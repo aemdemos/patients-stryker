@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "CMS grants transitional pass-through payment (TPT) for Stryker’s SpineJack® System",
+  "jcr:versionHistory": "882616e6-3c11-41bc-907d-80ecca2c258f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "5b07cf00-b9e6-4261-b254-c544708f1085"
+  ],
+  "contentID": "D0000069015",
+  "lastPublished": "Fri Dec 04 2020 01:11:26 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Dec 04 2020 01:11:26 GMT+0000",
+  "cq:lastModified": "Fri Dec 04 2020 01:11:21 GMT+0000",
+  "jcr:baseVersion": "5b07cf00-b9e6-4261-b254-c544708f1085",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Dec 03 2020 23:04:41 GMT+0000",
+  "jcr:uuid": "824a2dfb-cb4a-4a96-81e8-27c59e9a61d7",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Fri Dec 04 2020 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Dec-2020",
+    "jcr:lastModified": "Thu Dec 03 2020 23:05:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><b>Kalamazoo, Michigan, USA – December 4, 2020</b></p>\n<p>The Centers for Medicare &amp; Medicaid Services (CMS) announced the SpineJack implantable fracture reduction system qualified for the Transitional Pass-Through (TPT) payment as part of the 2021 Medicare Hospital Outpatient Prospective Payment System. SpineJack system now becomes one of only 11 medical devices to receive TPT status since 2016.</p>\n<p>The TPT payment provides additional payments for new medical devices that demonstrate a substantial clinical improvement over existing technologies. The TPT payment will be effective on Jan. 1, 2021. The TPT payment will provide outpatient facilities with incremental Medicare payment for the SpineJack System for up to three years.</p>\n<p>This announcement comes just over two months after CMS awarded the SpineJack System the New Technology Add-on Payment (NTAP), which provides additional payment in the hospital inpatient setting.</p>\n<p>“The CMS Transitional Pass-Through payment determination is a monumental step in providing a superior device technology in the treatment of osteoporotic vertebral compression fractures,” said Greg Siller, Vice President and General Manager of Stryker’s Interventional Spine business. “Due to SpineJack system receiving both NTAP and TPT payment, physicians and administrators no longer have to make a decision between care and cost. We remain committed to offering innovative Interventional Spine solutions and working with our customers to improve patients’ lives.”</p>\n<p>Over 700,000 patients in the U.S. suffer from osteoporotic compression fractures each year.<sup>1</sup> Changing the course of treatment for vertebral compression fractures (VCF), the SpineJack System comprehensively addresses reduction, fixation and restoration of these fractures. Vertebral augmentation procedures—such as balloon kyphoplasty (BKP)—have been shown to reduce mortality by up to 55% compared to non-surgical management.<sup>2</sup></p>\n<p><b>About the decision</b><br>\nThe CMS TPT decision was based on both public commentary as well as findings from the SAKOS trial—a prospective, multicenter, randomized study designed to support a non-inferiority finding for use of the SpineJack System versus BKP in the treatment of painful osteoporotic VCFs. SAKOS provided compelling evidence to establish the superiority of the SpineJack System over BKP with regards to absence of adjacent level fractures and midline vertebral body height restoration at both 6 and 12 months after the procedure.<sup>3</sup></p>\n<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at www.stryker.com.</p>\n<p><b>Media contact</b><br>\nJennifer Lentner<br>\nSr. Director, Communications<br>\nJennifer.lentner@stryker.com<br>\n</p>\n",
+    "jcr:lastModified": "Fri Dec 04 2020 01:11:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Siemionow K, Lieberman IH. Vertebral Augmentation in Osteoporotic and Osteolytic Fractures. Curr Opin. Support Palliat Care. 2009 Sep;3(3):219-25.</p>\r\n<p>2. Edidin AA, Ong KL, Lau E, Kurtz SM.&nbsp;Morbidity and mortality after vertebral fractures.&nbsp;Spine. 2015;40(15):1228-1241. [<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/26020845\">PubMed</a>]&nbsp;[<a href=\"https://scholar.google.com/scholar_lookup?journal=Spine&amp;title=Morbidity+and+mortality+after+vertebral+fractures&amp;author=AA+Edidin&amp;author=KL+Ong&amp;author=E+Lau&amp;author=SM+Kurtz&amp;volume=40&amp;issue=15&amp;publication_year=2015&amp;pages=1228-1241&amp;pmid=26020845&amp;\">Google Scholar</a>]</p>\r\n<p>3. Noriega D et al. A prospective, international, randomized, non-inferiority study comparing an implantable titanium vertebral augmentation device versus balloon kyphoplasty in the reduction of vertebral compression fractures (SAKOS study). The Spine Journal. 2019. doi: 10.1016/j.spinee.2019.07.009.</p>\r\n",
+    "jcr:lastModified": "Thu Dec 03 2020 21:22:57 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "srcFileRef": "/content/dam/stryker/about/news/2020/spinejack-tpt/images/spinejack-news-img.jpg",
+    "jcr:lastModified": "Thu Dec 03 2020 21:26:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2020/spinejack-tpt/images/spinejack-news-img.jpg"
+  }
+}

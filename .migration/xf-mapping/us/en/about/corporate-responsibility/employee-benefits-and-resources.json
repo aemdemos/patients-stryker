@@ -1,0 +1,698 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Employee benefits and resources",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "59bf1837-3993-416b-a2ae-65dfca203b4b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "fecab039-840e-4574-9fe4-a1d1ebf876a2"
+  ],
+  "contentID": "SOCI-GSNPS-SYK-1579300",
+  "lastPublished": "Fri Mar 14 2025 13:00:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Mar 14 2025 13:00:32 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 14 2025 13:00:34 GMT+0000",
+  "cq:lastModified": "Thu Mar 13 2025 20:04:35 GMT+0000",
+  "cq:siblingOrder": "overview,focus-areas,investing-in-people,product-lifecycle-innovation,environmental-programs,ethics-and-accountability,responsible-supply-chains,i,supplierdiversity,us-fall-2020-update-landing-page,cr-hub,promoting-global-health,giving-back,good-business,employee-benefits-and-resources,",
+  "jcr:baseVersion": "fecab039-840e-4574-9fe4-a1d1ebf876a2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Mar 13 2025 20:07:24 GMT+0000",
+  "hideInNav": "true",
+  "cq:name": "employee-benefits-and-resources",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Mar 03 2025 21:09:51 GMT+0000",
+  "jcr:uuid": "7cf7c2de-73cc-4612-84e5-71ff8766fd55",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/corporate-responsibility",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Mar 05 2021 16:17:27 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Mar 31 2021 20:13:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/corporate_responsibi/employee_benefits_an/hero-carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/corporate-responsibi/employee-benefits-an/hero-carousel/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "30",
+          "jcr:created": "Fri Mar 05 2021 16:21:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Feb 11 2025 15:57:44 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "12",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 01 2021 16:23:27 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\">Employee </span></span><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">benefits and resources</span></span><br>\n</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Feb 07 2025 19:51:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 08 2023 14:55:18 GMT+0000",
+      "jcr:lastModified": "Mon May 08 2023 14:55:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_530788373": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 04 2019 17:42:52 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Stryker aims to provide a competitive and inclusive total rewards offering for employees that drives attraction, engagement and retention of top talent. One of the team’s responsibilities is to ensure the employee benefits we offer are in line with our company philosophy, including our emphasis on wellbeing and mental health.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">We also have a comprehensive, global wellbeing framework that is focused on five core areas:</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Wed Feb 26 2025 18:25:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 20:46:47 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 20:46:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Physical</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:42:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Emotional</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:43:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:22 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-money-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-money-icons-02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Financial</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:43:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:32 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-work-life-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-work-life-icons-03.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Career</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:43:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:32 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-work-life-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-work-life-icons-03.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Social</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:43:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:01:12 GMT+0000",
+      "text": "<p>Our wellbeing benefits include gyms at many locations, fitness and nutrition classes, and access to mindfulness partners and mental health resources. Additionally, we offer several family-friendly benefits and resources, including the following for U.S.-based employees:<br>\n</p>\n",
+      "jcr:lastModified": "Tue Jan 28 2025 21:08:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_931466993": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Feb 11 2025 18:45:51 GMT+0000",
+      "jcr:lastModified": "Tue Feb 11 2025 18:45:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_copy_1882898613": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Maternity support programs</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:43:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:32 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-work-life-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-work-life-icons-03.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Adoption assistance</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:22 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-money-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-money-icons-02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Day care flexible spending account programs</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_1446994060": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:03:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Fertility guidance</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Breast milk shipping for mothers traveling on business</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:22 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-money-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-money-icons-02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Paid parental and caregiver leave</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:01:12 GMT+0000",
+      "text": "<p>Learn more about Stryker’s U.S. employee benefits on our <a href=\"https://totalrewards.stryker.com/\">Total Rewards</a> site.<br>\n</p>\n",
+      "jcr:lastModified": "Tue Jan 28 2025 21:10:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:01:12 GMT+0000",
+      "text": "<p>An important mental health offering for all employees globally is Lyra Health, a global mental health and employee assistance program that provides:<br>\n</p>\n",
+      "jcr:lastModified": "Wed Jan 29 2025 15:17:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1774546": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Feb 11 2025 15:57:59 GMT+0000",
+      "jcr:lastModified": "Tue Feb 11 2025 15:57:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_copy_469876691": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">10 free mental health counseling sessions for employees and family members</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:44:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Concierge support for parenting, family and couples counselors, and counseling for toddlers, children and teens</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:45:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">A library of self-care resources</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:45:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_1159233822": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 21:04:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:30:22 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-money-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-money-icons-02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Legal, financial and identity theft consultations</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:45:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Elder and child care resources and referrals</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:45:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:29:50 GMT+0000",
+          "alt": "CR-employees-benefits-and-resources-health-icon",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-employees-benefits-and-resources-health-icons-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:04:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 21:04:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">Quick and convenient care, averaging two days to the first appointment</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 18:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Jan 29 2025 14:37:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

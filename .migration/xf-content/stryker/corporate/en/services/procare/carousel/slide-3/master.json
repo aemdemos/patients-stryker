@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Slide 3",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "00f754e4-61e9-4652-a45c-062df669db4c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4b3d92ed-9c71-4a25-83de-d331e4f94937"
+  ],
+  "lastPublished": "Wed Jan 21 2026 20:51:27 GMT+0000",
+  "jcr:created": "Wed Jan 21 2026 20:51:32 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 21 2026 20:51:33 GMT+0000",
+  "cq:lastModified": "Tue Sep 16 2025 18:48:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4b3d92ed-9c71-4a25-83de-d331e4f94937",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jan 21 2026 20:51:27 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2a092d60-90fb-4526-92e3-7057fa8465df",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Sep 16 2025 18:48:08 GMT+0000",
+      "alt": "procare-carousel-3",
+      "srcFileRef": "/content/dam/stryker/services/procare/images/procare-carousel-3.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 16 2025 18:48:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

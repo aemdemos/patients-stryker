@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Core 2 Console Header 2 - mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6fcb7b32-80f5-4eeb-9382-f540ce3e196a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5e4e781c-2357-477b-9e11-d7f1c1eefb65"
+  ],
+  "lastPublished": "Thu Aug 29 2024 17:35:52 GMT+0000",
+  "jcr:created": "Thu Aug 29 2024 17:35:54 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 29 2024 17:36:01 GMT+0000",
+  "cq:lastModified": "Fri Jun 14 2024 18:49:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5e4e781c-2357-477b-9e11-d7f1c1eefb65",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 31 2024 20:42:45 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3aa8049b-f80d-430d-952b-67fb23d95c1d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jun 14 2024 18:48:57 GMT+0000",
+      "alt": "CORE 2 Console",
+      "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/Core2-Hero-TPX-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jun 14 2024 18:49:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

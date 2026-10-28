@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Wingspan Stent System body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "74a18e58-45f1-431a-a600-3bbafb4d8d04",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9a2491a3-210b-4697-9075-2827b02f0c49"
+  ],
+  "jcr:created": "Wed Aug 24 2022 20:23:27 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 24 2022 20:23:29 GMT+0000",
+  "cq:lastModified": "Tue May 24 2022 16:44:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9a2491a3-210b-4697-9075-2827b02f0c49",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "fde13dee-fc8b-4d5b-9548-1c6a029a0d60",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue May 24 2022 16:43:46 GMT+0000",
+      "text": "<p>The&nbsp;Wingspan Stent System&nbsp;with Gateway PTA&nbsp;Balloon Catheter is&nbsp;authorized under a&nbsp;Humanitarian Device&nbsp;Exemption (HDE). IRB is&nbsp;required prior to use.</p>\n",
+      "jcr:lastModified": "Tue May 24 2022 16:44:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

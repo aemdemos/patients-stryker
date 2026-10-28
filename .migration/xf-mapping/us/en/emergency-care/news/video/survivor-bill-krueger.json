@@ -1,0 +1,112 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Survivor: Bill Krueger",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "19737113-43e5-4b68-9ec3-42b317c57035",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "06875f45-58c2-4b2b-af91-ff179f666a93"
+  ],
+  "lastPublished": "Thu Jan 25 2024 23:01:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 23:01:41 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 23:01:43 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:55:24 GMT+0000",
+  "jcr:description": "Former Major League Baseball player, William \"Bill\" Krueger, shares his sudden cardiac arrest survival story.",
+  "jcr:baseVersion": "06875f45-58c2-4b2b-af91-ff179f666a93",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:business-unit/ems/news/survivor-stories",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news/videos"
+  ],
+  "jcr:lastModified": "Tue Aug 30 2022 15:08:02 GMT+0000",
+  "jcr:uuid": "c866767b-04cc-4f3a-89b5-7820945f105f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "description": "Former Major League Baseball player, William \"Bill\" Krueger, shares his sudden cardiac arrest survival story.",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Aug 30 2022 15:08:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-bill-krueger.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/survivor-bill-krueger-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jul 12 2022 18:30:52 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:55:24 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:55:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-denis-legault"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Sun Aug 01 2021 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Aug-2021",
+    "jcr:lastModified": "Fri Jul 29 2022 20:06:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/thumbnails/Survivor--Bill-Krueger.png"
+  }
+}

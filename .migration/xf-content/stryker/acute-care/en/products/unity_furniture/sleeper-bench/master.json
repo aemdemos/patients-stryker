@@ -1,0 +1,126 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sleeper bench",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "11f1fe6f-95fc-424f-a0a7-7c623b35f5eb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5741cdcf-dd8a-4794-a98f-942aad9357c0"
+  ],
+  "lastPublished": "Mon Nov 18 2024 22:24:05 GMT+0000",
+  "jcr:created": "Mon Nov 18 2024 22:24:06 GMT+0000",
+  "cq:lastReplicated": "Mon Nov 18 2024 22:24:08 GMT+0000",
+  "cq:lastModified": "Wed Oct 23 2024 21:36:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5741cdcf-dd8a-4794-a98f-942aad9357c0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Nov 18 2024 22:24:05 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "aba8db2a-6d94-44e1-9d7e-7c0df01b09a3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Oct 18 2024 16:57:58 GMT+0000",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Sleeper bench series</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Relax or sleep in a patient room in comfort.</span></p>\n",
+      "jcr:lastModified": "Wed Oct 23 2024 17:30:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 16:56:46 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy696481964028126": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_auto",
+        "alt": "Our hospital Unity sleeper bench labeled to identify pull and flip design  ",
+        "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/RAAPTOR-Bench-sleeper-1.jpg",
+        "jcr:lastModified": "Tue Nov 14 2023 18:43:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "5"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy_682116751": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 16:56:48 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_682116751696484640764151": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_auto",
+        "alt": "Our hospital Unity sleeper bench with bed halfway pulled out",
+        "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/RAAPTOR-Bench-sleeper-2.jpg",
+        "jcr:lastModified": "Tue Nov 14 2023 18:44:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">Key features</span></span></span><br>\n</h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Easily converts from sofa to bed with a simple pull and flip design, offering a dedicated, cleanable and moisture barrier sleep surface</span></li>\n<li><span class=\"fontsize-1-25em\">Six models available including customizable back, armrest and tablet configurations</span></li>\n<li><span class=\"fontsize-1-25em\">Optional USB outlet</span></li>\n</ul>\n",
+      "jcr:lastModified": "Wed Oct 23 2024 21:36:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

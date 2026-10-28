@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leader - 5238",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d5d1fdf1-5ea3-4bd7-a868-7ec5cef75a6b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c5c2c928-8143-462d-9bc9-183a17509d57"
+  ],
+  "lastPublished": "Tue Sep 01 2026 14:07:06 GMT+0000",
+  "jcr:created": "Tue Sep 01 2026 14:07:06 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 01 2026 14:07:08 GMT+0000",
+  "cq:lastModified": "Wed Aug 26 2026 18:48:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c5c2c928-8143-462d-9bc9-183a17509d57",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:11:16 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2423765c-c7a9-4c7f-95bd-3371360a5692",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Andy</span> Pierce</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Group President, MedSurg and Neurotechnology</span></span></p>\n<p>Andy Pierce became Group President, MedSurg and Neurotechnology in August 2019.<br>\n</p>\n<p>&nbsp;</p>\n<p>Andy oversees our Endoscopy, Instruments, Medical, Neurovascular and Peripheral Vascular Divisions. He joined Stryker in 1996 and has held various marketing, sales and product management roles in our Instruments Division and CMF Business, later moving into leadership positions within CMF. Andy became the Vice President and General Manager of CMF in 2008, Vice President and General Manager for Stryker's Surgical and Neuro Spine ENT Business Units in 2009 and in 2013, President of the Endoscopy Division. In 2018, he served as Group President, MedSurg and assumed responsibility for the Neurotechnology Group in 2019. From 2021 to 2025, he was also responsible for the Asia Pacific Region and Enterprise Strategy Function.</p>\n<p>Andy graduated from Hope College, where he earned a bachelor's degree in business, psychology and political science. Andy also serves on the Board of Directors for Envista Holdings (NYSE: NVST).</p>\n<p><span class=\"fontsize-8em\">COMM-GSNPS-SYK-2901950</span><br>\n</p>\n",
+      "jcr:lastModified": "Mon Jan 26 2026 22:10:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "5"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 20:59:14 GMT+0000",
+      "alt": "Andy Pierce",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Template_Andy_Pierce.png",
+      "jcr:lastModified": "Wed Aug 26 2026 18:48:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

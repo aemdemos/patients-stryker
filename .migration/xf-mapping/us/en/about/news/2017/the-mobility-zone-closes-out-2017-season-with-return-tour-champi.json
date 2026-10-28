@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "The Mobility Zone closes out 2017 season with return TOUR Championship",
+  "jcr:versionHistory": "04f5ebf1-96ca-4dfb-93a1-123305661b15",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "b722b37e-e343-4a7c-bf3d-2b216ae54f82"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:28:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:28:19 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 16:28:13 GMT-0500",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:baseVersion": "b722b37e-e343-4a7c-bf3d-2b216ae54f82",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 16:28:13 GMT-0500",
+  "jcr:uuid": "ce55c7ba-1db4-43e7-bef9-0479d544ca86",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Tue Sep 19 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "19-Sep-2017",
+    "jcr:lastModified": "Mon Sep 18 2017 16:37:41 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "text": "<p>This week, Stryker Orthopaedics will round out its fourth year as the Official Joint Replacement Products of the PGA TOUR® and PGA TOUR Champions at the TOUR Championship in Atlanta, GA. The tournament marks the ninth event where Stryker activated on-site with The Mobility Zone – a destination designed to educate golf fans on the importance of joint health.&nbsp;</p>\n<p>Mobility Zone will be open at the East Lake Golf Club starting on Wednesday, September 20, and will provide fans the opportunity to partake in the 2017 Stryker Challenge – a hands-on experience featuring Art H. Ritis, a life-size model that aims to provide tournament goers with a basic understanding of joint replacement surgery and Stryker’s products. In addition, fans who stop by The Mobility Zone are able to show their support to veterans by purchasing a Stryker hat. For each hat purchased, the company will make a donation to the K9s For Warriors organization, empowering veterans to return to civilian life with dignity and independence by sponsoring service canines.&nbsp;</p>\n<p>“Stryker is proud of our ongoing partnership with the PGA TOUR, as it affords us the opportunity to educate tournament goers about the importance of keeping their joints healthy in an atmosphere that promotes an active lifestyle,” said Stuart Simpson, President, Stryker’s Joint Replacement Division. “Over the course of three years activating at TOUR Championship, The Mobility Zone has become the premiere on-site destination for fans to stop by and learn fun ways to continue their health care journey – both on and off the golf course.”&nbsp;</p>\n<p>In addition to The Mobility Zone, throughout tournament week Stryker will host The Health Walk – a one mile walk featuring health facts and tips located in key areas along the course. The Health Walk is part of an ongoing initiative activated at key PGA TOUR and PGA TOUR Champions events throughout 2017.&nbsp;</p>\n<p><b>For additional information on the Stryker Challenge as well as K9s For Warriors involvement, please visit: www.StrykerChallenge.com.&nbsp;</b></p>\n<p><b>Read the full article:</b><br>\n</p>\n<p><a href=\"/content/dam/stryker/about/news/TOUR Champ_Final.pdf\"><b>TOUR Championship</b></a></p>\n<p>&nbsp;</p>\n<div style=\"position: absolute; left: -10000px; width: 9000px; top: 0px;\"><p><b>Read the full article:</b></p>\n<div><b>&nbsp;</b></div>\n</div>\n<div style=\"position: absolute; left: -10000px; width: 9000px; top: 0px;\"><p><b>Read the full article:</b></p>\n<div><b>&nbsp;</b></div>\n</div>\n<div style=\"position: absolute; left: -10000px; width: 9000px; top: 0px;\"><p style=\"box-sizing: border-box; margin-right: 0px; margin-left: 0px; line-height: 1.375;\"><b style=\"box-sizing: border-box;\">Read the full article:</b></p>\n<div><b style=\"box-sizing: border-box;\">&nbsp;</b></div>\n</div>\n",
+    "jcr:lastModified": "Tue Sep 19 2017 11:17:13 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "eventCity": "Mahwah",
+    "jcr:lastModified": "Mon Sep 18 2017 16:38:18 GMT-0400",
+    "eventState": "NJ",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Stryker_PGA_model_v2-front white.jpg",
+    "jcr:lastModified": "Tue Oct 03 2017 15:13:50 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  }
+}

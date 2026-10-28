@@ -1,0 +1,100 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Pro-Dense",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a68bc806-a752-41b2-815a-bb972671d500",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Pro-Dense",
+  "jcr:predecessors": [
+    "8c9d234c-dd33-46e6-a5de-f1de7a849293"
+  ],
+  "contentID": "AP-015803",
+  "lastPublished": "Thu Nov 07 2024 19:18:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Nov 07 2024 19:18:10 GMT+0000",
+  "cq:lastReplicated": "Thu Nov 07 2024 19:18:12 GMT+0000",
+  "cq:lastModified": "Thu Nov 07 2024 19:14:57 GMT+0000",
+  "jcr:description": "Faster, Stronger, and Denser New Bone.* \r\n<br>\r\nPro-Dense injectable regenerative graft has a unique triphasic resorption profile that provides an ideal environment for the direct deposition of bone by binding growth factors<sup>1</sup> and by providing a slow-resorbing matrix that supports healing across the defect.",
+  "jcr:baseVersion": "8c9d234c-dd33-46e6-a5de-f1de7a849293",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:57:00 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:",
+    "stryker:capability/biologics",
+    "stryker:capability/foot-and-ankle",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:product/trauma-and-extremities/prodense",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/bone-grafting",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:custom/foot-and-ankle/product-type/biologics"
+  ],
+  "jcr:lastModified": "Thu Nov 07 2024 19:14:57 GMT+0000",
+  "jcr:uuid": "1077069f-60af-4f71-905e-fcbb750b94ae",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Feb 18 2022 20:07:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/trauma-and-extremeties/products/prodense/resources/Pro-Dense-Mechanism-of-Action.pdf",
+        "/content/dam/stryker/trauma-and-extremeties/products/prodense/resources/Pro-Dense-Article-Summary-UBC.pdf",
+        "/content/dam/stryker/trauma-and-extremeties/products/prodense/resources/Core-Decompression-Kit-Pro-Dense-Pro-Stim.pdf"
+      ],
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Tue Apr 05 2022 17:42:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/prodense/images/Pro-Dense_AP-015803.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Pro-Dense was the first bone graft substitute indicated for the use in bone voids resulting from the resection of benign bone cysts in children 6 years and older. It delivers predicable bone regeneration with it’s triphasic resorption profile for faster, denser bone regeneration, stronger new bone, and a graft that remodels to normal bone.</p>\n",
+    "jcr:lastModified": "Fri Feb 18 2022 20:09:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*All claims based on a critically sized canine proximal humerus defect model. It is unknown how results from the canine modelcompare with clinical results in humans. Data on file at Stryker</p>\r\n<ol>\r\n<li>Growth factor binding based on in vitro data of BMP-2 and VEGF. Data on file.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Feb 18 2022 20:10:07 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

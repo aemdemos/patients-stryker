@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Carousel 4",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d0fcfb30-fa29-4c32-86d3-ebe1e59c6cb7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0706794b-de78-4f16-8cdd-0007f265e7cd"
+  ],
+  "lastPublished": "Mon Jul 14 2025 20:57:52 GMT+0000",
+  "jcr:created": "Mon Jul 14 2025 20:57:53 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 14 2025 20:57:57 GMT+0000",
+  "cq:lastModified": "Wed Sep 04 2024 18:34:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0706794b-de78-4f16-8cdd-0007f265e7cd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jan 29 2025 20:09:14 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "79ed4c5f-cedc-40b8-a3e0-39d6e8f097e2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Sep 04 2024 18:33:45 GMT+0000",
+      "alt": "OnSite-hero-4",
+      "srcFileRef": "/content/dam/stryker/services/onsite/OnSite-hero-4.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 04 2024 18:34:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

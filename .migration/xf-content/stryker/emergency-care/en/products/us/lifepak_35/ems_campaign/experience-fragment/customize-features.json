@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "STJ Insight",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6289f14d-3dc1-4786-8ead-b57cb7c7a7ed",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "7690d22d-412c-41eb-a2a9-1f47b7b9727e"
+  ],
+  "lastPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "jcr:created": "Wed May 29 2024 19:15:50 GMT+0000",
+  "cq:lastReplicated": "Wed May 29 2024 19:15:52 GMT+0000",
+  "cq:lastModified": "Wed May 29 2024 12:38:05 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7690d22d-412c-41eb-a2a9-1f47b7b9727e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "jcr:uuid": "a93276fc-fed0-4ffe-80de-a79d013f8579",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 30 2024 20:05:36 GMT+0000",
+      "alt": "LIFEPAK 35 showing STJInsight on large touchscreen",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_STJInsight-callout.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 29 2024 12:38:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

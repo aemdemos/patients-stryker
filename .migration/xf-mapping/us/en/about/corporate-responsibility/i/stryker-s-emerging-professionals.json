@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker's Emerging Professionals",
+  "jcr:versionHistory": "2505163d-8519-4f39-8de8-03f6e52f3708",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "54a42508-bd91-4f0c-82a6-1f1629e8d55a"
+  ],
+  "lastPublished": "Wed Oct 23 2019 14:23:44 GMT+0000",
+  "jcr:created": "Wed Oct 23 2019 14:23:44 GMT+0000",
+  "cq:lastModified": "Thu Nov 16 2017 13:50:52 GMT-0500",
+  "jcr:baseVersion": "54a42508-bd91-4f0c-82a6-1f1629e8d55a",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "cfe33f0a-3b61-4512-89f5-6d18b74a6a93",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "Michelle.Covello@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Fri Aug 18 2017 09:40:53 GMT-0400",
+      "jcr:lastModified": "Fri Aug 18 2017 09:40:53 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+          "jcr:created": "Fri Aug 18 2017 09:40:58 GMT-0400",
+          "text": "<p>At the heart of Stryker’s Emerging Professionals is the desire to come alongside emerging professionals and offer a helping hand so that they can thrive in Stryker’s culture and reach their full potential. Our mission is to engage, support, and inspire the next generation of Stryker professionals. </p>\n<p>SEP is committed to their members by offering avenues for emerging professionals to network and create forums for senior-level employees to provide wisdom to the next generation. There are also opportunities to inspire the surrounding community by volunteering at schools and participating in our recruiting events.</p>\n",
+          "jcr:lastModified": "Thu Nov 16 2017 13:50:52 GMT-0500",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2112ca2b-1dc5-4401-af41-72fe568e0da4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "8aeed6cd-ca21-4538-a7f7-840627de6823"
+  ],
+  "lastPublished": "Fri Aug 15 2025 15:37:26 GMT+0000",
+  "jcr:created": "Fri Aug 15 2025 15:37:26 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 15 2025 15:37:28 GMT+0000",
+  "cq:lastModified": "Fri Jul 18 2025 16:44:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "8aeed6cd-ca21-4538-a7f7-840627de6823",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 31 2024 19:28:45 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3f27aef7-bac9-4003-8bd6-5a9c525f7eb4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage Prevalon AirTAP patient repositioning system",
+      "srcFileRef": "/content/dam/stryker/sage/products/airtap/images/Sage-AirTAP-Thumbnail-2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jul 18 2025 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

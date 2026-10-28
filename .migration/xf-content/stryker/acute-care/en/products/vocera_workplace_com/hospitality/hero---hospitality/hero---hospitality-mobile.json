@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero - Hospitality Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "16e4a036-2e4b-41c3-af75-185b21c61b21",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "a57fa77c-1e5e-4c07-b1b1-0200ba6780fc"
+  ],
+  "lastPublished": "Mon Apr 13 2026 17:21:58 GMT+0000",
+  "jcr:created": "Mon Apr 13 2026 17:21:58 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 13 2026 17:22:01 GMT+0000",
+  "cq:lastModified": "Mon Apr 13 2026 17:21:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a57fa77c-1e5e-4c07-b1b1-0200ba6780fc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:21:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "765b30f2-2188-4445-a677-8a3723709d4d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 22 2024 15:17:50 GMT+0000",
+      "alt": "Hotel staff member wearing Vocera Smartbadge",
+      "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/workplace-communications_hospitality_hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Apr 13 2026 17:21:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

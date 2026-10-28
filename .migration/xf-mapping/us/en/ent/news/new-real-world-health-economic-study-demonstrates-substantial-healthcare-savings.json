@@ -1,0 +1,114 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "New real-world health economic study demonstrates substantial healthcare savings with the LATERA® absorbable nasal implant system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "48af3847-e509-468a-934d-fb8ee994e53c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:predecessors": [
+    "d6aa7c04-03e9-4d10-a2ac-b2bc99a10a4f"
+  ],
+  "contentID": "ENT-GSNPS-PRESS-1226437_REV-0",
+  "lastPublished": "Fri Oct 31 2025 13:54:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 31 2025 13:54:09 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 31 2025 13:54:11 GMT+0000",
+  "cq:lastModified": "Fri Oct 31 2025 13:53:56 GMT+0000",
+  "jcr:description": "Portage, Michigan, USA – August 23, 2024 – Stryker, a global leader in medical technologies, announced the publication of a new health economic study that has unveiled substantial potential cost savings associated with the LATERA® absorbable nasal implant system. LATERA was compared to traditional surgical repair for the treatment of nasal valve collapse (NVC). The study, which analyzed claims data from thousands of patients, demonstrates that payers could save approximately $2,200 per patient on the date of the procedure by opting for the minimally invasive LATERA approach over surgical intervention.",
+  "jcr:baseVersion": "d6aa7c04-03e9-4d10-a2ac-b2bc99a10a4f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 23 2024 15:07:27 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news/ent/clinical-information",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Oct 31 2025 13:53:56 GMT+0000",
+  "jcr:uuid": "3d731c5e-308a-4f91-a2d1-dba40a5c5469",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 21 2022 19:22:40 GMT+0000",
+      "jcr:lastModified": "Mon Nov 21 2022 19:22:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Learn more about the clinical and economic value of LATERA from Dr. Setzen.",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Fri Aug 23 2024 18:44:59 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "whc6CRpoLJQ?si=5tpgQaM0XBmxCUVa",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Aug 23 2024 18:48:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Mon Nov 21 2022 19:24:38 GMT+0000",
+          "text": "<p><b>About Stryker</b></p>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at www.stryker.com.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 23 2024 17:34:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Mon Nov 21 2022 19:24:38 GMT+0000",
+          "text": "<p><b>Important risk and safety information</b></p>\n<p><a href=\"https://www.stryker.com/us/en/ent/ent-risk-and-safety-information-for-health-care-professionals.html\" target=\"_blank\">ENT risk and safety information for healthcare professionals</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue Aug 20 2024 18:28:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Mon Nov 21 2022 19:24:38 GMT+0000",
+          "text": "<p><b>References</b></p>\n<ol>\n<li>Vo, R., Barhoush, Y., Batchu, L., Adams, S., &amp; Setzen, G. (2024). All-cause claims analysis of the LATERA absorbable nasal implant vs surgical repair in patients with nasal valve collapse. Journal of Medical Economics, 27(1), 1099–1107. https://doi.org/10.1080/13696998.2024.2362046&nbsp;<br>\n</li>\n<li>San Nicoló, Marion et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/30227454/\" target=\"_blank\">A 2-Year Follow-up Study of an Absorbable Implant to Treat Nasal Valve Collapse.</a>” Facial plastic surgery: FPS vol. 34,5 (2018): 545-550</li>\n<li>Sidle, Douglas M et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/33853139/\" target=\"_blank\">Bioabsorbable Implant for Treatment of Nasal Valve Collapse with or without Concomitant Procedures.</a>” Facial plastic surgery : FPS vol. 37,5 (2021): 673-680.</li>\n<li>Bikhazi, Nadim et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/34965603/\" target=\"_blank\">Long-Term Follow-up from the Treatment and Crossover Arms of a Randomized Controlled Trial of an Absorbable Nasal Implant for Dynamic Nasal Valve Collapse.</a>” Facial plastic surgery :&nbsp; FPS vol. 38,5 (2022): 495-503.</li>\n<li>San Nicoló, Marion et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/28388804/\" target=\"_blank\">Absorbable Implant to Treat Nasal Valve Collapse.</a>” Facial plastic surgery : FPS vol. 33,2 (2017): 233-240.</li>\n<li>Sidle, Douglas M et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/31254279/\" target=\"_blank\">Twelve-month outcomes of a bioabsorbable implant for in-office treatment of dynamic nasal valve collapse.</a>” The Laryngoscope vol. 130,5 (2020): 1132-1137.</li>\n<li>Stolovitzky, Pablo et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/29756407/\" target=\"_blank\">A prospective study for treatment of nasal valve collapse due to lateral wall insufficiency: Outcomes using a bioabsorbable implant.</a>” The Laryngoscope vol. 128,11 (2018): 2483-2489.</li>\n<li>Stolovitzky, Pablo et al. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/31226238/\" target=\"_blank\">Assessment of bioabsorbable implant treatment for nasal valve collapse compared to a sham group: a randomized control trial.</a>” International forum of allergy &amp; rhinology vol. 9,8 (2019): 850-856.</li>\n<li>Olson, Michael D, and Jose E Barrera. “<a href=\"https://pubmed.ncbi.nlm.nih.gov/34171694/\" target=\"_blank\">A comparison of an absorbable nasal implant versus functional rhinoplasty for nasal obstruction.</a>” American journal of otolaryngology vol. 42,6 (2021): 103118.</li>\n</ol>\n",
+          "jcr:lastModified": "Fri Aug 23 2024 15:07:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "publishDate": "Fri Aug 23 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "23-Aug-2024",
+    "jcr:lastModified": "Fri Oct 31 2025 13:52:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "text": "<p><b>Portage, Michigan, USA –</b>&nbsp;August 23, 2024 – Stryker, a global leader in medical technologies, announced the publication of a <a href=\"https://www.tandfonline.com/doi/full/10.1080/13696998.2024.2362046\" target=\"_blank\"><b>new health economic study</b></a> that has unveiled substantial potential cost savings associated with the LATERA® absorbable nasal implant system. LATERA was compared to traditional surgical repair for the treatment of nasal valve collapse (NVC). The study, which analyzed claims data from thousands of patients, demonstrates that payers could save approximately $2,200 per patient on the date of the procedure by opting for the minimally invasive LATERA approach over surgical intervention.<br>\n</p>\n<p>NVC has traditionally been addressed through surgical repair, resulting in a more invasive procedure with a longer recovery time. However, the emergence of the LATERA absorbable nasal implant system offers a cost-effective and less invasive alternative. This procedure can be performed in-office and not only provides effective treatment and an easier recovery for patients, but also delivers substantial cost savings for payers.</p>\n<p><b>Key findings from the study include:</b></p>\n<ul>\n<li><b>Total cost comparison</b>: LATERA claims were associated with an average cost of $9,612, while surgical repair incurred an average cost of $11,846 on the date of the procedure.<ul>\n<li>Data from 5,032 LATERA patients and 26,553 surgical repair of nasal vestibular stenosis patients demonstrated similar all-cause claims in the baseline and 18-month follow-up period.</li>\n</ul>\n</li>\n<li><b>Cost comparison with concomitant procedures</b>: When procedures were performed concomitantly with septoplasty and inferior turbinate reduction, patients in the LATERA group incurred lower follow-up costs than those in the surgical repair of nasal vestibular stenosis group, resulting in approximately $100 per patient per month mean total cost savings.</li>\n</ul>\n<p><b>Key LATERA information</b></p>\n<ul>\n<li>LATERA is a minimally invasive procedure that supports the cartilage of both the internal and external valve to reduce nasal airway obstruction (NAO) symptoms and help increase nasal airflow.</li>\n<li>LATERA is available for in-office treatment due to minimally invasive approach.</li>\n<li><b>Other clinical outcomes</b>: Eight clinical publications demonstrate significant improvement in nasal obstruction symptoms.<sup>2-9</sup><ul>\n<li>One study showing similar improvements to surgical options/functional rhinoplasty.<sup>9</sup></li>\n<li>One study demonstrated a positive effect on sleep quality and significant improvement in excessive daytime sleepiness.<sup>4</sup><br>\n<br>\n</li>\n</ul>\n</li>\n</ul>\n<p>According to Mitch Foley, Vice President of Stryker ENT, “We are able to meet our customers with LATERA, a minimally invasive treatment option for NVC with demonstrated patient sleep improvement, now bolstered with real-world evidence showing payer savings. LATERA has been on the market since 2016, and we’re excited to demonstrate its effectiveness to help increase access for patients.” These findings underscore the importance of considering not only clinical effectiveness but also economic implications when evaluating treatment options for nasal valve collapse. With healthcare costs continuing to rise, innovative solutions like LATERA offer a promising avenue for cost containment without compromising quality of care.&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Oct 31 2025 13:53:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "February",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "79137a8e-5ef9-44aa-97e6-132cc28535e6",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "9786bf60-61a3-4e79-b31d-cfbcec7207a4"
+  ],
+  "contentID": "JR-GSNPS-SYK-774781",
+  "lastPublished": "Tue Feb 11 2025 20:40:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 11 2025 20:40:01 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 11 2025 20:40:03 GMT+0000",
+  "cq:lastModified": "Tue Feb 11 2025 20:39:17 GMT+0000",
+  "jcr:baseVersion": "9786bf60-61a3-4e79-b31d-cfbcec7207a4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Feb 11 2025 20:40:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Feb 10 2025 18:39:02 GMT+0000",
+  "jcr:uuid": "8fec5921-7d9c-45d3-8178-df6c22954232",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-4vw\"><span style=\"background-color: transparent; font-weight: normal; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Adding to patient-based options with partial&nbsp;<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">knee procedures</span></span></span></span></span></h1>\r\n",
+          "jcr:lastModified": "Mon Feb 10 2025 18:30:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program objectives</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Understand when you can use Mako Partial Knee in your practice</span></li>\n<li><span class=\"fontsize-1-25em\">Identify key indications for partial knee procedures</span></li>\n<li><span class=\"fontsize-1-25em\">Evaluate joint balancing and understand how to balance</span></li>\n<li><span class=\"fontsize-1-25em\">Review complex procedures, including lateral, bicompartmental and patellofemoral partial knees</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Feb 11 2025 20:39:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Product focus</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Mako Partial Knee&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 18:31:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "jcr:lastModified": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 11 2023 18:03:13 GMT+0000",
+          "alt": "Michael Morwood, M.D.",
+          "srcFileRef": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/images/Morwood_Michael.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 10 2025 19:13:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Michael Morwood, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Portsmouth, NH</span><br>\n<br>\n<b>Residency</b>: Duke University<br>\n<b>Fellowship</b>: Orthopaedic Trauma, Florida Orthopaedic Institute<br>\nAdult Reconstruction, Aaron Hofmann <br>\nArthritis Institute&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 18:33:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 11 2023 18:03:13 GMT+0000",
+          "alt": "Jeremy Reid, M.D.",
+          "srcFileRef": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/images/Reid_Jeremy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 10 2025 19:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Jeremy Reid, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Moorestown, NJ</span><br>\n<br>\n<b>Residency</b>: University of California, Los Angeles David Geffen School of Medicine&nbsp;<br>\n<b>Fellowship</b>: Hospital for Special Surgery&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 18:34:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jul 25 2022 18:46:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Join Michael Morwood, M.D. and Jeremy Reid, M.D. as they discuss indications, balancing and complex cases to build a practice with Mako Partial Knee.</span></span></p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 18:32:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true",
+          "bottomMargin": "7"
+        }
+      }
+    },
+    "cols_1347437557_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "deepLinkingId": "learning",
+      "jcr:created": "Wed Dec 07 2022 19:18:53 GMT+0000",
+      "title": "On-demand learning",
+      "jcr:lastModified": "Mon Feb 12 2024 17:26:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">VIDEOS</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_1140126676_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "jcr:lastModified": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/videos/707350-JR45_Sastry June 2-learning video edits_1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/707350-JR45_Sastry June 2-learning video edits_1-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Feb 10 2025 19:56:01 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Mako Partial Knee indications with Akhil Sastry, M.D.&nbsp;</span><br>\n<span class=\"urw-egyptienne\">17:14 minutes</span></p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 20:09:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/videos/JR-MPKA-VID-884381-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/JR-MPKA-VID-884381-EN_US-1-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Feb 10 2025 19:55:48 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">JR45: Exploring partial knee procedures with William Junius, M.D. and Brian Perkinson, M.D.&nbsp;</span><br>\n<span class=\"urw-egyptienne\">39:20 minutes</span></p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 20:10:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Feb 12 2024 20:13:43 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Feb 12 2024 20:13:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/videos/Mako-Partial-Knee-Planar-Workflow-with-Dr- Freedhand.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Mako-Partial-Knee-Planar-Workflow-with-Dr- Freedhand-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Feb 10 2025 19:55:30 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Mako Partial Knee workflow with Adam Freedhand, M.D.&nbsp;</span><br>\n<span class=\"urw-egyptienne\">15:14 minutes</span></p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 20:10:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Feb 10 2025 19:56:17 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Feb 10 2025 20:02:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/videos/Mako-PKA-Lateral-Unicompartmental-with-Dr-Roche.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Mako-PKA-Lateral-Unicompartmental-with-Dr-Roche-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Feb 10 2025 21:16:48 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Lateral Mako Partial Knee with Martin Roche, M.D.&nbsp;</span><br>\n<span class=\"urw-egyptienne\">34:19 minutes</span></p>\n",
+          "jcr:lastModified": "Mon Feb 10 2025 19:32:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy__143238632": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "jcr:lastModified": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy__1384966749": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">RESOURCES</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/resources/Mako Partial Knee Intro Slide Deck.pdf",
+        "/content/dam/stryker/no-index/training-and-education/jr45/season-3/february/resources/Mako Partial Knee - Medial PKA patient indications.pdf"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:11:01 GMT+0000",
+      "jcr:lastModified": "Mon Feb 10 2025 19:23:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Feb 10 2025 18:26:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The faculty are paid consultants of Stryker Orthopaedics. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\r\n<p>The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Mako, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Mon Feb 10 2025 18:38:48 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

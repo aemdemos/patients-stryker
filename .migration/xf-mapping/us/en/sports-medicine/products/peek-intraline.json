@@ -1,0 +1,215 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PEEK Intraline",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0648851a-97b2-4554-a2be-f5915803f14b",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+  "thumbnailAltText": "PEEK intraline thumbnail",
+  "jcr:predecessors": [
+    "08fbf10a-743f-41cc-917f-fb63f4a3c900"
+  ],
+  "contentID": "Literature number: 1000903483 Rev A",
+  "lastPublished": "Wed Aug 19 2026 16:30:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 16:30:24 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 16:30:26 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 16:30:16 GMT+0000",
+  "jcr:description": "PEEK IntraLine is a fully-threaded anchor with a suture eyelet that runs through the center of the anchor which provides flexibility for the working suture.",
+  "jcr:baseVersion": "08fbf10a-743f-41cc-917f-fb63f4a3c900",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:39:47 GMT+0000",
+  "pageTitle": "PEEK Intraline",
+  "cq:tags": [
+    "stryker:procedure/sports-medicine",
+    "stryker:content-type/product",
+    "stryker:business-unit/sports-medicine",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:product",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair"
+  ],
+  "jcr:lastModified": "Thu May 07 2020 15:31:08 GMT+0000",
+  "jcr:uuid": "8b86bad7-0de1-48c8-99dd-fae562c0f8b6",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "PEEK Intraline",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "imageAlt": "PEEK Intraline hero",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Apr 17 2020 03:06:03 GMT+0000",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/peek-intraline/images/Hero-peek-intraline.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prods",
+      "jcr:created": "Tue Nov 11 2025 17:43:33 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Tue Nov 11 2025 17:43:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 17:43:56 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 17:43:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 17:44:00 GMT+0000",
+          "CTATitle": "Biosteon Intraline HA PLLA composite anchors",
+          "CTAImageAltText": "biosteon-intraline-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 19:38:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/biosteon-intraline-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 17:44:02 GMT+0000",
+          "CTATitle": "Peek zip anchor",
+          "CTAImageAltText": "peek-zip-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 19:39:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/peek-zip-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/peek-zip-anchor"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/sports-medicine/products/peek-intraline/resources/PEEK IntraLine Anchor Brochure.pdf",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Fri Nov 12 2021 20:51:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 16:30:07 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 16:30:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "text": "<p>PEEK IntraLine is offered in 5.5mm and 6.5mm, both with and without needles, and offers an excellent solution for soft tissue repairs.</p>\n",
+    "jcr:lastModified": "Fri Apr 17 2020 03:00:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/peek-intraline/images/thumb-peek-intraline.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 16:30:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

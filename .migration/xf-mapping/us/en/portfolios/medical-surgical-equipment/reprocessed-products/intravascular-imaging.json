@@ -1,0 +1,147 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Intravascular imaging",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "723ca0f7-dd37-4a39-942d-aca0e76240b4",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:predecessors": [
+    "b99d0467-79c5-4992-a9d4-d714b7c8ffa5"
+  ],
+  "contentID": "SSS-EPCA-SYK-1624787",
+  "lastPublished": "Tue Sep 02 2025 16:03:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 02 2025 16:03:00 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 02 2025 16:03:02 GMT+0000",
+  "cq:lastModified": "Tue Sep 02 2025 04:03:20 GMT+0000",
+  "jcr:description": "At SSS, we provide reprocessed intravascular imaging devices designed to support coronary and peripheral vessel evaluation in catheterization labs. Our portfolio includes four SKUs of Reprocessed Philips IVUS Catheters.",
+  "cq:siblingOrder": "reprocessed-pulse-oximeter-sensors,reprocessed-ecg-leads-cables-and-adaptors,save-simply-blended-offerings,bipolar-energy,ultrasonic-energy,hysteroscopic-tissue-removal,ice-catheters,ep-cables,introducer-sheaths,ep-catheters,bipolar-sealers,intravascular-imaging,",
+  "jcr:baseVersion": "b99d0467-79c5-4992-a9d4-d714b7c8ffa5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Mar 03 2025 09:00:00 GMT+0000",
+  "cq:name": "intravascular-imaging",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/intravascular-imaging",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Tue Sep 02 2025 04:03:20 GMT+0000",
+  "jcr:uuid": "4e8a1f71-46bc-441c-9aa0-d7c5c8a156b8",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/reprocessed-products",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "morgan.harder@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "filteredcontenttypeg_1900104898": {
+      "jcr:primaryType": "nt:unstructured",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "title": "Proven performance and reliability ",
+        "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      }
+    },
+    "text_1853064107": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "1",
+      "jcr:created": "Thu Feb 13 2025 16:07:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">These devices are designed for use in the evaluation of vascular morphology in blood vessels of the coronary and peripheral vasculature by providing a cross-sectional image of such vessels.<sup>1</sup></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Note: This device is not currently indicated for use in cerebral vessels.<sup>2,3</sup></span></span></p>\n",
+      "jcr:lastModified": "Thu Feb 13 2025 18:26:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "filteredcontenttypeg_680897682": {
+      "jcr:primaryType": "nt:unstructured",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "title": "Proven performance and reliability ",
+        "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      }
+    },
+    "filteredcontenttypeg_591604643": {
+      "jcr:primaryType": "nt:unstructured",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "title": "Proven performance and reliability ",
+        "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      }
+    },
+    "filteredcontenttypeg_867537567": {
+      "jcr:primaryType": "nt:unstructured",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "EP catheters record and pace electrical cardiogram (ECG) signals within the heart. Catheters utilize electrodes typically constructed of platinum-iridium to receive and transmit electrical signals to the heart. EP catheters can primarily be found in EP and Cath labs.",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "title": "Proven performance and reliability ",
+        "jcr:lastModified": "Wed Nov 09 2022 17:37:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sustainability/products/ivus-catheters/IVUS 2.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "imageAlt": "IVUS",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Feb 13 2025 15:52:48 GMT+0000",
+    "compImageRef": "/content/dam/stryker/sustainability/images/IVUS webpage us.png",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Philips. Eagle Eye Platinum Digital IVUS catheter. Accessed January 24, 2025. Philips - Eagle Eye Platinum Digital IVUS catheter</p>\r\n<p>2. Philips. INSTRUCTIONS FOR USE EAGLE EYE PLATINUM ST DIGITAL IVUS CATHETER. Philips; March 8, 2022. Accessed February 12, 2025. Available from: https://www.documents.philips.com/assets/Instruction%20for%20Use/20220112/45a32b12220246db80d4ae1b0115d3ce.pdf?feed=ifu_docs_feed</p>\r\n<p>3. Philips. INSTRUCTIONS FOR USE EAGLE EYE PLATINUM RX DIGITAL IVUS CATHETER. Philips; March 8, 2022. Accessed February 12, 2025. Available from: https://www.documents.philips.com/assets/Instruction%20for%20Use/20220308/ae6b05bcbf4b447a80c0ae520172add7.pdf?feed=ifu_docs_feed</p>\r\n",
+    "jcr:lastModified": "Thu Feb 13 2025 15:52:05 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModified": "Thu Feb 13 2025 21:08:42 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "intravascular-imaging",
+      "title": "Intravascular imaging solutions for Cath Labs",
+      "jcr:lastModified": "Thu Feb 13 2025 16:08:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  }
+}

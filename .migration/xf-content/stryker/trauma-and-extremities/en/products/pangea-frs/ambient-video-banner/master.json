@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ambient-video-banner",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d01647cd-e668-4307-b2b0-612277e763b2",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "328d16a4-2d27-45c9-899d-a0c461f65bba"
+  ],
+  "lastPublished": "Wed Apr 15 2026 18:53:18 GMT+0000",
+  "jcr:created": "Wed Apr 15 2026 18:53:18 GMT+0000",
+  "cq:lastReplicated": "Wed Apr 15 2026 18:53:23 GMT+0000",
+  "cq:lastModified": "Mon Mar 09 2026 19:57:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "328d16a4-2d27-45c9-899d-a0c461f65bba",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 18 2024 15:22:23 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "f7033dc3-c86b-4418-8b22-1c45c27bca87",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 19:28:09 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Mon Mar 09 2026 19:57:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/trauma-and-extremeties/experience-fragment-assets/products/2023-header-banners/Pangea-FRS-animated-banner.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Pangea-FRS-animated-banner-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Mar 09 2026 19:57:31 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

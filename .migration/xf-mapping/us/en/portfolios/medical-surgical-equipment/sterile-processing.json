@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sterile processing",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ebda97c3-ede1-4878-a33d-23b1c62fca64",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/sterile-processing/images/images/Thumbnail_SterileProcessing.jpg",
+  "jcr:predecessors": [
+    "4c0342af-89f8-45e9-a8de-d208f33cf178"
+  ],
+  "contentID": "9100-004-751 Rev. None",
+  "lastPublished": "Wed Jan 11 2023 16:10:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 11 2023 16:10:35 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 11 2023 16:10:37 GMT+0000",
+  "cq:lastModified": "Tue Jan 10 2023 21:44:31 GMT+0000",
+  "jcr:baseVersion": "4c0342af-89f8-45e9-a8de-d208f33cf178",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/sterile-processing",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Tue Jan 10 2023 21:44:31 GMT+0000",
+  "jcr:uuid": "9b0e3f49-213a-4088-8415-8157c804c034",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Fri Jul 14 2017 10:01:31 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Aug 24 2017 19:41:53 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/sterile-processing/images/images/Thumbnail_SterileProcessing.jpg"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Banner",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e3191ed7-3e05-43c1-a045-add492307894",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "dd1514e6-abc4-401d-a9ee-30d46cfef7bf"
+  ],
+  "lastPublished": "Wed Sep 25 2024 14:56:14 GMT+0000",
+  "jcr:created": "Wed Sep 25 2024 14:56:16 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 25 2024 14:56:18 GMT+0000",
+  "cq:lastModified": "Thu Sep 19 2024 15:59:48 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "dd1514e6-abc4-401d-a9ee-30d46cfef7bf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:56:14 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "dd638f6b-370f-4b9f-9cce-7f9bb4d2764a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy_1891157785": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Oct 03 2022 17:58:29 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Tue Dec 13 2022 19:47:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/trauma-and-extremeties/experience-fragment-assets/products/2023-header-banners/VariAx2-Volar-EF.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/VariAx2-Volar-EF-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 19 2024 15:59:39 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

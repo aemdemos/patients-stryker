@@ -1,0 +1,232 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Quick links",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4186dccd-5913-4edd-a57a-ff701dab4982",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f92a84c6-e3cb-4219-884a-ed5be9f41e7b"
+  ],
+  "lastPublished": "Tue Jun 02 2026 19:53:51 GMT+0000",
+  "jcr:created": "Tue Jun 02 2026 19:53:56 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 02 2026 19:54:03 GMT+0000",
+  "cq:lastModified": "Thu May 28 2026 18:34:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f92a84c6-e3cb-4219-884a-ed5be9f41e7b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 02 2026 19:53:51 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "12b605c6-26ea-4bf1-b898-92e060888f31",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu May 28 2026 15:22:00 GMT+0000",
+      "text": "<h4><span class=\"fontsize-1-25em\">Quick links</span></h4>\n",
+      "jcr:lastModified": "Thu May 28 2026 15:30:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_737350891": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu May 28 2026 15:22:39 GMT+0000",
+      "text": "<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical-technologies/surgical-technologies.html\">Contact information</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical-technologies/services/instruments.html\">Customer service</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical-technologies.html\">Surgical technologies homepage</a></span></p>\n",
+      "jcr:lastModified": "Thu May 28 2026 15:25:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_813294201": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 28 2026 15:23:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h4><span class=\"fontsize-1-25em\">Be in the know.</span></h4>\n<p>Follow us on social media and be among the first to gain information about our technologies, education opportunities and more.</p>\n",
+      "jcr:lastModified": "Thu May 28 2026 15:31:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.linkedin.com/showcase/stryker-surgical-technologies/",
+      "jcr:created": "Thu May 28 2026 15:26:15 GMT+0000",
+      "alt": "LinkedIn logo",
+      "srcFileRef": "/content/dam/stryker/logos/social-media/linkedin/linkedin-72x72.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 28 2026 15:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.facebook.com/strykersurgicaltechnologies",
+      "jcr:created": "Thu May 28 2026 15:26:15 GMT+0000",
+      "alt": "Facebook logo",
+      "srcFileRef": "/content/dam/stryker/logos/social-media/facebook/facebook-72x72.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 28 2026 15:32:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1022405168": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.youtube.com/playlist?list=PLZyNjjTfwJvDliIA4unYq_RHSMsejQRCR",
+      "jcr:created": "Thu May 28 2026 15:26:15 GMT+0000",
+      "alt": "YouTube logo",
+      "srcFileRef": "/content/dam/stryker/logos/social-media/youtube/youtube-72x72.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 28 2026 18:34:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1763255074": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://twitter.com/Stryker_ST",
+      "jcr:created": "Thu May 28 2026 15:26:15 GMT+0000",
+      "alt": "X/Twitter logo",
+      "srcFileRef": "/content/dam/stryker/logos/social-media/x/x-72x72.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 28 2026 15:33:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_77361897": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.instagram.com/strykerfornurses/",
+      "jcr:created": "Thu May 28 2026 15:26:15 GMT+0000",
+      "alt": "Instagram logo",
+      "srcFileRef": "/content/dam/stryker/logos/social-media/instagram/instagram-72x72.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 28 2026 15:33:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    }
+  }
+}

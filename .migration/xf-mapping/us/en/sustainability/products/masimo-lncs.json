@@ -1,0 +1,228 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reprocessed SP02 sensors ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Masimo LNCS®  pulse oximeter sensors",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "24a408a8-efcf-4980-8ef0-ab0deebe2411",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Reprocessed Masimo LNCS Pulse Oximeter Sensor",
+  "jcr:predecessors": [
+    "675326a2-7fbb-41bd-99a5-86b0ea246516"
+  ],
+  "contentID": "CIS11255",
+  "lastPublished": "Tue Aug 18 2026 20:23:26 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:23:26 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:23:28 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:23:19 GMT+0000",
+  "jcr:description": "Masimo LNCS pulse oximeter sensors designed for short or long-term patient monitoring. Offers a variety of traditional cable lengths and connector positions.\r\n",
+  "jcr:baseVersion": "675326a2-7fbb-41bd-99a5-86b0ea246516",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:24:15 GMT+0000",
+  "pageTitle": "Reprocessed Masimo LNCS® Pulse Oximeter Sensors: sizes and designs",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/sustainability/lncs",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/sustainability",
+    "stryker:specialty/pulse-oximeter-sensors",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Tue Mar 25 2025 22:25:04 GMT+0000",
+  "jcr:uuid": "6af8bb2f-4bfd-4de4-8f47-038849da9d31",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "hero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "subhead": "Patient monitoring pulse oximeter",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "imageAlt": "spo2",
+      "jcr:created": "Tue Mar 25 2025 22:21:17 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "head": "<p>Reprocessed Masimo LNCS®  pulse oximeter sensors</p>\r\n",
+      "content": "The Masimo LNCS pulse oximeter sensors are a noninvasive device attached to a patient’s fingertip, toe or foot and emits light through the appendage to consistently monitor blood oxygen saturation. LNCS, or low noise cabled sensors are available in a large variety of sizes and designs to fit several patient needs. Features and benefits include:\r\n\r\n\r\n<ul><li>Variety of traditional cable lengths</li><li>Connector positioned away from the sensor application site</li><li>Appropriate for short or long-term patient monitoring</li><li>Minimizes the rise of HAI or cross-contamination</li></ul>\r\n\r\nSustainability Solutions offers single use reprocessed Masimo LNCS pulse oximeter devices in both transpore and woven styles for adult, pediatric and infant patients.\r\n",
+      "jcr:lastModified": "Tue Mar 25 2025 22:24:00 GMT+0000",
+      "compImageRef": "/content/dam/stryker/endoscopy/products/masimo-lncs/images/Reprocessed Masimo 1859 Pulse Oximeter Sensor.png",
+      "sling:resourceType": "stryker/components/content/hero",
+      "textIsRich": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 19:24:44 GMT+0000",
+      "title": "Ordering information",
+      "jcr:lastModified": "Wed Nov 09 2022 19:25:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"139\" valign=\"top\"><b>Item number&nbsp;</b></td>\n<td width=\"139\" valign=\"top\"><b>Weight Indication</b></td>\n<td width=\"139\" valign=\"top\"><p><b>Tape Style</b></p>\n</td>\n<td width=\"139\" valign=\"top\"><p><b>Application</b></p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\">1859</td>\n<td width=\"139\" valign=\"top\"><p>&gt;30 kg </p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1860</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>10 - 50 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1861</p>\n</td>\n<td width=\"139\" valign=\"top\">2 - 29 kg</td>\n<td width=\"139\" valign=\"top\">Woven</td>\n<td width=\"139\" valign=\"top\"><p>Toe</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>1862</p>\n</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\">2317</td>\n<td width=\"139\" valign=\"top\">&gt;30 kg</td>\n<td width=\"139\" valign=\"top\">Transpore</td>\n<td>Finger</td>\n</tr><tr><td>2319</td>\n<td>2 - 29 kg</td>\n<td>Woven</td>\n<td>Toe</td>\n</tr><tr><td>2320</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td>Woven</td>\n<td>Finger</td>\n</tr><tr><td>2328</td>\n<td>2 - 29 kg</td>\n<td>Woven</td>\n<td>Toe</td>\n</tr><tr><td>2329</td>\n<td width=\"139\" valign=\"top\">&gt;40 kg</td>\n<td>Woven</td>\n<td>Finger</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 19:23:09 GMT+0000",
+      "jcr:lastModified": "Thu Jul 27 2023 21:44:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/endoscopy/products/masimo-lncs/resources/Pulse Oximeter Reprocessing Overview (2).pdf",
+        "/content/dam/stryker/endoscopy/products/masimo-lncs/resources/Vaporized Hydrogen Peroxide (VHP) sterilization White Paper.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Jul 27 2023 21:47:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:23:11 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:23:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/masimo-lncs/images/Reprocessed Masimo 1859 Pulse Oximeter Sensor.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Monitoring your patients and your bottom line</p>\r\n",
+    "shortDescTop": "<p>Before being sent back to you, all reprocessed devices are required to pass through our robust manufacturing process consisting of:</p>\r\n",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Jul 27 2023 21:35:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Decontamination and cleaning</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Visual inspection</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Function testing for electrical continuity</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Performance testing for signal output of the LED and photo detector</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Tape replacement</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>VHP sterilization</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:23:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Partial Knee Implant System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Restoris MCK",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f7aadf17-614a-4196-b6b9-7364a4100bd9",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/MCK_BiC_Onlay.png",
+  "jcr:predecessors": [
+    "638efdc6-a095-4fa1-bf7c-49a2e5373ca5"
+  ],
+  "contentID": "MAKPKI-WC-1_15244",
+  "lastPublished": "Thu Mar 16 2023 18:01:31 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 16 2023 18:01:31 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 16 2023 18:01:33 GMT+0000",
+  "cq:lastModified": "Thu Mar 16 2023 18:01:13 GMT+0000",
+  "jcr:description": "Featuring bone sparing, curved surfaces.",
+  "jcr:baseVersion": "638efdc6-a095-4fa1-bf7c-49a2e5373ca5",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Restoris MCK Partial Knee Implant System",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:business-unit/joint-replacement",
+    "stryker:specialty/knee-joint-replacement",
+    "stryker:product/joint-replacement/mako-mck-partial-kneee-implant-system",
+    "stryker:specialty/mako-robotic-arm-assisted-surgery",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/joint-replacements/product-type/implants",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jun 14 2021 13:20:43 GMT+0000",
+  "jcr:uuid": "07c3b9db-187d-4875-bbac-0d28c1754e62",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "Restoris MCK Partial Knee Implant System",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 16 2017 14:53:33 GMT-0400",
+      "compImageRef": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/MCK_BiC_Onlay.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Aug 08 2017 12:44:45 GMT-0400",
+      "jcr:lastModified": "Tue Aug 08 2017 12:44:45 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:47:24 GMT-0400",
+          "text": "<h4>Targeted solutions for multiple disease states</h4>\n",
+          "jcr:lastModified": "Tue Aug 08 2017 12:47:36 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Aug 08 2017 12:48:11 GMT-0400",
+      "jcr:lastModified": "Tue Aug 08 2017 12:48:11 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:48:19 GMT-0400",
+          "title": "Unicondylar medial",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/Mako_MCK_UniMedial.png",
+          "jcr:lastModified": "Fri Aug 25 2017 16:17:51 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:51:25 GMT-0400",
+          "title": "Unicondylar lateral",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/Mako_MCK_UniLateral.png",
+          "jcr:lastModified": "Tue Dec 17 2019 18:35:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:52:20 GMT-0400",
+          "title": "Patellofemoral",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/Mako_MCK_PatelloFemoral.png",
+          "jcr:lastModified": "Fri Aug 25 2017 16:18:54 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:52:43 GMT-0400",
+          "title": "Medial bicompartmental",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/Mako_MCK_MedialBicomp1.png",
+          "jcr:lastModified": "Wed Feb 14 2018 09:13:06 GMT-0500",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "title": "Targeted solutions for multiple disease states",
+      "jcr:lastModified": "Tue Aug 08 2017 12:45:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols2_2_3_1_3_2084795845": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Aug 08 2017 12:54:13 GMT-0400",
+      "jcr:lastModified": "Tue Aug 08 2017 12:54:13 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Tue Aug 08 2017 12:55:52 GMT-0400",
+          "text": "<h4>Restoris MCK implants<br>\nwith X3 polyethylene inserts<br>\n</h4>\n<p>Our patented<sup>2 </sup>process for creating precisely engineered polyethylene&nbsp;results in a polyethylene that is uniquely strong<sup>3,4</sup> and intrinsically resistant to wear<sup>3</sup> and oxidation.<sup>5</sup> X3’s manufacturing process of sequential crosslinking uses three separate gamma irradiation doses with an annealing step after each.</p>\n",
+          "jcr:lastModified": "Fri Aug 25 2017 16:26:41 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols2_2_3_1_3_2147282484": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Aug 08 2017 12:55:46 GMT-0400",
+      "jcr:lastModified": "Tue Aug 08 2017 12:55:46 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Mako enabled resurfacing</p>\r\n",
+    "shortDescTop": "<p>The Restoris MCK implant is paired with the Mako Partial Knee application, allowing you to create anatomic, sculpted resections<sup>1</sup> using a single 6mm burr to complete the entire case.</p>\r\n<p> </p>\r\n<p>Restoris MCK implants</p>\r\n",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Nov 23 2021 19:53:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Restoris MCK&nbsp;is a family of implants designed from over 100 CT scans that reflect gender and size.<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>The femoral and patellofemoral implants were designed to be compatible for bicompartmental use.<sup>1</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Restoris MCK&nbsp;is indicated for: medial, patellofemoral, lateral unicompartmental or bicompartmental (medial and&nbsp;patellofemoral) applications. &nbsp;&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>&nbsp;Banks, S. Haptic robotics enable a systems approach to design of a minimally invasive modular knee arthroplasty. Am J of Orthop. 2009; 38(2 suppl): 23-27.</li>\r\n<li>US Pat. 7,517,919</li>\r\n<li>Longaray et al. (2013). Fatigue and Wear Characterization of Various Contemporary Hip Bearing Materials. ORS Annual Meeting: Poster #1779.</li>\r\n<li>Stryker RD Test Report: RD-12-049.</li>\r\n<li>Yau S, Wang A, Essner A, Manley M, Dumbleton J. Sequential Irradiation and Annealing of Highly Crosslinked Polyethylenes Resist oxidation without sacrificing Physical/Mechanical Properties. 51st Annual Meeting of the Orthopedic Research Society. Poster No. 1670.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Aug 08 2017 12:34:48 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/makomckpartialkneeimplantsystem/images/MCK_BiC_Onlay.png"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "VSO",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d79523c4-bb2e-4de7-a178-0bcfdb3cd8ee",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+  "jcr:predecessors": [
+    "4fd3f23c-a11f-4291-a0f8-9949231ec777"
+  ],
+  "contentID": "JR-GSNPS-SYK-2812950",
+  "lastPublished": "Fri Sep 04 2026 18:21:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 04 2026 18:21:10 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 04 2026 18:21:13 GMT+0000",
+  "cq:lastModified": "Fri Sep 04 2026 18:21:07 GMT+0000",
+  "jcr:baseVersion": "4fd3f23c-a11f-4291-a0f8-9949231ec777",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Feb 13 2026 19:59:16 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/orthopaedics"
+  ],
+  "jcr:lastModified": "Wed Feb 11 2026 14:53:43 GMT+0000",
+  "jcr:uuid": "57d188db-9d87-4bb2-926e-a9c1ded01680",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jan 23 2026 19:55:17 GMT+0000",
+      "jcr:lastModified": "Fri Jan 23 2026 19:55:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/vso/vso-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/vso/vso-hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/vso/vso-hero/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/vso/vso-hero/master",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Jan 23 2026 19:55:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Jan 23 2026 20:06:20 GMT+0000",
+          "marginRight": "15",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "15"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Jan 23 2026 19:56:34 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<div><span class=\"fontsize-1-25em\"><b>Experience</b> <b>a live procedure</b> in a Virtual Surgical Observation (VSO) without leaving your office. A VSO transports you into an OR to watch a Mako procedure in real time and ask questions directly to the operating surgeon.&nbsp;</span><span class=\"fontsize-1-5em\"><br>\n </span><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">&nbsp;</span></b></span></div>\n<div style=\"margin-left: 40px;\"><br>\n<span class=\"fontsize-1-25em\"><b>Introduction to Mako:&nbsp;</b>See Mako in action and learn how it can impact your practice and patient outcomes.&nbsp;</span></div>\n<div style=\"margin-left: 40px;\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><br>\n <b>Pre-certification:&nbsp;</b></span></b><span class=\"fontsize-1-25em\">Prepare for your certification with a live Mako procedure and discussions with faculty.&nbsp;</span><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><br>\n <br>\n <b>Post-certification:&nbsp;</b></span></b><span class=\"fontsize-1-25em\">Schedule a VSO after certification and before your first Mako case for additional training, tips and tricks.&nbsp;</span><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><br>\n <br>\n <b>Advanced training:&nbsp;</b></span></b><span class=\"fontsize-1-25em\">Explore more of what Mako SmartRobotics™ can do for you and your patients.</span></div>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\"><br>\nStretch your skills, sharpen your thinking and step into what’s next.</span></b></span></p>\n<p><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">Reserve your spot below.</span></b> A calendar invite and access details will follow.</span></p>\n",
+      "jcr:lastModified": "Mon Apr 27 2026 18:49:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "total-knee",
+      "jcr:created": "Mon Jan 26 2026 21:42:41 GMT+0000",
+      "title": "Mako Total Knee",
+      "jcr:lastModified": "Mon Jan 26 2026 21:43:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1821390333": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Jan 23 2026 20:11:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\">Mako Total Knee</span></h2>\n",
+      "jcr:lastModified": "Tue Feb 10 2026 20:42:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>DAY</b></td>\n<td><b>DATE</b></td>\n<td><b>START TIME</b></td>\n<td><b>LINK</b></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Wed</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Mar 11</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_6G51rYgBTfSH68OWN7Plkg#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Wed</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Apr 1</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_pktnwfhZRDSz8uTj51M-uQ#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Fri</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Apr 10</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM CT</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_qK-2qbZMSvmAHdVAQa9eFA#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Mon</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Apr 13</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_KUqRIUUqQMWg9pv_xf3V_Q#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Fri</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>May 8</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:00 AM CT</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_aQt0rzrLRyux7G5vkG7NEQ#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Tue</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Jun 2</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM CT</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_F5oWKP4sRseRTBMgvO3_Sg#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Wed</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Jul 8</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_boA8BE8jTQuUr7H6ufC3zw#/registration\">Webinar Registration - Zoom</a>&nbsp;(Quad sparing)</td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Mon</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Sep 14</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM CT</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_vxiLMsWuRLq3BR_Vc-S6Rw#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Oct 8</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_XDsY03Y6Rsi2lQOhXejxOg#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Wed</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Dec 2</p>\n</td>\n<td width=\"156\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_nwVGfZgTTvO5Okz7isuIVg#/registration\">Webinar Registration - Zoom</a>&nbsp;(Quad sparing)</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jan 23 2026 20:10:17 GMT+0000",
+      "jcr:lastModified": "Fri Sep 04 2026 18:21:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "section_title_14459642": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "total-hip",
+      "jcr:created": "Mon Jan 26 2026 21:43:06 GMT+0000",
+      "title": "Mako Total Hip",
+      "jcr:lastModified": "Mon Jan 26 2026 21:43:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1821390333_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Jan 23 2026 20:11:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\">Mako Total Hip</span></h2>\n",
+      "jcr:lastModified": "Tue Feb 10 2026 20:42:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "table_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>DAY</b></td>\n<td><b>DATE</b></td>\n<td><b>START TIME</b></td>\n<td><b>APPROACH</b></td>\n<td><b>LINK</b></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Tue</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Mar 10</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>6:00 AM CT</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_K4Az3awvTkCQOqmLY4C29w#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Tue</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Apr 7</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>7:00 AM ET</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_3INlmwJuTPipRzFYVZfIGw#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Apr 16</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>8:00 AM CT</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>PL</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_Du5M6Q4zQwGiFgl7peNPDA#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>May 7</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_TfJPKWsvSNG0jb0p4fyxZA#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>May 28</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>9:00 AM CT</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>PL</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_YsWagIgdRlSM-HEfkGU8DQ#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Sep 10</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_3fEpJJxLQGavb05iXat5dQ#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Tue</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Oct 20</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_3fEpJJxLQGavb05iXat5dQ#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Tue</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Nov 3</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>8:00 AM CT</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>PL</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_ZeFE7g0tTkaqLDyef3Uf8g#/registration\">Webinar Registration - Zoom</a></td>\n</tr><tr><td width=\"59\" valign=\"bottom\"><p>Thur</p>\n</td>\n<td width=\"87\" valign=\"bottom\"><p>Dec 3</p>\n</td>\n<td width=\"145\" valign=\"bottom\"><p>7:30 AM ET</p>\n</td>\n<td width=\"116\" valign=\"bottom\"><p>DA</p>\n</td>\n<td><a href=\"https://stryker.zoom.us/webinar/register/WN_N2vu2U7ZQXKqrhciAkQE2Q#/registration\">Webinar Registration - Zoom</a></td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jan 23 2026 20:10:17 GMT+0000",
+      "jcr:lastModified": "Tue Jul 28 2026 20:34:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "text_358236279": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Jan 26 2026 21:40:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\">Questions?<br>\n Email us at <a href=\"mailto:JRMedicalEducation@stryker.com\" target=\"_blank\">JRMedicalEducation@stryker.com</a>.</span></p>\n<p><span class=\"fontsize-1-25em\">We look forward to seeing you!</span></p>\n",
+      "jcr:lastModified": "Mon Jan 26 2026 21:41:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "disclaimer-type": "path",
+    "path": "/content/stryker/us/en/training-and-education/orthopaedics/joint-replacement/a-commitment-to-surgeon-education",
+    "jcr:lastModified": "Mon Jan 26 2026 21:41:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

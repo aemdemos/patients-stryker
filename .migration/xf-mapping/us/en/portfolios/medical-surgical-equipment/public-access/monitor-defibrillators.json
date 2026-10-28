@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Monitor/Defibrillators",
+  "jcr:versionHistory": "50216cdf-6523-4198-9c77-9291899db978",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+  "jcr:predecessors": [
+    "8c264d26-46c0-4dba-9d52-bdb368aa463d"
+  ],
+  "lastPublished": "Wed Aug 28 2019 20:29:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 28 2019 20:29:37 GMT+0000",
+  "cq:lastModified": "Wed Aug 28 2019 20:27:01 GMT+0000",
+  "jcr:description": "Make high performance easier in challenging situations. With features and functionalities designed to empower responders, Stryker's monitor/defibrillators help caregivers work more efficiently so they can keep their focus on the patient. ",
+  "jcr:baseVersion": "8c264d26-46c0-4dba-9d52-bdb368aa463d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "properties:style/monochrome",
+    "stryker:specialty/Monitor-Defibrillators",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Wed Aug 28 2019 20:27:01 GMT+0000",
+  "jcr:uuid": "a68fa44e-3b71-4876-b120-953d844f0374",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "andy.tanabe@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/lifepak-15/images/LP15_LP20_Monitor_Defibrillator_2.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Mon Jun 17 2019 13:41:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "carousel-test-desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b474166f-5f46-4b1a-9d99-c2aadb427b11",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "af7c9707-6b2c-4a7c-b5c3-aa98edf474ae"
+  ],
+  "lastPublished": "Wed Jun 18 2025 18:54:59 GMT+0000",
+  "jcr:created": "Wed Jun 18 2025 18:54:59 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 18 2025 18:55:01 GMT+0000",
+  "cq:lastModified": "Tue Jun 04 2024 18:43:06 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "af7c9707-6b2c-4a7c-b5c3-aa98edf474ae",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jun 18 2025 18:54:59 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "314817e3-89a2-4499-bc1a-6e4a6c75dbf1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 04 2024 18:36:44 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Jun 04 2024 18:43:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/craniomaxillofacial/products/sternalplate/video/SternalPlate_CarouselVideo_desktop.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/SternalPlate_CarouselVideo_desktop-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jun 04 2024 18:42:26 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

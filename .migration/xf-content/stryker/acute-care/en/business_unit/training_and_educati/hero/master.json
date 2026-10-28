@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b1884e7e-5563-4be7-a1e6-d7b090fb7673",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "60d39e4a-d2e6-4ef7-aa52-3a4ce0c069cf"
+  ],
+  "lastPublished": "Fri Jun 07 2024 17:42:58 GMT+0000",
+  "jcr:created": "Fri Jun 07 2024 17:42:58 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 07 2024 17:43:00 GMT+0000",
+  "cq:lastModified": "Fri Jun 07 2024 16:09:42 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "60d39e4a-d2e6-4ef7-aa52-3a4ce0c069cf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 07 2024 16:07:17 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "9ac7ac21-d92c-4b5c-9d36-8299c137996c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Mar 15 2024 20:51:55 GMT+0000",
+      "alt": "Nurse standing in hallway wearing blue scrubs holding tablet and smiling",
+      "srcFileRef": "/content/dam/stryker/acute-care/images/smiling-nurse-with-ipad_1920x800.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jun 07 2024 16:09:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

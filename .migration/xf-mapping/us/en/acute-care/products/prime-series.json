@@ -1,0 +1,1510 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Stryker's hospital stretchers",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Prime Series",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "95f378f8-2f6c-475d-aa63-5ad7fd152098",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Prime electric hospital transport gurney",
+  "jcr:predecessors": [
+    "792d27b9-c1b2-4dd8-a8bf-a0a3adfed6f8"
+  ],
+  "contentID": "AC-GSNPS-SYK-1359020_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 20:12:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:12:58 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:13:00 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:12:45 GMT+0000",
+  "jcr:description": "Our Prime Series stretchers are designed to reduce physical strain on clinicians, enhance comfort during patient transport and drive hospital efficiency. ",
+  "jcr:baseVersion": "792d27b9-c1b2-4dd8-a8bf-a0a3adfed6f8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:18:56 GMT+0000",
+  "pageTitle": "Prime Series | Electric hospital stretchers",
+  "cq:tags": [
+    "stryker:custom/acute-care/stretcher-departments/transport",
+    "stryker:custom/acute-care/stretcher-types/transport",
+    "stryker:services/procare/acute-care/transport",
+    "stryker:custom/acute-care/stretcher-departments/emergency-department",
+    "stryker:custom/acute-care/stretcher-departments/intensive-care-unit",
+    "stryker:specialty/emergency-transport-stretchers",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care",
+    "stryker:content-type/product",
+    "stryker:custom/acute-care/stretcher-departments/operating-room",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital",
+    "stryker:specialty/increased-census",
+    "stryker:custom/acute-care/stretcher-departments/maternity",
+    "stryker:specialty/connected-infrastructure",
+    "stryker:capability/stretchers",
+    "stryker:product/acute-care/prime-series",
+    "stryker:custom/acute-care/stretcher-departments/imaging",
+    "stryker:custom/smart-care/product-type/connected-infrastructure",
+    "stryker:custom/smart-care/care-space/smarted"
+  ],
+  "jcr:lastModified": "Fri Jan 02 2026 20:57:45 GMT+0000",
+  "jcr:uuid": "2404797d-476f-4f3a-a963-68dd1bfc8e50",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "Prime Series | Electric hospital stretchers",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/prime_series/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/prime-series/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/acute-care/en/products/prime_series/hero/hero-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/acute-care/en/products/prime-series/hero/hero-mobile",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Nov 13 2024 20:41:53 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Prime Series</span></span></h1>\n<h2>Stryker's hospital stretchers</h2>\n<p>Our Prime Series stretchers are designed to reduce physical strain on clinicians, enhance comfort during patient transport and drive hospital efficiency. Transporting heavier patients in a hospital gurney is now easier with Stryker's advanced mobility, while electric functionality gives patients the independence to adjust themselves without calling for caregiver assistance. Fully equipped and highly configurable, our Prime Series stretchers allow you to create a solution that meets your specific needs.</p>\n",
+              "jcr:lastModified": "Wed Nov 13 2024 20:38:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Sep 13 2023 13:13:18 GMT+0000",
+      "jcr:lastModified": "Wed Sep 13 2023 15:29:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_83097812": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "cost-of-falls",
+      "jcr:created": "Wed Sep 13 2023 13:17:08 GMT+0000",
+      "title": "Cost of Falls",
+      "jcr:lastModified": "Wed Sep 13 2023 15:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_925290061": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 13 2023 13:13:31 GMT+0000",
+      "jcr:lastModified": "Wed Sep 13 2023 13:13:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 13 2023 13:13:35 GMT+0000",
+          "text": "<h2><span class=\"fontsize-2em\">The <span style=\"font-weight: normal;\"><span class=\"futura-bold\">cost of falls</span></span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Noisy, chaotic and fast-paced—the emergency department never stops. With more patients and fewer nurses<sup>1</sup>, it can be challenging to not only set bed exit, but also to locate the right stretcher when an alarm is activated. And those actions have serious consequences.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Every year, nearly 1 million patients in the US experience a fall at the hospital<sup>2</sup>, with a significant number of these falls likely occurring in the emergency department. In addition to the devastating impact of lives lost, a fall can cost up to $32,215<sup>3</sup> per episode of injury and take a serious toll on care team morale.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">But falls don’t have to be the norm.</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 08 2024 19:53:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_751678171": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 13 2023 13:28:38 GMT+0000",
+      "jcr:lastModified": "Wed Sep 13 2023 13:28:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">90% of emergency departments</span></span><sup><span class=\"fontsize-1-75em\">4&nbsp;</span></sup></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">More than 90% of U.S. EDs report feeling stressed beyond the breaking point, at least some of the time.</span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 22 2023 18:20:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true",
+          "bottomMargin": "8"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">1 million patients</span></span><sup><span class=\"fontsize-1-75em\">2</span>&nbsp;</sup><br>\n</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Every year, nearly 1 million patients in the US experience a fall at the hospital.</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 08 2024 19:53:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true",
+          "bottomMargin": "8"
+        },
+        "text_copy_copy_1871663747": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">$32,215</span></span><sup><span class=\"fontsize-1-75em\">3<span class=\"fontsize-2em\"></span></span></sup></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">A fall can cost up to&nbsp;$32,215<sup>3</sup> per episode of injury.</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 08 2024 19:53:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon May 09 2022 14:08:25 GMT+0000",
+          "alt": "Nurse assisting patient from a electric hospital stretcher ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-connect_nurse-assisting-patient-out-of-bed.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Nov 16 2023 16:07:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_1960131131": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "stretchers",
+      "jcr:created": "Wed Sep 13 2023 13:57:23 GMT+0000",
+      "title": "Stretchers",
+      "jcr:lastModified": "Mon Oct 07 2024 19:04:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_2050815483": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 13 2023 13:58:12 GMT+0000",
+      "jcr:lastModified": "Wed Sep 13 2023 13:58:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 14:52:15 GMT+0000",
+          "text": "<h1><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">The Prime difference</span></span></span><br>\nTransforming patient care with connectivity, advanced mobility and electric functionality</h1>\n<p><span class=\"fontsize-1-25em\">The demands on caregivers have never been greater — heavier patients, longer transports, ever-growing time constraints, patient falls, and an expectation to perform with fewer hands on deck. At Stryker, we are driven to help healthcare professionals achieve their goals by providing the Prime solution to address their needs. Through advanced mobility, electric functionality and pressure redistribution surfaces; Prime Series stretchers are designed to help ensure caregiver safety and efficiency while enhancing the patient experience.</span></p>\n",
+          "jcr:lastModified": "Mon Oct 07 2024 15:02:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "tabs_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 11 2024 14:32:11 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2024 19:03:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2062213765": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 15:00:06 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 15:00:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Tue Sep 10 2024 13:19:59 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Prime Connect<span style=\"color: #ffb500;\"><br>\n </span></span></span><span style=\"font-size: 21px; font-weight: normal;\">Smart stretcher. Confident care.</span></h2>\n<p><span class=\"fontsize-1-25em\">With both visual and audible bed exit alarms, Prime Connect is a smart, connected stretcher designed to help support fall prevention protocols in your facility.</span></p>\n",
+              "jcr:lastModified": "Thu Sep 12 2024 21:35:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Tue Sep 10 2024 13:19:59 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\">Designed to support both caregivers and patients</span></h3>\n<p><span class=\"fontsize-1-25em\">With its advanced mobility, electric functionality and pressure redistribution surfaces, Prime Connect helps prioritize caregiver safety and efficiency while also enhancing the overall patient experience.</span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Sep 12 2024 21:35:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Mar 25 2025 15:47:29 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Tue Mar 25 2025 15:47:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/acute-care/products/primeseries/videos/Prime-Connect_promo-launch-video.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Prime-Connect_promo-launch-video-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Jul 11 2025 19:43:42 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          }
+        },
+        "cols3_1856443749": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Sep 10 2024 12:47:19 GMT+0000",
+          "jcr:lastModified": "Tue Sep 10 2024 12:47:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "subtitle": "Improved local monitoring",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "description": "Local monitoring capabilities make it easy to acknowledge bed exit alarms in loud, fast-paced environments with the ability to have both the corridor light and the enhanced footboard display illuminate when bed exit is triggered.",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Sep 13 2023 15:51:26 GMT+0000",
+              "CTAImageAltText": "Local monitoring fixture lit up on wall",
+              "jcr:lastModified": "Mon Oct 07 2024 18:54:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/stryker/acute-care/products/primeseries/images/prime-connect_local-monitoring_secondary-hero_1200x680.jpg"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "subtitle": "Wired notifications",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "description": "Plug Prime Connect into your existing nurse call system to enable the transmission of bed exit through the nurse call system itself. This connection can illuminate the dome light when bed exit is triggered.",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Sep 13 2023 15:51:26 GMT+0000",
+              "CTAImageAltText": "Prime Connect electric hospital stretcher showing wire plugged into wall",
+              "jcr:lastModified": "Mon Oct 07 2024 18:54:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/stryker/acute-care/products/primeseries/images/prime-connect_wired-notifications_secondary-hero_1200x680.jpg"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "subtitle": "Next-gen footboard display",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "description": "Prime Connect’s customisable, high-contrast screen offers a user friendly experience. Tailored bed exit alarms align with patient fall risk status and hospital auditory preferences. Care team members can monitor power connection, alarm status and stretcher readiness at a glance.",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Sep 13 2023 15:51:26 GMT+0000",
+              "CTATitle": "Prime Connect’s customizable, high-contrast screen offers a user friendly experience. Tailored bed exit alarms align with patient fall risk status and hospital auditory preferences. Care team members can monitor power connection, alarm status and stretcher readiness at a glance.",
+              "CTAImageAltText": "Prime Connect electric hospital stretcher footboard",
+              "jcr:lastModified": "Fri Jul 11 2025 19:44:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/stryker/acute-care/products/primeseries/images/prime-series_enhanced-footboard-display_1200x680.jpg"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_1893273452": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 14:37:05 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 14:37:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 14:37:20 GMT+0000",
+              "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mobile. Safe. Efficient.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Stryker stretchers</span></p>\n",
+              "jcr:lastModified": "Mon Oct 07 2024 18:46:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_720209562": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "cq:lastRolledout": "Wed Sep 11 2024 13:40:03 GMT+0000",
+          "jcr:created": "Mon Feb 13 2023 20:10:16 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 13:40:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "jcr:created": "Fri Jul 17 2020 14:48:49 GMT+0000",
+              "alt": "Stryker's Fifth Wheel hospital stretcher",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PrimeModels_247x159_FifthWheel.png",
+              "jcr:lastModified": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveSyncCancelled"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "cq:isCancelledForChildren": true,
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "cq:lastRolledout": "Mon Sep 09 2024 20:35:42 GMT+0000",
+              "jcr:created": "Mon Jul 20 2020 20:07:32 GMT+0000",
+              "text": "<h3><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #000000;\">Fifth Wheel</span></span></span></h3>\n",
+              "jcr:lastModified": "Wed Sep 11 2024 11:19:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            },
+            "text_1723539875_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 20 2020 20:09:39 GMT+0000",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Recovery chair position</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Glideaway siderails</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Lift Assist backrest</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Power-washable**</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">700 lb. safe working load</span></span></p>\n",
+              "jcr:lastModified": "Wed Sep 20 2023 15:10:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "jcr:created": "Fri Jul 17 2020 14:49:24 GMT+0000",
+              "alt": "Stryker's Big Wheel hospital stretcher",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PrimeModels_247x159_BigWheel.png",
+              "jcr:lastModified": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+              "enableBorder": "false"
+            },
+            "text_180012833": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveSyncCancelled"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "cq:isCancelledForChildren": true,
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "cq:lastRolledout": "Mon Sep 09 2024 20:35:42 GMT+0000",
+              "jcr:created": "Fri Jul 17 2020 14:52:19 GMT+0000",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Big Wheel</span></span></span></h3>\n<p style=\"text-align: left;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">All features of Fifth Wheel</span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Sep 11 2024 11:19:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+              "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "jcr:created": "Fri Jul 17 2020 14:50:32 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">+</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "chris.kleckner@stryker.com"
+            },
+            "text_1814687200": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveSyncCancelled"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "cq:isCancelledForChildren": true,
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon Sep 09 2024 20:35:42 GMT+0000",
+              "rightMargin": "10",
+              "jcr:created": "Fri Jul 17 2020 14:51:12 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Big Wheel mobility –&nbsp;push and steer easier compared to a manual Fifth Wheel Stretcher</span></span></p>\n",
+              "jcr:lastModified": "Tue Sep 10 2024 12:52:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "jcr:created": "Fri Jul 17 2020 14:49:28 GMT+0000",
+              "alt": "Stryker's Zoom motorized drive hospital stretcher",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PrimeModels_247x159_Zoom.png",
+              "jcr:lastModified": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "cq:lastRolledoutBy": "chris.kleckner@stryker.com",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveSyncCancelled"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "cq:isCancelledForChildren": true,
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "cq:lastRolledout": "Mon Sep 09 2024 20:35:42 GMT+0000",
+              "jcr:created": "Mon Jul 20 2020 20:08:24 GMT+0000",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Zoom</span></span></span></h3>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">All features of Big Wheel</span></span></p>\n",
+              "jcr:lastModified": "Wed Sep 11 2024 11:20:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            },
+            "text_222353589": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+              "cq:lastRolledout": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "jcr:created": "Mon Jul 20 2020 20:13:36 GMT+0000",
+              "text": "<p><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">+</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Sep 11 2024 13:40:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "chris.kleckner@stryker.com"
+            },
+            "text_1677392542": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveSyncCancelled"
+              ],
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "cq:isCancelledForChildren": true,
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon Sep 09 2024 20:35:42 GMT+0000",
+              "rightMargin": "10",
+              "jcr:created": "Mon Jul 20 2020 20:15:06 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Zoom motorized drive – helps reduce strenuous pushing and pulling</span></span></p>\n",
+              "jcr:lastModified": "Tue Sep 10 2024 12:52:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          }
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Oct 07 2024 18:45:45 GMT+0000",
+          "jcr:lastModified": "Mon Oct 07 2024 18:45:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 20 2020 20:44:00 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"futura-bold\">Models can be configured to include:</span></span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Prime Connect for enhanced local, centralized and mobile monitoring</span></span></span></span><br>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Electric lift (not available on Zoom models)</span></span></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Patient and caregiver comfort controls</span></span></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Bed exit</span></span></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Scale</span></span></span></span></li>\n</ul>\n<p>**1105 and 1115 models only&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Sep 20 2023 20:57:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Prime Connect"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Prime Series"
+        }
+      }
+    },
+    "section_title_416771121": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Wed Sep 13 2023 15:08:58 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Oct 07 2024 19:04:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_2137109712_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 11 2024 19:26:58 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2024 19:26:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 19:35:58 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 19:35:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:37:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Safety. Support. Features.</span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Our Prime Connect and Prime Series stretchers are built for safety and support with caregivers and patients in mind.</span></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 20:09:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "tabs": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 19:09:56 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 19:10:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 1,
+              "tabTitle": "For Caregivers"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 2,
+              "tabTitle": "For Patients"
+            }
+          },
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cols2_2_3_1_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:28:04 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:28:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            },
+            "cols2_1_3_2_3_copy_1292410143": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Prime Connect electric hospital stretcher footboard",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-series_enhanced-footboard-display_1200x680.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Fri Jul 11 2025 19:44:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Enhanced footboard display</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Includes a high-contrast screen that offers a user friendly experience. Tailored bed exit alarms align with patient fall risk status and hospital auditory preferences.</span></p>\n",
+                  "jcr:lastModified": "Thu Sep 12 2024 21:54:22 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:12:49 GMT+0000",
+                  "alt": "Zoom motorized drive virtually eliminates manual pushing on electric hospital stretchers ",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-connect_advanced-stretcher-mobility_secondary-hero_1200x680.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:53:52 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Advanced stretcher mobility</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Zoom motorized drive virtually eliminates manual pushing, while Big Wheel reduces start-up push force and steering.</span></p>\n",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:50:34 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_140667450": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:12:49 GMT+0000",
+                  "alt": "Close up of Prime Series big wheel electric lift",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-series_big-wheel_electric-lift_1200x680.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:52:03 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Electric lift pedal</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Eliminates manual pumping, allowing for quick patient access. Simply step on the hydraulic pedal to raise the litter.</span></p>\n",
+                  "jcr:lastModified": "Wed Sep 11 2024 19:20:19 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_1633988264": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Nurse activating list assist for hospital stretcher ",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PH_TPPA_SmF4_LifeAssist.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:55:37 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Lift Assist&nbsp;backrest</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The drop seat leverages the patient’s weight to easily raise the head of the stretcher, while cradling the patient to reduce the need for boosting.</span></p>\n",
+                  "jcr:lastModified": "Fri Sep 20 2024 19:58:43 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_1": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Close up of Prime Series stretcher four-sided brakes",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PH_TPPA_SmF5_4SidedBrake.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:57:36 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Simple and convenient</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Four-sided brakes offer convenient access, while a power-washable design makes Prime Series stretchers easy to clean in a fast-paced healthcare environment.</span></p>\n",
+                  "jcr:lastModified": "Fri Sep 20 2024 19:54:44 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cols2_1_3_2_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:28:29 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:28:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3"
+            },
+            "cols2_1_3_2_3_copy_1": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Prime Series hospital stretcher in recovery chair position",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-series_recovery-chair-position_1200x680.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:56:33 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Recovery chair position</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Helps eliminate the need for unnecessary transfers by providing a comfortable position for patients to recover.</span></p>\n",
+                  "jcr:lastModified": "Thu Sep 12 2024 21:55:32 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_1_707933016": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Prime Series IsoFlex SE get support surface",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-series_isoflex-se-gel-support-surface_1200x680.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:58:07 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">IsoFlex SE gel support surface</span></span></h3>\n<p><span class=\"fontsize-1-25em\">IsoFlex SE addresses two key risk factors for skin breakdown: pressure and shear. Equipped with ShearGel throughout the entire surface and CoreGel in the sacral region, IsoFlex SE helps to keep the patient comfortable, aids in the treatment and prevention of pressure ulcers.**</span></p>\n",
+                  "jcr:lastModified": "Fri Sep 20 2024 19:58:48 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_1_416218975": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "patient using thumb to control bed position",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/Efficient_Features.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 18:59:05 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Comfort controls</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Patients can control their own comfort instead of calling for assistance and repositioning. Controls are staggered so the patient can access them in any position, and they include a patient lock-out. Optional foot-end nursing controls allow caregivers to improve patient comfort with the touch of a button.</span></p>\n",
+                  "jcr:lastModified": "Thu Sep 12 2024 21:56:20 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            },
+            "cols2_1_3_2_3_copy_1_1279160965": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "jcr:lastModified": "Wed Sep 11 2024 19:12:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Sep 11 2024 19:21:56 GMT+0000",
+                  "alt": "Close up of Prime Series side rails",
+                  "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/PH_TPPA_SmF6_ZeroTrnsfrGap.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Mon Oct 07 2024 19:00:23 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "chris.kleckner@stryker.com",
+                  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+                  "jcr:created": "Wed Sep 11 2024 19:17:05 GMT+0000",
+                  "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Glideaway siderails</span></span></h3>\n<p><span class=\"fontsize-1-25em\">These siderails offer enhanced patient security when raised.</span></p>\n",
+                  "jcr:lastModified": "Wed Sep 11 2024 19:30:30 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "section_title_1948173307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Sep 13 2023 15:30:43 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Tue Oct 08 2024 17:02:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "leftPadding": "1",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-2em\">Experience the <span class=\"futura-bold\">smart, connected difference.</span></span></h3>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Reach out today to learn more about our Prime Series stretchers.</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Wed Sep 13 2023 15:25:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": "true"
+    },
+    "cols2_2091302943_cop_1078567189": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Feb 13 2023 20:20:19 GMT+0000",
+      "jcr:lastModified": "Mon Feb 13 2023 20:20:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_279238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "jcr:lastModified": "Wed Mar 02 2022 17:56:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:38:32 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 20:12:45 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Oct 08 2024 19:10:31 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Tue Oct 08 2024 19:11:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jul 11 2025 19:27:48 GMT+0000",
+      "jcr:lastModified": "Fri Jul 11 2025 19:27:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 11 2025 19:28:13 GMT+0000",
+          "alt": "procare services wordmark",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/2023-update/procare-services-2550x750.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 11 2025 19:30:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/services/procare",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 11 2025 19:29:05 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">ProCare Services</span></span></p>\n<p><span class=\"fontsize-1-25em\">Our expert medical device technicians help ensure your equipment is ready to perform when you need it. With preventive maintenance plans and tailored service support, we help you maximize the life of your equipment—and your investment.</span><br>\n</p>\n<p><a><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Fri Jul 11 2025 19:29:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 11 2025 19:28:13 GMT+0000",
+          "alt": "money icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/2023-update/money-icon-2550x750.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 11 2025 19:31:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/c/2018/guaranteeprograms",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 11 2025 19:29:05 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Improve your&nbsp;ROI&nbsp;with ProCuity</span></span></p>\n<p><span class=\"fontsize-1-25em\">Working across departments as one seamless support system, ProCuity helps make standardization across your hospital easier and can even improve your ROI – helping reduce the added cost for specialty rentals and the need for bed transfers and extra staff.</span></p>\n<p><a><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Fri Jul 11 2025 19:32:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 11 2025 19:28:13 GMT+0000",
+          "alt": "flex financial wordmark",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/2023-update/flex-financial-2550x750.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 11 2025 19:33:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/services/procare",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 11 2025 19:29:05 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Power&nbsp;to purchase</span></span></p>\n<p><span class=\"fontsize-1-25em\">Through our Flex Financial business we can help you acquire our full portfolio of products and offer numerous payment structures that can be customized to meet your budgetary needs.</span></p>\n<p><a><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Fri Jul 11 2025 19:32:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jul 11 2025 19:44:52 GMT+0000",
+      "jcr:lastModified": "Fri Jul 11 2025 19:44:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "tabs": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 1,
+              "tabTitle": "Product information"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 2,
+              "tabTitle": "Related products"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 3,
+              "tabTitle": "Resources and downloads"
+            }
+          },
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": [
+                "/content/dam/stryker/acute-care/products/primeseries/resources/Prime Brochure_mkt lit-366.pdf",
+                "/content/dam/stryker/acute-care/products/primeseries/resources/M0000016624-rev-aa_prime-connect_brochure_v2_updated.pdf",
+                "/content/dam/stryker/acute-care/products/primeseries/resources/SE Support Surfaces Brochure.pdf"
+              ],
+              "jumpbarHidden": "true",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isoflex-se"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/prime-tc"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/ibed-wireless"
+                }
+              }
+            }
+          },
+          "tabs_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 3,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": [
+                "/content/dam/stryker/acute-care/products/primeseries/resources/Prime Series Spec Sheet Mkt Lit-369.pdf",
+                "/content/dam/stryker/acute-care/products/primeseries/resources/M0000015312-rev-aa_spec_sheet_prime_connect_2023_updated.pdf",
+                "/content/dam/stryker/acute-care/products/primeseries/resources/Prime X Spec Sheet.pdf",
+                "/content/stryker/us/en/acute-care/asset-items/techweb/jcr:content/par/externalasset_copy_c",
+                "/content/dam/stryker/acute-care/case-studies/ac_case-study_prime-big-wheel-push-force-steer.pdf"
+              ],
+              "jumpbarHidden": "true",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jul 11 2025 19:21:33 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Fri Jul 11 2025 19:21:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Prime Series at a glance<br />\r\n</p>\r\n",
+    "shortDescTop": "<p>Especially mobile and user-friendly, our Prime Series Stretcher is designed to reduce the physical strain on clinicians, drive efficiency and enhance patient comfort. Fully equipped and highly configurable, the Prime Series Stretcher allows you to create the ideal solution to meet your specific needs.<br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 01 2023 21:03:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Advanced mobility options: Big Wheel or Zoom Motorized Drive System<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Electric powered base and lift<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Chaperone stretcher alarm system with integrated scale<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://techweb.stryker.com/",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "https://patienthandling.stryker.com/en/products/transport/prime/prime-series-stretchers",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon May 09 2022 14:04:14 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "Operations and Maintenance Manuals",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/primeseries/images/20200708-Stryker_Surfaces-31.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Verelst S, Wouters P, Gillet JB, and Van den Berghe G. Emergency department crowding in relation to in-hospital adverse medical events: A large prospective observational cohort study. J Emerg Med 2015;49:949-961 https://www.sciencedirect.com/science/article/pii/S0736467915005235.</p>\r\n<p>2. Health Research &amp; Educational Trust. Preventing patient falls: A systematic approach from the Joint Commission Center for Transforming Healthcare project. 2016 Oct. Retrieved from http://www.hpoe.org/Reports-HPOE/2016/preventing-patient-falls.pdf.<br>\r\n</p>\r\n<p>3. Dykes, Patricia C., et al. “Evaluation of a Patient-Centered Fall-Prevention Tool Kit to Reduce Falls and Injuries.” JAMA Network Open, vol. 3, no. 11, 2020, https://doi.org/10.1001/jamanetworkopen.2020.25889.<br>\r\n</p>\r\n<p>4. Massachusetts Medical Society. Emergency Department Crowding: The Canary in the Health Care System. Gabor D. Kelen, Richard Wolfe, Gail D’Onofrio, Angela M. Mills, Deborah Diercks, Susan A. Stern, Michael C. Wadman, Peter E. Sokolove. 2021/09/01. doi: 10.1056/CAT.21.0217. 10.1056/CAT.21.0217. Vol. 2, no. 5. https://catalyst.nejm.org/doi/full/10.1056/CAT.21.0217.<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Wed Oct 09 2024 16:53:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 07 2022 17:23:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 01 2023 21:03:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 13 2023 15:36:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Mar 15 2023 20:52:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

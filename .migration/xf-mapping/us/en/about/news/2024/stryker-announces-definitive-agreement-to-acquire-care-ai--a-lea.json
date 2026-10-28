@@ -1,0 +1,119 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker announces definitive agreement to acquire care.ai, a leading virtual care and ambient intelligence solutions platform",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "77817907-6e72-4dcf-ab70-b7ff2b00250b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "stryker-logo-thumbnail",
+  "jcr:predecessors": [
+    "8817605a-6710-40a0-b443-5cbd0c753119"
+  ],
+  "lastPublished": "Mon Aug 12 2024 12:05:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Aug 12 2024 12:05:00 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 12 2024 12:05:03 GMT+0000",
+  "cq:lastModified": "Fri Aug 09 2024 13:29:45 GMT+0000",
+  "jcr:description": "Stryker (NYSE: SYK), a global leader in medical technologies, announced today a definitive agreement to acquire care.ai, a privately held company specializing in delivering AI-assisted virtual care workflows, smart room technology and ambient intelligence solutions.",
+  "cq:siblingOrder": "features,first-shoulder-arthroplasty-surgeries-using-strykers-blueprint-mixed-reality-guidance-system-completed-at-mayo-clinic-in-minnesota-and-at-st-josephs-health-care-london-in-canada,new-intermediate-nail-and-rc-lag-screw-expand-gamma4-portfolio-to-meet-the-needs-of-surgeons-and-their-patients,stryker-expands-prophecy-surgical-planning-system-to-include-the,fortune-names-stryker-one-of-world-s-most-admired-companies-for-,watch-chair-and-ceo-kevin-lobo-on-cnbcs-money-movers,stryker-showcases-commitment-to-innovation-at-aaos-2024-annual-m,stryker-completes-acquisition-of-serf-sas,stryker-named-one-of-fortune-s-100-best-companies-to-work-for,stryker-earns-highest-rating-on-hrc-equality-index,stryker-s-stiles-shares-how-our-latest-orthopaedic-innovations-d,stryker-receives-don-clifton-strengths-based-culture-award-for-f,listen-to-stryker-chair-and-ceo-kevin-lobo-on-ellig-group-s-lead,stryker-completes-acquisition-of-mfphd,stryker-announces-definitive-agreement-to-acquire-artelon--inc--,stryker-releases-lifepak-35-monitor-defibrillator,stryker-joins-atrium-health-affiliate-ircad-north-america--to-ad,stryker-completes-acquisition-of-artelon-inc,for-third-consecutive-year--stryker-named-2024-best-place-to-wor,stryker-s-pierce-shares-how-our-latest-digital-innovations-help-,stryker-s-spine-guidance-5-software-featuring-copilot-receives-5,stryker-completes-acquisition-of-molli-surgical,watch-chair-and-ceo-kevin-lobo-on-cnbc-s-money-movers,stryker-announces-launch-of-pangea-plating-system,stryker-announces-definitive-agreement-to-acquire-care-ai--a-lea,",
+  "jcr:baseVersion": "8817605a-6710-40a0-b443-5cbd0c753119",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 12 2024 12:05:00 GMT+0000",
+  "cq:name": "stryker-announces-definitive-agreement-to-acquire-care-ai--a-lea",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Aug 09 2024 13:27:33 GMT+0000",
+  "jcr:uuid": "757c6b5c-3569-4e5d-82a2-ed47a574ee8e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/news/2024",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Aug 09 2024 13:23:22 GMT+0000",
+      "jcr:lastModified": "Fri Aug 09 2024 13:23:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Aug 09 2024 13:23:26 GMT+0000",
+          "text": "<p>Stryker (NYSE: SYK), a global leader in medical technologies, announced today a definitive agreement to acquire care.ai, a privately held company specializing in delivering AI-assisted virtual care workflows, smart room technology and ambient intelligence solutions. The acquisition will strengthen Stryker’s growing healthcare IT offering and wirelessly connected medical device portfolio.</p>\n<p>This growing segment is of increasing importance as Stryker’s customers continue to face nursing shortages, employee retention challenges, overworked and cognitively burdened staff, and a rise in workplace safety concerns. care.ai adds complementary technology that will integrate seamlessly with the Vocera platform and Stryker’s devices, providing customers with an enterprise-wide ecosystem that can deliver dynamic clinical workflows and further the development of smart care facilities. care.ai’s platform and sensors enable a variety of AI-assisted workflows that can help deliver a responsive and personalized healthcare environment, allowing caregivers to spend more time with patients.</p>\n<p>“This acquisition underscores our commitment and focus on our customers,&quot; stated Andy Pierce, Group President, MedSurg and Neurotechnology, Stryker. “care.ai will help Stryker significantly accelerate our healthcare IT and digital vision to provide customers with real-time, smart and connected decision-making tools that enhance the lives of caregivers and their patients.”</p>\n<p>This transaction is subject to customary closing conditions. Stryker and care.ai will continue to operate as separate entities and proceed with business as usual until the transaction closes.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 09 2024 13:24:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Aug 09 2024 13:24:30 GMT+0000",
+          "jcr:lastModified": "Fri Aug 09 2024 13:24:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1102952349": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Aug 09 2024 13:24:27 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact:<br>\n </span>Meghan Menz<br>\nSr. Director, Communications<br>\n<a href=\"mailto:meghan.menz@stryker.com\">meghan.menz@stryker.com</a></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 09 2024 13:26:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_72620120": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Aug 09 2024 13:26:24 GMT+0000",
+          "text": "<p><a href=\"https://investors.stryker.com/home/default.aspx\"><span class=\"standalone-link\">READ MORE ON OUR INVESTOR RELATIONS SITE HERE</span></a></p>\n",
+          "jcr:lastModified": "Fri Aug 09 2024 13:26:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Mon Aug 12 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Aug-2024",
+    "jcr:lastModified": "Fri Aug 09 2024 13:22:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker_logo2015_left",
+    "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Aug 09 2024 13:29:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

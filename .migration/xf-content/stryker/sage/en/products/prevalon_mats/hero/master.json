@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5db522f8-ebaa-4715-b3c3-a2d15632faba",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "64e33c3f-8afa-4947-b7fc-b65789babc92"
+  ],
+  "lastPublished": "Fri Aug 15 2025 15:36:04 GMT+0000",
+  "jcr:created": "Fri Aug 15 2025 15:36:04 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 15 2025 15:36:06 GMT+0000",
+  "cq:lastModified": "Fri Jul 18 2025 15:49:07 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "64e33c3f-8afa-4947-b7fc-b65789babc92",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 31 2024 19:28:37 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e3851b4a-791b-4aba-9913-3fed4c2391f1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage Prevalon MATS",
+      "srcFileRef": "/content/dam/stryker/sage/products/mats/images/Sage-MATS-Thumbnail-2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jul 18 2025 15:49:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,747 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Plating System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker Hand",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7542cde8-c5f9-4440-b3e1-e914d9a29fde",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "thumbnailAltText": "Stryker Hand Plating System",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/VariAx-hand-image.png",
+  "jcr:predecessors": [
+    "c9e0aa6f-52b4-4df7-97d2-3c96c552e0ba"
+  ],
+  "contentID": "VAX-AWI-21, 01-2023",
+  "lastPublished": "Fri Jan 13 2023 21:45:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jan 13 2023 21:45:08 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 13 2023 21:45:11 GMT+0000",
+  "cq:lastModified": "Thu Jan 12 2023 19:54:25 GMT+0000",
+  "jcr:description": "The Stryker Hand Plating module houses the VariAx Hand Locking and Profyle Hand Systems which offer the benefits of a comprehensive range of variable angled locking and non-locking plating options to treat fractures of bones of the hand and wrist.  Plates utilize SmartLock Technology which permits polyaxial screw placement.  You can angle locking screws up to 10 degrees in each direction for a total range of 20 degrees providing you with the flexibility to position screws based on the patient's need, not a plate's pre-existing design.",
+  "jcr:baseVersion": "c9e0aa6f-52b4-4df7-97d2-3c96c552e0ba",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Stryker Hand Plating System",
+  "cq:tags": [
+    "stryker:capability/upper-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/plating",
+    "stryker:custom/trauma-and-extremities/Indications/hand",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:specialty/hand-and-wrist-(upper-exremities)",
+    "stryker:system/trauma-and-extremities/plating",
+    "stryker:content-type/hcp_content",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/hand-and-wrist",
+    "stryker:product/trauma-and-extremities/variax-hand",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/trauma-and-extremities/variax-2",
+    "stryker:business-unit/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Jan 12 2023 07:07:52 GMT+0000",
+  "jcr:uuid": "ad75d14a-569c-4a34-b1d6-54b7129d793c",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_493997791_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "jcr:lastModified": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 10 2022 19:00:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">Stryker Hand</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Plating System</span></span>",
+          "jcr:lastModified": "Fri Dec 02 2022 01:33:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Nov 10 2022 19:00:40 GMT+0000",
+          "alt": "Stryker Hand",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Full.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 03:47:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">The Stryker Hand Plating module houses the VariAx Hand Locking and Profyle Hand Systems which offer the benefits of a comprehensive range of variable angled locking and non-locking plating options to treat a full range of hand fractures. Plates utilize SmartLock Technology which permits polyaxial screw placement. You can angle locking screws up to 10 in each direction for a total range of 20˚ providing you with the flexibility to position screws based on the patient, not a plate’s pre-existing design.&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Nov 17 2022 23:02:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Nov 21 2022 18:34:02 GMT+0000",
+      "jcr:lastModified": "Mon Nov 21 2022 18:34:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The Stryker Hand Plating Solution consists of two modules with interchangeable inlays. The VariAx Hand Locking Plate Module offers variable angled locking plates as well as non-locking plates and screws for 1.7mm and 2.3mm implant sizes. The Profyle Hand Standard Plate Module offers non-locking plates and screws for 1.2mm, 1.7mm and 2.3mm implant sizes.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 17 2022 23:02:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 16 2022 23:56:55 GMT+0000",
+          "alt": "Tray Layout",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Kit.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 03:47:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_593058981": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Nov 21 2022 18:38:28 GMT+0000",
+      "jcr:lastModified": "Mon Nov 21 2022 18:38:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 16 2022 23:56:55 GMT+0000",
+          "alt": "Screw Options + Blade Options",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Screws.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 03:47:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Below is a spotlight of the plate offerings from 1.2mm Profyle plates, 1.7mm VariAx Locking plates and 2.3mm Compression plates.&nbsp; <br>\n Full offering of plates can be found in the operative technique.</span></span></p>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 19:54:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy_252632375": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 16 2022 23:56:55 GMT+0000",
+          "alt": "Plate offerings",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Plates-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jan 12 2023 18:54:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__355419666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Reduction and Specialty Instrumentation</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Available reduction and specialty instrumentation housed in the Stryker Hand module</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 02 2022 08:05:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Nov 16 2022 23:56:55 GMT+0000",
+          "alt": "Reduction and Specialty",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Tools.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 03:46:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1_3_2_3_784286879": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Nov 21 2022 18:38:58 GMT+0000",
+      "jcr:lastModified": "Mon Nov 21 2022 18:38:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Stryker Hand</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about Stryker Hand by exploring our collection of clinical resources including surgical reduction technique, exposure, and product overview videos, brochures, whitepapers, and more.</span></span></span>",
+          "jcr:lastModified": "Thu Nov 17 2022 23:03:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "jcr:lastModified": "Thu Jan 12 2023 07:08:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/variaxhand/resources/VAX_ST_59.pdf\" target=\"_blank\">STRYKER HAND PLATING SYSTEM - OPERATIVE TECHNIQUE</a><a href=\"/content/dam/stryker/trauma-and-extremeties/products/variaxhand/resources/VAX_ST_59.pdf\" target=\"_blank\"></a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Dec 15 2022 01:00:50 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/variaxhand/resources/VAX_TLC_24.pdf\" target=\"_blank\">STRYKER HAND - TRAY LAYOUT CARD</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/variaxhand/resources/VAX_SCS_14.pdf\" target=\"_blank\">STRYKER HAND - SYSTEM COMPONENTS</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Dec 15 2022 03:46:19 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Surgeon resources"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "Hospital resources"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 3,
+              "accTitle": "Internal resources"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed579fc659e930d6ad5c99c&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:08:43 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols_127389427_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop_1048328736": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:40:49 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:40:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1254130874_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Related products</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:42:21 GMT+0000",
+          "jcr:lastModified": "Fri Dec 02 2022 08:13:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/VariAx2-Mini-Fragment-System"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/endotrac-ectr"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/variax-2-distal-radius-plating-system"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/Swanson-Fingers"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy_1748709413": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about Stryker Hand and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 15:38:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_184": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:22 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:09:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Plating that fits.</p>\r\n",
+    "shortDescTop": "<p>The VariAx Hand Locking and Profyle Hand<b> </b>System which offers the benefits of a comprehensive range of variable angled locking and non-locking plating options to treat a full range of hand fractures. Plates utilize SmartLock Technology which permits polyaxial screw placement. You can angle locking screws up to 10º in each direction for a total range of 20º providing you with the flexibility to position screws based on the patient, not a plate’s pre-existing design. </p>\r\n",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 31 2022 19:50:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Various 1.7mm and 2.3mm locking plate options and 1.2mm, 1.7mm and 2.3mm non-locking plating options for flexibility to treat different fractures</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Specialty plate options including fifth metacarpal and rotation plate with vertical gliding hole</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Rounded, low-profile screw heads</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>T5 and T6 screw interface designed for increased self retention and may reduce risk of stripping</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Modular tray design allows customization options<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Color coded screws and instruments designed for ease of use and identification</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed Jun 29 2022 20:02:32 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/variaxhand/images/Full.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 31 2022 19:50:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 31 2022 19:50:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

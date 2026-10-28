@@ -1,0 +1,716 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Lift compatible turn and position system",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage TAP LC",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f146d61c-e599-46d6-970b-6b8865ebf5b6",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "Sage TAP LC lift compatible patient repositioning system",
+  "jcr:predecessors": [
+    "1663c3b7-391c-46f6-837c-92ac2c3f2a00"
+  ],
+  "contentID": "SAGE-PVN-SYK-1087657_REV-0_en_us",
+  "lastPublished": "Thu Aug 20 2026 19:48:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 19:48:49 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 19:48:51 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 19:48:37 GMT+0000",
+  "jcr:description": "Reduce risk factors for skin injury and promote early mobility with the Sage TAP LC - lift compatible patient repositioning system. ",
+  "jcr:baseVersion": "1663c3b7-391c-46f6-837c-92ac2c3f2a00",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 24 2024 12:03:00 GMT+0000",
+  "pageTitle": "Sage TAP LC  ",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/Patient_positioning",
+    "stryker:business-unit/SAGE",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/Turning_and_positioning",
+    "stryker:content-type/hcp_content",
+    "stryker:product/sage/sage-tap-lc"
+  ],
+  "jcr:lastModified": "Fri May 24 2024 14:33:34 GMT+0000",
+  "jcr:uuid": "6413dac8-ed8a-4200-9fc1-d7f126402df0",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/prevalon_tap_lc/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/prevalon-tap-lc/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Apr 10 2024 14:26:38 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_539977372": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Sage TAP LC</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Lift compatible patient repositioning system</span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Reduce risk factors for skin injury and promote early mobility</span></span></p>\n",
+              "jcr:lastModified": "Fri May 24 2024 14:33:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Wed Dec 06 2023 15:15:55 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Wed Dec 13 2023 19:26:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_2039969689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 08 2024 13:59:21 GMT+0000",
+      "jcr:lastModified": "Mon Apr 08 2024 13:59:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 08 2024 13:59:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Advancing mobilitiy with convenience and confidence</span></span></h2>\n<p><span class=\"fontsize-1-25em\">We understand the importance of early mobility. To achieve your mobility protocols and comply with nursing patient positioning guidelines, you need a readily available solution that stays under your patient and fits seamlessly into your workflow. That’s why we added lift compatibility to our innovative turn and position system to promote safety and mobility.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 10 2024 18:01:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "4"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Apr 10 2024 18:01:04 GMT+0000",
+          "jcr:lastModified": "Wed Apr 10 2024 18:01:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_99224499": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Apr 10 2024 14:51:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">3-in-1 patient mobility</span></span></h3>\n",
+          "jcr:lastModified": "Wed Apr 10 2024 18:01:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Apr 10 2024 14:49:28 GMT+0000",
+      "jcr:lastModified": "Wed Apr 10 2024 14:49:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4.5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Wed Apr 10 2024 14:49:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">1. Boost</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Help address patient migration</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 12:33:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(28,86,135)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4.5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Wed Apr 10 2024 14:49:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">2. Turn</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Help address risk factors of pressure injury</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 12:33:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(28,86,135)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4.5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Wed Apr 10 2024 14:49:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">3. Lift</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Safely transfer patient to the bedside chair</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 12:34:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(28,86,135)",
+          "textIsRich": "true",
+          "bottomMargin": "8"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Apr 05 2024 16:00:04 GMT+0000",
+      "jcr:lastModified": "Fri Apr 05 2024 16:00:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Dec 06 2023 15:11:15 GMT+0000",
+          "text": "<h2><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Reduce risk factors for skin injury and caregiver injury</span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Our TAP system is designed to assist and maintain proper patient positioning to offload the sacrum. It also effectively manages moisture and body heat to protect patients’ skin. In addition, it helps reduce the risk of nurse injury by providing a more ergonomically friendly method of repositioning patients.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">30° Body and Anchor Wedge System allow staff to easily position patients for consistent protection and pressure redistribution </span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/products/sage-m--microclimate-body-pads.html\"><u>M² Microclimate Body Pad</u></a> effectively absorbs and locks in moisture to protect patient’s skin while allowing air to flow through </span></li>\n<li><span class=\"fontsize-1-25em\">Anti-shear strap anchors the system to the bed to reduce shearing </span></li>\n<li><span class=\"fontsize-1-25em\">Low-friction glide sheet works with the 30° body wedge system to reduce friction and shear </span></li>\n<li><span class=\"fontsize-1-25em\">Dermasuede material on the glide sheet grips the microclimate body pad to keep it in place </span></li>\n<li><span class=\"fontsize-1-25em\">Positioning handles assist with quick, gentle micro-turns to position the patient at the appropriate angle</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Apr 17 2024 18:09:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 08 2024 13:41:55 GMT+0000",
+          "alt": "Nurses help a patient reposition using the Sage Prevalon TAP LC",
+          "srcFileRef": "/content/dam/stryker/sage/products/tap-lc/images/TAP LC_CeilingLift.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 24 2024 14:34:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Apr 05 2024 13:13:02 GMT+0000",
+      "jcr:lastModified": "Fri Apr 05 2024 13:13:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 08 2024 14:16:46 GMT+0000",
+          "jcr:lastModified": "Mon Apr 08 2024 14:16:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Apr 05 2024 13:29:56 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Promoting safety and mobility</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The TAP LC system features an intuitive strap system for multiple lifting positions.</span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 18:06:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Apr 05 2024 13:12:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 05 2024 13:12:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 05 2024 13:28:32 GMT+0000",
+          "alt": "The TAP LC system features an intuitive strap system for multiple lifting positions including flat. ",
+          "srcFileRef": "/content/dam/stryker/sage/products/tap-lc/images/TAP-LC-positions-supine.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 24 2024 14:35:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Apr 05 2024 13:29:19 GMT+0000",
+          "text": "<h3 style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Supine</span></span></h3>\n",
+          "jcr:lastModified": "Fri Apr 05 2024 13:31:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 05 2024 13:28:32 GMT+0000",
+          "alt": "The TAP LC system features an intuitive strap system for multiple lifting positions including reclined. ",
+          "srcFileRef": "/content/dam/stryker/sage/products/tap-lc/images/TAP-LC-positions-reclined.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 13 2024 18:06:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Apr 05 2024 13:29:19 GMT+0000",
+          "text": "<h3 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reclined</span></span></h3>\n",
+          "jcr:lastModified": "Fri Apr 05 2024 13:31:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 05 2024 13:28:32 GMT+0000",
+          "alt": "The TAP LC system features an intuitive strap system for multiple lifting positions including  upright. ",
+          "srcFileRef": "/content/dam/stryker/sage/products/tap-lc/images/TAP-LC-positions-upright-2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 13 2024 18:07:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Apr 05 2024 13:29:19 GMT+0000",
+          "text": "<h3 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Upright 2</span></span></h3>\n",
+          "jcr:lastModified": "Fri Apr 05 2024 13:32:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 05 2024 13:28:32 GMT+0000",
+          "alt": "The TAP LC system features an intuitive strap system for multiple lifting positions including upright. ",
+          "srcFileRef": "/content/dam/stryker/sage/products/tap-lc/images/TAP-LC-positions-upright-1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 13 2024 18:07:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Apr 05 2024 13:29:19 GMT+0000",
+          "text": "<h3 style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Upright 1</span></span></h3>\n",
+          "jcr:lastModified": "Fri Apr 05 2024 13:32:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 06 2023 15:15:55 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Wed Dec 06 2023 15:16:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Nov 21 2023 18:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1259",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! We received your information and a Stryker Sage representative will be in contact.",
+          "jcr:lastModified": "Thu Aug 20 2026 19:48:37 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c_398066413": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
+          "text": "Contact information Product feedback Customer service",
+          "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/social-icons/master"
+        }
+      }
+    },
+    "section_title_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Wed Dec 06 2023 15:15:55 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Dec 06 2023 15:16:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
+      "jcr:lastModified": "Fri Apr 05 2024 13:12:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/sage/products/tap-lc/resources/24-IN-1020799_REV-0_TAP LC Sell Sheet_Web.pdf",
+            "/content/dam/stryker/sage/resources/Pressure-Injury-and-Safe-Patient-Handling-Solutions-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Safe-patient-handling-and-pressure-injury-brochure-TAP.pdf",
+            "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Injury-Prevention.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:lastModified": "Thu Jun 20 2024 17:40:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Oct 30 2025 14:49:19 GMT+0000",
+          "jcr:lastModified": "Thu Oct 30 2025 14:49:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "errin.pace@stryker.com",
+              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:created": "Wed Feb 16 2022 19:12:18 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "jcr:lastModified": "Wed Feb 16 2022 19:29:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/sage/products/tap-lc/videos/sage-prevalon-tap-lc-in-service.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/sage-prevalon-tap-lc-in-service-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Wed Oct 29 2025 21:15:40 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "",
+                "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-TAP-LC-in-service-video-thumbnail"
+              }
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-Pressure-Injury.pdf",
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-Staff-Injury-Risk-Due-to-Turning-and-Repositioning.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Thu Sep 05 2019 20:07:21 GMT+0000",
+          "jcr:lastModified": "Wed Dec 06 2023 15:09:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Guidelines and recommendations"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 3,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
+          "jcr:lastModified": "Fri Apr 05 2024 13:12:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-airtap-lc"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-tap-2-0"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-airtap"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-mats"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 16:21:12 GMT+0000",
+      "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
+      "jcr:lastModified": "Tue Dec 13 2022 16:21:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/footer/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/footer/footer/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/tap-lc/images/Prevalon-TAP-LC-thumbnail.jpg"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Apr 05 2024 13:10:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Apr 05 2024 13:11:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Apr 05 2024 13:11:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Apr 05 2024 13:11:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Apr 05 2024 13:11:14 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

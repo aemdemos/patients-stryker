@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Novae Dual Mobility Hero Mobile EU",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "84496e2d-4fc0-4206-970d-0ff5068eb221",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5088dd1d-ac76-4208-a9d4-3154eb281f08"
+  ],
+  "lastPublished": "Wed Feb 04 2026 00:50:53 GMT+0000",
+  "jcr:created": "Wed Feb 04 2026 00:50:53 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 04 2026 00:50:55 GMT+0000",
+  "cq:lastModified": "Fri Dec 05 2025 00:59:18 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5088dd1d-ac76-4208-a9d4-3154eb281f08",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 04 2026 00:50:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "6f2c3599-15bf-4681-8a29-98c3d6884cf8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "5",
+      "topMargin": "10",
+      "jcr:created": "Mon Sep 29 2025 19:34:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Novae<sup>®</sup></span> Dual Mobility</span></span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 03 2025 23:22:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "8",
+      "textIsRich": "true",
+      "leftMargin": "5",
+      "bottomMargin": "10",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 15:08:58 GMT+0000",
+      "alt": "Novae Dual Mobility",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/products/novae/eu/images/Novae-Dual-Mobility-EU.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Dec 03 2025 01:37:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "8",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Oct 02 2025 17:32:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">Novae Dual Mobility is designed to restore joint mobility and reduce dislocation risks<sup>1&nbsp;</sup>following total hip replacement. ​</span></p>\n<p><span class=\"fontsize-1-25em\"><br>\nWith one system, Novae Dual Mobility is designed to offer comprehensive and easy-to-use monobloc dual mobility options for a wide range of patients.<br>\n </span></p>\n",
+      "jcr:lastModified": "Fri Dec 05 2025 00:59:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "8",
+      "textIsRich": "true"
+    }
+  }
+}

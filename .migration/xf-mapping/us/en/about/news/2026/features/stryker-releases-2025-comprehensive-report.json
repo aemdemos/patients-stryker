@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker releases 2025 Comprehensive Report",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7aad5632-09be-4796-9636-f6ab7e665a9e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "comprehensive-report-2025-news-thumbnail",
+  "jcr:predecessors": [
+    "519dbf14-608c-4e49-9d2c-230c0f1b0192"
+  ],
+  "contentID": "MARK-GSNPS-SYK-4043451",
+  "lastPublished": "Tue Oct 13 2026 15:13:39 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 13 2026 15:13:40 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 13 2026 15:13:41 GMT+0000",
+  "cq:lastModified": "Mon Oct 12 2026 21:01:08 GMT+0000",
+  "jcr:description": "Stryker is pleased to announce the publication of our 2025 Comprehensive Report, showcasing another year of progress toward our financial, environmental, social and governance commitments.",
+  "jcr:baseVersion": "519dbf14-608c-4e49-9d2c-230c0f1b0192",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Oct 13 2026 15:13:39 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/featured",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Mon Oct 12 2026 21:01:08 GMT+0000",
+  "jcr:uuid": "95cf9399-39d5-4ffc-917b-646734118257",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Oct 13 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "13-Oct-2026",
+    "jcr:lastModified": "Fri Oct 09 2026 18:53:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Stryker is pleased to announce the publication of our 2025 Comprehensive Report, showcasing another year of progress toward our financial, environmental, social and governance commitments. Guided by our mission to make healthcare better, this year’s report highlights our commitment to making a meaningful difference for our customers and the communities they serve. Today we are proudly impacting more than 150 million patients annually, supported by our team of 56,000 employees.</p>\n<p>Chair and CEO Kevin Lobo says, “Our mission continues to guide how we grow, both as a company and in the impact we deliver for customers, patients and communities around the world. The future will be shaped by the significant challenges healthcare systems are facing today. We continue to advance innovation in areas like digital, robotics and enabling technologies, with a focus on improving outcomes, increasing efficiency and enabling care in new settings.”</p>\n<p><a href=\"/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf\" target=\"_blank\"><span class=\"standalone-link\">Read the full report</span></a></p>\n",
+    "jcr:lastModified": "Fri Oct 09 2026 19:44:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "comprehensive-report-2025-hero",
+    "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-releases-2025-comprehensive-report/images/comprehensive-report-2025-hero.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Oct 09 2026 19:42:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/stryker-releases-2025-comprehensive-report/images/comprehensive-report-2025-news-thumbnail.jpg"
+  }
+}

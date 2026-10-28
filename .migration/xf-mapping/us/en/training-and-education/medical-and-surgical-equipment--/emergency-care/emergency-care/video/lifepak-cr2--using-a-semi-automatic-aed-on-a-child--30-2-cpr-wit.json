@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK CR2: Using a semi-automatic AED on a child, 30:2 CPR with cprINSIGHT",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9a8863d5-907f-42ff-b542-52dd468aa83b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "8b10cbf9-e981-47f7-9afb-d9f7face6b57"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:41:03 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:41:03 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:41:05 GMT+0000",
+  "cq:lastModified": "Fri Sep 09 2022 18:10:10 GMT+0000",
+  "jcr:baseVersion": "8b10cbf9-e981-47f7-9afb-d9f7face6b57",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "139115d9-69b2-4762-892a-9a58de524714",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:54:52 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:54:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Learn how to operate a semi-automatic AED on a child; 30:2 CPR with cprINSIGHT.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 19:55:39 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Fri Sep 09 2022 18:09:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr-with-cprinsight.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr-with-cprinsight-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Sep 09 2022 18:10:10 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

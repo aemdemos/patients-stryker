@@ -1,0 +1,263 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "ICJR",
+  "jcr:versionHistory": "72078cb2-5c44-4650-944f-90360062ae62",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "b9e53bba-8d61-4662-87eb-c0744fe69a09"
+  ],
+  "lastPublished": "Fri Nov 08 2019 19:30:17 GMT+0000",
+  "jcr:created": "Fri Nov 08 2019 19:30:17 GMT+0000",
+  "cq:lastModified": "Fri Nov 08 2019 19:28:59 GMT+0000",
+  "jcr:baseVersion": "b9e53bba-8d61-4662-87eb-c0744fe69a09",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "c787d58d-89ec-4c40-8e3c-08d73a00b721",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1973216350": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 30 2019 17:22:34 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2019 17:22:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_1063445144_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 16 2019 20:03:12 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">ICJR</span>&nbsp;2019&nbsp;</span></span></span><span class=\"urw-egyptienne\">We help our customers rebuild lives.™</span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><br>\n </span></span></span><span style=\"color: #ffb500;\">__________________________________________________________________________________________________________________________________________________________</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Las Vegas, NV | November 14-16, 2019</span></span></span><span class=\"fontsize-1-5em\"><span style=\"text-transform: uppercase;\"><span class=\"standalone-link\"><span style=\"color: #000000;\"><br>\n &nbsp;</span></span></span></span></p>\n",
+      "jcr:lastModified": "Fri Nov 08 2019 19:26:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1830": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 02 2019 19:01:49 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/campaigns/icjr/ICJR_Hero.jpg",
+      "jcr:lastModified": "Wed Oct 30 2019 17:19:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 30 2019 17:14:46 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2019 17:14:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 18:15:50 GMT+0000",
+      "title": "Events and workshops",
+      "jcr:lastModified": "Fri Nov 08 2019 17:06:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Nov 08 2019 17:06:58 GMT+0000",
+      "jcr:lastModified": "Fri Nov 08 2019 17:06:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "linkExternal": "http://www.cvent.com/events/8th-annual-icjr-shoulder-course/event-summary-9f6e459febb74e7b91c7a1e86d3dbb5f.aspx",
+          "jcr:created": "Fri Nov 08 2019 17:31:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/icjr/ICJR_Events_1.png",
+          "jcr:lastModified": "Fri Nov 08 2019 19:28:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "linkExternal": "https://icjr.net/livesurgerysanchezsotelo",
+          "jcr:created": "Fri Nov 08 2019 17:31:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/icjr/ICJR_Events_2.png",
+          "jcr:lastModified": "Fri Nov 08 2019 17:32:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 17:31:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/icjr/ICJR_Events_3.png",
+          "jcr:lastModified": "Fri Nov 08 2019 17:31:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols_37918208": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 30 2019 17:22:12 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2019 17:22:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_878504943": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 30 2019 17:20:45 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2019 17:20:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c_1669514948": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 18:15:50 GMT+0000",
+      "title": "Featured at ICJR",
+      "jcr:lastModified": "Wed Oct 30 2019 17:20:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jul 19 2019 15:00:26 GMT+0000",
+      "jcr:lastModified": "Fri Jul 19 2019 15:00:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:35 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/ReUnionRFX.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 19:11:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/reunion-rfx",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247036564": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/ReUnionS.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:21:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/ReUnion-S",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/Cobra.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:22:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/sports-medicine/products/cobra",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247_706056554": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/ICONIXSpeed.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:23:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/sports-medicine/products/iconix-speed",
+          "openInNewTab": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:35 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/ReUnionRSA.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:21:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/reunion-rsa",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/ReUnionTSA.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:21:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/reunion-tsa",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247_1643271861": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/_Gateway.jpg",
+          "jcr:lastModified": "Tue Oct 08 2019 15:15:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/sports-medicine/products/gateway",
+          "openInNewTab": "true"
+        },
+        "standaloneimage_1247_1254966177": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 19 2019 15:00:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/ases/products/OmegaSelfPunching.jpg",
+          "jcr:lastModified": "Wed Oct 02 2019 17:23:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/sports-medicine/products/omega",
+          "openInNewTab": "true"
+        }
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Wed Oct 30 2019 17:22:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Meet the “BPCI” A Team – Take Three!",
+  "jcr:versionHistory": "11520070-7466-4855-ad16-093ab570da2b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+  "jcr:predecessors": [
+    "cd7540cd-60cf-4477-8392-724f8d539e24"
+  ],
+  "contentID": "Blog6_618",
+  "lastPublished": "Mon Jun 04 2018 10:01:51 GMT+0000",
+  "jcr:created": "Mon Jun 04 2018 10:01:51 GMT-0400",
+  "cq:lastModified": "Fri Jun 01 2018 15:05:14 GMT-0400",
+  "cq:siblingOrder": "you-have-applied-with-a-convener--now-what-,meet-the--bpci--a-team0,update-from-cms--what-to-expect-may--september-2018,meet-the--bpci--a-team---take-two-,i-thought-op-knees-were-approved-by-medicare--why-arent-they-in-,meet-the-_bpci_-a-team--take-three-,",
+  "jcr:baseVersion": "cd7540cd-60cf-4477-8392-724f8d539e24",
+  "jcr:isCheckedOut": true,
+  "cq:name": "meet-the-_bpci_-a-team--take-three-",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Jun 01 2018 15:05:14 GMT-0400",
+  "jcr:uuid": "7d1eefb7-da99-4eef-bda8-7e14c5538c8d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:parentPath": "/content/stryker/us/en/joint-replacement/sps-blog/2018",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "anna.kroll@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "publishDate": "Mon Jun 04 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Jun-2018",
+    "jcr:lastModified": "Fri Jun 01 2018 14:27:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "srcFileRef": "/content/dam/stryker/joint-replacement/sps_blog/2534_SPS photos for blog.jpg",
+    "jcr:lastModified": "Fri Jun 01 2018 14:36:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Nick Jewell, Program Manager, Alignment, Strategy and Reform&nbsp;</span></span></p>\n<p>Nick is an experienced healthcare executive with a special focus on the shift to value based medicine and bundled payments. He started working in the bundled payment space with Signature Medical Group implementing Medicare’s Bundled Payment for Care Improvement Initiative (BPCI).</p>\n<p>Working for Signature, he became an expert in utilizing CMS claims analytics to drive changes in physician operations. Through the analysis of claims data, as well as building relationships with physicians and administrators, Nick assisted in transforming private physician practices to a successful bundled payment program. Nick also has extensive experience transforming post-acute providers to value-based partners and has led the design and implementation of a national post-acute network.</p>\n<p>Nick earned his B.A. degree in Accounting from Lindenwood University.&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Christine Veal, Sr. Program Manager, Alignment, Strategy and Reform</span></span></p>\n<p>Chris is anexperienced healthcare leader with over fifteen years of hospital leadership and strategic expertise in service line development and project management. In her former role as Director of Innovation in Action and Heart &amp; Vascular Operations at St. Vincent’s HealthCare in Jacksonville, Florida, Chris was responsible for the development and operational oversight of the Cardiovascular Service Line. This included the launch of a Joint Commission certified Advanced Heart Failure program, which was also one of the first Bundled Payment programs for St. Vincent’s HealthCare, the first Transcatheter Aortic Valve Replacement (TAVR) program and the first AFIB Institute in Northeast Florida. Chris was also responsible for implementing innovative ideas to provide excellent quality patient care, patient safety, and an overall improved financial performance using LEAN methodology to decrease variation and streamline processes.</p>\n<p>Chris has a Master's of Science in Nursing and a Master’s in Business Administration. She earned her MSN and MBA from Jacksonville University and earned her BSN from the University of North Florida. Chris has held several nursing leadership roles in multiple settings, from Clinical Resource Coordinator to Director of Nursing.&nbsp;</p>\n<p><a href=\"https://www.stryker.com/content/stryker/us/en/joint-replacement/sps-blog.html\"><span class=\"futura-bold\">BACK</span></a></p>\n",
+    "jcr:lastModified": "Fri Jun 01 2018 15:03:12 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This material and/or presentation is provided for guidance and/or illustrative purposes only and should not be construed as a guarantee of future results or a substitution for legal advice and/or medical advice from a healthcare provider. Stryker Performance Solutions does not practice medicine and assumes no responsibility for the administration of patient care.</p>\r\n<p>©2018 Stryker’s Performance Solutions Reproduction or distribution prohibited without the express written consent of Stryker’s Performance Solutions.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n",
+    "jcr:lastModified": "Fri Jun 01 2018 15:03:58 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

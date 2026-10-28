@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7ede1a69-2a41-4543-9854-b445c9fa87cb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4e90a0c8-9f14-4434-b4eb-3fd61edbcb5a"
+  ],
+  "jcr:created": "Tue Feb 13 2024 17:05:40 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 13 2024 17:05:42 GMT+0000",
+  "cq:lastModified": "Tue Feb 06 2024 15:25:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4e90a0c8-9f14-4434-b4eb-3fd61edbcb5a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "00fbade6-ca85-4496-9898-dffa02e36f80",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy_253086067": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's Prime X-ray stretcher",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/Thumbnail_PrimeX_UltraComfortSE_16x9.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 06 2024 15:25:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

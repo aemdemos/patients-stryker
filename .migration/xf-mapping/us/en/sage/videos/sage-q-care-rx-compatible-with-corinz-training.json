@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Training video",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage Q•Care Rx-compatible, with Corinz 6994",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a612716f-1e76-410d-b0cf-d7375772174d",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:predecessors": [
+    "6dd2ff2e-77b8-4735-8448-b1efa56ec208"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-489450_REV-0_en_us",
+  "lastPublished": "Tue Mar 19 2024 15:22:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Mar 19 2024 15:22:43 GMT+0000",
+  "cq:lastReplicated": "Tue Mar 19 2024 15:22:45 GMT+0000",
+  "cq:lastModified": "Tue Mar 19 2024 15:22:38 GMT+0000",
+  "jcr:baseVersion": "6dd2ff2e-77b8-4735-8448-b1efa56ec208",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Sage Q•Care Rx-compatible, with Corinz 6992/6994 training video",
+  "jcr:lastModified": "Tue Mar 19 2024 15:22:38 GMT+0000",
+  "jcr:uuid": "a454a5fd-fc4c-41b0-a771-bf2b6c926ebd",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Wed Feb 16 2022 19:12:18 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Feb 16 2022 19:29:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/products/oral-hygiene-vent/videos/Q-Care-Rx-compatible-with-Corinz-training-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Q-Care-Rx-compatible-with-Corinz-training-video-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Thu Jan 19 2023 19:26:42 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/Q-Care-Rx-compatible-with-Corinz-training-video-thumbnail"
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",
+      "CTATitle": "Learn more",
+      "jcr:lastModified": "Thu Jan 19 2023 19:27:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients"
+    }
+  }
+}

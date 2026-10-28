@@ -1,0 +1,138 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "VSP® solutions",
+  "jcr:versionHistory": "36616251-1fa4-4b74-9292-f8d1ee3863f8",
+  "cq:template": "/apps/stryker/templates/packagedetail",
+  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/systems/Virtual-Surgical-Planning--VSP-/images/Thumbnail_VSP.png",
+  "jcr:predecessors": [
+    "dd687709-9f02-4701-8a96-cea546c11e19"
+  ],
+  "contentID": "3DS-WEB-4_Rev. None_27965",
+  "lastPublished": "Fri Nov 13 2020 18:40:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 13 2020 18:40:11 GMT+0000",
+  "cq:lastModified": "Fri Nov 13 2020 18:39:54 GMT+0000",
+  "jcr:description": "A personalized digital planning solution.",
+  "jcr:baseVersion": "dd687709-9f02-4701-8a96-cea546c11e19",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:capability/cmf-implants",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:specialty/closure",
+    "stryker:content-type/system",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/craniomaxillofacial/vsp",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic"
+  ],
+  "jcr:lastModified": "Fri Nov 13 2020 18:39:54 GMT+0000",
+  "jcr:uuid": "ebf4e9f9-d6d3-42f5-b936-4fb200c3d1d8",
+  "sling:resourceType": "stryker/components/structure/pages/packagedetail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Aug 21 2020 14:20:45 GMT+0000",
+      "compImageRef": "/content/dam/stryker/craniomaxillofacial/systems/Virtual-Surgical-Planning--VSP-/images/Hero_VSP_Brown.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "beth.sizemore@stryker.com",
+      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "jcr:created": "Wed Jul 05 2017 17:44:19 GMT-0400",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Jul 05 2017 17:48:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Options",
+          "groupTag": "/etc/tags/stryker/system/craniomaxillofacial/vsp"
+        }
+      }
+    },
+    "productlisting": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "jcr:lastModified": "Wed Jul 05 2017 17:48:44 GMT-0400",
+      "loadMoreText": "Load More",
+      "sling:resourceType": "stryker/components/content/productlisting",
+      "listSize": "10"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p data-children-count=\"0\"><sup></sup>Plan with confidence.</p>\r\n",
+    "shortDescTop": "<p data-children-count=\"0\">Working in collaboration with 3D Systems, we are pleased to provide you with a major leap forward in patient-specific care. With virtual surgical planning, you can use imaging data to accurately plan a surgical procedure in a computer environment through a web-based planning session with a 3D Systems Biomedical Engineer. After you complete and approve the surgical plan, it is taken to the next level by creating patient-specific, disposable guides and splints for use in the surgical procedure to assist in more predictable patient outcomes.&nbsp;<br>\r\n<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+    "jcr:lastModified": "Fri Nov 13 2020 18:38:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Plan your case using patient-specific CT data. You have the ability to visualize anatomical landmarks and ensure the surgical plan matches your patient's anatomy.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Web-based design session allows you to have direct input on every step of the pre-surgical plan.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Transfer the plan to the operating room with patient-specific models, guides and templates.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Case report outlines the step-by-step of the of the pre-surgical plan, serving as a reference before surgery and in the operating room.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Our sales representatives support you throughout the process.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/systems/Virtual-Surgical-Planning--VSP-/images/Hero_VSP_Brown.png"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reduce the risk of nurse injury and pressure injury",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Seated positioning",
+  "jcr:versionHistory": "786f61df-ce35-4df8-a537-d24e695b2689",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Seated positioning products",
+  "jcr:predecessors": [
+    "0fe2913a-aeca-4587-9585-65303ca6299f"
+  ],
+  "contentID": "26624",
+  "lastPublished": "Tue Oct 08 2019 13:16:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 08 2019 13:16:38 GMT+0000",
+  "cq:lastModified": "Wed Sep 11 2019 14:46:46 GMT+0000",
+  "jcr:description": "Promote early mobility and minimize the need for repetitive boosting and repositioning.",
+  "cq:siblingOrder": "heel-protection,lateral-transfer,turning-and-positioning,seated-positioning,patient-positioning-hardware-and-accessories,",
+  "jcr:baseVersion": "0fe2913a-aeca-4587-9585-65303ca6299f",
+  "jcr:isCheckedOut": true,
+  "cq:name": "seated-positioning",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/Patient_positioning",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/Seated_positioning"
+  ],
+  "jcr:lastModified": "Wed Sep 11 2019 14:46:46 GMT+0000",
+  "jcr:uuid": "d2f3f62a-b114-414c-9ab0-4bfd8d918789",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/patient-positioning/seated-positioning/images/Seated-positioning-thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Sep 10 2019 19:59:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

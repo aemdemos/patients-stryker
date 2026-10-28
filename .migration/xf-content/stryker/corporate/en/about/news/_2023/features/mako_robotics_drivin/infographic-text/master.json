@@ -1,0 +1,474 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Infographic text",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a42119bb-7551-4dbe-b95c-78bf507243e1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c0c402f9-476a-42e2-b347-de5150429af6"
+  ],
+  "jcr:created": "Thu Jul 06 2023 20:52:50 GMT+0000",
+  "cq:lastReplicated": "Thu Jul 06 2023 20:52:51 GMT+0000",
+  "cq:lastModified": "Fri Jun 30 2023 17:56:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c0c402f9-476a-42e2-b347-de5150429af6",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "bc7d9421-f75f-4f6f-af87-d90516753df8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1265617733_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Thu Jun 29 2023 17:42:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_1265617733_copy844690445334238": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">More about Stryker’s Mako SmartRobotics<sup>™&nbsp;</sup><br>\n <br>\n </span></span>Our robotic surgery expertise is 17 years in the making. In 2013, Stryker saw the long-term potential benefit that Mako robotic surgery could have on patients undergoing joint replacement surgery and acquired MAKO Surgical Corp. We continue to bring this evidence-based healthcare technology to care teams around the world.&nbsp;<span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\n </span></span></p>\n",
+        "jcr:lastModified": "Fri Jun 30 2023 17:55:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_621251859": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Doctor",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon4_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:11:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2em\">1 million+</span></span></span><br>\n<span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Mako procedures</span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">performed globally to date</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1277829143": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Globe",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon2_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:11:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "none"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Mako Systems installed in</span>&nbsp;</span><span class=\"futura-bold\"><br>\n </span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"></span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">35</span> countries</span><span class=\"urw-egyptienne\"><br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">and every U.S. state</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:01:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_739307073": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Mako",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon3_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:11:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "newline"
+        }
+      }
+    },
+    "text_copy_copy_97410": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "8",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">17 years</span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">of robotic-arm assisted&nbsp;surgery experience</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:03:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_557423913": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Documents",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon1_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:11:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "text_copy_copy_copy__2031877667": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">330+ studies</span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">published, peer reviewed studies</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:01:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1349358742": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Patents",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon6_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:11:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "none"
+        }
+      }
+    },
+    "text_copy_copy_copy__38502878": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #af6d04;\">1,500+<span style=\"font-weight: 400;\">&nbsp;</span></span>patents</span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">and patent applications established globally&nbsp;</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:02:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1650108148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Feb 10 2023 18:48:13 GMT+0000",
+      "alt": "Computer",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Icon5_Mako.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 18:12:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "newline"
+        }
+      }
+    },
+    "text_copy_copy_97410_734041162": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 30 2023 20:45:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-2em\">1 million+</span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">patient records and 105 million actionable data points in Mako Insightful Data Analytics database</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 18:31:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "curatedcta_152469843": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Wed Jan 25 2023 18:50:08 GMT+0000",
+      "CTATitle": "Learn more about Mako",
+      "ctaExternalLink": "https://www.stryker.com/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html?cid=jr_makoknowmore.com",
+      "jcr:lastModified": "Thu Jun 29 2023 17:45:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "ctaInternalLink": "/content/stryker/us/en/acute-care/products/procuity/index.html",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "11"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Text 1",
+  "jcr:versionHistory": "a1e1eccc-caf6-4eb6-a718-5a4c66d0deea",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "aea1de2d-7983-44d1-99ec-b5dea5b2c54f"
+  ],
+  "jcr:created": "Mon Jun 15 2020 17:45:01 GMT+0000",
+  "cq:lastModified": "Fri Jun 12 2020 18:43:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "aea1de2d-7983-44d1-99ec-b5dea5b2c54f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "2be8d37b-7276-49da-ac51-4ff7ab3bc098",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 08 2020 17:00:36 GMT+0000",
+      "text": "<p><b><span class=\"fontsize-1-5em\">In February of 2020,</span></b> the running community learned about the Calendar Club, a monumental endurance challenge. Every day, a person would run the number of miles corresponding to whatever day it was—one mile on February 1, two miles on February 2, all the way up to 29 miles.</p>\n<p>Sometime in March, two well-known runners teamed up for the challenge, and invited their social media followers to participate. But this time, the challenge would be in support of nurses, doctors and first responders on the front lines who were fighting COVID-19. One of the runners who accepted the Calendar Club challenge for the month of April was Kenneth Fobian, Stryker sales representative. Recently, we asked Ken what compelled him to take the 30-day, <span style=\"color: #ffb500;\"><span class=\"futura-bold\">465-mile journey</span></span>.</p>\n",
+      "jcr:lastModified": "Fri Jun 12 2020 18:43:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  }
+}

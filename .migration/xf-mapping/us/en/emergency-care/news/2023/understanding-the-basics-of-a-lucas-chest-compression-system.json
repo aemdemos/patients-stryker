@@ -1,0 +1,208 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Understanding the basics of a LUCAS chest compression system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6240f06e-e278-49a0-9506-014b63b95f48",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "LUCAS device placed on a sudden cardiac arrest victim ",
+  "jcr:predecessors": [
+    "7a675fe2-2631-4d7d-b057-d0c817e2056c"
+  ],
+  "contentID": "M0000017290 REV AA",
+  "lastPublished": "Mon Jun 03 2024 18:56:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 03 2024 18:56:14 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 03 2024 18:56:16 GMT+0000",
+  "cq:lastModified": "Mon Jun 03 2024 18:55:53 GMT+0000",
+  "jcr:description": "When it comes to medical emergencies like sudden cardiac arrest, time is of the essence. Traditional cardiopulmonary resuscitation (CPR) can be demanding and fatiguing, even for first responders. This is where a LUCAS chest compression system comes into play. The innovative LUCAS device offers a viable solution for consistent, high-quality chest compressions, a critical component in resuscitation.1 This article aims to break down the basics of what a LUCAS chest compression system is and why it is revolutionizing the way CPR is administered.\r\n ",
+  "jcr:baseVersion": "7a675fe2-2631-4d7d-b057-d0c817e2056c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:56:13 GMT+0000",
+  "pageTitle": "Understanding the basics of a LUCAS chest compression system",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/articles",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news"
+  ],
+  "jcr:lastModified": "Mon Jun 03 2024 18:55:53 GMT+0000",
+  "jcr:uuid": "a4397dfd-bb88-4d78-b410-34d48f3446fa",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "navTitle": "Understanding the basics of a LUCAS chest compression system",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/master",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Dec 14 2023 14:10:39 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "rightMargin": "20",
+              "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><b>Understanding the basics of a LUCAS chest compression system</b></span></span></h1>\r\n",
+              "jcr:lastModified": "Thu Nov 16 2023 15:48:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Nov 15 2023 20:15:50 GMT+0000",
+      "text": "2-minute read When it comes to medical emergencies like sudden cardiac arrest, time is of the essence. Traditional cardiopulmonary resuscitation (CPR) can be demanding and fatiguing, even for first responders. This is where a LUCAS chest compression system comes into play. The innovative LUCAS device offers a viable solution for consistent, high-quality chest compressions, a critical component in resuscitation.1 This article aims to break down the basics of what a LUCAS chest compression system is and why it is revolutionizing the way CPR is administered. What is a LUCAS chest compression system? A LUCAS chest compression system is a portable, mechanical device designed to assist first responders and healthcare providers in administering automated chest compressions. Unlike manual CPR, which can vary in terms of quality and consistency, a LUCAS device delivers chest compressions at a consistent rate and depth, freeing the healthcare providers to focus on other critical aspects of patient care. Moreover, the LUCAS device helps reduce caregiver risk during patient transport and in the cath lab with reduced x-ray exposure and less physical strain to the CPR provider. How does a LUCAS device work? The LUCAS device consists of a backplate placed under the patient and a piston-based compression module placed above the chest. The compression module applies force directly to the sternum in order to compress the heart to help restore blood circulation.2 The LUCAS device automates the compression process and is consistent with the American Heart Association (AHA) and other international guidelines for CPR. Users can configure multiple device parameters to help meet organizational protocols including compression rate, compression depth, post-event reports and much more. The role of a LUCAS device in sudden cardiac arrest Sudden cardiac arrest is a medical emergency that demands immediate action. The importance of high-quality CPR within the first few minutes cannot be overstated. Unfortunately, manual CPR can become less effective as first responders tire or if there are insufficient numbers of trained personnel available to perform the compressions adequately.3 A LUCAS device bridges this gap by delivering high-quality chest compressions overcoming limitations of manual CPR. First responders and healthcare providers are then freed up to focus on other treatments that might be needed. Advantages over manual CPR Consistency - Manual chest compressions can vary significantly in terms of depth, rate and recoil. The LUCAS chest compression system delivers chest compressions at a consistent rate and depth and allows for full recoil after every compression, in line with established guidelines.4-6 Multitasking - Administering CPR is physically demanding and usually requires the undivided attention of the responder. With a LUCAS device in place, first responders can focus on other lifesaving interventions such as defibrillation, airway management, and administering medications. Decreased provider fatigue - Physical fatigue can compromise the effectiveness of manual chest compressions. Automated compressions via a LUCAS device can minimize this risk, ensuring that the patient receives the highest quality of CPR for extended periods.7 Together, we save lives The LUCAS chest compression system is a game-changer in the management of sudden cardiac arrest and CPR administration. With its ability to deliver consistent, high-quality chest compressions, this device is an invaluable tool for first responders and healthcare providers alike.8 By understanding its function and advantages, it's easy to see why the LUCAS device is revolutionizing the way we approach this critical aspect of emergency care.",
+      "jcr:lastModified": "Wed Nov 15 2023 20:24:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/understanding-the-basics-of-a-lucas-chest-compression-system/body"
+    },
+    "cols3_1098156374_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1098156374_cop_38144579": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedlinklist_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
+          "jcr:lastModified": "Wed Nov 29 2023 18:50:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedlinklist",
+          "internalLinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "LUCAS device product page",
+              "linkInternal": "/content/stryker/us/en/emergency-care/products/lucas-3"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "Survivor story: Derrick Mosley ",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "EMS stories: Anchorage Area Wide EMS",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/video/ems-stories-anchorage-area-wide-ems"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "EMS stories: Memphis Fire Department",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/video/ems-stories-memphis-fire-department"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Thu Nov 16 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "16-Nov-2023",
+    "jcr:lastModified": "Wed Nov 15 2023 20:48:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li><a href=\"https://academic.oup.com/eurheartj/article/38/40/3006/3896245?login=false\">https://academic.oup.com/eurheartj/article/38/40/3006/3896245?login=false</a></li>\r\n<li>Sporer, K., Jacobs, M., Derevin, L., Duval, S., &amp; Pointer, J. (2017). Continuous Quality Improvement Efforts Increase Survival with Favorable Neurologic Outcome after Out-of-hospital Cardiac Arrest.&nbsp;<i>Prehospital emergency care</i>,&nbsp;<i>21</i>(1), 1–6. https://doi.org/10.1080/10903127.2016.1218980</li>\r\n<li>Gyory, R. A, Buchle, S. E, Rodgers, D., &amp; Lubin, J. S. (2017). The Efficacy of LUCAS in Prehospital Cardiac Arrest Scenarios: A Crossover Mannequin Study.&nbsp;<i>Western Journal of Emergency Medicine: Integrating Emergency Care with Population Health</i>, 18(3). http://dx.doi.org/10.5811/westjem.2017.1.32575 Retrieved from <a href=\"https://escholarship.org/uc/item/0p1813xh\">https://escholarship.org/uc/item/0p1813xh</a></li>\r\n<li>Putzer G, Braun P, Zimmerman A, et al. LUCAS compared to manual cardiopulmonary resuscitation is more effective during helicopter rescue – a prospective, randomised, cross-over manikin study. Am J Emerg Med. 2013 Feb;31(2):384-9.</li>\r\n<li>Gyory R, Buchle S, Rodgers D, et al. The efficacy of LUCAS in prehospital cardiac arrest scenarios: A crossover mannequin study. West J Emerg Med. 2017;18(3):437-445.</li>\r\n<li>Wyss CA, Fox J, Franzeck F, et al. Mechanical versus manual chest compression during CPR in a cardiac catherisation settting. Cardiovascular Medicine. 2010;13(3):92-96 <a href=\"http://www.cardiovascular-medicine.ch/pdf/2010/2010-03/2010-03-005.pdf\">http://www.cardiovascular-medicine.ch/pdf/2010/2010-03/2010-03-005.pdf</a></li>\r\n<li><a href=\"https://www.sciencedirect.com/science/article/abs/pii/S030095720200271X?via%3Dihub\">https://www.sciencedirect.com/science/article/abs/pii/S030095720200271X?via%3Dihub</a></li>\r\n<li><a href=\"https://academic.oup.com/eurheartj/article/38/40/3006/3896245?login=false\">https://academic.oup.com/eurheartj/article/38/40/3006/3896245?login=false</a></li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Nov 15 2023 20:43:00 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/images/Increased efficiencies.jpg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Nov 15 2023 20:48:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "46daa82b-494c-441e-9e2d-4470814dab73",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "ff0e5c2e-02aa-4865-b041-f1eecefcd07b"
+  ],
+  "lastPublished": "Wed Nov 13 2024 20:53:51 GMT+0000",
+  "jcr:created": "Wed Nov 13 2024 20:53:51 GMT+0000",
+  "cq:lastReplicated": "Wed Nov 13 2024 20:53:53 GMT+0000",
+  "cq:lastModified": "Wed Nov 13 2024 20:28:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ff0e5c2e-02aa-4865-b041-f1eecefcd07b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Nov 13 2024 20:53:51 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "aa1853d2-88a5-4818-b8c6-200eb44f1575",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy_1250916079": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "PrimeSeries stretcher",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/20200708-Stryker_Surfaces-31.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Nov 13 2024 20:28:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "7",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

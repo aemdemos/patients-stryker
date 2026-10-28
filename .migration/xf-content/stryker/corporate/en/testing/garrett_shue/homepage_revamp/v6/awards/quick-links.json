@@ -1,0 +1,152 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Quick links",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "cdaf74b6-e118-4733-808e-c8302ff0a8e7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "d0104051-a4c5-4b1e-abff-cfadc711ab6f"
+  ],
+  "lastPublished": "Fri Aug 15 2025 21:35:38 GMT+0000",
+  "jcr:created": "Fri Aug 15 2025 21:35:38 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 15 2025 21:35:40 GMT+0000",
+  "cq:lastModified": "Fri Aug 15 2025 21:30:02 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d0104051-a4c5-4b1e-abff-cfadc711ab6f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:35:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3580f094-cf07-4e72-a9da-a0cf95b22712",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\">Quick links</span></span></span></span>",
+      "jcr:lastModified": "Tue Jul 25 2023 17:51:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 24 2022 18:21:43 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Portfolio</span></span></p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment.html\"><span class=\"standalone-link\">MEDICAL AND SURGICAL EQUIPMENT</span></a><br>\n</span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/portfolios/orthopaedics.html\">ORTHOPAEDICS</a></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/portfolios/neurotechnology-spine.html\">NEUROTECHNOLOGY</a></span></span></p>\n",
+      "jcr:lastModified": "Thu Mar 30 2023 15:27:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy_copy__1720460155": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 24 2022 18:21:43 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Offerings</span></span></p>\n<p><span class=\"fontsize-1em\"><a href=\"https://www.stryker.com/us/en/services.html\"><span class=\"standalone-link\">SERVICES</span></a><br>\n</span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/care-settings.html\">CARE SETTINGS</a></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/training-and-education.html\">TRAINING AND EDUCATION</a></span></span></p>\n",
+      "jcr:lastModified": "Thu Mar 30 2023 15:29:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Oct 24 2022 18:21:43 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Our company</span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/about/contact.html\">Contact us&nbsp;</a></span><br>\n</span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"https://investors.stryker.com/home/default.aspx\">INVESTOR RELATIONS</a></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/annual-review.html\">COMPREHENSIVE REPORT</a></span></span></p>\n",
+      "jcr:lastModified": "Fri Aug 15 2025 21:30:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_1133891616": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 24 2022 18:24:54 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">More information</span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare.html\">ADVANCED DIGITAL HEALTHCARe</a><br>\n</span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/care-settings/asc.html\">AMBULATORY SURGERY CENTERS</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/training-and-education.html\">TRAINING AND EDUCATION</a></span></p>\n<p><a href=\"https://www.stryker.com/us/en/legal/website-accessibility.html\"><span class=\"standalone-link\">ACCESSIBILITY STATEMENT</span></a></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/patients.html\">Patients</a></span></p>\n",
+      "jcr:lastModified": "Tue May 02 2023 18:13:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2fd4ce60-f263-472d-aae5-370aedb53a00",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "aee378f5-e1f9-423b-9f11-80c298df6ed0"
+  ],
+  "jcr:created": "Fri Mar 01 2024 15:47:54 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 01 2024 15:47:56 GMT+0000",
+  "cq:lastModified": "Fri Mar 01 2024 15:47:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "aee378f5-e1f9-423b-9f11-80c298df6ed0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "3e1b0e14-2a30-4691-a4e2-3e6c85d4c385",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage heel protectors for the OR",
+      "srcFileRef": "/content/dam/stryker/sage/products/heel-protector-or/images/Sage-Heel-Protector-OR-Thumbnail.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Mar 01 2024 15:47:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

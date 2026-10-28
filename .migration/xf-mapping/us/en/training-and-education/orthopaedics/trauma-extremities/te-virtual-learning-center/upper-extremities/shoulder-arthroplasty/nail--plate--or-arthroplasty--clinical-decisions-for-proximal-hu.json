@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Nail, Plate, or Arthroplasty? Clinical Decisions for Proximal Humerus Fractures",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0a2ef7bb-91c0-48c7-b10d-d4f6e7bb77a6",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "ff9b5953-22ed-4daf-8ec8-0ac895874cbf"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:55:17 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 20:55:24 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:55:35 GMT+0000",
+  "cq:lastModified": "Fri Aug 05 2022 18:49:21 GMT+0000",
+  "jcr:baseVersion": "ff9b5953-22ed-4daf-8ec8-0ac895874cbf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:55:17 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 05 2022 18:49:21 GMT+0000",
+  "jcr:uuid": "3aeef9e2-8904-477c-b324-5f2a447ceefa",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:17:51 GMT+0000",
+      "text": "Nail, Plate, or Arthroplasty? Clinical Decisions for Proximal Humerus Fractures Choosing between nail, plate or arthroplasty, Dr. Ponce shares his experience with making clinical decisions for proximal humerus fractures. AP-016265A",
+      "jcr:lastModified": "Thu Jul 28 2022 18:18:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/nail--plate--or-arthroplasty--clinical-decisions-for-proximal-hu/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/nail-plate-or-arthroplasty-clinical-decisions-for-proximal-hu/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/Nail Plate or Arthroplasty Clinical Decisions for Proximal Humerus Fractures.png"
+  }
+}

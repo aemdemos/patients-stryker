@@ -1,0 +1,244 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Solution",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b5447f79-b7f6-40eb-8bb5-f0089ebeadfe",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4f7ce832-3194-41cf-a5ac-80b33e2a4582"
+  ],
+  "lastPublished": "Mon Jun 22 2026 15:35:47 GMT+0000",
+  "jcr:created": "Mon Jun 22 2026 15:35:50 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 22 2026 15:35:52 GMT+0000",
+  "cq:lastModified": "Wed Jun 03 2026 16:38:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4f7ce832-3194-41cf-a5ac-80b33e2a4582",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 25 2024 20:57:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d77c7413-5183-40a9-8e9f-2a71a972dff7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_2089068029": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "73% CAUTI",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Aug 26 2024 14:46:15 GMT+0000",
+      "jcr:lastModified": "Thu Aug 29 2024 17:20:26 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "4",
+        "jcr:created": "Mon Aug 26 2024 14:22:55 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">It's time for a change</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The Sage PrimaFit External Urine Management for the Female Anatomy is a great fit for your patients and your hospital. It’s designed to help improve efficiency and reduce costs as well as address the #1 CAUTI risk factor – the indwelling catheter.<sup>2</sup></span></p>\n",
+        "jcr:lastModified": "Thu Aug 29 2024 17:20:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "4",
+        "textIsRich": "true",
+        "bottomMargin": "3",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_20890680296292871355389579": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "leftPadding": "2",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\">73%</span></span>&nbsp;<span class=\"fontsize-1-25em\">CAUTI rate</span></span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">&nbsp;</span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">reduction</span></span></span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><sup>3</sup></span></span></span></span></p>\n",
+        "jcr:lastModified": "Wed Jun 03 2026 16:38:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "2",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "-2",
+        "bottomMargin": "6",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Aug 26 2024 14:32:12 GMT+0000",
+      "jcr:lastModified": "Mon Aug 26 2024 14:34:35 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "experiencefragment": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Thu Aug 29 2024 17:01:15 GMT+0000",
+        "text": "For adolescent and adult patients with female anatomy4",
+        "jcr:lastModified": "Thu Aug 29 2024 17:01:35 GMT+0000",
+        "sling:resourceType": "stryker/components/content/experienceFragment",
+        "fragmentPath": "/content/experience-fragments/stryker/sage/en/campaigns/urine_management/stop_leaks/time-for-change/adolescent",
+        "edsFragmentPath": "/us/en/fragments/stryker/sage/en/campaigns/urine-management/stop-leaks/time-for-change/adolescent"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Aug 26 2024 14:32:12 GMT+0000",
+      "jcr:lastModified": "Thu Aug 29 2024 16:49:49 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "experiencefragment_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Thu Aug 29 2024 17:01:15 GMT+0000",
+        "text": "Performs up to 24 hours4",
+        "jcr:lastModified": "Thu Aug 29 2024 17:06:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/experienceFragment",
+        "fragmentPath": "/content/experience-fragments/stryker/sage/en/campaigns/urine_management/stop_leaks/time-for-change/performance",
+        "edsFragmentPath": "/us/en/fragments/stryker/sage/en/campaigns/urine-management/stop-leaks/time-for-change/performance"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage60237": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Mon Aug 26 2024 14:36:54 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "experiencefragment_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Thu Aug 29 2024 17:01:15 GMT+0000",
+        "text": "20% estimated average savings with PrimaFit5",
+        "jcr:lastModified": "Thu Aug 29 2024 17:11:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/experienceFragment",
+        "fragmentPath": "/content/experience-fragments/stryker/sage/en/campaigns/urine_management/stop_leaks/time-for-change/adolescent1",
+        "edsFragmentPath": "/us/en/fragments/stryker/sage/en/campaigns/urine-management/stop-leaks/time-for-change/adolescent1"
+      }
+    },
+    "standaloneimage_1529": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:lastModified": "Thu Aug 29 2024 16:50:30 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "experiencefragment_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Thu Aug 29 2024 17:01:15 GMT+0000",
+        "text": "17 to 1 CAUTI reduction in a 150-bed facility6",
+        "jcr:lastModified": "Thu Aug 29 2024 17:12:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/experienceFragment",
+        "fragmentPath": "/content/experience-fragments/stryker/sage/en/campaigns/urine_management/stop_leaks/time-for-change/adolescent2",
+        "edsFragmentPath": "/us/en/fragments/stryker/sage/en/campaigns/urine-management/stop-leaks/time-for-change/adolescent2"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

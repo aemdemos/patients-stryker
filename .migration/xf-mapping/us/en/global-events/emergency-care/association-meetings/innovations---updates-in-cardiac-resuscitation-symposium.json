@@ -1,0 +1,121 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Innovations & Updates in Cardiac Resuscitation Symposium",
+  "jcr:versionHistory": "0db6f2b8-cce1-443f-b715-32d2c5d4cec2",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "b265ca84-dd7d-4446-afea-57d4f5b1e95d"
+  ],
+  "lastPublished": "Mon Mar 04 2019 19:24:32 GMT+0000",
+  "jcr:created": "Mon Mar 04 2019 19:24:32 GMT+0000",
+  "cq:lastModified": "Mon Mar 04 2019 17:41:51 GMT+0000",
+  "jcr:baseVersion": "b265ca84-dd7d-4446-afea-57d4f5b1e95d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "fa2a1095-c3df-489a-aa34-550be0b3611c",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garret.shue@stryker.com",
+      "jcr:lastModifiedBy": "garret.shue@stryker.com",
+      "jcr:created": "Fri Mar 01 2019 16:39:05 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Fri Mar 01 2019 17:14:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garret.shue@stryker.com",
+      "jcr:lastModifiedBy": "garret.shue@stryker.com",
+      "jcr:created": "Fri Mar 01 2019 19:24:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 01 2019 19:24:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1037873095_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garret.shue@stryker.com",
+          "jcr:lastModifiedBy": "garret.shue@stryker.com",
+          "jcr:created": "Fri Mar 01 2019 16:34:33 GMT+0000",
+          "text": "<p><b><span class=\"futura-bold\">Ken Craig<br>\n <a href=\"mailto:ken.craig@stryker.com\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1em\">ken.craig@stryker.com</span></span></a></span></b></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2019 17:00:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1037873095_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garret.shue@stryker.com",
+          "jcr:lastModifiedBy": "garret.shue@stryker.com",
+          "jcr:created": "Fri Mar 01 2019 16:34:33 GMT+0000",
+          "text": "<p><b><span class=\"futura-bold\">Cheryl Brendemuhl<br>\n </span></b><a href=\"Mailtocheryl.l.brendemuhl@stryker.com\">cheryl.l.brendemuhl@stryker.com</a></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2019 17:01:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "resources": "/content/dam/stryker/global-events/emergency-care/Memphis Invite.pdf",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 21:16:46 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 21:17:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "eventBU": [
+      "stryker:business-unit/ems",
+      "stryker:business-unit/medical"
+    ],
+    "eventRegistrationLink": "https://www.cvent.com/c/express/bda30153-43f5-41bd-8046-c6b7960f0689",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "eventAudience": [
+      "stryker:audience/trainees",
+      "stryker:audience/nurses",
+      "stryker:audience/medical_professionals",
+      "stryker:audience/or-professionals"
+    ],
+    "hiddenState": "Tennessee",
+    "eventSpecialty": [
+      "stryker:capability/temperature-management"
+    ],
+    "eventDetail": "At this one-day symposium, you’ll learn the latest innovations and discover actionable techniques for improving resuscitation survival rates in your system. From learning how to integrate capnography and various CPR feedback tools to simple changes and strategies for improving team performance, you’ll also gain insights into how to effectively implement change in your organization",
+    "eventEndDateTime": "Thu Apr 04 2019 16:30:00 GMT-0400",
+    "eventLocation": "Holiday Inn University of Memphis<br />\r\n3700 Central Ave.<br />\r\nMemphis, TN  38152",
+    "eventCity": "Memphis",
+    "eventType": [
+      "stryker:event-type/associationmeetings"
+    ],
+    "eventTimeZone": "America/Chicago",
+    "jcr:lastModified": "Mon Mar 04 2019 17:41:51 GMT+0000",
+    "eventTitle": "Innovations & Updates in Cardiac Resuscitation Symposium",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register Now",
+    "eventStartDateTime": "Thu Apr 04 2019 08:00:00 GMT-0400",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

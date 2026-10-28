@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8a239f06-9eb9-45f6-b1be-a04aba53c8a5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "cd5cd770-bf76-4499-9909-1e7cb18dba30"
+  ],
+  "jcr:created": "Mon Feb 26 2024 21:18:41 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 26 2024 21:18:43 GMT+0000",
+  "cq:lastModified": "Mon Feb 26 2024 21:18:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cd5cd770-bf76-4499-9909-1e7cb18dba30",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "435a4d1d-b37e-42aa-a627-821dd6ff094e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage62010": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Wed Dec 06 2023 13:53:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage6201043804978539367": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Sage Prevalon Heel Protector II boot - help prevent pressure injuries",
+        "srcFileRef": "/content/dam/stryker/sage/products/heel-protector-ii/images/Sage-Heel-Protector-II-Thumbnail-16x9.jpg",
+        "jcr:lastModified": "Mon Feb 26 2024 21:18:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Lift Compatible Patient Repositioning System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage AirTAP LC",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c2fa19f4-f500-40c8-a9a9-df6ba428ce93",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Sage AirTAP LC lift compatible repositioning system",
+  "jcr:predecessors": [
+    "e2353408-9682-4ebf-878a-6b9eaa87b0a4"
+  ],
+  "contentID": "SAGE-PVN-SYK-1345937_REV-1_en_us",
+  "lastPublished": "Thu Aug 20 2026 19:45:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 19:45:05 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 19:45:07 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 19:44:42 GMT+0000",
+  "jcr:description": "We understand the importance of early mobility. That's why we combined our innovative air assist technology with lift compatibility to promote safety and mobility.",
+  "jcr:baseVersion": "e2353408-9682-4ebf-878a-6b9eaa87b0a4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:42:22 GMT+0000",
+  "pageTitle": "Sage AirTAP LC Lift Compatible Patient Repositioning System",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:business-unit/SAGE",
+    "stryker:capability/Patient_positioning",
+    "stryker:product/sage/Sage-AirTAP-LC",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/Turning_and_positioning",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 15 2025 15:58:52 GMT+0000",
+  "jcr:uuid": "fc1d50cf-ad8b-4b87-bfa1-48bc0beef1ca",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c_402180540": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/airtap_lc/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/airtap-lc/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "8",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Sep 10 2024 20:02:17 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text4461407964490140": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Sage AirTAP LC</span></span></span></h1>\n<h2>Lift Compatible Patient Repositioning System</h2>\n<p><span class=\"urw-egyptienne\">Advancing mobility with convenience and confidence.</span></p>\n",
+              "jcr:lastModified": "Tue Sep 24 2024 17:24:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_286073": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Wed Dec 06 2023 16:00:39 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Fri Jul 18 2025 16:13:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 11 2024 20:54:08 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2024 20:54:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 16:55:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Designed to help with patient transfer and turning</span></span></h2>\n<p><span class=\"fontsize-1-25em\">We understand the importance of early mobility. To achieve your mobility protocols and comply with guidelines, you need a readily available solution that stays under your patients and fits seamlessly into your workflow. That’s why we combined our innovative air assist technology with lift compatibility to promote safety and mobility.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Intuitive strap system enables multiple lifting positions (supine, reclined and upright)</span></li>\n<li><span class=\"fontsize-1-25em\">30° Body and Anchor Wedge System offloads the sacrum, minimizes patient migration down the bed, and reduces the need for boosting</span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/products/sage-m--microclimate-body-pads.html\" target=\"_blank\">Sage M² Microclimate Body Pad</a> effectively absorbs and locks in moisture to protect patient’s skin while allowing air to flow through</span></li>\n<li><span class=\"fontsize-1-25em\">Inflatable glide sheet with hi-tech fabric promotes a healthy microclimate for the skin and is compatible with low air loss technology</span></li>\n<li><span class=\"fontsize-1-25em\">Integrated head support ensures patient’s head maintains neutral position while inflated</span></li>\n<li><span class=\"fontsize-1-25em\">Point of care power switch is connected to the <a href=\"/content/stryker/us/en/sage/products/sage-air-pump.html\" target=\"_blank\">Sage Prevalon Air Pump</a> and integrated into the workflow to improve efficiency</span></li>\n<li><span class=\"fontsize-1-25em\">Easy roll handles encourage proper posture for healthcare worker</span></li>\n<li><span class=\"fontsize-1-25em\">Quick connect valve provides an easy, secure connection and a quick release</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Sep 24 2024 17:24:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 11 2024 20:54:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Dec 11 2024 20:54:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 12 2019 17:41:02 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "ImTF7SOY1BM",
+          "jcr:lastModified": "Mon Jul 28 2025 14:46:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sage/products/airtap-lc/videos/AirTAP LC 3-in-1 video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/AirTAP LC 3-in-1 video-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Tue Mar 18 2025 16:59:30 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-AirTAP-LC-training-video-thumbnail-1"
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Sep 11 2024 16:55:40 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2024 16:55:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 17:05:47 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2024 17:05:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1246574258": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Wed Sep 11 2024 16:59:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">3-in-1 mobility for patient repositioning</span></span></h2>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 17:07:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Sep 11 2024 16:55:53 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2024 16:55:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Sep 27 2024 16:05:29 GMT+0000",
+          "alt": "In-bed positioning icon",
+          "srcFileRef": "/content/dam/stryker/sage/products/airtap-lc/images/Patient Transfer_Icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 27 2024 16:14:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 17:00:13 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><b><span class=\"futura-bold\"><span style=\"color: #1c5687;\">In-bed positioning</span></span></b></span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">addresses risk factors of pressure injury</span></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 17:04:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Sep 27 2024 16:05:29 GMT+0000",
+          "alt": "Lateral transfer icon",
+          "srcFileRef": "/content/dam/stryker/sage/products/airtap-lc/images/Patient Repositioning_Icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 27 2024 16:14:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "jcr:created": "Wed Sep 11 2024 17:00:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #1c5687;\">Lateral transfer</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">utilizes air-assisted technology to safely transfer patients</span></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 17:05:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Sep 27 2024 16:05:29 GMT+0000",
+          "alt": "Vertical transfer icon",
+          "srcFileRef": "/content/dam/stryker/sage/products/airtap-lc/images/Patient Lifting_Icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 27 2024 16:14:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Sep 11 2024 17:00:13 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Vertical transfer</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">enables patients to safely transfer to the bedside chair</span></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 17:04:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_164597": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 06 2023 16:00:45 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Wed Dec 06 2023 16:01:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1345728387": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Jul 18 2025 15:57:04 GMT+0000",
+      "jcr:lastModified": "Fri Jul 18 2025 15:57:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jul 18 2025 15:56:57 GMT+0000",
+          "jcr:lastModified": "Fri Jul 18 2025 15:56:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jul 18 2025 16:00:05 GMT+0000",
+          "text": "Did you know? 2.5 million patients develop pressure injuries in acute care facilities each year1 $26.8 billion in estimated annual costs due to pressure injuries each year1 80% of healthcare workers report working with pain or injury2 Registered nurses rank in the top 10 occupations at highest risk for work-related musculoskeletal injuries in the U.S.3 Workers’ compensation claims cost an estimated $40,400 for low back injuries and $51,800 for shoulder injuries4 We’re committed to actively partnering with your facility to reduce the risk of patient handling injuries and improving outcomes. Our Journey to Zero program can help create a culture of safety that benefits your patients, nurses, and your organization. Let’s start the journey to zero – together. Learn more",
+          "jcr:lastModified": "Fri Jul 18 2025 16:00:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/products/airtap_lc/did-you-know/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/products/airtap-lc/did-you-know/master"
+        }
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">FAQs</span></span></span></h3>\n",
+      "jcr:lastModified": "Thu Mar 14 2024 17:33:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Aug 02 2024 15:40:48 GMT+0000",
+      "jcr:lastModified": "Mon Jun 02 2025 20:15:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Aug 02 2024 15:41:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The weight capacity of AirTAP LC is 600 pounds.&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 02 2025 20:15:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Aug 02 2024 15:41:47 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Based on clinician feedback, Stryker intentionally designed a non-full-length glide sheet to allow room for boosting with air-assisted technology, reduce bunching and support the head and neck during vertical transfers.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jul 28 2025 14:47:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Aug 02 2024 15:41:50 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The AirTAP LC glide sheet is breathable, low air loss and imaging compatible. It is designed to remain underneath the patient while they are in the facility.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jul 28 2025 14:47:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Aug 02 2024 15:41:50 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The wedges can be inserted while the glide sheet is fully inflated and should be positioned approximately one hand-width above and below the sacrum.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 02 2025 20:01:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "What is the weight capacity of AirTAP LC?  "
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "Why is the AirTAP LC glide sheet 65 inches long? "
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "3",
+          "accTitle": "Can AirTAP LC be left under a patient in bed?  "
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "4",
+          "accTitle": "How should the wedges be placed? "
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 5,
+          "accTitle": "Is the AirTAP LC Compatible with my lifts? "
+        }
+      },
+      "accordion_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 5,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jun 02 2025 20:16:50 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">AirTAP LC is compatible with hook (also referred to as “loop”) style lifts and complies with ISO 10535, the standard testing method for patient lifting devices.</span></p>\n",
+          "jcr:lastModified": "Mon Jun 02 2025 20:17:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 17:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1259",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! We received your information and a Stryker Sage representative will be in contact.",
+          "jcr:lastModified": "Thu Aug 20 2026 19:44:42 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c_785355366": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
+          "text": "Contact information Product feedback Customer service",
+          "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/social-icons/master"
+        }
+      }
+    },
+    "section_title_917612": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Wed Dec 06 2023 16:00:51 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Dec 06 2023 16:00:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 17:27:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_666644612": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/sage/products/airtap-lc/resources/Sage-AirTAP-LC-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Pressure-Injury-and-Safe-Patient-Handling-Solutions-Brochure.pdf",
+            "/content/dam/stryker/sage/products/airtap-lc/resources/Safe-patient-handling-and-mobility-brochure-AirTAP-LC.pdf",
+            "/content/dam/stryker/sage/resources/Safe-patient-handling-and-pressure-injury-brochure-AirTAP.pdf",
+            "/content/dam/stryker/sage/resources/Sage-Air-Pump-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Injury-Prevention.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Tue Sep 10 2024 20:04:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Sep 10 2024 20:03:33 GMT+0000",
+          "jcr:lastModified": "Tue Sep 10 2024 20:03:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "subtitle": "Sage Prevalon HEPA Filter",
+              "jcr:createdBy": "errin.pace@stryker.com",
+              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:created": "Fri Apr 24 2020 22:03:44 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "videoId": "LS9m92jZLgo",
+              "jcr:lastModified": "Wed Jan 18 2023 19:51:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/sage/videos/Sage-Prevalon-HEPA-Filter-video.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "errin.pace@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Sage-Prevalon-HEPA-Filter-video-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Wed Jan 18 2023 19:52:39 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "",
+                "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-Prevalon-HEPA-Filter-video-thumbnail"
+              }
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_1050081016": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-Pressure-Injury.pdf",
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-Staff-Injury-Risk-Due-to-Turning-and-Repositioning.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Oct 03 2019 19:26:07 GMT+0000",
+          "jcr:lastModified": "Tue Sep 10 2024 20:04:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Tue Nov 12 2019 17:40:54 GMT+0000",
+          "jcr:lastModified": "Tue Nov 12 2019 17:40:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "subtitle": "Training video",
+              "jcr:createdBy": "errin.pace@stryker.com",
+              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:created": "Tue Nov 12 2019 17:41:02 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "videoId": "ImTF7SOY1BM",
+              "jcr:lastModified": "Wed Jan 18 2023 19:54:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/sage/products/airtap-lc/videos/Sage-AirTAP-LC-training-video.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "errin.pace@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Sage-AirTAP-LC-training-video-2-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Wed Jan 18 2023 19:56:42 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "",
+                "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-AirTAP-LC-training-video-thumbnail-1"
+              }
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
+          "jcr:lastModified": "Wed Dec 06 2023 15:46:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-airtap-xxl"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-airtap"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-mats"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-airtap-lc"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Guidelines and recommendations"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Implementation support"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 16:27:34 GMT+0000",
+      "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
+      "jcr:lastModified": "Tue Dec 13 2022 16:27:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/footer/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/footer/footer/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/airtap-lc/images/Sage-AirTAP-LC-Thumbnail-2.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 11 2024 17:07:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Sep 11 2024 17:07:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "internalLink": "/content/stryker/us/en/sage",
+    "jcr:lastModified": "Tue Feb 14 2023 14:26:48 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "About Sage",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Wed Sep 11 2024 16:55:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Feb 14 2023 14:26:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 11 2024 17:07:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Padula WV, Delarmente BA. The national cost of hospital-acquired pressure injuries in the United States. Int Wound J. 2019;16(3):634–640.</p>\r\n<p>2. Wiggermann N, Francis R, Solomon A. Individual and organizational factors associated with injury history and patient handling behaviors: results from a nationwide survey of healthcare workers. Appl Ergon. 2024;118:104251.</p>\r\n<p>3. Lee SJ, Faucett J, Gillen M, et al. Factors associated with safe patient handling behaviors among critical care nurses. Am J Ind Med. 2010;53:886–897.</p>\r\n<p>4. National Safety Council. Workers’ compensation costs. National Safety Council. 2024. Available at:&nbsp;<a href=\"https://injuryfacts.nsc.org/work/costs/workers-compensation-costs/\">https://injuryfacts.nsc.org/work/costs/workers-compensation-costs/</a></p>\r\n",
+    "jcr:lastModified": "Mon Jun 02 2025 20:17:42 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

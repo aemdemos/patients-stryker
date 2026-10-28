@@ -1,0 +1,1209 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Medical education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fdcea522-0206-4e38-9435-203cc9e64ad4",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "jcr:predecessors": [
+    "92ac722c-1faa-412a-a64d-d60ae835d5bd"
+  ],
+  "contentID": "ENT-GSNPS-SYK-1020438_REV-1",
+  "lastPublished": "Mon Jul 20 2026 13:11:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jul 20 2026 13:12:05 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 20 2026 13:12:11 GMT+0000",
+  "cq:lastModified": "Mon Jul 20 2026 13:11:17 GMT+0000",
+  "jcr:baseVersion": "92ac722c-1faa-412a-a64d-d60ae835d5bd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:59:44 GMT+0000",
+  "jcr:lastModified": "Thu Feb 27 2025 15:05:51 GMT+0000",
+  "jcr:uuid": "164681f8-a00a-4ea1-b82a-41516ec41781",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Feb 28 2024 13:28:08 GMT+0000",
+      "jcr:lastModified": "Wed Feb 28 2024 13:28:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 16:11:53 GMT+0000",
+          "jcr:lastModified": "Thu Feb 29 2024 16:11:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "4",
+          "topMargin": "4",
+          "jcr:created": "Thu Feb 29 2024 13:05:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">ENT</span></span><br>\n &nbsp;</span></h1>\n<h1><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">We can help you advance&nbsp;</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">your knowledge and skills</span></span></span></span></h1>\n",
+          "jcr:lastModified": "Wed Mar 13 2024 20:27:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:06:41 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Your ENT medical education partner</span></h2>\n<p><span class=\"fontsize-1-25em\">At Stryker, we strive to deliver world class education and experiences that allow healthcare professionals like you to safely and effectively use our products. We accomplish this with a diverse mix of programs to fit a variety of needs. Our extensive medical education and training will help advance your product and procedural knowledge and skills to help drive better patient outcomes.</span></p>\n",
+          "jcr:lastModified": "Thu Mar 28 2024 18:36:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1103126170": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Mar 07 2024 18:36:07 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 18:36:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_4034": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Tue Mar 12 2024 19:46:50 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Mar 12 2024 19:49:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-VID-617808-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/ENT-GSNPS-VID-617808-EN_US-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Mar 18 2024 16:09:35 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Wed Mar 13 2024 20:25:38 GMT+0000",
+          "jcr:lastModified": "Wed Mar 13 2024 20:25:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Feb 29 2024 13:07:51 GMT+0000",
+          "alt": "STR ENT -- 1872 HCPs trained in 2024",
+          "srcFileRef": "/content/dam/stryker/ent/images/Screenshot 2026-02-02 at 3.57.28 PM.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 03 2026 15:53:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Feb 28 2024 13:28:25 GMT+0000",
+      "jcr:lastModified": "Wed Feb 28 2024 13:28:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 29 2024 13:09:56 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:46:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:created": "Wed Mar 05 2025 20:17:36 GMT+0000",
+      "jcr:lastModified": "Wed Mar 05 2025 21:24:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(178,180,174)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1508290136_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "jcr:lastModified": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_825817829_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Thu Feb 29 2024 14:13:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+              "text": "<h2><span class=\"fontsize-1-25em\">Tailored learning experiences</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>No matter where you are, no matter your surgical setting, we are here to support you.</b></span></p>\n<p><span class=\"fontsize-1-25em\">Our medical education team is here to support you across your journey with our products. We provide extensive medical education and training for healthcare professionals that are designed to help advance product and procedural knowledge and skills.</span></p>\n",
+              "jcr:lastModified": "Thu Feb 29 2024 13:14:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Feb 29 2024 13:12:50 GMT+0000",
+              "alt": "STR ENT -- Supporting you with tailored learning experiences",
+              "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--tailored-learning-experiences--gray-solid2.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 05 2025 21:45:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "virtual-events",
+      "jcr:created": "Thu Feb 29 2024 13:15:21 GMT+0000",
+      "title": "Virtual Events",
+      "jcr:lastModified": "Thu Feb 29 2024 13:15:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -virtual events",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--virtual-events.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:03:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Virtual events</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Education from the comfort of home</b></span></p>\n<p><span class=\"fontsize-1-25em\">Take advantage of our interactive, online sessions to expand your knowledge of contemporary ENT topics.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:16:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "See upcoming events",
+          "ctaDeepLinkID": "contact-us",
+          "ctaExternalLink": "https://www.stryker.com/us/en/training-and-education/calendar.html",
+          "jcr:lastModified": "Thu May 16 2024 17:49:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/calendar"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Additional resources",
+          "ctaDeepLinkID": "resources",
+          "jcr:lastModified": "Wed Mar 06 2024 14:51:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/calendar"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047_2065504500": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "action-lab",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Action lab",
+      "jcr:lastModified": "Thu Feb 29 2024 15:31:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Action lab</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Customized, local, hands-on training</b></span></p>\n<p><span class=\"fontsize-1-25em\">Experience hands-on physician or resident training utilizing cadaveric specimen. This local lab experience introduces our technologies and <span class=\"standalone-link\">products</span> close to home.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 06 2024 14:49:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Mon Mar 04 2024 18:02:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -action lab",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--action-lab.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:03:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "advanced-sinonasal-course",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Advanced sinonasal course",
+      "jcr:lastModified": "Thu Feb 29 2024 15:31:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy_1795843521": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -advanced sinonasal course",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--advanced-sinonasal-course.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:03:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "15",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:14:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Advanced sinonasal course</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Hone your skills for better patient outcomes</b></span></p>\n<p><span class=\"fontsize-1-25em\">Otolaryngologists experience hands-on cadaveric dissection, interactive lectures, and peer-led discussions during a weekend intensive educational course. A focus on traditional and hybrid endoscopic sinus surgery helps identify opportunities to incorporate minimally invasive technologies into practice.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:07:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Wed Mar 13 2024 20:39:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)",
+          "ctaInternalLink": "contact-us"
+        }
+      }
+    },
+    "sectionseparator_cop_194793361": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047_856189110": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "mobile-lab",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Mobile lab",
+      "jcr:lastModified": "Thu Feb 29 2024 15:31:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy_1376330563": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Neurotechnology mobile lab</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>We meet you where you are</b></span></p>\n<p><span class=\"fontsize-1-25em\">Our mobile operating room delivers world class training and education to you. Six integrated lab stations allow visitors to experience our full line of products and partner technologies. Our mobile lab criss-crosses the country with stops at facilities and institutions near you. We’re set up to accommodate a wide variety of surgical specialities, procedures and situations.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:07:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Mon Mar 04 2024 18:02:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -nerotechnology mobile lab",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--neurotechnology-mobile-lab.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_cop_411419231": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047_307548071": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resident-bootcamp",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Resident bootcamp",
+      "jcr:lastModified": "Thu Feb 29 2024 15:31:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy_2046075069": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -resident bootcamp",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--resident-bootcamp.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:05:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Resident bootcamp</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Educational partnership from residency to retirement</b></span></p>\n<p><span class=\"fontsize-1-25em\">Calling all senior otolaryngology residents to an action-packed educational weekend. Participate in faculty-led lectures and hand-on lab activities focused on rhinology, skull base and minimally invasive surgical techniques.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:08:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Wed Mar 13 2024 20:38:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      }
+    },
+    "sectionseparator_cop_1015344825": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047_556025781": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "speakers-bureau",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Speakers bureau",
+      "jcr:lastModified": "Thu Feb 29 2024 15:31:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy_1171216515": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Speakers bureau</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Peer-to-peer presentation and discussion</b></span></p>\n<p><span class=\"fontsize-1-25em\">Hear expert perspectives on patient selection, clinical data and best practices surrounding the use of Stryker technologies.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:08:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Mon Mar 04 2024 18:02:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -speakers bureau",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--speakers-bureau.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:05:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_cop_1785170579": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_123047_649533380": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "surgeon-surgeon",
+      "jcr:created": "Thu Feb 29 2024 13:16:20 GMT+0000",
+      "title": "Surgeon 2 surgeon",
+      "jcr:lastModified": "Thu Feb 29 2024 15:32:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_840670791_copy_1846416219": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:16:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:24:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 29 2024 13:16:41 GMT+0000",
+          "alt": "STR ENT -- Surgeon2Surgeon",
+          "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--surgeon2surgeon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:06:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_825817829_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">Surgeon 2 surgeon</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Visit a Stryker physician consultant in-clinic</b></span></p>\n<p><span class=\"fontsize-1-25em\">An immersive in-person experience alongside a physician consultant. Observe cases and share best practices surrounding Stryker technologies.</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 04 2024 18:08:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 29 2024 20:07:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Mon Mar 04 2024 18:02:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      }
+    },
+    "section_title_1877232174": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Thu Feb 29 2024 13:53:03 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Thu Feb 29 2024 15:32:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_1860772254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:created": "Wed Mar 05 2025 20:20:54 GMT+0000",
+      "jcr:lastModified": "Wed Mar 05 2025 21:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(178,180,174)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "jcr:lastModified": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_825817829_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "20",
+              "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+              "text": "<h2><span class=\"fontsize-1-25em\">Resource library</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Your access to continued learning</b></span></p>\n<p><span class=\"fontsize-1-25em\">Through our multi-faceted collection of resources, you gain easy access to a comprehensive suite of solutions to help make your vision of patient care a reality. Whether through integrated technologies, webinars or services, we’re here to help.</span></p>\n",
+              "jcr:lastModified": "Thu Feb 29 2024 13:48:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Feb 29 2024 13:12:50 GMT+0000",
+              "alt": "STR ENT -- Resource library",
+              "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--resource-library--gray-solid2.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 05 2025 20:23:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_142509965": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 21 2025 16:52:48 GMT+0000",
+      "jcr:lastModified": "Fri Feb 21 2025 16:52:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "1",
+      "jcr:created": "Thu Feb 29 2024 13:53:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Webinars</span></span></p>\n",
+      "jcr:lastModified": "Wed Mar 05 2025 20:28:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1645203656": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:54:51 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:54:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_1679_818899449": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Navigation in Focus Webinar Series Part 3 - Navigation in practice",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Wed Jun 05 2024 21:58:25 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "Y8_UsEWavMs",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Jul 20 2026 13:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "standalonevideo_1268": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Navigation in Focus Webinar Series Part 1 - Navigation Principles",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Thu Mar 07 2024 20:31:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "jjpnQbzFQ6E",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri May 15 2026 13:32:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "standalonevideo_1679": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "ClariFix – Putting the freeze on chronic rhinitis",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Wed Jun 05 2024 21:58:25 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "bMHhkxJUPgE",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri May 15 2026 13:31:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_1285": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Navigation in Focus Webinar Series Part 2 - Navigation Setup",
+          "jcr:createdBy": "andrew.reynolds@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Tue Feb 10 2026 20:39:30 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "-dBPVdurhMQ",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri May 15 2026 13:32:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Tools for successful sinus patient outcomes",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Thu Mar 07 2024 20:33:52 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "fP1q6CZGvus",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri May 15 2026 13:31:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "standalonevideo_1761": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "When and how to use balloon sinus dilation: A case based discussion",
+          "jcr:createdBy": "andrew.reynolds@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Fri May 15 2026 13:29:57 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "wk0KDEWKLR0?si=nItoGsYela0By1av",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri May 15 2026 13:30:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "fullbleedpanel_1732558924": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:created": "Wed Mar 05 2025 20:22:41 GMT+0000",
+      "jcr:lastModified": "Wed Mar 05 2025 21:34:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(178,180,174)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_830937340_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "jcr:lastModified": "Thu Feb 29 2024 13:12:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_825817829": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "20",
+              "jcr:created": "Thu Feb 29 2024 14:01:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Thu Feb 29 2024 14:05:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Feb 29 2024 13:12:43 GMT+0000",
+              "text": "<h2><span class=\"fontsize-1-25em\">Stay in the know</span></h2>\n<p><span class=\"fontsize-1-25em\"><b>Learn about comprehensive, evidence-supported technologies for ENT physicians, fellows and residents.</b></span></p>\n",
+              "jcr:lastModified": "Thu Feb 29 2024 13:56:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Feb 29 2024 13:12:50 GMT+0000",
+              "alt": "STR ENT -- Stay in the know",
+              "srcFileRef": "/content/dam/stryker/education-and-training/ent/meded/STR-ENT--stay-in-the-know--gray-solid2.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 05 2025 20:24:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "section_title_1958950046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-us",
+      "jcr:created": "Mon Mar 04 2024 18:01:26 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Mar 04 2024 18:01:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "5",
+      "jcr:created": "Thu Feb 29 2024 13:53:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Contact us</span></span></p>\n",
+      "jcr:lastModified": "Thu Feb 29 2024 19:56:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Feb 29 2024 13:57:26 GMT+0000",
+      "jcr:lastModified": "Thu Feb 29 2024 13:57:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:53:58 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Connect with an expert</b></span></p>\n<p><span class=\"fontsize-1-25em\">We understand healthcare is a complex field and we’re here to help you navigate it. Whether it’s a product question, a webinar request, or help finding your Stryker rep, we’re here to support you.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Feb 29 2024 13:59:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3145",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 16:30:06 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Mar 13 2024 20:13:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 13:53:58 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Follow us on social media</b></span></p>\n<p><span class=\"fontsize-1-25em\">Engage with us on LinkedIn to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Feb 29 2024 13:59:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(28,86,135,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 14:00:02 GMT+0000",
+          "jcr:lastModified": "Thu Feb 29 2024 18:47:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(28,86,135)",
+              "externalLink": "https://www.linkedin.com/showcase/stryker_ent/",
+              "buttonText": "LinkedIn",
+              "externalLinkType": "ext"
+            }
+          }
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "10",
+          "jcr:created": "Thu Feb 29 2024 13:53:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Subscribe on YouTube</b></span></p>\n<p><span class=\"fontsize-1-25em\">On our ENT dedicated playlist, find videos on procedures, techniques, case studies and webinars to keep you up-to-date on the latest advancements in ENT care.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Feb 29 2024 18:48:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(28,86,135,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Feb 29 2024 14:00:02 GMT+0000",
+          "jcr:lastModified": "Mon Mar 04 2024 18:28:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(28,86,135)",
+              "externalLink": "https://youtube.com/playlist?list=PLZyNjjTfwJvAL_c-0abEuiLdfkHPHADi6&si=VIhFjunze9_tVbGT",
+              "buttonText": "YouTube",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

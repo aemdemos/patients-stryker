@@ -1,0 +1,1227 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "External Fixation System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hoffmann 3  ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "64ac54b6-9381-4de0-ac9f-13b2fdf243fe",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Hoffmann 3 External Fixation System Ankle Frame",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/Ankle-Delta-frame.png",
+  "jcr:predecessors": [
+    "beaa4166-4d00-4c78-86f3-d77b3e48bc17"
+  ],
+  "contentID": "H-AWI-13, 01-2023",
+  "lastPublished": "Mon Apr 28 2025 16:03:53 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 28 2025 16:04:03 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 28 2025 16:04:06 GMT+0000",
+  "cq:lastModified": "Mon Apr 28 2025 16:03:20 GMT+0000",
+  "newDisplayFlagDate": "Thu Oct 31 2024 00:00:00 GMT-0400",
+  "jcr:description": "The Hoffmann 3 Modular External Fixation System components are external fixation frame components for use with the components of the Hoffmann II MRI and Hoffmann II Compact MRIExternal Fixation Systems, in conjunction with Apex Pins.\r\n\r\nThe fracture frame is to provide stabilization of compound fractures and where soft tissue injury may preclude the use of other fracture treatments.",
+  "jcr:baseVersion": "beaa4166-4d00-4c78-86f3-d77b3e48bc17",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:39:46 GMT+0000",
+  "pageTitle": "Hoffmann 3 External Fixation System",
+  "cq:tags": [
+    "stryker:custom/trauma-and-extremities/Indications/foot",
+    "stryker:custom/trauma-and-extremities/Indications/Ankle",
+    "stryker:capability/foot-and-ankle",
+    "stryker:custom/trauma-and-extremities/product-type/external-fixation",
+    "stryker:product/trauma-and-extremities/hoffman3",
+    "stryker:content-type/product",
+    "stryker:custom/trauma-and-extremities/Indications/hip-fracture",
+    "stryker:procedure/foot-and-ankle/ankle-fracture",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:specialty/foot-&-ankle",
+    "stryker:system/trauma-and-extremities/external-fixation",
+    "stryker:procedure/foot-and-ankle/navicular-fracture",
+    "stryker:specialty/hip-and-pelvis",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:custom/trauma-and-extremities/Indications/femur",
+    "stryker:procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems",
+    "stryker:custom/trauma-and-extremities/Indications/tibia",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/foot-and-ankle/ankle-fracture/external-fixation-systems",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+    "stryker:portfolio/orthopaedics",
+    "stryker:procedure/foot-and-ankle/-ankle-distraction",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:procedure/foot-and-ankle/brachymetatarsia/external-fixation"
+  ],
+  "jcr:lastModified": "Mon Apr 28 2025 16:02:14 GMT+0000",
+  "jcr:uuid": "7e71985f-7789-447d-b1d2-f2cfd5065484",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 17:42:58 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 17:42:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:56:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">Hoffmann<sup><span class=\"fontsize-1-5-vw\">®</span></sup> 3</span><br>\r\n </span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">External Fixation System</span></span>",
+          "jcr:lastModified": "Tue Sep 10 2024 18:52:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Feb 12 2023 09:27:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">This fracture frame is to provide stabilization of compound fractures and where soft tissue injury may preclude the use of other fracture treatments&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Sun Feb 12 2023 09:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jan 12 2023 17:42:25 GMT+0000",
+          "alt": "VariAX 2 Wrist Fusion",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/Hoffmann3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sun Feb 12 2023 09:40:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span style=\"font-size: 42.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Ready for all.</span><br />\r\n </span></b><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Yielding for nothing.</span></span></span></span>",
+          "line2": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><br>\r\nThe Hoffmann 3 Modular External Fixation System components are external fixation frame components for use with the components of the Hoffmann II MRI and Hoffmann II Compact MRI External Fixation Systems, in conjunction with Apex Pins. It is intended to provide stabilization of compound and/or unstable fractures and where soft tissue precludes the use of other fracture treatments such as IM nailing or casting or other means of internal fixation.</span></span></h3>\r\n",
+          "jcr:lastModified": "Sun Feb 12 2023 09:42:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 16:37:18 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "2gMxYe2IPPM",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Thu Feb 08 2024 16:37:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 21:27:50 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 21:27:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Hoffmann 3&nbsp;</span></span><span class=\"urw-egyptienne\">interactive model</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Select a point of interest to explore our product portfolio.</span></span>",
+          "jcr:lastModified": "Fri Jan 13 2023 21:28:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_971726852": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 21:27:24 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 21:27:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form",
+          "hiddenSelCompId": "trauma-hoffman",
+          "componentUrl": "https://microapp.stryker.com/trauma-hoffman/",
+          "jcr:created": "Fri Jan 13 2023 21:13:25 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/trauma-hoffman/",
+          "jcr:lastModified": "Fri Jan 13 2023 21:13:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Product</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"> Specifications</span></span><span class=\"urw-egyptienne\"> </span></span>",
+      "jcr:lastModified": "Thu Oct 13 2022 22:35:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "couplings",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/couplings-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:28:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Delta couplings</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">“Delta” design allows for 6 different pin/bar diameter connections through a single coupling<br>\n <br>\n </span><span class=\"futura-bold\">Green:</span><span class=\"urw-egyptienne\"> 5mm, 8mm, 11mm<br>\n </span><span class=\"futura-bold\">Grey:</span><span class=\"urw-egyptienne\"> 4mm, 5mm, 6mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Built-in, removable thumbwheels for provisional tightening&nbsp;<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Multiplayer Delta Couplings allow for increased flexibility<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Snap-fit technology designed for a fast ex-fix application<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Prevent “pop-out” with two turns of the thumbwheel</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 22:32:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "vectron-fiber",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/vectron-fiber.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:28:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"> Carbon fiber rods</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">11mm carbon fiber rods<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">100mm - 650mm in length<br>\n</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jul 19 2024 13:22:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_157646337": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "clamps",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/clamps.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:28:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Pin clamps <br>\n and rod couplers</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">5-hole and 10-hole pin clamps with customizeble, fixed posts&nbsp;<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Modular or pre-welded versions available&nbsp;<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Straight, 30, and 90 posts<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">30 fixed angle connection for 11mm rods<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Pelvic and knee bridging applications<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Asymmetric capability may aid in anatomic positioning</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 22:33:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_973962439": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "Hoffmann 3 Apex Pin Image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/apexpin.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Nov 30 2023 15:50:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Apex pin portfolio</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Self-drilling / self-tapping, blunt, cancellous and transfixing apex pins<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stainless steel &amp; titanium options, HA coating available<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Hybrid pins allow use of 3 &amp; 4mm threads with the 5mm side of delta couplings<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Universal pin chuck allows stab-&amp;-grab of all Apex pins</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 22:34:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_405369301": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "fieldkit",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/fieldkit.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sun Oct 16 2022 22:50:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Sterile fields kit</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Field kits with pre-sterilized components and instruments needed for multiple indications<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Available for civilian use<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Bridging and emergency options available&nbsp;</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 22:34:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Hoffmann 3</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about Hoffmann 3 by exploring our collection of unique clinical resources including surgical reduction technique, exposure, and product overview videos, brochures, whitepapers, and more.</span></span></span>",
+          "jcr:lastModified": "Fri Oct 14 2022 23:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "jcr:lastModified": "Wed Jul 12 2023 17:27:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols4_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Fri Jun 03 2022 14:24:56 GMT+0000",
+              "jcr:lastModified": "Fri Jun 03 2022 14:24:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "devin.doran@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://vimeo.com/303068910/6688116ca7",
+                  "jcr:created": "Wed Nov 28 2018 14:39:21 GMT+0000",
+                  "title": "Hoffmann 3 surgeon testimonial",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Hoffmann3-thumbnail1.jpg",
+                  "jcr:lastModified": "Fri Jun 03 2022 14:25:45 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "devin.doran@stryker.com",
+                  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+                  "linkExternal": "https://vimeo.com/303107278/665f023915",
+                  "jcr:created": "Wed Nov 28 2018 14:39:40 GMT+0000",
+                  "title": "Knee Bridging Frame sawbone demonstration",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Knee Bridging_thumbnail1.jpg",
+                  "jcr:lastModified": "Wed Nov 28 2018 16:49:07 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "devin.doran@stryker.com",
+                  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+                  "linkExternal": "https://vimeo.com/303068962/b50c8dca44",
+                  "jcr:created": "Wed Nov 28 2018 14:39:43 GMT+0000",
+                  "title": "Ankle Delta Frame sawbone demonstration",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/ankle_video-thumbnail1.jpg",
+                  "jcr:lastModified": "Wed Dec 05 2018 14:07:17 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true"
+                }
+              },
+              "col4": {
+                "jcr:primaryType": "nt:unstructured",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "devin.doran@stryker.com",
+                  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+                  "linkExternal": "https://vimeo.com/303353976/80226960b4",
+                  "jcr:created": "Wed Nov 28 2018 20:54:54 GMT+0000",
+                  "title": "Tibial Single Rod Frame sawbone demonstration",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Hoffmann-tibial-thumbnail.jpg",
+                  "jcr:lastModified": "Wed Nov 28 2018 20:56:17 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true"
+                }
+              }
+            },
+            "cols4_1448767949_cop": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Fri Jun 03 2022 14:25:18 GMT+0000",
+              "jcr:lastModified": "Fri Jun 03 2022 14:25:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long ankle bridging frame",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "sdYcOmZWDso",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:39:26 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long tibia single rod frame with multiplanar",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "2y_0mnw1sjk",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:35:24 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long knee bridging with rod coupler",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "9wBLd48zd00",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:37:28 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col4": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long knee bridging",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "EZs5O9hX_Xg",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:38:59 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            },
+            "cols4_713905389_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Fri Jun 03 2022 15:28:49 GMT+0000",
+              "jcr:lastModified": "Fri Jun 03 2022 15:28:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long knee bridging frame with multiplanar",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "NttfRfkkhwc",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:36:57 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long tibia frame with Dr. Seligson",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "WvAl8RlrnSs",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:39:11 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a long tibia box frame",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "XTFzMsOqLlA",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:36:28 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col4": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Build a Delta Ankle Frame",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Fri Jun 03 2022 14:07:44 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "urcRlErFy-w",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:37:55 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_ST_20.pdf\" target=\"_blank\">HOFFMANN 3 OPERATIVE TECHNIQUE</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_EM_13.pdf\" target=\"_blank\">HOFFMANN 3 FRAME EXAMPLES POCKET GUIDE</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_TLC_9.pdf\" target=\"_blank\">HOFFMANN 3 TRAY LAYOUT</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_SCS_3.pdf\" target=\"_blank\">HOFFMANN 3 SYSTEM COMPONENTS</a></span></li>\n<li><a href=\"http://cdn.stryker.com/SYKGCSDOC-1794883387-63982.PDF\"><span class=\"futura-bold\">HOFFMANN 3 SELL SHEET</span></a></li>\n</ul>\n",
+                  "jcr:lastModified": "Wed Jul 12 2023 17:27:26 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Dec 15 2022 04:25:28 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_624753639_copy_571829444": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_ST_20.pdf\" target=\"_blank\">HOFFMANN 3 OPERATIVE TECHNIQUE</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_EM_13.pdf\" target=\"_blank\">HOFFMANN 3 FRAME EXAMPLES POCKET GUIDE</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_TLC_9.pdf\" target=\"_blank\">HOFFMANN 3 TRAY LAYOUT</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/resources/H_SCS_3.pdf\" target=\"_blank\">HOFFMANN 3 SYSTEM COMPONENTS</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Dec 15 2022 04:28:08 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Dec 15 2022 04:25:28 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5eae19666a3b11708b927c1c&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:21:01 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Dec 15 2022 04:25:28 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Surgical Exposure, Reduction, and Technique Videos"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "2",
+              "accTitle": "Surgeon resources"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "3",
+              "accTitle": "Hospital resources"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "4",
+              "accTitle": "Internal resources"
+            }
+          }
+        }
+      }
+    },
+    "cols_127389427_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1561154666": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:47:50 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:47:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1254130874_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Related products</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:42:21 GMT+0000",
+          "jcr:lastModified": "Wed Nov 16 2022 19:48:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/hoffmann-compact"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/hoffmann-lrf-circular-external-fixation-system"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/Linear-Reduction-Clamp"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/t2-alpha-femur-antegrade-gt-pf"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_563693619": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:48:43 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:48:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy_1490618148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about Hoffmann 3 and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 16:11:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_271277582": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:48:59 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:48:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:22:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Hoffmann 3<br />\r\n</p>\r\n",
+    "shortDescTop": "<p>This system has a long tradition of providing solutions not only for patient care in the established environment of trauma center infrastructures but also in extreme situations such as military operations or disaster recovery management around the world.</p>\r\n",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 03 2022 13:38:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Single point of tightening on delta couplings allows for enhanced efficiency</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>&quot;Delta&quot; design allows for 6 different pin/bar connections through a single coupling</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Pre-attached, removable thumbwheels on the couplings allow for provisional tightening as well as a visual indicator of final tightening</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Multiplanar delta couplings allow for single rod constructs and free-hand pin placement</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Universal pin chuck allows stab-&amp;-grab of all Apex pins</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Hybrid pins allow use of 3 &amp; 4mm threads with the 5mm side of delta couplings &nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>11mm vectran coated carbon fiber rods for enhanced frame stability</p>\r\n",
+        "textIsRich": "true"
+      },
+      "8": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Field kits with pre-sterilized components and instruments for multiple indications &nbsp;</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Thu Jan 12 2023 16:41:43 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/Ankle-Delta-frame.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 03 2022 13:38:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 03 2022 13:38:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 28 2025 16:02:48 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Apr 28 2025 16:02:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 28 2025 16:03:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

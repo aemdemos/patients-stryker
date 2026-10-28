@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "social-media-links",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fa0a1d3e-99e5-4335-b3ae-bf879991166f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b4431162-431a-42c8-9eb3-f9ea754ba046"
+  ],
+  "lastPublished": "Fri Feb 20 2026 19:26:26 GMT+0000",
+  "jcr:created": "Fri Feb 20 2026 19:26:26 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 20 2026 19:26:28 GMT+0000",
+  "cq:lastModified": "Thu Feb 19 2026 20:16:18 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b4431162-431a-42c8-9eb3-f9ea754ba046",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Feb 19 2026 20:18:08 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b703a9cf-d1bb-44df-84da-0bf22b30598d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "buttonset": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 20:12:15 GMT+0000",
+      "jcr:lastModified": "Thu Feb 19 2026 20:16:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.linkedin.com/showcase/stryker-sports-medicine/",
+          "buttonText": "Follow us on LinkedIn",
+          "externalLinkType": "ext"
+        },
+        "item1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.instagram.com/stryker.sportsmedicine/",
+          "buttonText": "Follow us on Instagram",
+          "externalLinkType": "ext"
+        },
+        "item2": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.vumedi.com/channel/stryker/tab/shoulder-stryker/",
+          "buttonText": "Follow us on VuMedi",
+          "externalLinkType": "ext"
+        },
+        "item3": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.youtube.com/@StrykersClinicalSolutions",
+          "buttonText": "Follow us on YouTube",
+          "externalLinkType": "ext"
+        }
+      }
+    }
+  }
+}

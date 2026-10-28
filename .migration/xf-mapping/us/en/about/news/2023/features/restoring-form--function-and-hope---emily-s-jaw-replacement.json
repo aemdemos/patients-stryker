@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Restoring form, function and hope | Emily’s jaw replacement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c27d5dab-9850-49fd-9999-df6520fe9be5",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "EmilyHartmann_thumbnail",
+  "jcr:predecessors": [
+    "9db9f0d2-0f4c-4789-9ce6-2cc550932074"
+  ],
+  "contentID": "OT-WEB-4_Rev. None_34200 ",
+  "lastPublished": "Wed Feb 11 2026 20:39:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 11 2026 20:39:59 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 11 2026 20:40:01 GMT+0000",
+  "cq:lastModified": "Wed Feb 11 2026 20:39:52 GMT+0000",
+  "jcr:baseVersion": "9db9f0d2-0f4c-4789-9ce6-2cc550932074",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:39:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Wed Feb 11 2026 20:39:52 GMT+0000",
+  "jcr:uuid": "5d8aedd9-5132-47a5-b58b-09c438d48b90",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Feb 27 2023 14:39:42 GMT+0000",
+      "text": "In 2007, Emily began experiencing muscle spasms in her jaw. She was eventually diagnosed with a rare disorder called Parry-Romberg syndrome, which causes the slow deterioration of the skin and soft tissue in half the face1. Watch Emily as she shares how after years of pain, avoiding talking and relying on liquid diets, her surgeon not only restored her function but helped her feel beautiful again. “To have [the procedure] be successful and to be functional [with] no pain was just an answer to prayer.” ______________ Emily Hartmann Jaw replacement patient Learn more about CMF solutions",
+      "jcr:lastModified": "Mon Feb 27 2023 14:40:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/restoring_form_funct/body/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/restoring-form-funct/body/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Mon Mar 06 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Mar-2023",
+    "jcr:lastModified": "Mon Mar 06 2023 15:24:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Reference</p>\r\n<p>U.S. Department of Health and Human Services. (2022, July 25). <i>Parry-Romberg syndrome</i>. National Institute of Neurological Disorders and Stroke. Retrieved August 15, 2022, from <a href=\"https://www.ninds.nih.gov/health-information/disorders/parry-romberg-syndrome#:~:text=Publications-,Definition,in%20females%20than%20in%20males\">https://www.ninds.nih.gov/health-information/disorders/parry-romberg-syndrome#:~:text=Publications-,Definition,in%20females%20than%20in%20males</a></p>\r\n",
+    "jcr:lastModified": "Mon Feb 27 2023 15:13:19 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/features/restoring-form,-function-and-hope---emily's-jaw-replacement/EmilyHartmann_thumbnail.png"
+  }
+}

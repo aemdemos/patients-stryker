@@ -1,0 +1,82 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "71321b3b-51c5-4ee2-94da-5d4bc30c644b",
+  "jcr:predecessors": [
+    "1bff15da-ac77-4400-bfa8-62595eb413ae"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:49 GMT+0000",
+  "jcr:baseVersion": "1bff15da-ac77-4400-bfa8-62595eb413ae",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "e487a7e8-0e2f-4fac-be7a-eddbdfb9af36",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Shared Services",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "cq:lastReplicated": "Fri Feb 21 2025 18:58:14 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "shared-services",
+    "jcr:lastModified": "Fri Feb 21 2025 18:58:09 GMT+0000",
+    "lastFragmentSave": "Fri Feb 21 2025 18:58:09 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/corporate/en/contact-information",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Fri Feb 21 2025 18:58:12 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Thu Feb 20 2025 19:49:39 GMT+0000",
+        "Emails@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "addressBlock1": "<p>1941 Stryker Way<br>\nPortage, MI 49002<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "locationName": "Shared Services",
+        "PhoneNumberLabel": "Phone",
+        "ShortDesc@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "PhoneNumbers": "<p><b>Phone:</b>&nbsp;+1 269 389 2300</p>\n",
+        "AddressLabel@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Sep 03 2019 19:57:32 GMT+0000"
+      }
+    }
+  }
+}

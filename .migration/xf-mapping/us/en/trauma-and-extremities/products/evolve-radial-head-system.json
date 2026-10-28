@@ -1,0 +1,1243 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Evolve Radial Head System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c1fb4573-8002-4ca8-b239-e08e73a43560",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "thumbnailAltText": "Hero",
+  "jcr:predecessors": [
+    "f17e3d6b-396c-46ad-bc39-c35191118c17"
+  ],
+  "contentID": "AP-015232, 01-2023",
+  "lastPublished": "Thu Mar 30 2023 17:21:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 30 2023 17:21:55 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 30 2023 17:21:57 GMT+0000",
+  "cq:lastModified": "Wed Mar 29 2023 17:36:40 GMT+0000",
+  "jcr:baseVersion": "f17e3d6b-396c-46ad-bc39-c35191118c17",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Evolve Radial Head System",
+  "cq:tags": [
+    "stryker:product/trauma-and-extremities/evolve-proline",
+    "stryker:content-type/product",
+    "stryker:custom/trauma-and-extremities/product-type/small-joints",
+    "stryker:custom/trauma-and-extremities/product-type/plating",
+    "stryker:product/trauma-and-extremities/evolve-triad",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/trauma-and-extremities/Indications/elbow",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:capability/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Jan 19 2023 14:51:48 GMT+0000",
+  "jcr:uuid": "729e9aee-17d0-4402-8d54-c95ea4031a50",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "cedu.ocson@stryker.com",
+  "navTitle": "Evolve Radial Head System",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_493997791": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "jcr:lastModified": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 10 2022 19:00:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">Evolve</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Radial Head Systems</span></span>",
+          "jcr:lastModified": "Thu Nov 10 2022 19:01:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Nov 10 2022 19:00:40 GMT+0000",
+          "alt": "fpo-evolve",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Hero.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:57:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 17:06:06 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 17:06:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Evolve Proline Radial Head System</span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Radial head replacement system featuring two-part, modular implants designed with a smooth, loose-fitting stem that has been clinically proven in the literature.<sup>1,2</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 07 2022 23:19:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Evolve Triad Fixation System</span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Multi-faceted system designed to provide surgeons with different options to address fixation of fractures commonly associated with terrible triad injuries of the elbow. This system includes radial head, radial neck, and coronoid plates in addition to 1.5mm, 2.0mm, and 2.5mm screw options.</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 07 2022 23:19:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 17:10:55 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 17:10:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Jan 18 2023 14:29:04 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 29 2023 17:35:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/video/Evolve-Proline-Triad-Hype-Video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Evolve-Proline-Triad-Hype-Video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jan 18 2023 14:29:23 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 29 2023 17:34:41 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 17:34:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_1556327779": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 29 2023 17:34:52 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 29 2023 17:35:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/video/Evolve-SurgicalAnimation-V1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Evolve-SurgicalAnimation-V1-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Mar 29 2023 17:35:43 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 29 2023 17:34:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Evolve Radial Head Systems - Surgical Animation</span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 17:36:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Evolve Proline</span></span><span class=\"urw-egyptienne\"> <br>\r\nprovides confidence with clinically proven success<sup>1,2</sup></span></span>",
+      "jcr:lastModified": "Mon Sep 19 2022 17:56:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols2_158173488": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Oct 07 2022 21:24:26 GMT+0000",
+      "jcr:lastModified": "Fri Oct 07 2022 21:24:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Oct 07 2022 21:25:32 GMT+0000",
+          "jcr:lastModified": "Thu Nov 10 2022 19:08:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://pubmed.ncbi.nlm.nih.gov/27053580/",
+              "buttonText": "READ THE FULL PAPER ON JBJS - Marsh",
+              "externalLinkType": "ext"
+            }
+          }
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Oct 07 2022 21:25:32 GMT+0000",
+          "jcr:lastModified": "Thu Nov 10 2022 19:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://online.boneandjoint.org.uk/doi/full/10.1302/0301-620X.94B6.28176",
+              "buttonText": "READ THE FULL PAPER ON JBJS - Flinkkila",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "cols_1232933375": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:02:26 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:02:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Mon Sep 19 2022 18:02:40 GMT+0000",
+          "alt": "Evolve Proline - Provides confidence with clinically proven success. ",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Evolve-1-Update.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sun Feb 12 2023 13:31:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1023003861_copy_1824300909": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c_1165059070": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Smooth, loose-fitting stem</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><br>\r\nDesign rationale</span></span></span>",
+      "jcr:lastModified": "Mon Sep 19 2022 18:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "Designed to articulate congruently",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/articulate congruently-v2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:56:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 22 2022 21:42:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Toggle of the stem within the radius is designed to allow the radial head to </span><span class=\"futura-bold\">articulate congruently</span><span class=\"urw-egyptienne\"> with the capitellum³</span></span></p>\n",
+          "jcr:lastModified": "Sun Oct 16 2022 19:01:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "fpo-new",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Evolve2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jan 12 2023 21:28:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 22 2022 21:42:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Movement of the implant is designed to be </span><span class=\"futura-bold\">guided by the annular ligament</span><span class=\"urw-egyptienne\"> rather than by the position of the radial neck³</span></span></p>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 17:55:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_27059456": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "fpo-new",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Rotate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jan 12 2023 22:00:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 22 2022 21:42:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Loose fit designed to allow the forearm to </span><span class=\"futura-bold\">rotate around the stem</span><span class=\"urw-egyptienne\"> rather than at the articular surface of the capitellum</span></span></p>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 17:56:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy_1248360170": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c_1657293279": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">Options&nbsp;</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">delivered</span></span></span>",
+      "jcr:lastModified": "Sat Oct 15 2022 17:56:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols2_1_3_2_3_copy_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "Evolve Proline Radial Head Prostheses",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:56:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolve Proline</span></span><span class=\"urw-egyptienne\"><br>\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Radial Head Prostheses</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Material:&nbsp;cobalt chrome<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Modular system with 324 sizing combinations<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Head diameters: 18mm, 20mm, 22mm, 24mm, 26mm, 28mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Stem diameters: 4.5mm, 5.5mm, 6.5mm, 7.5mm, 8.5mm, 9.5mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">All head and stem sizes are available with 3 height options</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 19:11:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_2_891125941": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "Evolve Triad Radial Head and Neck Plates",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-4.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:56:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolve Triad</span></span><span class=\"urw-egyptienne\"><br>\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Radial Head and Neck Plates</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Material:&nbsp;stainless steel<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Ortholoc Mini Polyaxial locking design allows for up to a 20° cone of variable angle locking<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">All round holes accept 2.0mm locking and non-locking screws<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Radial head plate sizes: 20mm, 22mm, 24mm, 26 mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Radial neck plate sizes: 21mm, 25mm</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 19:11:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_2_689575244": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "Evolve Triad Coronoid Plates",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-5.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:56:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolve Triad</span></span><span class=\"urw-egyptienne\"><br>\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Coronoid Plates</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Material: stainless steel<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Available in small, medium, and large<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Designed to be cut to size and contoured to wrap around and buttress the coronoid<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Accept 2.0mm bone screws only<br>\n </span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 19:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_2_951567436": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 18:30:19 GMT+0000",
+          "alt": "Evolve Triad - Screw options",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/EvolveRadial-Screenshot.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sun Feb 12 2023 13:31:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolve Triad</span></span><span class=\"urw-egyptienne\"><br>\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Screw Options</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Material:&nbsp;stainless steel<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">2.5mm cannulated screws: 10-50mm*<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">2.0mm locking screws: 10-30mm*, 35mm, 40mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">2.0mm bone screws: 10-30mm*, 35mm, 40mm<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">1.5mm bone screws: 10-28mm*</span></span></li>\n</ul>\n<p>&nbsp;</p>\n<p>*available in 2mm increments</p>\n",
+          "jcr:lastModified": "Tue Nov 08 2022 00:03:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy_1474283701": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c_1264338957": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Key</span></span><span class=\"urw-egyptienne\">&nbsp;</span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">instrumentation</span></span></span></span>",
+      "jcr:lastModified": "Mon Sep 19 2022 19:13:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 19:13:59 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 19:13:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 19:14:16 GMT+0000",
+          "alt": "Evolve Proline radial head sizing and assembly dish",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-6.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:57:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Sep 19 2022 19:14:23 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span class=\"fontsize-1-25em\">Evolve Proline radial head sizing and assembly dish</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 19 2022 19:14:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 19:14:16 GMT+0000",
+          "alt": "Evolve Triad  in-situ plate sizers",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-7.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:57:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Sep 19 2022 19:14:23 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span class=\"fontsize-1-25em\">Evolve Triad&nbsp;in-situ plate sizers</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 19 2022 19:15:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 19:14:16 GMT+0000",
+          "alt": "Evolve Triad  coronoid plate bender",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-8.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:57:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Sep 19 2022 19:14:23 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span class=\"fontsize-1-25em\">Evolve Triad&nbsp;coronoid plate bender</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 19 2022 19:15:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 19:14:16 GMT+0000",
+          "alt": "Evolve Triad  bending pliers",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/images/Evolve-9.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 14 2022 21:57:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Sep 19 2022 19:14:23 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span class=\"fontsize-1-25em\">Evolve Triad&nbsp;bending pliers</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 19 2022 19:15:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Evolve</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about the Evolve Radial Head Systems by exploring our collection of clinical resources including videos, brochures, and more.</span></span></span>",
+          "jcr:lastModified": "Fri Jan 13 2023 20:29:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "jcr:lastModified": "Thu Jan 12 2023 05:56:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Proline-operative-technique.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE - PROLINE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Triad-Operative-Technique%20copy.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE - TRIAD</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Proline-Radial-Head-System-Proven-Reliable-SS.pdf\" target=\"_blank\">CLINICAL OVERVIEW BROCHURE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/resources/CheatSheet.pdf\" target=\"_blank\">SYSTEM CHEAT SHEET</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:17:04 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Proline-2499KIT1-Count-Sheet.pdf\" target=\"_blank\">COUNT SHEET - PROLINE INSTRUMENTS (2499KIT1)</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Triad-4951KIT1A-Count-Sheet.pdf\" target=\"_blank\">COUNT SHEET - TRIAD (4951KIT1.A)</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-radial-head-systems/downloads/Evolve-Proline-Implants-2499KIA-Count-Sheet.pdf\" target=\"_blank\">COUNT SHEET - PROLINE IMPLANTS (2499KITA)</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/resources/Evolve%20Triad%20ICS.pdf\" target=\"_blank\">INVENTORY CONTROL SHEET - TRIAD</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 10:16:45 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Surgeon resources"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "Hospital resources"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 3,
+              "accTitle": "Internal resources"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154570342f8b41b4178b16b&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:57:54 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols_127389427_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "sectionseparator_157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy_389582446": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about Evolve Proline and Evolve Triad and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 14:37:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_184": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:22 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 05:58:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Sep 19 2022 16:50:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Sep 19 2022 16:50:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Sep 19 2022 16:51:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Sep 19 2022 16:51:11 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Sep 19 2022 16:51:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Sep 19 2022 16:51:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>Flinkkilä T, Kaisto T, Sirniö K, Hyvönen P, Leppilahti J. Short- to mid-term results of metallic press-fit radial head arthroplasty in unstable injuries of the elbow. J Bone Joint Surg Br. 2012 Jun;94(6):805-10. doi: 10.1302/0301-620X.94B6.28176. PMID: 22628596.</li>\r\n<li>Marsh JP, Grewal R, Faber KJ, Drosdowech DS, Athwal GS, King GJ. Radial Head Fractures Treated with Modular Metallic Radial Head Replacement: Outcomes at a Mean Follow-up of Eight Years. J Bone Joint Surg Am. 2016 Apr 6;98(7):527-35. doi: 10.2106/JBJS.15.00128. PMID: 27053580.</li>\r\n<li>Ring, David MD, PhD1; King, Graham MD, MSc, FRCSC2. Radial Head Arthroplasty with a Modular Metal Spacer to Treat Acute Traumatic Elbow Instability: Surgical Technique. The Journal of Bone &amp; Joint Surgery: March 2008 - Volume 90 - Issue Supplement_2_Part_1 - p 63-73 doi: 10.2106/JBJS.G.01248<br>\r\n</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Nov 08 2022 00:02:05 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Hero.jpg"
+  }
+}

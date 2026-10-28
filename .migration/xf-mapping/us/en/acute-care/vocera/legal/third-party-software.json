@@ -1,0 +1,80 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Third-Party Software",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4316a2db-8156-4f3b-9e61-a46f1ae18388",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0a0bd65b-4cd5-4321-9810-dfbe566b8af6"
+  ],
+  "lastPublished": "Fri Sep 29 2023 18:30:25 GMT+0000",
+  "jcr:created": "Fri Sep 29 2023 18:30:25 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 29 2023 18:30:27 GMT+0000",
+  "cq:lastModified": "Mon Sep 11 2023 21:57:06 GMT+0000",
+  "jcr:baseVersion": "0a0bd65b-4cd5-4321-9810-dfbe566b8af6",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "9882d466-2af3-4df6-80fb-56a852504b4c",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Mon Sep 11 2023 21:47:19 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Third-party Software</span></span></span></h1>\n<p>Open configuration optionsCertain software components, identified in the documents posted below, are licensed to Vocera by third parties (“Licensors”) and incorporated by Vocera in our Software. As incorporated in our Software, these components are sublicensed by Vocera to its End Users pursuant to our End User License Agreement (in which the term “Software” is defined). As explained in the End User License Agreement, the applicable provisions in the documents posted below are included in these sublicenses. The posted documents address Vocera products and versions currently shipping. If you are using a Vocera product with a Vocera Version number preceding that listed here or a Vocera product that is not listed, please contact&nbsp;lawdepartment@vocera.com&nbsp;for the applicable details.</p>\n<p>Each entry in a Third-Party Software Document posted below specifies various details about the sublicensed component. “Version” is the version number designated by its Licensor. “Vocera Version” is the version number designated by Vocera for the Vocera Software in which the third party component is incorporated. “Source Code Status” and “URL” explain whether the Licensor makes available, or requires Vocera to make available, corresponding source code and, if so, how to obtain that source code. Finally, “Supplemental License Text” specifies the identity of the Licensor, applicable Licensor trademarks, and supplemental license provisions required by the Licensor.&nbsp; &nbsp;&nbsp;<br>\n</p>\n",
+      "jcr:lastModified": "Mon Sep 11 2023 21:51:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Sep 11 2023 21:50:21 GMT+0000",
+      "jcr:lastModified": "Mon Sep 11 2023 21:50:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Sep 11 2023 21:51:26 GMT+0000",
+      "jcr:lastModified": "Mon Sep 11 2023 21:51:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Sep 11 2023 21:51:30 GMT+0000",
+          "text": "<p><a title=\"Open Vocear Analytics PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-alarm-analytics.pdf\" target=\"_blank\">Vocera Alarm Analytics</a></p>\n<p><a title=\"Open Vocera Alarm Management PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-alarm-management.pdf\" target=\"_blank\">Vocera Alarm Management</a></p>\n<p><a title=\"Open Vocera Badge Firmware PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-badge-firmware.pdf\" target=\"_blank\">Vocera Badge Firmware</a></p>\n<p><a title=\"Open Vocera Cardiac Consult\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-cardiac-consult.pdf\" target=\"_blank\">Vocera Cardiac Consult</a></p>\n<p><a title=\"Open Vocera Care Experience PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-care-experience.pdf\" target=\"_blank\">Vocera Care Experience</a></p>\n<p><a title=\"Open Vocera Clinical Workflow Engine PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-clinical-workflow-engine.pdf\" target=\"_blank\">Vocera Clinical Workflow Engine</a><br>\n(including Patient Monitoring Connector)</p>\n<p><a title=\"Open Vocera Engage Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-engage-platform.pdf\" target=\"_blank\">Vocera Engage Platform</a><br>\n(including Airstrip)</p>\n<p><a title=\"Open Vocera Engage Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-integrations.pdf\" target=\"_blank\">Vocera Integrations</a><br>\n(including Vocera Care Team Synchronization and Vocera Environmental Services)</p>\n<p><a title=\"Open Vocera Messaging Platform PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-messaging-platform.pdf\" target=\"_blank\">Vocera Messaging Platform</a></p>\n<p><a title=\"Open Vocera Smartphone Applications PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-smartphone-applications.pdf\" target=\"_blank\">Vocera Smartphone Applications</a><br>\n(including Vocera Collaboration Suite and Vocera Secure Texting)</p>\n<p><a title=\"Open Vocera Voice Server PDF\" href=\"/content/dam/stryker/acute-care/vocera/legal/vocera-voice-server.pdf\" target=\"_blank\">Vocera Voice Server</a></p>\n",
+          "jcr:lastModified": "Mon Sep 11 2023 21:57:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  }
+}

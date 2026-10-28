@@ -1,0 +1,171 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Reimbursement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f14491ee-328c-46cb-9941-6c5a39212be3",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:predecessors": [
+    "a6bfb7cf-cfa6-4835-9725-54ceed57d58d"
+  ],
+  "lastPublished": "Tue Oct 07 2025 17:48:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 07 2025 17:48:10 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 07 2025 17:48:12 GMT+0000",
+  "cq:lastModified": "Tue Oct 07 2025 17:47:33 GMT+0000",
+  "jcr:baseVersion": "a6bfb7cf-cfa6-4835-9725-54ceed57d58d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:44:36 GMT+0000",
+  "pageTitle": "Reimbursement",
+  "jcr:lastModified": "Thu Nov 02 2023 17:48:11 GMT+0000",
+  "jcr:uuid": "b84a78eb-3539-4bed-a48b-9db7b1c8c3af",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stryker-admin",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Thu Jan 16 2025 21:01:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_706246011": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "allisa.chamberlin@stryker.com",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:created": "Thu Nov 02 2023 20:30:16 GMT+0000",
+      "jcr:lastModified": "Thu Nov 02 2023 20:30:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_964312640": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Thu Nov 02 2023 20:31:13 GMT+0000",
+          "text": "<p>Phone: 844 842 4232<br>\nEmail:&nbsp;ENT-Reimbursement@stryker.com</p>\n",
+          "jcr:lastModified": "Thu Nov 02 2023 20:31:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jan 26 2023 20:09:52 GMT+0000",
+      "jcr:lastModified": "Thu Jan 26 2023 20:09:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "deepLinkingId": "resources",
+          "jcr:created": "Fri Dec 01 2023 19:51:49 GMT+0000",
+          "title": "Resources",
+          "jcr:lastModified": "Fri Dec 01 2023 19:52:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "resourcesanddownload_1111663280": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "resources": [
+            "/content/dam/commercial/usa/ent/cfx/ENT-GSNPS-BROC-862094-EN_US.pdf",
+            "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-REIM-766503-EN_US.pdf",
+            "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-REIM-1045913-EN_US.pdf",
+            "/content/dam/commercial/usa/ent/latsys/ENT-GSNPS-REIM-1212276-EN_US.pdf",
+            "/content/dam/commercial/usa/ent/latsys/ENT-LATSYS-REIM-1105924-EN_US.pdf"
+          ],
+          "jcr:lastModifiedBy": "stryker-admin",
+          "jcr:created": "Fri Apr 19 2024 17:59:48 GMT+0000",
+          "jcr:lastModified": "Thu Jan 16 2025 21:02:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      }
+    },
+    "cols_1382030942": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jan 26 2023 20:10:01 GMT+0000",
+      "jcr:lastModified": "Thu Jan 26 2023 20:10:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "allisa.chamberlin@stryker.com",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:created": "Fri Jul 26 2024 18:43:12 GMT+0000",
+      "jcr:lastModified": "Fri Jul 26 2024 18:43:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Fri Jul 26 2024 18:43:27 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "SqnZajRn0gE",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Oct 07 2025 17:47:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "allisa.chamberlin@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Fri Sep 06 2024 15:39:21 GMT+0000",
+          "jcr:lastModified": "Fri Sep 06 2024 15:48:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.tandfonline.com/doi/full/10.1080/13696998.2024.2362046#abstract",
+              "buttonText": "Read the study",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Nov 02 2023 17:46:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

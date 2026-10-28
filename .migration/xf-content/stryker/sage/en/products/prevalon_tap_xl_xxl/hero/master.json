@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ff5b2244-f127-4b6c-945c-f286616cabd4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "253b65a9-d8f6-4368-bdeb-792373b16d68"
+  ],
+  "jcr:created": "Fri Feb 16 2024 13:48:19 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 16 2024 13:48:21 GMT+0000",
+  "cq:lastModified": "Fri Feb 16 2024 13:48:16 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "253b65a9-d8f6-4368-bdeb-792373b16d68",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "fb0405e6-371a-4c03-b922-af2f952c4a91",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage62010": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Wed Dec 06 2023 15:39:43 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage6201050150663937158": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Turn and position system for larger patients ",
+        "srcFileRef": "/content/dam/stryker/sage/products/tap-xl-xxl/images/Sage-TAP-XL-XXL-Thumbnail-16x9.jpg",
+        "jcr:lastModified": "Mon Dec 11 2023 19:42:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

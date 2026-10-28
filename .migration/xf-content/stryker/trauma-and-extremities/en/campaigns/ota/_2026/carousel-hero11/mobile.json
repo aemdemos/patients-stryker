@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bea9aa6e-80b7-4fef-9d30-fe50569d018e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "590ac9ff-fb80-4ffe-b5a9-6515eb17c789"
+  ],
+  "lastPublished": "Tue Jun 23 2026 14:39:22 GMT+0000",
+  "jcr:created": "Tue Jun 23 2026 14:39:26 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 23 2026 14:39:31 GMT+0000",
+  "cq:lastModified": "Mon Jun 22 2026 14:51:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "590ac9ff-fb80-4ffe-b5a9-6515eb17c789",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 23 2026 14:39:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "5501c861-88cf-44a2-a77d-aca520199cdd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 24 2022 12:17:10 GMT+0000",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 22 2026 14:16:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

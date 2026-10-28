@@ -1,0 +1,63 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "We have a high-performance team of diverse and talented leaders that live our mission and values.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leaders",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f3a4808b-4938-44c5-bfb6-76bfa60a6c95",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "3b427dcb-802d-4b42-a6fc-bc360485eb7d"
+  ],
+  "contentID": "SYK CORP 2019-08-41_Rev-30",
+  "lastPublished": "Tue Apr 01 2025 13:00:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 01 2025 13:00:24 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 01 2025 13:00:27 GMT+0000",
+  "cq:lastModified": "Wed Jun 08 2022 19:03:14 GMT+0000",
+  "cq:siblingOrder": "board-of-directors,bod-detail,our-management,our-management-detail,leaders,",
+  "jcr:baseVersion": "3b427dcb-802d-4b42-a6fc-bc360485eb7d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 13:00:14 GMT+0000",
+  "pageTitle": "Our management",
+  "cq:name": "leaders",
+  "jcr:lastModified": "Fri May 27 2022 15:19:51 GMT+0000",
+  "jcr:uuid": "64960acf-a1a0-4963-b92b-2aba9e8c2ccc",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/about/our-management",
+  "cq:childrenOrder": "3326,1116,6401,7462,1361,1942,5238,9569,1064,2158,2006,4473,1200,9122,1997,1652,1134,2943,9372,1391,8739,6278,",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "navTitle": "Our management",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 27 2022 15:35:04 GMT+0000",
+      "jcr:lastModified": "Fri May 27 2022 15:35:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 27 2022 15:17:53 GMT+0000",
+      "text": "Our management We have a high-performance team of diverse and talented leaders that live our mission and values. Leadership team Kevin Lobo Chair and CEO Meet Kevin Dylan Crotty Group President, Orthopaedics Meet Dylan Katy Fink Vice President, Chief Human Resources Officer Meet Katy Rob Fletcher Vice President, Chief Legal Officer Meet Rob Debra King Vice President, Chief Digital and Information Officer Meet debra Viju Menon Group President, Global Quality and Operations Meet Viju Kim Montagnino Vice President, Chief Communications Officer Meet Kim Andy Pierce Group President, MedSurg and Neurotechnology Meet Andy Spencer Stiles President and Chief Operating Officer Meet Spencer Preston Wells Vice President, Chief Financial Officer Meet Preston Other officers Emily Baculik Vice President, Corporate Controller Meet emily Rob Cummings Vice President, Tax Meet Robert Jill Duffy Vice President, Assurance and Risk Advisory Meet Jill Tina French Vice President, Corporate Secretary Meet TINA Lindsay Gardner Vice President, Treasurer Meet LINDSAY Jamie Leary-Erickson Vice President, Global Real Estate and Facilities Meet Jamie Dana McMahon Vice President, Chief Compliance Officer Meet Dana Nick Mead Vice President, Investor Relations Meet Nick Jody Powell Vice President, Global Regulatory Affairs and Quality Assurance Meet Jody COMM-GSNPS-WEB-596150_Rev-17",
+      "jcr:lastModified": "Fri May 27 2022 15:19:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our-management-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-management-page/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Smart, connected hospital bed systems and stretchers​",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Connected infrastructure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1615acfc-56fd-4c9e-b49c-8bf1e9f85b8c",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "Prime Series smart stretcher and ProCuity connected hospital bed",
+  "jcr:predecessors": [
+    "aa3bb5b0-6647-4f5e-b371-af3770896719"
+  ],
+  "contentID": "AC-GSNPS-SYK-2606988_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:35:46 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:35:47 GMT+0000",
+  "cq:lastModified": "Wed Jan 21 2026 21:53:07 GMT+0000",
+  "jcr:description": "Our SmartHospital Platform is built on a foundation of connected beds and stretchers. With solutions like the ProCuity® bed series and Prime Connect® stretchers, you have the ability to enhance care team safety and efficiency while enhancing the patient experience.​",
+  "jcr:baseVersion": "aa3bb5b0-6647-4f5e-b371-af3770896719",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/connected-infrastructure",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital"
+  ],
+  "jcr:lastModified": "Wed Jan 21 2026 21:53:07 GMT+0000",
+  "jcr:uuid": "c4a3840d-860b-493d-bca0-4d4ebb670674",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kennedy.lane@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/smarthospital-platform/connected-infrastructure/connected-infrastructure_hero_nowaves_675x450.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModified": "Mon Dec 15 2025 20:06:29 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/acute-care/products/procuity"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/acute-care/products/procuity-icu"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/acute-care/products/prime-series"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Jan 06 2026 14:27:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

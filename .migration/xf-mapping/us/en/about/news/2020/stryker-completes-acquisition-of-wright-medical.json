@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker completes acquisition of Wright Medical",
+  "jcr:versionHistory": "06b8e505-0713-45b4-9440-16cb62e64ec4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "d65d5acf-36be-4f56-ab5d-ad87fae83fe8"
+  ],
+  "lastPublished": "Wed Nov 11 2020 14:58:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Nov 11 2020 14:58:19 GMT+0000",
+  "cq:lastModified": "Wed Nov 11 2020 14:58:03 GMT+0000",
+  "jcr:baseVersion": "d65d5acf-36be-4f56-ab5d-ad87fae83fe8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Nov 09 2020 21:27:08 GMT+0000",
+  "jcr:uuid": "cefdd5f8-618c-4a36-9e7e-b7dc31be5e6b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Wed Nov 11 2020 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "11-Nov-2020",
+    "jcr:lastModified": "Mon Nov 09 2020 21:19:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Stryker (NYSE: SYK) announced today that it has completed the previously announced acquisition of Wright Medical Group N.V. (NASDAQ: WMGI), a global medical device company focused on extremities and biologics.</p>\n<p>“This acquisition enhances our global market position in trauma and extremities, providing significant opportunities to advance innovation and reach more patients,” said Kevin Lobo, Chairman and Chief Executive Officer, Stryker. “We welcome the Wright Medical team to Stryker and look forward to growing the combined business by delivering solutions that improve patient outcomes.”</p>\n<p>Wright Medical brings a highly complementary product portfolio and customer base to Stryker’s trauma and extremities business. The company is a recognized leader in the upper extremities (shoulder, elbow, wrist and hand), lower extremities (foot and ankle) and biologics market segments, which are among the fastest growing segments in orthopaedics. Wright Medical also has advanced preoperative planning technology and sufficient scale to enable the combined business to have a more focused business unit approach.</p>\n<p>As previously mentioned, Stryker is not providing guidance on fourth-quarter earnings given the uncertainties related to the COVID-19 pandemic. The company’s intention is to provide 2021 guidance, including the impact of Wright Medical, along with the planned earnings release in January 2021.</p>\n<p>See full press release <a href=\"https://investors.stryker.com/press-releases/news-details/2020/Stryker-completes-acquisition-of-Wright-Medical/default.aspx\">here</a>.</p>\n",
+    "jcr:lastModified": "Wed Nov 11 2020 14:58:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/stryker_logo2015_web.jpg"
+  }
+}

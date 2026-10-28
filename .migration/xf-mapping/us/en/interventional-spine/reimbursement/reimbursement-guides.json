@@ -1,0 +1,235 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Reimbursement guides",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "108e0b8b-8f3c-415f-ae0d-c735a080cfca",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:predecessors": [
+    "318b5d31-4dcd-4ca9-81a3-a66eddb71d77"
+  ],
+  "contentID": "IVS-GSNPS-SYK-2033126",
+  "lastPublished": "Thu Mar 05 2026 14:28:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 05 2026 14:28:47 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 05 2026 14:28:50 GMT+0000",
+  "cq:lastModified": "Wed Mar 04 2026 20:10:52 GMT+0000",
+  "jcr:baseVersion": "318b5d31-4dcd-4ca9-81a3-a66eddb71d77",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 14:44:23 GMT+0000",
+  "jcr:lastModified": "Tue Sep 23 2025 14:41:39 GMT+0000",
+  "jcr:uuid": "ffb51f51-fb07-4d7e-89bd-684b309e1c34",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:23:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Reimbursement guides</span></span></h1>\r\n",
+      "line2": "<h2>We provide beneficial information regarding coding, coverage and payment for our products and applicable therapies</h2>\r\n<p><a href=\"https://providers.strykerivs.com/assets/files/2/ivs-1465959_reimb_openvcf_122324.pdf\"> </a></p>\r\n",
+      "jcr:lastModified": "Tue Mar 03 2026 14:32:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "resourcesanddownload_124218394": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "resources": [
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide OptaBlate bone tumor ablation.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide mild procedure.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide Radiofrequency ablation.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide Open treatment of vertebral compression fracture with posterior instrumentation and insertion of an intervertebral biomechanical device.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide OptaBlate basivertebral nerve ablation.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide Percutaneous vertebral augmentation.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide Percutaneous vertebroplasty.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide BTA and multiple procedure.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/2026 IVS reimbursement guide Discectomy.pdf"
+      ],
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Mar 04 2026 18:32:14 GMT+0000",
+      "jcr:lastModified": "Wed Mar 04 2026 19:20:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_1395382232": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "4",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jul 07 2025 14:22:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Jul 07 2025 14:22:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:44:33 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Medicare local coverage determinations (LCD)</span></span></h2>\n",
+      "jcr:lastModified": "Wed Jul 02 2025 20:45:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:41:20 GMT+0000",
+      "jcr:lastModified": "Mon Jul 07 2025 14:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jul 02 2025 20:40:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Percutaneous vertebral augmentation (PVA) with billing and coding information</span></span></h3>\n",
+          "jcr:lastModified": "Wed Jul 02 2025 20:57:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_570518065": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 22:34:27 GMT+0000",
+      "jcr:lastModified": "Wed Jul 02 2025 22:34:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload_896021900": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "resources": [
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_cgs_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_fcso_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_ngs_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_noridian_l34106_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_noridian_l34228_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_novitas_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_palmetto_2023_d0000251458.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summaries_wps_2023_d0000251458.pdf"
+      ],
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:36:24 GMT+0000",
+      "jcr:lastModified": "Tue Sep 23 2025 14:40:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:41:20 GMT+0000",
+      "jcr:lastModified": "Mon Jul 07 2025 14:34:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(182,114,25)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jul 02 2025 20:40:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Facet joint interventions with billing and coding information</span></span></h3>\n",
+          "jcr:lastModified": "Wed Jul 02 2025 20:58:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 22:34:20 GMT+0000",
+      "jcr:lastModified": "Wed Jul 02 2025 22:34:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "resources": [
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_cgs_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_fcso_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_ngs_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_noridian_l38801_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_noridian_l38803_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_novitas_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_palmetto_2023_d0000255862.pdf",
+        "/content/dam/stryker/ivs/reimbursement-guides/resources/cms-lcd-summary_facet-joint-interventions_wps_2023_d0000255862.pdf"
+      ],
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 20:36:24 GMT+0000",
+      "jcr:lastModified": "Wed Jul 02 2025 22:30:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_1341989948": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 21:01:19 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">Please see entire Medicare local coverage determinations, as summaries are provided for educational purposes only.</span></p>\n",
+      "jcr:lastModified": "Wed Jul 02 2025 22:24:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1059235447": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Jul 02 2025 21:05:21 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h4><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Contact Us</span></span></h4>\n<p><span class=\"fontsize-1-25em\"><a href=\"mailto:ivs-reimbursement@stryker.com\">IVS-reimbursement@stryker.com</a><br>\n Reimbursement hotline: 1 954 302 4591</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 14:31:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The information summarized in this document is for illustrative purposes only and is not intended to provide coverage, coding, payment, medical treatment, or legal advice. Stryker does not warrant, promise, guarantee, or make any statement that the codes supplied in this guide are appropriate for any individual patient or that the use of this information will result in coverage or payment for treatment using any Stryker products or that any payment received will reimburse a provider’s costs. Nor is the information intended to guarantee or increase payment by any payor. Laws, regulations, and policies concerning reimbursement are complex, subject to change and updated regularly.<br>\r\n<br>\r\nStryker defers to specialty society guidelines, payer policies and guidelines, Medicare, and the AMA regarding the submission of claims and the appropriate coding for procedures and products. Reimbursement has three components, coding, coverage and payment. All three must be aligned for providers to receive reimbursement for the services they furnish. Payment rates are calculated and represent the national unadjusted payments rates. Payment to individual providers will vary based on a number of variables, including geographic location.<br>\r\n<br>\r\nThe entity billing Medicare and/or third-party payers is solely responsible for the accuracy of the codes assigned to the services and items in the medical record. Stryker Instruments does not, and should not, have access to medical records, and therefore cannot recommend codes for specific cases. The provider issolely responsible for reporting the codes that accurately describe the services furnished to a particular patient as well as the patient’s medical condition. It is the provider’s responsibility to determine and document that the services provided are medically necessary and that the site of service is appropriate. This information in this document is accurate as of December 2021 and all coding and reimbursement information is subject to change without notice. Please contact your Medicare Administrative Contractor or Private Payer for billing, payment and coverage information.</p>\r\n",
+    "jcr:lastModified": "Wed Jul 02 2025 21:05:06 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

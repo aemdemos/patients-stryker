@@ -1,0 +1,62 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Header",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a0b77316-3b09-4412-9368-3cca66d2d4f8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3f3391ce-26d2-4c15-b373-959e872605fe"
+  ],
+  "lastPublished": "Mon Jun 29 2026 17:48:15 GMT+0000",
+  "jcr:created": "Mon Jun 29 2026 17:48:16 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 17:48:18 GMT+0000",
+  "cq:lastModified": "Fri Jun 19 2026 14:19:37 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3f3391ce-26d2-4c15-b373-959e872605fe",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 29 2026 17:48:15 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "330d72df-e7f9-4860-9bc2-4e0b3ef188ec",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Connect with us</span></span></h2>\n",
+      "jcr:lastModified": "Fri Jun 19 2026 14:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": "true"
+    },
+    "text4216725011870939": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Have feedback about Stryker’s products and services? Visit our <a title=\"Product experience page\" href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;</p>\n<p>Visiting from outside the United States? Visit our <a title=\"Country index\" href=\"https://www.stryker.com/index.html\" target=\"_blank\">country index</a> to learn more about what's available in your country.&nbsp;</p>\n",
+      "jcr:lastModified": "Fri Jun 19 2026 14:19:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

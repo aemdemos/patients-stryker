@@ -1,0 +1,127 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Antegrade/Retrograde Nailing System",
+  "jcr:createdBy": "admin",
+  "jcr:title": "T2 Femur A/R ",
+  "jcr:versionHistory": "f0a715f1-e3af-4604-9949-f7a7e9edb48d",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2femurar/images/T2-Femur.png",
+  "jcr:predecessors": [
+    "fa8e2ac0-4b40-4dd4-a0df-beae53d19934"
+  ],
+  "lastPublished": "Thu Apr 26 2018 19:45:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 26 2018 19:45:16 GMT-0400",
+  "cq:lastModified": "Thu Apr 26 2018 19:31:31 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Intramedullary nail for treating femoral shaft as well as distal femur fractures. ",
+  "jcr:baseVersion": "fa8e2ac0-4b40-4dd4-a0df-beae53d19934",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:system/trauma-and-extremities/nailing",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:custom/trauma-and-extremities/Indications/femur",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:system/trauma-and-extremities/t2",
+    "stryker:product/trauma-and-extremities/t2-femur-ar",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 10 2017 09:58:00 GMT-0400",
+  "jcr:uuid": "c3baa46d-dd97-4e52-b5d5-909165c2e313",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Jun 21 2017 16:17:03 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/t2femurar/images/T2-Femur.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_548095_2054528393",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:lastModified": "Fri Jun 16 2017 08:06:02 GMT-0400",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>T2 Femur A/R Nailing System</p>\r\n",
+    "shortDescTop": "<p>The T2 Femoral Nailing System offers a universal left and right nail in addition to an antegrade or retrograde approach that may reduce inventory. The T2 IM Nailing Platform offers a combination of innovation, simplicity and versatility that is designed to suit your various needs.</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Thu Aug 10 2017 14:07:21 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Retrograde vs. antegrade target device</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>10mm of active compression</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Sizes range from 8-15mm</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Special condyle bolts for distal fixation</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Dynamic locking options available</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>T2-AWI-1, 07-2017</p>\r\n",
+    "jcr:lastModified": "Wed Aug 09 2017 11:23:20 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2femurar/images/T2-Femur.png"
+  }
+}

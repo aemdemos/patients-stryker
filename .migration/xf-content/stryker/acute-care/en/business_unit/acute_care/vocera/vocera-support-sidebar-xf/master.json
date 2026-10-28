@@ -1,0 +1,49 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vocera Support Sidebar XF",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c9c12d01-e112-41e9-8856-c816eceb3206",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "172c3554-d856-447b-a8e2-1729a39fe9e3"
+  ],
+  "jcr:created": "Fri Jan 26 2024 18:30:23 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 26 2024 18:30:25 GMT+0000",
+  "cq:lastModified": "Fri Jan 26 2024 18:29:56 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "172c3554-d856-447b-a8e2-1729a39fe9e3",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "5b0fc420-7fd2-48a9-94ae-bb20bbdd2ff8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_1582705398": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "leftPadding": "3",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Aug 29 2023 20:26:47 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\">Quick Links</span></h3>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a title=\"Go to Vocera Support\" href=\"/content/stryker/us/en/acute-care/vocera/support.html\">Vocera Support</a></span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a title=\"Go to Vocear Easter eggs\" href=\"/content/stryker/us/en/acute-care/vocera/support/easter-eggs.html\">Vocera Easter Eggs</a></span><br>\n</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a title=\"Go to Vocera voice commands\" href=\"/content/stryker/us/en/acute-care/vocera/support/voice-commands.html\">Vocera Voice Commands</a></span></span></p>\n<p>&nbsp;</p>\n<h3><span class=\"futura-bold\">Tech Support</span></h3>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Toll Free:&nbsp;<a title=\"Call (800) 473-3971\" href=\"tel:8004733971\">(800) 473-3971</a><br>\n or <a title=\"Call (408) 882-5700\" href=\"tel:1-4088825700\">(408) 882-5700</a><br>\n </span></span><a title=\"Email Vocera Support\" href=\"vcsupport@stryker.com\" target=\"_blank\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">vcsupport@stryker.com</span></span></a></p>\n",
+      "jcr:lastModified": "Fri Jan 26 2024 18:29:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "3",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "textIsRich": "true"
+    }
+  }
+}

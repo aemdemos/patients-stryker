@@ -1,0 +1,91 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Joint Replacement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d7d328b0-7d46-41b2-95f7-8d46e39db08a",
+  "cq:template": "/apps/stryker/templates/contactdivision",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:predecessors": [
+    "fbb1062a-5789-411d-865c-48df2e35fe38"
+  ],
+  "lastPublished": "Tue Dec 09 2025 20:55:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Dec 09 2025 20:55:18 GMT+0000",
+  "cq:lastReplicated": "Tue Dec 09 2025 20:55:20 GMT+0000",
+  "cq:lastModified": "Tue Dec 09 2025 20:54:59 GMT+0000",
+  "jcr:baseVersion": "fbb1062a-5789-411d-865c-48df2e35fe38",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:55:18 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/business-unit-contact",
+    "stryker:geography/north-america",
+    "stryker:business-function/manufacturing/usa",
+    "stryker:business-unit/joint-replacement",
+    "stryker:business-function/hq",
+    "stryker:customer-support-centers/USA",
+    "stryker:business-function/hq/usa",
+    "stryker:business-function/sales/usa"
+  ],
+  "jcr:lastModified": "Thu Aug 17 2017 02:16:11 GMT-0400",
+  "jcr:uuid": "6e2c6eb7-eb7d-4799-8b04-7ff3e120e2c9",
+  "sling:resourceType": "stryker/components/structure/pages/contactdivision",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "divisioncontactus": {
+      "jcr:primaryType": "nt:unstructured",
+      "emailaddressRequired": "true",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "formThankYou": "Thank you for your message, we will respond to your inquiry shortly.",
+      "formMailTo": "soemployeecommunications@stryker.com",
+      "lastNameRequired": "true",
+      "jcr:lastModified": "Tue Mar 01 2022 18:21:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/divisioncontactus",
+      "firstNameRequired": "true"
+    }
+  },
+  "contactus": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "title": "Contact us",
+    "groupContact": "1",
+    "jcr:lastModified": "Tue Dec 09 2025 20:54:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactus",
+    "textIsRich": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "group1Addresslabel": "Address",
+    "group1Address": "<p>325 Corporate Drive<br />\r\nMahwah, NJ 07430<br />\r\nUSA<br />\r\n</p>\r\n",
+    "group1Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Phone",
+        "phoneNumber": "201 831 5000"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "201 831 6288  Fax"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Customer support",
+        "phoneNumber": "877 946 9678 Toll Free"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    }
+  }
+}

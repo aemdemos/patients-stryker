@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero - Long-term Care Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1da4d5de-3c16-4ba6-9582-6c5de70af05d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "cbb1c8d6-13bd-4b78-b8e1-c87e48d431cd"
+  ],
+  "lastPublished": "Fri Apr 24 2026 12:25:27 GMT+0000",
+  "jcr:created": "Fri Apr 24 2026 12:25:29 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 24 2026 12:25:34 GMT+0000",
+  "cq:lastModified": "Fri Apr 24 2026 12:25:05 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cbb1c8d6-13bd-4b78-b8e1-c87e48d431cd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:31:10 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "21eb8b11-dc20-4ce8-9424-b3b6bc4b589e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 22 2024 15:39:01 GMT+0000",
+      "alt": "nurse wearing Vocera Smartbadge help patient in home",
+      "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/long-term-care_hero_mobile_842x480.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Apr 24 2026 12:25:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

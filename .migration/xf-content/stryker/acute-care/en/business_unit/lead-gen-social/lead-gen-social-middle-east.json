@@ -1,0 +1,81 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Lead gen social Middle East",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1cd7baf2-4199-4ba7-9c85-696c6153e0ff",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "08eb3b54-01a3-4907-986c-7e10e411511d"
+  ],
+  "lastPublished": "Tue Jul 23 2024 15:07:52 GMT+0000",
+  "jcr:created": "Tue Jul 23 2024 15:07:52 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 23 2024 15:07:55 GMT+0000",
+  "cq:lastModified": "Tue Jul 23 2024 15:07:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "08eb3b54-01a3-4907-986c-7e10e411511d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jul 22 2024 14:07:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "a2731abf-d6c1-4182-90d6-05467de625da",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text4216725011870939": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Quick Links</span></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/edit_eemea/en/acute-care.html\" title=\"Acute Care home page\">Acute Care home page</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/edit_eemea/en/portfolios/medical-surgical-equipment.html\">Medical and surgical equipment</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/edit_eemea/en/acute-care/connectivity-and-clinical-communication.html\">Connectivity and clinical communication</a></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/edit_eemea/en/acute-care/contact.html\">Contact information</a></span><br>\n</p>\n",
+      "jcr:lastModified": "Tue Jul 23 2024 15:07:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage42171": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Mon Jun 24 2024 20:50:25 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage42171603070996692517": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.linkedin.com/showcase/stryker-acute-care/",
+        "alt": "LinkedIn icon",
+        "srcFileRef": "/content/dam/stryker/ems/images/LinkedIn_100x100.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jun 25 2024 14:27:13 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    }
+  }
+}

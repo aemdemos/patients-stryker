@@ -1,0 +1,83 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "710d995c-dc1c-46fa-827f-665c9f860f12",
+  "jcr:predecessors": [
+    "36180516-5d41-4045-816a-c3953b02692e"
+  ],
+  "jcr:created": "Wed Jun 16 2021 13:23:58 GMT+0000",
+  "jcr:baseVersion": "36180516-5d41-4045-816a-c3953b02692e",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "ae90ac19-d040-4b35-a2b0-175070f132a9",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "NZ (Building 2)",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "nz-(building-2)",
+    "jcr:lastModified": "Fri May 21 2021 12:53:12 GMT+0000",
+    "lastFragmentSave": "Fri May 21 2021 12:53:12 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/australia/en_gb/contact-information",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Wed Jun 16 2021 13:23:58 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "cq:ctNeedTMUpdate": false,
+      "cq:ctTransItemId": "a0e3a4e9-7717-4686-82c7-07352425becb",
+      "cq:lastTranslationSource": "Language(EN_GB)",
+      "cq:lastModified": "Tue Jun 15 2021 15:09:41 GMT+0000",
+      "cq:ctTranslated": "Tue Jun 15 2021 15:09:41 GMT+0000",
+      "cq:lastModifiedBy": "matt.brandenburg@stryker.com-CTT"
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Jun 15 2021 15:09:37 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Jun 15 2021 15:09:39 GMT+0000",
+        "Emails@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "addressBlock1": "<p><b>Auckland office</b><br>511 Mount Wellington Highway<br>Mount Wellington<br>Auckland 1060</p>",
+        "ShortDesc@ContentType": "text/html",
+        "locationName@ContentType": "text/plain",
+        "EmailLabel@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "AddressLabel@ContentType": "text/plain",
+        "RelatedLinks@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "locationName": "New Zealand",
+        "ShortDesc@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Fri May 21 2021 12:53:11 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Jun 15 2021 15:09:40 GMT+0000",
+        "PhoneNumbers": "<p><b>NZ toll free customer support<br> </b>0800 787 9287</p>",
+        "AddressLabel@LastModified": "Tue Jun 15 2021 15:09:38 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Fri May 21 2021 12:53:11 GMT+0000"
+      }
+    }
+  }
+}

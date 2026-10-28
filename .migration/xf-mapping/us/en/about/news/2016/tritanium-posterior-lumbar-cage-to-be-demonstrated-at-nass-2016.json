@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Tritanium® Posterior Lumbar Cage to be demonstrated at NASS 2016",
+  "jcr:versionHistory": "d28100a9-0854-40d3-81f3-989ea8400b61",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "70500cce-2ce3-414e-84b1-4e741cb77023"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:21 GMT-0400",
+  "cq:lastModified": "Tue Aug 22 2017 18:37:32 GMT-0400",
+  "jcr:baseVersion": "70500cce-2ce3-414e-84b1-4e741cb77023",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Jul 31 2017 15:13:44 GMT-0400",
+  "jcr:uuid": "74f4369c-3dc5-4201-94e7-9638804d100b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Thu Oct 20 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Oct-2016",
+    "jcr:lastModified": "Wed May 31 2017 21:56:19 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division will demonstrate its 3D-printed <a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.stryker.com%2Fbuilttofuse%2F&amp;esheet=51442660&amp;newsitemid=20161020005207&amp;lan=en-US&amp;anchor=Tritanium+Posterior+Lumbar+%28PL%29+Cage&amp;index=1&amp;md5=4dfe7ca790817d7e0bd99d2e04098bd0\" target=\"_blank\">Tritanium Posterior Lumbar (PL) Cage</a>, an interbody fusion device designed to aid in lumbar spinal fixation for patients with degenerative disc disease, including up to Grade 1 spondylolisthesis, and degenerative scoliosis, at the North American Spine Society (<a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.nassannualmeeting.org%2FAM2016%2Fpublic%2Fenter.aspx&amp;esheet=51442660&amp;newsitemid=20161020005207&amp;lan=en-US&amp;anchor=NASS&amp;index=2&amp;md5=0ece76065cde7a61ce6c8544fd3420f0\" target=\"_blank\">NASS</a>) Annual Meeting, Oct. 26-29, 2016, in Boston (booth No. 1415).</p>\n<p>As part of the exhibit, Stryker’s proprietary Tritanium In-Growth Technology will be featured in a virtual reality “tour,” providing surgeons with a unique perspective on how 3D printing, also known as additive manufacturing, allows Stryker to produce highly porous implants that would be difficult or impossible to create using traditional manufacturing techniques.<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20161020005207/en/Tritanium%C2%AE-Posterior-Lumbar-Cage-Demonstrated-NASS-2016\" target=\"_blank\">Business Wire</a></p>\n",
+    "jcr:lastModified": "Wed May 31 2017 21:56:10 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mini-PRO pediatric restraints",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a3af096d-af9c-4744-a373-db03f9cfa6dc",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "32c2c950-0876-4c40-9180-ccd7a0380ce3"
+  ],
+  "lastPublished": "Thu Sep 10 2026 15:37:28 GMT+0000",
+  "jcr:created": "Thu Sep 10 2026 15:37:29 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 10 2026 15:37:32 GMT+0000",
+  "cq:lastModified": "Thu Sep 10 2026 15:37:24 GMT+0000",
+  "jcr:baseVersion": "32c2c950-0876-4c40-9180-ccd7a0380ce3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Apr 22 2026 18:46:10 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/ems"
+  ],
+  "jcr:uuid": "86feede3-2337-4402-92c6-e1aa0ad609ab",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Sep 10 2026 15:37:24 GMT+0000",
+      "jcr:lastModified": "Thu Sep 10 2026 15:37:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1218534599_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Sep 09 2026 21:28:05 GMT+0000",
+      "jcr:lastModified": "Wed Sep 09 2026 21:28:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "description": "EC-PP2-VID-3294550_REV-0_en_us\r\n",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Sep 09 2026 21:28:11 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Sep 09 2026 21:33:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/ems/products/power-pro-2/videos/MiniPRO Video US CA EMEA.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/MiniPRO Video US CA EMEA-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Sep 10 2026 15:34:01 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_272493304_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 15:14:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Fill out the form to learn more about&nbsp;<span class=\"futura-bold\">Mini-PRO pediatric restraints.</span></span></h2>\n",
+          "jcr:lastModified": "Wed Apr 22 2026 18:35:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Apr 22 2026 18:31:47 GMT+0000",
+      "jcr:lastModified": "Wed Apr 22 2026 18:31:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "redirectToPage",
+          "formId": "3901",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "redirectPage": "/content/stryker/us/en/emergency-care/c/mini-pro-pediatric-restraints/mini-pro-restraint-brochure",
+          "jcr:lastModified": "Wed Apr 22 2026 18:35:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 15 2021 21:08:06 GMT+0000",
+      "hideButton": "false",
+      "jcr:lastModified": "Wed Apr 22 2026 18:45:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "true",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lifepak-35"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/xpedition-powered-stair-chair"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/power-pro-2"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/power-load"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 21:11:04 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Thu Apr 25 2024 21:11:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Grants and donations",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e2ec9277-5f2c-41de-81cf-4b1542397c29",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "jcr:predecessors": [
+    "639f756c-d00b-4956-81b6-fbf87152a2c6"
+  ],
+  "contentID": "IVS-GSNPS-SYK-2226732_REV-0",
+  "lastPublished": "Wed Feb 18 2026 14:30:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 18 2026 14:30:47 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 18 2026 14:30:50 GMT+0000",
+  "cq:lastModified": "Wed Feb 18 2026 14:30:25 GMT+0000",
+  "jcr:description": "At Stryker, we recognize the important role that medical education grants and charitable donations play in our mission, both in benefits to patient care and the advancement of medical technology, treatments and knowledge.",
+  "jcr:baseVersion": "639f756c-d00b-4956-81b6-fbf87152a2c6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 14:38:59 GMT+0000",
+  "pageTitle": "Grants and donations",
+  "jcr:lastModified": "Wed Sep 17 2025 14:38:49 GMT+0000",
+  "jcr:uuid": "5cfbc563-8191-4dca-84d3-126dd30600ea",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "At Stryker, we recognize the important role that medical education grants and charitable donations play in our mission",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/grants-and-donations/images/Grants-and-Donations_hero-mobile_1200x680.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/grants-and-donations/images/Grants-donations_hero_1920x640.png",
+        "alt": "At Stryker, we recognize the important role that medical education grants and charitable donations play in our mission",
+        "jcr:lastModified": "Wed Feb 18 2026 14:30:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">Educational grants and charitable donations</span></span></span></h1>\r\n",
+              "jcr:lastModified": "Wed Feb 18 2026 14:06:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "APPLY FOR A GRANT OR DONATION",
+              "ctaExternalLink": "https://globalrequests.stryker.com/",
+              "jcr:lastModified": "Wed Feb 18 2026 14:09:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Tue Aug 26 2025 14:53:29 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\">Together with our customers,<span class=\"futura-bold\"> <span style=\"color: #ffb500;\">we are driven to make healthcare better</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">This is Stryker's mission, accomplished by collaborating with our customers to develop innovative products and services that improve the lives of patients.</span></p>\n<p><span class=\"fontsize-1-25em\">At Stryker, we recognize the important role that medical education grants and charitable donations play in our mission, both in benefits to patient care and the advancement of medical technology, treatments and knowledge.</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 14:19:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Aug 26 2025 14:43:36 GMT+0000",
+      "jcr:lastModified": "Tue Aug 26 2025 14:43:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_791904153": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Aug 26 2025 14:55:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Application process</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 15:09:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(89,75,97)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "7",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Aug 26 2025 14:44:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Factors our committee considers as part of the review process may include the following: independently developed content by a qualified medical education provider, audience, location and budget.</span></p>\n<p><span class=\"fontsize-1-25em\">On an annual basis, we receive hundreds of requests, and we aim to provide responsible support. Please note that due to finite resources, not every quality program will receive support.</span></p>\n<p><span class=\"fontsize-1-25em\">All support from Stryker is provided in accordance with <a href=\"https://www.advamed.org/member-center/resource-library/advamed-code-of-ethics/\" target=\"_blank\">AdvaMed Code of Ethics</a> on Interactions with Healthcare Professionals, Stryker corporate and divisional policies, and applicable federal and local laws.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 15:09:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "7",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_791904153_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Aug 26 2025 14:55:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Application resources</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 15:09:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(89,75,97)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "7",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Aug 26 2025 14:44:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ivs/grants-and-donations/resources/submitting-a-grant-request.pdf\" target=\"_blank\">Submitting an educational grant request</a></span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ivs/grants-and-donations/resources/submitting-a-charitable-donation-request.pdf\" target=\"_blank\">Submitting a charitable donation request</a></span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ivs/grants-and-donations/resources/third-party-support.pdf\" target=\"_blank\">Industry support guidance</a></span></li>\n<li><a href=\"https://openpaymentsdata.cms.gov/\" target=\"_blank\"><span class=\"fontsize-1-25em\">CMS Transparency open payments</span></a></li>\n</ul>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Sep 12 2025 20:18:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "7",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_788668609": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Aug 26 2025 15:38:20 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Tue Aug 26 2025 15:38:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "cols_1212824959_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 17:20:22 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 17:20:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "fullbleedpanel_20505": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Aug 04 2025 15:22:57 GMT+0000",
+          "jcr:lastModified": "Tue Aug 26 2025 15:19:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(237,238,236)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "2",
+              "jcr:created": "Tue Aug 26 2025 15:18:05 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Register and apply for a grant or donation from Stryker's Interventional Spine business</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">All requests must be submitted at least 8 weeks prior to the program start date.</span></p>\n<p style=\"text-align: center;\"><span class=\"standalone-link\"><a href=\"https://globalrequests.stryker.com/\" target=\"_blank\"><span class=\"fontsize-1-25em\">Apply for a grant or donation</span></a></span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 15:10:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_2050399307": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Aug 26 2025 15:37:29 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Tue Aug 26 2025 18:37:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "bottomMargin": "2"
+            }
+          }
+        }
+      }
+    },
+    "text_1490165928": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Sep 03 2025 17:12:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Wed Sep 03 2025 17:12:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Sep 03 2025 17:11:57 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 17:11:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Sep 03 2025 17:13:55 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 17:13:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_1433252831": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Feb 18 2026 14:05:00 GMT+0000",
+      "jcr:lastModified": "Wed Feb 18 2026 14:05:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "4056",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Sep 03 2025 17:09:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h2><span style=\"font-weight: normal;\">Be in the know</span></h2>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Thu Jun 05 2025 12:49:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:21:27 GMT+0000",
+      "text": "Resources Explore Interventional Spine homepage About us Learn Training and education Physician resources Indications for use Portfolios Advanced pain therapies Bone tumor ablation Vertebral augmentation Support Contact information Reimbursement Grants and donations",
+      "jcr:lastModified": "Tue Oct 21 2025 15:22:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/footer-links/master"
+    },
+    "cols_277294206": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Aug 26 2025 15:14:46 GMT+0000",
+      "jcr:lastModified": "Tue Aug 26 2025 15:14:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed Sep 03 2025 17:30:45 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

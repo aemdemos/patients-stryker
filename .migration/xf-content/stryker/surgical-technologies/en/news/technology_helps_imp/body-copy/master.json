@@ -1,0 +1,249 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "651c25df-1b42-4614-9abf-b260b0ba9d85",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b79edb01-ef83-4e2a-85de-ded5831df0f9"
+  ],
+  "lastPublished": "Tue Jun 16 2026 13:59:49 GMT+0000",
+  "jcr:created": "Tue Jun 16 2026 13:59:50 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 16 2026 13:59:52 GMT+0000",
+  "cq:lastModified": "Wed Jun 10 2026 18:20:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b79edb01-ef83-4e2a-85de-ded5831df0f9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 16 2026 13:59:49 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "44f6dc78-f91c-4599-9e21-655fa832ebd4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Jun 10 2026 18:09:20 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Colonoscopy and colorectal cancer screening procedures are on the rise in facilities across the country. With the U.S. Preventive Services Task Force lowering the recommended initial screening age from 50 to 45, and patients rescheduling colonoscopies they postponed at the height of the pandemic,¹ healthcare professionals in the GI space are busy.</p>\n<p>“We’re on a trajectory to break any record we would have thought about setting,” says Connie Hall, RN, a certified gastroenterologynurse.² There are five procedure rooms where Hall works, and lately, 500 to 600colonoscopies per month are performed with at least 1,000 patients waiting to be scheduled.</p>\n<p>What’s made a difference for Hall in efficiency and staff safety was switching from using canisters to a constantly closed waste management system. Not only did canisters have to be changed during a procedure—occasionally two to three times—but a lost polyp meant manually searching through the waste.</p>\n<p>“It was labor intensive to change out those canisters. The way you had to go through them to find a missing polyp, now that’s a day you don’t want to repeat very often,” Hall recalls.</p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:10:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jun 10 2026 18:10:09 GMT+0000",
+      "alt": "6758a57473d5461299237a65_65d679c85af2f7ac521bf611_NativeArticle_NeptuneS_4",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/technology-helps-improve-colonoscopy-safety-and-efficiency/6758a57473d5461299237a65_65d679c85af2f7ac521bf611_NativeArticle_NeptuneS_4.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 10 2026 18:10:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1315676503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:10:28 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Equipment is crucial</span></span></h2>\n<p>When Hall was on the design team at her new facility, purchasing Stryker’s Neptune Waste Management System was non-negotiable. The Neptune System helps protect staff from biohazardous fluid exposure and streamlines the colonoscopy process because it reduces the need to empty canisters during a procedure.</p>\n<p>Hall says nurses who come to work at the facility are amazed they don’t have to be exposed to the waste, therefore, she believes the Neptune System helps with staff retention. “Too many people don’t know what the options are for GI,” Hall continues. She has introduced colleagues at other facilities to the innovative technology of a constantly closed system, as well.</p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:11:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_884569585": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jun 10 2026 18:11:33 GMT+0000",
+      "alt": "6758a57473d5461299237a6f_65d679c85af2f7ac521bf613_NativeArticle_NeptuneS_5",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/technology-helps-improve-colonoscopy-safety-and-efficiency/6758a57473d5461299237a6f_65d679c85af2f7ac521bf613_NativeArticle_NeptuneS_5.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 10 2026 18:11:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_918654843": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:11:51 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Level up your facility’s waste management system³</span></span></h2>\n<p>Stryker recently added a Neptune System specifically designed for the GI space to its product portfolio—Neptune S. It provides consistent, reliable suction and helps protect staff against unintentional exposures and spills that happen under the current standard of care. Neptune S has a backup basket and an illuminated manifold port to help prevent lost polyps,** in addition to an SEM(Smart Equipment Management), allowing for proactive device maintenance. Despite all its features, Neptune S has a 30% smaller footprint in comparison to Neptune 3.</p>\n<p>For those working in GI roles, there are more efficient options now available, thanks to Stryker's innovation. While upgrading a waste management system is a monetary investment, it's also an investment in safety for everyone in the room. Hall encourages pulling the safety card and getting infection control and employee health team members on board.</p>\n<p>“It’s only going to take one splash in the face or contamination of a staff member to put everyone through the cleanup of biohazards and potential blood work and treatment for those affected,” Hall concludes. “Safety is a bigger commitment than it’s ever been in healthcare.”</p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:12:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1940272286": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jun 10 2026 18:12:35 GMT+0000",
+      "alt": "6758a57473d5461299237a79_65d679c85af2f7ac521bf612_NativeArticle_NeptuneS_6",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/technology-helps-improve-colonoscopy-safety-and-efficiency/6758a57473d5461299237a79_65d679c85af2f7ac521bf612_NativeArticle_NeptuneS_6.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 10 2026 18:12:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:15:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 18:15:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_513768991": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:12:54 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Is your facility prepared to help protect you and other staff?</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/surgical-technologies/products/neptune-s.html\">Begin your Journey to Zero* harm today at Neptune S.</a></span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:15:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "1",
+      "jcr:created": "Wed Jun 10 2026 18:14:38 GMT+0000",
+      "CTATitle": "Neptune S",
+      "ctaExternalLink": "https://www.safeor.com/products/neptune-s",
+      "jcr:lastModified": "Wed Jun 10 2026 18:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "ctaInternalLink": "/content/stryker/us/en/surgical-technologies/products/neptune-s"
+    },
+    "sectionseparator_198017187": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:15:55 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 18:15:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1420747207": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 18:16:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">*Zero splash and spills, zero airborne contaminants, zero smoke, zero retained surgical sponges, zero blind spots, zero trips and falls, zero drug diversion, zero maternal harm, zero lost polyps, zero exposure, and zero doubt messages are not guarantees and are aspirational in nature.</span></p>\n<p><span class=\"fontsize-8em\">**Polyps 2 mm or larger</span></p>\n<ol>\n<li><span class=\"fontsize-8em\">Shaukat A, Church T. Colorectal cancer screening in the USA in the wake of COVID-19. Lancet Gastroenterol Hepatol. 2020Aug;5(8):726-727. doi: 10.1016/S2468-1253(20)30191-6. Epub 2020 Jun 19. PMID:32569576; PMCID: PMC7304951.</span></li>\n<li><span class=\"fontsize-8em\">This is a paid interview with a Stryker nurse consultant, conducted March 22, 2023, on behalf of Stryker.</span></li>\n<li><span class=\"fontsize-8em\">Lamb W, Pursely D. The principles of vacuum and clinical application in the hospital environment. Ohio Medical Corporation. 4th Ed.March 2017.</span></li>\n</ol>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:17:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta_217785828": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "1",
+      "jcr:created": "Wed Jun 10 2026 18:16:45 GMT+0000",
+      "CTATitle": "Back to trending topics",
+      "jcr:lastModified": "Wed Jun 10 2026 18:17:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "ctaInternalLink": "/content/stryker/us/en/surgical-technologies/news"
+    }
+  }
+}

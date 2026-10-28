@@ -1,0 +1,137 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": " Supracondylar Nailing System",
+  "jcr:createdBy": "admin",
+  "jcr:title": "T2 SCN",
+  "jcr:versionHistory": "6bd42693-8533-486b-bf1a-547f71a772f8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2scn/images/T2-SCN.png",
+  "jcr:predecessors": [
+    "f7a38f4e-5639-4189-ba88-b3030ceaa238"
+  ],
+  "lastPublished": "Thu Apr 26 2018 19:45:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 26 2018 19:45:18 GMT-0400",
+  "cq:lastModified": "Thu Apr 26 2018 19:33:38 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Intramedullary nail for treating diaphyseal and supracondylar fractures. ",
+  "jcr:baseVersion": "f7a38f4e-5639-4189-ba88-b3030ceaa238",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:custom/trauma-and-extremities/Indications/femur",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/trauma-and-extremities/plating",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:system/trauma-and-extremities/t2",
+    "stryker:product/trauma-and-extremities/t2-scn",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 10 2017 09:56:58 GMT-0400",
+  "jcr:uuid": "1b8ecfca-c69d-49ff-a9c0-07c530246006",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jun 02 2017 10:58:06 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/t2scn/images/T2-SCN.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_548095_151318355",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModified": "Fri Jun 16 2017 09:30:55 GMT-0400",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>T2 Supracondylar Nailing System</p>\r\n",
+    "shortDescTop": "<p>The T2 IM Nailing Platform offers a combination of innovation, simplicity and versatility that is designed to suit your various needs.</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Mon Jul 17 2017 14:27:44 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Four locking holes in distal 32mm with three planes of fixation<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Short and long nail options available</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Distal screw only 6mm from distal tip</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Sizes range from 9-14mm</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Ream less bone on driving end</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Condyle bolts for intra-frag compression</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>End cap for distal end of nail creates fixed angle construct with distal screw</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>T2-AWI-1, 07-2017</p>\r\n",
+    "jcr:lastModified": "Wed Aug 09 2017 11:28:01 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2scn/images/T2-SCN.png"
+  }
+}

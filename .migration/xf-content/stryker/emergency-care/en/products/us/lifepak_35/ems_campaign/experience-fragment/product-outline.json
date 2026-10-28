@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Firefighters",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2a888f1c-3eba-4704-ae3c-b113381dd9f5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "92f752c7-223c-470a-84cf-061491243919"
+  ],
+  "lastPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "jcr:created": "Wed May 29 2024 19:15:51 GMT+0000",
+  "cq:lastReplicated": "Wed May 29 2024 19:15:52 GMT+0000",
+  "cq:lastModified": "Wed May 29 2024 12:46:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "92f752c7-223c-470a-84cf-061491243919",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "jcr:uuid": "008d78fc-e65e-4dbf-a923-d15521d16db3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 23 2024 14:28:27 GMT+0000",
+      "alt": "First responders passing LIFEPAK 35 through a car crash",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_car-crash-firefighters_3x1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 29 2024 12:37:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,1426 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Augment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a5a5c824-ccd3-4f9e-930e-04ae10863851",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Image of syringe and Augment",
+  "jcr:predecessors": [
+    "9e527130-710d-457d-b80f-0157df2a0485"
+  ],
+  "contentID": "FA-AUGM-SYK-1995000_REV-0_en_us",
+  "lastPublished": "Mon Feb 23 2026 17:30:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 23 2026 17:30:59 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 23 2026 17:31:02 GMT+0000",
+  "cq:lastModified": "Mon Feb 23 2026 17:30:34 GMT+0000",
+  "newDisplayFlagDate": "Fri Oct 31 2025 00:00:00 GMT-0400",
+  "jcr:description": "Augment is the first and only FDA approved alternative to autograft in hindfoot and ankle arthrodesis backed by the largest prospective Level 1 RCT in Foot and Ankle Orthopedic history. \r\n\r\nIn the randomized, controlled pivotal trial conducted to support U.S. FDA approval of Augment Bone Graft, 75% of the treated patients had one or more risk factors for non-union. Literature reports a range of 10% to as high as 41% of all hindfoot and ankle fusions fail. ",
+  "jcr:baseVersion": "9e527130-710d-457d-b80f-0157df2a0485",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:21:50 GMT+0000",
+  "pageTitle": "Augment",
+  "cq:tags": [
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/hindfoot",
+    "stryker:custom/trauma-and-extremities/biologics/bone-grafting/recombinant-growth-factors",
+    "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/biologics",
+    "stryker:capability/biologics",
+    "stryker:capability/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/ankle-fracture/biologics",
+    "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy/biologics",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis/biologics",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/foot-and-ankle/product-type/biologics",
+    "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/biologics",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/biologics",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/biologics",
+    "stryker:portfolio/orthopaedics",
+    "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/biologics",
+    "stryker:specialty/bone-grafting",
+    "stryker:product/foot-and-ankle/augment",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-recombinant-growth-factors"
+  ],
+  "jcr:lastModified": "Mon Aug 18 2025 17:23:30 GMT+0000",
+  "jcr:uuid": "1e0cba30-7104-4b55-bd80-0ed9fe9a3f5c",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Aug 16 2024 17:16:36 GMT+0000",
+      "carouselOptionSpeed": "2500",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Dec 03 2025 18:56:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Mon Aug 19 2024 18:14:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Sep 10 2024 15:56:44 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "alison.moutinho@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5-5-vw\">Trust Augment<sup><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\">®</span></span></sup></span></span></span></span></span></h1>\r\n",
+              "line2": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">for all your hindfoot and ankle fusions.</span></span></h2>\r\n<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Recommended more often than autograft.<sup>1</sup></span></span></h3>\r\n",
+              "jcr:lastModified": "Mon Oct 14 2024 14:03:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide_206282": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Mon Aug 19 2024 18:15:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Sep 10 2024 15:54:48 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "alison.moutinho@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h2><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5-5-vw\">Trust Augment<sup><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\">®</span></span></sup></span></span></span></span></span></h2>\r\n",
+              "line2": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">for all your hindfoot and ankle fusions.</span></span></h2>\r\n<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Recommended more often than autograft.<sup>1</sup></span></span></h3>\r\n",
+              "jcr:lastModified": "Mon Oct 14 2024 14:04:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "david.gilmour@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon Aug 19 2024 19:44:09 GMT+0000",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">#1 biologic&nbsp;brand of choice</span></span>&nbsp;<span class=\"urw-egyptienne\">for hindfoot and ankle fusion.<sup>1</sup></span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 12 2024 14:40:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "carouselslide_1111178842": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Mon Aug 19 2024 20:39:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Sep 10 2024 15:55:41 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "alison.moutinho@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h2><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5-5-vw\">Trust Augment<sup><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\">®</span></span></sup></span></span></span></span></span></h2>\r\n",
+              "line2": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">for all your hindfoot and ankle fusions.</span></span></h2>\r\n",
+              "jcr:lastModified": "Mon Oct 14 2024 14:04:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "david.gilmour@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon Aug 19 2024 19:44:09 GMT+0000",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">2× odds ratio&nbsp;</span></span><span class=\"urw-egyptienne\">for fusion success in patients over 65 (vs. autograft).<sup>3</sup></span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 12 2024 14:39:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "carouselslide_1638199512": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/foot-and-ankle/en/products/augment/carousel-slide-desktop/master",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Mon Aug 19 2024 20:41:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Sep 10 2024 15:55:50 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "alison.moutinho@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h2><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5-5-vw\">Trust Augment<sup><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\">®</span></span></sup></span></span></span></span></span></h2>\r\n",
+              "line2": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">for all your hindfoot and ankle fusions.</span></span></h2>\r\n",
+              "jcr:lastModified": "Mon Oct 14 2024 14:04:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "david.gilmour@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon Aug 19 2024 19:44:09 GMT+0000",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Preferred 3×&nbsp;</span></span><span class=\"urw-egyptienne\">over the next preferred&nbsp;biologic brand.<sup>1</sup></span></span></p>\n",
+              "jcr:lastModified": "Mon Aug 19 2024 20:45:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "localpagenavigation": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "alison.moutinho@stryker.com",
+      "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+      "jcr:created": "Mon Aug 18 2025 18:08:25 GMT+0000",
+      "isParent": false,
+      "jcr:lastModified": "Mon Aug 18 2025 18:08:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/localpagenavigation",
+      "enableLocalPageNavigation": true
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "trust",
+      "jcr:created": "Tue Aug 20 2024 20:52:55 GMT+0000",
+      "title": "Why trust Augment?",
+      "jcr:lastModified": "Tue Aug 20 2024 20:57:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "sectionseparator_342939969": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Sep 12 2024 14:48:23 GMT+0000",
+      "jcr:lastModified": "Thu Sep 12 2024 14:48:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"font-size: 42.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Why Trust Augment?</span></span></b><br>\r\n </span></h2>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Augment is the<b> first and only</b> FDA approved alternative to autograft in hindfoot and ankle arthrodesis and is backed by the largest prospective Level 1 RCT in Foot and Ankle Orthopedic history.<sup>2,*</sup></span></span>",
+      "jcr:lastModified": "Mon Oct 14 2024 14:03:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols_671200835": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 17:27:36 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 17:27:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Proven</span><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Level 1 evidence showing safety and efficacy in clinical outcomes when compared to the gold standard autograft in the largest F&amp;A clinical trial ever conducted.<sup>2,*</sup></span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Labeled</span><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Class III combination product specifically proven in, and labeled for, ankle and hindfoot arthrodesis via a rigorous PMA regulatory pathway.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Unique</span><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Bioengineered human rhPDGF-BB stimulates multiple aspects of healing in response to injury. rhPDGF-BB is highly purified with consistent biological potency; while allograft and autograft are highly variable in quality and potency.<sup>7-10</sup></span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">Safe</span></span><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Proven safe through multiple clinical trials and successful commercial use since 2009 in Canada and 2011 in United States, Australia and New Zealand, while eliminating the risks, morbidities, and costs associated with autograft harvest.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 18:08:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Sep 10 2024 13:54:51 GMT+0000",
+      "text": "<p>*As of September, 2024</p>\n",
+      "jcr:lastModified": "Mon Aug 18 2025 15:49:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_2126797041": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Aug 19 2024 20:48:01 GMT+0000",
+      "jcr:lastModified": "Mon Aug 19 2024 20:48:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 17:40:18 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 17:40:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_1955435932": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "what",
+      "jcr:created": "Tue Aug 20 2024 20:55:50 GMT+0000",
+      "title": "What is Augment?",
+      "jcr:lastModified": "Tue Aug 20 2024 21:00:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 17:39:30 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 17:39:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">What is Augment</span></span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">﻿Both Augment Bone Graft and Augment Injectable are made up of two main components, rhPDGF-BB and beta-Tricalcium Phosphate. Augment Injectable also includes a collagen matrix to make it flowable.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">﻿﻿A natural deficiency in PDGF-BB has been found to be correlated with non-union and poor bone formation in clinical and pre-clinical studies involving subjects with diabetes, and osteoporosis.<sup>11-13</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 16:26:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 17:39:40 GMT+0000",
+          "alt": "fa-augment-syringe-capsule",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-syringe-capsule.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 17:40:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_1143126070": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 17:40:31 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 17:40:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Aug 20 2024 20:49:41 GMT+0000",
+      "jcr:lastModified": "Tue Aug 20 2024 20:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Aug 20 2024 20:48:52 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "UCid1jbUj2k",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Aug 20 2024 20:49:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 20:29:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Operative technique and MOA</span></span></p>\n<p><span class=\"fontsize-1-25em\">Application of Augment Injectable for tibial talar fusion including mechanism of action.</span><br>\n<br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 17:39:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1948434199": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Aug 19 2024 20:51:17 GMT+0000",
+      "jcr:lastModified": "Mon Aug 19 2024 20:51:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_26463790": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "said",
+      "jcr:created": "Tue Aug 20 2024 20:57:32 GMT+0000",
+      "title": "What Surgeons Said",
+      "jcr:lastModified": "Tue Aug 20 2024 21:00:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_652839079_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+      "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">What surgeons said</span></span></span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 19 2024 20:48:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_652839079_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "daniela.marino1@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+      "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">We polled orthopaedic surgeons on which biologics&nbsp;brand they prefer for hindfoot and ankle fusions.</span></span></span></span></span></p>\n<p><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">One choice <span style=\"color: #ffb500;\">stood out.</span></span></span></span></span></span></p>\n<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Augment </span><span class=\"urw-egyptienne\">Regenerative solutions</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">When choosing a biologic for hindfoot and ankle arthrodesis, preference matters, and you’ve told us yours. Considered by many&nbsp;to be a standard of care for hindfoot and ankle arthrodesis<sup>1</sup>, Augment&nbsp;provides predictable outcomes to guarantee your peace of mind.</span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 19 2024 21:18:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:18:21 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:18:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:19:03 GMT+0000",
+          "alt": "illustration of two hands holding a star with the number one inside",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-star-one.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:25:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">#1 biologic&nbsp;brand of choice</span>&nbsp;</span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">for hindfoot and ankle fusion.<sup>1</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:27:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:19:03 GMT+0000",
+          "alt": "illustration of two people talking to each other",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-reccomended-talking.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:25:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">recommended more</span>&nbsp;</span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">often than </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">autograft.</span></span><span class=\"urw-egyptienne\"><sup>1</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:28:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:19:03 GMT+0000",
+          "alt": "Image of a shield with the number three and a X",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-stars-three.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:26:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">preferred 3×&nbsp;</span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">over the next preferred&nbsp;biologic brand.<sup>1</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:29:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_797520400": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:29:42 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:29:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_652839079_copy__1888094120": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+      "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">You deserve performance and peace of mind.</span></span></span></span></span></p>\n<p><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Augment&nbsp;<span style=\"color: #ffb500;\">delivers both.</span></span></span></span></span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Augment is the safe, efficacious and only level 1 clinically demonstrated option for hindfoot and ankle arthrodesis, as evidenced in the largest randomized controlled trial (RCT) conducted in foot and ankle orthopaedic history. Augment is backed by Stryker’s Augment Satisfaction Guarantee.***</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Wed Sep 11 2024 19:34:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1480416977": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:30:02 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:30:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_1036324370": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:30:57 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:30:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a downward arrow indicating reduction",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-reduced.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:32:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Reduced</span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">&nbsp;incidence of chronic pain.<sup>2,6</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:35:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a upward arrow",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-increased.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:33:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">odds ratio for fusion success in patients over&nbsp;65 (vs. autograft).<sup>3</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 15:47:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a downward arrow indicating reduction",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-reduced.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:32:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Reduced</span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">&nbsp;surgical complication rate.<sup>2,4,5,6</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 15:50:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1982568561": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:29:49 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:29:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a calendar highlighting the number 15",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-calendar.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:34:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">More than</span></span></span></span><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"> 15 years </span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">of clinical research</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:38:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a open book indicating a publication",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-open-book.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:34:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Over 45</span>&nbsp;</span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">peer-reviewed publications.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:38:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 16 2024 18:30:15 GMT+0000",
+          "alt": "an icon of a magnifying glass",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-icons-magnify-glass.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 18:35:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 12 2024 15:26:28 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Augment is the </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">only</span></span><span class=\"urw-egyptienne\">&nbsp;FDA approved alternative&nbsp;to autograft in hindfoot&nbsp;and ankle arthrodesis</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:39:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Sep 10 2024 13:54:51 GMT+0000",
+      "text": "<p>***Stryker’s Augment Satisfaction Guarantee provides a replacement Augment kit to a facility if a patient develops a nonunion at one or more of the ankle or hindfoot joints where Augment was implanted. The facility must meet the terms and conditions of the guarantee for the replacement to be provided.</p>\n",
+      "jcr:lastModified": "Tue Sep 10 2024 20:30:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1205545642": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Aug 20 2024 20:58:58 GMT+0000",
+      "jcr:lastModified": "Tue Aug 20 2024 20:58:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_209903077": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "clinical",
+      "jcr:created": "Tue Aug 20 2024 20:58:32 GMT+0000",
+      "title": "Clinical Evidence",
+      "jcr:lastModified": "Tue Aug 20 2024 21:00:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_115070840": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Aug 20 2024 20:58:50 GMT+0000",
+      "jcr:lastModified": "Tue Aug 20 2024 20:58:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">Clinical evidence</span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2024 20:01:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "clinical",
+          "jcr:lastModified": "Tue Aug 27 2024 13:17:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/augment/clinical-evidence/Prospective-Randomized-Timothy-Daniels.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/clinical-evidence/Augment-DiGiovanni-Clincal-Article-2013.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/clinical-evidence/Augment-Berlet-Clincal-Article-2020.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/clinical-evidence/Augment-Clinical Article-Loveland-2020.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/clinical-evidence/Loveland_RetroSeries_Augment_JOA_Publication.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Wed Jun 11 2025 21:02:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Clinical Evidence"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_1896272858": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Aug 20 2024 20:58:42 GMT+0000",
+      "jcr:lastModified": "Tue Aug 20 2024 20:58:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_964296157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Aug 27 2024 13:58:48 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Aug 27 2024 14:01:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Wed Sep 11 2024 20:01:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Regenerative-Solutions-AP-017085.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Regenerative-Solutions-FAQ-AP-017622.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Satisfaction-Guarantee.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Surgeon-Infographic-AP-017561.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/augment/resources/Augment-Bibliography.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Wed Dec 11 2024 19:17:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_155759491": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 18:42:30 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 18:42:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_210157705": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Aug 20 2024 20:56:39 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Tue Aug 20 2024 21:01:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu May 23 2024 17:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Mon Feb 23 2026 17:30:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Augment</span></span></h4>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 18:41:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 23 2024 17:22:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator_457674631": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Sep 12 2024 14:07:19 GMT+0000",
+      "jcr:lastModified": "Thu Sep 12 2024 14:07:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_71142467": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "augment-info",
+      "jcr:created": "Mon Aug 04 2025 16:43:34 GMT+0000",
+      "title": "Info",
+      "jcr:lastModified": "Mon Aug 18 2025 18:13:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1211939272": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Sep 12 2024 14:11:08 GMT+0000",
+      "jcr:lastModified": "Thu Sep 12 2024 14:11:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 20:29:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Brief summary of important product information</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 12 2024 14:11:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Sep 12 2024 14:08:07 GMT+0000",
+      "jcr:lastModified": "Thu Sep 12 2024 14:08:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 20:29:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Indications for use</span></span></p>\n<p><span class=\"fontsize-1em\">Augment Bone Graft and Augment Injectable are indicated for use as an alternative to autograft in arthrodesis (i.e., surgical fusionprocedures) of the ankle (tibiotalar joint) and/or hindfoot (including subtalar,talonavicular, and calcaneocuboid joints, alone or in combination), due toosteoarthritis, post-traumatic arthritis, rheumatoid arthritis, psoriatic arthritis, avascular necrosis, joint instability, jointdeformity, congenital defect, or jointarthropathy in patients with preoperative or intraoperative evidence indicating the need for supplemental graft material.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 15:35:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 20:29:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Contraindications</span></span></p>\n<p><span class=\"fontsize-1em\">Augment Bone Graft and Augment Injectable should not:</span></p>\n<ul>\n<li><span class=\"fontsize-1em\">be used in patients who have a known hypersensitivity to any of the components of the product or are allergic to bovine collagen (Augment Injectable only) or yeast-derived products.</span></li>\n<li><span class=\"fontsize-1em\">be used in patients with active cancer.</span></li>\n<li><span class=\"fontsize-1em\">be used in patients who are skeletally immature (&lt;18 years of age or no radiographicevidence of closure of epiphyses).</span></li>\n<li><span class=\"fontsize-1em\">be used in pregnant women. The potential effects of rhPDGF-BB on the human fetus have not been evaluated.</span></li>\n<li><span class=\"fontsize-1em\">be implanted in patients with an active infection at the operative site.</span></li>\n<li><span class=\"fontsize-1em\">be used in situations where soft tissue coverage is not achievable.</span></li>\n<li><span class=\"fontsize-1em\">be used in patients with metabolic disorders known to adversely affect the skeleton (e.g. renal osteodystrophy or hypercalcemia), other than primary osteoporosis or diabetes.</span></li>\n<li><span class=\"fontsize-1em\">be used as a substitute for structural graft.<br>\n </span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Sep 12 2024 14:30:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Sep 12 2024 14:07:10 GMT+0000",
+      "jcr:lastModified": "Thu Sep 12 2024 14:07:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 20:29:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Warnings</span></span></p>\n<p><span class=\"fontsize-1em\">As with all therapeutic recombinant proteins, there is a potential for immune responses to be generated to the rhPDGF-BB component of Augment Bone Graft and Augment Injectable. The immune response to rhPDGF-BB was evaluated for Augment Injectable in two studies, and for Augment Bone Graft (which contains the identical rhPDGF-BB) in two pilot and one pivotal study for ankle and hindfoot arthrodesis procedures. The detection of antibody formation is highly dependent on the sensitivity and specificity of the assay. Additionally, the observed incidence of antibody (including neutralizing antibody) positivity in an assay may be influenced by several factors including assay methodology, sample handling, timing of sample collection, concomitant medications, and underlying disease. For these reasons, comparison of the incidence of antibodies to Augment Bone Graft or Augment Injectable with the incidence of antibodies to other products may be misleading.</span></p>\n<p><span class=\"fontsize-1em\">Women of childbearing potential should avoid becoming pregnant for one year following treatment with Augment Bone Graft or Augment Injectable. The implantation of rhPDGF-BB in women and the influence of their development of anti-PDGF-BB antibodies, with or without neutralizing activity, on human fetal development are not known.</span></p>\n<p><span class=\"fontsize-1em\">The safety and effectiveness of Augment Bone Graft or Augment Injectable in nursing mothers has not been established. It is not known if rhPDGF-BB is excreted in human milk.</span></p>\n<p><span class=\"fontsize-1em\">The safety and effectiveness of Augment Bone Graft or Augment Injectable has not been established in anatomical locations other than the ankle or hindfoot, or when combined with autologous bone or other bone grafting materials.</span></p>\n<p><span class=\"fontsize-1em\">The safety and effectiveness of repeat applications of Augment Bone Graft or Augment Injectable have not been established. The safety and effectiveness of Augment Bone Graft or Augment Injectable in pediatric patients below the age of 18 years have not been established.</span></p>\n<p><span class=\"fontsize-1em\">Augment Bone Graft or Augment Injectable do not have any biomechanical strength and must be used in conjunction with standard orthopedic hardware to achieve rigid fixation.<br>\n The β-TCP component is radiopaque, which must be considered when evaluating radiographs for the assessment of bridging bone. The radiopacity may also mask underlying pathological conditions. Over time, the β-TCP is intended to be resorbed at the fusion site and replaced by new bone. Under such circumstances, it would typically be indistinguishable from surrounding bone.<br>\n </span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Sep 12 2024 14:30:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/augment/Augment.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>The first and only proven alternative to autograft in ankle and hindfoot arthrodesis.</p>\r\n",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Aug 16 2024 17:26:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Proven - Level 1 evidence of safety and effectiveness as a replacement to autograft in the largest F&amp;A clinical trial ever conducted</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Labeled - Class III combination product specifically proven in, and labeled for, ankle and hindfoot arthrodesis via a rigorous PMA regulatory pathway</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Unique - The only biologic product specifically engineered, proven, and approved for ankle and hindfoot fusions</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Safe - Proven safe through multiple clinical trials and successful commercial use since 2009 in Canada and 2011 in Australia and New Zealand, while eliminating the proven risks, morbidities, and costs associated with autograft harvest</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Aug 16 2024 17:25:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Aug 16 2024 17:26:02 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Aug 16 2024 17:26:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Aug 19 2024 19:47:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Aug 20 2024 20:53:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:</b></p>\r\n<ol>\r\n<li>Double-blinded brand equity survey, GLG, 2023. &nbsp;</li>\r\n<li>DiGiovanni C et al, JBJS, 2013</li>\r\n<li>Berlet GC, et al. JBJSO, 2020 </li>\r\n<li>Daniels TR et al, FAI, 2015 </li>\r\n<li>Daniels TR et al, FAI, 2019</li>\r\n<li>Reduced chronic pain and surgical complications are related to the absence of autograft harvest</li>\r\n<li>Fiedler, et al. J Cell Biochem (2002)<br>\r\n</li>\r\n<li>Ozaki, et al. J Stem Cells &amp; Dev (2007)</li>\r\n<li>Bouletreau, et al. Plast Reconstr Surg (2002)</li>\r\n<li>Hollinger, et al. JBJS (2008)</li>\r\n<li>Verma, et al., Curr Orthop Pract (2011)&nbsp;<br>\r\n</li>\r\n<li>Hollinger, et al., JOR (2008)&nbsp;</li>\r\n<li>Al-Zube, et al., J Orthop Res (2009)&nbsp;</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Aug 18 2025 16:25:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

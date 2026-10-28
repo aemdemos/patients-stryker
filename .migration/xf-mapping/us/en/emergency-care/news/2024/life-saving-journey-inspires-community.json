@@ -1,0 +1,107 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "From the desert to the heart of hope: How one man’s life-saving journey inspired a community",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0aa1161c-0449-41d6-8f14-368efed7f86e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "EMTs who saved his life visit Ron Baker in the hospital after his heart attack",
+  "jcr:predecessors": [
+    "8d71a0f0-2de9-45f6-a705-61d3487f86a6"
+  ],
+  "contentID": "EC-LUC-COMM-1354395_REV-0_en_us",
+  "lastPublished": "Mon Dec 16 2024 22:54:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 16 2024 22:54:51 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 16 2024 22:54:53 GMT+0000",
+  "cq:lastModified": "Mon Dec 16 2024 22:54:45 GMT+0000",
+  "jcr:description": "A heart attack in the remote Utah desert and the subsequent heroic acts by local EMTs, inspired one couple to raise funds to donate much needed mechanical CPR devices to area EMS organizations. ",
+  "jcr:baseVersion": "8d71a0f0-2de9-45f6-a705-61d3487f86a6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 16 2024 22:40:29 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/articles",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news"
+  ],
+  "jcr:lastModified": "Mon Dec 16 2024 22:54:45 GMT+0000",
+  "jcr:uuid": "7e985c7f-1976-4ce8-8be7-4179c302df47",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "description": "Chasie Greathouse and Cherish Works with Millard County EMS stopping by to introduce themselves at the hospital the day after Ron Baker’s heart attack. (Photo credit: Ron Baker)",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Dec 09 2024 18:34:47 GMT+0000",
+      "alt": "EMTs who saved his life visit Ron Baker in the hospital after his heart attack",
+      "srcFileRef": "/content/dam/stryker/ems/news/images/ec-newsroom_Ron-Utaxh-hospital-Cherish-Chasie_1440x815.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Dec 13 2024 20:53:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>8-minute read</i></span></p>\n<p><span class=\"fontsize-1-25em\">What began as a simple road trip for Ron Baker and Fay Lim took a dramatic, life-altering turn in the Utah desert on June 19, 2023. Ron, a former contractor and lifelong adventurer, never expected that a whim to dig for fossils would lead him to a near-death experience—and then to a powerful mission to give back.</span></p>\n<p><span class=\"fontsize-1-25em\">Ron and Fay were winding down a six-week journey across the U.S., having spent time with their children and enjoying a much-deserved adventure in Millard County, Utah. But on that fateful day, as Ron unearthed fossilized treasures from the soil, he felt a strange fatigue and pain. It started subtly but quickly turned intense, spreading across his collarbone and shoulders. A contractor by trade, Ron shrugged it off at first, attributing it to a long day of unfamiliar, physical labor. Yet, deep down, he sensed something wasn’t right. On the drive back from the dig, he realized he couldn’t continue and handed the wheel to Fay. He tried calling 911, but there was no service in the vast Utah desert. Finally, after several attempts, they connected with emergency services, who dispatched a sheriff and an ambulance to meet them as close as possible to their remote location.</span></p>\n<p><span class=\"fontsize-1-25em\">Ron’s memory fades at that point, but Fay remembers every moment vividly. “He turned to the EMT and said, ‘I’m passing out.’ Then he just slumped,” she recounted, her voice still charged with emotion. As Ron lost consciousness and went into cardiac arrest, the EMTs took over, performing manual CPR nonstop for nearly 20 miles. “They didn’t have a mechanical CPR device,” Ron shared, emphasizing the strain this placed on the EMTs. “Those people were fighting as hard as they could to keep me alive, using nothing but their hands and sheer determination.”</span></p>\n<p><span class=\"fontsize-1-25em\">When they arrived at Delta Community Hospital, Ron’s heart stopped twice before being revived by the emergency team. Later, he was stabilized and airlifted to Provo for intensive care. After eight hours he awoke, dazed but overwhelmingly grateful. “My first thought was, is my brain OK? Am I still myself?” Ron recalled. “I just woke up in the land of Oz, as if I’d traveled to another world.”</span></p>\n<h2><span class=\"futura-bold\">Driven by gratitude</span></h2>\n<p><span class=\"fontsize-1-25em\">As Ron recovered, he couldn’t shake the thought of the EMTs and hospital staff who had fought so hard for him. What struck him most was learning that many of the responders in this rural area were volunteers, receiving no compensation. The people who had saved his life were giving their time, energy, and in his case, unwavering commitment—all out of the goodness of their hearts. “I kept thinking, these people barely know me, and they didn’t hesitate. They just kept going,” Ron said.</span></p>\n<p><span class=\"fontsize-1-25em\">Back home in Bothell, Washington, the gravity of his experience settled in, and Ron knew he needed to act. At first, he and Fay brainstormed small ways to show their gratitude. “We thought about sending them a new coffee maker or maybe a refrigerator for the break room,” Fay laughed. “But that felt too small.” It was during a conversation with one of the EMTs that they learned about a specific piece of equipment the team desperately needed: a mechanical CPR device.</span></p>\n<h2><span class=\"futura-bold\">What makes the mechanical CPR device so important?</span></h2>\n<p><span class=\"fontsize-1-25em\">Mechanical CPR devices—often referred to as automatic chest compression systems—deliver consistent, life-saving compressions in cases of cardiac arrest. Unlike manual CPR, which can be physically exhausting and hard to sustain over long distances, these devices reduce interruptions during compressions,<sup>1,2,3</sup> giving patients like Ron the best possible chance of survival. Ron was amazed to learn that his EMT team, stationed in a large but sparsely populated area, had no access to such a device. For Ron, it was unthinkable. “It’s one of those tools that you don’t realize is vital until you’re in that position,” he explained. “Knowing now what the EMTs went through—keeping me going with manual compressions for miles—I felt this overwhelming sense that we could do something bigger than a coffee machine.”</span></p>\n<p><span class=\"fontsize-1-25em\">When he and Fay learned the cost of one of these devices, they decided to launch a GoFundMe campaign to help cover it. Their goal was simple: raise enough to equip Delta’s EMTs with a tool that could save lives with less physical strain. “We’d never done a fundraiser before,” Ron admitted. “But we felt so strongly about it—these people saved my life. The least we could do was try.”</span></p>\n<h2><span class=\"futura-bold\">The campaign that captured hearts</span></h2>\n<p><span class=\"fontsize-1-25em\">The GoFundMe campaign quickly gained traction, drawing interest from local news stations in Utah and Ron’s home state of Washington. Donations poured in, and the story spread. “In no time, we hit our goal,” Fay said, still in awe. “The support was incredible.”</span></p>\n<p><span class=\"fontsize-1-25em\">Soon after, county officials took notice, and their attention turned to other communities. Within weeks, additional funds were allocated to purchase two more mechanical CPR devices for other hospitals in the area. What had started as a small, heartfelt gesture from one grateful couple turned into a movement, equipping more hospitals with the resources they needed. “We were floored,” Ron said. “It wasn’t just about my life anymore—it was about making sure others had the same chance.”</span></p>\n<h2><span class=\"futura-bold\">A full circle moment: The device’s first mission</span></h2>\n<p><span class=\"fontsize-1-25em\">Shortly after the first machine arrived in Delta, it was put to the test. EMTs responded to a call for a 41-year-old woman experiencing cardiac arrest. With barely an hour of training on the device, the team used it to stabilize her and transport her to the hospital, ensuring her heart kept beating through the journey. The EMTs later called Ron, eager to share the news: “They stepped outside the emergency room and told me, ‘Ron, it worked. This machine did exactly what it was supposed to do.’”</span></p>\n<p><span class=\"fontsize-1-25em\">Though the woman ultimately faced complex health challenges, the device had bought her crucial time. “I’d told myself that I wanted to meet the first person who survived because of this machine,” Ron said. “Even though she didn’t make it, knowing that the device gave her a chance… it means the world.”</span></p>\n<h2><span class=\"futura-bold\">Community heroes</span></h2>\n<p><span class=\"fontsize-1-25em\">Reflecting on the journey, Ron’s admiration for the people of Utah has only grown. “The people in Utah were amazing. They treated us like family,” he said, adding with a chuckle, “If anyone needs to have an emergency, do it in Utah.” This warmth, compassion, and community-minded spirit inspired him and Fay to think bigger. He recalls with reverence the dedication of Chasie Greathouse, an EMT and trainer who tirelessly advocated for a mechanical CPR device long before Ron’s heart attack. “She’d been trying for three years to get the county to fund one of these machines,” Ron said. “I told her, ‘Whatever they pay you, it’s not enough.’&quot;</span></p>\n<h2><span class=\"futura-bold\">A legacy of lifesaving</span></h2>\n<p><span class=\"fontsize-1-25em\">Ron and Fay’s efforts have ignited something lasting in the community. Now, two additional devices are in use in Delta, and the impact is unmistakable. Ron’s story has inspired donations and support beyond anything he anticipated. Ron and Fay are hopeful that their campaign will continue to grow, spreading awareness about the importance of these devices in rural communities where EMS resources are often limited.</span></p>\n<p><span class=\"fontsize-1-25em\">“To me, this isn’t just about a device or a single life saved,” Ron said, pausing as emotion softened his voice. “It’s about creating a legacy of survival. It’s knowing that people who face what I did will have someone—and something—fighting for them every step of the way.”</span></p>\n<p><span class=\"fontsize-1-25em\">Reflecting on the GoFundMe campaign and the overwhelming response, Fay smiled. “We wanted to give back in a meaningful way. Now, knowing that these devices are out there, that might help someone else—it’s a legacy we never expected but are so grateful to leave.”</span></p>\n<h2><span class=\"futura-bold\">Moving forward</span></h2>\n<p><span class=\"fontsize-1-25em\">Ron and Fay continue to stay connected with the EMTs and hospital staff in Delta, and they’re exploring additional ways to support the local EMS community. For Ron, whose life was saved by the hands and hearts of those strangers in the desert, every day is now a celebration of survival, gratitude, and the power of community.</span></p>\n<p><span class=\"fontsize-1-25em\">“My wish,” Ron shared, “is that anyone facing what I did finds themselves surrounded by people as committed and courageous as the team that saved me.”</span></p>\n<p><span class=\"fontsize-1-25em\">What began as a day of fossil hunting turned into a story of resilience, kindness, and community strength. And for Ron and Fay, it’s a journey they’re committed to honoring every day forward.</span></p>\n",
+      "jcr:lastModified": "Mon Dec 16 2024 22:40:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "5"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Dec 13 2024 20:54:39 GMT+0000",
+      "jcr:lastModified": "Fri Dec 13 2024 20:54:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Dec 13 2024 20:54:16 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Fri Dec 13 2024 20:54:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Mon Dec 16 2024 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "16-Dec-2024",
+    "jcr:lastModified": "Mon Dec 16 2024 15:32:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/news/images/ec-newsroom_Ron-Utah-hospital-Cherish-Chasie_1200x680.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Beseems S, Madsen Hardig B, et al. Resuscitation 2015;91:67-72.&nbsp;</p>\r\n<p>2. Putzer G, Braun P, Zimmerman A, et al., LUCAS compared to manual cardiopulmonary resuscitation is more effective during helicopter rescue – a prospective, randomized, cross-over manikin study, American Journal of Emergency Medicine, 2013 Feb;31(2):384-9.&nbsp;</p>\r\n<p>3. Rubertsson S, Lindgren E, Smekal D, et al., Journal of American Medical Association, 2014;311(1):53-61.</p>\r\n",
+    "jcr:lastModified": "Fri Dec 13 2024 20:16:22 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

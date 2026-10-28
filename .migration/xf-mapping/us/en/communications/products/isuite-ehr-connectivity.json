@@ -1,0 +1,197 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "A solution that allows bi-directional communication with your EHR",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "EHR Connectivity",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4a399565-1c59-45c9-abd8-0a0b2fcd4950",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "EHR Connectivity",
+  "thumbnailFileReference": "/content/dam/stryker/communications/products/datamediatoremrconnectivity/images/EHR-Thumb.jpg",
+  "jcr:predecessors": [
+    "8c605d26-4841-4cac-bae1-5fbe8917795a"
+  ],
+  "contentID": "ENDO-ORIS-SYK-2543850",
+  "lastPublished": "Mon Jun 29 2026 18:51:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 18:51:20 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 18:51:22 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 18:51:09 GMT+0000",
+  "jcr:description": "The EHR connectivity solution serves as the bridge between your surgical devices, media management system, and hospital information systems—like your EHR and PACS. It transfers case data, images, and videos from devices such as the Connected OR into the patient’s record or iSuite Media Management, without manual uploads or lost files. This connectivity software provides an integrated, secure, and reliable data management solution.",
+  "jcr:baseVersion": "8c605d26-4841-4cac-bae1-5fbe8917795a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:02:04 GMT+0000",
+  "pageTitle": "EHR Connectivity",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:services/procare/communications/or-integration-and-connectivity",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:specialty/hospital-enterprise-software",
+    "stryker:business-unit/communications",
+    "stryker:product/communications/isuite-ehr-connectivity",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 31 2025 22:39:02 GMT+0000",
+  "jcr:uuid": "018088e7-8c48-4c95-b4e8-98c50147cfc2",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "longtexthero": {
+      "jcr:primaryType": "nt:unstructured",
+      "longCopy": "<p>The EHR connectivity solution serves as the bridge between your surgical devices, media management system, and hospital information systems—like your EHR and PACS. It transfers case data, images, and videos from devices such as the Connected OR into the patient’s record or Stryker's Surgical Media Management solution, without manual uploads or lost files. This connectivity software provides an integrated, secure, and reliable data management solution.</p>\r\n",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "thumbnailRP": "/content/dam/stryker/communications/products/datamediatoremrconnectivity/images/EHR-product-page-hero.jpg",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Oct 31 2025 22:18:37 GMT+0000",
+      "jcr:lastModified": "Mon Nov 03 2025 16:48:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/longtexthero",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "sheila.raja@stryker.com",
+      "title": "Related Products",
+      "jcr:lastModified": "Fri Aug 10 2018 12:39:20 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/communications/systems/-isuite-experience"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 18:51:00 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 18:51:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Fri Oct 31 2025 22:21:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/datamediatoremrconnectivity/images/EHR-product-page-hero.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 18:51:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 18:51:09 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

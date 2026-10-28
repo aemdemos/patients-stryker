@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder Arthroplasty featuring the Aequalis Ascend™ Flex - Gilles Walch, MD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e97c3df1-e9b2-468c-a8eb-d05cff7ad2ef",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "db7f9c17-3918-4ad4-b6f7-75694778843d"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 21:00:58 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 20:08:13 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "db7f9c17-3918-4ad4-b6f7-75694778843d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ccbaebe8-28be-4894-a642-16f7671911a4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/CAW-5684 Aequalisascend_livesurgery_walch_081616_WebOp.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/CAW-5684 Aequalisascend_livesurgery_walch_081616_WebOp-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Aug 04 2022 18:01:32 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Orthopaedic surgeon, Gilles Walch, MD, performs a shoulder arthroplasty on an 82-year-old female patient, using the Tornier Flex Shoulder System.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "link",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Shoulder arthroplasty featuring the Tornier Flex Shoulder System – Gilles Walch, MD",
+      "jcr:lastModified": "Tue Aug 20 2024 20:08:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 27 2022 15:29:26 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016284A</span></p>\n",
+      "jcr:lastModified": "Fri Mar 17 2023 19:23:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  }
+}

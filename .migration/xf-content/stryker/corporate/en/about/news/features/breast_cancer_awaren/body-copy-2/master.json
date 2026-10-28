@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Body Copy 2",
+  "jcr:versionHistory": "15e8ce3b-5e3a-44c6-a224-e32b9427b06b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1fe2a2ca-8ad0-40a0-aa1d-3524efdea086"
+  ],
+  "jcr:created": "Tue Oct 13 2020 21:21:06 GMT+0000",
+  "cq:lastModified": "Wed Oct 07 2020 19:45:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1fe2a2ca-8ad0-40a0-aa1d-3524efdea086",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "b6c17142-0dfe-46f9-b768-2a29d2dc0080",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 07 2020 19:44:46 GMT+0000",
+      "text": "<p>These offerings are designed to help advance product and procedural knowledge and skills, improve customer competence and confidence, and lead to better patient outcomes.</p>\n",
+      "jcr:lastModified": "Wed Oct 07 2020 19:45:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  }
+}

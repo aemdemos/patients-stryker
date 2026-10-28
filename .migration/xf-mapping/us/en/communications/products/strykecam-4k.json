@@ -1,0 +1,409 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Surgical in-light camera",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "StrykeCam 4K",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c1aaead0-f497-441d-8e89-9cff1310ade2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "StrykeCam 4K surgical in-light camera",
+  "jcr:predecessors": [
+    "6a8e5509-eebe-42db-a7ee-5671f1ab35a1"
+  ],
+  "contentID": "COMMS-LGHT-SYK-3828992",
+  "lastPublished": "Tue Sep 01 2026 16:25:57 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 01 2026 16:25:58 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 01 2026 16:26:00 GMT+0000",
+  "cq:lastModified": "Tue Sep 01 2026 16:17:27 GMT+0000",
+  "jcr:description": "Visualize cases with enhanced image quality using the StrykeCam 4K surgical in-light camera.",
+  "jcr:baseVersion": "6a8e5509-eebe-42db-a7ee-5671f1ab35a1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:01:08 GMT+0000",
+  "pageTitle": "StrykeCam 4K",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:services/procare/communications/lights",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:business-unit/communications",
+    "stryker:specialty/camera-systems",
+    "stryker:specialty/or",
+    "stryker:capability/infrastructure-and-room-design",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/lighting"
+  ],
+  "jcr:lastModified": "Tue Sep 01 2026 16:17:27 GMT+0000",
+  "jcr:uuid": "485867e5-5621-47fe-bc49-dc990cc314f1",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "StrykeCam 4K",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/communications/en/products/strykecam-hd/hero",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/communications/en/products/strykecam-hd/hero",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/communications/en/products/strykecam-hd/hero---mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/communications/en/products/strykecam-hd/hero-mobile",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Mon Aug 17 2026 15:48:11 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">StrykeCam 4K&nbsp;</span></span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">​Surgical in-light camera&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">Visualize cases with enhanced image quality using the StrykeCam 4K surgical in-light camera.</span><br>\n</p>\n",
+              "jcr:lastModified": "Mon Aug 17 2026 15:27:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact us",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Apr 27 2026 21:30:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_1205468606": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Mon Aug 17 2026 15:22:52 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Mon Aug 17 2026 15:25:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 17 2026 15:29:23 GMT+0000",
+      "jcr:lastModified": "Mon Aug 17 2026 15:29:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">StrykeCam 4K&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The new 4K HDMI output delivers an improved visual experience with 240× zoom and 700° picture rotation, all while maintaining the same footprint and physical dimensions as the previous generation. </span></p>\n<p><span class=\"fontsize-1-25em\">StrykeCam 4K surgical in-light camera is designed to optimize workflow by enabling light-to-light mobility within the Oculan surgical lighting system. </span></p>\n",
+          "jcr:lastModified": "Mon Aug 17 2026 15:35:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_742351095": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Aug 17 2026 15:23:11 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Aug 17 2026 15:24:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1263420408": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 17 2026 15:29:56 GMT+0000",
+      "jcr:lastModified": "Mon Aug 17 2026 15:29:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Mon Aug 17 2026 15:30:01 GMT+0000",
+          "jcr:lastModified": "Mon Aug 17 2026 15:30:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_631612600_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 14:27:57 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 14:27:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Resources</span></span></h2>\n",
+          "jcr:lastModified": "Mon Aug 17 2026 15:31:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "tabs_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 15:11:26 GMT+0000",
+          "jcr:lastModified": "Mon Aug 17 2026 15:30:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload_2035472790": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": "/content/dam/stryker/sports-medicine/products/alphavent-knotless/resources/AlphaVent Knotless Brochure.pdf",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModified": "Tue Jun 23 2026 14:16:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 1,
+              "tabTitle": "Related products"
+            }
+          },
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "featuredcontent": {
+              "jcr:primaryType": "nt:unstructured",
+              "titleFont": "font-egyptienne",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideButton": "false",
+              "jcr:lastModified": "Mon Aug 17 2026 15:24:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "hideDescription": "false",
+              "hideThumbnail": "false",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/communications/products/oculan"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/communications/systems/-isuite-experience"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:01:06 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:01:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Aug 17 2026 15:20:08 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Aug 17 2026 15:25:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>StrykeCam HD</p>\r\n",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Aug 17 2026 15:28:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/occulan/4k-ilc.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:00:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:00:58 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Aug 17 2026 15:26:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Aug 17 2026 15:27:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

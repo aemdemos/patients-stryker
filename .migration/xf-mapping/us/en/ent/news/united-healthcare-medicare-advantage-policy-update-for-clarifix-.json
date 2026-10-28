@@ -1,0 +1,69 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "United Healthcare Medicare Advantage policy update for ClariFix® cryotherapy, enhancing patient access for chronic rhinitis treatment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8a277ac7-14c7-4f34-81cf-cc922a6ac21b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:predecessors": [
+    "1495342a-08c0-46bc-ad46-4ace694a31fd"
+  ],
+  "contentID": "ENT-GSNPS-SYK-2524373_REV-0",
+  "lastPublished": "Mon Nov 03 2025 13:53:56 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 03 2025 13:53:56 GMT+0000",
+  "cq:lastReplicated": "Mon Nov 03 2025 13:53:59 GMT+0000",
+  "cq:lastModified": "Mon Nov 03 2025 13:53:50 GMT+0000",
+  "jcr:description": "Portage, Michigan, USA – October 31, 2025 – Stryker, a global leader in medical technologies, today announced that United Healthcare has removed language deeming ClariFix CPT® 31243 as experimental,investigational, and unproven from their Medicare Advantage policy effective immediately. This update marks a significant advancement in patient access to an evidence-based treatment for chronic rhinitis.",
+  "jcr:baseVersion": "1495342a-08c0-46bc-ad46-4ace694a31fd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Oct 31 2025 13:43:54 GMT+0000",
+  "pageTitle": "United Healthcare Medicare Advantage policy update ",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Nov 03 2025 13:53:50 GMT+0000",
+  "jcr:uuid": "c15b158f-3c21-4c82-ad8b-d20d06028d47",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "navTitle": "United Healthcare Medicare Advantage policy update ",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "publishDate": "Fri Oct 31 2025 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Oct-2025",
+    "jcr:lastModified": "Fri Oct 31 2025 13:34:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "text": "<p><b>Portage, Michigan, USA – October 31, 2025</b> – Stryker, a global leader in medical technologies, today announced that United Healthcare has removed language deeming ClariFix CPT® 31243 as experimental,investigational, and unproven from their Medicare Advantage policy effective immediately. This update marks a significant advancement in patient access to an evidence-based treatment for chronic rhinitis.</p>\n<p>ClariFix is a minimally invasive solution that targets the underlying cause of chronic rhinitis, a persistent and inflammatory condition known to severely impact quality of life. ClariFix delivers targeted cryotherapy using a proprietary, flexible device designed to disrupt the posterior nasal nerve—helping alleviate the excessive mucus production and congestion associated with chronic rhinitis. The procedure can be performed in-office under local anesthesia, requires no incisions, and typically involves minimal recovery time. To review the full details of United Healthcare’s updated medical policy, click <a href=\"https://www.uhcprovider.com/content/dam/provider/docs/public/policies/medadv-mp/ear-nose-throat-procedures.pdf\" target=\"_blank\">here</a>.&nbsp;</p>\n<p>Although CPT 31243 has been removed from United Healthcare’s investigational list for Medicare Advantage, healthcare providers are advised to continue monitoring relevant policy changes. This change does not apply to UHC’s commercial plans. Stryker does not guarantee coverage, reimbursement, or payment levels for ClariFix or services associated with its use. It remains the responsibility of the provider to determine medical necessity, accurately document clinical information, and appropriately report diagnostic codes, services provided, and applicable billing modifiers.</p>\n<p>See additional <a href=\"https://www.stryker.com/us/en/ent/reimbursement.html\" target=\"_blank\">reimbursement resources</a>.&nbsp;</p>\n<p>Learn more about&nbsp;<a href=\"https://www.stryker.com/us/en/ent/products/clarifix-cryotherapy-device.html\" target=\"_blank\">ClariFix</a>.&nbsp;</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;www.stryker.com.</p>\n<p>CPT Copyright 2025 American Medical Association. All rights reserved. CPT is a registered trademark of the American Medical Association.</p>\n",
+    "jcr:lastModified": "Fri Oct 31 2025 13:51:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "eventCity": "Portage",
+    "jcr:lastModified": "Fri Oct 31 2025 13:34:26 GMT+0000",
+    "eventState": "MI",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties",
+    "eventCountry": "United States"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

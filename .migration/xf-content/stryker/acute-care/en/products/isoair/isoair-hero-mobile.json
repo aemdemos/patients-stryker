@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "IsoAir hero mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "51e182ea-0e5d-43a7-b142-4470736a9dfb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "436826d5-b101-4699-8dc3-01d94489b017"
+  ],
+  "jcr:created": "Tue Apr 23 2024 21:07:51 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 23 2024 21:07:53 GMT+0000",
+  "cq:lastModified": "Thu Apr 18 2024 14:52:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "436826d5-b101-4699-8dc3-01d94489b017",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "97154e9e-390d-4b1e-b02c-369f7a3fad7b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Mar 25 2024 16:19:49 GMT+0000",
+      "alt": "Stryker's IsoAir air powered hospital mattress with air pump",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/isoair/images/IsoAir-with-pump_960x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Apr 18 2024 14:52:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

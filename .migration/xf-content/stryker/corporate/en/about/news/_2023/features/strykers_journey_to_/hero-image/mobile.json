@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a7ca3aed-8d0b-4bd6-9fbc-3014941dcd01",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "a46827b7-257e-4312-815d-cd3720908e34"
+  ],
+  "jcr:created": "Fri Aug 25 2023 17:43:55 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 25 2023 17:43:57 GMT+0000",
+  "cq:lastModified": "Fri Aug 25 2023 17:43:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a46827b7-257e-4312-815d-cd3720908e34",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "8e8acdb8-cd4c-4089-8168-46bb7c46e784",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Aug 15 2023 17:50:27 GMT+0000",
+      "alt": "Journey to Zero",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/kers-journey-to-zero-harm-continues-with-neptune-s/HeroImage_Neptune_Mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Aug 25 2023 17:43:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

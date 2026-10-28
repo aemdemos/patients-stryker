@@ -1,0 +1,289 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Launches Industry’s First Completely Wireless Hospital Bed ",
+  "jcr:versionHistory": "cbdc761b-7757-4bd2-a701-dad69a860d53",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "a420d944-44fd-4d1f-a090-649ffe92ee5e"
+  ],
+  "lastPublished": "Mon Oct 26 2020 17:41:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 26 2020 17:41:40 GMT+0000",
+  "cq:lastModified": "Mon Oct 26 2020 17:36:15 GMT+0000",
+  "jcr:baseVersion": "a420d944-44fd-4d1f-a090-649ffe92ee5e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Oct 13 2020 20:19:42 GMT+0000",
+  "jcr:uuid": "8c369450-9029-438f-92ed-bbc9df49e501",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_138200388": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 19:18:24 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 19:18:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 19:18:28 GMT+0000",
+          "jcr:lastModified": "Tue Oct 13 2020 19:18:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 19:19:24 GMT+0000",
+          "text": "<p>Specific key features of ProCuity include:&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 19:19:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 18:19:41 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 18:19:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:19:53 GMT+0000",
+          "text": "<p><b>Completely Wireless:</b> ProCuity’s Secure® Connect™ wireless solution makes it the only bed on the market that can connect without cables to nurse call systems. Additionally, with iBed Wireless, all bed data, including bed configuration and exit alarm activity, are wirelessly compatible with facilities’ hospital information systems (HIS). To help give caregivers increased visibility to safe bed configuration and bed exit alarm activity, ProCuity can also integrate with Stryker’s optional patient-centric clinical dashboard, iBed Vision.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:19:53 GMT+0000",
+          "text": "<p><b>Ergonomic Side Rails: </b>Three-position Secure® Assist side rails allow for easier patient entry and exit as well as nurse-patient interaction. By working in a “clocking motion,” the side rails stay tightly close to the bed, thus avoiding unnecessary interference with any real estate next to the bed.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1477751195": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Intuitive Patient and Bed Monitoring Systems: </b>ProCuity’s exclusive Adaptive Bed Alarm uses load cell technology to sense a patient’s weight and will alert nurses if a patient is out of position or has left the bed. With ProCuity’s iBed™ Watch system, all operational aspects of the bed, from side rail positioning, head of bed angle and height, are monitored to ensure that it is always in a safe position for the patient. Caregivers are alerted immediately if any components are out of position.</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Zoom Motorized Drive:</b> To help caregivers move patients safely and more efficiently, ProCuity Z and ZM models come complete with Zoom® Motorized Drive, a motorcycle throttle-like touch handle that deploys the central fifth wheel. It also comes with one-touch electric brakes.</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1477751195_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Standard, Customizable Platform:</b> From MedSurg units to the ICU, the ProCuity bed series is designed to meet all patient acuity levels. This helps make standardization across hospitals easier, while reducing hospital costs associated with renting specialty beds and the need for bed transfers and extra staff.</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Enhanced Patient Experience:</b> To provide greater flexibility for taller patients, ProCuity has an integrated bed extender, which allows the bed to stretch an additional 12 inches in length. It also comes with a USB port and holder to allow patients to charge and store personal electronic devices like phones.</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1477751195_cop_518366282": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 18:21:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Guarantee Program:</b> Through Stryker’s Financial Guarantee program, the company promises customers will see a 50% reduction in bed-related falls occurring on Stryker beds utilizing iBed Wireless technology**.</p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:25:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:21:56 GMT+0000",
+          "text": "<p><b>Global Launch:</b> ProCuity will be launched globally in over 70 countries, with a market focus in North America, Latin America, Europe, the Middle East, Australia/New Zealand, and Asia. In the U.S., units will ship in January 2021.</p>\n",
+          "jcr:lastModified": "Mon Oct 26 2020 17:36:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_138200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 19:18:24 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 19:18:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 19:18:28 GMT+0000",
+          "jcr:lastModified": "Tue Oct 13 2020 19:18:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 13 2020 18:27:02 GMT+0000",
+          "text": "<p>Learn more about ProCuity <a href=\"https://www.stryker.com/us/en/acute-care/products/procuity/index.html\">here</a>.</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><b>Media contact</b></p>\n<p>Meghan Menz<br>\n<a href=\"mailto:meghan.menz@stryker.com\">meghan.menz@stryker.com</a></p>\n",
+          "jcr:lastModified": "Tue Oct 13 2020 18:29:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 18:26:58 GMT+0000",
+      "jcr:lastModified": "Tue Oct 13 2020 18:26:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Mon Oct 19 2020 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "19-Oct-2020",
+    "jcr:lastModified": "Fri Oct 16 2020 15:57:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>ProCuity Bed Series designed to enhance patient and caregiver safety for all acuity levels, reduce in-hospital falls</p>\n<p><b>Kalamazoo, Michigan, USA – October 19, 2020 –</b> Stryker, one of the world's leading medical technology companies, today announced the global launch of the industry’s first and only completely wireless hospital bed, ProCuity™. This intelligent bed was designed to help reduce in-hospital patient falls at all acuity levels, improve nurse workflow efficiencies and safety, as well as help lower hospital costs. It is the only bed on the market today that can connect seamlessly to nurse call systems without the use of cables or wires. </p>\n<p>“Patient safety is at the foundation of everything we do at Stryker. With rising acuity rates leading to increased bed demand, coupled with the continuing challenge of in-hospital falls, we needed to find a solution to further enhance our response to some of today’s most pressing healthcare challenges,” said Jessica Mathieson, VP/GM of Acute Care, Stryker. “Leveraging our long history in innovation, ProCuity is the culmination of years of extensive research and feedback from nurses and other healthcare professionals to create what is truly a ‘brilliance in a bed’ solution. It was designed to improve patient outcomes and assist caregivers for years to come.” </p>\n<p>Research shows that between 700,000 and 1 million patients experience a fall while being treated in the hospital annually<sup>1</sup>, with 79 percent of falls occurring on or near a bed while unassisted<sup>2</sup>. Stryker’s own research found that 97 percent of hospital nurses reported having encountered a situation where a patient has had difficulty getting out of a hospital bed, with 75 percent reporting they have encountered a situation where a patient has hurt him or herself while getting out of a hospital bed<sup>3</sup>. Anywhere from 30 to 51 percent of in-hospital falls result in injuries<sup>4</sup>. </p>\n<p>Set at an industry low height of 11.5 inches*, ProCuity is ergonomically designed with the latest technologies to promote safe patient handling and help reduce fall-related injuries, including intuitive patient positioning and bed alarms as well as ergonomic side rails. Helping to address nurse call cable connectivity issues prevalent in hospitals today, ProCuity can be equipped with fully wireless features. Additionally, the bed’s easy-to-use touchscreens and other key components makes the job of caregivers easier and more efficient, while providing for a more enhanced patient experience.</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Oct 16 2020 15:54:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*L/LE Model<br>\r\n**Facility must meet eligibility requirements as outlined in the&nbsp;iBed&nbsp;Wireless Fall Reduction Agreement. If a reduction of 50% of bed-related falls is not recognized after one full year (based on the Guarantee Commencement Date) of product use by the facility, Stryker will refund a portion of the on-bed wireless components.&nbsp;</p>\r\n<p>1. Agency for Healthcare Research and Quality. Preventing Falls in Hospitals. Retrieved December 5, 2018. https://www.ahrq.gov/professionals/systems/hospital/fallpxtoolkit/index.html&nbsp;<br>\r\n2. Design Powered by Research: Improving Patient and Caregiver Safety Through Evidence-Based Design. Guy&nbsp;Fragala. August 2020.&nbsp;<br>\r\n3. The State of Hospital Beds. May 2020. A Stryker-commissioned survey, prepared by Pinkston&nbsp;<br>\r\n4. Oliver, D., Healey, F., Haines, T.&nbsp; (2010) Preventing falls and fall-related injuries in hospitals.&nbsp; Clin Geriatric Medicine, 26:645-692&nbsp;</p>\r\n<p>Stryker Corporation or affiliated entities own, use or have applied for the trademarks or service marks: iBed, ProCuity, Secure Connect, IsoTour, Zoom, Stryker.  All other trademarks are trademarks of their respective owners or holders. The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.&nbsp;<br>\r\nCopyright 2020 Stryker. PA-005-18SEP2020.</p>\r\n",
+    "jcr:lastModified": "Fri Oct 16 2020 18:34:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "IsoTour bed",
+    "srcFileRef": "/content/dam/stryker/about/news/2020/procuity-news-release/images/ProCuity-news.jpg",
+    "jcr:lastModified": "Tue Oct 13 2020 19:28:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2020/procuity-news-release/images/ProCuity-news.jpg"
+  }
+}

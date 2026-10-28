@@ -1,0 +1,203 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Examining the prevalence of incontinence in older adults ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0696f1c6-9aac-4d13-9b8d-bb81191b76c4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Nurse helping an elderly patient",
+  "jcr:predecessors": [
+    "2e9ae544-4cce-4990-a0b5-3ccdb528bd3a"
+  ],
+  "contentID": "SAGE-PH-COMM-1494485_REV-0_en_us",
+  "lastPublished": "Tue Feb 11 2025 21:40:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 11 2025 21:40:27 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 11 2025 21:40:30 GMT+0000",
+  "cq:lastModified": "Tue Feb 11 2025 21:40:25 GMT+0000",
+  "jcr:description": "This systematic review will analyze statistics related to the challenges of incontinence, which is essential for discussions with clinicians and highlights the significance of addressing the clinical and personal consequences of incontinence.",
+  "jcr:baseVersion": "2e9ae544-4cce-4990-a0b5-3ccdb528bd3a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Feb 11 2025 21:28:39 GMT+0000",
+  "pageTitle": "Examining the prevalence of incontinence in older adults ",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage",
+    "stryker:content-type/news/sage/2",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Tue Feb 11 2025 14:10:24 GMT+0000",
+  "jcr:uuid": "c2bf43bf-bc49-4857-9a3f-c64f93a40f17",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 10 2025 16:03:42 GMT+0000",
+      "alt": "Nurse helping elderly incontinent patient in bed",
+      "srcFileRef": "/content/dam/stryker/sage/news/2025/1494485_IAD KOL Summary.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Feb 10 2025 22:38:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "text": "<p><i>6-minute read</i></p>\n<p><b>By Joan Junkin RN, MSN</b></p>\n<h2><span class=\"futura-bold\">The consequences of incontinence</span></h2>\n<p><span class=\"fontsize-1-25em\">Imagine this scenario: today, you learn that you need to have your gallbladder removed. You're young and healthy, so you'll be admitted to an outpatient surgical center and can return home the day after laparoscopic surgery.</span></p>\n<p><span class=\"fontsize-1-25em\">Now, consider the case of your grandparent, who also needs their gallbladder removed. Due to their history of heart disease and the medications they are taking that could complicate anesthesia, they’ll be admitted to acute care. They will likely stay there for several days and may experience issues such as incontinence and an increased risk of pressure injuries due to immobility.</span></p>\n<p><span class=\"fontsize-1-25em\">This scenario aims to make the complications of incontinence more relatable. While the literature provides valuable statistics on the risks associated with urinary incontinence, fecal incontinence, and dual incontinence, it’s the individuals living with these conditions, along with their caregivers, who can truly convey the daily struggles they face. One significant consequence of incontinence is the severe pain caused by incontinence-associated dermatitis.</span></p>\n<h2><span class=\"futura-bold\">Reviewing a retrospective analysis</span></h2>\n<p><span class=\"fontsize-1-25em\">This systematic review will analyze statistics related to the challenges of incontinence, which is essential for discussions with clinicians. While it’s important to stay informed about the scientific aspects of incontinence, we must also pay attention to the personal impact it has on those affected.</span></p>\n<h3><b>The prevalance of incontinence</b></h3>\n<p><span class=\"fontsize-1-25em\">A recent <a href=\"https://journals.lww.com/jwocnonline/fulltext/2024/03000/the_prevalence_of_incontinence_and_its_association.12.aspx\" target=\"_blank\">retrospective analysis</a> published in the Journal of Wound Ostomy and Continence Nursing (JWOCN)<sup>1</sup>&nbsp;revealed that 11.2% of 1.2 million Medicare recipients from a 2018 database were diagnosed with incontinence. This figure is lower than what is typically reported, and the authors suggest that the discrepancy may be due to the fact that incontinence is often underreported.</span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 22:40:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">A recent report from China showed 60% of women and 35% of men over 65 with incontinence.<sup>2</sup> A study from a large database in U.S. hospitals reported 33% of patients with urinary incontinence.<sup>3</sup></span></span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 22:36:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\">The prevalence of incontinence was found to be higher in settings where individuals require more care. Specifically, it was 20.6% in skilled nursing facilities, 16.6% in nursing homes and even higher at 24.5% for those receiving home healthcare services.<sup>1</sup> One of the key benefits of this quantitative study is its extensive database, which reliably identifies diagnoses associated with incontinence in the elderly population. Understanding these important relationships is crucial when discussing the need for products designed to prevent and treat incontinence and complications related to immobility.</span></p>\n<h3><b>The risk of slips, falls and disruptions in behavior</b></h3>\n<p><span class=\"fontsize-1-25em\">Medicare members with incontinence are more than twice as likely to experience slips and falls, as well as disruptions in behavior.<sup>1</sup> Historically, this issue has been attributed to individuals attempting to leave their beds or chairs to use the bathroom, leading to slips in wet areas caused by incontinence.<sup>1</sup> Additionally, individuals with impaired cognition may forget that they have a collection device in place and still attempt to respond to the urge to void.</span></p>\n<h3><b>Urinary tract infections</b></h3>\n<p><span class=\"fontsize-1-25em\">Individuals with incontinence were found to be five times more likely to be diagnosed with a urinary tract infection (UTI).<sup>1</sup> Although this study could not determine whether the use of an indwelling catheter contributed to this increased risk, existing literature clearly indicates a strong association between indwelling catheter use and the likelihood of UTIs, which clinicians are generally aware of. However, many may not be informed about the risks associated with non-catheter-related UTIs (non-CAUTIs) and hospital-onset UTIs (HOUTIs). One factor to consider is that external collection devices can contain urine that harbors bacteria, which may limit cross-contamination.</span></p>\n",
+      "jcr:lastModified": "Tue Feb 11 2025 21:40:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1077651212": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Of 549,433 hospital admissions, 434 CAUTIs and 3,177 HOUTIs (non-CAUTI hospital-onset urinary tract infections) were observed.<sup>4</sup></span></span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 22:36:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_1078895430": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "text": "<h3><b>Incontinence-associated dermatitis (IAD)</b></h3>\n<p><span class=\"fontsize-1-25em\">Incontinent patients in this study were twice as likely to experience related skin disruptions (IAD).<sup>1</sup> A break in skin allows bacteria and fungus to grow and may contribute to UTIs. This is based on logic, knowing that a break in the body’s first line of defense can create a medium for the growth of organisms.</span></p>\n<p><span class=\"fontsize-1-25em\">Although pressure injuries were not tracked in this study, they have been reported in many others, and the risk is clearly higher for individuals with IAD, making this doubled risk even more significant.</span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 17:49:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1038805270": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">A data analysis published in 2019 found that IAD is a significant risk factor for&nbsp;pressure injury.<sup>5</sup></span></span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 22:36:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_1571290792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 10 2025 16:03:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\">Effectively addressing incontinence</span></h2>\n<p><span class=\"fontsize-1-25em\">Analyzing this extensive database about older Americans highlights the significance of addressing the consequences of incontinence. By effectively directing urine away from the skin and using gentle cleansing cloths containing dimethicone to protect the skin from deterioration, clinicians can be confident that they are employing the best available methods to safeguard their high-risk patients, particularly the elderly.</span></p>\n",
+      "jcr:lastModified": "Mon Feb 10 2025 17:48:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "5"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 10 2025 17:11:00 GMT+0000",
+      "title": "Learn more about incontinence",
+      "jcr:lastModified": "Mon Feb 10 2025 17:51:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2024/shea-cauti-prevention-practice-updates"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2025/how-to-give-bed-bath-guide"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2024/reduce-cauti-icu-primafit"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-cleansing/incontinence-care"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Mon Feb 10 2025 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Feb-2025",
+    "jcr:lastModified": "Mon Feb 10 2025 16:03:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Joan Junkin RN, MSN, is a paid consultant of Stryker. The data included in this presentation was collected by the author of this presentation. The opinions expressed are those of Joan Junkin RN, MSN, and are not those of Stryker. Individual results may vary.</p>\r\n<p><b>References:&nbsp;</b></p>\r\n<p><b>1.</b> Duncan I, Stocking A, Fitzner K, et al, (2024). The Prevalence of Incontinence and Its Association With Urinary Tract Infections, Dermatitis, Slips and Falls, and Behavioral Disturbances Among Older Adults in Medicare Fee-for-Service.&nbsp;Journal of Wound, Ostomy, and Continence Nursing,&nbsp;51(2),138-45.&nbsp;</p>\r\n<p><b>2.</b> Luo Y, Zou P, Wang K, et al, (2022). Prevalence and Risk Factors of Urinary Incontinence Among Elderly Adults in Rural China: A Cross-Sectional Survey.&nbsp;Journal of Wound, Ostomy, and Continence Nursing,&nbsp;49(1), 78–86.&nbsp;</p>\r\n<p><b>3.</b> Koloms K, Cox J, VanGilder CA, and Edsberg, LE (2022). Incontinence Management and Pressure Injury Rates in US Acute Care Hospitals: Analysis of Data From the 2018-2019 International Pressure Injury Prevalence (IPUP) Survey.&nbsp;Journal of Wound, Ostomy, and Continence Nursing,&nbsp;49(5), 405-15.&nbsp;</p>\r\n<p><b>4.</b> Kelly T, Ai C, Jung M, and Yu K. (2024). Catheter-associated urinary tract infections (CAUTIs) and non-CAUTI hospital-onset urinary tract infections: Relative burden, cost, outcomes and related hospital-onset bacteremia and fungemia infections.&nbsp;Infection control and hospital epidemiology, 1–8. Advance online publication.&nbsp;</p>\r\n<p><b>5.</b> Manderlier B, Van Damme N, Verhaeghe S, et al, (2019). Modifiable patient-related factors associated with pressure ulcers on the sacrum and heels: Secondary data analyses.&nbsp;Journal of Advanced Nursing,&nbsp;75(11), 2773-85.&nbsp;</p>\r\n",
+    "jcr:lastModified": "Mon Feb 10 2025 16:13:18 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2025/1494485_IAD KOL Summary.jpg"
+  }
+}

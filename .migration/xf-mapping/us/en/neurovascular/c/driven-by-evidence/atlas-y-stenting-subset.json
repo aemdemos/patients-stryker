@@ -1,0 +1,389 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Atlas: Y-Stenting Subset",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4bb73246-941c-4b5f-aa46-16bc4060d71a",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+  "jcr:predecessors": [
+    "62432774-43be-402c-9b18-03883392941c"
+  ],
+  "lastPublished": "Wed Jun 07 2023 19:01:56 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 07 2023 19:01:56 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 07 2023 19:01:58 GMT+0000",
+  "cq:lastModified": "Thu Apr 06 2023 20:41:10 GMT+0000",
+  "jcr:baseVersion": "62432774-43be-402c-9b18-03883392941c",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Mar 09 2023 19:35:04 GMT+0000",
+  "jcr:uuid": "02805f79-2b56-4365-82b5-e83a5d1016cb",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "troy.boehm@stryker.com",
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Apr 05 2022 17:56:15 GMT+0000",
+      "text": "<p><span style=\"color: #ffb500;\"><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">&lt; </a><u><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">Back to Driven By Evidence Home</a></u></span><u></u></p>\n",
+      "jcr:lastModified": "Tue Apr 05 2022 18:01:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Mar 09 2023 19:36:28 GMT+0000",
+      "jcr:lastModified": "Thu Mar 09 2023 19:36:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Mar 09 2023 19:36:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: right;\"><span class=\"fontsize-1-5em\">Information for&nbsp;<span class=\"futura-bold\">healthcare professionals</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 09 2023 19:37:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "layoutOptions": "50_top",
+      "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/Atlas-Y-Stenting-Hero.png",
+      "jcr:created": "Fri Feb 18 2022 19:10:06 GMT+0000",
+      "alt": "Atlas Study: Y-stenting subset",
+      "jcr:lastModified": "Wed Dec 07 2022 21:53:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "jcr:lastModified": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+        "jcr:lastModified": "Wed Dec 07 2022 22:06:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "text": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "darek.jansen1@stryker.com",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "hideComponent": "false",
+            "jcr:created": "Wed Dec 07 2022 21:38:11 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp; &nbsp;</p>\n",
+            "jcr:lastModified": "Wed Dec 07 2022 21:54:11 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": "true"
+          },
+          "text_copy": {
+            "jcr:primaryType": "nt:unstructured",
+            "bottomPadding": ".5",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "3",
+            "topPadding": "0",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "15",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">ATLAS Study: Y-stenting subset</span></span></span><span class=\"fontsize-2-5em\"><br>\n </span></span></p>\n",
+            "jcr:lastModified": "Wed Dec 07 2022 21:55:35 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "rightPadding": "3",
+            "backgroundColor": "rgba(255,181,0,1)",
+            "textIsRich": "true",
+            "leftMargin": "15",
+            "bottomMargin": "4"
+          },
+          "text_copy_1654321463": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "jcr:lastModifiedBy": "troy.boehm@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "15",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The ATLAS Y-stenting subset is the largest&nbsp;single study to date, prospectively evaluated&nbsp;studying&nbsp;Y-stenting treatments of bifurcation aneurysms.</span></span></p>\n",
+            "jcr:lastModified": "Thu Apr 06 2023 20:41:10 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "textIsRich": "true",
+            "leftMargin": "15"
+          }
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 18:21:38 GMT+0000",
+      "jcr:lastModified": "Wed Dec 07 2022 18:21:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 18:23:19 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\">The results are in</span></h2>\r\n",
+      "jcr:lastModified": "Wed Dec 07 2022 18:24:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "layoutOptions": "col-sm-12",
+      "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/NV--Y Stenting -results infographic -60 patients -v3.png",
+      "jcr:created": "Wed Dec 07 2022 18:24:36 GMT+0000",
+      "alt": "Y Stenting results: 60 patients; 56.7 basil artery",
+      "jcr:lastModified": "Wed Dec 07 2022 21:28:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Wed Dec 07 2022 18:22:27 GMT+0000",
+      "title": "The results are in",
+      "jcr:lastModified": "Wed Dec 07 2022 18:23:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 17:43:51 GMT+0000",
+      "jcr:lastModified": "Wed Dec 07 2022 17:43:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 07 2022 17:44:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Although Y-stenting is typically linked to higher rates of ischemic complications, results from the ATLAS IDE study show an incredible low complication rate of 3.3%.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Mar 09 2023 19:32:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Dec 07 2022 21:57:33 GMT+0000",
+          "jcr:lastModified": "Tue Jan 10 2023 18:02:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.ahajournals.org/doi/10.1161/SVIN.122.000437",
+              "buttonText": "View Full Study",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Dec 07 2022 18:14:52 GMT+0000",
+          "alt": "Y Stenting: 81.1% Primary effectiveness endpoint",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/NV--Y Stenting -results chart -primary effectiveness.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 07 2022 18:17:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Dec 07 2022 18:14:52 GMT+0000",
+          "alt": "Y Stenting: 3.3% Primary safety endpoint",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-y-stenting-subset/images/NV--Y Stenting -results chart -primary safety.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 07 2022 18:18:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2062942866": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:07:31 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:07:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Dec 07 2022 18:21:38 GMT+0000",
+          "jcr:lastModified": "Wed Dec 07 2022 18:21:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Dec 07 2022 21:29:27 GMT+0000",
+          "text": "<p>Results are based on retrospective subset analysis of a single-arm trial</p>\n<p>Source: Jadhav AP, Desai SM, Jovin TG et al. Y-Stent–Assisted Coiling of Wide-Necked Intracranial Aneurysms With the Neuroform Atlas Stent System.</p>\n<p>Stroke Vasc Interv Neurol. 2022;0:e000437</p>\n",
+          "jcr:lastModified": "Wed Dec 07 2022 21:30:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 21:57:03 GMT+0000",
+      "jcr:lastModified": "Wed Dec 07 2022 21:57:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Dec 07 2022 22:19:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h4>Neuroform Atlas Stent System</h4>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 22:33:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 15:50:43 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 15:50:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>See package insert for complete indications, contraindications, warnings and instructions for use.<br>\n</p>\n<p><b>RX ONLY</b></p>\n<p><b>Intended use / indications for use</b></p>\n<p>The Neuroform Atlas Stent System is indicated for use with neurovascular embolization coils in the anterior and posterior circulation of the neurovasculature for the endovascular treatment of patients ≥ 18 years of age with saccular wide-necked (neck width ≥ 4 mm or a dome-to-neck ratio of &lt; 2) intracranial aneurysms arising from a parent vessel with a diameter of ≥ 2.0 mm and ≤ 4.5 mm.</p>\n<p><b>Contraindications</b></p>\n<ul>\n<li>Patients in whom the parent vessel size does not fall within the indicated range.</li>\n<li>Patients in whom antiplatelet and/or anticoagulation therapy (e.g., aspirin and clopidogrel) is contraindicated.</li>\n<li>Patients who have not received anti-platelet agents prior to stent implantation.</li>\n<li>Patients with an active bacterial infection.</li>\n<li>Patients in whom angiography demonstrates the anatomy is not appropriate for endovascular treatment due to conditions such as:<ul>\n<li>Severe intracranial vessel tortuosity or stenosis;</li>\n<li>Intracranial vasospasm not responsive to medical therapy.</li>\n</ul>\n</li>\n<li>Patients in whom a pre-existing stent is in place in the parent artery at the target intracranial aneurysm location.</li>\n</ul>\n<p><b>Potential adverse events</b></p>\n<p>The potential adverse events listed below, as well as others, may be associated with the use of the Neuroform Atlas Stent System or with the procedure:</p>\n<ul>\n<li>Aphasia</li>\n<li>Allergic reaction to Nitinol metal and medications</li>\n<li>Aneurysm perforation/rupture, leak or contrast extravasation</li>\n<li>Blindness</li>\n<li>Cardiac arrhythmia</li>\n<li>Coil herniation through stent into parent vessel</li>\n<li>Cranial neuropathy</li>\n<li>Death</li>\n<li>Embolus</li>\n<li>Headache</li>\n<li>Hemiplegia</li>\n<li>Hemorrhage (i.e., intracerebral, subarachnoid, retroperitoneal, or in other locations)</li>\n<li>Hydrocephalus</li>\n<li>In-stent stenosis</li>\n<li>Infection</li>\n<li>Ischemia</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Dec 08 2022 16:39:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
+          "text": "<ul>\n<li>Mass&nbsp;effect</li>\n<li>Myocardial&nbsp;infarction</li>\n<li>Neurological&nbsp;deficit/intracranial&nbsp;sequelae</li>\n<li>Pseudoaneurysm</li>\n<li>Reaction to radiation exposure (i.e., alopecia, burns ranging in severity from skin&nbsp;reddening to ulcers, cataracts, or delayed neoplasia)</li>\n<li>Reactions&nbsp;to&nbsp;anti-platelet/anti-coagulant&nbsp;agents</li>\n<li>Renal&nbsp;failure</li>\n<li>Seizure</li>\n<li>Stent&nbsp;fracture,&nbsp;migration/embolization,&nbsp;or&nbsp;misplacement</li>\n<li>Stent&nbsp;thrombosis</li>\n<li>Stroke</li>\n<li>Transient&nbsp;ischemic&nbsp;attack</li>\n<li>Vasospasm</li>\n<li>Vessel&nbsp;occlusion&nbsp;or&nbsp;closure&nbsp;including&nbsp;parent&nbsp;vessel&nbsp;or&nbsp;non-target&nbsp;side-branches</li>\n<li>Vessel&nbsp;perforation/rupture,&nbsp;dissection,&nbsp;trauma&nbsp;or&nbsp;damage</li>\n<li>Vessel thrombosis</li>\n<li>Visual&nbsp;impairment</li>\n<li>Other procedural complications including but not limited to anesthetic and contrast media risks, hypotension, hypertension, access site complications (including pain, hematoma, local bleeding, local infection, and injury to the artery (i.e. dissection), vein, or adjacent nerves)<br>\n</li>\n<li>Unplanned&nbsp;intervention</li>\n</ul>\n<p><b>Warnings</b></p>\n<p>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</p>\n<p>For single use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing or resterilization may compromise the structural integrity of the device and/or lead to device failure which, in turn, may result in patient injury, illness or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection,including, but not limited to, the transmission of infectious disease(s) from one patient to another. Contamination of the device may lead to injury, illness or death of the patient.</p>\n<p>After use, dispose of product and packaging in accordance with hospital, administrative and/or local government policy.<br>\n</p>\n<ul>\n<li>This device should only be used by physicians who have received appropriate&nbsp;training in interventional neuroradiology or interventional radiology and preclinical&nbsp;training on the use of this device as established by Stryker Neurovascular.</li>\n<li>Persons allergic to nickel titanium (Nitinol) may suffer an allergic response to this&nbsp;stent&nbsp;implant.</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 07 2022 22:38:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 01 2022 15:50:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Higher adverse event rates may be experienced for distal aneurysms located in the anterior and middle cerebral arteries.</li>\n<li>The safety and effectiveness of the device has not been established in the treatment of ruptured intracranial aneurysms.</li>\n</ul>\n<p><b>Cautions / precautions</b></p>\n<ul>\n<li>Take all necessary precautions to limit X-ray radiation doses to clinical operators by using sufficient shielding, reducing fluoroscopy times, and modifying X-ray technical factors whenever possible.</li>\n<li>The Neuroform Atlas stent may create local field inhomogeneity and susceptibility artifacts during magnetic resonance angiography (MRA), which may degrade the diagnostic quality to assess effective intracranial aneurysm occlusion.</li>\n<li>Safety and effectiveness of the Neuroform Atlas Stent System in patients below the age of 18 has not been established.</li>\n<li>The benefits may not outweigh the risks of device use in patients with small and medium asymptomatic extradural intracranial aneurysms, including those located in the cavernous internal carotid artery.</li>\n<li>Carefully weigh the benefits vs. risks of device treatment for each individual patient based on their medical health status and risk factors for intracranial aneurysm rupture during their expected life time such as age, comorbidities, history of smoking, intracranial aneurysm size, location, and morphology, family history, history of prior asymptomatic subarachnoid hemorrhage (aSAH), documented growth of intracranial aneurysm on serial imaging, presence of multiple intracranial aneurysms, and presence of concurrent pathology. The benefits may not outweigh the risks associated with device use in certain patients; therefore, judicious patient selection is recommended based on clinical practice guidelines or tools to assess the life time risk of intracranial aneurysm rupture.<br>\n</li>\n</ul>\n<p><span class=\"fontsize-1em\"><b>Safety&nbsp;Information&nbsp;Magnetic&nbsp;Resonance&nbsp;Conditional</b></span></p>\n<p>Non-clinical testing and analysis have demonstrated that the Neuroform Atlas Stent is MR Conditional alone, or when overlapped with a second stent, and adjacent toa Stryker Neurovascular coil mass. A patient with the Neuroform Atlas Stent can be safely scanned immediately after placement of this implant, under the following conditions:<br>\n</p>\n<ul>\n<li>Static magnetic field of 1.5 and 3.0 Tesla</li>\n<li>Maximum spatial gradient field up to 2500 Gauss/cm (25 Tesla/m)</li>\n<li>Maximum MR system reported whole body averaged specific absorption rate of 2 W/ kg (Normal Operating Mode) and head averaged specific absorption rate of 3.2 W/kg.<br>\n</li>\n</ul>\n<p>Under the scan conditions defined above, the Neuroform Atlas Stent is expected to produce a maximum temperature rise of 4 C after 15 minutes of continuous scanning. The Neuroform Atlas Stent should not migrate in this MRI environment.</p>\n<p>In non-clinical testing, the image artifact caused by the device extends approximately 2 mm from the Neuroform Atlas Stent when imaged with a spin echo pulse sequence and 3 Tesla MRI System. The artifact may obscure the device lumen. It may be necessary to optimize MR imaging parameters for the presence of this implant.</p>\n<p>See additional precaution related to the image artifact from the implant in the “Precautions” section of this labeling.<br>\n</p>\n",
+          "jcr:lastModified": "Wed Dec 07 2022 22:42:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>AP-003948 v1.0<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Wed Dec 07 2022 21:56:49 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

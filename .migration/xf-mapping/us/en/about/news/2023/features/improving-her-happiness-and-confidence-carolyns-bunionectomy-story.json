@@ -1,0 +1,211 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Improving her happiness and confidence | Carolyn’s bunionectomy story ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "41e8a3cb-cecd-49a5-a104-693023734fb3",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Carolyn holding a phone",
+  "jcr:predecessors": [
+    "24cdc23c-0f8b-45c6-ae17-eae32a21ac1a"
+  ],
+  "contentID": "COMM-GSNPS-WEB-534750",
+  "lastPublished": "Wed Feb 11 2026 20:36:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 11 2026 20:36:51 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 11 2026 20:36:53 GMT+0000",
+  "cq:lastModified": "Wed Feb 11 2026 20:36:36 GMT+0000",
+  "jcr:baseVersion": "24cdc23c-0f8b-45c6-ae17-eae32a21ac1a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:36:50 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Wed Feb 11 2026 20:36:36 GMT+0000",
+  "jcr:uuid": "3a79ade0-6266-4eb2-b1c3-44cd1f4b1e80",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 22:11:48 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 22:11:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy53": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><a><span style=\"color: rgb(0,0,0);\">Improving her happiness and confidence</span><br />\r\n </a></span>Carolyn's bunionectomy story</span>",
+          "line2": "<br>\r\nAs high as 30% of women experience a painful bump on the outside of their big toe, known as a bunion.<sup>1</sup> Due to their location, bunions can often reduce the flexibility of the toe and cause continuous pain. Watch Carolyn as she shares how PROstep provided her with less pain<sup>2</sup>, smaller scars<sup>2,3</sup> and a quicker recovery<sup>3,4</sup>.",
+          "jcr:lastModified": "Fri Jan 27 2023 21:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        },
+        "item1089953560363234": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"></span> ",
+          "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">For years, I lived with bunions. The pain was one thing, but they were so unsightly that I was embarrassed to show my feet in public—I didn’t even have the confidence to walk into a shoe store! But now, thanks to PROstep MIS, there’s no more pain and whole lot more shoe shopping.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Carolyn D</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">PROstep bunionectomy patient</span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Fri Jan 27 2023 22:05:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jan 30 2023 16:21:01 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Jan 30 2023 16:21:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/carolyn-1-27-23/Stryker ProStep Carolyn B v4.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Stryker ProStep Carolyn B v4-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Jan 30 2023 16:22:04 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Carolyn holding a phone"
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 21 2022 15:09:07 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">Reference</span></p>\n<ol>\n<li><span class=\"fontsize-8em\">Kuhn J, Alvi F. Hallux Valgus. [Updated 2021 Jul 25]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2022 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK553092/</span></li>\n<li><span class=\"fontsize-8em\">Lam P, Lee M, Xing J, Di Nallo M. Percutaneous Surgery for Mild to Moderate Hallux Valgus. Foot Ankle Clin N Am 2016; 21: 459-477.</span></li>\n<li><span class=\"fontsize-8em\">Lee M, Walsh J, Smith MM, Ling J, Wines A, Lam P. Hallux Valgus Correction Comparing Percutaneous Chevron/Akin (PECA) and Open Scarf/Akin Osteotomies. Foot Ankle Intl 2017; 38(8): 838-846.</span></li>\n<li><span class=\"fontsize-8em\">Maffulli N, Longo UG, Oliva F, Denaro V, Coppola C. Bosch Osteotomy and Scarf Osteotomy for Hallux Valgus</span></li>\n</ol>\n",
+          "jcr:lastModified": "Fri Jan 27 2023 21:44:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 22:08:38 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 22:08:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Jan 31 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Jan-2023",
+    "jcr:lastModified": "Fri Jan 27 2023 22:09:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/patients/patient-stories/carolyn-1-27-23/Carolyn holding a phone.jpeg"
+  }
+}

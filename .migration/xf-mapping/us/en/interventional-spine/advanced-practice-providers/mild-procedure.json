@@ -1,0 +1,710 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Bringing mild® into practice",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1820b870-1cee-4a38-993f-2b130885e5c1",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "f7b0554d-a695-4c1b-9630-81c2306517c7"
+  ],
+  "contentID": "IVS-MILD-SYK-3030151_REV-0",
+  "lastPublished": "Wed Jun 24 2026 13:48:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 24 2026 13:48:14 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 24 2026 13:48:16 GMT+0000",
+  "cq:lastModified": "Wed Jun 24 2026 13:48:09 GMT+0000",
+  "jcr:description": "Guidance and resources to help APPs recognize, educate and guide candidates with lumbar spinal stenosis",
+  "jcr:baseVersion": "f7b0554d-a695-4c1b-9630-81c2306517c7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Mar 04 2026 19:47:30 GMT+0000",
+  "pageTitle": "APP Education | Bringing mild® into practice",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 04 2026 19:02:02 GMT+0000",
+  "jcr:uuid": "4d9458b2-bcd8-4c02-b4c3-f23c41e3437a",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "navTitle": "APP Education | Bringing mild® into practice",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "Providing APPs guidance and resources to help recognize, educate and guide candidates with lumbar spinal stenosis",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/products/mild-procedure/images/mild-hero_1200x680_rev-1.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/products/mild-procedure/images/mild-hero_1920x640_rev-1.png",
+        "alt": "Providing APPs guidance and resources to help recognize, educate and guide candidates with lumbar spinal stenosis",
+        "jcr:lastModified": "Wed Feb 18 2026 20:17:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">Bringing mild<sup>®</sup> into practice</span></span></span></h1>\r\n",
+              "line2": "<h2>Guidance and resources to help APPs recognize, educate and guide candidates with lumbar spinal stenosis</h2>\r\n",
+              "jcr:lastModified": "Wed Feb 18 2026 20:17:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "int",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "CONTACT A REP",
+              "ctaExternalLink": "https://www.stryker.com/content/patients/us/en/ivs/find-a-doctor.html",
+              "jcr:lastModified": "Tue Feb 17 2026 19:13:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Feb 17 2026 13:29:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_984044492": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:07:27 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:07:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy__523084178": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Patient</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">identification &amp;&nbsp;education</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Does your practice offer the mild<sup>®</sup> procedure? Do you manage patient identification and education? If so, this blog offers practical guidance to help you confidently identify appropriate patients and educate them throughout the mild procedure journey.</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 13:54:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "leftMargin": "0"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:35:32 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:35:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "This blog offers practical guidance to help you confidently identify appropriate patients and educate them throughout the mild procedure journey",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-identification-rev.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Feb 19 2026 14:10:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/interventional-spine/advanced-practice-providers/blogs/identifying-and-educating-mild-patients",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__162145510": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Imaging</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">review</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Imaging review, which is essential to mild<sup>®</sup> patient identification, is often not covered in initial schooling. In the resources below, James Lynch, APP at Pain Consultants of San Diego, shares practical MRI tips, confidence-building pearls and step-by-step videos to help determine if patients with lumbar spinal stenosis (LSS) are candidates for mild.</span></p>\n",
+      "jcr:lastModified": "Tue Feb 17 2026 14:40:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "leftMargin": "0"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:35:32 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:35:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "Learn the basics of image review, become more familiar with identifying anatomical landmarks, and understand how to confirm if a patient is a candidate for the mild® procedure",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-imaging-review-insights.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 18 2026 21:40:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/interventional-spine/advanced-practice-providers/blogs/insights-into-imaging-review",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/2ab4be92700fc8d6a1e177dc990510f5",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "Reviewing the MRI report for a mild® patient",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-mri-report.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 14:13:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/9700fc6d4af5901e30e363a87194075f",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "How to link sagittal and axial views during imaging review for mild® patient identification",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-sagittal-axial-views.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 18 2026 21:41:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols3_967514895": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:35:36 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:35:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/b87af6b175f12bde6fa60df24e85a2ac",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "Measuring ligamentum flavum thickness during imaging review to assess candidacy for the mild® procedure",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-ligamentum-flavum.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 18 2026 21:41:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/ed0476b8ff1904af202ee9fa8852162a",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "MRI images illustrating characteristics of an ideal mild® procedure candidate",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-patient-identification.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 14:24:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy_copy_copy__387566363": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Educational</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">videos</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Explore our video library, featuring a step-by-step mild<sup>®</sup> procedure tutorial and a webinar led by Patrick McGinn on how APPs are leading the way in identifying, educating and guiding patients through minimally invasive LSS treatment with mild.</span></p>\n",
+      "jcr:lastModified": "Fri Feb 27 2026 14:29:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "leftMargin": "0"
+    },
+    "cols3_1450904819": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:41:27 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:41:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/5c9b53c1fef9f22442a4b8b7b1ecc3fb",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "Technique overview for performing the mild® procedure",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-technique-overview.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 19:28:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://view.stryker.com/viewer/43c0baceaf021856cf37ca55a649fed2",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "Patrick McGinn shares how APPs are leading the way in identifying, educating and guiding patients through minimally invasive lumbar spinal stenosis treatment with mild® procedure",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-didactic.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 19:28:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__1349868754": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Blogs &amp; <span class=\"futura-bold\"><span style=\"color: #ffb500;\">articles</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">From understanding lumbar spinal stenosis with neurogenic claudication to exploring the downside of repeat epidural steroid injections, these blogs provide insight into treating patients with LSS.</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 13:26:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "leftMargin": "0"
+    },
+    "cols3_1450904819_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 14:41:27 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 14:41:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "This blog offers practical guidance to understanding lumbar spinal stenosis with neurogenic claudication",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-understanding-LSS.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 18 2026 21:42:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/interventional-spine/advanced-practice-providers/blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudicatio",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 17 2025 18:52:56 GMT+0000",
+          "alt": "This blog highlights the downside of repeat epidural steroid injections for patients with lumbar spinal stenosis",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-epidural-injections-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 19:28:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/interventional-spine/advanced-practice-providers/blogs/downside-of-repeat-epidural-steroid-injection-treatments-for-lum",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__1260649948": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Office&nbsp;<span style=\"color: #ffb500;\"><span class=\"futura-bold\">resources</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Let us help bring awareness and confidence to you and your patients about our products. We’ve created educational materials to help you support your patients in making informed decisions about their care.</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 20:15:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "leftMargin": "0"
+    },
+    "cols2_1946253775_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Aug 19 2025 15:57:56 GMT+0000",
+      "jcr:lastModified": "Tue Aug 19 2025 15:57:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Aug 19 2025 16:00:38 GMT+0000",
+          "alt": "Your go-to resource for launching and supporting mild® in practice",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-onboarding.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 15:01:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Tue Dec 26 2023 19:49:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">mild onboarding kit</span></span></h4>\n<p><span class=\"fontsize-1-25em\">Your go-to resource for launching and supporting mild<sup>®</sup> in practice.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 18 2026 20:15:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 16 2024 18:27:38 GMT+0000",
+          "CTATitle": "Learn more",
+          "ctaExternalLink": "https://view.stryker.com/viewer/a7a494e543ac023e0decfd43e15cc76e",
+          "jcr:lastModified": "Tue Feb 17 2026 17:24:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(76,125,122)",
+          "ctaInternalLink": "/content/stryker/us/en/interventional-spine/products/optablate-bone-tumor-ablation-system"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Aug 19 2025 16:00:38 GMT+0000",
+          "alt": "Get printed materials ranging from patient education, physician education or practice materials.",
+          "srcFileRef": "/content/dam/stryker/ivs/advanced-practice-provider/images/mild/mild_APP-printed-materials-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 19 2026 15:06:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Tue Dec 26 2023 19:49:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Get printed materials</span></span></h4>\n<p><span class=\"fontsize-1-25em\">Ready to get started? Create an account to start exploring our materials ranging from patient education, physician education or practice materials.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 18 2026 19:59:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 16 2024 18:27:38 GMT+0000",
+          "CTATitle": "Learn more",
+          "ctaExternalLink": "https://hcpprintsolutions.com/login?returnUrl=%2Fcategory",
+          "jcr:lastModified": "Tue Sep 16 2025 15:21:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(76,125,122)",
+          "ctaInternalLink": "/content/stryker/us/en/interventional-spine/products/optablate-bone-tumor-ablation-system"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Aug 19 2025 12:31:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1em\">*Note: Processing a new account can take up to 24 hours.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:55:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_122121805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 13:31:59 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 13:31:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 13:29:48 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 13:29:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">Pain is unrelenting. But so are we.</span></h3>\n<p><span class=\"fontsize-1-25em\">Thank you for your interest in Stryker's Interventional Spine products—bold and innovative approaches for treating patients experiencing pain. Tell us how we can help by answering the following questions, and we’ll work to get you what you need.</span></p>\n<p><span class=\"fontsize-1-25em\">To place an order, contact your Stryker's Sales Representative or Stryker's Customer Service at 1 800 253 3210.</span></p>\n",
+          "jcr:lastModified": "Fri Jan 30 2026 21:27:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "5111",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your interest. If you have opted in to learn more about Stryker Interventional Spine Medical Education offerings, you will receive updates on educational opportunities and upcoming events as they become available.",
+          "jcr:lastModified": "Wed Jun 24 2026 13:48:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span style=\"font-weight: normal;\"><span class=\"fontsize-1-25em\">Be in the know</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Fri Jan 30 2026 21:27:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:21:27 GMT+0000",
+      "text": "Resources Explore Interventional Spine homepage About us Learn Training and education Physician resources Indications for use Portfolios Advanced pain therapies Bone tumor ablation Vertebral augmentation Support Contact information Reimbursement Grants and donations",
+      "jcr:lastModified": "Tue Oct 21 2025 15:22:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/footer-links/master"
+    },
+    "cols_469504154": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Feb 17 2026 13:30:27 GMT+0000",
+      "jcr:lastModified": "Tue Feb 17 2026 13:30:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

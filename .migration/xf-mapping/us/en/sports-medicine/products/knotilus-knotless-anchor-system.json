@@ -1,0 +1,296 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Knotless suture anchors",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Knotilus Anchor System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4216212e-6059-4d7e-a926-6ac70b480c23",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/knotilusknotlessanchorsystem/images/Thumb-Knotilus.jpg",
+  "jcr:predecessors": [
+    "09d6511c-6c98-457e-90c6-1cfb8d8303ba"
+  ],
+  "contentID": "Literature Number 1000903161",
+  "lastPublished": "Tue Aug 18 2026 21:35:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:35:45 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:35:47 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:35:37 GMT+0000",
+  "jcr:description": "The Knotilus anchor has greater ultimate pullout strength than competitive instability anchors.*",
+  "jcr:baseVersion": "09d6511c-6c98-457e-90c6-1cfb8d8303ba",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:59:00 GMT+0000",
+  "pageTitle": "Knotilus Anchor System",
+  "cq:tags": [
+    "stryker:product/sports-medicine/knotilus-knotless-anchor-system",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+  ],
+  "jcr:lastModified": "Wed May 04 2022 16:41:06 GMT+0000",
+  "jcr:uuid": "93224eea-1560-4047-a29d-c5c11b9b7c2f",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Knotilus Anchor System",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModified": "Wed May 23 2018 12:43:19 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/knotilusknotlessanchorsystem/images/Hero-Knotilus.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Wed May 28 2025 20:06:26 GMT+0000",
+      "title": "Related products and procedures",
+      "jcr:lastModified": "Wed May 28 2025 20:06:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 20:52:15 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 20:52:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:52:24 GMT+0000",
+          "CTATitle": "CinchLock SS and CinchLock Flex knotless anchor system",
+          "CTAImageAltText": "cinchlock-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:53:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/cinchlock-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:52:27 GMT+0000",
+          "CTATitle": "Champion Slingshot Single portal suture passing system",
+          "CTAImageAltText": "slingshot-shoulder-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:58:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/slingshot-shoulder-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/champion-slingshot-single-portal-suture-passing-system"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:52:31 GMT+0000",
+          "CTATitle": "Omega self-punching knotless anchor system",
+          "CTAImageAltText": "omega-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:58:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/omega-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/omega"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:52:35 GMT+0000",
+          "CTATitle": "suture and tape offerings",
+          "CTAImageAltText": "suture-tape-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/suture-tape-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/suture-and-tape-offerings"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/sports-medicine/products/knotilusknotlessanchorsystem/resources/Knotilus Anchor Technique Guide.pdf",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Jul 31 2019 18:52:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:35:29 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:35:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>The Knotilus implant loop does not rely on friction but is secure inside the center of the implant and locked into the PEEK anchor body. The Knotilus system is available with two guide tip options, allowing for preference.<br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Wed Nov 13 2019 20:34:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>2.4–2.9mm wedge design<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>25mm loop<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Stepped Drill—equipped with a hard stop<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/knotilusknotlessanchorsystem/images/Thumb-Knotilus.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*&nbsp;Reference: DHFD15039</p>\r\n",
+    "jcr:lastModified": "Thu Feb 13 2020 18:16:08 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:35:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

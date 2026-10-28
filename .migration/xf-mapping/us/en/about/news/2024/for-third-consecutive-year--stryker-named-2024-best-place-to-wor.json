@@ -1,0 +1,101 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "For third consecutive year, Stryker named 2024 Best Place to Work for Disability Inclusion",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "722459b5-279b-4140-9ed1-eb4fe03e73d7",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "stryker-logo-thumbnail",
+  "jcr:predecessors": [
+    "ce15784e-75bc-4b1a-9a0f-9f71ae6c7a26"
+  ],
+  "lastPublished": "Fri Aug 02 2024 14:18:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Aug 02 2024 14:18:20 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 02 2024 14:18:22 GMT+0000",
+  "cq:lastModified": "Fri Aug 02 2024 14:18:16 GMT+0000",
+  "jcr:description": "News announcing Stryker has been once again named a top-scoring business on the Disability Equality Index® (DEI) by the nation’s largest disability rights organization, the American Association of People with Disabilities, and Disability:IN, the global business disability inclusion network, for our efforts to advance inclusion for people with disabilities.",
+  "jcr:baseVersion": "ce15784e-75bc-4b1a-9a0f-9f71ae6c7a26",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 16 2024 12:00:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Aug 02 2024 14:18:16 GMT+0000",
+  "jcr:uuid": "6c97fad4-5d61-434a-984f-27348112d0dd",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 15 2024 18:02:14 GMT+0000",
+      "jcr:lastModified": "Mon Jul 15 2024 18:02:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 15 2024 18:02:19 GMT+0000",
+          "alt": "stryker Disability Equality Index award logo 2024",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/for-third-consecutive-year,-stryker-named-2024-best-place-to-work-for-disability-inclusion/stryker Disability Equality Index award logo 2024.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 15 2024 18:02:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 15 2024 17:58:09 GMT+0000",
+      "jcr:lastModified": "Mon Jul 15 2024 17:58:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 15 2024 17:58:13 GMT+0000",
+          "text": "<p>Stryker has been once again named a top-scoring business on the Disability Equality Index®&nbsp;(DEI) by the nation’s largest disability rights organization, the American Association of People with Disabilities, and Disability:IN, the global business disability inclusion network, for our efforts to advance inclusion for people with disabilities. The Disability Equality Index (DEI) is a comprehensive benchmarking tool that helps companies build a roadmap of measurable, tangible actions that they can take to achieve disability inclusion and equality.</p>\n<p>“We are thrilled to be recognized as a 'Best Place to Work for Disability Inclusion' for the third consecutive year,” said Bernard O'Connor, president of Stryker's Allies for All Abilities (3A) employee resource group and Vice President, Advanced Operations, Engineering. “This achievement is a testament to our collective dedication and passion for advancing disability inclusion. A heartfelt thank you to the 3A team and the entire Stryker community for its unwavering support and leadership.”</p>\n<p>The 2024 Disability Equality Index measured culture and leadership, enterprise-wide access and employment practices (benefits, recruitment, employment, education, retention and advancement and accommodations), community engagement, supplier diversity and non-U.S. operations.</p>\n<p>To learn more about the Disability Equality Index, check out <a href=\"https://disabilityin.org/what-we-do/disability-equality-index/2022companies/\">Disability:In's website</a>.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jul 15 2024 18:03:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Jul 16 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "16-Jul-2024",
+    "jcr:lastModified": "Mon Jul 15 2024 17:57:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/for-third-consecutive-year,-stryker-named-2024-best-place-to-work-for-disability-inclusion/RushDisabilityInclusionAward2024_thumbnail.png"
+  }
+}

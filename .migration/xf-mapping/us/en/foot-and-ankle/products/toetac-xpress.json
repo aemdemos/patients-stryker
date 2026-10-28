@@ -1,0 +1,961 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Hammertoe Fixation System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ToeTac Xpress",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "641b7ae9-edf5-4ec1-b6e2-a3b68fadb825",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Thumb-ToeTacXpress",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/products/toetac/images/page_thumbnail_toetac.jpg",
+  "jcr:predecessors": [
+    "bdaac53b-3a46-4d4d-8edd-f1dacd3e6542"
+  ],
+  "contentID": "AP-017559",
+  "lastPublished": "Thu Sep 26 2024 20:27:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 26 2024 20:27:13 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 26 2024 20:27:21 GMT+0000",
+  "cq:lastModified": "Thu Sep 26 2024 20:27:02 GMT+0000",
+  "newDisplayFlagDate": "Wed Dec 04 2024 00:00:00 GMT-0500",
+  "jcr:description": "ToeTac Xpress is sterile biocomposite (PEEK) non-resorbable implant for hammertoe fixation.",
+  "jcr:baseVersion": "bdaac53b-3a46-4d4d-8edd-f1dacd3e6542",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:40:43 GMT+0000",
+  "pageTitle": "ToeTac Xpress",
+  "cq:tags": [
+    "stryker:product/foot-and-ankle",
+    "stryker:content-type/product",
+    "stryker:custom/foot-and-ankle/product-type/hammertoe-solutions",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)/hammertoe-solutions",
+    "stryker:product/foot-and-ankle/toetac",
+    "stryker:capability/foot-and-ankle",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 23 2024 15:47:09 GMT+0000",
+  "jcr:uuid": "3025eb32-5cc7-4853-95b2-16e9d2c158b3",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "ToeTac Xpress",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_473328307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Apr 22 2024 21:44:17 GMT+0000",
+      "jcr:lastModified": "Mon Apr 22 2024 21:44:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Apr 22 2024 21:44:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\">ToeTac<sup><span class=\"fontsize-1-5-vw\">®&nbsp;</span></sup>Xpress</span></span></span></h1>\r\n",
+          "line2": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Hammertoe Fixation System</span></span></h2>\r\n",
+          "jcr:lastModified": "Thu Jun 06 2024 15:37:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 22 2024 21:44:30 GMT+0000",
+          "alt": "ToeTac Xpress Product image",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/toetac/images/default_curated_HERO_toetac.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 15:38:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#specification\">SPECIFICATION OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "about",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "about",
+      "jcr:lastModified": "Tue Jun 04 2024 18:35:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_2000441555_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1783731615": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Apr 22 2024 21:55:39 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">ToeTac Xpress is a sterile biocomposite (PEEK) non-resorbable implant for hammertoe fixation.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Sep 26 2024 14:09:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Apr 22 2024 21:55:26 GMT+0000",
+      "jcr:lastModified": "Mon Apr 22 2024 21:55:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_copy_c_429279222": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "specification",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "specification",
+      "jcr:lastModified": "Tue Jun 04 2024 18:35:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_775615365": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Apr 22 2024 22:00:43 GMT+0000",
+      "jcr:lastModified": "Mon Apr 22 2024 22:00:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Apr 22 2024 22:00:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Key features</span></span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">0° cannulated option can be used with a K-wire to temporarily fixate the MTP joint.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Radiolucent implant allows for visualization of the fusion site.</span></span><span style=\"font-size: 2em; font-family: URWEgyptienneW01-Light, Rockwell, Georgia, Times, serif;\"></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Compact kit includes all instrument needs for procedure.</span></span></li>\n</ul>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 26 2024 14:09:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">1</span></span></span>&nbsp;&nbsp;<span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Cannulated drill bit: </span></span><span class=\"fontsize-1-25em\">2.7mm, 3.2mm or 3.7mm AO Quick Connect drill bits with laser marks for accuracy.</span><br>\n</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">2</span></span>&nbsp;&nbsp;<span class=\"urw-egyptienne\">Reamers:</span> </span><span class=\"fontsize-1-25em\">Proximal and middle phalanx reamers.</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">3</span></span>&nbsp;&nbsp;<span class=\"urw-egyptienne\">ToeTac:</span> </span><span class=\"fontsize-1-25em\">Cannulated PEEK implant available in three sizes.</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">4</span></span>&nbsp;&nbsp;<span class=\"urw-egyptienne\">Cannulated tap:</span> </span><span class=\"fontsize-1-25em\">Tap is laser marked to ensure the proper depth has been reached.</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">5</span></span>&nbsp;&nbsp;<span class=\"urw-egyptienne\">Cannulated driver:</span> </span><span class=\"fontsize-1-25em\">Novel driver concept ensures proper seating of implant.</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">6</span></span>&nbsp;&nbsp;<span class=\"urw-egyptienne\">K-wire:</span> </span><span class=\"fontsize-1-25em\">1.1mm with double-ended trocar tip.</span></p>\n",
+          "jcr:lastModified": "Thu Sep 26 2024 14:09:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 22 2024 22:01:03 GMT+0000",
+          "alt": "ToeTac Xpress Product tray",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/toetac/images/FA-ToeTac-Xpress-features-traylayout.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 15:38:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Sep 09 2024 20:11:38 GMT+0000",
+      "jcr:lastModified": "Mon Sep 09 2024 20:11:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "videos",
+          "jcr:lastModified": "Mon Sep 09 2024 20:10:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": 1,
+              "accTitle": "Video Library"
+            }
+          },
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_1393007193": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:35:13 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "IHxq15-HsE4",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:35:44 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                },
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:34:09 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "kH7zEQlJ14M",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:34:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:34:57 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "l6V2L_OP29o",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:35:02 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            },
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "daniela.marino1@stryker.com",
+              "jcr:lastModifiedBy": "daniela.marino1@stryker.com",
+              "jcr:created": "Wed Jun 12 2024 19:44:00 GMT+0000",
+              "jcr:lastModified": "Wed Jun 12 2024 19:44:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_1469816016": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_copy__1281772105": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions.</span></span></span>",
+          "jcr:lastModified": "Fri Aug 23 2024 15:40:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c_1477585226": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Mon Sep 09 2024 20:10:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/toetac/resources/ToeTac Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/toetac/resources/ToeTac Brochure.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Thu Sep 26 2024 20:27:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_1393007193": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:35:13 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "IHxq15-HsE4",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:35:44 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                },
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:34:09 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "kH7zEQlJ14M",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:34:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "alison.moutinho@stryker.com",
+                  "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+                  "jcr:created": "Wed Jun 12 2024 20:34:57 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "l6V2L_OP29o",
+                  "borderColor": "rgba(0,0,0,1)",
+                  "jcr:lastModified": "Wed Jun 12 2024 20:35:02 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            },
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "daniela.marino1@stryker.com",
+              "jcr:lastModifiedBy": "daniela.marino1@stryker.com",
+              "jcr:created": "Wed Jun 12 2024 19:44:00 GMT+0000",
+              "jcr:lastModified": "Wed Jun 12 2024 19:44:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Mar 07 2024 22:40:38 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 22:40:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c_305963616": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Tue Jun 04 2024 18:35:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu May 23 2024 17:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu May 23 2024 17:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about <span style=\"color: #ffb500;\">ToeTac Xpress</span></h4>\n",
+          "jcr:lastModified": "Wed Jun 19 2024 15:52:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 23 2024 17:22:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_cop_250797335": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Mar 07 2024 18:49:18 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 18:49:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy_1811440805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Wed May 15 2024 18:42:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>ToeTac Xpress is a PEEK, cannulated implant, designed for hammertoe fixation. The sterile, all-inclusive instrument kits include innovative cup and cone reamers for PIP joint preparation..<br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 22 2024 23:36:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/all-products/2024-brandrefresh/product-thumbnails/Thumb-ToeTacXpress.png"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 22 2024 23:35:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 22 2024 23:35:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Apr 22 2024 23:35:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 22 2024 23:35:56 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 22 2024 23:36:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

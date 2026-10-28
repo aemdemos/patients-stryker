@@ -1,0 +1,184 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Dedicated to the foot and ankle surgeon.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Foot and ankle",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f1a2aa6b-daa7-4ebf-ab36-732a49f22045",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Foot and Ankle",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/images/FA-foot-image.jpg",
+  "jcr:predecessors": [
+    "9f03278d-149a-4bc8-a88a-253886fecfed"
+  ],
+  "contentID": "OT-AWI-42, 08-2017",
+  "lastPublished": "Tue Aug 18 2026 19:59:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 19:59:31 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 19:59:38 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 13:04:08 GMT+0000",
+  "jcr:description": "As one of the world’s leading companies in medical technology, Stryker is dedicated to helping foot and ankle surgeons treat their patients more efficiently while enhancing patient care and the overall healthcare experience. Constantly driven to innovate, we offer a diverse array of advanced medical technologies and a comprehensive portfolio of products. We’re here for the foot and ankle surgeon. We’re here to make healthcare better.",
+  "cq:siblingOrder": "advanced-digital-healthcare,craniomaxillofacial,foot-and-ankle,joint-replacement,spine--ortho-,sports-medicine,trauma-and-extremities,upper-extremities,",
+  "jcr:baseVersion": "9f03278d-149a-4bc8-a88a-253886fecfed",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:11:54 GMT+0000",
+  "hideInNav": "true",
+  "cq:name": "foot-and-ankle",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/foot-and-ankle",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Apr 24 2024 16:05:12 GMT+0000",
+  "jcr:uuid": "9d86292c-dc5b-431c-affc-15af6c593b37",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics",
+  "cq:childrenOrder": "forefoot,midfoot,ankle,hindfoot,biologics,",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "cols2_351653127": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Mon Nov 11 2019 19:31:36 GMT+0000",
+      "jcr:lastModified": "Mon Nov 11 2019 19:31:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "featuredcontent_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "featuredcontentconte": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "jcr:created": "Thu May 11 2017 15:51:54 GMT-0400",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/featuredcontentcontext",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "ctaDamLink": "/content/dam/stryker/foot-and-ankle/resources/CartivaFSN30Oct2024_US.pdf",
+      "ctaLinkType": "dam",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Oct 31 2024 18:12:24 GMT+0000",
+      "CTATitle": "Product Field Action",
+      "jcr:lastModified": "Thu Oct 31 2024 18:49:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)"
+    },
+    "featuredcontentitem": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "jcr:created": "Thu May 11 2017 15:52:00 GMT-0400",
+      "amountProductDetail": "2",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/featuredcontentitem",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 11 2024 21:55:09 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "50",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/foot-and-ankle/product-type"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Procedure",
+        "tagFolder": "/etc/tags/stryker/procedure/foot-and-ankle"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "headColor": "rgba(255,181,0,1)",
+    "jcr:lastModified": "Thu May 25 2023 18:27:22 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/frontfoot.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "jcr:lastModified": "Thu Jun 20 2024 18:24:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/images/FA-foot-image.jpg"
+  }
+}

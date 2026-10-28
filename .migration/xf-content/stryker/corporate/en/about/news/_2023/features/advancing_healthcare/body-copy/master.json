@@ -1,0 +1,220 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e7d97bf1-dd5c-4f80-ae0c-f77407f77702",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5947c9ac-41ca-45b1-a18f-0348732f5b93"
+  ],
+  "jcr:created": "Thu Jan 19 2023 19:21:18 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 19 2023 19:21:22 GMT+0000",
+  "cq:lastModified": "Wed Jan 11 2023 17:15:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5947c9ac-41ca-45b1-a18f-0348732f5b93",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1f8f37e0-5f64-4365-8426-4c1479931ab9",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 09 2023 15:29:10 GMT+0000",
+      "text": "<p><span class=\"futura-bold\">To help improve patient outcomes, Stryker provides extensive medical education and training on the safe and effective use of our products for thousands of HCPs worldwide. Learn how Stryker is using a new state-of-the-art mobile experience, the Neurotech Mobile Experience (NTME), to bring the complete Neurotechnology and Spine portfolio to the doorsteps of healthcare professionals in Europe.</span></p>\n",
+      "jcr:lastModified": "Mon Jan 09 2023 15:48:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_2108013526": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 09 2023 15:31:17 GMT+0000",
+      "text": "<p>Earlier this year we expanded our medical education offering with the launch of the Neurotech Mobile Experience. This fully equipped truck brings Stryker’s complete Neurotech portfolio to healthcare professionals’ doorstep, providing them the opportunity to experience a full range of products at convenient locations. The NTME transforms into an educational and showroom environment, bringing Stryker’s solutions to facilities across Europe for awareness sessions and hands-on product demonstrations.</p>\n",
+      "jcr:lastModified": "Mon Jan 09 2023 16:04:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Nov 02 2020 21:46:47 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">&quot;The Neurotech Mobile Experience is important for Stryker because we no longer need to rely on our customers to take time off to come and see our products,”</span></span> says Stuart Smith, Business Unit Manager on our Interventional Spine team. <span style=\"color: rgb(255,181,0);\">“[With the mobile lab]<span class=\"futura-bold\"> we can take our products and experience to them.”</span></span></span></span></span><br>\r\n </span>",
+      "jcr:lastModified": "Tue Jan 10 2023 15:09:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_638236547": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 09 2023 15:32:02 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">NTME on the road</span></span><br>\n</p>\n<p>As one of the first of its kind in Europe, the NTME has been busy. Since its launch in May 2022, the mobile experience has traveled to 27 hospitals in 10 different countries across Europe including Rome (Italy), Rotterdam (the Netherlands), Manheim (Germany), London (UK), and more. The truck also visited 6 major European neuro-spine congresses.</p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">A comprehensive learning experience</span></span></p>\n<p>The features included inside the truck make it a high-tech environment for an optimal learning experience. The NTME expands to over 80 m2, comfortably hosting up to 30 visitors at the same time. The truck offers five integrated stations to experience Stryker's custom solutions, including the&nbsp;<a href=\"https://www.stryker.com/us/en/spine/products/airo-truct/imaging.html\">Airo TruCT</a>, enabling realistic product simulations.</p>\n",
+      "jcr:lastModified": "Tue Jan 10 2023 15:01:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1851509471": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 09 2023 15:34:12 GMT+0000",
+      "alt": "AiroTruCT",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/advancing-healthcare-professionals’-education-with-stryker’s-neurotech-mobile-experience/AiroTruCT.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jan 09 2023 15:34:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_700924328": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 09 2023 15:34:22 GMT+0000",
+      "text": "<p>The flexible setup provides an ideal environment for learning opportunities, such as product demonstrations, educational courses, and customer feedback sessions for next-generation products. Serving our purpose of making healthcare better, the NTME has been extremely well received by healthcare professionals and will continue touring Europe in 2023.</p>\n",
+      "jcr:lastModified": "Mon Jan 09 2023 16:05:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1680294746": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 09 2023 15:34:28 GMT+0000",
+      "alt": "NeurotechMobile_TruckInside",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/advancing-healthcare-professionals’-education-with-stryker’s-neurotech-mobile-experience/NeurotechMobile_TruckInside.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jan 09 2023 15:34:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Jan 10 2023 14:56:50 GMT+0000",
+      "CTATitle": "LEARN MORE ABOUT THE NEUROTECH MOBILE EXPERIENCE",
+      "ctaExternalLink": "https://neurotech-eu.stryker.com/mobile-experience/",
+      "jcr:lastModified": "Tue Jan 10 2023 14:57:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

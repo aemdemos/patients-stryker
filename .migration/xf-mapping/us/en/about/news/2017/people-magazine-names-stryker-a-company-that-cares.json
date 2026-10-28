@@ -1,0 +1,51 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "People magazine names Stryker a Company that Cares",
+  "jcr:versionHistory": "2e5994aa-2f41-4a98-a3c2-b5d81f414b8f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "96db82ab-dded-430d-969f-c64c4a12ef6b"
+  ],
+  "lastPublished": "Mon Nov 06 2017 15:57:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 15:57:25 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 15:57:20 GMT-0500",
+  "jcr:baseVersion": "96db82ab-dded-430d-969f-c64c4a12ef6b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 15:57:20 GMT-0500",
+  "jcr:uuid": "9aa79fd9-8103-4e13-b83e-6a22e0456087",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "publishDate": "Wed Mar 29 2017 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Mar-2017",
+    "jcr:lastModified": "Thu Jun 01 2017 12:29:07 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>People magazine, together with Great Place to Work (GPTW), named Stryker a Company that Cares. This list highlights the top U.S. companies with 1,000 or more employees that have succeeded in business while also demonstrating respect, compassion and concern for their employees, their communities and the environment. We ranked #45 out of 50 companies on the list.</p>\n<p>Our great culture is a result of our great people. Stryker is a company of caring, compassionate, driven people who live our mission and values every day. We thank our employees for their determination to make healthcare better and, with that same drive, help one another and our communities.</p>\n<p>To determine the companies on the list, GPTW asked more than 368,000 randomly selected employees from various companies about their daily experiences at work, taking into account their personal stories about the difference their workplaces have made in their lives and in their communities. GPTW also looked at the generosity of the organizations’ benefits, financial donations and volunteerism.</p>\n<p>Here are some of the ways our employees show that they care.</p>\n<p><b>Employees care for others</b></p>\n<p>We support organizations that align with our company mission through charitable and product donations as well as volunteerism. At the company level, we partner with Operation Smile. Operation Smile is an international medical charity that has provided hundreds of thousands of free surgeries for children who suffer from facial deformities such as cleft lip, cleft palate and other surgically amenable conditions. We’ve partnered with the organization since 1999 and expanded our relationship in 2014 by offering our employees opportunities to serve as non-medical volunteers on mission trips. We’ve completed two missions to date. Employees participating in a mission trip receive paid volunteer time, which typically runs 7-8 days. We also provide product donations to support missions across the globe, and the Stryker Smiles web site gives employees a way to give to Operation Smile year-round.</p>\n<p>Denise, one of our employees who recently volunteered on a mission in India, shared: &quot;The patients and families came in groups on buses. We saw 298 patients in one day—learned about their stories, entertained the children and tried to put the families at ease. Families ranged between 2-6 people, but probably averaged three members—so you can imagine how many people we interacted with. The medical personnel, student volunteers, translators and Op Smile were all awesome and so appreciative of the Stryker team.&quot;</p>\n<p><b>Employees care for each other</b></p>\n<p>Employee Aaron was racing his bike when he lost control and crashed. He was quickly taken by helicopter to a hospital where he was told he had fractured six vertebrae in his upper and middle spine, broken a rib and his left shoulder blade, injured his brachial plexus, and his lung had collapsed. The fracture in his thoracic, or middle, spine had so damaged his spinal cord that Aaron was paralyzed from his stomach area down.</p>\n<p>After surgery, Aaron spent months in intense inpatient rehabilitation and in physical and occupational therapy. Returning home in a wheelchair, Aaron quickly realized that his home needed to undergo dramatic changes to accommodate his new lifestyle.</p>\n<p>&quot;Surgeons used Stryker hardware to stabilize my fractures, but that wasn’t all that connected me to Stryker. It was just unbelievable. All my coworkers came to the house and worked to renovate it. They put in a ramp, they expanded the doorways, and they rebuilt the bathroom entirely. The engineers from Stryker were so skilled. People from Stryker brought us home-cooked meals. They drove me to outpatient rehab three times a week. I am so grateful.&quot;</p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with our customers, we are driven to make healthcare better. The Company offers a diverse array of innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. Stryker is active in over 100 countries around the world. Please contact us for more information at Stryker.</p>\n<p>More details about People’s Companies that Care list are available on <a href=\"http://www.stryker.com/en-us/corporate/ContactUs/index.htm#locations\" target=\"_blank\">People.com</a>.</p>\n<p><a href=\"http://careers.stryker.com/\" target=\"_blank\">Learn more about careers</a>&nbsp; &nbsp; &nbsp;&nbsp;<a href=\"http://www.stryker.com/en-us/corporate/AboutUs/index.htm\" target=\"_blank\">Learn more about our company</a>&nbsp; &nbsp; &nbsp;&nbsp;<a href=\"http://www.stryker.com/en-us/corporate/AboutUs/SocialResponsibility/index.htm\" target=\"_blank\">Learn more about our social responsibility</a><br>\n</p>\n",
+    "jcr:lastModified": "Tue May 30 2017 15:48:01 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

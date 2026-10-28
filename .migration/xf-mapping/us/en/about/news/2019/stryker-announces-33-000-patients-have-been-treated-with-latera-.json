@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces 33,000 patients have been treated with LATERA absorbable nasal implant ",
+  "jcr:versionHistory": "7acd59e2-9383-41e1-a7ad-5464aae3556a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "efb11a0e-681a-4b89-a613-489aabc78a0d"
+  ],
+  "contentID": "4278-179 rB ",
+  "lastPublished": "Mon Jun 24 2019 18:28:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 24 2019 18:28:47 GMT+0000",
+  "cq:lastModified": "Mon Jun 24 2019 18:28:37 GMT+0000",
+  "hideContentID": "true",
+  "jcr:baseVersion": "efb11a0e-681a-4b89-a613-489aabc78a0d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Jun 24 2019 18:28:37 GMT+0000",
+  "jcr:uuid": "bc3dba8f-c73e-4cf5-adea-d92d9dbf6548",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Mon Jun 24 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jun-2019",
+    "jcr:lastModified": "Mon Jun 24 2019 18:14:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker announced today that more than 33,000 nasal valve collapse (NVC) patients have been treated with its LATERA® absorbable nasal implant.<sup>i</sup> LATERA is used to support the lateral nasal cartilage (side wall of the nose) and address the symptoms of NVC, helping patients breathe better. Nasal airway obstruction (NAO) is the most common complaint ENTs hear from patients, affecting more than 20 million Americans.vi&nbsp;NAO has three anatomic contributors: septal deviation, turbinate hypertrophy and nasal valve collapse. &nbsp;</p>\n<p>Through a minimally invasive procedure, the LATERA nasal implant is inserted through a small incision made inside a patient’s nose. Published literature demonstrates that LATERA delivers significant relief to patients with NVC.<sup>ii</sup> Eighteen and 24-month data has further demonstrated durable relief of nasal airway obstruction symptoms with LATERA.<sup>iii</sup></p>\n<p>LATERA was launched in the U.S. following receipt of 510(k) clearance by the U.S. Food and Drug Administration (FDA) in June 2016. To date, over 3,000 physicians across all 50 states and Puerto Rico have been trained on LATERA, and over 2,000 hospital, ambulatory surgery center and office accounts have used LATERA to help their patients with nasal valve&nbsp;collapse.<sup> i</sup></p>\n<p>Since its launch in 2016, LATERA has achieved the following significant adoption milestones:</p>\n<ul>\n<li>June, 2016: First patient treated</li>\n<li>January, 2017: 1,000th patient treated</li>\n<li>April, 2017: Initial study demonstrating safety and efficacy of LATERA published in Facial Plastic Surgery<sup>vi</sup></li>\n<li>January, 2018: 10,000th patient treated</li>\n<li>May, 2018: Results from a prospective clinical trial of 101 patients treated with LATERA published in Laryngoscope<sup>ii</sup></li>\n<li>October, 2018: Two year follow-up study of LATERA demonstrating durability of effectiveness published in Facial Plastic Surgery<sup>v</sup></li>\n<li>April, 2019: 33,000th patient treated</li>\n</ul>\n<p>According to Don Gonzales, MD, Chief Medical Advisor for Stryker, “The pace of adoption of LATERA by the ENT community is both a reflection of a real, widespread need for the technology among patients with NVC and the confidence physicians have in LATERA as an effective solution.”</p>\n<p>Indications for Use: The LATERA absorbable nasal implant is indicated for supporting upper and lower lateral nasal cartilage.</p>\n<p>Please see Instructions for Use (IFU) for a complete listing of warnings, precautions and adverse events.</p>\n<p><sup>ii Stolovitzky P, Sidle DM, Ow RA, Nachlas NE, Most SP.&nbsp;A prospective study for treatment of nasal valve collapse due to lateral wall insufficiency: outcomes using a bioabsorbable implant.&nbsp;Laryngoscope. 2018 May 14.</sup></p>\n<p><sup>iii&nbsp;San Nicolo M, Stelter K, Sadick H, Bas M, Berghaus A. Long term safety and effectiveness of a novel absorbable implant in patients with nasal valve collapse. In: Annual Meeting of the&nbsp;American Academy of Facial Plastic and Reconstructive Surgery.&nbsp;Phoenix, AZ; 2017.</sup></p>\n<p><sup>&nbsp;iv San Nicolo, et al. 2017.&nbsp;Absorbable Implant to Treat Nasal Valve Collapse.&nbsp;Facial Plast Surg,&nbsp;32:233-240.</sup></p>\n<p><sup>v San Nicolo, et al. 2018.&nbsp;A 2-Year Follow-up Study of anAbsorbable Implant to Treat Nasal Valve Collapse.&nbsp;Facial Plast Surg,&nbsp;34(5):545-550.</sup></p>\n<p><sup>vi&nbsp;Value calculated based on 2014 US population estimate from&nbsp;US Census and World Bank&nbsp;data in conjunction with incidence numbers cited in: Stewart M, Ferguson BJ, Fromer L. Epidemiology and burden of nasal congestion. Intl J Gen Med. 2010;3:37-45.</sup></p>\n<p><sup>vii&nbsp;Rhee et al.&nbsp; Nasal Valve Surgery Improves Disease-Specific Quality of Life. Laryngoscope&nbsp;115:&nbsp; March&nbsp; 2005.</sup></p>\n<p><sup>viii&nbsp;Rhee et al. Quality of Life Assessment in Nasal Airway Obstruction. Laryngoscope, 113: 1118–1122.&nbsp;July 2003.</sup></p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;www.stryker.com.i Data on file at Stryker.</p>\n<p>&nbsp;<b>Media contact<br>\n </b>Jennifer Lentner<br>\nSenior Director, Communications<br>\njennifer.lentner@stryker.com</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Mon Jun 24 2019 18:25:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

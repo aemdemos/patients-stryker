@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Arterial Disease",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b1b465d0-3d14-45f1-9e90-c329acb4b75d",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "0d30753d-8daf-42bc-be39-6dd97c35aec8"
+  ],
+  "contentID": "PRO-3807-USA-EN-v2",
+  "lastPublished": "Thu Aug 06 2026 18:20:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 06 2026 18:20:21 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 06 2026 18:20:24 GMT+0000",
+  "cq:lastModified": "Thu Aug 06 2026 18:20:14 GMT+0000",
+  "jcr:description": "Driven by evidence and a relentless passion to solve unmet needs, we're advancing arterial disease innovation to improve lives. Explore our portfolio of arterial solutions below.",
+  "jcr:baseVersion": "0d30753d-8daf-42bc-be39-6dd97c35aec8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 29 2026 21:07:24 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:portfolio/vascular",
+    "stryker:capability/arterial-disease",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 06 2026 18:20:14 GMT+0000",
+  "jcr:uuid": "b88afba7-f43c-4a45-b02a-560205ae6d00",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Jul 07 2026 16:42:59 GMT+0000",
+      "CTATitle": "Learn more about arterial thrombectomy",
+      "jcr:lastModified": "Tue Jul 07 2026 16:45:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgb(133,69,138)",
+      "ctaInternalLink": "/content/stryker/us/en/portfolios/vascular/arterial-disease/arterial-thrombectomy"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jul 07 2026 16:44:44 GMT+0000",
+      "jcr:lastModified": "Tue Jul 07 2026 16:44:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/vascular/arterial-disease/images/Arterial-Disease-1000x596.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Jun 18 2026 00:06:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModified": "Tue Jul 07 2026 16:31:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/vascular/arterial-disease/arterial-thrombectomy"
+      }
+    }
+  }
+}

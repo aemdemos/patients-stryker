@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Presents first K9s For Warriors donation at the Honda Classic",
+  "jcr:versionHistory": "db7a2b39-e84b-470f-8040-8473b3f89d83",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "90b64b81-4139-41a1-931f-9b1f35141409"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:13:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:13:33 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 16:13:29 GMT-0500",
+  "jcr:baseVersion": "90b64b81-4139-41a1-931f-9b1f35141409",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 16:13:29 GMT-0500",
+  "jcr:uuid": "08632774-560c-493e-806a-67fb4da94eac",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Tue Feb 21 2017 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "21-Feb-2017",
+    "jcr:lastModified": "Tue May 30 2017 16:54:54 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>MAHWAH, N.J.,&nbsp;Feb. 21, 2017&nbsp;/PRNewswire/ --&nbsp;Stryker Orthopaedics is pleased to announce its second PGA TOUR stop of 2017 with a first-ever appearance at The Honda Classic in Palm Beach Gardens, FL. Throughout the tournament, Stryker will further its commitment to joint health and to the nation's military through a series of engaging activities for fans and tournament goers. On Thursday, Stryker will host a special K9s For Warriors ceremony, presenting one military hero with a service dog – Stryker's first official canine sponsorship donation of the year.</p>\n<p>As an extension of a successful relationship that began last year, in 2017 Stryker will continue to give a new leash on life to military heroes by sponsoring service canines and empowering veterans to return to civilian life with dignity and independence. Tournament goers can also show their support to veterans by purchasing the same hat that PGA TOUR professionals and longtime brand ambassadors, Fred Funk and Hal Sutton wear on TOUR at the newly renovated Mobility Zone – Stryker's premiere &quot;joint health&quot; destination. With each hat purchase, Stryker will make a donation to the K9s For Warriors organization.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-presents-first-k9s-for-warriors-donation-at-the-honda-classic-300409787.html\" target=\"_blank\">PRNewswire</a><br>\n</p>\n",
+    "jcr:lastModified": "Fri Jun 02 2017 10:49:36 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

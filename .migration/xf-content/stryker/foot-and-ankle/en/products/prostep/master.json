@@ -1,0 +1,69 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "carousel - desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2b7f39eb-39b7-4221-bfa7-daef962590da",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b355887b-e539-4c63-80d9-b7874f12fbd7"
+  ],
+  "lastPublished": "Fri Jun 28 2024 17:50:48 GMT+0000",
+  "jcr:created": "Fri Jun 28 2024 17:50:49 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 28 2024 17:50:51 GMT+0000",
+  "cq:lastModified": "Mon Jun 24 2024 15:12:27 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b355887b-e539-4c63-80d9-b7874f12fbd7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 17:50:48 GMT+0000",
+  "jcr:uuid": "0c61c311-3a3d-4d8f-9232-7491f15c4d8b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 15:08:33 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Jun 24 2024 15:12:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/foot-and-ankle/products/prostep/videos/ProStep-Banner-V1.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/ProStep-Banner-V1-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Mon Jun 24 2024 15:08:51 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

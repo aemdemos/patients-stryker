@@ -1,0 +1,88 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "d97316a0-991a-4c3d-9360-eac6229d187e",
+  "jcr:predecessors": [
+    "603d7f81-7a9a-4eb5-8e59-07a521a36cda"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:54 GMT+0000",
+  "jcr:baseVersion": "603d7f81-7a9a-4eb5-8e59-07a521a36cda",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "844bf0e5-abc0-43a5-9e8d-80a5e1ee3d8a",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Wed Jan 17 2024 19:18:02 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:00:37 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Wed Jan 03 2024 16:58:43 GMT+0000",
+    "lastFragmentSave": "Wed Jan 03 2024 16:58:43 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/endoscopy/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Wed Jan 17 2024 19:18:00 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "addressBlock1": "<p>5900 Optical Court<br>\nSan Jose, CA 95138<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "BusinessHomePage": "<p><a href=\"https://www.stryker.com/us/en/endoscopy/contact.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "locationName": "Endoscopy",
+        "ShortDesc": "<p>Stryker’s visualization platform enables you to distinguish anatomy across all minimally invasive procedures, while providing a simple, yet personalized experience.</p>\n",
+        "PhoneNumberLabel": "Phone and Fax",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jan 03 2024 16:36:34 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "PhoneNumbers": "<p>408 754 2000</p>\n<p><b>Customer support</b><br>\n800 624 4422 Toll Free (USA Only)<br>\n408 754 2039<br>\n800 729 2917 Toll Free (USA Only) Fax<br>\n408 754 2969 Fax</p>\n<p><b>Technical support</b><br>\n877 478 7953 Toll Free<br>\n408 754 2037</p>\n<p><b>Reimbursement Services</b><br>\n800 698 9985 (Option 1)</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 14:08:15 GMT+0000",
+        "BusinessHomePageLabel": "Endoscopy Homepage",
+        "Emails": "<p><b>Customer support</b><br>\n<a href=\"mailto:EndoCustomerSupport@stryker.com\">EndoCustomerSupport@stryker.com</a></p>\n<p><b>Tech Support<br>\n </b><a href=\"mailto:endots@stryker.com\">endots@stryker.com</a></p>\n<p><b>ProCare Repairs</b><br>\n<a href=\"mailto:EndoCSRepairteam@stryker.com\">EndoCSRepairteam@stryker.com</a></p>\n<p><b>ProCare Billing</b><br>\n<a href=\"mailto:EndoProCareBilling@stryker.com\">EndoProCareBilling@stryker.com</a></p>\n<p><b>Reimbursement Services</b><br>\n<a href=\"mailto:endoscopy.reimbursement@stryker.com\">endoscopy.reimbursement@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

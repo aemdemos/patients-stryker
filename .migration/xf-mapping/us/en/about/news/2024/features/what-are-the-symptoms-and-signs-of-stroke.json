@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "What are the symptoms and signs of stroke?",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2db353d8-ffc3-45ad-9921-29b12c0fac8a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "World Stroke Day",
+  "jcr:predecessors": [
+    "7680c382-2a39-433c-b92b-6b2df9d10894"
+  ],
+  "lastPublished": "Mon Mar 02 2026 21:41:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 02 2026 21:41:58 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 02 2026 21:42:00 GMT+0000",
+  "cq:lastModified": "Mon Mar 02 2026 21:41:28 GMT+0000",
+  "jcr:description": "Learn how to spot the signs of stroke using the B.E. F.A.S.T. acronym.",
+  "jcr:baseVersion": "7680c382-2a39-433c-b92b-6b2df9d10894",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 24 2024 17:24:43 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Mon Mar 02 2026 21:41:28 GMT+0000",
+  "jcr:uuid": "16dbc16f-aacb-43ee-9ae3-ee2ae425574d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 17 2024 18:30:14 GMT+0000",
+      "text": "What are the symptoms and signs of stroke? In order to know how to treat stroke, we must first understand what exactly a stroke is. Stroke occurs when blood flow is either blocked (ischemic stroke) or an artery bursts (hemorrhagic stroke). When this happens, the brain doesn’t get the blood it needs to function properly. Depending on the severity of the stroke and the area of the brain affected, loss of brain function or death may occur. Motor function, speech and memory are examples of bodily functions that may be impacted. Unfortunately, one in four people over the age of 25 will experience a stroke in their lifetime.1 Given this alarming statistic, it's crucial for everyone to recognize the signs of a stroke and learn how to reduce their risk. “Recognizing the signs and symptoms of a stroke is the first critical step in ensuring patients receive the urgent care they need” said Jim Marucci, President of Stryker's Neurovascular division. “Doctors, nurses, and technicians perform life-saving work, but their efforts can only begin once a stroke is identified. By spreading awareness, we hope to empower more people to act quickly, bridging the gap between the onset of a stroke and the life-saving treatment that follows. Together, we can ensure more patients have a chance at recovery and a brighter future.” Find more resources on stroke awareness and the risk factors of stroke. Spot the signs of stroke and B.E. F.A.S.T Balance Loss of balance, difficulty walking, dizziness, or lack of coordination2 Observe if the person is having trouble staying balanced. If you notice this symptom, check for additional signs. Eyes Sudden trouble seeing in one or both eyes.2 If the person experiencing changes in their vision, check for additional symptoms of stroke. Face Facial drooping and weakness2 Look at the person’s face. Is one side of their face drooping or are they unable to move their lips up and down? If so, check for additional signs. Arms Arm weakness2 A stroke can cause muscle weakness and numbness on one or both sides of the body. Check to see if the person’s arm is lying limp to their side. If so, check for additional symptoms of stroke. Speech Speech difficulty2 If someone is slurring their words and you’re having a hard time understanding them, it’s time to call for help. Time Time to call emergency medical services if you see these signs of stroke.2 Speed of care matters when it comes to stroke. If you notice someone exhibiting the symptoms above, call emergency services immediately. Ischemic strokes block the flow of blood and as a result, oxygen moving to and from the brain. Fast treatment can lessen the brain damage that stroke can cause.2 This is why it’s so important to B.E. F.A.S.T. Stroke is treatable Stroke generally happens suddenly, and medical care needs to be administered as quickly as possible. The best course of treatment depends on the type of stroke, the patient’s age, the severity of the stroke and other risk factors.",
+      "jcr:lastModified": "Thu Oct 17 2024 18:30:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/what_are_the_symptom/body-copy/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/what-are-the-symptom/body-copy/master"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 17 2024 18:32:35 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Oct 17 2024 18:32:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 17 2024 18:31:53 GMT+0000",
+      "title": "More on this topic",
+      "jcr:lastModified": "Thu Oct 17 2024 18:32:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/about/news/2022/features/five-things-you-need-to-know-about-high-blood-pressure-and-strok"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Oct 24 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Oct-2024",
+    "jcr:lastModified": "Thu Jan 15 2026 20:20:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/features/what-are-the-symptoms-and-signs-of-stroke/images/World Stroke Day.jpg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Oct 17 2024 18:32:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div><b>References</b><br>\r\n<br>\r\n</div>\r\n<ol>\r\n<li>World Stroke Organization. “Awareness and advocacy.” Published 2024. Accessed July 25, 2024 via <a href=\"https://www.world-stroke.org/what-we-do/awareness-advocacy\">https://www.world-stroke.org/what-we-do/awareness-advocacy</a><b><u></u></b></li>\r\n<li>Centers for Disease Control. “Signs and symptoms of stroke.” Published May 15, 2024. Accessed July 25, 2024 via <a href=\"https://www.cdc.gov/stroke/signs-symptoms/index.html\">https://www.cdc.gov/stroke/signs-symptoms/index.html</a><b><u></u></b></li>\r\n<li>American Heart Association. “Types of Stroke and Treatment.” Accessed July 25, 2024 via <a href=\"https://www.stroke.org/en/about-stroke/types-of-stroke\">https://www.stroke.org/en/about-stroke/types-of-stroke</a></li>\r\n</ol>\r\n<p>MARK-GSNPS-SYK-1414576<br>\r\nAP004679 v1.0<br>\r\nCopyright © 2024 Stryker</p>\r\n",
+    "jcr:lastModified": "Thu Oct 24 2024 17:37:02 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

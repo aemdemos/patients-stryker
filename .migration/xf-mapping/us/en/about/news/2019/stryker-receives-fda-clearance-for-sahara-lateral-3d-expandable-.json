@@ -1,0 +1,106 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker receives FDA clearance for SAHARA® Lateral 3D Expandable Interbody System",
+  "jcr:versionHistory": "cb15c0cd-bfbe-4218-9671-be9f71a52d3e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "1ad1cf61-7ad5-4837-aa13-9c9ed510331c"
+  ],
+  "contentID": "PRT-PB-3_Rev-1_22806",
+  "lastPublished": "Fri Nov 01 2019 18:10:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 01 2019 18:10:19 GMT+0000",
+  "cq:lastModified": "Fri Nov 01 2019 18:09:22 GMT+0000",
+  "jcr:baseVersion": "1ad1cf61-7ad5-4837-aa13-9c9ed510331c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Nov 01 2019 18:09:22 GMT+0000",
+  "jcr:uuid": "10948fbc-feb3-43d2-9e6f-2c467a815204",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Nov 01 2019 17:26:29 GMT+0000",
+      "jcr:lastModified": "Fri Nov 01 2019 17:26:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Nov 01 2019 17:16:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Stryker receives FDA clearance for SAHARA® Lateral 3D Expandable Interbody System</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The first and only 3D-printed lateral expandable device on the market to be featured at SMISS 2019</span></span></p>\n",
+          "jcr:lastModified": "Fri Nov 01 2019 17:26:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Nov 01 2019 17:26:53 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/images/Expanded ISO.png",
+          "jcr:lastModified": "Fri Nov 01 2019 17:26:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Nov 01 2019 17:16:45 GMT+0000",
+      "text": "<p>Stryker announced today the U.S. Food and Drug Administration (FDA) 510(k) clearance of its SAHARA Lateral 3D Expandable Interbody System featuring Lamellar 3D Titanium Technology, which will be on display at the Society for Minimally Invasive Spine Surgery (SMISS) Annual Forum this week in Las Vegas, NV.<br>\n</p>\n<p>SAHARA Lateral is the first ever 3D-printed lateral expandable fusion device and features passive expansion capabilities that are designed to allow surgeons to achieve up to 30 degrees of sagittal spinal correction in skeletally mature patients.</p>\n<p>Utilizing a passive expansion mechanism, the implant can either be adjusted from a lateral approach intraoperatively or can adjust passively in a staged posterior approach following osteotomy.</p>\n<p>“Surgeons performing lateral spinal fusion often require versatility to help them achieve optimal outcomes for their patients,” said Gregory Poulter, orthopaedic surgeon at OrthoIndy in Indianapolis, IN. “Stryker’s SAHARA Lateral, with its expansion mechanism that is both actively adjustable from a lateral approach and passively adjustable during a staged posterior procedure, provides an excellent 3D-printed option to help these patients.”</p>\n<p>SAHARA Lateral features Lamellar 3D Titanium Technology, which uses an advanced 3D printing method to create structures that were previously difficult or impossible to manufacture using traditional manufacturing techniques. Starting with a titanium powder, the SAHARA implants are grown through the selective application of a high-energy laser beam, incorporating complex internal geometries and a roughened surface architecture. Roughened titanium surfaces have been shown to demonstrate increased protein expression in contrast to smooth titanium surfaces.1-3</p>\n<p>“At Stryker, inventing state-of-the-art solutions that address unmet clinical needs is essential to our vision and purpose,” said Eric Major, President of Stryker’s Spine Division. “SAHARA Lateral, which will be on display at this year’s SMISS annual forum, provides surgeons and hospital systems with a 3D-printed solution for complex posterior correction maneuvers, all while reinforcing our commitment to excellence in medical innovation and improving quality of life for people with spinal deformities.”</p>\n<p>SAHARA Lateral complements the SAHARA Anterior Lumbar Expandable Stabilization System, a lordotic expandable device with integrated screw fixation. SAHARA Lateral is available in a variety of footprints, heights and lordotic offerings designed to more precisely match a patient’s anatomy and is intended to be used with supplemental fixation systems cleared for use in the lumbar spine.</p>\n<p>More information on SAHARA Lateral is available at booth number 101 at the SMISS annual meeting.</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">About the Spine division</span></span></p>\n<p>We are a global leader of complex spine and minimally invasive solutions focused on achieving three-dimensional</p>\n<p>Total Body Balance. Our spine business unit offers one of the most comprehensive and diverse product portfolios, including our leading 3D-printed technologies, enabling surgeons to provide their patients with treatment options. Our products include implants, instruments, and biologic solutions for the cervical, thoracic and lumbar spine. For more information, visit strykerspine.com and connect with us on Facebook, Twitter, Instagram, LinkedIn and YouTube.</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">About Stryker</span></span></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The<br>\ncompany offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at stryker.com.</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Media Contact<br>\n </span></span><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Zeno Group on behalf of Stryker Corporation</span></span></p>\n<p style=\"margin-left: 40px;\">Christian Emering, 212-299-8985</p>\n<p style=\"margin-left: 40px;\"><a href=\"mailto:Christian.Emering@ZenoGroup.com\">Christian.Emering@ZenoGroup.com</a></p>\n<p>&nbsp;</p>\n<p><b>References:</b></p>\n<ol>\n<li>Olivares-Navarrete R, Hyzy SL, Slosar PJ, Schneider JM, Schwartz Z, and Boyan BD. Implant materials generate different peri-implant inflammatory factors. Spine 40 (2015): 399-404.</li>\n<li>Olivares-Navarrete R, Gittens RA, Schneider JM, Hyzy SL, Haithcock DA, Ullrich PF, Schwartz Z, and Boyan BD. Osteoblasts exhibit a more differentiated phenotype and increased bone morphogenetic protein production on titanium alloy substrates than on poly-ether-ether-ketone. The Spine Journal 12 (2012): 265-272.</li>\n<li>Lincks J, Boyan BD, Blanchard CR, Lohmann CH, Liu Y, Cochran DL, Dean DD, and Schwartz Z. Response of MG63 osteoblast-like cells to titanium and titanium alloy is dependent on surface roughness and composition. Biomaterials 19 (1998): 2219-2232.</li>\n</ol>\n<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\n<p>The information presented is intended to demonstrate the breadth of Stryker product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.</p>\n<p>Stryker or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: SAHARA, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\n",
+      "jcr:lastModified": "Fri Nov 01 2019 17:29:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Expanded ISO.png"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Fri Nov 01 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Nov-2019",
+    "jcr:lastModified": "Fri Nov 01 2019 17:16:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Fri Nov 01 2019 17:16:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Nov 01 2019 17:25:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

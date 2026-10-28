@@ -1,0 +1,1030 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "VCF accessories",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7422a662-5841-46b1-bad0-11320c4f40e1",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "thumbnailAltText": "Stryker Interventional Spine offers a portfolio of VCF accessories",
+  "jcr:predecessors": [
+    "2eacad42-6ab1-48db-b60f-97fd4b0b718f"
+  ],
+  "contentID": "IVS-CUR-SYK-1135519_REV-1",
+  "lastPublished": "Mon Feb 02 2026 21:51:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 21:51:41 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 21:51:43 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 21:51:37 GMT+0000",
+  "jcr:description": "View our portfolio of VCF accessories including our Curette, Verteport X4 manifold cement delivery assistant, VertePort cement cannula, bone biopsy kits and access cannula. ",
+  "jcr:baseVersion": "2eacad42-6ab1-48db-b60f-97fd4b0b718f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 13:30:55 GMT+0000",
+  "pageTitle": "VCF accessories",
+  "cq:tags": [
+    "stryker:product/ivs/curette",
+    "stryker:content-type/product",
+    "stryker:capability/image-guided-therapies",
+    "stryker:capability/spine-ortho",
+    "stryker:portfolio/neurotechnology",
+    "stryker:capability/spine",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:services/procare/ivs",
+    "stryker:specialty/vertebral-augmentation",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/ivs",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Sep 17 2025 15:47:19 GMT+0000",
+  "jcr:uuid": "5647f727-6263-4328-96df-153a2d108ecc",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 14:25:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">VCF accessories</span></span></span></h1>\r\n",
+      "jcr:lastModified": "Thu Jul 10 2025 14:35:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_1279260390": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 15:22:47 GMT+0000",
+      "jcr:lastModified": "Thu Jul 10 2025 15:22:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy_copy_231845644": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Mon Jul 14 2025 17:58:02 GMT+0000",
+          "alt": "AVAflex balloon system is designed to simplify your approach to treating vertebral compression fractures (VCFs)",
+          "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/AVAflex_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 16 2025 13:40:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">AVAFlex<sup>®</sup> curved needle</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Confidence is close at hand with our AVAflex balloon system. Simplify your unipedicular approach in treating vertebral compression fractures (VCFs). AVAFlex’s multiple balloon sizes and needle gauge options are designed to meet your preferences and patient needs.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:16:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Targeted placement of cement during vertebral compression fractures&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Flexible qualities of the nitinol introducer allows needle to target areas that a straight cannula may not be able to reach&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Maneuverability and flexibility designed to be more efficient than traditional straight cannulas</span></li>\n<li><span class=\"fontsize-1-25em\">Ability to direct and inject cement into the specific target areas</span></li>\n<li><span class=\"fontsize-1-25em\">Fits through the Stryker 11G access cannula<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Can be used in conjunction with Stryker’s OmniCurve system<sup><a href=\"#references\">1</a></sup></span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:17:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Features"
+            }
+          }
+        }
+      }
+    },
+    "cols_1837666978": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:45:09 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:45:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_1294959510": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:29:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:43:51 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:43:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:00 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:46:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:02 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:46:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:28:54 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:28:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 10 2025 14:38:25 GMT+0000",
+              "alt": "Minimally invasive Curette for displacing cancellous bone during vertebral augmentation",
+              "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/Curette_640x380.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 16 2025 13:46:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Curette</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Our curette offers a minimally invasive solution for displacing cancellous bone during percutaneous balloon-assisted vertebral augmentation procedures.</span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:17:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            },
+            "accordion_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+              "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/accordion",
+              "accordion_parsys1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "accPosId": 1,
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.shannon@stryker.com",
+                  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                  "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Available in 10G and 11G</span></li>\n<li><span class=\"fontsize-1-25em\">Raised thumbwheel for precise depth adjustment for preferred bone displacement&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Depth markings at every 2mm ensure accurate identification of device depth&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Wide-grip ergonomic handle with integrated thumbwheel for single-handed device control&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Nitinol distal tip geometry for effective bone displacement</span></li>\n</ul>\n",
+                  "jcr:lastModified": "Mon Feb 02 2026 14:17:33 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "accordionsGrid": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "accPosId": "1",
+                  "accTitle": "Features"
+                }
+              }
+            }
+          }
+        },
+        "cols2_1202799864": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:43:59 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:43:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:14 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:30:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:17 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:30:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:26:47 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:27:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)"
+    },
+    "cols_1558221182": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:44:09 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:44:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:31:57 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:31:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">VertePort X4 manifold<sup>®</sup> cement delivery assistant</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Our cement-filling device loads up to four cement cannulae at one time, affording an opportunity for quicker and more efficient procedures.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:17:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "accordion_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 14:25:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Flexibility allows 1 to 4 cartridges to be filled at the same time&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Standard configuration quick connects with AutoPlex system&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">PCD adapter quick connects with PCD system&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Luer valves provide smooth connect and disconnect of the cartridge&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Cement only flows to loaded cannula site&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Cartridge can be used as a stand for back-table organization</span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:17:58 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Features"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jul 10 2025 14:48:18 GMT+0000",
+          "alt": "Cement-filling device loads up to four cannulae for faster, more efficient procedures",
+          "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/Verteport-X4-delivery-assistant_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 16 2025 13:39:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1456742673": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 15:21:16 GMT+0000",
+      "jcr:lastModified": "Thu Jul 10 2025 15:21:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_431129380": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:32:55 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:32:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:44:31 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:44:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:30 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:46:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:32 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:46:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_671563011_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:33:06 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:33:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 10 2025 15:15:03 GMT+0000",
+              "alt": "VertePort cement cannula enables controlled, versatile cement delivery during vertebral augmentation",
+              "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/Verteport-cement-cannula_640x380.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 16 2025 13:39:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">VertePort<sup>® </sup>cement cannula</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">The VertePort cement cannula is a coaxial, hollow-needle system developed specifically for vertebral augmentation. The system offers multiple ways to deliver bone cement during vertebral augmentation procedures. By providing continuous access to the vertebral body, the VertePort cannula allows control while delivering cement with the use of a traditional injector. If used to hand obturate cement delivery, it allows an opportunity for the delivery of thicker cement and increased working time.</span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:18:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            },
+            "accordion_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+              "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/accordion",
+              "accordion_parsys1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "accPosId": 1,
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.shannon@stryker.com",
+                  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                  "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Available in 8, 10 and 11 gauges&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Maximizes flexibility during vertebral augmentation procedure&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Provides constant unobstructed access to the vertebral body&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Allows easy delivery of high-viscosity cement&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Designed for precise control&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Ability to deliver cement through hand obturation and / or injector&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Allows an opportunity for extended working time with the use of hand obturation</span></li>\n</ul>\n<p>Please see&nbsp;<a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=04546540434333\">Instructions for Use (IFU)</a>&nbsp;for a complete listing of warnings, precautions and adverse events.</p>\n",
+                  "jcr:lastModified": "Mon Feb 02 2026 14:18:24 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "accordionsGrid": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "accPosId": "1",
+                  "accTitle": "Features"
+                }
+              }
+            }
+          }
+        },
+        "cols2_542033473": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:44:47 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:44:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:41 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:31:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:46 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:31:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_575406938": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:44:54 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:44:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1349046711": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:34:15 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:34:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jul 10 2025 14:52:50 GMT+0000",
+          "alt": "Bone biopsy kit with coaxial design for core sampling; compatible with 8, 10 and 11 gauge needles",
+          "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/Bone-biopsy-kits_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 16 2025 13:39:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Bone biopsy kits</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Our bone biopsy kits are compatible with our 8, 10, and 11 gauge needles. The coaxial design allows for biopsy collection of a core sample within the vertebral body. This streamlined technique can be used in conjunction with VCF procedures or independent biopsies.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:18:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "accordion_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 14:25:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span data-rte-class=\"rte-temp\">Includes the coaxial biopsy needle, with a plunging stylet and a 3cc syringe&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\">Bone biopsy kits for the iVAS system feature a rotating handle&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Bone biopsy kits for the iVAS system increase biopsy protrusion</span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:18:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Features"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 15:21:09 GMT+0000",
+      "jcr:lastModified": "Thu Jul 10 2025 15:21:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_1313617530": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jul 14 2025 19:35:34 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 19:35:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:45:28 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:45:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:53 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:46:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:46:56 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Jul 14 2025 19:47:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1800532156_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:34:43 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:34:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 10 2025 14:53:24 GMT+0000",
+              "alt": "Access cannula with dual-side locking stylet for secure needle placement in cancellous bone",
+              "srcFileRef": "/content/dam/stryker/ivs/products/vcf-accessories/images/Access-cannula_640x380.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 16 2025 13:39:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Access cannula</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Our access cannula allows the stylet to lock from either side of the handle, ensuring security when used in hard, cancellous bone. Once the stylet is inserted into the cannula, simply rotate the handle in either direction to lock it securely in place. Our cannula will help you achieve a smooth and secure needle placement.</span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:19:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            },
+            "accordion_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+              "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/accordion",
+              "accordion_parsys1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "accPosId": 1,
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.shannon@stryker.com",
+                  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                  "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Available in 8, 10 and 11 gauges&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Dual direction locking for ease of use&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">More customized procedure experience</span></li>\n</ul>\n<p>Please see&nbsp;<a href=\"https://ifu.stryker.com/?es=true&amp;manu=0&amp;description=access+cannula\">Instructions for Use (IFU)</a>&nbsp;for a complete listing of warnings, precautions and adverse events.</p>\n",
+                  "jcr:lastModified": "Mon Feb 02 2026 14:19:16 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "accordionsGrid": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "accPosId": "1",
+                  "accTitle": "Features"
+                }
+              }
+            }
+          }
+        },
+        "cols2_112529656": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jul 14 2025 19:45:43 GMT+0000",
+          "jcr:lastModified": "Mon Jul 14 2025 19:45:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:47:04 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:31:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Jul 14 2025 19:47:07 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Sep 09 2025 12:31:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_64792351": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 13:49:46 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 13:49:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_852608479": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Feb 02 2026 21:51:37 GMT+0000",
+      "jcr:lastModified": "Mon Feb 02 2026 21:51:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">Pain is unrelenting. But so are we.</span></h3>\n<p><span class=\"fontsize-1-25em\">Thank you for your interest in Stryker's Interventional Spine products—bold and innovative approaches for treating patients experiencing pain. Tell us how we can help by answering the following questions, and we’ll work to get you what you need.</span></p>\n<p><span class=\"fontsize-1-25em\">To place an order, contact your Stryker's Sales Representative or Stryker's Customer Service at 1 800 253 3210.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:19:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2945",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue Aug 12 2025 13:50:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span style=\"font-weight: normal;\"><span class=\"fontsize-1-25em\">Be in the know</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:19:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "references",
+      "jcr:created": "Tue Aug 26 2025 15:13:39 GMT+0000",
+      "title": "References",
+      "jcr:lastModified": "Tue Aug 26 2025 15:14:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:21:27 GMT+0000",
+      "text": "Resources Explore Interventional Spine homepage About us Learn Training and education Physician resources Indications for use Portfolios Advanced pain therapies Bone tumor ablation Vertebral augmentation Support Contact information Reimbursement Grants and donations",
+      "jcr:lastModified": "Tue Oct 21 2025 15:22:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/footer-links/master"
+    },
+    "cols_430231981": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:32:00 GMT+0000",
+      "jcr:lastModified": "Tue Oct 21 2025 15:32:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ivs/products/vcf-accessories/images/VCF-accessories-thumbnail_1200x680.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<h4>Features</h4>\n<ul>\n<li>Available in 10g and 11g</li>\n<li>Raised thumbwheel for precise depth adjustment for preferred bone displacement</li>\n<li>Depth markings at every 2mm ensure accurate identification of device depth<br>\n</li>\n<li>Wide-grip ergonomic handle with integrated thumbwheel for single-handed device control</li>\n<li>Nitinol distal tip geometry for effective bone displacement</li>\n</ul>\n",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://providers.strykerivs.com/products/accessories#curette",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:32 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Additional Resources",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jul 10 2025 14:32:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Stryker data on file.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Aug 26 2025 15:13:00 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

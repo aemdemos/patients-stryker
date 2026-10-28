@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Ankle Distraction",
+  "jcr:versionHistory": "94ffa77f-e1a8-4b1f-a78d-8fb3efc5fbfb",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Ankle-Distraction/Images/Ankle_AnkleDistraction.jpg",
+  "jcr:predecessors": [
+    "7c8995b0-d2f8-4230-af94-751f3de21df8"
+  ],
+  "contentID": "OT-AWI-8, 07-2017",
+  "lastPublished": "Mon Jul 08 2019 20:52:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jul 08 2019 20:52:28 GMT+0000",
+  "cq:lastModified": "Mon Mar 04 2019 22:09:24 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "A distraction arthroplasty stretches the ankle joint apart over a period of time. This effectively unloads the joint, allowing it to heal. An ankle distraction arthroplasty is most commonly used for patients with ankle arthritis without deformity.",
+  "jcr:baseVersion": "7c8995b0-d2f8-4230-af94-751f3de21df8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/ankle-foot-and-ankle",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:procedure/foot-and-ankle/-ankle-distraction",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jul 23 2018 09:20:30 GMT-0400",
+  "jcr:uuid": "f8618d67-b207-4889-bdea-5670af71cf7a",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Jul 12 2017 10:03:36 GMT-0400",
+      "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Ankle-Distraction/Images/Ankle_AnkleDistraction.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Mar 04 2019 22:09:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "External fixation systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/-ankle-distraction/external-fixation-systems"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Biologics",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/-ankle-distraction/biologics"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Ankle-Distraction/Images/Ankle_AnkleDistraction.jpg"
+  }
+}

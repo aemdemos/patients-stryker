@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Turkish corporate policies",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dea9f7c5-3664-4976-ba19-18290457d095",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f61e1717-3379-46a2-963c-b7da6466487c"
+  ],
+  "lastPublished": "Mon Jul 13 2026 18:51:54 GMT+0000",
+  "jcr:created": "Mon Jul 13 2026 18:52:06 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 13 2026 18:52:09 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2026 20:48:35 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f61e1717-3379-46a2-963c-b7da6466487c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:47:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8f03e5ab-1644-4a0d-bc45-3326408f0b03",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jan 26 2018 14:54:54 GMT-0500",
+      "text": "<ul>\n<li>&nbsp;<a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/02%20ANTI-DISCRIMINATION%20POLICY_TURKISH.pdf\">Ayrımcılıkla Mücadele&nbsp;(2 Anti-Discrimination)</a><br>\n</li>\n<li>&nbsp;<a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/03 Harassment Free Workplace_TR.pdf\">Tacizsiz İşyeri (03 Harassment Free Workplace)</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/05 On-Label Product Promotion_TR.pdf\">&nbsp;Etikete Uygun Ürün Tanıtımı&nbsp;(05 On-Label Product Promotion)</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-790605-TR_TR.pdf\">&nbsp;Şirket Personeli Tarafından Menkul Kıymet Alım Satımı (06 Trading in Securities by Company Personnel)</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/7%20Global%20Information%20and%20Systems%20Security%20(K%C3%BCresel%20Bilgi%20ve%20Sistem%20G%C3%BCvenli%C4%9Fi)%20CP7%20Turkish.pdf\">&nbsp;Küresel Bilgi ve Sistem Güvenliği (07 Global Information and Systems Security)</a></li>\n<li><a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/09 Regulatory Affairs and Quality Assurance_TR.pdf\">&nbsp;Mevzuat İşleri ve Kalite Güvencesi&nbsp;(09 Quality)</a></li>\n<li><a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/11 Employee Privacy Principles_TR.pdf\">&nbsp;Çalışan Mahremiyeti İlkeleri (11 Global Privacy and Data Protection)</a></li>\n<li><a href=\"/content/dam/stryker/about/CorporateGovernance/tr-corporate-policies/13 Attendance at Surgery or Other Medical Procedures_TR.pdf\">&nbsp;Ameliyata veya Diğer Tıbbi Prosedürlere Katılım (13 Attendance at Surgery or Other Medical Procedures)</a></li>\n</ul>\n",
+      "jcr:lastModified": "Fri Jul 10 2026 20:48:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Body copy",
+  "jcr:versionHistory": "eaea1552-d66e-4988-90bc-1e726af7b2db",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3afae064-510d-4d0c-8f9a-3db31e58b111"
+  ],
+  "jcr:created": "Thu May 06 2021 13:41:15 GMT+0000",
+  "cq:lastModified": "Wed May 05 2021 20:45:43 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3afae064-510d-4d0c-8f9a-3db31e58b111",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "15765432-c62f-4f64-bd20-abbd94f162b6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 03 2021 19:42:21 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">When Pam Mizerany, RN, learned that one of her best friends and a fellow nurse at Tampa General Hospital, Debbie, was in dire need of a life-saving kidney, she immediately raised her hand to help. Fortunately for Debbie, the pair of friends were a perfect match. Hear more about Pam and her selfless act and the deep bond that exists between them allowing both to continue doing what they love: caring for their patients.</span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed May 05 2021 20:45:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 03 2021 19:42:57 GMT+0000",
+      "hideBorder": "false",
+      "type": "typeId",
+      "videoId": "ZGTb6-4bJPk",
+      "jcr:lastModified": "Tue May 04 2021 18:59:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/about/news/features/mako-smartrobotics™-hits-500,000--procedures/videos/MKOTHA-VA-23_26562.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/MKOTHA-VA-23_26562-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Mon May 03 2021 19:45:48 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "AXS Infinity LS hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6028cf31-e9a5-41e3-8ff5-ba94fb1f1e69",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c15af3d6-0670-4034-bcbe-8a60a86a34c1"
+  ],
+  "lastPublished": "Wed Feb 26 2025 16:54:10 GMT+0000",
+  "jcr:created": "Wed Feb 26 2025 16:54:10 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 26 2025 16:54:13 GMT+0000",
+  "cq:lastModified": "Tue Feb 18 2025 19:26:10 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c15af3d6-0670-4034-bcbe-8a60a86a34c1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:16:23 GMT+0000",
+  "jcr:uuid": "c610a186-6b22-4fa6-8655-78d3459fb2e5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Feb 18 2025 19:24:55 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 18 2025 19:25:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy488896": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "AXS Infinity LS",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Fri Oct 25 2019 19:32:28 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Jan 27 2025 21:50:26 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">AXS Infinity LS<sup>®</sup>&nbsp;Long Sheath</span></span></h1>\n",
+        "jcr:lastModified": "Tue Feb 18 2025 19:24:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "3",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Thu Jan 23 2025 23:00:22 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">AXS Infinity LS Long Sheath is a neurovascular sheath designed for rapid access and enhanced support.</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 27 2025 22:30:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "curatedcta_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "ctaLinkType": "deep",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Thu Jan 23 2025 23:03:14 GMT+0000",
+        "CTATitle": "Contact us",
+        "ctaDeepLinkID": "contact-us",
+        "jcr:lastModified": "Fri Jan 24 2025 23:10:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgb(255,181,0)"
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/axs-infinity-ls/images/AXS-Infinity-LS.png",
+      "jcr:lastModified": "Fri Oct 25 2019 19:47:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

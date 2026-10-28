@@ -1,0 +1,598 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Virtual Surgical Planning guides",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "83222952-4f95-48dc-a43c-54c1ac445fd3",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "VSP Guides thumbnail",
+  "jcr:predecessors": [
+    "dac6771d-c9a5-4473-87b7-87f80306393a"
+  ],
+  "contentID": "CMF-GSNPS-SYK-1985877_REV-0",
+  "lastPublished": "Tue Sep 02 2025 21:52:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 02 2025 21:52:41 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 02 2025 21:52:43 GMT+0000",
+  "cq:lastModified": "Tue Sep 02 2025 21:52:37 GMT+0000",
+  "jcr:baseVersion": "dac6771d-c9a5-4473-87b7-87f80306393a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 02 2025 21:23:54 GMT+0000",
+  "pageTitle": "Virtual Surgical Planning guides",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:capability/cmf-implants",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:portfolio/neurotechnology",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic",
+    "stryker:content-type/product",
+    "stryker:specialty/aesthetics",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/closure",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cranial"
+  ],
+  "jcr:lastModified": "Tue Jun 10 2025 14:28:41 GMT+0000",
+  "jcr:uuid": "03ed731e-6d6c-439f-b58f-905ffdf75ed1",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "navTitle": "Virtual Surgical Planning guides",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Virtual surgical planning guides</span></span><br>\n</h1>\n",
+      "jcr:lastModified": "Fri Jun 06 2025 19:54:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_211193": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "jcr:lastModified": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
+          "alt": "VSP guides product",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/1596814673_VSP-Guides-Hero.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 10 2025 13:38:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1971668492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>Planning&nbsp;<span style=\"color: #ffb500;\"><span class=\"futura-bold\">elevated</span></span>.<br>\n</h2>\n<p>As exclusive partners with 3D Systems, we’re committed to advancing personalized surgery together. That’s why we’re expanding our portfolio of VSP<sup>®</sup> patient-specific surgical guides to include two new 3D-printed materials: titanium and nylon. With customized tools designed to fit your patient, these surgical guides enable you to take your digital plan from the office to the operating room.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 10 2025 13:44:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
+          "CTATitle": "Request information",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Tue Feb 11 2025 20:24:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 21:10:27 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 21:10:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "titanium",
+      "jcr:created": "Fri Jun 06 2025 19:57:39 GMT+0000",
+      "title": "Titanium VSP® guides",
+      "jcr:lastModified": "Mon Jun 09 2025 22:27:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Titanium VSP<sup>®</sup>&nbsp;guides</span></span></p>\n",
+      "jcr:lastModified": "Fri Jun 06 2025 19:58:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_496498813": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Features and benefits:</span></span></p>\n<p><b>Material made 20x stronger<sup>1</sup></b><br>\nWith titanium, you can experience increased strength over our traditional guides, allowing cutting and drilling directly through the guides.</p>\n<p><b>Customized by you, for you</b><br>\nYou can maximize functionality of the guides by altering cut slots to match your surgical blade. You can choose the height of your drill guide and cutting slots to control trajectory or reduce guide profile height.</p>\n<p><b>Lower profile, easier placement</b><br>\nWith slimmer profiles, the guides can provide easier placement in areas with limited exposure.</p>\n<p><b>Your visualization, increased</b><br>\nImprove your visibility of the surgical site with lower profiles and a new cellular structure design which can help you better see anatomy.</p>\n",
+          "jcr:lastModified": "Tue Jun 10 2025 14:08:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 06 2025 21:43:30 GMT+0000",
+          "alt": "Titanium Orthog Mandibular Max image",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/1596642410-Titanium-Orthog-MandMax-Side-2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 10 2025 13:33:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_1198156391": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "nylon",
+      "jcr:created": "Fri Jun 06 2025 20:05:37 GMT+0000",
+      "title": "Nylon VSP® guides",
+      "jcr:lastModified": "Mon Jun 09 2025 22:27:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Nylon VSP<sup>®</sup>&nbsp;guides</span></span></p>\n",
+      "jcr:lastModified": "Fri Jun 06 2025 19:59:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1201588021": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Features and benefits:</span></span></p>\n<p><b>Material made 88% tougher<sup>1</sup><br>\n </b>The nylon guides can better withstand mechanical forces, providing an improved performance.</p>\n<p><b>Customized by you, for you<br>\n </b>Select occlusal or bone-borne guides to fit your surgical needs. Further customize the guides with optional features such as nasal floor registration.</p>\n<p><b>Lower profile, easier placement<br>\n </b>Slimmer profile guides can provide easier placement in areas with limited exposure.</p>\n<p><b>Your visualization, increased<br>\n </b>Improve your visibility of the surgical site with lower profiles and a new cellular structure design which can help you better see anatomy.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Jun 06 2025 21:58:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
+          "alt": "Nylon VSP guides",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/nylon-VSP-guides-cropped.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 10 2025 13:26:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_506416259": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "hybrid",
+      "jcr:created": "Fri Jun 06 2025 20:06:14 GMT+0000",
+      "title": "Hybrid VSP® guides",
+      "jcr:lastModified": "Mon Jun 09 2025 22:27:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_1197864069": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Hybrid VSP<sup>®</sup>&nbsp;guides</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Mon Jun 09 2025 21:17:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_387976406": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
+          "text": "<p>This cutting and drilling guide for maxillofacial surgeons is a combination of a nylon occlusal guide and titanium cutting/drilling guide, the latest enhancement to 3D Systems’ VSP surgical planning solutions portfolio.</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Features and benefits:</span></span></p>\n<p><b>Easy guide placement</b><br>\nOcclusal-based registration enabled by an easy-to-use connection site with indicators to confirm the proper connection of guides.</p>\n<p><b>Reduced bulkiness</b><br>\nLower profile guides are easier to place in areas with limited exposure.</p>\n<p><b>Multi-material benefits</b><br>\nOcclusal registration from a nylon guide for accurate placement plus the increased strength and rigidity<sup>2</sup> of a titanium cutting/drilling guide.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 10 2025 14:04:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
+          "alt": "hybrid-vsp-guides",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/hybrid-vsp-guides.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 09 2025 21:15:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_2142175326": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "traditional",
+      "jcr:created": "Fri Jun 06 2025 20:06:40 GMT+0000",
+      "title": "Traditional VSP® guides",
+      "jcr:lastModified": "Mon Jun 09 2025 22:28:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_1197864069_1844441459": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:58:11 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Traditional VSP<sup>®</sup>&nbsp;guides</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Mon Jun 09 2025 21:04:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_1358904932": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 21:03:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 06 2025 21:04:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Proven since the start</span></span></span><span class=\"urw-egyptienne\"><br>\n </span>The original guide. Used in thousands of cases, the traditional guide pioneered the personalized medicine space.</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Features and benefits:</span></span></p>\n<p><b>Customized solutions</b><br>\nDesigned from the VSP<sup>®</sup> planning session, these surgical guides are the physical output of the preplanned surgery. They assist a surgeon with patient-specific marking, positioning and osteotomy decisions in the OR.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 10 2025 14:06:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 06 2025 21:07:50 GMT+0000",
+          "alt": "1596653442_Tradition---SLA-Fibula-Guide-cropped",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/1596653442_Tradition---SLA-Fibula-Guide.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 09 2025 21:01:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_395066825": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Fri Jun 06 2025 20:06:57 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jun 09 2025 22:28:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_995385999_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
+      "text": "<h2><b><span class=\"futura-bold\">Resources</span></b></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_1764388257": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1596737850_OT-FL-18_Rev.None_24775--VSP-Scanning--New-model.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1597148959_CMF-FL-60_Rev.-None_14137-VSP-Recon-flyer.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/resources/CMF-FL-132_Rev. None_25332-new-guides-flyer.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/resources/1628091487_VSP-Hybrid-Guides-Flyer_3DS-BR-30-Rev.None_29186.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/vspreconstruction/resources/us/3ds-br-1_vsp-surgical-positioning-guide.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/resources/1597149035_CMF-FL-131_Patient-specific-product-workflows.pdf"
+      ],
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Tue Jun 10 2025 14:24:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_1610187111": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "products",
+      "jcr:created": "Fri Jun 06 2025 20:07:25 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Jun 09 2025 22:28:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_2090444076_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:28:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "featuredcontent_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Tue Sep 02 2025 21:52:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/anatomical-models"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/universal-select"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/vsp-orthognathic"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/vsp-reconstruction"
+        }
+      }
+    },
+    "section_title_1416956731": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jun 06 2025 20:07:49 GMT+0000",
+      "title": "Request information",
+      "jcr:lastModified": "Mon Jun 09 2025 22:28:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1663437304_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3226",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Thu Feb 06 2025 18:37:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "text_copy_1019504837": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 25 2025 18:01:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-8em\">References<br>\n 1. Data compared to 3D Systems’ Traditional cutting and marking guides. Proprietary mechanical validation testing data on file at 3D Systems.<br>\n 2. Data compared to 3D Systems' Traditional cutting and marking guides. Proprietary Mechanical Validation Testing Data on file at 3D Systems. 3D Systems LaserForm TI Gr23(A) Datasheet on file at 3D Systems<br>\n </span></p>\n",
+      "jcr:lastModified": "Fri Jun 06 2025 20:09:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 06 2025 19:52:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Jun 06 2025 19:52:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 06 2025 19:53:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 06 2025 19:53:07 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 06 2025 19:53:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 06 2025 19:53:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/vsp-guides/images/VSP-guides-product-thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>VSP is a registered trademark of 3D Systems, Inc.</p>\r\n",
+    "jcr:lastModified": "Mon Jul 07 2025 19:56:49 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

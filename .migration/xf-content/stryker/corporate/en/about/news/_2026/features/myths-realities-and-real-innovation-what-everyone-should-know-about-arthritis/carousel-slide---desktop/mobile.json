@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d0fa914e-0f45-4a1b-9398-c0e1d2f1c0af",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "115267e1-f67e-4531-93d2-5496de80cc51"
+  ],
+  "lastPublished": "Wed Jun 10 2026 15:42:52 GMT+0000",
+  "jcr:created": "Wed Jun 10 2026 15:42:55 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 10 2026 15:42:56 GMT+0000",
+  "cq:lastModified": "Tue Jun 02 2026 20:37:55 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "115267e1-f67e-4531-93d2-5496de80cc51",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jun 10 2026 15:42:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "9e0619e9-1d16-4450-8a84-caf612adb160",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jun 02 2026 20:37:49 GMT+0000",
+      "alt": "Arthritis-article-hero-mobile",
+      "srcFileRef": "/content/dam/stryker/about/news/2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/Arthritis-article-hero-mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 02 2026 20:37:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

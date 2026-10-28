@@ -1,0 +1,731 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "AEDs for the community",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Workplace and public safety",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "efbbd4fb-e0c8-4c4d-be96-45da359b666c",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Bystander grabs LIFEPAK CR2 AED from wall in an office",
+  "jcr:predecessors": [
+    "a68edadc-dcf2-4331-9edc-58f0d06e11f2"
+  ],
+  "contentID": "EC-GSNPS-SYK-1081840_REV-2_en_us",
+  "lastPublished": "Fri Aug 14 2026 12:57:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Aug 14 2026 12:57:13 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 14 2026 12:57:15 GMT+0000",
+  "cq:lastModified": "Fri Aug 14 2026 12:57:03 GMT+0000",
+  "jcr:description": "An AED program is a critical link in the chain of survival of a sudden cardiac arrest, empowering you to deliver lifesaving intervention before first responders arrive. With more than a million AEDs deployed globally, Stryker offers diverse options and deep expertise to help you choose the right device and cost-effectively manage your community AED program.",
+  "jcr:baseVersion": "a68edadc-dcf2-4331-9edc-58f0d06e11f2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:51:16 GMT+0000",
+  "pageTitle": "Workplace and public safety",
+  "jcr:lastModified": "Fri Oct 04 2024 18:48:18 GMT+0000",
+  "jcr:uuid": "3f501192-d9f8-435c-ac40-46e6314d42a2",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "Workplace and public safety",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c_274793884": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/community_public_saf/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/community-public-saf/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/emergency-care/en/community_public_saf/hero/hero-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/emergency-care/en/community-public-saf/hero/hero-mobile",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "8",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Sep 19 2024 12:44:34 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">AEDs for the community</span></span></span></span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">If a sudden cardiac arrest strikes an employee, customer, family member or friend, are you prepared to help save a life?</span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 19 2024 12:45:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true",
+              "bottomMargin": "5",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/images/ec-aed-community-public-safety-hero_cr2-wall-unit_1200x680.jpg"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1700446494": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Sep 12 2023 18:31:40 GMT+0000",
+      "jcr:lastModified": "Tue Sep 12 2023 18:31:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 12 2023 18:31:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><sup></sup>Be prepared for a sudden cardiac&nbsp;arrest — even before EMS arrives</span></span></h2>\n<p><span class=\"fontsize-1-25em\">An AED program is a critical link in the chain of survival, empowering you to deliver lifesaving intervention before an EMS team arrives. Did you know that each minute that passes after a sudden cardiac arrest cuts the chances of survival by 7-10%?<sup>1</sup> With more than a million AEDs deployed globally, Stryker offers diverse options and deep expertise to help you choose the right device and cost-effectively manage your AED program.</span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2024 21:43:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_200890852": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Oct 11 2021 17:06:38 GMT+0000",
+      "jcr:lastModified": "Mon Feb 07 2022 15:44:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
+          "alt": "Be ready for the unthinkable",
+          "srcFileRef": "/content/dam/stryker/ems/workplace-public-safety/images/Icon_AED_Gold (1).png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 24 2022 21:06:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:47:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Be ready for the unthinkable</span></span></div>\n<div style=\"text-align: center;\">&nbsp;</div>\n<div style=\"text-align: left;\"><span class=\"fontsize-1-25em\">An AED is an essential public safety device that can help someone survive in an emergency. Your AED should always be at the ready.</span></div>\n",
+          "jcr:lastModified": "Wed Sep 25 2024 12:29:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
+          "alt": "Find the perfect fit",
+          "srcFileRef": "/content/dam/stryker/ems/workplace-public-safety/images/Icon_Readiness_100px.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 24 2022 21:06:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_1153408564": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "text": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Find the perfect fit</span></span></div>\n<div style=\"text-align: center;\">&nbsp;</div>\n<div style=\"text-align: left;\"><span class=\"fontsize-1-25em\">There are many AED products on the market. Learn which products and solutions are best for your organization.</span></div>\n",
+          "jcr:lastModified": "Wed Sep 25 2024 12:32:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
+          "alt": "Manage and maintain your AEDs ",
+          "srcFileRef": "/content/dam/stryker/ems/workplace-public-safety/images/Icon_AEDProgramMgmt_100px-01.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 24 2022 21:07:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_201991826": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:47:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Manage and maintain your AEDs&nbsp;</span></span></div>\n<div style=\"text-align: center;\">&nbsp;</div>\n<div style=\"text-align: left;\"><span class=\"fontsize-1-25em\">An effective AED program helps to ensure that your AEDs and trained staff are ready to save a life at any time. Learn how Stryker makes it easy to own, manage and maintain your AEDs.</span></div>\n",
+          "jcr:lastModified": "Wed Sep 25 2024 12:29:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "survivor",
+      "jcr:created": "Thu Sep 07 2023 20:03:32 GMT+0000",
+      "title": "Survivor stories",
+      "jcr:lastModified": "Thu Sep 14 2023 14:29:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_67599614": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Sep 14 2023 15:06:17 GMT+0000",
+      "jcr:lastModified": "Thu Sep 14 2023 15:06:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Sep 14 2023 13:36:30 GMT+0000",
+          "jcr:lastModified": "Thu Sep 14 2023 13:36:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_1949042136_copy_1437782037": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Sep 14 2023 15:29:44 GMT+0000",
+      "jcr:lastModified": "Thu Sep 14 2023 15:29:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 07 2023 20:17:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">AEDs in the community and workplace</span></span></h2>\n<p><span class=\"fontsize-1-25em\">AEDs can help enhance preparedness and the ability to respond to cardiac emergencies. Learn more about the impact of AEDs in our communities and workplaces, from increasing survival rates to promoting a culture of emergency preparedness.</span></p>\n",
+          "jcr:lastModified": "Thu Sep 18 2025 19:41:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "customizable_5549374_2105190740": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 12:40:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety/athletics"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety/education"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety/law-enforcement"
+        }
+      }
+    },
+    "cols_73855103": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Sep 09 2025 20:29:59 GMT+0000",
+      "jcr:lastModified": "Tue Sep 09 2025 20:29:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Sep 09 2025 15:16:46 GMT+0000",
+      "text": "Hold on to the moments that matter Be ready to act when sudden cardiac arrest strikes Life is built from small moments—coffee before sunrise, sideline cheers, a hand squeezed at the right time. Sudden cardiac arrest can happen to anyone, anywhere, interrupting those moments without warning. Our latest video shows us what’s worth protecting and how being prepared can help. Read More Tell us your cardiac arrest story EC-GSNPS-SYK-2235972",
+      "jcr:lastModified": "Tue Sep 09 2025 15:23:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/community_public_saf/psa-video/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/community-public-saf/psa-video/master"
+    },
+    "cols_652040384": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 19 2024 12:27:43 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 12:27:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Mon Sep 29 2025 21:14:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Sep 29 2025 21:14:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Sep 19 2024 12:47:53 GMT+0000",
+          "jcr:lastModified": "Thu Sep 19 2024 12:47:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "customizable_5549374_1754118951": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 12:36:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-esley-thorton"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-bennett-hart"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-jordan-schoen"
+        }
+      }
+    },
+    "cols_1626569999": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri May 03 2024 22:07:00 GMT+0000",
+      "jcr:lastModified": "Fri May 03 2024 22:07:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri May 03 2024 22:07:05 GMT+0000",
+          "jcr:lastModified": "Fri May 03 2024 22:07:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_2125704928": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Thu Sep 14 2023 14:28:03 GMT+0000",
+      "title": "Why AEDs Matter",
+      "jcr:lastModified": "Thu May 09 2024 16:03:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1949042136_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Sep 14 2023 15:29:44 GMT+0000",
+      "jcr:lastModified": "Thu Sep 14 2023 15:29:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 07 2023 20:17:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Learn more about sudden cardiac arrest</span></span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Here are several resources on why AEDs matter. Click <a href=\"https://www.stryker.com/us/en/emergency-care/news.html\"><u>here</u></a> to view more on the Emergency Care newsroom.</span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 16:02:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "customizable_5549374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 12:39:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2024/saving-young-hearts-aed-placement-strategies-schools"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2024/emergency-preparedness-darryl-conway-sudden-cardiac-arrest"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2024/when-to-use-AED-sudden-cardiac-arrest"
+        }
+      }
+    },
+    "customizable_5549374_1146483978": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 12:37:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2024/aed-buying-guide"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2022/how-to-prepare-your-workplace-for-a-sudden-cardiac-emergency"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2022/defibrillator-101"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri May 03 2024 22:06:44 GMT+0000",
+      "jcr:lastModified": "Fri May 03 2024 22:06:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Apr 29 2024 18:17:53 GMT+0000",
+          "jcr:lastModified": "Mon Apr 29 2024 18:17:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_24342557": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Apr 29 2024 18:17:34 GMT+0000",
+      "jcr:lastModified": "Mon Apr 29 2024 18:17:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Apr 17 2020 20:29:33 GMT+0000",
+          "alt": "Stryker's Forward Hearts program logo - yellow and black with a heart behind it",
+          "srcFileRef": "/content/dam/stryker/ems/workplace-public-safety/images/forwardhearts-promo_680x385.png",
+          "jcr:lastModified": "Mon Apr 29 2024 18:26:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_531301273": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Apr 29 2024 18:18:06 GMT+0000",
+          "jcr:lastModified": "Mon Apr 29 2024 18:18:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 17 2020 20:34:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Pay it&nbsp;forward</span></span></h2>\n<p><span class=\"fontsize-1-5em\">Forward Hearts lets survivors of a sudden cardiac arrest event pay it forward and potentially save another life by donating an automated external defibrillator (AED) to the organization of the survivor's choice.</span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/emergency-care/forward-hearts.html\" target=\"_self\" title=\"Learn more\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\"><span style=\"color: #4c7d7a;\">LEARN MORE</span></span></span></span></span></a></span></p>\n",
+          "jcr:lastModified": "Mon Apr 29 2024 18:26:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_634872657": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 15 2021 21:30:50 GMT+0000",
+      "title": "connect",
+      "jcr:lastModified": "Thu Sep 14 2023 14:27:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_272493304_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 15:14:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert</span></span></h2>\n",
+          "jcr:lastModified": "Thu May 09 2024 16:07:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Fri Aug 14 2026 12:57:03 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 21:15:32 GMT+0000",
+          "text": "Contact Information Customer service product feedback",
+          "jcr:lastModified": "Tue Sep 12 2023 20:18:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/lead-gen-form/social-icons/master"
+        }
+      }
+    },
+    "tabs_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Oct 02 2023 15:11:26 GMT+0000",
+      "jcr:lastModified": "Mon Apr 29 2024 16:59:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_copy_co_1607861079": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Dec 15 2021 21:08:06 GMT+0000",
+          "jcr:lastModified": "Thu Sep 18 2025 19:42:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/lifepak-cr2"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/heartsine-samaritan-pad-450p"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/heartsine-smaritan-pad-360p"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_5549374": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+          "jcr:lastModified": "Thu Apr 25 2024 21:13:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Related products"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 21:11:04 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Thu Apr 25 2024 21:11:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1: Part 4: The Automated External Defibrillator. (2000). Circulation,102 (suppl_1). <a href=\"https://doi.org/10.1161/circ.102.suppl_1.i-60\">https://doi.org/10.1161/circ.102.suppl_1.i-60</a></p>\r\n<p>AED users should be trained in CPR and in the use of the AED. Some AEDs for public use/trained users and can be used also by professional users. AEDs are indicated for use on adults and children. Certain AEDs may be used on children 1-8 years of age weighing less than 25 kg (55 lbs) but some models required separate defibrillation electrodes. </p>\r\n",
+    "jcr:lastModified": "Thu Sep 18 2025 19:42:17 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Sep 07 2023 20:30:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

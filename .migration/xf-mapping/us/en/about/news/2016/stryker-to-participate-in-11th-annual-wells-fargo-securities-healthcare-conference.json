@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker to participate in 11th Annual Wells Fargo Securities Healthcare Conference",
+  "jcr:versionHistory": "d923cfd2-c397-4050-b9f9-88a60b77f349",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "47c4f7b5-b6df-43d2-aa2b-7888d0c1a256"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:23 GMT-0400",
+  "cq:lastModified": "Thu Sep 14 2017 16:52:06 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:baseVersion": "47c4f7b5-b6df-43d2-aa2b-7888d0c1a256",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 09:42:03 GMT-0400",
+  "jcr:uuid": "51c7c8d7-6d1f-4d98-b7d5-8a746f490c02",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Wed Aug 31 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Aug-2016",
+    "jcr:lastModified": "Tue May 30 2017 11:18:35 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>Kalamazoo, Michigan - Stryker Corporation (NYSE:SYK) will participate in the 11th Annual Wells Fargo Securities Healthcare Conference on Thursday, September 8, 2016 at the The Westin Boston Waterfront in Boston, Massachusetts. Katherine Owen, Vice President, Strategy and Investor Relations, will represent the Company in a presentation scheduled for 9:55 a.m. Eastern Time.</p>\n<p>A simultaneous webcast and replay of the Company's presentation will be available on Stryker's website at <a href=\"http://www.stryker.com/\" target=\"_blank\" style=\"background-color: rgb(255, 255, 255);\">www.stryker.com</a>.<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=2198641\" target=\"_blank\">Stryker Investor Relations</a><br>\n</p>\n",
+    "jcr:lastModified": "Tue May 30 2017 11:19:37 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

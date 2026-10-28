@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Sports Medicine",
+  "jcr:versionHistory": "c9b08e83-03d8-4c64-8c35-07795d3c6d42",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:predecessors": [
+    "c5b96964-8c49-48d4-b8ef-7b2bb57b0399"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:56 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:56 GMT-0400",
+  "cq:lastModified": "Mon Nov 20 2017 12:30:27 GMT-0500",
+  "jcr:baseVersion": "c5b96964-8c49-48d4-b8ef-7b2bb57b0399",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "fcce4a3d-177d-4e6e-936d-6294478c2f7c",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com"
+}

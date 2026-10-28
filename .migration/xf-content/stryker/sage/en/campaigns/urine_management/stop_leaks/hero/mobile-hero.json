@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "226ffa1d-16ff-4117-a47e-dbc9a8f4ae33",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "005153d1-acb3-4fd5-bae8-ab61a1910479"
+  ],
+  "lastPublished": "Wed Sep 25 2024 20:57:17 GMT+0000",
+  "jcr:created": "Wed Sep 25 2024 20:57:18 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 25 2024 20:57:28 GMT+0000",
+  "cq:lastModified": "Wed Sep 25 2024 19:46:06 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "005153d1-acb3-4fd5-bae8-ab61a1910479",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 25 2024 20:57:17 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "518a6661-3bab-46ab-b8fe-5b9c93d90e52",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Sep 10 2024 22:15:08 GMT+0000",
+      "alt": "Nurse holding Sage PrimaFit external urine management for the female anatomy",
+      "srcFileRef": "/content/dam/stryker/sage/urine-management/primafit-competitor/images/um-prima-campaign-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 25 2024 19:46:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

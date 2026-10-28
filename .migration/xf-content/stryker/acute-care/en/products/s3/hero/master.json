@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0a4dba31-1ae9-4fcc-b10e-b70b1d3067ee",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "d0892fe5-7ff6-4688-bd1c-adb23771ded5"
+  ],
+  "jcr:created": "Fri Feb 23 2024 18:12:12 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 23 2024 18:12:14 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 18:12:08 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d0892fe5-7ff6-4688-bd1c-adb23771ded5",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "420c0090-7b87-4a91-8357-b71c16364695",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's S3 simple, safe and secure MedSurg hospital bed",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/s3/images/Thumbnail_S3_SYK.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 18:12:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

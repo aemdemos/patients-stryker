@@ -1,0 +1,140 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "KB - AXS Catalyst 5 alt2 - gold bar",
+  "jcr:versionHistory": "e4b878da-09ae-4e8d-afc9-2514a54ac3c4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "1218326e-1ac6-4c21-ad5b-9389f5752b03"
+  ],
+  "jcr:created": "Fri Nov 08 2019 16:38:26 GMT+0000",
+  "cq:lastModified": "Wed Oct 30 2019 13:28:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1218326e-1ac6-4c21-ad5b-9389f5752b03",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "737becf2-bee5-43e9-a563-b8d8f5d02d97",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 18:29:53 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Fri Sep 27 2019 18:33:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Left Float",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 17:10:05 GMT+0000",
+      "jcr:lastModified": "Mon Oct 21 2019 20:17:22 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy4888964545752651": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><br>\n </span></span><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-5em\">AXS Catalyst 5</span></span></span><br>\n <br>\n <span class=\"fontsize-1-75em\">Distal Access Catheter</span></span></p>\n<p>_____________________________________</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Take on Tortuosity</span></span></p>\n<p>The AXS Catalyst 5 Distal Access Catheter is designed for rapid access and enhanced support</p>\n",
+        "jcr:lastModified": "Wed Oct 02 2019 17:45:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "item4888964547469940": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Sep 19 2019 19:49:51 GMT+0000",
+        "srcFileRef": "/content/dam/stryker/neurovascular/images/goldBar.jpg",
+        "jcr:lastModified": "Wed Oct 23 2019 17:02:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "1"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/axs-catalyst-5/images/Hero_AXS Cat 5.jpg",
+      "jcr:lastModified": "Tue Oct 08 2019 19:11:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "7420179f-1116-4376-bf5b-36434a6886e8",
+  "jcr:predecessors": [
+    "40e27e63-c5dc-42e6-88d0-ec55cfb6eb46"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:47 GMT+0000",
+  "jcr:baseVersion": "40e27e63-c5dc-42e6-88d0-ec55cfb6eb46",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "ac9598ed-2e1c-434d-80d0-6e6afffd2acc",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:title": "Malaysia",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "malaysia",
+    "jcr:lastModified": "Wed Oct 30 2019 19:38:12 GMT+0000",
+    "lastFragmentSave": "Wed Oct 30 2019 19:38:12 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Mon Feb 24 2020 14:44:47 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "Emails@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "addressBlock1": "<p>100.6.001 &amp; 100.6.003<br>\n129 Offices, Jaya One<br>\nPetaling Jaya, Selangor 46200 Malaysia<br>\nMalaysia</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "For any sales enquiry",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/my/en/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "RelatedLinks@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "locationName": "Malaysia",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "PhoneNumbers": "<p><a>+60 3-7661 7888</a><br>\n<a>+60 3-7661 7800 Fax</a></p>\n",
+        "AddressLabel@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Wed Oct 30 2019 19:38:11 GMT+0000",
+        "BusinessHomePageLabel": "Malaysia Homepage",
+        "Emails": "<p><a href=\"mailto:strykeraseansales@stryker.com\">strykeraseansales@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

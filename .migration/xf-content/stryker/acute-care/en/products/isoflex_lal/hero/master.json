@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c3500b13-5de9-46fe-aad3-21e5aa0a2ed5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f6c44d20-94b8-47f8-9fe0-9ec15b22854f"
+  ],
+  "lastPublished": "Thu May 08 2025 17:25:20 GMT+0000",
+  "jcr:created": "Thu May 08 2025 17:25:21 GMT+0000",
+  "cq:lastReplicated": "Thu May 08 2025 17:25:23 GMT+0000",
+  "cq:lastModified": "Thu Oct 31 2024 16:29:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f6c44d20-94b8-47f8-9fe0-9ec15b22854f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu May 08 2025 17:25:20 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "da694477-ed2e-43ea-91f1-12ab8b997e9e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "IsoFlex LAL support surface for pressure injury reduction",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/isoflexlal/images/Thumbnail_IsoFlexLALSurface.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 31 2024 16:29:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,814 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "MEDPOR Oculoplastic surgery",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "975779f6-ed1b-4b0b-a012-c4c25e53847d",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "medpor-oculoplastic-thumbnail",
+  "jcr:predecessors": [
+    "dc77da49-6d81-4a0c-bb25-b5ccd250b7aa"
+  ],
+  "contentID": "CMF-MEDM-SYK-1801165",
+  "lastPublished": "Fri Jul 25 2025 18:08:53 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 25 2025 18:08:53 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 18:08:55 GMT+0000",
+  "cq:lastModified": "Mon Jun 09 2025 22:01:02 GMT+0000",
+  "jcr:baseVersion": "dc77da49-6d81-4a0c-bb25-b5ccd250b7aa",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 25 2025 18:08:53 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:content-type/product",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cmf-implants",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Apr 07 2025 13:39:45 GMT+0000",
+  "jcr:uuid": "82ae46d3-dca9-4b87-95b4-fcbfe29c8cbb",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">MEDPOR<sup>®</sup>&nbsp;Oculoplastic surgery</span></span><br>\n</h1>\n",
+      "jcr:lastModified": "Tue Apr 15 2025 14:07:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_211193": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "jcr:lastModified": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
+          "alt": "MEDPOR Oculoplastic hero",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-oculoplastic-surgery/images/1588344960_Oculoplastic-Hero.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sat Mar 01 2025 01:39:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1971668492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><b>Proven. </b></span></span><span style=\"color: #ffb500;\"><b><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Adaptable. Comprehensive.</span></span></b></span></h2>\n<p>MEDPOR has been a trusted name in the industry since 1985, with hundreds of thousands of procedures performed, and hundreds of published clinical reports in reconstructive, cranial, oculoplastic, and cosmetic applications.</p>\n<p>Our MEDPOR product line provides you an array of porous polyethylene solutions for your reconstruction and augmentation needs. We understand that bio-compatibility characteristics of implants are paramount to help surgeons achieve positive patient outcomes. The omni-directional pore structure of our polyethylene implants may increase implant acceptance by allowing the patient‘s native tissue to integrate with the implant.<sup>1</sup> In addition to our comprehensive line of stock MEDPOR implants, we offer CT-based patient-specific implants, putting the implant design in your hands.<br>\n</p>\n",
+          "jcr:lastModified": "Fri May 09 2025 13:14:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
+          "CTATitle": "Request information",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Tue Feb 11 2025 20:24:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "jumpbarnav_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:51:33 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:51:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "text_1641737831_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Feb 28 2025 23:12:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">MEDPOR product line</span></span></p>\n",
+      "jcr:lastModified": "Tue Mar 04 2025 01:11:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Sat Feb 22 2025 02:09:36 GMT+0000",
+      "jcr:lastModified": "Sat Feb 22 2025 02:09:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_9104": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Feb 22 2025 02:04:25 GMT+0000",
+          "alt": "MEDPOR Titan Double Barrier BTB image",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463409404_81024-Medpor-Titan-Double-Barrier-BTB-cropped.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 16:27:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Sat Feb 22 2025 02:17:49 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">MEDPOR Titan Double Barrier BTB</span></span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Feb 22 2025 02:06:07 GMT+0000",
+          "alt": "MEDPOR Orbital Floor and Wall MTB Left image",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463409630_81031-medpor-titan-cropped.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 01:09:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Sat Feb 22 2025 02:18:14 GMT+0000",
+          "text": "<p><span style=\"font-size: 17.5px;\"><b><span class=\"futura-bold\">MEDPOR Orbital Floor and Wall MTB Left</span></b></span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:44:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Feb 22 2025 02:06:42 GMT+0000",
+          "alt": "1528486030_Unison_20120713_010a-CUBE",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463409683_20141031_024Rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 22:40:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Sat Feb 22 2025 02:18:28 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">MEDPOR TITAN 3D Orbital Floor - Large</span></span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:45:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1699": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Feb 22 2025 02:06:46 GMT+0000",
+          "alt": "1528486072_Unison_20130403_056",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463410395_20141031_066Rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 22:40:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Sat Feb 22 2025 02:18:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">MEDPOR TITAN 3D Orbital Floor - Small</span></span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:46:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_1989250682": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Sat Feb 22 2025 02:09:36 GMT+0000",
+      "jcr:lastModified": "Sat Feb 22 2025 02:09:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_9104": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Feb 22 2025 02:04:25 GMT+0000",
+          "alt": "1528485467_LifeNet-Products-Pics-061",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463410032_Titan-Fan.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 22:41:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Sat Feb 22 2025 02:17:49 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">TITAN Fan</span></span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 01:09:56 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 01:09:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Sat Mar 01 2025 01:24:41 GMT+0000",
+      "title": "Features and benefits",
+      "jcr:lastModified": "Tue Mar 04 2025 01:10:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 23:01:17 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Features and benefits</span></span></p>\n",
+      "jcr:lastModified": "Fri Feb 28 2025 23:02:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1_3_2_3_163555": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 22:25:14 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 22:25:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Feb 28 2025 22:02:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-6-5-vw\">30+</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">years of proven clinical history</span></span>",
+          "jcr:lastModified": "Fri Feb 28 2025 23:03:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 21:09:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b><span class=\"fontsize-1-25em\">Proven material</span><br>\n </b>More than 400,000 procedures have been performed with MEDPOR Biomaterial, with more than 350 published clinical reports in cranial, reconstructive, oculoplastic and cosmetic applications.</p>\n<p><b><span class=\"fontsize-1-25em\">Comprehensive portfolio</span><br>\n </b>Wide variety of facial implants to fit patient and surgeon reconstructive and augmentation needs.</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:26:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_112079": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 22:24:52 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 22:24:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2025 21:09:28 GMT+0000",
+          "alt": "1463409630_81031-medpor-titan",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1463409630_81031-medpor-titan-cropped.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 16:54:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 21:09:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b><span class=\"fontsize-1-25em\">MEDPOR TITAN<br>\n</span> </b>Combines high-density polyethylene sheets and titanium mesh in a single implant for increased flexibility, shape retention, radiographic visualization and strength.<sup>2</sup></p>\n",
+          "jcr:lastModified": "Fri May 09 2025 13:15:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 22:24:26 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 22:24:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2025 21:09:28 GMT+0000",
+          "alt": "1587578032_medpor-material",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/images/1587578032_medpor-material.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 22:18:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 21:09:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b><span class=\"fontsize-1-25em\">Adaptable<br>\n</span> </b>If desired, MEDPOR material may be cut and shaped to fit patient and surgeon needs.</p>\n<p><b><span class=\"fontsize-1-25em\">Sterile</span><br>\n </b>Implants packaged sterile and ready to use. They can be stored in the hospital or office to have on hand as needed.</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:26:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 25 2025 18:01:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-8em\">References<br>\n 1: MEDPOR IFU<br>\n 2: Holck, D., Foster J., and Dahl T., “Custom Shaped Porous Polyethylene-Titanium Mesh Orbital Implants for Internal Orbital Floor/Medial- Wall Fracture Repair” ASOPRS 37th Annual Fall Scientific Syllabus, pp190, November 15-16, 2006</span></p>\n",
+      "jcr:lastModified": "Fri May 09 2025 13:26:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_1918227089": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "evidence",
+      "jcr:created": "Sat Mar 01 2025 01:26:34 GMT+0000",
+      "title": "Clinical evidence",
+      "jcr:lastModified": "Tue Mar 04 2025 01:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_604550158_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 18:24:05 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Clinical evidence</span></h2>\n",
+      "jcr:lastModified": "Wed Feb 26 2025 18:26:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion_1586000363": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 18:27:36 GMT+0000",
+      "jcr:lastModified": "Sat Mar 01 2025 01:26:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 18:31:07 GMT+0000",
+          "text": "<p><b>Objective</b><br>\nTo determine the safety and efficacy of using porous high-density polyethylene (PHDPE) in the repair of orbital defects.</p>\n<p><b>Design</b><br>\nRetrospective case series.</p>\n<p><b>Setting</b><br>\nAcademic tertiary care trauma center. Patients One hundred seventy patients with orbital defects requiring surgical repair. Intervention Orbital defect repair with PHDPE. Main Outcome Measure Our review documents surgical results and complications associated with the use of PHDPE.</p>\n<p><b>Results</b><br>\nThere was a 6.4% complication rate associated with the use of PHDPE. The infection rate was 1.8%. The persistent orbital malposition rate was 3.5%. The extrusion rate was 0%.</p>\n<p><b>Conclusions</b><br>\nThis report represents the largest case series in the literature using PHDPE for orbital reconstructions. The use of PHDPE resulted in a low complication rate and excellent functional and cosmetic reconstructive results. Because of our success with the use of PHDPE, we have changed our clinical practice to minimize the use of autologous graft material, thereby eliminating donor site morbidity in cases involving orbital reconstruction.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:59:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Feb 26 2025 18:31:47 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "http://www.ncbi.nlm.nih.gov/pubmed/15897425",
+          "jcr:lastModified": "Sat Mar 01 2025 01:26:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 18:32:38 GMT+0000",
+          "text": "<p><b>Purpose</b><br>\nTo evaluate our initial experience with a porous polyethylene implant with embedded titanium in orbital reconstruction.</p>\n<p><b>Methods</b><br>\nA retrospective review of the charts was performed for patients receiving at least 1 orbital porous polyethylene implant with embedded titanium from October 2004 through April 2006. Patient demographics, implant type and size, method of fixation, postoperative complications, and length of follow-up were recorded.</p>\n<p><b>Results</b><br>\nOne-hundred six patients received at least one embedded titanium implant (80 men, 26 women). Age ranged from 3 years to 85 years (mean, 31 years). Indications included orbital fracture repair (102 patients), correction of enophthalmos (3 patients), and reconstruction after tumor resection (1 patient). The average floor implant used was 22.3 mm wide by 27.9 mm long. The average medial wall implant was 13.6 mm tall by 22 mm long. Implants were fixated with 1 or 2 microscrews in 75 patients (70.8%) and placed without fixation in 31 patients (29.2%). Four postoperative complications were noted: a retrobulbar hemorrhage on postoperative day 3 that resolved without sequelae, a vertical overcorrection requiring removal of the implant, a transient oculomotor disturbance, and a screw placed in proximity to the infraorbital nerve canal resulting in hypesthesia and chronic pain that required removal of the screw. In the 3 complications potentially related to the implant, the embedded titanium allowed postoperative implant visualization and guided subsequent management. No implant extrusions or postoperative infections were noted.</p>\n<p><b>Conclusions</b><br>\nPorous polyethylene implants with embedded titanium provide a new alternative to alloplastic implant materials for orbital reconstruction with a profile that combines several advantages of porous polyethylene and titanium implants.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:00:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Feb 26 2025 18:31:47 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "http://www.ncbi.nlm.nih.gov/pubmed/18030113",
+          "jcr:lastModified": "Fri Feb 28 2025 22:01:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 18:32:38 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Abstract</span></span></p>\n<p><b>Purpose:&nbsp;</b>To measure and identify factors associated with treatment outcomes for patients with temporomandibular joint (TMJ) ankylosis treated with TMJ Concepts patient-fitted total joint prostheses and autogenous fat grafts.</p>\n<p><b>Patients and methods:</b>&nbsp;This retrospective cohort study evaluated records of patients with TMJ ankylosis from a single private practice, treated from 1992 to 2011, who met the following inclusion criteria: 1) radiographic evidence of bony ankylosis, 2) limited incisal opening, 3) minimum of 12 months' follow-up, and 4) treatment with TMJ Concepts (Ventura, CA)/Techmedica (Camarillo, CA) total joint prostheses and fat grafts. For each patient, the number of previous TMJ surgical procedures, as well as the estimated age of ankylosis onset, age at surgery, and length of postoperative follow-up, was recorded. Subjective evaluations were made with Likert-like scales (from 0 to 10) for 1) TMJ pain, 2) headache and facial pain, 3) jaw function, 4) diet, and 5) disability. Objective evaluations included maximal incisal opening and excursion movements. Nonparametric statistics were used for analysis.</p>\n<p><b>Results: </b>There were 32 patients (22 female and 10 male patients) with 48 ankylosed TMJs (16 bilateral and 16 unilateral) in this study, with a mean age of 39 years (range, 11 to 68 years), 2 or more previous TMJ surgical procedures in 69%, and a mean follow-up period of 68 months (range, 12 to 168 months). Trauma was the major etiology of TMJ ankylosis, occurring in 17 of 32 patients (53%). The following improvements occurred: The median value for TMJ pain changed from 8.0 preoperatively to 1.5 at longest follow-up; headache, from 8 to 3.5; facial pain, from 8 to 4; jaw function, from 8 to 2.5; diet, from 7 to 3; and disability, from 7 to 1.5. The median incisal opening was 14.5 mm (interquartile range, 6.3 to 20 mm) preoperatively and 35 mm (interquartile range, 30 to 40 mm) at longest follow-up. The median left lateral excursion improved from 0.5 to 2 mm, and the median right lateral excursion improved from 1 to 1.3 mm. All of these improvements were highly significant (P &lt; .001, Wilcoxon tests). Equally favorable outcomes were found in patients with 12 to 48 months of maximal follow-up and patients with more than 48 months of maximal follow-up.</p>\n<p><b>Conclusions:</b>&nbsp;The treatment of TMJ ankylosis with the TMJ Concepts patient-fitted total joint prosthesis in combination with fat grafting around the articulation area of the prosthesis is a viable and predictable method for improving pain levels, function, and quality of life, as well as prevention of reankylosis of the TMJ.</p>\n",
+          "jcr:lastModified": "Wed Feb 26 2025 18:35:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Feb 26 2025 18:31:47 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/26878364/",
+          "jcr:lastModified": "Wed Feb 26 2025 18:35:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 18:31:07 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Abstract</span></span></p>\n<p>Total replacement of the temporomandibular joint (TMJ) is increasingly accepted as the gold standard for reconstruction of irreparably damaged or ankylosed joints. The TMJ Concepts system (TMJ Concepts, Ventura, USA) has the longest follow-up of the 2 systems used in the UK. A total of 74 patients had placement of TMJ Concepts prostheses. The primary diagnoses were degenerative disease, multiple previous operations, injury, rheumatoid arthritis, psoriatic arthritis, ankylosing spondylitis, and ankylosis. Of these, 12 were revisions of previous replacements (3 after multiple operations). Over the year there was a significant mean (SD) reduction in pain score (10 cm visual analogue scale) from 72 (2.5) to 8 (1.7) (p&lt;0.0001), and mean (SD) improvements in mouth opening from 22.4 mm (9.4) to 33.7 mm (6.2) (p&lt;0.0001), and dietary consistency (10 cm analogue liquid 0 to solid 100) from 38 (23) to 93 (16) (p&lt;0.0001). No patient had worse symptoms postoperatively. Joints in 2 patients failed because of biofilm infections. Two patients required blood transfusion and one required ligation of the external carotid artery. Five had perioperative dislocation, which responded to elastic intermaxillary fixation for one week. A total of 31 patients had partial, and 2 had total weakness of the facial nerve. All resolved fully except weakness of the temporal branch in one patient, which required brow lift. Total TMJ replacement gives good early improvements in function and pain with few complications. Of the 74 patients, 71 were very pleased to have had the procedure. One was dissatisfied despite complete pain relief and improvement in mouth opening from 3 to 30 mm, and 2 were ambivalent (one had infection, revision, and permanent weakness of the temporal branch of the facial nerve).<br>\n</p>\n",
+          "jcr:lastModified": "Wed Feb 26 2025 18:36:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Feb 26 2025 18:31:47 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/23618995/",
+          "jcr:lastModified": "Wed Feb 26 2025 18:36:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Porous high-density polyethylene for orbital reconstruction"
+        }
+      }
+    },
+    "section_title_16286046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Sat Mar 01 2025 01:40:05 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Mar 04 2025 01:10:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_995385999_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
+      "text": "<h2><b><span class=\"futura-bold\">Resources</span></b></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_177015203": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/craniomaxillofacial/products/medpor-oculoplastic-surgery/resources/1590784033_CMF-BR-91_Rev.-2_22950-MEDPOR-Oculoplastic-surgery-brochure.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/medpor-ent-surgery/resources/1452868161_CMF-FL-6-MEDPOR-Titan-brand-yellow.pdf"
+      ],
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Wed Mar 12 2025 21:46:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_272211315": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "products",
+      "jcr:created": "Sat Mar 01 2025 01:41:04 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Jun 09 2025 22:00:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_2090444076_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:28:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "featuredcontent_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Fri Apr 04 2025 21:41:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/colorado-microdissection-needle"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/medpor"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/universal-select"
+        }
+      }
+    },
+    "section_title_1792432145": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Sat Mar 01 2025 01:40:18 GMT+0000",
+      "title": "Request information",
+      "jcr:lastModified": "Mon Jun 09 2025 22:01:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1663437304_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3226",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Thu Feb 06 2025 18:37:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Tue May 27 2025 19:28:04 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/medpor-oculoplastic-surgery/images/medpor-oculoplastic-thumbnail.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:42 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sat Mar 01 2025 01:28:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "hero carousel",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8cc31a90-6678-4d13-a573-8b6fb8b883fd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3e0982bd-0427-4203-bc7c-a2314f246c78"
+  ],
+  "jcr:created": "Thu Jan 04 2024 18:35:36 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 04 2024 18:35:38 GMT+0000",
+  "cq:lastModified": "Mon Nov 13 2023 19:34:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3e0982bd-0427-4203-bc7c-a2314f246c78",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "925ca71a-4719-436f-88ff-d0f59c80f626",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Nov 13 2023 19:34:14 GMT+0000",
+      "alt": "hero",
+      "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/a-commitment-to-surgeon-education/hero.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 13 2023 19:34:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

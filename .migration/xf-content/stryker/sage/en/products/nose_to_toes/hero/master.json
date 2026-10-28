@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a768e0de-3727-4df1-bcf6-887cc85d4e95",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "a0f2d08a-cd94-4ebc-82fb-ca4ff5c74c66"
+  ],
+  "lastPublished": "Tue Oct 15 2024 21:38:37 GMT+0000",
+  "jcr:created": "Tue Oct 15 2024 21:38:37 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 15 2024 21:38:40 GMT+0000",
+  "cq:lastModified": "Tue Oct 15 2024 17:03:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a0f2d08a-cd94-4ebc-82fb-ca4ff5c74c66",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 31 2024 19:28:37 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d73646d7-39e2-49a0-a42c-14dfab852109",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage Nose to Toes for surgical site infection prevention",
+      "srcFileRef": "/content/dam/stryker/sage/products/noes-to-toes/images/nose-to-toes-thumbnail-2024.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Oct 15 2024 17:03:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

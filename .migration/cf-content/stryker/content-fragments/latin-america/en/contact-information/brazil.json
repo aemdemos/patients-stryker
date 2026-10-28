@@ -1,0 +1,81 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "47fb7a49-ff60-4421-906a-16cba6ad6247",
+  "jcr:predecessors": [
+    "dbcaf14d-98e1-44e2-9eaf-105aa3b98e86"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:49 GMT+0000",
+  "jcr:baseVersion": "dbcaf14d-98e1-44e2-9eaf-105aa3b98e86",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "89278193-66ff-43dd-9cfc-54a36a7f06b7",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:title": "Brazil",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastModified": "Tue Oct 08 2019 16:50:55 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "brazil",
+    "jcr:lastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+    "lastFragmentSave": "Thu Oct 31 2019 14:59:15 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information",
+    "dam:relativePath": "stryker/content-fragments/latin-america/en/contact-information/brazil",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Mon Feb 24 2020 14:44:49 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "Emails@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "addressBlock1": "<p>Rua Urussuí, 300 - 8º andar<br>\nSão Paulo - SP, 04542-051, Brazil</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/br/pt/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "RelatedLinks@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "locationName": "Brazil",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "PhoneNumbers": "<p><b>+</b>55 11 5189-2500<br>\n</p>\n",
+        "AddressLabel@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Thu Oct 31 2019 14:59:15 GMT+0000",
+        "BusinessHomePageLabel": "Brazil Homepage",
+        "Emails": "<p><a href=\"mailto:csbrasil@stryker.com\">csbrasil@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

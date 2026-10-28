@@ -1,0 +1,982 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "T2 Alpha Femur Antegrade GT/PF",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c002854d-b9a8-4e6a-8422-3f685b35e068",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "thumbnailAltText": "PF-Femur-Hero-Image",
+  "jcr:predecessors": [
+    "2826e0e4-aff1-4369-a0e6-ae0dd0de2f15"
+  ],
+  "contentID": "T2-AWI-14, 01-2023",
+  "lastPublished": "Wed Jun 24 2026 16:01:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 24 2026 16:01:28 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 24 2026 16:01:30 GMT+0000",
+  "cq:lastModified": "Wed Jun 24 2026 16:01:19 GMT+0000",
+  "jcr:description": "The T2 Alpha GT/PF antegrade femoral nailing systems are intended for temporary stabilization of bone segments or fragments until bone consolidation has been achieved for femoral fractures.",
+  "jcr:baseVersion": "2826e0e4-aff1-4369-a0e6-ae0dd0de2f15",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 12:51:31 GMT+0000",
+  "pageTitle": "T2 Alpha Femur Antegrade GT/PF",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:product/trauma-and-extremities/t2-alpha-femur-pf",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:custom/trauma-and-extremities/Indications/femur",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 19 2025 16:49:25 GMT+0000",
+  "jcr:uuid": "dcf6821a-f93c-484b-a04a-b26d75153be2",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "navTitle": "T2 Alpha Femur Antegrade GT/PF",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Mon Aug 22 2022 21:54:00 GMT+0000",
+      "carouselOptionSpeed": "0",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Dec 15 2022 16:26:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_anteg_1690556205/t2-alpha-femur-antegrade/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/trauma-and-extremities/en/products/t2-alpha-femur-anteg-1690556205/t2-alpha-femur-antegrade/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/t2_alpha_femur_anteg_1690556205/t2-alpha-femur-antegrade/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/trauma-and-extremities/en/products/t2-alpha-femur-anteg-1690556205/t2-alpha-femur-antegrade/mobile",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "5",
+          "jcr:created": "Mon Aug 22 2022 21:54:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Dec 15 2022 16:26:28 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Mon Aug 22 2022 21:56:40 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span style=\"font-size: 70.0px;\"><b><span class=\"futura-bold\">T2 Alpha</span></b></span></h1>\r\n",
+              "line2": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">Femur Antegrade <br />\r\n GT/PF Intramedullary <br />\r\n Nailing System</span></span></h2>\r\n",
+              "jcr:lastModified": "Mon Nov 06 2023 21:10:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols_51023337": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 07:48:42 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 07:48:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\">The power to do more.</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><br />\r\nThe T2 Alpha Femur Antegrade GT/PF are hybrid-intramedullary nails for the treatment of proximal and diaphyseal femur fractures. The system offers a greater trochanteric entry (GT) and piriformis fossa entry (PF) nail which include recon, transverse and oblique locking options in a consolidated implant offering.</span></span>",
+          "jcr:lastModified": "Wed Jul 05 2023 13:33:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">The system utilizes a common instrument platform shared with all T2 Alpha and Gamma4 nails which promotes hospital standardization and is designed to offer both simplicity and procedural efficiency.</span></span></p>\n<p>&nbsp;</p>\n",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_739238836": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jun 12 2023 15:31:02 GMT+0000",
+      "jcr:lastModified": "Mon Jun 12 2023 15:31:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Mar 29 2023 17:34:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">T2 Alpha Femur Antegrade GT/PF - Overview</span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jun 12 2023 15:43:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Feb 20 2023 23:40:21 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Feb 20 2023 23:45:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/video/NailingPortfolio-V1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/NailingPortfolio-V1-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Feb 20 2023 23:45:11 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Mar 29 2023 17:34:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">T2 Alpha Femur Antegrade GT/PF - Surgical Animation</span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jun 12 2023 15:43:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Jun 12 2023 15:31:16 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "rZ9pr6-uVfU",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Jun 12 2023 15:31:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_55618912": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 21:25:00 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 21:25:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">T2 Alpha Femur Antegrade GT/PF&nbsp;<br>\r\n</span></span><span class=\"urw-egyptienne\">interactive model</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Select a point of interest to explore our product portfolio.</span></span>",
+          "jcr:lastModified": "Fri Jan 13 2023 21:25:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Nov 15 2022 22:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Nov 15 2022 22:24:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion",
+          "hiddenSelCompId": "trauma-alpha-femur-antegrade",
+          "componentUrl": "https://microapp.stryker.com/trauma-alpha-femur-antegrade/",
+          "jcr:created": "Fri Jan 13 2023 21:08:54 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/trauma-alpha-femur-antegrade/",
+          "jcr:lastModified": "Fri Jan 13 2023 21:11:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        }
+      }
+    },
+    "cols_1743476514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 07:49:04 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 07:49:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 20:54:48 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 20:54:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 20:55:00 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 20:55:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #ffb500;\">Advanced&nbsp;</span>nail design</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\nIntraoperative adaptability<br>\n </span><br>\n <span class=\"urw-egyptienne\">T2 Alpha provides our customers with a platform capable of quickly adapting to varying intraoperative needs. With nails designed for preferred entry, length dependent radius of curvature, and added locking configurations, T2 Alpha delivers a comprehensive implant portfolio to meet the diverse anatomical needs of patients.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 04 2023 20:24:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jan 12 2023 20:55:25 GMT+0000",
+          "alt": "T2 Alpha Femur Antegrade GTPF IM Nail",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/t2alphafemurgt/images/gtpf-fpo.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 04 2023 20:28:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Oct 16 2022 03:03:46 GMT+0000",
+      "jcr:lastModified": "Sun Oct 16 2022 03:03:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Stability when and where you need it</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\nAdvanced Locking Screws<br>\n </span><br>\n <span class=\"urw-egyptienne\">Provide increased axial fracture stability in any 5mm round locking hole when the surgeon chooses.<sup>1,2\u000b</sup></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\nIMN Locking Screws<br>\n </span><br>\n <span class=\"urw-egyptienne\">IMN locking screw design provides increased fatigue strength compared to competition.<sup>2</sup></span></span></p>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 17:17:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Oct 19 2022 23:16:51 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "loopVal": "1",
+          "jcr:lastModified": "Wed Oct 19 2022 23:16:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2-alpha-femur-retrograde/videos/stability.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/stability-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Oct 19 2022 23:17:15 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols2_copy_950573063": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Oct 16 2022 03:03:46 GMT+0000",
+      "jcr:lastModified": "Sun Oct 16 2022 03:03:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Instrumentation made easy</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\nStreamlined instrumentation platform<br>\n \u000b</span><br>\n <span class=\"urw-egyptienne\">One core basic tray that is used across Gamma4 and all T2 Alpha nail indications, designed to improve platform consistency and ease of use.<sup>1\u000b</sup></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\nGuided distal targeting devices for&nbsp;short and long nails</span><br>\n <span class=\"urw-egyptienne\"><br>\nDesigned to provide reproducible locking, and reduce\u000bthe total number of x-ray shots compared to freehand locking.<sup>3,4,5</sup></span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 04 2023 20:24:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Oct 19 2022 23:16:51 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "loopVal": "1",
+          "jcr:lastModified": "Wed Oct 19 2022 23:16:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2-alpha-femur-retrograde/videos/tray.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/tray-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Oct 19 2022 23:17:18 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_127389427_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Oct 16 2022 03:04:46 GMT+0000",
+      "jcr:lastModified": "Sun Oct 16 2022 03:04:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">T2 Alpha Femur Antegrade GT/PF</span></span><span class=\"urw-egyptienne\">&nbsp;<span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about T2 Alpha Femur Antegrade GT/PF by exploring our collection of unique clinical resources including surgical reduction technique, exposure, and product overview videos, brochures, whitepapers, and more.</span></span></span>",
+          "jcr:lastModified": "Thu Jan 12 2023 07:51:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "sectionseparator_684593424": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Oct 16 2022 03:05:08 GMT+0000",
+      "jcr:lastModified": "Sun Oct 16 2022 03:05:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 07:55:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/resources/t2-alpha-distal-targeting-device-tray-layout.pdf\" target=\"_blank\">T2 ALPHA DISTAL TARGETING DEVICE TRAY LAYOUT</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/OperativeTechnique.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/SellSheet.pdf\" target=\"_blank\">SELL SHEET</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/resources/t2-alpha-advanced-locking-screws-sell-sheet.pdf\" target=\"_blank\">ADVANCED LOCKING SCREWS INFO SHEET</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/TrayLayoutCard-DTS.pdf\" target=\"_blank\">TRAY LAYOUT CARD - DISTAL TARGETING</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/IndicationTrayLayout.pdf\" target=\"_blank\">TRAY LAYOUT CARD - INDICATION TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/TrayLayoutCard-IMN.pdf\" target=\"_blank\">TRAY LAYOUT CARD - IMN</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/gamma4/resources/Brochure-Trauma-Nailing-brochure.pdf\">NAILING BROCHURE</a></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 01 2025 12:51:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/resources/T2_BR_7.pdf\" target=\"_blank\">NAILING REDEFINED BROCHURE</a></b></span><br>\n</li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/resources/bixcut-reamer-brochure.pdf\" target=\"_blank\">BIXCUT REAMER BROCHURE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/resources/Performance%20of%20IMN%20Screws%20(1).pdf\" target=\"_blank\">PERFORMANCE OF IMN SCREWS</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/System%20Components%20Guide%20-%20T2%20Alpha%20GT-PF.pdf\" target=\"_blank\">SYSTEM COMPONENTS</a></b></span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Mar 06 2023 19:21:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/InventoryControlSheet.pdf\" target=\"_blank\">INVENTORY CONTROL SHEET</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/CountSheet-BasicIntruments.pdf\" target=\"_blank\">COUNT SHEET - BASIC INTRUMENTS KIT</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/CountSheet.pdf\" target=\"_blank\">COUNT SHEET - PF TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/TrayCountSheet.pdf\" target=\"_blank\">COUNT SHEET - GT TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alphafemur-antegrade-gtpf/resources/CountSheet-DTS.pdf\" target=\"_blank\">COUNT SHEET - DISTAL TARGETING TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2-alpha-humeral-nail/resources/Trauma-Nailing-Value-Brief.pdf\">TRAUMA VALUE BRIEF</a></span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jun 24 2026 16:01:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Mon Mar 06 2023 19:21:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Surgeon resources"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "Hospital resources"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "Internal resources"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed57b2f66bbaa26df441aab&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Mar 06 2023 19:30:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:56:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_35309282": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Sat Jan 14 2023 16:18:06 GMT+0000",
+      "jcr:lastModified": "Sat Jan 14 2023 16:18:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1254130874_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Related products</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:42:21 GMT+0000",
+          "jcr:lastModified": "Wed Jan 25 2023 21:49:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/Linear-Reduction-Clamp"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/asnis-iii"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/t2-alpha-femur-retrograde"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/omega-3-hip-screw"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:40:49 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:40:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy_493236008": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about T2 Alpha Femur Antegrade GT/PF and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 16:45:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_285618987": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Oct 16 2022 03:05:22 GMT+0000",
+      "jcr:lastModified": "Sun Oct 16 2022 03:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:49:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Oct 16 2022 02:55:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Sun Oct 16 2022 02:55:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Oct 16 2022 02:55:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Oct 16 2022 02:55:46 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Oct 16 2022 02:55:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Oct 16 2022 02:56:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>T2 Alpha Retrograde Femur Nailing System Surgical Technique T2-ST-37</li>\r\n<li>T2-WP-5_Rev-1, 12-2019</li>\r\n<li>M.Ehlinger et al. Distal targeting device for long Gamma nail . Monocentric observational study. Orthopaedics and Traumatology:Surgery and Research. Vol 99-Issue 7. November 2013, Pages 799-804</li>\r\n<li>T2-WP-8, 03-2019</li>\r\n<li>dam et al. External distal targeting device for safe insertion of distal locking screws when performing long Gamma Nail: Comparison with the freehand technique. Bone and Joint. Vol 94-B Supp XXXVII. 14. Sept. 2012</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Jan 12 2023 20:32:23 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/images/PF-Femur-Hero-Image.png"
+  }
+}

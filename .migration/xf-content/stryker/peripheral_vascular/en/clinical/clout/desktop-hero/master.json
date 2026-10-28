@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Desktop hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "51a01583-0cce-4d64-90ec-f3037b9eeeb4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "40f50a2d-6ba6-4935-bb82-06ab1b23d207"
+  ],
+  "lastPublished": "Thu Oct 08 2026 20:07:36 GMT+0000",
+  "jcr:created": "Thu Oct 08 2026 20:07:36 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 08 2026 20:07:38 GMT+0000",
+  "cq:lastModified": "Wed Sep 30 2026 16:08:08 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "40f50a2d-6ba6-4935-bb82-06ab1b23d207",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 08 2026 20:07:36 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "37c95734-a351-4fb9-b1fa-41933a5f2f69",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Sep 30 2026 15:54:42 GMT+0000",
+      "alt": "DVT Hero image_1920x640",
+      "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/DVT Hero image_1920x640.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 30 2026 16:08:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

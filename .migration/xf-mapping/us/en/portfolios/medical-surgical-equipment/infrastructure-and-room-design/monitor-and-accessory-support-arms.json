@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Ceiling mounted monitor support arms and accessory support arms",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Monitor and accessory support arms",
+  "jcr:versionHistory": "c1ec580b-e6c5-42b9-92c0-015daa3102ea",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "38a84a1f-1eed-4607-85d3-78f1674862e9"
+  ],
+  "contentID": "1000903759 REV B",
+  "lastPublished": "Thu Feb 11 2021 20:03:12 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Feb 11 2021 20:03:12 GMT+0000",
+  "cq:lastModified": "Thu Feb 11 2021 20:02:33 GMT+0000",
+  "jcr:description": "Customizable monitor support arms to ensure effortless, optimal positioning for your cases.",
+  "jcr:baseVersion": "38a84a1f-1eed-4607-85d3-78f1674862e9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/monitor-and-accessory-support-arms",
+    "stryker:capability/infrastructure-and-room-design"
+  ],
+  "jcr:lastModified": "Thu Feb 11 2021 20:02:33 GMT+0000",
+  "jcr:uuid": "4d5cc666-fdc1-4120-8152-587e2de93924",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/infrastructure-and-room-design/images/Monitor and accessory support arms.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Aug 13 2020 15:44:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

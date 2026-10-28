@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Forbes ranks Kevin Lobo as one of America’s Most Innovative Leaders",
+  "jcr:versionHistory": "f1d97e7a-cb59-4dad-aac6-a85da5f6319b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "4bfaa78f-60c0-44ab-b49e-f46edb233912"
+  ],
+  "lastPublished": "Tue Oct 22 2019 15:19:03 GMT+0000",
+  "jcr:created": "Tue Oct 22 2019 15:19:03 GMT+0000",
+  "cq:lastModified": "Tue Oct 22 2019 15:18:59 GMT+0000",
+  "jcr:baseVersion": "4bfaa78f-60c0-44ab-b49e-f46edb233912",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:uuid": "1869f122-6579-46f8-a078-0468fb334db1",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Thu Sep 12 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Sep-2019",
+    "jcr:lastModified": "Tue Oct 22 2019 15:18:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Forbes has named Stryker Chairman and CEO, Kevin Lobo, as one of America’s Most Innovative Leaders. Mr. Lobo is listed #33 on the list of 100 most creative and successful founders and CEOs of U.S. firms. Forbes ranked leaders based on criteria and methodology that included media reputation for innovation, social capital, track record and investor expectations for market value creation and innovation.</p>\n<p><span class=\"standalone-link\"><a href=\"https://www.forbes.com/lists/innovative-leaders/#60ad63da26aa\">See complete list here</a></span></p>\n",
+    "jcr:lastModified": "Wed Sep 11 2019 16:34:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

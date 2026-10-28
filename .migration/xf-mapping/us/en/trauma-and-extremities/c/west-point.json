@@ -1,0 +1,953 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Army West Point Athletics",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "40431d5b-efa6-42b1-b9d9-87ce84d928ea",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "jcr:predecessors": [
+    "a093eea8-4d5a-4a2f-a6b2-bd728cd9df21"
+  ],
+  "contentID": "AP-016894",
+  "lastPublished": "Tue Jul 14 2026 16:50:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 14 2026 16:50:18 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 14 2026 16:50:20 GMT+0000",
+  "cq:lastModified": "Tue Jul 14 2026 16:50:14 GMT+0000",
+  "jcr:baseVersion": "a093eea8-4d5a-4a2f-a6b2-bd728cd9df21",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:50:16 GMT+0000",
+  "hideInNav": "true",
+  "pageTitle": "Army West Point Athletics",
+  "jcr:lastModified": "Thu Sep 07 2023 04:54:15 GMT+0000",
+  "jcr:uuid": "2221b732-4d77-42bf-990a-1a6d5296b5ee",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "Army West Point Athletics",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTopLine": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "childrenNumber": "0",
+    "jcr:lastModified": "Thu Sep 07 2023 06:09:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "hideBottomLine": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Tue Aug 16 2022 18:05:39 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Aug 24 2022 15:31:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/trauma-and-extremities/en/campaigns/west_point/carousel-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/trauma-and-extremities/en/campaigns/west-point/carousel-hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/trauma-and-extremities/en/campaigns/west_point/carousel-hero/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/trauma-and-extremities/en/campaigns/west-point/carousel-hero/mobile",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "10",
+          "jcr:created": "Tue Aug 16 2022 18:06:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Sep 07 2023 05:59:28 GMT+0000",
+          "marginRight": "10",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Sun Aug 27 2023 21:13:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Get back</span></span><br />\r\n <span class=\"urw-egyptienne\"><span style=\"color: rgb(223,225,222);\">in the game</span></span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span style=\"color: rgb(223,225,222);\"><span class=\"fontsize-2vw\"><br>\r\n Rediscover the freedom of<br>\r\n movement with foot and ankle<br>\r\n solutions from Stryker.</span></span></span>",
+              "jcr:lastModified": "Thu Sep 07 2023 05:59:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_19271_1143339350": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 16:22:15 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 16:23:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 23 2023 16:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #dfe1de;\">To learn more about foot and ankle pain<br>\n </span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">find a surgeon in your area</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 07:10:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Aug 23 2023 16:22:29 GMT+0000",
+          "jcr:lastModified": "Wed Aug 23 2023 16:22:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 23 2023 16:22:45 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span style=\"color: #dfe1de;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Why does my foot hurt?<br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Is it time to take control of your foot pain?</span></span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 07 2023 06:15:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "preset": "max_width_png",
+              "linkExternal": "https://patients.stryker.com/foot-pain?cid=footandankle_WPlandingpage_WP2023_foothurt_stickymenu",
+              "jcr:created": "Wed Aug 23 2023 19:06:35 GMT+0000",
+              "alt": "Foot-Hurt-Button",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/button-findasurgeon.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 19:34:43 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "openInNewTab": "true",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Wed Aug 23 2023 16:22:52 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span style=\"color: #dfe1de;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Why does my ankle hurt?&nbsp;</span><br>\n </span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Arthritis may be at the bottom of your pain.</span></span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 07 2023 06:14:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "preset": "max_width_png",
+              "linkExternal": "https://patients.stryker.com/ankle-replacement/understanding-ankle-pain?cid=footandankle_WPlandingpage_WP2023_anklehurt_stickymenu",
+              "jcr:created": "Wed Aug 23 2023 18:52:21 GMT+0000",
+              "alt": "Ankle-Hurt-Button",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/button-findasurgeon.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 19:34:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "openInNewTab": "true",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "text_1180823908": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Sep 07 2023 07:09:32 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 07:09:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Thu Sep 07 2023 06:49:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Sep 07 2023 06:49:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_1545505853": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 15:58:42 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 15:58:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Sep 07 2023 06:16:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\">The foot and ankle partner</span><br />\r\n<span class=\"urw-egyptienne\">of Army West Point Athletics</span></span>",
+          "jcr:lastModified": "Thu Sep 07 2023 06:36:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "-2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 12 2022 18:13:22 GMT+0000",
+          "alt": "Stryker and Army West Point",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/Group 3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:41:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2019761346": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 12 2022 17:52:24 GMT+0000",
+      "jcr:lastModified": "Fri Aug 12 2022 17:52:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 12 2022 17:52:33 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Sep 07 2023 06:38:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/videos/2023-commercial-v1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/2023-commercial-v1-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Sep 07 2023 06:37:24 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_1039890549": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Sep 07 2023 06:17:32 GMT+0000",
+          "text": "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Limited mobility or repeated twists and sprains keeping you on the sidelines?</span></span><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><br>\n <span style=\"color: #ffb500;\">Don’t let pain hold you back.&nbsp;</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 25 2023 19:34:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 23 2023 16:01:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">As a global leader in medical technology, we are committed to making healthcare better. Our innovative foot and ankle products are designed to get you back in the game and on your feet.<br>\n</span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Stryker has joined forces with Army West Point Athletics to empower you with knowledge about foot and ankle pain and to provide potential solutions that may alleviate your discomfort.</span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Take the first step towards a brighter, more active future by finding a foot and ankle specialist in your area.</span></p>\n",
+          "jcr:lastModified": "Tue Jul 14 2026 16:50:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_2108621441": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 16:39:39 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 16:39:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 23 2023 18:33:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Find out more about</span><br>\n <span class=\"futura-bold\"><span style=\"color: #ffb500;\">foot and ankle treatment options</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 07:00:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 16:58:47 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 16:58:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "description": "Learn more about PROstep MIS and Lapifuse and take the next step in finding a surgeon.",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://patients.stryker.com/bunions?cid=footandankle_WPlandingpage_WP2023_bunions_image",
+          "jcr:created": "Wed Aug 23 2023 16:59:36 GMT+0000",
+          "alt": "IMAGE - Bunion Solutions",
+          "title": "Bunion solutions",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/BunionSolutions.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:42:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 07 2023 07:02:20 GMT+0000",
+          "CTATitle": "FIND A SURGEON - BUNIONS",
+          "CTAImageAltText": "Find A Surgeon - Bunions",
+          "ctaExternalLink": "https://patients.stryker.com/bunions.html?cid=footandankle_WPlandingpage_WP2026_Surgeon_Bunions",
+          "jcr:lastModified": "Mon Jul 13 2026 20:16:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "description": "Learn more about Total Ankle Replacement and take the next step in finding a surgeon.",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://patients.stryker.com/total-ankle-replacement?cid=footandankle_WPlandingpage_WP2023_tar_image",
+          "jcr:created": "Wed Aug 23 2023 16:59:42 GMT+0000",
+          "alt": "IMAGE - Ankle Arthritis",
+          "title": "Ankle arthritis solutions",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/AnkleArthirits.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:42:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 07 2023 07:02:20 GMT+0000",
+          "CTATitle": "FIND A SURGEON - ANKLE",
+          "CTAImageAltText": "BUTTON - Find A Surgeon - TAR",
+          "ctaExternalLink": "https://patients.stryker.com/ankle-replacement/understanding-ankle-pain?cid=footandankle_WPlandingpage_WP2026_anklehurt_stickymenu",
+          "jcr:lastModified": "Mon Jul 13 2026 20:17:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_1023003861_copy_1465818827": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_1129921954": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Dec 04 2023 20:38:25 GMT+0000",
+      "jcr:lastModified": "Mon Dec 04 2023 20:38:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://syklinks.com/2023-westpoint/",
+          "jcr:created": "Mon Dec 04 2023 20:43:04 GMT+0000",
+          "alt": "HospitalHustle",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/2023-westpoint/images/HospitalHustle.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 04 2023 20:52:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1023003861_copy_1730890888": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion",
+          "hiddenSelCompId": "fa-westpoint",
+          "componentUrl": "https://microapp.stryker.com/fa-westpoint/",
+          "jcr:created": "Mon Dec 04 2023 19:10:42 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/fa-westpoint/",
+          "jcr:lastModified": "Mon Dec 04 2023 20:45:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        }
+      }
+    },
+    "cols_1023003861_copy_761623258": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_2108621441_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 16:39:39 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 16:39:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 23 2023 18:33:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Patient Stories<br>\n </span></span><span class=\"urw-egyptienne\">Surgery patients share their before and after experiences.</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 06:40:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 07 2023 06:41:44 GMT+0000",
+      "jcr:lastModified": "Thu Sep 07 2023 06:41:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://vimeo.com/670327269/b3a48335f8",
+          "jcr:created": "Wed Aug 23 2023 16:41:00 GMT+0000",
+          "alt": "PatientStory-Carolyn",
+          "title": "Bunion treatment with ProStep Carolyn D",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/CarolynD.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:43:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://vimeo.com/670327354/ccf4485cec",
+          "jcr:created": "Wed Aug 23 2023 16:41:04 GMT+0000",
+          "alt": "PatientStory-Christina",
+          "title": "Bunion treatment with ProStep Christina T",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/ChristinaT.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:40:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://vimeo.com/713334461",
+          "jcr:created": "Wed Aug 23 2023 16:41:08 GMT+0000",
+          "alt": "PatientStory-StevenG",
+          "title": "Bunion treatment with LapiFuse Steven G",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/StevenG.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:40:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 07 2023 06:41:44 GMT+0000",
+      "jcr:lastModified": "Thu Sep 07 2023 06:41:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://stryker-assets.s3.us-west-2.amazonaws.com/stryker-fa/westpoint/2023-testimonial-videos/fa-westpoint-testimonial-jeff.mp4",
+          "jcr:created": "Wed Aug 23 2023 16:41:00 GMT+0000",
+          "alt": "PatientStory-JeffA",
+          "title": "Total Ankle - Jeff A",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/JeffA.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:40:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://stryker-assets.s3.us-west-2.amazonaws.com/stryker-fa/westpoint/2023-testimonial-videos/fa-westpoint-testimonial-drew.mp4",
+          "jcr:created": "Wed Aug 23 2023 16:41:04 GMT+0000",
+          "alt": "PatientStory-DrewB",
+          "title": "Total Ankle - Drew B",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/DrewB.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:41:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://stryker-assets.s3.us-west-2.amazonaws.com/stryker-fa/westpoint/2023-testimonial-videos/fa-westpoint-testimonial-robert.mp4",
+          "jcr:created": "Wed Aug 23 2023 16:41:08 GMT+0000",
+          "alt": "PatientStory-RobertM",
+          "title": "Charcot - Robert M",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/RobertM.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 19:43:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 20:20:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 20:20:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 12 2022 17:52:33 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "loopVal": "1",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Mon Dec 04 2023 20:48:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/videos/2023-5sec-v1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/2023-5sec-v1-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Thu Sep 07 2023 06:37:36 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 12 2022 18:12:10 GMT+0000",
+      "jcr:lastModified": "Fri Aug 12 2022 18:18:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_105907443": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Sep 07 2023 07:05:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 07:05:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 12 2022 18:12:30 GMT+0000",
+          "jcr:lastModified": "Thu Sep 07 2023 07:05:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Aug 12 2022 18:13:22 GMT+0000",
+              "alt": "Stryker and Army West Point",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/west-point/images/Group 3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 19:41:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 12 2022 18:12:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at stryker.com.<br>\n<br>\n &nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 07 2023 07:05:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "cols_880369379": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 12 2022 18:15:10 GMT+0000",
+      "jcr:lastModified": "Fri Aug 12 2022 18:15:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 12 2022 23:15:51 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 12 2022 23:15:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_470397842": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 12 2022 18:15:13 GMT+0000",
+      "jcr:lastModified": "Fri Aug 12 2022 18:15:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 12 2022 18:22:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Follow us on Social Media!&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 16 2022 18:30:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_761229970": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 12 2022 23:08:02 GMT+0000",
+      "jcr:lastModified": "Fri Aug 12 2022 23:08:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Aug 12 2022 23:13:35 GMT+0000",
+          "CTAImageAltText": "Social Media",
+          "jcr:lastModified": "Mon Sep 25 2023 19:41:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "LINKEDIN",
+              "externalLinkType": "ext"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.instagram.com/strykerfoot.ankle/",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "INSTAGRAM",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1725560453": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 18:53:59 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 18:53:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_1713251715": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 18:54:20 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 18:54:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Aug 12 2022 23:31:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Individual results and activity levels after surgery vary and depend on many factors including age, weight and prior activity level. There are risks and recovery times associated with surgery and there are certain individuals who should not undergo surgery. Only a physician can tell you if this product and associated procedure are right for you and your unique circumstances. Please consult with a physician for complete information regarding benefits, risks, anticipated implant duration and possible outcomes.</p>\r\n",
+    "jcr:lastModified": "Thu Sep 07 2023 04:54:37 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

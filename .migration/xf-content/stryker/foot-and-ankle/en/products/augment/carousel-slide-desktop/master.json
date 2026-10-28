@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Carousel slide desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b8cf14c2-5b3a-4b2d-b8ec-748aee9b4048",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "2ce84c8d-69fe-4cf8-90af-b0d25b46e8da"
+  ],
+  "lastPublished": "Thu Sep 12 2024 13:53:53 GMT+0000",
+  "jcr:created": "Thu Sep 12 2024 13:53:59 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 12 2024 13:54:04 GMT+0000",
+  "cq:lastModified": "Wed Sep 11 2024 20:07:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "2ce84c8d-69fe-4cf8-90af-b0d25b46e8da",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Sep 12 2024 13:53:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "43211b39-93f8-42d1-abbe-528cca46bc34",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Aug 19 2024 18:06:17 GMT+0000",
+      "alt": "fa-augment-carousel-image-hero-00",
+      "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-carousel-image-hero-00.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 11 2024 20:07:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

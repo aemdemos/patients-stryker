@@ -1,0 +1,761 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Bone cements and mixer and delivery systems",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "75f94f3f-8ba6-4d5b-ac37-cb9a668489e2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "thumbnailAltText": "XXX",
+  "jcr:predecessors": [
+    "d695542b-ba82-4db4-a203-07feb25d8c86"
+  ],
+  "contentID": "IVS-GSNPS-SYK-1983135_REV-0",
+  "lastPublished": "Mon Feb 02 2026 21:51:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 21:51:02 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 21:51:04 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 21:50:44 GMT+0000",
+  "jcr:description": "Explore our bone cements and mixer and delivery systems — AutoPlex M4 and a variety of bone cements including VertaPlex HV, VertaPlex and SpinePlex.",
+  "jcr:baseVersion": "d695542b-ba82-4db4-a203-07feb25d8c86",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:56:28 GMT+0000",
+  "pageTitle": "Bone cements and mixer and delivery systems",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/image-guided-therapies",
+    "stryker:capability/spine-ortho",
+    "stryker:portfolio/neurotechnology",
+    "stryker:capability/spine",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:services/procare/ivs",
+    "stryker:specialty/vertebral-augmentation",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/ivs",
+    "stryker:product/ivs/autoplex-mixer-delivery-system",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Sep 17 2025 11:49:11 GMT+0000",
+  "jcr:uuid": "cc465097-547e-4f43-be0d-f80545bfba18",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 14:25:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Bone cements and mixer and delivery systems</span></span></span></h1>\r\n",
+      "jcr:lastModified": "Thu Jul 10 2025 14:27:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_1907550356": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 15:22:39 GMT+0000",
+      "jcr:lastModified": "Thu Jul 10 2025 15:22:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jun 12 2025 14:25:27 GMT+0000",
+          "alt": "With the touch of a single button, AutoPlex M4 mixes and transfers highly viscous bone cement for delivery",
+          "srcFileRef": "/content/dam/stryker/ivs/products/autoplex-mixer-and-delivery-system/images/AutoPlex-M4_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 08 2025 17:28:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">AutoPlex<sup>®</sup> M4</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">With the touch of a single button, AutoPlex M4 mixes and transfers highly viscous bone cement for delivery in less than 60 seconds.<sup><a href=\"#references\">1</a></sup> You don't have to choose between efficiency and cement control. AutoPlex M4 is designed to help maximize both—giving you the automatic standard.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:13:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Cement-ready in less than 60 seconds<sup><a href=\"#references\">1</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Reduces radiation to the user by up to 99.7% compared to a bone filler device<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Flexible extension tube with swivel joint allows cement injection in multiple positions&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Easily connects to VertePort cement cannula&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Provides 11cc of deliverable cement<sup><a href=\"#references\">1</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Tactile feedback on delivery knob indicates 0.1cc of cement injection (0.8cc per 360˚ rotation)</span></li>\n</ul>\n<p><span class=\"fontsize-1em\">Please see <a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=04546540593108\">Instructions for Use (IFU)</a> for a complete listing of warnings, precautions and adverse events.</span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:14:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Features"
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 12 2025 14:26:07 GMT+0000",
+      "jcr:lastModified": "Thu Jun 12 2025 14:26:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1114972302_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jul 10 2025 15:20:09 GMT+0000",
+          "jcr:lastModified": "Thu Jul 10 2025 15:20:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jul 10 2025 15:20:21 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jul 10 2025 15:20:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jul 10 2025 15:20:23 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jul 10 2025 15:20:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 23 2023 18:59:33 GMT+0000",
+          "jcr:lastModified": "Wed Aug 23 2023 18:59:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">VertaPlex<sup>®</sup> HV bone cement</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">VertaPlex HV bone cement is used for treating vertebral compression fractures.<sup><a href=\"#references\">2</a></sup> It reaches a thick viscosity as soon as it's mixed and maintains viscosity for an average of 18 minutes.<sup><a href=\"#references\">3</a></sup></span></p>\n<p><span class=\"fontsize-1-25em\">VertaPlex HV cement was introduced in 2009 to address specific viscosity and working time preferences for physicians. In 2015, VertaPlex HV became the first polymethylmethacrylate (PMMA) cement in the U.S. to receive 510(k) clearance for the fixation of pathological fractures of the sacral vertebral body or ala using sacral vertebroplasty or sacroplasty.<sup><a href=\"#references\">4</a></sup></span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:14:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            },
+            "accordion_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+              "jcr:lastModified": "Thu Jun 12 2025 14:25:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/accordion",
+              "accordion_parsys1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "accPosId": 1,
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                  "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Immediate high viscosity after mixing<sup><a href=\"#references\">3</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Controlled interdigitation and fill<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Working time of approximately 18 minutes<sup><a href=\"#references\">3</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Set time 10.2 minutes at 37ºC<sup><a href=\"#references\">1</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Low creep rate<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Increased viscosity improves visibility<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">30% barium sulfate concentration</span></li>\n</ul>\n",
+                  "jcr:lastModified": "Mon Feb 02 2026 14:14:42 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "accordionsGrid": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "accPosId": "1",
+                  "accTitle": "Features"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jun 12 2025 14:28:41 GMT+0000",
+              "alt": "VertaPlex HV bone cement is used for treating vertebral compression fractures",
+              "srcFileRef": "/content/dam/stryker/ivs/products/autoplex-mixer-and-delivery-system/images/VertaPlex-HV_640x380.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 08 2025 17:28:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 17:34:40 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 17:34:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jun 12 2025 17:34:58 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jun 12 2025 17:35:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jun 12 2025 17:35:00 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jun 12 2025 17:35:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jul 10 2025 15:22:22 GMT+0000",
+      "jcr:lastModified": "Thu Jul 10 2025 15:22:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "jcr:lastModified": "Wed Aug 23 2023 18:59:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jun 12 2025 14:25:27 GMT+0000",
+          "alt": "VertaPlex bone cement has been developed for physicians who want low initial viscosity and increased working time",
+          "srcFileRef": "/content/dam/stryker/ivs/products/autoplex-mixer-and-delivery-system/images/VertaPlex-bone-cement_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 08 2025 17:28:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">VertaPlex<sup>®</sup> bone cement</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">VertaPlex bone cement has been developed for physicians who want low initial viscosity and increased working time. Advantageous for multilevel vertebral augmentation, VertaPlex bone cement maintains its toothpaste-like consistency for an average of 20 minutes.<sup><a href=\"#references\">3</a></sup></span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:14:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 14:28:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Increased working time – approximately 20 minutes<sup><a href=\"#references\">3</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Set time of 10.2 minutes at 37ºC<sup><a href=\"#references\">1</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Low creep rate<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">30% barium sulfate concentration</span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:15:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Features"
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 12 2025 14:26:07 GMT+0000",
+      "jcr:lastModified": "Thu Jun 12 2025 14:26:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1114972302_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jul 10 2025 15:20:09 GMT+0000",
+          "jcr:lastModified": "Thu Jul 10 2025 15:20:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jul 10 2025 15:20:21 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jul 10 2025 15:20:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jul 10 2025 15:20:23 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jul 10 2025 15:20:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 23 2023 18:59:33 GMT+0000",
+          "jcr:lastModified": "Wed Aug 23 2023 18:59:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">SpinePlex<sup>®</sup> bone cement</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">SpinePlex bone cement is a derivative of Simplex P bone cement and has an average working time of 10-12 minutes.<sup><a href=\"#references\">1</a></sup> It contains the same PMMA as Simplex P and is manufactured using the same proprietary process. Simplex P bone cement has proven through clinical testing to have high fatigue,<sup><a href=\"#references\">5</a></sup> compressive and flexural&nbsp;strengths<sup><a href=\"#references\">6</a></sup> and low creep.<sup><a href=\"#references\">7</a></sup></span></p>\n",
+              "jcr:lastModified": "Mon Feb 02 2026 14:15:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            },
+            "accordion_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Jun 12 2025 14:22:25 GMT+0000",
+              "jcr:lastModified": "Thu Jun 12 2025 14:25:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/accordion",
+              "accordion_parsys1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "accPosId": 1,
+                "text": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.shannon@stryker.com",
+                  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                  "jcr:created": "Thu Jun 12 2025 14:22:56 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Working time of 10-12 minutes<sup><a href=\"#references\">1</a></sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">30% barium sulfate concentration</span></li>\n</ul>\n",
+                  "jcr:lastModified": "Mon Feb 02 2026 14:15:31 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "accordionsGrid": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "accPosId": "1",
+                  "accTitle": "Features"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jun 12 2025 14:28:41 GMT+0000",
+              "alt": "SpinePlex bone cement is a derivative of Simplex P bone cement",
+              "srcFileRef": "/content/dam/stryker/ivs/products/autoplex-mixer-and-delivery-system/images/SpinePlex_640x380.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 09 2025 12:28:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 12 2025 17:34:40 GMT+0000",
+          "jcr:lastModified": "Thu Jun 12 2025 17:34:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jun 12 2025 17:34:58 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jun 12 2025 17:35:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jun 12 2025 17:35:00 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Jun 12 2025 17:35:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_2131375422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 15:56:48 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 15:56:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_1558264449": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Feb 02 2026 21:50:44 GMT+0000",
+      "jcr:lastModified": "Mon Feb 02 2026 21:50:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">Pain is unrelenting. But so are we.</span></h3>\n<p><span class=\"fontsize-1-25em\">Thank you for your interest in Stryker's Interventional Spine products—bold and innovative approaches for treating patients experiencing pain. Tell us how we can help by answering the following questions, and we’ll work to get you what you need.</span></p>\n<p><span class=\"fontsize-1-25em\">To place an order, contact your Stryker's Sales Representative or Stryker's Customer Service at 1 800 253 3210.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:15:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2945",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu Jun 05 2025 14:04:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span style=\"font-weight: normal;\"><span class=\"fontsize-1-25em\">Be in the know</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:15:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "references",
+      "jcr:created": "Thu Jun 12 2025 17:01:57 GMT+0000",
+      "title": "References",
+      "jcr:lastModified": "Thu Jun 12 2025 17:04:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:21:27 GMT+0000",
+      "text": "Resources Explore Interventional Spine homepage About us Learn Training and education Physician resources Indications for use Portfolios Advanced pain therapies Bone tumor ablation Vertebral augmentation Support Contact information Reimbursement Grants and donations",
+      "jcr:lastModified": "Tue Oct 21 2025 15:22:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/footer-links/master"
+    },
+    "cols_2010906870": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:30:55 GMT+0000",
+      "jcr:lastModified": "Tue Oct 21 2025 15:30:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Tue Sep 17 2019 19:46:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Stryker data on file.</li>\r\n<li>Stryker Corporation. VertaPlex HV Radiopaque Bone Cement Instructions for Use 0406-622-715 Rev-AD. Retrieved on July 30, 2025 from <a href=\"https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=07613252254430\">https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=07613252254430</a></li>\r\n<li>Independent lab results from Fluid Dynamics Inc commissioned by Stryker (July 2009). Testing conducted at 20-21 ˚C (68-70 ˚F).</li>\r\n<li>U.S. Food and Drug Administration. (2020). 510(k) Premarket Notification: K192818 - OptaBlate RF Ablation Probe. Retrieved on July 30, 2025 from <a href=\"https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=k192818\">https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=k192818</a></li>\r\n<li>Davies J et al. The effect of centrifuging bone cement. J Bone Joint Surg Br. 1989; 71(1):39-42.</li>\r\n<li>Hansen D and Jensen J. Mixing does not improve mechanical properties of all bone cements. Manual and centrifugation-vacuum mixing compared for 10 cement brands. Acta Orthop Scand 1992; 63(1): 13-18.</li>\r\n<li>Holm N. The relaxation of some acrylic bone cements. Acta Orthop Scand. 1980; 51(5):727-31.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Aug 08 2025 17:24:28 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ivs/products/autoplex-mixer-and-delivery-system/images/AutoPlex-M4_1200x680.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Features</span></span></p>\n<p><span class=\"futura-bold\">Mixing</span></p>\n<ul>\n<li>Automated and blade-driven mix chamber provides consistent and thorough blending of components.<br>\n</li>\n</ul>\n<p><span class=\"futura-bold\">Delivery</span></p>\n<ul>\n<li>Lightweight, ergonomic delivery injector</li>\n<li>Provides 12 cc of deliverable cement<sup>1</sup></li>\n<li>Closed mixing, transfer, and delivery system prevents exposure to harmful fumes</li>\n<li>Flexible extension tube and delivery cartridge, totaling 16&quot; in length, helps ensure radiation safety</li>\n<li>Easily connects to access tool</li>\n<li>Delivers 0.5 cc per full turn<sup>1</sup></li>\n<li>Simple and reliable handheld injection<br>\n</li>\n</ul>\n",
+    "jcr:lastModified": "Wed Aug 23 2023 19:07:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://providers.strykerivs.com/products/cements-and-mixer-and-delivery-systems#autoplex-mixer-and-delivery-system",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Aug 23 2023 19:07:22 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Additional Resources",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 23 2023 19:07:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 23 2023 19:07:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 12 2025 17:33:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PSA Video",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3e119b32-f42b-4d76-b32e-0b6e3ce39bf4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1ab819e8-3118-4416-ba58-997ba9ff494e"
+  ],
+  "lastPublished": "Mon Sep 29 2025 21:29:47 GMT+0000",
+  "jcr:created": "Mon Sep 29 2025 21:29:47 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 29 2025 21:29:49 GMT+0000",
+  "cq:lastModified": "Mon Sep 29 2025 21:24:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1ab819e8-3118-4416-ba58-997ba9ff494e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Sep 29 2025 13:40:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1fbe0b1a-7c2f-443f-82d4-f8b742b7f927",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage42631": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Tue Sep 09 2025 15:19:46 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage426314263360161881033": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Sudden cardiac arrest can happen to anyone, anywhere",
+        "srcFileRef": "/content/dam/stryker/ems/community-public-safety/images/SCAA-PSA-video-thumbnail_1840x1067.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Sep 29 2025 21:24:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/emergency-care/news/2025/sudden-cardiac-arrest-awareness-and-preparation",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text4263138006382769": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "A",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Tue Sep 09 2025 15:19:48 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text42631380063827694263362736594748": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Hold on to the moments that matter</span></span></h2>\n<h2>Be ready to act when sudden cardiac arrest strikes</h2>\n<p><span class=\"fontsize-1-25em\">Life is built from small moments—coffee before sunrise, sideline cheers, a hand squeezed at the right time. Sudden cardiac arrest can happen to anyone, anywhere, interrupting those moments without warning.&nbsp;Our latest video shows us what’s worth protecting and how being prepared can help.</span></p>\n",
+        "jcr:lastModified": "Thu Sep 18 2025 19:33:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "bottomMargin": "5"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "curatedcta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Tue Sep 09 2025 15:36:56 GMT+0000",
+        "CTATitle": "Read More",
+        "ctaDeepLinkID": "#psa-video",
+        "jcr:lastModified": "Mon Sep 29 2025 18:22:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgb(255,181,0)",
+        "ctaInternalLink": "/content/stryker/us/en/emergency-care/news/2025/sudden-cardiac-arrest-awareness-and-preparation"
+      },
+      "text4263138006382769": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "5",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/us/en/emergency-care/celebrate-survivors.html\"><span class=\"standalone-link\">Tell us your cardiac arrest story</span></a></span></p>\n<p style=\"text-align: right;\">EC-GSNPS-SYK-2235972</p>\n",
+        "jcr:lastModified": "Tue Sep 09 2025 15:38:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    }
+  }
+}

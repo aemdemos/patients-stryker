@@ -1,0 +1,138 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Healthcare supply chain management and SSS: Partners in successful reprocessing",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "25535cba-e83e-43f4-b669-a30dea1a0296",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sustainability/images/Oct Supplier LinkedIn.png",
+  "jcr:predecessors": [
+    "5558d10a-13f9-4b74-b56c-c27ceae355db"
+  ],
+  "contentID": "SSS-GSNPS-ARTI-1355491",
+  "lastPublished": "Tue Aug 18 2026 20:04:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:04:08 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:04:10 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:04:04 GMT+0000",
+  "jcr:baseVersion": "5558d10a-13f9-4b74-b56c-c27ceae355db",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 10 2024 14:29:44 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Sep 23 2024 22:17:22 GMT+0000",
+  "jcr:uuid": "f834a03e-08e7-4791-8822-ed191fb4e13f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "2759",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Tue Mar 19 2024 21:52:53 GMT+0000",
+      "message": "SSS will be in contact with your soon. Thank you. ",
+      "jcr:lastModified": "Tue Mar 19 2024 21:53:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:00:39 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:00:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+      "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+      "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:03:34 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:03:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "publishDate": "Thu Oct 10 2024 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Oct-2024",
+    "jcr:lastModified": "Thu Oct 10 2024 14:26:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "text": "<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">At Stryker's Sustainability Solutions (SSS), we know that efficient supply chain management is critical to a hospital’s bottom line and to its patient care. Today, we’re working with supply chain teams at roughly 3,250 health care facilities across the U.S. and Canada to ensure that our reprocessed medical devices are on hand and can flow seamlessly into physicians’ hands when needed. In the past five years alone, our reprocessed medical devices have supported the health and well-being of 90.8 million patients.<sup>1</sup></span></span></p>\n<h4><br>\nMedical device reprocessing: a critical link in supply chains</h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Medical device reprocessing is a valuable practice for hospital supply chain management teams. Reprocessing allows hospitals to reduce expenditures on single-use devices by reusing approved devices.<sup><span class=\"fontsize-8em\">1</span></sup> Because reprocessed medical devices are regulated by the FDA and must meet strict safety and quality standards, cost savings can be achieved without compromising the quality of care.&nbsp;</span></span></p>\n<h4><br>\nBenefits start with the bottom line</h4>\n<p><span class=\"fontsize-1-25em\">Over the last five years, our partnerships with healthcare supply chain managers have saved hospitals $1 billion.<span class=\"fontsize-8em\"><sup>1</sup> </span>Those savings can go a long way toward helping hospitals allocate resources more efficiently and invest in critical areas. Reprocessing also plays a huge role in helping hospitals reduce waste<sup><span class=\"fontsize-1em\"><span class=\"fontsize-8em\">2</span></span></sup> and meet their commitments to environmental sustainability goals. In the last five years, Stryker Sustainability Solutions’ partnerships with healthcare facilities have diverted 26 million pounds of waste from landfills.<sup><span class=\"fontsize-8em\">1</span></sup></span></p>\n<h4><br>\nCollaboration, collection, success</h4>\n<p><span class=\"fontsize-1-25em\">At SSS, we dedicate an entire support team to each of our partner facilities to help health care supply chain management maximize and standardize device collections throughout the hospital. Together, with hospital staff, our teams determine optimal collection points, manage communication and training within the hospital and ensure the timely removal and replacement of containers. We understand that the sooner we collect used devices, the sooner we can get them back into inventory, reducing the risk of stock-outs. Over the last five years, our collections have resulted in the successful reprocessing of 145.2 million single-use medical devices.<sup><span class=\"fontsize-8em\">1</span></sup></span></p>\n<h4><br>\nManaging inventory for cases</h4>\n<p><span class=\"fontsize-1-25em\">A successful reprocessing program can also be instrumental in helping health care supply chain managers optimize inventory management. Programs give supply chain managers greater visibility and control over the inventory required for cases. In addition to reducing waste<sup>1</sup> and optimizing storage, this allows supply chain managers to be more strategic in purchasing decisions and to command better pricing from suppliers. Money saved can be redirected to patient care, equipment upgrades or other crucial areas.</span></p>\n<h4><br>\nGive your hospital’s sustainability goals the green light</h4>\n<p><span class=\"fontsize-1-25em\">Health care supply chain managers wear many hats. At SSS, we work hard to make sure reprocessing doesn’t add to their workload. Instead, we focus on helping our partners streamline workflows, reduce costs, improve inventory management and maintain high quality. We believe that reducing a hospital's carbon footprint is a natural by-product of smart business decisions that include the high-quality medical device reprocessing that only SSS provides.&nbsp;<br>\n</span></p>\n<p><span class=\"fontsize-1-25em\">Want to learn more about how SSS help your facility implement a reprocessing program?&nbsp;Connect with SSS today by filling out the form below. An experienced SSS representative will reach out to you.&nbsp;</span></p>\n<p><br>\n<sup>1</sup>Internal Data&nbsp;</p>\n<p><sup>2</sup>AMDR. (n.d.). Best practices from top reprocessing hospitals. https://amdr.org/portfolio-items/best-practices-from-top-reprocessing-hospitals/</p>\n",
+    "jcr:lastModified": "Thu Oct 10 2024 14:28:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Oct Supplier LinkedIn",
+    "srcFileRef": "/content/dam/stryker/sustainability/images/Oct Supplier LinkedIn.png",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Sep 23 2024 19:51:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

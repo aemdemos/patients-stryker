@@ -1,0 +1,216 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "ProCare services",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Equipment management systems",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "948195ff-ac23-44e0-88da-71754ca1253c",
+  "cq:template": "/apps/stryker/templates/packagedetail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "db3f56dd-4048-4c69-915e-52ecc71a0b8c"
+  ],
+  "contentID": "Literature Number: 1000902502, Rev. A",
+  "lastPublished": "Mon Jun 29 2026 19:33:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 19:33:24 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 19:33:26 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 19:33:18 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Stryker’s ProCare service programs are committed to helping you perform your job more efficiently while enhancing patient care delivery. We provide solutions intended to maximize the life and value of your investments and to create opportunities for better patient outcomes.",
+  "jcr:baseVersion": "db3f56dd-4048-4c69-915e-52ecc71a0b8c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:33:23 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/system",
+    "stryker:business-unit/communications",
+    "stryker:system/communications",
+    "stryker:services/procare/communications",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 25 2017 16:46:26 GMT-0400",
+  "jcr:uuid": "2dee70c7-c207-481b-b071-d29e63c7f46f",
+  "sling:resourceType": "stryker/components/structure/pages/packagedetail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 16 2017 17:55:05 GMT-0400",
+      "compImageRef": "/content/dam/stryker/communications/services/procare/images/ProCareHero-CustomizedSuspension.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Wed Aug 16 2017 17:18:48 GMT-0400",
+      "jcr:lastModified": "Wed Aug 16 2017 17:18:48 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Wed Aug 16 2017 17:55:59 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/endoscopy/services/procare/images/ProCare-2thirdTitles-Noperiod.jpg",
+          "jcr:lastModified": "Wed Aug 23 2017 11:47:32 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><th width=\"50%\" scope=\"row\" style=\"text-align: left;\">ProCare service</th>\n<th width=\"25%\" scope=\"row\" style=\"text-align: center;\">Protect</th>\n<th width=\"25%\" scope=\"row\" style=\"text-align: center;\">Prevent</th>\n</tr><tr><td>Priority response</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*<br>\n</td>\n</tr><tr><td>Unlimited service calls and repairs<br>\n<i>Some repairs not covered under Protect service contract option.<br>\n See Non-Warranty Repair List for more information</i></td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>Replacement parts and shipping</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>Mobile inventory</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>Specialized Stryker service technician</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>Labor and travel of service technician ($1250 value)</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>6:30AM - 6:00PM CST technical phone support</td>\n<td style=\"text-align: center;\">*</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>24/7 technical phone support</td>\n<td>&nbsp;</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>One seat at First Responder Training</td>\n<td style=\"text-align: center;\">&nbsp;</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>Access to BioMed portal</td>\n<td style=\"text-align: center;\">&nbsp;</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td><b>Preventative maintenance</b><br>\n<i>Annual inspection and repair on covered equipment</i></td>\n<td>&nbsp;</td>\n<td style=\"text-align: center;\">*</td>\n</tr><tr><td>PM Documentation for Joint Commission, DNV CMS</td>\n<td style=\"text-align: center;\">&nbsp;</td>\n<td style=\"text-align: center;\">*</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Wed Aug 16 2017 18:37:14 GMT-0400",
+          "jcr:lastModified": "Wed Aug 23 2017 11:47:47 GMT-0400",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "jcr:created": "Fri Aug 11 2017 17:51:28 GMT-0400",
+      "title": "Covered products",
+      "jcr:lastModified": "Wed Aug 23 2017 11:48:17 GMT-0400",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Customized suspension solutions",
+          "groupTag": "/etc/tags/stryker/services/procare/communications/customized-suspension-solutions"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:33:18 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:33:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:33:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:33:10 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Email us for additional information",
+    "linkType": "dam",
+    "sling:resourceType": "stryker/components/content/secondarycta",
+    "damLink": "mailto:commprocareservice@stryker.com"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Wed Aug 16 2017 17:13:22 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Transport",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "cc7ccde5-8d9c-41d0-a382-875eb124a2cc",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0a8dd7ce-5281-4205-a0fc-50dd4030f1b3"
+  ],
+  "lastPublished": "Wed Aug 28 2024 13:25:07 GMT+0000",
+  "jcr:created": "Wed Aug 28 2024 13:25:07 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 28 2024 13:25:09 GMT+0000",
+  "cq:lastModified": "Wed Aug 28 2024 12:17:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0a8dd7ce-5281-4205-a0fc-50dd4030f1b3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Aug 28 2024 13:25:07 GMT+0000",
+  "jcr:uuid": "6952b141-6a36-4ed5-acc6-fc37c5c54f64",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jun 11 2024 15:03:10 GMT+0000",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Transport patients safely and confidently</span></span></h2>\n",
+      "jcr:lastModified": "Tue Jun 11 2024 18:00:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1102": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:lastModified": "Tue Jun 11 2024 16:45:12 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_11024055144141868631": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "EMTs transporting a Power-PRO 2 powered amublance stretcher ",
+        "srcFileRef": "/content/dam/stryker/ems/images/Power-PRO_2_Product_Lifestyle_440x258.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Aug 28 2024 12:16:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__1915619358": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><a href=\"/content/stryker/us/en/emergency-care/products/power-pro-2.html\" target=\"_self\"><span class=\"fontsize-1-5em\"><span class=\"standalone-link\">Power-PRO 2</span></span></a><br>\n</p>\n<p><span class=\"fontsize-1-25em\">Powered ambulance cot</span></p>\n",
+        "jcr:lastModified": "Sun Jul 21 2024 13:04:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_1102_1957927028": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:lastModified": "Tue Jun 11 2024 16:47:53 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+        "alt": "First responders using an Xpedition powered stair chair to transport a patient",
+        "srcFileRef": "/content/dam/stryker/ems/images/Xpedition_Product_Lifestyle-stairs-loading_440x258.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Aug 28 2024 12:16:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><a href=\"/content/stryker/us/en/emergency-care/products/xpedition-powered-stair-chair.html\" target=\"_blank\"><span class=\"standalone-link\">Xpedition</span></a></span></p>\n<p><span class=\"fontsize-1-25em\">Powered stair chair</span></p>\n",
+        "jcr:lastModified": "Sun Jul 21 2024 13:00:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+      "jcr:lastModified": "Sun Jul 21 2024 12:54:43 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy2907328652751547": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Power-LOAD in the back of an ambulance",
+        "srcFileRef": "/content/dam/stryker/ems/images/Power-LOAD_Product_Lifestyle_440x258.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Aug 28 2024 12:16:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Sun Jul 21 2024 12:55:24 GMT+0000",
+        "text": "<p><span class=\"fontsize-1-5em\"><a href=\"/content/stryker/us/en/emergency-care/products/power-load.html\" target=\"_blank\"><span class=\"standalone-link\">Power-LOAD</span></a></span></p>\n<p><span class=\"fontsize-1-25em\">Powered cot fastener</span></p>\n",
+        "jcr:lastModified": "Sun Jul 21 2024 13:01:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_copy_650193277": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Sun Jul 21 2024 12:55:04 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_6501932772907349802739279": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "EMT loading a Power-PRO XT powered ambulance cot into an ambulance",
+        "srcFileRef": "/content/dam/stryker/ems/images/Power-PRO_XT_Product_Lifestyle_440x258.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Aug 28 2024 12:17:32 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Sun Jul 21 2024 12:55:24 GMT+0000",
+        "text": "<p><span class=\"fontsize-1-5em\"><a href=\"/content/stryker/us/en/emergency-care/products/power-pro-xt.html\" target=\"_blank\"><span class=\"standalone-link\">Power-PRO XT</span></a></span></p>\n<p><span class=\"fontsize-1-25em\">Powered ambulance cot</span></p>\n",
+        "jcr:lastModified": "Sun Jul 21 2024 13:03:29 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

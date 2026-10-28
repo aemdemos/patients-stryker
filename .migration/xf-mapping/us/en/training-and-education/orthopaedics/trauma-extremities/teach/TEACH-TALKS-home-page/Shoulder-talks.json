@@ -1,0 +1,408 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Tips and tricks for glenoid exposure",
+  "jcr:versionHistory": "e8d8f8f9-2049-45b0-9d2f-242041a651e6",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:predecessors": [
+    "f4e34b21-720c-4cb8-afe5-990c1e418c9e"
+  ],
+  "contentID": "CP-AWI-33, 07-2019",
+  "lastPublished": "Thu Feb 27 2020 19:54:07 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Feb 27 2020 19:54:07 GMT+0000",
+  "cq:lastModified": "Thu Feb 27 2020 17:09:59 GMT+0000",
+  "jcr:baseVersion": "f4e34b21-720c-4cb8-afe5-990c1e418c9e",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Feb 27 2020 17:09:59 GMT+0000",
+  "jcr:uuid": "0aec9355-69de-40e3-af19-bc5e98789b4a",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+      "jcr:lastModified": "Tue Oct 01 2019 15:30:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:12:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"fontsize-1em\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\">Shoulder</span></span> </span></span><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">Talks:</span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:25:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "largeheadline_88636828": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #ffb500;\">Tips and tricks</span></span> </span></span><span class=\"urw-egyptienne\">for glenoid exposure</span></span>",
+      "jcr:lastModified": "Wed Sep 11 2019 20:18:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:25:49 GMT+0000",
+          "type": "typeId",
+          "videoId": "R8YJ_C5txuU",
+          "jcr:lastModified": "Tue Oct 01 2019 13:25:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:43:16 GMT+0000",
+          "text": "<p><b>Description:</b> Glenoid Exposure can be one of the most challenging elements of shoulder arthroplasty. Tune in to Dr. Willis’s class for his personal experience getting to the glenoid with these simple and quick steps.</p>\n<p><b>Learning objective:</b><br>\n• Simple, step by step glenoid exposure<br>\n• Subscapularis Management<br>\n• Lesser Tuberosity Osteotomy Technique<br>\n• High-level overview of retractor placement</p>\n<p><b>Course instructor:</b> Matthew Willis, MD</p>\n",
+          "jcr:lastModified": "Tue Oct 01 2019 15:49:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">TE<span style=\"color: #000000;\">ACH&nbsp;</span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Talks: Course overview</span></span></span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:26:19 GMT+0000",
+          "type": "typeId",
+          "videoId": "rOx5lOqWwzc",
+          "jcr:lastModified": "Tue Oct 01 2019 13:26:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 1: </span><b>Positioning you patient and the Deltopectoral Approach</b></p>\n",
+          "jcr:lastModified": "Wed Sep 11 2019 19:49:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/ReUnion-S.html\" target=\"_blank\">ReUnion S</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2019 14:22:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:26:42 GMT+0000",
+          "type": "typeId",
+          "videoId": "O-fxAmOv19s",
+          "jcr:lastModified": "Tue Oct 01 2019 13:26:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 2:</span> <b>Subscapularis Management and Humeral Sided Releases</b></p>\n<p><b>• Section 1</b> - Subscapularis – Lesser Tuberosity Osteotomy&nbsp;</p>\n<p><b>• Section 2</b> - Important Releases on the Humerus<br>\n</p>\n",
+          "jcr:lastModified": "Wed Sep 11 2019 20:27:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/ReUnion-S.html\" target=\"_blank\">ReUnion S</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2019 14:22:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_833133784": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:49:50 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:49:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:27:38 GMT+0000",
+          "type": "typeId",
+          "videoId": "-LFiSvpTpfw",
+          "jcr:lastModified": "Tue Oct 01 2019 13:27:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:27:58 GMT+0000",
+          "type": "typeId",
+          "videoId": "0CynRgDMo_0",
+          "jcr:lastModified": "Tue Oct 01 2019 13:28:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 3:</span><b> Maximizing your Humeral Head Cut</b><br>\n</p>\n",
+          "jcr:lastModified": "Wed Sep 11 2019 20:27:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/ReUnion-S.html\" target=\"_blank\">ReUnion S</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2019 14:22:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 4: </span><b>Tips for Gleonohumeral Exposure</b><br>\n</p>\n",
+          "jcr:lastModified": "Wed Sep 11 2019 19:53:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/ReUnion-S.html\" target=\"_blank\">ReUnion S</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2019 14:22:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_2118327026": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:50:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:50:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:27:38 GMT+0000",
+          "type": "typeId",
+          "videoId": "RKXth9zuvsc",
+          "jcr:lastModified": "Tue Oct 01 2019 15:28:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 5:</span><b>&nbsp;Protecting the neurovascular bundle during glenoid exposure</b><br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 01 2019 15:49:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/ReUnion-S.html\" target=\"_blank\">ReUnion S</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Sep 27 2019 14:22:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Sep 11 2019 19:39:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Drs. Adams, Palanca and Willis are paid consultants of Stryker. The opinions expressed during their presentation are those of Drs. Adams, Palanca and Willis and not necessarily \u0003those of Stryker. Individual results may vary. The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical \u0003judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained \u0003in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.</p>\r\n",
+    "jcr:lastModified": "Wed Oct 30 2019 19:30:53 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

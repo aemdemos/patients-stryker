@@ -1,0 +1,259 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b165a011-2356-4161-b304-458d1c4f50a6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "83e1aa7a-5e07-46d4-bdc7-7ed96efd3288"
+  ],
+  "lastPublished": "Thu Jun 04 2026 14:16:08 GMT+0000",
+  "jcr:created": "Thu Jun 04 2026 14:16:09 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 04 2026 14:16:13 GMT+0000",
+  "cq:lastModified": "Thu Jun 04 2026 13:35:16 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "83e1aa7a-5e07-46d4-bdc7-7ed96efd3288",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:16:08 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "391c11df-f711-4755-97e6-661ed49cc6a2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Our commitment to cybersecurity</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:55:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>Security is a foundational and fundamental aspect of Stryker's technology programs as established in Corporate Policy 11 Global Privacy and Data Protection. Our senior leadership team meets with our Board of Directors regularly and the Corporate Compliance Committee multiple times a year to provide cybersecurity updates.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Jun 04 2026 13:35:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 20:31:26 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 24 2021 20:31:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Cybersecurity overview</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:55:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy_656403845": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>Our cybersecurity program leverages a defense-in-depth strategy that is supported by a highly experienced team of cybersecurity experts. Our team follows leading industry cybersecurity practices and methodologies and leverages Artificial Intelligence and Machine Learning to provide state-of-the-art global cybersecurity protection.</p>\n<p>We have strong relationships with government partners, cybersecurity industry partners and security researchers to enhance our cybersecurity profile across our highly regulated and controlled infrastructure for facilities, data and assets. Some of our key memberships include:</p>\n<ul>\n<li>Gartner Institute Research Board (IRB) for Enterprise Risk Executives and CISO’s Health-ISAC<br>\n</li>\n<li>CISO Coalition<br>\n</li>\n<li>Critical Manufacturing Sector<br>\n</li>\n<li>Sector Coordinating Council<br>\n</li>\n<li>Cybersecurity and Infrastructure Security Agency (CISA)<br>\n</li>\n<li>Department of Homeland Security (DHS)<br>\n</li>\n<li>Anti-Terrorism Advisory Council (ATAC)<br>\n</li>\n<li>Cincinnati CISO Roundtable<br>\n</li>\n<li>Infragard Chicago HealthCare ISAC<br>\n</li>\n</ul>\n<p>Cybersecurity at Stryker is a multi-faceted program. Our program includes a Tier 1 and Tier 2 Security Operations and Cyber Fusion Center that monitors and detects threat activity 24/7 to proactively gather, analyze and act upon relevant intelligence to defend Stryker, including risk management, compliance assurance, regulatory and audit. The program also includes teams dedicated to digital product security and traditional product security and a global incident response plan.</p>\n<p>Our program conducts security-related exercises quarterly to improve our ability to provide coverage for our digital products and corporate infrastructure, the safeguarding of data and incident response. In addition, our Quality Management Program includes internal and external security reviews of products and systems, and security and privacy by design.</p>\n",
+      "jcr:lastModified": "Tue Mar 30 2021 15:31:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_689510266": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 20:31:26 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 24 2021 20:31:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_563392076": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Our certifications</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:56:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy_478724158": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>Our security team holds approximately 120 security security, risk and compliance certifications including:</p>\n<ul>\n<li>2 Cloud Security Professionals (CCSP)<br>\n</li>\n<li>1 Certified Protection Professional (CPP)<br>\n</li>\n<li>33 Certified Ethical Hackers (CEH)<br>\n</li>\n<li>9 Certified Information System Security Professional (CISSP)<br>\n</li>\n<li>4 Certified Chief Information Security Officer (C|CISO)<br>\n</li>\n<li>1 Certified IT System Risk (CRISC)<br>\n</li>\n<li>2 ISO 27001 (International Security Standards)<br>\n</li>\n<li>3 Certified Information System Auditors (CISA)<br>\n</li>\n<li>2 Certified Information System Manager (CISM)<br>\n</li>\n</ul>\n",
+      "jcr:lastModified": "Thu Jun 04 2026 13:26:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_878367835": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 20:31:26 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 24 2021 20:31:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_609193367": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Training and awareness</span>&nbsp;</span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:56:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy_304978436": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>We have implemented annual mandatory security education to help employees understand security risks and comply with our policies. Additionally, we provide frequent communications around pertinent security topics and policies to all employees. These include formal and awareness training such as newsletter articles, direct email, posters, digital signage, town halls and presentations. We provide additional security and data protection training and awareness of specific topics consistent with employee roles.<br>\n</p>\n",
+      "jcr:lastModified": "Fri Mar 26 2021 17:39:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_934349742": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 20:31:26 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 24 2021 20:31:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_2097789327": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Third-party security</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:56:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy_1062975343": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>We conduct cybersecurity and privacy assessments on all third parties who integrate with Stryker’s data, network, systems and products. We use a combination of our Security Operations Center and external tools to help ensure that these third parties meet security requirements. We leverage standard industry threat model and privacy impact assessment concepts to help ensure data minimization and adequate data protections are in place.</p>\n<p>We perform supplemental reviews commensurate with the risk associated with each vendor.<br>\n</p>\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:53:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1603871703": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 20:31:26 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 24 2021 20:31:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_1048656359": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Mar 24 2021 19:48:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Product security&nbsp;</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:56:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy_135470331": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 19 2017 09:46:21 GMT-0400",
+      "text": "<p>Product security is dedicated to the safety and security of our global products. Product security is an integral part of our holistic global security program.</p>\n<p>We utilize a continuous improvement approach focused on enhancements to the software development lifecycle and new technical capabilities that reinforce the effectiveness of defense-in-depth security controls used to protect our products.<br>\n</p>\n",
+      "jcr:lastModified": "Fri Mar 26 2021 13:59:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_170992698_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Mar 15 2021 18:38:25 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>For more information on product security, advisories and notifications, please follow this <a href=\"/content/stryker/us/en/about/governance/cyber-security.html\">link</a>.</p>\n",
+      "jcr:lastModified": "Thu Jun 04 2026 13:33:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_854792732": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 10 2022 18:09:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-8em\">COMM-GSNPS-SYK-3405000</span><br>\n</p>\n",
+      "jcr:lastModified": "Wed May 27 2026 20:32:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Strategies for Reducing Falls in the ED",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fe44fe0e-59da-4d58-a2f6-383a04a356e6",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "nurse looking back toward patient getting out of hospital bed",
+  "jcr:predecessors": [
+    "a4b501e3-a09d-4922-b4ce-21254666573a"
+  ],
+  "lastPublished": "Wed Sep 03 2025 13:59:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 03 2025 13:59:47 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 03 2025 13:59:50 GMT+0000",
+  "cq:lastModified": "Wed Sep 03 2025 13:30:58 GMT+0000",
+  "jcr:description": "In this educational webinar we will share eye-opening statistics, discuss human and financial costs of falls, identify risk factors and interventions, and focus on evidence-based practices in the utilization of technology for prevention of patient falls.",
+  "jcr:baseVersion": "a4b501e3-a09d-4922-b4ce-21254666573a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:54:31 GMT+0000",
+  "jcr:lastModified": "Wed Sep 03 2025 13:30:58 GMT+0000",
+  "jcr:uuid": "d19eabae-1983-45ed-a983-d8309b1dd354",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 13 2024 17:25:23 GMT+0000",
+      "jcr:lastModified": "Tue Feb 13 2024 17:25:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1283327520_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Thu Sep 10 2020 15:10:39 GMT+0000",
+      "jcr:lastModified": "Thu Sep 10 2020 15:10:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
+          "alt": "nurse assisting patient getting out of prime connect stretcher",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/strategies-for-reducing-falls-in-the-ed/images/prime-connect-fall-reduciton-strategory_1440x816.jpg",
+          "jcr:lastModified": "Tue Sep 02 2025 20:49:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_908007915_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Strategies for Reducing Falls in the ED</span></span></span></span></span></span></h1>\n<p><span class=\"fontsize-1-25em\">As more and more patients enter the hospital through the ED, emergency nurses are not only tasked with saving lives in emergencies – but they’re also responsible for keeping patients safe from adverse outcomes such as falls. In this educational webinar we will share eye-opening statistics, discuss human and financial costs of falls, identify risk factors and interventions, and focus on evidence-based practices in the utilization of technology for prevention of patient falls.<br>\n</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Course Objectives:</b></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Distinguish between the different types of falls</span></li>\n<li><span class=\"fontsize-1-25em\">Discuss human and financial costs of a fall</span></li>\n<li><span class=\"fontsize-1-25em\">Identify ED-specific risk factors for falls</span></li>\n<li><span class=\"fontsize-1-25em\">Discuss evidence-based fall prevention practices in the emergency department</span></li>\n<li><span class=\"fontsize-1-25em\">Discuss integration of technology into fall and injury prevention practices</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 03 2025 13:30:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "10",
+          "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-2em\"><span class=\"futura-bold\">Register now</span> to watch the webinar!</span></h3>\n",
+          "jcr:lastModified": "Wed Nov 30 2022 18:22:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 30 2022 18:13:17 GMT+0000",
+          "jcr:lastModified": "Wed Nov 30 2022 18:13:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "redirectToPage",
+          "formId": "2921",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "redirectPage": "/content/stryker/us/en/acute-care/c/strategies-for-reducing-falls-in-the-ed/webinar",
+          "jcr:lastModified": "Fri Aug 01 2025 14:52:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Sep 10 2020 13:30:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Presented by:</span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 30 2022 16:51:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 30 2022 16:46:03 GMT+0000",
+          "alt": "Zachary Allan headshot",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/strategies-for-reducing-falls-in-the-ed/images/zachary-allan.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 12 2024 20:41:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__761489890": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Sep 10 2020 13:30:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">Zachary Allan</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">MHA, MSN, RN, CEN, PHRN<br>\n Emergency Services, Allegheny Health Network</span></p>\n",
+          "jcr:lastModified": "Mon Feb 12 2024 20:32:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/campaigns/strategies-for-reducing-falls-in-the-ed/images/prime-connect-fall-reduciton-strategory_1440x816.jpg"
+  }
+}

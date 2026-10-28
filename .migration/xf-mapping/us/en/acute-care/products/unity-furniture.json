@@ -1,0 +1,904 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Refresh your patient rooms with our newest solutions",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Unity furniture line",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "467efcb5-0622-492c-940c-e327b4ac145a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Unity Furniture Line for hospitals ",
+  "jcr:predecessors": [
+    "d2aae208-63c5-440e-aed7-967fdc5fd3e5"
+  ],
+  "contentID": "AC-UNFL-SYK-1410015_REV-0_en_us",
+  "lastPublished": "Wed Aug 19 2026 19:22:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 19:22:39 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 19:22:41 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 19:22:27 GMT+0000",
+  "jcr:baseVersion": "d2aae208-63c5-440e-aed7-967fdc5fd3e5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:24:05 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/patient-room-furniture",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:product/acute-care/unity",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care",
+    "stryker:services/procare/acute-care/hospital-furniture"
+  ],
+  "jcr:lastModified": "Fri Oct 18 2024 20:25:22 GMT+0000",
+  "jcr:uuid": "494233d7-a2c2-4700-a417-f853ce2f18bd",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/unity_furniture/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/unity-furniture/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Oct 18 2024 20:22:44 GMT+0000",
+          "marginRight": "52",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Unity furniture line</span></span></span></h1>\n<h2>Refresh your patient rooms with our newest healthcare furniture solutions</h2>\n",
+              "jcr:lastModified": "Wed Oct 23 2024 17:27:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_2024324705": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Oct 18 2024 19:51:34 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 19:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Fri Oct 18 2024 19:51:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Choose</span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">&nbsp;comfort&nbsp;</span></span><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">and</span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">&nbsp;cleanability </span></span><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">for your furniture</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Now, more than ever, preventing infections in the hospital has become a top concern of caregivers.<sup>1&nbsp;</sup>It’s one of ours, too. Our Unity hospital furniture line fuses the comfort of home with the durability and cleanability caregivers expect – designed to meet the needs of the most demanding environments and intensive cleaning procedures associated with today’s infection control requirements.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://designmix.com/Finishes/ePholsterProduct.jsp?lid=1003&amp;mid=1330\" target=\"_blank\"><span class=\"standalone-link\">Fabrics and finishes</span></a></span></p>\n",
+          "jcr:lastModified": "Wed Oct 23 2024 19:38:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols_804324831": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Oct 23 2024 19:52:31 GMT+0000",
+      "jcr:lastModified": "Wed Oct 23 2024 19:52:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Oct 23 2024 19:52:35 GMT+0000",
+          "jcr:lastModified": "Wed Oct 23 2024 19:52:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1624082962": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Oct 23 2024 19:47:14 GMT+0000",
+      "jcr:lastModified": "Wed Oct 23 2024 19:47:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jan 30 2023 20:36:38 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Oct 23 2024 19:50:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/campaigns/unity-furniture-launch-2021/syk130-unity-final-3.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/syk130-unity-final-3-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Jan 30 2023 20:38:03 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 12 2021 21:02:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">1</span></span> <span class=\"urw-egyptienne\">in </span><span class=\"futura-bold\"><span style=\"color: #85458a;\">31</span></span></span></span></span></span></span></span></span></p>\n<p style=\"text-align: left;\">&nbsp;</p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">According to the Centers for Disease Control, on any given day, about one in 31 hospital patients has at least one healthcare-associated infection.<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Wed Oct 23 2024 19:49:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_804324831_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Oct 23 2024 19:52:31 GMT+0000",
+      "jcr:lastModified": "Wed Oct 23 2024 19:52:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Oct 23 2024 19:52:35 GMT+0000",
+          "jcr:lastModified": "Wed Oct 23 2024 19:52:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Fri Feb 12 2021 15:48:18 GMT+0000",
+      "jcr:lastModified": "Fri Feb 12 2021 15:48:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+          "alt": "Unity Glider hospital furniture ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/RAAPTOR-Glider-wide.jpg",
+          "jcr:lastModified": "Tue Nov 14 2023 18:41:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 12 2021 15:44:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Customizable</span><span class=\"urw-egyptienne\">&nbsp;furniture pieces with a</span><span class=\"futura-bold\"> clinical </span><span class=\"urw-egyptienne\">edge</span></span></h2>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Oct 23 2024 17:28:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Experience the cleanability you need to help with infection prevention</span></span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Sealed seams</span></li>\n<li><span class=\"fontsize-1-25em\">Moisture barrier: prevents moisture from passing through fabric and increases its resiliency and stability</span></li>\n<li><span class=\"fontsize-1-25em\">Clean out space around seat cushions for easy housekeeping and infection control practices</span></li>\n<li><span class=\"fontsize-1-25em\">No Velcro® on seat or back</span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #85458a;\"><span style=\"color: #000000;\">Cleanable with a bleach solution (1 part bleach to 100 parts water)</span></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 21:39:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_211449114_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Fri Feb 12 2021 15:54:06 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Feb 12 2021 15:54:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "products",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Products",
+      "jcr:lastModified": "Fri Oct 18 2024 20:13:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Feb 16 2021 18:40:47 GMT+0000",
+      "jcr:lastModified": "Tue Feb 16 2021 18:40:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Oct 18 2024 19:44:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\"><span style=\"color: #000000;\">Unity <span class=\"urw-egyptienne\">furniture line options</span></span></span></span></span></h2>\n",
+          "jcr:lastModified": "Wed Oct 23 2024 19:46:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Oct 23 2024 19:38:36 GMT+0000",
+      "jcr:lastModified": "Mon Nov 18 2024 21:42:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_580550707": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Jul 31 2023 19:34:32 GMT+0000",
+          "jcr:lastModified": "Mon Jul 31 2023 19:34:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Mon Jan 30 2023 20:36:38 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Wed Oct 23 2024 19:52:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/acute-care/campaigns/unity-recliner-series-launch/SYK192_Raap In_CV5.1.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/SYK192_Raap In_CV5.1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Oct 23 2024 19:51:35 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Healthcare recliner series &nbsp;&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Modern, durable and comfortable recliners are designed to be customizable to meet the needs of each department. Clinical and Treatment models were developed to meet the needs of both caregivers and patients to help aid in the recovery process and allow patients to get into a recliner sooner.</span></p>\n<p>&nbsp;</p>\n<h3><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Key features</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">A</span> </span>Wall saver recline designed to help maximize space in compact patient rooms</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">B</span></span> Clinical and Treatment models feature transfer arm options to allow for caregiver access to help better facilitate safe patient handling, transfers and early mobility</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">C</span></span> Full 360° clean out with gap between seat and back</span></p>\n",
+              "jcr:lastModified": "Wed Oct 23 2024 19:52:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_108523": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 18 2024 17:11:42 GMT+0000",
+          "jcr:lastModified": "Fri Oct 18 2024 17:11:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+              "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Gliders</span></span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Our modern and durable Glider offers a smooth, low-range rocking motion to help users relax.</span></p>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Key features</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\"><span class=\"futura-bold\">A</span> </span>Curved armrests remain stationary, providing a safer way to get in and out of the chair</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">B</span>&nbsp;</span>High density Ultracell foam for comfort, durability and performance</span></p>\n",
+              "jcr:lastModified": "Wed Oct 23 2024 17:29:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_auto",
+              "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+              "alt": "Unity Glider labeled to identify curved armrests and Ultracell foam",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/Glider_AB.jpg",
+              "jcr:lastModified": "Tue Nov 14 2023 18:42:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Oct 23 2024 19:40:01 GMT+0000",
+          "jcr:lastModified": "Wed Oct 23 2024 19:40:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+              "text": "<h2 style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Chaise lounge sleeper</span></span></h2>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-5em\">Sit, relax or sleep in comfort on this furniture&nbsp;</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Oct 23 2024 21:36:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Fri Feb 12 2021 21:25:29 GMT+0000",
+          "jcr:lastModified": "Fri Feb 12 2021 21:25:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+              "alt": "Unity chaise lounge sleeper labeled to identify pull handle",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/Chaise-Lounge-Sleeper-1_B.jpg",
+              "jcr:lastModified": "Tue Nov 14 2023 18:43:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "9",
+              "jcr:created": "Fri Feb 12 2021 21:27:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\"><span class=\"futura-bold\">B</span></span><span class=\"urw-egyptienne\">&nbsp;</span>Easy to use pull handle, requires minimal effort to open up into a lounge or sleeper</span></p>\n",
+              "jcr:lastModified": "Fri Oct 18 2024 17:02:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+              "alt": "Unity chaise lounge sleeper labeled to identify  armcap finishes",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/Chaise-Lounge-Sleeper-1_A.jpg",
+              "jcr:lastModified": "Tue Nov 14 2023 18:43:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+              "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">Key features</span></span></span><br>\n</h3>\n",
+              "jcr:lastModified": "Fri May 14 2021 12:57:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Feb 12 2021 21:27:09 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\"><span class=\"futura-bold\">A</span></span><span class=\"urw-egyptienne\"> </span>Cleanable, nonporous frame with self-skinned urethane (SSU) armcap finishes</span></p>\n",
+              "jcr:lastModified": "Fri Oct 18 2024 17:01:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+              "alt": "Unity chaise lounge sleeper labeled to identify fold down backrest",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/Chaise-Lounge-Sleeper-1_C.jpg",
+              "jcr:lastModified": "Tue Nov 14 2023 18:43:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_1469562377": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "9",
+              "jcr:created": "Fri Feb 12 2021 21:27:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">C</span></span><span class=\"urw-egyptienne\"> </span>Fold down backrest extends into a sleeping surface without requiring additional wall clearance</span></p>\n",
+              "jcr:lastModified": "Fri Oct 18 2024 17:02:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 18 2024 16:59:41 GMT+0000",
+          "text": "Sleeper bench series Relax or sleep in a patient room in comfort. Key features Easily converts from sofa to bed with a simple pull and flip design, offering a dedicated, cleanable and moisture barrier sleep surface Six models available including customizable back, armrest and tablet configurations Optional USB outlet",
+          "jcr:lastModified": "Fri Oct 18 2024 16:59:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/unity_furniture/sleeper-bench/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/unity-furniture/sleeper-bench/master"
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3_436739": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 18 2024 19:49:15 GMT+0000",
+          "jcr:lastModified": "Fri Oct 18 2024 19:49:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 12 2021 15:48:31 GMT+0000",
+              "alt": "Three variations of Unity hospital and clinic side seating",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/raaptor/images/side-seating-tall-abcd.jpg",
+              "jcr:lastModified": "Tue Nov 14 2023 18:44:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "eleni.maistrellis@stryker.com",
+              "leftPadding": "4",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "4",
+              "jcr:created": "Fri Feb 12 2021 15:50:21 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Side seating</span></span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Choose from a variety of stylish and durable seating options for your needs.</span></p>\n<p><a href=\"/content/stryker/us/en/acute-care/products/side-seating.html\" target=\"_blank\"><span class=\"standalone-link\">Learn more</span></a></p>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Key features</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">A</span></span> Select flexback models with torsion control mechanism provide a gentle rocking motion for the chair</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">B</span></span> Full 360° cleanout with 0.5 inch (13 mm) wide gap between seat and back</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">C</span></span> Easily cleanable nonporous frame constructed with reinforced steel and SSU armcaps</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">D</span></span> Select bariatric models to complete your space</span></p>\n",
+              "jcr:lastModified": "Wed Oct 23 2024 17:30:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Recliners"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Gliders"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Chaise lounge"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "Sleeper benches"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "Side seating"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Aug 31 2021 18:16:42 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Oct 18 2024 20:13:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Oct 18 2024 16:38:16 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 16:38:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 16 2021 19:25:31 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for contacting us. A representative will reach out to you shortly. ",
+          "jcr:lastModified": "Wed Aug 19 2026 19:22:27 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 16:37:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/unity-furniture/Unity Furniture Brochure.pdf",
+            "/content/dam/stryker/acute-care/products/unity-furniture/2023 Unity recliner spec sheet.pdf",
+            "/content/dam/stryker/acute-care/products/unity-furniture/2021 Unity side seating spec sheet JB.pdf",
+            "/content/dam/stryker/acute-care/products/unity-furniture/2021 Unity sleeper bench spec sheet JB.pdf",
+            "/content/dam/stryker/acute-care/products/unity-furniture/2021 Unity chaise lounge sleeper spec sheet JB.pdf",
+            "/content/dam/stryker/acute-care/products/unity-furniture/2021 Unity glider spec sheet V2 JB.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Fri Oct 18 2024 16:37:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "featuredcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Fri Oct 18 2024 16:37:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/symmetry-plus"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/bedside-stands"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/tru-fit"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/unity-furniture/RAAPTOR-banner-1.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Oct 18 2024 19:53:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,0)",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<p><b>1.&nbsp;</b>Centers for Disease Control and Prevention. <a href=\"https://www.cdc.gov/healthcare-associated-infections/php/toolkit/?CDC_AAref_Val=https://www.cdc.gov/hai/prevent/prevention.html\">Healthcare-Associated Infections (HAIs): About HAIs</a>.&nbsp;</p>\r\n<p><b>2.&nbsp;</b>Centers for Disease Control and Prevention. HAI and Antibiotic Use Prevalence Survey: Overview.&nbsp;<a href=\"https://www.cdc.gov/healthcare-associated-infections/php/haic-eip/antibiotic-use.html\">https://www.cdc.gov/healthcare-associated-infections/php/haic-eip/antibiotic-use.html</a>. Retrieved February 8, 2021.</p>\r\n",
+    "jcr:lastModified": "Mon Nov 18 2024 21:41:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://designmix.com/Finishes/ePholsterProduct.jsp?lid=1003&mid=1330",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Fri Oct 18 2024 19:55:02 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Fabrics and finishes",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 22 2021 16:01:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Oct 18 2024 19:53:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Oct 18 2024 19:55:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

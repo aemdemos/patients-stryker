@@ -1,0 +1,166 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker releases 2024 Comprehensive Report",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0fc9bdbb-0368-40ea-821f-96134a3704b1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5042a2c9-c519-4614-953e-8b4f5e5dbac6"
+  ],
+  "lastPublished": "Tue Jun 24 2025 20:07:54 GMT+0000",
+  "jcr:created": "Tue Jun 24 2025 20:07:55 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 24 2025 20:07:57 GMT+0000",
+  "cq:lastModified": "Tue Jun 24 2025 20:07:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5042a2c9-c519-4614-953e-8b4f5e5dbac6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 20:52:09 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "f876e2d9-4645-4c85-8295-54594277932e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage85363": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModified": "Fri Mar 28 2025 15:33:59 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage85363928046067278440": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "2024 Comprehensive Report",
+        "srcFileRef": "/content/dam/stryker/about/annual-review/2024/SYK-004_2024-cr-v11d_cover-85.jpg",
+        "jcr:lastModified": "Tue Jun 24 2025 20:07:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "2",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "2",
+            "width": "8"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Mar 27 2025 18:53:14 GMT+0000",
+      "jcr:lastModified": "Thu Mar 27 2025 18:53:45 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Mar 26 2025 21:35:01 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>Stryker is pleased to announce the publication of our 2024 Comprehensive Report, showcasing another year of strong financial performance, innovation and progress toward our corporate and sustainability commitments. This year’s report highlights how we are driving meaningful change for patients, customers, employees and communities worldwide.</p>\n<p>In his letter to stakeholders, Chair and CEO, Kevin Lobo emphasizes our continued momentum in MedTech innovation and global impact. “We delivered an excellent year of results in 2024 and touched the lives of over 150 million patients,” says Lobo. “Our strong talent and culture, combined with our decentralized operating model, are key to our success.”</p>\n<p>The report details Stryker’s advancements in product innovation, including transformative launches like the Pangea Plating System and LIFEPAK 35 monitor/defibrillator. It also underscores our commitment to sustainability, with continued progress toward carbon neutrality in our facilities by 2030 and 100% renewable electricity by 2027. Additionally, Stryker’s corporate responsibility and inclusion efforts remain at the forefront, where we continue to create a better, healthier world through our environmental, social and governance commitments.</p>\n<p>From launching transformative medical technologies to expanding access to care, Stryker remains focused on making healthcare better. “Our strategy is working,” says Lobo. “We continue to drive strong growth and performance across our key metrics. I believe Stryker’s best days are ahead of us.”</p>\n",
+        "jcr:lastModified": "Mon Mar 31 2025 16:25:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "bottomMargin": "2",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "curatedcta_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "ctaDamLink": "/content/dam/stryker/about/annual-review/2024/Stryker-2024-Comprehensive-Report.pdf",
+        "ctaLinkType": "dam",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Wed Mar 26 2025 21:39:12 GMT+0000",
+        "CTATitle": "Read the full report",
+        "jcr:lastModified": "Wed Mar 26 2025 21:39:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(76,125,122,1)"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Fri Mar 28 2025 15:41:11 GMT+0000",
+        "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+        "jcr:lastModified": "Fri Mar 28 2025 15:41:16 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    }
+  }
+}

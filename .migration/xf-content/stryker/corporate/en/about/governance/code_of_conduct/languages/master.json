@@ -1,0 +1,92 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Languages",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c0e266fd-819a-4758-98ea-c8d9f5fb7469",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "996b136d-cf91-4c9f-a8ac-ba819b9b8e51"
+  ],
+  "lastPublished": "Wed Feb 12 2025 21:48:25 GMT+0000",
+  "jcr:created": "Wed Feb 12 2025 21:48:25 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 12 2025 21:48:28 GMT+0000",
+  "cq:lastModified": "Wed Feb 12 2025 16:36:37 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "996b136d-cf91-4c9f-a8ac-ba819b9b8e51",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:48:25 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1c6959c4-00fe-40d4-a302-6027e1b2fb57",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1152358640_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 18:44:21 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-ZH_CN.pdf\">简体中文 (Simplified Chinese)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-ZH.pdf\">繁体中文 (Traditional Chinese)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-NL_BE.pdf\">Nederlands (Dutch)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-DA_DK.pdf\">Dansk (Danish)</a><br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-EN_US.pdf\">English (U.S.)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-FR_FR.pdf\">Français pour l'Europe (European French)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-FR_CA.pdf\">Français pour le Canada (French Canadian)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-DE_DE.pdf\">Deutsch (German)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-IW_IL.pdf\">עִבְרִית (Hebrew)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-IT_IT.pdf\">Italiano (Italian)</a>&nbsp;</span><br>\n<a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-JA.pdf\"><span class=\"urw-egyptienne\">日本語 (Japanese)&nbsp;</span></a><br>\n<br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Wed Feb 12 2025 16:36:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text_1152358640_copy_1719333260": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 18:44:21 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"> <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-KO_KR.pdf\">한국어 (Korean)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-PL_PL.pdf\">Polski (Polish)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-PT_BR.pdf\">Português para Brasil (Portuguese for Brazil)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-PT_PT.pdf\">Português para Portugal (Portuguese for Portugal)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-RO_RO.pdf\">Română (Romanian)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-RU.pdf\">Pусский (Russian)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-ES_ES.pdf\">Español para Europa (European Spanish)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-ES.pdf\">Español para América latina (Latin American Spanish)</a>&nbsp;<br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-TH_TH.pdf\">ภาษาไทย (Thai)</a><br>\n <a href=\"/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-500158-TR_TR.pdf\">Türkçe (Turkish)</a>&nbsp;</span><br>\n<br>\n<br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Wed Feb 12 2025 16:35:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

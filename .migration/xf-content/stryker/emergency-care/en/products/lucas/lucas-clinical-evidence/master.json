@@ -1,0 +1,464 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LUCAS Clinical Evidence",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6caaa767-7fe3-4fd1-be9e-fb01b44266b3",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "7e011ccc-c83d-4f25-a9ca-ccb0378121ef"
+  ],
+  "lastPublished": "Thu Dec 04 2025 20:32:00 GMT+0000",
+  "jcr:created": "Thu Dec 04 2025 20:32:00 GMT+0000",
+  "cq:lastReplicated": "Thu Dec 04 2025 20:32:02 GMT+0000",
+  "cq:lastModified": "Thu Dec 04 2025 20:31:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7e011ccc-c83d-4f25-a9ca-ccb0378121ef",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 12 2025 21:08:44 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ff6e7b58-001a-4594-aab7-dfcad2b72b46",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy88134704121": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Randomized controlled trials</span></span></p>\n",
+      "jcr:lastModified": "Mon Mar 10 2025 20:08:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Randomized",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 21:25:10 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 15:39:54 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy8813470412151498": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\">The highest level of evidence<sup>21</sup>, randomized, controlled LINC (LUCAS in Cardiac Arrest)<sup>11</sup> trial on 2,589 pre-hospital cardiac arrest patients shows:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">LUCAS is as safe and effective as high-quality manual CPR</span></li>\n<li><span class=\"fontsize-1-25em\">Good neurological outcomes (CPC Scale Score of 1-2)</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">Another randomized, controlled trial on 259 cardiac arrest patients has shown:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">LUCAS did not cause more injuries than manual CPR<sup>22</sup></span></li>\n</ul>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 21:15:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy88134704121": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><a href=\"https://www.lucas-cpr.com/files/7716962_LINC%20Clinical%20Summary_3317390_D.pdf\" target=\"_blank\"><span class=\"standalone-link\">Read more in LINC summary</span></a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://www.lucas-cpr.com/files/1447134_Koster%20Summary_US_3344773_A_LR.pdf\" target=\"_blank\"><span class=\"standalone-link\">Koster Clinical Summary</span></a></span></p>\n<p>US versions - for Europe/MEA version, see <a href=\"/content/stryker/us/en/emergency-care/products/lucas-3/resources.html\" target=\"_blank\">Resources</a></p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 20:55:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Randomized Sidebar",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 15:41:23 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 15:42:03 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text8813599639930703": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "5",
+        "leftPadding": "5",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">&gt;99%</span></span><br>\n<span class=\"fontsize-1-25em\">of the survivors treated with LUCAS had good neurological outcomes (CPC Scale Score of 1-2) at <span style=\"white-space: nowrap;\">6 months follow up</span><sup>11</sup></span></p>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 21:16:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "5",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Mon Jan 20 2025 15:30:59 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Mon Jan 20 2025 16:49:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Feb 14 2025 17:47:06 GMT+0000",
+      "jcr:lastModified": "Fri Feb 14 2025 17:47:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_747861017": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 21:35:46 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Outcome data</span></span></p>\n<h3><span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">A helpful tool for progressive systems of care</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Systems of care implementing the LUCAS device together with a comprehensive approach to resuscitation have shown increased ROSC rates<sup>13,23-29&nbsp;</sup>as well as improved survival with good neurological outcomes<sup>13,29,30&nbsp;</sup>compared to historical data.</span></p>\n<p><span class=\"fontsize-1-25em\">The Emergency Department at North Shore University Hospital, NY, US, significantly improved their ROSC rates, going from 26% to 41%, using LUCAS chest compressions, a team-focused resuscitation strategy and video-reviews.<sup>28</sup></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 17:25:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage11585": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Feb 24 2025 13:05:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage1158511828203638523435": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "† Axelsson C, Herrera M, Fredriksson M, et al. Implementation of mechanical chest compression in out-of-hospital cardiac arrest in an emergency medical service system. Am J Emerg Med. 2013;31(8):1196-1200.",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_png",
+        "alt": "bar chart showing improved outcomes after implementation of LUCAS",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/lucas_improved-outcomes_pre-hospital_1440x980.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Apr 04 2025 20:14:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage11585_323780345": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Feb 24 2025 13:06:02 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage11585_32378034511828238077753107": {
+        "jcr:primaryType": "nt:unstructured",
+        "description": "† Şener A, Günaydın GP, Tanrıverdi F et al.Manual versus mechanical chest compression in in-hospital cardiac arrest: A retrospective cohort in emergency department patients. Turk J Emerg Med. 2022;22(2):83-88.",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_png",
+        "alt": "bar chart showing improved outcomes with LUCAS vs manual CPR",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/lucas_improved-outcomes_in-hospitall_1440x980.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Apr 04 2025 20:08:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "sectionseparator_cop_1073830387": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Mon Jan 20 2025 15:30:59 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Mon Jan 20 2025 16:49:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator_268777199": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 15:52:14 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 15:52:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1822315275": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 16:02:12 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Quality CPR</span></span></p>\n",
+      "jcr:lastModified": "Mon Jan 20 2025 16:03:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_331412359": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "LUCAS allows",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 21:41:35 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 15:59:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_3314123598814657855530679": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "text": "<h3><span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">LUCAS allows for defibrillation during ongoing compressions</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">LUCAS allows for application of the defibrillation electrodes outside the suction cup.<sup>20</sup> The LUCAS device does not need to be stopped when delivering the shock (only stop when doing the rhythm analysis).<sup>11</sup></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Defibrillation-Ventilation_US-Canada.pdf\" target=\"_blank\"><span class=\"standalone-link\">Defibrillation and ventilation with LUCAS</span></a></span></p>\n<p><i>US version - for Europe/MEA version, see <a href=\"/content/stryker/us/en/emergency-care/products/lucas-3/resources.html\" target=\"_blank\">Resources</a></i></p>\n",
+        "jcr:lastModified": "Thu Dec 04 2025 20:31:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "item8814657855778393": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "3",
+        "jcr:created": "Thu Jan 16 2025 21:02:23 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h3><span class=\"fontsize-1-25em\">More CPR time with LUCAS</span></h3>\n<p><span class=\"fontsize-1-25em\">LUCAS has documented chest compression fractions of up to 93%, leading to significantly more flow time compared to manual CPR.<sup>16,31-33,41</sup></span></p>\n",
+        "jcr:lastModified": "Thu Mar 13 2025 17:28:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 16:00:15 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:00:46 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage8814721969393657": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "increased hands on-time LUCAS device vs manual CPR",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/lucas_increased-hands-on-time_lucas-vs-manual_1200x800.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Mar 14 2025 12:34:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "sectionseparator_cop_1171837681": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Mon Jan 20 2025 15:30:59 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Mon Jan 20 2025 16:49:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator_268": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 15:52:14 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 15:52:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "standaloneimage_copy_2087531897": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:32:00 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:10:20 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_1802692388": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Buys time to find and treat reversible causes</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Implementing a progressive program approach to take appropriate patients from the field to the hospital for advanced life-saving interventions, such as ECMO and PCI, resulted in an increase in survival rate with good neurological function from 8.2% to 50%.<sup>34</sup></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS allows the healthcare provider to perform simultaneous diagnosis and treatment of reversible causes, e.g. coronary occlusion, pulmonary emboli, intoxication or accidental hypothermia.<sup>6,17,35,40</sup></span></p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 14:43:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "text_copy_1802692388": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Buys",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:32:19 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:10:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_310227185": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Jan 14 2025 22:33:30 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Saves lives in the cath lab</span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Using LUCAS during PCI, 25% vs. historical 10% of sudden cardiac arrest patients who did not respond to normal advanced resuscitation efforts, could be saved with good neurological outcome.&nbsp;This despite prolonged CPR durations of up to 50 minutes.<sup>30</sup><br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\">Life-saving PCI during LUCAS chest compressions leads to significant improvements in ROSC in cardiac arrest patients with persistent VF or non-shockable rhythms.<sup>27</sup></span></li>\n</ul>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 21:17:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_28051676": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Mar 25 2025 14:45:19 GMT+0000",
+      "jcr:lastModified": "Tue Mar 25 2025 14:45:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    }
+  }
+}

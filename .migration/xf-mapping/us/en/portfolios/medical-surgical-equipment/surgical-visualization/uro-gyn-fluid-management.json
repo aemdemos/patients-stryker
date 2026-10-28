@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "URO fluid management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3f7e10d8-06a4-4785-89c4-72c9b0dab45d",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "ThermaClear",
+  "jcr:predecessors": [
+    "3a5fa989-6a42-47e4-b0ee-4de9505fa739"
+  ],
+  "contentID": "ENDO-THERM-SYK-3092599",
+  "lastPublished": "Wed May 06 2026 18:52:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed May 06 2026 18:52:50 GMT+0000",
+  "cq:lastReplicated": "Wed May 06 2026 18:52:52 GMT+0000",
+  "cq:lastModified": "Wed May 06 2026 18:52:46 GMT+0000",
+  "jcr:description": "ThermaClear is a fluid management system for irrigation, distention and fluid warming in urologic procedures.",
+  "jcr:baseVersion": "3a5fa989-6a42-47e4-b0ee-4de9505fa739",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:24:27 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/specialty",
+    "stryker:specialty/uro-gyn-fluid-management",
+    "stryker:capability/fluid-management-medsurg",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed May 06 2026 18:52:33 GMT+0000",
+  "jcr:uuid": "65a5ef38-269a-4da4-a350-0acb1b07d1c7",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/URO-fluid-management-thumbnail.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "imageAlt": "ThermaClear",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Wed May 06 2026 18:52:46 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/URO-fluid-management.png",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

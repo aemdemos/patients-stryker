@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Lap Tip Carousel Video",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7296ea51-d0fa-45ea-b4e0-f95c8ac7592c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "655214b0-b3b5-498b-b9ea-e682f6286339"
+  ],
+  "lastPublished": "Fri Aug 08 2025 13:20:43 GMT+0000",
+  "jcr:created": "Fri Aug 08 2025 13:20:44 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 08 2025 13:20:46 GMT+0000",
+  "cq:lastModified": "Mon Aug 26 2024 20:45:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "655214b0-b3b5-498b-b9ea-e682f6286339",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 08 2025 13:20:43 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "5c0a63df-9ae0-41ac-bc3d-e491a8893ebf",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Aug 26 2024 20:39:00 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Aug 26 2024 20:45:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/nav-nse/products/sonopet-iq/video/LapTipCarouselVideo.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/LapTipCarouselVideo-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Aug 26 2024 20:45:29 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "The intelligent workflow engine",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vocera Engage",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "490210a8-77d3-4c12-8d0e-efdb58e163c3",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Doctors and nurses walking in a hospital wearing Vocera Badges - hands-free communication devices",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/vocera-engage/images/doctor-on-phone-walking-nurses-in-background.jpg",
+  "jcr:predecessors": [
+    "73ee21a0-fcb0-469d-a6f4-8f94e1920957"
+  ],
+  "contentID": "M0000015113 REV AA",
+  "lastPublished": "Mon Feb 02 2026 19:54:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:55:00 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:55:05 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 15:24:54 GMT+0000",
+  "jcr:description": "Vocera Engage middleware is the core of Vocera’s communication and workflow intelligence. It provides care teams a more complete picture of a patient’s situation, enabling prompt communication and helping to enhance patient safety.",
+  "jcr:baseVersion": "73ee21a0-fcb0-469d-a6f4-8f94e1920957",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:18:51 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/smart-care/care-space/smarted",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital",
+    "stryker:business-unit/smart-care",
+    "stryker:specialty/workflow-engine",
+    "stryker:product/smart-care/vocera-engage",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/smart-care/product-type/workflow-engine",
+    "stryker:custom/smart-care/care-space/smartroom",
+    "stryker:custom/smart-care/care-space/smartor"
+  ],
+  "jcr:lastModified": "Fri Jan 02 2026 20:48:22 GMT+0000",
+  "jcr:uuid": "f3f8a707-706d-4bb9-87da-f0d97b75da9e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "imageAlt": "Nurses and doctor wearing Smart Badge hands-free communication device discuss a patient in a hallway",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Mon Jun 26 2023 19:11:44 GMT+0000",
+      "compImageRef": "/content/dam/stryker/acute-care/products/vocera-minibadge/images/PASS_04_VOC033_02b-04559_aa.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jun 01 2023 16:44:27 GMT+0000",
+      "jcr:lastModified": "Thu Jun 01 2023 16:44:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Wed May 31 2023 20:55:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2 style=\"text-align: center;\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Enhance</span> <span style=\"color: rgb(255,181,0);\">patient safety</span> <span style=\"color: #ffffff;\">by enabling filtering, routing, escalation and prioritization of alarms* and notifications.</span></span></span></span></span></h2>\r\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:54:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "2",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Thu Jun 01 2023 18:24:40 GMT+0000",
+      "sectionColor": "grey-hr",
+      "jcr:lastModified": "Thu Jun 01 2023 18:25:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jun 01 2023 16:47:02 GMT+0000",
+      "jcr:lastModified": "Thu Jun 01 2023 16:47:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 31 2023 20:52:22 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 20:52:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed May 31 2023 20:57:46 GMT+0000",
+          "alt": "Health care professionals wearing a Vocera SmartBadage and using Vocera Engage to communicate",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-smartbadge/images/nursedoctorsmartbadge.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:16:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed May 31 2023 20:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Communication and workflow intelligence</span></span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Patient care happens second by second and care team members need flexible and dynamic tools that optimize patient outcomes.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Vocera Engage</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Includes Engage Medical Device Alarm Notification (EMDAN), FDA 510(k)-cleared middleware, to deliver secondary alarm notifications</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Enables more than 150 integrations with clinical and operational systems like nurse call, lab, radiology, physiologic monitors, patient surveillance, bed alarms, patient flow, bed management and more</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Integrates care team assignment information from multiple sources into the Dynamic Master Directory.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:55:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "0"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jun 01 2023 18:26:05 GMT+0000",
+          "CTATitle": "Connect with an Expert",
+          "ctaDeepLinkID": "marketo-form",
+          "jcr:lastModified": "Mon Jun 05 2023 14:22:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols2_2071059462_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 31 2023 21:10:00 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 21:10:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed May 31 2023 21:10:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Turning actionable notifications into smart workflows</span></span></span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Receive only the communications and notifications you need and make sure important information reaches the right recipient by setting rules for filtering, routing, escalation and prioritization based on your facility’s protocols.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">With Engage, rules may include the following, and more:<br>\n • Number of caregivers in an escalation path<br>\n • Care team roles for each escalation<br>\n • A recipient’s presence and availability<br>\n • Time between escalations</span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:55:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1640948461": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 01 2023 12:32:44 GMT+0000",
+          "alt": "A nurse standing on stairs using a Vocera SmartBadge to communicate hands-free ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-engage/images/Nurse_Speaking_Smartbadge.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:16:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2071059462": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 31 2023 21:10:00 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 21:10:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1640": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 01 2023 12:32:44 GMT+0000",
+          "alt": "A nurse comforts a patient in the hospital while a wearing a Vocera SmartBadge - hands-free communication ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-smartbadge/images/nursecomfortsmartbadge.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:16:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Wed May 31 2023 21:10:10 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Putting patients at the center of care – communication software and devices</span></span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Vocera Engage connects the entire clinical ecosystem of nurses, physicians and ancillary staff, whether their workflows demand hands-free, voice-driven communication or a smartphone.&nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:56:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jun 01 2023 18:26:05 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaDeepLinkID": "marketo-form",
+          "jcr:lastModified": "Mon Jun 05 2023 14:23:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/clinical-communication-and-workflow/hardware"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "leftPadding": "7",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Wed May 31 2023 20:55:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<p><span style=\"color: rgb(255,255,255);\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5-vw\"><span style=\"font-size: 35.0px;\"><b><i><span style=\"color: rgb(255,181,0);\">&quot;</span></i></b></span></span><span class=\"fontsize-2-5-vw\"><span style=\"font-size: 35.0px;\"><b><i>&nbsp;</i></b></span><span class=\"urw-egyptienne\">Interoperability between our many clinical systems and the Vocera app helps&nbsp;improve the healthcare experience for both patients and nurses by helping&nbsp;create a quieter environment with fewer nuisance alarms.</span></span><span style=\"color: rgb(255,181,0);\"><i><span class=\"fontsize-2-5-vw\">&quot;</span></i></span></span></span></p>\r\n<p>&nbsp;</p>\r\n",
+      "line2": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">– Jacob Kittinger, RN Manager of Clinical Support Owensboro Health</span></span></span></div>\r\n",
+      "jcr:lastModified": "Wed Jul 05 2023 13:59:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "7",
+      "backgroundColor": "rgba(28,86,135,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_162223262": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jun 05 2023 19:10:43 GMT+0000",
+      "jcr:lastModified": "Mon Jun 05 2023 19:10:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 01 2023 12:30:27 GMT+0000",
+          "alt": "Vocera Engage analytics dashboard example ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-engage/images/vocera-reporting-analytics-summary-screen.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:16:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jun 01 2023 12:33:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Reporting and analytics</span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Vocera Analytics, a core capability of our platform, is a diagnostic tool that gives you the consolidated, holistic insight you need to more effectively:&nbsp;</span></span><br>\n</p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Manage clinician interruptions and communication workflows&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Identify root causes of sentinel events&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Achieve clinical imperatives for improving patient care</span></span></li>\n</ul>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Find the information you need quickly with a broad selection of intuitive dashboards and reports.&nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:59:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1714020080_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 15:42:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 11 2025 15:42:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Sep 11 2025 15:42:58 GMT+0000",
+          "jcr:lastModified": "Thu Sep 11 2025 15:42:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "experiencefragment_c_2113686272": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 15:01:38 GMT+0000",
+      "text": "ProAssure We’ll handle the technology, you handle the patient care Technology should make care easier, not harder. ProAssure specialists work with your team—remotely or on site—to maintain, optimize and support your Styker clinical communications solutions. From updates and training to workflow optimization, it’s ongoing support that helps keep your system reliable and your teams connected. Click the \"Learn More\" button below and discover how ProAssure can support patient care. Learn more AC-ACCL-SYK-2133106_REV-0_en_us",
+      "jcr:lastModified": "Thu Sep 11 2025 15:01:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/services/proassure/proassure-cta/master"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 15:52:00 GMT+0000",
+      "jcr:lastModified": "Thu Sep 11 2025 15:52:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "marketo-form",
+      "jcr:created": "Thu Jun 01 2023 18:31:57 GMT+0000",
+      "jcr:lastModified": "Thu Jun 01 2023 18:32:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Apr 17 2020 20:40:07 GMT+0000",
+      "jcr:lastModified": "Fri Apr 17 2020 20:40:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Interested in learning more?&nbsp;</span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\">Talk to a rep today.</span></span></h3>\n",
+          "jcr:lastModified": "Thu May 25 2023 19:06:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_157571": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed May 24 2023 14:01:01 GMT+0000",
+      "jcr:lastModified": "Wed May 24 2023 14:01:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed May 24 2023 14:01:12 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for filling out the form! A Stryker representative will be in contact with you shortly.",
+          "jcr:lastModified": "Fri Jul 07 2023 20:10:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_7": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Feb 02 2026 15:20:17 GMT+0000",
+          "text": "Quick Links Smart Care homepage Medical and surgical equipment Contact information",
+          "jcr:lastModified": "Mon Feb 02 2026 15:20:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/business-unit/form-sidebar/quick-links/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 28 2022 21:49:32 GMT+0000",
+      "text": "Vocera resources Customer support Contact sales and support Customer support portal Training and education Vocera University Documentation Vocera documentation portal Resources and downloads Vocera legal Vocera legal documents Professional services Vocera professional services Vocera Accessories Shop the Vocera Store",
+      "jcr:lastModified": "Mon Oct 02 2023 19:05:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "description": "Explore Vocera products and solutions.",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 24 2023 13:17:48 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Oct 06 2025 20:29:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-edge"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-smartbadge"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-minibadge"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/sync-badge"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/vocera-engage/images/doctor-on-phone-walking-nurses-in-background.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 31 2023 20:50:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed May 31 2023 20:51:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 31 2023 20:51:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 31 2023 20:51:30 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 31 2023 20:51:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 31 2023 20:52:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* Prioritized alarm notifications require Engage Medical Device Alarm Notification (EMDAN), FDA 510(k)-cleared middleware.<br />\r\n</p>\r\n<p>** Filtering, routing escalation and prioritization of notifications are based on your facility's protocols. </p>\r\n",
+    "jcr:lastModified": "Wed Jun 21 2023 16:13:57 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

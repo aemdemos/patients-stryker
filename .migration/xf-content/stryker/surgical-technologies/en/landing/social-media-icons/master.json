@@ -1,0 +1,207 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Social media icons",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "84370f84-b1ec-4047-ae65-e23d070f8890",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "337980f3-8668-4e15-99ee-6db4372b98fa"
+  ],
+  "lastPublished": "Tue May 26 2026 19:03:19 GMT+0000",
+  "jcr:created": "Mon Jun 15 2026 19:57:02 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 15 2026 19:57:05 GMT+0000",
+  "cq:lastModified": "Thu May 28 2026 15:28:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "cq:siblingOrder": "master,",
+  "jcr:baseVersion": "337980f3-8668-4e15-99ee-6db4372b98fa",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue May 26 2026 19:03:19 GMT+0000",
+  "cq:name": "master",
+  "cq:tags": [],
+  "jcr:uuid": "28a9d7e0-597a-4ad9-8887-1caa9cbfd802",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:parentPath": "/content/experience-fragments/stryker/surgical-technologies/en/landing/social-media-icons",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.linkedin.com/showcase/stryker-surgical-technologies/",
+      "jcr:created": "Fri Feb 13 2026 19:18:23 GMT+0000",
+      "alt": "Linkedin logo",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/icons/68f925cfef7d4aad6616272e_social -LinkedIn -black.svg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 13 2026 19:24:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_5534": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.facebook.com/strykersurgicaltechnologies",
+      "jcr:created": "Fri Feb 13 2026 19:21:21 GMT+0000",
+      "alt": "Facebook icon",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/icons/68f925cf8634de8b00c7a995_social -Facebook -black.svg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 13 2026 19:24:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_5534_291267501": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.youtube.com/user/stryker",
+      "jcr:created": "Fri Feb 13 2026 19:21:21 GMT+0000",
+      "alt": "YouTube icon",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/icons/youtube-social-icon.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 14 2026 14:53:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_5534_1689026603": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://twitter.com/Stryker_ST",
+      "jcr:created": "Fri Feb 13 2026 19:21:21 GMT+0000",
+      "alt": "Twitter icon",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/icons/68f925cfb7f4c174facb23bd_social -Twitter.svg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 13 2026 19:24:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        }
+      }
+    },
+    "standaloneimage_5534_1295680117": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.instagram.com/strykerfornurses/",
+      "jcr:created": "Fri Feb 13 2026 19:21:21 GMT+0000",
+      "alt": "Instagram icon",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/icons/68f925cf9afd09d51d024b2d_social -Instagram -black.svg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 13 2026 19:26:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    }
+  }
+}

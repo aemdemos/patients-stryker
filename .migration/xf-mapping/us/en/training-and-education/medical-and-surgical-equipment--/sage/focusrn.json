@@ -1,0 +1,564 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "FocusRN",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e5f7570b-64fb-4b3e-86b6-ec64fb5c31cc",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "e283ff82-098a-416e-b4d3-786cd95ad8b9"
+  ],
+  "contentID": "SAGE-WBNR-SYK-1808751_REV-0_en_us",
+  "lastPublished": "Wed Oct 21 2026 14:42:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Oct 21 2026 14:42:04 GMT+0000",
+  "cq:lastReplicated": "Wed Oct 21 2026 14:42:07 GMT+0000",
+  "cq:lastModified": "Tue Oct 20 2026 19:26:36 GMT+0000",
+  "jcr:description": "FocusRN is Stryker’s learning platform that provides clinical education and tools that address the challenges nurses face in patient care every day.",
+  "jcr:baseVersion": "e283ff82-098a-416e-b4d3-786cd95ad8b9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:58:48 GMT+0000",
+  "pageTitle": "FocusRN – Stryker's clinical education platform",
+  "jcr:lastModified": "Tue Jul 08 2025 20:20:06 GMT+0000",
+  "jcr:uuid": "39f83d00-01c8-4da2-9a10-dd4ae1f97880",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kelley.may@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Jul 31 2020 13:12:58 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Aug 19 2020 17:52:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kelley.may@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/focusrn/carousel---focusrn-live-hero---desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/focusrn/carousel-focusrn-live-hero-desktop/master",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Fri Jul 31 2020 14:08:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri May 13 2022 12:12:40 GMT+0000",
+          "marginRight": "40",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "14",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kelley.may@stryker.com",
+              "jcr:lastModifiedBy": "errin.pace@stryker.com",
+              "jcr:created": "Fri Jul 31 2020 14:15:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"fontsize-4vw\">Welcome to<br>\r\n <span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">Stryker’s clinical<br>\r\n education platform</span></span></span></span></h1>\r\n",
+              "line2": "<span class=\"fontsize-4-5-vw\"></span> ",
+              "jcr:lastModified": "Sun May 15 2022 16:38:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Mon May 09 2022 23:26:00 GMT+0000",
+      "jcr:lastModified": "Mon May 09 2022 23:26:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Tue May 10 2022 19:29:36 GMT+0000",
+          "jcr:lastModified": "Fri May 13 2022 16:14:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/focusrn/section-1/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/focusrn/section-1/master"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kelley.may@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 05 2020 15:59:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">FocusRN is Stryker’s learning platform</span> that provides clinical education and tools that address the challenges nurses face in patient care every day.</span></p>\n<p><span class=\"fontsize-1-25em\">The course offerings are developed in conjunction with our panel of clinical experts to produce relevant, evidence-based content. FocusRN allows you to track your progress and provides transcripts of completed courses to enhance your record-keeping for licensure renewal.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Apr 08 2025 16:44:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "1",
+          "jcr:created": "Fri May 13 2022 12:16:12 GMT+0000",
+          "CTATitle": "VIEW RESOURCES",
+          "ctaExternalLink": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:lastModified": "Tue Apr 11 2023 14:00:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue May 10 2022 00:05:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffffff;\">Upcoming events</span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 11 2022 15:17:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": "true"
+        },
+        "text_1078361376_copy_450147875": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "leftPadding": "6",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon May 09 2022 23:49:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Live webinars</span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #323232;\"><span style=\"color: #af6d04;\"><span style=\"color: #1c5687;\">Tuesday, November 17</span></span></span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Evidence related to turn &amp; positioning systems</span></span></p>\n<p><span class=\"fontsize-1-25em\">Jan Powers, PhD, RN, CCNS, CCRN, NE-BC, EBP-C, FCNS, FCCM, FAAN&nbsp;</span></p>\n<p><a href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/upcoming-events.html\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\"><u>See details</u></span></span></span></a></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Thursday, November 19</span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Beyond the surface: Where clinical care meets quality reporting</span></span></p>\n<p><span class=\"fontsize-1-25em\">Kathleen Vollman MSN, RN, CCNS, FCCM, FCNS, FAAN and Tanya Martel DNP, FNP-BC, CWOCN&nbsp;</span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><a href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/upcoming-events.html\" target=\"_self\" title=\"See more details and links to register.\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><u>See details</u></span></span></a></span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 20 2026 19:26:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Apr 04 2025 21:27:31 GMT+0000",
+      "jcr:lastModified": "Fri Apr 04 2025 21:27:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Apr 04 2025 21:36:01 GMT+0000",
+          "jcr:lastModified": "Fri Apr 04 2025 21:36:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 04 2025 21:27:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">On-demand webinars</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Revisit some of the most popular FocusRN monthly webinars. Learn about pressure injuries, hospital-acquired infections and more from clinical leaders.</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars.html\" target=\"_blank\"><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">Watch now</span></span></a></p>\n",
+          "jcr:lastModified": "Tue Apr 15 2025 20:02:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_263546028": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 19 2020 15:41:09 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2020 15:41:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 04 2025 21:36:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Explore clinical topics</span></span></h2>\n",
+          "jcr:lastModified": "Fri Apr 04 2025 21:37:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue May 10 2022 19:40:32 GMT+0000",
+      "jcr:lastModified": "Tue May 10 2022 19:40:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Cardiovascular health",
+          "title": "Cardiovascular health",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Cardiovascular-health.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:35:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/cardiovascular-health",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Caregiver safety",
+          "title": "Caregiver safety",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Caregiver-safety.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:38:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/caregiver-safety",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 22 2023 14:40:49 GMT+0000",
+          "alt": "Cerebrovascular health",
+          "title": "Cerebrovascular health",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/stroke-care/SKILL_brain_image_Neurovascular.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 28 2025 14:27:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/cerebrovascular-health",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Complex surgical access and decompression",
+          "title": "Complex surgical access and decompression",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Complex-surgical-access-and-decompression.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed May 11 2022 15:55:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/complex-surgical-access-and-decompression",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols4_1254957031": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue May 10 2022 19:51:53 GMT+0000",
+      "jcr:lastModified": "Tue May 10 2022 19:51:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Cranial procedures and repair",
+          "title": "Cranial procedures and repair",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Cranial-procedures-and-repair.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:43:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/cranial-procedures-and-repair",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Fall prevention",
+          "title": "Fall prevention",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Fall-prevention.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:44:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/fall-prevention",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Healthcare teamwork and communication",
+          "title": "Healthcare teamwork and communication",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Healthcare-teamwork-and-communication.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed May 11 2022 15:17:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/healthcare-teamwork-and-communication",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Hospital-acquired infections",
+          "title": "Hospital-acquired infections",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Hospital-acquired-infections.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:46:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/hospital-acquired-infections",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols4_569385767": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue May 10 2022 19:52:49 GMT+0000",
+      "jcr:lastModified": "Tue May 10 2022 19:52:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Mobility",
+          "title": "Mobility",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Mobility.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:47:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/mobility",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Pressure injuries",
+          "title": "Pressure injuries",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Pressure-injuries.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:48:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/pressure-injuries",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Surgical access and visualization",
+          "title": "Surgical access and visualization",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Surgical-access-and-visualization.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed May 11 2022 15:19:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/surgical-access-and-visualization",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Waste management practices",
+          "title": "Waste management practices",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Waste-management-practices.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 00:51:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/waste-management-practices",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols4_719027123": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue May 10 2022 19:53:27 GMT+0000",
+      "jcr:lastModified": "Tue May 10 2022 19:53:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue May 10 2022 00:33:17 GMT+0000",
+          "alt": "Women’s health",
+          "title": "Women’s health",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Womens-health.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed May 11 2022 15:19:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/womens-health",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator_1876045167": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kelley.may@stryker.com",
+      "jcr:lastModifiedBy": "kelley.may@stryker.com",
+      "jcr:created": "Thu Jul 30 2020 23:06:06 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2020 23:06:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "kelley.may@stryker.com",
+    "jcr:lastModified": "Thu Jul 30 2020 20:18:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/focusrn/images/27701_FocusRN_TrainingAndEducation_Callout.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Tue Oct 15 2024 22:10:03 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

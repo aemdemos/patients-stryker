@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Officer - 2006",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "54c19a92-c71a-44af-a878-c837794c8024",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "39d23d09-9239-4e85-8af0-a16cb95ba07b"
+  ],
+  "lastPublished": "Mon Sep 23 2024 18:13:28 GMT+0000",
+  "jcr:created": "Mon Sep 23 2024 18:13:29 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 23 2024 18:13:31 GMT+0000",
+  "cq:lastModified": "Mon Sep 23 2024 18:12:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "39d23d09-9239-4e85-8af0-a16cb95ba07b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:13:28 GMT+0000",
+  "jcr:uuid": "ff7a9702-07b9-447b-88b9-d7e501048492",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Tina</span>&nbsp;French</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Vice President,&nbsp;Corporate Secretary</span></span></p>\n<p>Tina French became Vice President, Corporate Secretary in September 2024<br>\n</p>\n<p>&nbsp;</p>\n<p>Tina is responsible for the corporate law and mergers and acquisitions legal team.</p>\n<p>Before joining Stryker, Tina was Head of Legal, Americas at Galapagos NV where she led the legal team supporting its research and development, commercialization and business development activities, and supported corporate governance and shareholder engagement strategy. Prior to Galapagos, Tina spent 10 years at Johnson &amp; Johnson (J&amp;J) in a variety of roles, including serving as Vice President Law for Consumer Health North America and as Assistant Corporate Secretary, where she advised the Board of Directors and senior leadership on corporate governance matters. She joined J&amp;J as Senior Counsel in the Business Development Legal Group where she partnered on global acquisitions and divestitures. Prior to J&amp;J, Tina was an Associate at Vinson &amp; Elkins, L.L.P. in New York.</p>\n<p>Tina earned her law degree from University of Virginia School of Law and holds a bachelor's degree in history and political studies from Rice University.</p>\n",
+      "jcr:lastModified": "Mon Sep 23 2024 18:12:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "5"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 20:14:55 GMT+0000",
+      "alt": "Tina French",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Redesign_TinaFrench.png",
+      "jcr:lastModified": "Mon Sep 09 2024 14:11:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Customizable documentation stations",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Nurse documentation stations",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b66ed5b5-f195-4526-be41-48cb9170d0d8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/communications/products/documentationstations/images/Thumb-Nurse.jpg",
+  "jcr:predecessors": [
+    "6b317b44-f481-4afa-9018-156b3994a408"
+  ],
+  "contentID": "Literature Number: 1000902500, Rev. A",
+  "lastPublished": "Mon Jun 29 2026 18:54:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 18:54:11 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 18:54:14 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 18:54:06 GMT+0000",
+  "jcr:description": "Our nurse documentation stations are modular and designed to be configurable to outfit all types of operating rooms. \r\n\r\n",
+  "jcr:baseVersion": "6b317b44-f481-4afa-9018-156b3994a408",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:54:11 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/communications/nurse-documentation-stations",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/communications",
+    "stryker:specialty/or",
+    "stryker:capability/infrastructure-and-room-design",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/or-design-and-construction-resources"
+  ],
+  "jcr:lastModified": "Thu Jul 30 2020 17:45:07 GMT+0000",
+  "jcr:uuid": "7ffa82ec-e3ba-415e-940f-6ae5a3a17652",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 02 2017 17:48:12 GMT-0400",
+      "compImageRef": "/content/dam/stryker/communications/products/documentationstations/images/Hero-NurseStation.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "sheila.raja@stryker.com",
+      "title": "Related Products",
+      "jcr:lastModified": "Fri Aug 10 2018 12:45:39 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/communications/systems/-isuite-experience"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 18:54:06 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 18:54:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Nurse documentation stations</p>\r\n",
+    "shortDescTop": "<p>Whether you need extra countertop workspace for charting or robust upper cabinets for equipment storage, we have a documentation station design just for you.</p>\r\n",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Tue Aug 22 2017 14:00:31 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Strategically placed vents on every configuration allow for maximum heat dissipation from medical equipment stored within the unit&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Built-in cable passes, removable shelves, and snap-in false backs facilitate easy equipment installation and servicing&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Brackets mounted to each frame provide provision for 10 dual power junction boxes per cabinet&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Sliding shelf in base cabinet provided for simplified servicing and upgrading of integration equipment&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Optional GCX touch panel mount, extended countertop and mobile desk allow the nurse to face the surgical field from the documentation station</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/documentationstations/images/Thumb-Nurse.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 18:53:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 18:53:58 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Surgical access and visualization",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ff730b71-dad2-4498-af3e-074df8b76cd3",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "99bd4368-966c-4b62-b1d3-1effcf27eaac"
+  ],
+  "contentID": "28996",
+  "lastPublished": "Mon May 15 2023 21:07:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 15 2023 21:07:55 GMT+0000",
+  "cq:lastReplicated": "Mon May 15 2023 21:07:57 GMT+0000",
+  "cq:lastModified": "Fri May 12 2023 20:11:44 GMT+0000",
+  "jcr:baseVersion": "99bd4368-966c-4b62-b1d3-1effcf27eaac",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Tue May 10 2022 01:28:51 GMT+0000",
+  "jcr:uuid": "204b80e6-8530-41ed-b727-e9ad05cfa5e0",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Apr 21 2022 20:09:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 16:22:12 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 16:23:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/focusrn/subpage-brand-bar/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/focusrn/subpage-brand-bar/master"
+    },
+    "cols_1263276765_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 15:57:10 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 15:57:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri May 13 2022 15:57:20 GMT+0000",
+          "jcr:lastModified": "Fri May 13 2022 15:57:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Thu Apr 21 2022 18:23:18 GMT+0000",
+      "jcr:lastModified": "Thu Apr 21 2022 18:23:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Apr 21 2022 18:24:21 GMT+0000",
+          "text": "<h1><span class=\"futura-bold\">Surgical access and visualization</span></h1>\n<p><span class=\"fontsize-1-25em\">Many surgical approaches require optimal illumination for visual access of tissues and other structures. This section will provide resources for enhancing visualization and improved access.</span></p>\n",
+          "jcr:lastModified": "Fri May 13 2022 23:08:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 21 2022 18:33:37 GMT+0000",
+          "alt": "Surgical access and visualization",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Surgical-access-and-visualization.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:08:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "1",
+          "jcr:created": "Fri May 13 2022 12:16:12 GMT+0000",
+          "CTATitle": "View Resources",
+          "ctaExternalLink": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:lastModified": "Fri May 12 2023 20:11:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "jumpbarnav_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Thu Apr 21 2022 18:16:48 GMT+0000",
+      "jcr:lastModified": "Thu Apr 21 2022 18:16:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Mar 17 2022 18:47:38 GMT+0000",
+      "title": "Educational Courses ",
+      "jcr:lastModified": "Fri May 12 2023 20:11:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "FocusRN Educational Courses",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/manuals_icon.jpg",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 12 2023 20:11:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>O.R. safety series: Enhanced visualization<br>\n</h2>\n<p>Minimally invasive or minimal access procedures account for up to 40% of all surgical procedures today. While there are numerous patient benefits to these procedures, the approach does come with known hazards, such as poor lighting to access areas, potential for burn injuries and fires from light sources, retained surgical items and increased inefficiencies and time delays.</p>\n<p>This program discusses the current data on medical errors and provides up to date evidence-based guidelines and strategies for prevention, including enhancing visualization of the operative field.<br>\n</p>\n<h3>Learning objectives</h3>\n<ul>\n<li>Describe the different types of medical errors in the O.R.</li>\n<li>Define the types of medical waste and how the O.R. is specifically impacted</li>\n<li>List the current practices and potential hazards associated with liquid waste</li>\n<li>Describe the risks associated with fluid waste management in the O.R.</li>\n<li>List the benefits of an effective and safe fluid waste management program in the O.R.<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:28:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "TAKE COURSE",
+          "ctaExternalLink": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:lastModified": "Fri May 13 2022 18:12:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Thu Mar 17 2022 18:47:38 GMT+0000",
+      "title": "White papers",
+      "jcr:lastModified": "Mon Apr 04 2022 18:50:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/white-papers/Retrospective%20Chart%20Review%20of%20NSMs%20with%20and%20without%20an%20enabling%20intracavity%20illumin.pdf",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "Retrospective chart revivew of nipple sparing mastectomies with and without an enabling intracavity illumination and visualization system",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/surgical-access-and-visualization/white-papers/Retrospective Chart Review of NSMs with and without an enabling intracavity illumin.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:27:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Retrospective chart revivew of nipple sparing mastectomies with and without an enabling intracavity illumination and visualization system<br>\n</h2>\n<p><b>Authors:</b>&nbsp;Beth Baughman DuPree, MD, FACS, ABIHM, William Scarlett, DO, FACS, FACOS, FAACS, Anna Smaron, Marie Cassese, Darren Eskow, Jeff Gross, PhD</p>\n<p>Nipple Sparing Mastectomy (NSM) has become a desirable option for oncologic treatment of breast cancer with excellent clinical and aesthetic outcomes in appropriate patients. Still, this procedure can technically challenging for surgeons, and patient selection is a critical factor. Technological advances have enabled surgeons to improve their surgical efficiency and proficiency, decrease complications, reduce surgical times, and improve aesthetic outcomes. Shorter anesthesia times are beneficial for patients. The addition of advanced technologies has enabled us to further decrease surgical times, increase flap visibility, nipple areolar viability, contractility and sensation and improve aesthetic outcomes.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:30:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "VIEW / DOWNLOAD",
+          "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/white-papers/Retrospective%20Chart%20Review%20of%20NSMs%20with%20and%20without%20an%20enabling%20intracavity%20illumin.pdf",
+          "jcr:lastModified": "Fri May 13 2022 23:27:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 22 2022 21:31:40 GMT+0000",
+      "title": "Journal articles",
+      "jcr:lastModified": "Fri Apr 22 2022 21:31:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_copy_c_1577122603": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/PACE%20Journal%20Manuscript%20LEAD%20study.pdf",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "Avoiding damage to transvenous leads - a comparison of electrocautery techniques and two insulated electrocautery blades",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/surgical-access-and-visualization/journal-articles/PACE Journal Manuscript LEAD study.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:28:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Avoiding damage to transvenous leads - a comparison of electrocautery techniques and two insulated electrocautery blades<br>\n</h2>\n<p><b>Authors:</b>&nbsp;Jeremiah Wasserlauf, MD, MS, Taiki Esheim BS, MBA, Natasha M. Jarett BS, Eric K.Y. Chan, PhD, Robert D. Schaller, DO, Fermin C. Garcia, MD, Bradley P. Knight, MD</p>\n<p>Electrocautery (cautery) can damage transvenous cardiac device leads. The purpose of this study was to compare lead damage from an insulated cautery blade when used with several different techniques that included coagulation (COAG) versus cutting (CUT) mode, perpendicular active edge (active) versus parallel flat blade (flat) orientation (phase 1), and using one commercially available blade versus another (phase 1).<br>\n</p>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:33:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "VIEW / DOWNLOAD",
+          "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/PACE%20Journal%20Manuscript%20LEAD%20study.pdf",
+          "jcr:lastModified": "Fri May 13 2022 23:28:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_copy_1755601358_587964024": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 15:26:18 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 15:26:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri May 13 2022 15:26:27 GMT+0000",
+          "jcr:lastModified": "Fri May 13 2022 15:26:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c_985254230": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/Evidence%20based%20outcomes%20of%20the%20ASBrS%20NSM%20registry.pdf",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "Evidence-based outcomes of the American Society of Breast Surgeons Nipple Sparing Mastectomy Registry",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/surgical-access-and-visualization/journal-articles/Evidence based outcomes of the ASBrS NSM registry.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:29:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Evidence-based outcomes of the American Society of Breast Surgeons Nipple Sparing Mastectomy Registry<br>\n</h2>\n<p><b>Authors:</b>&nbsp;Sunny D. Mitchell, Shawna C. Willey, Peter Beitsch, Sheldon Feldman</p>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:34:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "VIEW / DOWNLOAD",
+          "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/Evidence%20based%20outcomes%20of%20the%20ASBrS%20NSM%20registry.pdf",
+          "jcr:lastModified": "Fri May 13 2022 23:29:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_copy_1755601358": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 15:26:18 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 15:26:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri May 13 2022 15:26:27 GMT+0000",
+          "jcr:lastModified": "Fri May 13 2022 15:26:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c_1048484006": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/SPIE%20Manuscript.pdf",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "Assessment of penetrating thermal tissue damage/spread",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/surgical-access-and-visualization/journal-articles/SPIE Manuscript.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:30:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Assessment of penetrating thermal tissue damage/spread<br>\n</h2>\n<p><b>Authors:</b>&nbsp;Haydon E. Bennett, Scott D. Taylor, James H. Fugett II, Joshua L. Shrout, Paul O. Davison, S. Eric Ryan, James E. Coad</p>\n<p>Penetrating thermal tissue damage/spread is an important aspect of many electrosurgical devices and correlates with effective tissue cutting, hemostasis, preservation of adjacent critical structures and tissue healing.</p>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:35:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "VIEW / DOWNLOAD",
+          "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/journal-articles/SPIE%20Manuscript.pdf",
+          "jcr:lastModified": "Fri May 13 2022 23:30:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "section_title_copy_c_280746073": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Thu Mar 17 2022 18:47:38 GMT+0000",
+      "title": "Case studies",
+      "jcr:lastModified": "Mon Apr 04 2022 18:49:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_140230": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Mon Apr 04 2022 20:30:38 GMT+0000",
+      "jcr:lastModified": "Mon Apr 04 2022 20:30:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/case-studies/Direct%20Anterior%20Hip%20Study%20Manuscript.pdf",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "Use of the saber yankauer™ handheld illuminator in anterior approach total hip arthroplasty surgery",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/surgical-access-and-visualization/case-studies/Direct Anterior Hip Study Manuscript.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 13 2022 23:31:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Use of the saber yankauer™ handheld illuminator in anterior approach total hip arthroplasty surgery<br>\n</h2>\n<p>A survey of leading orthopedic surgeons on the benefits for surgical precision, workflow efficiency &amp; patient safety</p>\n<p><b>Authors:</b>&nbsp;Joel Matta, John Masonis, MD, Anthony Carter, MD, David Homesley, MD, Tarun Bhargava, MD, Cass K Nakasone, MD, Hamid Redjal, MD, Charles DeCook, MD, Herrick Siegel, MD, J. Deal Cole, MD, Anthony Unger, MD</p>\n<p>Total hip arthroplasty (THA) is an established cost-effective treatment for arthritis of the hip joint. The anterior approach is becoming more popular among patients.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Apr 22 2022 21:36:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "VIEW / DOWNLOAD",
+          "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/education-and-training/focusrn/resources/surgical-access-and-visualization/case-studies/Direct%20Anterior%20Hip%20Study%20Manuscript.pdf",
+          "jcr:lastModified": "Fri May 13 2022 23:31:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

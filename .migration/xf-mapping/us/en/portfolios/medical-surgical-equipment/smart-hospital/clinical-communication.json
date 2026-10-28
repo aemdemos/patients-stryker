@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Turning data into insights. Turning insights into enhanced patient care.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Clinical communication",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "172b7d9f-f4f0-4ad4-bfcb-cfb909832429",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "Stryker's clinical communication devices, mobile screens and hands-free badges",
+  "jcr:predecessors": [
+    "0dc263bb-5f36-411a-8fca-3f2f67b4de86"
+  ],
+  "contentID": "AC-GSNPS-SYK-2604102_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:35:46 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:35:47 GMT+0000",
+  "cq:lastModified": "Fri Jan 23 2026 15:37:49 GMT+0000",
+  "jcr:description": "Unify the people and information needed to deliver patient care and simplify communication. Create a richer, more human-centered connection for care teams, patients and their loved ones. Our solutions can be tailored for your specific needs, from urgent, voice communication when seconds matter, to secure messaging, closed-loop EHR workflows and more.",
+  "jcr:baseVersion": "0dc263bb-5f36-411a-8fca-3f2f67b4de86",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital",
+    "stryker:specialty/clinical-communication"
+  ],
+  "jcr:lastModified": "Wed Jan 14 2026 16:38:22 GMT+0000",
+  "jcr:uuid": "d4b28f81-2088-449c-a95c-9408805bb96a",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/smarthospital-platform/clinical-communication/clinical-communications_hero_nowaves_675x450.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModified": "Tue Jan 06 2026 14:30:56 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tagFolder": "/etc/tags/stryker/specialty/clinical-communication"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-ease"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-edge"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/sync-badge"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-smartbadge"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-minibadge"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-vina"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-collaboration-suite"
+      },
+      "8": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-accessories"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Jan 06 2026 14:25:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The names and characters presented throughout are entirely fictious. Any similarity to names or incidents is entirely coincidental.</p>\r\n",
+    "jcr:lastModified": "Fri Jan 23 2026 15:37:49 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

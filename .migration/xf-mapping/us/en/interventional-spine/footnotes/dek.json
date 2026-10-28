@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "D0000068686",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Disc Decompression Patient Brochure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dc19a623-6c3e-4596-a3cb-da11a91bed13",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "86422407-5d9b-432e-8435-adc891666523"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:00 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:02 GMT+0000",
+  "cq:lastModified": "Mon Dec 22 2025 18:48:26 GMT+0000",
+  "jcr:baseVersion": "86422407-5d9b-432e-8435-adc891666523",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "jcr:lastModified": "Wed Sep 17 2025 19:24:35 GMT+0000",
+  "jcr:uuid": "9d13300d-ad14-48ae-8a53-343f39efb41d",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 17 2025 19:23:55 GMT+0000",
+      "jcr:lastModified": "Wed Sep 17 2025 19:23:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 00:13:43 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">D0000068686 Rev AA</span></span></p>\n<p><b>Revision Date: 01.22.21</b></p>\n<ol>\n<li>Interventional Spine &amp; Pain Centre. (2018). Discogenic back pain. Retrieved from: http://spinepainindore.com/conditions/discogenic-back-pain/<br>\n</li>\n<li>Alo K et al. Percutaneous lumbar discectomy: Clinical response in an initial cohort of fifty consecutive patients with chronic radicular pain. Pain Practice. 2004; 4(1):19-29.</li>\n<li>Alo K et al. Percutaneous lumbar discectomy: One-year follow-up in an initial cohort of fifty consecutive patients with chronic radicular pain. Pain Practice. 2005; 5(2):116-124.</li>\n<li>North American Spine Society. (2020). Herniated lumbar disc. Retrieved from: https://www.spine.org/KnowYourBack/Conditions/Degenerative-Conditions/Herniated-Lumbar-Disc&nbsp;&nbsp;</li>\n<li>Miller R. (2019, April 10). Sciatica causes and exercises. Retrieved from: https://www.spine-health.com/wellness/exercise/sciatica-causes-and-exercises</li>\n<li>American Association of Neurological Surgeons. (2020). Herniated disc. Retrieved from: https://www.aans.org/en/Patients/Neurosurgical-Conditions-and-Treatments/Herniated-Disc&nbsp;</li>\n<li>Hartl R. (2016, July 6). Lumbar herniated disc symptoms. Retrieved from: https://www.spine-health.com/conditions/herniated-disc/lumbar-herniated-disc-symptoms</li>\n<li>Mummaneni P. (2019, May 21). Discogenic low back pain. Retrieved from: https://www.spineuniverse.com/conditions/back-pain/discogenic-low-back-pain</li>\n<li>Bohinski R. (2018). Lumbar discectomy. Retrieved from: https://www.mayfieldclinic.com/pe-lumdiscectomy.htm</li>\n<li>National Spine &amp; Pain Centers. (2020). Percutaneous discectomy: Alternative treatment for herniated discs. Retrieved from: https://www.treatingpain.com/treatments/percutaneous-discectomy/</li>\n<li>Hirsch J. (2019, March 19). Percutaneous discectomy. Retrieved from: https://www.spineuniverse.com/treatments/surgery/percutaneous-discectomy</li>\n<li>Erginousakis D et al. Comparative prospective randomized study comparing conservative treatment and percutaneous disk decompression for treatment of intervertebral disk herniation. Radiology. 2011; 260(2):487-493.</li>\n</ol>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">D0000068686</span></span></p>\n<p><b>Revision Date: 12.26.20</b></p>\n<ol>\n<li>Interventional Spine &amp; Pain Centre. (2018). Discogenic back pain. Retrieved from: http://spinepainindore.com/conditions/discogenic-back-pain/&nbsp;&nbsp;<br>\n</li>\n<li>Alo K et al. Percutaneous lumbar discectomy: Clinical response in an initial cohort of fifty consecutive patients with chronic radicular pain. Pain Practice. 2004; 4(1):19-29.</li>\n<li>Alo K et al. Percutaneous lumbar discectomy: One-year follow-up in an initial cohort of fifty consecutive patients with chronic radicular pain. Pain Practice. 2005; 5(2):116-124.</li>\n<li>North American Spine Society. (2020). Herniated lumbar disc. Retrieved from: https://www.spine.org/KnowYourBack/Conditions/Degenerative-Conditions/Herniated-Lumbar-Disc&nbsp;</li>\n<li>Miller R. (2019, April 10). Sciatica causes and exercises. Retrieved from: https://www.spine-health.com/wellness/exercise/sciatica-causes-and-exercises</li>\n<li>American Association of Neurological Surgeons. (2020). Herniated disc. Retrieved from: https://www.aans.org/en/Patients/Neurosurgical-Conditions-and-Treatments/Herniated-Disc&nbsp;</li>\n<li>Hartl R. (2016, July 6). Lumbar herniated disc symptoms. Retrieved from: https://www.spine-health.com/conditions/herniated-disc/lumbar-herniated-disc-symptoms&nbsp;</li>\n<li>Mummaneni P. (2019, May 21). Discogenic low back pain. Retrieved from: https://www.spineuniverse.com/conditions/back-pain/discogenic-low-back-pain</li>\n<li>National Spine &amp; Pain Centers. (2020). Percutaneous discectomy: Alternative treatment for herniated discs. Retrieved from: https://www.treatingpain.com/treatments/percutaneous-discectomy/</li>\n<li>Erginousakis D et al. Comparative prospective randomized study comparing conservative treatment and percutaneous disk decompression for treatment of intervertebral disk herniation. Radiology. 2011; 260(2):487-493.&nbsp;</li>\n</ol>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Rev H</span></span></p>\n<p><b>Revision Date: 07.31.17</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29<br>\n</li>\n<li>Alò KM, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: one-year follow-up in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Pract 2005 Jun; 5(2):116-24</li>\n<li>WebMD. Lumbar Herniated Disc Guide.&nbsp;<a href=\"http://www.webmd.com/back-pain/tc/herniated-disc-topic-overview\">http://www.webmd.com/back-pain/tc/herniated-disc-topic-overview</a>. Accessed September 15, 2015.</li>\n<li>Carragee EJ, Han MY, Yang B, Kim D, Kraemer H, Billys J. Activity restrictions after posterior lumbar discectomy: a prospective study of outcomes in 152 case with no postoperative restrictions. Spine 1999 Nov 15; 24(22):2346-51</li>\n<li>Mariconda M, Galasso O, Secondulfo V, Rotonda GD, Milano C. Minimum 25-year outcome and functional assessment of lumbar discectomy. Spine 2006 Oct 15;31(22):2593-99</li>\n</ol>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Rev F</span></span></p>\n<p><b>Revision Date: 12.04.15</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29<br>\n</li>\n<li>Alò KM, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: one-year follow-up in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Pract 2005 Jun; 5(2):116-24</li>\n<li>WebMD. Lumbar Herniated Disc Guide.&nbsp;<a href=\"http://www.webmd.com/back-pain/tc/herniated-disc-topic-overview\">http://www.webmd.com/back-pain/tc/herniated-disc-topic-overview</a>. Accessed September 15, 2015.</li>\n<li>Carragee EJ, Han MY, Yang B, Kim D, Kraemer H, Billys J. Activity restrictions after posterior lumbar discectomy: a prospective study of outcomes in 152 case with no postoperative restrictions. Spine 1999 Nov 15; 24(22):2346-51</li>\n<li>Mariconda M, Galasso O, Secondulfo V, Rotonda GD, Milano C. Minimum 25-year outcome and functional assessment of lumbar discectomy. Spine 2006 Oct 15;31(22):2593-99</li>\n</ol>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Rev E</span></span></p>\n<p><b>Revision Date: 12.03.15</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n<li>Lipetz JS. Pathophysiology of inflammatory, degenerative, and compressive radiculopathies. Phys Med Rehabil Clin N Am 2002 Aug;13(3):439-49</li>\n<li>Prescher A. Anatomy and pathology of the aging spine. Eur J Radiol 1998 Jul;27(3):181-95</li>\n<li>Coppes MH, Marani E, Thomeer RT, Groen GJ. Innervation of the painful lumbar discs. Spine 1997 Oct 15; 22(20):2342-50</li>\n<li>Carey TS, Garrett J, Jackman A, Mclaughlin C, Fryer J, Smucker D. The outcomes and costs of care for acute low back pain among patients seen by primary care practitioners, chiropractors, and orthopedic surgeons. The North Carolina Back Pain Project. N Eng J Med 1995 Oct 5; 333(14):913-7</li>\n<li>Mayo Clinic.com http://www.mayoclinic.com/health/back-pain/DS00536/&amp;;;slide=4 Accessed April 30, 2008</li>\n<li>WebMd.com http://www.webmd.com/back-pain/tc/herniated-disc-topic-overview Accessed April 30, 2008</li>\n<li>Alò K, Wright RE, Fu ZJ. Open human torso laboratory dissection with annular and nuclear lumbar disc analysis pre and post Dekompressor®. Denver, CO: University of Colorado Health Sciences Center College of Medicine, Department of Anatomy; January 19/20, 2003</li>\n<li>Alò KM, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: one-year follow-up in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Pract 2005 Jun; 5(2):116-24</li>\n<li>Carragee EJ, Han MY, Yang B, Kim D, Kraemer H, Billys J. Activity restrictions after posterior lumbar discectomy: a prospective study of outcomes in 152 case with no postoperative restrictions. Spine 1999 Nov 15; 24(22):2346-51</li>\n<li>Wright R. Preclinical laboratory analysis of Dekompressor® percutaneous decompression in sheep and human cadaver discs: internal data. Fort Collins, CO: Colorado State University; May 2000</li>\n<li>Onik G, et al. Automated percutaneous diskectomy: initial patient experience. Work in progress. Radiology 1987 Jan;162(1 Pt 1): 129-32</li>\n<li>Davis GW, Onik G. Clinical experience with automated percutaneous discectomy. Clin Orthop Relat Res 1989 Jan;(238):98-103</li>\n<li>Onik G, et al. Automated percutaneous discectomy: a prospective multi-institutional study. Neurosurgery 1990 Feb;26(2): 228-32; discussion 232-3</li>\n<li>Maroon JC, Onik G, Sternau L. Percutaneous automated discectomy. a new approach to lumbar surgery. Clin Orthop Relate Res 1989 Jan;(238):64-70</li>\n<li>Gill K, Blumenthal SL. Clinical experience with automated percutaneous discectomy: the Nucleotome system. Orthopedics 1991 Jul;14(7):757-60</li>\n<li>Gill K, Blumenthal SL. Automated percutaneous discectomy. long-term clinical experience with the Nucleotome system. Acta Orthop Scand Suppl 1993;251:30-3</li>\n<li>Castro WH, et al. Restriction of indication for automated percutaneous discectomy based on computed tomographic discography. Spine 1992 Oct;17(10):1239-43</li>\n<li>Yeo SJ, Tay BK. Clinical experience with automated percutaneous discectomy. Singapore Med J 1993 Aug;34(4):313-5</li>\n<li>Mathews R, Ken G, Miller M. APLD: A prospective study in an outpatient surgical setting. ISIS Newsletter, 1997</li>\n<li>Mariconda M, Galasso O, Secondulfo V, Rotonda GD, Milano C. Minimum 25-year outcome and functional assessment of lumbar discectomy. Spine 2006 Oct 15;31(22):2593-99</li>\n</ol>\n",
+      "jcr:lastModified": "Thu Sep 18 2025 19:06:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

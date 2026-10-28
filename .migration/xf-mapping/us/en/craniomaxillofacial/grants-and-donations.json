@@ -1,0 +1,228 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Grants & Donations",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "deb10127-6323-4cb3-b5d4-22e7db8a9399",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "jcr:predecessors": [
+    "a5ae7adf-0a0d-40f2-9b9f-eba5784a78fe"
+  ],
+  "contentID": "CMF-GSNPS-SYK-1996070_REV-0",
+  "lastPublished": "Fri Jul 10 2026 20:41:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 10 2026 20:41:11 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 10 2026 20:41:14 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2026 20:41:01 GMT+0000",
+  "jcr:baseVersion": "a5ae7adf-0a0d-40f2-9b9f-eba5784a78fe",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 01 2025 15:08:00 GMT+0000",
+  "jcr:lastModified": "Wed Jul 02 2025 14:22:48 GMT+0000",
+  "jcr:uuid": "1c3cba08-dae6-4df0-aa31-806a1cf3771d",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jun 16 2025 15:58:32 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Grants and donations</span></span></h1>\n",
+      "jcr:lastModified": "Wed Jul 02 2025 14:24:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 14:32:47 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 14:32:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 16 2025 13:58:51 GMT+0000",
+          "alt": "Grants hero",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/grants-and-donations/images/1452531808-meded-grants.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 16 2025 15:27:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_2_3_1_3_900922555": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 15:29:28 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 15:29:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 16 2025 13:59:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Craniomaxillofacial division program overview</span></span></p>\n<p>At Stryker, we recognize the important role that educational grants and charitable contributions play in our mission, both in benefits to patient care and the advancement of medical technology, treatment, and knowledge.</p>\n<p>Factors our committee considers as part of the review process may include the following: content, audience, location, and budget. On an annual basis, we receive hundreds of requests and we aim to provide responsible support. Due to finite resources, not every quality program will receive support.</p>\n<p>All requests must be submitted at least 8 weeks prior to the program start date.</p>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 15:50:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 16 2025 16:01:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Jun 16 2025 16:01:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)"
+        },
+        "text_copy_1400922100": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 16 2025 13:59:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Contact information<br>\n </span></span><a href=\"mailto:GRTManagers@stryker.com\"><span class=\"standalone-link\">GRTManagers@stryker.com</span></a><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n </span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 15:51:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1311347294": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 15:46:13 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 15:46:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 15:35:47 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 15:35:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 16 2025 13:59:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Application link</span></span></p>\n<p>To register and apply for a grant or donation from Stryker's Craniomaxillofacial division, please visit<br>\n<span class=\"standalone-link\"><a href=\"https://globalrequests.stryker.com/\" target=\"_blank\">globalrequests.stryker.com</a></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 15:20:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1852081821": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Jun 16 2025 13:59:03 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Additional resources</span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 15:09:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Jun 16 2025 15:06:29 GMT+0000",
+          "jcr:lastModified": "Fri Jul 10 2026 20:41:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(76,125,122)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "GRT Application Guide",
+              "damLink": "/content/dam/stryker/craniomaxillofacial/grants-and-donations/resources/CMF-GRT-Application-Guide-2026.pdf",
+              "externalLinkType": "dam"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "http://www.cms.gov/",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "Federal Transparency Sunshine Act",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 15:21:53 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 15:21:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

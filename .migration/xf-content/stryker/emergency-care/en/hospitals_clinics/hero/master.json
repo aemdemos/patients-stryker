@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4cbb5aab-19b5-43ae-bb84-9a3ac2b9d904",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c18cbd56-fa1a-4bd9-a36b-d46de5ddd0fb"
+  ],
+  "lastPublished": "Tue Oct 14 2025 14:57:41 GMT+0000",
+  "jcr:created": "Tue Oct 14 2025 14:57:43 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 14 2025 14:57:44 GMT+0000",
+  "cq:lastModified": "Tue Sep 09 2025 21:53:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c18cbd56-fa1a-4bd9-a36b-d46de5ddd0fb",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:44:46 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "836400d9-fdb0-4ed4-8cc4-09ebfb64e05d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Sep 08 2025 18:05:17 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Sep 08 2025 18:06:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/hospitals-clinics/video/empower-care-hero-video_1920x640.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/empower-care-hero-video_1920x640-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Sep 09 2025 21:53:32 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

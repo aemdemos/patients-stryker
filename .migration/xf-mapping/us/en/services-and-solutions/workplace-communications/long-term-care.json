@@ -1,0 +1,451 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Long-term care | handsfree device communication",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a9fd395f-5638-4005-b97f-a641674ff1d8",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "nurse wearing Vocera Smartbagde help patient in home",
+  "jcr:predecessors": [
+    "be6dc011-0622-4655-be31-cc2873ab6b2f"
+  ],
+  "contentID": "M0000017667 REV AA",
+  "lastPublished": "Thu Apr 16 2026 22:07:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 16 2026 22:07:51 GMT+0000",
+  "cq:lastReplicated": "Thu Apr 16 2026 22:07:54 GMT+0000",
+  "cq:lastModified": "Wed Apr 15 2026 18:56:57 GMT+0000",
+  "jcr:description": "Staff at long-term care and senior living communities do the type of work they do because they care about residents, yet they spend a great deal of time just trying to locate each other, leaving less time for the fulfilling aspects of caregiving. Employees need to be able to collaborate efficiently and get help quickly for their own safety and that of residents.",
+  "jcr:baseVersion": "be6dc011-0622-4655-be31-cc2873ab6b2f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:31:55 GMT+0000",
+  "pageTitle": "long-term care",
+  "jcr:lastModified": "Wed Jan 28 2026 20:02:53 GMT+0000",
+  "jcr:uuid": "9ef5b6fc-36df-4e8e-820d-01c338c9a7aa",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c_786887911": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Jan 22 2024 16:37:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/vocera_workplace_com/long_term_care/hero----long-term-care/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/vocera-workplace-com/long-term-care/hero-long-term-care/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/acute-care/en/products/vocera_workplace_com/long_term_care/hero----long-term-care/hero---long-term-care-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/acute-care/en/products/vocera-workplace-com/long-term-care/hero-long-term-care/hero-long-term-care-mobile",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Jan 22 2024 18:07:29 GMT+0000",
+          "marginRight": "40",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "topPadding": "2",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Communication for long-term care and senior living communities</span></span></span></h1>\n<h2>Supporting employee safety and resident safety<br>\n</h2>\n",
+              "jcr:lastModified": "Tue Feb 20 2024 13:33:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/long-term-care_hero_1200x680.jpg"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_73054120": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Fri Jan 19 2024 19:35:35 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Fri Jan 19 2024 19:35:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jan 05 2024 21:14:14 GMT+0000",
+      "jcr:lastModified": "Fri Jan 05 2024 21:14:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jan 05 2024 21:14:20 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Help your staff <span style=\"color: #323232;\"><span style=\"color: #ffb500;\">work smarter, not harder</span></span></span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Creating a better experience for them and the residents they serve</span></span></p>\n<p><span class=\"fontsize-1-25em\">Staff at long-term care and senior living communities do the type of work they do because they care about residents, yet they spend a great deal of time just trying to locate each other, leaving less time for the fulfilling aspects of caregiving. Employees need to be able to collaborate efficiently and get help quickly for their own safety and that of residents.</span></p>\n",
+          "jcr:lastModified": "Fri Apr 19 2024 14:07:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_2124941498": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "jcr:lastModified": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 05 2024 20:45:08 GMT+0000",
+          "alt": "Long-term care nurse sitting on sofa with patient wearing Vocera badges",
+          "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/long-term-care_nurse-patient-seated.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 19 2024 14:08:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Communicate easily with individuals or groups</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Save steps and time by connecting quickly with nurses, certified nursing assistants and staff members without needing to know names, extensions or phone numbers.</span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Know who is and isn’t available with a near-real time directory view of staff in different functional areas across your facility.</span></li>\n<li><span class=\"fontsize-1-25em\">Call or page people inside or outside the facility – anyone, anywhere – and receive a direct call back. <br>\n </span>&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 22 2024 12:54:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "jcr:lastModified": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 05 2024 20:45:08 GMT+0000",
+          "alt": "Male nurse wearing a Vocera Smartbadge providing care to a senior living patient ",
+          "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/long-term-care_nurse-with-patient-walking-holding-hands.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 19 2024 14:10:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Deliver alarms and notifications to the right people at the right time</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Vocera technology integrates with pendant, nurse call and wander-alert systems, and more.</span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Our technology can route notifications from these systems to the right team members who can respond quickly based on their proximity and availability.</span></li>\n<li><span class=\"fontsize-1-25em\">Notifications include the patient’s name, location and type of event.</span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 22 2024 12:50:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "jcr:lastModified": "Tue Feb 06 2024 16:29:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 05 2024 20:45:08 GMT+0000",
+          "alt": "Retirement community security guard responding to a call on the Vocera Smartbadge",
+          "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/hospitality_security-guard.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 19 2024 14:10:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jan 05 2024 20:46:06 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reach help quickly in an emergency</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Safety for residents and employees at long-term care and senior living communities depends upon having fast access to help. The Smartbadge has a built-in panic button intended for emergencies and active threats. Press it to discreetly broadcast to a response group.<br>\n</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Response group members will see the name and location of who’s sending the broadcast.</span></li>\n<li><span class=\"fontsize-1-25em\">They can hear what’s happening and communicate directly with that person if the situation allows it.</span></li>\n<li><span class=\"fontsize-1-25em\">Staff can use the Smartbadge to make a straight call to 911.</span><br>\n&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Feb 20 2024 13:44:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_1780160075": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 06 2024 16:30:40 GMT+0000",
+      "jcr:lastModified": "Tue Feb 06 2024 16:30:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 05 2024 20:45:08 GMT+0000",
+          "alt": "Nurse hugging patient both smiling",
+          "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/long-term-care_nurse-hugging-patient.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 19 2024 14:10:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jan 05 2024 20:46:06 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Create a quiet, home-like environment</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Minimize or eliminate noise from nurse call systems or intercoms.<br>\n</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Staff can call each other directly and use an earpiece or handset mode to allow more discreet conversations.</span></li>\n<li><span class=\"fontsize-1-25em\">Speak safely with isolated residents and bring family into the conversation.</span></li>\n<li><span class=\"fontsize-1-25em\">Residents can feel more at home thanks to quiet, discreet communication and more timely service from staff.<br>\n </span>&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Jan 22 2024 18:09:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jan 05 2024 21:05:23 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h4><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">“The integration of Stryker’s Vocera technology with our life-safety system is like having our own 911 center. It lets us respond to urgent resident needs faster and more intelligently.”</span></span></h4>\r\n<p style=\"text-align: right;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Karen Kemp</span><br>\r\n IT Application Support Manager, Covia</span></p>\r\n<h4>&nbsp;</h4>\r\n",
+      "jcr:lastModified": "Tue Feb 06 2024 16:31:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_1910886951": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Fri Jan 19 2024 19:35:55 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Fri Jan 19 2024 19:36:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c_1831758286": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Aug 28 2023 21:51:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"urw-egyptienne\">Interested in learning more?</span>&nbsp;<span class=\"futura-bold\">Connect with an expert.</span></span>",
+      "jcr:lastModified": "Wed Jan 10 2024 16:16:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_157571": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed May 24 2023 14:01:01 GMT+0000",
+      "jcr:lastModified": "Wed May 24 2023 14:01:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed May 24 2023 14:01:12 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for filling out the form! A Stryker representative will be in contact with you shortly.",
+          "jcr:lastModified": "Tue Aug 29 2023 15:29:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Jan 11 2024 15:26:47 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Thu Jan 11 2024 15:27:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Fri Jan 19 2024 22:14:40 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Fri Jan 19 2024 22:14:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "resources": "/content/dam/stryker/acute-care/vocera/resources/case-studies/vocera-covia-case-study.pdf",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Jan 19 2024 19:28:52 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Fri Jan 19 2024 22:14:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jan 11 2024 15:27:34 GMT+0000",
+      "hideButton": "false",
+      "title": "Featured products",
+      "jcr:lastModified": "Wed Apr 15 2026 18:56:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "false",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/products/sync-badge"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/products/vocera-smartbadge"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 28 2022 21:49:32 GMT+0000",
+      "text": "Vocera resources Customer support Contact sales and support Customer support portal Training and education Vocera University Documentation Vocera documentation portal Resources and downloads Vocera legal Vocera legal documents Professional services Vocera professional services Vocera Accessories Shop the Vocera Store",
+      "jcr:lastModified": "Mon Oct 02 2023 19:05:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master"
+    }
+  }
+}

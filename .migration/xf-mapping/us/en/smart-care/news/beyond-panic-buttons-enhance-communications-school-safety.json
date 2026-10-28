@@ -1,0 +1,120 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Beyond panic buttons: Three ways to enhance day-to-day and crisis communication in schools",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d2901603-7ecc-4b44-831d-893458cb536a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "School teacher communicating with students",
+  "jcr:predecessors": [
+    "a9f4f080-af06-495e-84a2-4cd4cf653d12"
+  ],
+  "contentID": "AC-VSB-COMM-1201539_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 20:01:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 20:01:34 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 20:01:35 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 17:01:56 GMT+0000",
+  "jcr:description": "School administrators are all too aware of the threat of violence in our nation’s schools today. Post-incident reports from government agencies and commissions following tragic shootings are rife with recommendations intended to help schools prevent future acts of gun violence, and to help law enforcement respond more effectively. ",
+  "jcr:baseVersion": "a9f4f080-af06-495e-84a2-4cd4cf653d12",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 03 2024 18:43:48 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:custom/acute-care/acute-care-bu-news"
+  ],
+  "jcr:lastModified": "Wed Aug 28 2024 20:30:25 GMT+0000",
+  "jcr:uuid": "61a4e373-c74f-4ba8-b677-3fccbd6be880",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 28 2024 20:13:59 GMT+0000",
+      "alt": "School teacher interacting with students at the front of a classroom",
+      "srcFileRef": "/content/dam/stryker/acute-care/news/vocera-k-12-crisis-communications/vocera-k12-crisis-communications_hero_1440x960.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Aug 30 2024 17:33:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 20:14:04 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>4-minute read</i></span></p>\n<h2><span style=\"font-weight: normal;\"><span class=\"futura-bold\">Enable staff to communicate quickly, directly and effectively</span></span></h2>\n<p><span class=\"fontsize-1-25em\">School administrators are all too aware of the threat of violence in our nation’s schools today. Post-incident reports from government agencies and commissions following tragic shootings are rife with recommendations intended to help schools prevent future acts of gun violence, and to help law enforcement respond more effectively. Recommendations that can be addressed within schools themselves include (but are not limited to) shoring up policies and procedures, with more effective planning, preparation and training; hardening doors and windows; and improving crisis communication.</span></p>\n<p><span class=\"fontsize-1-25em\">Our focus turns to the recurring theme in post-incident reports of communication breakdowns within schools and between schools and law enforcement, because we have solutions that can help.</span></p>\n<p><span class=\"fontsize-1-25em\">This article looks at examples of where crisis communication has broken down in more recent incidents, and three ways schools can enhance it with help from Stryker’s Smartbadge – a unique device that can be likened to having a panic button, phone, two-way radio and PA system all in one small wearable.</span></p>\n<h3><span class=\"futura-bold\">1. Hardwire protocols into your communication system</span></h3>\n<p><span class=\"fontsize-1-25em\">Reports following recent school shootings suggest that staff members faced barriers to communicating effectively in a crisis. In one instance, radio failures caused communication delays and confusion that hindered authorities from coordinating a response, and 911 call routing problems impeded people in dire distress who were trying to get help.<sup>1</sup> In another example, someone called a Code Red that couldn’t reach people in the hallways or outdoors because there were no PA speakers in those places, while fire alarms led people to follow evacuation protocols that put them at risk.<sup>2</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Now, imagine a situation where a staff member sees a threat, and they can press a panic button built into a communication device they wear all the time. But this is no ordinary panic button. This panic button discreetly opens a communication channel that broadcasts to an on-campus response team. The response team can see the staff member’s name and location, hear what’s happening and communicate directly with the person if the situation allows. The response team can coordinate crisis communication across the campus and with authorities as needed, according to protocol. They can also communicate directly with teachers to inform them to go into lockdown and ignore conflicting direction from a triggered fire alarm or anything else.</span></p>\n<p><span class=\"fontsize-1-25em\">This is what happens when a user presses the built-in panic button on our lightweight, wearable Smartbadge, and a school’s communication protocols are hardwired into our communication platform.</span></p>\n<p><span class=\"fontsize-1-25em\">Beyond the panic button, staff members can use the Smartbadge every day and in an emergency to communicate one-to-one and with specific user groups via voice calling or secure messaging, all without needing to know names or numbers. They can even use simple voice commands to initiate communication hands-free.</span></p>\n<h3><span class=\"futura-bold\">2. Equip staff to communicate anytime, from anywhere on campus</span></h3>\n<p><span class=\"fontsize-1-25em\">During an active shooter incident at one school, several district employees used the school’s emergency alert system via a smartphone app to send a lockdown alert.</span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">As it turned out, there were two significant problems.</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">First, employees did not always reliably receive alerts from that system – for example, if their phones were turned off or stowed, or if they had to log in to a computer in order to see a notification.<sup>3</sup></span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Second, the active shooter alerts were not differentiated from certain less-critical alerts staff had been receiving with nuisance-level frequency, so they didn’t respond to the active shooter alerts with appropriate urgency.<sup>3</sup></span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">A communication device is of use in a crisis only if it’s with the user wherever they are on campus, and turned on. And notifications are of use only if they are accurate and meaningful to recipients.</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Because a teacher can wear Stryker’s Smartbadge, the device is likely to be with them and at the ready when they need it most. They can set the Smartbadge to Do Not Disturb (DND) to allow focus on education activities. DND mode can be overridden in an emergency.</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">With the Smartbadge, school administrators have a voice in how protocols will be hardwired. They can help ensure that notifications will be differentiated from one another and intuitive to the teachers, secretaries, support staff, SROs and maintenance team members who receive them.</span></span></span></span></p>\n<h3><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"futura-bold\">3. Integrate communication with campus security technologies</span></span></span></span></h3>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">In more than one case, a perpetrator entered a school building through an unlocked exterior door.<sup>1,2</sup></span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Imagine a scenario where exterior doors are integrated with your access control, campus security and communication systems, allowing a resource officer or security team to promptly receive a “door unlocked” notification and take quick action.*</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Our Smartbadge is part of an enterprise communication platform that can integrate with campus security systems for situational awareness, mass notification and more.* The platform can route alarm and system notifications to the right people at the right time<sup>4</sup> to help speed law enforcement and EMT response and allow broad communication in the event of a threat.</span></span></span></span></p>\n<h3><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><b><span class=\"futura-bold\">We’re here to help</span></b></span></span></span></h3>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Every school should be a secure and safe place where teachers and students can thrive.</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">At Stryker, our solutions have been helping healthcare teams for more than 20 years with proven, reliable communication where lifesaving activities are critical. In the same way, we’re here to help schools empower staff to communicate quickly, broadly and effectively in a crisis, no matter the situation.</span></span></span></span></p>\n<p><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">Visit <a href=\"https://www.stryker.com/school-safety\">stryker.com/school-safety</a> to learn how our all-in-one communication and security solution can help you create a quieter environment for teaching and learning – and a communication hub for school safety and security.</span></span></span></span></p>\n<p>*Requires integration with Stryker’s <a href=\"/content/stryker/us/en/smart-care/products/vocera-engage.html\">Vocera Engage</a> intelligent middleware. Capabilities are based on your facility’s protocols and technology configuration.<span class=\"fontsize-1-25em\"><br>\n </span>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 17:01:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Aug 29 2024 19:44:27 GMT+0000",
+      "hideButton": "false",
+      "title": "Related",
+      "jcr:lastModified": "Mon Feb 02 2026 17:00:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "false",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/vocera/workplace-communications/education"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/news/school-safety-staff-communication"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Aug 05 2024 18:25:02 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Mon Aug 05 2024 18:25:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Wed Aug 28 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "28-Aug-2024",
+    "jcr:lastModified": "Wed Aug 28 2024 20:30:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/news/vocera-k-12-crisis-communications/vocera-k12-crisis-communications_thumbnail_1200x680.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. United States Department of Justice. Critical Incident Review Active Shooter at Robb Elementary School. 2024. Retrieved July 16, 2024.</p>\r\n<p>2. Marjory Stoneman Douglas High School Public Safety Commission. Initial Report Submitted to the Governor, Speaker of the House of Representatives and Senate President. January 2, 2019. Retrieved July 16, 2024.</p>\r\n<p>3. Investigative Committee on the Robb Elementary Shooting. Texas House of Representatives. July 17, 2022. Retrieved July 16, 2024.</p>\r\n<p>4. Vocera Engage solution brief. Retrieved July 2, 2024.</p>\r\n",
+    "jcr:lastModified": "Wed Aug 28 2024 20:30:12 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

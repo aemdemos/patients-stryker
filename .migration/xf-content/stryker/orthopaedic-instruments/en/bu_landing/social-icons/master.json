@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Social icons",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d861338e-21e5-4e47-a289-ad05f898b9cf",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "7657c886-ef55-4445-b565-e54d2f1cce45"
+  ],
+  "jcr:created": "Mon Dec 11 2023 22:21:11 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 11 2023 22:21:13 GMT+0000",
+  "cq:lastModified": "Mon Dec 11 2023 22:20:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7657c886-ef55-4445-b565-e54d2f1cce45",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "820df700-903e-4f5f-871d-dbd02bdb2dd3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_1929_338284025": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Thu May 25 2023 19:24:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1929_3382840253979060698550563": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.linkedin.com/showcase/orthopaedic-instruments/",
+        "alt": "LinkedIn icon",
+        "srcFileRef": "/content/dam/stryker/ems/images/LinkedIn_100x100.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Nov 01 2023 19:23:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_1929": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Oct 04 2023 18:06:04 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      },
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.youtube.com/playlist?list=PLZyNjjTfwJvCcxOT2ToeOc8Q7R2YsUUUQ",
+        "jcr:created": "Wed Oct 04 2023 18:08:29 GMT+0000",
+        "alt": "YT_100x100-2",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/YT_100x100-2.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Nov 01 2023 19:23:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false"
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 11 2023 22:19:55 GMT+0000",
+      "jcr:lastModified": "Mon Dec 11 2023 22:19:59 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage506166033227276": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.instagram.com/stryker.orthopaedicinstruments?igshid=OGQ5ZDc2ODk2ZA%3D%3D",
+        "alt": "IG_100x100-1",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/IG_100x100-1.png",
+        "jcr:lastModified": "Mon Dec 11 2023 22:20:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    }
+  }
+}

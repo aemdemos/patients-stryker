@@ -1,0 +1,99 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Key Benefits EU",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "56e51705-eaf2-4121-8260-fe985d4289f2",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5e9d6212-56fb-401b-93a7-e0e8765cb4ad"
+  ],
+  "lastPublished": "Tue Feb 03 2026 21:42:10 GMT+0000",
+  "jcr:created": "Tue Feb 03 2026 21:42:15 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 03 2026 21:42:17 GMT+0000",
+  "cq:lastModified": "Thu Dec 18 2025 01:12:53 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5e9d6212-56fb-401b-93a7-e0e8765cb4ad",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Feb 03 2026 21:42:10 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "df962ef7-280a-425a-a617-2417f671ff3c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Dec 05 2025 01:11:07 GMT+0000",
+      "alt": "Novae key benefits",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/products/novae/eu/images/Novae-key-benefits-EU-v2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Dec 08 2025 21:37:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 08 2025 21:38:26 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">1. Flattened Pole</span></span></span><br>\n<span class=\"fontsize-1-25em\">peripheral press fit</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">2. 3mm cylindrical extension</span></span><br>\n demonstrated increased jump distance compared to traditional hemispherical shells<sup>5</sup></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">3. Peripheral fixation</span></span><br>\n regional 3-point raised fixation</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">4. Ti + HA dual coating</span></span><br>\n designed to support secondary fixation</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">5. Forged stainless steel</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">6. Poly inner diameter (ID)</span></span><br>\n 28mm head starting at 47mm cup</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">7. Poly outer diameter (OD)</span></span><br>\n 6mm smaller than the cup OD</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">8. Groove pattern</span></span><br>\n promotes stability when polymerized<sup>6</sup></span></p>\n",
+      "jcr:lastModified": "Thu Dec 18 2025 01:12:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

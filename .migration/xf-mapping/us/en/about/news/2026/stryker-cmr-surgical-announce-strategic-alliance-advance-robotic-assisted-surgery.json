@@ -1,0 +1,123 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker and CMR Surgical announce strategic alliance to advance robotic-assisted surgery",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "df8115a5-c986-4650-b353-cb4975a9dcb8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Stryker",
+  "jcr:predecessors": [
+    "1dec6c47-1843-47b4-8b90-e5afffa48bcc"
+  ],
+  "contentID": "COMM-GSNPS-SYK-4044302",
+  "lastPublished": "Mon Oct 12 2026 12:06:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 12 2026 12:06:22 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 12 2026 12:06:25 GMT+0000",
+  "cq:lastModified": "Fri Oct 09 2026 19:44:29 GMT+0000",
+  "jcr:description": "Strategic alliance combines CMR Surgical’s established platform and robotics expertise with Stryker’s scale, customer relationships and commercial reach to accelerate growth of the Versius Surgical Robotic portfolio.",
+  "jcr:baseVersion": "1dec6c47-1843-47b4-8b90-e5afffa48bcc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Oct 12 2026 12:06:22 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Oct 09 2026 19:44:29 GMT+0000",
+  "jcr:uuid": "b4a6a2be-c6fe-425c-8796-0bb8ec6b60ab",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Oct 09 2026 17:32:55 GMT+0000",
+      "jcr:lastModified": "Fri Oct 09 2026 17:32:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_928149926": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Oct 09 2026 17:43:33 GMT+0000",
+          "jcr:lastModified": "Fri Oct 09 2026 17:43:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Oct 09 2026 17:32:58 GMT+0000",
+          "text": "<p><b>PORTAGE, Mich., USA, and CAMBRIDGE, England</b> – <b>October 12, 2026</b> – Stryker (NYSE:SYK), a global leader in medical technologies, and CMR Surgical, a global robotics company, today announced a strategic equity investment of approximately $400 million (£300 million) by Stryker with an exclusive option for Stryker to acquire the remaining equity of CMR Surgical, and an exclusive U.S. commercial agency agreement for the Versius portfolio.</p>\n<p>The agreement brings together CMR Surgical’s globally established soft-tissue robotics portfolio, clinical experience and culture of innovation with Stryker’s scale, deep customer relationships, commercial execution and proven track record of bringing innovative technologies to market. Stryker will serve as the exclusive U.S. sales agent for the Versius portfolio, while CMR Surgical will continue to lead portfolio development and commercialization in markets outside the United States.</p>\n<p>The alliance comes as demand for robotic-assisted surgery continues to grow, creating an opportunity to help healthcare providers expand robotic-assisted surgery programs with a scalable and practical solution. CMR Surgical’s second-generation robot, with established clinical experience globally, supports a broad range of soft tissue procedures. Designed for real-world operating environments, the Versius platform’s modular architecture supports flexibility across procedures, surgeon access and sites of care, and can help healthcare providers grow robotic adoption within existing operating room workflows. This scalable approach can help health systems meet growing demand for robotic-assisted surgery while preserving operational flexibility and supporting long-term program economics.</p>\n<p>“Soft-tissue robotics is a high-growth adjacency and a natural extension of Stryker’s strengths in endoscopy, visualization and enabling technologies. We have evaluated the segment carefully for years, and this alliance represents a thoughtful and disciplined entry that combines the complementary strengths of both companies,” said Andy Pierce, Group President, Medsurg and Neurotechnology, Stryker. “We selected CMR Surgical and the Versius portfolio because of the opportunity to help healthcare providers grow robotic-assisted surgery adoption across a broad range of procedures in hospitals and ASCs.”</p>\n<p>“This strategic alliance is a significant milestone for CMR and a strong endorsement of the technology, clinical experience and global business we have built,” said Massimiliano Colella, Chief Executive Officer of CMR Surgical. “Stryker’s investment will give us additional strength to accelerate innovation and the continued global expansion of the Versius portfolio, while its scale and deep customer relationships create a significant growth opportunity in the United States. We also look forward to welcoming Andy Pierce to our board of directors and benefiting from his more than 30 years of MedTech leadership experience at Stryker as we continue expanding access to robotic-assisted surgery globally.”</p>\n<p>Stryker’s exclusive acquisition option provides Stryker the opportunity to acquire 100% of CMR Surgical’s outstanding equity in the future, subject to the agreement’s terms. This transaction is subject to regulatory approvals and customary closing conditions.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Oct 09 2026 17:34:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Oct 09 2026 17:34:37 GMT+0000",
+          "jcr:lastModified": "Fri Oct 09 2026 17:34:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_30027317": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Oct 09 2026 17:34:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">About CMR Surgical</span><br>\nCMR Surgical is a global medical devices company dedicated to transforming surgery with Versius Plus, a next-generation surgical robot. Headquartered in Cambridge, United Kingdom, CMR is committed to working with surgeons, surgical teams and hospital partners, to provide an optimal tool to make robotic minimal access surgery universally accessible and affordable. With Versius Plus, CMR Surgical is on a mission to redefine the surgical robotics market with practical, innovative technology and data that can improve surgical care. Founded in 2014, CMR Surgical is a private limited company backed by an international shareholder base.</p>\n<p><span class=\"futura-bold\">Contacts</span><br>\n<b>For investor inquiries for Stryker:</b><br>\nNick Mead<br>\nVice President, Investor Relations<br>\n<a href=\"mailto:nick.mead@stryker.com\">nick.mead@stryker.com</a></p>\n<p><b>For media inquiries for Stryker:</b><br>\nKim Montagnino<br>\nVice President, Chief Communications Officer<br>\n<a href=\"mailto:kim.montagnino@stryker.com\">kim.montagnino@stryker.com</a></p>\n<p><b>For investor and media inquiries for CMR Surgical:</b><br>\n<a href=\"mailto:pressoffice@cmrsurgical.com\">pressoffice@cmrsurgical.com</a></p>\n",
+          "jcr:lastModified": "Fri Oct 09 2026 17:37:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Mon Oct 12 2026 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Oct-2026",
+    "jcr:lastModified": "Fri Oct 09 2026 17:42:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Stryker",
+    "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Oct 09 2026 19:44:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "text": "<p><b>Strategic alliance combines CMR Surgical’s established platform and robotics expertise with Stryker’s scale, customer relationships and commercial reach to accelerate growth of the Versius Surgical Robotic portfolio</b></p>\n<ul>\n<li>Stryker will make an approximately $400 million (£300 million) preferred equity investment in CMR Surgical to support future innovation and global commercialization of the Versius portfolio, subject to customary closing conditions.</li>\n<li>The preferred equity investment also grants Stryker an exclusive option to acquire 100% of CMR Surgical’s outstanding equity in the future, subject to the agreement's terms.</li>\n<li>Stryker will serve as the exclusive U.S. sales agent for the Versius portfolio.</li>\n</ul>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Oct 09 2026 17:43:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  }
+}

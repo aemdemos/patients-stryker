@@ -1,0 +1,720 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Address Blocks",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5c976953-dcbe-4387-8a20-ba0157714e5c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "8f07c89c-7c7e-4bb0-9956-58a72ef2bd64"
+  ],
+  "lastPublished": "Wed May 14 2025 15:39:11 GMT+0000",
+  "jcr:created": "Wed May 14 2025 15:39:14 GMT+0000",
+  "cq:lastReplicated": "Wed May 14 2025 15:39:19 GMT+0000",
+  "cq:lastModified": "Tue May 13 2025 15:44:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "8f07c89c-7c7e-4bb0-9956-58a72ef2bd64",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:39:11 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2e2865c9-02a9-4d1c-aa9a-4be4d32d2a8e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Headquarters</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 15:46:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116876391204_1914834806": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Hong Kong (China)            \n\n                        Address                                            International Hong Kong Office\n9th Floor, 12 Taikoo Wan Road, \nTaikoo Shing, Hong Kong\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:29:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/hong-kong",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_1074564892": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Singapore Asia Pacific            \n\n                        Address                                            Singapore Office\n51 Bras Basah Rd, \nLevel 6, \nSingapore 189554\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:29:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information/singapore-asia-pacific",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 17 2020 20:48:49 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Feb 17 2020 20:49:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Manufacturing</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 15:46:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(223,225,222,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116876391204_592633011": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            China            \n\n                        Address                                            Medical Technology Co. Ltd.\n\nNo. 18 Wuxiang, EPZ Zone A\n200 Suhong Rd.\nSIP, Suzhou, PRC (215021)\nPeople's Republic of China (PRC)\n\n\n\n\n\n\n                        Business Home Page                                                        \n\n                        Phone Numbers                                            86 512 8227 3388\n86 512 8227 2778 Fax\n\n\n\n                        Emails                                                        \n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:29:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/medical-technology-co-ltd",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_1766900097": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Address                                            Trauson Medical Instrument Company Limited\n\nNo.9 Longmen Road\nWujin Hi-tech Industrial Zone, 213164\nChangzhou City, Jiangsu Province\nPeople's Republic of China (PRC)\n\n\n\n                        Business Home Page                                                        \n\n                        Phone Numbers                                            86 519 8166 5318\n\n\n\n                        Emails                                            hanlijun@trauson.com\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:30:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/trauson-medical-instrument-company-limited",
+      "cq:styleIds": [
+        "1566584115189",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "none"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 17 2020 20:48:49 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Feb 17 2020 20:49:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_204792290": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Sales</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 15:46:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(223,225,222,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116876391204_206416367": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Greater China            \n\n                        Address                                            Room 917, Tower 2,\nNo. 138 Wangfujing Dajie,\nDongcheng district,\nBeijing, China, 100006\n\nUnit 3601, HK New World Tower,\nNo.300 Middle Huaihai Road,\nShanghai(200020),PRC\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:31:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "contentfragment_1127469641": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "PhoneNumbers"
+      ],
+      "jcr:created": "Tue Feb 18 2020 18:58:48 GMT+0000",
+      "text": "                    Location Name                                            China Limited            \n\n                        Address                                            Unit 3301, Hong Kong New World Tower300 Middle Huai Hai RoadShanghai, Shanghai 200020People's Republic of China (PRC)            \n\n                        Phone Numbers                                            86 21 6391 6119 Fax\n\nCustomer support:\n86 21 6391 6887\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:31:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/china-limited",
+      "cq:styleIds": [
+        "1566584115189"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "item3666116876391204_118919689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            China Ltd            \n\n                        Address                                            9th Floor,\n12 Taikoo Wan Road\nTaikoo Shing, Hong Kong\n\n\n\n                        Business Home Page                                                        \n\n                        Phone Numbers                                            852 3969 1200\n\n\n\n                        Emails                                                        \n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:31:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/china-ltd",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584115189"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_321642663": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name Far East Inc. Address 5F-1, NO. 100, Sec. 2, Roosevelt Road, Taipei 100, Taiwan Phone Numbers 886 2 2367 3088 886 2 2367 3089 Fax Customer support 800 231 636 Emails",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:31:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/far-east-inc-taiwan",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584115189"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_222844863": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Healthcare Products Co., Ltd. - Beijing            \n\n                        Address                                            Room 915&917\nOffice Beijing apm Tower 2\n138 WangFuJing Da Jie, Beijing, P.R. China\n\n\n\n                        Business Home Page                                                        \n\n                        Phone Numbers                                            +86 10 6526 1295\n+86 10 6513 0255 Fax\n\nCustomer support\n800 810 7879\n\n\n\n                        Emails                                            vivien.li@stryker.com\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:32:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/healthcare-products-co-ltd",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584115189"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "none"
+        }
+      }
+    },
+    "item3666116876391204_1981325933": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers",
+        "Emails"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Healthcare Products Co., Ltd. - Shanghai            \n\n                        Address                                            36F, Hong Kong New World Tower\n300 Middle Huai Hai Road\nShanghai, 200021\nPeople's Republic of China (PRC)\n\n\n\n                        Business Home Page                                                        \n\n                        Phone Numbers                                            86 21 2321 0000\n86 21 6391 6119 Fax\n\nCustomer support\n 800 810 7879 \n\n\n\n                        Emails                                            vivien.li@stryker.com\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:32:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information/healthcare-products-co-ltd-shanghai",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584115189"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    },
+    "item3666116876391204": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name India Address Stryker India Private Limited 6 floor, Unit no. 0602, Block 1 - Phase 1 International Tech Park, Sector 59, Behrampur Village Gurgaon, Haryana, 122101 Stryker Global Technology Center 3 - 5 floor, Unit no. 0602, Block 1 - Phase 1 International Tech Park, Sector 59, Behrampur Village Gurgaon, Haryana, 122101 Business Home Page Learn more",
+      "variationName": "master",
+      "jcr:lastModified": "Fri Dec 18 2020 14:36:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/india/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    },
+    "item3666116876391204_402771604": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name Japan Address Shinjuku First Tower 8F/9F 5-1-1 Nishishinjuku, Shinjuku-ku 160-0023 Tokyo Japan Business Home Page Learn More",
+      "variationName": "master",
+      "jcr:lastModified": "Fri Dec 18 2020 14:34:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/japan/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_831820969": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Korea            \n\n                        Address                                            6th Fl.,\nASEM Tower, 517,\nYeongdong-daero, Gangnam-gu,\nSeoul 06164, Korea\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:32:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/korea/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    },
+    "item3666116876391204_1057641236": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Malaysia            \n\n                        Address                                            100.6.001 & 100.6.003\n129 Offices, Jaya One\nPetaling Jaya, Selangor 46200 Malaysia\nMalaysia\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:32:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information/malaysia",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_1373440383": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Singapore            \n\n                        Address                                            438B Alexandra Technopark Block B \n#06-11 \nSingapore 119968\nSingapore\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:32:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information/singapore",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_1395767839": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Thailand            \n\n                        Address                                            Rasa Tower II, 11th Floor\n555 Phaholyothin Road\nChatuchak, Bangkok 10900\nThailand\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Thu Dec 03 2020 15:33:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information/thailand",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

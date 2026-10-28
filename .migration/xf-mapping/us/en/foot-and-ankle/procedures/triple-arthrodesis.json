@@ -1,0 +1,104 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Triple Arthrodesis",
+  "jcr:versionHistory": "3eeb032f-e077-4ad4-8fac-37a425f03e86",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Triple-Arthrodesis/Images/Hindfoot_TripleArthrodesis.jpg",
+  "jcr:predecessors": [
+    "7e3eb053-03b1-46a7-8077-dce22e219d10"
+  ],
+  "contentID": "OT-AWI-39, 07-2017",
+  "lastPublished": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:lastModified": "Wed Aug 12 2020 19:52:18 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "A triple arthrodesis is the fusion of three joints in the hindfoot: the subtalar (talocalcaneal), the talonavicular (TN) and the calcaneocuboid (CC) joints. It is used to address severe arthritis, instability, or deformity.",
+  "jcr:baseVersion": "7e3eb053-03b1-46a7-8077-dce22e219d10",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/hindfoot",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 04 2017 09:03:15 GMT-0400",
+  "jcr:uuid": "4c0a2a36-bdfd-40e2-b1b4-1a5bf4a19ece",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Jul 12 2017 10:04:27 GMT-0400",
+      "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Triple-Arthrodesis/Images/Hindfoot_TripleArthrodesis.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Aug 12 2020 19:52:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Plating platforms",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/triple-arthrodesis/plating-platforms"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Nailing systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/triple-arthrodesis/nailing-systems"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Screw systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/triple-arthrodesis/screw-systems"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Staple solutions",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/triple-arthrodesis/staple-solutions"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Biologics",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/triple-arthrodesis/biologics"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Triple-Arthrodesis/Images/Hindfoot_TripleArthrodesis.jpg"
+  }
+}

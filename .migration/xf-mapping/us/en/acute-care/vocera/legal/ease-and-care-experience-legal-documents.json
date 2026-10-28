@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ease and Care Experience Legal Documents",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8beaacd3-d152-4ad3-96ff-b423c29a9866",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "ba45ba3a-a544-42ae-aa82-79f8e8bdfc73"
+  ],
+  "lastPublished": "Wed Jan 15 2025 22:49:44 GMT+0000",
+  "jcr:created": "Wed Jan 15 2025 22:49:45 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 15 2025 22:49:47 GMT+0000",
+  "cq:lastModified": "Wed Jan 15 2025 22:46:39 GMT+0000",
+  "jcr:baseVersion": "ba45ba3a-a544-42ae-aa82-79f8e8bdfc73",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:53:14 GMT+0000",
+  "jcr:uuid": "e2406fb8-6116-49f8-8c7a-49de8ef47b54",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_1734178359": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Thu Aug 31 2023 21:52:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Ease and Care Experience Legal Documents</span></span></span></h1>\n",
+      "jcr:lastModified": "Thu Aug 31 2023 21:53:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Aug 31 2023 21:53:18 GMT+0000",
+      "jcr:lastModified": "Thu Aug 31 2023 21:53:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 09 2023 19:59:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\">United States / Canada</span></h2>\n<p><a title=\"Open Vocera Ease mobile device end user license agreement\" href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/vocera-ease-mobile-device-application-end-user-license-agreement.pdf\"><span class=\"standalone-link\">Vocera Ease mobile device application end user license agreement</span></a></p>\n<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202501/vocera-master-subscription-agreement-for-ease-and-vce-solutions_REV-J-01092025.pdf\" target=\"_blank\" title=\"Open Master Subscription Agreement for Vocera Ease and Care Experience Solutions PDF\"><span class=\"standalone-link\">Master Subscription Agreement for Vocera Ease and Care Experience Solutions</span></a></p>\n<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202501/attachment-3-subscription-terms_REV-J-01092025.pdf\" target=\"_blank\" title=\"Open Subscription terms and conditions for Vocera Ease and Care Experience Solutions PDF\"><span class=\"standalone-link\">Subscription Terms and Conditions for Vocera Ease and Care Experience Solutions</span></a></p>\n<p><a href=\"/content/dam/stryker/acute-care/vocera/legal/202501/attachment-4-support-terms_REV-J-01092025.pdf\" target=\"_blank\" title=\"Open Support for Vocera Ease and Care Experience Solutions PDF\"><span class=\"standalone-link\">Support for Vocera Ease and Care Experience Solutions</span></a></p>\n",
+      "jcr:lastModified": "Wed Jan 15 2025 22:46:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    }
+  }
+}

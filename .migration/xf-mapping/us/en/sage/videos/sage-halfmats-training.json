@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Training video",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage HalfMATS Mobile Air Transfer System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1afc74ba-a5b8-4e5b-940b-27090e88e44b",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "0d4911a3-89c1-478e-a9a7-03f4e9fc1bdd"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-489450_REV-0_en_us",
+  "lastPublished": "Thu Jan 19 2023 23:15:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 19 2023 23:15:43 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 19 2023 23:15:48 GMT+0000",
+  "cq:lastModified": "Thu Jan 19 2023 23:15:31 GMT+0000",
+  "jcr:baseVersion": "0d4911a3-89c1-478e-a9a7-03f4e9fc1bdd",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Sage HalfMATS Mobile Air Transfer System training video",
+  "jcr:lastModified": "Thu Jan 19 2023 23:14:05 GMT+0000",
+  "jcr:uuid": "52779b85-ee2d-4edf-b681-85535a2a4a26",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Wed Feb 16 2022 19:12:18 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Feb 16 2022 19:29:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/products/halfmats/videos/Sage-HalfMATS-training-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Sage-HalfMATS-training-video-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Thu Jan 19 2023 23:15:04 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-HalfMATS-training-video-thumbnail"
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",
+      "CTATitle": "Learn more",
+      "jcr:lastModified": "Thu Jan 19 2023 23:15:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/products/sage-halfmats"
+    }
+  }
+}

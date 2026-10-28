@@ -1,0 +1,460 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LUCAS Product Specifications",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d94dc48d-0b7d-44e1-a780-d45206e35ed0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4545f3bb-7ac6-4bcd-a929-1a74c8537b33"
+  ],
+  "lastPublished": "Tue Apr 01 2025 18:56:01 GMT+0000",
+  "jcr:created": "Tue Apr 01 2025 18:56:01 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 01 2025 18:56:03 GMT+0000",
+  "cq:lastModified": "Tue Mar 25 2025 20:56:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4545f3bb-7ac6-4bcd-a929-1a74c8537b33",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 12 2025 21:08:54 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2333602d-12a8-4abd-a819-8e353ab90cad",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_120283145": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 15:58:21 GMT+0000",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Configure multiple device parameters to better meet your protocols**</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The LUCAS 3, v3.1, allows for tailored rates to meet your protocols, alerts configuration, Post-Event Reports to your inbox, and asset notifications by e-mail.</span></p>\n<p><span class=\"fontsize-1-25em\">If setup options are not applied, the device will operate according to its factory default settings, which are identical to LUCAS 3, v3.0 and LUCAS 2, v2.2.</span></p>\n<p><span class=\"fontsize-1-25em\">The training, application steps and user interface remain the same as for LUCAS 3 and LUCAS 2.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Mar 10 2025 20:13:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage88165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Icon Compressions - Rate",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:32:37 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage881658816632939053199": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon gauge",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_compressions_rate-change-on-the-fly.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Jan 20 2025 16:30:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "item8816556274937998": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:30:32 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Compressions&nbsp;<br>\n(<a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Rate-Change-During-Operation.mp4\" target=\"_blank\" title=\"LUCAS v3.1 Rate Change During Operation video\">Rate change on the fly</a>)</p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 15:54:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_1409152948": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Icon Compressions - Manual",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:33:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_14091529488816695561378998": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon weight and measuring stick",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_compressions_depth.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Jan 20 2025 16:34:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "item8816556274937998": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:30:32 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Compressions&nbsp;<br>\n(Depth)</p>\n",
+        "jcr:lastModified": "Mon Jan 20 2025 16:34:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_142946062": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:34:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_1429460628816768365858079": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon suction cup",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_suction-cup.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 25 2025 16:58:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "item8816556274937998": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:30:32 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Suction cup<br>\n(<a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_AutoFit.mp4\" target=\"_blank\" title=\"LUCAS v3.1 AutoFit video\">AutoFit</a>, QuickFit, manual)</p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 15:53:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_799817499": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:35:31 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_7998174998816807522160904": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon lungs",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_ventilation.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Jan 20 2025 16:35:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "item8816556274937998": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:30:32 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Ventilation<br>\n(Number of prompts, <a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Ventilation-Alert-Signal.mp4\" target=\"_blank\" title=\"LUCAS v3.1 Ventilation Alert Signal video\">alerts</a>,<br>\npause duration, chest rise)</p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 15:53:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_1629062043": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:36:37 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_16290620438816873737752378": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon timer",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_audible-timer.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 25 2025 16:58:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:36:54 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Audible-Timers.mp4\" target=\"_blank\" title=\"LUCAS v3.1 Audible Timers video\">Audible Timer</a><br>\n(continuous or CPR Timer)</p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 15:55:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_99128751": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:36:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_991287518816877913795409": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon wifi",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_wifi-bluetooth-connectivity.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 25 2025 16:58:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:36:54 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Wi-Fi and Bluetooth<br>\nconnectivity</p>\n",
+        "jcr:lastModified": "Mon Feb 10 2025 21:15:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage88165_1475151763": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:36:44 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage88165_14751517638816880865812463": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "icon envelope",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/icons/lucas-icon_email.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 25 2025 16:59:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Jan 20 2025 16:36:54 GMT+0000",
+        "text": "<p style=\"text-align: center;\">E-mail<br>\nAsset notifications and Post-Event Reports</p>\n",
+        "jcr:lastModified": "Mon Feb 10 2025 21:15:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "text_1569435023": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 10 2025 21:14:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>**Setup options should be changed only under the direction of a physician knowledgeable in cardiopulmonary resuscitation who is familiar with the literature in this area.&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 11 2025 23:12:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 16:16:51 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:16:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy88156986000": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Cath",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Tue Feb 11 2025 23:12:24 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy8815698600010741420276501731": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Cath lab compatible*</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Optional carbon fiber back plate to allow for interventional life-saving procedures and bridge to definitive care.</span></p>\n<h4><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Allows various angles</span></span></h4>\n<p><span class=\"fontsize-1-25em\">Most radiological projection angles can be used during LUCAS CPR.<sup>36</sup></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-3-v3.1-Cath-Lab-Brochure_US-Canada.pdf\" target=\"_blank\"><span class=\"standalone-link\">LUCAS in the Cath Lab</span></a></span></p>\n<p><i>US version - for Europe/MEA version, see&nbsp;<a href=\"/content/stryker/us/en/emergency-care/products/lucas-3/resources.html\">Resources</a></i></p>\n",
+        "jcr:lastModified": "Tue Mar 25 2025 20:56:34 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "chris.kleckner@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "jcr:created": "Mon Feb 10 2025 20:16:23 GMT+0000",
+        "text": "<p>* Caution – adjunctive therapies: The use of other medical equipment or drugs in conjunction with the LUCAS device can affect the treatment. Always consult the instructions for use for the other equipment and/or drugs to make sure that they are applicable in conjunction with CPR.<br>\n</p>\n",
+        "jcr:lastModified": "Thu Mar 13 2025 17:36:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_copy_938523749": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Tue Feb 11 2025 23:12:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_93852374910741448864363376": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "LUCAS-cath-lab-compatible_1200x680",
+        "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/LUCAS-cath-lab-compatible_1200x680.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jan 14 2025 23:02:07 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "sectionseparator_cop_245181091": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Mon Jan 20 2025 15:30:59 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Mon Jan 20 2025 16:49:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 16:16:51 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:16:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "Connecting",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jan 20 2025 16:38:44 GMT+0000",
+      "jcr:lastModified": "Mon Jan 20 2025 16:39:30 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text8817046777960201": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Connecting LUCAS to LIFENET</span></span></h3>\n<p><span class=\"fontsize-1-25em\">With your LUCAS purchase you will get a LUCAS LIFENET Asset account. <a href=\"/content/dam/stryker/ems/resources/training-materials/LUCAS_3-v3.1_Connectivity_Guide_EN.pdf\" target=\"_blank\">Read how to connect and set up your LUCAS in the Connectivity guide</a></span></p>\n",
+        "jcr:lastModified": "Tue Jan 28 2025 16:02:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text8817046777960201": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Connecting",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:lastModified": "Mon Jan 20 2025 16:39:47 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text88170467779602018817063138145603": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">View reports in CODE-STAT and LIFENET Analytics</span></span></h3>\n<p><span class=\"fontsize-1-25em\">LUCAS Post-Event Review is integrated with CODE-STAT (version 11 and higher) and LIFENET Analytics cloud based reports</span></p>\n<p>&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Mar 11 2025 18:45:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

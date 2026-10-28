@@ -1,0 +1,746 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "7 unique ways we partner for prevention",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8be91f64-8c0e-4940-9af3-2b1fc9319d1b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "d2dad9ed-3fb5-47de-a074-b947b223581a"
+  ],
+  "contentID": "SYK CORP 2019-06-08",
+  "lastPublished": "Tue May 12 2026 18:02:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 12 2026 18:02:46 GMT+0000",
+  "cq:lastReplicated": "Tue May 12 2026 18:02:50 GMT+0000",
+  "cq:lastModified": "Tue May 12 2026 15:00:03 GMT+0000",
+  "jcr:baseVersion": "d2dad9ed-3fb5-47de-a074-b947b223581a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:02:37 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Mon Aug 19 2019 18:09:02 GMT+0000",
+  "jcr:uuid": "a0f6f97c-c28d-4bbc-b06a-12e78cc802dd",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 15:13:36 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">7 unique ways</span>&nbsp;<span class=\"urw-egyptienne\">we partner for prevention&nbsp;</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">Did you know that in his quote “an ounce of prevention is worth a pound of cure,” Ben Franklin was reportedly referring to fire safety? We think his sage advice applies to so much more. We’re looking at technology across Stryker and highlighting seven unique tools that our customers use to prevent everything from infection to surgical smoke exposure.</span></p>\n",
+      "jcr:lastModified": "Thu Aug 01 2019 19:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_345446122": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 17:13:35 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 17:13:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "sectionseparator_1621933839": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 15:14:45 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 15:14:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_915802855": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:37:39 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:37:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Infection</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:10:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 18:59:03 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge1.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 16:54:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:01:29 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">When it comes to infection, the numbers tell the story. Every year in the U.S. over 700,000 patients acquire healthcare-associated infections.<sup>1&nbsp;</sup>In 2018, the ECRI listed device cleaning, disinfection <g class=\"gr_ gr_6 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Punctuation only-ins replaceWithoutSep\" id=\"6\" data-gr-id=\"6\">and</g> sterilization in their list of Top 10 Patient Safety Concerns for Healthcare Organizations report.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Thu Aug 01 2019 19:22:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:07:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 18:59:03 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention1.jpg",
+          "jcr:lastModified": "Mon Aug 19 2019 16:42:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/cleaners-and-disinfectants"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:05:16 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">To combat infection, we offer a slate of cleaners and disinfectants like <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/cleaners-and-disinfectants.html\">Blu62</a> that are formulated to optimize equipment and instrument lifespan, while supporting the need to meet evidence-based cleaning and disinfecting standards.</span></p>\n",
+          "jcr:lastModified": "Tue May 12 2026 15:00:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:11:26 GMT+0000",
+      "jcr:lastModified": "Tue Jul 30 2019 19:11:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:43:37 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:43:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Drug diversion</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 18:59:03 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge2.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:05:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:01:29 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Our customers told us that they were battling the effects of DEA-regulated controlled substance diversion.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 01 2019 19:22:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:07:20 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention2.jpg",
+          "jcr:lastModified": "Mon Aug 19 2019 16:43:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/surgical/products/cactus-controlled-substance-waste-management-system"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:07:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">So we created a secure alternative for drug waste: the <a href=\"/content/stryker/us/en/surgical/products/cactus-controlled-substance-waste-management-system.html\">Cactus Smart Sink System</a>. The Cactus Smart Sink System automatically secures and renders controlled substance waste unusable and non-retrievable while providing a secured bridge from traditional drug disposal to proper and responsible disposal.</span></p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:50:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_989648154": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 17:09:56 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 17:09:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Back injuries during transport</span></span></span>",
+      "jcr:lastModified": "Tue Jul 30 2019 19:10:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(28,86,135,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1892797829": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 17:11:09 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 17:11:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge3.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:10:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_505509605": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:30 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Medics experience frequent spinal loading due to repetitive motions such as lifting, lowering, carrying, and bending. An estimated 34% of EMS work-related injuries are sprain or strain<g class=\"gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Style replaceWithoutSep\" id=\"4\" data-gr-id=\"4\">, and</g> 35% of these injuries are located in the lower trunk.<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:41:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_copy_c_1349410637": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+      "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1830426788": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 17:11:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 17:11:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_1847": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:14:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention3.jpg",
+          "jcr:lastModified": "Mon Aug 19 2019 16:44:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_306536357": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:15:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">We design products to help you save lives and your back during transport. Our industry-leading powered ambulance cot, the <a href=\"/content/stryker/us/en/emergency-care/products/power-pro-xt.html\">Power Pro-XT</a> assists you in lifting and lowering the cot. While <a href=\"/content/stryker/us/en/emergency-care/products/power-load.html\">Power-LOAD</a>, our powered cot fastener system, helps boost safety by supporting the cot throughout loading and unloading. The reduction in spinal load helps prevent cumulative trauma injuries.</span></p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:51:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1928748497": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:15:31 GMT+0000",
+      "jcr:lastModified": "Tue Jul 30 2019 19:15:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_155214543": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:44:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:44:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Sponge safety</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:15:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge4.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:06:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:30 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">88% of retained surgical sponge cases had a false correct count.<sup>3&nbsp;</sup>However these types of adverse events -leaving sponges behind -are preventable.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 01 2019 19:23:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:14:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention4.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:06:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:15:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Using a smart technology like the <a href=\"/content/stryker/us/en/surgical/products/surgicount-safety-sponge-system.html\">SurgiCount Safety Sponge System</a> verifies <g class=\"gr_ gr_3 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Grammar only-ins replaceWithoutSep\" id=\"3\" data-gr-id=\"3\">removal</g> of each individually barcoded sponge to ensure all sponges are accounted for with evidence-based outcome.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:52:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1647265210": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:17:02 GMT+0000",
+      "jcr:lastModified": "Tue Jul 30 2019 19:17:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_253241693": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:44:39 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:44:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Pressure injuries</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:17:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge5.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:06:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:30 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">With 2.5 million patients treated for hospital-acquired pressure injuries annually in the U.S.<sup>4</sup>, the cost of treatment is on the rise. Pressure injury care in the U.S. approaches $11 billion annually.<sup>5</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 01 2019 19:24:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 31 2019 18:27:24 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention5.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:07:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:15:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Hospitals can help prevent and treat all pressure injuries (stages 1-4, unstageable and deep tissue injury) with the <a href=\"/content/stryker/us/en/acute-care/products/isolibrium.html\">Isolibrium Support Surface</a> and <a href=\"/content/stryker/us/en/acute-care/products/isotour.html\">IsoTourGel support surface</a>. Unique technology addresses pressure redistribution, shear <g class=\"gr_ gr_5 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Punctuation only-ins replaceWithoutSep\" id=\"5\" data-gr-id=\"5\">and</g> moisture. Additionally, the Isolibrium combines this with a clinically relevant pulmonary solution.<sup>6</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:53:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1711196556": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:17:51 GMT+0000",
+      "jcr:lastModified": "Tue Jul 30 2019 19:17:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1907696497": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:44:57 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:44:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Surgical smoke</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:18:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge6.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:06:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:30 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">It's estimated that 500,000 workers are exposed to laser and electrosurgical smoke each year,<sup>7&nbsp;</sup>putting them at risk for chronic bronchitis, carcinoma, leukemia, cardiovascular <g class=\"gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_disable_anim_appear ContextualSpelling ins-del\" id=\"3\" data-gr-id=\"3\">disfunction</g> and more.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 15 2019 14:48:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 31 2019 18:34:18 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention6New.jpg",
+          "jcr:lastModified": "Wed Aug 14 2019 18:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:15:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">We developed a solution that protects staff and their patients from surgical smoke while improving workflow at the same time.<sup>8&nbsp;</sup><a href=\"/content/stryker/us/en/surgical/products/neptune-e-sep-smoke-evacuation-pencil.html\">Neptune SafeAir</a> supports surgical smoke evacuation in the O.R.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:53:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1342989901": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Jul 30 2019 19:20:53 GMT+0000",
+      "jcr:lastModified": "Tue Jul 30 2019 19:20:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_205437365": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 16:45:31 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 16:45:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Challenge:</span> <span style=\"color: rgb(255,181,0);\">Falls</span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:24:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge7.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:07:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:08:30 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">While being treated in a hospital, roughly 850,000 patients experience a fall.<sup>9&nbsp;</sup>On average, there is a fall injury every 13 seconds.<sup>10</sup> We know fall prevention is a top priority for our customers.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 01 2019 19:24:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:03:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Prevention</span></span></span></span>",
+          "jcr:lastModified": "Tue Jul 30 2019 19:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:22:11 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Prevention7.jpg",
+          "jcr:lastModified": "Thu Aug 01 2019 17:07:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Jul 30 2019 19:15:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">For a proactive approach to fall prevention, our <a href=\"/content/stryker/us/en/acute-care/products/s3.html\">S3 MedSurg Bed</a>, and <a href=\"/content/stryker/us/en/acute-care/products/intouch.html\">InTouch Critical Care bed</a>, combined with the <a href=\"/content/stryker/us/en/acute-care/products/ibed-wireless.html\">iBed Wireless <g class=\"gr_ gr_4 gr-alert gr_spell gr_inline_cards gr_disable_anim_appear ContextualSpelling ins-del multiReplace\" id=\"4\" data-gr-id=\"4\">Smartbed</g> Technology</a> offer enhanced risk monitoring abilities and the tools that help caregivers to respond in a timely manner.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 19 2019 16:55:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1801131975": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 01 2019 17:13:52 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2019 17:13:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Aug 15 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-Aug-2019",
+    "jcr:lastModified": "Tue Sep 03 2019 20:31:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Thu Aug 01 2019 15:14:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Jul 31 2019 18:36:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>&nbsp;</p>\r\n<p>1. GliedS, Cohen B, Liu J, et al. Trends in Mortality, Length of Stay, and Hospital Charges Associated with Healthcare-associated Infections, 2006-2012. Am J Infect Control. 2016 Sep 1; 44(9): 983–989. Ncbi.nlm.nih.gov. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5011005/. Accessed June 2019.</p>\r\n<p>2. Emergency Medical Service Workers Injury Data. CDC.gov. https://www.cdc.gov/niosh/topics/ems/data.html. Publication reviewed March 20, 2018. Accessed June 5, 2019.</p>\r\n<p>3. Gawande, A. et al. “Risk factors for retained instruments and sponges after surgery.” N Engl J Med. 348;3 (Jan. 2003) 229-35.</p>\r\n<p>4. Preventing Pressure Ulcers in Hospitals. AHRQ.gov. https://www.ahrq.gov/professionals/systems/hospital/pressureulcertoolkit/putool1.html. Publication reviewed October 2014. Accessed June 2019.</p>\r\n<p>5. National Pressure Ulcer Advisory Panel, European Pressure Ulcer Advisory Panel and Pan Pacific Pressure Injury Alliance. Prevention and Treatment of Pressure Ulcers: Clinical Practice Guideline. Emily Haesler (Ed.) Cambridge Media; Osborne Park, Western Australia; 2014</p>\r\n<p>6. DI131 &amp; RAA106</p>\r\n<p>7. Alp, E., Bijl, D., Bleichodt, R.P., Hansson, B., Voss, A. “Surgical Smoke and Infection Control.” Journal of Hospital Infection (2006); 62, 1-5</p>\r\n<p>8. Perioperative Nurse Study; ECO048123</p>\r\n<p>9. Preventing Falls in Hospitals. AHRQ.gov. https://www.ahrq.gov/professionals/systems/hospital/fallpxtoolkit/index.html. Publication reviewed July 2018. Accessed June 2019.</p>\r\n<p>10. CDC: Among U.S. seniors, fall-related deaths have doubled. Advisory.com. https://www.advisory.com/daily-briefing/2015/05/11/cdc-among-usseniors-fall-related-deaths-have-doubled?WT. Published 2015. Accessed June 2019.</p>\r\n",
+    "jcr:lastModified": "Thu Aug 01 2019 17:12:09 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/features/7-unique-ways-we-partner-for-prevention/Challenge6.jpg"
+  }
+}

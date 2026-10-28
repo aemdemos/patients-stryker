@@ -1,0 +1,939 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Nico Clinical Evidence",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f2f4d0dc-5527-4f96-88d6-99a5ec8480ba",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "jcr:predecessors": [
+    "3029fb84-1c93-4c77-8893-eccf7ca37392"
+  ],
+  "contentID": "NS-GSNPS-SYK-1476317_REV-1",
+  "lastPublished": "Thu Apr 23 2026 18:27:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 23 2026 18:27:53 GMT+0000",
+  "cq:lastReplicated": "Thu Apr 23 2026 18:27:56 GMT+0000",
+  "cq:lastModified": "Thu Apr 23 2026 18:27:03 GMT+0000",
+  "jcr:description": "Independent publications show improved safety, efficiency and reduced surgical morbidity associated with the MIPS technique while using NICO technologies.",
+  "jcr:baseVersion": "3029fb84-1c93-4c77-8893-eccf7ca37392",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Dec 10 2024 20:50:54 GMT+0000",
+  "pageTitle": "NICO Clinical Evidence",
+  "jcr:lastModified": "Tue Aug 19 2025 15:08:23 GMT+0000",
+  "jcr:uuid": "24acfaae-81d9-4700-8eb6-a8e4611f8771",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "navTitle": "NICO Clinical Evidence",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols3_364670844": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 20:43:36 GMT+0000",
+      "jcr:lastModified": "Wed Dec 04 2024 20:43:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Dec 04 2024 20:43:58 GMT+0000",
+          "alt": "icon-heart",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/icon-heartbeat.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 05 2024 15:31:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 20:44:25 GMT+0000",
+          "text": "<p style=\"text-align: center; margin-left: 40px;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b><span class=\"fontsize-1-5em\">Improve health</span></b></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 05 2024 16:01:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Dec 04 2024 20:43:58 GMT+0000",
+          "alt": "icon-coins",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/icon-coins.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 05 2024 15:43:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_1118131671": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 20:44:25 GMT+0000",
+          "text": "<p style=\"text-align: center; margin-left: 40px;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b><span class=\"fontsize-1-5em\">Lower costs</span></b></span></span></p>\n",
+          "jcr:lastModified": "Mon Dec 09 2024 17:37:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Dec 04 2024 20:43:58 GMT+0000",
+          "alt": "icon-healthcare-cross",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/icon-cross.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 05 2024 16:16:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_324552260": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 20:44:25 GMT+0000",
+          "text": "<p style=\"text-align: center; margin-left: 40px;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b><span class=\"fontsize-1-5em\">Better care</span></b></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 05 2024 16:02:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_1943197081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 20:44:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span class=\"fontsize-3vw\">Triple aim of healthcare</span></span></span></h2>\r\n",
+      "jcr:lastModified": "Wed Dec 04 2024 21:47:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(182,114,25)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "largeheadline_copy_406322533": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">ENRICH clinical trial</span></span></h3>\r\n",
+      "jcr:lastModified": "Mon Jan 27 2025 16:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Dec 03 2024 20:18:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">The ENRICH trial is a pivotal clinical trial providing level 1 evidence in ICU settings, utilizing a multi-centered, two-arm, randomized, adaptive comparative-effectiveness study design. Integrated advanced technologies, including Nico BrainPath and Myriad, to evaluate surgical interventions for lobar intracerebral hemorrhage (ICH) in specific brain locations, offering critical insights into treatment efficacy.</span></p>\n",
+      "jcr:lastModified": "Tue Jan 28 2025 13:14:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "cols3_835494718": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Mon Jan 27 2025 15:22:24 GMT+0000",
+      "jcr:lastModified": "Mon Jan 27 2025 15:22:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "andrew.reynolds@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "preset": "max_width_auto",
+          "linkExternal": "https://www.nejm.org/doi/full/10.1056/NEJMoa2308440",
+          "jcr:created": "Mon Jan 27 2025 16:01:25 GMT+0000",
+          "alt": "Cover image_Trial of Early Minimally Invasive Removal of Intracerebral Hemorrhage",
+          "srcFileRef": "/content/dam/stryker/nav-nse/image/Cover image_Trial of Early Minimally Invasive Removal of Intracerebral Hemorrhage.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jan 27 2025 16:07:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy_324552260_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 20:44:25 GMT+0000",
+          "text": "<p style=\"text-align: center; margin-left: 40px;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><b><span class=\"fontsize-1-5em\"><a href=\"https://www.nejm.org/doi/full/10.1056/NEJMoa2308440\" target=\"_blank\">ENRICH study</a></span></b></span></span></p>\n",
+          "jcr:lastModified": "Mon Jan 27 2025 16:08:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "ctaLinkType": "deep",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Dec 03 2024 20:34:55 GMT+0000",
+      "CTATitle": "Contact us here for more information",
+      "ctaDeepLinkID": "contact",
+      "jcr:lastModified": "Tue Dec 10 2024 20:47:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgb(255,181,0)"
+    },
+    "cols_1990645335": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 10 2024 20:48:04 GMT+0000",
+      "jcr:lastModified": "Tue Dec 10 2024 20:48:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Evidence is mounting</span></span></h3>\r\n",
+      "jcr:lastModified": "Tue Dec 03 2024 20:47:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:26 GMT+0000",
+      "jcr:lastModified": "Tue Dec 03 2024 20:17:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #85458a;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">50,000+</span></span></span><span class=\"fontsize-1-5em\"><br>\n <span class=\"urw-egyptienne\">Patient lives impacted</span></span></p>\n",
+          "jcr:lastModified": "Mon Dec 09 2024 17:38:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_536309739": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #85458a;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2em\">35+</span></span></span></span></span><span class=\"fontsize-1-5em\"><span style=\"color: #4c7d7a;\"><br>\n</span> <span class=\"urw-egyptienne\">Presentations at national and international Neurosurgical conferences</span><br>\n </span></p>\n",
+          "jcr:lastModified": "Mon Dec 09 2024 17:39:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_536309739_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><b><span style=\"color: #85458a;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2em\">250+</span></span></span></span></b><span class=\"fontsize-1-5em\"><b><span style=\"color: #85458a;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><br>\n</span></span></span> </b><span class=\"urw-egyptienne\">Peer-reviewed publications and abstracts</span><br>\n </span></p>\n",
+          "jcr:lastModified": "Mon Dec 09 2024 17:39:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Dec 03 2024 20:18:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">These independent publications show:<br>\n </span>Improved safety, efficiency and reduced surgical morbidity associated with the MIPS technique while using NICO technologies.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Evidence also suggests MIPS supported by BrainPath provides economic value for the hospital when analyzing the entire episode of care.<sup>4 </sup>This, combined with a reduction in the ICU length of stay, helps improve the patient experience of care and supports healthcare’s commitment to achieving the Triple Aim.</span></p>\n",
+      "jcr:lastModified": "Mon Dec 09 2024 17:44:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:19:21 GMT+0000",
+      "jcr:lastModified": "Tue Dec 03 2024 20:19:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "ich",
+      "jcr:created": "Tue Dec 03 2024 20:19:33 GMT+0000",
+      "title": "ICH evacuation clinical impact",
+      "jcr:lastModified": "Wed Dec 04 2024 21:27:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">ICH evacuation clinical impact</span></span></h3>\r\n",
+      "jcr:lastModified": "Wed Dec 04 2024 21:23:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_108900769": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Tue Dec 03 2024 21:08:55 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Clinical Advantages<br>\n Using a repeatable approach (trans-sulcal, parafascicular) and technology (BrainPath for access and NICO Myriad NOVUS to mechanically evacuate the clot) provides three clinical advantages for ICH evacuation:</span></p>\n<ol>\n<li><span class=\"fontsize-1-25em\">Intervention in an acute time period without clot stability<sup>2</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Effective hemostasis management using a bi-manual technique<sup>2</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Consistent evacuation &gt;90% of clot<sup>2,3,4,5</sup></span></li>\n</ol>\n",
+      "jcr:lastModified": "Tue Dec 10 2024 20:48:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 21:09:21 GMT+0000",
+      "jcr:lastModified": "Tue Dec 03 2024 21:09:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 21:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Selected clinical outcomes</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">98.2% median clot evacuation<sup>2</sup></span></li>\n<li><span class=\"fontsize-1-25em\">mRS &lt;3 in 63% of patients<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">&lt;15mL EOT volumes in 94 of 98 patients studied<sup>2,3,4,5</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Statistically significant post-op GCS improvement<sup>2,4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Mortality Improvement (vs pre-op ICH score)<sup>2,4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Decrease in ICU length of stay from 12 to 4 days<sup>6</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:32:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 21:09:43 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Selected economic outcomes</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Increased surgical options for patients vs medical management.<sup>1</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Reduction in repetitive non-contrast CT scans.<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Throughput</span><ul>\n<li><span class=\"fontsize-1-25em\">55% decrease in mechanical ventilation days.<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">18% decrease in neuro-ICULOS days, freeing-up neuro-ICU beds.<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">47% decrease in cost per patient.<sup>4</sup></span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:33:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 21:23:36 GMT+0000",
+      "jcr:lastModified": "Tue Dec 03 2024 21:23:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Pre-Op</span></span></p>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:17:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 04 2024 21:05:14 GMT+0000",
+          "alt": "ich-evacuation-clinical-impact_pre-op",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/ich-evacuation-clinical-impact_pre-op.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 04 2024 21:05:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Post-Op</span></span></p>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:07:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 04 2024 21:05:14 GMT+0000",
+          "alt": "ich-evacuation-clinical-impact_post-op",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/ich-evacuation-clinical-impact_post-op.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 04 2024 21:05:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_1953782069": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "impact",
+      "jcr:created": "Tue Dec 03 2024 20:19:57 GMT+0000",
+      "title": "Tumor and brain biopsy clinical impact",
+      "jcr:lastModified": "Wed Dec 04 2024 16:23:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 16:19:40 GMT+0000",
+      "jcr:lastModified": "Wed Dec 04 2024 16:20:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "topMargin": "3",
+          "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: #ffffff;\">Tumor and brain biopsy clinical impact</span></span></span></h3>\r\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:33:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_154731708": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 04 2024 14:43:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">In a 2020 Meta-Analysis published in World Neurosurgery<sup>8&nbsp;</sup>that included 29 publications meeting rigorous inclusion criteria, more than 280 patients were included in a review of current studies on use of MIPS with BrainPath. The outcomes not only confirmed the success of non-disruptive, trans-sulcal access and the ability to achieve microsurgical techniques and hemostasis management, but also the following:</span></span></p>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:46:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        },
+        "cols2_1728928132": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 14:43:54 GMT+0000",
+          "jcr:lastModified": "Wed Dec 04 2024 14:43:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:09:39 GMT+0000",
+              "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Selected clinical outcomes</span></span></span></p>\n<ul>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Lower surgical morbidity / post-operative complications (8.3%) as compared to traditional craniotomy<sup>7</sup></span></span></li>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">80.6% of cases achieved gross total resection<sup>7</sup></span></span></li>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">100% gross total resection for colloid cyst<sup>7</sup></span></span></li>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">100% success in achieving pathologic diagnosis for all biopsy cases<sup>7</sup></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:34:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:09:39 GMT+0000",
+              "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Selected clinical outcomes</span></span></span></p>\n<ul>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Several cohorts have reported shorter length of hospital stay with MIPS using BrainPath as compared to traditional craniotomy, with benefits of:</span></span><ul>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Minimal wound disruption<sup>7</sup></span></span></li>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Decreased risk of post-operative wound infection<sup>7</sup></span></span></li>\n<li><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Lower post-operative complications<sup>7</sup></span></span></li>\n</ul>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:34:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_443104238": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 21:25:35 GMT+0000",
+          "jcr:lastModified": "Wed Dec 04 2024 21:25:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Dec 04 2024 21:09:58 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:10:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_2127130941": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 14:54:15 GMT+0000",
+          "jcr:lastModified": "Wed Dec 04 2024 14:54:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Post-Op</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:07:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Dec 04 2024 14:51:24 GMT+0000",
+              "alt": "tumor-and-brain-biopsy-clinical-impact_post-op",
+              "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/tumor-and-brain-biopsy-clinical-impact_post-op.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Dec 04 2024 21:15:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Pre-Op MR-DTI</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:08:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Dec 04 2024 14:51:24 GMT+0000",
+              "alt": "tumor-and-brain-biopsy-clinical-impact_pre-op_MR-DTI",
+              "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/tumor-and-brain-biopsy-clinical-impact_pre-op_MR-DTI.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Dec 04 2024 21:06:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Pre-Op</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:16:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Dec 04 2024 14:51:24 GMT+0000",
+              "alt": "tumor-and-brain-biopsy-clinical-impact_pre-op",
+              "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/tumor-and-brain-biopsy-clinical-impact_pre-op.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Dec 04 2024 21:05:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 03 2024 21:24:12 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Post-Op MR-DTI</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:08:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Dec 04 2024 14:51:24 GMT+0000",
+              "alt": "tumor-and-brain-biopsy-clinical-impact_post-op_MR-DTI",
+              "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/tumor-and-brain-biopsy-clinical-impact_post-op_MR-DTI.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Dec 04 2024 21:06:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Dec 04 2024 21:09:55 GMT+0000",
+          "jcr:lastModified": "Wed Dec 04 2024 21:09:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Dec 04 2024 21:09:58 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Dec 04 2024 21:10:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 14:52:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 04 2024 14:52:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_162691474": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "economic",
+      "jcr:created": "Tue Dec 03 2024 20:20:17 GMT+0000",
+      "title": "Economic impact",
+      "jcr:lastModified": "Wed Dec 04 2024 21:27:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_1454450682": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Economic impact</span></span></h3>\r\n",
+      "jcr:lastModified": "Wed Dec 04 2024 21:26:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_1940583237": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Dec 04 2024 14:43:23 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Clinical paper shows substantial economic benefit to hospital.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Greater than 50% average reduction in ICU length of stay<sup>6</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Average economic benefit to the hospital of $12,000 per patient for 28 patients<sup>6</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Net estimated benefit to the bottom line of $329,659<sup>5</sup></span></li>\n</ul>\n<p>&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Economic benefit of BrainPath surgery* for appropriate patients</span></span></p>\n",
+      "jcr:lastModified": "Tue Dec 10 2024 20:49:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "cols2_1711804827": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 15:43:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 04 2024 15:43:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\">$329,659</span></span></span><span class=\"fontsize-1-5em\"></span></p>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:16:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 04 2024 20:26:08 GMT+0000",
+          "alt": "nico-arrow-up-icon",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/nico-arrow-up-icon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 04 2024 21:12:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Economic return</span></span><span class=\"fontsize-1-5em\"><br>\n </span><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">*refer to Table 5 in published paper</span></span><span class=\"fontsize-1-5em\"></span></p>\n",
+          "jcr:lastModified": "Thu Dec 05 2024 17:03:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(182,114,25)",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_536309739_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #4c7d7a;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\">54% reduced LOS</span></span></span></span><span class=\"fontsize-1-5em\"><br>\n </span></p>\n",
+          "jcr:lastModified": "Wed Dec 04 2024 21:27:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 04 2024 20:26:13 GMT+0000",
+          "alt": "nico-arrow-down-icon",
+          "srcFileRef": "/content/dam/stryker/nav-nse/campaigns/nico-clinical-evidence/images/nico-arrow-down-icon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 04 2024 21:12:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 03 2024 20:17:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Cost</span></span><span class=\"fontsize-1-5em\"><br>\n </span><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">*</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 05 2024 17:03:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(182,114,25)",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "section_title_110437": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Dec 03 2024 20:36:04 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Thu Dec 05 2024 15:51:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_656142443": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Dec 03 2024 20:17:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Contact Us</span></span></h3>\r\n",
+      "jcr:lastModified": "Wed Dec 04 2024 21:34:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_930951505": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Dec 04 2024 21:32:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">To learn more about Stryker products or our other offerings to help advance neurosurgery and transform lives, please complete the form below.</span></p>\n",
+      "jcr:lastModified": "Wed Dec 04 2024 21:38:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3424",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Wed Dec 04 2024 15:28:04 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Mon Feb 17 2025 19:11:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Dec 03 2024 20:19:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Pradilla G, et al; Trial of Early Minimally Invasive Removal of Intracerebral Hemorrhage. N Engl J Med. 2024</li>\r\n<li>Apr 11;390(14):1277-1289. doi: 10.1056/NEJMoa2308440. PMID: 38598795 Bauer, et al. &quot;Initial Single-center technical experience with the BrainPath system for acute Intracerebral hemorrhage evacuation&quot; Operative Neurosurgery 2016</li>\r\n<li>Labib, et al, &quot;The safety and feasibility of image-guided BrainPath mediated transsulcul hematoma evacuation: a Multicenter trial” Neurosurgery 4, April 2017: 515-524</li>\r\n<li>Sujijantarat, et al. &quot;Trans-sulcal endoport assisted evacuation of supratentorial Intracerebral hemorrhage&quot; Operative Neurosurgery 0:1-8,2017</li>\r\n<li>Rutkowski, M., Song, I., Mack, W. and Zada, G. Outcomes After Minimally Invasive Parafascicular Surgery For Intracerebral Hemorrhage: A Single-Center Experience. World Neurosurgery. 2019; 132:e520 e528.</li>\r\n<li>Shah,et al. Technology that achieves the Triple Aim. ClinicoEconomics and Outcomes Research. 2017;9 519-523</li>\r\n<li>Mansour S. et al The use of BrainPath Tubular Retractors in the Management of Deep Brain Lesions: A Review of Current Studies. World Neurosurg. (2020) 134:155-163</li>\r\n<li>Marenco-Hillembrand L, Prevatt C, Suarez-Meade P, Ruiz-Garcia H, Quinones-Hinojosa A, Chaichana KL. Minimally Invasive Surgical Outcomes for Deep-Seated Brain Lesions Treated with Different Tubular Retraction Systems: A Systematic Review and Meta-Analysis. World Neurosurg. 2020 Nov;143:537-545.e3. doi: 10.1016/j. wneu.2020.07.115. Epub 2020 Jul 23. PMID: 32712409.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Dec 09 2024 18:59:51 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

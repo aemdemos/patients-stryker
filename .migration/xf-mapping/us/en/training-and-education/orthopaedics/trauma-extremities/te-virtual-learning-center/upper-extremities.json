@@ -1,0 +1,222 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Upper Extremities",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "869263f2-6e65-4577-971e-8374fd407408",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "5baaf072-619d-4d24-a8d0-ff33691d8401"
+  ],
+  "contentID": "UE-GSNPS-SYK-1515650",
+  "lastPublished": "Wed Mar 05 2025 19:53:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 05 2025 19:53:00 GMT+0000",
+  "cq:lastReplicated": "Wed Mar 05 2025 19:53:02 GMT+0000",
+  "cq:lastModified": "Wed Mar 05 2025 19:52:57 GMT+0000",
+  "jcr:baseVersion": "5baaf072-619d-4d24-a8d0-ff33691d8401",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:50:51 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Feb 05 2025 21:09:46 GMT+0000",
+  "jcr:uuid": "cb2a4e38-0ace-4218-bba5-b3866fa9c32c",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 16 2024 18:04:19 GMT+0000",
+      "jcr:lastModified": "Mon Dec 16 2024 18:04:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/landing_page/carousel---desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/landing-page/carousel-desktop/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "7",
+          "jcr:created": "Mon Dec 16 2024 18:04:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Dec 16 2024 18:11:48 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Dec 16 2024 18:05:05 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-9vw\"><span style=\"color: rgb(255,181,0);\">TE</span>ACH</span></span></h1>\r\n",
+              "jcr:lastModified": "Mon Dec 16 2024 18:09:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "largeheadline_1894708623": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "topMargin": "-10",
+              "jcr:created": "Mon Dec 16 2024 18:06:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">Trauma &amp; Extremities</span></span></span><span class=\"fontsize-2vw\"><br />\r\n<span style=\"color: rgb(255,255,255);\">Academic Course for Healthcare</span></span></div>\r\n",
+              "jcr:lastModified": "Mon Dec 16 2024 18:09:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgb(89,75,97)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 16 2024 18:23:58 GMT+0000",
+      "jcr:lastModified": "Mon Dec 16 2024 18:23:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jul 29 2022 15:40:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\">Learn from shoulder experts through Stryker's Upper Extremities Virtual Learning Center, an on-demand learning platform incorporating relevant clinical insights and procedural innovation for shoulder arthroplasty.</span>",
+      "jcr:lastModified": "Wed Dec 11 2024 21:31:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 11 2024 21:31:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2024 21:31:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 16 2024 18:15:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-arthroplasty.html\" target=\"_blank\"><span style=\"color: #ffffff;\">SHOULDER ARTHROPLASTY</span></a></span></p>\n",
+          "jcr:lastModified": "Wed Mar 05 2025 19:52:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(28,86,135)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 16 2024 18:15:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/shoulder-exposure.html\" target=\"_blank\"><span style=\"color: #ffffff;\">SHOULDER EXPOSURE</span></a></span></p>\n",
+          "jcr:lastModified": "Wed Mar 05 2025 19:52:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(76,125,122)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 16 2024 18:15:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/humeral-fracture-management.html\" target=\"_blank\"><span style=\"color: #ffffff;\">FRACTURE MANAGEMENT</span></a></span></p>\n",
+          "jcr:lastModified": "Wed Mar 05 2025 19:52:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(175,109,4)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 16 2024 18:15:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities/blueprint.html\" target=\"_blank\"><span style=\"color: #ffffff;\">BLUEPRINT</span></a></span></p>\n",
+          "jcr:lastModified": "Wed Mar 05 2025 19:52:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(133,69,138)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Dec 16 2024 18:10:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

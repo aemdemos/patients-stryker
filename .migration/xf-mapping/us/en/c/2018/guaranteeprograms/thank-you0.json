@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Thank You",
+  "jcr:versionHistory": "458ab633-5dfd-473b-8386-30e04e26ffdf",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:predecessors": [
+    "09354055-392e-4b5d-a79d-a1421c9811bd"
+  ],
+  "lastPublished": "Fri Sep 14 2018 16:12:08 GMT+0000",
+  "jcr:created": "Fri Sep 14 2018 16:12:08 GMT-0400",
+  "cq:lastModified": "Thu Sep 13 2018 10:13:29 GMT-0400",
+  "jcr:baseVersion": "09354055-392e-4b5d-a79d-a1421c9811bd",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "bcdf2064-62bb-41c1-96b0-6b41535962a3",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Thu Apr 05 2018 16:55:58 GMT-0400",
+      "text": "<p>We have received your request. A Stryker clinician will be in contact with you soon.</p>\n",
+      "jcr:lastModified": "Thu Sep 13 2018 09:58:37 GMT-0400",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

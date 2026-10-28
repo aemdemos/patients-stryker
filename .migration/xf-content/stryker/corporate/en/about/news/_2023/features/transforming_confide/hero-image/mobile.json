@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fff4af8a-e82a-4339-9506-fde3c5b412c6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "30c53411-330c-4442-a439-7957fb8b3829"
+  ],
+  "lastPublished": "Tue Oct 22 2024 21:02:19 GMT+0000",
+  "jcr:created": "Tue Oct 22 2024 21:02:20 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 22 2024 21:02:21 GMT+0000",
+  "cq:lastModified": "Thu Sep 19 2024 16:48:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "30c53411-330c-4442-a439-7957fb8b3829",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:02:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "08a24f9f-47a7-48ec-ab9f-22411f81d5a8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Oct 11 2023 19:59:12 GMT+0000",
+      "alt": "Dilan smiles with his before photo where he has a cleft lip.",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile/images/herocarousel_mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Sep 19 2024 16:48:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

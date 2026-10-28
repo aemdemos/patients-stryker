@@ -1,0 +1,212 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Services and solutions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4a6f0480-5b97-403d-8333-f89fd4e98db4",
+  "cq:template": "/apps/stryker/templates/tier1-landing-services",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "43aa6777-5a57-4e7d-a096-161feef56582"
+  ],
+  "contentID": "CORPM-GSNPS-SYK-1910250_Rev-1",
+  "lastPublished": "Tue May 05 2026 14:54:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 05 2026 14:54:31 GMT+0000",
+  "cq:lastReplicated": "Tue May 05 2026 14:54:33 GMT+0000",
+  "cq:lastModified": "Tue May 05 2026 14:54:26 GMT+0000",
+  "jcr:baseVersion": "43aa6777-5a57-4e7d-a096-161feef56582",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jan 29 2026 20:53:49 GMT+0000",
+  "jcr:lastModified": "Tue May 05 2026 14:54:26 GMT+0000",
+  "jcr:uuid": "533a3227-2235-4a2a-a6f9-559e835f2fcc",
+  "sling:resourceType": "stryker/components/structure/pages/tier1-landing-services",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "ray.maniaci@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_72378185_copy_c_1060619134": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Services</span></span></p>\n",
+      "jcr:lastModified": "Wed Jan 10 2024 14:58:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_72378185_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Maximizing your investment</span></span></p>\n",
+      "jcr:lastModified": "Tue May 13 2025 19:39:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "jcr:lastModified": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">From flexible financial options to sustainable options for reprocessing single-use devices to exceptional technicians trained to maintain and support your equipment—we’re here so you can focus on what matters most, your patients.</span></p>\n",
+      "jcr:lastModified": "Tue Oct 07 2025 19:43:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jan 10 2024 15:00:16 GMT+0000",
+      "jcr:lastModified": "Wed Jan 10 2024 15:00:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Jan 08 2024 15:15:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/flex-financial"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/onsite"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/procare"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/reprocessing-and-remanufacturing"
+        }
+      }
+    },
+    "cols2_1312706284": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue May 13 2025 20:02:59 GMT+0000",
+      "jcr:lastModified": "Tue May 13 2025 20:02:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_352953482": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue May 13 2025 19:37:21 GMT+0000",
+      "jcr:lastModified": "Tue May 13 2025 19:37:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "text_72378185_copy_c_1029655685": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Solutions</span></span></p>\n",
+      "jcr:lastModified": "Tue May 13 2025 19:39:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_72378185_copy_c_132977772": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Solutions for the places we work, learn and play</span></span></p>\n",
+      "jcr:lastModified": "Fri Jun 13 2025 15:09:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_cop_374733136": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "jcr:lastModified": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">While Stryker is a trusted partner in healthcare, many of our innovations apply outside of the hospital, too.&nbsp;Equipment like our AEDs and communications solutions are used by police officers, veterinarians, teachers and others across our communities daily. Explore the ways we can make an impact.</span></p>\n",
+      "jcr:lastModified": "Tue Oct 07 2025 19:42:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jan 10 2024 15:00:16 GMT+0000",
+      "jcr:lastModified": "Wed Jan 10 2024 15:00:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue May 13 2025 19:44:03 GMT+0000",
+      "jcr:lastModified": "Tue May 13 2025 19:45:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/schools-universities"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/services-and-solutions/workplace-communications"
+        }
+      }
+    }
+  },
+  "title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModified": "Thu May 11 2017 15:07:38 GMT-0400",
+    "sling:resourceType": "stryker/components/content/title"
+  },
+  "tagline": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTagLineComp": "true",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jan 10 2024 14:59:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagline",
+    "backgroundColor": "rgba(182,114,25,1)",
+    "gradientDirectionInverse": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

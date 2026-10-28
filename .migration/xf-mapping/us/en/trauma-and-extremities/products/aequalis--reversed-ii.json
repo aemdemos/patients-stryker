@@ -1,0 +1,183 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Shoulder System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Aequalis Reversed II",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a61d40fb-929c-4fc4-a599-b5ebab16a7b9",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Aequalis Reversed II",
+  "jcr:predecessors": [
+    "842f672e-57f7-4d1c-a95f-ab99b9146abc"
+  ],
+  "contentID": "AP-015336A  22-Jun-2021",
+  "lastPublished": "Thu Oct 10 2024 19:23:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 10 2024 19:25:37 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 10 2024 19:25:38 GMT+0000",
+  "cq:lastModified": "Thu Oct 03 2024 14:33:52 GMT+0000",
+  "jcr:baseVersion": "842f672e-57f7-4d1c-a95f-ab99b9146abc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:22:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/upper-extremities",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:specialty/shoulder"
+  ],
+  "jcr:lastModified": "Thu Oct 03 2024 14:33:52 GMT+0000",
+  "jcr:uuid": "9d3f50ec-9817-4988-837b-84ca0e2338c5",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Thu Jun 10 2021 19:00:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 10 2021 19:02:11 GMT+0000",
+      "title": "Aequalis Rev II Glenoid Baseplate",
+      "jcr:lastModified": "Fri Nov 12 2021 19:40:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 10 2021 19:02:51 GMT+0000",
+      "jcr:lastModified": "Thu Jun 10 2021 19:02:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 10 2021 19:02:59 GMT+0000",
+          "alt": "Aequalis Rev II Glenoid Baseplate ",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/aequalis-reversed-ii/images/Glenoid-baseplate.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 10 2021 19:04:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 10 2021 19:03:05 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Key benefits</span></span></p>\n<ul>\n<li>25mm and 29mm diameter baseplate options available with 15mm and 25mm post<br>\n</li>\n<li>2 compression and 2 Locking locking olives provide angled locking fixation<br>\n</li>\n<li>HA coating on post baseplate designed for biological fixation<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Nov 30 2021 15:14:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 10 2021 19:15:05 GMT+0000",
+      "jcr:lastModified": "Thu Jun 10 2021 19:15:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 10 2021 19:02:11 GMT+0000",
+      "title": "Aequalis Rev II Threaded Post Baseplate",
+      "jcr:lastModified": "Fri Nov 12 2021 19:40:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 10 2021 19:02:51 GMT+0000",
+      "jcr:lastModified": "Thu Jun 10 2021 19:02:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 10 2021 19:02:59 GMT+0000",
+          "alt": "Aequalis Rev II Threaded Post Baseplate",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/aequalis-reversed-ii/images/Threaded-post-baseplate.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 10 2021 19:05:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 10 2021 19:03:05 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Key benefits</span></span></p>\n<ul>\n<li>One-piece central threaded post provides immediate baseplate fixation</li>\n<li>Plasma spray coating creates long-term baseplate fixation<br>\n</li>\n<li>Variable locking screws designed for baseplate fixation<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Nov 30 2021 15:15:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/aequalis-reversed-ii/images/Aequalis-Reversed-II.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-8em\">Key benefits</span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-8em\">Biomechanics of the Aequalis Reversed II prosthesis is designed for:</span></span></h1>\n<ul>\n<li>Medialization of the center of rotation inside the glenoid bone surface.</li>\n<li>Distalization of the humerus, resulting in retensioning of the deltoid muscle and any rotator cuff muscles that are still competent (in case of massive rotator cuff tear).<br>\n</li>\n</ul>\n",
+    "jcr:lastModified": "Mon Nov 06 2023 20:56:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

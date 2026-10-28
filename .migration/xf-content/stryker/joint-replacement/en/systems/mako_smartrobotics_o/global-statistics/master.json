@@ -1,0 +1,409 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Global statistics",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6a4f0211-3e90-4469-8624-5c73881a0a94",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "ae81cb58-b1c8-4f45-abf4-d5ef82880d48"
+  ],
+  "lastPublished": "Wed Jun 24 2026 13:49:51 GMT+0000",
+  "jcr:created": "Wed Jun 24 2026 13:49:51 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 24 2026 13:49:53 GMT+0000",
+  "cq:lastModified": "Wed Jun 24 2026 13:49:20 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ae81cb58-b1c8-4f45-abf4-d5ef82880d48",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:41:07 GMT+0000",
+  "jcr:uuid": "85164ad0-6c50-440e-b30e-ec8040a8ce3e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_1741384364": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Dec 20 2023 20:03:22 GMT+0000",
+      "jcr:lastModified": "Wed Dec 20 2023 20:04:38 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_17413843641275645262154115": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "MAKO GLOBAL STATS 1M PROCEDURES cropped",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/MAKO GLOBAL STATS 1M PROCEDURES cropped.png",
+        "jcr:lastModified": "Wed Dec 20 2023 20:33:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_45994301_copy_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Dec 20 2023 20:03:43 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2-5em\">2.5 million+<br>\n </span><span class=\"fontsize-2em\"></span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">Mako procedures</span><br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">have been performed across the globe</span></span></p>\n",
+        "jcr:lastModified": "Wed Jun 24 2026 13:47:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1741": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Dec 20 2023 20:05:10 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_17411275677791454929": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "MAKO GLOBAL STATS 35 COUNTRIES US cropped",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/MAKO GLOBAL STATS 35 COUNTRIES US cropped.png",
+        "jcr:lastModified": "Wed Dec 20 2023 20:33:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_45994301_copy_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Wed Dec 20 2023 20:03:43 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: rgb(28, 86, 135);\">47</span>&nbsp;</span><span class=\"fontsize-1-75em\" style=\"color: rgb(76, 125, 122);\"><span style=\"color: #000000;\"><span style=\"color: #1c5687;\">countries</span><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Mako Systems installed in over 47 countries</span></span></p>\n",
+        "jcr:lastModified": "Wed Jun 24 2026 13:49:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1741_575744202": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Dec 20 2023 20:05:38 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1741_5757442021275705778860000": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "MAKO GLOBAL STATS",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/images/MAKO_GLOBAL_STATS_17_YEARS_cropped1.jpg",
+        "jcr:lastModified": "Tue Mar 04 2025 14:23:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_45994301_copy_c_1455147270": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Wed Dec 20 2023 20:03:43 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #b2b4ae;\"><span style=\"color: #85458a;\">20</span></span></span>&nbsp;</span><span class=\"fontsize-1-75em\"><span style=\"color: #000000;\"><span style=\"color: #85458a;\">years</span><br>\n </span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">of robotic-arm assisted surgery experience</span></span></p>\n",
+        "jcr:lastModified": "Wed Jun 24 2026 13:48:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Dec 20 2023 20:39:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Dec 20 2023 20:39:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "-3"
+    },
+    "standaloneimage_1741_1721811118": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Dec 20 2023 20:06:01 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1741_17218111181275728488783812": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "MAKO GLOBAL STATS 330 STUDIES cropped",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/MAKO GLOBAL STATS 330 STUDIES cropped.png",
+        "jcr:lastModified": "Wed Dec 20 2023 20:33:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_45994301_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Wed Dec 20 2023 20:03:43 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\">800+</span></span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">contributions to the global scientific record*</span></span></p>\n",
+        "jcr:lastModified": "Tue May 26 2026 17:06:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1741_347351744": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Dec 20 2023 20:06:20 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_1741": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "MAKO GLOBAL STATS 1.5K PATENTS cropped",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/MAKO GLOBAL STATS 1.5K PATENTS cropped.png",
+        "jcr:lastModified": "Wed Dec 20 2023 20:34:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_45994301_copy_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Wed Dec 20 2023 20:03:43 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #af6d04;\">2,000+&nbsp;</span></span><br>\n </span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #af6d04;\">patents</span><br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">and patent applications established globally</span></span></p>\n",
+        "jcr:lastModified": "Fri May 01 2026 12:56:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      }
+    },
+    "standaloneimage_1741_1720565948": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Dec 20 2023 20:07:03 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

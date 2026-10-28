@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Hip and pelvis",
+  "jcr:versionHistory": "a08733cc-6ed2-4cf7-be24-f30afc6a2e41",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/pelvis-indication-image.jpg.png",
+  "jcr:predecessors": [
+    "7894c959-2506-4475-b5ba-36ea77d842d4"
+  ],
+  "lastPublished": "Tue Mar 19 2019 15:33:51 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Mar 19 2019 15:33:51 GMT+0000",
+  "cq:lastModified": "Mon Nov 19 2018 20:06:25 GMT+0000",
+  "jcr:description": "When you require a variety of hip fracture and pelvic treatment options look no further. We have continued to develop our products utilizing the latest technologies to meet all of your needs in hip and pelvis reconstruction.",
+  "jcr:baseVersion": "7894c959-2506-4475-b5ba-36ea77d842d4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/hip-and-pelvis",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 10 2017 13:32:18 GMT-0400",
+  "jcr:uuid": "3bc15329-474b-418a-aa8e-68a5e0f11b71",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 20:06:25 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+      "title": "Portfolio",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/trauma-and-extremities/product-type"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/pelvis-indication-image.jpg.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>CP-AWI-13, 07-2017</p>\r\n",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:58 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/pelvis-indication-image.jpg.png"
+  }
+}

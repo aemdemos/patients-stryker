@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Sage launches new Multi-Position MATS to help OR nurses safely tilt and transfer patients",
+  "jcr:versionHistory": "8264f8df-edf5-4bab-a158-809206c41114",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Sage Multi-Position MATS Mobile Air Transfer System",
+  "jcr:predecessors": [
+    "8664a395-89a5-44c4-9f37-9eefe4604262"
+  ],
+  "contentID": "28791",
+  "lastPublished": "Thu Mar 17 2022 14:16:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 17 2022 14:16:35 GMT+0000",
+  "cq:lastModified": "Thu Mar 17 2022 14:16:27 GMT+0000",
+  "jcr:baseVersion": "8664a395-89a5-44c4-9f37-9eefe4604262",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/1"
+  ],
+  "jcr:lastModified": "Thu Mar 17 2022 14:16:27 GMT+0000",
+  "jcr:uuid": "c4c234d0-64ed-4a74-bf96-b1dbd9a559f9",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Thu Mar 17 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "17-Mar-2022",
+    "jcr:lastModified": "Thu Mar 17 2022 13:59:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<h2>Innovative mobile air transfer system brings safe patient handling practices to the operating room</h2>\n<p>The Sage Multi-Position MATS Mobile Air Transfer System is designed to help prevent patients from sliding during tilt procedures and protect nurses during pre- and post-surgical lateral transfers. It fits into OR nurses’ workflow and secures patients in the following tilt positions: lithotomy, Trendelenburg, reverse Trendelenburg and lateral tilt.</p>\n<p>“We know tilt procedures have unique challenges related to the perioperative team, including staff injury, workflow issues, and patient sliding,” says Brandon Gwin, Brand Marketing Manager. “But hospitals shouldn’t have to compromise staff safety to ensure proper patient positioning and transferring in the OR. Many other areas of the hospital utilize air-assisted technology and now this device can help the OR staff and their patients.”</p>\n<h2>Helping reduce the risk of injury</h2>\n<p>Injury prevention continues to be a considerable challenge across the continuum of care – and the risk in the operating room is no different. Surgical patients in tilt positions are vulnerable to complications and structural injury due to sliding events.<sup>1</sup> Pre- and post-surgical lateral transfers also present risks to the OR staff – 45% of nurse injury is caused by overexertion.<sup>2</sup></p>\n<h2>Partnering for improved outcomes</h2>\n<p>During the development of the Sage Multi-Position MATS, Sage worked closely with clinicians, nurse educators, and robotics training staff to gain insight and deliver a solution that exceeded expectations. “Once we uncovered this unmet need, we worked together with our partners to create the best possible product,” says Hester Fletcher RN, MSN, Ed, CNOR, Staff Market Intelligence Specialist. “It was clear that we could improve on the current standard of care by adapting our Mobile Air Transfer System for the OR,” she said.</p>\n<h2>Key features make the difference</h2>\n<p>Multi-Position MATS secures the patient to the OR table and features a unique, skin-friendly foam pad that redistributes pressure and can be easily removed post-surgery.<sup>3</sup> The innovative design of the integrated arm wraps helps reduce the risk of nerve damage by protecting the patient’s arms<sup>4</sup> and keeps the arms adducted during surgery.<sup>5,6</sup> The system also uses a 2-phase inflation method that safely cradles and tabilizes the patient before raising on a cushion of air, resulting in an easier transfer.</p>\n<h2>Leaders in safe patient handling</h2>\n<p>The Sage Multi-Position MATS joins our HalfMATS and MATS Systems, along with our AirTAP Patient Repositioning System, Turn and Position System and Seated Positioning System to enhance our leadership position in the field of healthcare worker safety and safe patient handling. We are driven to solve real problems and make healthcare better for you and your patients. To learn more about how Sage can help your hospital reduce the risk of injury in the OR, please visit:&nbsp;<a title=\"Learn more about how Sage can help your hospital reduce the risk of injury in the OR with Sage Multi-Position MATS.\" href=\"/content/stryker/us/en/sage/products/sage-multi-position-mats.html\">https://www.stryker.com/us/en/sage/products/sage-multi-position-mats.html</a></p>\n",
+    "jcr:lastModified": "Thu Mar 17 2022 13:51:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References: 1.</b> Chitlik A, Safe Positioning for Robotic-Assisted Laparoscopic Prostatectomy, AORN Journal 2011;94(1):37-48. <b>2.</b> U.S. Bureau of Labor Statistics, Monthly Labor Review, Occupational injuries and illnesses among registered nurses, November 2018. <b>3.</b> Data on file. Sage Products LLC. Product Evaluation – TrendeMATS Survey, conducted September 2021. <b>4.</b> Data on file. Sage Products LLC. TP21-0010: TrendeMATS Arm Wrap Pressure Map, TP21-0013: TrendeMATS IV Arm Wrap Pressure Map. <b>5.</b> Data on file. Sage Products LLC. TrendeMATS Survey conducted September 2021. <b>6.</b> Bouyer-Ferullo S, Preventing Perioperative Peripheral Nerve Injuries, AORN Journal, 2013 Jan;97(1):110-124.</p>\r\n",
+    "jcr:lastModified": "Wed Mar 16 2022 18:39:29 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Multi-Position-MATS-launched.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Sage Multi-Position MATS Mobile Air Transfer System",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Multi-Position-MATS-launched.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Mar 17 2022 13:59:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

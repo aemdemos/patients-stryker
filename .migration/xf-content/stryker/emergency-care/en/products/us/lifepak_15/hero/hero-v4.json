@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 15 V4+ monitor/defibrillator",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "795310e6-d5cf-44e0-8821-8caff7365d8f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "8f87ccc1-07c6-4e6b-8551-468d6dbe79e9"
+  ],
+  "jcr:created": "Tue Nov 21 2023 17:36:16 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 21 2023 17:36:19 GMT+0000",
+  "cq:lastModified": "Tue Nov 21 2023 17:36:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "Accelerate patient care with LIFEPAK 15 V4+ monitor/defibrillator - the high-performance device trusted by healthcare professionals for lifesaving emergencies. ",
+  "jcr:baseVersion": "8f87ccc1-07c6-4e6b-8551-468d6dbe79e9",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "1de90d3e-49b8-4520-a3d1-070702ae376b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Oct 11 2022 15:37:28 GMT+0000",
+      "alt": "LIFEPAK 15 V4+ monitor/defibrillator on gray background",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-15/us/lifepak15V4_banner_Hero.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Oct 11 2022 15:37:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

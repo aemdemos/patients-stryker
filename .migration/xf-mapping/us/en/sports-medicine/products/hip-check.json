@@ -1,0 +1,594 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Patient-specific surgical planning",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "HipMap and HipCheck",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c6e6d535-c8ca-44f9-9a11-2320604af209",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": ".",
+  "jcr:predecessors": [
+    "2eb325d0-d3e9-4d34-85bb-32efc7ab4b70"
+  ],
+  "contentID": " 1000902979 Rev. A",
+  "lastPublished": "Wed Aug 19 2026 16:59:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 16:59:42 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 16:59:44 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 16:59:17 GMT+0000",
+  "jcr:description": "3D preoperative planning assists with clinical decision making, and real-time intra-operative feedback helps measure and resect cam lesions to a desired alpha angle.",
+  "jcr:baseVersion": "2eb325d0-d3e9-4d34-85bb-32efc7ab4b70",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:44:17 GMT+0000",
+  "pageTitle": "HipMap and HipCheck",
+  "cq:tags": [
+    "stryker:business-unit/sports-medicine",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/product-type/surgical-planning",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+    "stryker:product/sports-medicine/hip-check",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai"
+  ],
+  "jcr:lastModified": "Fri Jul 10 2026 18:32:20 GMT+0000",
+  "jcr:uuid": "8bb6419f-5027-4429-bc5d-4d88407963d8",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "HipMap and HipCheck",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "imageAlt": "HipMap HTML and HipCheck 1.4",
+      "jcr:lastModified": "Tue Apr 20 2021 16:03:10 GMT+0000",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/hipcheck/images/hipmap-hipcheck-html-updated.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:07:16 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:07:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:07:41 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">The future of hip arthroscopy.</span><br>\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Now.</span></span></span>",
+      "jcr:lastModified": "Mon Oct 07 2019 22:55:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:07:34 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:07:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Apr 02 2021 14:41:31 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Aug 14 2026 22:50:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/hipcheck/videos/190820_SYK_HipCheck_v3-2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/190820_SYK_HipCheck_v3-2-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Aug 14 2026 22:51:10 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Fri Apr 02 2021 14:39:57 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Apr 02 2021 14:47:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/hipcheck/videos/StrykerHipLaunchFinal.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/StrykerHipLaunchFinal-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Apr 02 2021 14:41:22 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "sectionseparator_2133791443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:11:08 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:11:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_185659253": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:11:19 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:11:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:11:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-5vw\">HipMap</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">A pre-operative planning tool that delivers a patient-specific, interactive 3D representation of the hip designed to assist with clinical decision making.</span></span>",
+          "jcr:lastModified": "Thu Feb 28 2019 18:13:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:12:39 GMT+0000",
+          "text": "<p>HipMap is rooted in literature and utilizes complex analytics to provide you with an advanced approach to pre-operative clinical decision making.</p>\n<p><span class=\"futura-bold\">Plan the surgery</span><br>\nHipMap leverages advanced imaging to create a patient-specific, interactive 3D representation of the hip. The full report is delivered in a consumable format complete with cam and pincer analysis, version/torsion measurements, indications for potential instability, 3D heat maps, measurement scales and other visual tools.</p>\n<p><span class=\"futura-bold\">Educate patients</span><br>\nHipMap will help patients understand the pathology affecting their hip joint and will contribute to a more robust discussion on the surgical approach.</p>\n",
+          "jcr:lastModified": "Tue Mar 30 2021 22:25:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Mar 30 2021 22:25:43 GMT+0000",
+          "jcr:lastModified": "Tue Mar 30 2021 22:26:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://microapp.stryker.com/hipmap/",
+              "buttonText": "See HipMap demo report here",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 20:34:11 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/hipcheck/images/Assets-Hipmap-Hipcheck3DBone.jpg",
+          "jcr:lastModified": "Thu Feb 28 2019 20:34:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_1881908854": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:14:36 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:14:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:15:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">Patient specific<br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">3D hip mapping.&nbsp;</span></span></span>",
+          "jcr:lastModified": "Thu Feb 28 2019 18:15:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Fri Apr 02 2021 14:42:09 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Apr 02 2021 14:47:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/hipcheck/videos/HipMapClientAnimation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/HipMapClientAnimation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Apr 02 2021 14:42:17 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "sectionseparator_1475370350": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:21:23 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:21:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_284498852": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:23:35 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:23:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:11:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-5vw\">HipCheck</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">An intra-operative resection planning and execution tool that allows you to measure and resect cam lesions to your desired alpha angle.</span></span>",
+          "jcr:lastModified": "Tue Mar 30 2021 22:27:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:12:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">Visualization</span><br>\nIntroduce a visualization tool to the sterile field to localize and address cam pathology on a patient-specific basis.</p>\n<p><span class=\"futura-bold\">Reproducible approach to femoroplasty<br>\n </span>View side-by-side comparison of pre-resection and post-resection fluoroscopy to validate the resection plan was executed.</p>\n",
+          "jcr:lastModified": "Tue Mar 30 2021 22:26:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 20:34:34 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/hipcheck/images/Assets-Hipmap-HipcheckScreen1.jpg",
+          "jcr:lastModified": "Thu Feb 28 2019 20:34:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_1333671663": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Feb 28 2019 18:27:32 GMT+0000",
+      "jcr:lastModified": "Thu Feb 28 2019 18:27:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 18:12:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">Enhanced workflow</span><br>\nThis tool integrates seamlessly into the current workflow and puts you in control.</p>\n<p><span class=\"futura-bold\">Post-op communication<br>\n </span>Connect on a different level with patients – the pre-op and post-op comparison images deliver confidence that the pathology was addressed appropriately.</p>\n",
+          "jcr:lastModified": "Tue Mar 30 2021 22:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Feb 28 2019 20:34:48 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/hipcheck/images/Assets-Hipmap-HipcheckScreen2.jpg",
+          "jcr:lastModified": "Thu Feb 28 2019 20:34:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "sectionseparator_974490054": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Mar 19 2019 00:11:52 GMT+0000",
+      "jcr:lastModified": "Tue Mar 19 2019 00:11:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/hipcheck/resources/ASEbrochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/hipcheck/resources/1000903002.pdf"
+      ],
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 03 2019 15:26:04 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Jul 03 2019 15:31:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prods",
+      "jcr:created": "Tue Nov 11 2025 21:43:04 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Tue Nov 11 2025 21:43:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 21:42:57 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 21:42:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 21:43:35 GMT+0000",
+          "CTATitle": "Pivot Guardian Total Hip System",
+          "CTAImageAltText": "pivot-guardian-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 21:44:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/pivot-guardian-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/pivot-guardian-distraction-system"
+        }
+      }
+    },
+    "sectionseparator_1931229300": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 16:59:08 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 16:59:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/hipcheck/images/hipmap-hipcheck-thumbnail-updated.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Designed to advance FAI through enhanced workflow and improved patient interaction.</p>\r\n",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Mon Mar 04 2019 23:13:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Streamline pre-operative planning and intra-operative clinical decision making</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Introduce a visualization tool to your workflow that provides a reproducible approach to femoroplasty</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Bring HipMap into the OR with HipCheck in order to translate planning to execution</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Both tools enable you to communicate differently with your patients</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Thu Feb 28 2019 18:06:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 16:58:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

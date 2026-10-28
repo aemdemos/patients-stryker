@@ -1,0 +1,1399 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "with 3Di Technology",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ortholoc 2 Ankle Fracture LP",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "068d6b8d-ac9e-461c-836d-23035722db05",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Thumb-OrtholocAnkleFracture",
+  "jcr:predecessors": [
+    "2e2fef93-2ea2-43b7-8cb0-5662946dfc19"
+  ],
+  "contentID": "FA-ORT2-SYK-2495100_REV-0_en_us",
+  "lastPublished": "Tue Nov 25 2025 15:32:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 25 2025 15:32:03 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 25 2025 15:32:05 GMT+0000",
+  "cq:lastModified": "Tue Nov 25 2025 15:31:52 GMT+0000",
+  "jcr:description": "Ankle fractures are the most common intra-articular fracture of a weight-bearing joint. These injuries present a multitude of classifications and degree of severity.The Ortholoc 2 Ankle Fracture Low Profile System combines a complete selection of indication specific implants and instruments with an advanced andversatile locked plate technology, providing a comprehensive single tray solution to these complex indications.",
+  "jcr:baseVersion": "2e2fef93-2ea2-43b7-8cb0-5662946dfc19",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:24:30 GMT+0000",
+  "pageTitle": "Ortholoc 2  Ankle Fracture LP",
+  "cq:tags": [
+    "stryker:custom/foot-and-ankle/product-type/Plating-platform",
+    "stryker:content-type/product",
+    "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/ankle-foot-and-ankle",
+    "stryker:capability/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/talus-fracture/plating-platforms",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+    "stryker:content-type/hcp_content",
+    "stryker:product/foot-and-ankle/ortholoc-2-ankle-fracture"
+  ],
+  "jcr:lastModified": "Tue Nov 25 2025 15:31:52 GMT+0000",
+  "jcr:uuid": "14e7b862-ac77-4b2a-9585-575169d159a5",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "Ortholoc 2  Ankle Fracture LP",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 00:36:47 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 00:36:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 00:43:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\">Ortholoc<sup><span class=\"fontsize-1-5-vw\">®</span></sup> 2&nbsp;</span></span></span></h1>\r\n<h1><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span class=\"fontsize-4-5-vw\">Ankle Fracture LP</span></span></span></h1>\r\n",
+          "line2": "<h2><span class=\"fontsize-4vw\"><span class=\"urw-egyptienne\">with 3Di Technology</span></span></h2>\r\n",
+          "jcr:lastModified": "Tue Nov 04 2025 20:55:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 00:37:59 GMT+0000",
+          "alt": "Ortholoc 2 Ankle Fracture LP Product image",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-2-Ankle-Fracture-LP-HeroImage-001.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 30 2025 18:22:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy__514597334": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#specification\">SPECIFICATION OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Tue Nov 18 2025 21:44:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_2000441555_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "about",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "about",
+      "jcr:lastModified": "Thu May 30 2024 15:29:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 00:52:09 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 00:52:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 00:53:05 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Ankle fractures represent the most common type of intra-articular fracture in weight-bearing joints.<sup>1</sup> These injuries present a multitude of classifications and degree of severity. The Ortholoc 2 Ankle Fracture Low Profile System combines a complete selection of indication specific implants and instruments with an advanced andversatile locked plate technology, providing a comprehensive single tray solution to these complex indications.</span></span></p>\n",
+          "jcr:lastModified": "Tue Nov 04 2025 21:40:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "video": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "height": "0",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Nov 04 2025 20:47:54 GMT+0000",
+          "asset": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/videos/015666-ortholoc-3di-ankle-fracture-lp-system-animation-mid2.mp4",
+          "width": "0",
+          "jcr:lastModified": "Tue Nov 04 2025 20:48:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/video"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Nov 04 2025 20:48:45 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Nov 04 2025 20:48:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/videos/015666-ortholoc-3di-ankle-fracture-lp-system-animation-mid2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/015666-ortholoc-3di-ankle-fracture-lp-system-animation-mid2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Nov 04 2025 20:49:09 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_2119240282": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:26:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Key features</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Completely redesigned to address the anatomy</span></span></p>\n<ul>\n<li><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Offset syndesmotic and lateral fibula plates allow for precise syndesmotic fixation</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Versatile, low-profile plate designs are Type II anodized, pairing increased strength with minimal construct prominence</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">System features a wide range of plates including hook, medial &amp; posterior tibia, 1/3 tubular and syndesmosis plates</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jun 14 2024 16:09:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_copy_c_345644225": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "specification",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "specification",
+      "jcr:lastModified": "Thu May 30 2024 15:29:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1827280374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 00:59:18 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 00:59:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_697779097": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 00:57:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Ortholoc 2 LP Ankle Fracture plates</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Gravity Synchfix is compatible with plates from the Ortholoc 2 LP Ankle Fracture Plating System. The system includes a Syndesmosis Plate and a Lateral Fibula Plate that both come in Straight and Offset options for the syndesmotic plate holes.</span></span></p>\n",
+          "jcr:lastModified": "Tue Nov 04 2025 20:51:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 16:46:24 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 16:46:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 17:51:12 GMT+0000",
+          "alt": "Straight Syndesmosis Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/StraightSyndesmosisPlate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:42:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:09 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Straight syndesmosis plate</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:07:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:50 GMT+0000",
+          "alt": "Offset Syndesmosis Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/OffsetSyndesmosisPlate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:43:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:15 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Offset syndesmosis plate</span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:53 GMT+0000",
+          "alt": "Fibula plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/fibulaplate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:53:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:18 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Straight lateral fibula plate</span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:07:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:57 GMT+0000",
+          "alt": "Off set Lateral Fibula Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/StraightLateralFibulaPlate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:43:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:21 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Off set lateral fibula plate</span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:07:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 16:46:24 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 16:46:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:47 GMT+0000",
+          "alt": "Tubular Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/13tubularplate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:45:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:09 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">1/3 tubular plate</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:08:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:50 GMT+0000",
+          "alt": "Hook Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/HookPlate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:46:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:15 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Hook plate</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:08:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:46:53 GMT+0000",
+          "alt": "Medial Malleolar Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/MedialMalleolarPlate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 17:46:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 16:47:18 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Medial malleolar plate</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 24 2024 17:08:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1005841031": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 16:55:19 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 16:55:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_1073640419": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Jun 21 2024 17:33:12 GMT+0000",
+      "jcr:lastModified": "Fri Jun 21 2024 17:33:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 00:59:25 GMT+0000",
+      "text": "<h4><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Screws and instrumentation</span></span></h4>\n",
+      "jcr:lastModified": "Thu May 09 2024 13:54:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:55 GMT+0000",
+          "alt": "2.7mm Locking Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-2-7mm-Locking-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:47:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">2.7mm locking screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">On axis and polyaxial locking capability'</span></li>\n<li><span class=\"urw-egyptienne\">Cortical thread</span></li>\n<li><span class=\"urw-egyptienne\">2.0mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">10 - 18mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: grey</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:58 GMT+0000",
+          "alt": "3.5mm Locking Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-3-5mm-Locking-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:47:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:16 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">3.5mm locking screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">On axis and polyaxial locking capability</span></li>\n<li><span class=\"urw-egyptienne\">Cortical thread</span></li>\n<li><span class=\"urw-egyptienne\">2.8mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">10 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: purple</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 17:00:01 GMT+0000",
+          "alt": "3.5mm Low-Profile Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-3-5mm-low-profile-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:47:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">3.5mm low-profile screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">On axis and polyaxial locking capability</span></li>\n<li><span class=\"urw-egyptienne\">Cortical thread</span></li>\n<li><span class=\"urw-egyptienne\">2.5mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">10 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: bronze</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:55 GMT+0000",
+          "alt": "3.5mm Cortical Bone Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-3-5-cortical-bone-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:47:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">3.5mm cortical bone screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">Cortical thread</span></li>\n<li><span class=\"urw-egyptienne\">Fully threaded</span></li>\n<li><span class=\"urw-egyptienne\">2.5mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">10 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: bronze</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:58 GMT+0000",
+          "alt": "4.0mm Cortical Bone Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-4mm-cortical-bone-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:48:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:16 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">4.0mm cortical bone screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">Cortical thread</span></li>\n<li><span class=\"urw-egyptienne\"> Fully threaded</span></li>\n<li><span class=\"urw-egyptienne\">2.8mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">40 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: gold</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 17:00:01 GMT+0000",
+          "alt": "4.0mm Cancellous Bone Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-4mm-Cancellous-Full-bone-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:48:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:24 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">4.0mm cancellous bone screw<br>\n</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">Cancellous thread</span></li>\n<li><span class=\"urw-egyptienne\">Fully threaded</span></li>\n<li><span class=\"urw-egyptienne\">2.5mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">10 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: green</span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 17:03:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:55 GMT+0000",
+          "alt": "4.0mm Cancellous Partial Thread Bone Screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-4mm-Cancellous-partial-bone-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:48:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">4.0mm cancellous bone screw</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\">Cancellous thread</span></li>\n<li><span class=\"urw-egyptienne\">Partially threaded</span></li>\n<li><span class=\"urw-egyptienne\">2.5mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">20 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: green</span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 16:59:58 GMT+0000",
+          "alt": "4.0mm Cannulated  bone screw",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-4mm-cannulated-bone-screw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:49:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:16 GMT+0000",
+          "text": "<div><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">4.0mm cannulated&nbsp;bone screw</span></span></div>\n<ul>\n<li><span class=\"urw-egyptienne\">Cancellous thread</span></li>\n<li><span class=\"urw-egyptienne\">Partially threaded</span></li>\n<li><span class=\"urw-egyptienne\">Cannulated design (1.4mm K-wire)</span></li>\n<li><span class=\"urw-egyptienne\">3.0mm pre-drill</span></li>\n<li><span class=\"urw-egyptienne\">20 - 60mm lengths</span></li>\n<li><span class=\"urw-egyptienne\">Color code: blue</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jun 12 2024 20:01:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 05 2024 17:00:01 GMT+0000",
+          "alt": "Bone Screw Washer",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-3DI-bone-screw-washers.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 09 2024 13:50:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Mar 05 2024 17:00:24 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Bone screw washers</span></span></p>\n<p><span class=\"urw-egyptienne\">Washers are intended to prevent a screw head from breaking through the cortex of the bone by distributing the forces/load over a large area.</span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 13:50:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_2028635255_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 01 2023 22:08:47 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:08:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 22:08:51 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Nov 01 2023 22:08:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c_173430321": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Thu May 30 2024 15:30:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions</span></span></span>",
+          "jcr:lastModified": "Wed Nov 08 2023 23:19:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Oct 24 2025 17:13:45 GMT+0000",
+      "jcr:lastModified": "Fri Oct 24 2025 17:13:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Nov 18 2025 21:44:30 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Nov 18 2025 21:44:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "daniela.marino1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Wed Jun 12 2024 15:52:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/resources/Ortholoc 2 with 3Di technology.pdf",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Tue Nov 25 2025 14:31:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_891039402": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Nov 18 2025 21:38:24 GMT+0000",
+      "jcr:lastModified": "Tue Nov 18 2025 21:38:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c_904385752": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 26 2019 15:04:56 GMT+0000",
+      "title": "Procedures",
+      "jcr:lastModified": "Fri Apr 26 2019 15:05:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_344554973": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Nov 18 2025 21:39:03 GMT+0000",
+      "jcr:lastModified": "Tue Nov 18 2025 21:39:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/Header_Ankle.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 15:08:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Ankle procedures</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/ankle-fracture.html\">Ankle Fracture</a></span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Nov 18 2025 21:38:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/Header_Hindfoot.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 15:08:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Hindfoot procedures</span></span></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/talonavicular-joint-arthrodesis.html\"><span class=\"standalone-link\"><span class=\"fontsize-8em\">TALONAVICULAR JOINT ARTHRODESIS</span></span></a></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/talus-fracture.html\">Talus Fracture</a></span></span></p>\n",
+          "jcr:lastModified": "Tue Nov 18 2025 21:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1855020797": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Nov 04 2025 21:39:43 GMT+0000",
+      "jcr:lastModified": "Tue Nov 04 2025 21:39:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1693307873": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu May 09 2024 14:04:13 GMT+0000",
+      "jcr:lastModified": "Thu May 09 2024 14:04:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h4><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h4>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Ortholoc 2 </span><span style=\"color: #ffffff;\"><span style=\"color: #000000;\">Ankle Fracture LP</span></span></span></h4>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:25:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Fri Mar 22 2024 02:54:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed May 08 2024 13:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "sectionseparator_200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br />\r\n</span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Thu May 09 2024 15:38:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Fri Mar 22 2024 02:38:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols_220625712": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 05 2024 17:22:40 GMT+0000",
+      "jcr:lastModified": "Tue Mar 05 2024 17:22:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/ortholoc-2-ankle-fracture-lp-system/images/FA-Ortholoc-2-Ankle-Fracture-LP-HeroImage-001.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>Completely redesigned to address the anatomy.</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Mar 05 2024 00:34:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Offset syndesmotic and lateral fibula plates allow for precise syndesmotic fixation</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Versatile, low-profile plate designs are Type II anodized, pairing increased strength with minimal construct prominence</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>System features a wide range of plates including hook, medial &amp; posterior tibia, 1/3 tubular and syndesmosis plates</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Mar 05 2024 00:34:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Mar 05 2024 00:34:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Mar 05 2024 00:34:55 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Mar 05 2024 00:35:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Mar 05 2024 00:36:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1.&nbsp;Phillips WA et al. J Bone Joint Surg 67A:67-78, 1985</p>\r\n",
+    "jcr:lastModified": "Tue Nov 04 2025 21:41:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

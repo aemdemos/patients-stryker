@@ -1,0 +1,121 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveSync"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "India variation",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3da71184-313c-4f22-918c-5aa21c6fbbe2",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+  "jcr:predecessors": [
+    "32143359-2d9f-49ce-9fec-e3b988d1f5fb"
+  ],
+  "lastPublished": "Fri May 30 2025 17:55:28 GMT+0000",
+  "jcr:created": "Fri May 30 2025 17:55:31 GMT+0000",
+  "cq:lastReplicated": "Fri May 30 2025 17:55:33 GMT+0000",
+  "cq:lastModified": "Mon May 19 2025 15:42:04 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "32143359-2d9f-49ce-9fec-e3b988d1f5fb",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Dec 10 2024 21:51:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "22bd0e8f-8354-4e9f-8e75-de4132e28cdf",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "cq:lastRolledout": "Mon May 19 2025 15:42:03 GMT+0000",
+    "jcr:lastModified": "Mon May 19 2025 15:42:03 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+    "standaloneimage_1994214722": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "preset": "max_width_1440",
+      "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+      "jcr:created": "Tue Dec 10 2024 16:14:00 GMT+0000",
+      "alt": "direct superior approach patient positioning image",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/images/DAA_Graphic-(1).jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 19 2025 15:42:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "3",
+          "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+          "width": "6",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "preset": "max_width_1440",
+      "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+      "jcr:created": "Tue Dec 10 2024 16:13:30 GMT+0000",
+      "alt": "Direct Superior Approach Chart for DSA page",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/images/Direct Superior Approach Chart for DSA page.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 19 2025 15:42:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "2",
+          "cq:lastRolledout": "Mon May 19 2025 15:42:04 GMT+0000",
+          "width": "8",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    }
+  },
+  "cq:LiveSyncConfig": {
+    "jcr:primaryType": "cq:LiveCopy",
+    "cq:rolloutConfigs": [
+      "/libs/msm/wcm/rolloutconfigs/default"
+    ],
+    "cq:isDeep": true,
+    "cq:master": "/content/experience-fragments/stryker/joint-replacement/en/procedures/direct_superior_appr/dsa-chart-/master"
+  }
+}

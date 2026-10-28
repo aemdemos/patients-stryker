@@ -1,0 +1,229 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reprocessed SP02 sensors ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Nellcor™ OxiMax™ pulse oximeter sensors",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e631ae97-8bb2-42d5-94c5-f26a9da62b7b",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Nellcor OxiMax",
+  "jcr:predecessors": [
+    "bb1eeed1-97b4-4932-a4eb-7a614a413185"
+  ],
+  "contentID": "CIS11254",
+  "lastPublished": "Tue Aug 18 2026 20:14:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:14:10 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:14:12 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:13:55 GMT+0000",
+  "jcr:description": "The Nellcor OxiMax pulse oximeter sensors are noninvasive devices attached to a patient’s fingertip, toe or foot and emits light through the appendage to consistently monitor blood oxygen saturation. Stryker's Sustainability Solutions offers single use, reprocessed Nellcor OxiMax pulse oximeter devices in both transpore and woven styles for adult, pediatric, infant and neonatal patients.",
+  "jcr:baseVersion": "bb1eeed1-97b4-4932-a4eb-7a614a413185",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:14:10 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/sustainability",
+    "stryker:specialty/pulse-oximeter-sensors",
+    "stryker:content-type/hcp_content",
+    "stryker:product/sustainability/oximax",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Thu Jul 27 2023 16:46:29 GMT+0000",
+  "jcr:uuid": "f96d7266-f272-430c-99e2-cc3b4a21abac",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Wed Nov 09 2022 18:58:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 19:03:49 GMT+0000",
+      "title": "Ordering information",
+      "jcr:lastModified": "Wed Nov 09 2022 19:04:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"139\" valign=\"top\"><p><b>Item number</b></p>\n</td>\n<td width=\"139\" valign=\"top\"><p><b>Weight indication</b></p>\n</td>\n<td width=\"139\" valign=\"top\"><p><b>Tape style</b></p>\n</td>\n<td width=\"139\" valign=\"top\"><p><b>Application</b></p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>MAX-A</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>&gt; 30 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>MAX-AL</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>&gt; 30 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>MAX-I</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>3-20 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Toe</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>MAX-N</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>foot if &lt; 3 kg</p>\n<p>finger if &gt;40 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger and toe</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>MAX-P</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>10-50 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>N-25</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>foot if &lt; 3 kg</p>\n<p>finger if &gt; 40 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger and toe</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>D-20</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>10-50 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>D-25</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>&gt; 30 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>D-25L</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>&gt; 30 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Transpore</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Finger</p>\n</td>\n</tr><tr><td width=\"139\" valign=\"top\"><p>I-20</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>3-20 kg</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Woven</p>\n</td>\n<td width=\"139\" valign=\"top\"><p>Toe</p>\n</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 19:03:08 GMT+0000",
+      "jcr:lastModified": "Wed Nov 09 2022 19:03:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/endoscopy/products/nellcor-oximax/resources/Pulse Oximeter Reprocessing Overview.pdf",
+        "/content/dam/stryker/sustainability/products/nellcore-oximax/Nellcor OxiMax White Paper.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Jul 20 2023 19:15:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:13:45 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:13:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/nellcor-oximax/images/Reprocessed Max-A Pulse Oximeter Sensor.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Monitoring your vitals and your bottom line</p>\r\n",
+    "shortDescTop": "<p>Before being sent back to you, all reprocessed devices are required to pass through our robust manufacturing process consisting of:</p>\r\n",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Jul 20 2023 19:12:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Decontamination and cleaning</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Visual inspection</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Function testing for electrical continuity</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Performance testing for signal output of the LED and photo detector</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Tape replacement</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>VHP sterilization</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:13:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:13:37 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

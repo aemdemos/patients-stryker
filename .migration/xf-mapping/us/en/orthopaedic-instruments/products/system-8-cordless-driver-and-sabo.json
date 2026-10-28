@@ -1,0 +1,88 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Your one-system solution",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "System 8 Cordless driver and Sabo",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fb47b9bb-99d8-46a7-ad18-4dd8ad663a7b",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "thumbnailAltText": "System 8 Cordless driver and Sabo ",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/system8cordlessdriverandsabo/images/Thumbnail_System8CordlessDriverSABO.jpg",
+  "jcr:predecessors": [
+    "4e525cc6-0f39-49e7-82b3-f766ec7238a3"
+  ],
+  "contentID": "9100-004-743 Rev. None",
+  "lastPublished": "Fri Sep 12 2025 17:47:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 12 2025 17:47:51 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 12 2025 17:47:54 GMT+0000",
+  "cq:lastModified": "Fri Sep 12 2025 17:47:35 GMT+0000",
+  "jcr:description": "Developed specifically for sports med and ortho trauma, this system produces the dependable power you require.",
+  "jcr:baseVersion": "4e525cc6-0f39-49e7-82b3-f766ec7238a3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:47:50 GMT+0000",
+  "pageTitle": "System 8 cordless driver and Sabo Saw",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:services/procare/surgical/power-tools",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/sports-medicine",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:portfolio/orthopaedics",
+    "stryker:services/procare/surgical",
+    "stryker:product/orthopaedic_instruments/System_8_Cordless_Driver_and_SABO",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Fri Sep 12 2025 17:47:35 GMT+0000",
+  "jcr:uuid": "f2107983-3a89-4624-8045-7af04298c851",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Tue Jun 27 2017 08:22:38 GMT-0400",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>System 8 cordless driver – An evolution of Stryker’s cordless driver, the System 8&nbsp;cordless driver gives you the confidence you need to drill, cut and ream in sports med&nbsp;and ortho trauma procedures. Plus, our exclusive PoweReam Technology gives you a&nbsp;<span style=\"font-size: 0.8125rem;\">significant increase in torque, for tackling challenging reaming procedures.</span></p>\r\n<p><br>\r\nSystem 8 SABO Sagittal Saw – The next iteration of Stryker’s SABO Saw, the lightweight&nbsp;System 8 SABO Sagittal Saw delivers optimized cutting speed, control and accuracy in&nbsp;<span style=\"font-size: 0.8125rem;\">every case.</span></p>\r\n",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModified": "Tue Jun 27 2017 08:21:00 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/system8cordlessdriverandsabo/images/Thumbnail_System8CordlessDriverSABO.jpg"
+  }
+}

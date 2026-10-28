@@ -1,0 +1,863 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "MEDPOR Plastic surgery",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a748c129-b6ef-4e0b-aab1-1c7bd30b3a29",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "1587738967_Titan-hero",
+  "jcr:predecessors": [
+    "ee9d8142-4112-43aa-aa50-9b2a7b8aae4f"
+  ],
+  "lastPublished": "Tue Sep 02 2025 21:21:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 02 2025 21:21:43 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 02 2025 21:21:46 GMT+0000",
+  "cq:lastModified": "Tue Sep 02 2025 21:21:06 GMT+0000",
+  "jcr:baseVersion": "ee9d8142-4112-43aa-aa50-9b2a7b8aae4f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 02 2025 21:21:41 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:capability/cmf-implants",
+    "stryker:product/craniomaxillofacial/medpor-plastic-surgery",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic"
+  ],
+  "jcr:lastModified": "Tue Sep 02 2025 21:21:06 GMT+0000",
+  "jcr:uuid": "4a05eb2f-209b-4c59-86b3-2455f8b28577",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "3",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">MEDPOR<sup>®</sup><br>\n </span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Plastic surgery</span></span></h1>\n",
+      "jcr:lastModified": "Wed Apr 02 2025 21:16:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
+      "alt": "1587738967_Titan-hero",
+      "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1587738967_Titan-hero.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Mar 04 2025 21:38:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1971668492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\">Overview</span></h2>\n<p>MEDPOR has been a trusted name in the industry since 1985, with hundreds of thousands of procedures performed, and hundreds of published clinical reports in reconstructive, cranial, oculoplastic, and&nbsp;cosmetic applications.</p>\n<p>Our MEDPOR product line provides you an array of porous polyethylene solutions for your reconstruction and augmentation needs. We understand that bio-compatibility characteristics of implants are paramount to help surgeons achieve positive patient outcomes. The omni-directional pore structure of our polyethylene implants may increase implant acceptance by allowing the patient‘s native tissue to integrate with the implant. In addition to our comprehensive line of stock MEDPOR implants, we offer CT-based&nbsp;patient-specific implants, putting the implant design in your hands.</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Proven.</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">&nbsp;Adaptable. Comprehensive.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:39:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
+          "CTATitle": "Request information",
+          "ctaDeepLinkID": "request-information",
+          "jcr:lastModified": "Thu Feb 06 2025 19:51:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:50:31 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:50:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 07 2025 20:50:35 GMT+0000",
+          "jcr:lastModified": "Fri Feb 07 2025 20:50:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_421968903_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:53:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">MEDPOR product line</span></h2>\n",
+      "jcr:lastModified": "Fri May 23 2025 18:38:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 21:51:27 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:51:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1463411929_8318-Chin-Extended-Square-RZ-7mm-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463411929_8318-Chin-Extended-Square-RZ-7mm-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:52:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Chin Extended Square RZ 7mm</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:54:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1463411970_9429_Inferior-Orbital-Rim-Left-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463411970_9429_Inferior-Orbital-Rim-Left-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:52:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Inferior Orbital Rim Left</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:55:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1463412010_9533-Nasal-Arch-Small-with-Blue-Template-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463412010_9533-Nasal-Arch-Small-with-Blue-Template-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:53:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Nasal Arch Small with Blue Template</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:55:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1587674382_LE-Nostril-retainer-image",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1587674382_LE-Nostril-retainer-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:53:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Nostril Retainer with Modified Loops</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:55:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 21:51:27 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:51:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1463412089_9957-Mandibular-Angle-RZ-Medium-Left-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463412089_9957-Mandibular-Angle-RZ-Medium-Left-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:53:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Mandibular Angle RZ Medium</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:55:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:51:37 GMT+0000",
+          "alt": "1463412128_83007-Midface-Contour-Implant-Left-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463412128_83007-Midface-Contour-Implant-Left-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:53:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Midface Contour Implant</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:55:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:53:42 GMT+0000",
+          "alt": "1463412168_88038-Contoured-Mandibular-Angle-Right-copy",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1463412168_88038-Contoured-Mandibular-Angle-Right-copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:53:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Contoured Mandibular Angle</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:56:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_338250006_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 21:56:32 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_421968903_copy__1310827549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:53:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Features and benefits</span></h2>\n",
+      "jcr:lastModified": "Mon Feb 17 2025 16:56:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:52:33 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:52:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Mar 04 2025 21:58:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: #ffb500;\">30+</span></span></span><br>\r\n<span class=\"fontsize-3vw\">years of proven clinical history</span>",
+          "jcr:lastModified": "Tue Mar 04 2025 21:58:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Proven material</span></span></p>\n<p>More than 400,000 procedures have been performed with MEDPOR Biomaterial, with more than 350 published clinical reports in cranial, reconstructive, oculoplastic and cosmetic applications.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:57:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_66247548": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Comprehensive portfolio</span></span></p>\n<p>Wide variety of facial implants to fit patient and surgeon reconstructive and augmentation needs.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:57:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 21:59:16 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:59:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 04 2025 21:59:21 GMT+0000",
+          "alt": "1587578032_cmf-br-94_rev",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1587578032_cmf-br-94_rev.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 04 2025 21:59:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_66247": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Adaptable</span></span></p>\n<p>If desired, MEDPOR material may be cut and shaped to fit patient and surgeon needs.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:59:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_66247_938482018": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Sterile</span></span></p>\n<p>Implants packaged sterile and ready to use. They can be stored in the hospital or office to have on hand as needed.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 22:00:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_328557979_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 21:00:41 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 21:00:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1879940623": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Clinical evidence</span></h2>\n",
+          "jcr:lastModified": "Mon Feb 17 2025 16:57:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "accordion_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:30:08 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:40:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 20:18:22 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 20:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+              "text": "<p>The use of implantable biomaterials has become an integral part of aesthetic and reconstructive surgery of the face. Metals are used for fracture fixation devices, whereas polymers are used primarily for bone or soft-tissue substitution. This review of the scientific literature examines the risks and complications of these materials. First, we present an overview of commonly used materials. Second, we address general considerations of toxicity relevant to all biomaterials. Third, we present data from a large number of clinical series on the incidence of complications for individual materials used in specific applications.<br>\n</p>\n",
+              "jcr:lastModified": "Tue Mar 04 2025 21:41:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+              "CTATitle": "Full Article",
+              "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/9326803/",
+              "jcr:lastModified": "Tue Mar 04 2025 21:41:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(133,69,138)"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Complication and toxicities of implantable biomaterials used in facial reconstructive and aesthetic surgery: a comprehensive review of literature."
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 2,
+          "accTitle": "Improving aesthetic outcomes after alloplastic chin augmentation"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "Reconstruction of congenital microtia-artresia – outcomes with the MEDPOR /bone-anchored hearing aid-approach"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 4,
+          "accTitle": "Ear reconstruction using a porous polyethylene framework and temporoparietal fascia flap"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 5,
+          "accTitle": "Making concave faces convex"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+          "text": "<p>A novel approach to increase chin projection with alloplastic material is presented. Key aspects of the technique include the consideration of anthropometric normal values in preoperative assessment and planning, a submental approach with wide subperiosteal exposure of the area to be augmented, the use of two-piece porous polyethylene implants for augmentation, and screw fixation of the implant to the mandible. Screw fixation improves the predictability and precision of reconstruction by preventing implant displacement, by obliterating gaps between the implant and the facial skeleton, and by facilitating final implant contouring. In a series of 46 patients (24 primary and 22 secondary) operated on over a 6-year period, this approach allowed anatomically correct, stable chin contours to be created. Iatrogenic problems with macrogenia, mentalis dysfunction, and soft-tissue distortion resulting from implant migration and capsular contracture have been avoided. There have been no infections. Two patients who had had multiple previous chin operations requested revisional surgery to refine contour.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:45:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/14504528/",
+          "jcr:lastModified": "Tue Mar 04 2025 21:45:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+          "text": "<p>Ideal surgery for congenital microtia-atresia would offer excellent cosmetic and hearing rehabilitation, with minimal morbidity. Classic approaches require multiple procedures, including rib cartilage harvest and aural atresia repair. Our facial plastic and otologic team approach incorporates a high-density porous polyethylene (Medpor, Porex Surgical, Newnan, GA) auricular framework, followed by single-stage bone-anchored hearing aid (BAHA) implantation. We evaluated the efficacy, safety, and morbidity of this 2-stage dual system approach. A prospective database of microtia patients was used to identify patients undergoing combined Medpor/BAHA auricular reconstruction and hearing rehabilitation between 2003 and 2006. The first stage involves placement of a Medpor framework beneath a temporoparietal fascia flap, followed by a second-stage procedure for lobule transposition and BAHA implantation. Twenty-five patients (28 ears) were evaluated. Aesthetic quality of the implants was excellent, with a high degree of framework detail visible, and a postauricular crease created in all patients. All patients were satisfied with the cosmetic result. There were no major Medpor complications such as infection, extrusion, loss of implant, or flap necrosis, and a 10.7% incidence of minor complications requiring operative revision. BAHA significantly improved hearing in all patients, with a complication rate of 31.8%, mainly skin overgrowth and cellulitis. The Medpor/BAHA dual plastic-otologic approach to microtia-atresia has produced excellent cosmetic results and hearing outcomes, which compare favorably to traditional microtia-atresia repair. This is a 2-stage aesthetic and functional protocol with an acceptably low rate of complications, which safely and efficiently achieves both aesthetic and functional goals.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:45:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/19325342/",
+          "jcr:lastModified": "Tue Mar 04 2025 21:46:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+          "text": "<p>Ear reconstruction is a difficult procedure requiring a framework and soft tissue covering. The traditional method uses a rib cartilage framework placed beneath scalp skin. This method has been used for 50 years despite inherent problems with both harvesting rib cartilage and using scalp for coverage. The authors describe a method using a porous polyethylene (PPE) framework covered by a large temporoparietal fascia (TFP) flap raised with the underlying subgaleal fascia (SGF). The entire implant is covered by the two-layered flap, which can be raised without any scalp incision. The skin grafts applied to the covered implant lie on the SGF. The trilaminar structure of the SGF allows the skin to move independently over the implant, resisting shear forces and reducing the probability of implant exposure. Ear reconstruction using the PPE framework was performed on 786 ears over an 18-year period. Initial complications were common. With improved implant design and complete coverage of the implant with both the TPF and SGF, exposure rate dropped to 7% with a 12-year follow-up. Implant fractures decreased to less than 3%. The PPE/TPF method allows earlier ear reconstruction in children with minimal scarring and discomfort. The reconstructed ear can closely mimic the shape and projection of the natural contralateral ear in fewer stages and with a shorter learning curve.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:46:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/19809950/",
+          "jcr:lastModified": "Tue Mar 04 2025 21:46:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 5,
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+          "text": "<p>Inadequate projection of the midface skeleton results in midface concavity. Patients with this skeletal morphology tend to have prominent eyes and noses. Lack of skeletal support for the midface soft tissue envelope predisposes to premature cheek descent, resulting in palpebral fissure distortion and lower lid &quot;bags,&quot; an appearance of early aging. Concave midfaces can be made convex with two basic maneuvers performed through intraoral and periorbital incisions. Midface skeletal projection can be increased by augmenting the facial skeleton with alloplastic implants. Multiple implants are required to replicate the complex curvature of the midface skeleton and to avoid impingement on the infraorbital nerve. Subperiosteal elevation of the midface soft tissues and repositioning provides cheek fullness and narrows the palpebral fissure while masking eyelid &quot;bags.&quot; The resultant midface concavity makes the eyes and nose appear less prominent. This procedure has been a safe and effective treatment for 14 patients treated over a 4-year period.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 21:46:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/15959686/",
+          "jcr:lastModified": "Tue Mar 04 2025 21:46:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      }
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 22 2021 21:21:56 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Apr 14 2025 15:34:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/colorado-microdissection-needle"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/universal-select"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/medpor-ent"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/medpor-titan-3d-orbital-floor"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 04 2025 21:37:40 GMT+0000",
+      "jcr:lastModified": "Tue Mar 04 2025 21:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_135584854_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:59:09 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:59:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1663437304_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
+          "jcr:lastModified": "Mon Feb 17 2025 16:57:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3226",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Thu Feb 06 2025 18:37:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:27 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jul 29 2025 18:49:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/systems/MEDPOR/images/1587738967_Titan-hero.jpg"
+  }
+}

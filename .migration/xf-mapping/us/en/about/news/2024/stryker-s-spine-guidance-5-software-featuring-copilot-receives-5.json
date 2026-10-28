@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker’s Spine Guidance 5 Software featuring Copilot receives 510(k) clearance from FDA",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b97dfead-0fb0-4f2c-a166-98276be7368a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Copilot510k_PR_thumbnail",
+  "jcr:predecessors": [
+    "0170ef4f-1885-4fca-a517-12a942f3c3f4"
+  ],
+  "contentID": "SPINE-GSNPS-PRESS-1246500",
+  "lastPublished": "Fri Aug 02 2024 13:48:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Aug 02 2024 13:48:43 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 02 2024 13:48:46 GMT+0000",
+  "cq:lastModified": "Fri Aug 02 2024 13:48:40 GMT+0000",
+  "jcr:description": "Q Guidance System with Spine Guidance 5 Software featuring Copilot is a first-to-market technology, pioneering new planning and surgical capabilities",
+  "jcr:baseVersion": "0170ef4f-1885-4fca-a517-12a942f3c3f4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 30 2024 13:15:26 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Aug 02 2024 13:48:40 GMT+0000",
+  "jcr:uuid": "3c59708a-75df-4d91-ade7-62059b14bbb9",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 29 2024 16:41:36 GMT+0000",
+      "jcr:lastModified": "Mon Jul 29 2024 16:41:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 29 2024 16:41:47 GMT+0000",
+          "alt": "Copilot510k_PR",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/stryker’s-spine-guidance-5-software-featuring-copilot-receives-510(k)-clearance-from-fda/Copilot510k_PR.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 29 2024 16:42:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 29 2024 16:41:50 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Q Guidance System with Spine Guidance 5 Software featuring Copilot is a first-to-market technology, pioneering new planning and surgical capabilities</span></span></p>\n<p><span class=\"futura-bold\">LEESBURG, Va. – July 30, 2024</span> – Stryker (NYSE:SYK),&nbsp;a global leader in medical technologies, today announced that its Q Guidance System with Spine Guidance 5 Software featuring Copilot received 510(k) clearance from the U.S. Food and Drug Administration. This first-to-market technology seamlessly integrates smart-powered* instruments into Stryker’s growing ecosystem.</p>\n<p>Spine Guidance Software with Copilot’s breakthrough ­technology was built to provide multiple feedback modalities for supporting bone resection, pedicle preparation and screw delivery to help maximize a surgeon’s effectiveness and enhance patient outcomes. Stryker engaged over 850 orthopaedic spine surgeons and neurosurgeons to develop this technology.</p>\n<p>“This project is a prime example of our mission in action,” said Dylan Crotty, president of Stryker’s Instruments division. “We listened to our customers’ evolving needs and are engaging leading surgeons to create a product that adds confidence to their workflow.”&nbsp;&nbsp;</p>\n<p>Smart Zones for bone resection provide auditory and sensory feedback when surgeons approach the planned boundaries of anatomical alert zones with the high-speed drill. To complement Smart Zones, the Copilot Smart Driver** stops automatically when it reaches the planned depth, supporting surgeon precision during pedicle preparation and screw placement. The automatic depth stop feature is proprietary technology that unlocks only when using a Stryker implant.</p>\n<p>“Spine Guidance Software with Copilot is just the beginning of our development pipeline,” said Robbie Robinson, president of Stryker’s Spine division. “While focusing on innovation and the integration of our implants, instrumentation and enabling technologies, we strive to help surgeons perform safe and efficient procedures that enable better patient outcomes.”</p>\n<p>The first clinical cases using Spine Guidance Software with Copilot will begin in September, with a full commercial launch expected later this fall. For more information on Spine Guidance Software with Copilot please visit <a href=\"http://www.stryker.com/SmartGuidance\">www.stryker.com/SmartGuidance</a>.</p>\n<p><span class=\"fontsize-8em\">*Smart features enabled by the Q Guidance System with Spine Guidance 5 Software.<br>\n **SPINE-COP-BROC-1169302</span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Jul 30 2024 13:55:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 29 2024 16:46:02 GMT+0000",
+          "jcr:lastModified": "Mon Jul 29 2024 16:46:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1753928261": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 29 2024 16:46:36 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span></p>\n<p>Sarah Yerden<br>\n509 438 1198<br>\nsarah.yerden@stryker.com</p>\n",
+          "jcr:lastModified": "Tue Jul 30 2024 13:07:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Jul 30 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Jul-2024",
+    "jcr:lastModified": "Mon Jul 29 2024 16:41:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/stryker’s-spine-guidance-5-software-featuring-copilot-receives-510(k)-clearance-from-fda/Copilot510k_PR_thumbnail.png"
+  }
+}

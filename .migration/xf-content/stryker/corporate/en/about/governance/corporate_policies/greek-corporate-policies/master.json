@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Greek corporate policies",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "af743df5-a34a-4f53-bf90-5903dc96f07b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "abd1e385-6358-408c-92bf-fc9e9a2ec4a4"
+  ],
+  "lastPublished": "Mon Jul 13 2026 18:51:54 GMT+0000",
+  "jcr:created": "Mon Jul 13 2026 18:52:03 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 13 2026 18:52:07 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2026 20:43:56 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "abd1e385-6358-408c-92bf-fc9e9a2ec4a4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:51:39 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "a4ee2ffb-8f81-49c1-943b-c13d789156ad",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 08 2017 15:52:34 GMT-0400",
+      "text": "<ul>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/127328\">Καταπολέμηση των Διακρίσεων&nbsp;(2 Anti-Discrimination (A4))&nbsp;</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/127192\">Σεξουαλική και άλλη παράνομη παρενόχληση (3 Sexual and Other Unlawful Harassmen (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/141180\">Προώθηση σύμφωνα με την ετικέτα Εηαηξηθή πνιηηηθή Αξ. 5 (5 On-Label Product Promotion)</a></li>\n<li><a href=\"https://www.stryker.com/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-790605-EL_GR.pdf\">Αγοραπωλησίες κινητών αξιών από το προσωπικό της Εταιρίας (6 Trading in Securities by Company Personnel (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/127194\">Παγκόσμια Ασφάλεια Πληροφοριών και Συστημάτων (7 Global Information and Systems Security (Ltr))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/127196\">Πολιτική κανονιστικών υποθέσεων και διασφάλισης ποιότητας (9 Quality (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/127198\">Αρχές προστασίας ιδιωτικού απορρήτου υπαλλήλων (11 Global Privacy and Data Protection (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/el-gr/148407\">Τίτλος πολιτικής Παρουσία σε χειρουργικές επεμβάσεις ή άλλες ιατρικές πράξεις (13 Attendance at Surgery or Other Medical Procedures (A4))</a></li>\n</ul>\n",
+      "jcr:lastModified": "Fri Jul 10 2026 20:43:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

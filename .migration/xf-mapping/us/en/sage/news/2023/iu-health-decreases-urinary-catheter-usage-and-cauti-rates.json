@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "IU Health West Hospital presents poster at NACNS and Magnet (in-booth) demonstrating a clinically significant decrease in catheter utilization and CAUTI",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7390f615-fdf6-42d4-bd9f-ce1ebf22646d",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "2022 IU Health catheter reduction poster",
+  "thumbnailFileReference": "/content/dam/stryker/sage/news/2023/Sage-Newsroom-IU-Health-CAUTI-poster.jpg",
+  "jcr:predecessors": [
+    "b7123a75-3b02-4c07-b83f-3de4dc9ac73e"
+  ],
+  "contentID": "SAGE-UM-COMM-499552_REV-0_en_us",
+  "lastPublished": "Mon Apr 17 2023 15:08:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 17 2023 15:08:52 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 17 2023 15:08:54 GMT+0000",
+  "cq:lastModified": "Mon Apr 17 2023 15:08:48 GMT+0000",
+  "jcr:baseVersion": "b7123a75-3b02-4c07-b83f-3de4dc9ac73e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/4"
+  ],
+  "jcr:lastModified": "Mon Apr 17 2023 15:08:48 GMT+0000",
+  "jcr:uuid": "b65e594a-8e9e-4156-8a84-c84c4b014e9f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Mon Jan 30 2023 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Jan-2023",
+    "jcr:lastModified": "Mon Jan 30 2023 20:28:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "linkExternal": "https://www.stryker.com/content/dam/stryker/sage/news/resources/2023/IU-Health-West-poster.pdf",
+    "alt": "2022 IU Health catheter reduction poster",
+    "srcFileRef": "/content/dam/stryker/sage/news/2023/Sage-Newsroom-IU-Health-CAUTI-poster.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Jan 30 2023 20:59:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "openInNewTab": "true",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p>In September of 2020, Erica Newkirk, MSN, RN, AGCNS-BC, GERO-BC, CMSRN at Indiana University Hospital West led the effort to bring the Sage PrimoFit External Urine Management for the Male Anatomy into the healthcare system. IU Health was already utilizing Sage PrimaFit External Urine Management for the Female Anatomy. The addition of the PrimoFit device provided the staff with another option for urine collection to serve both their male and female patients.</p>\n<p>PrimoFit was implemented in September 2020 and the retention trial began in February 2021. There was a clinically significant decrease in the urinary catheter utilization rate after implementation. There was also only one CAUTI in January 2021 and one in April 2021. All units have remained CAUTI free for the remainder of 2021 into 2022. These results changed the culture on the unit. Nurses and providers advocated, when appropriate, for PrimoFit in place of urinary catheters for their patients.</p>\n<p>To view the poster, <a title=\"View the Indiana University West Hospital's Beyond the Protocol: The Clinical Nurse Specialist's Role in Reducing Foley Catheter Utilization.\" href=\"/content/dam/stryker/sage/news/resources/2023/IU-Health-West-poster.pdf\" target=\"_blank\">click here</a>.</p>\n<p>Our urine management products effectively manage urinary incontinence and help address the risk factors associated with infection and skin injury. To learn more, <a title=\"Learn more about our urine managment products.\" href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/urine-management.html\">click here</a>.</p>\n",
+    "jcr:lastModified": "Mon Jan 30 2023 21:00:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

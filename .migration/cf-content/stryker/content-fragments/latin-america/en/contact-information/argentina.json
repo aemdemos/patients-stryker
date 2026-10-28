@@ -1,0 +1,83 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "520c69f9-5cc3-4af0-a48f-60f33801928a",
+  "jcr:predecessors": [
+    "c031bd75-980d-4670-92a5-3688c4048c45"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:50 GMT+0000",
+  "jcr:baseVersion": "c031bd75-980d-4670-92a5-3688c4048c45",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "4256d0f8-facd-4886-9067-8594141a133e",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Argentina",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Fri Sep 11 2026 18:15:30 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "argentina",
+    "jcr:lastModified": "Fri Sep 11 2026 14:21:30 GMT+0000",
+    "lastFragmentSave": "Fri Sep 11 2026 14:21:30 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Fri Sep 11 2026 18:15:27 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Aug 18 2026 02:05:09 GMT+0000",
+        "Emails@LastModified": "Thu Sep 10 2026 16:34:51 GMT+0000",
+        "addressBlock1": "<p>Ricardo Gutiérrez 4070/90 –<br>\nCP: B1605 – Munro, Partido de Vicente López<br>\nProvincia de Buenos Aires - Argentina.</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/ar/es/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Thu Sep 10 2026 16:34:51 GMT+0000",
+        "RelatedLinks@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "locationName": "Argentina",
+        "ShortDesc@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Fri Sep 11 2026 14:21:30 GMT+0000",
+        "PhoneNumbers": "<p><b>Medsurg </b>(Lunes a Viernes de 9:00 a 18:00 hs)<b>:<br>\n </b>📞+54 9 11 3757-7776<br>\n<a href=\"mailto:Ventasms@stryker.com\">Ventasms@stryker.com</a></p>\n<p><b>Medical </b>(Lunes a Viernes de 9:00 a 18:00 hs)<b>:&nbsp;&nbsp;<br>\n</b>Líneas: Camas; Camillas; EMS<br>\n📞+54 9 11 5885 7377<br>\n<a href=\"mailto:raul.ambrosio@stryker.com\" title=\"mailto:raul.ambrosio@stryker.com\">raul.ambrosio@stryker.com</a></p>\n<p><b>Neurovascular </b>(Lunes a Viernes de 9:00 a 18:00 hs)<b>:&nbsp;&nbsp;<br>\n </b>📞+54 9 11 6226-3814<br>\n<a href=\"mailto:ordenesnv@stryker.com\">ordenesnv@stryker.com</a></p>\n<p><b>Orthopaedics&nbsp;</b>(Lunes a Viernes de 9:00 a 18:00 hs)<b>:<br>\n </b>📞+54 9 11 6224-2574<br>\n📞+54 9 11 6226-3843<br>\n📞+54 9 11-2754-9235<br>\n<a href=\"mailto:cotizaciones.arg@stryker.com\">cotizaciones.arg@stryker.com</a></p>\n<p><b>Technical Service:<br>\n </b><a href=\"mailto:servicioargentina@stryker.com\">servicioargentina@stryker.com</a></p>\n",
+        "AddressLabel@LastModified": "Wed Jun 16 2021 18:39:20 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Thu Sep 10 2026 16:35:35 GMT+0000",
+        "BusinessHomePageLabel": "Argentina Homepage"
+      }
+    }
+  }
+}

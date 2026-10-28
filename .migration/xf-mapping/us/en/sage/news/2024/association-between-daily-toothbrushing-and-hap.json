@@ -1,0 +1,125 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The association between daily toothbrushing and hospital-acquired pneumonia ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d54647e9-1326-49fa-821b-10e104a8d865",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Nurse brushing teeth to prevent hospital-acquired pneumonia",
+  "jcr:predecessors": [
+    "eec91d5d-eab6-4484-bb7f-b6ca17f21e70"
+  ],
+  "contentID": "SAGE-OC-COMM-1104118_REV-0_en_us",
+  "lastPublished": "Tue Sep 10 2024 14:57:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 10 2024 14:57:19 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 14:57:21 GMT+0000",
+  "cq:lastModified": "Tue Sep 10 2024 14:57:14 GMT+0000",
+  "jcr:description": "The release of the updated SHEA/IDSA/APIC Strategies to Prevent HAP in 20221 has reminded healthcare providers that oral hygiene is an essential intervention but has sparked new discussions about comprehensive oral care. A systematic review and meta-analysis by Ehrenzeller and Klompas (2023)2 looked at the role of toothbrushing. ",
+  "jcr:baseVersion": "eec91d5d-eab6-4484-bb7f-b6ca17f21e70",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 24 2024 19:55:24 GMT+0000",
+  "pageTitle": "The association between daily toothbrushing and hospital-acquired pneumonia ",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage",
+    "stryker:content-type/news/sage/2",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Tue Aug 27 2024 14:36:09 GMT+0000",
+  "jcr:uuid": "2085aeaa-ac27-4b08-b5fc-5056b148c16e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jun 24 2024 19:30:48 GMT+0000",
+      "alt": "Nurse administering oral care to patient.",
+      "srcFileRef": "/content/dam/stryker/sage/news/2024/Sage Newsroom June - 1440x900.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 24 2024 19:31:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 19:31:14 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>3-minute read</i></span></p>\n<p><span class=\"fontsize-1-25em\"><b>By Barbara Quinn DNP, MSN, RN, ACNS-BC, FCNS</b></span><br>\n</p>\n<p>&nbsp;</p>\n<h2><span class=\"futura-bold\">A systematic review and meta-analysis</span></h2>\n<p><span class=\"fontsize-1-25em\">Recently, fresh questions about the best oral hygiene protocols to prevent hospital-acquired pneumonia (HAP) have been raised. The release of the updated SHEA/IDSA/APIC Strategies to Prevent HAP in 2022<sup>1</sup> has reminded healthcare providers that oral hygiene is an essential intervention but has sparked new discussions about comprehensive oral care. A systematic review and meta-analysis by Ehrenzeller and Klompas (2023)<sup>2</sup> looked at the role of toothbrushing.&nbsp;</span></p>\n<h2><span class=\"futura-bold\">Summary of the study</span></h2>\n<p><span class=\"fontsize-1-25em\">The study evaluated whether daily toothbrushing reduces the incidence of HAP, mortality, length of stay, and use of antibiotics. Fifteen studies met inclusion criteria: randomized control trials, hospitalized adults over age 16, oral care comparison that included toothbrushing versus no toothbrushing, and objective outcomes.</span></p>\n<p><span class=\"fontsize-1-25em\">Fifteen trials were identified with a total of 10,742 patients. The risk of bias was assessed as low in seven (7) studies and high in eight (8). Only one (1) study was of non-ICU patients, so significant results were limited to ICU and patients on ventilators. Although the quality of evidence is moderate, the alignment between HAP and other objective outcomes increases certainty.</span></p>\n<p><span class=\"fontsize-1-25em\">For ICU patients, the results demonstrated a significant association between toothbrushing and the reduction of HAP, ICU mortality, and length of time on ventilators and in the ICU. The frequency of toothbrushing was also examined. Toothbrushing twice daily was not inferior to three or four times. The study concludes that twice daily toothbrushing should be included in standard care for all hospitalized patients as an essential HAP prevention strategy.</span></p>\n<h2><span class=\"futura-bold\">Takeaway: Toothbrushing is essential</span></h2>\n<p><span class=\"fontsize-1-25em\">This study further validates that mechanical debridement of oral biofilm with a toothbrush is the gold standard of effective oral hygiene. Toothbrushing for every hospitalized patient should be woven into every hospital’s patient care process: policy, procedure, or protocol, staff education, quality improvement, and performance review.</span></p>\n<p><span class=\"fontsize-1-25em\">The American Dental Association (ADA) agrees that an evidence-based toothbrush is irreplaceable. It should have soft bristles and be small enough to fit easily in the mouth. The bristles should be firmly attached to the brush head and not come off during use. The American Dental Association approval seal is preferred, to ensure the toothbrush's quality.<sup>3,4</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Oral swabs are a convenient way to moisturize the mouth and lips, reducing the sense of thirst. However, they should not be used as a substitute for a toothbrush to remove plaque.<sup>5</sup> Oral swabs are safe for one-time use only. Allowing the swab to “sit” in a cup of water should be avoided, as it may increase the risk of bacterial replication and infection. Extended exposure to water may also weaken the adherence of the swab to the stick, leading to detachment and posing a choking hazard.<sup>7</sup></span></p>\n<h2><span class=\"futura-bold\">Toothbrushing without oral chlorhexidine is effective</span></h2>\n<p><span class=\"fontsize-1-25em\">This updated systematic review may reduce anxiety about the recent recommendation to withdraw chlorhexidine gluconate (CHG) from routine care for ventilated patients. Although most studies included CHG as an adjunct to toothbrushing, the ones that brushed teeth without CHG had similar outcomes.</span></p>\n<p><span class=\"fontsize-1-25em\">For those hospitals removing CHG from the VAP protocol, this update may provide an opportunity to refresh long-standing practice, prompting a review of the evidence, unit or hospital data, oral care supplies, and fresh patient and staff education. Policies, procedures, and order sets will need to be revised. As with any practice change, ongoing incidence monitoring is required to ensure VAP rates do not increase with the removal of CHG.</span></p>\n<h2><span class=\"futura-bold\">Toothbrushing twice daily is effective</span></h2>\n<p><span class=\"fontsize-1-25em\">Patients should receive a minimum standard of oral care twice a day, following the ADA recommendation for healthy individuals. Although some lower-level before and after studies have shown increased effectiveness with a higher frequency of toothbrushing, and the ADA Oral Care Protocol for Hospitalized Adults6 recommends four times a day, even twice a day is more than most patients are currently receiving, especially those not on a ventilator.</span></p>\n<p><span class=\"fontsize-1-25em\">This updated evidence may help remove common barriers to determining the frequency of toothbrushing in the hospital. Compliance with oral care policies and procedures may increase for nursing staff who feel that brushing twice a day is feasible and “doable.” Nursing leaders may be willing to hold staff accountable to a more reasonable frequency. Patients, too, may be more likely to cooperate with a less frequent intervention, more like their home routine.</span></p>\n<h2><span class=\"futura-bold\">Reducing the risk of pneumonia is possible</span></h2>\n<p><span class=\"fontsize-1-25em\">Brushing patients’ teeth twice a day can help reduce the risk and incidence of HAP. Preventing HAP can result in multiple benefits. Patients benefit from surviving their hospitalization, remaining free of hospital-acquired sepsis, and being able to go home sooner. Family members benefit by being able to take their loved one home rather than managing a long-term rehab or nursing home transition. Nurses benefit from fewer rapid response calls, urgent phone calls to providers, new orders for tests, and new medication administration. The hospital benefits from a lower cost of caring for the patient and improved quality metrics.</span></p>\n<p><span class=\"fontsize-1-25em\">Toothbrushing twice daily is an evidence-based intervention for hospitalized patients. It should be provided, promoted as essential, and prioritized by staff.</span></p>\n<p><span class=\"fontsize-1-25em\">To learn more about our Oral Care products, click <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\" target=\"_blank\">here</a>.</span><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Sep 10 2024 14:57:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 19:56:21 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Jun 24 2024 19:57:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-tools"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-self-oral-care"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Mon Jun 24 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jun-2024",
+    "jcr:lastModified": "Mon Jun 24 2024 19:39:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2024/Sage Newsroom June - 1440x900.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Barbara Quinn, DNP, MSN, RN, ACNS-BC, FCNS is a paid consultant of Stryker. The data included in this presentation was collected by the author of this presentation. The opinions expressed are those of Barbara Quinn, DNP, MSN, RN, ACNS-BC, FCNS and are not necessarily those of Stryker. Individual results may vary.</p>\r\n<p><b>References</b></p>\r\n<p><b>1. </b>Klompas M, Branson R, Cawcutt K, et al. 2022, Strategies to prevent VAP, ventilator-associated events, and NV-HAP in acute-care hospitals: 2022 update. ICHE, 43, 687-713.<b></b></p>\r\n<p><b>2. </b>Ehrenzeller S, Klompas M, (2023). Association between daily toothbrushing and hospital-acquired pneumonia: A systematic review and meta-analysis. JAMA Internal Medicine. e1-e12.&nbsp;</p>\r\n<p><b>3. </b>Quinn B, Giuliano KK, Baker D, Non-ventilator health care-associated pneumonia (NV-HAP): Best practices for prevention of NV-HAP, American Journal of Infection Control, 2020, May;48(5S):A23-A27.&nbsp;</p>\r\n<p><b>4. </b>American Dental Association, ADA Seal of Acceptance, Available at: https://www.ada.org/resources/research/science-and-research-institute/ada-seal-of-acceptance<b> </b>Accessed June 4, 2024.&nbsp;</p>\r\n<p><b>5.</b> Pearson LS, Hutton JL. A controlled trial to compare the ability of foam swabs and toothbrushes to remove dental plaque. J Adv Nurs. 2002;39(5):480-89.<b></b></p>\r\n<p><b>6.</b> Mouth Care Swabs, UK, Knowledge Oral Health Care (kohc.co.uk). Available at: https://www.kohc.co.uk/mouth-sponges, Accessed April 2, 2024.<b></b></p>\r\n<p><b>7.</b> Davis J, Finley E, 2018, A second breadth: Hospital-acquired pneumonia in Pennsylvania, nonventilated versus ventilated patients. Pennsylvania Patient Safety Advisory, 15(3).</p>\r\n",
+    "jcr:lastModified": "Tue Jun 25 2024 20:44:47 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Jun 24 2024 19:38:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

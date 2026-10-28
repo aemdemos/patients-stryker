@@ -1,0 +1,268 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "ET dilation system",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Audion®",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "86b122a7-6796-4def-8732-fb5db510e7cf",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "Audion",
+  "jcr:predecessors": [
+    "fd462223-0330-49dd-9d3c-f4800368dcaa"
+  ],
+  "contentID": "ENT-AUD-SYK-623951",
+  "lastPublished": "Mon Apr 29 2024 13:54:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 29 2024 13:54:24 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 29 2024 13:54:26 GMT+0000",
+  "cq:lastModified": "Fri Apr 19 2024 17:50:14 GMT+0000",
+  "jcr:description": "The Audion Eustachian Tube dilation system is a balloon dilation device that aims to treat adults (18+) suffering from Eustachian tube dysfunction.¹ The FlexFeel technology and flexible design provide optimal feel while traversing the eustachian tube.² Balloon dilation of the eustachian tube may help to provide up to 29 months of relief, giving your patients comfort that lasts.⁵",
+  "jcr:baseVersion": "fd462223-0330-49dd-9d3c-f4800368dcaa",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:capability/ent",
+    "stryker:content-type/product",
+    "stryker:product/ent/audion",
+    "stryker:business-unit/ent",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Jul 18 2023 14:38:01 GMT+0000",
+  "jcr:uuid": "398dee3c-ba16-4924-b06c-bda610130a8f",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Thu Jun 23 2022 14:13:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_copy_411422244": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:28:26 GMT+0000",
+      "title": "Features and benefits",
+      "jcr:lastModified": "Wed Apr 19 2023 17:28:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:31:32 GMT+0000",
+      "jcr:lastModified": "Wed Apr 19 2023 17:31:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Apr 19 2023 17:31:38 GMT+0000",
+          "alt": "Audion Inflated",
+          "srcFileRef": "/content/dam/stryker/ent/products/audion/Audion_hero_profile_left_inflated.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 24 2023 15:18:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Apr 19 2023 17:31:43 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Designed to treat&nbsp;Eustachian tube dysfunction</span></span></p>\n<p>The Audion Eustachian Tube dilation system is designed specifically to treat Eustachian tube dysfunction, with many features and benefits including:</p>\n<ul>\n<li>Designed with FlexFeel technology, featuring our atraumatic tip with an enhanced flexible design,&nbsp;to help optimize feel<sup>2</sup></li>\n<li>Slim profile designed for optimal visualization</li>\n<li>Features one-finger advancement and a 45-degree angle to help avoid critical anatomy during transnasal approach<sup>3-4</sup></li>\n<li>Locking mechanism holds pressure for 2 minutes dilation time<br>\n&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Jul 24 2023 15:31:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:28:26 GMT+0000",
+      "title": "Product specifications",
+      "jcr:lastModified": "Wed Apr 19 2023 17:29:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Product</b></td>\n<td><b>Ordering no.</b></td>\n<td><b>Description</b></td>\n</tr><tr><td>Audion ET dilation system</td>\n<td>AET-100</td>\n<td>1 system</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:29:55 GMT+0000",
+      "jcr:lastModified": "Wed Apr 19 2023 17:30:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:30:57 GMT+0000",
+      "text": "<p><span class=\"futura-bold\">1 system includes:</span>&nbsp;1 balloon dilation device, 1 inflation syringe, 1 extension line and 1 inflation lock.<br>\n<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Apr 19 2023 17:31:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "deepLinkingId": "downloads",
+      "jcr:created": "Wed Apr 19 2023 17:28:26 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Mon Jun 19 2023 20:30:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload_1940168013": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-PRDC-655033-EN_US.pdf",
+        "/content/dam/stryker/ent/products/audion/documents/5325-001-rA IFU Audion ET Dilation System.pdf"
+      ],
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Fri Apr 19 2024 17:50:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_copy_2062372498": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 19 2023 17:28:26 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Apr 19 2023 17:29:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 19 2023 20:25:10 GMT+0000",
+      "jcr:lastModified": "Mon Jun 19 2023 20:25:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 19 2023 20:24:38 GMT+0000",
+          "alt": "XprESS",
+          "srcFileRef": "/content/dam/m/patients-site/us/ent/sinitus/images/XprESS_Family_Duo_v2_LoProfile.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 19 2023 20:27:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/ent/products/xpress-ent-dilation-system",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jun 19 2023 20:25:21 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">XprESS® ENT dilation system</span></span><br>\n<br>\nThe XprESS ENT dilation system delivers&nbsp;control and versatility for balloon dilation. Its seeker-based design and tip malleability provide the tactile feel and flexibility to address complex anatomy for a broad range of patients.<sup>6-7</sup><br>\n<a href=\"/content/stryker/us/en/ent/products/xpress-ent-dilation-system.html\"><br>\n <span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Tue Jul 18 2023 14:38:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 12 2023 17:44:00 GMT+0000",
+      "jcr:lastModified": "Wed Jul 12 2023 17:44:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Wed Jul 12 2023 15:23:19 GMT+0000",
+      "CTATitle": "IMPORTANT RISK AND SAFETY INFORMATION FOR HEALTH CARE PROFESSIONALS",
+      "jcr:lastModified": "Wed Jul 12 2023 15:25:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "ctaInternalLink": "/content/stryker/us/en/ent/ent-risk-and-safety-information-for-health-care-professionals"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ent/products/audion/Audion_hero_angeled_left.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>The Audion ET dilation system is a balloon dilation device specifically designed to treat adult (18+) Eustachian tube dysfunction&nbsp;patients. The Audion device is designed with FlexFeel technology, featuring our atraumatic tip with an enhanced flexible design,&nbsp;providing an optimal feel while traversing the Eustachian tube. The built-in reliability of the device allows for one-finger&nbsp;<span style=\"font-size: 0.8125rem; background-color: transparent;\">advancement and a 45˚ angle designed to avoid critical anatomy.</span></p>\r\n",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Jun 23 2022 14:14:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Tue Jun 20 2023 17:59:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Jun 20 2023 18:10:57 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>REFERENCES :&nbsp;</b><u></u></p>\r\n<p>1.&nbsp;Audion instructions for use 5325-001</p>\r\n<p>2. Data on file at Stryker DHF 2267-001&nbsp;</p>\r\n<p>3. Data on file at Stryker DHF 2265-001&nbsp;</p>\r\n<p>4. Data on file at Stryker DHF 2266-001&nbsp;</p>\r\n<p>5. Cutler JL, Meyer TA, Nguyen SA, O'Malley EM, Thackeray L, Slater PW. Long-term outcomes of balloon dilation for persistent Eustachian tube dysfunction. Otol Neurotol. 2019;40(10):1322-1325</p>\r\n<p>6. XprESS instructions for use 4322-001</p>\r\n<p>7. Data on file at Stryker DHF 1656-001</p>\r\n<p>&nbsp;</p>\r\n<p><b>Disclaimer</b></p>\r\n<p>This document is intended solely for the use of healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. We do not dispense medical advice and recommend that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate Stryker’s products. A surgeon must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your representative if you have questions about the availability of Stryker’s products in your area.</p>\r\n<p>A physician using Audion products for Eustachian tube dilation must either (i) have experience with Eustachian tube dilation or (ii) undergo cadaver training on the use of this product for Eustachian tube dilation. If a physician who intends to use Audion products for Eustachian tube dilation does not meet at least one of these criteria, please contact your Stryker representative to arrange training</p>\r\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: Audion, XprESS and Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\r\n",
+    "jcr:lastModified": "Tue Jul 18 2023 14:39:20 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

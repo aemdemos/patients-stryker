@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Lindsay Gardner",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "71e7da15-0c77-47b8-afbc-e31eedb5e429",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "3d2428dd-65dd-44d8-bf64-e1612747a154"
+  ],
+  "lastPublished": "Mon May 20 2024 18:22:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 20 2024 18:22:48 GMT+0000",
+  "cq:lastReplicated": "Mon May 20 2024 18:22:50 GMT+0000",
+  "cq:lastModified": "Fri May 10 2024 15:26:08 GMT+0000",
+  "jcr:baseVersion": "3d2428dd-65dd-44d8-bf64-e1612747a154",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Lindsay Gardner",
+  "jcr:lastModified": "Fri May 10 2024 15:26:08 GMT+0000",
+  "jcr:uuid": "a1c960b4-9c2a-47fd-91c6-275b59a06e0c",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "navTitle": "Lindsay Gardner",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_998696161_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_1652053757": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
+      "text": "Lindsay Gardner Vice President, Treasurer Lindsey Gardner joined Stryker as Vice President, Treasurer in April 2024 Lindsay is responsible for our global Treasury function including treasury, risk, insurance and aviation. Prior to joining us, Lindsay spent 23 years with GE where she most recently served as Deputy Treasurer, leading corporate finance activities across credit ratings, capital structure, capital allocation, liquidity and bank relationships. In that role, Lindsay led the simplification and strengthening of the balance sheet to support the company’s transformation and growth strategy. Prior to serving as Deputy Treasurer, Lindsay held various finance and risk management leadership positions in GE, including corporate audit, stress testing and capital adequacy. Lindsay holds a bachelor's degree in finance from Pennsylvania State University.",
+      "jcr:lastModified": "Mon Jun 06 2022 15:57:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our_leadership/2158/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-leadership/2158/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces multi-year partnership with Indo UK Institute of Health to deliver affordable orthopaedic care in India",
+  "jcr:versionHistory": "48ae277a-6879-4979-837c-382118df4742",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "d404f468-f21b-4a19-800a-5e3032a93fec"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:19 GMT-0400",
+  "cq:lastModified": "Thu Sep 14 2017 16:49:29 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:baseVersion": "d404f468-f21b-4a19-800a-5e3032a93fec",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 09:42:03 GMT-0400",
+  "jcr:uuid": "8698f735-39d0-4218-9948-f322a9ce252e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Mon Nov 14 2016 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "14-Nov-2016",
+    "jcr:lastModified": "Tue May 30 2017 10:52:12 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>Kalamazoo, Michigan - November 14, 2016 - Stryker Corporation (NYSE:SYK), one of the world's leading medical technology companies, announced today a multi-year collaboration with Indo UK Institute of Health's (IUIH) Medicity Program to serve as a preferred partner in the orthopaedic areas of hip, knee, and trauma products and services. Stryker and IUIH's new relationship will provide greater access to affordable primary joint replacements and other healthcare services to patients in India.</p>\n<p>The unprecedented 20-year partnership between Stryker and IUIH, a forward-looking healthcare provider, will create and deliver real value throughout the continuum of orthopaedic care, driven by a combination of Stryker's quality implants and products, streamlined patient pathways and world-class commercial services.</p>\n<p><b>Read the full article:</b><br>\n</p>\n<p><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=2222163\" target=\"_blank\">Stryker Investor Relations</a><br>\n</p>\n",
+    "jcr:lastModified": "Tue May 30 2017 11:08:25 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

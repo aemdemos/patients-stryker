@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Cryopreserved Fresh Osteochondral Allograft",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProChondrix CR",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9144c0c1-6886-4f55-83b9-baae196add3c",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/prochondrix-cr/ProChondrix-image.png",
+  "jcr:predecessors": [
+    "e8d2fc8c-55a3-434a-8c64-27386c31975a"
+  ],
+  "lastPublished": "Tue Nov 29 2022 20:41:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 29 2022 20:41:06 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 29 2022 20:41:08 GMT+0000",
+  "cq:lastModified": "Tue Nov 29 2022 20:40:41 GMT+0000",
+  "jcr:description": "A single stage, natural solution for patients in need of articular cartilage repair.",
+  "jcr:baseVersion": "e8d2fc8c-55a3-434a-8c64-27386c31975a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:product/trauma-and-extremities/prochondrix-cr",
+    "stryker:capability/biologics",
+    "stryker:content-type/hcp_content",
+    "stryker:system/foot-and-ankle/biologics",
+    "stryker:custom/foot-and-ankle/product-type/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/cartilage-repair-osteochondral-allografts",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+    "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+    "stryker:system/trauma-and-extremities/biologics",
+    "stryker:specialty/cartilage-repair",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Mar 10 2022 16:53:27 GMT+0000",
+  "jcr:uuid": "7bc5b484-5f7a-4ead-bbb0-866b84a777a9",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Feb 02 2018 09:56:06 GMT-0500",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/prochondrix-cr/ProChondrix-image.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_993386659",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1827917918",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160"
+      ],
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Tue Nov 29 2022 20:40:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>ProChondrix CR Cryopreserved Fresh Osteochondral Allograft<br>\r\n</p>\r\n",
+    "shortDescTop": "<p>ProChondrix CR is a cryopreserved, fresh osteochondral allograft that contains live cells and other biological components for the repair of damaged cartilage tissues.<sup>1</sup></p>\r\n<p>ProChondrix CR can be used in a variety of orthopedic reconstructive procedures to aid in the repair of articular cartilage.<sup>2</sup></p>\r\n",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModified": "Tue Feb 27 2018 08:56:30 GMT-0500",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>The extracellular matrix is designed to help support a structure for cellular migration and adhesion while preserving growth factors<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Presence of native growth factors may help maintain healthy cartilage and facilitate chondrocyte functionality<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Viable chondrocytes have been shown to be present and may aid in cartilage repair by generating extracellular matrix proteins that help promote chondrgensis<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>Delaney, R, Barrett, C, Stevens, P. AlloSource, Centennial, CO. ProChondrix Cartilage Restoration Matrix Contains Growth Factors Necessary for Hyaline Cartilage Regeneration.</li>\r\n<li>ProChondrix CR Package Insert M1S2662.01</li>\r\n</ol>\r\n<p>AGFT-AWI-1, 02-2018</p>\r\n",
+    "jcr:lastModified": "Tue Feb 27 2018 08:56:42 GMT-0500",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/prochondrix-cr/ProChondrix-image.png"
+  }
+}

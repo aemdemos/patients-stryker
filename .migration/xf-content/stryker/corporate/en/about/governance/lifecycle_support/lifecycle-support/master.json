@@ -1,0 +1,488 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Lifecycle Support",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "01adfc68-ddb1-478e-a9e4-fc4c7023457f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "166b1e00-724b-4ab3-9694-13367f4d95cd"
+  ],
+  "lastPublished": "Fri Oct 16 2026 15:28:11 GMT+0000",
+  "jcr:created": "Fri Oct 16 2026 15:28:11 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 16 2026 15:28:14 GMT+0000",
+  "cq:lastModified": "Thu Oct 01 2026 22:42:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "166b1e00-724b-4ab3-9694-13367f4d95cd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jul 01 2024 11:00:00 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "47f1d602-d367-4b4e-858d-e1225cddf03e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "topMargin": "2",
+      "jcr:created": "Wed Apr 10 2024 21:25:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Stryker Lifecycle Support</span></span></h1>\r\n",
+      "jcr:lastModified": "Fri Nov 21 2025 19:34:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "our-support-commitment",
+      "jcr:created": "Wed Apr 10 2024 21:26:23 GMT+0000",
+      "title": "Our support commitment",
+      "jcr:lastModified": "Wed Apr 10 2024 21:26:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "text": "<p>Stryker is committed to ensuring the safety, effectiveness, and security of our cyber devices through defined support phases over the life of a Stryker product. At a high level, cyber devices are medical devices that include software or are software, can connect to the internet, or can be vulnerable to cyber threats.&nbsp;Stryker has aligned with emerging cybersecurity and medical device regulation best practices to define a planned End of Support for our cyber devices, a fixed calendar date on which all units of a cyber device will no longer receive software improvements or maintenance.&nbsp;<br>\n</p>\n",
+      "jcr:lastModified": "Wed Jun 12 2024 14:48:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Apr 11 2024 21:40:57 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Apr 11 2024 21:41:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_1886779712": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "support-phases",
+      "jcr:created": "Wed Apr 10 2024 22:01:40 GMT+0000",
+      "title": "Support phases",
+      "jcr:lastModified": "Wed Apr 10 2024 22:02:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Guaranteed",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Apr 10 2024 21:50:59 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:23:34 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy2679009489653036": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">Guaranteed Support</span></span></div>\r\n",
+        "jcr:lastModified": "Thu Jun 13 2024 00:06:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(28,86,135)",
+        "textIsRich": [
+          "true",
+          "true"
+        ]
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_1640162915": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "leftPadding": "0",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Apr 10 2024 21:53:30 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>Stryker cyber devices are in Guaranteed Support immediately upon launch. During this support phase, customers can expect Stryker to restore cyber devices to their intended use, including situations in which the creation and deployment of software patches may be required.&nbsp;</p>\n",
+        "jcr:lastModified": "Wed May 01 2024 16:20:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "0",
+        "textIsRich": "true"
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Limited",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Apr 10 2024 21:50:59 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:24:03 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_c2679037794826618": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">Limited Support</span></span></div>\r\n",
+        "jcr:lastModified": "Thu Jun 13 2024 00:07:07 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(133,69,138)",
+        "textIsRich": [
+          "true",
+          "true"
+        ]
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_1436085849": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "leftPadding": "0",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Apr 10 2024 21:53:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>In certain circumstances, such as limited component availability or unanticipated third-party software obsolescence, a product may enter Limited Support. During this support phase, Stryker will provide best-effort service solutions to support the intended use of the cyber device.&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 12 2024 23:25:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "0",
+        "textIsRich": "true"
+      }
+    },
+    "largeheadline_copy_c_1709981514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "End",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Apr 10 2024 21:50:59 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:24:23 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_c_17099815142679057985383296": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">End of Support</span></span></div>\r\n",
+        "jcr:lastModified": "Thu Jun 13 2024 00:07:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(76,125,122)",
+        "textIsRich": [
+          "true",
+          "true"
+        ]
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_1473035096": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "leftPadding": "0",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Apr 10 2024 21:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>Upon End of Support, cyber devices will no longer be improved, repaired, maintained, or supported. Customers will be notified by Stryker as the End of Support date approaches.</p>\n",
+        "jcr:lastModified": "Wed Apr 10 2024 22:11:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "0",
+        "textIsRich": "true"
+      }
+    },
+    "text_387720102": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Apr 11 2024 21:41:48 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Apr 11 2024 21:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1198060062": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 23:05:20 GMT+0000",
+      "text": "<p><span class=\"fontsize-1em\">For full terms and conditions, see the Instructions for Use and/or Security Operations Manual applicable to your device.</span></p>\n",
+      "jcr:lastModified": "Tue Apr 09 2024 23:05:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_685317025": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Apr 11 2024 21:41:15 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Apr 11 2024 21:41:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "title_1689043141_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 21:46:05 GMT+0000",
+      "title": "Product support status",
+      "jcr:lastModified": "Tue Apr 09 2024 21:46:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "text_1603273072": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 30 2024 22:27:07 GMT+0000",
+      "text": "<p>Current support status is identified below for any cyber devices launched on or after July 1, 2024. Any previously commercialized and/or legacy products remain in Guaranteed Support unless customers were directly notified otherwise.</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Jun 05 2024 20:47:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1242938046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "The",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 21:49:42 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:26:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_12429380462679206668782927": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\">The following products are in<br>\n<span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">Guaranteed Support</span></span></span>:</p>\n<p style=\"text-align: left;\">Any previously commercialized and/or legacy products remain in Guaranteed Support unless customers were directly notified otherwise.</p>\n",
+        "jcr:lastModified": "Wed Nov 20 2024 00:04:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "gradientDirectionInverse": "true",
+        "textIsRich": "true"
+      },
+      "table": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>CORE 2 (5400-052-000, software revision 4.1.x)<br>\n </b>End of Guaranteed Support: January 2030<br>\nEnd of Support: January 2035</td>\n</tr><tr><td><b>Sonopet iQ (5500-050-000, software revision 3.0.x)</b><br>\nEnd of Guaranteed Support: November 2026<br>\nEnd of Support: January 2032</td>\n</tr><tr><td><b>Steri-Shield 8 (0424-655-000)<br>\n </b>End of Guaranteed Support: March 2030<br>\nEnd of Support: March 2035</td>\n</tr><tr><td><b>RPS Primary TKA Software (8800-800-000)<br>\n </b>End of Guaranteed Support: January 2036<br>\nEnd of Support: January 2040</td>\n</tr><tr><td><b>RPS Console (8800-050-000)<br>\n </b>End of Guaranteed Support: January 2036<br>\nEnd of Support: January 2040</td>\n</tr><tr><td><b>Neptune 3 rovers (0703-001-000,&nbsp;0703-002-000,&nbsp;0703-003-000,&nbsp;0703-004-000)</b><br>\nEnd of Guaranteed Support: January 2034<br>\nEnd of Support: January 2034</td>\n</tr><tr><td><b>System 9 chargers (9110-120-000, 9126-100-000)</b><br>\nEnd of Guaranteed Support: January 2038<br>\nEnd of Support: January 2038</td>\n</tr><tr><td><b>Universal chargers (7110-120-000, 7110-190-000)</b><br>\nEnd of Guaranteed Support: January 2033<br>\nEnd of Support: January 2033</td>\n</tr><tr><td><b>Sonopet iQ Series III (5700-050-000)</b><br>\nEnd of Guaranteed Support: January 2035<br>\nEnd of Support: January 2035</td>\n</tr></tbody></table>\n",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed Jun 12 2024 23:45:39 GMT+0000",
+        "jcr:lastModified": "Thu Oct 01 2026 22:42:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/table",
+        "mobileDesign": "true",
+        "textIsRich": "true"
+      }
+    },
+    "text_copy_2131685856": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "The",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 21:50:18 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:27:17 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_21316858562679232309595308": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "text": "<p style=\"text-align: center;\">The following products are in<br>\n<span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-25em\">Limited Support</span></span></span>:</p>\n",
+        "jcr:lastModified": "Thu Jun 13 2024 00:02:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "table_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>There are currently no products in Limited Support</td>\n</tr></tbody></table>\n",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed Jun 12 2024 23:45:39 GMT+0000",
+        "jcr:lastModified": "Fri Jun 14 2024 20:35:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/table",
+        "mobileDesign": "true",
+        "textIsRich": "true"
+      }
+    },
+    "text_copy_962449357": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "The",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 21:50:42 GMT+0000",
+      "jcr:lastModified": "Thu Apr 11 2024 21:27:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_9624493572679253589409574": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "text": "<p style=\"text-align: center;\">The following products have reached<br>\n<span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-1-25em\">End of Support</span></span></span>:</p>\n",
+        "jcr:lastModified": "Thu Jun 13 2024 00:03:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "table": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>SurgiCount Gen 1 tablet with Medicus software (0694-001-012)<br>\nAll versions</td>\n</tr><tr><td>SurgiCount Legacy System with 9700 scanner (0694-097-001)<br>\nAll versions</td>\n</tr><tr><td>Triton AI Application (GAUS-6 or SYK-TRITON-OR)<br>\nVersions 1.9.1 and earlier</td>\n</tr><tr><td>Triton QBL Application (GAUS-5 or SYK-TRITON-LD)<br>\nVersions 1.13.1 and earlier</td>\n</tr></tbody></table>\n",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed Jun 12 2024 23:48:41 GMT+0000",
+        "jcr:lastModified": "Fri Jun 28 2024 18:44:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/table",
+        "textIsRich": "true"
+      }
+    },
+    "text_165753468": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Apr 11 2024 21:41:28 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Apr 11 2024 21:41:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "title_2016391659_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 09 2024 21:46:28 GMT+0000",
+      "title": "Communication of Changes",
+      "jcr:lastModified": "Tue Apr 09 2024 21:46:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "text_copy_992883631": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Apr 09 2024 21:47:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Cyber device support dates are monitored closely but may change due to unforeseen events. If any such change occurs, this webpage will be updated, and customers may receive direct notification.</p>\n",
+      "jcr:lastModified": "Fri Nov 21 2025 19:32:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "5"
+    },
+    "text_317903233_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 18:43:29 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">COMM-GSNPS-SYK-1070900_Rev-6</span><br>\n</p>\n",
+      "jcr:lastModified": "Thu Sep 24 2026 01:18:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

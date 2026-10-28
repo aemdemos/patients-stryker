@@ -1,0 +1,174 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Implants",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Joint replacement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dc797cdb-ade0-49df-be5d-5ea8abbad194",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png",
+  "jcr:predecessors": [
+    "e8bfda3d-33dc-443a-97ee-b13548f9fbe1"
+  ],
+  "contentID": "JR-GSNPS-WEB-559686_Rev-1",
+  "lastPublished": "Fri Oct 11 2024 18:17:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 11 2024 18:17:22 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 11 2024 18:17:24 GMT+0000",
+  "cq:lastModified": "Fri Oct 11 2024 18:17:08 GMT+0000",
+  "jcr:description": "Our joint replacement solutions offer you the combination of market-leading implants for the hip and knee along with Mako SmartRobotics™ for the orthopaedic service line.",
+  "jcr:baseVersion": "e8bfda3d-33dc-443a-97ee-b13548f9fbe1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:39:51 GMT+0000",
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 11 2024 18:17:08 GMT+0000",
+  "jcr:uuid": "8d391282-c0ca-4023-9da6-de2cdcb88d4a",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "ctaLinkType": "none",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Fri Mar 15 2019 14:03:20 GMT+0000",
+      "jcr:lastModified": "Fri Mar 15 2019 14:03:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "links": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "linkNewWindowOverride": "0",
+          "externalLinkType": "none"
+        }
+      }
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon May 11 2020 15:27:06 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "200",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "description": "The healthcare landscape is evolving.  We can help prepare you with our unique combination of joint\r\nreplacement implants, proprietary robotics technology and\r\nconsultative services. Isn’t it time we create the future together?",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "title": "Let’s create the future together",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Procedure",
+        "tagFolder": "/etc/tags/stryker/custom/joint-replacements/procedure"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/joint-replacements/product-type"
+      }
+    }
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "jcr:lastModified": "Mon Oct 07 2024 19:31:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/hip"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/knee"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/mako-robotic-arm-assisted-surgery"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/sensor-technology"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/limb-salvage"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/orthopaedics/joint-replacement/Joint_Pres.png"
+  }
+}

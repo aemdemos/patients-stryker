@@ -1,0 +1,476 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Knotless anchor system",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CinchLock SS and CinchLock Flex",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7d50b405-5694-4a79-be21-a7cfb6b47e61",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/images/Thumb-CinchLock.jpg",
+  "jcr:predecessors": [
+    "c5ede6d8-b3c9-4bcd-be99-48c7b3c0d73c"
+  ],
+  "contentID": "Lit number: 1000902884",
+  "lastPublished": "Tue Aug 18 2026 21:19:12 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:19:13 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:19:15 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:19:04 GMT+0000",
+  "jcr:description": "The CinchLock knotless anchors allow for greater control over repairs with independent cinching capability and an internal suture locking feature to allow for fixation independent of bone quality. The anchor offers speed and simplicity with the \"one-click lock and release\" design. CinchLock Flex is the market's first and only flexible knotless anchor.",
+  "jcr:baseVersion": "c5ede6d8-b3c9-4bcd-be99-48c7b3c0d73c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:03:04 GMT+0000",
+  "pageTitle": "CinchLock SS and CinchLock Flex",
+  "cq:tags": [
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+    "stryker:custom/sports-medicine/anatomy/small-joints",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure/elbow-repairs",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:product/sports-medicine/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/small-joints",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs"
+  ],
+  "jcr:lastModified": "Tue Dec 21 2021 18:16:18 GMT+0000",
+  "jcr:uuid": "a5216b2e-b7e3-4fc4-9e37-fb7394a38614",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Oct 13 2017 15:07:24 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/images/Hero-cinchlock.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Tue May 22 2018 16:18:29 GMT-0400",
+      "jcr:lastModified": "Mon Jun 17 2019 15:33:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Tue May 22 2018 16:17:20 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Jun 17 2019 15:33:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 19:23:04 GMT+0000",
+      "jcr:lastModified": "Tue Mar 29 2022 19:23:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Hip labral repair using Cinchlock SS with Dr. Struan Coleman*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Oct 04 2021 20:50:30 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Sep 13 2022 22:15:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/videos/Dr. Coleman hip labral repair using Cinchlock SS surgical technique video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr. Coleman hip labral repair using Cinchlock SS surgical technique video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Mar 29 2022 19:44:43 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_9074": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Capsule closure surgical technique using Stryker's Champion SlingShot with Dr. Brian Rebolledo*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Nov 10 2020 04:46:02 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Sep 13 2022 22:27:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/championslingshotcapsulerestorationsystem/videos/1000904198revc_FNL.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/1000904198revc_FNL-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Sep 13 2022 22:28:00 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Labral Refixation CinchLock SS/CinchLock Flex Technique with Dr. James Genuario*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Oct 04 2021 20:50:30 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Sep 13 2022 22:15:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/videos/Labral refixation with CinchLock SS and CinchLock Flex.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Labral refixation with CinchLock SS and CinchLock Flex-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Oct 04 2021 21:05:16 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols3_1901996055": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Sep 13 2022 22:14:44 GMT+0000",
+      "jcr:lastModified": "Tue Sep 13 2022 22:14:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_9074": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Nov 10 2020 04:46:02 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Nov 10 2020 04:46:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/videos/CinchLock-SS-Flex_Animation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/CinchLock-SS-Flex_Animation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Nov 10 2020 04:46:11 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/resources/CinchlockFlexBrochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/resources/CinchlockSSBrochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/resources/CinchlockSSTechnique.pdf"
+      ],
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Aug 14 2019 15:41:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Wed May 28 2025 20:06:26 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Fri May 30 2025 20:02:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 19:47:37 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 19:47:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:47:43 GMT+0000",
+          "CTATitle": "Slingshot single portal capsule restoration system",
+          "CTAImageAltText": "slingshot-hip-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:00:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/slingshot-hip-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/slingshot-capsule-restoration-system"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:47:46 GMT+0000",
+          "CTATitle": "Pivot Guardian Total System",
+          "CTAImageAltText": "pivot-guardian-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:00:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/pivot-guardian-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/pivot-guardian-distraction-system"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:47:49 GMT+0000",
+          "CTATitle": "HipMap and HipCheck",
+          "CTAImageAltText": "hipmap-hipcheck-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:02:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/hipmap-hipcheck-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/hip-check"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:47:52 GMT+0000",
+          "CTATitle": "Suture and tape offerings",
+          "CTAImageAltText": "suture-tape-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:02:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/suture-tape-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/suture-and-tape-offerings"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:18:54 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:18:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>&nbsp;&nbsp;</p>\r\n",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Fri Oct 13 2017 14:46:54 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Designed for precise anchor placement in challenging environments with optional-use Sport Sheath.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Allows for greater control over repairs with independent cinching capability and an internal suture locking feature to allow for fixation independent of bone quality.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>“One-click lock and release” offers speed and simplicity by reducing surgical steps.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/cinchlockknotlessanchorsystem/images/Thumb-CinchLock.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Stryker consultant</p>\r\n",
+    "jcr:lastModified": "Fri May 30 2025 19:47:25 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:18:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

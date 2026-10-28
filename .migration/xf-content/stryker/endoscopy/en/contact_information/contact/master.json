@@ -1,0 +1,164 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Contact",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "84b75034-bcf0-435f-b6c0-59a4644ff618",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f008a7a1-5b34-4907-aa75-d41da98ee80c"
+  ],
+  "lastPublished": "Mon Jun 29 2026 20:06:33 GMT+0000",
+  "jcr:created": "Mon Jun 29 2026 20:06:33 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 20:06:35 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 20:06:30 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f008a7a1-5b34-4907-aa75-d41da98ee80c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 29 2026 17:48:28 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "019dc30d-a235-40a7-940a-f2b51ef6a3d2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text4216725011870939_1881269674": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "4",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/endoscopy/contact.html\" target=\"_blank\" title=\"Contact information\">Contact Information</a></span></p>\n<p><a href=\"/content/stryker/us/en/endoscopy/contact.html\" title=\"Customer support\" target=\"_blank\"><span class=\"standalone-link\">Customer support</span></a></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/productexperience/\" target=\"_blank\" title=\"Product feedback\">product feedback</a></span></p>\n",
+      "jcr:lastModified": "Fri Jun 19 2026 14:19:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 20:16:12 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Endoscopy</span></span></p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 20:16:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "buttonset_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 20:12:15 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 20:22:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.linkedin.com/showcase/stryker-endoscopy-",
+          "buttonText": "LinkedIn",
+          "externalLinkType": "ext"
+        },
+        "item1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.instagram.com/strykervisualization/",
+          "buttonText": "Instagram",
+          "externalLinkType": "ext"
+        },
+        "item2": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://twitter.com/StrykerEndo",
+          "buttonText": "X",
+          "externalLinkType": "ext"
+        },
+        "item3": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.youtube.com/@StrykersClinicalSolutions",
+          "buttonText": "YouTube",
+          "externalLinkType": "ext"
+        },
+        "item4": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.vumedi.com/channel/stryker/tab/endoscopy-2/",
+          "buttonText": "VuMedi",
+          "externalLinkType": "ext"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Jun 10 2026 20:16:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Breast Care</span></span></p>\n",
+      "jcr:lastModified": "Mon Jun 29 2026 20:06:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "buttonset_copy_copy__604883710": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 20:12:15 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 20:22:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.linkedin.com/company/stryker-breast-care/",
+          "buttonText": "LinkedIn",
+          "externalLinkType": "ext"
+        },
+        "item1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.instagram.com/strykerbreastcare/",
+          "buttonText": "Instagram",
+          "externalLinkType": "ext"
+        },
+        "item2": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://x.com/StrykerBreast",
+          "buttonText": "X",
+          "externalLinkType": "ext"
+        },
+        "item3": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.youtube.com/@StrykersClinicalSolutions",
+          "buttonText": "YouTube",
+          "externalLinkType": "ext"
+        },
+        "item4": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://www.vumedi.com/channel/stryker/tab/endoscopy-2/",
+          "buttonText": "Vumedi",
+          "externalLinkType": "ext"
+        }
+      }
+    }
+  }
+}

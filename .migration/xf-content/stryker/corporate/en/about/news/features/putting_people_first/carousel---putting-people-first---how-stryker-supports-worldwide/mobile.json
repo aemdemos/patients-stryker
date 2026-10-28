@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "mobile",
+  "jcr:versionHistory": "7e9e700a-783f-44ab-bde8-ee817dc2e161",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "84d60863-e056-4c41-b99c-fbf074866800"
+  ],
+  "jcr:created": "Thu Nov 18 2021 21:07:45 GMT+0000",
+  "cq:lastModified": "Thu Nov 18 2021 21:07:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "84d60863-e056-4c41-b99c-fbf074866800",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "87a392ef-27f0-4603-b542-070da15f516c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Nov 17 2021 19:35:45 GMT+0000",
+      "alt": "Icon of hand holding heart",
+      "srcFileRef": "/content/dam/stryker/about/news/features/putting-people-first--how-stryker-supports-worldwide-disaster-relief-efforts/Relief-efforts-carousel-mobile-1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Nov 18 2021 21:07:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

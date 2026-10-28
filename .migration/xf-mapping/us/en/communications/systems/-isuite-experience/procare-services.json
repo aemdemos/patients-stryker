@@ -1,0 +1,342 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Procare services",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e54d2b5e-586f-43de-ac55-e6c5d37219df",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/communications/images/HeroProCare.jpg",
+  "jcr:predecessors": [
+    "59e84f3e-122c-451f-9091-27d969ce0ee8"
+  ],
+  "contentID": "1000902250 Rev D | COMMS-PROC-SYK-1400038",
+  "lastPublished": "Mon Jun 29 2026 19:38:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 19:38:28 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 19:38:30 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 19:38:21 GMT+0000",
+  "jcr:baseVersion": "59e84f3e-122c-451f-9091-27d969ce0ee8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:07:06 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content",
+    "stryker:services/procare",
+    "stryker:services/onsite-services"
+  ],
+  "jcr:lastModified": "Tue Oct 08 2024 15:21:09 GMT+0000",
+  "jcr:uuid": "ae12dc64-9986-4adc-afdf-c7406b335499",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_196011": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 18:29:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-4vw\"><span class=\"urw-egyptienne\">Everyday, you count on your medical equipment<br>\r\n </span><span class=\"futura-bold\">to perform at its best.</span></span>",
+      "line2": "<span class=\"fontsize-1-5-vw\"><br />\r\nProcare isn't just a service program, it's a relationship you can count on from the very beginning.</span>",
+      "jcr:lastModified": "Fri Apr 03 2020 20:00:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:57:16 GMT+0000",
+      "jcr:lastModified": "Mon Mar 30 2020 20:57:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 30 2020 21:02:00 GMT+0000",
+          "alt": "Optimize Efficiency",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuite-experience/procare-services/OptimizeEfficiency-PROCARE.jpg",
+          "jcr:lastModified": "Mon Oct 07 2024 16:03:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 18:37:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">Optimize efficiency</span></span></span></p>\n<p><b>85% of customers agree that ProCare has helped reduce intraoperative downtime.<sup>1</sup></b></p>\n<p>Procare service contracts help increase efficiency by minimizing paperwork and reducing downtime before service begins.&nbsp;</p>\n<ul>\n<li>Priority response on all repairs</li>\n<li>Unlimited service calls and repairs</li>\n<li>Replacement parts and shipping</li>\n<li>Technician labor and travel</li>\n<li>Software fixes and upgrades</li>\n<li>24/7 technical phone support</li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 24 2020 18:46:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 30 2020 21:02:11 GMT+0000",
+          "alt": "Maximize Value",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuite-experience/procare-services/MaximizeValue-PROCARE.jpg",
+          "jcr:lastModified": "Mon Oct 07 2024 16:03:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 18:37:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">Maximize value</span></span></span></p>\n<p><b>72% of ProCare customers agree they operate more efficiently and their costs have been reduced.<sup>2</sup></b></p>\n<p>Standardize costs and eliminate the guesswork. With a ProCare Service contract, you will know the cost of owning your equipment for the life of the contract. Contracts can range from 1-6 years and payment can be scheduled on a recurring basis.</p>\n",
+          "jcr:lastModified": "Fri Apr 24 2020 16:01:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 30 2020 21:02:14 GMT+0000",
+          "alt": "Consistent Performance",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuite-experience/procare-services/ConsistentPerformance-PROCARE.jpg",
+          "jcr:lastModified": "Mon Oct 07 2024 16:04:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 18:37:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">Consistent performance</span></span></span></p>\n<p><b>90% of ProCare Services customers surveyed agreed that the life of their equupment has been extended.<sup>3</sup></b></p>\n<p>A Prevent service contract offers a comprehensive preventative maintenance program that includes annual equipment inspection and detailed reports to support regulatory requirements.&nbsp;</p>\n<ul>\n<li>Annual inspection and repair on covered equipment</li>\n<li>Detailed report on inspection findings</li>\n<li>One seat at BioMed training</li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 24 2020 16:05:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 21:02:31 GMT+0000",
+      "jcr:lastModified": "Mon Mar 30 2020 21:02:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 21:02:43 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 21:02:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:42 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Learn more about out <span class=\"futura-bold\">ProCare services.&nbsp;</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 30 2020 21:16:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:22:47 GMT+0000",
+          "jcr:lastModified": "Fri Apr 03 2020 20:07:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "http://stryker.com",
+              "internalLink": "/content/stryker/us/en/services/procare",
+              "buttonText": "Learn more",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:38:21 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:38:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Jul 12 2018 20:27:50 GMT-0400",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "titleColor": "rgba(255,255,255,1)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Mar 31 2020 16:37:13 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Tue Mar 31 2020 20:20:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "ND",
+        "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/communications/systems/isuite-experience/procare-services/AssetsPROCARE-1Mobile.jpg",
+        "layoutOptions": "col-sm-6 pull-left",
+        "backgroundImageRef": "/content/dam/stryker/communications/systems/isuite-experience/procare-services/AssetsPROCARE-11.jpg",
+        "jcr:lastModified": "Fri Apr 03 2020 20:08:32 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "lee.fuller1@stryker.com",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:created": "Tue Mar 31 2020 20:56:30 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"fontsize-5vw\"><span class=\"futura-bold\">ProCare</span><br>\r\n <span class=\"urw-egyptienne\">Service Advantage</span></span></h1>\r\n",
+            "line2": "<span class=\"fontsize-1-5-vw\">With ProCare Services, our people ensure your equipment is ready to perform when it’s needed. ProCare service contracts provide training, staff support and preventative maintenance to enhance the reliability and maximize the life of your equipment.</span>",
+            "jcr:lastModified": "Thu Nov 02 2023 15:45:21 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/images/HeroProCare.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>In the 2014 Gallup CE11 Survey, a survey of 527 Stryker ProCare customers, 85% of Endoscopy Top Tier customers agreed that ProCare has helped reduce downtime.</li>\r\n<li>In the 2014 Gallup CE11 Survey, a survey of 527 Stryker ProCare customers, 72% of Endoscopy Top Tier customers indicated that they operate more efficiently and costs have been reduced.</li>\r\n<li>In the 2014 Gallup CE11 Survey, a survey of 527 Stryker ProCare customers, 90% of Endoscopy Top Tier customers indicated that the life of their equipment has been extended with ProCare Services,”</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Apr 24 2020 16:05:58 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

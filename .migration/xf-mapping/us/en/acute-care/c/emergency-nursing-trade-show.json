@@ -1,0 +1,297 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Emergency Nursing Trade Show",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7e1f74ff-2358-4a48-92c2-47f07a94b2dd",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Kansas City skyline",
+  "jcr:predecessors": [
+    "b7e0e182-c7bc-4db0-be03-a938b0e25712"
+  ],
+  "contentID": "AC-GSNPS-SYK-1201934_REV-4_en_us",
+  "lastPublished": "Tue Oct 06 2026 20:05:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 06 2026 20:05:41 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 06 2026 20:05:43 GMT+0000",
+  "cq:lastModified": "Tue Oct 06 2026 20:05:33 GMT+0000",
+  "jcr:description": "Ready to get hands-on with some of our products? Join us for a demo where you can experience the future of emergency nursing, and chat with experts about the ways Stryker can support your mission.",
+  "jcr:baseVersion": "b7e0e182-c7bc-4db0-be03-a938b0e25712",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 12 2024 19:46:14 GMT+0000",
+  "pageTitle": "Join Stryker at Emergency Nursing 2027",
+  "cq:tags": [
+    "stryker:business-unit/ems",
+    "stryker:business-unit/smart-care",
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Tue Oct 06 2026 20:05:33 GMT+0000",
+  "jcr:uuid": "6a0cfd3f-3a71-4004-9681-fd9d5b3e28b0",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Jul 15 2024 17:43:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/campaigns/ena-trade-show-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/campaigns/ena-trade-show-hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "textColor": "rgb(0,0,0)",
+          "verticalMargin": "2",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Oct 06 2026 20:03:52 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "1",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Join Stryker at <span style=\"display: block;\">Emergency Nursing 2027</span></span></span></span></h1>\n<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\">September 15 - 18 | Kansas City<br>\n &nbsp;</span></span></p>\n",
+              "jcr:lastModified": "Tue Oct 06 2026 15:27:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true",
+              "bottomMargin": "2",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Fri Jul 26 2024 17:11:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 10 2024 20:33:21 GMT+0000",
+      "jcr:lastModified": "Wed Jul 10 2024 20:33:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Thu Jul 18 2024 14:12:01 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Thu Jul 18 2024 14:33:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Jan 18 2024 17:29:24 GMT+0000",
+      "jcr:lastModified": "Thu Jan 18 2024 17:29:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Jan 18 2024 17:29:28 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Emergency care <span style=\"color: #ffb500;\">reimagined</span></span></span></h2>\n<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Stryker is your partner in next-gen nursing</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Emergency nurses like you face the unpredictable every day, delivering care when it matters most. As the pace and complexity of care evolve, the tools behind it must advance too. That's why we're reimagining emergency care, from the roadside to the SmartED. In partnership with nurses like you, we're driving innovation that connects teams and advances care.</span></p>\n",
+          "jcr:lastModified": "Tue Jul 21 2026 15:58:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy_1898": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Jan 22 2024 14:51:34 GMT+0000",
+      "jcr:lastModified": "Mon Jan 22 2024 14:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jan 22 2024 14:51:39 GMT+0000",
+          "alt": "Stryker booth demo of LUCAS 3, v3.1 on a dummy laying on a Prime Stretcher",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/tradeshows/prime-lucas-dummy-aacn-2026.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 03 2026 15:20:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 22 2024 14:51:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Experience Stryker at <span style=\"color: #ffb500; white-space: nowrap;\">Emergency Nursing 2027</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Ready to get hands-on with some of our products? Join us for a demo where you can experience the future of emergency nursing, and chat with experts about the ways Stryker can support your mission.</span></p>\n",
+          "jcr:lastModified": "Tue Oct 06 2026 15:27:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Thu Jul 18 2024 14:12:01 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Thu Jul 18 2024 14:33:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Thu Jun 20 2024 14:50:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1275",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 13 2026 21:05:14 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Feb 12 2024 20:37:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/campaigns/tradeshows/kansas-city-skyline-stock-302355667.jpg"
+  }
+}

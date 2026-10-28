@@ -1,0 +1,106 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches next generation of SurgiCount+ to help improve the standard of care in hospitals for sponge management and blood loss assessment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e0ca2978-546f-4211-b09c-e134474f654e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Surgicount_PressRelease_thumbnail",
+  "jcr:predecessors": [
+    "74afc7bc-22b3-460c-879a-8225b47bb408"
+  ],
+  "lastPublished": "Thu Nov 14 2024 14:33:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Nov 14 2024 14:33:33 GMT+0000",
+  "cq:lastReplicated": "Thu Nov 14 2024 14:33:35 GMT+0000",
+  "cq:lastModified": "Thu Nov 14 2024 14:32:51 GMT+0000",
+  "jcr:description": "Stryker announced its launch of the next generation of SurgiCount+ within its sponge management portfolio.",
+  "jcr:baseVersion": "74afc7bc-22b3-460c-879a-8225b47bb408",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Nov 14 2024 14:33:29 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Nov 14 2024 14:30:24 GMT+0000",
+  "jcr:uuid": "c767d3fd-d20d-450b-a0ad-f571aee50c17",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 14:28:04 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Nov 14 2024 14:29:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/stryker_launches_nex/experience-fragment/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2024/stryker-launches-nex/experience-fragment/master"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 14:14:21 GMT+0000",
+      "jcr:lastModified": "Thu Nov 14 2024 14:14:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 14:14:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">PORTAGE, Mich., USA – November 14, 2024</span>&nbsp;– Stryker (NYSE:SYK), a global leader in medical technologies, announced its launch of the next generation of SurgiCount+ within its sponge management portfolio. Now integrated with Stryker’s Triton technology, SurgiCount+ addresses two key challenges: retained surgical sponges and blood loss assessment. Integrating these previously separate digital solutions provides the added benefit of a more efficient, streamlined workflow for hospitals.</p>\n<p>Maternal mortality has been rising in the U.S. for decades,<sup>1</sup> with approximately 50,000 cases of severe maternal morbidity occurring each year.<sup>2</sup> Notably, 70% of pregnancy-related deaths due to hemorrhage are preventable.<sup>3</sup> Stryker’s Triton software includes AI technology that can differentiate blood from other fluids and a Bluetooth scale that batch weighs blood-soaked items to help assess blood loss. This provides hospital staff with real-time information to help coordinate the clinical team’s hemorrhage response and make informed patient care decisions.</p>\n<p>Surgical sponges continue to be the number one retained surgical item with 88% of retained surgical items occurring with a false correct count.<sup>4</sup> For nurses trying to locate a missing sponge in the operating room (OR), that can take up to 10 minutes on average.<sup>5</sup> Stryker’s SurgiCount+ software helps address these problems by featuring a wireless reader that counts, tracks and locates surgical sponges in the OR. RFID-tagged sponges enable unique identification, eliminating false-correct duplicate or unknown counts.</p>\n<p>“We are committed to helping keep caregivers and patients safe from harm,” said Brandon Jominy, vice president and general manager of Stryker’s Surgical Technologies business. “Integrating our SurgiCount+ and Triton technologies on one platform will set a new industry standard for quantifying blood loss and continuing to help reduce retained surgical sponges in the OR.”</p>\n<p>Additionally, recent studies show that nurse burnout is affecting more than half of all U.S. nurses.<sup>6</sup> By integrating these two technologies into one solution, it provides additional benefits to hospitals and staff which includes:</p>\n<ul>\n<li>Helping save time by standardizing clinical protocols for charting</li>\n<li>Simplifying workflows and aggregating case data with backend data</li>\n<li>Helping reduce manual data entry errors through real-time EMR integration</li>\n<li>Tracking and communicating patient information with one seamless workflow</li>\n</ul>\n<p>For more information about Stryker’s SurgiCount+ integrated with Triton please visit <a href=\"https://www.safeor.com/products/surgicount-triton\">safeor.com/products/surgicount-triton</a>.</p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 14:32:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_838452994": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 14:16:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Beth Sizemore<br>\nSr. Director, Strategic Communications<br>\nbeth.sizemore@stryker.com</p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 14:17:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu Nov 14 2024 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "14-Nov-2024",
+    "jcr:lastModified": "Thu Nov 14 2024 14:14:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Hoyert DL. Maternal mortality rates in the United States, 2021. NCHS Health E-Stats. 2023. DOI: <a href=\"https://dx.doi.org/10.15620/cdc:124678\">https://dx.doi.org/10.15620/cdc:124678</a></li>\r\n<li>Callaghan, W.M., Creanga, A.A. and Kuklina, E.V. (2012) “Severe maternal morbidity among delivery and postpartum hospitalizations in the United States,” Obstetrics &amp; Gynecology,120(5), pp. 1029–1036. doi:10.1097/aog.0b013e31826d60c5.</li>\r\n<li>Building U.S. Capacity to Review and Prevent Maternal Deaths. (2018). Report from nine maternal mortality review committees. <a href=\"https://www.cdcfoundation.org/sites/default/files/files/ReportfromNineMMRCs.pdf\" style=\"font-size: 0.8125rem; background-color: rgb(240, 240, 240);\">https://www.cdcfoundation.org/sites/default/files/files/ReportfromNineMMRCs.pdf</a></li>\r\n<li>Gawande, A. A., Studdert, D. M., Orav, E. J., Brennan, T. A., &amp; Zinner, M. J. (2003). Risk factors for retained instruments and sponges after surgery. <i style=\"font-size: 0.8125rem;\">The New England Journal of Medicine, 348</i>(3), 229–235.&nbsp;https://doi.org/10.1056/NEJMsa021721&nbsp;</li>\r\n<li>Double-blinded survey of 154 Operating Room Nurses from 154 different facilities across the United States. Data on file internally. Conducted August 2020.</li>\r\n<li>Rotenstein, L.S., Brown, R., Sinsky, C.&nbsp;<i style=\"font-size: 0.8125rem;\">et al.</i><span style=\"font-size: 0.8125rem;\">&nbsp;The Association of Work Overload with Burnout and Intent to Leave the Job Across the Healthcare Workforce During COVID-19.&nbsp;</span><i style=\"font-size: 0.8125rem;\">J GEN INTERN MED</i><span style=\"font-size: 0.8125rem;\">&nbsp;38, 1920–1927 (2023). </span><a href=\"https://doi.org/10.1007/s11606-023-08153-z\" style=\"font-size: 0.8125rem; background-color: rgb(240, 240, 240);\">https://doi.org/10.1007/s11606-023-08153-z</a></li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Nov 14 2024 14:18:08 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-the-standard-of-care-in-hospitals-for-sponge-management-and-blood-loss-assessment/Surgicount_PressRelease_thumbnail.png"
+  }
+}

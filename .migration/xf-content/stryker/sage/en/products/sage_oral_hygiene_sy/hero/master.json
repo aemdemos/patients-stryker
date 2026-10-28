@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "af5f2bd5-1fb2-43e5-aa36-5e982ceb331d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "59264de5-e336-4be6-9afd-8e24d0fec83c"
+  ],
+  "lastPublished": "Wed Jul 31 2024 19:28:50 GMT+0000",
+  "jcr:created": "Wed Jul 31 2024 19:28:50 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 31 2024 19:28:53 GMT+0000",
+  "cq:lastModified": "Wed Jul 31 2024 18:10:52 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "59264de5-e336-4be6-9afd-8e24d0fec83c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:28:50 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e00b3056-73f3-42b8-b507-8c42e5c65a09",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Aug 10 2023 14:05:05 GMT+0000",
+      "jcr:lastModified": "Thu Aug 10 2023 14:05:11 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage4460449138759584": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Sage oral hygiene systems for non-ventilated patients",
+        "srcFileRef": "/content/dam/stryker/sage/products/oral-hygiene-non-vent/images/oral-care-for-non-vent-thumbnail.jpg",
+        "jcr:lastModified": "Wed Jul 31 2024 14:36:54 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

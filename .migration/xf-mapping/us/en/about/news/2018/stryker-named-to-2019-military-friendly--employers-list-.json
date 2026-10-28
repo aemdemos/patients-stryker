@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker named to 2019 Military Friendly® Employers List ",
+  "jcr:versionHistory": "d665c677-be38-4179-aeeb-51a1a3b2aff2",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "5707cc6b-9800-473a-9f8d-a7a4200c3e9a"
+  ],
+  "lastPublished": "Fri Sep 14 2018 11:50:48 GMT+0000",
+  "jcr:created": "Fri Sep 14 2018 11:50:48 GMT-0400",
+  "cq:lastModified": "Fri Sep 14 2018 11:50:34 GMT-0400",
+  "jcr:baseVersion": "5707cc6b-9800-473a-9f8d-a7a4200c3e9a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:uuid": "73058dff-a40d-460a-a409-62c97ecf6a3c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Fri Sep 14 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "14-Sep-2018",
+    "jcr:lastModified": "Fri Sep 14 2018 11:48:42 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/MFE19_Bronze_300x300.png",
+    "jcr:lastModified": "Fri Sep 14 2018 11:48:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Military Friendly® Employers recognized Stryker for its commitment, effort and success in creating a sustainable and meaningful benefit for the American military and veteran community.</p>\n<p>“We are honored to be included on Military Friendly Employers’ 2019 list. Hiring veterans is important to us not only because of the deep and talented pool of candidates but also because it is the right thing to do. We are proud to continue our commitment to veterans and their families,” said Art Hartman, Senior Military Relations Officer at Stryker.&nbsp;</p>\n<p>Stryker has been a part of the <a href=\"https://www.veteranjobsmission.com/\">Veterans Job Mission</a> since 2014 and has benefited from hiring and developing veteran talent.</p>\n<p>The Military Friendly® Employers list is created each year based on extensive research using public data sources for more than 8,800 employers nationwide, input from student veterans, and responses to the proprietary, data-driven Military Friendly® Employers survey from participating institutions.</p>\n<p>For more information, please visit Military Friendly® Employers’ <a href=\"http://militaryfriendly.com/employers/\">website</a>.</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Sep 14 2018 11:50:34 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

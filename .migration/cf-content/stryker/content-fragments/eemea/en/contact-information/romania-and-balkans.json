@@ -1,0 +1,84 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "4dd3756a-85b2-4bc3-93d3-fa61ff4da688",
+  "jcr:predecessors": [
+    "74cd0f61-1e4e-46a9-bd15-f1db5ed01c23"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:48 GMT+0000",
+  "jcr:baseVersion": "74cd0f61-1e4e-46a9-bd15-f1db5ed01c23",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "9861b617-2f3c-4e6e-8d3d-eefadc411996",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Romania and Balkans",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastModified": "Tue Oct 08 2019 06:05:46 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "romania-and-balkans",
+    "jcr:lastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+    "lastFragmentSave": "Tue Oct 27 2020 20:36:09 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information",
+    "dam:relativePath": "stryker/content-fragments/eemea/en/contact-information/romania-and-balkans",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Fri Oct 30 2020 18:49:48 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "Emails@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "addressBlock1": "<p>7 Iuliu Maniu Boulevard<br>\nBuilding A, 2nd Floor<br>\nBucharest Romania 061072<br>\n</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/ro/en/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "locationName": "Central Eastern Europe & Romania",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "PhoneNumbers": "<p>+40 21 529 91 00<br>\n+40 21 529 91 99 Fax<br>\n</p>\n",
+        "AddressLabel@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Oct 27 2020 20:36:09 GMT+0000",
+        "BusinessHomePageLabel": "Romania and Balkans Homepage",
+        "Emails": "<p><a href=\"mailto:stryker.romania@stryker.com\">stryker.romania@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

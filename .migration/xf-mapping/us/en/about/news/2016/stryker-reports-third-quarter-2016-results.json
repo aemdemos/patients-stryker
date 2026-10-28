@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker reports third quarter 2016 results",
+  "jcr:versionHistory": "b2cca8cf-4afc-4e79-baf8-91cc0afc3a06",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "46a1800c-80ef-46c0-8f77-03a4663bf361"
+  ],
+  "lastPublished": "Mon Mar 11 2019 17:46:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 11 2019 17:46:29 GMT+0000",
+  "cq:lastModified": "Mon Mar 11 2019 17:46:02 GMT+0000",
+  "jcr:baseVersion": "46a1800c-80ef-46c0-8f77-03a4663bf361",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 09:42:03 GMT-0400",
+  "jcr:uuid": "ea7a4ccc-1737-446f-ae34-2809a2f5b4b3",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Thu Oct 27 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "27-Oct-2016",
+    "jcr:lastModified": "Tue May 30 2017 10:53:38 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "text": "<p>Stryker Corporation (NYSE:SYK) reported operating results for the third quarter of 2016.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2016/Stryker-reports-third-quarter-2016-results/default.aspx\">See full release here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Mon Mar 11 2019 17:46:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

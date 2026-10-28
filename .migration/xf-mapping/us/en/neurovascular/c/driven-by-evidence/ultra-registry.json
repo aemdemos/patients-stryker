@@ -1,0 +1,537 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ultra Registry",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "64d2a2f3-869d-4fa3-a53e-9213a4c07da6",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "52f8f982-2877-46d3-bb96-40ef817d40fb"
+  ],
+  "contentID": "AP-003786 V1.0",
+  "lastPublished": "Wed Dec 07 2022 13:43:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Dec 07 2022 13:43:47 GMT+0000",
+  "cq:lastReplicated": "Wed Dec 07 2022 13:43:50 GMT+0000",
+  "cq:lastModified": "Fri Dec 02 2022 14:11:40 GMT+0000",
+  "jcr:baseVersion": "52f8f982-2877-46d3-bb96-40ef817d40fb",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Mon May 02 2022 17:42:19 GMT+0000",
+  "jcr:uuid": "e7a848dd-ae75-4efe-8b3f-2326a59677cd",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "troy.boehm@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Apr 05 2022 17:56:15 GMT+0000",
+      "text": "<p><span style=\"color: #ffb500;\"><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">&lt; </a><u><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">Back to Driven By Evidence Home</a></u></span><u></u></p>\n",
+      "jcr:lastModified": "Tue Apr 05 2022 18:01:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "layoutOptions": "50_top",
+      "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/ultra-registry/images/Ultra-Hero.png",
+      "jcr:created": "Fri Feb 18 2022 19:10:06 GMT+0000",
+      "alt": "Ultra Registry",
+      "jcr:lastModified": "Fri Apr 01 2022 15:25:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "jcr:lastModified": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "text_copy": {
+            "jcr:primaryType": "nt:unstructured",
+            "bottomPadding": ".5",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "3",
+            "topPadding": "1",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "57",
+            "topMargin": "15",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Ultra Registry</span></span></span><span class=\"fontsize-2-5em\"><br>\n </span></span></p>\n",
+            "jcr:lastModified": "Fri Feb 18 2022 19:20:28 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "backgroundColor": "rgba(255,181,0,1)",
+            "textIsRich": "true",
+            "leftMargin": "10",
+            "bottomMargin": "4"
+          },
+          "text_copy_1654321463": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "10",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "hideComponent": "false",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Treat small aneurysms confidently</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The ULTRA Registry is an investigator-initiated prospective, multicenter US registry of patients with small (≤5mm) intracranial aneurysms treated exclusively with Target Ultra and Nano Detachable Coils&nbsp;led by Dr. Gaurav Jindal at the University of Maryland.</span></span></p>\n",
+            "jcr:lastModified": "Mon May 02 2022 17:37:50 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "textIsRich": "true"
+          }
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:08:32 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:08:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:08:32 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:08:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:08:35 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:08:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 20:49:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">The evidence is undeniable</span></span></p>\n<p>At Stryker, our excellence is backed by evidence. When working in small intracranial aneurysms, the ULTRA Registry – an investigator initiated study involving 100 patients – showed that Target Ultra Detachable Coils and Target Nano Detachable Coils had zero coil related complications. For ruptured or unruptured aneurysms, Target Detachable Coils are safe and effective—and the evidence proves it.<br>\n</p>\n<p><span class=\"futura-bold\">Primary endpoints:</span><br>\nTarget aneurysm occlusion and recurrence rates</p>\n<p><span class=\"futura-bold\">Secondary endpoints:</span><br>\nDevice and/or procedure related adverse events, aneurysm<br>\nhemorrhage intraoperatively or during follow-up</p>\n",
+          "jcr:lastModified": "Tue Oct 25 2022 14:06:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "7"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Oct 25 2022 14:00:23 GMT+0000",
+          "CTATitle": "View the full study",
+          "ctaExternalLink": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdoi.org%2F10.3171%2F2022.5.JNS2296&data=05%7C01%7Cgarrett.shue%40stryker.com%7Cf23d63befef8463d0bd908daa8665129%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C638007454641414706%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=g1hVvrnO%2BCHnB%2BDXQdDNHIHZN3%2F2HGxukKVGkORPJFc%3D&reserved=0",
+          "jcr:lastModified": "Tue Oct 25 2022 14:01:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "troy.boehm@stryker.com",
+          "jcr:lastModifiedBy": "troy.boehm@stryker.com",
+          "jcr:created": "Wed Nov 30 2022 19:40:41 GMT+0000",
+          "text": "<p>Click here to watch Dr. Jindal’s ULTRA Registry session from the SKILL Connect peer-to-peer<br>\nneurovascular speaker series</p>\n",
+          "jcr:lastModified": "Fri Dec 02 2022 14:11:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_2014779498": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "troy.boehm@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "troy.boehm@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Nov 30 2022 19:41:44 GMT+0000",
+          "CTATitle": "SKILL Connect",
+          "ctaExternalLink": "https://web.cvent.com/event/c7c52b95-ed7c-40db-bec6-ead016be11e0/websitePage:6e75862e-2ac2-4526-ac53-dfe107607f44",
+          "jcr:lastModified": "Wed Nov 30 2022 19:42:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "piechart": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "titleLocation": "1",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "titleAlignment": "left",
+          "currencyTypePieChart": "AUD $",
+          "pieHeight": "400",
+          "holeSize": "0",
+          "multiSeriesItemColors": "rgba(76,125,122,1)|rgba(148,177,175,1)|rgba(219,229,228,1)|rgba(28,86,135,1)|rgba(73,120,159,1)|rgba(164,187,207,1)|rgba(201,221,231,1)",
+          "dataLabel": "value",
+          "jcr:created": "Fri Apr 01 2022 16:10:05 GMT+0000",
+          "hideBorder": "transparent",
+          "legendCategory": "1",
+          "numberTypePieChart": "3",
+          "jcr:lastModified": "Fri Apr 01 2022 16:14:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/pieChart",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "chartType": "1",
+          "pieChartCategoryLinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "3",
+              "categoryColor": "rgba(76,125,122,1)",
+              "categoryName": "Vertebral"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "13",
+              "categoryColor": "rgba(148,177,175,1)",
+              "categoryName": "PComA"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "10",
+              "categoryColor": "rgba(219,229,228,1)",
+              "categoryName": "Basilar"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "34",
+              "categoryColor": "rgba(28,86,135,1)",
+              "categoryName": "AComA"
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "9",
+              "categoryColor": "rgba(73,120,159,1)",
+              "categoryName": "ACA"
+            },
+            "6": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "22",
+              "categoryColor": "rgba(164,187,207,1)",
+              "categoryName": "ICA"
+            },
+            "7": {
+              "jcr:primaryType": "nt:unstructured",
+              "categoryValueNew": "9",
+              "categoryColor": "rgba(201,221,231,1)",
+              "categoryName": "MCA"
+            }
+          }
+        },
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Mean aneurysm size</b></td>\n<td>3.5 x 3.0 x 2.8mm</td>\n</tr><tr><td><b>Wide neck aneurysms</b><br>\n(Dome-to-neck &lt;2.0)</td>\n<td>61%</td>\n</tr><tr><td><b>Average # of coils</b></td>\n<td>2.9 coils</td>\n</tr><tr><td><b>Average packing density</b></td>\n<td>34.3%</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 01 2022 16:12:31 GMT+0000",
+          "jcr:lastModified": "Fri Apr 01 2022 16:14:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:27:01 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:27:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/neurovascular/en/campaigns/driven_by_evidence/ultra_registry/ultra-registry/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/neurovascular/en/campaigns/driven-by-evidence/ultra-registry/ultra-registry/master"
+    },
+    "cols2_1781523236": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:26:52 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:26:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_1281185330": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 02 2022 17:40:59 GMT+0000",
+      "jcr:lastModified": "Mon May 02 2022 17:40:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon May 02 2022 17:41:07 GMT+0000",
+          "alt": "0 coil related complications  0 intraoperative aneurysm ruptures  0 known post-operative aneurysm ruptures  0 crossover to clipping",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/ultra-registry/images/Ultra_Registry_Graphic.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 02 2022 17:41:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "animatedbarchart_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "chartTitleLocation": "Top",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "chartTitleAlignment": "Left",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "chartSeriesItemColors": "rgba(178,180,174,1)|rgba(182,143,185,1)",
+          "chartHeight": "0",
+          "categoryNameInTooltip": "true",
+          "numberType": "Percentage",
+          "jcr:created": "Fri Apr 01 2022 16:28:54 GMT+0000",
+          "yAxisMinValue": "0",
+          "hideDataLabels": "true",
+          "currency": "AUD $",
+          "valueInTooltip": "true",
+          "jcr:lastModified": "Fri Apr 01 2022 16:30:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/animatedbarchart",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "chartType": "Column",
+          "chartTitle": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Raymond l &amp; ll</span></span></p>\r\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">at one year</span></span></p>\r\n",
+          "chartSeries": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "chartSeriesItemCategory": "Overall",
+              "chartSeriesItemColor": "rgba(178,180,174,1)",
+              "chartSeriesItemValue": "83",
+              "chartSeriesShowCategory": "true"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "chartSeriesItemCategory": "Unruptured",
+              "chartSeriesItemColor": "rgba(182,143,185,1)",
+              "chartSeriesItemValue": "92",
+              "chartSeriesShowCategory": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_2063508306": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:33:56 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 16:33:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 01 2022 16:34:01 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Apr 01 2022 16:34:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/ultra-registry/videos/Target ULTRA Registry Treatment of Small Intracranial Aneurysms.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Target ULTRA Registry Treatment of Small Intracranial Aneurysms-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 04 2022 19:14:51 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 01 2022 15:43:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">&quot;Target Ultra and Nano Coils are outstanding in both safety profile and intraoperative&nbsp;reliability. I’m confident treating small aneurysms with these coils.&quot;</span></span><br>\n<span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><br>\n <span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dr. Gaurav Jindal</span></span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon May 02 2022 17:38:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "6",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 18:48:05 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">All data is from&nbsp;:&nbsp;https://www.youtube.com/watch?v=c4gbq8JMH2U<br>\n Data presented as an ePoster at SNIS 2021, manuscript pending journal submission.<br>\n The&nbsp;Ultra Registry was an Investigator sponsored research study, funded by a research grant from Stryker.</span></p>\n",
+      "jcr:lastModified": "Mon May 02 2022 17:45:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 15:50:43 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 15:50:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2084961831_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Target® Detachable Coil </span><br>\nSee package insert for complete indications, contraindications, warnings and instructions for use.<br>\n<b>RX ONLY</b><br>\n<b>Intended use / indications for use</b></p>\n<ul>\n<li>Target Detachable Coils are intended to endovascularly obstruct or occlude blood flow in vascular abnormalities of the neurovascular and peripheral vessels.</li>\n<li>Target Detachable Coils are indicated for endovascular embolization of:</li>\n<li>Intracranial aneurysms</li>\n<li>Other neurovascular abnormalities such as arteriovenous malformations and arteriovenous fistulae</li>\n<li>Arterial and venous embolizations in the peripheral vasculature</li>\n</ul>\n<p><b>Contraindications</b><br>\nNone known.<br>\nPotential adverse events<br>\nPotential complications include, but are not limited to: allergic reaction, aneurysm perforation and rupture, arrhythmia, death, edema, embolus, headache, hemorrhage, infection, ischemia, neurological/intracranial sequelae, post-embolization syndrome (fever, increased white blood cell count, discomfort), TIA/stroke, vasospasm, vessel occlusion or closure, vessel perforation, dissection, trauma or damage, vessel rupture, vessel thrombosis. Other procedural complications including but not limited to: anesthetic and contrast media risks, hypotension, hypertension, access site complications.<br>\n<b><br>\n Warnings</b></p>\n<ul>\n<li>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</li>\n<li>For single use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing or resterilization may compromise the structural integrity of the device and/or lead to device failure which, in turn, may result in patient injury, illness or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection, including, but not limited to, the transmission of infectious disease(s) from one patient to another. Contamination of the device may lead to injury, illness or death of the patient.</li>\n<li>After use, dispose of product and packaging in accordance with hospital, administrative and/or local government policy.</li>\n<li>This device should only be used by physicians who have received appropriate training in interventional neuroradiology or interventional radiology and preclinical training on the use of this device as established by Stryker Neurovascular.</li>\n<li>Patients with hypersensitivity to 316LVM stainless steel may suffer an allergic reaction to this implant.</li>\n<li>MR temperature testing was not conducted in arteriovenous malformations or fistulae models.</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Mar 21 2022 19:53:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "4"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2084961831_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+          "text": "<ul>\n<li>The safety and performance characteristics of the Target Detachable Coil System (Target Detachable Coils, InZone Detachment Systems, delivery systems and accessories) have not been demonstrated with other manufacturer’s devices (whether coils, coil delivery devices, coil detachment systems, catheters, guidewires, and/or other accessories). Due to the potential incompatibility of non Stryker Neurovascular devices with the Target Detachable Coil System, the use of other manufacturer’s device(s) with the Target Detachable Coil System is not recommended.</li>\n<li>To reduce risk of coil migration, the diameter of the first and second coil should never be less than the width of the ostium.</li>\n<li>In order to achieve optimal performance of the Target Detachable Coil System and to reduce the risk of thromboembolic complications, it is critical that a continuous infusion of appropriate flush solution be maintained between a) the femoral sheath and guiding catheter, b) the 2-tip microcatheter and guiding catheter, and c) the 2-tip microcatheter and Stryker Neurovascular guidewire and delivery wire. Continuous flush also reduces the potential for thrombus formation on, and crystallization of infusate around, the detachment zone of the Target Detachable Coil.</li>\n<li>Do not use the product after the “Use By” date specified on the package.</li>\n<li>Reuse of the packaging hoop or use with any coil other than the original coil may result in contamination of, or damage to, the coil.<br>\nDamaged delivery wires may cause detachment failures, vessel injury or unpredictable distal tip response during coil deployment. If a delivery wire is damaged at any point during the procedure, do not attempt to straighten or otherwise repair it. Do not proceed with deployment or detachment. Remove the entire coil and replace with undamaged product.</li>\n<li>Utilization of damaged coils may affect coil delivery to, and stability inside, the vessel or aneurysm, possibly resulting in coil migration and/or stretching.</li>\n<li>The fluoro-saver marker is designed for use with a Rotating Hemostatic Valve (RHV). If used without an RHV, the distal end of the coil may be beyond the alignment marker when the fluoro-saver marker reaches the microcatheter hub.</li>\n<li>If the fluoro-saver marker is not visible, do not advance the coil without fluoroscopy.</li>\n<li>Do not rotate delivery wire during or after delivery of the coil. Rotating the Target Detachable Coil delivery wire may result in a stretched coil or premature detachment of the coil from the delivery wire, which could result in coil migration.</li>\n<li>Verify there is no coil loop protrusion into the parent vessel after coil placement and prior to coil detachment. Coil loop protrusion after coil placement may result in thromboembolic events if the coil is detached.</li>\n<li>Verify there is no movement of the coil after coil placement and prior to coil detachment. Movement of the coil after coil placement may indicate that the coil could migrate once it is detached.</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Mar 29 2022 17:44:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "4"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2084961831_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+          "text": "<ul>\n<li>Failure to properly close the RHV compression fitting over the delivery wire before attaching the InZone® Detachment System could result in coil movement, aneurysm rupture or vessel perforation.</li>\n<li>Verify repeatedly that the distal shaft of the catheter is not under stress before detaching the Target Detachable Coil. Axial compression or tension forces could be stored in the 2-tip microcatheter causing the tip to move during coil delivery. Microcatheter tip movement could cause the aneurysm or vessel to rupture.</li>\n<li>Advancing the delivery wire beyond the microcatheter tip once the coil has been detached involves risk of aneurysm or vessel perforation.</li>\n<li>The long term effect of this product on extravascular tissues has not been established so care should be taken to retain this device in the intravascular space.</li>\n</ul>\n<p><b><br>\nCautions / precautions</b><br>\n</p>\n<ul>\n<li>Federal Law (USA) restricts this device to sale by or on the order of a physician.</li>\n<li>Besides the number of InZone Detachment System units needed to complete the case, there must be an extra InZone Detachment System unit as back up.</li>\n<li>Removing the delivery wire without grasping the introducer sheath and delivery wire together may result in the detachable coil sliding out of the introducer sheath.</li>\n<li>Failure to remove the introducer sheath after inserting the delivery wire into the RHV of the microcatheter will interrupt normal infusion of flush solution and allow back flow of blood into the microcatheter.</li>\n<li>Some low level overhead light near or adjacent to the patient is required to visualize the fluoro-saver marker; monitor light alone will not allow sufficient visualization of the fluoro-saver marker.</li>\n<li>Advance and retract the Target Detachable Coil carefully and smoothly without excessive force. If unusual friction is noticed, slowly withdraw the Target Detachable Coil and examine for damage. If damage is present, remove and use a new Target Detachable Coil. If friction or resistance is still noted, carefully remove the Target Detachable Coil and microcatheter and examine the microcatheter for damage.</li>\n<li>If it is necessary to reposition the Target Detachable Coil, verify under fluoroscopy that the coil moves with a one-to-one motion. If the coil does not move with a one-to-one motion or movement is difficult, the coil may have stretched and could possibly migrate or break. Gently remove both the coil and microcatheter and replace with new devices.</li>\n<li>Increased detachment times may occur when:<ul>\n<li>Other embolic agents are present.</li>\n<li>Delivery wire and microcatheter markers are not properly aligned.</li>\n<li>Thrombus is present on the coil detachment zone.</li>\n</ul>\n</li>\n<li>Do not use detachment systems other than the InZone Detachment System.<br>\n&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Mar 29 2022 17:44:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "4"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Image",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "480348fa-2b03-499e-9776-01f2245e7e2b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9ac281a3-d557-46f0-88e7-1cfd0ae759c5"
+  ],
+  "jcr:created": "Tue Nov 14 2023 20:09:17 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 14 2023 20:09:19 GMT+0000",
+  "cq:lastModified": "Tue Nov 14 2023 20:09:10 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "EMTs use an Xpedition powered stair chair  to transport a patient down stairs and into an ambulance. ",
+  "jcr:baseVersion": "9ac281a3-d557-46f0-88e7-1cfd0ae759c5",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "4c6f83e6-dfa2-4347-97d6-9e9183da64d5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Dec 05 2022 21:05:28 GMT+0000",
+      "alt": "A patient being transported down stairs using the Xpedition powered stair chair",
+      "srcFileRef": "/content/dam/stryker/ems/products/xpedition/images/Xpedition_steps_website.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 21 2023 19:11:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

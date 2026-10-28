@@ -1,0 +1,135 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Footer",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c135cb52-dbce-4345-a2e7-ce43b67ca827",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "78af91e7-25e2-402b-bb13-7cdca2fd3273"
+  ],
+  "jcr:created": "Tue Nov 21 2023 18:05:56 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 21 2023 18:05:58 GMT+0000",
+  "cq:lastModified": "Mon Oct 30 2023 13:40:56 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "78af91e7-25e2-402b-bb13-7cdca2fd3273",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "19a83251-c99b-4a0d-8101-628028566b6e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "deepLinkingId": "emergency-care",
+      "jcr:created": "Tue Aug 15 2023 13:33:58 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Oct 30 2023 13:26:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text5598976517775081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Explore</span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care.html\">Emergency Care homepage</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/news.html\">Newsroom</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/celebrate-survivors.html\">Survivor stories</a></span></p>\n",
+      "jcr:lastModified": "Mon Oct 30 2023 13:30:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text5598976517775081_2111668254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Learn</span></span></p>\n<p><a href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care.html\"><span class=\"fontsize-1-25em\">Training and education</span></a></p>\n<p><a href=\"/content/stryker/us/en/emergency-care/product-resources.html\"><span class=\"fontsize-1-25em\">Product resources</span></a></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://ifu.stryker.com/\">Information for use</a></span></p>\n<p><a href=\"https://techweb.stryker.com/MedSurg/\"><span class=\"fontsize-1-25em\">Techweb</span></a></p>\n",
+      "jcr:lastModified": "Mon Oct 30 2023 13:35:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "30",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text5598976517775081_440824474": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Support</span></span></p>\n<p><a href=\"/content/stryker/us/en/emergency-care/contact.html\"><span class=\"fontsize-1-25em\">Contact information</span></a></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/return-policy.html\">Return policy</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/disclosure-and-safety-information.html\">Disclosure and safety information</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/resources/warranty-statements/device_warranty_statement.pdf\">Limited warranty</a></span></p>\n",
+      "jcr:lastModified": "Mon Oct 30 2023 13:38:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text5598976517775081_1935964945": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">More</span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/terms.html\">Terms and conditions</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/device-registration.html\">LIFEPAK Device registration</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/recycling.html\">Recycling</a></span></p>\n",
+      "jcr:lastModified": "Mon Oct 30 2023 13:40:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

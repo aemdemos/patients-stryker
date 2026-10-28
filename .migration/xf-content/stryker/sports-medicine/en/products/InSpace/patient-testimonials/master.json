@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Patient testimonials",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3d19289e-550b-4efd-9553-be1a5cced050",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "136982d6-459c-44c4-acac-dc376605befa"
+  ],
+  "jcr:created": "Thu Jun 29 2023 20:57:44 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 29 2023 20:57:46 GMT+0000",
+  "cq:lastModified": "Thu Jun 29 2023 20:45:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "136982d6-459c-44c4-acac-dc376605befa",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "aa95fa83-ec82-489d-9f54-5462522d7ef8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Thu Jun 29 2023 20:44:51 GMT+0000",
+      "alt": "InSpace_patient-testimonial_banner",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/InSpace_patient-testimonial_banner.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 29 2023 20:45:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

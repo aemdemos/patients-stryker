@@ -1,0 +1,463 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Driven by Evidence | Target Tetra Detachable Coil",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "709d508b-fbd9-4218-8b69-fb8ea0ac8c8b",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "75e75cc8-f606-4338-b135-f1cf3994d305"
+  ],
+  "contentID": "AP004712 v1.0",
+  "lastPublished": "Fri Nov 08 2024 21:16:56 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 08 2024 21:16:57 GMT+0000",
+  "cq:lastReplicated": "Fri Nov 08 2024 21:16:59 GMT+0000",
+  "cq:lastModified": "Fri Nov 08 2024 21:16:33 GMT+0000",
+  "jcr:description": "Learn more about the retrospectively reviewed post-procedural angiographic and clinical results of 41 patients with 46 aneurysms (45 unruptured and 1 ruptured), who underwent the coil embolization of intracranial aneurysms sized ≤10mm with Target Tetra Detachable Coils between April and May 2023.",
+  "jcr:baseVersion": "75e75cc8-f606-4338-b135-f1cf3994d305",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Nov 04 2024 22:26:06 GMT+0000",
+  "jcr:lastModified": "Mon Nov 04 2024 17:08:58 GMT+0000",
+  "jcr:uuid": "764c7f2a-c5dc-4ea4-8b11-282e2179e572",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy__1897644364": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "layoutOptions": "50_top",
+      "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target-Tetra--Detachable-coil--Hero.jpg",
+      "jcr:created": "Fri Feb 18 2022 19:10:06 GMT+0000",
+      "alt": "Target Tetra: Detachable Coil",
+      "jcr:lastModified": "Thu Oct 31 2024 13:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "jcr:lastModified": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+        "jcr:lastModified": "Wed Oct 30 2024 20:22:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "text_copy": {
+            "jcr:primaryType": "nt:unstructured",
+            "bottomPadding": ".5",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "3",
+            "topPadding": "2",
+            "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "30",
+            "topMargin": "3",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Target Tetra<sup>®</sup> Detachable Coil study results</span><span class=\"fontsize-2-5em\"><br>\n </span></span></p>\n",
+            "jcr:lastModified": "Fri Nov 08 2024 21:16:33 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "rightPadding": "3",
+            "backgroundColor": "rgba(255,181,0,1)",
+            "textIsRich": "true",
+            "bottomMargin": "4"
+          },
+          "text_copy_1654321463": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "30",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">A big deal for small spaces</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">This study retrospectively reviewed the medical records of 41 patients with 46 aneurysms (45 unruptured and 1 ruptured), who underwent the coil embolization of&nbsp;intracranial aneurysms sized ≤10mm with&nbsp;Target Tetra Detachable Coils between April&nbsp;and May 2023. Post-procedural angiographic and clinical results were reviewed.</span></span></p>\n",
+            "jcr:lastModified": "Mon Nov 04 2024 17:05:32 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "textIsRich": "true"
+          },
+          "buttonset": {
+            "jcr:primaryType": "nt:unstructured",
+            "buttonSeriesColors": "rgba(255,181,0,1)",
+            "jcr:createdBy": "darek.jansen1@stryker.com",
+            "buttonAlignment": "horizontal-alignment align-left",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "jcr:created": "Wed Oct 30 2024 19:59:02 GMT+0000",
+            "jcr:lastModified": "Thu Oct 31 2024 15:50:47 GMT+0000",
+            "sling:resourceType": "stryker/components/content/buttonset",
+            "buttonSetList": {
+              "jcr:primaryType": "nt:unstructured",
+              "item0": {
+                "jcr:primaryType": "nt:unstructured",
+                "buttonColor": "rgb(255,181,0)",
+                "externalLink": "https://pubmed.ncbi.nlm.nih.gov/39201082/",
+                "buttonText": "View Full Study",
+                "externalLinkType": "ext"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Oct 30 2024 20:42:38 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2024 20:42:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_693203974": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:33:48 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:33:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:33:56 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary endpoints:</span></span></p>\n<p><span class=\"fontsize-1-5em\">Immediate aneurysm complete occlusion rate (Raymond scale)</span></p>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 13:39:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:33:56 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Secondary endpoints:</span></span></p>\n<p><span class=\"fontsize-1-5em\">Angiographic complete occlusion rate at first follow-up (Raymond scale), recanalization and retreatment rates, and device or procedure-related complications</span></p>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 15:41:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:27:53 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:27:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Oct 31 2024 13:28:03 GMT+0000",
+          "alt": "Target Tetra:  41 patients; mean age: 63 years old; 76% femail",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -41 years -mean age.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 13:29:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Oct 31 2024 13:28:03 GMT+0000",
+          "alt": "Target Tetra: 46 aneurysms; 3.6% ruptured",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -46 aneurysms ruptured.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 13:31:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Oct 31 2024 13:28:03 GMT+0000",
+          "alt": "Target Tetra: 28% simple coil vs 72% coil-stent",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -28 Simple Coil vs coil stent.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 13:32:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Oct 31 2024 13:28:03 GMT+0000",
+          "alt": "Target Tetra: 7.9 months avg follow-up (34.7% packing density)",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -7.9 Months.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 13:33:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_1189661857": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:58:40 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:58:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1232925048": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Oct 30 2024 20:44:03 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Results are in</span></span></p>\n",
+      "jcr:lastModified": "Thu Oct 31 2024 12:47:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 12:47:17 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 12:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Oct 31 2024 12:47:31 GMT+0000",
+          "alt": "Target Tetra: 89.1 percent Raymond 1 and 2, post-operative",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -89.1-percent 1 and 2 post-operative.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 12:56:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Oct 31 2024 13:28:03 GMT+0000",
+          "alt": "Target Tetra: 93% complete occlusion at 6-12 months follow-up",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -93-percent occlusion1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 31 2024 13:30:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 31 2024 12:58:57 GMT+0000",
+      "alt": "Target Tetra: 0 Device or procedure-related complications; 0 Recanalization; 0 Retreatment",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-tetra/STR NV -Target Tetra -0 complications.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 31 2024 13:00:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols_1183321848_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:48:11 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:48:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:48:20 GMT+0000",
+          "text": "<p>&nbsp; &nbsp;</p>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 13:48:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:03:01 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Discover the Target Tetra Detachable Coil</span></span></p>\n",
+      "jcr:lastModified": "Thu Oct 31 2024 17:30:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "buttonset": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(255,181,0,1)",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:03:54 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 14:40:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgb(255,181,0)",
+          "internalLink": "/content/stryker/us/en/neurovascular/products/target-tetra.html",
+          "buttonText": "Learn More",
+          "externalLinkType": "int"
+        }
+      }
+    },
+    "cols_1183321848": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:48:11 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:48:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:48:20 GMT+0000",
+          "text": "<p>&nbsp; &nbsp;</p>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 13:48:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:04:45 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:04:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu Oct 31 2024 13:04:56 GMT+0000",
+      "jcr:lastModified": "Thu Oct 31 2024 13:04:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:05:11 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Target Tetra Detachable Coil</span></span></p>\n<p><b>See package insert for complete indications, contraindications, warnings and instructions for use.</b></p>\n<p><span class=\"futura-bold\">RX ONLY</span></p>\n<p><span class=\"futura-bold\">Indications for use</span></p>\n<p>Target Detachable Coils are intended to endovascularly obstruct or occlude blood&nbsp;flow in vascular abnormalities of the neurovascular and peripheral vessels.</p>\n<p>Target Detachable Coils are indicated for endovascular embolization of:</p>\n<ul>\n<li>Intracranial aneurysms</li>\n<li>Other neurovascular abnormalities such as arteriovenous malformations and&nbsp;arteriovenous fistulae</li>\n<li>Arterial and venous embolizations in the peripheral vasculature</li>\n</ul>\n<p><span class=\"futura-bold\">Contraindications</span></p>\n<p>None known.</p>\n<p><span class=\"futura-bold\">Potential adverse events</span></p>\n<p>Potential complications include, but are not limited to: allergic reaction, aneurysm&nbsp;perforation and rupture, arrhythmia, death, embolus, headache, hemorrhage,&nbsp;infection, ischemia, neurological/intracranial sequelae, transient ischemic attack (TIA)/stroke, vasospasm, vessel occlusion or closure, vessel perforation and&nbsp;rupture, vessel dissection, vessel thrombosis, other procedural complications&nbsp;including but not limited to: anesthetic and contrast media risks, hypertension and hypotension, access site complications.</p>\n<p>Any serious product-related incidents should be reported to both Stryker&nbsp;Neurovascular and a competent authority or equivalent regulatory authority,&nbsp;where the user and/or patient is established. Please make every attempt to retain any suspect device, its associated components and their packaging for return to Stryker Neurovascular.</p>\n<p><span class=\"futura-bold\">Warnings</span></p>\n<ul>\n<li>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</li>\n<li>For single use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing&nbsp;or resterilization may compromise the structural integrity of the device and/&nbsp;or lead to device failure which, in turn, may result in patient injury, illness&nbsp;or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection,&nbsp;including, but not limited to, the transmission of infectious disease(s) from one&nbsp;patient to another. Contamination of the device may lead to injury, illness or death of the patient.</li>\n<li>After use, dispose of product and packaging in accordance with hospital, administrative and/or local government policy. Used product and any&nbsp;associated used materials should be handled and processed as biohazardous&nbsp;material.</li>\n<li>This device should only be used by physicians who have received appropriate&nbsp;training in interventional neuroradiology or interventional radiology.</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 13:10:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:10:08 GMT+0000",
+          "text": "<ul>\n<li>Patients with hypersensitivity to 316LVM stainless steel may suffer an allergic reaction to this implant.</li>\n<li>MR temperature testing was not conducted in arteriovenous malformations or fistulae models.</li>\n<li>The safety and performance characteristics of the Target Detachable Coil&nbsp;System (Target Detachable Coils, InZone Detachment System, delivery systems&nbsp;and accessories) have not been demonstrated with other manufacturers’ devices (whether coils, coil delivery devices, coil detachment systems,&nbsp;catheters, guidewires, and/or other accessories). Due to the potential incompatibility of non-Stryker Neurovascular devices with the Target Detachable Coil System, the use of other manufacturers’ device(s) with the Target Detachable Coil System is not recommended.</li>\n<li>To reduce risk of coil migration, the diameter of the first and second coil should never be less than the width of the ostium.</li>\n<li>In order to achieve optimal performance of the Target Detachable Coil System and to reduce the risk of thromboembolic complications, it is critical that a continuous infusion of appropriate flush solution be maintained between a) the femoral sheath and Guide Catheter or Long Sheath, b) the 2-tip microcatheter and Guide Catheter or Long Sheath, and c) the 2-tip microcatheter and guidewire and delivery wire. Continuous flush also reduces the potential for&nbsp;thrombus formation on, and crystallization of infusate around, the detachment&nbsp;zone of the Target Detachable Coil.</li>\n<li>Do not use the product after the “Use By” date specified on the package.</li>\n<li>Reuse of the packaging hoop or use with any coil other than the original coil may result in contamination of, or damage to, the coil.</li>\n<li>Damaged delivery wires may cause detachment failures, vessel injury or unpredictable distal tip response during coil deployment. If a delivery wire is&nbsp;damaged at any point during the procedure, do not attempt to straighten or&nbsp;otherwise repair it. Do not proceed with deployment or detachment. Remove the entire coil and replace with undamaged product.</li>\n<li>Utilization of damaged coils may affect coil delivery to, and stability inside, the&nbsp;vessel or aneurysm, possibly resulting in coil migration and/or stretching.</li>\n<li>The fluoro-saver marker is designed for use with a Rotating Hemostatic Valve (RHV). If used without an RHV, the distal end of the coil may be beyond the alignment marker when the fluoro-saver marker reaches the microcatheter hub.</li>\n<li>If the fluoro-saver marker is not visible, do not advance the coil without fluoroscopy.</li>\n<li>Do not rotate the delivery wire during or after delivery of the coil. Rotating&nbsp;the Target Detachable Coil delivery wire may result in a stretched coil or premature detachment of the coil from the delivery wire, which could result in&nbsp;coil migration.</li>\n<li>Verify there is no coil loop protrusion into the parent vessel after coil placement and prior to coil detachment. Coil loop protrusion after coil placement may result in thromboembolic events if the coil is detached.</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 13:11:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Oct 31 2024 13:10:08 GMT+0000",
+          "text": "<ul>\n<li>Verify there is no movement of the coil after coil placement and prior to coil detachment. Movement of the coil after coil placement may indicate that the coil could migrate once it is detached.</li>\n<li>Failure to properly close the RHV compression fitting over the delivery wire before attaching the InZone Detachment System could result in coil movement, aneurysm rupture or vessel perforation.</li>\n<li>Verify repeatedly that the distal shaft of the catheter is not under stress before detaching the Target Detachable Coil. Axial compression or tension forces could be stored in the 2-tip microcatheter causing the tip to move during coil delivery. Microcatheter tip movement could cause the aneurysm or vessel to rupture.</li>\n<li>Advancing the delivery wire beyond the microcatheter tip once the coil has&nbsp;been detached involves risk of aneurysm or vessel perforation.</li>\n<li>The long-term effect of this product on extravascular tissues has not been established so care should be taken to retain this device in the intravascular space.</li>\n</ul>\n<p><span class=\"futura-bold\">Cautions / precautions</span></p>\n<ul>\n<li>Federal Law (USA) restricts this device to sale by or on the order of a physician.</li>\n<li>Besides the number of InZone Detachment System units needed to complete the case, there must be an extra InZone Detachment System unit as back-up.</li>\n<li>Removing the delivery wire without grasping the introducer sheath and&nbsp;delivery wire together may result in the detachable coil sliding out of the&nbsp;introducer sheath.</li>\n<li>Failure to remove the introducer sheath after inserting the delivery wire into&nbsp;the RHV of the microcatheter will interrupt normal infusion of flush solution and allow back flow of blood into the microcatheter.</li>\n<li>Some low-level overhead light near or adjacent to the patient is required to visualize the fluoro-saver marker; monitor light alone will not allow sufficient visualization of the fluoro-saver marker.</li>\n<li>Advance and retract the Target Detachable Coil carefully and smoothly without excessive force. If unusual friction is noticed, slowly withdraw the Target Detachable Coil and examine for damage. If damage is present, remove and use a new Target Detachable Coil. If friction or resistance&nbsp;is still noted, carefully remove the Target Detachable Coil and microcatheter and examine the microcatheter for damage.</li>\n<li>If it is necessary to reposition the Target Detachable Coil, verify under fluoroscopy that the coil moves with a one-to-one motion. If the coil does not move with a one-to-one motion or movement is difficult, the coil may have stretched and could possibly migrate or break. Gently remove both the coil and microcatheter and replace with new devices.</li>\n<li>Increased detachment times may occur when:<br>\n– Other embolic agents are present.<br>\n– Delivery wire and microcatheter markers are not properly aligned.<br>\n– Thrombus is present on the coil detachment zone.</li>\n<li>Do not use detachment systems other than the InZone Detachment System, M00345100950.</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Oct 31 2024 15:42:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_881161982": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Oct 31 2024 13:17:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Kim, W.; Jee, T.K.; Yeon, J.Y.; Kim, K.H.; Kim, J.-S.; Jeon, P. Endovascular Embolization of Intracranial Aneurysms Using Target Tetra Detachable Coils: Angiographicand Clinical Results from a Single Center. J. Clin. Med. 2024, 13, 4940. https://doi.org/10.3390/jcm13164940</p>\n<p>A physician must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that physicians be trained in the use of any particular product before using it in a procedure. The information presented is intended to demonstrate the breadth of Stryker product offerings. A physician must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.</p>\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: Stryker, Target, Target Tetra. All other trademarks are trademarks of their respective owners or holders.</p>\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\n",
+      "jcr:lastModified": "Thu Oct 31 2024 15:43:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

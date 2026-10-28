@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b129b0f9-dbc0-45e0-a863-e283464b194c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "20750842-28b5-476f-9e28-8bbfcc7aa68c"
+  ],
+  "jcr:created": "Fri Mar 01 2024 14:29:13 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 01 2024 14:29:15 GMT+0000",
+  "cq:lastModified": "Fri Mar 01 2024 14:29:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "20750842-28b5-476f-9e28-8bbfcc7aa68c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "7575c618-8944-487c-92ce-b765c1230c70",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage M-Care for meatal cleansing cloths for Foley-catheterized patients",
+      "srcFileRef": "/content/dam/stryker/sage/products/m-care/images/Sage-M-Care-Thumbnail.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Mar 01 2024 14:29:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

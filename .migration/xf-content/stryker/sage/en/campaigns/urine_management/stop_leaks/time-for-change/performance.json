@@ -1,0 +1,128 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Performance",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "48033ad8-da4e-4c6a-9c74-266739a24666",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "370a1bf2-bc15-4cae-96c4-1eb5d44bfcf7"
+  ],
+  "lastPublished": "Wed Sep 25 2024 20:57:07 GMT+0000",
+  "jcr:created": "Wed Sep 25 2024 20:57:09 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 25 2024 20:57:10 GMT+0000",
+  "cq:lastModified": "Wed Sep 25 2024 19:44:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "370a1bf2-bc15-4cae-96c4-1eb5d44bfcf7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 25 2024 20:57:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "77560936-717a-4508-91ac-d75b47cd2299",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage60237": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Thu Aug 29 2024 17:05:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage602376291960238894941": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "24 hour clock icon",
+        "srcFileRef": "/content/dam/stryker/sage/urine-management/primafit-competitor/images/24-hour-clock-icon.png",
+        "jcr:lastModified": "Wed Sep 25 2024 19:44:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "2",
+        "jcr:created": "Mon Aug 26 2024 14:34:48 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Performs up to </span><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">24 hours<sup>4</sup></span></span></span></p>\n",
+        "jcr:lastModified": "Mon Sep 09 2024 15:28:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Aug 29 2024 17:05:35 GMT+0000",
+      "alt": "long-line-separator",
+      "srcFileRef": "/content/dam/stryker/sage/urine-management/primafit-competitor/images/long-line-separator.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Aug 29 2024 17:31:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "behavior": "hide"
+        }
+      }
+    }
+  }
+}

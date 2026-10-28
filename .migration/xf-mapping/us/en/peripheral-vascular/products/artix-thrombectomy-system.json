@@ -1,0 +1,1058 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Artix Thrombectomy System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "522b2b7f-faac-40a2-b4e0-526f24ab16ea",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Artix header",
+  "jcr:predecessors": [
+    "b28903aa-c657-49f2-9b90-8e526ca110ee"
+  ],
+  "contentID": "PRO-3802-USA-EN-v1",
+  "lastPublished": "Wed Jul 29 2026 20:58:49 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 29 2026 20:58:50 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 29 2026 20:58:52 GMT+0000",
+  "cq:lastModified": "Wed Jul 29 2026 17:14:01 GMT+0000",
+  "jcr:description": "Developed from a true clinical need and shaped by direct physician feedback, Artix is a powerful, dual mechanical + aspiration solution, designed to address a broad spectrum of arterial thrombus cases.",
+  "jcr:baseVersion": "b28903aa-c657-49f2-9b90-8e526ca110ee",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 29 2026 20:58:49 GMT+0000",
+  "pageTitle": "Artix Thrombectomy System",
+  "cq:tags": [
+    "stryker:business-unit/peripheral-vascular",
+    "stryker:product/peripheral-vascular/artix",
+    "stryker:content-type/product",
+    "stryker:specialty/arterial-thrombectomy",
+    "stryker:portfolio/vascular",
+    "stryker:capability/arterial-disease",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jun 18 2026 18:35:57 GMT+0000",
+  "jcr:uuid": "68feab3b-0aa6-4e8b-980d-d1da8b7c8d9a",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_368840509_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 11 2026 19:56:09 GMT+0000",
+      "jcr:lastModified": "Thu Jun 11 2026 19:56:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Thu Jun 11 2026 20:54:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">The all-in-one advantage for arterial thrombectomy</span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 29 2026 16:49:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Artix</span></span><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-8em\">®</span></sup></span><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">&nbsp;Thrombectomy System</span></span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">All Clots</span><sup><span class=\"fontsize-1-25em\">1</span></sup><span class=\"fontsize-1-5em\">&nbsp;&nbsp;•&nbsp;&nbsp;One System&nbsp;&nbsp;•&nbsp;&nbsp;Don't Settle</span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 29 2026 16:52:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jun 11 2026 19:57:25 GMT+0000",
+          "CTATitle": "CONNECT WITH AN EXPERT",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Thu Jun 11 2026 19:57:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 13 2025 17:50:06 GMT+0000",
+          "alt": "Artix Thrombectomy System",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix header v3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 10 2026 19:31:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Jun 12 2026 21:07:48 GMT+0000",
+      "jcr:lastModified": "Fri Jun 12 2026 21:07:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Fri Jun 12 2026 21:08:16 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Tue Jun 30 2026 17:30:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy_1556500459": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Overview</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 21:58:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "0"
+    },
+    "cols_1543404669_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 20:02:59 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 20:02:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Purpose-built for arterial</span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Developed from a true clinical need and shaped by direct physician feedback, Artix is a powerful, dual mechanical + aspiration solution, designed to address a broad spectrum of arterial thrombus cases.</span></p>\n",
+          "jcr:lastModified": "Mon Jul 20 2026 21:52:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Exceptional treatment flexibility &amp; control</span></span></span></h2>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Dual mechanical thrombectomy and aspiration toolkit</b> designed to remove acute to chronic clots.<sup>1</sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Low profile, trackable, kink-resistant sheath <b>expands treatment options.&nbsp;</b></span></li>\n<li><span class=\"fontsize-1-25em\"><b>Over-the-wire mechanical element</b> that enables controlled access and precise device handling.&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Covered funnel catheter provides <b>proximal flow restriction</b> to assist in the ingestion of thrombi during thrombectomy.&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Jul 20 2026 21:52:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_767070945": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "pedro.escobedo@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed May 27 2026 15:12:50 GMT+0000",
+          "alt": "Artix arterial system",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix-System-Components.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 10 2026 19:32:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_712828153": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "system-components",
+      "jcr:created": "Fri Jun 12 2026 21:15:10 GMT+0000",
+      "title": "System components",
+      "jcr:lastModified": "Tue Jun 30 2026 17:30:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">System components</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 21:58:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "0"
+    },
+    "cols_1543404669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Jun 12 2026 21:15:50 GMT+0000",
+      "jcr:lastModified": "Mon Jul 20 2026 18:55:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "jcr:lastModified": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-75em\">Covered Funnel Catheter</span></span></span></h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Ultimate control</span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:05:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jun 12 2026 21:31:39 GMT+0000",
+          "jcr:lastModified": "Fri Jun 12 2026 21:31:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 21:32:41 GMT+0000",
+              "alt": "Covered Funnel Catheter",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix Carousel 3 v2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Jul 10 2026 19:34:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "4",
+              "topMargin": "3.5",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A)&nbsp;</span><span style=\"color: rgb(255, 181, 0);\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Covered nitinol mesh funnel </span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\">is designed to restrict flow to aid in thrombus ingestion and extraction</span></span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">B)&nbsp;<span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Artix Thin-Walled Sheath</span></span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:08:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "4"
+            }
+          }
+        },
+        "cols2_2_3_1_3_copy_c_596532847": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "jcr:lastModified": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Fri Jun 12 2026 23:05:14 GMT+0000",
+              "text": "<p><span class=\"fontsize-8em\">*According to benchtop testing compared to control. Internal data on file.</span></p>\n<p><span class=\"fontsize-8em\"><b>Note:</b> To attempt to minimize risk of arterial embolization of blood clots, use of a device that entraps clots may potentially be helpful, but this has not yet been demonstrated to be effective in the arterial system.</span></p>\n",
+              "jcr:lastModified": "Fri Jun 12 2026 23:06:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_666558154": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jun 15 2026 20:11:34 GMT+0000",
+          "jcr:lastModified": "Mon Jun 15 2026 20:11:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Artix AX </span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span style=\"color: #85458a;\">Aspiration Catheter</span></span></span></span></h4>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:06:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_copy_copy_copy__795026711": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "4",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A)&nbsp;</span><span style=\"color: rgb(255, 181, 0);\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">8Fr beveled tip</span></span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">B)&nbsp;<span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Artix Thin-Walled Sheath</span></span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:08:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "4"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 21:28:39 GMT+0000",
+              "alt": "Artix AX Aspiration Catheter",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix Carousel 4 v6.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Jul 13 2026 20:58:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy__854096903": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #85458a;\">Aspiration flow rates (cc/s)*</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">70% faster aspiration flow rates*</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><b>Artix</b> flow rates outpace the competition, using the <b>Artix AX</b> Aspiration Catheter or <b>Artix</b> Thin-Walled Sheath.</span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 01 2026 13:58:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "textIsRich": "true"
+            },
+            "animatedbarchart": {
+              "jcr:primaryType": "nt:unstructured",
+              "chartTitleLocation": "Top",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "chartTitleAlignment": "Left",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "chartSeriesItemColors": "rgb(133,69,138)|rgb(28,86,135)|rgb(76,125,122)",
+              "chartHeight": "0",
+              "categoryNameInTooltip": "true",
+              "numberType": "Currency",
+              "jcr:created": "Fri Jun 12 2026 22:38:27 GMT+0000",
+              "yAxisMinValue": "0",
+              "hideDataLabels": "true",
+              "currency": "AUD $",
+              "valueInTooltip": "true",
+              "jcr:lastModified": "Wed Jul 01 2026 13:56:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/animatedbarchart",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "chartType": "Column",
+              "chartSeries": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "chartSeriesItemCategory": "Penumbra Indigo",
+                  "chartSeriesItemColor": "rgb(133,69,138)",
+                  "chartSeriesItemValue": "5.2",
+                  "chartSeriesShowCategory": "true"
+                },
+                "item1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "chartSeriesItemCategory": "Artix AX Catheter (8F)",
+                  "chartSeriesItemColor": "rgb(28,86,135)",
+                  "chartSeriesItemValue": "7.45",
+                  "chartSeriesShowCategory": "true"
+                },
+                "item2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "chartSeriesItemCategory": "Artix Thin-Walled Sheath",
+                  "chartSeriesItemColor": "rgb(76,125,122)",
+                  "chartSeriesItemValue": "17.38",
+                  "chartSeriesShowCategory": "true"
+                }
+              }
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Mon Jun 15 2026 20:13:23 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">5.2</span></span> <span class=\"urw-egyptienne\">| Penumbra Indigo | CAT</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">87.45</span></span> <span class=\"urw-egyptienne\">| Artix AX Catheter (8F) with 0.035&quot; wire</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">17.38</span></span> <span class=\"urw-egyptienne\">| Artix Thin-Walled Sheath with 0.035&quot; wire</span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 01 2026 13:59:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_230293208": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Mon Jul 13 2026 20:58:57 GMT+0000",
+              "text": "<p><span class=\"fontsize-8em\">*Benchtop testing. Data on file. Artix Thin-Walled Sheath vs. Penumbra Indigo CAT 8 continuous aspiration catheter (included catheter and 8’ tubing under continuous pump-based aspiration)&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Jul 13 2026 20:59:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "jcr:lastModified": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Artix MT </span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span style=\"color: #85458a;\">Mechanical Thrombectomy Device</span></span></span></span></h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Broad treatment range</span></span></p>\n<p><span class=\"fontsize-1-25em\">2 sizes increase options for above and below the knee thrombus</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">3-6 mm vessels</span></li>\n<li><span class=\"fontsize-1-25em\">4-8 mm vessels</span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:06:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jun 12 2026 21:31:35 GMT+0000",
+          "jcr:lastModified": "Fri Jun 12 2026 21:31:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 21:32:41 GMT+0000",
+              "alt": "Artix MT Mechanical Thrombectomy Device",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix Carousel 2 v3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Jul 13 2026 20:45:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "4",
+              "topMargin": "3.5",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A)&nbsp;</span><span style=\"color: rgb(255, 181, 0);\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Offset mouth </span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\">for optimized clot capture</span></span><span class=\"futura-bold\"><span style=\"color: #85458a;\"></span></span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">B)&nbsp;<span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Designed to collect and retrieve </span></span></span></span><span class=\"fontsize-1-25em\">acute-to-chronic clot&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">C) <span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Laser-cut element </span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #000000;\">featuring internal struts&nbsp;</span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">D) <span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Expandable distal segment </span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #000000;\">designed to aid element cleaning</span></span><span style=\"color: #000000;\">&nbsp;</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:09:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "4"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "jcr:lastModified": "Thu Jun 11 2026 19:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">Artix </span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span style=\"color: #85458a;\">Thin-Walled Sheath</span></span></span></span></h4>\n<p><span class=\"fontsize-1-25em\">Aspiration-capable, ultralow profile hydrophilic, 8 Fr</span></p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:06:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jun 12 2026 21:31:31 GMT+0000",
+          "jcr:lastModified": "Fri Jun 12 2026 21:31:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "4",
+              "topMargin": "3.5",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">A)&nbsp;<span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Enhanced trackability and kink resistance</span>&nbsp;</span></span></span><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">for an up-and-over arterial thrombectomy approach</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">B)&nbsp;<span style=\"color: #85458a;\">Hydrophilic coating</span> </span>for smooth insertion&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #000000;\">C)</span>&nbsp;Two lengths expand treatment flexibility</span>&nbsp;</span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">65cm and 90cm&nbsp;</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:08:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "4"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 21:32:41 GMT+0000",
+              "alt": "Artix Thin-Walled Sheath",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix Carousel 1-1 v3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Jul 13 2026 20:40:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jun 12 2026 22:23:30 GMT+0000",
+          "jcr:lastModified": "Fri Jun 12 2026 22:23:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jun 12 2026 21:31:31 GMT+0000",
+          "jcr:lastModified": "Fri Jun 12 2026 21:31:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "4",
+              "topMargin": "3.5",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A) <span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">8Fr sheath with a 7Fr access profile</span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Jul 29 2026 17:08:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "4"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 21:32:41 GMT+0000",
+              "alt": "Artix Thin-Walled Sheath",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/Artix Carousel 1-2 v2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Jul 10 2026 19:33:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 15:34:24 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 15:34:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jun 12 2026 22:39:59 GMT+0000",
+              "alt": "FlowSaver Blood Return System",
+              "srcFileRef": "/content/dam/stryker/peripheral-vascular/products/artix/images/FlowSaver- no inari - logo.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Jul 10 2026 19:34:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "7",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "12",
+              "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">FlowSaver</span><br>\n </span></span></span><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Blood Return System</span></span></p>\n<p><span class=\"fontsize-1-25em\">The only thrombectomy system with<span class=\"futura-bold\"> <span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">intraprocedural blood return</span></span></span></span></p>\n",
+              "jcr:lastModified": "Tue Jun 30 2026 15:21:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "7",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Artix MT Mechanical Thromboectomy Device"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Artix Thin-Walled Sheath"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Covered Funnel Catheter"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "Artix AX Aspiration Catheter"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "Compatible with FlowSaver"
+        }
+      }
+    },
+    "section_title_94560578": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "clinical-support-and-evidence",
+      "jcr:created": "Fri Jun 12 2026 21:34:06 GMT+0000",
+      "title": "Clinical evidence",
+      "jcr:lastModified": "Tue Jun 30 2026 17:32:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy_1044571641": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Clinical evidence</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 21:58:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1543404669_copy_1690922773": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 02 2026 22:09:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">ArtixASCEND Study</span></span></p>\n<p><span class=\"fontsize-1-25em\">The first prospective registry of Artix for the treatment of acute lower extremity arterial occlusions.</span></p>\n",
+      "jcr:lastModified": "Wed Jul 29 2026 17:14:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols_1005524200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jun 18 2026 18:30:34 GMT+0000",
+      "jcr:lastModified": "Thu Jun 18 2026 18:30:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/peripheral-vascular/products/artix/resources/ArtixASCEND Overview.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Jul 13 2026 20:27:16 GMT+0000",
+          "CTATitle": "Learn more",
+          "jcr:lastModified": "Mon Jul 13 2026 20:27:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu Jun 11 2026 19:58:05 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Tue Jun 30 2026 17:32:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy_950021759": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Contact</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 21:58:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1543404669_copy_659824527": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_2_3_1_3_202655": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Apr 02 2026 14:33:16 GMT+0000",
+      "jcr:lastModified": "Thu Apr 02 2026 14:33:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1739583688_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Apr 02 2026 14:03:34 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Contact</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Connect with an expert</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Apr 02 2026 14:35:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "5061",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Apr 02 2026 14:35:41 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue Jun 16 2026 14:37:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 16:07:34 GMT+0000",
+          "text": "Follow us on social media Engage with us on social media to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more. LinkedIn Instagram YouTube Vumedi",
+          "jcr:lastModified": "Thu Jun 18 2026 16:08:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/peripheral_vascular/en/contact/social-media/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/peripheral-vascular/en/contact/social-media/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/peripheral-vascular/products/artix/images/PV-products-Artix-thumbnail.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 12 2026 21:00:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Jun 12 2026 21:01:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 12 2026 21:01:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 12 2026 21:01:10 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 12 2026 21:01:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 12 2026 21:01:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References&nbsp;</b></p>\r\n<ol>\r\n<li>Designed to remove acute to chronic arterial clots. According to benchtop testing compared to control. Internal data on file. Narula et al. JACC 2018;72:2153-63&nbsp;</li>\r\n<li>According to benchtop testing compared to control. Internal data on file.&nbsp;</li>\r\n<li>Benchtop testing. Data on file. Artix Thin-Walled Sheath vs. Penumbra Indigo CAT 8 continuous aspiration catheter (included catheter and 8’ tubing under continuous pump-based aspiration).&nbsp;</li>\r\n</ol>\r\n<p><b>Indications for Use&nbsp;</b></p>\r\n<p>The Artix Thin-Walled Sheath is indicated for: (1) The non-surgical removal of emboli and thrombi from blood vessels. (2) Injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel. (3) Use as a conduit for endovascular devices. (4) Use in facilitating the insertion and guidance of an intravascular catheter into a selected blood vessel. The funnel provides temporary vascular occlusion during these and other angiographic procedures. The Artix Thin-Walled Sheath is intended for use in the peripheral vasculature. The Artix MT thrombectomy device is indicated for (1) the non-surgical removal of emboli and thrombi from a blood vessel; and (2) injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel. The Artix MT thrombectomy device is intended for use in the peripheral vasculature. The Artix AX aspiration catheter is indicated for (1) the non-surgical removal of emboli and thrombi from blood vessels; and (2) injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel. The Artix AX aspiration catheter is intended for use in the peripheral vasculature. The FlowSaver Blood Return System is used with Inari Medical catheters and sheaths for autologous blood transfusion.&nbsp;</p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and contraindications prior to use of the product.&nbsp;</p>\r\n<p>For all non-Stryker products, please refer to manufacturer Instructions for Use/Intended Purpose for complete indications for use, contraindications, warnings and precautions.&nbsp;</p>\r\n<p>Caution: Federal (USA) law restricts this device to sale by or on the order of a physician.</p>\r\n",
+    "jcr:lastModified": "Tue Jun 30 2026 15:15:55 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "348e5956-a1d5-4f0a-a1d9-aba09e1b6a21",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "93f91a6c-4db2-499c-afb7-958eae47fbfe"
+  ],
+  "lastPublished": "Tue Dec 03 2024 23:12:13 GMT+0000",
+  "jcr:created": "Tue Dec 03 2024 23:12:14 GMT+0000",
+  "cq:lastReplicated": "Tue Dec 03 2024 23:12:16 GMT+0000",
+  "cq:lastModified": "Mon Dec 02 2024 17:09:26 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "93f91a6c-4db2-499c-afb7-958eae47fbfe",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Dec 03 2024 23:12:03 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3ee4c5c3-037b-4785-94e4-0bbad737cf42",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Nov 27 2024 21:47:44 GMT+0000",
+      "alt": "Stryker employees work to build native bee houses to support local bee populations",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker's-global-volunteer-network-highlights-importance-of-volunteerism/202412-stryker-gvn-v1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Nov 27 2024 21:47:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "topMargin": "10",
+      "jcr:created": "Wed Nov 27 2024 20:00:25 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Stryker's <br />\r\n<span style=\"color: rgb(255,181,0);\">Global Volunteer Network </span>highlights importance of volunteerism</span></span></h1>\r\n",
+      "jcr:lastModified": "Wed Nov 27 2024 21:57:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 27 2024 21:49:20 GMT+0000",
+      "text": "<p>Stryker’s Global Volunteer Network is a shining example of our commitment to create a healthier world. The employee-led network facilitates volunteerism, connecting passionate employees with nonprofits in need.&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Why it’s important</span></span></p>\n<p>Nonprofits thrive on community generosity. Our Global Volunteer Network bridges the gap, enabling employees to share their skills and time to strengthen communities around the world.</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Dec 02 2024 16:57:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 27 2024 21:52:25 GMT+0000",
+      "jcr:lastModified": "Wed Nov 27 2024 23:21:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 27 2024 21:53:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">If there’s one thing we know about Stryker employees, it’s that they are driven by purpose.</span></span></p>\n<p>This goes for Stryker’s mission to make healthcare better, but extends beyond our jobs, too. <a href=\"/content/stryker/us/en/about/news/features/driven-to-give--three-ways-stryker-employees-are-giving-back.html\">Our employees are passionate about supporting their local communities</a>—making them healthier, cleaner and more vibrant. This is why we created our Global Volunteer Network.</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:17:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        },
+        "text_976467124": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 27 2024 21:57:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\">Impactful fact</span></span></span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">In 2023 alone, our employees logged 22,500 volunteer hours.<sup>1</sup></span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:14:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true"
+        },
+        "text_1782501881": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 27 2024 22:02:08 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1em\"><span class=\"fontsize-8em\">What is Stryker’s Global Volunteer Network?</span></span></span></h2>\n<p>The Global Volunteer Network is an employee-led network that scales volunteering across the globe, connecting passionate employees with nonprofits in need. They empower employees to positively impact their communities through volunteerism. Their goal of creating a healthier world through volunteerism aligns perfectly with our mission to make healthcare better. To achieve this, our Global Volunteer Network works together with <a href=\"https://www.visit.org/\" target=\"_blank\">Visit.org</a>, a social impact partner that connects companies with nonprofit organizations through immersive team experiences. Together, we create a diverse range of volunteer opportunities, both virtual and in-person, empowering our employees to contribute to communities around the globe. &nbsp;</p>\n<p>“The Global Volunteer Network reinforces our culture of giving and caring for one another,” says Anita Mehta, director of social impact at Stryker. “It’s terrific to see the spirit of volunteerism thriving within our organization and to see the impact that technology can have on connecting employees with meaningful volunteer opportunities.”</p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">How Stryker employees are making an impact through volunteerism</span></span></h2>\n<p>Creating care packages for hospitalized children. Setting girls up for academic success with educational STEM kits. Building native bee houses to support local bee populations. These are just some of the impactful volunteer opportunities that our employees have found through the Global Volunteer Network. “By providing volunteer events near me, the Global Volunteer Network makes it simple to get plugged into some amazing, difference-making opportunities,” one Stryker employee said.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2024 17:09:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage41733_63057440": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Backpack",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker's-global-volunteer-network-highlights-importance-of-volunteerism/icon-backpack.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 27 2024 22:44:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "2"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "3",
+              "width": "4",
+              "behavior": "newline"
+            }
+          }
+        },
+        "text_738133747": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 27 2024 22:39:35 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\"><span style=\"color: #1c5687;\">Empowering and engaging with youth in Costa Rica</span></span></span></h3>\n<p>70 Stryker employees and 42 Stryker guests participated in a 2-hour volunteer experience, engaging with 105 children through learning and play. By partnering with Glasswing International Costa Rica, a nonprofit that aims to address the root causes of poverty and violence through education, health, and community empowerment, Stryker contributed to enriching the Peninsula Papagayo community.</p>\n<p>Participants fostered meaningful connections with local youth through fun games and activities and provided tangible resources by packing 130 individual hygiene kits, as well as school supplies for two schools, including soap, disinfect, paper toilets and books. “It was a great day,” one employee said. “The kids were adorable! One of the children commented, ‘This is the best day of my life!’”</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:05:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8",
+              "behavior": "none"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10",
+              "behavior": "none"
+            }
+          }
+        },
+        "standaloneimage41737": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Hospital",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker's-global-volunteer-network-highlights-importance-of-volunteerism/icon-hospital.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 27 2024 22:50:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "2",
+              "behavior": "newline"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "3",
+              "width": "4"
+            }
+          }
+        },
+        "text_531283438": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 27 2024 22:41:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\"><span style=\"color: #85458a;\">Creating care packages for hospitalized children</span></span></span></h3>\n<p>130 employees in New Jersey and Michigan created over 250 care packages for hospitalized children for the Happy Hope Foundation, a nonprofit committed to supporting children impacted by health and safety crises. The care packages are disseminated to hospitals in the local community.&nbsp;</p>\n<p>“My younger son had 3 surgeries between the ages of 1 and 5,” a New Jersey employee said. “I remember looking for things to make his stay in the hospital fun and not scary. This was a great moment for me to remember our time together!”</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:05:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8",
+              "behavior": "none"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10",
+              "behavior": "newline"
+            }
+          }
+        },
+        "standaloneimage_1720": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Beehive",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker's-global-volunteer-network-highlights-importance-of-volunteerism/icon-beehive.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 27 2024 22:51:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "2",
+              "behavior": "newline"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "3",
+              "width": "4"
+            }
+          }
+        },
+        "text_1443359991": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 27 2024 22:42:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\"><span style=\"color: #ffb500;\">Building native bee houses to support local bee populations</span></span></span></h3>\n<p>From California to New Jersey, many teams across the U.S. are passionate about supporting Planet Bee Foundation, a nonprofit that is dedicated to creating a green-minded generation by teaching people about the importance of bees as a pathway to STEM, conservation and innovations in agriculture. Teams learn about the significance of native bees, how to identify local bee species and how to assemble native bee houses to help sustain local wildlife in their community.</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:05:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10"
+            }
+          }
+        },
+        "text_300380848": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 27 2024 22:42:49 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">The virtuous cycle continues</span></span></h2>\n<p>Whether it’s related to healthcare, education, disaster relief or environmental sustainability, opportunities to make an impact are everywhere. Fortunately, Stryker employees are everywhere, too—across North America and around the world – ready to participate in volunteer work in the community.&nbsp;</p>\n<p>Time and time again, our Global Volunteer Network shows us that when you give people accessible opportunities to give back, they’ll take them enthusiastically. This creates a virtuous cycle where people grow stronger personally and professionally, the planet benefits from sustainable practices and our communities thrive because we’re committed to doing good.</p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 22:43:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_708749255": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 27 2024 23:10:23 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-8em\"><b>Reference</b></span></p>\n<p><span class=\"fontsize-8em\">1. Data on file with Stryker. &nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Nov 27 2024 23:13:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Read full article"
+        }
+      }
+    }
+  }
+}

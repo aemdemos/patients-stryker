@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5dee0e6b-2288-4f85-aac0-2dba88b26c26",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9fe35e0b-e119-4bca-a44e-2c0bc7286b91"
+  ],
+  "lastPublished": "Mon Jun 10 2024 20:27:58 GMT+0000",
+  "jcr:created": "Mon Jun 10 2024 20:28:00 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 10 2024 20:28:02 GMT+0000",
+  "cq:lastModified": "Mon Jun 03 2024 14:56:43 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9fe35e0b-e119-4bca-a44e-2c0bc7286b91",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 10 2024 20:27:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "9b73ad03-c9bc-4de1-bb06-baa34336c912",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed May 29 2024 19:00:38 GMT+0000",
+      "alt": "Employees stand in front of Stryker Global Technology Centre",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker-boosts-innovation--r-d-expands-with-medical-device-testing-facility/India testing lab mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 03 2024 14:56:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Kevin Lobo",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "01e9b5a5-9463-4cfe-9566-259e72954c00",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hidePublicationDate": "true",
+  "jcr:predecessors": [
+    "7505ca17-013c-40d2-9790-02960afde0ee"
+  ],
+  "lastPublished": "Mon Apr 06 2026 21:43:39 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 06 2026 21:43:39 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 06 2026 21:43:41 GMT+0000",
+  "cq:lastModified": "Mon Apr 06 2026 19:01:29 GMT+0000",
+  "jcr:baseVersion": "7505ca17-013c-40d2-9790-02960afde0ee",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:00:18 GMT+0000",
+  "pageTitle": "Kevin Lobo",
+  "jcr:lastModified": "Mon Apr 06 2026 19:01:29 GMT+0000",
+  "jcr:uuid": "f0234c2b-2ec9-45c0-8d0b-fcc839e8342d",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Kevin Lobo",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_998696161": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_805636421": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
+      "text": "Kevin Lobo Chair and CEO Kevin has been CEO of Stryker since October 1, 2012, and also assumed the role of Chair of the Board on July 22, 2014. He had previously been Group President of Orthopaedics. Since he joined the company in 2011, Stryker has completed more than 60 acquisitions and advanced innovation and global market presence. Kevin serves on the Boards of GE HealthCare (Nasdaq: GEHC), Parker Hannifin (NYSE: PH) and the Advanced Medical Technology Association (AdvaMed) and is also a member of the Business Council. Additionally, he serves as Chair of the Valley Health System's board of trustees in New Jersey. Prior to Stryker, he held leadership roles at Johnson & Johnson, including President of Ethicon Endo Surgery, President of J&J Medical Products Canada, and CFO roles within its consumer and women’s health divisions. Earlier in his career, he held finance and management roles at Rhone-Poulenc, including international assignments in Europe, as well as at Kraft Canada, Unilever, and KPMG. He holds a Bachelor of Commerce from McGill University, an MBA from the University of Toronto, and is a Chartered Accountant. COMM-GSNPS-SYK-3185901",
+      "jcr:lastModified": "Mon Jun 06 2022 16:01:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our_leadership/3326/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-leadership/3326/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

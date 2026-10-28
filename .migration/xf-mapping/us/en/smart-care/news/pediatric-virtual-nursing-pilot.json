@@ -1,0 +1,116 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Supporting pediatric patient care with virtual nursing",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9ceb2463-42cb-43e5-aad3-172b736866a8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Nurse in video chat with younger male patient",
+  "jcr:predecessors": [
+    "7fb11fd3-b3ef-4f3b-a590-3613c374bfe6"
+  ],
+  "contentID": "AC-GSNPS-COMM-2967922_REV-0_en_us",
+  "lastPublished": "Fri May 15 2026 15:18:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 15 2026 15:18:45 GMT+0000",
+  "cq:lastReplicated": "Fri May 15 2026 15:18:46 GMT+0000",
+  "cq:lastModified": "Wed May 13 2026 20:10:02 GMT+0000",
+  "jcr:description": "Akron Children’s Hospital launched a Virtual Nursing Pilot Project enabling virtual nurses to take on key operational responsibilities for the care team.",
+  "jcr:baseVersion": "7fb11fd3-b3ef-4f3b-a590-3613c374bfe6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 15 2026 15:18:43 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon May 11 2026 14:12:48 GMT+0000",
+  "jcr:uuid": "862ddb7e-36cf-4fdb-870a-26566789c0f4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon May 11 2026 13:58:13 GMT+0000",
+      "alt": "Nurse in video chat with younger male patient",
+      "srcFileRef": "/content/dam/stryker/smart-care/newsroom/akron-children's-hospital-care-ai-white-paper/care-ai-akron-white-paper-article_hero_1440x816 photo_1440x816.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 11 2026 13:59:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon May 11 2026 13:59:51 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>1-minute read</i></span></p>\n<h2><span class=\"futura-bold\">Learn how Akron Children’s Hospital used connected care teams to streamline admissions, discharges and documentation</span></h2>\n<p><span class=\"fontsize-1-25em\">In pediatric care, hospitals face unique challenges, from staffing shortages and rising operational costs to ensuring consistent support for patients and families. Akron Children’s launched a Virtual Nursing Pilot Project to address these pressures by integrating virtual nurses into the care team. Supported by AI-enabled technology, virtual nurses took on key operational responsibilities traditionally handled at the bedside, including admissions, discharges, patient monitoring and education. Over the course of the 7-month pilot, this approach contributed to 1,045 nursing hours saved and helped identify 145 patient safety risks, while supporting improvements in workflow coordination and documentation practices. Download the white paper to explore how these outcomes were achieved and what they may signal for the future of care delivery.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon May 11 2026 19:56:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "resources": "/content/dam/stryker/smart-care/newsroom/akron-children's-hospital-care-ai-white-paper/Akron-Childrens-Hospital-care-ai_white-paper_US.pdf",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon May 11 2026 19:51:27 GMT+0000",
+      "title": "Download the White Paper",
+      "jcr:lastModified": "Mon May 11 2026 20:00:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 13 2026 20:03:42 GMT+0000",
+      "hideButton": "false",
+      "title": "Related",
+      "jcr:lastModified": "Wed May 13 2026 20:10:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "true",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/news/enhancing-hospital-communication-patient-family-satisfaction"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/news/enabling-smart-connected-care-with-careai"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Fri May 15 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-May-2026",
+    "jcr:lastModified": "Mon May 11 2026 14:53:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/smart-care/newsroom/akron-children's-hospital-care-ai-white-paper/care-ai-akron-white-paper-article_hero_1440x816 photo_1440x816.jpg"
+  }
+}

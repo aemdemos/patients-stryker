@@ -1,0 +1,1030 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CORE 2 Console",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "650e1603-fdcd-4d48-9d68-f2748a22c111",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Core 2 Console",
+  "jcr:predecessors": [
+    "7528cb89-9b49-49e8-9eb1-ba678caa6905"
+  ],
+  "contentID": "NS-CORE-SYK-1165068_REV-0 ",
+  "lastPublished": "Thu Aug 29 2024 17:37:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 29 2024 17:37:05 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 29 2024 17:37:07 GMT+0000",
+  "cq:lastModified": "Wed Aug 28 2024 21:25:46 GMT+0000",
+  "jcr:description": "The CORE 2 Console is Stryker’s next gen console that enhances surgical workflows with customizable user profiles, smart programming, and integrated irrigation. The console supports a wide range of surgical applications and with its intuitive interface, safety features, and ability to power multiple devices makes it a reliable and cost-effective choice for healthcare professionals.",
+  "jcr:baseVersion": "7528cb89-9b49-49e8-9eb1-ba678caa6905",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:41:38 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/access-and-decompression",
+    "stryker:specialty/access-and-decompression-cranial",
+    "stryker:content-type/product",
+    "stryker:business-unit/Navigation-NSE",
+    "stryker:portfolio/neurotechnology",
+    "stryker:capability/spine",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/neuro-and-spine",
+    "stryker:product/nav-nse/core2",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/cranial",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Mon Aug 26 2024 20:53:39 GMT+0000",
+  "jcr:uuid": "66fe00a7-3d1b-4000-bc98-c97301e2cfba",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Jun 14 2024 17:42:02 GMT+0000",
+      "carouselOptionSpeed": "5000",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Fri Jun 14 2024 21:22:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-1---mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/core-2-console-header-1-mobile",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Fri Jun 14 2024 17:42:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 26 2024 17:58:53 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 02 2019 19:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,181,0);\">CORE 2 Console</span></span></span></h1>\r\n",
+              "line2": "<p>&nbsp;</p>\r\n<p><span class=\"fontsize-1-5-vw\">The Consolidated Operating Room Equipment (CORE) 2 Console provides a convenient, single control center for a multitude of powered instruments. Here’s a look at the many capabilities and benefits it brings to you and your instruments.</span></p>\r\n",
+              "jcr:lastModified": "Fri Jun 14 2024 18:10:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide_1802015205": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-3",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/core-2-console-header-3",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-30",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/core-2-console-header-30",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Fri Jun 14 2024 17:43:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 26 2024 17:59:03 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 02 2019 19:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,181,0);\">CORE 2 Console</span></span></span></h1>\r\n",
+              "line2": "<p>&nbsp;</p>\r\n<p><span class=\"fontsize-1-5-vw\">The Consolidated Operating Room Equipment (CORE) 2 Console provides a convenient, single control center for a multitude of powered instruments. Here’s a look at the many capabilities and benefits it brings to you and your instruments.</span></p>\r\n",
+              "jcr:lastModified": "Fri Jun 14 2024 18:10:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide_1432296193": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-2",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/core-2-console-header-2",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/neurosurgical/en/products/core_2_console/core-2-console-header/core-2-console-header-2---mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/neurosurgical/en/products/core-2-console/core-2-console-header/core-2-console-header-2-mobile",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Fri Jun 14 2024 17:42:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 26 2024 17:59:26 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 02 2019 19:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,181,0);\">CORE 2 Console</span></span></span></h1>\r\n",
+              "line2": "<p>&nbsp;</p>\r\n<p><span class=\"fontsize-1-5-vw\">The Consolidated Operating Room Equipment (CORE) 2 Console provides a convenient, single control center for a multitude of powered instruments. Here’s a look at the many capabilities and benefits it brings to you and your instruments.</span></p>\r\n",
+              "jcr:lastModified": "Fri Jun 14 2024 18:10:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator_1663653599": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:27:56 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:27:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_308518422_copy_67847817": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:29:37 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:29:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_308518422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:29:37 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:29:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 13:23:59 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 13:23:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:24:52 GMT+0000",
+          "jcr:lastModified": "Wed Aug 14 2019 13:24:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:24:52 GMT+0000",
+          "jcr:lastModified": "Wed Aug 14 2019 13:24:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 13 2019 20:25:00 GMT+0000",
+          "alt": "CORE 2",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-fbt-1.jpg",
+          "jcr:lastModified": "Fri Jun 14 2024 18:27:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:25:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">A</span><br>\n </span></span>Adjustable irrigation flow rate<br>\n<br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">B</span><br>\n </span></span>I.D. Touch Software for tailored torque, tactile feel and drill precision/performance<br>\n<br>\n<span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">C</span><br>\n </span></span>Three hand piece ports; runs two non-heavy duty hand pieces simultaneously<br>\n<br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">D</span><br>\n </span></span>Colored illumination rings (5) display matched drills and foot pedals for free and confident workflow<br>\n<br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">E</span><br>\n </span></span>Two foot pedal ports; ability to assign two pedals to a single hand piece<br>\n<br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">F</span><br>\n </span></span>Integrated irrigation; one-step insertion and removal<br>\n<br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">G</span><br>\n </span></span>Distinct audio tones denote different actions/alerts</p>\n",
+          "jcr:lastModified": "Wed Sep 25 2019 13:16:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_227358139": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:15:29 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:15:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_591101578": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:15:26 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:15:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_1013623960": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 13:16:41 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 13:16:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:12:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Versatility</span></span></p>\n<ul>\n<li>For use in a variety of surgical procedures, including orthopaedic, dental, ENT, neuro, spine, and endoscopic applications.</li>\n<li>Powers small and large bone drills, saws and drivers; small and large joint shavers; ENT shavers; foot pedals; Bone Mill+ and irrigation<br>\n</li>\n<li>Cuts, drills, reams, decorticates, shapes and smoothes bone, bone cement and teeth<br>\n</li>\n<li>Helps place or cut screws, metal, wires, pins and other fixation devices<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jul 11 2024 16:53:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1985324475_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:22:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Simplicity</span></span></p>\n<ul>\n<li>Smart programming auto-activates screens, options and information based on connected devices</li>\n<li>Large icons and 7″ color touch screen with 170° wide viewing angle<br>\n</li>\n<li>Numeric and written error descriptions with troubleshooting tips<br>\n</li>\n<li>Flat, intuitive navigation with shortcuts for added speed<br>\n</li>\n<li>Quick, onsite USB upgrades and localized technical support<br>\n</li>\n<li>Stryker sales rep contact info can be stored internally<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Aug 14 2019 13:18:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1527540941_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:17:58 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Cost and workflow efficiency</span></span></p>\n<ul>\n<li>Single console supports all specialties; capital ROI</li>\n<li>Powers a spectrum of devices, reducing need for multiple power sources</li>\n<li>Routinely costs less than top competitor<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jul 11 2024 16:53:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1650668942": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 13:19:38 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 13:19:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_1050498385_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:16:25 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Unparalleled customization</span></span></p>\n<ul>\n<li>100+ user profiles that can be stored and transferred</li>\n<li>Adjustable irrigation flow rate<br>\n</li>\n<li>Three foot pedal choices, each with multiple buttons to set desired functions</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Aug 05 2024 16:30:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_1447005630_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 20:23:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Safety</span></span></p>\n<ul>\n<li>Built-in design features enable safe operation with less effort</li>\n<li>13-year proven performance<br>\n</li>\n<li>30,000 trusted units worldwide<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jul 11 2024 16:54:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1037397696": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:27:26 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:27:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1287593817": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:27:18 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:27:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 13:11:22 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 13:11:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_782938915_copy_1417718499": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_782938915": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_1574178222": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 13:28:53 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 13:28:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:30:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">First-rate foot pedals</span></span></p>\n<p>Get your choice of three foot pedals, each with multiple buttons to set desired functions such as irrigation on/off, forward/reverse direction, change drill port assignment, change RPMs and more.</p>\n",
+          "jcr:lastModified": "Tue Sep 03 2019 13:33:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:30:43 GMT+0000",
+          "jcr:lastModified": "Wed Aug 14 2019 13:30:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    },
+    "cols4_286968923": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 22:40:25 GMT+0000",
+      "jcr:lastModified": "Mon Jun 24 2024 22:40:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 14 2019 13:00:40 GMT+0000",
+          "alt": "NSE footswitch",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-frfp-1-1.jpg",
+          "jcr:lastModified": "Mon Jun 24 2024 22:53:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:09:21 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">NSE Footswitch</span><br>\nwith four feature buttons (two left, two right)</p>\n",
+          "jcr:lastModified": "Wed Aug 14 2019 13:09:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 14 2019 13:00:40 GMT+0000",
+          "alt": "Bi-directional footswitch",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-frfp-2-1.jpg",
+          "jcr:lastModified": "Mon Jun 24 2024 22:53:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:09:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Bi-Directional Footswitch</span><br>\nDual pedal with three feature buttons</p>\n",
+          "jcr:lastModified": "Wed Aug 14 2019 13:10:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 14 2019 13:00:40 GMT+0000",
+          "alt": "Uni-directional footswitch",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-frfp-3-1.jpg",
+          "jcr:lastModified": "Mon Jun 24 2024 22:53:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 13:10:22 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Uni-Directional Footswitch</span><br>\nSingle pedal with two feature buttons</p>\n",
+          "jcr:lastModified": "Wed Aug 14 2019 13:10:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Jul 26 2024 01:51:35 GMT+0000",
+          "alt": "Core Footswitch",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-footswitch.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 26 2024 01:51:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Jun 24 2024 22:50:55 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">CORE Footswitch</span><br>\nwith raised toe loop, 270° open access</p>\n",
+          "jcr:lastModified": "Wed Jul 17 2024 15:52:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 14:01:11 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 14:01:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_782938915_copy_2137022885": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:21:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_643831186": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 14:01:36 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 14:01:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_991892528_copy_18144784": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_507377215": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 22:37:29 GMT+0000",
+      "jcr:lastModified": "Mon Jun 24 2024 22:37:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jun 24 2024 22:39:38 GMT+0000",
+      "jcr:lastModified": "Mon Jun 24 2024 22:39:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 14 2019 13:59:05 GMT+0000",
+          "alt": "No fuss irrigation",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-nfuir-1_edit.jpg",
+          "jcr:lastModified": "Fri Jun 14 2024 18:26:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Aug 14 2019 13:59:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">No fuss irrigation</span></span></p>\n<p>Our front facing, integrated irrigation with one-step insertion and removal makes set up simple, without any extra hardware components to affix or tubes to thread. Also includes integrated I.V. pole bracket, auto prime and adjustable flow rate.</p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 21:22:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "10"
+        }
+      }
+    },
+    "cols_991892528_copy_1645001792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_991892528_copy_373568073": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_1501428793": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:31:43 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:31:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1965763581_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:12:50 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:12:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1965763581": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:12:50 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:12:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_1512578282": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:03:14 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:03:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:02:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">A class of its own</span></span></p>\n<p>Drill and instrument portfolios are only as good as their driver, and ours stands apart from the crowd. Engineered with the bells and whistles you need, it empowers your instruments – and you – with added capability and benefits.</p>\n",
+          "jcr:lastModified": "Mon Aug 05 2024 16:30:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1435791443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:54:56 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:54:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td style=\"text-align: center;\"><b>&nbsp;</b></td>\n<td style=\"text-align: center;\"><b>CORE 2 Console</b></td>\n<td style=\"text-align: center;\"><b>Medtronic IPC 1</b></td>\n<td style=\"text-align: center;\"><b>Anspach EG1 1</b></td>\n</tr><tr><td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Universal console for use across specialties (capital ROI)</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Average cost</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Breadth of compatible instrument portfolios</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Colored illumination rings indicating matched hand/foot switches</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Capable of running two drills simultaneously</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Future Smart Equipment management (SEM) compatibility</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 17:55:41 GMT+0000",
+          "jcr:lastModified": "Thu Aug 15 2019 17:10:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:08:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Customization</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 15 2019 17:09:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(66,83,97,1)",
+          "textIsRich": "true"
+        },
+        "text_1521825273": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:11:04 GMT+0000",
+          "jcr:lastModified": "Thu Aug 15 2019 17:11:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "text_732861741": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:10:38 GMT+0000",
+          "jcr:lastModified": "Thu Aug 15 2019 17:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "table_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td>&nbsp;</td>\n<td style=\"text-align: center;\"><b>CORE 2 Console</b></td>\n<td style=\"text-align: center;\"><b>Medtronic IPC 1</b></td>\n<td style=\"text-align: center;\"><b>Anspach EG1 1</b></td>\n</tr><tr><td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Ability to create and store user profiles</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>I.D. Touch Software for custom tactile feel and drill response</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Adjustable irrigation flow</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Adjustable acceleration settings</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Detachable electric hand switch</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>4 Electric foot pedal options</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr><tr><td>Customizable foot pedal buttons</td>\n<td style=\"text-align: center;\">✔</td>\n<td style=\"text-align: center;\">x</td>\n<td style=\"text-align: center;\">x</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Aug 14 2019 17:55:41 GMT+0000",
+          "jcr:lastModified": "Wed Aug 28 2024 21:25:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        },
+        "text_455773859": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 07 2019 15:47:36 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">1.&nbsp;Competitive data reflects information accessed via marketing materials, IFUs and company websites as of May 2017</span></p>\n",
+          "jcr:lastModified": "Mon Oct 07 2019 15:47:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_630725124": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 17:54:42 GMT+0000",
+      "jcr:lastModified": "Wed Aug 14 2019 17:54:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_316398020": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:27:59 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:27:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1072149547": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:27:55 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:27:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:23:03 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:23:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:23:53 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-cubeco-1.jpg",
+          "jcr:lastModified": "Thu Aug 15 2019 17:24:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:26:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">Customization</span></span>",
+          "line2": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: #ffffff;\">beyond compare</span></span></span>",
+          "jcr:lastModified": "Thu Aug 15 2019 17:27:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:27:17 GMT+0000",
+          "text": "<p>Everyone claims to offer highly customizable consoles and instrument platforms, but we deliver on it. Personal preference options are engineered into multiple features, giving you unparalleled ways to customize your system for maximum skill and satisfaction.</p>\n",
+          "jcr:lastModified": "Thu Aug 15 2019 17:27:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1887563706_copy_485601092": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:28:57 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:28:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1887563706": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:28:57 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:28:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_1738574374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:28:52 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:28:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1710706662_copy_269111520": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1710706662": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1182984597": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:34:58 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:34:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:35:07 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/cr2cnsl-cubeco-2-SAO.jpg",
+          "jcr:lastModified": "Thu Aug 15 2019 17:37:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:26:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">User profiles:</span></span>",
+          "line2": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\">ready when you are</span></span></span>",
+          "jcr:lastModified": "Thu Aug 15 2019 17:37:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 15 2019 17:37:42 GMT+0000",
+          "text": "<p>In the O.R., you and your team have critical responsibilities on your mind. Stopping to set instrument preferences can be inconvenient or even interrupt your focus. Our custom user profiles eliminate this disruption by retrieving all your carefully pre-planned preferences in just two touches.</p>\n<ul>\n<li>Set once and they’re permanently saved (stores 100+)</li>\n<li>Copy/edit allows creation of multiple profiles without starting from scratch<br>\n</li>\n<li>Customizable features instantly appear based on the device connected and include RPMs, oscillation rate, direction, fixed/variable mode and many more<br>\n</li>\n<li>Transferrable to other CORE 2 Consoles via USB<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Aug 15 2019 17:38:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1710706662_copy_1613438258": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1710706662_copy_112596334": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 17:39:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/navigation/products/core-2-console/resources/CORE Console brochure.pdf",
+        "/content/dam/stryker/nav-nse/products/Core-2/resources/Core 2 User Guide.pdf"
+      ],
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Mar 18 2021 13:15:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_1109288304": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 18:34:51 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 18:34:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_946966272": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2019 18:34:55 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2019 18:34:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "title": "Related products",
+      "jcr:lastModified": "Tue Jun 25 2024 22:44:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/sonopet-ultrasonic-aspirator"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/s2_drive-drill"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/tpx"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/ent/products/pello-microdebrider"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/navigation/products/core-2-console/images/prd-bg-img-1.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Features and benefits</p>\r\n",
+    "shortDescTop": "<p>Today's next-gen console combines Stryker innovation with your real-world insights, giving you more capabilities and benefits than ever before. It includes the same tried and true features you love plus new features, more smart programming and across-the-board simplifications for greater ease of use.</p>\r\n",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Jun 13 2024 22:02:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 14 2024 21:15:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

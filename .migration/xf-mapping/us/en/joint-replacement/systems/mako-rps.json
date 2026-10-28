@@ -1,0 +1,569 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mako RPS",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fc2d19c9-b591-4ad1-8708-775d2295c557",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+  "thumbnailAltText": "Mako RPS",
+  "jcr:predecessors": [
+    "1c29c5c9-d600-4063-ba21-8620f971fe8b"
+  ],
+  "contentID": "JR-RPS-SKY-3656650",
+  "lastPublished": "Fri Aug 21 2026 13:25:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Aug 21 2026 13:25:06 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 21 2026 13:25:09 GMT+0000",
+  "cq:lastModified": "Fri Aug 21 2026 13:25:04 GMT+0000",
+  "newDisplayFlagDate": "Sun Aug 01 2027 00:00:00 GMT-0400",
+  "jcr:description": "Explore the Mako RPS Robotic Power System, including product information, workflow details, key features and system capabilities. ",
+  "jcr:baseVersion": "1c29c5c9-d600-4063-ba21-8620f971fe8b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 14 2026 15:08:02 GMT+0000",
+  "cq:tags": [
+    "stryker:system/joint-replacements/mako-robotic-arm-assisted-surgery",
+    "stryker:business-unit/orthopaedics",
+    "stryker:content-type/system",
+    "stryker:business-unit/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jul 31 2026 16:12:28 GMT+0000",
+  "jcr:uuid": "fb88bbfe-ab4a-498f-a976-32c164aa49ef",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "slide": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Jul 23 2026 17:47:07 GMT+0000",
+      "jcr:lastModified": "Thu Jul 23 2026 17:47:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carousel/slide"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Jul 23 2026 17:47:26 GMT+0000",
+      "jcr:lastModified": "Thu Jul 23 2026 17:47:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jul 23 2026 17:47:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-75em\">Mako RPS</span></span></span></h1>\n<h2>&nbsp;</h2>\n<h2><span class=\"fontsize-1em\">Mako RPS (Robotic Power System) is a robotically enabled handpiece designed to give surgeons an intuitive, controlled cutting experience with robotic precision and a familiar handheld experience. The workflow does not require preoperative imaging and provides real-time intraoperative guidance to support bone preparation, implant positioning and alignment assessment throughout total knee arthroplasty.&nbsp;</span></h2>\n",
+          "jcr:lastModified": "Fri Aug 21 2026 13:25:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jul 23 2026 17:47:43 GMT+0000",
+          "alt": "Mako RPS handpiece",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/RPS handpiece.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jul 23 2026 18:40:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_770279872": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Aug 14 2026 15:08:49 GMT+0000",
+      "jcr:lastModified": "Fri Aug 14 2026 15:08:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 24 2026 16:35:42 GMT+0000",
+          "CTATitle": "Connect with the Mako Team",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Mon Aug 03 2026 14:48:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "fullbleedpanel_752555514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Aug 03 2026 14:41:16 GMT+0000",
+      "jcr:lastModified": "Mon Aug 03 2026 14:41:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jul 24 2026 16:36:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\"><span style=\"color: #ffb500;\">No preoperative imaging.&nbsp;</span></span></b></span></h2>\n<h2><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\"><span style=\"color: #ffb500;\">No cutting blocks.&nbsp;</span></span></b></span></h2>\n<h2><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Handheld by design. Streamlined for your OR.&nbsp;&nbsp;</span></span></b></span></h2>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 14:45:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1748773341": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 24 2026 16:38:38 GMT+0000",
+      "jcr:lastModified": "Fri Jul 24 2026 16:38:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 24 2026 16:38:06 GMT+0000",
+          "alt": "Q Guidance with Mako RPS software",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/Q Guidance with RPS software.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 24 2026 16:38:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "4",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "5",
+          "topMargin": "25",
+          "jcr:created": "Fri Jul 24 2026 16:38:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-75em\">Built to work with Stryker’s multi-specialty guidance platform, the Q Guidance System, Mako RPS joins a comprehensive orthopaedic technologies ecosystem designed to bring simplicity, versatility and workflow efficiency across sites of care.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 14:44:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "backgroundColor": "rgb(66,83,97)",
+          "textIsRich": "true",
+          "leftMargin": "2",
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "text_1572878465": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "4",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "10",
+      "jcr:created": "Fri Jul 24 2026 16:42:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Mako RPS for Total Knee workflow&nbsp;&nbsp;</span></span></h3>\n",
+      "jcr:lastModified": "Fri Jul 24 2026 16:43:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "4",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 31 2026 13:54:14 GMT+0000",
+      "jcr:lastModified": "Fri Jul 31 2026 13:54:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 31 2026 13:50:18 GMT+0000",
+          "alt": "OR staff looking at Mako RPS software screen",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/3713450 STRYKER.COM PHOTO RETOUCH-TRANSPARENT.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 31 2026 13:53:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_19707447": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jul 24 2026 16:43:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-25em\">The Mako RPS Total Knee workflow does not require preoperative imaging and uses intraoperative registration and real-time guidance technology to support implant planning, alignment assessment and bone resection throughout the procedure. After tracker fixation and anatomy registration, the system enables the surgeon to evaluate alignment, visualize soft tissue balance data and adjust implant positioning before performing guided resections. Following bone preparation, trial and final alignment analyses help the surgeon confirm implant positioning and overall knee balance prior to final implantation.</span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 11 2026 15:54:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 24 2026 16:44:33 GMT+0000",
+      "jcr:lastModified": "Fri Jul 24 2026 16:44:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 24 2026 16:44:57 GMT+0000",
+          "jcr:lastModified": "Fri Jul 24 2026 16:44:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jul 31 2026 13:55:15 GMT+0000",
+              "alt": "Mako RPS register anatomy software screen",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/Register femur new1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Aug 11 2026 16:04:43 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_347403979": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "6",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Jul 24 2026 16:45:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Step 1</span>: <b><span style=\"color: #4c7d7a;\">Anatomy registration</span></b>&nbsp;&nbsp;</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">The surgeon completes bone registration on the femur and tibia by collecting points on the surface of the patient's bone.&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">During anatomy registration the surgeon selects the tibial boundary point. This registration point is used to generate a plane that deactivates resection capabilities if crossed, helping prevent cutting beyond this surgeon defined boundary.&nbsp;</span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 11 2026 14:33:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_992605658": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 31 2026 13:56:52 GMT+0000",
+      "jcr:lastModified": "Fri Jul 31 2026 13:56:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 31 2026 13:58:33 GMT+0000",
+          "alt": "Mako RPS implant positioning software screen",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/Mako RPS implant positioning software screen.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 31 2026 13:58:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jul 24 2026 16:45:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Step 2</span>: <b><span style=\"color: #4c7d7a;\"><span style=\"color: #85458a;\">Pose captures and implant planning</span>&nbsp;&nbsp;</span></b>&nbsp;&nbsp;</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Capture a flexion and extension pose in the desired limb alignment and laxity that they would like to achieve with their final implants.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Adjust and plan for the Triathlon Total Knee system.&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Both &quot;gap balancing&quot; and &quot;measured resection&quot; workflows are available.&nbsp;</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Aug 11 2026 14:33:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 24 2026 16:44:33 GMT+0000",
+      "jcr:lastModified": "Fri Jul 24 2026 16:44:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 24 2026 16:44:57 GMT+0000",
+          "jcr:lastModified": "Fri Jul 24 2026 16:44:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_868373403": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Jul 31 2026 13:55:15 GMT+0000",
+              "alt": "Mako RPS bone resection software screen",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-rps/Mako RPS bone resection software screen1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Jul 31 2026 13:57:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Jul 31 2026 14:36:15 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Jul 31 2026 14:36:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "6",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Jul 24 2026 16:45:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Step 3</span><span style=\"color: #1c5687;\">: <b>Bone resection</b></span></span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Mako RPS’s patented active adjustment technology responds to surgeons’ hand movements, guiding the handpiece to stay aligned with the surgical plan.&nbsp;&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Mako RPS integrates boundary control on the tibial cut: once the handpiece reaches the posterior protection boundary as defined by the surgeon’s selected landmark, resection capabilities are disabled.&nbsp;</span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Thu Aug 06 2026 15:27:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jul 31 2026 14:39:14 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Fri Jul 31 2026 14:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1541844671": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "8",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Jul 31 2026 14:31:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">See <span style=\"color: #ffb500;\">Mako RPS</span> in action!</span></span></p>\n<p>This contact form is intended for healthcare professionals. If you’re a patient looking to contact us, <a href=\"https://patients.stryker.com/orthopedics\" target=\"_blank\">please go here.</a></p>\n",
+      "jcr:lastModified": "Fri Jul 31 2026 14:46:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1389687546": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jul 31 2026 14:31:33 GMT+0000",
+      "jcr:lastModified": "Fri Jul 31 2026 14:31:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "5332",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Jul 31 2026 14:33:54 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "globalProd",
+          "message": "Thank you!",
+          "jcr:lastModified": "Fri Aug 21 2026 13:12:18 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/systems/mako-rps/RPS handpiece.png"
+  }
+}

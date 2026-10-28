@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9fb8a92c-25e7-4cdc-aede-4c41dcdb8de1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "1bf61db1-4cd4-4317-ab6b-11f3011696f2"
+  ],
+  "lastPublished": "Fri Aug 21 2026 20:36:59 GMT+0000",
+  "jcr:created": "Fri Aug 21 2026 20:37:01 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 21 2026 20:37:02 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 19:58:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1bf61db1-4cd4-4317-ab6b-11f3011696f2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 21 2026 20:36:59 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "343e14e5-b360-49f2-afdb-486d0b19b453",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Aug 19 2026 19:58:06 GMT+0000",
+      "alt": "Las Vegas mobile",
+      "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/vizient-connections/images/Las Vegas mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Aug 19 2026 19:58:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

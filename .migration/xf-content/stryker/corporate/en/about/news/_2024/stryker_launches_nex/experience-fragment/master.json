@@ -1,0 +1,97 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Experience Fragment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ac44f590-0bfd-415b-b0c0-95380740be9f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b44c471e-a1bf-4e48-a14b-42175cd878a0"
+  ],
+  "lastPublished": "Thu Nov 14 2024 14:36:32 GMT+0000",
+  "jcr:created": "Thu Nov 14 2024 14:36:32 GMT+0000",
+  "cq:lastReplicated": "Thu Nov 14 2024 14:36:33 GMT+0000",
+  "cq:lastModified": "Thu Nov 14 2024 14:36:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b44c471e-a1bf-4e48-a14b-42175cd878a0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Nov 14 2024 14:33:29 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "de3575e9-1c60-4fe2-b8bc-7db0b17f5ae2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Nov 14 2024 14:27:16 GMT+0000",
+      "alt": "SurgiCount+ image 1",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-the-standard-of-care-in-hospitals-for-sponge-management-and-blood-loss-assessment/SurgiCount image 1.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Nov 14 2024 14:27:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_copy_1694245507": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Nov 14 2024 14:27:19 GMT+0000",
+      "alt": "SurgiCount+ image 2",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-the-standard-of-care-in-hospitals-for-sponge-management-and-blood-loss-assessment/SurgiCount image 2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Nov 14 2024 14:27:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_copy_1528871611": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Nov 14 2024 14:27:22 GMT+0000",
+      "alt": "SurgiCount+ image 3",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/stryker-launches-next-generation-of-surgicount--to-help-improve-the-standard-of-care-in-hospitals-for-sponge-management-and-blood-loss-assessment/SurgiCount image 3.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Nov 14 2024 14:27:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

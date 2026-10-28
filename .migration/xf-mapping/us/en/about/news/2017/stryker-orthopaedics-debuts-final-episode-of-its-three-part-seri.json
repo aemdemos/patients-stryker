@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Orthopaedics Debuts Final Episode of its Three-Part Series \"Road Trip to a Healthier Lifestyle\" featuring Jerome Bettis and Fred Funk",
+  "jcr:versionHistory": "4b12e39c-ac37-46ea-aff1-17bf302a7abe",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "23f54fb4-1395-4ffe-a784-a3f49ee06c3b"
+  ],
+  "lastPublished": "Thu Sep 28 2017 10:39:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 28 2017 10:39:54 GMT-0400",
+  "cq:lastModified": "Thu Sep 28 2017 10:39:47 GMT-0400",
+  "jcr:baseVersion": "23f54fb4-1395-4ffe-a784-a3f49ee06c3b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Sep 28 2017 10:39:47 GMT-0400",
+  "jcr:uuid": "78a98131-e483-4e87-9822-0e2eb2f11ce7",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Wed Sep 20 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Sep-2017",
+    "jcr:lastModified": "Thu Sep 28 2017 10:12:51 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "text": "<p>MAHWAH, N.J.,&nbsp;Sept. 20, 2017&nbsp;/PRNewswire/ --&nbsp;Stryker Orthopaedics released the third and final episode of its three-part content series, &quot;Road Trip to a Healthier Lifestyle.&quot; The series features brand ambassadors, NFL Hall of Famer,&nbsp;Jerome Bettis, and PGA TOUR Champions golfer and GetAroundKnee® recipient,&nbsp;Fred Funk&nbsp;on a cross country fitness journey across the nation.</p>\n<p>The duo visited the Big Apple to wrap-up their #StrykerActive mission of encouraging fans to participate in everyday health-related initiatives. For the final episode, fans will enjoy watching Bettis and Funk work out at a state-of-art indoor golf training facility, followed by a fun round of bowling. To conclude the series, the duo reflects on their entire road trip on the iconic New York City Highline.</p>\n<p>To watch the entire series visit <a href=\"http://www.StrykerChallenge.com\">www.StrykerChallenge.com</a></p>\n<ol>\n<li>Jerome Bettis and Fred Funk are paid spokespersons of Stryker, and their statements represent their personal views based on their personal experiences. Jerome Bettis does not have any Stryker implants and his comments do not constitute an endorsement of Stryker products. All surgery carries risk.&nbsp; See your orthopaedic surgeon to discuss your potential benefits and risks.&nbsp; Not all patients will have the same post-operative recovery and activity level.&nbsp; Individual results vary. Stryker Corporation or its divisions or other corporate affiliated entities own ,use or have applied for the following trademark or service mark: Stryker. All other trademarks are trademarks of their respective owners or holders.</li>\n</ol>\n<p>&nbsp;<br>\nSOURCE Stryker Orthopaedics<br>\nRelated Links<br>\n<a href=\"http://www.StrykerChallenge.com\">http://www.StrykerChallenge.com</a></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Sep 28 2017 10:30:33 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/1.jpeg",
+    "jcr:lastModified": "Thu Sep 28 2017 10:26:59 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  }
+}

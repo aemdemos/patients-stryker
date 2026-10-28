@@ -1,0 +1,749 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "T7 and T7plus ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "007cc472-7ba4-411b-837b-8637e34c9aec",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+  "jcr:predecessors": [
+    "d473c400-9843-4d2f-9249-de7d56264a72"
+  ],
+  "contentID": "D0000036883",
+  "lastPublished": "Wed May 22 2024 19:55:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed May 22 2024 19:55:37 GMT+0000",
+  "cq:lastReplicated": "Wed May 22 2024 19:55:39 GMT+0000",
+  "cq:lastModified": "Wed May 22 2024 19:55:23 GMT+0000",
+  "jcr:description": "T7 and T7plus create a personal protection system that’s tailored to your fit, keeping you comfortable and cool, in any surgical procedure.",
+  "jcr:baseVersion": "d473c400-9843-4d2f-9249-de7d56264a72",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Jun 17 2021 15:33:47 GMT+0000",
+  "jcr:uuid": "3ff0af31-b421-4ee3-ac6a-d9cce0aa984f",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 01 2020 18:37:56 GMT+0000",
+      "jcr:lastModified": "Tue Dec 01 2020 18:37:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/t7/carousel/carousel---t7-hero---desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/products/t7/carousel/carousel-t7-hero-desktop/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "17",
+          "jcr:created": "Tue Dec 01 2020 18:38:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Dec 01 2020 18:40:46 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Dec 01 2020 18:38:40 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-4-5-vw\">Protection <br>\r\n meets comfort</span></span>",
+              "line2": "<span class=\"fontsize-1-5-vw\"><br />\r\n </span><span class=\"fontsize-2vw\">T7 personal protection system</span>",
+              "jcr:lastModified": "Tue Dec 01 2020 18:41:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/T7-plus-shot.jpg"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1552304960": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 01 2020 18:47:37 GMT+0000",
+      "jcr:lastModified": "Tue Dec 01 2020 18:47:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1552407138": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 02 2020 20:32:58 GMT+0000",
+      "jcr:lastModified": "Wed Dec 02 2020 20:32:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1490230729": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 01 2020 18:47:33 GMT+0000",
+      "jcr:lastModified": "Tue Dec 01 2020 18:47:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 01 2020 18:46:48 GMT+0000",
+      "jcr:lastModified": "Tue Dec 01 2020 18:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/products/t7/work-safely--and-comfortably-/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/products/t7/work-safely-and-comfortably/master"
+    },
+    "cols_697015379": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Dec 01 2020 18:47:48 GMT+0000",
+      "jcr:lastModified": "Tue Dec 01 2020 18:47:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 21:34:48 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 21:34:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-3vw\">T7</span><span class=\"fontsize-4vw\"><br>\r\n </span></span></span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">The lightest and quietest Stryker helmet adjusts to your customized fit. The T7 helmet, paired with our T7plus toga, provides optimal protection and comfort.</span></span>",
+          "jcr:lastModified": "Mon Nov 30 2020 21:49:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 21:04:55 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">+<br>\n </span></span><br>\n </span></p>\n",
+          "jcr:lastModified": "Mon Nov 30 2020 21:24:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-3vw\">T7 plus</span></span></span></span>",
+          "line2": "<br />\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Built to work seamlessly with the T7 helmet, our toga protects you from infectious bodily fluids and microorganisms. All while keeping you comfortable with breathable, tear-resistant material.</span></span><br />\r\n",
+          "jcr:lastModified": "Mon Nov 30 2020 21:50:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 21:47:42 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Nov 30 2020 21:47:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Nov 30 2020 21:35:04 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/T7-plus-shot.jpg",
+          "jcr:lastModified": "Mon Nov 30 2020 21:47:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols_1676265704": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:35:49 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:35:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols_1537854737": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 21:48:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 21:48:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 21:48:09 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 21:48:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_418290165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 21:48:02 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 21:48:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "layoutOptions": "col-sm-4 pull-right",
+      "backgroundImageRef": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/helmet-exploded-shot-1.jpg",
+      "jcr:created": "Mon Nov 30 2020 18:49:21 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 18:58:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_448954341": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:44:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-1-5-vw\"><span style=\"color: #ffffff;\">Tailored to you</span><br>\r\n </span><span class=\"futura-bold\"><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #ffb500;\">T7 helmet</span></span></span></span>",
+          "line2": "<span style=\"color: #ffffff;\">The T7 helmet is engineered to fit you–and fit you well. Technology and ergonomics work together to create a comfortable fit without sacrificing your personal protection.</span>",
+          "jcr:lastModified": "Tue Dec 01 2020 15:51:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">1. Hear with ease</span></span></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">40% quieter than our previous generation, T7 will leave you asking if it’s actually on.</span></span><br>\r\n<br>\r\n",
+          "jcr:lastModified": "Mon Nov 30 2020 19:47:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">2. Work in comfort</span></span></span></span>",
+          "line2": "<p><br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">EVA foam conforms to your head with a lighter frame and a cooler fit.</span></span></p>\r\n<p><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Better balance and ergonomics keep T7 comfortable and secure.</span></span><br>\r\n</p>\r\n",
+          "jcr:lastModified": "Mon Nov 30 2020 19:48:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy_2129623076": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><b><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">3. Adjust to your fit</span></span></b></span></span>",
+          "line2": "<p><br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">The dual adjustment knob lets you precisely control height and width.</span></span></p>\r\n<p><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Improved center of gravity is intended to take the strain off of your neck.</span></span><br>\r\n</p>\r\n",
+          "jcr:lastModified": "Mon Nov 30 2020 19:48:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy_1092365959": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><b><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">4. Stay in the zone</span></span></b></span></span>",
+          "line2": "<p><br />\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Pause button lets you control the fan to streamline the donning and doffing workflow and save battery life.</span></span></p>\r\n<p><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Extended battery life means fewer interruptions in the OR.</span></span></p>\r\n<p><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span> 15 hours with LED off<br />\r\n <span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span> 6 hours with LED on</span></span></p>\r\n",
+          "jcr:lastModified": "Mon Nov 30 2020 19:49:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:22:09 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:22:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:22:16 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:22:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:27:20 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Nov 30 2020 19:27:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:22:26 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:22:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:22:30 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: #ffffff;\">Innovation on the move</span></span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\">T7 has many powerful features that improve your workflow and help you stay safe in the OR.</span></p>\r\n",
+              "line2": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\"> LED light</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\"> Removable light shroud</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\"> Optimized distribution</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\"> Lightest and most durable Stryker system</span></p>\r\n",
+              "jcr:lastModified": "Mon Nov 30 2020 19:33:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Nov 30 2020 19:29:32 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/T7-helmet-frontview-1.jpg",
+              "jcr:lastModified": "Mon Nov 30 2020 19:32:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:27:20 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Nov 30 2020 19:27:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_361662206": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:52:46 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:52:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_184830115": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:52:50 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:52:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "layoutOptions": "col-sm-4 pull-right",
+      "backgroundImageRef": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/PPE-suit.jpg",
+      "jcr:created": "Mon Nov 30 2020 18:49:21 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 20:02:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_448954341": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:44:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-1-5-vw\"><span style=\"color: #ffffff;\">Designed to protect</span><br>\r\n </span><span class=\"futura-bold\"><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #ffb500;\">T7 plus</span></span></span></span>",
+          "line2": "<span style=\"color: #ffffff;\">When you know you’re protected, you can concentrate on getting the job done. Our toga works to give you the highest level of protection—while still making sure you’re cool and comfortable during complex procedures.</span>",
+          "jcr:lastModified": "Tue Dec 01 2020 15:52:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">1. Breathe easy</span></span></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Redesigned material helps you stay cool.</span></span><br>\r\n<br>\r\nWhen donned correctly, the face shield will automatically turn on the fan.",
+          "jcr:lastModified": "Mon Nov 30 2020 20:04:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">2. Keep your vision clear</span></span></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Peel-away technology lets you easily and quickly remove sterile lenses, so that your view is never obstructed.</span></span>",
+          "jcr:lastModified": "Mon Nov 30 2020 20:04:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy_2129623076": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><b><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">3. AAMI level 4 protection</span></span></b></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Safeguard yourself from contamination, infectious bodily fluids, microorganisms, and particulate matter.</span></span>",
+          "jcr:lastModified": "Mon Nov 30 2020 20:05:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy_1092365959": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><b><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">4. Enhanced seams</span></span></b></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Enhanced seams provide a strong, secure barrier.</span></span>",
+          "jcr:lastModified": "Mon Nov 30 2020 20:05:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 18:49:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><b><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">5. Stay comfortable</span></span></b></span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">BVB fabric (breathable viral barrier) is a soft, lightweight material that keeps you dry and protected.</span></span>",
+          "jcr:lastModified": "Mon Nov 30 2020 20:06:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_1287881155": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 20:09:22 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 20:09:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 19:22:16 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 19:22:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:27:20 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Nov 30 2020 19:27:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:22:26 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:22:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:22:30 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">The latest in PPE</span></span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Stay safe and comfortable in the OR with all the latest features in personal protection.</span></p>\r\n",
+              "line2": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\">&nbsp;Full coverage against splash and contamination</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\">&nbsp;Designed specifically for the T7 helmet</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\">&nbsp;Semipermeable material that’s tear-resistant</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">+</span></span><span class=\"fontsize-1-5-vw\">&nbsp;Peel-away face shield</span></p>\r\n",
+              "jcr:lastModified": "Mon Nov 30 2020 20:11:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Nov 30 2020 19:29:32 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/t7/images/PPE-suit-small.jpg",
+              "jcr:lastModified": "Mon Nov 30 2020 20:21:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "jcr:lastModified": "Mon Nov 30 2020 19:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Nov 30 2020 19:27:20 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Nov 30 2020 19:27:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_209272665": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 20:34:35 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 20:34:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_943988766": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 20:34:39 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 20:34:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1743158201": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 30 2020 20:34:42 GMT+0000",
+      "jcr:lastModified": "Mon Nov 30 2020 20:34:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed May 22 2024 19:49:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h5><span class=\"fontsize-2-5-vw\"><b><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Stay Connected&nbsp;</span></span></span></span></span></b></span></h5>\r\n",
+          "jcr:lastModified": "Wed May 22 2024 19:53:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3022",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed May 22 2024 17:38:22 GMT+0000",
+      "useProduction": "true",
+      "message": "Contact a sales rep and learn all the ways we can empower you. Whether it's a product question, a webinar request, or help finding your Stryker rep, we're here to support you.",
+      "jcr:lastModified": "Wed May 22 2024 19:55:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  }
+}

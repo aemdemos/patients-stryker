@@ -1,0 +1,1001 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Trauma",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "efa4e54b-ce7e-4a0a-8d7f-0724f3397612",
+  "cq:template": "/apps/stryker/templates/division",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/images/T-E-business-unit-image.jpg",
+  "jcr:predecessors": [
+    "17789843-229b-44e7-9276-6c8eff0b199b"
+  ],
+  "contentID": "CP-AWI-52, 03-2023",
+  "lastPublished": "Mon Aug 31 2026 16:10:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Aug 31 2026 16:10:28 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 31 2026 16:10:30 GMT+0000",
+  "cq:lastModified": "Mon Aug 31 2026 16:10:16 GMT+0000",
+  "jcr:baseVersion": "17789843-229b-44e7-9276-6c8eff0b199b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:37:27 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/business-unit"
+  ],
+  "jcr:lastModified": "Mon Mar 18 2024 14:01:05 GMT+0000",
+  "jcr:uuid": "9a29323e-d712-43de-bef4-cdefa6e5b2f1",
+  "sling:resourceType": "stryker/components/structure/pages/division",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed May 01 2024 16:56:31 GMT+0000",
+      "jcr:lastModified": "Wed May 01 2024 16:56:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "deepLinkingId": "trauma",
+      "jcr:created": "Wed May 01 2024 16:56:53 GMT+0000",
+      "title": "Who we are",
+      "jcr:lastModified": "Mon Jan 26 2026 16:34:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "layoutOptions": "col-sm-3",
+      "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/images/together-with-you-header-image.jpg",
+      "jcr:created": "Mon Jan 26 2026 16:36:34 GMT+0000",
+      "alt": "together with you",
+      "jcr:lastModified": "Mon Jan 26 2026 20:19:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage"
+    },
+    "cols_1141032012": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Feb 16 2026 16:41:16 GMT+0000",
+      "jcr:lastModified": "Mon Feb 16 2026 16:41:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Feb 16 2026 16:41:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">More than a portfolio. ​</span></span></span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #b2b4ae;\">A trusted partner in&nbsp;the</span></span></span></span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">moments that count.​ </span>​</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Feb 16 2026 16:44:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jan 26 2026 16:36:17 GMT+0000",
+      "jcr:lastModified": "Mon Jan 26 2026 16:36:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Mar 18 2024 14:12:07 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Trauma care demands relentless focus and absolute accountability. No matter your role in Trauma, you work at that pace every day. That’s why our partnership is built to match your speed and intensity, ready when the moment arises, responsive when conditions change and committed to the same purpose.</span></p>\n<p><span class=\"fontsize-1-25em\">Together with our customers, we've been advancing orthopaedic trauma care dating back to 1939. Continuous R&amp;D. Streamlined instrumentation. Ergonomics directly informed by physician feedback. A pipeline designed to define what's next.</span></p>\n<p><span class=\"fontsize-1-25em\">But innovation extends beyond the implant itself. Its impact depends on the people who use it, the systems that support it and the knowledge that surrounds it. That's why we apply the same rigor used to engineer our devices to education, service and the partnerships that help our customers rebuild lives.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Here’s how that partnership takes shape at Stryker Trauma.</b>&nbsp;&nbsp;</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">A sales force committed to people and results, not promises. Experienced teams who know your hospital, anticipate what’s needed next, earning trust one case at a time</span></li>\n<li><span class=\"fontsize-1-25em\">Dedicated teams built for trauma, like the Alliance Trauma Value program, bringing strategy, insight and execution together for supply chain and OR leaders &nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Medical education that addresses your reality, tailored to your hospital, your time and your team &nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">A comprehensive trauma portfolio built for the realities of orthopaedic trauma, designed to support the diverse needs of patients and the teams who care for them</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">And where care is hardest to reach, our partnership continues. Through global outreach and humanitarian efforts, we extend care to underserved communities. Because as we imagine what’s coming next, we won’t lose sight of what matters most.&nbsp; &nbsp;</span></p>\n<p><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\">For decades, we've continuously driven trauma care forward. And it all traces back to the same source: The partners who push us, trust us and do whatever it takes. &nbsp;&nbsp;</span></b></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\">For the innovations that move care forward.&nbsp;&nbsp;<br>\n The learners preparing for what’s next. &nbsp;<br>\n The supply chain and OR leaders strengthening their systems.<br>\n The patients whose lives are rebuilt.<br>\n The missions that expand access. &nbsp;</span></span></span></p>\n<p><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><b data-rte-class=\"rte-temp\"><span class=\"urw-egyptienne\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Together with you,</span></span>&nbsp;we are full force.</span><span class=\"fontsize-1-5em\">​​</span></b></span></b></span></b></p>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 16:10:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "deepLinkingId": "history",
+      "jcr:created": "Wed May 01 2024 16:56:53 GMT+0000",
+      "title": "Our history",
+      "jcr:lastModified": "Mon Jan 26 2026 20:32:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Mar 18 2024 14:12:02 GMT+0000",
+          "jcr:lastModified": "Mon Mar 18 2024 14:12:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Mar 18 2024 14:16:52 GMT+0000",
+          "jcr:lastModified": "Mon Mar 18 2024 14:16:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Mon Mar 18 2024 14:17:01 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Picture the most difficult case you’ve recently experienced. Now picture that same case coming through your doors 87 years ago. <span class=\"futura-bold\">That’s where our story begins. ​​</span></span></p>\n<p><span class=\"fontsize-1-25em\">Our history traces back to 1939 where Ernst Pohl, an orthopaedic engineer collaborated with local surgeon Professor Gerhard Küntscher to create an intramedullary nail. Their revolutionary method challenged the proven and established procedures of the time. ​​</span></p>\n<p><span class=\"fontsize-1-25em\">Elsewhere Dr. Homer Stryker was doing the equivalent, developing a specially designed positioning bed called the Turning Frame—the same year that Professor Küntscher implanted his first intramedullary nail in Kiel, Germany. ​​</span></p>\n<p><span class=\"fontsize-1-25em\">Simultaneously, Raoul Hoffmann designed a new way to reset and fix broken bones without the need for open surgery, and years after, Oswald Leibinger’s company introduced an implant system for craniomaxillofacial surgery made from pure titanium, establishing the technology for small bone plating.​​<br>\n</span></p>\n<p><span class=\"fontsize-1-25em\">All these stories would eventually converge at Stryker—and that’s why our history is rich. Not because we have one, but because we have many.​​</span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Jul 16 2026 18:42:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Mar 18 2024 14:22:24 GMT+0000",
+              "alt": "Trauma-story-image1",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Trauma-story-image1.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Mar 18 2024 14:22:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Mar 18 2024 14:24:22 GMT+0000",
+      "jcr:lastModified": "Mon Mar 18 2024 14:24:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_411718161": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "description": "Select a point of interest to explore our product portfolio.",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "deepLinkingId": "portfolio",
+      "jcr:created": "Wed May 01 2024 16:58:09 GMT+0000",
+      "title": "Trauma product portfolio",
+      "jcr:lastModified": "Wed May 01 2024 16:58:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1149585858": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 12 2023 19:01:19 GMT+0000",
+      "jcr:lastModified": "Thu Jan 12 2023 19:01:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html|https://microapp.stryker.com/trauma-pangea-femur/|https://microapp.stryker.com/fa-prostep/",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion|trauma-pangea-femur|fa-prostep",
+          "hiddenSelCompId": "trauma-skeleton",
+          "componentUrl": "https://microapp.stryker.com/trauma-skeleton/",
+          "jcr:created": "Fri Jan 13 2023 21:06:08 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/trauma-skeleton/",
+          "jcr:lastModified": "Sat Jan 14 2023 15:06:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/trauma-and-extremeties/teach-courses/Trauma-Medical-Education-Course-Calendar.pdf",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "1",
+          "jcr:created": "Fri Dec 15 2023 17:06:35 GMT+0000",
+          "CTATitle": "LEARN MORE ABOUT OUR PORTFOLIO",
+          "ctaExternalLink": "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities.html",
+          "jcr:lastModified": "Mon Feb 16 2026 16:49:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      }
+    },
+    "sectionseparator_1902068467": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Feb 16 2026 16:50:28 GMT+0000",
+      "jcr:lastModified": "Mon Feb 16 2026 16:50:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols3_1451836584": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Fri Dec 19 2025 16:57:14 GMT+0000",
+      "jcr:lastModified": "Fri Dec 19 2025 16:57:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Apr 21 2026 18:31:04 GMT+0000",
+      "jcr:lastModified": "Tue Apr 21 2026 18:31:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Medical education</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 18 2024 14:24:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+          "alt": "Trauma Portfolio",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/portfolio-BU-template.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jan 12 2023 19:35:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities",
+          "enableBorder": "false"
+        },
+        "text_492808316": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Medical education that addresses your reality, tailored to your hospital, your time and your team.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jan 27 2026 16:15:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/trauma-and-extremeties/teach-courses/Trauma-Medical-Education-Course-Calendar.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Dec 15 2023 17:06:35 GMT+0000",
+          "CTATitle": "View our 2026 Medical Education Calendar",
+          "jcr:lastModified": "Tue Jan 27 2026 16:19:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Alliance</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 18 2024 14:26:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://alliancecanhelp.com",
+          "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+          "alt": "Trauma Portfolio",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/alliance-BU-template2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 15 2026 19:20:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text_492808316_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Alliance is your comprehensive solution for all trauma-related procurement needs, seamlessly integrating patient care with supply chain management.</span></span></p>\n",
+          "jcr:lastModified": "Tue Jan 27 2026 16:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_5725": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Dec 14 2022 04:31:16 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "ctaExternalLink": "https://alliancecanhelp.com/",
+          "jcr:lastModified": "Wed Jul 15 2026 19:20:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_1023003861_copy_141504842": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 14 2022 04:29:35 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 04:29:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1667304024": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 14 2022 04:33:32 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 04:33:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 14 2022 04:33:36 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Dec 14 2022 04:33:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_411718": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed May 01 2024 16:58:09 GMT+0000",
+      "title": "Connect with us",
+      "jcr:lastModified": "Wed May 01 2024 18:18:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formMailTo": "traumaevents@stryker.com",
+          "formDescription": "Send us a message to learn more about Stryker Trauma and its capabilities. ",
+          "jcr:lastModified": "Wed May 01 2024 20:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus"
+        }
+      }
+    },
+    "sectionseparator_271": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:48:59 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:48:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "jcr:lastModified": "Tue Jan 27 2026 16:35:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols4_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Sat Jan 07 2023 23:48:19 GMT+0000",
+              "jcr:lastModified": "Sat Jan 07 2023 23:48:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+                  "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Plating</span></span></p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:50:47 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+                  "alt": "fpo-evolve",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variax-mini-fragment/variax-mini-frag.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Sat Jan 14 2023 16:23:17 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                },
+                "text_492808316_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+                  "text": "<p>Only by truly understanding the challenges you face can we offer a portfolio to best fit your needs. With anatomically contoured plates designed or validated using our proprietary SOMA technology, streamlined instrumentation, and trained representatives, our plating portfolio is designed with you in mind.</p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:50:56 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "curatedcta_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Wed Dec 14 2022 04:31:16 GMT+0000",
+                  "CTATitle": "LEARN MORE",
+                  "jcr:lastModified": "Mon Aug 17 2026 17:49:04 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgba(255,181,0,1)",
+                  "ctaInternalLink": "/content/stryker/us/en/trauma-and-extremities/products/Pangea"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+                  "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">External fixation</span></span></p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:50:36 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+                  "alt": "fpo-evolve",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/hoffmann3modularexternalfixationsystem/images/Ankle Delta frame.png",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Sat Jan 14 2023 16:28:01 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                },
+                "text_492808316_copy_": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+                  "text": "<p>Having spent decades enhancing our Hoffmann brand, we recognize what you require from an external fixation system. Our circular and modular products are versatile and efficient, ready for your next challenge.</p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:51:03 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "curatedcta_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Wed Dec 14 2022 04:31:16 GMT+0000",
+                  "CTATitle": "LEARN MORE",
+                  "jcr:lastModified": "Mon Aug 17 2026 17:48:36 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgba(255,181,0,1)",
+                  "ctaInternalLink": "/content/stryker/us/en/trauma-and-extremities/products/hoffmann-3-external-fixation-system"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+                  "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Intermedullary nailing</span></span></p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:50:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+                  "alt": "fpo-evolve",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/gamma4/images/Gamma4-Thumb.png",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Sat Jan 14 2023 16:25:47 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                },
+                "text_492808316_copy_": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+                  "text": "<p>We continue to build upon our legacy of continuous design enhancements to ensure that our trusted portfolio meets your needs today and in the future. With category-leading technology, intuitive instrumentation and market-leading support, we bring you the complete nailing portfolio you can trust.<br>\n</p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:51:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "curatedcta_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Wed Dec 14 2022 04:31:16 GMT+0000",
+                  "CTATitle": "LEARN MORE",
+                  "jcr:lastModified": "Mon Aug 17 2026 17:49:35 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgba(255,181,0,1)",
+                  "ctaInternalLink": "/content/stryker/us/en/trauma-and-extremities/products/gamma4"
+                }
+              },
+              "col4": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:29:45 GMT+0000",
+                  "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Small joint arthroplasty</span></span></p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:50:16 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "jcr:created": "Wed Dec 14 2022 04:29:40 GMT+0000",
+                  "alt": "fpo-evolve",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/Hero.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Sat Jan 14 2023 16:26:18 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                },
+                "text_492808316_copy_": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Wed Dec 14 2022 04:30:39 GMT+0000",
+                  "text": "<p>We are dedicated to the continued development of small joint replacement in the upper extremity and foot and ankle. You can be confident our portfolio will fit your needs today and tomorrow.<br>\n</p>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:51:19 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                },
+                "curatedcta_copy_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Wed Dec 14 2022 04:31:16 GMT+0000",
+                  "CTATitle": "LEARN MORE",
+                  "jcr:lastModified": "Mon Aug 17 2026 17:50:09 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgba(255,181,0,1)",
+                  "ctaInternalLink": "/content/stryker/us/en/trauma-and-extremities/products/Evolve-Proline"
+                }
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://www.stryker.com/us/en/about/news/2023/stryker-s-pangea-systems-receive-fda-clearance.html\">Stryker’s Pangea Systems Receive FDA Clearance</a></b><br>\n</li>\n<li><a href=\"/content/stryker/us/en/about/news/2022/stryker-launches-new-gamma4-hip-fracture-nailing-system.html\"><b>Stryker Launches New Gamma4 Hip Fracture Nailing System</b></a></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Sep 14 2023 17:53:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"https://www.stryker.com/us/en/training-and-education/calendar.html\">TRAUMA MEDICAL EDUCATION CALENDAR</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Tue Feb 07 2023 14:57:45 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Sat Jan 07 2023 23:43:09 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Product resources"
+            }
+          }
+        },
+        "cols": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Jan 27 2026 17:06:49 GMT+0000",
+          "jcr:lastModified": "Tue Jan 27 2026 17:06:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "0",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "0",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media! </span></span>",
+              "jcr:lastModified": "Tue Jan 27 2026 17:07:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "0",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols_1470124152_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cols4_70696004": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Tue Jan 27 2026 16:54:09 GMT+0000",
+              "jcr:lastModified": "Tue Jan 27 2026 16:54:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "jcr:created": "Tue Jan 27 2026 16:58:10 GMT+0000",
+                  "alt": "linkedin",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/socials/linkedin.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Tue Jan 27 2026 17:07:25 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "jcr:created": "Tue Jan 27 2026 16:58:10 GMT+0000",
+                  "alt": "instagram",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/socials/instagram.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Tue Jan 27 2026 17:07:38 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "enableBorder": "false"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://www.vumedi.com/channel/stryker/tab/trauma-20/",
+                  "jcr:created": "Tue Jan 27 2026 16:58:10 GMT+0000",
+                  "alt": "VuMedi",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/socials/VuMedi.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Tue Jan 27 2026 17:09:00 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              },
+              "col4": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://www.youtube.com/playlist?list=PLZyNjjTfwJvB7qmX8ZC4a9IPcEP5royiJ",
+                  "jcr:created": "Tue Jan 27 2026 17:06:16 GMT+0000",
+                  "alt": "youtube",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/socials/youtube.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Tue Jan 27 2026 17:08:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              }
+            },
+            "cols4": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Tue Jan 27 2026 16:35:41 GMT+0000",
+              "jcr:lastModified": "Tue Jan 27 2026 16:35:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              },
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "vince.wolff@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://orthobullets.com/Site/Practice/SponsorLanding?sponsorId=82&hideLeftMenu=true",
+                  "jcr:created": "Tue Jan 27 2026 17:06:33 GMT+0000",
+                  "alt": "orthobullets",
+                  "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/socials/orthobullets.jpg",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Tue Jan 27 2026 17:08:36 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/images/T-E-business-unit-image.jpg"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "path",
+    "jcr:lastModified": "Wed Dec 14 2022 04:26:24 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "4e9778b1-8b40-4234-8a8a-109f529b8626",
+  "jcr:predecessors": [
+    "cdf9a01a-a6db-4db1-bfb7-f6f5d7376ecc"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:49 GMT+0000",
+  "jcr:baseVersion": "cdf9a01a-a6db-4db1-bfb7-f6f5d7376ecc",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "cc5620b4-8937-48c8-9754-5fd1c0193b5f",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:title": "Primary Contact",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "cq:lastModified": "Mon Oct 07 2019 15:01:16 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+    "lastFragmentSave": "Tue Oct 08 2019 04:24:07 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/korea/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Mon Feb 24 2020 14:44:49 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "Emails@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "addressBlock1": "<p>6th Fl.,<br>\nASEM Tower, 517,<br>\nYeongdong-daero, Gangnam-gu,<br>\nSeoul 06164, Korea</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/kr/ko/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "locationName": "Korea",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "PhoneNumbers": "<p>+82 2 565 7303<br>\n+82 2 565 4157 Fax</p>\n",
+        "AddressLabel@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Oct 08 2019 04:24:07 GMT+0000",
+        "BusinessHomePageLabel": "Korea Homepage"
+      }
+    }
+  }
+}

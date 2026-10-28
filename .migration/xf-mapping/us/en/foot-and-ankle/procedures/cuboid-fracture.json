@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Cuboid Fracture",
+  "jcr:versionHistory": "8dceceba-9679-4483-8c9d-1871939cf648",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Cuboid-Fracture/Images/Midfoot_CuboidFracture.jpg",
+  "jcr:predecessors": [
+    "e46a2fd3-4613-483e-b168-298aed070feb"
+  ],
+  "contentID": "OT-AWI-17, 07-2017",
+  "lastPublished": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:lastModified": "Wed Aug 12 2020 19:46:41 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Cuboid fractures are typically due to a compression injury, resulting in shortening of the lateral aspect of the foot.\r\n",
+  "jcr:baseVersion": "e46a2fd3-4613-483e-b168-298aed070feb",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:specialty/midfoot",
+    "stryker:procedure/foot-and-ankle/cuboid-fracture",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jul 23 2018 09:25:56 GMT-0400",
+  "jcr:uuid": "c82ee2a7-8081-4bbc-8715-6b5c37294157",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Jul 17 2017 12:18:41 GMT-0400",
+      "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Cuboid-Fracture/Images/Midfoot_CuboidFracture.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Aug 12 2020 19:46:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Plating platforms",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/cuboid-fracture/plating-platforms"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Nailing systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/cuboid-fracture/nailing-systems"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Biologics",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/cuboid-fracture/biologics"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Cuboid-Fracture/Images/Midfoot_CuboidFracture.jpg"
+  }
+}

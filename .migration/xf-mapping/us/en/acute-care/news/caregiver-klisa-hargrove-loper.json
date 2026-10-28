@@ -1,0 +1,123 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Caregiver: Klisa Hargrove-Loper",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2a7947cb-6824-4652-852b-b74372bffa77",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "caregiver wearing ppe",
+  "jcr:predecessors": [
+    "2d1d9fd5-31ed-4568-a223-d3afc6675be0"
+  ],
+  "lastPublished": "Thu Jan 25 2024 22:45:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 22:45:55 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 22:45:57 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:45:30 GMT+0000",
+  "jcr:description": "“Klisa is love. She’s love wrapped up in one person.” That’s how AtlantiCare nurse Marisol Ramos describes her dear friend and colleague, Klisa Hargrove-Loper, DNP, CRNA, APN. As her family and friends can attest, caregiving is engrained into everything Klisa is and everything she does. She’s a CRNA in an out-patient surgery center and trauma unit – the “eyes and ears of the OR.” She’s a mom. A wife. A mentor. A friend. And when she lost her mother to breast cancer in the middle of the pandemic, she took her pain and channeled it into something truly inspiring.",
+  "jcr:baseVersion": "2d1d9fd5-31ed-4568-a223-d3afc6675be0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/acute-care/news/caregiver-stories"
+  ],
+  "jcr:lastModified": "Wed Oct 18 2023 19:51:20 GMT+0000",
+  "jcr:uuid": "d4cfa523-2d1d-4bbc-b573-fb5cd5a96416",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Oct 10 2023 20:07:58 GMT+0000",
+      "text": "<p>“Klisa is love. She’s love wrapped up in one person.” That’s how AtlantiCare nurse Marisol Ramos describes her dear friend and colleague, Klisa Hargrove-Loper, DNP, CRNA, APN. As her family and friends can attest, caregiving is engrained into everything Klisa is and everything she does. She’s a CRNA in an out-patient surgery center and trauma unit – the “eyes and ears of the OR.” She’s a mom. A wife. A mentor. A friend. And when she lost her mother to breast cancer in the middle of the pandemic, she took her pain and channeled it into something truly inspiring.</p>\n<p>This is her story.&nbsp;<br>\n</p>\n",
+      "jcr:lastModified": "Tue Oct 10 2023 20:28:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Oct 10 2023 20:08:04 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Wed Oct 18 2023 17:38:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/acute-care/videos/caregiver-stories-klisa-hargrove-loper.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video|VIDEO|false",
+        "assetID": "stryker/caregiver-stories-klisa-hargrove-loper-AVS",
+        "urlModifiers": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Wed Oct 18 2023 17:37:48 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "/stryker/Video|VIDEO|false"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:32:09 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:32:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:45:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-pam-mizerany"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-james-bamber"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-judy-gay"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Fri Jul 15 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-Jul-2022",
+    "jcr:lastModified": "Thu Oct 19 2023 13:15:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/images/klisa-hargrove-loper_thumbnail.jpg"
+  }
+}

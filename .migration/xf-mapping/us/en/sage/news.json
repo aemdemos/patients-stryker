@@ -1,0 +1,83 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage Newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8f2dda54-dfb0-4b62-b4a9-71c2436747ea",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "253cb832-2285-4e8b-bdd1-f4ff56f0d785"
+  ],
+  "contentID": "28451",
+  "lastPublished": "Mon Aug 05 2024 15:20:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Aug 05 2024 15:20:18 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 05 2024 15:20:20 GMT+0000",
+  "cq:lastModified": "Mon Aug 05 2024 15:18:58 GMT+0000",
+  "jcr:description": "The Sage Newsroom is your source for industry news, clinical information, Sage product and business updates, inspiring stories, and more!",
+  "jcr:baseVersion": "253cb832-2285-4e8b-bdd1-f4ff56f0d785",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:20:18 GMT+0000",
+  "jcr:lastModified": "Mon Jan 24 2022 20:44:23 GMT+0000",
+  "jcr:uuid": "c3d9ceee-f226-491b-ae57-e55b522b3eb9",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "searchPath": "/content/stryker/us/en/sage/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Mon Aug 05 2024 15:18:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 8,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:content-type/news"
+    ],
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/sage/1"
+        ]
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/sage/2"
+        ]
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/sage/3"
+        ]
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/sage/4"
+        ]
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Links:&nbsp;</span></span></span><br>\n</p>\n<ul>\n<li><a href=\"/content/stryker/us/en/sage.html\">About Sage</a></li>\n<li><a href=\"/content/stryker/us/en/sage/news-and-updates.html\" target=\"_blank\">Subscribe to Sage's newsletter</a></li>\n<li><a href=\"https://www.stryker.com/us/en/about/news.html\">Stryker News</a></li>\n</ul>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Follow us on social media for more updates:</span></span></p>\n<ul>\n<li><a href=\"https://www.facebook.com/StrykerSage\">Facebook</a></li>\n<li><a href=\"https://twitter.com/Strykersage\">Twitter</a></li>\n<li><a href=\"https://www.linkedin.com/company/strykersage/\">LinkedIn</a></li>\n<li><a href=\"https://www.youtube.com/c/StrykerSage\">Youtube</a></li>\n</ul>\n",
+    "jcr:lastModified": "Thu Jun 29 2023 13:58:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

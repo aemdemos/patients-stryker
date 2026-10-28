@@ -1,0 +1,923 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "1788 Platform for Urology ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a75857d0-1ae8-4b5f-b49e-7e444335228c",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "jcr:predecessors": [
+    "a6a3c300-3472-4706-8fe7-ca04c23dbb92"
+  ],
+  "contentID": "ENDO-GSNPS-SYK-1556340",
+  "lastPublished": "Tue Jun 30 2026 12:22:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 30 2026 12:22:03 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 30 2026 12:22:06 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 17:45:35 GMT+0000",
+  "jcr:baseVersion": "a6a3c300-3472-4706-8fe7-ca04c23dbb92",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 17 2025 18:56:03 GMT+0000",
+  "pageTitle": "1788 Platform for Urology ",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jun 30 2025 21:34:10 GMT+0000",
+  "jcr:uuid": "bb51f35f-5209-4817-aca0-495ef42b9ae5",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Urology",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Jan 17 2025 14:54:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"urw-egyptienne\">Experience a new wave of</span><br />\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">surgical visualization.</span></span></span>",
+          "jcr:lastModified": "Fri Jan 17 2025 14:55:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "0"
+        },
+        "text_264461011": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 16 2024 22:24:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Introducing the 1788 Platform, now equipped to evolve with a new&nbsp;mode. Featuring improved image lighting and 62.5x more visible colors, the 1788 Platform is Stryker’s re-imagined surgical visualization solution.<sup>1</sup></span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 13:30:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_575481937": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jan 17 2025 14:56:27 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://stryker.com/us/en/endoscopy/products/1788-platform/urology.html#contact",
+          "jcr:lastModified": "Mon Jun 08 2026 18:15:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Jan 15 2025 23:47:37 GMT+0000",
+          "CTATitle": "CONTACT US",
+          "jcr:lastModified": "Wed Jan 15 2025 23:49:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "CONTACT US",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 17 2025 15:01:28 GMT+0000",
+      "jcr:lastModified": "Fri Jan 17 2025 15:01:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 20:10:11 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 20:10:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:35:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Introducing&nbsp;<br>\n <span style=\"color: #ffb500;\">F88 Flexible Ureteroscope<br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 05 2026 19:18:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1668980546_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 16 2024 22:28:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The F88 flexible reusable ureteroscope is designed to help clinicians go for hard-to-reach anatomy with confidence<sup>2</sup>.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The F88 features 270° up / 270° down deflection and an insertion tube designed with graduated flexibility along its length to help reduce stress, along with a high-strength bending section produced through a proprietary manufacturing process<sup>2</sup><b>.</b></span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 18:18:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_575481937": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jan 17 2025 14:56:27 GMT+0000",
+          "CTATitle": "Contact us to learn more",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://stryker.com/us/en/endoscopy/products/1788-platform/urology.html#contact",
+          "jcr:lastModified": "Mon Jun 08 2026 18:15:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 05 2026 19:59:37 GMT+0000",
+          "alt": "F88 Flexible Ureteroscope",
+          "srcFileRef": "/content/dam/stryker/endoscopy/systems/1788/images/f88-product-sqaure.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 08 2026 12:49:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "standalonevideo_copy_1883326007": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Sep 13 2023 23:44:18 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Wed Sep 13 2023 23:44:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/endoscopy/systems/1788/videos/introducing-the-f88-flexible-ureteroscope.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/introducing-the-f88-flexible-ureteroscope-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Fri Jun 05 2026 19:59:26 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols_2055929817": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 19:59:00 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 19:59:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_953482185": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 19:15:06 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 19:15:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1381825305_copy_1423801674": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:35:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Now Available:<br>\n </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">ThermaClear</span></span></span></p>\n",
+          "jcr:lastModified": "Sat Jul 19 2025 21:41:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_963504959": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jan 16 2025 00:15:39 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The ThermaClear is Stryker’s next generation Fluid Management System intended for Urological procedures.<sup>3</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 18:17:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2117530100_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Jan 16 2025 18:55:43 GMT+0000",
+      "jcr:lastModified": "Thu Jan 16 2025 18:55:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jan 16 2025 18:56:10 GMT+0000",
+          "alt": "clear-visualization",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/1788-platform/images/ClearVis2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 17 2025 16:01:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_963504959_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jan 16 2025 00:15:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Consistent pressure regulation and&nbsp;non-pulsatile <br>\n flow for clear visualization.<sup>4</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 18:17:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jan 16 2025 18:56:10 GMT+0000",
+          "alt": "fluid-warning",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/1788-platform/images/FluidWarn2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 17 2025 16:03:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_963504959_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jan 16 2025 00:15:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">On demand fluid warming.<sup>4</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 18:17:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy_1013245208": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jan 16 2025 18:56:10 GMT+0000",
+          "alt": "safety",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/1788-platform/images/Safety-2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 17 2025 16:03:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_963504959_copy__367264462": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jan 16 2025 00:15:39 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Enhanced Safety Features:<br>\n adjustable notifications for pressure and <br>\n fluid bag volumes, low fluid notifications.<sup>4,5</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 18:17:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jan 16 2025 18:56:10 GMT+0000",
+          "alt": "device-img",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/1788-platform/images/ThermaClear-4.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 17 2025 16:06:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1381825305_copy_860751812": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "jcr:lastModified": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_347471723_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:41:45 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:41:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:35:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">The future, <span style=\"color: #ffb500;\">in your hands<br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jan 17 2025 15:21:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_634100776": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:43:16 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Introducing the 1788 4K Pendulum Urology Camera Head with Lasershield</span></span></p>\n",
+          "jcr:lastModified": "Wed Jun 17 2026 18:45:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 24 2026 16:42:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Wed Jun 24 2026 16:42:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/endoscopy/products/1788-platform/videos/lasershield-zell-on-off.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lasershield-zell-on-off-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Jun 24 2026 16:42:12 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols_1381825305_copy_423285131": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_239667288_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 17 2025 14:57:11 GMT+0000",
+      "jcr:lastModified": "Fri Jan 17 2025 14:57:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "jcr:lastModified": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:26:57 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:26:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 16 2024 22:34:43 GMT+0000",
+          "alt": "cyan-spectral-imaging",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/cyan-spectral-imaging-v4.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 16 2024 22:25:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:35:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Introducing&nbsp;<br>\n <span style=\"color: #ffb500;\">SPY Cyan Spectral Imaging<br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jan 17 2025 15:21:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1668980546": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:28:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">SPY Cyan Spectral Imaging (CSI) is an advanced imaging modality to enhance the visualization of vasculature in urology surgery.<sup>1</sup></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><br>\nThis technology works by emitting only green and short blue wavelengths to provide higher contrast of vascular structures on the mucosal surface.<sup>1</sup></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><br>\nCSI is an enhanced cystoscopic technique. AUA recommends considering the use of enhanced cystoscopy in patients with a history of NMIBC.<sup>6</sup></span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 13:31:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1381825305": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "jcr:lastModified": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_347471723": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:41:45 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:41:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 11 2024 14:35:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Introducing</span> <span class=\"futura-bold\"><span style=\"color: #ffb500;\">Tone Mode</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jan 17 2025 15:22:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_634100776": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:43:16 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Customizable tone mode improves posterior brightness while maintaining consistent lighting across the surgical image.<sup>1</sup></span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 15:47:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:55:18 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:55:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 16 2024 22:55:25 GMT+0000",
+          "alt": "level0",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/level0.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 22:57:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:58:05 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Level 0 (Off)&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 22:58:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 16 2024 22:55:25 GMT+0000",
+          "alt": "level3",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/level3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 23:02:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:58:05 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Level 3</span></span></p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 23:03:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 16 2024 22:55:25 GMT+0000",
+          "alt": "level6",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/level6.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 16 2024 23:03:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 16 2024 22:58:05 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Level 6</span></span></p>\n",
+          "jcr:lastModified": "Fri Aug 16 2024 23:03:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1381825305_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 13:56:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_488805683": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 17:45:23 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 17:45:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jun 28 2024 20:22:43 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Jun 29 2026 17:45:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
+              "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/contact/master"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "4047",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "jcr:lastModified": "Thu Sep 05 2024 14:03:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigationchild"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Tue Sep 12 2023 18:33:38 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Tue Sep 12 2023 18:34:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/endoscopy/en/products/_1788_platform/urology/header/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/endoscopy/en/products/1788-platform/urology/header/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/endoscopy/en/products/_1788_platform/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/endoscopy/en/products/1788-platform/hero-image/mobile",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "20",
+          "jcr:created": "Tue Sep 12 2023 18:09:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Sun Jan 19 2025 16:18:36 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Tue Sep 12 2023 18:35:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\">1788 Platform</span></span><span class=\"futura-bold\">&nbsp;</span><br>\r\n <span style=\"color: rgb(237,238,236);\"><span class=\"urw-egyptienne\"><span style=\"color: #b2b4ae;\">for Urology</span></span></span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-2-5-vw\"><span style=\"color: #b2b4ae;\">The future, in your hands</span></span></span></span>",
+              "jcr:lastModified": "Sun Jan 19 2025 16:20:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Sep 05 2024 14:03:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>1000904469</li>\r\n<li>F88 Flexible Ureteroscope design intent and durability features. <b>DFHD 17934 Rev A</b></li>\r\n<li>Not yet commercially available; K210628</li>\r\n<li>DHFD16731, Rev. A</li>\r\n<li>compared to gravity</li>\r\n<li>AUA guidelines: https://www.auanet.org/guidelines-and-quality/guidelines/bladder-cancer-non-muscle-invasive-guideline</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Jun 08 2026 18:16:28 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

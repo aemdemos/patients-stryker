@@ -1,0 +1,235 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Connect with confidence",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Reprocessed EP cables",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bc2029de-2fbb-461c-b03f-c7d2b3bcac54",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Ensite X",
+  "thumbnailFileReference": "/content/dam/stryker/sustainability/images/New cables DiamondnGenOrion.png",
+  "jcr:predecessors": [
+    "501e1b0d-40de-4365-80b0-181e6dbc6f0a"
+  ],
+  "contentID": "SSS-EPCB-SYK-2417100",
+  "lastPublished": "Tue Aug 18 2026 20:22:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:22:35 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:22:37 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:22:25 GMT+0000",
+  "jcr:description": "Reprocessed EP cables are a set of insulated wires, wrapped in a protective coating, with unique connectors on each end. Stryker's Sustainability Solutions reprocessed EP cables are 100% visually inspected and reprocessing cycles are tracked.\r\n\r\n</li><li>Now available: reprocessed Interface cable, reprocessed nGen ablation cable, reprocessed DiamondTemp ablation cable and Orion 78in cable",
+  "jcr:baseVersion": "501e1b0d-40de-4365-80b0-181e6dbc6f0a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:05:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/ep-cables",
+    "stryker:business-unit/sustainability",
+    "stryker:product/sustainability/ensite-x",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Thu Feb 26 2026 15:43:24 GMT+0000",
+  "jcr:uuid": "8a4d221b-3221-4071-ba3d-608448ace2c4",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "hero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "subhead": "Connect with confidence",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "imageAlt": "Cables EP Webpage",
+      "jcr:created": "Mon Oct 06 2025 15:50:40 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "head": "<p>Reprocessed EP cables</p>\r\n",
+      "content": "Reprocessed EP cables are a set of insulated wires, wrapped in a protective coating, with unique connectors on each end. Stryker's Sustainability Solutions (SSS) reprocessed EP cables are 100% visually inspected and reprocessing cycles are tracked.<sup> 1</p>\r\n\r\nNow available: Reprocessed Affera Sphere-9 cable and PulseSelect cable",
+      "jcr:lastModified": "Thu Apr 16 2026 21:28:13 GMT+0000",
+      "compImageRef": "/content/dam/stryker/sustainability/images/Cables EP Webpage.JPG",
+      "sling:resourceType": "stryker/components/content/hero",
+      "textIsRich": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Fri Sep 13 2024 15:44:24 GMT+0000",
+      "jcr:lastModified": "Fri Sep 13 2024 15:44:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 22:55:19 GMT+0000",
+          "text": "<h4>Explore our latest additions to the reprocessed EP cable portfolio.</h4>\n<h3><span class=\"fontsize-1em\"><span class=\"fontsize-8em\">Please contact your Sustainability Solutions rep for our complete offering</span></span></h3>\n",
+          "jcr:lastModified": "Wed Feb 25 2026 22:58:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\r\n<tbody><tr><td><b>Original manufacturer</b></td>\r\n<td><b>SKU</b></td>\r\n<td><b>Decsirption</b></td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-AVSE-5-CBL</td>\r\n<td>Advisor FL SE 12 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-AVSE-6-CBL</td>\r\n<td>Advisor HD/VL SE 22 Pin Ensite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-INQ-DD-CBL</td>\r\n<td>Inquiry 20 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-L/R-DDY-CBL</td>\r\n<td>Livewire/Response 20 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-INQ-OD-CBL</td>\r\n<td>Inquiry 10 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-INQ-Q-CBL</td>\r\n<td>Inquiry 4 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-L/R-BQ-CBL</td>\r\n<td>Livewire/Response 4 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>D-ENS-L/R-BQ-CBL</td>\r\n<td>Livewire/Response 10 Pin EnSite X Cable</td>\r\n</tr><tr><td>Abbott</td>\r\n<td>A-ENS-MAGEXT-CBL</td>\r\n<td>Magnetic Extension 10 Pin EnSite X Cable</td>\r\n</tr><tr><td>Biosense Webster</td>\r\n<td>D128622</td>\r\n<td>Interface Cable</td>\r\n</tr><tr><td>Biosense Webster</td>\r\n<td>D134402</td>\r\n<td>Carto 3 40 Pin &quot;Octoray&quot; Cable</td>\r\n</tr><tr><td>Biosense Webster</td>\r\n<td>D133701</td>\r\n<td>Interface Cable</td>\r\n</tr><tr><td>Biosense Webster</td>\r\n<td>D133703</td>\r\n<td>BW nGen Ablation Cable</td>\r\n</tr><tr><td>Biosense Webster</td>\r\n<td>D135703</td>\r\n<td>TX eco Extension Cable (for QDOT MICRO)</td>\r\n</tr><tr><td>Boston Scientific</td>\r\n<td>M004 Raumbilical2 0</td>\r\n<td>BS Orion Umbilical Cable</td>\r\n</tr><tr><td>Boston Scientific&nbsp;</td>\r\n<td>M004PF41M434</td>\r\n<td>Farastar Gen1 Connection Cable</td>\r\n</tr><tr><td>Boston Scientific</td>\r\n<td>M004PF41M444</td>\r\n<td>Farastar Gen2 Connection Cable&nbsp;</td>\r\n</tr><tr><td>Medtronic</td>\r\n<td>ARF-00006</td>\r\n<td>Affera Catheter Extension Cable</td>\r\n</tr><tr><td>Medtronic</td>\r\n<td>CEDTC100</td>\r\n<td>DiamondTemp Ablation Cable</td>\r\n</tr><tr><td>Medtronic</td>\r\n<td>PSCIC101</td>\r\n<td>PulseSelect Cable</td>\r\n</tr></tbody></table>\r\n",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 22:34:59 GMT+0000",
+          "jcr:lastModified": "Thu Apr 16 2026 21:30:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:22:16 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:22:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sustainability/images/New cables DiamondnGenOrion.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Reprocessing EP cables<sup>1</sup></p>\r\n",
+    "shortDescTop": "<p>EP cables function as extension cords that connect electrophysiology (EP) catheters to the mapping and recording systems. They are commonly found in EP labs and, in some cases, Cath labs. Our reprocessed cables undergo: </p>\r\n",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Dec 22 2025 21:08:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>100% cleaning&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Inspection for physical damage including cracking, corrosion and bent pins</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Performance testing&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Tracking using a distinct barcode</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModified": "Wed Aug 28 2024 20:36:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:21:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1 Internal data on file</p>\r\n",
+    "jcr:lastModified": "Tue Aug 18 2026 20:22:06 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

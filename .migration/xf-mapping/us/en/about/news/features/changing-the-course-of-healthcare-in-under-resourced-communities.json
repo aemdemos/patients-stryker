@@ -1,0 +1,599 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Changing the course of healthcare in under-resourced communities",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f1d6660f-3671-48ca-9ef8-16403bc2e9c7",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Changing the course of healthcare",
+  "jcr:predecessors": [
+    "d91b90d8-8e39-4c49-9421-437bf4a1bde0"
+  ],
+  "contentID": "SYK CORP 2019-08-01",
+  "lastPublished": "Tue Feb 27 2024 19:26:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 27 2024 19:26:10 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 27 2024 19:26:12 GMT+0000",
+  "cq:lastModified": "Tue Feb 27 2024 19:26:04 GMT+0000",
+  "jcr:baseVersion": "d91b90d8-8e39-4c49-9421-437bf4a1bde0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Tue Feb 27 2024 19:26:04 GMT+0000",
+  "jcr:uuid": "fcb84e89-be22-4aab-93d1-00cc772a2070",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_321077617": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:06:11 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:06:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 22 2019 20:06:23 GMT+0000",
+          "alt": "General Surgery Resident Yves Nezerwa Rwanda and Cleft Surgeon Steve Naum USA assessing wrist contracture with patient Solange",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Changing the course of healthcare.jpg",
+          "jcr:lastModified": "Tue Feb 27 2024 19:22:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">General surgery resident Yves Nezerwa (Rwanda) and cleft surgeon Steve Naum (USA) assessing wrist contracture with patient Solange</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:05:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1070096623": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:37:10 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:37:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1248262712": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Committed to making healthcare better, together</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:27:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>Our employees are driven by a strong purpose to serve and give back, with a commitment to people and the planet. So, when we get the chance to support an organization whose work aligns with our mission and also offers our teams the chance to help make healthcare better around the world, we take it!<br>\n</p>\n<p>Our partnership with Operation Smile advances our mission through medical education initiatives as well as medical missions that directly serve those in need. These education and training programs are designed to train healthcare professionals and build surgical capacity in under-resourced countries such as Rwanda.</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:26:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_575834804": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:27:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:27:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 19:54:55 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 19:54:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Rwanda</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:27:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:55:14 GMT+0000",
+          "text": "<p>This year, we joined Operation Smile on its Rwanda surgical training rotation, a program that brings experienced surgeons and anesthesiologists to Rwanda to train medical residents who specialize in general surgery, plastic surgery and anesthesia. Launched in 2015 by Operation Smile and the University of Rwanda, the surgical training rotations have trained more than 60 residents and delivered free surgical care to over 565 patients.<br>\n</p>\n<p>Additionally, more than 15 general surgery residents have graduated from the University of Rwanda with training through this program. They are now practicing in their local communities, delivering care that patients would otherwise face exceedingly long wait times to receive.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:11:09 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:11:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:09:52 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:09:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:07:30 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Rwanda surgical center img-2.jpg",
+          "jcr:lastModified": "Thu Aug 29 2019 20:11:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">View of Rwinkwavu, Rwanda, location of the Rwanda surgical training rotation</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:05:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:10:03 GMT+0000",
+          "alt": "2015 2019",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Rwanda surgical center img v4.jpg",
+          "jcr:lastModified": "Thu Aug 29 2019 20:16:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">Map shows increase of access to care across Rwanda</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:05:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:11:09 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:11:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1174268331": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 19:56:29 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 19:56:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">In the OR</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:28:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:27:56 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:27:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:56:34 GMT+0000",
+          "text": "<p>Surgical training rotations on this mission are designed to train residents to perform a variety of surgery cases. Despite poor lighting in the operating room, our PhotonBlade provided surgeons with better visibility thanks to the adjustable illumination it provides.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:28:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_589685858": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:11:41 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:11:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:11:45 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Photon blades in action.jpg",
+          "jcr:lastModified": "Thu Aug 22 2019 20:12:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">PhotonBlades in action</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:05:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_965961813": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:13:09 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:13:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_117426": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 19:56:29 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 19:56:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Inspiration</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:29:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:28:53 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:28:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:56:34 GMT+0000",
+          "text": "<p>As the surgeons worked to build capabilities through training and education, the impact they were having on patients who might otherwise not receive care was inspiring. Seen below is Sandrine who had bilateral cleft lip surgery. A surgery which will change the trajectory of Sandrine’s life and her family’s as well.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:29:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_635832940": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:15:46 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:15:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:15:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Sandrine.jpg",
+          "jcr:lastModified": "Thu Aug 22 2019 20:16:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">Patient Sandrine, before her bilateral cleft lip surgery</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:06:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1019260832": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 29 2019 20:17:07 GMT+0000",
+      "jcr:lastModified": "Thu Aug 29 2019 20:17:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols3_290616035": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:46:28 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:46:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:29:26 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Jess F with baby Sandrine-5.jpg",
+          "jcr:lastModified": "Thu Aug 29 2019 20:10:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">General surgery resident Carine Uwakunda (Rwanda) and ambassador Jessica soothing patient Sandrine before surgery</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:06:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:29:26 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Ambassador Carlos with baby in waiting-2 area.jpg",
+          "jcr:lastModified": "Thu Aug 22 2019 20:39:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:04:30 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">Stryker ambassador Carlos plays with a baby in the screening area</span></p>\n",
+          "jcr:lastModified": "Thu Aug 29 2019 20:06:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_958640090": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:46:44 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:46:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1210045056": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:44:03 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:44:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:56:34 GMT+0000",
+          "text": "<p>“I was so happy that I got to escort this family throughout the surgery process. When Sandrine’s mom left her in the pre-surgery area, I did everything I could to comfort her as tears rolled down her face,” said Stryker ambassador Jessica reflecting on her experience with Sandrine’s family.<br>\n</p>\n<p>From entertaining patients with activities while they waited in line for a doctor, to comforting the families throughout the process, Stryker ambassadors took part in many intimate and rewarding moments that they will never forget.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:28:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1956276591": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:29:36 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:29:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1848372220": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 19:58:14 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 19:58:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Dedication to making healthcare better</span></span></p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:30:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:30:07 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:30:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:58:17 GMT+0000",
+          "text": "<p>The spring 2019 Rwanda Surgical Training Rotation succeeded in advancing the skills of another group of residents to perform complex surgery procedures to better serve the needs of their communities. Our team was proud to support the mission to improve access to healthcare in the region, and grateful for the opportunity to share the experience with the dedicated team of surgeons, residents from University of Rwanda and Operation Smile.<br>\n</p>\n<p>More about the program:</p>\n<ul>\n<li>11 surgical and anesthesia instructors</li>\n<li>14 residents</li>\n<li>13 days</li>\n<li>86 patients who recieved surgery</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Aug 28 2019 19:31:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_57246537": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:41:47 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:41:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_778618197": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:41:04 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:41:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:41:08 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/OPSmile Rwanda Mission team.jpg",
+          "jcr:lastModified": "Thu Aug 22 2019 20:41:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 19:58:17 GMT+0000",
+          "text": "<p>Want to learn more about our partnership with Operation Smile? Visit <span class=\"standalone-link\"><a href=\"https://smile.stryker.com\">smile.stryker.com</a></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 22 2019 20:41:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Tue Sep 03 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "03-Sep-2019",
+    "jcr:lastModified": "Tue Sep 03 2019 19:55:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Thu Aug 22 2019 20:06:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Thu Aug 22 2019 20:06:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/changing-the-course-of-healthcare-in-under-resourced-communities/images/Changing the course of healthcare.jpg"
+  }
+}

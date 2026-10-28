@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "cd980637-ab8a-41e1-abb1-8932e64cb743",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0dee0c73-dbf7-4976-8521-f113f4c3d503"
+  ],
+  "jcr:created": "Wed Jul 05 2023 18:18:49 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 05 2023 18:18:51 GMT+0000",
+  "cq:lastModified": "Wed Jul 05 2023 18:18:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0dee0c73-dbf7-4976-8521-f113f4c3d503",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "c31d61fd-241e-45d7-b144-6291ada0d910",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jun 30 2023 18:57:35 GMT+0000",
+      "alt": "Mako 2.0",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/HeroImage_Mako_Mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jul 05 2023 18:18:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

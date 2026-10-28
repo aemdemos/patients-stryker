@@ -1,0 +1,88 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Amniotic",
+  "jcr:createdBy": "admin",
+  "jcr:title": "ActiShield",
+  "jcr:versionHistory": "b942314f-8cb9-4dc7-9421-6465e76d8353",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "6ae1b227-1c9b-4911-b0a9-3eba86a882a9"
+  ],
+  "contentID": "AP-015811",
+  "lastPublished": "Fri May 20 2022 14:46:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 20 2022 14:46:55 GMT+0000",
+  "cq:lastModified": "Fri May 20 2022 14:46:51 GMT+0000",
+  "jcr:description": "ActiShield and ActiShield CF amniotic barrier membranes are biologic allografts derived from dehydrated human amniotic tissue.",
+  "jcr:baseVersion": "6ae1b227-1c9b-4911-b0a9-3eba86a882a9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:specialty/amniotics",
+    "stryker:capability/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/amniotics/membranes",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-membrane",
+    "stryker:portfolio/orthopaedics",
+    "stryker:product/trauma-and-extremities/actishield",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Mar 31 2022 18:42:01 GMT+0000",
+  "jcr:uuid": "e9144f07-1d82-4038-bf4d-bea00ed3c474",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Feb 18 2022 19:11:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Fri May 20 2022 14:46:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/actishield/images/ActiShield-image.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Wound Adherence:</span></span><br>\nNaturally wicks to the wound bed or site of repair</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Variation:</span></span><br>\nAvailable in two membrane forms and thicknesses. ActiShieldis a chorion-based membrane, while ActiShieldCF offers an amnion only membrane. Both offering no side-specific orientation for implantation.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Processing:</span></span><br>\nProprietary HydraTekTechnology, a unique and state of the art process that preserves key elements of native human amniotic tissue.*</p>\n<ul>\n<li>Ideal handling, both dry and wet*<br>\n</li>\n<li>Adheres well without sutures*<br>\n</li>\n<li>Easy to apply topically and internally*<br>\n</li>\n<li>Creates no additional bulk at the site*<br>\n</li>\n<li>5-year shelf life at ambient temperature<br>\n</li>\n</ul>\n",
+    "jcr:lastModified": "Thu Mar 03 2022 18:59:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>&nbsp;*Data on file at Human Regenerative Technologies, LLC<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Fri Feb 18 2022 19:11:00 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "January",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1b7bb048-09b4-4ab8-9a9c-3f5c7c412c68",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "6102d454-a75e-4600-bfa2-e040488161cf"
+  ],
+  "contentID": "JR-GSNPS-SYK-774781",
+  "lastPublished": "Tue Jan 21 2025 21:34:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jan 21 2025 21:34:26 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 21 2025 21:34:28 GMT+0000",
+  "cq:lastModified": "Tue Jan 21 2025 21:07:56 GMT+0000",
+  "jcr:baseVersion": "6102d454-a75e-4600-bfa2-e040488161cf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jan 21 2025 21:34:25 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Jan 21 2025 16:12:51 GMT+0000",
+  "jcr:uuid": "9a094558-cc3c-4587-9590-b73853404d8d",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-4vw\"><span style=\"background-color: transparent; font-weight: normal; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">How to address knee alignment with <span class=\"futura-bold\"><span style=\"color: #ffb500;\">robotic technology</span></span></span></span></span><br>\r\n</h1>\r\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:14:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program objectives</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Identify knee alignment philosophies</span></li>\n<li><span class=\"fontsize-1-25em\">Evaluate 3D CT-based planning for different alignment philosophies</span></li>\n<li><span class=\"fontsize-1-25em\">Understand Functional Knee Positioning™&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:15:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Product focus</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Mako Total Knee&nbsp;</span>&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:15:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "jcr:lastModified": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 11 2023 18:03:13 GMT+0000",
+          "alt": "Charles Claps, D.O.",
+          "srcFileRef": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/images/Charles Claps.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 21:06:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Charles Claps, D.O.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Atlanta, GA&nbsp;&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Pittsburgh Medical Center – Pinnacle Health<br>\n<b>Fellowship</b>: Wake Forest University</p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:16:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 11 2023 18:03:13 GMT+0000",
+          "alt": "Eric Yakish, M.D.",
+          "srcFileRef": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/images/Eric Yakish.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 21:07:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Eric Yakish, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Pittsburgh, PA</span><br>\n<br>\n<b>Residency</b>: University of Pittsburgh Medical Center<br>\n<b>Fellowship</b>: Allegheny General Hospital</p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:18:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jul 25 2022 18:46:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Join Charles Claps, D.O. and Eric Yakish, M.D., as they discuss different alignment philosophies and how they achieve Functional Knee Positioning™</span></span></p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 16:15:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true",
+          "bottomMargin": "7"
+        }
+      }
+    },
+    "cols_1347437557_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "deepLinkingId": "learning",
+      "jcr:created": "Wed Dec 07 2022 19:18:53 GMT+0000",
+      "title": "On-demand learning",
+      "jcr:lastModified": "Mon Feb 12 2024 17:26:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">VIDEOS</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_1140126676_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "jcr:lastModified": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/videos/mako-total-knee-2-0-overview-video-with-russell-cohen-m-d-v2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/mako-total-knee-2-0-overview-video-with-russell-cohen-m-d-v2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jan 21 2025 19:22:21 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Mako Total Knee 2.0 overview video with Russell Cohen, M.D.</span><br>\n<span class=\"urw-egyptienne\">12:31 minutes</span></p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 19:57:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/videos/mako-total-knee-2-0-surgeon-preferences-and-intraoperative-adjustments-with-seth-jerabek-m-d.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/mako-total-knee-2-0-surgeon-preferences-and-intraoperative-adjustments-with-seth-jerabek-m-d-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jan 21 2025 18:57:48 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Mako Total Knee 2.0 surgeon preferences and intraoperative implant adjustments with Seth Jerabek, M.D.</span><br>\n<span class=\"urw-egyptienne\">14:50 minutes</span></p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 19:57:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Feb 12 2024 20:13:43 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Feb 12 2024 20:13:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/videos/mako-total-knee-2-0-video-with-dr-robert-marchand-V2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/mako-total-knee-2-0-video-with-dr-robert-marchand-V2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jan 21 2025 19:41:36 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Mako Total Knee 2.0 video with Robert Marchand, M.D.</span><br>\n<span class=\"urw-egyptienne\">34:19 minutes</span></p>\n",
+          "jcr:lastModified": "Tue Jan 21 2025 19:57:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_copy_copy_copy__1611954604": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "jcr:lastModified": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy__319683221": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">RESOURCES</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/resources/Functional Knee Positioning guide - Mako Total Knee.pdf",
+        "/content/dam/stryker/no-index/training-and-education/jr45/season-3/january/resources/Mako Total Knee 2.0 - Case review with Kirby Hitt.pdf"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:11:01 GMT+0000",
+      "jcr:lastModified": "Tue Jan 21 2025 17:03:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Jan 21 2025 16:10:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The faculty are paid consultants of Stryker Orthopaedics. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\r\n<p>The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Functional knee positioning, Mako, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Tue Jan 21 2025 21:07:56 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

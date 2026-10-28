@@ -1,0 +1,239 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Directory - Middle East and Africa",
+  "jcr:versionHistory": "e2d1a17e-7851-4a58-9e65-f3e2f5c6d8cd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "47bbbec9-b80a-4e79-b8ec-51875afa6868"
+  ],
+  "jcr:created": "Mon Nov 22 2021 16:39:35 GMT+0000",
+  "cq:lastModified": "Mon Jul 19 2021 18:11:46 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "47bbbec9-b80a-4e79-b8ec-51875afa6868",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "58ae9ae2-6e9a-4f28-b93e-e3b6e387124e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Sales</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 15:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(223,225,222,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116876391204_826014821": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "ShortDesc",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Russia            \n\n                        Short Description                                            Covering sales for Kazakhstan and Russia.\n\n\n\n                        Address                                            3rd floor, Business Center SkyLight, Tower “B”\n39/80 Leningradsky Prospect\nMoscow, 125167\nRussia\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:20:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information/russia",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_1747585407": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Central Eastern Europe & Romania            \n\n                        Address                                            7 Iuliu Maniu Boulevard\nBuilding A, 2nd Floor\nBucharest Romania 061072\n\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 06:18:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information/romania-and-balkans",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_58032148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "ShortDesc",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            South Africa            \n\n                        Short Description                                                        \n\n                        Address                                            Stryker Building,\nWaterfall Industrial Park\nCnr Pretoria Main Road & Bridal Veil Rd, Midrand Johannesburg\nSouth Africa\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:24:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information/south-africa",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204_898413758": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "ShortDesc",
+        "addressBlock1",
+        "RelatedLinks",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Turkey            \n\n                        Short Description                                                        \n\n                        Address                                            Akpınar Mahallesi,\nFiruze Sokak,\nNo:2-6,\nSancaktepe/İstanbul\nTurkey\n\n\n\n                        Related Links                                            Kayseri Serbest Bolgesi \n2. Cad. No:17 \n38070 \nKayseri/Turkiye\nE-mail: infosmi@stryker.com\nPhone: +90 352 321 43 00\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Mon Jul 19 2021 18:11:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information/turkey",
+      "cq:styleIds": [
+        "1566584137963",
+        "1566584101179"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116876391204": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "ShortDesc",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name Middle East Short Description Covering sales for Bahrain, Iran, Israel, Jordan, Kuwait, Malta, Morocco, Oman, Qatar, Saudi Arabia, Tunisia. Address Stryker ESCS BV - Dubai Branch Central Park Towers – Office Tower - Level 25 – DIFC Dubai United Arab Emirates Business Home Page Learn More",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:12:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584101179",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

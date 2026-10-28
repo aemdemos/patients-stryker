@@ -1,0 +1,136 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ENT’s Stewart shares views on leadership, Stryker’s Women’s Network and vital business opportunities",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0f931e93-3573-4bcd-9988-2985d114f224",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "STRYKER.Stewart.Updated",
+  "jcr:predecessors": [
+    "ef341d8d-32ea-4234-b9d9-09a159f58d30"
+  ],
+  "lastPublished": "Tue Nov 15 2022 20:32:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 15 2022 20:32:02 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 15 2022 20:32:04 GMT+0000",
+  "cq:lastModified": "Tue Nov 15 2022 20:31:58 GMT+0000",
+  "jcr:baseVersion": "ef341d8d-32ea-4234-b9d9-09a159f58d30",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/strykertalks-podcast",
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Tue Nov 15 2022 20:31:45 GMT+0000",
+  "jcr:uuid": "0c6fceca-835c-42fa-81d9-3fbcc9190c9f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 14 2022 19:47:40 GMT+0000",
+      "jcr:lastModified": "Mon Mar 14 2022 19:47:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Mar 14 2022 19:51:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Kate Stewart, Vice President and General Manager of our ENT Business, joins the StrykerTalks podcast series to share the current areas critical to her business, the key leadership quality she has come to appreciate and the power of Stryker’s Women’s Network.</span></span></h2>\r\n",
+          "jcr:lastModified": "Tue Nov 15 2022 20:30:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_386675570": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jun 06 2022 13:34:47 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Aug 22 2022 19:58:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2022/ent’s-stewart-shares-views-on-leadership,-stryker’s-women’s-network-and-vital-ent-business-opportunities/November StrykerTalks.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/November StrykerTalks-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Tue Nov 15 2022 19:49:47 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/STRYKER.Stewart.Updated"
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Apr 12 2022 17:06:21 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">Products may not be available in all markets. Product availability is subject to the regulatory and/or medical practices in individual markets.</span></p>\n",
+          "jcr:lastModified": "Tue Nov 15 2022 18:37:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Nov 15 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-Nov-2022",
+    "jcr:lastModified": "Tue Nov 15 2022 20:31:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/ent’s-stewart-shares-views-on-leadership,-stryker’s-women’s-network-and-vital-ent-business-opportunities/STRYKER.Stewart.Updated.png"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Nov 15 2022 20:14:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

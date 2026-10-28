@@ -1,0 +1,223 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Emergency Care contact",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "08cf0a00-b38b-42cb-ae3d-bbd7c82e846a",
+  "cq:template": "/apps/stryker/templates/contactdivision",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "93b97c08-7588-4bca-821b-61c3544fe61c"
+  ],
+  "lastPublished": "Wed Aug 19 2026 22:12:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 22:12:10 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 22:12:12 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 22:11:57 GMT+0000",
+  "jcr:baseVersion": "93b97c08-7588-4bca-821b-61c3544fe61c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:58:36 GMT+0000",
+  "pageTitle": "Emergency Care contact",
+  "cq:tags": [
+    "stryker:content-type/business-unit-contact",
+    "stryker:geography/north-america",
+    "stryker:business-function/manufacturing/usa",
+    "stryker:business-unit/ems",
+    "stryker:business-function/hq",
+    "stryker:business-function/sales/usa",
+    "stryker:customer-support-centers/USA",
+    "stryker:business-function/hq/usa"
+  ],
+  "jcr:lastModified": "Mon Oct 03 2022 20:39:57 GMT+0000",
+  "jcr:uuid": "f0e9fbd4-50ec-40a3-bd2d-d684dff0b61d",
+  "sling:resourceType": "stryker/components/structure/pages/contactdivision",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "Emergency Care contact",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Sep 07 2022 15:58:30 GMT+0000",
+      "title": "Contact an Emergency Care representative",
+      "jcr:lastModified": "Wed Sep 07 2022 16:00:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Wed May 12 2021 19:27:49 GMT+0000",
+      "jcr:lastModified": "Wed May 12 2021 19:27:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Jan 19 2021 19:36:17 GMT+0000",
+          "text": "<p>Thank you for your interest in Stryker. Please fill out the following form to receive more information about Stryker products and to be contacted by your local Stryker Account Manager.&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Jan 19 2021 19:36:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Wed Aug 19 2026 22:11:57 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
+          "jcr:lastModified": "Sun Apr 23 2023 15:56:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "contactus": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "group1Title": "Address",
+    "group2Title": "Customer support",
+    "group4Title": "Medical information request form",
+    "title": "Contact us",
+    "groupContact": "1",
+    "jcr:lastModified": "Thu Aug 21 2025 21:56:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactus",
+    "textIsRich": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "group1Address": "<p>3800 E. Centre Ave.<br />\r\nPortage, MI 49002<br />\r\nUSA</p>\r\n",
+    "group2Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Devices and hardware",
+        "phoneNumber": "+1 800 327 0770 | 8 a.m. - 7 p.m. ET"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Fax",
+        "phoneNumber": "+1 800 329 7879"
+      }
+    },
+    "group2Emails": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "emailAddress": "medicalcustomerservice@stryker.com",
+        "emailLabel": "Customer service"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "emailAddress": "medtechsup@stryker.com",
+        "emailLabel": "Technical support"
+      }
+    },
+    "group3Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Software, data and connectivity",
+        "phoneNumber": "+1 844 999 2787 | 8 a.m. - 7 p.m. ET"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "Option 1: Software assistance"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "Option 2: Connectivity assistance"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "Option 3: Distributor or Law Enforcement customers"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "Option 4: Premium AED program customers"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "Option 5: If you are a Stryker representative"
+      }
+    },
+    "group3Emails": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "emailAddress": "solutioncenter@stryker.com"
+      }
+    },
+    "group3Links": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "checkboxOverride": "1",
+        "openInNewWindow": "true",
+        "linkUrl": "https://supportstryker-emergency-care.zendesk.com/hc/en-us",
+        "linkText": "Emergency Care Solution Center"
+      }
+    },
+    "group4Links": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "checkboxOverride": "0",
+        "linkPath": "/content/stryker/us/en/emergency-care/medical-information-request",
+        "linkText": "Click here to provide your contact information and detailed question. A Stryker clinical representative will reach out to you to address your request."
+      }
+    }
+  },
+  "title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+    "jcr:lastModified": "Wed Feb 26 2020 20:36:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,1133 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Your customized integrated OR ecosystem, designed to increase safety, operational efficiency and patient and staff satisfaction.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The iSuite Experience",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "34414c3e-e584-48a6-a36e-e4cd0043ecd4",
+  "cq:template": "/apps/stryker/templates/packagedetail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "thumbnailAltText": "Operating room, Stryker Operating Room, iSuite, Operating Theater, Integrated operating room",
+  "jcr:predecessors": [
+    "c9c95b0a-0a1a-430a-849e-f1d03888b15f"
+  ],
+  "contentID": "COMMS-GSNPS-OTHW-163900",
+  "lastPublished": "Mon Jun 29 2026 19:39:53 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 19:39:56 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 19:39:58 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 19:39:38 GMT+0000",
+  "jcr:description": "You are team-oriented. We are too. Together we share a common goal of providing exceptional patient care. This begins with the iSuite - your customized, efficient, seamlessly integrated operating room. To create your iSuite, our team will guide you through the entire process, one we’ve successfully completed thousands of times. This includes designing and planning your room, providing world-class equipment and connecting your OR to the world.",
+  "jcr:baseVersion": "c9c95b0a-0a1a-430a-849e-f1d03888b15f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:11:06 GMT+0000",
+  "pageTitle": "The iSuite Experience",
+  "cq:tags": [
+    "stryker:system/communications/isuite-experience",
+    "stryker:services/procare/communications/or-integration-and-connectivity",
+    "stryker:specialty/room-design",
+    "stryker:specialty/ed",
+    "stryker:content-type/system",
+    "stryker:specialty/hospital-enterprise-software",
+    "stryker:business-unit/communications",
+    "stryker:specialty/or",
+    "stryker:specialty/or-design-and-construction-resources",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/infrastructure-and-room-design",
+    "stryker:specialty/monitor-and-accessory-support-arms",
+    "stryker:specialty/integration-and-connectivity",
+    "stryker:specialty/OR-integration",
+    "stryker:specialty/ICU",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:specialty/emr-connectivity",
+    "stryker:specialty/asc",
+    "stryker:specialty/infrastructure-and-room-design",
+    "stryker:specialty/or-walls"
+  ],
+  "jcr:lastModified": "Wed Feb 12 2025 16:05:38 GMT+0000",
+  "jcr:uuid": "e98733f9-fa94-4460-8606-6d332029debf",
+  "sling:resourceType": "stryker/components/structure/pages/packagedetail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "The iSuite Experience",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "tagline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "hideTagLineComp": "true",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue May 03 2022 16:05:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Wed Sep 07 2022 17:10:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tagline",
+      "backgroundColor": "rgba(255,255,255,1)"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Dec 11 2024 14:55:30 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Dec 16 2024 15:13:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/communications/en/systems/isuite_experience/isuite-hero-video/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/communications/en/systems/isuite-experience/isuite-hero-video/master",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "0",
+          "jcr:created": "Wed Dec 11 2024 14:55:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Mon Dec 16 2024 15:10:46 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Fri Dec 13 2024 20:41:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Experience</span></span><br />\r\n<span class=\"urw-egyptienne\">the iSuite</span></span>",
+              "line2": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><br />\r\nYour customized integrated OR ecosystem, designed to increase safety, <br />\r\noperational efficiency and patient and staff satisfaction. </span></span>",
+              "jcr:lastModified": "Fri Dec 13 2024 21:04:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Nov 05 2024 19:11:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-5vw\">The iSuite <span style=\"color: rgb(255,181,0);\">Experience</span></span></span></h1>\r\n",
+      "jcr:lastModified": "Mon Dec 16 2024 16:00:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_526878721": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Nov 05 2024 22:54:56 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">You are team-oriented. We are too. Together we share a common goal of providing exceptional patient care. This begins with the iSuite - your customized, efficient, seamlessly integrated operating room. To create your iSuite, our team will guide you through the entire process, one we’ve successfully completed thousands of times. This includes designing and planning your room, providing world-class equipment and connecting your OR to the world.</span></p>\n",
+      "jcr:lastModified": "Wed Nov 06 2024 17:05:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1023003861_copy_2141179004": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Mar 02 2022 18:58:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">World class operating rooms</span></span><br>\n <span class=\"urw-egyptienne\">designed for safer, more efficient patient care.</span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 06 2024 17:05:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 13 2024 20:17:26 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Dec 13 2024 20:17:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "jcr:title": "TEST-TITLE-VIDEO",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuiteexperience/ByDesign Video-.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/ByDesign Video--AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Dec 16 2024 19:56:28 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "numbercounter_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "startNumber": "0",
+      "counterlabel": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Reduction in trips and falls</span></span></p>\r\n<p><b>Increased safety:</b> Reduce consequential trips and falls by 93% by reducing your equipment footprint in the operating room.<sup>1</sup></p>\r\n",
+      "fontColor": "rgb(255,181,0)",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 31 2020 22:57:23 GMT+0000",
+      "numberCounterAlignment": "text-left",
+      "numberTypeNumberCounter": "3",
+      "fontFace": "futura-bold",
+      "fontSize": "fontsize-5-5-vw",
+      "currencyTypeNumberCounter": "$",
+      "jcr:lastModified": "Fri Mar 21 2025 14:48:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/numbercounter",
+      "endNumber": "93",
+      "textIsRich": "true"
+    },
+    "numbercounter_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "startNumber": "0",
+      "counterlabel": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Man hours per case</span></span></p>\r\n<p><b>Increased productivity:</b> Increase the productivity of surgical staff by 0.8 man hours per case with devices that are quickly and easily controlled.<sup>1</sup></p>\r\n",
+      "fontColor": "rgb(255,181,0)",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 31 2020 22:57:23 GMT+0000",
+      "numberCounterAlignment": "text-left",
+      "numberTypeNumberCounter": "1",
+      "fontFace": "futura-bold",
+      "fontSize": "fontsize-5-5-vw",
+      "currencyTypeNumberCounter": "$",
+      "jcr:lastModified": "Fri Dec 13 2024 21:26:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/numbercounter",
+      "endNumber": "0.8",
+      "textIsRich": "true"
+    },
+    "numbercounter_copy_7": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "startNumber": "0",
+      "counterlabel": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Minute reduction in turnovers</span></span></p>\r\n<p><b>Increased efficiency:</b> The iSuite provides an average of 11 minutes reduction in room turnover time with effective room set-up.<sup>1</sup></p>\r\n",
+      "fontColor": "rgb(255,181,0)",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Mar 31 2020 22:57:23 GMT+0000",
+      "numberCounterAlignment": "text-left",
+      "numberTypeNumberCounter": "1",
+      "fontFace": "futura-bold",
+      "fontSize": "fontsize-5-5-vw",
+      "currencyTypeNumberCounter": "$",
+      "jcr:lastModified": "Fri Dec 13 2024 21:27:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/numbercounter",
+      "endNumber": "11",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Nov 05 2024 19:15:20 GMT+0000",
+      "jcr:lastModified": "Tue Nov 05 2024 19:15:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 06 2024 19:04:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Nov 06 2024 19:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy_2116264832": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Wed Mar 02 2022 18:58:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Experience the latest</span></span><br>\n <span class=\"urw-egyptienne\">from Stryker.</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 02 2022 19:00:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_937467906_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "jcr:lastModified": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 19:15:03 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "FTPxUGRGpnA",
+          "jcr:lastModified": "Fri May 24 2024 17:19:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuite-experience/2025-oculan-hype.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/2025-oculan-hype-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Sat Feb 01 2025 01:24:45 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "jcr:created": "Tue Mar 31 2020 23:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Oculan Lighting Platform</span></span></p>\n<p><span class=\"fontsize-1-25em\">Redefining the standard of surgical lighting.&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 13 2024 19:58:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 17:33:35 GMT+0000",
+          "jcr:lastModified": "Thu Mar 05 2026 20:01:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/communications/products/dash-iq-surgical-dashboard.html",
+              "internalLink": "/content/stryker/us/en/communications/products/oculan",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 19:15:03 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "FTPxUGRGpnA",
+          "jcr:lastModified": "Mon Dec 16 2024 19:55:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuiteexperience/STRYKER_CONNECTED_OR_120524_FINAL_H264_WEB.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/STRYKER_CONNECTED_OR_120524_FINAL_H264_WEB-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Dec 16 2024 20:20:36 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "jcr:created": "Tue Mar 31 2020 23:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Connected OR Platform</span></span></p>\n<p><span class=\"fontsize-1-25em\">Created to Connect.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 13 2024 19:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 17:33:35 GMT+0000",
+          "jcr:lastModified": "Thu Mar 05 2026 20:00:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/communications/systems/-isuite-experience/connected-or-operating-system.html",
+              "internalLink": "/content/stryker/us/en/communications/systems/-isuite-experience/connected-or-operating-system",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/standalonevideo"
+    },
+    "cols2_937467906_copy_1695048072": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "jcr:lastModified": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 19:15:03 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "FTPxUGRGpnA",
+          "jcr:lastModified": "Fri May 24 2024 17:19:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/products/fortress-walls/videos/Fortress.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Fortress-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Nov 08 2024 17:43:09 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "jcr:created": "Tue Mar 31 2020 23:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Fortress Modular Wall System</span></span></p>\n<p><span class=\"fontsize-1-25em\">Prefabricated stainless steel OR walls, that consolidates construction timelines, provides durability and flexibility.&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 13 2024 19:56:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 17:33:35 GMT+0000",
+          "jcr:lastModified": "Thu Mar 05 2026 20:04:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/communications/systems/-isuite-experience/room-design.html",
+              "internalLink": "/content/stryker/us/en/communications/products/Fortress-wall-system",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 19:15:03 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "FTPxUGRGpnA",
+          "jcr:lastModified": "Fri May 24 2024 17:19:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuite-experience/ByDesign-2024-v1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video_social|VIDEO|false",
+            "assetID": "stryker/ByDesign-2024-v1-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Nov 08 2024 17:42:31 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": "/stryker/Video_social|VIDEO|false"
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Mar 31 2020 23:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Reimagine your OR</span></span></p>\n<p><span class=\"fontsize-1-25em\">Design your critical care spaces with Stryker's propriety software ByDesign.</span></p>\n",
+          "jcr:lastModified": "Wed Mar 02 2022 19:45:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 17:33:35 GMT+0000",
+          "jcr:lastModified": "Wed Apr 27 2022 00:18:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/communications/systems/-isuite-experience/room-design.html",
+              "internalLink": "/content/stryker/us/en/communications/systems/-isuite-experience/room-design",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "cols2_937467906": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "jcr:lastModified": "Tue Jul 10 2018 18:06:48 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 13 2024 20:16:41 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Dec 13 2024 20:17:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuiteexperience/Operon D860 Surgical Table Video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Operon D860 Surgical Table Video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Dec 13 2024 20:17:03 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "jcr:created": "Tue Mar 31 2020 23:09:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Surgical Tables&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">From General Surgery to Orthopaedics, our surgical table line can meet the needs of variety of surgical disciplines.&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 13 2024 19:56:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Apr 01 2020 17:33:35 GMT+0000",
+          "jcr:lastModified": "Thu Mar 05 2026 20:03:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/communications/products/slx-surgical-light.html",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/surgical-tables",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Nov 06 2024 19:04:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Nov 06 2024 19:06:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+      "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_543011514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 17:07:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 17:07:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Mar 02 2022 18:58:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Customize your iSuite</span></span><br>\n <span class=\"urw-egyptienne\">with Stryker's complete line of integrated equipment.</span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 06 2024 19:06:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Mar 02 2022 19:48:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">From surgical tables, lights and equipment management, to routers and cables, Stryker offers all the major equipment for a fully integrated OR suite. Create a unique, customized environment, regardless of your specialty.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Mar 02 2022 20:00:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Mar 02 2022 19:56:48 GMT+0000",
+          "CTATitle": "VIEW THE 3D EXPERIENCE",
+          "ctaExternalLink": "https://my.matterport.com/show/?m=CuPCfqfkm1L",
+          "jcr:lastModified": "Thu Mar 10 2022 13:52:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols_1023003861_copy_869873044": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 13 2024 20:09:52 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Dec 13 2024 20:09:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/systems/isuite-experience/2022-assets/videos/isuite-matterport-V2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/isuite-matterport-V2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Dec 13 2024 20:10:16 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 06 2024 19:04:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Nov 06 2024 19:06:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1999813935": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 19:15:32 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 19:15:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 06 2024 17:51:18 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Related products&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 06 2024 17:52:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1523421689_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 19:13:40 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 19:13:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/us/en/communications/products/operon-d860.html",
+          "jcr:created": "Wed Nov 06 2024 19:13:53 GMT+0000",
+          "alt": "surgical tables",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuiteexperience/Group 33.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 16 2024 19:21:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/us/en/communications/products/hospital-status.html",
+          "jcr:created": "Wed Nov 06 2024 19:13:56 GMT+0000",
+          "alt": "Hospital Status",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuiteexperience/Group 29.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 16 2024 19:22:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/us/en/communications/products/oculan.html",
+          "jcr:created": "Wed Nov 06 2024 19:13:53 GMT+0000",
+          "alt": "surgical lights",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuite-experience/Group 31.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 13 2025 15:46:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols3_1523421689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 19:13:40 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 19:13:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/us/en/communications/products/s-series-equipment-management-system.html",
+          "jcr:created": "Wed Nov 06 2024 19:13:56 GMT+0000",
+          "alt": "surgical booms",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuiteexperience/Group 32.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 16 2024 19:22:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/us/en/communications/products/Fortress-wall-system.html",
+          "jcr:created": "Wed Nov 06 2024 19:13:59 GMT+0000",
+          "alt": "Fortress Modular Wall System",
+          "srcFileRef": "/content/dam/stryker/communications/systems/isuiteexperience/Group 34.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 16 2024 19:22:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator_816228788": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:39:38 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:39:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "childrenNumber": "3",
+    "isParent": "true",
+    "jcr:lastModified": "Mon Jun 25 2018 14:03:19 GMT-0400",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "enableLocalPageNavigation": "true",
+    "hideBottomLine": "true"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>The iSuite Experience<br />\r\n</p>\r\n",
+    "shortDescTop": "<p>You are team-oriented. We are too. Together we share a common goal of providing exceptional patient care. This begins with the iSuite - your customized, efficient, seamlessly integrated operating room. To create your iSuite, our team will guide you through the entire process, one we’ve successfully completed thousands of times. This includes designing and planning your room, providing world-class equipment and connecting your OR to the world.</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Nov 05 2024 21:55:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>&quot;Based on a study of 106 OR personnel (surgeons, OR managers and circulating nurses) in US hospitals that have Stryker integrated operating rooms, the following information was concluded: Consequential trips and falls were reduced by 93%; An average decrease of 0.8 man-hours per case was found; Room turnover was shortened by 11 minutes on average; 95% of circulating nurses surveyed said there was no need to locate mobile equipment in order to set up the room for surgery. Improving OR Efficiency and Economics with Stryker iSuite Integration.” (pp. 3-14, White Paper). Frost and Sullivan. 2015.&nbsp;</li>\r\n</ol>\r\n<div>Manufacturer part number:&nbsp;1000901877&nbsp;</div>\r\n",
+    "jcr:lastModified": "Tue Apr 26 2022 01:00:39 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Nov 05 2024 21:55:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://www.linkedin.com/showcase/strykercommunications/",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Tue Nov 05 2024 21:55:40 GMT+0000",
+    "linkText": "LinkedIn",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Dec 13 2024 20:24:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/systems/isuite-experience/2022-assets/images/thumbnail.png"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Nov 05 2024 21:55:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

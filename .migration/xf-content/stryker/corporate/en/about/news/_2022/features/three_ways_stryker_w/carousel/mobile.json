@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Mobile",
+  "jcr:versionHistory": "691f4f25-3f3f-4df4-ac12-7e1449172cca",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "f4aa70c6-4083-4a5e-bc90-9d277dd56f45"
+  ],
+  "jcr:created": "Wed Mar 30 2022 15:19:56 GMT+0000",
+  "cq:lastModified": "Tue Mar 29 2022 17:48:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f4aa70c6-4083-4a5e-bc90-9d277dd56f45",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "d343e417-3d8b-4fa3-8a11-7a42bd100278",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Tue Mar 29 2022 15:28:09 GMT+0000",
+      "alt": "Doctors and nurses interacting with patient",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/three-ways-stryker-works-to-support-physicians-in-their-pursuit-to-improve-patient-outcomes/national-doctors-day-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Mar 29 2022 17:48:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

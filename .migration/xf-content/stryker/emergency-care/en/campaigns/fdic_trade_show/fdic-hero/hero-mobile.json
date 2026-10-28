@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b86e338c-ff28-492d-8841-6debaa489e1c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "59e33735-e987-43ce-bcff-0abfd12d82cc"
+  ],
+  "lastPublished": "Thu Aug 13 2026 20:46:49 GMT+0000",
+  "jcr:created": "Thu Aug 13 2026 20:46:49 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:46:51 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:46:18 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "59e33735-e987-43ce-bcff-0abfd12d82cc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Aug 13 2026 20:46:49 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "30696616-47ff-4317-90bb-d25568ff53e6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Aug 13 2026 20:46:09 GMT+0000",
+      "alt": "Exterior view of the Indianapolis convention center",
+      "srcFileRef": "/content/dam/stryker/ems/tradeshows/images/indiana-convention-center-hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Aug 13 2026 20:46:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

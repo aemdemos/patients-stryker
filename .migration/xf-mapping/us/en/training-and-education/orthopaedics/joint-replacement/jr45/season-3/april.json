@@ -1,0 +1,376 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "April",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1bc406e5-a762-48b9-92bc-10ad0e5efa4b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "f4746de5-d4c5-4113-80d5-efbfaefb1331"
+  ],
+  "contentID": "JR-GSNPS-SYK-774781",
+  "lastPublished": "Fri Apr 18 2025 12:56:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Apr 18 2025 12:56:55 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 18 2025 12:56:58 GMT+0000",
+  "cq:lastModified": "Fri Apr 18 2025 12:56:43 GMT+0000",
+  "jcr:baseVersion": "f4746de5-d4c5-4113-80d5-efbfaefb1331",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Apr 11 2025 19:33:34 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Apr 11 2025 14:40:54 GMT+0000",
+  "jcr:uuid": "bf8e1fbb-2d28-453e-a19a-d20ac9b338ba",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kimberly.wylde@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-4vw\"><span style=\"background-color: transparent; font-weight: normal; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Treatment of&nbsp;<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">periprosthetic fractures</span></span></span></span></span></h1>\r\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:42:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program objectives</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Understand how to identify a periprosthetic hip fr</span><span style=\"font-size: 13px;\"><span class=\"fontsize-1-25em\">acture</span></span></li>\n<li><span class=\"fontsize-1-25em\">Understand the Vancouver classification system for classifying periprosthetic femoral fractures</span></li>\n<li><span class=\"fontsize-1-25em\">Understand treatment options for addressing periprosthetic hip fractures&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Understand patient indications, cemented stem options and patient outcomes and survivorship for treating periprosthetic fractures&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:43:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kimberly.wylde@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Product focus</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Exeter&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Restoration Modular&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 18 2025 12:56:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "jcr:lastModified": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 11 2025 15:18:22 GMT+0000",
+          "alt": "kyle-alpaugh",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/jr45/images/april/kyle-alpaugh.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 11 2025 15:18:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Kyle Alpaugh, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Boston, MA&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Massachusetts Medical Center&nbsp;<br>\n<b>Fellowship</b>: Hospital for Special Surgery</p>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:45:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 11 2025 15:18:22 GMT+0000",
+          "alt": "alvin-ong",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/jr45/images/april/alvin-ong.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Apr 11 2025 15:18:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Alvin Ong, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Egg Harbor Township, NJ&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Pennsylvania&nbsp;<br>\n<b>Fellowship</b>: Orthopaedic Trauma, Carolinas Medical Center<br>\nHip and Knee Replacement, Rothman Orthopaedic Institute&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:46:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jul 25 2022 18:46:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Join Kyle Alpaugh, M.D. and Alvin Ong, M.D. as they provide information on how to identify, evaluate and address periprosthetic hip fractures.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 19:30:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true",
+          "bottomMargin": "7"
+        }
+      }
+    },
+    "cols_1347437557_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "deepLinkingId": "learning",
+      "jcr:created": "Wed Dec 07 2022 19:18:53 GMT+0000",
+      "title": "On-demand learning",
+      "jcr:lastModified": "Mon Feb 12 2024 17:26:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">VIDEOS</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_1140126676_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "jcr:lastModified": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/jr45/videos/april/10205-JR-45-November-video-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/10205-JR-45-November-video-comp-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Apr 11 2025 17:45:34 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Identify treatment options and implant selection for periprosthetic fractures with Dr. Bryan Springer</span><br>\n<span class=\"urw-egyptienne\">08:20 minutes</span></p>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:47:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 18:55:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jan 21 2025 18:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/jr45/videos/april/10363-JR45-Simplifying-revision-hip-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/10363-JR45-Simplifying-revision-hip-comp-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Apr 11 2025 17:45:37 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">JR45: Simplifying revision hip with Dr. Timothy Sauber and Dr. Andrew Wassef</span><br>\n<span class=\"urw-egyptienne\">50:04 minutes</span></p>\n",
+          "jcr:lastModified": "Fri Apr 11 2025 14:47:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_copy_copy_copy__1900206307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "jcr:lastModified": "Thu Oct 12 2023 18:07:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy__1752859610": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">RESOURCES</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/education-and-training/joint-replacement/jr45/resources/april/Restoration Modular Revision Hip System Product Guide.pdf",
+        "/content/dam/stryker/education-and-training/joint-replacement/jr45/resources/april/Restoration Modular sell sheet.pdf",
+        "/content/dam/stryker/education-and-training/joint-replacement/jr45/resources/april/Restoration Modular surgical protocol.pdf"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:11:01 GMT+0000",
+      "jcr:lastModified": "Fri Apr 11 2025 15:19:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Apr 11 2025 14:38:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The faculty are paid consultants of Stryker Orthopaedics. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.&nbsp;</p>\r\n<p>The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.&nbsp;</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Exeter, Restoration, Stryker. All other trademarks are trademarks of their respective owners or holders.&nbsp;</p>\r\n",
+    "jcr:lastModified": "Fri Apr 11 2025 19:31:47 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

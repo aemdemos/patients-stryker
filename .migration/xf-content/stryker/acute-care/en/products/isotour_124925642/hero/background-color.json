@@ -1,0 +1,33 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "background color",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8ffca75c-119b-4730-bb5c-cfda59117d02",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4015884d-38cf-477c-aab8-fcefc66d3fc5"
+  ],
+  "lastPublished": "Tue Aug 06 2024 14:33:26 GMT+0000",
+  "jcr:created": "Tue Aug 06 2024 14:33:26 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 06 2024 14:33:28 GMT+0000",
+  "cq:lastModified": "Tue Jul 02 2024 13:58:27 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4015884d-38cf-477c-aab8-fcefc66d3fc5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Aug 06 2024 14:33:26 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2d7782eb-a9d2-4ca6-8920-e5e70afb555b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid"
+  }
+}

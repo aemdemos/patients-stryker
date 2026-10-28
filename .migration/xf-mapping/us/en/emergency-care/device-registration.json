@@ -1,0 +1,103 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK device registration",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5d2a6929-d11c-4463-ae51-dc8f19ad2146",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "203e3933-796b-49ac-940e-ba10d3c7f44d"
+  ],
+  "lastPublished": "Tue Sep 06 2022 21:44:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 06 2022 21:44:45 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 06 2022 21:44:47 GMT+0000",
+  "cq:lastModified": "Tue Sep 06 2022 21:44:25 GMT+0000",
+  "jcr:baseVersion": "203e3933-796b-49ac-940e-ba10d3c7f44d",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "LIFEPAK device registration",
+  "jcr:lastModified": "Tue Sep 06 2022 21:44:17 GMT+0000",
+  "jcr:uuid": "4b1471c1-ada2-4e60-8ca4-b58e7f4637ce",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "LIFEPAK device registration",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 06 2022 18:13:36 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Tue Sep 06 2022 21:44:25 GMT+0000",
+      "compImageRef": "/content/dam/stryker/ems/images/Device Registration Hero Image 666x392.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 06 2022 17:54:49 GMT+0000",
+      "jcr:lastModified": "Mon Aug 15 2022 17:59:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jul 06 2022 17:56:04 GMT+0000",
+          "text": "<ul>\n<li><a href=\"/content/stryker/us/en/emergency-care/device-registration/lifepak-form.html\">English</a></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 06 2022 19:34:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jul 06 2022 17:56:04 GMT+0000",
+          "text": "<ul>\n<li><a href=\"/content/stryker/gb/en/emergency-care/device-registration/lifepak-form.html\">English</a></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 06 2022 20:29:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "defaultExpanded": "true",
+          "accPosId": "1",
+          "accTitle": "United States"
+        }
+      }
+    },
+    "adobesignwebform_889002536": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Mar 28 2022 18:53:28 GMT+0000",
+      "jcr:lastModified": "Mon Mar 28 2022 18:53:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/adobesignwebform"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

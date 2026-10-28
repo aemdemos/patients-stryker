@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "72847a72-6158-46c2-bb24-e15e3c3f713b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9de1fd99-dd14-4ff5-b85a-78990b66162c"
+  ],
+  "lastPublished": "Mon Jul 15 2024 19:20:22 GMT+0000",
+  "jcr:created": "Mon Jul 15 2024 19:20:23 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 15 2024 19:20:25 GMT+0000",
+  "cq:lastModified": "Fri Jul 12 2024 14:55:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9de1fd99-dd14-4ff5-b85a-78990b66162c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jul 15 2024 19:20:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "64613e66-3966-4b4c-b119-880d6e7f8000",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri May 31 2024 17:42:40 GMT+0000",
+      "alt": "Soccer player stands next to a LIFEPAK CR2 AED on the  field",
+      "srcFileRef": "/content/dam/stryker/ems/community-public-safety/athletics/EC_Community-Public-Safety_AEDs-in-Athletics_Hero_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jul 12 2024 14:55:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

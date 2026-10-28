@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Percutaneous Expandable Reamer",
+  "jcr:createdBy": "admin",
+  "jcr:title": "X-Ream",
+  "jcr:versionHistory": "e5fccde1-3260-4127-9c74-721e071e9eb9",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "aa37eb92-31cc-4bd0-b7da-f3501fb65f5c"
+  ],
+  "contentID": "AP-015801",
+  "lastPublished": "Thu Mar 31 2022 18:35:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 31 2022 18:35:35 GMT+0000",
+  "cq:lastModified": "Thu Mar 31 2022 18:35:29 GMT+0000",
+  "jcr:description": "Advanced core decompression: Debride more through the same hole with the X-Ream Expandable Reamer",
+  "jcr:baseVersion": "aa37eb92-31cc-4bd0-b7da-f3501fb65f5c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/trauma-and-extremities/x-ream",
+    "stryker:capability/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/bone-grafting",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits",
+    "stryker:capability/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Mar 31 2022 18:35:29 GMT+0000",
+  "jcr:uuid": "f9aea9b4-7c16-4551-8663-d49622a74107",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Feb 18 2022 20:47:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/x-ream/images/X-Ream_AP-015801.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>The advanced core decompression system includes the reusable X-Ream Percutaneous Expandable Reamer that allows optimized debridement when used in conjunction with a standard core decompression. The system includes a single-use, disposable instrument kit (sold separately) designed to efficiently facilitate a standard core decompression, and Pro-Dense or Pro-Stim Injectable Graft for backfilling the surgically created defect.&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Feb 18 2022 20:49:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

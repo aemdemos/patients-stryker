@@ -1,0 +1,496 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ab1160c2-b907-400e-a8d7-bed099491945",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "e8e105da-7b17-4c0a-823b-ff124b6283df"
+  ],
+  "lastPublished": "Tue Jun 16 2026 13:59:21 GMT+0000",
+  "jcr:created": "Tue Jun 16 2026 13:59:22 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 16 2026 13:59:27 GMT+0000",
+  "cq:lastModified": "Tue Jun 16 2026 13:49:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "e8e105da-7b17-4c0a-823b-ff124b6283df",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 16 2026 13:59:21 GMT+0000",
+  "jcr:uuid": "34c82dfe-cbe7-49ab-8018-1fd041407c1c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 09 2026 18:56:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>In the gastrointestinal (GI) suite, a focus on safety is often associated with procedural technique and precision. However, caregivers and patients might face other challenges like exposure to fluid waste, <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4528205/\">lost polyps</a> and hypoxic injuries.</p>\n<p>To help transform staff safety and facility efficiency in the GI suite, a comprehensive approach is crucial. Assessing the procedural space and elements—such as fluid <a href=\"https://www.sgna.org/Practice-Resources/Sponsored-Content/Level-Up-to-Enhance-Safety-and-Efficiency-in-the-GI-Space\">waste management</a> and patient monitoring—for areas of improvement is a place to start.</p>\n",
+      "jcr:lastModified": "Tue Jun 09 2026 19:46:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "text_877776992": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 19:07:15 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Technology can be a silent partner.</span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 09 2026 19:07:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 19:07:54 GMT+0000",
+      "jcr:lastModified": "Tue Jun 09 2026 19:12:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage51697930947283": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "6924bac2bcd04ca7556415c6_ST_SGNA-Article_Image-1",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/how-technology-helps-address-gi-suite-challenges/6924bac2bcd04ca7556415c6_ST_SGNA-Article_Image-1.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jun 09 2026 19:08:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "text_204646949": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:created": "Tue Jun 09 2026 19:07:59 GMT+0000",
+        "text": "<p>When exploring areas for improvement, ambulatory surgery centers (ASCs) may benefit from equipment designed with the GI space in mind. Helping reduce room turnover times and the need to dump waste management canisters mid-procedure are just some of the potential benefits.</p>\n<p>Carol Stevens, a nurse with over 35 years of experience in the GI field, recalls a time in her career when she had to manually empty canisters and was splashed.¹ Now there are other options. A constantly closed waste management system like <a href=\"/content/stryker/us/en/surgical-technologies/products/neptune-s.html\">Stryker’s Neptune S</a> helps protect staff from fluid waste exposure.</p>\n<p>“We have to be very concerned as nurses at the end of the procedure and what’s happening with the waste we collected,” she says. “The Neptune has helped because we don’t have to empty a canister that’s sitting on the wall.”</p>\n<p>Stevens, who is a past SGNA president, says the Neptune S system’s integrated specimen collection has also made a positive impact. The device captures polyps that are 2mm in diameter or larger without clogging or needing to turn off suction, and it has a backup basket for added peace of mind.</p>\n",
+        "jcr:lastModified": "Tue Jun 09 2026 19:12:29 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      }
+    },
+    "text_1737277237": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 19:13:30 GMT+0000",
+      "jcr:lastModified": "Tue Jun 09 2026 19:13:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_173727723751746988666230": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<p>&quot;If a polyp is collected in the canister on the wall, then it’s not a great opportunity for the nurse or the tech in the room to have to sift through the waste,” she said. “If we lose a polyp, it’s imperative that the physician tells the patient at the end of the colonoscopy…and that’s a hard conversation.”</p>\n<p>Another product to help support patient safety in the GI suite is the POM Procedural Oxygen Mask. POM is intended to deliver supplemental oxygen and allow for the monitoring of expired gases in non-intubated, spontaneously breathing patients. The mask has helped decrease severe and prolonged hypoxic episodes and in-case interruptions, delay and cancellations.*³,⁴</p>\n",
+        "jcr:lastModified": "Tue Jun 09 2026 19:57:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "text_877776992_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Jun 09 2026 19:07:15 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Help transform staff safety and efficiency at your facility.</span></span></p>\n",
+        "jcr:lastModified": "Tue Jun 09 2026 20:02:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "text_1774720568": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:created": "Tue Jun 09 2026 19:34:14 GMT+0000",
+        "text": "<p>Innovations like the Neptune S system and POM are meant to integrate seamlessly in a facility’s workflow so caregivers can focus on patients. When compared to an open waste management system, a closed system such as Neptune S is more efficient in room set-up, handling and maintenance.⁵</p>\n<p>With a quick turnover between cases, ASCs have the opportunity to care for more patients. And while there is an initial investment in technology, it can deliver lasting value through supporting staff safety, satisfaction and facility efficiency.</p>\n<p>Judd Adelman, a gastroenterologist with more than 20 years of experience in the specialty, shares⁶ that since adopting the Neptune S system, nurses and technicians he works with have said it’s exactly what they need. Not only can a constantly closed waste management system help reduce fluid waste exposure⁵ and the risk of lost polyps**, but it also helps streamline processes because canisters don’t need to be emptied mid-procedure.</p>\n<p>“At this point, I don’t think they’d be comfortable working with anything else,” he says. “Due to the ease of use, we’ve almost had no [staff] turnover since that time.”</p>\n<p>Innovations like the Neptune S system and POM support caregivers where it matters most—enhancing patient and staff safety, streamlining workflows and improving the surgical experience. Stryker is committed to driving change to help make healthcare better.</p>\n",
+        "jcr:lastModified": "Tue Jun 09 2026 20:05:13 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      }
+    },
+    "standaloneimage_1627": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 19:14:19 GMT+0000",
+      "jcr:lastModified": "Tue Jun 09 2026 20:02:29 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_162754674433980206": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "692da8f8addb11d6b9c86541_692da8dc161ee936805657a9_ST_SGNA-Article_Image-2",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/how-technology-helps-address-gi-suite-challenges/692da8f8addb11d6b9c86541_692da8dc161ee936805657a9_ST_SGNA-Article_Image-2.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jun 09 2026 19:14:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "standaloneimage_1126": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Tue Jun 09 2026 19:16:04 GMT+0000",
+        "alt": "692da9a3a7010dc637797b02_692da94d24ed7e5b5df00925_ST_SGNA-Article_Image-4",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/how-technology-helps-address-gi-suite-challenges/692da9a3a7010dc637797b02_692da94d24ed7e5b5df00925_ST_SGNA-Article_Image-4.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jun 09 2026 19:18:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      }
+    },
+    "standaloneimage_2175": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Tue Jun 09 2026 20:20:14 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_217555739177103003": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "692daa49c145e9c3a7b725ce_692da9cdedbce6a8e7c3f6c1_ST_SGNA-Article_Image-3",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/how-technology-helps-address-gi-suite-challenges/692daa49c145e9c3a7b725ce_692da9cdedbce6a8e7c3f6c1_ST_SGNA-Article_Image-3.jpg",
+        "jcr:lastModified": "Tue Jun 09 2026 19:41:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      },
+      "text_877776992_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Jun 09 2026 19:07:15 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Does your ASC use specialized technology in the GI suite? Learn how equipment like Stryker’s Neptune S and POM can help address challenges.</span></span></p>\n",
+        "jcr:lastModified": "Tue Jun 09 2026 20:04:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "1",
+        "jcr:created": "Tue Jun 09 2026 20:08:20 GMT+0000",
+        "CTATitle": "Neptune S",
+        "jcr:lastModified": "Tue Jun 09 2026 20:17:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(76,125,122,1)",
+        "ctaInternalLink": "/content/stryker/us/en/surgical-technologies/products/neptune-s",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      },
+      "curatedcta_copy_copy_339518471": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "1",
+        "jcr:created": "Tue Jun 09 2026 20:08:20 GMT+0000",
+        "CTATitle": "POM",
+        "jcr:lastModified": "Tue Jun 09 2026 20:17:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(76,125,122,1)",
+        "ctaInternalLink": "/content/stryker/us/en/surgical-technologies/products/procedural-oxygen-mask",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          }
+        }
+      }
+    },
+    "text_328600255": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 16:36:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Thu Jun 11 2026 16:36:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 20:19:00 GMT+0000",
+      "jcr:lastModified": "Tue Jun 09 2026 20:19:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "text_522188126": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 09 2026 20:24:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<ol>\n<li><span class=\"fontsize-8em\">This is a paid interview with a Stryker consultant, conducted 05/29/2025, on behalf of Stryker.</span></li>\n<li><span class=\"fontsize-8em\">Kim H, Hyun JN, Lee KJ, Kim HS, Park HJ. Oxygenation before Endoscopic Sedation Reduces the Hypoxic Event during Endoscopy in Elderly Patients: A Randomized Controlled Trial. J Clin Med. 2020 Oct 13;9(10):3282. doi: 10.3390/jcm9103282. PMID: 33066213; PMCID: PMC7602052.</span></li>\n<li><span class=\"fontsize-8em\">Gonzalez RM, How Oxygen Masks in Upper Endoscopies Can Improve Patient and Staff Safety. ENDOPRO Magazine, volume 6, issue 6, July/August 2021, pages 14-17.</span></li>\n<li><span class=\"fontsize-8em\">For 1001 model, internal data on file.</span></li>\n<li><span class=\"fontsize-8em\">Horn, Martlie et al. “Traditional canister-based open waste management system versus closed system: hazardous exposure prevention and operating theatre staff satisfaction.” Journal of Perioperative Nursing in Australia. 28:1 (Autumn 2015):18-22.</span></li>\n<li><span class=\"fontsize-8em\">This is a paid interview with a Stryker consultant, conducted 05/29/2025, on behalf of Stryker.</span></li>\n</ol>\n<p><span class=\"fontsize-8em\">*Based on single site experience by Gonzalez.<br>\n **2 mm or larger</span></p>\n<p><span class=\"fontsize-8em\">This information is intended solely for the use of healthcare professionals. A healthcare professional must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using the product.</span></p>\n<p><span class=\"fontsize-8em\">The information presented is intended to demonstrate the breadth of Stryker product offerings. A healthcare professional must always refer to the package insert, product label and/or instructions for use. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker Representative if you have questions about the availability of Stryker products in your area.</span></p>\n<p><span class=\"fontsize-8em\">Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: Neptune, POM Procedural Oxygen Mask, Stryker. All other trademarks are trademarks of their respective owners or holders.</span></p>\n<p><span class=\"fontsize-8em\">ST-GSNPS-ARTI-2155876_REV-0</span></p>\n",
+      "jcr:lastModified": "Wed Jun 10 2026 18:18:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "1",
+      "jcr:created": "Tue Jun 09 2026 20:29:30 GMT+0000",
+      "CTATitle": "Back to trending topics",
+      "jcr:lastModified": "Tue Jun 09 2026 20:30:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "ctaInternalLink": "/content/stryker/us/en/surgical-technologies/news",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ABCs of the Gilles Walch Classification, ASAP Meeting 2020",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3fcf80ea-bcde-43a1-9fae-590cfd330cc1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "14be8b3b-b27f-4d44-8dcf-8562813dbe43"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 21:00:54 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:02 GMT+0000",
+  "cq:lastModified": "Wed Mar 08 2023 21:39:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "14be8b3b-b27f-4d44-8dcf-8562813dbe43",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "dacb59f8-c964-48fd-b979-9effee522c32",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/AP-013790A 01-10-19_GS_0715_Walch_v2.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/AP-013790A 01-10-19_GS_0715_Walch_v2-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Oct 06 2022 18:00:08 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "On behalf of ASAP Society Meeting, Gilles Walch, MD, shows his latest glenoid classification model.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "ABCs of the Gilles Walch Classification, ASAP Meeting 2020",
+      "jcr:lastModified": "Wed Mar 08 2023 21:39:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 14 2022 19:08:59 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016219A</span></p>\n",
+      "jcr:lastModified": "Mon Nov 14 2022 19:11:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

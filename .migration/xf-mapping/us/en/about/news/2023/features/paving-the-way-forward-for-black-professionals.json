@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Paving the way forward for Black professionals",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1c8bf904-8b96-4eef-a90c-cb7d1842a1c4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "image1",
+  "jcr:predecessors": [
+    "00c7c1d6-552e-4c85-b22b-282cd5778c4c"
+  ],
+  "contentID": "COMM-GSNPS-WEB-542184",
+  "lastPublished": "Wed Feb 11 2026 20:37:26 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 11 2026 20:37:26 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 11 2026 20:37:28 GMT+0000",
+  "cq:lastModified": "Wed Feb 11 2026 20:37:18 GMT+0000",
+  "jcr:baseVersion": "00c7c1d6-552e-4c85-b22b-282cd5778c4c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:37:26 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/diversity-equity-inclusion",
+    "stryker:content-type/news/cr",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Wed Feb 11 2026 20:37:18 GMT+0000",
+  "jcr:uuid": "108c3220-3496-4a14-bfd5-5d2309741a4f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 14 2022 19:49:36 GMT+0000",
+      "jcr:lastModified": "Mon Feb 14 2022 19:49:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/paving_the_way_forwa/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/paving-the-way-forwa/hero/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Mon Feb 14 2022 19:49:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Feb 14 2022 19:58:13 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Mon Feb 14 2022 19:50:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Paving&nbsp;the way forward for Black professionals</span></span>",
+              "jcr:lastModified": "Tue Feb 15 2022 18:43:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 14 2022 19:54:38 GMT+0000",
+      "jcr:lastModified": "Mon Feb 14 2022 19:54:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Feb 06 2023 20:00:13 GMT+0000",
+      "text": "Sixteen years ago, Greg Taylor answered the call to be a Trauma sales representative. More recently, he answered another call—becoming the east coast chapter President of Stryker’s African Ancestry Network. “I wanted to be in a position to make an impact and difference, where I could help make decisions for the greater good of our diversity, equity and inclusion (DE&I) initiatives,” he says. Stryker's African Ancestry Network (SAAN) is an employee resource group, formed by Stryker employees who aspire to drive DE&I, making Stryker a desired career destination for talented Black employees. SAAN continues to develop a network of employees who embrace a culture of inclusion. “We look at this in two buckets,” Greg says, “One is engaging current Black employees and making sure they know they have a voice. The second is engaging the community—creating platforms, events and opportunities for those outside Stryker to come inside and learn more.” Representation in the workplace matters, and it’s critical when it comes to achieving one of Stryker’s key DE&I commitments: maximizing the power of inclusion to drive innovation and growth. “I feel like including everybody is the only way to be successful, otherwise, you might be missing a critical perspective,” Greg says. “That’s the greatest thing about healthcare,” he adds. “If you put people together in a room, you can begin to solve some really difficult healthcare problems that take into consideration the unique needs of patients.” Driving inclusion and improving healthcare With SAAN’s leadership, topics that impact the Black community are brought to the forefront of conversations to drive greater inclusion. Seeking and valuing diverse perspectives is critical to delivering on our mission to make healthcare better for all. Whether Greg is serving a customer in the operating room, or planning SAAN’s next outreach event, his motivation is clear. “I don’t look to pay it back. I look to pay it forward, he says. “I hope someone looks back years from now and says, ‘Greg Taylor helped pave the way for individuals to get into this spot.’ I want to find ways to help individuals who look just like me have the opportunities I was given 16 years ago.” Despite his busy, hectic life as a Trauma sales representative, doing whatever it takes for customers and patients, Greg’s purpose is clear, and renews itself every morning. “Every day I get up, I try to leave a legacy and help people develop their careers,” Greg says, speaking both for his ERG and Stryker as a whole. “Black History Month is a time to reflect, but also a time to get motivated and make a difference,” he adds. “I want to leave a footnote in history where we made a lasting impact.”",
+      "jcr:lastModified": "Mon Feb 06 2023 20:00:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/paving_the_way_forwa/body/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/paving-the-way-forwa/body/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Feb 07 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "07-Feb-2023",
+    "jcr:lastModified": "Tue Feb 07 2023 14:09:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/features/paving-the-way-forward-for-black-professionals/image1.jpeg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Feb 06 2023 20:01:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

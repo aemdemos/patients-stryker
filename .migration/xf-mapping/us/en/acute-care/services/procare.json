@@ -1,0 +1,988 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "You focus on patient care. We'll focus on medical equipment repairs.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProCare Services | Acute Care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f3238022-7ba0-47cf-a5d6-aeb3c70ea6ef",
+  "cq:template": "/apps/stryker/templates/packagedetail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "Stryker ProCare services provide medical device equipment repair and medical device services by trained biomedical repair technicians",
+  "jcr:predecessors": [
+    "00c14030-6ab7-4614-b61d-84e0321de4d5"
+  ],
+  "contentID": "AC-GSNPS-SYK-2033021_REV-0_en_us",
+  "lastPublished": "Wed Aug 19 2026 19:24:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 19:24:24 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 19:24:26 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 19:24:10 GMT+0000",
+  "jcr:description": "You focus on patient care. We'll focus on medical equipment repairs. Choose the medical equipment service package that best meets your needs.",
+  "jcr:baseVersion": "00c14030-6ab7-4614-b61d-84e0321de4d5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:41:00 GMT+0000",
+  "pageTitle": "ProCare Services | Acute Care",
+  "cq:tags": [
+    "stryker:content-type/system",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care",
+    "stryker:services/procare"
+  ],
+  "jcr:lastModified": "Thu Aug 21 2025 16:03:43 GMT+0000",
+  "jcr:uuid": "b02fc97f-331e-4b47-8d6a-e9015e168605",
+  "sling:resourceType": "stryker/components/structure/pages/packagedetail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "ProCare Services | Acute Care",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Mon Jul 21 2025 21:51:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_1407158962": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Mon Jul 21 2025 22:14:06 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Tue Jul 22 2025 12:55:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:04:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Your&nbsp;</span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\">trusted</span></span></span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">&nbsp;medical device service partner</span></span></span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">ProCare isn’t just about hospital bed repair or medical equipment services. It’s a partnership you can count on to give you one less thing to worry about, and one more reason to feel confident you’re doing all you can for your clinicians, staff and patients.</span></span>",
+      "jcr:lastModified": "Wed Feb 15 2023 14:50:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Feb 15 2023 01:18:17 GMT+0000",
+      "jcr:lastModified": "Wed Feb 15 2023 01:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Mar 02 2022 18:11:36 GMT+0000",
+          "CTATitle": "Contact a tech",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Wed Feb 15 2023 01:17:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_838027950": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Feb 15 2023 01:19:50 GMT+0000",
+      "jcr:lastModified": "Wed Feb 15 2023 01:19:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Feb 03 2023 19:15:53 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Feb 06 2023 20:02:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/Services/ProCare/Videos/procare-day-in-the-life.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/procare-day-in-the-life-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Feb 03 2023 19:16:08 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols3_65718797_copy__203053121": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jan 31 2023 15:46:16 GMT+0000",
+      "jcr:lastModified": "Tue Jan 31 2023 15:46:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Mar 09 2022 23:29:20 GMT+0000",
+      "jcr:lastModified": "Wed Mar 09 2022 23:29:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">of customers surveyed reported that their downtime had been reduced because of ProCare Services.<sup>1</sup></span></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Mar 09 2022 23:19:09 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Mon Feb 06 2023 19:38:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "92",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">of customers reported the life of their equipment has been extended because of ProCare Services.<sup>1</sup></span></span>",
+          "fontColor": "rgb(255,181,0)",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Mar 09 2022 23:19:09 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Mon Feb 06 2023 19:37:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "90",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">hours of equipment training is what our ProCare technicians receive, and have an average tenure of 12 years with Stryker.</span></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Mar 09 2022 23:19:09 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Mon Feb 06 2023 19:38:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "200",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_65718797_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jan 31 2023 15:46:16 GMT+0000",
+      "jcr:lastModified": "Tue Jan 31 2023 15:46:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:04:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Our </span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\">proactive </span></span></span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">approach</span></span></span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"fontsize-1-5-vw\">With ProCare Service, we offer you operational and financial peace of mind through three comprehensive offerings: ProCare Preventive Maintenance, ProCare Protect and ProCare Prevent. Choose the medical equipment service package that best meets your needs.</span>",
+      "jcr:lastModified": "Mon Aug 04 2025 20:41:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1_3_2_3_981669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "ProCare tech servicing hospital furniture",
+          "srcFileRef": "/content/dam/stryker/acute-care/Services/ProCare/Images/procare_ac_furniture_1200x800.jpg",
+          "jcr:lastModified": "Mon Jul 21 2025 20:00:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Preventive&nbsp;<span style=\"color: #ffb500;\">Maintenance</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">With ProCare Preventive Maintenance, a dedicated, on-site Stryker ProCare medical device technician works with you to enable maximum performance and workflow management solutions related to equipment utilization and uptime, staff engagement and patient safety.</span></p>\n",
+          "jcr:lastModified": "Mon Aug 04 2025 20:43:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_981669_373701501": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "ProCare tech servicing hospital bed",
+          "srcFileRef": "/content/dam/stryker/acute-care/Services/ProCare/Images/procare_ac_beds-stretchers_1200x800.jpg",
+          "jcr:lastModified": "Mon Jul 21 2025 20:01:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">ProCare <span style=\"color: #ffb500;\">Protect</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">ProCare Protect is a maintenance and service solution that provides OEM support with unlimited service calls, enabling you to balance equipment uptime needs within your budget.</span></p>\n",
+          "jcr:lastModified": "Mon Jul 21 2025 20:01:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_981669_2120557270": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "ProCare tech servicing hospital furniture",
+          "srcFileRef": "/content/dam/stryker/acute-care/Services/ProCare/Images/procare_ac_preventative_1200x800.jpg",
+          "jcr:lastModified": "Mon Aug 04 2025 20:38:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">ProCare&nbsp;<span style=\"color: #ffb500;\">Prevent</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">The optimal program for customers who need a total solution, ProCare Prevent provides enhanced service solutions to get the most from your equipment. ProCare Prevent includes unlimited service calls, OEM parts and annual preventive maintenance inspections, all with proper documentation.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 20 2025 21:43:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1934765893": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Feb 06 2023 19:44:01 GMT+0000",
+      "jcr:lastModified": "Mon Feb 06 2023 19:44:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "table_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\r\n<tbody><tr><td> </td>\r\n<td style=\"text-align: center;\"><b>PM-only</b></td>\r\n<td style=\"text-align: center;\"><b>Protect</b></td>\r\n<td style=\"text-align: center;\"><b>Prevent</b></td>\r\n</tr><tr><td>Stryker OEM parts</td>\r\n<td style=\"text-align: center;\"> </td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Labor and travel expenses for repairs</td>\r\n<td style=\"text-align: center;\"> </td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Stryker-trained service specialist</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>2-hour call back time*</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>24-72 hour repair turnaround*</td>\r\n<td style=\"text-align: center;\"> </td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Loaner device during PM or repair*</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Software updates*</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Discounts on upgrades</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Documentation for governing bodies</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\"> </td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td>Annual PM inspection service</td>\r\n<td style=\"text-align: center;\">•</td>\r\n<td style=\"text-align: center;\"> </td>\r\n<td style=\"text-align: center;\">•</td>\r\n</tr><tr><td><i>*based on the provisions of the service agreement and the location of the product</i></td>\r\n<td> </td>\r\n<td> </td>\r\n<td> </td>\r\n</tr></tbody></table>\r\n",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Aug 29 2017 13:02:26 GMT-0400",
+          "title": "Choosing your plan",
+          "jcr:lastModified": "Tue Feb 14 2023 21:48:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_755151165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Mar 14 2022 17:11:44 GMT+0000",
+      "jcr:lastModified": "Mon Mar 14 2022 17:11:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 14 2022 17:11:48 GMT+0000",
+          "alt": "Medical equipment repair technicians specialize in Stryker hospital bed and stretcher repair",
+          "srcFileRef": "/content/dam/stryker/acute-care/Services/ProCare/Images/600x300_ProCare_main2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 29 2024 15:18:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Jul 20 2020 20:04:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">We've got your </span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\">back</span></span></span></span></span>",
+          "line2": "<p><span class=\"futura-bold\"><span class=\"fontsize-2vw\">Optimize your&nbsp;investment</span></span></p>\r\n<p>&nbsp;</p>\r\n<p><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5-vw\">The reliability of our products is just the beginning of the Stryker commitment to customer satisfaction. While Stryker equipment is designed to perform over time, continue to invest in your capital equipment with a ProCare Service solution.&nbsp;Our service solutions aim to provide a high standard&nbsp;</span></span><span style=\"font-size: 21px; background-color: transparent;\">of service and support for your facility's needs and are customizable and scalable to any budget.&nbsp;</span></p>\r\n",
+          "jcr:lastModified": "Wed Aug 20 2025 21:45:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Feb 24 2026 17:16:57 GMT+0000",
+          "jcr:lastModified": "Tue Feb 24 2026 18:57:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "internalLink": "/content/stryker/us/en/services-and-solutions/procare/medical",
+              "buttonText": "Check technician coverage",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "cols2_2_3_1_3_845033460": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Aug 30 2017 11:17:13 GMT-0400",
+      "jcr:lastModified": "Wed Aug 30 2017 11:17:13 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Feb 06 2023 19:39:10 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Mon Feb 06 2023 19:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "leftPadding": "1",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Connect with a&nbsp;</span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\">ProCare Service technician</span></span></h3>\n",
+      "jcr:lastModified": "Wed Feb 15 2023 01:15:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": "true"
+    },
+    "cols_718452362": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Feb 06 2023 19:47:01 GMT+0000",
+      "jcr:lastModified": "Mon Feb 06 2023 19:47:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_279238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "jcr:lastModified": "Wed Mar 02 2022 17:56:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:38:32 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Wed Aug 19 2026 19:24:10 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Aug 30 2017 11:11:52 GMT-0400",
+          "text": "<h5>Contact us for all your ProCare Service needs, including:<br>\n</h5>\n<ul>\n<li>Dispatching your local service technician</li>\n<li>Ordering Stryker OEM parts</li>\n<li>Technical support for your Stryker equipment</li>\n</ul>\n<p><a href=\"mailto:medtechsup@stryker.com\">medtechsup@stryker.com</a><br>\n</p>\n<p>1-800-STRYKER</p>\n",
+          "jcr:lastModified": "Tue Feb 14 2023 20:21:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1907874521": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jul 21 2025 20:32:12 GMT+0000",
+      "jcr:lastModified": "Mon Jul 21 2025 20:32:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "description": "Click the tabs below to view additional covered products.",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "deepLinkingId": "covered-products",
+          "jcr:created": "Mon Jul 21 2025 20:32:56 GMT+0000",
+          "title": "Covered products",
+          "jcr:lastModified": "Mon Jul 21 2025 20:35:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "tabs": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Jul 21 2025 20:36:07 GMT+0000",
+          "jcr:lastModified": "Mon Jul 21 2025 22:06:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:21:37 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 20:38:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/bari-10a"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/intouch"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/ld-304"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/mv3"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/procuity"
+                },
+                "6": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/procuity-icu"
+                },
+                "7": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/s3"
+                }
+              }
+            }
+          },
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:00:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isoflex-lal"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isoflex-se"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isolibrium"
+                }
+              }
+            },
+            "customizable": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:00:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isotour"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/isoair"
+                }
+              }
+            }
+          },
+          "tabs_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 3,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy_co": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:02:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/prime-tc"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/trurize"
+                }
+              }
+            }
+          },
+          "tabs_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 4,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy_co": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:04:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/nara-bassinet"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/unity-furniture"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/tru-fit"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/bedside-stands"
+                },
+                "6": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/symmetry-plus"
+                },
+                "7": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/side-seating"
+                }
+              }
+            }
+          },
+          "tabs_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 5,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy_co": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:08:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/cub"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/eye-surgery"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/fluoroscopy-stretcher"
+                }
+              }
+            },
+            "customizable_copy_co_449889097": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:08:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/gynnie"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/prime-series"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/primex-x-ray"
+                }
+              }
+            },
+            "customizable_copy_co_1545291825": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:48:58 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 22:09:43 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/stretcher-chairs"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/surgistool"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/acute-care/products/transport"
+                }
+              }
+            }
+          },
+          "tabs_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 6,
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "1",
+              "tabTitle": "Beds"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "2",
+              "tabTitle": "Stretchers"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "3",
+              "tabTitle": "Clinical Seating"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "4",
+              "tabTitle": "Patient Room Furniture"
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "5",
+              "tabTitle": "Transport"
+            }
+          }
+        }
+      }
+    },
+    "cols_316082865": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Jul 21 2025 20:20:41 GMT+0000",
+      "jcr:lastModified": "Mon Jul 21 2025 20:20:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "description": "Click the tabs below to view additional resources and downloads.",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "deepLinkingId": "related",
+          "jcr:created": "Mon Jul 21 2025 20:32:56 GMT+0000",
+          "title": "Related",
+          "jcr:lastModified": "Wed Nov 05 2025 19:32:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "tabs": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Jul 21 2025 20:20:46 GMT+0000",
+          "jcr:lastModified": "Mon Aug 04 2025 20:45:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload_741017005": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": [
+                "/content/dam/stryker/acute-care/Services/ProCare/Resources/Acute-Care_ProCare_Brochure-US.pdf",
+                "/content/dam/stryker/services/procare/resources/ProCare_Special-Ops-One Pager_US-CA.pdf"
+              ],
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:lastModified": "Tue Jul 22 2025 13:37:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            },
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:21:48 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 20:21:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": "/content/dam/stryker/ems/Services/ProCare/Videos/ProCare_special ops_sizzle_final.mp4",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:lastModified": "Mon Jul 21 2025 20:48:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            },
+            "customizable": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Jul 21 2025 20:21:37 GMT+0000",
+              "jcr:lastModified": "Mon Jul 21 2025 20:21:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable"
+            }
+          },
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "1",
+              "tabTitle": "Product Information"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "2",
+              "tabTitle": "Videos"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Aug 04 2025 20:38:58 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Mon Aug 04 2025 20:39:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>Every day, you count on your medical equipment to perform at its best. With ProCare Services, our people help to ensure your equipment is ready to perform when it's needed and help make it easier to get the most from your investment. When an issue arises, we promise to help solve it-making repairs quickly and correctly. </p>\r\n<p> </p>\r\n<p>Our team provides preventive maintenance and service support to help enhance the reliability and maximize the life of your equipment. ProCare isn't just a service program. It's a partnership you can count on to give you one less thing to worry about, and one more reason to feel confident you're doing all you can for your clinicians, staff, and patients. <br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 06 2023 19:47:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/Services/ProCare/Images/600x300_ProCare_Main.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Stryker ProCare customer Engagement Study. 2014 Gallup Inc. Published August 2014&nbsp;</p>\r\n",
+    "jcr:lastModified": "Mon Feb 06 2023 19:44:30 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 06 2023 19:47:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

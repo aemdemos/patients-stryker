@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vocera Legal Documents",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0add01d6-6b9f-4117-849d-cfaab1c4a631",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:predecessors": [
+    "6a3d211f-87c7-47fe-b0b7-565869e4feee"
+  ],
+  "lastPublished": "Wed Jan 21 2026 21:04:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 21 2026 21:04:18 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 21 2026 21:04:20 GMT+0000",
+  "cq:lastModified": "Wed Jan 21 2026 21:00:54 GMT+0000",
+  "jcr:baseVersion": "6a3d211f-87c7-47fe-b0b7-565869e4feee",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:30:10 GMT+0000",
+  "pageTitle": "Vocera Legal",
+  "jcr:lastModified": "Wed Aug 09 2023 12:56:05 GMT+0000",
+  "jcr:uuid": "a1c982d7-b5cb-4b91-9271-d2b32875181b",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Thu Aug 31 2023 21:41:22 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Smart Care (Vocera&nbsp;and&nbsp;care.ai)&nbsp;Legal Documents</span></span></h1>\n",
+      "jcr:lastModified": "Wed Jan 21 2026 20:56:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Aug 31 2023 21:42:38 GMT+0000",
+      "jcr:lastModified": "Thu Aug 31 2023 21:42:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 09 2023 16:20:01 GMT+0000",
+      "jcr:lastModified": "Wed Aug 09 2023 16:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Aug 09 2023 19:50:38 GMT+0000",
+          "text": "<p><a title=\"Go to Smart Care Purchase Terms and Conditions\" href=\"https://www.stryker.com/us/en/acute-care/vocera/legal/voice-messaging-products-legal-documents.html\"><span class=\"standalone-link\">Smart Care Purchase Terms and Conditions</span></a><br>\n</p>\n<p><a href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/202508/Stryker-BAA-Template-FINAL_8-21-2025.pdf\" title=\"Open Business Associate Agreement PDF\" target=\"_blank\"><span class=\"standalone-link\">Business Associate Agreement</span></a></p>\n<p><a href=\"https://voceradocs.stryker.com/\" title=\"Go to Stryker Vocera documentation portal\"><span class=\"standalone-link\">Product Documentation</span></a></p>\n<p><a href=\"/content/stryker/us/en/acute-care/vocera/legal/professional-services-legal-documents.html\" title=\"View Professional Services legal documents\"><span class=\"standalone-link\">Professional Services Legal Documents</span></a></p>\n<p><a href=\"/content/stryker/us/en/acute-care/vocera/legal/mobile-application-privacy-policy.html\" title=\"View Mobile Application Privacy Policy\" target=\"_blank\"><span class=\"standalone-link\">Mobile Application Privacy Policy</span></a></p>\n<p><a title=\"Go to Vocera Third-party Software\" href=\"https://voceradocs.stryker.com/\"><span class=\"standalone-link\">Third-Party Software</span></a></p>\n",
+          "jcr:lastModified": "Wed Jan 21 2026 21:00:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  }
+}

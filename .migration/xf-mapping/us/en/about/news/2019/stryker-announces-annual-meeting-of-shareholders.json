@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces Annual Meeting of Shareholders",
+  "jcr:versionHistory": "794015b8-c412-418a-b0d7-a238698dc3cb",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "7e1a2f65-bb99-4d84-892c-3c4bd1a46b7d"
+  ],
+  "lastPublished": "Fri Mar 22 2019 13:24:43 GMT+0000",
+  "jcr:created": "Fri Mar 22 2019 13:24:43 GMT+0000",
+  "cq:lastModified": "Fri Mar 22 2019 13:24:36 GMT+0000",
+  "jcr:baseVersion": "7e1a2f65-bb99-4d84-892c-3c4bd1a46b7d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir"
+  ],
+  "jcr:uuid": "6e91571f-5390-4e8f-afca-0566052a756c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Wed Mar 20 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Mar-2019",
+    "jcr:lastModified": "Fri Mar 22 2019 13:22:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker (NYSE:SYK) announced its 2019 Annual Meeting of Shareholders is scheduled as follows:</p>\n<p>May 1, 2019 – 2:00 p.m. Eastern Time<br>\nRadisson Plaza Hotel &amp; Suites at The Kalamazoo Center<br>\nKalamazoo, Michigan</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2019/Stryker-announces-Annual-Meeting-of-Shareholders/default.aspx\">See full release here</a>.</p>\n",
+    "jcr:lastModified": "Fri Mar 22 2019 13:24:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

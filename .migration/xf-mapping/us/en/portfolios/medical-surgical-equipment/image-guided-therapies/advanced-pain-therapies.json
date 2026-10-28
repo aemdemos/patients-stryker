@@ -1,0 +1,93 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Advanced pain therapies",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "56577e6b-f3ef-4e67-86b3-584048ce5eb6",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "IVS portfolio - running man",
+  "jcr:predecessors": [
+    "d6c78b63-4635-4502-a0c2-7ce09a2975de"
+  ],
+  "contentID": "IVS-GSNPS-SYK-1972150_REV-0",
+  "lastPublished": "Wed Sep 17 2025 14:27:15 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 17 2025 14:27:15 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 17 2025 14:27:17 GMT+0000",
+  "cq:lastModified": "Wed Sep 17 2025 14:27:10 GMT+0000",
+  "jcr:description": "Advanced pain therapies refer to specialized, minimally invasive treatments designed to help manage pain and increase mobility, particularly when non-surgical methods haven't been successful in relieving symptoms.¹",
+  "jcr:baseVersion": "d6c78b63-4635-4502-a0c2-7ce09a2975de",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 14:02:25 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/image-guided-therapies",
+    "stryker:specialty/advanced-pain-therapies",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Wed Sep 17 2025 14:22:41 GMT+0000",
+  "jcr:uuid": "96109900-7561-467f-a350-98c7b965baed",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/image-guided-therapies/advanced-pain-therapies/IVS portfolio - running man.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Jun 05 2025 20:53:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed Sep 17 2025 14:23:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Wed Sep 17 2025 14:27:10 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/interventional-spine/products/mild-procedure"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/interventional-spine/products/multigen2-rf-generator-and-venom-cannula-and-electrode-system"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/interventional-spine/products/optablate-bvn"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/interventional-spine/products/dekompressor-disc-removal-system"
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker enters national partnership with Minor League Baseball to become the “Official SmartRobotics™ Joint Replacement Partner”",
+  "jcr:versionHistory": "386552fb-6eb0-40b7-831c-eed0c198029c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "04392072-1d68-4edf-b04f-d9653f052a97"
+  ],
+  "contentID": "GSNPS-PR-72_Rev-1_29607",
+  "lastPublished": "Thu Apr 29 2021 13:07:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 29 2021 13:07:25 GMT+0000",
+  "cq:lastModified": "Wed Apr 28 2021 20:50:47 GMT+0000",
+  "jcr:baseVersion": "04392072-1d68-4edf-b04f-d9653f052a97",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Wed Apr 28 2021 20:50:47 GMT+0000",
+  "jcr:uuid": "12a904d7-a21f-4aae-8188-6feeddf180fb",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 28 2021 20:07:43 GMT+0000",
+      "jcr:lastModified": "Wed Apr 28 2021 20:07:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Apr 28 2021 20:07:47 GMT+0000",
+          "jcr:lastModified": "Wed Apr 28 2021 20:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Apr 28 2021 20:07:51 GMT+0000",
+          "text": "<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/\">stryker.com</a>.</p>\n<p><b>About Minor League Baseball</b><br>\nMinor League Baseball is the governing body for all professional baseball teams in the United States, Canada, and the Dominican Republic that are affiliated with Major League Baseball® clubs through their farm systems. In 2019, Minor League Baseball attracted over 41.5 million fans to its ballparks to see baseball’s future stars and experience affordable family-friendly entertainment that has been a staple of Minor League Baseball since 1901. For more information, visit <a href=\"https://www.milb.com/\">www.MiLB.com</a>. Follow Minor League Baseball on <a href=\"https://www.facebook.com/milb/\">Facebook</a>, <a href=\"https://www.instagram.com/milb\">Instagram</a> and <a href=\"https://twitter.com/MiLB\">Twitter</a>.</p>\n<p><b>About K9s For Warriors</b><br>\nDetermined to end veteran suicide, <a href=\"https://www.k9sforwarriors.org/\">K9s For Warriors</a> is the nation’s largest provider of trained Service Dogs to military veterans suffering from PTSD, traumatic brain injury and/or military sexual trauma. With the majority of dogs coming from high-kill rescue shelters, this innovative program allows the K9/Warrior team to build an unwavering bond that facilitates their collective healing and recovery. This treatment method is backed by scientific research (from Purdue University’s OHAIRE Lab) demonstrating Service Dogs’ ability to help mitigate their veteran’s symptoms of PTSD while simultaneously restoring their confidence and independence.</p>\n",
+          "jcr:lastModified": "Wed Apr 28 2021 20:11:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_178066173": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 28 2021 20:11:55 GMT+0000",
+      "jcr:lastModified": "Wed Apr 28 2021 20:11:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Apr 28 2021 20:11:59 GMT+0000",
+          "jcr:lastModified": "Wed Apr 28 2021 20:11:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Apr 28 2021 20:12:04 GMT+0000",
+          "text": "<p><b>Contact Information</b><br>\n<br>\nJeanine Guilfoyle, Stryker<br>\n201.264.6597<br>\n<a href=\"mailto:jeanine.guilfoyle@stryker.com\">jeanine.guilfoyle@stryker.com</a></p>\n<p>Shannen Walsh, Coyne PR<br>\n973.588.2101<br>\n<a href=\"mailto:swalsh@coynepr.com\">swalsh@coynepr.com</a></p>\n<p>Jeff Lantz, Minor League Baseball<br>\n515.208.0508<br>\n<a href=\"mailto:JLantz@MiLB.com\">JLantz@MiLB.com</a></p>\n",
+          "jcr:lastModified": "Wed Apr 28 2021 20:13:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Apr 29 2021 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Apr-2021",
+    "jcr:lastModified": "Wed Apr 28 2021 20:05:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><b>MAHWAH, NJ and NEW YORK, NY, April 29, 2021</b> – Today, Stryker and Minor League Baseball™ (MiLB™) announced a first-of-its-kind multiyear national partnership, designating the medical device company as “The Official SmartRobotics™ Joint Replacement Partner of Minor League Baseball.” In support of its commitment to making healthcare better, and as part of the broader MiLB partnership, Stryker is also the presenting partner of “Own the Walk” – the first-ever national platform that encourages fans of all ages to stay active through everyday activities like walking.</p>\n<p>Together, Stryker and MiLB will host “Own the Walk” game day events at MiLB ballparks across the country, where the latest innovation in joint replacement technology, Mako SmartRobotics™, will be on full display to fans. At each event, fans will be invited to participate in several in-stadium experiences and activities, while learning about the benefits of Mako SmartRobotics™, a technology that uses 3D CT-based planning software for hip and knee replacement that enables surgeons to create a 3D image of each patient’s unique anatomy.</p>\n<p>In 2021, Stryker is taking its commitment to “Own the Walk” one step further: for every walk issued to a batter during the regular season, Stryker will donate $1 to K9s For Warriors, the nation’s largest provider of service dogs to American veterans living with military-related trauma. Stryker has been a committed partner of K9s For Warriors since 2015, having sponsored 31 service dogs to date — the largest number by any corporate partner.</p>\n<p>“We are thrilled to work alongside Minor League Baseball to bring the ‘Own the Walk’ platform to fans and communities across the U.S., while also supporting our veterans,” said Don Payerle, president of Stryker's Joint Replacement division. “Minor League Baseball fans are not only passionate about the game, but they also care about spending active time together with loved ones, so what better way to get active than by spending a day with the family at the ballpark? Our country has endured a great deal over the past year and we want to engage local communities with fun and healthy activities, including learning about the importance of joint health and innovative medical technologies like Mako SmartRobotics™.”</p>\n<p><b>The Nation Emerges from COVID-19</b><br>\nWith the nationwide onset of COVID-19 in March 2020, both the Centers for Disease Control and Prevention and the American College of Surgeons recommended delaying non-urgent surgeries – including joint replacement – until the pandemic was better controlled. As the country begins to re-open, it is critical that individuals with joint pain revisit a treatment plan with their physician to prevent further pain and potential complications. Educational seminars at the ballparks with local orthopaedic surgeons are one avenue to educate individuals on their options and the latest technologies.</p>\n<p>“The reputation and quality of Stryker’s products, along with its commitment to philanthropic causes, gives this partnership a solid foundation for growth,” said Kurt Hunzeker, Major League Baseball’s Vice President of Minor League Business Operations. “Minor League Baseball continues to partner with companies that serve their communities, and with the help of Stryker, we can remain connected to our millions of fans and introduce them to new advancements designed to keep them active.”</p>\n<p>For additional information on Stryker’s “Own the Walk” platform, please visit <a href=\"https://patients.stryker.com/mako-robotic-arm-assisted-technology?cid=makosmartrobotics.com\">www.makosmartrobotics.com</a>.</p>\n<p>All surgery carries risk. See your orthopaedic surgeon to discuss your potential benefits and risks. Not all patients will have the same postoperative recovery and activity level. Individual results vary.</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Wed Apr 28 2021 20:47:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Stryker MiLB logos",
+    "jcr:lastModified": "Wed Apr 28 2021 20:45:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/stryker_logo2015_web.jpg"
+  }
+}

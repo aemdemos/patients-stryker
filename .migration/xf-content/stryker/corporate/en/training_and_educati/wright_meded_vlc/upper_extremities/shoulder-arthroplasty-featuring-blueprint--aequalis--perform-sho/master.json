@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder Arthroplasty featuring Blueprint: AEQUALIS™ PERFORM™Shoulder Prosthesis Tutorial Part 2 Surgery & Follow-up - Armodios Hatzidakis, MD.",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ebb5f55b-c701-490c-b90c-651a17aaf51d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1591f0b4-4241-45d2-9d47-ddec7fad73fe"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:58:27 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 21:00:13 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:00:28 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 19:20:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1591f0b4-4241-45d2-9d47-ddec7fad73fe",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:57:17 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "bef93cc8-5481-4394-9e68-2130d8cd7fb6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/CAW-0508 Blueprint_SimplicitiArthroplasty_Full.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/CAW-0508 Blueprint_SimplicitiArthroplasty_Full-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Aug 12 2022 19:32:55 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Orthopedic surgeon, Armodios Hatzidakis, MD, gives a tutorial for a shoulder prosthesis, using Blueprint® 3D Planning + PSI. Featuring Tornier Perform® Anatomic Glenoid.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "link",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Shoulder arthroplasty featuring Blueprint®: Tornier Perform® Anatomic Glenoid Shoulder Prosthesis Tutorial Part 2 Surgery & Follow-up – Armodios Hatzidakis, MD. ",
+      "jcr:lastModified": "Tue Aug 20 2024 19:20:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 27 2022 15:29:26 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016275A</span></p>\n",
+      "jcr:lastModified": "Fri Mar 17 2023 18:52:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  }
+}

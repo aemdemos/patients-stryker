@@ -1,0 +1,215 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Services and Support (no product resources)",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "608a74c7-82cc-46b9-9b31-cffa53d60a0c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "ae72312f-90cd-4ef1-a6dd-bc1527c246eb"
+  ],
+  "jcr:created": "Thu May 02 2024 14:05:51 GMT+0000",
+  "cq:lastReplicated": "Thu May 02 2024 14:05:58 GMT+0000",
+  "cq:lastModified": "Tue Mar 26 2024 19:09:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ae72312f-90cd-4ef1-a6dd-bc1527c246eb",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "0ffa5eb1-03ee-4c33-be0b-50992d04957e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">SERVICE AND SUPPORT</span></span></span></p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Robust support for your team</span></span></h2>\n",
+      "jcr:lastModified": "Tue Dec 19 2023 14:55:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Tech Support",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:53:08 GMT+0000",
+      "jcr:lastModified": "Tue Mar 26 2024 18:42:50 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy1286965417618825": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Technical support icon",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/icon_techsupport_101px_Blue.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Sep 13 2022 14:45:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "3",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Technical support</span></span></p>\n<p><span class=\"fontsize-1-25em\">We'll work with you to quickly assess your situation and find the best solution.</span></p>\n",
+        "jcr:lastModified": "Tue Dec 19 2023 14:53:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",
+        "CTATitle": "Contact support",
+        "CTAImageAltText": "Contact support",
+        "jcr:lastModified": "Tue Mar 26 2024 18:46:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(28,86,135,1)",
+        "ctaInternalLink": "/content/stryker/edit_intl/en/emergency-care/contact.html"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1036304856": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "ProCare",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:53:13 GMT+0000",
+      "jcr:lastModified": "Tue Mar 26 2024 18:43:30 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_10363048561287005345105888": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Service icon",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/ProCare_Icon_Blue.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Sep 13 2022 14:45:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "3",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">ProCare service plans</span></span></p>\n<p><span class=\"fontsize-1-25em\">Focus on saving lives while extending the integrity of your devices with a ProCare service plan.</span></p>\n",
+        "jcr:lastModified": "Tue Dec 19 2023 14:53:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",
+        "CTATitle": "Learn more",
+        "CTAImageAltText": "Learn more",
+        "jcr:lastModified": "Tue Mar 26 2024 18:45:52 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(28,86,135,1)",
+        "ctaInternalLink": "/content/stryker/edit_intl/en/emergency-care/services/procare.html"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1692037312": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Training",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:53:13 GMT+0000",
+      "jcr:lastModified": "Tue Mar 26 2024 18:44:26 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_16920373121287061170038117": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Continuing education icon",
+        "srcFileRef": "/content/dam/stryker/ems/products/lifepak-15/us/icon_lucas_continuing-education_101px.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Sep 13 2022 14:45:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "3",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Nov 16 2021 20:11:51 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Training and education</span></span></p>\n<p><span class=\"fontsize-1-25em\">Discover webinars, online and in-person courses and other resources to strengthen your clinical education.</span></p>\n",
+        "jcr:lastModified": "Tue Dec 19 2023 14:54:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Fri Oct 01 2021 18:17:39 GMT+0000",
+        "CTATitle": "Learn more",
+        "CTAImageAltText": "Learn more",
+        "jcr:lastModified": "Tue Mar 26 2024 19:09:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(28,86,135,1)",
+        "ctaInternalLink": "/content/stryker/edit_intl/en/training-and-education/medical-and-surgical-equipment--/emergency-care-and-patient-resuscitation"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    }
+  }
+}

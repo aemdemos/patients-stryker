@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "1663",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a782ce9b-7fa6-43e7-93a0-1b78fb9e86c6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "910d23a9-3d9e-4be4-a289-ddcb9b8fe50d"
+  ],
+  "lastPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "jcr:created": "Fri Jul 25 2025 15:55:32 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 15:55:34 GMT+0000",
+  "cq:lastModified": "Tue Jul 15 2025 18:51:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "910d23a9-3d9e-4be4-a289-ddcb9b8fe50d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "56140b39-01b5-48e7-8008-812d502bdd7f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jan 23 2020 19:03:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Rajeev</span>&nbsp;Suri</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Director since 2018, Audit Committee<br>\n </span></span><br>\nFormer Chief Executive Officer of Inmarsat<br>\n<br>\n&nbsp;</p>\n<p>Mr. Suri is the Chairman of Digicel Group, a leading digital provider across the Caribbean and Central America and the Chairman of M-KOPA, a leading African financial technology company. He is the former Chief Executive Officer of Inmarsat, a world leader in global, mobile satellite communications and the former President and Chief Executive Officer of Nokia, from 2014 through July 2020. From 2009 to 2014, he was Chief Executive Officer of Nokia Solutions and Networks (previously Nokia Siemens Networks). Mr. Suri also serves as a director of Singapore Telecommunications Limited (commonly known as Singtel), a publicly traded Singaporean telecommunications company.<br>\n</p>\n<p>Mr. Suri has deep business experience working across a range of functions, including strategy, mergers and acquisitions, marketing and sales. He led a transformation of Nokia through significant portfolio adjustments, including the acquisition of Alcatel-Lucent, and has strong global experience. Mr. Suri’s business background and extensive knowledge across a range of technology solutions provide critical input to our Board.<br>\n</p>\n",
+      "jcr:lastModified": "Mon Jul 14 2025 18:26:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 20 2020 19:33:18 GMT+0000",
+      "alt": "Rajeev Suri",
+      "srcFileRef": "/content/dam/stryker/about/our-management/Board-of-Directors/new-bod/gold-bar/Our_BOD_Rajeev_Suri_Gold_V2.jpg",
+      "jcr:lastModified": "Tue Jul 15 2025 18:51:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

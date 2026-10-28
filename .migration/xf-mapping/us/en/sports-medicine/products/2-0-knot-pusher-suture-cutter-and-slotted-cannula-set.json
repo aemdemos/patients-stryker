@@ -1,0 +1,165 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Knot pusher and cutter",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "2-0 Knot Pusher/Suture Cutter and Slotted Cannula Set",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f6ad755d-ac53-4d7d-9d46-fe0de3db133f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/2-0-knot-pusher---suture-cutter-and-slotted-cannula-set/images/Thumb-20Knot.png",
+  "jcr:predecessors": [
+    "93516ed8-b9dc-4000-a2ac-0c9f20f9a47d"
+  ],
+  "contentID": "Literature number 1000903160",
+  "lastPublished": "Wed Aug 19 2026 14:38:12 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 14:38:12 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 14:38:15 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 14:38:04 GMT+0000",
+  "jcr:description": "The 2-0 Knot Pusher/Suture Cutter has an ergonomic handle design that is curved to match the geometry of your hand and allows use of palm to actuate. The threader provides ease of use for reloading devices between cuts. Malleable slotted cannula allows you to easily bend where desired.",
+  "jcr:baseVersion": "93516ed8-b9dc-4000-a2ac-0c9f20f9a47d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:38:12 GMT+0000",
+  "pageTitle": "2-0 Knot Pusher/Suture Cutter and Slotted Cannula Set",
+  "cq:tags": [
+    "stryker:product/sports-medicine/2-0-knot-pusher---suture-cutter-and-slotted-cannula-set",
+    "stryker:business-unit/sports-medicine",
+    "stryker:Stryker-SEO-Tags",
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure/meniscus-repair",
+    "stryker:content-type/product",
+    "stryker:event-speciailty/sports-medicine",
+    "stryker:custom/sports-medicine/product-type/instrumentation",
+    "stryker:product/sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:system/sports-medicine",
+    "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair"
+  ],
+  "jcr:lastModified": "Tue Dec 21 2021 18:05:00 GMT+0000",
+  "jcr:uuid": "13cf1563-b25e-4108-9758-1712fff09f22",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "2-0 Knot Pusher/Suture Cutter and Slotted Cannula Set",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModified": "Fri Jun 01 2018 18:44:00 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/2-0-knot-pusher---suture-cutter-and-slotted-cannula-set/images/Hero-20Knot.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Feb 10 2021 15:35:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/All-inside-meniscal-repair-system"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 14:37:53 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 14:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/2-0-knot-pusher---suture-cutter-and-slotted-cannula-set/images/Thumb-20Knot.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 14:37:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

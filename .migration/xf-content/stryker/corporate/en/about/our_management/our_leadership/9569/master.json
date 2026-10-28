@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leader - 9569",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "69d42330-91a2-4113-8a4f-c40b4ba25ef5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "64d87c26-2b15-4564-807b-01e53a8096a7"
+  ],
+  "lastPublished": "Tue Sep 01 2026 14:06:45 GMT+0000",
+  "jcr:created": "Tue Sep 01 2026 14:06:46 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 01 2026 14:06:48 GMT+0000",
+  "cq:lastModified": "Thu Aug 27 2026 19:01:23 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "64d87c26-2b15-4564-807b-01e53a8096a7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:11:16 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "a74312a2-6d24-4740-882e-efb2ac0eb099",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Spencer</span> Stiles</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">President and Chief Operating Officer</span></span></p>\n<p>Spencer Stiles became President and Chief Operating Officer in January 2026.<br>\n</p>\n<p>&nbsp;</p>\n<p>Spencer is responsible for the company’s global businesses, strategy, and mergers and acquisitions.</p>\n<p>In his previous role as Group President, Orthopaedics, Spencer strengthened business performance in Joint Replacement and Trauma &amp; Extremities while accelerating innovation through our Digital, Robotics, and Enabling Technologies organization. His leadership has also enhanced the operating model across Europe, the Middle East, Africa, Latin America and Canada and advanced Stryker’s enterprise M&amp;A strategy.&nbsp;</p>\n<p>Spencer began his career with Stryker’s Endoscopy business in 1999 and previously had oversight of several global businesses throughout his tenure, including Instruments, Joint Replacement, Spine, Communications, Neurovascular, and Craniomaxillofacial.</p>\n<p>Since 2019, Spencer has served on the Board of Directors of the Medical Device Manufacturers Association (MDMA). He also served on the board of Chart Industries, Inc. from 2023 until its acquisition by Baker Hughes (NASDAQ: BKR) in 2026 and chaired the compensation committee during his tenure. He holds a bachelor’s degree from Miami University and an MBA from the University of Nebraska.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Aug 27 2026 19:01:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "5"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 21:07:14 GMT+0000",
+      "alt": "Spencer Stiles",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Template_Spencer_Stiles_V2.jpg",
+      "jcr:lastModified": "Thu Aug 07 2025 19:50:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

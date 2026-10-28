@@ -1,0 +1,691 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "X-Ray Stretcher",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Prime X",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "735d81eb-72a5-456e-a10a-c8bac39ecb53",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "PrimeX Xray Stretcher",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/ultracomfortse/images/Thumbnail_UltraComfortSE.jpg",
+  "jcr:predecessors": [
+    "f7a09df4-8a5d-40e3-99db-c3d7e3cb304c"
+  ],
+  "contentID": "Mkt Lit-2002 09 JUN 2020 REV A",
+  "lastPublished": "Thu Aug 13 2026 20:14:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:14:30 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:14:32 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:14:14 GMT+0000",
+  "jcr:description": "The simplicity, safety and efficiency of a Prime Series Stretcher with X-ray capability.",
+  "jcr:baseVersion": "f7a09df4-8a5d-40e3-99db-c3d7e3cb304c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:14:29 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/acute-care/primex-x-ray",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:services/procare/acute-care/transport",
+    "stryker:custom/acute-care/stretcher-departments/emergency-department",
+    "stryker:capability/stretchers",
+    "stryker:specialty/emergency-transport-stretchers",
+    "stryker:custom/acute-care/stretcher-departments/imaging",
+    "stryker:custom/acute-care/stretcher-types/x-ray",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Wed Jun 24 2020 19:13:42 GMT+0000",
+  "jcr:uuid": "b905fc86-79eb-4a07-bd5a-0ebdab54df80",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/prime_x_ray/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/prime-x-ray/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Feb 20 2024 15:52:06 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Prime X</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">X-Ray Stretcher</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The simplicity, safety and efficiency of a Prime Series Stretcher with X-ray capability.</span></span></p>\n",
+              "jcr:lastModified": "Mon Feb 05 2024 14:02:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1396859865": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 05 2024 14:54:07 GMT+0000",
+      "jcr:lastModified": "Mon Feb 05 2024 14:54:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Feb 05 2024 14:17:37 GMT+0000",
+      "jcr:lastModified": "Mon Feb 05 2024 14:17:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Related categories</span></span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\">Medical and surgical equipment</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/stretchers.html\">Stretchers and transport chairs</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/stretchers/emergency-and-transport-stretchers.html\">Emergency and transport stretchers</a></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:18:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "20"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Feb 05 2024 14:18:52 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Image Quality. Access. Versatility.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Our Prime X X-ray Stretcher, utilizing ClearView Technology in a dual-deck design, offers a similar image quality to an X-ray table with the convenience and efficiency of a mobile platform.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Advanced mobility options: Big Wheel or Zoom Motorized Drive System</span></li>\n<li><span class=\"fontsize-1-25em\">Electric powered base and lift</span></li>\n<li><span class=\"fontsize-1-25em\">Integrated scale</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:20:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_818130461_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 17:00:07 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 17:00:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:03:10 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Product <span style=\"color: #ffb500;\">features</span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 18:49:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "jcr:lastModified": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 19:09:20 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 19:09:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Prime X x-ray hospital stretcher includes simple cassettee positioning ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF1_BeveledEdge1.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:27:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Simple cassette positioning</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Beveled edges and visual alignment guides make positioning the cassette to the patient simple.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:49:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Exclusive ClearView technology offers image quality comparabel to traditional X-ray tables",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF2_CvTech1.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:26:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Exclusive ClearView Technology</span></span></h3>\n<p><span class=\"fontsize-1-25em\">This exclusive Stryker technology consists of structural foam encased by two layers of ABS composite, and offers image quality comparable to traditional X-ray tables, now on the Prime Series mobile platform.1</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:50:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Patient being transported on a Prime X x-ray hospital stretcher ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF3_AdvMob1.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:26:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Mobility options</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Choose from the retractable Fifth Wheel for controlled traction and cornering, or the Big Wheel Advanced Mobility solution.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:50:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Fri Apr 24 2020 22:12:59 GMT+0000",
+      "jcr:lastModified": "Fri Apr 24 2020 22:12:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 19:07:59 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 19:07:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 19:08:04 GMT+0000",
+          "alt": "Prime X hospital stretcher",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_LF1_Red.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:27:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Easy ID</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Stryker Prime X exclusively uses a red color scheme on its handles, siderails, bumpers and accent rings, so the X-ray stretcher is easily identified.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:51:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy_327598319": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 19:07:59 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 19:07:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 19:08:04 GMT+0000",
+          "alt": "Dual-deck design on x-ray hospital stretcher ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_LF2_DualDeck1.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:27:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Dual-deck design</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The unique dual-deck design with an open cassette platform and a full 360 degrees of access allows positioning of cassettes from head end to foot end and side to side. Open architecture accommodates virtually any size cassette.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:52:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_917655254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Fri Apr 24 2020 22:13:03 GMT+0000",
+      "jcr:lastModified": "Fri Apr 24 2020 22:13:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 19:09:20 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 19:09:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Prime X x-ray stretcher includes glideaway siderails ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF4_GASiderails1.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:27:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Glideaway siderails</span></span></h3>\n<p><span class=\"fontsize-1-25em\">These siderails offer maximum patient security when raised, yet are completely out of the way when lowered, to ensure zero transfer gap.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:52:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Prime X x-ray stretcher includes easy cleaning ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF5_Cleanability.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:28:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Easy cleaning</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Articulating backrest and foot section offer enhanced cleanability through convenient access to the cassette platform. A power-washable design makes cleaning quick and easy.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:53:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Prime X x-ray stretcher includes an electric lift and optional scale ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primexx-ray/images/PH_TPPX_SmF6_Scales.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 15:28:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Electric lift and optional scale</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Caregivers can raise the litter of the stretcher by simply stepping on a pedal. Integrated scales help reduce the need for patient transfers.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 05 2024 14:53:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Feb 02 2024 18:28:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 13 2026 20:14:14 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Fri Feb 02 2024 18:32:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_2095269938": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/primexx-ray/resources/Prime X Brochure_mkt lit-625.pdf",
+            "/content/dam/stryker/acute-care/products/primexx-ray/resources/Prime X Spec Sheet_mkt lit-626.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Mon Feb 05 2024 13:57:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue May 11 2021 19:20:41 GMT+0000",
+          "title": "Related products",
+          "jcr:lastModified": "Tue May 11 2021 19:21:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/tru-fit"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 05 2024 14:20:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://techweb.stryker.com/",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "https://patienthandling.stryker.com/en/products/transport/prime/prime-x-x-ray-stretcher",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon Feb 05 2024 14:20:41 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "Operations and Maintenance Manuals",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/ultracomfortse/images/Thumbnail_UltraComfortSE.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Prime X Case Study</p>\r\n",
+    "jcr:lastModified": "Wed Jun 24 2020 19:13:27 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Feb 05 2024 14:20:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 05 2024 14:20:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 05 2024 14:20:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

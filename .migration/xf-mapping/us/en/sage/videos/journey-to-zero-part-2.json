@@ -1,0 +1,92 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage Journey to Zero: Part 2",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f7a3822e-3d2a-4907-8fef-8f590b15b371",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "4d46a6ed-3df6-4f8b-abb2-51c8c91d9132"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-489450_REV-0_en_us",
+  "lastPublished": "Thu Jan 19 2023 17:51:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 19 2023 17:51:19 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 19 2023 17:51:21 GMT+0000",
+  "cq:lastModified": "Thu Jan 19 2023 17:51:06 GMT+0000",
+  "jcr:baseVersion": "4d46a6ed-3df6-4f8b-abb2-51c8c91d9132",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Jan 19 2023 17:51:06 GMT+0000",
+  "jcr:uuid": "cc20ddb4-6d8c-4cdb-8a2a-966dfe8888ae",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Wed Aug 24 2022 19:03:57 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Aug 24 2022 19:04:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/journey-to-zero/videos/Sage-Journey-to-Zero-Part-2-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Sage-Journey-to-Zero-Part-2-video-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Wed Aug 24 2022 19:04:52 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-Journey-to-Zero-Part-2-video-thumbnail"
+      }
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Wed Aug 24 2022 19:05:32 GMT+0000",
+      "CTATitle": "LEARN MORE",
+      "jcr:lastModified": "Wed Aug 24 2022 19:06:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/c/journey-to-zero"
+    }
+  }
+}

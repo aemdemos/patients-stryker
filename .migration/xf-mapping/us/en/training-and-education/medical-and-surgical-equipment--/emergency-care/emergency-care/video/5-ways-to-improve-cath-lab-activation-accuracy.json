@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "5 ways to improve cath lab activation accuracy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9e3068f4-1af9-4db5-ac9c-c78a18846b49",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "74a10f78-7a98-439b-be6e-8ce255f49673"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:42:03 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:42:03 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:42:05 GMT+0000",
+  "cq:lastModified": "Fri Sep 09 2022 18:20:38 GMT+0000",
+  "jcr:baseVersion": "74a10f78-7a98-439b-be6e-8ce255f49673",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "12623d65-d74a-4414-8aa0-974ee744408f",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:56:52 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:56:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "This on-demand webinar features Tim Phalen discussing five ways to improve cath lab activation.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 20:01:51 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Fri Sep 09 2022 18:19:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials/5-ways-to-improve-cath-lab-activation-accuracy.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/5-ways-to-improve-cath-lab-activation-accuracy-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Sep 09 2022 18:20:38 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

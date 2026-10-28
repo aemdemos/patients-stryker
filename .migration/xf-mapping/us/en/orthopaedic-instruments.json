@@ -1,0 +1,1423 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Orthopaedic Instruments",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e0340946-92c7-4df0-982c-cc1344fe210e",
+  "cq:template": "/apps/stryker/templates/division",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:predecessors": [
+    "90185293-326c-4d63-8a42-df5fdcf8157b"
+  ],
+  "contentID": " OI-GSNPS-SYK-828680_REV-3",
+  "lastPublished": "Mon Mar 02 2026 17:23:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 02 2026 17:23:37 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 02 2026 17:23:39 GMT+0000",
+  "cq:lastModified": "Mon Mar 02 2026 17:23:23 GMT+0000",
+  "jcr:baseVersion": "90185293-326c-4d63-8a42-df5fdcf8157b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:23:00 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:content-type/business-unit"
+  ],
+  "jcr:lastModified": "Mon Mar 02 2026 17:23:23 GMT+0000",
+  "jcr:uuid": "11f93591-e390-4cb4-be0e-a111987fac3d",
+  "sling:resourceType": "stryker/components/structure/pages/division",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Apr 30 2019 15:22:44 GMT+0000",
+      "jcr:lastModified": "Tue Apr 30 2019 15:25:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured"
+        }
+      }
+    },
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Thu Sep 28 2023 15:34:34 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Fri Sep 29 2023 18:16:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/bu_landing/hero-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/bu-landing/hero-image/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/orthopaedic-instruments/en/bu_landing/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/orthopaedic-instruments/en/bu-landing/hero-image/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "0",
+          "jcr:created": "Thu Sep 28 2023 15:34:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Fri Sep 29 2023 17:56:16 GMT+0000",
+          "marginRight": "25",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Sep 28 2023 15:41:26 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1vw\">Orthopaedic Instruments</span></span></span></h1>\r\n<h2><span class=\"fontsize-3vw\">You're built for this. <br />\r\n And we're built for you.</span></h2>\r\n<h3><span class=\"futura-bold\"><br />\r\nInnovation. It's in our DNA.</span></h3>\r\n",
+              "line2": "<p>&nbsp;</p>\r\n<p><span class=\"fontsize-1-5-vw\">When every day is unpredictable, you need tools that are proven, dependable and remarkable. Stryker delivers with a comprehensive portfolio that empowers you.<br>\r\n <br>\r\n</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Driven by your insight, partnership and desire for better outcomes, we create products that address the current and future surgical landscapes.</span></p>\r\n",
+              "jcr:lastModified": "Tue Oct 31 2023 20:25:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:32:53 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 17:32:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 17:33:03 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 17:33:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-3",
+              "jcr:created": "Thu Sep 28 2023 17:33:07 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Sep 28 2023 17:33:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 15:58:25 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 15:58:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:35:51 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 17:35:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "purpose",
+      "jcr:created": "Thu Sep 28 2023 20:54:52 GMT+0000",
+      "title": "our purpose",
+      "jcr:lastModified": "Thu Sep 28 2023 20:57:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:42:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Our purpose</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Oct 16 2023 20:47:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_11034439": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:45:22 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 17:45:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 15:59:08 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 15:59:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-2",
+          "jcr:created": "Thu Sep 28 2023 15:59:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: right;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span style=\"color: #000000;\">Built on trust.</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Oct 02 2023 20:00:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 15:59:20 GMT+0000",
+          "text": "<p>With over 80 years of quality innovation, we know when you're equipped with the right tools that provide precise accuracy, <b>we gain your trust.</b></p>\n",
+          "jcr:lastModified": "Wed Oct 04 2023 18:37:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 15:59:08 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 15:59:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-2",
+          "jcr:created": "Thu Sep 28 2023 15:59:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: right;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span style=\"color: #000000;\">Empowering you.</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Oct 02 2023 20:01:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 15:59:20 GMT+0000",
+          "text": "<p>Starting with Dr. Homer Stryker and his customer driven insights, our proven legacy and tools <b>empower your future possibilities.</b></p>\n",
+          "jcr:lastModified": "Thu Sep 28 2023 17:29:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Sep 28 2023 17:37:23 GMT+0000",
+      "alt": "Stryker_Collage",
+      "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/Stryker_Collage.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Sep 28 2023 17:37:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:35:51 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 17:35:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 17:42:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\">Our products</span></span></span></span></span></h2>\r\n",
+          "jcr:lastModified": "Mon Oct 16 2023 20:47:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "products",
+      "jcr:created": "Thu Sep 28 2023 20:54:52 GMT+0000",
+      "title": "our products",
+      "jcr:lastModified": "Thu Sep 28 2023 20:57:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1310755169": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:05:26 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:05:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Mon Feb 23 2026 21:02:54 GMT+0000",
+          "jcr:lastModified": "Mon Feb 23 2026 21:02:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 20:31:13 GMT+0000",
+              "alt": "system9",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/system9.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu May 15 2025 20:31:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-10",
+              "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\">System 9 power tools</span></h3>\n<p>The latest battery technology, combined with our first-ever wireless charger and a well-balanced handpiece, create power tools that are ready when you are.</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html\">LEARN MORE</a></span></p>\n",
+              "jcr:lastModified": "Thu May 15 2025 20:31:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 20:31:13 GMT+0000",
+              "alt": "ortho-q",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/steri-shield-8/images/t8-port.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu May 15 2025 20:26:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/steri-shield-8",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-10",
+              "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\">Steri-Shield 8&nbsp;</span></h3>\n<p>The next evolution of PPE is here. Designed to empower and protect.</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/steri-shield-8.html\">LEARN MORE</a></span></p>\n",
+              "jcr:lastModified": "Mon Feb 23 2026 21:14:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Feb 23 2026 21:07:54 GMT+0000",
+              "alt": "NPseal",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal-gold.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Feb 23 2026 21:17:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/npseal",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-10",
+              "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><b><span class=\"futura-bold\">NPseal</span></b></h3>\n<p>NPseal delivers the proven benefits of NPWT in a lightweight, ultraportable system—no cords, no batteries, no canisters.&nbsp;</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/npseal.html\">LEARN MORE</a></span></p>\n",
+              "jcr:lastModified": "Mon Feb 23 2026 21:17:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:06:02 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 18:06:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 19:54:58 GMT+0000",
+          "text": "<h3 style=\"text-align: center;\"><span class=\"fontsize-1-25em\">The portfolio that empowers you.</span></h3>\n",
+          "jcr:lastModified": "Mon Oct 02 2023 19:55:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1258016582": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "system9-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/system9-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:27:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: left;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html\"><span style=\"color: #000000;\">System 9 power tools</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Oct 31 2023 20:32:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "cd-nxt-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/cd-nxt-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Mar 26 2025 15:24:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/cd-nxt",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #000000;\">CD NXT power tool</span></span></h3>\n",
+          "jcr:lastModified": "Thu May 15 2025 16:16:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "tpx-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/tpx-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:27:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/tpx",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: left;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/tpx.html\"><span style=\"color: #000000;\">TPX electric power tool system</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Oct 31 2023 20:34:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "core2-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/core2-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Aug 13 2024 19:01:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/nse/products/core-2-console",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: left;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/nse/products/core-2-console.html\"><span style=\"color: #000000;\">CORE 2 console</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 19:04:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1258016582_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "f1-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/f1-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:27:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/stryker-f1-system-cordless-small-bone-power-tool-system",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/stryker-f1-system-cordless-small-bone-power-tool-system.html\"><span style=\"color: #000000;\">F1 cordless power tool system</span></a></span></h3>\n",
+          "jcr:lastModified": "Thu May 15 2025 16:15:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "Steri-Shield 8 PPE",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/steri-shield-8/images/t8-port-teal.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 15 2025 20:25:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/steri-shield-8",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_120299134": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><b><span class=\"futura-bold\">Steri-Shield 8&nbsp;</span></b></h3>\n",
+          "jcr:lastModified": "Thu May 15 2025 16:16:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "ortho-q-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/ortho-q-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:28:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system.html\"><span style=\"color: #000000;\">Ortho Q guidance system</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Oct 31 2023 20:38:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "detergents-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/detergents-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:31:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/cleaners-and-disinfectants",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/cleaners-and-disinfectants.html\"><span style=\"color: #000000;\">Detergents, cleaners and lubricants</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Oct 31 2023 20:39:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1258016582_cop_1355859539": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 20:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "smartpump-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal-teal.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 23 2026 21:17:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/npseal",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><b><span class=\"futura-bold\">NPseal</span></b></h3>\n",
+          "jcr:lastModified": "Mon Feb 23 2026 21:13:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "zip-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/zip-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:29:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/zip-skin-closure",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/zip-skin-closure.html\"><span style=\"color: #000000;\">Zip closure system</span></a></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 23 2026 21:12:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "interpulse-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/interpulse-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Oct 31 2023 20:29:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/interpulse-pulsed-lavage-system",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/interpulse-pulsed-lavage-system.html\"><span style=\"color: #000000;\">InterPulse lavage system</span></a></span></h3>\n",
+          "jcr:lastModified": "Tue Oct 31 2023 20:41:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+          "alt": "cement-port",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/cement-port.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 19:20:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/revolution-cement-mixer-system",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-10",
+          "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/revolution-cement-mixer-system.html\"><span style=\"color: #000000;\">Cement mixer and preparation systems</span></a></span></h3>\n",
+          "jcr:lastModified": "Thu May 15 2025 16:21:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_539229147": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:14:38 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:14:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_1258016582_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 20:36:14 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 20:36:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 20:36:18 GMT+0000",
+              "alt": "smartpump-port",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/our-portfolio/images/smartpump-port.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Oct 31 2023 20:29:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/orthopaedic-instruments/products/smartpump-tourniquet",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-10",
+              "jcr:created": "Thu Sep 28 2023 20:31:54 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/orthopaedic-instruments/products/smartpump-tourniquet.html\"><span style=\"color: #000000;\">SmartPump tourniquet system</span></a></span></h3>\n",
+              "jcr:lastModified": "Tue Oct 31 2023 20:40:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      }
+    },
+    "section_title_copy_1448369236": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "meded",
+      "jcr:created": "Thu Sep 28 2023 20:54:52 GMT+0000",
+      "title": "medical education",
+      "jcr:lastModified": "Thu Sep 28 2023 20:58:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:42:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(175,109,4);\">Medical education</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Oct 16 2023 20:47:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "carouselslidegroup_1545680718": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 19:15:58 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 19:15:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/bu_landing/medical-education-banner/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/bu-landing/medical-education-banner/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Thu Sep 28 2023 19:16:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Sep 28 2023 19:17:14 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:15:14 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:15:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:21:15 GMT+0000",
+      "text": "<p style=\"text-align: center;\">Whether you're an experienced surgeon or a resident in training, we'll be your biggest<br>\nchampions—empowering your learning as you make a difference in patients' lives,<br>\nwhatever the moment, whatever the challenge.</p>\n",
+      "jcr:lastModified": "Wed Apr 30 2025 19:00:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:26:19 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:26:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 28 2023 18:26:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><a href=\"/content/stryker/us/en/training-and-education/calendar.html\"><span style=\"color: #ffffff;\">UPCOMING EVENTS</span></a></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 01 2023 19:34:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(175,109,4)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1466331210": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:30:43 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:30:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_808107089": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "solutions",
+      "jcr:created": "Thu Sep 28 2023 20:54:52 GMT+0000",
+      "title": "tailored solutions",
+      "jcr:lastModified": "Thu Sep 28 2023 20:58:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c_653041107": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:42:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(133,69,138);\">Tailored solutions</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Oct 16 2023 20:46:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:31:21 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:31:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 1,
+          "tabTitle": "Optimize your power tools"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Add flexibility to your budget"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 3,
+          "tabTitle": "Protect your investments"
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3>Smart Equipment Management</h3>\n<p>Our online data module is designed to optimize the management of your System 9 power tools through device-derived, actionable data to inform decision-making.</p>\n<p><a href=\"/content/stryker/us/en/surgical/services/smart-equipment-management.html\"><span class=\"standalone-link\">LEARN MORE</span></a></p>\n",
+              "jcr:lastModified": "Tue Oct 31 2023 20:43:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 18:41:33 GMT+0000",
+              "alt": "sem",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/tailored-solutions/images/sem.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Sep 28 2023 20:50:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3>Flex Financial</h3>\n<p>We provide a range of smart business alternatives that offer flexibility beyond a cash purchase, enabling you to acquire the products you need.</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/services/flex-financial.html\">LEARN MORE</a></span></p>\n",
+              "jcr:lastModified": "Tue Oct 31 2023 20:44:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 18:41:33 GMT+0000",
+              "alt": "flex",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/tailored-solutions/images/flex.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Sep 28 2023 20:50:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 18:32:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3>ProCare Services</h3>\n<p>Our team of expert technicians have the proprietary knowledge, tooling and parts to care for your important power tools in accordance with manufacturing specifications.</p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/services/procare.html\">LEARN MORE</a></span></p>\n",
+              "jcr:lastModified": "Wed Nov 01 2023 19:25:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 28 2023 18:41:33 GMT+0000",
+              "alt": "procare",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/tailored-solutions/images/procare.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Sep 28 2023 20:50:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "section_title_872640985": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "newsroom",
+      "jcr:created": "Mon May 05 2025 20:09:18 GMT+0000",
+      "title": "Newsroom",
+      "jcr:lastModified": "Mon May 05 2025 20:09:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_50607874": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:41:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "gradientDirection": "left-to-right",
+          "text": "<h3>The Orthopaedic Instruments Newsroom is your source for product and business updates, industry news, clinical information, inspiring stories and more</h3>\n",
+          "jcr:lastModified": "Mon May 05 2025 20:32:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      }
+    },
+    "customizable_1225611147": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Wed Apr 30 2025 18:41:49 GMT+0000",
+      "jcr:lastModified": "Fri Aug 22 2025 19:05:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/news/2025/the-importance-of-ergonomics-with-ppe--dr--seann-willson"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/news/2025/not-all-ppe-is-created-equal--why-the-small-details-matter"
+        }
+      }
+    },
+    "cols_420101446": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Apr 30 2025 18:49:30 GMT+0000",
+      "jcr:lastModified": "Wed Apr 30 2025 18:49:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:06:02 GMT+0000",
+          "jcr:lastModified": "Thu Sep 28 2023 18:06:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_copy_408552183": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connected",
+      "jcr:created": "Thu Sep 28 2023 20:54:52 GMT+0000",
+      "title": "stay connected",
+      "jcr:lastModified": "Thu Sep 28 2023 20:58:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c_1628740392": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 17:42:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(28,86,135);\">Stay connected</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Oct 16 2023 20:46:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 28 2023 18:42:10 GMT+0000",
+      "jcr:lastModified": "Thu Sep 28 2023 18:42:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-5em\">Be in the know</span></h3>\n<p>Engage with us LinkedIn and Twitter to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data, and more.</p>\n",
+          "jcr:lastModified": "Thu Sep 28 2023 18:45:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Tue Apr 08 2025 13:51:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/orthopaedic-instruments/en/bu_landing/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/orthopaedic-instruments/en/bu-landing/social-icons/master"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-5em\">Let's build a partnership</span></h3>\n<p>Contact a sales rep and learn all the ways we can empower you. Whether it's a product question, a webinar request, or help finding your Stryker rep, we're here to support you.</p>\n",
+          "jcr:lastModified": "Thu Sep 28 2023 18:45:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Sep 08 2023 14:54:51 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Fri Sep 08 2023 14:55:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "cols2_1145451415": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 29 2023 18:04:19 GMT+0000",
+      "jcr:lastModified": "Fri Sep 29 2023 18:04:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "childrenNumber": "0",
+    "jcr:lastModified": "Thu Sep 28 2023 15:36:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "hideBottomLine": "true"
+  }
+}

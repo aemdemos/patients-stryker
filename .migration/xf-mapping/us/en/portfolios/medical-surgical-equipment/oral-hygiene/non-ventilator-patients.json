@@ -1,0 +1,91 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Oral care for non-ventilator patients",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6c309a60-c71f-430b-b971-b7c2e9b329d1",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Independent care systems for non-ventilated patients",
+  "jcr:predecessors": [
+    "b345afd6-66e2-40a9-938e-f439080f59ea"
+  ],
+  "contentID": "SAGE-OC-WEB-484950_REV-0_en_us",
+  "lastPublished": "Fri Feb 16 2024 14:40:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Feb 16 2024 14:40:33 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 16 2024 14:40:35 GMT+0000",
+  "cq:lastModified": "Wed Jul 26 2023 14:49:38 GMT+0000",
+  "jcr:description": "Our systems and tools help address risk factors associated with pneumonia for non-ventilated patients.",
+  "cq:siblingOrder": "ventilator-patients,non-ventilator-patients,",
+  "jcr:baseVersion": "b345afd6-66e2-40a9-938e-f439080f59ea",
+  "jcr:isCheckedOut": true,
+  "cq:name": "non-ventilator-patients",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/Oral_hygiene",
+    "stryker:specialty/Non_ventilator_patients",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Wed Jul 26 2023 14:49:38 GMT+0000",
+  "jcr:uuid": "8bc6b1a9-1a15-4a72-a5ac-f7a341458dd3",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/oral-hygiene-non-vent/images/Sage-oral-hygiene-systems-for-non-ventilated-patients.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Mon Sep 09 2019 19:25:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModified": "Fri Oct 04 2019 20:54:25 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-self-oral-care"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-oral-solutions-and-moisturizers"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-oral-hygiene-tools"
+      }
+    }
+  }
+}

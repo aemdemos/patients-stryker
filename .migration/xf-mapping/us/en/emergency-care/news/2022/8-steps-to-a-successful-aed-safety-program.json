@@ -1,0 +1,211 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "8 steps to a successful AED safety program",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e8fa6fd5-605c-4383-abf3-ca8fd2ccc8a0",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "AED signage on a wall in an office ",
+  "jcr:predecessors": [
+    "bea31e8e-0cdb-4717-80b9-cc71edc0b96a"
+  ],
+  "contentID": "3344944_A",
+  "lastPublished": "Mon Oct 03 2022 20:55:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 03 2022 20:55:21 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 03 2022 20:55:23 GMT+0000",
+  "cq:lastModified": "Mon Oct 03 2022 20:41:45 GMT+0000",
+  "jcr:baseVersion": "bea31e8e-0cdb-4717-80b9-cc71edc0b96a",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "8 steps to a successful AED safety program",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/articles",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Sep 16 2022 12:20:08 GMT+0000",
+  "jcr:uuid": "f2e811ff-3cd7-4c87-ace6-e0c7e11996d5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "navTitle": "8 steps to a successful AED safety program",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/master",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue May 31 2022 19:19:15 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">8 steps to a successful AED safety program</span></span></h1>\r\n",
+              "line2": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">How to establish a robust and efficient plan</span></span></h2>\r\n",
+              "jcr:lastModified": "Mon Oct 03 2022 20:41:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols3_1341500114_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:22:36 GMT+0000",
+      "text": "2-minute read More than 350,000 people suffer from out-of-hospital sudden cardiac arrest (SCA) every year in the United States alone.1 Public access to automated external defibrillators (AEDs) is critical to help increase survival rates. Use this step-by-step guide on how to create and manage an AED program for your organization: 1. Designate a program coordinator – Before implementing an AED program, assign a dedicated program coordinator to serve as the point of contact for general program oversight, communicate with the public and facility employees and connect with key decision makers. 2. Research state and local requirements – Familiarize yourself with state and local requirements including training specifications, program enablement guidelines and how to work with your local EMS office. 3. Get medical advice – It is imperative to work with medical experts when establishing an AED program. They can serve as advocates of the overall program, provide needed authority when pitching a plan to decision makers and offer guidance and ongoing support once your program has launched. 4. Work with EMS – Most states require organizations to work with local EMS systems when setting up an AED program. Your local EMS office can help establish protocols on patient care transfer, data sharing and AED placement within your building. 5. Choose your AED – AEDs located in public spaces must be simple and easy to operate. Be sure to pick one that provides clear directions either visually or audibly. There are a variety of AED options on the market including Stryker’s compact and easy to use LIFEPAK CR2 defibrillator. 6. Create an AED management plan – Maintaining your device is vital for optimal AED functionality. While you could implement a self-administered management program with scheduled device testing, battery monitoring and expiration tracking, a program like Stryker’s LIFELINKcentral AED program manager eliminates the complexity and time commitments needed in maintaining AEDs. 7. Train employees on how to use an AED – Training all employees on how to use an AED can be difficult due to budget or time constraints. Alternatively, you can select and fully train a group of employees located throughout the building so a trained responder is nearby. The American Red Cross offers a variety of training services. Trained responders must know how to: Recognize the warning signs of SCA Respond to an emergency Activate the local EMS Perform CPR and use the AED properly 8. Raise awareness – Educating employees about the AEDs in your organization is key to increased success during a cardiac emergency. Create ongoing digital or on-site marketing campaigns to raise awareness. Together, we save lives. Help keep your workplace safe with Stryker's full line of defibrillators. With the right solution for all public places, we can help you improve SCA survival rates in your community. Contact an AED expert today to learn more about our full line of defibrillators and program management options.",
+      "jcr:lastModified": "Wed Sep 07 2022 14:53:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/8-steps-to-a-successful-aed-safety-program/body"
+    },
+    "cols3_1341500114_cop_1239265066": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 20:47:24 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 20:51:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "curatedlinklist_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
+          "jcr:lastModified": "Tue May 31 2022 20:53:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedlinklist",
+          "internalLinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "AED buying guide",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/aed-buying-guide"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "Defibrillator 101",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/defibrillator-101"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "The role of defibrillation during sudden cardiac arrest",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/the-role-of-defibrillation-during-sudden-cardiac-arrest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Tue Mar 01 2022 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Mar-2022",
+    "jcr:lastModified": "Fri Jul 29 2022 20:10:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue May 31 2022 19:15:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/news/images/8_steps-to_successful_AED_program_thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Source: CPR.heart.org</p>\r\n",
+    "jcr:lastModified": "Tue May 31 2022 19:17:41 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

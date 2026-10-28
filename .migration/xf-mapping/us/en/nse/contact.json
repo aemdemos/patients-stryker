@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Neurosurgical",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "368f946a-9ee7-4b2c-b2af-4c83feaeddda",
+  "cq:template": "/apps/stryker/templates/contactdivision",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "21788871-bd24-4468-a109-a9ede56dd2e4"
+  ],
+  "contentID": "9100-004-798 Rev. None",
+  "lastPublished": "Thu Sep 19 2024 17:38:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 19 2024 17:38:14 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 19 2024 17:38:16 GMT+0000",
+  "cq:lastModified": "Thu Sep 19 2024 17:23:42 GMT+0000",
+  "jcr:baseVersion": "21788871-bd24-4468-a109-a9ede56dd2e4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:36:37 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/business-unit-contact",
+    "stryker:geography/north-america",
+    "stryker:business-function/manufacturing/usa",
+    "stryker:business-unit/Navigation-NSE",
+    "stryker:business-function/hq",
+    "stryker:business-function/sales/usa",
+    "stryker:customer-support-centers/USA",
+    "stryker:business-function/hq/usa"
+  ],
+  "jcr:lastModified": "Thu Sep 19 2024 17:23:42 GMT+0000",
+  "jcr:uuid": "cf742f18-57b8-4190-a7eb-91c73a3b1dfb",
+  "sling:resourceType": "stryker/components/structure/pages/contactdivision",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Oct 10 2023 18:57:53 GMT+0000",
+      "title": "Send us a message",
+      "jcr:lastModified": "Tue Oct 10 2023 18:58:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3071",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 10 2023 18:57:28 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Tue Oct 10 2023 18:57:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "contactus": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "title": "Contact us",
+    "groupContact": "2",
+    "jcr:lastModified": "Wed Mar 08 2023 15:15:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactus",
+    "textIsRich": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "group1Addresslabel": "Address",
+    "group1Address": "<p>1941 Stryker Way <br>\r\nPortage, MI 49002<br>\r\nUSA<br>\r\n</p>\r\n",
+    "group1Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Customer service",
+        "phoneNumber": "800 253 3210 Toll Free"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "269 323 7700 "
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "800 999 3811 Toll Free Fax"
+      }
+    }
+  },
+  "title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModified": "Wed May 10 2017 00:14:09 GMT-0400",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

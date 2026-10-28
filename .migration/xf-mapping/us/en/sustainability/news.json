@@ -1,0 +1,102 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker's Sustainability Solutions Newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b34a5f75-2904-490a-8236-ec9901715fc3",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sustainability/images/Group.png",
+  "businessUnitTag": "sustainability",
+  "jcr:predecessors": [
+    "4c3b4ebd-33e7-4d3f-a06f-b2cb08f1a69c"
+  ],
+  "lastPublished": "Mon Jan 22 2024 21:42:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jan 22 2024 21:42:44 GMT+0000",
+  "cq:lastReplicated": "Mon Jan 22 2024 21:42:46 GMT+0000",
+  "cq:lastModified": "Mon Jan 22 2024 21:42:33 GMT+0000",
+  "jcr:description": "The Stryker's Sustainability Solutions Newsroom is your source for industry news, clinical information, product and business updates, inspiring stories and more.",
+  "jcr:baseVersion": "4c3b4ebd-33e7-4d3f-a06f-b2cb08f1a69c",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Stryker's Sustainability Solutions Newsroom",
+  "jcr:lastModified": "Mon Jan 22 2024 21:42:33 GMT+0000",
+  "jcr:uuid": "eaa4acf1-364b-4b40-96e4-e28114add469",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "morgan.harder@stryker.com",
+  "navTitle": "Stryker's Sustainability Solutions Newsroom",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "searchPath": "/content/stryker/us/en/sustainability/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Thu Dec 21 2023 17:54:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 20,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:content-type/news"
+    ],
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/product-bulletins"
+        ]
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/company-announcements"
+        ]
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/ir"
+        ]
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/events"
+        ]
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/in-the-news"
+        ]
+      }
+    }
+  },
+  "longtexthero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "imageMap": "[poly(1478,728,1488,728,1488,718,1478,718,1478,728)\"quickview:sku=\"|\"\"|\"Hotspot 1\"]",
+    "jcr:lastModified": "Wed May 10 2017 00:28:11 GMT-0400",
+    "sling:resourceType": "stryker/components/content/longtexthero",
+    "textIsRich": [
+      "true",
+      "true"
+    ]
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "text": "<h4>Follow us on social media for more updates:&nbsp;</h4>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"https://www.linkedin.com/company/stryker-sustainability-solutions/mycompany/verification/?viewAsMember=true\">LinkedIn&nbsp;</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"https://www.instagram.com/strykersustainability/\">Instagram</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"https://twitter.com/StrykerSustain\">X</a></span></span></li>\n</ul>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Jan 18 2024 21:19:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

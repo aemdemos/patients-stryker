@@ -1,0 +1,117 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker partners with Fortune to share our digital innovation story",
+  "cq:lastReplicationAction": "Activate",
+  "videoTitle": "Stryker partners with Fortune to share our digital innovation story",
+  "jcr:versionHistory": "76e913cd-dd65-4dac-8c19-d30b8ad152a5",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Stryker partners with Fortune video",
+  "jcr:predecessors": [
+    "9a979952-c0bf-4aa7-9ce4-3be3c5a8cb27"
+  ],
+  "contentID": "COMM-GSNPS-SYK-3506194",
+  "lastPublished": "Mon Oct 05 2026 23:52:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 05 2026 23:52:25 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 05 2026 23:52:27 GMT+0000",
+  "cq:lastModified": "Mon Oct 05 2026 23:52:15 GMT+0000",
+  "videoRegionsAllowed": "US",
+  "jcr:description": "Fortune Brand Studio sat down with Stryker leaders to explore how our connected digital solutions deliver value to our customers across the continuum of care.",
+  "jcr:baseVersion": "9a979952-c0bf-4aa7-9ce4-3be3c5a8cb27",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jun 11 2026 14:10:15 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Oct 05 2026 23:52:15 GMT+0000",
+  "videoUploadDate": "2026-06-10T17:22:09.823Z",
+  "jcr:uuid": "0fe75b59-7943-44a3-9e65-50c06a2c92b2",
+  "videoThumbnailUrl": "https://media-assets.stryker.com//is/image/stryker/Fortune Stryker v2.9-lowres?scl=1",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typePath",
+  "videoContentUrl": "https://www.stryker.com/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune%20Stryker%20v2.9-lowres.mp4",
+  "videoAssetPath": "/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune Stryker v2.9-lowres.mp4",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "videoDuration": "PT3M10S",
+  "videoDescription": "In this Fortune Brand Studio feature, Chair and CEO Kevin Lobo and Stryker leaders share how digital innovation and connected medical technologies power the future of the SmartHospital.",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 17:15:28 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 17:15:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 17:15:34 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Jun 10 2026 17:26:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/video/Fortune Stryker v2.9-lowres.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Fortune Stryker v2.9-lowres-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Wed Jun 10 2026 20:25:27 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 17:15:38 GMT+0000",
+          "text": "<p>Fortune Brand Studio sat down with Stryker leaders to explore how our connected digital solutions deliver value to our customers across the continuum of care.</p>\n<p>In this video, watch Chair and CEO Kevin Lobo, President of Stryker’s Medical Division Jessica Mathieson, President and COO Spencer Stiles and Group President of Orthopaedics Dylan Crotty discuss how our customers are navigating increasing operational pressures and how our connected technologies can help address those challenges.</p>\n<p><a href=\"https://fortune.com/brandstudio/stryker/connected-technologies-smarter-outcomes-how-stryker-is-reimagining-health-care-delivery/\"><span class=\"standalone-link\">Read more on Fortune’s site here</span></a></p>\n",
+          "jcr:lastModified": "Thu Jun 11 2026 13:10:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu Jun 11 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "11-Jun-2026",
+    "jcr:lastModified": "Wed Jun 10 2026 17:25:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/stryker-partners-with-fortune-to-share-our-digital-innovation-story/images/Stryker partners with Fortune video thumbnail v3.png"
+  }
+}

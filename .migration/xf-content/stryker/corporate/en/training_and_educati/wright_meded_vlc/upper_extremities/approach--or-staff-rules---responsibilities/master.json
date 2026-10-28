@@ -1,0 +1,127 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "APPROACH™ OR Staff Rules & Responsibilities",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d7783367-d06c-4210-88b7-33e9a6cb3e65",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4b77ace1-8413-4f03-a5c0-0561eac71f1a"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:56:03 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 20:56:08 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:56:34 GMT+0000",
+  "cq:lastModified": "Wed Aug 07 2024 18:08:24 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4b77ace1-8413-4f03-a5c0-0561eac71f1a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:56:03 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7cd0827f-b56d-4d64-9971-41cc207e20b1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/9_AP-015532A_APPROACH OR Staff Roles and Responsibilities.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/9_AP-015532A_APPROACH OR Staff Roles and Responsibilities-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Aug 12 2022 18:53:52 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Dr. Brent Morris discusses OR staff roles and responsibilities for Tornier Approach.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "link",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Tornier Approach OR Staff Roles & Responsibilities ",
+      "jcr:lastModified": "Wed Aug 07 2024 18:08:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 14 2022 19:08:59 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016242A</span></p>\n",
+      "jcr:lastModified": "Mon Nov 14 2022 19:50:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

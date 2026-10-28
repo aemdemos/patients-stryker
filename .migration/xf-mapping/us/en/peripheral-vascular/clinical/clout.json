@@ -1,0 +1,990 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CLOUT",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b0da656f-0bdc-4b6a-963f-741de3b8dc94",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "88aae350-ee57-411e-963c-cdad6d791372"
+  ],
+  "contentID": "PRO-4511-USA-EN-v1",
+  "lastPublished": "Thu Oct 08 2026 20:11:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 08 2026 20:11:21 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 08 2026 20:11:23 GMT+0000",
+  "cq:lastModified": "Thu Oct 08 2026 20:11:17 GMT+0000",
+  "jcr:baseVersion": "88aae350-ee57-411e-963c-cdad6d791372",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 08 2026 20:06:55 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Sep 28 2026 20:27:56 GMT+0000",
+  "jcr:uuid": "77f1245d-c93a-486c-a07c-dbb08395e4d3",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2026 15:55:09 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2026 15:55:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/peripheral_vascular/en/clinical/clout/desktop-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/peripheral-vascular/en/clinical/clout/desktop-hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/peripheral_vascular/en/clinical/clout/desktop-hero/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/peripheral-vascular/en/clinical/clout/desktop-hero/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Wed Sep 30 2026 15:55:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Oct 08 2026 20:09:53 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h1 style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">CLOUT</span></span> Registry</span><br>\n</h1>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-5em\">The largest prospective mechanical thrombectomy study in the field of deep vein thrombosis (DVT).</span></p>\n<p style=\"text-align: left;\"><span class=\"standalone-link\"><a href=\"https://clinicaltrials.gov/study/NCT03575364\"><span class=\"fontsize-1-5em\"><br>\nNCT03575364</span></a></span></p>\n",
+              "jcr:lastModified": "Thu Oct 08 2026 20:11:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "5"
+            }
+          }
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Sep 28 2026 20:44:05 GMT+0000",
+      "jcr:lastModified": "Mon Sep 28 2026 20:44:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_2049253893_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:18:01 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:18:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1863677118": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 20:21:25 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 20:21:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_2017817555": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "design",
+      "jcr:created": "Mon Sep 28 2026 20:42:49 GMT+0000",
+      "title": "Design",
+      "jcr:lastModified": "Wed Sep 30 2026 19:19:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy_1519638532": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Design</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Wed Sep 30 2026 19:19:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1543404669_copy_1155565533": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 18:21:47 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 18:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 17 2026 20:15:00 GMT+0000",
+          "alt": "CLOUT-objective-icons.png",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/CLOUT-design-icon-centered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 29 2026 20:54:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "-10",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">Objective</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Evaluate real-world patient outcomes after treatment of acute, subacute, and chronic proximal lower extremity DVT with the ClotTriever system<br>\n <br>\n <br>\n <br>\n <br>\n <br>\n <br>\n <br>\n </span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 15:39:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 17 2026 20:15:00 GMT+0000",
+          "alt": "CLOUT-design-icons.png",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/CLOUT-objective-icon-centered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 29 2026 20:54:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "-10",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Design</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Prospective multicenter, all-comer registry of 500 patients enrolled at 43 US sites</span><br>\n</li>\n<li><span class=\"fontsize-1-25em\">Study conduct: independent core laboratory to assess primary effectiveness endpoint and an independent medical monitor to assess safety events</span></li>\n<li><span class=\"fontsize-1-25em\">Variables Collected:</span><ul>\n<li><span class=\"fontsize-1-25em\">Procedural Data</span></li>\n<li><span class=\"fontsize-1-25em\">Safety: Total and device-related SAEs</span></li>\n<li><span class=\"fontsize-1-25em\">Other Outcomes: Duplex US, Post-thrombotic Syndrome (PTS) assessment via Villalta score, rVCSS, NPRS, EQ-5D</span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 15:32:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 17 2026 20:15:00 GMT+0000",
+          "alt": "CLOUT-Primary Effectiveness Endpoint-icons.png",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/CLOUT-Primary Effectiveness Endpoint-icons-centered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 29 2026 20:54:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "-10",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\"><span class=\"futura-bold\">Primary Effectiveness Endpoint</span><br>\n</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Complete or near-complete (≥75%) removal of thrombus from the target venous segments via venographic Marder score<br>\n <br>\n <br>\n <br>\n <br>\n <br>\n <br>\n <br>\n <br>\n </span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 15:39:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      }
+    },
+    "cols3_1244258075_cop_2058879123": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 18:23:31 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 18:23:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 17 2026 20:15:00 GMT+0000",
+          "alt": "CLOUT-Key Eligibility Criteria-icons.png",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/CLOUT-Key Eligibility Criteria-icons-centered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 29 2026 20:54:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "-10",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\"><span class=\"futura-bold\">Key Eligibility Criteria</span><br>\n</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Inclusion:</span><ul>\n<li><span class=\"fontsize-1-25em\">Patients enrolled irrespective of symptom duration<br>\n </span></li>\n<li><span class=\"fontsize-1-25em\">Age ≥ 18 years</span></li>\n<li><span class=\"fontsize-1-25em\">Unilateral or bilateral proximal lower extremity DVT</span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\">Exclusion:</span><ul>\n<li><span class=\"fontsize-1-25em\">Patients with IVC filter present at time of DVT treatment or prior stenting of the target vessel segment were excluded</span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:35:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 17 2026 20:15:00 GMT+0000",
+          "alt": "CLOUT-Duration of Patient Follow-up-icons.png",
+          "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/CLOUT-Duration of Patient Follow-up-icons-centered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 29 2026 20:54:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "-10",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\"><span class=\"futura-bold\">Duration of Patient Follow-up</span><br>\n</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Patients were assessed at</span><ul>\n<li><span class=\"fontsize-1-25em\">discharge</span></li>\n<li><span class=\"fontsize-1-25em\">30-day visit</span></li>\n<li><span class=\"fontsize-1-25em\">6-month visit</span></li>\n<li><span class=\"fontsize-1-25em\">1-year visit</span></li>\n<li><span class=\"fontsize-1-25em\">2-year visit<br>\n <br>\n <br>\n <br>\n &nbsp;</span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 15:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_201781": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "outcomes",
+      "jcr:created": "Mon Sep 28 2026 20:42:49 GMT+0000",
+      "title": "Outcomes",
+      "jcr:lastModified": "Mon Sep 28 2026 20:43:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy_79244475": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">CLOUT Outcomes</span><sup>1, 2, 3</sup></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Mon Sep 28 2026 20:39:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1543404669_copy_459269165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2 style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Significant clot removal in a single session</span></span></h2>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 19:58:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 21:23:25 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 21:23:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 17 2026 20:23:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: #85458a;\">&gt;90%</span></span></span><br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Complete or near-complete thrombus removal*</span></span><br>\r\n(n=486)</div>\r\n",
+          "jcr:lastModified": "Thu Sep 17 2026 20:24:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 17 2026 20:23:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(133,69,138);\">40ml</span></span></span><br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Median estimated<br>\r\nblood loss</span></span><br>\r\n(n=448)</div>\r\n",
+          "jcr:lastModified": "Thu Sep 17 2026 20:25:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 17 2026 20:23:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(133,69,138);\">99.4%</span></span></span><br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Single session<br>\r\ntreatment</span></span><br>\r\n(n=499)</div>\r\n",
+          "jcr:lastModified": "Thu Sep 17 2026 20:25:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:31:11 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:31:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2 style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Established safety outcomes</span></span></h2>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:35:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols3_1729989621": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 16 2026 21:25:19 GMT+0000",
+          "jcr:lastModified": "Wed Sep 16 2026 21:25:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "numbercounter": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "startNumber": "0",
+              "counterlabel": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Device-related serious adverse events (SAEs)</span> <br>\r\n (n=499)</span></div>\r\n",
+              "fontColor": "rgb(133,69,138)",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Sep 16 2026 21:25:25 GMT+0000",
+              "numberCounterAlignment": "text-center",
+              "numberTypeNumberCounter": "3",
+              "fontFace": "futura-bold",
+              "fontSize": "fontsize-6-5-vw",
+              "currencyTypeNumberCounter": "$",
+              "jcr:lastModified": "Thu Sep 17 2026 19:37:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/numbercounter",
+              "endNumber": "0.2",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "numbercounter_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "startNumber": "-0",
+              "counterlabel": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Vessel damage, valve damage, acute kidney injury</span><br>\r\n (n=499)</span></div>\r\n",
+              "fontColor": "rgb(133,69,138)",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Sep 16 2026 21:25:25 GMT+0000",
+              "numberCounterAlignment": "text-center",
+              "numberTypeNumberCounter": "3",
+              "fontFace": "futura-bold",
+              "fontSize": "fontsize-6-5-vw",
+              "currencyTypeNumberCounter": "$",
+              "jcr:lastModified": "Thu Sep 17 2026 19:37:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/numbercounter",
+              "endNumber": "0",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "numbercounter_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "startNumber": "0",
+              "counterlabel": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Rethrombosis/residual thrombus SAE rate (30 days)</span><br>\r\n (n=499)</span></div>\r\n",
+              "fontColor": "rgb(133,69,138)",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Sep 16 2026 21:25:25 GMT+0000",
+              "numberCounterAlignment": "text-center",
+              "numberTypeNumberCounter": "3",
+              "fontFace": "futura-bold",
+              "fontSize": "fontsize-6-5-vw",
+              "currencyTypeNumberCounter": "$",
+              "jcr:lastModified": "Thu Sep 17 2026 19:37:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/numbercounter",
+              "endNumber": "5.0",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 17 2026 19:31:49 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 17 2026 19:31:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_1310179451": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 21:10:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy_copy_copy__2142751307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2 style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span style=\"color: #85458a;\">Sustained improvements in<br>\n PTS symptoms at 2 years</span></span></h2>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 19:58:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1729989621_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 16 2026 21:25:19 GMT+0000",
+      "jcr:lastModified": "Wed Sep 16 2026 21:25:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">No PTS or mild PTS symptoms</span><br>\r\n (n=265)</span></div>\r\n",
+          "fontColor": "rgb(133,69,138)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 16 2026 21:25:25 GMT+0000",
+          "numberCounterAlignment": "text-center",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-7vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Thu Sep 17 2026 19:51:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "94",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1332112645": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:39:44 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:39:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1227637437": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Sep 28 2026 20:33:08 GMT+0000",
+      "jcr:lastModified": "Mon Sep 28 2026 20:33:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_201781_596765265": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "evidence",
+      "jcr:created": "Mon Sep 28 2026 20:42:49 GMT+0000",
+      "title": "clinical evidence",
+      "jcr:lastModified": "Thu Oct 08 2026 18:37:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1364898747_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:28:26 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Clinical evidence</span></span></span></span></span></h2>\n",
+      "jcr:lastModified": "Thu Oct 08 2026 18:36:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1543404669_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 17:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "jcr:lastModified": "Tue Jun 30 2026 17:29:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:43:20 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:43:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">2025 ESVM: New DVT guidelines state for endovascular treatment of acute DVT, the use of catheter-based mechanical thrombectomy should be preferred over CDT or USAT.</span></span></span></p>\n<p><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span class=\"standalone-link\"><a href=\"/content/dam/stryker/peripheral-vascular/clinical/clout/resources/PRO-2734-USA-EN-v1-ClotTriever-ESVM-Guidelines_MLR.pdf\">See results</a></span></span><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:42:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">One-Year Clinical Outcomes: A <b>CLOUT</b> Registry Analysis<br>\n <br>\n <br>\n <br>\n<br>\n &nbsp;</span></span></span></p>\n<p><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span class=\"standalone-link\"><a href=\"https://www.jscai.org/article/S2772-9303(24)00014-0/fulltext\">See results</a></span></span><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:43:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">Outcomes from the <b>ClotTriever</b> Registry show symptom duration may underestimate DVT chronicity<br>\n<br>\n<br>\n</span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.sciencedirect.com/science/article/pii/S2213333X22002566\">See results</a></span></p>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:44:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">6-Month DVT Outcomes by Chronicity: Analysis of the Real-World <b>ClotTriever</b> Outcomes Registry<br>\n <br _rte_temp_br=\"brEOB\">\n <br>\n <br>\n</span></span></span></p>\n<p><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><span class=\"standalone-link\"><a href=\"https://www.jvir.org/article/S1051-0443(23)00004-0/fulltext\">See results</a><br>\n</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:44:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:43:20 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:43:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">CLOUT vs. ATTRACT AC PSM<br>\n <br>\n <br>\n<br>\n<br>\n <br>\n <br>\n</span></span></span></p>\n<p><span style=\"color: #85458a;\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"></span></span></b><span style=\"color: #000000;\"><span class=\"standalone-link\"><a href=\"https://www.jvsvenous.org/article/S2213-333X(24)00078-7/fulltext\">See results</a></span></span><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><br>\n </span></span></b></span></p>\n",
+          "jcr:lastModified": "Thu Oct 08 2026 18:39:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">6-Month Outcomes of Mechanical Thrombectomy for Treating DVT: Analysis from the 500-Patient CLOUT Registry<br>\n<br>\n&nbsp;</span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/37580422/\">See results</a></span></p>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 19:26:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">Safety and Effectiveness of Mechanical Thrombectomy from the Fully Enrolled <b>CLOUT</b> Registry<br>\n<br>\n<br>\n&nbsp;</span></span></span></p>\n<p><a href=\"https://www.jscai.org/article/S2772-9303(23)00012-1/fulltext\"><span class=\"standalone-link\">See results</span></a></p>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 19:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">Association Between 30-Day Villalta Scores and Long-Term PTS Incidence and Severity Following Acute DVT<br>\n<br>\n<br>\n&nbsp;</span></span></span></p>\n<p><a href=\"https://pubmed.ncbi.nlm.nih.gov/37802419/\"><span class=\"standalone-link\">See results</span></a></p>\n",
+          "jcr:lastModified": "Wed Sep 30 2026 19:25:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols4_544287184": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 08 2026 18:38:01 GMT+0000",
+      "jcr:lastModified": "Thu Oct 08 2026 18:38:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 16 2026 18:22:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">Mechanical Thrombectomy vs. Pharmacomechanical CDT for the Treatment of Iliofemoral DVT: A Propensity Score Matched Exploratory Analysis of 12 Month Clinical Outcomes</span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://pubmed.ncbi.nlm.nih.gov/37981003/\">See results</a></span></p>\n",
+          "jcr:lastModified": "Mon Sep 28 2026 20:19:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      }
+    },
+    "cols_2049253893_copy_1409064317": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 17 2026 19:18:01 GMT+0000",
+      "jcr:lastModified": "Thu Sep 17 2026 19:18:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 17 2026 19:25:46 GMT+0000",
+          "jcr:lastModified": "Thu Sep 17 2026 19:25:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Sep 16 2026 21:09:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* ≥75% thrombus removal assessed via Marder score by an independent core laboratory</p>\r\n<p><b>References</b></p>\r\n<ol>\r\n<li>Dexter D, et al. Safety and effectiveness of mechanical thrombectomy from the fully enrolled multicenter, prospective CLOUT registry. J Soc Cardiov Angiog Interv. 2023;2(2):100585.<br>\r\n<br>\r\n</li>\r\n<li>Shaikh A, et al. Six-month outcomes of mechanical thrombectomy for treating deep vein thrombosis: analysis from the 500-patient CLOUT registry. Cardiovasc Intervent Radiol. 2023; 46(11):1571-1580.<br>\r\n<br>\r\n</li>\r\n<li>Dexter, Dr. Complete Two-Year Outcomes in Patients Receiving Mechanical Thrombectomy for Deep Vein Thrombosis in the CLOUT Registry. Presetened at VIVA/VEINS 2024.</li>\r\n</ol>\r\n<div><b>Indications for Use</b><br>\r\n<br>\r\n</div>\r\n<div>The ClotTriever® thrombectomy system is indicated for (1) the non-surgical removal of thrombi and emboli from blood vessels and (2) injection, infusion and/or aspiration of contrast media and other fluids into or from a blood vessel. The ClotTriever thrombectomy system is intended for use in the peripheral, vasculature, including deep vein thrombosis (DVT).</div>\r\n<div>&nbsp;</div>\r\n<div>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and Contraindications prior to use of the product.</div>\r\n<div>&nbsp;</div>\r\n<div><b>Caution</b></div>\r\n<div>&nbsp;</div>\r\n<div>Federal (USA) law restricts this device to sale by or on the order of a physician.</div>\r\n<div>&nbsp;</div>\r\n<div>All trademarks are property of their respective owners.</div>\r\n",
+    "jcr:lastModified": "Mon Sep 28 2026 20:27:21 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

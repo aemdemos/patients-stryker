@@ -1,0 +1,96 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Impact stats",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "50f11342-19ef-435f-8aa5-79f5d1f83831",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4351776b-e59a-4d86-90ef-39bf6995618b"
+  ],
+  "lastPublished": "Wed Jan 07 2026 15:26:23 GMT+0000",
+  "jcr:created": "Wed Jan 07 2026 15:26:23 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 07 2026 15:26:26 GMT+0000",
+  "cq:lastModified": "Wed Jan 07 2026 15:26:18 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4351776b-e59a-4d86-90ef-39bf6995618b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Nov 04 2025 18:39:18 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7519e416-bc34-444d-bf1f-bec06f464dfd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_1861100605": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Sep 17 2025 18:46:39 GMT+0000",
+      "jcr:lastModified": "Wed Sep 17 2025 18:46:56 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1861": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_png",
+        "alt": "Icon of a document with a checkmark on it",
+        "srcFileRef": "/content/dam/stryker/sage/images/icons/documents-icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 03 2025 16:46:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "10"
+          }
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "7",
+        "jcr:created": "Wed Sep 17 2025 17:41:32 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Over <span style=\"color: #ffb500;\">150 published outcomes</span> show clinical and financial impact</span></span></p>\n",
+        "jcr:lastModified": "Mon Oct 13 2025 15:11:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "gradientDirectionInverse": "true",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    }
+  }
+}

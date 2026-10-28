@@ -1,0 +1,212 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Acute Ischemic Stroke (AIS)",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d0db5bd8-b386-4238-bc94-866e4d67f413",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "5ef0096a-073d-46e1-a6f4-a3377d4366b2"
+  ],
+  "contentID": "NV-GSNPS-SYK-1414037",
+  "lastPublished": "Tue Sep 30 2025 14:24:05 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 30 2025 14:24:05 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 30 2025 14:24:07 GMT+0000",
+  "cq:lastModified": "Tue Sep 30 2025 14:24:04 GMT+0000",
+  "jcr:baseVersion": "5ef0096a-073d-46e1-a6f4-a3377d4366b2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jan 08 2025 18:23:01 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/neurovascular",
+    "stryker:specialty/acute-ischemic-stroke-ais",
+    "stryker:portfolio/neurotechnology",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jan 08 2025 18:24:29 GMT+0000",
+  "jcr:uuid": "55384485-4ebe-496e-830c-833b1837150c",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "filteredcontenttypeg": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "emptyText": "No Results found.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "searchPath": "/content/stryker/us/en/neurovascular/products",
+      "jcr:created": "Mon Dec 30 2024 20:42:56 GMT+0000",
+      "jcr:lastModified": "Mon Jan 06 2025 15:23:43 GMT+0000",
+      "loadMoreText": "See other neurovascular products",
+      "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+      "listSize": "1",
+      "defaultFilterOption": "Show All",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "deepLinkingId": "icad",
+        "title": "Intracranial atherosclerotic disease (ICAD)",
+        "jcr:lastModified": "Mon Dec 30 2024 20:44:29 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      },
+      "filterArbitraryOrdering": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/wingspan-stent-system"
+        }
+      }
+    },
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 30 2024 20:44:44 GMT+0000",
+      "jcr:lastModified": "Mon Dec 30 2024 20:44:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "filteredcontenttypeg_602364168": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "emptyText": "No Results found.",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "searchPath": "/content/stryker/us/en/neurovascular/products",
+      "jcr:created": "Mon Dec 30 2024 20:42:56 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 14:29:27 GMT+0000",
+      "loadMoreText": "See other neurovascular products",
+      "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+      "listSize": "9",
+      "defaultFilterOption": "Show All",
+      "sectionTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "deepLinkingId": "access",
+        "title": "Access",
+        "jcr:lastModified": "Mon Dec 30 2024 20:47:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title"
+      },
+      "filterArbitraryOrdering": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-infinity-ls"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-infinity-plus"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/broadway-system"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/flowgate2--balloon-guide-catheter"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/guider-softip-xf"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/merci-balloon-guide-catheter"
+        },
+        "7": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/synchro2"
+        },
+        "8": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/synchro-select-guidewires"
+        },
+        "9": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/transend--guidewires"
+        },
+        "10": {
+          "jcr:primaryType": "nt:unstructured",
+          "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/trak-21"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/neurotechnology/neurovascular/acute-ischemic-stroke/Thumbnail_Trevo XP ProVue.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "searchPath": "/content/stryker/us/en/neurovascular/products",
+    "jcr:lastModified": "Mon Jan 06 2025 15:23:34 GMT+0000",
+    "loadMoreText": "See other neurovascular products",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "8",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "thrombectomy",
+      "title": "Thrombectomy",
+      "jcr:lastModified": "Mon Dec 30 2024 20:42:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-catalyst-5"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-catalyst--6"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-catalyst-7"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-vecta-46"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-vecta-intermediate-catheter"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/axs-universal"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/trevo-nxt"
+      },
+      "8": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/neurovascular/products/trevo--xp-provue-retriever-"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Mon Dec 30 2024 21:08:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "hideBottomLine": "true"
+  }
+}

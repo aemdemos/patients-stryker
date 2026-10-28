@@ -1,0 +1,622 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Meniscal repair",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f246eac4-55c9-45dc-9e81-e10ad050b901",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "f2dc6857-1e51-419e-a1aa-4a5aa789d23c"
+  ],
+  "contentID": "SM-KNE-SYK-2618748",
+  "lastPublished": "Mon May 11 2026 16:11:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 11 2026 16:11:05 GMT+0000",
+  "cq:lastReplicated": "Mon May 11 2026 16:11:07 GMT+0000",
+  "cq:lastModified": "Fri May 08 2026 20:35:10 GMT+0000",
+  "jcr:baseVersion": "f2dc6857-1e51-419e-a1aa-4a5aa789d23c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 11 2026 16:11:02 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:business-unit/sports-medicine",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/sports-medicine",
+    "stryker:procedure/meniscal-repair"
+  ],
+  "jcr:lastModified": "Fri May 08 2026 20:35:10 GMT+0000",
+  "jcr:uuid": "c6611428-ade2-4a89-8103-9e563e277b00",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Feb 25 2022 22:33:51 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 10 2022 17:17:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "ACL reconstruction — precision and strength in ACL reconstruction",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/sports-medicine/procedures/acl-reconstruction/acl-procedural-page-thumb.png",
+        "layoutOptions": "col-sm-6 pull-left",
+        "backgroundImageRef": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/Meniscal repair carousel gold bar.png",
+        "alt": "VersiPass",
+        "jcr:lastModified": "Fri Mar 13 2026 17:57:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "carissa.frausto@stryker.com",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:created": "Wed Mar 02 2022 20:34:15 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><b style=\"background-color: transparent; font-size: 24.5px;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">Precision</span></span><span style=\"color: rgb(255,181,0);\"><b><sup><span class=\"fontsize-1-5-vw\">1</span></sup></b></span><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">. Strength. Confidence.</span><br>\r\n </span></span></b><b style=\"background-color: transparent; font-family: adobe-clean , Helvetica , Arial , sans-serif; font-size: 24.5px;\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Stryker Meniscal Repair</span></span></span></span></b></h1>\r\n",
+            "jcr:lastModified": "Fri May 08 2026 14:45:26 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,1)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_286910": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Apr 03 2020 01:33:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Meniscal repair animation library</span></span>",
+      "jcr:lastModified": "Mon Mar 02 2026 17:54:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 18:50:49 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 18:50:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "AIR+ animation",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 19:03:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/AIR Animation (2).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/AIR Animation (2)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Feb 25 2026 20:05:46 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy_1332563003": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "SharpShooter Animation",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 19:03:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/SharpShooter Technical Information (5).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/SharpShooter Technical Information (5)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Feb 25 2026 19:01:30 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy_99429491": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Versitomic RR Meniscal Root Repair Animation",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 19:03:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/Versitomic RR Meniscal Root Repair Animation (7).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Versitomic RR Meniscal Root Repair Animation (7)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Feb 25 2026 19:01:36 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "largeheadline_286910_898623496": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Apr 03 2020 01:33:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Meniscal repair surgical video library</span></span>",
+      "jcr:lastModified": "Mon Mar 02 2026 17:54:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 18:50:49 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 18:50:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Dr. Genuario lateral meniscal repair using AIR+ surgical technique video",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 19:04:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/Dr. Genuario lateral meniscal repair using AIR surgical technique video (2).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr. Genuario lateral meniscal repair using AIR surgical technique video (2)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Feb 25 2026 20:43:23 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Dr. Yanke Meniscal Root Repair",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 19:04:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/Dr. Yanke Meniscal Root Repair (1).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr. Yanke Meniscal Root Repair (1)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Feb 25 2026 20:06:16 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Meniscal Root Repair with Dr. Vidal",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Feb 25 2026 18:50:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Mar 02 2026 19:35:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/videos/Meniscal Root Repair with Dr. Armando Vidal.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Meniscal Root Repair with Dr. Armando Vidal-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Mar 02 2026 19:35:29 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "curatedcta_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon May 18 2020 21:35:09 GMT+0000",
+      "CTATitle": "Follow us on VuMedi",
+      "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/shoulder-19/",
+      "jcr:lastModified": "Mon May 18 2020 21:36:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 18:57:10 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 18:57:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Feb 25 2022 20:26:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,181,0);\">Meniscal preservation&nbsp;</span><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">product portfolio</span></span></span></span></h3>\r\n",
+      "jcr:lastModified": "Wed Feb 25 2026 19:12:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3_89138681_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Feb 25 2022 20:29:37 GMT+0000",
+      "jcr:lastModified": "Fri Feb 25 2022 20:29:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Feb 25 2022 20:31:53 GMT+0000",
+          "alt": "all inside",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/1- All Inside 2.psd",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 20:53:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 25 2022 20:31:58 GMT+0000",
+          "text": "<h5><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">All-inside meniscal repair&nbsp;</span></span></h5>\n<p><span style=\"text-transform: uppercase;\"><b><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/sports-medicine/products/All-inside-meniscal-repair-system.html\">AIR+</a></span></b></span></p>\n",
+          "jcr:lastModified": "Wed Feb 25 2026 19:16:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Feb 25 2022 20:32:26 GMT+0000",
+          "alt": "inside out",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/2- Inside Out 2.psd",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 20:53:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 25 2022 20:32:33 GMT+0000",
+          "text": "<h5><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Inside-Out Meniscal Repair</span></span></h5>\n<p><a href=\"/content/stryker/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system.html\"><span class=\"standalone-link\">SHARPSHOOTER</span></a></p>\n",
+          "jcr:lastModified": "Wed Feb 25 2026 19:17:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Feb 25 2022 20:32:58 GMT+0000",
+          "alt": "root repair",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/3- Root Repair 3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 02 2026 19:33:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 25 2022 20:32:33 GMT+0000",
+          "text": "<h5><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Root Repair</span></span></h5>\n<h5><span class=\"fontsize-1em\">Tunnel Prep - <a href=\"/content/stryker/us/en/sports-medicine/products/versitomic-flexible-reaming-system.html\"><span class=\"standalone-link\">VersiTomic</span></a></span></h5>\n<h5><span class=\"fontsize-1em\">Suture Passing - <a href=\"/content/stryker/us/en/sports-medicine/products/versipass.html\"><span class=\"standalone-link\">VersiPass</span></a> - <a href=\"/content/stryker/us/en/sports-medicine/products/suture-and-tape-offerings.html\"><span class=\"standalone-link\">Suture</span></a></span></h5>\n<h5><span class=\"fontsize-1em\">Fixation - <a href=\"/content/stryker/us/en/sports-medicine/products/AlphaVent_Knotless.html\"><span class=\"standalone-link\">AVK</span></a> <a href=\"/content/stryker/us/en/sports-medicine/products/omega.html\"><span class=\"standalone-link\">Omega</span></a> <a href=\"/content/stryker/us/en/sports-medicine/products/procinch-suspensory-fixation-adjustable-loop.html\"><span class=\"standalone-link\">Slotted Buttons (ProCinch)</span></a></span></h5>\n",
+          "jcr:lastModified": "Thu Feb 26 2026 18:28:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_2052654140": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 19:14:43 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 19:14:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Feb 25 2022 20:32:26 GMT+0000",
+          "alt": "resection",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/4- Resection 2.psd",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 20:53:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 25 2022 20:32:33 GMT+0000",
+          "text": "<h5><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Resection</span></span></h5>\n<h5><span class=\"fontsize-1em\">Conquest Manual Instruments and CrossBlade Cutters <a href=\"/content/stryker/us/en/sports-medicine/products/conquest-manual-instruments.html\"><span class=\"standalone-link\">Conquest Manual Instruments</span></a></span></h5>\n<h5><span class=\"fontsize-1em\"><a href=\"/content/stryker/us/en/sports-medicine/products/crossblade-series-cutters.html\"><span class=\"standalone-link\">CrossBlade Series Cutters</span></a></span></h5>\n",
+          "jcr:lastModified": "Wed Feb 25 2026 19:29:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_730717736": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 18:57:54 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 18:57:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/AIR+ Brochure (2).pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/VersiTomic RR Evidence Matters Clinical Data.pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/CrossBlade Premium Arthroscopic Cutters Brochure.pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/VersiPass Brochure.pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/Sharpshooter Product Brochure.pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/Versitomic RR meniscal root repair system surgical technique guide  (4).pdf",
+        "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/resources/Conquest Intruments Brochure (3).pdf"
+      ],
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 18:58:13 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Feb 25 2026 19:31:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+      "text": "Follow us on LinkedIn Follow us on Instagram Follow us on VuMedi Follow us on YouTube",
+      "jcr:lastModified": "Thu Feb 19 2026 20:18:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/social-media-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/social-media-links/master"
+    },
+    "cols_1767484254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 20:53:59 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 20:53:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3149",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Mar 02 2026 18:38:44 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Mon Mar 02 2026 18:39:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/procedures/meniscal-repair/images/Use_This_One_StrykerMeniscalRepair.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>Meniscal preservation is critical for maintaining long-term joint health and function<sup>3,4,5</sup>. From inside-out to all-inside to root repairs and transplants, Stryker’s Meniscal Repair portfolio is built to support a variety of approaches to meniscal preservation.</p>\r\n<p>&nbsp;</p>\r\n<p>No matter the technique, you can count on our comprehensive portfolio to meet your surgical needs.</p>\r\n",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Mar 02 2026 18:11:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Feb 25 2026 18:31:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Mar 02 2026 17:51:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Mar 02 2026 17:51:04 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Mar 02 2026 18:10:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. DHFD15772 pg 24: “VRR is more precise than the leading competitor” Also ECO127770 <br />\r\n3. Hurmuz, M., Ionac, M., Hogea, B., Miu, C. A., &amp; Tatu, F. (2024). Osteoarthritis Development Following Meniscectomy vs. Meniscal Repair for Posterior Medial Meniscus Injuries: A Systematic Review. Medicina, 60(4), 569. <a href=\"https://doi.org/10.3390/medicina60040569\" style=\"background-color: rgb(240,240,240);\">https://doi.org/10.3390/medicina60040569</a><br />\r\n4. Fox AJ, Wanivenhaus F, Burge AJ, Warren RF, Rodeo SA. The human meniscus: a review of anatomy, function, injury, and advances in treatment. Clin Anat. 2015 Mar;28(2):269-87. doi: 10.1002/ca.22456. Epub 2014 Aug 14. PMID: 25125315. <br />\r\n5. Patil, S.S., Shekhar, A. &amp; Tapasvi, S.R. Meniscal Preservation is Important for the Knee Joint. IJOO 51, 576–587 (2017). <a href=\"https://doi.org/10.4103/ortho.IJOrtho_247_17\" style=\"background-color: rgb(240,240,240);\">https://doi.org/10.4103/ortho.IJOrtho_247_17</a></p>\r\n",
+    "jcr:lastModified": "Fri May 08 2026 14:43:56 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

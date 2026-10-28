@@ -1,0 +1,39 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Mobile",
+  "jcr:versionHistory": "06bfec21-5229-4d89-8678-941910e38d29",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "76d7ad7c-0512-46e6-937d-3361c14be826"
+  ],
+  "jcr:created": "Mon Feb 22 2021 14:19:00 GMT+0000",
+  "cq:lastModified": "Thu Feb 18 2021 20:58:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "76d7ad7c-0512-46e6-937d-3361c14be826",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "bf7c8c54-198e-4978-bf02-d6f03e123fba",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Thu Feb 18 2021 20:58:18 GMT+0000",
+      "alt": "80 years together; Our history in healthcare",
+      "srcFileRef": "/content/dam/stryker/about/news/features/80-years-together/images/80th-mobile-with-text.jpg",
+      "jcr:lastModified": "Thu Feb 18 2021 20:58:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    }
+  }
+}

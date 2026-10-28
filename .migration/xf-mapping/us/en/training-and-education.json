@@ -1,0 +1,362 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Healthcare professionals",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Training and education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "47500d14-d682-4d20-b85b-678d5e9a4070",
+  "cq:template": "/apps/stryker/templates/tier1-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "920175a5-e7f8-471c-953d-83fdb95b2648"
+  ],
+  "contentID": "CORPM-GSNPS-SYK-933500_REV-4",
+  "lastPublished": "Mon Aug 03 2026 14:08:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Aug 03 2026 14:08:06 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 03 2026 14:08:09 GMT+0000",
+  "cq:lastModified": "Mon Jun 22 2026 15:41:58 GMT+0000",
+  "jcr:baseVersion": "920175a5-e7f8-471c-953d-83fdb95b2648",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:11:51 GMT+0000",
+  "hideInNav": "true",
+  "jcr:lastModified": "Mon Jun 22 2026 15:41:58 GMT+0000",
+  "jcr:uuid": "2300f0bc-8a05-44b8-b524-c4daba17152c",
+  "sling:resourceType": "stryker/components/structure/pages/tier1-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Mon May 10 2021 17:32:55 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerCheckbox": "hcp-banner-overlay",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Jan 09 2023 22:29:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "localpage_nav_Overlay",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/nse/meded/hero---carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/nse/meded/hero-carousel/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/training_and_educati/nse/meded/hero---carousel/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/training-and-educati/nse/meded/hero-carousel/master",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Mon May 10 2021 17:33:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Wed May 12 2021 22:22:28 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "1",
+              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "rightMargin": "1",
+              "topMargin": "1",
+              "jcr:created": "Thu Mar 04 2021 22:29:42 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(133,69,138);\"><span style=\"color: rgb(0,0,0);\">Training and education</span></span></span></span></h1>\r\n<h2><span class=\"fontsize-3-5-vw\">Healthcare professionals</span></h2>\r\n",
+              "jcr:lastModified": "Mon Jan 08 2024 15:23:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "1",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "1",
+              "bottomMargin": "1"
+            }
+          }
+        }
+      }
+    },
+    "cols_794617490": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 15:25:50 GMT+0000",
+      "jcr:lastModified": "Mon Jan 08 2024 15:25:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_72378185_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Advancing product and procedural knowledge</span></span></p>\n",
+      "jcr:lastModified": "Mon Jan 08 2024 15:25:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "jcr:lastModified": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">Our partnership goes beyond delivering the latest technology and solutions. We offer a wide range of training and education options to help ensure you’re making the most of your time and investment.</span></p>\n",
+      "jcr:lastModified": "Mon Jan 08 2024 15:25:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Mon Mar 08 2021 03:36:07 GMT+0000",
+      "jcr:lastModified": "Mon Mar 08 2021 03:36:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "jumpbarnav_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 11 2021 16:04:05 GMT+0000",
+      "jcr:lastModified": "Thu Feb 11 2021 16:04:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_275107": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 11 2021 16:01:12 GMT+0000",
+      "title": "Nurses and physician assistants",
+      "jcr:lastModified": "Mon Jul 12 2021 22:35:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 04:03:26 GMT+0000",
+      "text": "Clinical education FocusRN is Stryker’s clinical education program, accessible through an online portal. This resource provides clinical education and tools to help you fulfill your education requirements and advance your knowledge to improve patient care. Interventional Spine This site provides Advanced Practice Providers (APPs) with an overview of our Medical Education offerings and resources designed specifically for APPs, including patient identification and imaging education. Joint Replacement - Mako in the OR A collection of educational content designed for OR staff using the Mako System. Watch videos and interact with modules to learn OR layouts, roles and responsibilities, Mako instrumentation, Mako System set-up and more for all three applications. Peripheral Vascular This site provides multidisciplinary healthcare professionals with educational programs and training opportunities focused on advancing knowledge of Stryker’s Peripheral Vascular portfolio, procedural techniques, and clinical application. Surgical Technologies This site provides nurses and operating room staff with meaningful learning experiences that ultimately keep our caregivers safe and improve patient outcomes.",
+      "jcr:lastModified": "Fri Oct 15 2021 17:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/training-and-education/en/us/nurses-and-physician-assistants/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/training-and-education/en/us/nurses-and-physician-assistants/master"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 04:07:44 GMT+0000",
+      "jcr:lastModified": "Sat Sep 11 2021 04:07:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "section_title_169821": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 12 2021 22:36:26 GMT+0000",
+      "title": "Emergency Care",
+      "jcr:lastModified": "Thu Jul 21 2022 13:27:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_1318591279": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 04:23:01 GMT+0000",
+      "text": "In-hospital care On-demand webinars, online and in-person training and additional resources created specifically for hospital clinicians. Pre-hospital care On-demand webinars, online and in-person training and additional resources created specifically for EMS and first responders.",
+      "jcr:lastModified": "Sat Sep 11 2021 04:24:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/training-and-education/en/us/emergency-medical-services/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/training-and-education/en/us/emergency-medical-services/master"
+    },
+    "largeheadline_1409132963": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 04:07:54 GMT+0000",
+      "jcr:lastModified": "Sat Sep 11 2021 04:07:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 11 2021 16:00:48 GMT+0000",
+      "title": "Surgeons, residents and fellows",
+      "jcr:lastModified": "Thu Sep 09 2021 19:33:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_569211075": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 05:43:04 GMT+0000",
+      "text": "Craniomaxillofacial This site provides craniomaxillofacial surgeons with educational programs that incorporate the latest clinical insights and advancements in procedural innovation. ENT This site provides surgeons, residents, and fellows with training opportunities to further their knowledge of Stryker’s ENT product portfolio and procedures. Interventional Spine This site provides healthcare professionals with an overview of our Medical Education programs and training opportunities focused on advancing knowledge of our extensive product portfolio, procedural techniques and clinical application. Joint Replacement This site provides Joint Replacement surgeons, residents, and fellows with training opportunities to further their knowledge of Stryker’s hip and knee product portfolio. Neurosurgical This site provides residents, fellows and practicing physicians with best in-class educational courses to advance surgical techniques in order to learn the safe and effective use of Neurosurgical devices. Neurovascular Stroke Knowledge Initiatives for Learning and Leadership (SKILL) is a series of innovative, tailored ischemic and hemorrhagic stroke education programs that support our customers’ need to address patient management challenges with the ultimate shared goal of improving lives. SKILL features an e-lab, NeuroElite fellows program, training center initiatives and global centers of excellence. Peripheral Vascular This site provides multidisciplinary healthcare professionals with educational programs and training opportunities focused on advancing knowledge of Stryker’s Peripheral Vascular portfolio, procedural techniques, and clinical application. Spine Sports Medicine This site provides Sports Medicine surgeons, residents, and fellows with training opportunities to further their knowledge of Stryker's Sports Medicine product portfolio and procedures. Surgical Technologies This site provides surgeons with educational programs incorporating the latest and most relevant clinical insights and procedural innovation. Surgical Visualization This site provides multidisciplinary healthcare professionals a peer-to-peer learning experience focused on the advancement of Fluorescence Guided Surgery. Content and surgical experience utilizing Stryker’s advanced visualization technology is shared by global thought-leaders. Trauma & Extremities This site provides Trauma, Upper Extremities and Foot & Ankle surgeons, residents, and fellows with training opportunities to further their knowledge of Stryker’s Trauma & Extremities product portfolio.",
+      "jcr:lastModified": "Sat Sep 11 2021 05:44:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/training-and-education/en/us/surgeons--residents-and-fellows/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/training-and-education/en/us/surgeons-residents-and-fellows/master"
+    },
+    "largeheadline_1531765991": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 04:08:02 GMT+0000",
+      "jcr:lastModified": "Sat Sep 11 2021 04:08:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "section_title_copy_c_427151738": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 11 2021 16:00:48 GMT+0000",
+      "title": "General public",
+      "jcr:lastModified": "Fri Sep 10 2021 16:31:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_270523081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Sat Sep 11 2021 06:09:44 GMT+0000",
+      "text": "The happiness impact Stryker’s first externally available leadership course, The Happiness Impact, is a 60-90 minute course focusing on changing mindsets, boosting happiness and engagement at work and at home. Community and workplace On-demand webinars, online training and additional resources around CPR and AED preparedness.",
+      "jcr:lastModified": "Sat Sep 11 2021 06:10:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/training-and-education/en/us/general-public/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/training-and-education/en/us/general-public/master"
+    },
+    "largeheadline_717232": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Mon Mar 08 2021 05:46:01 GMT+0000",
+      "jcr:lastModified": "Mon Mar 08 2021 05:46:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "section_title_copy_c_1419129465": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Thu Feb 11 2021 16:00:48 GMT+0000",
+      "title": "Calendar",
+      "jcr:lastModified": "Sat Sep 11 2021 03:11:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Aug 23 2022 20:57:29 GMT+0000",
+      "jcr:lastModified": "Tue Aug 23 2022 20:57:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4"
+    },
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "layoutOptions": "col-sm-8 pull-left​",
+      "backgroundImageRef": "/content/dam/stryker/education-and-training/image/thumbnails/calendar_banner.jpg",
+      "jcr:created": "Mon Mar 08 2021 05:46:20 GMT+0000",
+      "jcr:lastModified": "Mon Mar 08 2021 05:48:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Mon Mar 08 2021 05:47:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(133,69,138);\"><span style=\"color: #545857;\">Training Calendar</span></span></span></span></h1>\r\n",
+          "line2": "Stryker’s new Education and training calendar is now available. Learn about upcoming courses and events.",
+          "jcr:lastModified": "Mon Mar 08 2021 15:27:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(84,88,87,1)",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Mon Mar 08 2021 05:50:13 GMT+0000",
+          "jcr:lastModified": "Thu Jan 26 2023 15:36:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(84,88,87,1)",
+              "internalLink": "/content/stryker/us/en/training-and-education/calendar",
+              "buttonText": "Calendar",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tagline": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTagLineComp": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Sat Sep 11 2021 03:05:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagline",
+    "backgroundColor": "rgba(255,181,0,1)"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModified": "Sat Sep 11 2021 03:05:43 GMT+0000",
+    "sling:resourceType": "cq/experience-fragments/editor/components/experiencefragment",
+    "fragmentPath": "/content/experience-fragments/stryker/training-and-education/en/index/training-and-education/training-and-education",
+    "edsFragmentPath": "/us/en/fragments/stryker/training-and-education/en/index/training-and-education/training-and-education"
+  }
+}

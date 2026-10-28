@@ -1,0 +1,90 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "AORN (Association of periOperative Registered Nurses) - Arthroscopy only",
+  "jcr:versionHistory": "36744dab-d682-4562-9ac5-458aaca29440",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "cb74b205-7488-4667-bc1a-de04b29c84ce"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:40 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:40 GMT-0400",
+  "cq:lastModified": "Mon Jun 18 2018 17:58:08 GMT-0400",
+  "jcr:baseVersion": "cb74b205-7488-4667-bc1a-de04b29c84ce",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:uuid": "47608c73-edde-4560-a0f5-6637f1b37dfb",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brian.keszler@stryker.com",
+      "jcr:lastModifiedBy": "brian.keszler@stryker.com",
+      "jcr:created": "Mon Dec 04 2017 12:32:54 GMT-0500",
+      "jcr:lastModified": "Mon Dec 04 2017 12:32:54 GMT-0500",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3"
+    }
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "eventBU": [
+      "stryker:business-unit/sports-medicine"
+    ],
+    "eventRegistrationLink": "https://www.aorn.org/member_apps/account/login?AppendId=1&returnurl=https://aorn2018.wyndhamjade.com/aorn2018/imis-init",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "eventAudience": [
+      "stryker:audience/nurses"
+    ],
+    "hiddenState": "Louisiana",
+    "eventSpecialty": [
+      "stryker:event-speciailty/sports-medicine"
+    ],
+    "eventDetail": "AORN is returning to New Orleans for our Global Surgical Conference &amp; Expo, March 24-28, 2018. Plan to attend this revolutionary learning experience, featuring a dynamic range of topics, world-renowned speakers, top-notch researchers, and the latest products and services changing how we practice.",
+    "eventEndDateTime": "Wed Mar 28 2018 13:15:00 GMT-0400",
+    "eventLocation": "Morial Convention Center - 900 Convention Center Blvd",
+    "eventDisclaimer": "Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures.\r\nFor more information, contact your local sales representative. ",
+    "eventCity": "New Orleans",
+    "eventType": [
+      "stryker:event-type/associationmeetings"
+    ],
+    "eventTimeZone": "CST",
+    "jcr:lastModified": "Mon Jun 18 2018 17:58:08 GMT-0400",
+    "eventState": "Louisiana",
+    "eventTitle": "AORN (Association of periOperative Registered Nurses)  - Arthroscopy only",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Event Registration Link",
+    "eventStartDateTime": "Sat Mar 24 2018 08:00:00 GMT-0400",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America",
+    "eventRelatedLinks": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "linkURL": "https://www.aorn.org/surgicalexpo",
+        "linkText": "Event Website"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "disclaimer-type": "path",
+    "jcr:lastModified": "Sun Dec 03 2017 15:53:39 GMT-0500",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "82efdb80-194e-418a-a730-2efb118a1b4d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "7beaed11-1c3d-4de6-810b-1d4856e344bb"
+  ],
+  "lastPublished": "Mon Jul 15 2024 19:20:22 GMT+0000",
+  "jcr:created": "Mon Jul 15 2024 19:20:23 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 15 2024 19:20:25 GMT+0000",
+  "cq:lastModified": "Fri Jul 12 2024 14:55:55 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7beaed11-1c3d-4de6-810b-1d4856e344bb",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jul 15 2024 19:20:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "a6edbe39-ed58-4663-9a47-60e1d10f18d6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jun 13 2024 17:36:28 GMT+0000",
+      "alt": "Soccer player stands next to a LIFEPAK CR2 AED on the field",
+      "srcFileRef": "/content/dam/stryker/ems/community-public-safety/athletics/EC_Community-Public-Safety_AEDs-in-Athletics_Hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jul 12 2024 14:55:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

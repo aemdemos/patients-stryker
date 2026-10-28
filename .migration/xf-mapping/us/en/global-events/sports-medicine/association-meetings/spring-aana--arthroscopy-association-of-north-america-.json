@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Spring AANA (Arthroscopy Association of North America)",
+  "jcr:versionHistory": "3d892f64-3d78-454d-8ad1-1d2155cac6d0",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "8a96630f-9ab0-4024-8a08-00bbc8750ff0"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:40 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:40 GMT-0400",
+  "cq:lastModified": "Mon Jun 18 2018 17:58:54 GMT-0400",
+  "jcr:baseVersion": "8a96630f-9ab0-4024-8a08-00bbc8750ff0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:uuid": "f27d1c07-2ebf-4891-873c-dd25b4dd873f",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "eventBU": [
+      "stryker:business-unit/sports-medicine"
+    ],
+    "eventRegistrationLink": "http://www.aana.org/account/login?ReturnUrl=http%3a%2f%2fwww.aana.org%2fMeeting-Registration%2fRegister-Group%2fRegister-Group-Step-1%3fMeetingId%3dA80D0919-E9B4-E711-88F5-0050569142AF",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "eventAudience": [
+      "stryker:audience/trainees",
+      "stryker:audience/or-professionals"
+    ],
+    "hiddenState": "Illinois",
+    "eventSpecialty": [
+      "stryker:event-speciailty/sports-medicine"
+    ],
+    "eventDetail": "Drawing attendees from across the globe, the AANA Annual Meeting is the world's largest arthroscopy-focused event of the year. The hallmarks of the Annual Meeting are scientific podium presentations and Instructional Course Lectures that put forth the latest research, innovations, and techniques in the field. With an emphasis on no-nonsense discussion and AANA's focus on inclusiveness as the largest orthopaedic subspecialty, the Annual Meeting is the year's best opportunity for orthopaedic surgeons and advanced practitioners to get up to speed on the latest advances in arthroscopy.",
+    "eventEndDateTime": "Sat Apr 28 2018 17:00:00 GMT-0400",
+    "eventLocation": "McCormick Place - 2301 S King Drive",
+    "eventDisclaimer": "Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures.\r\nFor more information, contact your local sales representative. ",
+    "eventCity": "Chicago",
+    "eventType": [
+      "stryker:event-type/associationmeetings"
+    ],
+    "eventTimeZone": "CST",
+    "jcr:lastModified": "Mon Jun 18 2018 17:58:54 GMT-0400",
+    "eventState": "Illinois",
+    "eventTitle": "Spring AANA (Arthroscopy Association of North America)",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Event Registration Link",
+    "eventStartDateTime": "Thu Apr 26 2018 08:00:00 GMT-0400",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America",
+    "eventRelatedLinks": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "linkURL": "http://www.aana.org/home/education/meetings-and-events/annual-meeting",
+        "linkText": "Event Website"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Shoulder Prosthesis",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Aequalis Reversed FX",
+  "jcr:versionHistory": "6072eda0-2b2c-4861-9e97-190c81d2bc45",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "21e7352a-af0c-4a4d-b6e5-51a484d56a10"
+  ],
+  "contentID": "AP-015612A, Apr. 2022",
+  "lastPublished": "Tue Apr 26 2022 15:23:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 26 2022 15:23:50 GMT+0000",
+  "cq:lastModified": "Tue Apr 26 2022 15:23:26 GMT+0000",
+  "jcr:baseVersion": "21e7352a-af0c-4a4d-b6e5-51a484d56a10",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/upper-extremities",
+    "stryker:product/trauma-and-extremities/aequalis-reversed-fx",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:capability/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Tue Apr 26 2022 15:23:26 GMT+0000",
+  "jcr:uuid": "4e1f3ee6-38fa-4f8c-8047-8fca520c4f18",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Tue Nov 23 2021 16:22:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/aequalis-reversed-fx/images/Aequalis_Reversed_FX_Product-Image.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Key benefits</span></span></p>\n<ul>\n<li>More predictable results versus hemiarthroplasty<sup>1</sup></li>\n<li>Proximal body designed for anatomical positioning of tuberosities<sup><br>\n </sup></li>\n<li>Bone graft window with HA coating intended to allow for tuberosity healing&nbsp;<br>\n</li>\n</ul>\n",
+    "jcr:lastModified": "Tue Nov 30 2021 15:32:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Chalmers et al., Reverse shoulder arthroplasty for acute proximal humeral fracture: comparison to open reduction –internal fixation and hemiarthroplasty. JSES (2014) 23: 197 – 204.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Apr 05 2022 18:49:35 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

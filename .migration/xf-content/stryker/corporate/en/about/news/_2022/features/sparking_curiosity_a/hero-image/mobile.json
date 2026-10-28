@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c6c6b41b-1a01-4ae0-a403-327228574687",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "1fea82ab-2c8b-4156-8820-9f70df0d4c3b"
+  ],
+  "jcr:created": "Thu Sep 29 2022 18:22:38 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 29 2022 18:22:40 GMT+0000",
+  "cq:lastModified": "Mon Sep 26 2022 18:30:52 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1fea82ab-2c8b-4156-8820-9f70df0d4c3b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "29e1cb1d-c561-49a3-9b41-496931392b41",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Sep 22 2022 18:38:25 GMT+0000",
+      "alt": "DEI_Feature_Mobile",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/DEI_Feature_Mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Sep 26 2022 18:30:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

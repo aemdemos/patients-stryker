@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero carousel",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "338d75f9-022c-4608-a3a5-5fda0267899e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "de370231-4438-430c-a65e-2a89eb9e916c"
+  ],
+  "lastPublished": "Wed Jun 25 2025 23:55:27 GMT+0000",
+  "jcr:created": "Wed Jun 25 2025 23:55:28 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 25 2025 23:55:32 GMT+0000",
+  "cq:lastModified": "Tue Jun 24 2025 18:39:42 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "de370231-4438-430c-a65e-2a89eb9e916c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Mar 31 2025 20:56:43 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1a111ecb-0814-4935-8130-a4c44eb306d4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Thu Feb 15 2024 21:39:47 GMT+0000",
+      "alt": "CR-2024-desktop",
+      "srcFileRef": "/content/dam/stryker/about/annual-review/2024/phase-2/images/CR-2024-hero-v2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 24 2025 18:39:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

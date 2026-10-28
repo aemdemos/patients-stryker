@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker reports second quarter 2018 operating results",
+  "jcr:versionHistory": "a0cce980-56a0-4ad3-8d74-d742ae65b36b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "4955ea2e-c854-4a90-a9f2-7e88ba41925d"
+  ],
+  "lastPublished": "Wed Jul 25 2018 09:06:49 GMT+0000",
+  "jcr:created": "Wed Jul 25 2018 09:06:49 GMT-0400",
+  "cq:lastModified": "Wed Jul 25 2018 09:06:44 GMT-0400",
+  "jcr:baseVersion": "4955ea2e-c854-4a90-a9f2-7e88ba41925d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir"
+  ],
+  "jcr:uuid": "ee243869-edb5-468f-bb3c-e16afdd6c412",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Tue Jul 24 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jul-2018",
+    "jcr:lastModified": "Wed Jul 25 2018 09:06:03 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker Corporation&nbsp;(NYSE:SYK) reported operating results for the second quarter of 2018.</p>\n<p>See full press release <a href=\"https://stryker.gcs-web.com/news-releases/news-release-details/stryker-reports-second-quarter-2018-operating-results\">here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Wed Jul 25 2018 09:06:44 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

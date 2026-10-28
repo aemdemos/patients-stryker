@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ambient-video-banner",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "22484fee-7bb0-4e6e-a4ca-4e21f19b096b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9a738ee3-160e-48a6-a808-adb390e80c35"
+  ],
+  "lastPublished": "Tue Jul 28 2026 18:36:20 GMT+0000",
+  "jcr:created": "Tue Jul 28 2026 18:36:20 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 28 2026 18:36:23 GMT+0000",
+  "cq:lastModified": "Thu May 14 2026 13:42:24 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9a738ee3-160e-48a6-a808-adb390e80c35",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 18 2024 15:22:23 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "13162b99-8187-4668-975a-c9a2b7cf52b4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 19:28:09 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Mon Mar 09 2026 19:57:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/trauma-and-extremeties/experience-fragment-assets/products/landing-page-banners/Nailing-Header-Banner.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Nailing-Header-Banner-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Thu May 14 2026 13:42:24 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

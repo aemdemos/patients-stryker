@@ -1,0 +1,141 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The Science Behind Support Surfaces Webinar",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b20561ff-3bb8-443b-b628-4b7e400508c3",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "a55da55c-60f2-4777-ab7b-0e654543f7f3"
+  ],
+  "lastPublished": "Thu Sep 14 2023 14:20:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2023 14:20:23 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 14 2023 14:20:25 GMT+0000",
+  "cq:lastModified": "Thu Sep 14 2023 14:20:19 GMT+0000",
+  "noFollow": "true",
+  "jcr:description": "Thank you for registering for The Science Behind Support Surfaces virtual webinar.  ",
+  "jcr:baseVersion": "a55da55c-60f2-4777-ab7b-0e654543f7f3",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "pageTitle": "The Science Behind Support Surfaces Webinar",
+  "cq:tags": [
+    "stryker:custom/acute-care"
+  ],
+  "jcr:lastModified": "Fri Dec 02 2022 14:18:10 GMT+0000",
+  "jcr:uuid": "051dee60-b3ba-4dae-b1f3-9cf72e2e8a0b",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "The Science Behind Support Surfaces Webinar",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 30 2022 17:03:51 GMT+0000",
+      "jcr:lastModified": "Wed Nov 30 2022 17:03:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_908007915_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">The Science Behind Support Surfaces</span></span></span></span></span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Thank you for registering for The Science Behind Support Surfaces virtual webinar. Click the video below to start learning now or save this link </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><u><a href=\"http://bit.ly/3EWtSqz\" target=\"_blank\">http://bit.ly/3EWtSqz</a></u></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"> to watch at a later date.</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 14 2023 14:20:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_573143608": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 30 2022 17:04:31 GMT+0000",
+      "jcr:lastModified": "Wed Nov 30 2022 17:04:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 30 2022 17:04:36 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Nov 30 2022 17:07:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/becker-s-stryker-nov-2022-webinar-archive.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/becker-s-stryker-nov-2022-webinar-archive-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Nov 30 2022 18:00:15 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/penn-state-hershey-isotour-outcome-story.pdf",
+        "/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/kaleida-health-outcomes-story-isoair-support-surface.pdf",
+        "/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/bronxcare-isolibrium-outcome-story.pdf",
+        "/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/bon-secours-mercy-hospital-pressure-injuries.pdf"
+      ],
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "title": "Additional support surfaces resources and downloads",
+      "jcr:lastModified": "Fri Dec 02 2022 16:25:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  }
+}

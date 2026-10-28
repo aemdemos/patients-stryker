@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder arthroplasty featuring Blueprint: AEQUALIS™ PERFORM™ Shoulder Prosthesis Tutorial - Armodios Hatzidakis, MD.",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a6e9c122-22c6-4fff-b779-7e6143e98796",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "a6c7d989-4a71-4035-8da6-ba4fc2f742b8"
+  ],
+  "lastPublished": "Wed Feb 05 2025 21:00:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:01:04 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:38 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 20:10:00 GMT+0000",
+  "jcr:baseVersion": "a6c7d989-4a71-4035-8da6-ba4fc2f742b8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 21:00:41 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 20 2024 20:10:00 GMT+0000",
+  "jcr:uuid": "73a557b6-1768-490d-9351-a1244645254a",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 19:19:44 GMT+0000",
+      "text": "Shoulder arthroplasty featuring Blueprint®: Tornier Perform® Anatomic Glenoid Shoulder Prosthesis Tutorial – Armodios Hatzidakis, MD. Orthopedic surgeon, Armodios Hatzidakis, MD, explains using Blueprint® software to plan the glenoid side of the case for a 73-year-old male. Featuring Tornier Perform® Anatomic Glenoid. AP-016280A",
+      "jcr:lastModified": "Thu Jul 28 2022 19:20:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-blueprint--aequalis--perform--sh/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/shoulder-arthroplasty-featuring-blueprint-aequalis-perform-sh/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

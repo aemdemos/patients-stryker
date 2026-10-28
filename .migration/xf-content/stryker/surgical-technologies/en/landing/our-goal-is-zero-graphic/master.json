@@ -1,0 +1,329 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Our goal is zero graphic",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0eb3ae99-c2ce-4478-9503-8b2aa95b277f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "683651c7-deb7-49e8-bbcf-70bb0058d96d"
+  ],
+  "lastPublished": "Tue May 26 2026 19:03:19 GMT+0000",
+  "jcr:created": "Tue May 26 2026 19:03:26 GMT+0000",
+  "cq:lastReplicated": "Tue May 26 2026 19:03:28 GMT+0000",
+  "cq:lastModified": "Thu May 14 2026 14:16:27 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "683651c7-deb7-49e8-bbcf-70bb0058d96d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue May 26 2026 19:03:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7975cdf1-4f33-4f93-808f-837d9c9cd741",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:50:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy52378840681479": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-splashes-and-spills",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-splashes-and-spills.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero splashes <br>\nand spills</span></span></p>\n",
+        "jcr:lastModified": "Thu May 14 2026 14:14:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_633676621": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:50:53 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_63367662152404733839319": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-surgical-smoke",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-surgical-smoke.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero surgical <br>\nsmoke</span></span></p>\n",
+        "jcr:lastModified": "Thu May 14 2026 14:15:32 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_1238530584": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:51:19 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_123853058452430207691907": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-lost-polyps",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-lost-polyps.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero lost <br>\npolyps**</span></span></p>\n",
+        "jcr:lastModified": "Thu May 14 2026 14:15:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_866952396": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:52:02 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_86695239652473311488522": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-maternal-harm",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-maternal-harm.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:29 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero maternal <br>\nharm</span></span></p>\n",
+        "jcr:lastModified": "Thu May 14 2026 14:16:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_1141122894": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:52:36 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_114112289452507998677371": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-retained-sponges",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-retained-sponges.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero retained sponges</span></span></p>\n",
+        "jcr:lastModified": "Thu Feb 12 2026 18:57:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_1657679815": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 12 2026 18:55:52 GMT+0000",
+      "jcr:lastModified": "Fri May 08 2026 17:53:02 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_165767981552533634690515": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "ST-zero-hypoxic-injuries",
+        "srcFileRef": "/content/dam/stryker/surgical-technologies/landing/images/ST-zero-hypoxic-injuries.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 13 2026 18:32:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Feb 12 2026 18:56:02 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Zero hypoxic injuries***</span></span></p>\n",
+        "jcr:lastModified": "Thu Feb 12 2026 18:58:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

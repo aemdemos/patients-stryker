@@ -1,0 +1,121 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Safe patient handling and mobility programs benefit healthcare workers and patients ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a6a8539b-0550-40f0-907e-9bbdf8738e62",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Patient in an AirTAP LC",
+  "jcr:predecessors": [
+    "47544e26-c150-4c2b-8d93-8651d38c996e"
+  ],
+  "contentID": "SAGE-PVN-COMM-1354276_REV-0_en_us",
+  "lastPublished": "Mon Feb 24 2025 22:32:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 24 2025 22:32:55 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 24 2025 22:32:57 GMT+0000",
+  "cq:lastModified": "Mon Feb 24 2025 22:32:50 GMT+0000",
+  "jcr:description": "Nurses continue to suffer a higher rate of musculoskeletal disorders than workers in all other industries.¹ Learn how one hospital established a Safe Patient Handling and Mobility (SPHM) program to help reduce risk to healthcare workers. \r\n\r\n",
+  "jcr:baseVersion": "47544e26-c150-4c2b-8d93-8651d38c996e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Nov 14 2024 15:49:22 GMT+0000",
+  "pageTitle": "Safe patient handling and mobility programs benefit healthcare workers and patients ",
+  "cq:tags": [
+    "stryker:content-type/news/sage/4",
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage",
+    "stryker:content-type/news/sage/2",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Mon Feb 24 2025 22:32:50 GMT+0000",
+  "jcr:uuid": "1ddd1325-bda2-41d1-855a-53c9ec70e6f8",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Nov 13 2024 21:18:43 GMT+0000",
+      "alt": "Nurses using a Sage AirTAP to move a patient ",
+      "srcFileRef": "/content/dam/stryker/sage/news/2024/SAGE-PVN-COMM-1354276_REV-0_en_us Web Image.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Nov 14 2024 14:34:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Wed Nov 13 2024 21:18:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Susan Salsbury OTR/L, CDMS, CSPHP&nbsp;</span></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Healthcare workers and musculoskeletal disorders&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Nurses (RNs) continue to suffer a higher rate of musculoskeletal disorders than workers in all other industries.<sup>1</sup> Musculoskeletal disorders are soft-tissue injuries or disorders to one or more of the following: muscles, nerves, tendons, joints, cartilage and spinal discs. Work-related musculoskeletal disorders (WMSDs) often result in days away from work for healthcare workers.<sup>2</sup> Nurses suffer high rates of WMSDs because of overexertion when performing manual transferring, repositioning, lifting and mobilizing patients.</span></p>\n<p><span class=\"fontsize-1-25em\">Overexertion is a leading cause of healthcare worker injury. The greatest risk factors for WMSDs are patient handling, manually moving, repositioning and lifting of patients.<sup>2</sup> Additional ergonomic risk factors from manual patient handling include:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">duration of exposure (working long shifts)</span></li>\n<li><span class=\"fontsize-1-25em\">exertion (force required to manually move a patient)</span></li>\n<li><span class=\"fontsize-1-25em\">working in awkward postures</span></li>\n<li><span class=\"fontsize-1-25em\">repetitive movements in specific postures<sup>3</sup></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">Research has repeatedly demonstrated that it is inherently unsafe to manually move patients. Maximum recommended weight limits for patient handling conditions have been identified by the National Institute of Occupational Safety and Health (NIOSH), Occupational Safety and Health Administration (OSHA) and Centers for Disease Control (CDC).<sup>4</sup></span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Injury statistics and costs</span></span></h3>\n<p><span class=\"fontsize-1-25em\">In 2016, more than half of all injuries and illnesses to RNs resulted from sprains, strains or tears that averaged seven days away from work and occurred at a rate significantly greater than the rate for all occupations.<sup>1</sup> Consider these averages:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">compensation claim for a patient handling injury - $14,1005</span></li>\n<li><span class=\"fontsize-1-25em\">cost range for replacing a nurse - $27,000 to $103,0006</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">The American Association of Colleges of Nursing workforce fact sheet reported that the median age of registered nurses is 46, and more than one-quarter of registered nurses plan to leave nursing or retire in the next five years.<sup>7</sup> We need to improve the ergonomics of our healthcare environments to keep our wisdom workers at the bedside and decrease the musculoskeletal injuries to our healthcare workers.</span></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Safe patient handling and mobility programs</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Safe Patient Handling and Mobility (SPHM) programs use an evidence-based approach to reduce risk to HCWs. Early work performed by Tampa VA to identify components for a comprehensive SPHM program included risk assessment of the environment, use of equipment, patient assessment, development of algorithms, peer safety leaders and after-action reviews.<sup>8</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The American Nurses Association subsequently published its Safe Patient Handling and Mobility Interprofessional National Standards Across the Care Continuum.<sup>9</sup> This benchmark publication contains eight standards to identify procedures that employers and healthcare workers can utilize to create and sustain an SPHM program. The standards are:</span></p>\n<ol>\n<li><span class=\"fontsize-1-25em\">Establish a culture of safety</span></li>\n<li><span class=\"fontsize-1-25em\">Implement and sustain a SPHM program</span></li>\n<li><span class=\"fontsize-1-25em\">Incorporate ergonomic design principles to provide a safe environment of care</span></li>\n<li><span class=\"fontsize-1-25em\">Select, install, and maintain SPHM technology</span></li>\n<li><span class=\"fontsize-1-25em\">Establish a system for education, training and maintaining competence</span></li>\n<li><span class=\"fontsize-1-25em\">Integrate patient-centered SPHM assessment, plan of care and use of safe patient handling and technology</span></li>\n<li><span class=\"fontsize-1-25em\">Include SPHM in reasonable accommodation and post-occupational injury return to work</span></li>\n<li><span class=\"fontsize-1-25em\">Establish a comprehensive evaluation system</span></li>\n</ol>\n<p><span class=\"fontsize-1-25em\">The following are other resources available to healthcare organizations to establish SPHM programs. This is not an all-inclusive list.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Susan Gallagher PhD, RN, authored the Implementation Guide to the SPHM Interprofessional National Standards,<sup>10</sup> which outlines step-by-step recommendations for implementing the standards with sample policies and procedures.</span></li>\n<li><span class=\"fontsize-1-25em\">The Association of Occupational Health Professionals in Healthcare (AOHP) collaborated with OSHA to develop a free resource guide for implementing a comprehensive SPHM program.<sup>11</sup> The fourth edition was revised in the spring of 2020.</span></li>\n<li><span class=\"fontsize-1-25em\">The Facility Guidelines Institute (FGI) published its second edition of Patient Handling and Mobility Assessments in 2019,<sup>12</sup> which includes information on developing a business plan for SPHM programs plus facilitating and implementing such programs.</span></li>\n<li><span class=\"fontsize-1-25em\">The Association of Safe Patient Handling Professionals, Inc. (ASPHP)<sup>13</sup> is a non-profit corporation for individuals interested in the science of safe patient handling to share experiences and access education and information. The membership of the ASPHP works together to build a credentialed profession dedicated to the safety and comfort of caregivers and their patients worldwide.</span></li>\n<li><span class=\"fontsize-1-25em\">Additionally, NIOSH, OSHA, CDC, BLS, and the Veterans Administration have SPHM resources on their respective websites.</span></li>\n</ul>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A successful SPHM program<sup>14</sup></span></span></h3>\n<p><span class=\"fontsize-1-25em\">The recent publication by Ericka Newkirk MSN, RN, AGNSC-BC, GERO-BC, CMSRN of Decreasing Nurse Injuries Outcomes of Safe Patient Handling and Mobility Program in Clinical Nurse Specialist is an example of one Midwest community hospital’s results from implementing an SPHM program. The Clinical Nurse Specialist team analyzed their employee injury data and determined that most injuries were from mobilizing patients without assistive devices. They completed an assessment of each unit in the hospital and then identified which SPHM technologies could decrease the risk of injury. Their team presented their findings, equipment recommendations and budget to the hospital’s executive team.</span></p>\n<p><span class=\"fontsize-1-25em\">After procuring the Sage Prevalon® Turn and Positioning (TAP) System and a floor-based lift with disposable sling, they provided education to all staff. SPHM education was also added to their new employee orientation. When additional units were added they recommended ceiling lifts for the ICU and additional SPHM equipment for their progressive care unit. After a 5-year period, they evaluated their injury data. The data showed a 73% decrease in employee injuries and a cost avoidance of $171,000, once again illustrating that implementation of a comprehensive SPHM program can reduce injuries and create a safe work environment.</span></p>\n<p><span class=\"fontsize-1-25em\">The Journey to Zero healthcare worker injuries&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">We’re committed to actively partnering with your facility to reduce the risk of patient handling injuries and improving outcomes. Let’s start the journey to zero – together. If you’re interested in discovering how your facility can partner with Stryker to help reduce the risk of patient handling injuries <a href=\"/content/stryker/us/en/sage/c/journey-to-zero.html\" target=\"_blank\">click here</a>.</span></p>\n",
+      "jcr:lastModified": "Thu Nov 14 2024 15:13:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 13 2024 21:50:31 GMT+0000",
+      "title": "Learn more about safe patient handling",
+      "jcr:lastModified": "Thu Nov 14 2024 15:13:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/c/journey-to-zero"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-airtap-lc"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-airtap"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-tap-2-0"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Thu Nov 14 2024 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "14-Nov-2024",
+    "jcr:lastModified": "Thu Nov 14 2024 15:48:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Susan Salsbury OTR/L, CDMS, CSPHP, is a paid consultant of Stryker. The data included in this presentation was collected by the author of this presentation. The opinions expressed are those of Susan Salsbury OTR/L, CDMS, CSPHP and are not necessarily those of Stryker. Individual results may vary.</p>\r\n<p><b>References: 1. </b>Dressner MA, Kissinger SP,<b> </b>Occupational injuries and illnesses among registered nurses,<b> </b>Monthly Labor Review, U.S. Bureau of Labor Statistics, November 2018. <b>2.</b> U.S. Centers for Disease Control and Prevention (CDC), The National Institute for Occupational Safety and Health (NIOSH). About Safe Patient Handling and Mobility, May 9, 2024. Available at: https://www.cdc.gov/niosh/healthcare/prevention/sphm.html Accessed October 14, 2024. <b>3.</b> Fragala G, Boynton T, Conti M, et al., Patient-handling injuries: Risk factors and risk-reduction strategies. American Nurse Today, May 2016;11(5):40-44. <b>4. </b>Waters TR, When is it safe to manually lift a patient? American Journal of Nursing, CE, August 2007;107(8):53-58. <b>5.</b> Health Care Workers Compensation Barometer, Aon Commerical Risk Solutions, Actuarial Analysis, November 2018. <b>6. </b>Occupational Safety and Health Administration (OSHA): Worker Safety in Your Hospital, U.S. Department of Labor. <b>7.</b> American Association of Colleges of Nursing, Nursing Workforce Fact Sheet, Available at: https://www.aacnnursing.org/news-data/fact-sheets/nursing-workforce-fact-sheet Accessed October 14, 2024. <b>8.</b> Nelson A, Matz M, Chen F, et al, Development and evaluation of a multifaceted ergonomics program to prevent injuries associated with patient handling tasks. International Journal of Nursing Studies, 2006;(43):717-33. <b>9.</b> American Nurses Association. 2nd Edition (2021). Safe patient handling and mobility; Interprofessional National Standards, Across the Care Continuum. Silver Springs, MD. <b>10.</b> Safe Patient Handling and Mobility: Interprofessional National Standards, American Nurses Association, 2013. <b>11.</b> Association of Occupational Health Professionals (AOHP). Beyond Getting Started: A Resource Guide for Implementing a Safe Patient Handling Program in the Acute Care Setting. Fourth Edition. Revised Spring 2020. <b>12. </b>The Facility Guidelines Institute (FGI), Patient Handling and Mobility Assessments, Second Edition, Available at: https://www.fgiguidelines.org/wp-content/uploads/2019/10/FGI-Patient-Handling-and-Mobility-Assessments_191008.pdf Accessed October 18, 2024. <b>13.</b> The Association of Safe Patient Handling Professionals, Available at: www.asphp.org Accessed October 18, 2024. <b>14. </b>Newkirk E, Allison A, Decreasing Nurse Injuries: Outcomes of a Safe Patient Handling and Mobility Program, Clinical Nurse Specialist, July/August 2024;38(4):193-94.&nbsp;</p>\r\n",
+    "jcr:lastModified": "Wed Nov 13 2024 21:31:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2024/SAGE-PVN-COMM-1354276_REV-0_en_us Web Image.jpg"
+  }
+}

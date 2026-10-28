@@ -1,0 +1,126 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Anatomic total shoulder arthroplasty live-streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP.",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "47908508-9fcd-4666-a571-029335bc1afd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "759a84b4-57a9-4980-afe3-42610c5c6af8"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 21:01:00 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:lastModified": "Wed Mar 15 2023 14:45:26 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "759a84b4-57a9-4980-afe3-42610c5c6af8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "75fc43db-f1a1-424d-995b-bd74d3db9717",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/AP-015711A 9030-Carving out the future rev 1 v1.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/AP-015711A 9030-Carving out the future rev 1 v1-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Oct 06 2022 18:17:00 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP. Featured products include Tornier Simpliciti®, Blueprint® PSI guide, NeoReamer, and Tornier Perform® Anatomic Augmented Glenoid.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP",
+      "jcr:lastModified": "Wed Mar 15 2023 14:45:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 14 2022 19:08:59 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016223A</span></p>\n",
+      "jcr:lastModified": "Mon Nov 14 2022 19:18:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

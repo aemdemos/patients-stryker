@@ -1,0 +1,71 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Rebuilding what’s been broken",
+  "jcr:versionHistory": "d8944cc0-538b-4965-812c-dc0085ad666e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "f6df9b4e-a87e-401d-9318-6956c3c65dc9"
+  ],
+  "contentID": "OT-AR-15 11-2019 SYK CORP 2019-11-13",
+  "lastPublished": "Fri Nov 22 2019 21:04:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 22 2019 21:04:33 GMT+0000",
+  "cq:lastModified": "Fri Nov 22 2019 21:04:23 GMT+0000",
+  "jcr:baseVersion": "f6df9b4e-a87e-401d-9318-6956c3c65dc9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Fri Nov 22 2019 21:04:23 GMT+0000",
+  "jcr:uuid": "15ae38a7-d909-424e-be3c-805f6c2e2b26",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Nov 21 2019 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "21-Nov-2019",
+    "jcr:lastModified": "Mon Nov 18 2019 18:22:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1: AAOS Department of Research, Quality, and Scientific Affairs, Orthopaedic Practice In The U.S. 2016, January 2017&nbsp;</p>\r\n<p>2: The American Association for the Surgery of Trauma. Trauma Facts. Retrieved from http://www.aast.org/trauma-facts</p>\r\n",
+    "jcr:lastModified": "Mon Nov 18 2019 18:23:27 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Every day, a person wakes up completely unaware that this will be the day the unthinkable happens—a car accident, horrific fall or another trauma-related injury. Fortunately, there are orthopaedic surgeons who are very aware, and very prepared, for events like these. Working with purpose and precision, these orthopaedic surgeons—around 30,000 in the U.S. alone<sup>1</sup>—help give people the best chance at a normal life after an injury.</p>\n<p>Our Trauma and Extremities business offers market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements. And just like the caregivers who use our products, our passion goes far beyond a product or innovation. It’s about rebuilding lives. “Rebuilding lives to me means someone has gone though the most traumatic event in their life, and bringing them back to as normal as possible,” says Brian Wright, a Stryker trauma sales representative. “You might not see them after they leave the OR, but we know in the back of our mind we’re helping that person, we’re helping the surgeon, achieve the greatest outcome that we can.”</p>\n<p>In the United States, there are over 3 million non-fatal injuries per year.<sup>2</sup> When someone experiences an orthopaedic trauma injury, our customers are on-call to treat them. Our team plays a pivotal role by making sure that caregivers have the right products, including Robert Leedy, Stryker trauma sales representative. “Getting the phone call at 1 a.m., pulling into the hospital, right when the helicopter is landing, you’re getting out, your adrenaline is pumping, and you’re sitting there thinking to yourself, ‘Oh my gosh, what am I getting myself into?’ And then you just snap into the mode, and you get in there and you go to work.”</p>\n<p>In an instant, a traumatic injury can take away a person’s ability to walk, play golf, hold a baby or even a cup of coffee. When patients realize they might not ever be able to do these things again, it breaks them. Our job is to help build them back—both their body and their spirit.</p>\n<p>One such patient is Taylor Koob, who shattered his ankle and had floodwater-soaked gashes on his leg after narrowly escaping from his submerged Jeep by kicking out the windshield. Taylor’s leg was so seriously injured that he required five surgeries, a significant amount of antibiotics and a month of recuperation at the hospital. Every single day, our customers are fixing people like Taylor. And they consider it the honor of a lifetime. “You get to impact people’s lives at a really critical time,” says David Forsh, MD, Orthopaedic Trauma Surgeon. “You can watch them evolve, and heal, and recuperate, and return to full form and function—and kind of reclaim their lifestyle back.”</p>\n<p>At Stryker, we’re pioneering new technologies, launching products, training on the safe and effective use of those products and ensuring the OR staff has what they need. For us, rebuilding lives is more than a message, it’s our creed and motivation—and it drives us every day. Scott Salisbury, Stryker foot &amp; ankle sales representative, sums it up well. “You wake up every morning with a purpose, knowing that you have the opportunity to change somebody’s life.”</p>\n",
+    "jcr:lastModified": "Fri Nov 22 2019 20:07:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/rebuilding-what's-been-broken/TE article img 2.png"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/rebuilding-what's-been-broken/TE article img.png",
+    "jcr:lastModified": "Mon Nov 18 2019 18:31:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  }
+}

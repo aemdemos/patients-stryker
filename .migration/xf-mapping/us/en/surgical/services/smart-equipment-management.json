@@ -1,0 +1,1480 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "The future of device management is here.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Smart Equipment Management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e544d399-9a46-47e9-b17a-9fe093b2c82a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Smart Equipment Management thumbnail",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Thumbnail_SEM.jpg",
+  "jcr:predecessors": [
+    "89b69fc8-55ca-4353-9ff2-a966577347f3"
+  ],
+  "contentID": "ST-GSNPS-SYK-890841_REV-0",
+  "lastPublished": "Thu Sep 24 2026 01:31:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 24 2026 01:31:26 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 24 2026 01:31:28 GMT+0000",
+  "cq:lastModified": "Fri Aug 28 2026 05:06:48 GMT+0000",
+  "jcr:baseVersion": "89b69fc8-55ca-4353-9ff2-a966577347f3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 01:31:23 GMT+0000",
+  "pageTitle": "Smart Equipment Management",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:business-unit/surgical",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Dec 01 2023 14:53:58 GMT+0000",
+  "jcr:uuid": "1b6d963a-e9ed-446a-abf5-95c71df92edb",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Apr 19 2021 19:13:20 GMT+0000",
+      "compImageRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/SEM_Devices.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "heather.schabel@stryker.com",
+      "jcr:lastModified": "Tue Aug 22 2017 13:02:09 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured"
+        }
+      }
+    },
+    "section_title_623019974": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jul 20 2018 14:20:50 GMT-0400",
+      "title": "Product overview",
+      "jcr:lastModified": "Fri Jul 20 2018 14:20:59 GMT-0400",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Apr 17 2018 10:01:37 GMT-0400",
+      "jcr:lastModified": "Tue Apr 17 2018 10:01:37 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Tue Apr 17 2018 10:04:21 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><b><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\">Make a smart&nbsp;<br>\r\nconnection today</span></span></span></b></h3>\r\n",
+          "line2": "<h3>Connecting is simple – and with a secure internet connection,<br>\r\nyou're ready to access actionable data.<br>\r\n</h3>\r\n",
+          "jcr:lastModified": "Fri Jul 20 2018 14:33:17 GMT-0400",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "heather.schabel@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 10:57:13 GMT-0400",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Aug 06 2019 17:22:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/surgical/services/smart-equipment-management/videos/CCare_rework_05.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/CCare_rework_05-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Aug 06 2019 17:22:36 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue May 08 2018 14:03:58 GMT-0400",
+      "jcr:lastModified": "Tue May 08 2018 14:03:58 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Apr 17 2018 12:27:39 GMT-0400",
+      "title": "Connected smart devices",
+      "jcr:lastModified": "Fri Jul 20 2018 14:16:32 GMT-0400",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Sep 06 2018 12:49:57 GMT-0400",
+      "jcr:lastModified": "Fri Aug 28 2026 04:49:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 12:53:39 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 12:53:39 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Sep 12 2018 13:25:13 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><b><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">System 9</span></span></span></span></b><br />\r\n</h3>\r\n",
+              "line2": "<span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">Power Tools</span></span></span>",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "text": "<p><a href=\"https://www.stryker.com/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html\"><span class=\"futura-bold\">LEARN MORE ABOUT SYSTEM 9 ►&nbsp;</span></a><br>\n</p>\n",
+              "jcr:lastModified": "Mon Mar 27 2023 16:28:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 06 2018 13:08:44 GMT-0400",
+              "alt": "Family-v3",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/system-9/images/Thunmb.png",
+              "jcr:lastModified": "Mon Mar 27 2023 16:27:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 13:05:08 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 13:05:08 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:05:16 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Proactive device maintenance screen.png",
+              "jcr:lastModified": "Thu Sep 06 2018 13:06:27 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1080376809": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance&nbsp;<br>\n</b></p>\n<ul>\n<li>Gain visibility to devices trending towards a<br>\nsub-optimal state</li>\n<li>Remove devices from rotation, which may help reduce downtime events</li>\n<li>Schedule preventative maintenance services by need, not assumption</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Sep 12 2018 13:36:40 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:05:19 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Balanced product use screen_SEM.png",
+              "jcr:lastModified": "Thu Sep 06 2018 13:06:43 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1313605239": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:20:30 GMT-0400",
+              "text": "<p><b>Balanced product use</b></p>\n<ul>\n<li>Better rotate handpieces to help increase overall</li>\n<li>Equipment utilization</li>\n<li>Lessen the strain placed on individual devices</li>\n</ul>\n",
+              "jcr:lastModified": "Thu Sep 13 2018 10:02:41 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:05:21 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/capital assets screen_SEM.png",
+              "jcr:lastModified": "Thu Sep 06 2018 13:06:51 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_207541399": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:20:35 GMT-0400",
+              "text": "<p><b>Spend justification of capital assets</b></p>\n<ul>\n<li>Avoid the risks of running too lean</li>\n<li>Validate capital equipment needs</li>\n<li>Leverage information to inform and influence case scheduling</li>\n</ul>\n",
+              "jcr:lastModified": "Thu Sep 13 2018 10:02:58 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_298867462": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 13:07:00 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 13:07:00 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:07:09 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Proactive-device-maintenance-cart.png",
+              "jcr:lastModified": "Thu Sep 06 2018 13:07:29 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_316233672": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:22 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Submit maintenance requests with a click of a button</li>\n<li>Monitor loaner deployment within your facility</li>\n<li>Access service history records to assist with compliance and internal reporting</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Sep 12 2018 13:39:50 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:07:11 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/capital assets screen_SEM.png/asset tracking screen_SEM.png",
+              "jcr:lastModified": "Thu Sep 06 2018 13:07:50 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_519525119": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:26 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Monitor individual and comparative fleet data</li>\n<li>Save time locating devices through &quot;last seen&quot;<br>\nlocation information</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 06 2019 20:00:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 13:27:59 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 13:27:59 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Sep 12 2018 13:41:30 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><b><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Stryker F1</span></span></span></b><br />\r\n</h3>\r\n",
+              "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">Small Bone Micro Power System</span></span></span></span>",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical/products/stryker-f1-system-cordless-small-bone-power-tool-system.html\">LEARN MORE ABOUT Stryker F1</a></span></span></span>&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Wed Oct 31 2018 14:21:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:01 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/about/news/images/10162 Stryker_F1 Pistol_Pencil_DSC5277b.jpg",
+              "jcr:lastModified": "Wed Sep 12 2018 13:30:11 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 13:28:07 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 13:28:07 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:04 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Proactive-device-maintenance-screen-F1-DRILL-v2.jpg",
+              "jcr:lastModified": "Fri Sep 07 2018 12:43:24 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance</b></p>\n<ul>\n<li>Gain visibility to devices trending towards a sub-optimal state</li>\n<li>Remove devices from rotation, which may help reduce&nbsp; downtime events</li>\n<li>Schedule preventative maintenance services by need, not assumption</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jan 02 2019 15:20:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:13 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/balanced product use.jpg",
+              "jcr:lastModified": "Thu Sep 13 2018 09:59:35 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:39 GMT-0400",
+              "text": "<p><b>Balanced product use</b></p>\n<ul>\n<li>Better rotate handpieces to help increase overall</li>\n<li>Equipment utilization</li>\n<li>Lessen the strain placed on individual devices</li>\n</ul>\n",
+              "jcr:lastModified": "Thu Sep 13 2018 10:02:07 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:17 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/capital assets.jpg",
+              "jcr:lastModified": "Thu Sep 13 2018 09:59:43 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:42 GMT-0400",
+              "text": "<p><b>Spend justification of capital assets</b></p>\n<ul>\n<li>Avoid the risks of running too lean</li>\n<li>Validate capital equipment needs</li>\n<li>Leverage information to inform and influence case scheduling</li>\n</ul>\n",
+              "jcr:lastModified": "Thu Sep 13 2018 10:03:26 GMT-0400",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_2046049785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Sep 06 2018 13:28:15 GMT-0400",
+          "jcr:lastModified": "Thu Sep 06 2018 13:28:15 GMT-0400",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_801643112": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:07 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Maintenance Cart screen F1 Drill v2.jpg",
+              "jcr:lastModified": "Fri Sep 07 2018 12:43:55 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_316233672_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:22 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Submit maintenance requests with a click of a button</li>\n<li>Monitor loaner deployment within your facility</li>\n<li>Access service history records to assist with compliance and internal reporting</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jan 02 2019 15:20:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_1435142716": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:29:10 GMT-0400",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/asset-tracking-F1-DRILL-v3.jpg",
+              "jcr:lastModified": "Fri Sep 07 2018 12:44:01 GMT-0400",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_519525119_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:26 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Monitor individual and comparative fleet data</li>\n<li>Save time locating devices through &quot;last seen&quot; location information</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jan 02 2019 15:20:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Wed Jan 02 2019 15:12:50 GMT+0000",
+          "jcr:lastModified": "Wed Jan 02 2019 15:12:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:12:55 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">S3 Bed</span></span></span></span></h3>\r\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/acute-care/products/s3.html\">LEARN MORE ABOUT S3 BED</a></span></span></span>&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Wed Mar 03 2021 16:56:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 17:28:47 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/s3/images/Thumbnail_S3Bed.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 17:29:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Wed Jan 02 2019 15:18:20 GMT+0000",
+          "jcr:lastModified": "Wed Jan 02 2019 15:18:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:18:29 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/ProactiveDeviceManagement_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance</b></p>\n<ul>\n<li>Remote diagnostics-error codes for proactive maintenance calls<br>\n</li>\n<li>Bed specific error logs to track equipment maintenance and health</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:38:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:16 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/SimplifiedService_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_316233672_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:22 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Submit service requests<br>\n</li>\n<li>Mobile device compatibility for access on a computer, tablet, or mobile phone<br>\n</li>\n<li>Remotely filter and search for information about your Stryker beds<br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 06 2019 20:00:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:20 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/AssetTracking_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_519525119_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:26 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Near real-time location of beds<br>\n</li>\n<li>Improve workflow efficiency by identifying beds that are empty and available for service<br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:37:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Tue Jan 15 2019 19:37:52 GMT+0000",
+          "jcr:lastModified": "Tue Jan 15 2019 19:37:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jan 15 2019 19:37:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">InTouch Bed</span></span></span></span></h3>\r\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/acute-care/products/intouch.html\">LEARN MORE ABOUT InTouch BED</a></span></span></span>&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Mon Mar 22 2021 14:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "1000%"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Tue Jan 15 2019 19:42:05 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouchBed.jpg",
+              "jcr:lastModified": "Tue Jan 15 2019 19:47:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Tue Jan 15 2019 19:44:56 GMT+0000",
+          "jcr:lastModified": "Tue Jan 15 2019 19:44:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:18:29 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/ProactiveDeviceManagement_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance</b></p>\n<ul>\n<li>Remote diagnostics-error codes for proactive maintenance calls</li>\n<li>Bed specific error logs to track equipment maintenance and health<br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 06 2019 20:01:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:16 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/SimplifiedService_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_316233672_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:22 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Submit service requests</li>\n<li>Mobile device compatibility for access on a computer, tablet, or mobile phone</li>\n<li>Remotely filter and search for information about your Stryker beds</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:38:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:20 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/AssetTracking_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_519525119_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:26 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Near real-time location of beds</li>\n<li>Improve workflow efficiency by identifying beds that are empty and available for service</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:38:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Mar 04 2021 21:46:07 GMT+0000",
+          "jcr:lastModified": "Thu Mar 04 2021 21:46:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Mar 04 2021 21:46:16 GMT+0000",
+          "jcr:lastModified": "Thu Mar 04 2021 21:46:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jan 15 2019 19:37:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">ProCuity Bed</span></span></span></span></h3>\r\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/acute-care/products/procuity/\">LEARN MORE ABOUT PROCUITY BED</a></span></span></span>&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Fri Mar 05 2021 13:52:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Jan 15 2019 19:42:05 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/ProCuity_seated_trim.png",
+              "jcr:lastModified": "Thu Mar 04 2021 21:50:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols3_1674455804": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Thu Mar 04 2021 21:51:09 GMT+0000",
+          "jcr:lastModified": "Thu Mar 04 2021 21:51:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:18:29 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/ProactiveDeviceManagement_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance</b></p>\n<ul>\n<li>Remote diagnostics-error codes for proactive maintenance calls</li>\n<li>Bed specific error logs to track equipment maintenance and health<br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 06 2019 20:01:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:16 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/SimplifiedService_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_316233672_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:22 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Submit service requests</li>\n<li>Mobile device compatibility for access on a computer, tablet, or mobile phone</li>\n<li>Remotely filter and search for information about your Stryker beds</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:38:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Wed Jan 02 2019 15:21:20 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/AssetTracking_Beds.jpg",
+              "jcr:lastModified": "Wed Jan 02 2019 16:01:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_519525119_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:22:26 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Near real-time location of beds</li>\n<li>Improve workflow efficiency by identifying beds that are empty and available for service</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Mar 05 2019 15:38:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Mon Mar 22 2021 14:39:03 GMT+0000",
+          "jcr:lastModified": "Mon Mar 22 2021 14:39:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      },
+      "tabs_parsys6": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 6,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3_1640379383": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 15:31:01 GMT+0000",
+          "jcr:lastModified": "Thu Dec 07 2023 15:31:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Dec 07 2023 15:31:47 GMT+0000",
+              "alt": "neptune3-001",
+              "srcFileRef": "/content/dam/stryker/surgical/products/neptune-3/images/360-view/neptune3-001.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Dec 07 2023 15:33:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Sep 12 2018 13:25:13 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><b><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">Neptune <br />\r\n </span></span></span></span></b><span class=\"fontsize-2-5-vw\">Waste Management Systems</span></h3>\r\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy_copy_copy__1870812976": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical/products/neptune-waste-management-system.html\">LEARN MORE ABOUT&nbsp;NEPTUNE 3</a>&nbsp;</span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Dec 07 2023 15:45:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/surgical/products/neptune-s.html\">LEARN MORE ABOUT&nbsp;NEPTUNE S</a>&nbsp;</span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Dec 07 2023 15:44:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Sep 06 2018 13:08:44 GMT-0400",
+              "alt": "Picture1",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/neptune-s/Neptune S.png",
+              "jcr:lastModified": "Fri Dec 08 2023 14:29:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 17 2023 14:50:20 GMT+0000",
+          "jcr:lastModified": "Fri Feb 17 2023 14:50:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 17 2023 14:50:35 GMT+0000",
+              "alt": "Picture2",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/neptune-s/Overview Screen Image.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 01 2023 14:43:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Have a quick, simple view of the status of your rovers</li>\n<li>Mobile device compatibility for access on a computer, tablet, or cell phone</li>\n<li>Remotely filter and search for information about your Neptune rovers</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Dec 01 2023 14:55:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 17 2023 14:50:38 GMT+0000",
+              "alt": "Picture3",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/neptune-s/Rover Summary Screen Image.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 01 2023 14:44:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Proactive device maintenance</b></p>\n<ul>\n<li>Remote diagnostics-error codes for proactive maintenance calls</li>\n<li>Rover specific error logs to track equipment maintenance and health</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Feb 17 2023 14:53:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Feb 17 2023 14:50:41 GMT+0000",
+              "alt": "Picture4",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/neptune-s/List View Screen Image.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 01 2023 14:44:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Near real-time location of rovers<br>\n</li>\n<li>Improve workflow efficiency by identifying rovers that need service</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 01 2023 14:47:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_1483737403": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Mar 01 2023 14:45:50 GMT+0000",
+          "jcr:lastModified": "Wed Mar 01 2023 14:45:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Mar 01 2023 14:47:17 GMT+0000",
+              "alt": "Vacuum Pump Image",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/neptune-s/Vacuum Pump Image.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Mar 01 2023 14:47:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1080376809_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Thu Sep 06 2018 13:16:48 GMT-0400",
+              "text": "<p><b>Balanced product use</b></p>\n<ul>\n<li>See how your fleet is being utilized</li>\n</ul>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Mar 07 2023 17:27:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "System 9"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Stryker F1"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "S3 Bed"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "InTouch Bed"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "ProCuity Bed"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "6",
+          "tabTitle": "Neptune "
+        },
+        "7": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 7,
+          "tabTitle": "Connected OR Hub"
+        }
+      },
+      "tabs_parsys7": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 7,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Aug 28 2026 04:50:43 GMT+0000",
+          "jcr:lastModified": "Fri Aug 28 2026 04:50:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "leftPadding": "0",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Sep 12 2018 13:25:13 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><b><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">Connected OR Hub</span></span></span></span></b><br />\r\n</h3>\r\n",
+              "line2": "<span class=\"fontsize-2-5-vw\">Digital capture system</span>",
+              "jcr:lastModified": "Fri Aug 28 2026 05:06:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "0"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Sep 06 2018 13:09:45 GMT-0400",
+              "gradientDirection": "left-to-right",
+              "text": "<p><a href=\"/content/stryker/us/en/endoscopy/products/connected-or-hub0.html\"><span class=\"standalone-link\">Learn more about Connected OR Hub</span></a><br>\n</p>\n",
+              "jcr:lastModified": "Fri Aug 28 2026 04:52:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Aug 28 2026 04:58:04 GMT+0000",
+              "alt": "Connected OR Hub",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/connected-or-hub/Connected-OR-Hub.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 28 2026 04:58:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Aug 28 2026 04:58:55 GMT+0000",
+          "jcr:lastModified": "Fri Aug 28 2026 04:58:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Aug 28 2026 04:59:00 GMT+0000",
+              "alt": "Device Maintenance",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/connected-or-hub/Device-Maintenance.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 28 2026 04:59:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 28 2026 04:59:50 GMT+0000",
+              "text": "<p><b>Device maintenance</b></p>\n<ul>\n<li>Provides real-time equipment status and detailed error information to improve issue awareness and time to resolution</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:03:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Aug 28 2026 04:59:00 GMT+0000",
+              "alt": "Simplified service",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/connected-or-hub/Simplified-service.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 28 2026 04:59:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 28 2026 04:59:50 GMT+0000",
+              "text": "<p><b>Simplified service</b></p>\n<ul>\n<li>Access device history to assist with compliance needs</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:03:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Aug 28 2026 04:59:00 GMT+0000",
+              "alt": "Asset tracking",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/connected-or-hub/Asset-tracking.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 28 2026 04:59:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 28 2026 04:59:50 GMT+0000",
+              "text": "<p><b>Asset tracking</b></p>\n<ul>\n<li>Allows customers to quickly access, view and manage their assigned fleet</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:03:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_499138529": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Aug 28 2026 05:00:16 GMT+0000",
+          "jcr:lastModified": "Fri Aug 28 2026 05:00:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Aug 28 2026 05:00:21 GMT+0000",
+              "alt": "Utilization insights",
+              "srcFileRef": "/content/dam/stryker/surgical/services/smart-equipment-management/images/connected-or-hub/Utilization-insights.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 28 2026 05:00:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Fri Aug 28 2026 04:59:50 GMT+0000",
+              "text": "<p><b>Utilization insights</b></p>\n<ul>\n<li>Gain visibility into equipment usage</li>\n<li>Understand utilization patterns and trends</li>\n<li>Plan future equipment needs with greater confidence</li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 28 2026 05:03:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Mon Mar 22 2021 14:38:04 GMT+0000",
+      "jcr:lastModified": "Mon Mar 22 2021 14:38:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "heather.schabel@stryker.com",
+      "resources": [
+        "/content/dam/stryker/surgical/services/smart-equipment-management/resources/Neptune S Features and Benefits (5).pdf",
+        "/content/dam/stryker/surgical/services/smart-equipment-management/resources/Neptune S + Neptune 3_Docking Station with Connectivity-light_120823.pdf"
+      ],
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Aug 18 2017 15:36:43 GMT-0400",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Dec 12 2023 14:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Smart devices. Actionable data. Informed decisions.</p>\r\n",
+    "shortDescTop": "<p>Originated through research and guided by our customers, we are pleased to offer Smart Equipment Management (SEM), a revolutionary, web-based solution designed to help you optimize the management of Stryker's smart devices through device-derived, actionable data.&nbsp;<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+    "jcr:lastModified": "Tue Apr 17 2018 10:45:29 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "heather.schabel@stryker.com",
+    "jcr:lastModified": "Tue Aug 22 2017 13:00:17 GMT-0400",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "heather.schabel@stryker.com",
+    "jcr:lastModified": "Tue Aug 22 2017 11:56:03 GMT-0400",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "heather.schabel@stryker.com",
+    "jcr:lastModified": "Tue Aug 22 2017 13:07:15 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "heather.schabel@stryker.com",
+    "jcr:lastModified": "Tue Aug 22 2017 12:59:59 GMT-0400",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/services/smart-equipment-management/images/Thumbnail_SEM.jpg"
+  }
+}

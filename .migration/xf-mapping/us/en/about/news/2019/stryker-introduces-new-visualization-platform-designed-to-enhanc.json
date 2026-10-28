@@ -1,0 +1,63 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker introduces new visualization platform designed to enhance orthopaedic surgical efficiency and the patient experience",
+  "jcr:versionHistory": "b4f09ed8-f66b-416d-b949-2c73af41d06f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "cf9a9586-3234-41c1-94f1-f167918231eb"
+  ],
+  "lastPublished": "Wed Mar 13 2019 12:32:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 13 2019 12:32:55 GMT+0000",
+  "cq:lastModified": "Wed Mar 13 2019 12:29:52 GMT+0000",
+  "jcr:baseVersion": "cf9a9586-3234-41c1-94f1-f167918231eb",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/news/events",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Wed Mar 13 2019 12:29:52 GMT+0000",
+  "jcr:uuid": "e8ae5135-80a1-4ef4-a2cd-17e25d3d7fc7",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Mon Mar 11 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "11-Mar-2019",
+    "jcr:lastModified": "Tue Mar 12 2019 17:58:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p><i>Advanced tools designed to deliver procedural efficiency and improved patient-specific results</i></p>\n<p>Stryker announced today the launch of transformative visualization tools designed to enhance the surgical experience for arthroscopy—HipCheck, HipMap, the 1688 Advanced Imaging Modalities (AIM)&nbsp;4K&nbsp;Visualization Platform, and the Connected OR Hub.</p>\n<p>&quot;We're committed to helping lead the advancement of innovation in sports medicine,&quot; said&nbsp;Brent Ladd, President of Stryker's Endoscopy division. &quot;We understand surgeons need to not only visualize anatomy intraoperatively with the highest level of color reproduction and clarity, but also to plan preoperatively for each individual patient. We are extremely excited about the potential this combined platform provides our customers for optimal and customized surgical care.&quot;</p>\n<ul>\n<li><b><u>HipCheck and HipMap</u></b>:The HipCheck platform is focused on advancing the field of hip arthroscopy as an interactive tablet&nbsp;integrating into existing OR workflow,&nbsp;calculating intraoperative measurements and working to deliver a higher degree of accuracy in measuring bone deformities. This interactive tablet also incorporates a 3D imaging tool designed to improve pre-operative planning, HipMap.</li>\n<li><b><u>1688 AIM&nbsp;4K&nbsp;Platform</u></b>:The 1688 AIM&nbsp;4K&nbsp;Platform features several enhancements, such as brilliant&nbsp;4K&nbsp;resolution and fluorescence, auto-light technology, better ergonomics and seamless standardization. Approved for use in a variety of specialties, including arthroscopy, laparoscopy, urology, gynecology, colorectal and ENT, the platform's vivid&nbsp;4Kdisplay offers consistently bright, crystal-clear images for improved surgical visualization. The advanced system's L11 light source features Stryker's proprietary auto-light technology, which automatically corrects poor lighting in posterior compartments and self-adjusts based on anatomy.</li>\n<li><b><u>Connected OR Hub</u></b>:To help improve standardization in the operating room, Stryker's Connected OR Hub allows for seamless connectivity between devices. Fully integrated into the tower, the Connected OR Hub allows surgeons to capture, record, stream and print images directly from the 1688 AIM&nbsp;4K&nbsp;Platform. Surgeons can also use the Hub to customize their respective surgeon profiles and desired tower settings to drive efficiency.</li>\n</ul>\n<p>&quot;The visualization quality of the 1688 Platform is very impressive – images are extremely clear and bright, and the auto-light feature allows us to look at the back of the knee or bottom of the shoulder without the difficulty we had before,&quot; said Dr.&nbsp;Benjamin Ma, Chief of the UCSF Sports Medicine and Shoulder Service. &quot;The Connected OR Hub is also a huge improvement with workflow to get images stored in our electronic medical records.&quot;</p>\n<p>Stryker will debut these new technologies at the American Academy of Orthopaedic Surgeons (AAOS) from&nbsp;March 13-15, 2019&nbsp;at booth #443.</p>\n<p><a href=\"http://www.strykeracademy2019.com/\">http://www.strykeracademy2019.com/</a></p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><b>Media contact</b><br>\nKara Rasmussen<br>\nDirector, Communications &amp; Public Relations<br>\nkara.rasmussen@stryker.com&nbsp;<br>\nPhone: 408.529.7512</p>\n",
+    "jcr:lastModified": "Tue Mar 12 2019 18:00:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Endo.jpg",
+    "jcr:lastModified": "Wed Mar 13 2019 12:28:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Endo.jpg"
+  }
+}

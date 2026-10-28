@@ -1,0 +1,488 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Understanding lumbar spinal stenosis with neurogenic claudication",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e926558c-3342-461b-bf62-57ef62784d53",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "jcr:predecessors": [
+    "9a73bebb-34ac-45ed-81cd-c2f2e2dc3042"
+  ],
+  "contentID": "IVS-MILD-SYK-2675638_REV-0",
+  "lastPublished": "Wed Mar 04 2026 20:38:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 04 2026 20:38:47 GMT+0000",
+  "cq:lastReplicated": "Wed Mar 04 2026 20:38:50 GMT+0000",
+  "cq:lastModified": "Thu Feb 19 2026 16:39:46 GMT+0000",
+  "jcr:baseVersion": "9a73bebb-34ac-45ed-81cd-c2f2e2dc3042",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Mar 04 2026 20:28:29 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Jan 22 2026 14:44:04 GMT+0000",
+  "jcr:uuid": "afb14724-1c68-4b44-942e-fb62c064a922",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "shanna.hearon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jan 21 2025 20:08:44 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">APP Guidance</span></span></span></span></h2>\n<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Understanding lumbar spinal stenosis with neurogenic claudication</span></span></h1>\n<p><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\"><b>Publish date:</b>&nbsp;</span></b><span class=\"fontsize-1-5em\">March 2, 2026</span><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\"><br>\n </span></b></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:39:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1751286269": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>What is lumbar spinal stenosis? </b><br>\n Lumbar spinal stenosis, or LSS, is a common condition in which the lower spinal canal narrows and compresses the nerves in the lower back. Lumbar spinal stenosis is generally caused by aging and natural wear and tear on the spine.<sup>1</sup> With lumbar spinal stenosis, thickened ligament, overgrowth of bone, and/or bulging discs in the lower back put pressure on the spinal nerves. This pressure can cause a variety of symptoms that affect daily life, including pain and limited mobility.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Up to 85% of spinal canal narrowing is caused by thickened ligament.<sup>2</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Lumbar spinal stenosis (LSS) is a common condition. Over 100 million patients globally are diagnosed each year with lumbar spinal stenosis, also known as LSS.<sup>3</sup> LSS is generally found in people over the age of 50, and the likelihood of developing LSS increases with age.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Lumbar spinal stenosis can be diagnosed by a medical history that includes a review of symptoms, as well as other tests that may be performed to verify LSS, including physical examinations to test mobility, and imaging such as X-rays, MRI, and CT scans.<sup>4</sup></span></p>\n<p><span class=\"fontsize-1-25em\">People diagnosed with lumbar spinal stenosis may also have been diagnosed with, or be affected by, several other conditions of the lower back, including spondylosis, degenerative disc disease, foraminal narrowing, lateral recess narrowing, or facet hypertrophy.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Treatment options for lumbar spinal stenosis include conservative therapies (e.g., physical therapy, pain medication, chiropractic), epidural steroid injections, the mild<sup>®</sup> procedure, spacer implants, and open surgery.<sup>1</sup> mild<sup>®</sup> is an early treatment option to consider when conservative therapies are not providing adequate relief.<sup>5</sup></span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 16:40:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 19:04:35 GMT+0000",
+      "jcr:lastModified": "Wed Oct 29 2025 19:04:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:37:12 GMT+0000",
+          "alt": "Lumbar spinal stenosis, (LSS) is a common condition in which the lower spinal canal narrows and compresses the nerves in the lower back",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudication/images/mild_neurogenic-claudication-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:35:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__1286559158": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">mild<sup>®</sup> is a treatment with a safety profile similar to an epidural steroid injection,<sup>7</sup> and the lasting relief expected from back surgery.<sup>8</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The mild<sup>®</sup> procedure addresses a major root cause of LSS by removing excess ligament tissue to restore space in the spinal canal.<sup>2</sup></span></p>\n<p><span class=\"fontsize-1-25em\"><b>What is neurogenic claudication?</b></span></p>\n",
+      "jcr:lastModified": "Wed Jan 28 2026 14:12:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1103691825": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 19:05:49 GMT+0000",
+      "jcr:lastModified": "Wed Oct 29 2025 19:05:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:37:17 GMT+0000",
+          "alt": "The mild® procedure addresses a major root cause of LSS by removing excess ligament tissue to restore space in the spinal canal",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudication/images/mild_icons-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:35:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__1523961208": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Neurogenic claudication (NC) is a syndrome, also described as a “collection of symptoms,” that is commonly diagnosed with lumbar spinal stenosis. Symptoms associated with NC result from the narrowing of the spinal canal that compresses the nerves in the lower back, and include pain, numbness, tingling, or heaviness in the lower back and legs.<sup>1</sup> These symptoms are often brought on by walking or standing, as an upright posture places additional pressure on the nerves in the lower back. Symptoms may be relieved by sitting, bending forward, or sleeping curled in the fetal position, which can help reduce pressure on the spinal nerves.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Lumbar spinal stenosis with neurogenic claudication can be treated by a range of therapies that include conservative approaches such as medication or physical therapy, minimally invasive treatments, or surgery.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The mild<sup>®</sup> procedure is a minimally invasive option that addresses a major root cause of LSS by removing excess ligament tissue to restore space in the spinal canal. By reducing the compression on the nerves, the mild<sup>®</sup> procedure helps restore mobility and relieve lower back and leg pain associated with neurogenic claudication.<sup>9</sup></span></p>\n",
+      "jcr:lastModified": "Wed Oct 29 2025 19:07:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1674366197": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>What are the symptoms of lumbar spinal stenosis (LSS) with neurogenic claudication (NC)?</b> <br>\n Symptoms of LSS with NC include pain, numbness, tingling, or heaviness while standing or walking that is relieved by sitting, bending forward or sleeping curled in the fetal position.<sup>1</sup></span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 16:41:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1592134520": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 19:07:40 GMT+0000",
+      "jcr:lastModified": "Wed Oct 29 2025 19:07:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:37:50 GMT+0000",
+          "alt": "Symptoms of lumbar spinal stenosis (LSS) with neurogenic claudication (NC)",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudication/images/mild_symptom-descriptions-rev1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jan 28 2026 20:26:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__142823426": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>How is lumbar spinal stenosis with neurogenic claudication diagnosed?</b> <br>\n Lumbar spinal stenosis with neurogenic claudication can be diagnosed by a doctor or Advanced Practice Provider (APP). In addition to taking a medical history that includes a list of symptoms, other tests that may be performed to verify LSS with NC include:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Physical examinations to test mobility&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">X-rays&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">MRI&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">CT scan&nbsp;</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">During the patient consultation, healthcare providers may ask patients a series of questions to understand how LSS affects the patient, including:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">How long can you stand before you need to rest?&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">How far can you walk before you need to rest?&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Do you often lean on shopping carts and other objects for support?&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">How does pain disrupt your life?&nbsp;</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">Using these questions, providers can determine if the patient is a good candidate for mild<sup>®</sup>, a treatment that addresses a major root cause of their LSS with neurogenic claudication.<sup>2</sup></span></p>\n<p><span class=\"fontsize-1-25em\">“When patients have neurogenic claudication, their spinal canal has narrowed. If you think about your spinal canal, it’s like a garden hose. It is a nice, round circle which allows neural input from the brain to get to the lower extremities. If the garden hose gets a kink in it, less water comes out of the hose to water your plants, or in this case, less neural information from the brain gets to the lower extremities. By debulking the excess ligament that causes the kink, we can create more space and provide relief.” <br>\n <b>– Dr. Denis Patterson</b>, Nevada Advanced Pain Specialists (on contract with Stryker)</span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 18:32:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1090236280": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>What is the difference between an epidural steroid injection and the mild<sup>®</sup> procedure?</b> <br>\n Two common treatments for lumbar spinal stenosis with NC are epidural steroid injections and the mild<sup>®</sup> procedure. An epidural steroid injection, which is a medication injected in the lower spine to reduce swelling and offer pain relief, is typically offered to LSS patients when non-medical care methods like exercise and physical therapy have failed to provide relief. The steroid medication in the injection is believed to reduce inflammation which relieves pain; however, injections only treat the symptoms of LSS and may not address the root cause of the problem.<sup>10</sup></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">The effects of epidural steroid injections typically last less than 6 months<sup>11</sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">To provide long-term relief, patients may require 2-3 injections in the lower back on average per year&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Epidural steroid injections are known to increase risk of infections and may cause bone loss known as osteoporosis<sup>12</sup></span></li>\n</ul>\n",
+      "jcr:lastModified": "Wed Oct 29 2025 19:12:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__785342038": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>The mild<sup>®</sup> procedure – Minimally invasive lumbar decompression</b><br>\n The mild<sup>®</sup> procedure is a short*, outpatient procedure that can be performed using only local anesthetic and sedation. The procedure is performed through an incision in the lower back which is smaller than the size of a pencil top eraser, or the diameter of a drinking straw. (5.1mm)<sup>13</sup><br>\n <i>*Typically takes less than an hour<sup>5</sup></i></span></p>\n<p><span class=\"fontsize-1-25em\">The mild<sup>®</sup> procedure addresses a major root cause of LSS by removing excess ligament tissue which has built up around the spine. This restores space around the spinal cord, which reduces the pressure on the nerves in the lower back.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">The mild<sup>®</sup> procedure does not leave behind an implant, and patients are typically discharged within 24 hours.<sup>5</sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">The mild<sup>®</sup> procedure may not require stitches, staples, or complex bandaging. Typically, patients leave the outpatient procedure facility, with just a bandage covering their incision, and visit their doctor a few days post-procedure for a quick wound check to ensure healing is progressing normally.&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">mild<sup>®</sup> has a safety profile similar to epidural steroid injections, but with lasting results.<sup>14&nbsp;</sup></span></li>\n<li><span class=\"fontsize-1-25em\">mild<sup>®</sup> doesn’t eliminate future treatment options because no major structural anatomy of the spine is altered.<sup>15</sup></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">Research identifies mild<sup>®</sup> as a first-line treatment option for LSS, with several key advantages, including lasting pain relief and increased mobility.<sup>16</sup> The mild<sup>®</sup> procedure is a treatment with a safety profile similar to an epidural steroid injection, and the lasting relief expected from back surgery.<sup>14</sup> A Cleveland Clinic 5-Year Study showed mild<sup>®</sup> helped 88% of patients avoid back surgery for at least 5 years while providing lasting relief.<sup>15</sup></span></p>\n",
+      "jcr:lastModified": "Wed Jan 28 2026 14:37:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__686781245": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>How does mild<sup>®</sup> procedure treat LSS with NC?</b> <br>\n Up to 85% of spinal canal narrowing is caused by thickened ligament.<sup>2</sup> mild<sup>®</sup> addresses this major root cause of LSS, by removing excess ligament tissue using specialized tools and imaging, and leaves no implants behind.</span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 16:41:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_815854757": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 19:16:59 GMT+0000",
+      "jcr:lastModified": "Wed Oct 29 2025 19:16:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:38:08 GMT+0000",
+          "alt": "mild® addresses this major root cause of LSS, by removing excess ligament tissue using specialized tools and imaging",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudication/images/mild_before-after-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:34:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_copy_copy__1724396053": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>What should patients with LSS with NC expect from their mild<sup>®</sup> procedure? </b><br>\n The mild<sup>®</sup> procedure is a short*, outpatient procedure with a safety profile similar to an ESI injection.<sup>14</sup> The procedure can be performed using only local anesthetic and sedation and leaves no implants or stitches behind. Most patients are discharged and see functional improvement over time.<sup>17</sup> Many patients notice an improvement in their ability to stand longer and walk farther.<sup>8</sup> Some patients will have to rebuild strength after having been weakened by lumbar spinal stenosis. Achieving full benefits from the procedure may take three to twelve months post-surgery.<sup>8</sup> <br>\n <i>*Typically takes less than an hour<sup>5</sup></i><br>\n</span></p>\n<p><span class=\"fontsize-1-25em\">Quick recovery time - Patients are typically discharged within 24 hours.<sup>5</sup></span></p>\n",
+      "jcr:lastModified": "Tue Jan 27 2026 21:44:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__455024346": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>Is the mild<sup>®</sup> procedure an effective treatment for LSS with NC? <br>\n </b>The mild<sup>®</sup> procedure has been proven to be an effective treatment for LSS with NC. In a Cleveland Clinic study, mild<sup>®</sup> helped 88% of patients avoid back surgery for at least 5 years while providing lasting relief.<sup>15</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Every year, thousands of lumbar spinal stenosis (LSS) patients are treated with the mild<sup>®</sup> procedure.<sup>8</sup></span></p>\n<p><span class=\"fontsize-1-25em\">In a separate study conducted by the Cleveland Clinic, clinicians tracked patient results for one year after the mild<sup>®</sup> procedure. The published data showed:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Average standing time increased from 8 to 56 minutes with less pain<sup>8</sup>&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Average walking distance increased from 246 to 3,956 feet with less pain<sup>8</sup><br>\n </span></li>\n</ul>\n",
+      "jcr:lastModified": "Wed Oct 29 2025 19:28:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1802051528": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 19:28:30 GMT+0000",
+      "jcr:lastModified": "Wed Oct 29 2025 19:28:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:38:26 GMT+0000",
+          "alt": "Studies show that mild® helps improve patient functionality over time",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/understanding-lumbar-spinal-stenosis-with-neurogenic-claudication/images/mild_function-improvement-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1170451214_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Oct 28 2025 13:07:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><i>Cleveland Clinic Study, 1-year study<sup>10</sup></i></p>\n",
+          "jcr:lastModified": "Wed Jan 28 2026 14:11:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_183546058_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Aug 20 2025 15:26:44 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">If you would like a mild<sup>®</sup> Quick Reference Card for your office or to learn more about APP-specific educational opportunities, <b>please contact your local sales representative.</b></span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 18:30:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue May 06 2025 19:17:26 GMT+0000",
+      "CTATitle": "Contact A Rep",
+      "ctaExternalLink": "https://providers.strykerivs.com/contact",
+      "jcr:lastModified": "Wed Aug 20 2025 17:06:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgb(255,181,0)",
+      "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+    },
+    "text_copy_1828700409": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Nov 26 2025 18:29:43 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 18:29:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1086704821_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Oct 30 2025 17:52:39 GMT+0000",
+      "jcr:lastModified": "Thu Oct 30 2025 17:52:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "text_copy_copy_copy__1874952147": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Key Resources</span></span></span></span></h3>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:30:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2125934138_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 16:45:15 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 16:45:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_1924463574": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild Patient Brochure.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Oct 27 2025 17:26:14 GMT+0000",
+          "CTAImageAltText": "mild® patient brochure",
+          "jcr:lastModified": "Wed Oct 29 2025 16:06:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild_PatientBrochure_040925_XL_rev.png"
+        },
+        "text_1126484402_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+          "text": "<p><span style=\"font-size: 16.25px;\"><b>mild<sup>®</sup> patient brochure</b></span></p>\n",
+          "jcr:lastModified": "Wed Oct 29 2025 16:06:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild Patient Brochure.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 20 2025 16:50:48 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "jcr:lastModified": "Mon Oct 27 2025 17:26:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 16:45:24 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Aug 20 2025 16:58:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/interventional-spine/lss/IVS-MILD-VID-1621800-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IVS-MILD-VID-1621800-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Aug 20 2025 16:59:24 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_1126484402_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+          "text": "<p><span style=\"font-size: 16.25px;\"><b>mild<sup>®</sup> patient education video</b></span></p>\n",
+          "jcr:lastModified": "Thu Oct 30 2025 17:53:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "publishDate": "",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Oct 29 2025 19:01:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Wu L, Munakomi S, Cruz R. Lumbar Spinal Stenosis. [Updated 2024 Jan 30]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 Jan-. Available from: <u><a href=\"https://www.ncbi.nlm.nih.gov/books/NBK531493/\">https://www.ncbi.nlm.nih.gov/books/NBK531493/</a></u></li>\r\n<li>Hansson T, Suzuki N, Hebelka H, Gaulitz A. The narrowing of the lumbar spinal canal during loaded MRI: the effects of the disc and ligamentum flavum. Eur Spine J. 2009 May;18(5):679-86. doi: 10.1007/s00586-009-0919-7. Epub 2009 Mar 11. PMID: 19277726; PMCID: PMC3234003. <u><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234003/\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234003/</a></u></li>\r\n<li>Ravindra VM, Senglaub SS, Rattani A, et al. Degenerative Lumbar Spine Disease: Estimating Global Incidence and Worldwide Volume. Global Spine Journal. 2018;8(8):784-794. doi:10.1177/2192568218770769</li>\r\n<li>Spinal Stenosis. BMJ Best Practice. Updated 15 Jul 2025, Accessed 15 Aug 2025. Available from: <u><a href=\"https://bestpractice.bmj.com/topics/en-gb/191\">https://bestpractice.bmj.com/topics/en-gb/191</a></u></li>\r\n<li>Deer TR, Costandi SJ, Washabaugh E, Chafin TB, Wahezi SE, Jassal N, Sayed D. The MOTION Study: A Randomized Controlled Trial with Objective Real-World Outcomes for Lumbar Spinal Stenosis Patients Treated with the mild® Procedure: One-Year Results. Pain Med. 2022 Apr 8;23(4):625-634. doi: 10.1093/pm/pnac028. PMID: 35167700; PMCID: PMC8992575.&nbsp;</li>\r\n<li>Munakomi S, Foris LA, Varacallo M. Spinal Stenosis and Neurogenic Claudication. [Updated 2023 Aug 13]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 Jan-. Available from: <u><a href=\"https://www.ncbi.nlm.nih.gov/books/NBK430872/\">https://www.ncbi.nlm.nih.gov/books/NBK430872/</a></u></li>\r\n<li>Staats PS, Benyamin RM; MiDAS ENCORE Investigators. MiDAS ENCORE: Randomized Controlled Clinical Trial Report of 6-Month Results. Pain Physician.&nbsp;</li>\r\n<li>Mekhail N, Costandi S, Abraham B, Samuel SW. Functional and patient-reported outcomes in symptomatic lumbar spinal stenosis following percutaneous decompression. Pain Pract. 2012 Jul;12(6):417-25. doi: 10.1111/j.1533 2500.2012.00565.x. Epub 2012 Jun 1. PMID: 22651852. <u><a href=\"https://onlinelibrary.wiley.com/doi/10.1111/j.1533-2500.2012.00565.x\">https://onlinelibrary.wiley.com/doi/10.1111/j.1533-2500.2012.00565.x</a></u></li>\r\n<li>Yuan H, Yi X. Lumbar Spinal Stenosis and Minimally Invasive Lumbar Decompression: A Narrative Review. J Pain Res. 2023 Nov 6;16:3707-3724. doi: 10.2147/JPR.S428112. PMID: 37954472; PMCID: PMC10637222.</li>\r\n<li>Cleveland Clinic. Lumbar Epidural Steroid Injection. Updated 19 Nov 2021, Accessed 21 Aug 2025. Available from: <u><a href=\"https://my.clevelandclinic.org/health/treatments/22091-lumbar-epidural-steroid-injection\">https://my.clevelandclinic.org/health/treatments/22091-lumbar-epidural-steroid-injection</a></u></li>\r\n<li>Fukusaki M, Kobayashi I, Hara T, Sumikawa K. Symptoms of spinal stenosis do not improve after epidural steroid injection. Clin J Pain. 1998;14(2):148–151. doi:10.1097/00002508-199806000-00010.&nbsp;</li>\r\n<li>Chen HW, Wu WT, Wang JH, Lin CL, Hsu CY, Yeh KT. Epidural Steroid Injections and the Risk of Osteoporosis in Lumbar Spondylosis Patients: A Nationwide Population-Based Cohort Study. Pain Physician. 2023 May;26(3):307-316. PMID: 37192236.</li>\r\n<li>DIOM-2 Rev 11, User Need 1.2.1 PRT-00666 Rev, A, Trocar Diameter: 0.1795 ± 0.0008 inches (4.559 ± 0.02mm)&nbsp;&nbsp;</li>\r\n<li>Staats PS, Chafin TB, Golovac S, Kim CK, Li S, Richardson WB, Vallejo R, Wahezi SE, Washabaugh EP 3rd, Benyamin RM; MiDAS ENCORE Investigators. Long-Term Safety and Efficacy of Minimally Invasive Lumbar Decompression Procedure for the Treatment of Lumbar Spinal Stenosis With Neurogenic Claudication: 2-Year Results of MiDAS ENCORE. Reg Anesth Pain Med. 2018 Oct;43(7):789-794.</li>\r\n<li>Mekhail N, et al. The durability of minimally invasive lumbar decompression procedure in patients with symptomatic lumbar spinal stenosis: Long-term follow-up. Pain Pract. 2021 Nov;21(8):826-835 <u><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9291913/\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9291913/</a></u></li>\r\n<li>Deer TR, Grider JS, Pope JE, Lamer TJ, Wahezi SE, Hagedorn JM, Falowski S, Tolba R, Shah JM, Strand N, Escobar A, Malinowski M, Bux A, Jassal N, Hah J, Weisbein J, Tomycz ND, Jameson J, Petersen EA, Sayed D. Best Practices for Minimally Invasive Lumbar Spinal Stenosis Treatment 2.0 (MIST): Consensus Guidance from the American Society of Pain and Neuroscience (ASPN). J Pain Res. 2022 May 5;15:1325-1354. doi: 10.2147/JPR.S355285. PMID: 35546905; PMCID: PMC9084394.</li>\r\n<li>Deer T, Kim C, Wahezi SE, Qu H, Sayed D; MOTION Study Investigators. Objective Real-World Outcomes of Patients Suffering from Painful Neurogenic Claudication Treated with the mild® Procedure: Interim 6-Month Report of a Randomized Controlled Trial. J Pain Res. 2021 Jun 10;14:1687-1697. doi: 10.2147/JPR.S312573. PMID: 34140805; PMCID: PMC8203201. <u><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201/\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201/</a></u></li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Jan 28 2026 14:05:09 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

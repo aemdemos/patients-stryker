@@ -1,0 +1,270 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "IAHCSMM 2019",
+  "jcr:versionHistory": "05deed76-a357-4527-a710-c8c97784531f",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "0c3e5931-16eb-4107-85a6-7096a49beb69"
+  ],
+  "contentID": "D0000010830 Rev. AA",
+  "lastPublished": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:lastModified": "Fri Apr 12 2019 15:14:13 GMT+0000",
+  "jcr:baseVersion": "0c3e5931-16eb-4107-85a6-7096a49beb69",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Fri Apr 05 2019 19:24:25 GMT+0000",
+  "jcr:uuid": "461b5241-23c3-4b0c-9101-e1831e8641e5",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Apr 02 2019 17:13:45 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/campaigns/iahcsmm-2019/images/2019 ASBRS Campaign Banner2.png",
+      "jcr:lastModified": "Fri Apr 05 2019 19:50:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Apr 02 2019 15:52:39 GMT+0000",
+      "jcr:lastModified": "Tue Apr 02 2019 15:52:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Apr 02 2019 15:51:58 GMT+0000",
+          "title": "Featured at IAHCSMM",
+          "jcr:lastModified": "Tue Apr 02 2019 17:46:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/surgical/products/blu62-pretreatment-foam-and-instrument-detergent"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/surgical/products/auto62-cleaning-chemistries"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/surgical/services/smart-equipment-management"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Apr 03 2019 14:41:04 GMT+0000",
+          "jcr:lastModified": "Wed Apr 03 2019 14:41:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured"
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Fri Apr 05 2019 18:29:50 GMT+0000",
+          "jcr:lastModified": "Fri Apr 05 2019 18:29:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "title": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Wed Apr 03 2019 14:34:31 GMT+0000",
+              "title": "Blu62 in action",
+              "jcr:lastModified": "Wed Apr 03 2019 14:34:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/title"
+            },
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Tue Apr 02 2019 17:48:37 GMT+0000",
+              "type": "typePath",
+              "jcr:lastModified": "Tue Apr 02 2019 17:48:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/surgical/products/blu62/video/Blu62 Animation.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+                "unsharpMaskAmount": "0",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Blu62 Animation-AVS",
+                "unsharpMaskRadius": "0",
+                "urlModifiers": "",
+                "jcr:lastModified": "Tue Apr 02 2019 17:48:53 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "jpegQuality": "85",
+                "unsharpMaskThreshold": "0",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "title_922409546": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Wed Apr 03 2019 14:34:49 GMT+0000",
+              "title": "Smart Equipment Management",
+              "jcr:lastModified": "Wed Apr 03 2019 14:35:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/title"
+            },
+            "standalonevideo_1986": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Tue Apr 02 2019 17:49:01 GMT+0000",
+              "type": "typePath",
+              "jcr:lastModified": "Tue Apr 02 2019 17:49:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/surgical/services/smart-equipment-management/videos/9100-004-553_Rev_A_CCare_Automated_SEM_Pres_Rev_A.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+                "unsharpMaskAmount": "0",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/9100-004-553_Rev_A_CCare_Automated_SEM_Pres_Rev_A-AVS",
+                "unsharpMaskRadius": "0",
+                "urlModifiers": "",
+                "jcr:lastModified": "Tue Apr 02 2019 17:51:19 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "jpegQuality": "85",
+                "unsharpMaskThreshold": "0",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "title": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "description": "Follow us on LinkedIn and Twitter. ",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Wed Apr 03 2019 15:19:07 GMT+0000",
+              "title": "Partnering with you for a cleaner OR!",
+              "jcr:lastModified": "Wed Apr 03 2019 15:19:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/title"
+            },
+            "engagementcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "buttonColor": "rgba(28,86,135,1)",
+              "buttonAlignment": "Horizontal",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Wed Apr 03 2019 15:17:49 GMT+0000",
+              "buttonTextAlignment": "Center",
+              "jcr:lastModified": "Wed Apr 03 2019 15:18:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/engagementcta",
+              "engCTAButtons": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "engCtaButtonUrl": "https://www.linkedin.com/showcase/orthopaedic-instruments",
+                  "engCtaButtonType": "LinkedIn"
+                }
+              }
+            },
+            "engagementcta_86060040": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "Dilara.Atkins@stryker.com",
+              "buttonColor": "rgba(28,86,135,1)",
+              "buttonAlignment": "Horizontal",
+              "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+              "jcr:created": "Wed Apr 03 2019 15:18:21 GMT+0000",
+              "buttonTextAlignment": "Center",
+              "jcr:lastModified": "Wed Apr 03 2019 15:18:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/engagementcta",
+              "engCTAButtons": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "engCtaButtonUrl": "https://twitter.com/StrykerOI",
+                  "engCtaButtonType": "Twitter"
+                }
+              }
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "title_1363103902": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "description": "Learn from the expert at our booth",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Apr 03 2019 15:25:47 GMT+0000",
+          "title": "Rodney (Rod) Parker, PhD",
+          "jcr:lastModified": "Thu Apr 04 2019 13:18:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/title"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Apr 03 2019 15:24:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/iahcsmm-2019/images/Dr. Rod Parker Bio.jpg",
+          "jcr:lastModified": "Fri Apr 12 2019 15:14:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "standaloneimage_1657403070": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Fri Apr 05 2019 19:12:50 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/campaigns/iahcsmm-2019/images/2019 IAHCSMM Blu62 Ad.jpg",
+      "jcr:lastModified": "Fri Apr 05 2019 19:12:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

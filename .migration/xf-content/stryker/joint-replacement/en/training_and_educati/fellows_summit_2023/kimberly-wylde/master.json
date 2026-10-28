@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Kimberly Wylde",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bdb940f9-b60a-4e15-87e0-e54abc1a088d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6c7cdce1-f947-4688-9459-40b45352a854"
+  ],
+  "jcr:created": "Mon Apr 17 2023 13:27:12 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 17 2023 13:27:15 GMT+0000",
+  "cq:lastModified": "Tue Apr 11 2023 15:36:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6c7cdce1-f947-4688-9459-40b45352a854",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "888b4586-4f8d-42a3-9e17-1cccd1b3f8f9",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Oct 10 2022 15:11:37 GMT+0000",
+      "alt": "KimberlyWylde",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/KimberlyWylde.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Oct 10 2022 15:11:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "4"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 17:36:09 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Thank you for attending the 2023 Joint Replacement Fellows Summit!</span><br>\n</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Don’t hesitate to contact <a href=\"mailto:Kimberly.Wylde@stryker.com\"><span style=\"color: #85458a;\">Kimberly.Wylde@stryker.com</span></a> with questions.&nbsp;</span></span></p>\n",
+      "jcr:lastModified": "Tue Apr 11 2023 15:36:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

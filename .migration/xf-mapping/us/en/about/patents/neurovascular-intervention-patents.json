@@ -1,0 +1,1715 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Neurovascular Intervention Patents",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1a88dcf9-e92a-4a45-8de3-f39c8a5641dd",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3eb1ae25-a2c9-473d-93bf-81c43a9fddf5"
+  ],
+  "lastPublished": "Thu Sep 10 2026 22:47:23 GMT+0000",
+  "jcr:created": "Thu Sep 10 2026 22:47:24 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 10 2026 22:47:26 GMT+0000",
+  "cq:lastModified": "Thu Sep 10 2026 22:47:18 GMT+0000",
+  "jcr:baseVersion": "3eb1ae25-a2c9-473d-93bf-81c43a9fddf5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:42:01 GMT+0000",
+  "jcr:uuid": "38279a62-6fd0-4611-a7a5-330701e13227",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "ashley.salerno@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "patenttables": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "matt.thomson@stryker.com",
+      "jcr:lastModifiedBy": "ashley.salerno@stryker.com",
+      "jcr:created": "Mon Aug 07 2017 18:32:47 GMT-0400",
+      "jcr:lastModified": "Thu Sep 10 2026 22:47:18 GMT+0000",
+      "nameTable": "NV",
+      "sling:resourceType": "stryker/components/content/patenttables",
+      "testHidden": "patentTable",
+      "documentTable": "/content/dam/stryker/about/stryker-patents/NV 09092026.xlsx",
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "date_ModifiedBy": 1789080437893,
+        "size_columns": 4,
+        "modifiedBy": "ashley.salerno@stryker.com",
+        "row_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "DIVISION",
+          "COL2": "PRODUCT NAME",
+          "COL3": "CATALOG NUMBER",
+          "COL4": "PATENT(S)"
+        },
+        "row_2": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Contour Neurovascular System",
+          "COL3": "n/a",
+          "COL4": "10,130,372; 11,284,901; 11,389,174; 12,029,431; 12,414,775"
+        },
+        "row_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Excelsior® 1018® Microcatheters, Straight",
+          "COL3": "144181, 144189, 144190, 144191, 144192, 144193, 144194",
+          "COL4": "6,165,163"
+        },
+        "row_4": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Excelsior® SL–10® Microcatheters, Straight",
+          "COL3": "168181, 168189, 168190, 168191, 168192, 168193, 168194",
+          "COL4": "6,165,163"
+        },
+        "row_5": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–10 2D Detachable Coils",
+          "COL3": "342103-4, 342308-4, 342410-4,       342515-4, 342620-4, 342725-4,       342830-4, 342930-4",
+          "COL4": "6,921,410"
+        },
+        "row_6": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–10 360 Soft SR Detachable Coils",
+          "COL3": "3471020-SR, 347204-SR, 347306-SR, 347408-SR, 347509-SR, 347611-SR, 347715-SR, 347820-SR, 347920-SR",
+          "COL4": "9,055,948"
+        },
+        "row_7": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–10 360 Standard SR Detachable Coils",
+          "COL3": "3461030-SR, 3461130-SR, 3461230-SR, 3461330-SR, 3461430-SR, 346305-SR,         346308-SR, 346407-SR, 346509-SR, 346515-SR, 346611-SR, 346615-SR,            346715-SR, 346720-SR, 346815-SR, 346820-SR, 346920-SR, 346930-SR",
+          "COL4": "9,055,948"
+        },
+        "row_8": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–10 Soft Detachable Coils",
+          "COL3": "341202-4, 341203-4, 341204-4,       341206-4, 341208-4, 341303-4,        341304-4, 341306-4, 341308-4,        341310-4, 341404-4, 341406-4,       341408-4, 341410-4",
+          "COL4": "6,921,410"
+        },
+        "row_9": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–10 UltraSoft Detachable Coils",
+          "COL3": "343201, 343202, 343203, 343204, 343206, 343252, 343253, 343254, 343256, 343304, 343306, 343308, 343404, 343406, 343408",
+          "COL4": "6,921,410"
+        },
+        "row_10": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–18 2D Detachable Coils",
+          "COL3": "352103-4, 352123-4, 352143-4,           352163-4, 352183-4, 352203-4,           352520-4, 352620-4, 352730-4,          352830-4, 352930-4",
+          "COL4": "6,921,410"
+        },
+        "row_11": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–18 360 Standard Detachable Coils",
+          "COL3": "3481030, 3481130, 3481230, 3481330, 3481430, 3481630, 3481640, 3481830, 3481840, 3482033, 3482240, 3482440, 348615, 348715, 348820, 348920",
+          "COL4": "9,055,948"
+        },
+        "row_12": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–18 3D Detachable Coils",
+          "COL3": "355103-4, 355123-4, 355143-4,       355163-4, 355183-4, 355203-4,        355615-4, 355825-4",
+          "COL4": "6,929,654"
+        },
+        "row_13": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–18 Fibered VortX® Coils",
+          "COL3": "353023-4, 353025-4, 353024-4,       353026-4",
+          "COL4": "8,172,862"
+        },
+        "row_14": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "GDC®–18 Soft Detachable Coils",
+          "COL3": "351204-4, 351208-4, 351304-4,       351308-4, 351406-4, 351410-4,       351508-4, 351512-4, 351610-4,       351615-4",
+          "COL4": "6,921,410"
+        },
+        "row_15": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Neqstent Coil Assisted Flow Diverter",
+          "COL3": "n/a",
+          "COL4": "10,130,372; 11,389,174"
+        },
+        "row_16": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "NeuroForm Atlas™ Stent System",
+          "COL3": "SZAS3015, SZAS3021, SZAS3024, SZAS4021, SZAS4024, SZAS4521, SZAS4530",
+          "COL4": "7,037,330"
+        },
+        "row_17": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Neuroform3® Microdelivery Stent System",
+          "COL3": "SNF32515, SNF32520, SNF33015, SNF33020, SNF33030, SNF33515, SNF33520, SNF33530, SNF34015, SNF34020, SNF34030, SNF34515, SNF34520, SNF34530",
+          "COL4": "7,037,330"
+        },
+        "row_18": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target XL® 360  Soft Detachable Coils",
+          "COL3": "612720, 612830, 612930, 612104, 612124, 612145, 612165, 612185, 612203, 612205,  612206, 612306, 612309, 612408, 612412, 612510, 612515, 612620",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_19": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target XL® 360  Standard Detachable Coils",
+          "COL3": "610620, 610720, 610830, 610930, 610104, 610124, 610145, 610165, 610185, 610205, 610225, 610245",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_20": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target XL® Helical Detachable Coils",
+          "COL3": "611515, 611620, 611720, 611830, 611930, 611104",
+          "COL4": "8,202,292; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_21": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® 360 Nano™ Detachable Coils",
+          "COL3": "542102, 542103, 542152, 542153, 542154, 544203, 544204, 544254, 544304, 544306, 544356",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_22": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® 360 Soft Detachable Coils",
+          "COL3": "547103, 547113, 547123, 547133, 547143, 547204, 547306, 547308, 547310, 547406, 547408, 547410, 547415, 547510, 547515, 547520, 547610, 547615, 547620, 547630, 547715, 547720, 547730, 547820, 547830, 547920, 547930",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_23": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® 360 Standard Detachable Coils",
+          "COL3": "546103, 546113, 546123, 546133, 546143, 546154, 546306, 546308, 546408, 546410, 546415, 546515, 546520, 546615, 546620, 546630, 546715, 546720, 546730, 546820, 546830,  546920, 546930",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_24": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® 360 Ultra Detachable Coils",
+          "COL3": "542203, 542204, 542206, 542254, 542304, 542306, 542308, 542310, 542358, 542406, 542408, 542410, 542415, 542451, 542510, 542515",
+          "COL4": "8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_25": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® 3D Detachable Coils",
+          "COL3": "615306, 615408, 615510, 615615, 615715, 615825, 615103",
+          "COL4": "8,202,292; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_26": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® Helical Nano™ Detachable Coils",
+          "COL3": "543101, 543102, 543103, 543151, 543152, 543153, 543154, 545202, 545203, 545204, 545206, 545253, 545254, 545256, 545304, 545306, 545308",
+          "COL4": "8,202,292; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_27": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Target® Helical Ultra Detachable Coils",
+          "COL3": "543201, 543202, 543203, 543204, 543206, 543208, 543253, 543254, 543256, 543304, 543306, 543308, 543310, 543356, 543406, 543408, 543415",
+          "COL4": "8,202,292; 9,265,504; 9,314,250; 9,504,475"
+        },
+        "row_28": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "TransForm® Compliant Occlusion Balloon Catheters",
+          "COL3": "SRC0310, SRC0315, SRC0410, SRC0415, SRC0420, SRC0430, SRC0510, SRC0515, SRC0520, SRC0530",
+          "COL4": "8,585,643; 9,162,040"
+        },
+        "row_29": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "TransForm® Super Compliant Occlusion Balloon Catheters",
+          "COL3": "SSC0305, SSC0407, SSC0410, SSC0707, SSC0710, SSC0715",
+          "COL4": "8,585,643; 9,162,040"
+        },
+        "row_30": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Trevo® ProVue Retrievers",
+          "COL3": "80,030",
+          "COL4": "8,357,179; 8,529,596; 8,795,317; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+        },
+        "row_31": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Trevo® XP ProVue Retrievers",
+          "COL3": "80051, 80052, 90182, 90183, 90185,  93067",
+          "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+        },
+        "row_32": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Trevo® XP ProVue Retrievers",
+          "COL3": "90186, 93068",
+          "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,700,331"
+        },
+        "row_33": {
+          "jcr:primaryType": "nt:unstructured",
+          "COL1": "Neurovascular",
+          "COL2": "Wingspan® Stent System",
+          "COL3": "WS025009, WS025015, WS025020, WS030009, WS030015, WS030020, WS035009, WS035015, WS035020, WS040009, WS040015, WS040020, WS045009, WS045015, WS045020",
+          "COL4": "8,092,508"
+        }
+      },
+      "history": {
+        "jcr:primaryType": "nt:unstructured",
+        "rev_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "date": 1540559159199,
+          "size_columns": 4,
+          "modifiedBy": "ashley.salerno@stryker.com",
+          "publishBy": "ashley.salerno@stryker.com",
+          "row_1": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "DIVISION",
+            "COL2": "PRODUCT NAME",
+            "COL3": "CATALOG NUMBER",
+            "COL4": "PATENT(S)"
+          },
+          "row_2": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Pre-Shaped",
+            "COL3": "144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959; 7,621,904"
+          },
+          "row_3": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Straight",
+            "COL3": "144181, 144189, 144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_4": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Pre-Shaped",
+            "COL3": "168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959;  7,621,904"
+          },
+          "row_5": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Straight",
+            "COL3": "168181, 168189, 168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_6": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-17™ Microcatheters",
+            "COL3": "C1775ST, C177545, C177590, C17750J, C1715ST, C171545, C171590, C17150J",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_7": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-27® Microcatheters",
+            "COL3": "XT273591, XT275081, XT275091, XT273581, XT273582, XT273592, XT275082, XT275092",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_8": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuro Renegade® Hi-Flo™ Microcatheters",
+            "COL3": "182880US, 182890US, 182900US,  182910US",
+            "COL4": "6,575,959"
+          },
+          "row_9": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Renegade® 18 Microcatheters",
+            "COL3": "18-257, 18-259",
+            "COL4": "6,575,959"
+          },
+          "row_10": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® Pro Microcatheters",
+            "COL3": "90231, 90238",
+            "COL4": "5,951,539"
+          },
+          "row_11": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Concentric® Balloon Guide Catheters",
+            "COL3": "90,072",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_12": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "FlowGate2™ Balloon Guide Catheters",
+            "COL3": "90485, 90495",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_13": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Gateway® PTA Balloon Catheters",
+            "COL3": "20722-0915, 20722-0920, 20722-0922, 20722-0925, 20722-0927, 20722-0930,         20722-0932, 20722-0935, 20722-0937, 20722-0940, 20722-1515, 20722-1520,         20722-1522, 20722-1525, 20722-1527, 20722-1530, 20722-1532, 20722-1535,            20722-1537, 20722-1540, 20722-2015, 20722-2020, 20722-2022, 20722-2025,                     20722-2027, 20722-2030, 20722-2032, 20722-2035, 20722-2037, 20722-2040",
+            "COL4": "6,022,340; 6,319,228; 6,960,187"
+          },
+          "row_14": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Merci® Balloon Guide Catheters",
+            "COL3": "90076, 90073, 90077, 90074",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_15": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Compliant Occlusion Balloon Catheters",
+            "COL3": "SRC0310, SRC0315, SRC0410, SRC0415, SRC0420, SRC0430, SRC0510, SRC0515, SRC0520, SRC0530",
+            "COL4": "6,575,959;  8,021,329;  8,585,643; 9,162,040"
+          },
+          "row_16": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Super Compliant Occlusion Balloon Catheters",
+            "COL3": "SSC0305, SSC0407, SSC0410, SSC0707, SSC0710, SSC0715",
+            "COL4": "6,575,959;  8,585,643; 9,162,040"
+          },
+          "row_17": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 5 Distal Access Catheters",
+            "COL3": "M003IC0581150, M003IC0581320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_18": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 6 Distal Access Catheters",
+            "COL3": "M003IC0601320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_19": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "InZone® Detachment System",
+            "COL3": "4,510,095",
+            "COL4": "6,344,041; 6,397,850"
+          },
+          "row_20": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft SR Detachable Coils",
+            "COL3": "341201-SR4, 341202-SR4, 341203-SR4, 341204-SR4, 341206-SR4, 341208-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_21": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft Detachable Coils",
+            "COL3": "341202-4, 341203-4, 341204-4,       341206-4, 341208-4, 341303-4,        341304-4, 341306-4, 341308-4,        341310-4, 341404-4, 341406-4,       341408-4, 341410-4",
+            "COL4": "6,921,410"
+          },
+          "row_22": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 2D Detachable Coils",
+            "COL3": "342103-4, 342308-4, 342410-4,       342515-4, 342620-4, 342725-4,       342830-4, 342930-4",
+            "COL4": "6,921,410"
+          },
+          "row_23": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 UltraSoft Detachable Coils",
+            "COL3": "343201, 343202, 343203, 343204, 343206, 343252, 343253, 343254, 343256, 343304, 343306, 343308, 343404, 343406, 343408",
+            "COL4": "6,921,410"
+          },
+          "row_24": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft 2D SR Detachable Coils",
+            "COL3": "344302-SR4, 344303-SR4, 344304-SR4, 344306-SR4, 344308-SR4, 344403-SR4,            344404-SR4, 344406-SR4, 344408-SR4, 344504-SR4, 344506-SR4, 344508-SR4,                 344510-SR4, 344606-SR4, 344608-SR4, 344610-SR4, 344710-SR4, 344715-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_25": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 3D Detachable Coils",
+            "COL3": "345304-4, 345103-4, 345306-4,        345406-4, 345408-4, 345508-4,       345510-4, 345610-4, 345615-4,        345712-4, 345715-4, 345820-4",
+            "COL4": "6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_26": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Standard SR Detachable Coils",
+            "COL3": "3461030-SR, 3461130-SR, 3461230-SR, 3461330-SR, 3461430-SR, 346305-SR,         346308-SR, 346407-SR, 346509-SR, 346515-SR, 346611-SR, 346615-SR,            346715-SR, 346720-SR, 346815-SR, 346820-SR, 346920-SR, 346930-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_27": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Soft SR Detachable Coils",
+            "COL3": "3471020-SR, 347204-SR, 347306-SR, 347408-SR, 347509-SR, 347611-SR, 347715-SR, 347820-SR, 347920-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_28": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 360 Standard Detachable Coils",
+            "COL3": "3481030, 3481130, 3481230, 3481330, 3481430, 3481630, 3481640, 3481830, 3481840, 3482033, 3482240, 3482440, 348615, 348715, 348820, 348920",
+            "COL4": "6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_29": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Soft Detachable Coils",
+            "COL3": "351204-4, 351208-4, 351304-4,       351308-4, 351406-4, 351410-4,       351508-4, 351512-4, 351610-4,       351615-4",
+            "COL4": "6,921,410"
+          },
+          "row_30": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 2D Detachable Coils",
+            "COL3": "352103-4, 352123-4, 352143-4,           352163-4, 352183-4, 352203-4,           352520-4, 352620-4, 352730-4,          352830-4, 352930-4",
+            "COL4": "6,921,410"
+          },
+          "row_31": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Fibered VortX® Coils",
+            "COL3": "353023-4, 353025-4, 353024-4,       353026-4",
+            "COL4": "6,187,027; 6,280,457; 6,921,410; 8,172,862"
+          },
+          "row_32": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 3D Detachable Coils",
+            "COL3": "355103-4, 355123-4, 355143-4,       355163-4, 355183-4, 355203-4,        355615-4, 355825-4",
+            "COL4": "6,635,069; 6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_33": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical UltraSoft SR Detachable Coils",
+            "COL3": "497202-SR, 497203-SR, 497204-SR, 497206-SR, 497208-SR, 497210-SR, 497215-SR, 497253-SR, 497254-SR, 497256-SR, 497304-SR, 497306-SR, 497308-SR, 497310-SR, 497315-SR, 497320-SR, 497406-SR, 497408-SR, 497410-SR, 497415-SR, 497420-SR, 497515-SR, 497520-SR, 497620-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_34": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 UltraSoft SR Detachable Coils",
+            "COL3": "498204-SR, 498206-SR, 498304-SR, 498306-SR, 498308-SR, 498406-SR, 498408-SR, 498510-SR, 498515-SR, 498610-SR, 498615-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,860,893; 6,921,410; 7,070,607"
+          },
+          "row_35": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Standard SR Detachable Coils",
+            "COL3": "470103-SR, 470410-SR, 470515-SR, 470620-SR, 470730-SR, 470830-SR, 470930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_36": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Soft SR Detachable Coils",
+            "COL3": "471408-SR, 471410-SR, 471510-SR, 471515-SR, 471610-SR, 471620-SR, 471720-SR, 471830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_37": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 3D Omega Standard Detachable Coils",
+            "COL3": "475103, 475304, 475306, 475406, 475408, 475508, 475610, 475510, 475615, 475715, 475820",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_38": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Soft SR Detachable Coils",
+            "COL3": "490304-SR, 490306-SR, 490308-SR, 490406-SR, 490510-SR, 490408-SR, 490515-SR, 490610-SR, 490615-SR, 490715-SR, 490720-SR, 490820-SR, 490830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_39": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Standard SR Detachable Coils",
+            "COL3": "492103-SR, 492123-SR, 492408-SR, 492510-SR, 492515-SR, 492610-SR, 492615-SR, 492715-SR, 492720-SR, 492820-SR, 492830-SR, 492920-SR, 492930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_40": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Firm Detachable Coils",
+            "COL3": "494515, 494615, 494720, 494830, 494930, 494103, 494123, 494143, 494163, 494183, 494203, 494244",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_41": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical Soft SR Detachable Coils",
+            "COL3": "471204-SR, 471206-SR, 471208-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_42": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Ultra Detachable Coils",
+            "COL3": "542203, 542204, 542206, 542254, 542304, 542306, 542308, 542310, 542358, 542406, 542408, 542410, 542415, 542451, 542510, 542515",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_43": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Nano™ Detachable Coils",
+            "COL3": "542102, 542103, 542152, 542153, 542154, 544203, 544204, 544254, 544304, 544306, 544356",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_44": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Ultra Detachable Coils",
+            "COL3": "543201, 543202, 543203, 543204, 543206, 543208, 543253, 543254, 543256, 543304, 543306, 543308, 543310, 543356, 543406, 543408, 543415",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_45": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Nano™ Detachable Coils",
+            "COL3": "543101, 543102, 543103, 543151, 543152, 543153, 543154, 545202, 545203, 545204, 545206, 545253, 545254, 545256, 545304, 545306, 545308",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_46": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Standard Detachable Coils",
+            "COL3": "546103, 546113, 546123, 546133, 546143, 546154, 546306, 546308, 546408, 546410, 546415, 546515, 546520, 546615, 546620, 546630, 546715, 546720, 546730, 546820, 546830,  546920, 546930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_47": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Soft Detachable Coils",
+            "COL3": "547103, 547113, 547123, 547133, 547143, 547204, 547306, 547308, 547310, 547406, 547408, 547410, 547415, 547510, 547515, 547520, 547610, 547615, 547620, 547630, 547715, 547720, 547730, 547820, 547830, 547920, 547930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_48": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Standard Detachable Coils",
+            "COL3": "610620, 610720, 610830, 610930, 610104, 610124, 610145, 610165, 610185, 610205, 610225, 610245",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_49": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Soft Detachable Coils",
+            "COL3": "612720, 612830, 612930, 612104, 612124, 612145, 612165, 612185, 612203, 612205,  612206, 612306, 612309, 612408, 612412, 612510, 612515, 612620",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_50": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® Helical Detachable Coils",
+            "COL3": "611515, 611620, 611720, 611830, 611930, 611104",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_51": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 3D Detachable Coils",
+            "COL3": "615306, 615408, 615510, 615615, 615715, 615825, 615103",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_52": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform EZ® Stent System",
+            "COL3": "N3EZ2515, N3EZ2520, N3EZ3015, N3EZ3020, N3EZ3030, N3EZ3510, N3EZ3515, N3EZ3520, N3EZ3530, N3EZ4015, N3EZ4020, N3EZ4030, N3EZ4510, N3EZ4520, N3EZ4515, N3EZ4530",
+            "COL4": "7,037,330; 7,695,507; 8,506,615"
+          },
+          "row_53": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform3® Microdelivery Stent System",
+            "COL3": "SNF32515, SNF32520, SNF33015, SNF33020, SNF33030, SNF33515, SNF33520, SNF33530, SNF34015, SNF34020, SNF34030, SNF34515, SNF34520, SNF34530",
+            "COL4": "6,575,959; 7,037,330; 7,695,507"
+          },
+          "row_54": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "NeuroForm Atlas™ Stent System",
+            "COL3": "SZAS3015, SZAS3021, SZAS3024, SZAS4021, SZAS4024, SZAS4521, SZAS4530",
+            "COL4": "7,037,330; 7,695,507"
+          },
+          "row_55": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Wingspan® Stent System",
+            "COL3": "WS025009, WS025015, WS025020, WS030009, WS030015, WS030020, WS035009, WS035015, WS035020, WS040009, WS040015, WS040020, WS045009, WS045015, WS045020",
+            "COL4": "7,004,962; 7,037,330; 7,294,137; 7,468,070; 7,695,507; 8,092,508"
+          },
+          "row_56": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® ProVue Retrievers",
+            "COL3": "80,030",
+            "COL4": "8,357,179; 8,529,596; 8,795,317; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_57": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "80051, 80052, 90182, 90183, 90185,  93067",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_58": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "90186, 93068",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,700,331"
+          },
+          "row_59": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-14 Guidewires",
+            "COL3": "1301, 1302, 1331, 1332",
+            "COL4": "6,260,458; 6,431,039, 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_60": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-10 Guidewires",
+            "COL3": "1631, 1633",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_61": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro2® Guidewires",
+            "COL3": "2601, 2611, 2641, 2642, 2631, 2632, 2651, 2652",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_62": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_63": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_64": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Transend® 300 Guidewires",
+            "COL3": "46-814, 46-815",
+            "COL4": "5,984,878"
+          },
+          "row_65": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_66": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          }
+        },
+        "rev_2": {
+          "jcr:primaryType": "nt:unstructured",
+          "date": 1692891996222,
+          "size_columns": 4,
+          "modifiedBy": "ashley.salerno@stryker.com",
+          "publishBy": "ashley.salerno@stryker.com",
+          "row_1": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "DIVISION",
+            "COL2": "PRODUCT NAME",
+            "COL3": "CATALOG NUMBER",
+            "COL4": "PATENT(S)"
+          },
+          "row_2": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 5 Distal Access Catheters",
+            "COL3": "M003IC0581150, M003IC0581320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_3": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 6 Distal Access Catheters",
+            "COL3": "M003IC0601320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_4": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Concentric® Balloon Guide Catheters",
+            "COL3": "90,072",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_5": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Contour Neurovascular System",
+            "COL3": "n/a",
+            "COL4": "10,130,372; 11,284,901; 11,389,174"
+          },
+          "row_6": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Pre-Shaped",
+            "COL3": "144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959; 7,621,904"
+          },
+          "row_7": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Straight",
+            "COL3": "144181, 144189, 144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_8": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Pre-Shaped",
+            "COL3": "168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959;  7,621,904"
+          },
+          "row_9": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Straight",
+            "COL3": "168181, 168189, 168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_10": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-17™ Microcatheters",
+            "COL3": "C1775ST, C177545, C177590, C17750J, C1715ST, C171545, C171590, C17150J",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_11": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-27® Microcatheters",
+            "COL3": "XT273591, XT275081, XT275091, XT273581, XT273582, XT273592, XT275082, XT275092",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_12": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "FlowGate2™ Balloon Guide Catheters",
+            "COL3": "90485, 90495",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_13": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Gateway® PTA Balloon Catheters",
+            "COL3": "20722-0915, 20722-0920, 20722-0922, 20722-0925, 20722-0927, 20722-0930,         20722-0932, 20722-0935, 20722-0937, 20722-0940, 20722-1515, 20722-1520,         20722-1522, 20722-1525, 20722-1527, 20722-1530, 20722-1532, 20722-1535,            20722-1537, 20722-1540, 20722-2015, 20722-2020, 20722-2022, 20722-2025,                     20722-2027, 20722-2030, 20722-2032, 20722-2035, 20722-2037, 20722-2040",
+            "COL4": "6,022,340; 6,319,228; 6,960,187"
+          },
+          "row_14": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 2D Detachable Coils",
+            "COL3": "342103-4, 342308-4, 342410-4,       342515-4, 342620-4, 342725-4,       342830-4, 342930-4",
+            "COL4": "6,921,410"
+          },
+          "row_15": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Soft SR Detachable Coils",
+            "COL3": "3471020-SR, 347204-SR, 347306-SR, 347408-SR, 347509-SR, 347611-SR, 347715-SR, 347820-SR, 347920-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_16": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Standard SR Detachable Coils",
+            "COL3": "3461030-SR, 3461130-SR, 3461230-SR, 3461330-SR, 3461430-SR, 346305-SR,         346308-SR, 346407-SR, 346509-SR, 346515-SR, 346611-SR, 346615-SR,            346715-SR, 346720-SR, 346815-SR, 346820-SR, 346920-SR, 346930-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_17": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 3D Detachable Coils",
+            "COL3": "345304-4, 345103-4, 345306-4,        345406-4, 345408-4, 345508-4,       345510-4, 345610-4, 345615-4,        345712-4, 345715-4, 345820-4",
+            "COL4": "6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_18": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft 2D SR Detachable Coils",
+            "COL3": "344302-SR4, 344303-SR4, 344304-SR4, 344306-SR4, 344308-SR4, 344403-SR4,            344404-SR4, 344406-SR4, 344408-SR4, 344504-SR4, 344506-SR4, 344508-SR4,                 344510-SR4, 344606-SR4, 344608-SR4, 344610-SR4, 344710-SR4, 344715-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_19": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft Detachable Coils",
+            "COL3": "341202-4, 341203-4, 341204-4,       341206-4, 341208-4, 341303-4,        341304-4, 341306-4, 341308-4,        341310-4, 341404-4, 341406-4,       341408-4, 341410-4",
+            "COL4": "6,921,410"
+          },
+          "row_20": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft SR Detachable Coils",
+            "COL3": "341201-SR4, 341202-SR4, 341203-SR4, 341204-SR4, 341206-SR4, 341208-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_21": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 UltraSoft Detachable Coils",
+            "COL3": "343201, 343202, 343203, 343204, 343206, 343252, 343253, 343254, 343256, 343304, 343306, 343308, 343404, 343406, 343408",
+            "COL4": "6,921,410"
+          },
+          "row_22": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 2D Detachable Coils",
+            "COL3": "352103-4, 352123-4, 352143-4,           352163-4, 352183-4, 352203-4,           352520-4, 352620-4, 352730-4,          352830-4, 352930-4",
+            "COL4": "6,921,410"
+          },
+          "row_23": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 360 Standard Detachable Coils",
+            "COL3": "3481030, 3481130, 3481230, 3481330, 3481430, 3481630, 3481640, 3481830, 3481840, 3482033, 3482240, 3482440, 348615, 348715, 348820, 348920",
+            "COL4": "6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_24": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 3D Detachable Coils",
+            "COL3": "355103-4, 355123-4, 355143-4,       355163-4, 355183-4, 355203-4,        355615-4, 355825-4",
+            "COL4": "6,635,069; 6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_25": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Fibered VortX® Coils",
+            "COL3": "353023-4, 353025-4, 353024-4,       353026-4",
+            "COL4": "6,187,027; 6,280,457; 6,921,410; 8,172,862"
+          },
+          "row_26": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Soft Detachable Coils",
+            "COL3": "351204-4, 351208-4, 351304-4,       351308-4, 351406-4, 351410-4,       351508-4, 351512-4, 351610-4,       351615-4",
+            "COL4": "6,921,410"
+          },
+          "row_27": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "InZone® Detachment System",
+            "COL3": "4,510,095",
+            "COL4": "6,344,041; 6,397,850"
+          },
+          "row_28": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Soft SR Detachable Coils",
+            "COL3": "471408-SR, 471410-SR, 471510-SR, 471515-SR, 471610-SR, 471620-SR, 471720-SR, 471830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_29": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Standard SR Detachable Coils",
+            "COL3": "470103-SR, 470410-SR, 470515-SR, 470620-SR, 470730-SR, 470830-SR, 470930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_30": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Firm Detachable Coils",
+            "COL3": "494515, 494615, 494720, 494830, 494930, 494103, 494123, 494143, 494163, 494183, 494203, 494244",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_31": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Soft SR Detachable Coils",
+            "COL3": "490304-SR, 490306-SR, 490308-SR, 490406-SR, 490510-SR, 490408-SR, 490515-SR, 490610-SR, 490615-SR, 490715-SR, 490720-SR, 490820-SR, 490830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_32": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Standard SR Detachable Coils",
+            "COL3": "492103-SR, 492123-SR, 492408-SR, 492510-SR, 492515-SR, 492610-SR, 492615-SR, 492715-SR, 492720-SR, 492820-SR, 492830-SR, 492920-SR, 492930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_33": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 UltraSoft SR Detachable Coils",
+            "COL3": "498204-SR, 498206-SR, 498304-SR, 498306-SR, 498308-SR, 498406-SR, 498408-SR, 498510-SR, 498515-SR, 498610-SR, 498615-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,860,893; 6,921,410; 7,070,607"
+          },
+          "row_34": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 3D Omega Standard Detachable Coils",
+            "COL3": "475103, 475304, 475306, 475406, 475408, 475508, 475610, 475510, 475615, 475715, 475820",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_35": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical Soft SR Detachable Coils",
+            "COL3": "471204-SR, 471206-SR, 471208-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_36": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical UltraSoft SR Detachable Coils",
+            "COL3": "497202-SR, 497203-SR, 497204-SR, 497206-SR, 497208-SR, 497210-SR, 497215-SR, 497253-SR, 497254-SR, 497256-SR, 497304-SR, 497306-SR, 497308-SR, 497310-SR, 497315-SR, 497320-SR, 497406-SR, 497408-SR, 497410-SR, 497415-SR, 497420-SR, 497515-SR, 497520-SR, 497620-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_37": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Merci® Balloon Guide Catheters",
+            "COL3": "90076, 90073, 90077, 90074",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_38": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neqstent Coil Assisted Flow Diverter",
+            "COL3": "n/a",
+            "COL4": "10,130,372; 11,389,174"
+          },
+          "row_39": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuro Renegade® Hi-Flo™ Microcatheters",
+            "COL3": "182880US, 182890US, 182900US,  182910US",
+            "COL4": "6,575,959"
+          },
+          "row_40": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "NeuroForm Atlas™ Stent System",
+            "COL3": "SZAS3015, SZAS3021, SZAS3024, SZAS4021, SZAS4024, SZAS4521, SZAS4530",
+            "COL4": "7,037,330; 7,695,507"
+          },
+          "row_41": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform EZ® Stent System",
+            "COL3": "N3EZ2515, N3EZ2520, N3EZ3015, N3EZ3020, N3EZ3030, N3EZ3510, N3EZ3515, N3EZ3520, N3EZ3530, N3EZ4015, N3EZ4020, N3EZ4030, N3EZ4510, N3EZ4520, N3EZ4515, N3EZ4530",
+            "COL4": "7,037,330; 7,695,507; 8,506,615"
+          },
+          "row_42": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform3® Microdelivery Stent System",
+            "COL3": "SNF32515, SNF32520, SNF33015, SNF33020, SNF33030, SNF33515, SNF33520, SNF33530, SNF34015, SNF34020, SNF34030, SNF34515, SNF34520, SNF34530",
+            "COL4": "6,575,959; 7,037,330; 7,695,507"
+          },
+          "row_43": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Renegade® 18 Microcatheters",
+            "COL3": "18-257, 18-259",
+            "COL4": "6,575,959"
+          },
+          "row_44": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_45": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_46": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_47": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_48": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-10 Guidewires",
+            "COL3": "1631, 1633",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_49": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-14 Guidewires",
+            "COL3": "1301, 1302, 1331, 1332",
+            "COL4": "6,260,458; 6,431,039, 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_50": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro2® Guidewires",
+            "COL3": "2601, 2611, 2641, 2642, 2631, 2632, 2651, 2652",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_51": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Soft Detachable Coils",
+            "COL3": "612720, 612830, 612930, 612104, 612124, 612145, 612165, 612185, 612203, 612205,  612206, 612306, 612309, 612408, 612412, 612510, 612515, 612620",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_52": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Standard Detachable Coils",
+            "COL3": "610620, 610720, 610830, 610930, 610104, 610124, 610145, 610165, 610185, 610205, 610225, 610245",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_53": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® Helical Detachable Coils",
+            "COL3": "611515, 611620, 611720, 611830, 611930, 611104",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_54": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Nano™ Detachable Coils",
+            "COL3": "542102, 542103, 542152, 542153, 542154, 544203, 544204, 544254, 544304, 544306, 544356",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_55": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Soft Detachable Coils",
+            "COL3": "547103, 547113, 547123, 547133, 547143, 547204, 547306, 547308, 547310, 547406, 547408, 547410, 547415, 547510, 547515, 547520, 547610, 547615, 547620, 547630, 547715, 547720, 547730, 547820, 547830, 547920, 547930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_56": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Standard Detachable Coils",
+            "COL3": "546103, 546113, 546123, 546133, 546143, 546154, 546306, 546308, 546408, 546410, 546415, 546515, 546520, 546615, 546620, 546630, 546715, 546720, 546730, 546820, 546830,  546920, 546930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_57": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Ultra Detachable Coils",
+            "COL3": "542203, 542204, 542206, 542254, 542304, 542306, 542308, 542310, 542358, 542406, 542408, 542410, 542415, 542451, 542510, 542515",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_58": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 3D Detachable Coils",
+            "COL3": "615306, 615408, 615510, 615615, 615715, 615825, 615103",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_59": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Nano™ Detachable Coils",
+            "COL3": "543101, 543102, 543103, 543151, 543152, 543153, 543154, 545202, 545203, 545204, 545206, 545253, 545254, 545256, 545304, 545306, 545308",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_60": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Ultra Detachable Coils",
+            "COL3": "543201, 543202, 543203, 543204, 543206, 543208, 543253, 543254, 543256, 543304, 543306, 543308, 543310, 543356, 543406, 543408, 543415",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_61": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Transend® 300 Guidewires",
+            "COL3": "46-814, 46-815",
+            "COL4": "5,984,878"
+          },
+          "row_62": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Compliant Occlusion Balloon Catheters",
+            "COL3": "SRC0310, SRC0315, SRC0410, SRC0415, SRC0420, SRC0430, SRC0510, SRC0515, SRC0520, SRC0530",
+            "COL4": "6,575,959;  8,021,329;  8,585,643; 9,162,040"
+          },
+          "row_63": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Super Compliant Occlusion Balloon Catheters",
+            "COL3": "SSC0305, SSC0407, SSC0410, SSC0707, SSC0710, SSC0715",
+            "COL4": "6,575,959;  8,585,643; 9,162,040"
+          },
+          "row_64": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® Pro Microcatheters",
+            "COL3": "90231, 90238",
+            "COL4": "5,951,539"
+          },
+          "row_65": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® ProVue Retrievers",
+            "COL3": "80,030",
+            "COL4": "8,357,179; 8,529,596; 8,795,317; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_66": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "80051, 80052, 90182, 90183, 90185,  93067",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_67": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "90186, 93068",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,700,331"
+          },
+          "row_68": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Wingspan® Stent System",
+            "COL3": "WS025009, WS025015, WS025020, WS030009, WS030015, WS030020, WS035009, WS035015, WS035020, WS040009, WS040015, WS040020, WS045009, WS045015, WS045020",
+            "COL4": "7,004,962; 7,037,330; 7,294,137; 7,468,070; 7,695,507; 8,092,508"
+          }
+        },
+        "rev_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "date": 1760725268694,
+          "size_columns": 4,
+          "modifiedBy": "ashley.salerno@stryker.com",
+          "publishBy": "ashley.salerno@stryker.com",
+          "row_1": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "DIVISION",
+            "COL2": "PRODUCT NAME",
+            "COL3": "CATALOG NUMBER",
+            "COL4": "PATENT(S)"
+          },
+          "row_2": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 5 Distal Access Catheters",
+            "COL3": "M003IC0581150, M003IC0581320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_3": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "AXS Catalyst® 6 Distal Access Catheters",
+            "COL3": "M003IC0601320",
+            "COL4": "5,951,539; 6,258,080; 6,575,959"
+          },
+          "row_4": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Concentric® Balloon Guide Catheters",
+            "COL3": "90,072",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_5": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Contour Neurovascular System",
+            "COL3": "n/a",
+            "COL4": "10,130,372; 11,284,901; 11,389,174; 12,029,431; 12,414,775"
+          },
+          "row_6": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Pre-Shaped",
+            "COL3": "144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959; 7,621,904"
+          },
+          "row_7": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® 1018® Microcatheters, Straight",
+            "COL3": "144181, 144189, 144190, 144191, 144192, 144193, 144194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_8": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Pre-Shaped",
+            "COL3": "168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959;  7,621,904"
+          },
+          "row_9": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® SL–10® Microcatheters, Straight",
+            "COL3": "168181, 168189, 168190, 168191, 168192, 168193, 168194",
+            "COL4": "6,165,163; 6,508,804; 6,575,959"
+          },
+          "row_10": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-17™ Microcatheters",
+            "COL3": "C1775ST, C177545, C177590, C17750J, C1715ST, C171545, C171590, C17150J",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_11": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Excelsior® XT-27® Microcatheters",
+            "COL3": "XT273591, XT275081, XT275091, XT273581, XT273582, XT273592, XT275082, XT275092",
+            "COL4": "5,951,539; 6,575,959"
+          },
+          "row_12": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "FlowGate2™ Balloon Guide Catheters",
+            "COL3": "90485, 90495",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_13": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Gateway® PTA Balloon Catheters",
+            "COL3": "20722-0915, 20722-0920, 20722-0922, 20722-0925, 20722-0927, 20722-0930,         20722-0932, 20722-0935, 20722-0937, 20722-0940, 20722-1515, 20722-1520,         20722-1522, 20722-1525, 20722-1527, 20722-1530, 20722-1532, 20722-1535,            20722-1537, 20722-1540, 20722-2015, 20722-2020, 20722-2022, 20722-2025,                     20722-2027, 20722-2030, 20722-2032, 20722-2035, 20722-2037, 20722-2040",
+            "COL4": "6,022,340; 6,319,228; 6,960,187"
+          },
+          "row_14": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 2D Detachable Coils",
+            "COL3": "342103-4, 342308-4, 342410-4,       342515-4, 342620-4, 342725-4,       342830-4, 342930-4",
+            "COL4": "6,921,410"
+          },
+          "row_15": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Soft SR Detachable Coils",
+            "COL3": "3471020-SR, 347204-SR, 347306-SR, 347408-SR, 347509-SR, 347611-SR, 347715-SR, 347820-SR, 347920-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_16": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 360 Standard SR Detachable Coils",
+            "COL3": "3461030-SR, 3461130-SR, 3461230-SR, 3461330-SR, 3461430-SR, 346305-SR,         346308-SR, 346407-SR, 346509-SR, 346515-SR, 346611-SR, 346615-SR,            346715-SR, 346720-SR, 346815-SR, 346820-SR, 346920-SR, 346930-SR",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_17": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 3D Detachable Coils",
+            "COL3": "345304-4, 345103-4, 345306-4,        345406-4, 345408-4, 345508-4,       345510-4, 345610-4, 345615-4,        345712-4, 345715-4, 345820-4",
+            "COL4": "6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_18": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft 2D SR Detachable Coils",
+            "COL3": "344302-SR4, 344303-SR4, 344304-SR4, 344306-SR4, 344308-SR4, 344403-SR4,            344404-SR4, 344406-SR4, 344408-SR4, 344504-SR4, 344506-SR4, 344508-SR4,                 344510-SR4, 344606-SR4, 344608-SR4, 344610-SR4, 344710-SR4, 344715-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_19": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft Detachable Coils",
+            "COL3": "341202-4, 341203-4, 341204-4,       341206-4, 341208-4, 341303-4,        341304-4, 341306-4, 341308-4,        341310-4, 341404-4, 341406-4,       341408-4, 341410-4",
+            "COL4": "6,921,410"
+          },
+          "row_20": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 Soft SR Detachable Coils",
+            "COL3": "341201-SR4, 341202-SR4, 341203-SR4, 341204-SR4, 341206-SR4, 341208-SR4",
+            "COL4": "6,468,266; 6,921,410"
+          },
+          "row_21": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–10 UltraSoft Detachable Coils",
+            "COL3": "343201, 343202, 343203, 343204, 343206, 343252, 343253, 343254, 343256, 343304, 343306, 343308, 343404, 343406, 343408",
+            "COL4": "6,921,410"
+          },
+          "row_22": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 2D Detachable Coils",
+            "COL3": "352103-4, 352123-4, 352143-4,           352163-4, 352183-4, 352203-4,           352520-4, 352620-4, 352730-4,          352830-4, 352930-4",
+            "COL4": "6,921,410"
+          },
+          "row_23": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 360 Standard Detachable Coils",
+            "COL3": "3481030, 3481130, 3481230, 3481330, 3481430, 3481630, 3481640, 3481830, 3481840, 3482033, 3482240, 3482440, 348615, 348715, 348820, 348920",
+            "COL4": "6,860,893; 6,921,410; 9,055,948"
+          },
+          "row_24": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 3D Detachable Coils",
+            "COL3": "355103-4, 355123-4, 355143-4,       355163-4, 355183-4, 355203-4,        355615-4, 355825-4",
+            "COL4": "6,635,069; 6,860,893; 6,921,410; 6,929,654"
+          },
+          "row_25": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Fibered VortX® Coils",
+            "COL3": "353023-4, 353025-4, 353024-4,       353026-4",
+            "COL4": "6,187,027; 6,280,457; 6,921,410; 8,172,862"
+          },
+          "row_26": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "GDC®–18 Soft Detachable Coils",
+            "COL3": "351204-4, 351208-4, 351304-4,       351308-4, 351406-4, 351410-4,       351508-4, 351512-4, 351610-4,       351615-4",
+            "COL4": "6,921,410"
+          },
+          "row_27": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "InZone® Detachment System",
+            "COL3": "4,510,095",
+            "COL4": "6,344,041; 6,397,850"
+          },
+          "row_28": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Soft SR Detachable Coils",
+            "COL3": "471408-SR, 471410-SR, 471510-SR, 471515-SR, 471610-SR, 471620-SR, 471720-SR, 471830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_29": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 2D Standard SR Detachable Coils",
+            "COL3": "470103-SR, 470410-SR, 470515-SR, 470620-SR, 470730-SR, 470830-SR, 470930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,635,069; 6,921,410; 6,929,654; 6,423,085; 7,070,607"
+          },
+          "row_30": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Firm Detachable Coils",
+            "COL3": "494515, 494615, 494720, 494830, 494930, 494103, 494123, 494143, 494163, 494183, 494203, 494244",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_31": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Soft SR Detachable Coils",
+            "COL3": "490304-SR, 490306-SR, 490308-SR, 490406-SR, 490510-SR, 490408-SR, 490515-SR, 490610-SR, 490615-SR, 490715-SR, 490720-SR, 490820-SR, 490830-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_32": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 Standard SR Detachable Coils",
+            "COL3": "492103-SR, 492123-SR, 492408-SR, 492510-SR, 492515-SR, 492610-SR, 492615-SR, 492715-SR, 492720-SR, 492820-SR, 492830-SR, 492920-SR, 492930-SR",
+            "COL4": "6,280,457; 6,468,266; 6,860,893; 6,921,410; 6,423,085; 7,070,607"
+          },
+          "row_33": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 360 UltraSoft SR Detachable Coils",
+            "COL3": "498204-SR, 498206-SR, 498304-SR, 498306-SR, 498308-SR, 498406-SR, 498408-SR, 498510-SR, 498515-SR, 498610-SR, 498615-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,860,893; 6,921,410; 7,070,607"
+          },
+          "row_34": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® 3D Omega Standard Detachable Coils",
+            "COL3": "475103, 475304, 475306, 475406, 475408, 475508, 475610, 475510, 475615, 475715, 475820",
+            "COL4": "6,280,457; 6,423,085; 6,921,410; 6,860,893; 7,070,607"
+          },
+          "row_35": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical Soft SR Detachable Coils",
+            "COL3": "471204-SR, 471206-SR, 471208-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_36": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Matrix2® Helical UltraSoft SR Detachable Coils",
+            "COL3": "497202-SR, 497203-SR, 497204-SR, 497206-SR, 497208-SR, 497210-SR, 497215-SR, 497253-SR, 497254-SR, 497256-SR, 497304-SR, 497306-SR, 497308-SR, 497310-SR, 497315-SR, 497320-SR, 497406-SR, 497408-SR, 497410-SR, 497415-SR, 497420-SR, 497515-SR, 497520-SR, 497620-SR",
+            "COL4": "6,280,457; 6,423,085; 6,468,266; 6,921,410; 7,070,607"
+          },
+          "row_37": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Merci® Balloon Guide Catheters",
+            "COL3": "90076, 90073, 90077, 90074",
+            "COL4": "6,638,245;  6,702,782"
+          },
+          "row_38": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neqstent Coil Assisted Flow Diverter",
+            "COL3": "n/a",
+            "COL4": "10,130,372; 11,389,174"
+          },
+          "row_39": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuro Renegade® Hi-Flo™ Microcatheters",
+            "COL3": "182880US, 182890US, 182900US,  182910US",
+            "COL4": "6,575,959"
+          },
+          "row_40": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "NeuroForm Atlas™ Stent System",
+            "COL3": "SZAS3015, SZAS3021, SZAS3024, SZAS4021, SZAS4024, SZAS4521, SZAS4530",
+            "COL4": "7,037,330; 7,695,507"
+          },
+          "row_41": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform EZ® Stent System",
+            "COL3": "N3EZ2515, N3EZ2520, N3EZ3015, N3EZ3020, N3EZ3030, N3EZ3510, N3EZ3515, N3EZ3520, N3EZ3530, N3EZ4015, N3EZ4020, N3EZ4030, N3EZ4510, N3EZ4520, N3EZ4515, N3EZ4530",
+            "COL4": "7,037,330; 7,695,507; 8,506,615"
+          },
+          "row_42": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Neuroform3® Microdelivery Stent System",
+            "COL3": "SNF32515, SNF32520, SNF33015, SNF33020, SNF33030, SNF33515, SNF33520, SNF33530, SNF34015, SNF34020, SNF34030, SNF34515, SNF34520, SNF34530",
+            "COL4": "6,575,959; 7,037,330; 7,695,507"
+          },
+          "row_43": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Renegade® 18 Microcatheters",
+            "COL3": "18-257, 18-259",
+            "COL4": "6,575,959"
+          },
+          "row_44": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_45": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass  Streamline™  Flow Diverters",
+            "COL3": "M003100FPP0, M003101FPP0, M003102FPP0, M003110FPP0, M003112FPP0, M003111FPP0,  M003113FPP0,  M003114FPP0, M003115FPP0, M003120FPP0, M003121FPP0,  M003122FPP0, M003124FPP0,  M003123FPP0",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_46": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_47": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Surpass™ Flow Diverters",
+            "COL3": "502FPP, 503FPP, 504FPP",
+            "COL4": "7,306,624; 7,572,290; 7,942,925; 8,419,787"
+          },
+          "row_48": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-10 Guidewires",
+            "COL3": "1631, 1633",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_49": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro®-14 Guidewires",
+            "COL3": "1301, 1302, 1331, 1332",
+            "COL4": "6,260,458; 6,431,039, 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_50": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Synchro2® Guidewires",
+            "COL3": "2601, 2611, 2641, 2642, 2631, 2632, 2651, 2652",
+            "COL4": "6,260,458; 6,431,039; 6,428,489; 6,440,088; 6,553,880; 6,579,246; 6,766,720"
+          },
+          "row_51": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Soft Detachable Coils",
+            "COL3": "612720, 612830, 612930, 612104, 612124, 612145, 612165, 612185, 612203, 612205,  612206, 612306, 612309, 612408, 612412, 612510, 612515, 612620",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_52": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® 360  Standard Detachable Coils",
+            "COL3": "610620, 610720, 610830, 610930, 610104, 610124, 610145, 610165, 610185, 610205, 610225, 610245",
+            "COL4": "6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_53": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target XL® Helical Detachable Coils",
+            "COL3": "611515, 611620, 611720, 611830, 611930, 611104",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_54": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Nano™ Detachable Coils",
+            "COL3": "542102, 542103, 542152, 542153, 542154, 544203, 544204, 544254, 544304, 544306, 544356",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_55": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Soft Detachable Coils",
+            "COL3": "547103, 547113, 547123, 547133, 547143, 547204, 547306, 547308, 547310, 547406, 547408, 547410, 547415, 547510, 547515, 547520, 547610, 547615, 547620, 547630, 547715, 547720, 547730, 547820, 547830, 547920, 547930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_56": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Standard Detachable Coils",
+            "COL3": "546103, 546113, 546123, 546133, 546143, 546154, 546306, 546308, 546408, 546410, 546415, 546515, 546520, 546615, 546620, 546630, 546715, 546720, 546730, 546820, 546830,  546920, 546930",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_57": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 360 Ultra Detachable Coils",
+            "COL3": "542203, 542204, 542206, 542254, 542304, 542306, 542308, 542310, 542358, 542406, 542408, 542410, 542415, 542451, 542510, 542515",
+            "COL4": "6,270,495; 6,468,266; 6,860,893; 6,921,410; 6,936,055; 8,202,292; 9,055,948; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_58": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® 3D Detachable Coils",
+            "COL3": "615306, 615408, 615510, 615615, 615715, 615825, 615103",
+            "COL4": "6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_59": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Nano™ Detachable Coils",
+            "COL3": "543101, 543102, 543103, 543151, 543152, 543153, 543154, 545202, 545203, 545204, 545206, 545253, 545254, 545256, 545304, 545306, 545308",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_60": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Target® Helical Ultra Detachable Coils",
+            "COL3": "543201, 543202, 543203, 543204, 543206, 543208, 543253, 543254, 543256, 543304, 543306, 543308, 543310, 543356, 543406, 543408, 543415",
+            "COL4": "6,270,495; 6,468,266; 6,921,410; 6,936,055; 8,202,292; 9,265,504; 9,314,250; 9,504,475"
+          },
+          "row_61": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Transend® 300 Guidewires",
+            "COL3": "46-814, 46-815",
+            "COL4": "5,984,878"
+          },
+          "row_62": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Compliant Occlusion Balloon Catheters",
+            "COL3": "SRC0310, SRC0315, SRC0410, SRC0415, SRC0420, SRC0430, SRC0510, SRC0515, SRC0520, SRC0530",
+            "COL4": "6,575,959;  8,021,329;  8,585,643; 9,162,040"
+          },
+          "row_63": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "TransForm® Super Compliant Occlusion Balloon Catheters",
+            "COL3": "SSC0305, SSC0407, SSC0410, SSC0707, SSC0710, SSC0715",
+            "COL4": "6,575,959;  8,585,643; 9,162,040"
+          },
+          "row_64": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® Pro Microcatheters",
+            "COL3": "90231, 90238",
+            "COL4": "5,951,539"
+          },
+          "row_65": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® ProVue Retrievers",
+            "COL3": "80,030",
+            "COL4": "8,357,179; 8,529,596; 8,795,317; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_66": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "80051, 80052, 90182, 90183, 90185,  93067",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,072,537; 9,700,331"
+          },
+          "row_67": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Trevo® XP ProVue Retrievers",
+            "COL3": "90186, 93068",
+            "COL4": "8,357,179; 8,529,596; 8,795,345; 9,044,263; 9,700,331"
+          },
+          "row_68": {
+            "jcr:primaryType": "nt:unstructured",
+            "COL1": "Neurovascular",
+            "COL2": "Wingspan® Stent System",
+            "COL3": "WS025009, WS025015, WS025020, WS030009, WS030015, WS030020, WS035009, WS035015, WS035020, WS040009, WS040015, WS040020, WS045009, WS045015, WS045020",
+            "COL4": "7,004,962; 7,037,330; 7,294,137; 7,468,070; 7,695,507; 8,092,508"
+          }
+        }
+      }
+    }
+  }
+}

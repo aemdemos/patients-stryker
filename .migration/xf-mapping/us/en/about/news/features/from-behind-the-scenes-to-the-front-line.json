@@ -1,0 +1,78 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "From behind-the-scenes to the front line",
+  "jcr:versionHistory": "c2db1c1f-22f0-482e-81e8-770032dcefc9",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "4bc034c1-ca5b-4809-af9f-90fc70100f76"
+  ],
+  "contentID": "SYK CORP 2020-08-31",
+  "lastPublished": "Thu Sep 03 2020 13:28:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 03 2020 13:28:32 GMT+0000",
+  "cq:lastModified": "Thu Sep 03 2020 13:28:28 GMT+0000",
+  "jcr:baseVersion": "4bc034c1-ca5b-4809-af9f-90fc70100f76",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:Stryker-SEO-Tags/covid19",
+    "stryker:content-type/news",
+    "stryker:Stryker-SEO-Tags/coronavirus",
+    "stryker:Stryker-SEO-Tags/covid-19",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/covid-19"
+  ],
+  "jcr:lastModified": "Tue Sep 01 2020 16:59:47 GMT+0000",
+  "jcr:uuid": "f5a09d73-d688-4c9c-9343-6c6c7377c3b6",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 31 2020 14:35:49 GMT+0000",
+      "jcr:lastModified": "Mon Aug 31 2020 14:36:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/features/from_behind_the_scen/text---from-behind-the-scenes-to-the-front-line/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/features/from-behind-the-scen/text-from-behind-the-scenes-to-the-front-line/master"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 31 2020 14:36:41 GMT+0000",
+      "text": "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Learn more about our COVID-19 response efforts</span> <span class=\"standalone-link\"><a href=\"/content/stryker/us/en/covid19.html\">here</a></span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 31 2020 14:40:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Sep 03 2020 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "03-Sep-2020",
+    "jcr:lastModified": "Thu Sep 03 2020 13:28:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Aug 31 2020 14:36:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/features/from-behind-the-scenes-to-the-front-line/thumbnail.png"
+  }
+}

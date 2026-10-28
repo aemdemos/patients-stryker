@@ -1,0 +1,101 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Shoulder System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Tornier Flex",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bde92bd5-a229-4ef7-b791-4370162c6a28",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Tornier Flex",
+  "jcr:predecessors": [
+    "6bc8aa20-f74a-454a-aec9-bfa743c464ff"
+  ],
+  "contentID": "AP-015256A  10-Jun-2021",
+  "lastPublished": "Thu Oct 10 2024 19:23:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 10 2024 19:25:38 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 10 2024 19:25:39 GMT+0000",
+  "cq:lastModified": "Thu Oct 03 2024 15:22:28 GMT+0000",
+  "jcr:description": "The versatility of an anatomic and reversed shoulder in one system",
+  "jcr:baseVersion": "6bc8aa20-f74a-454a-aec9-bfa743c464ff",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:22:06 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/upper-extremities",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:product/trauma-and-extremities/aequalis-ascend-flex",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:specialty/shoulder"
+  ],
+  "jcr:lastModified": "Thu Oct 03 2024 15:22:28 GMT+0000",
+  "jcr:uuid": "7ec853e7-81ec-4ef4-bcd2-03462d4cada2",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri May 21 2021 20:30:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/trauma-and-extremeties/products/tornier-flex/resources/Tornier Flex Shoulder System Operative Technique.pdf",
+        "/content/dam/stryker/trauma-and-extremeties/products/tornier-flex/resources/Tornier Flex Inlay Operative Technique Addendum.pdf"
+      ],
+      "jcr:lastModifiedBy": "bonnie.lindenfelser@stryker.com",
+      "jcr:lastModified": "Fri Jun 03 2022 19:26:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/tornier-flex/images/AEQUALIS-ASCEND-FLEX-Hero_3.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Key benefits</span></span><br>\n</p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Anatomic Design: Stem shape designed from the inside out based upon CT data<br>\n <br>\n </span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Convertible Platform: Simple conversion from anatomic to reverse without stem removal<br>\n <br>\n </span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Reversed Positioning: Dialable eccentric trays allow for enhanced ROM</span></span><br>\n</li>\n</ul>\n",
+    "jcr:lastModified": "Tue Nov 30 2021 15:10:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>The Tornier Flex Shoulder System provides anatomic and reversed options within a single system designed to offer precise intra-operative implant-to-patient fit and easy conversion to reversed if necessary.</p>\r\n",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Fri Nov 12 2021 19:28:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  }
+}

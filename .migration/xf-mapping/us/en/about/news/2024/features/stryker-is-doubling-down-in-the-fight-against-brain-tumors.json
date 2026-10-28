@@ -1,0 +1,203 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Advancing neurosurgery: Stryker supports brain tumor research through ongoing partnership",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "24cfbc14-b10f-442a-aa67-93254d35bcec",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Stryker employees at brain tumor community event",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/2024/features/stryker-is-doubling-down-in-the-fight-against-brain-tumors/2024-BTAM-cropped.jpg",
+  "jcr:predecessors": [
+    "db77fecd-f924-46a6-8ec3-df8a33b8ea99"
+  ],
+  "lastPublished": "Thu May 07 2026 16:36:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu May 07 2026 16:36:13 GMT+0000",
+  "cq:lastReplicated": "Thu May 07 2026 16:36:18 GMT+0000",
+  "cq:lastModified": "Thu May 07 2026 16:34:00 GMT+0000",
+  "jcr:description": "Learn how Stryker's Neurosurgical team is partnering again with the National Brain Tumor Society to help raise awareness and funds for brain tumor research.",
+  "jcr:baseVersion": "db77fecd-f924-46a6-8ec3-df8a33b8ea99",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 24 2024 15:32:37 GMT+0000",
+  "pageTitle": "Advancing neurosurgery: Stryker supports brain tumor research through ongoing partnership",
+  "cq:tags": [
+    "stryker:content-type/news/featured",
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Thu May 07 2026 16:33:24 GMT+0000",
+  "jcr:uuid": "f3f2d6a7-9909-40b4-8c7d-d139a12c019d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri May 17 2024 18:08:12 GMT+0000",
+      "jcr:lastModified": "Fri May 17 2024 18:08:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/experience-fragment/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/stryker-is-doubling/experience-fragment/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/experience-fragment/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/stryker-is-doubling/experience-fragment/mobile",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "35",
+          "jcr:created": "Fri May 17 2024 18:08:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri May 17 2024 22:11:22 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgb(255,255,255)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "5",
+              "jcr:created": "Fri May 17 2024 21:42:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Advancing&nbsp;neurosurgery: Stryker supports brain tumor research through ongoing partnership</span></span></h1>\r\n",
+              "jcr:lastModified": "Fri May 02 2025 19:12:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Apr 26 2021 19:41:34 GMT+0000",
+      "jcr:lastModified": "Tue Apr 27 2021 20:32:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Apr 26 2021 19:41:54 GMT+0000",
+          "jcr:lastModified": "Mon Apr 26 2021 19:41:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Apr 26 2021 19:41:58 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 26 2021 19:42:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri May 17 2024 18:12:23 GMT+0000",
+      "jcr:lastModified": "Fri May 17 2024 18:12:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_322017844": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri May 17 2024 18:12:40 GMT+0000",
+      "jcr:lastModified": "Fri May 17 2024 18:12:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Apr 26 2021 17:06:45 GMT+0000",
+      "text": "The facts are staggering. An estimated 1.3 million Americans are living with a brain tumor and approximately 109,000 more will be diagnosed in 2026.1 What’s more, pediatric brain tumors are the leading cause of cancer-related death among children and adolescents ages 0-19 years.1 Yet even with those statistics, brain tumor research remains underfunded. This is why Stryker’s Neurosurgical team is proud to partner again with the National Brain Tumor Society (NBTS) and help raise awareness and funds for brain tumor research. \"We're proud to partner with the society to support, empower, and amplify the voice of the brain tumor community as we work to advance neurosurgery and transform lives,\" said Mitch Foley, Vice President and General Manager of Stryker's Neurosurgical business. As part of this ongoing partnership, Stryker will donate $25,000 to the NBTS to help drive awareness and funding for brain cancer research. The NBTS has already awarded more than $38 million in research grants to researchers at leading institutions, all in the pursuit of more effective treatments and ultimately a cure. Stryker’s commitment to advancing neurosurgical care is also reflected in its innovative products. In 2019, Stryker released the Sonopet iQ Ultrasonic Aspirator, a technology that helps surgeons remove soft and hard tissue as well as work near critical anatomy. This advancement is helping to advance neurosurgical care. To learn more about the National Brain Tumor Society or to make a donation, please visit their home page or giving platform. Together, we can support groundbreaking research and bring hope to countless individuals affected by brain tumors. “Brain cancer patients and their families exhibit strength and courage throughout their journey. It’s a privilege to support initiatives like this that are working to find a cure,” said Jeff Gorton, President of Stryker’s Instruments division. David F. Arons, JD, Chief Executive Officer of the National Brain Tumor Society says, “Brain tumors are some of the toughest and most complex diseases on the planet. The generous support of sponsors like Stryker will help advance our mission and the pursuit of better outcomes for patients.” What does it mean to #GoGrayInMay? According to the National Brain Tumor Society, “the brain tumor experience is full of extraordinary darkness and extraordinary hope. The gray area that falls in between is what drives us, unrelentingly, toward our shared mission of conquering and curing brain tumors—once and for all.”² Use #GoGrayInMay or #GrayMay to show how you’re taking action and raising awareness to make lasting change for the brain tumor community.",
+      "jcr:lastModified": "Thu May 16 2024 23:35:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/stryker_is_doubling_/body-text/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2024/features/stryker-is-doubling/body-text/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu May 07 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "07-May-2026",
+    "jcr:lastModified": "Thu May 07 2026 16:34:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>About Brain Tumor Awareness Month. (2025). Raise Awareness <a href=\"https://braintumor.org/events/brain-tumor-awareness-month/raise-awareness/#fast-facts\" style=\"background-color: rgb(240,240,240);\">https://braintumor.org/events/brain-tumor-awareness-month/raise-awareness/#fast-facts</a></li>\r\n<li>Brain tumor awareness month. (2026). National Brain Tumor Society. <a href=\"https://braintumor.org/take-action/brain-tumor-awareness-month/\" style=\"background-color: rgb(240,240,240);\">https://braintumor.org/take-action/brain-tumor-awareness-month/</a></li>\r\n</ol>\r\n<div>&nbsp;</div>\r\n<div>Stryker Corporation or affiliated entities own, use or have applied for the following trademarks or service marks: Sonopet IQ, Stryker. All other trademarks are trademarks of their respective owners or holders. The absence of a product or service name or logo from this list does not constitute a waiver of Stryker's trademark or other intellectual property rights concerning that name or logo.</div>\r\n<div>&nbsp;</div>\r\n<div>NS-IQ-ARTI-3270375_REV-0<br>\r\nCOMM-GSNPS-SYK-657750_Rev-3</div>\r\n",
+    "jcr:lastModified": "Thu May 07 2026 16:33:15 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri May 17 2024 21:42:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/features/stryker-is-doubling-down-in-the-fight-against-brain-tumors/2024-BTAM-thumbnail.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri May 17 2024 05:09:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri May 02 2025 19:13:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

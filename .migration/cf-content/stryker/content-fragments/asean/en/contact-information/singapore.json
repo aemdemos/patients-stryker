@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "ca30d681-1257-45e1-8c0a-7cb330bbf2bd",
+  "jcr:predecessors": [
+    "3e17fc29-4774-4e3d-8c41-5b19ba55b2cf"
+  ],
+  "jcr:created": "Mon Jan 06 2020 18:14:33 GMT+0000",
+  "jcr:baseVersion": "3e17fc29-4774-4e3d-8c41-5b19ba55b2cf",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "95dd7ac3-7ab5-4901-acf9-fde6085d5f8a",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Singapore",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Thu May 25 2023 15:48:38 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "singapore",
+    "jcr:lastModified": "Fri Apr 14 2023 13:21:29 GMT+0000",
+    "lastFragmentSave": "Fri Apr 14 2023 13:21:29 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/asean/en/contact-information",
+    "cq:versionCreator": "workflow-process-service",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Thu May 25 2023 15:48:36 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Fri Apr 14 2023 13:21:29 GMT+0000",
+        "Emails@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "addressBlock1": "<p>1 GEORGE STREET&nbsp;<br>\n#20-01/02/03<br>\nSingapore 049145<br>\n</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "For any sales enquiry",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/sg/en/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "RelatedLinks@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "locationName": "Singapore",
+        "ShortDesc@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Fri Apr 14 2023 13:20:58 GMT+0000",
+        "AddressLabel@LastModified": "Mon Apr 18 2022 20:58:42 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Fri Apr 14 2023 13:21:09 GMT+0000",
+        "BusinessHomePageLabel": "Singapore Homepage",
+        "Emails": "<p><a href=\"mailto:strykeraseansales@stryker.com\">strykeraseansales@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

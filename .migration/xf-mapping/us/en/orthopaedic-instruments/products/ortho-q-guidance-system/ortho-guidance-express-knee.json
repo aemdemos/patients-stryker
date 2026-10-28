@@ -1,0 +1,950 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ortho Guidance express knee software",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1aec916d-4714-4339-890a-079a1180f889",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Express-knee-thumbnail",
+  "jcr:predecessors": [
+    "57ba1ea1-d294-47ca-a072-013ba105bb50"
+  ],
+  "contentID": "D0000255391 Rev. AA",
+  "lastPublished": "Wed Aug 14 2024 19:21:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 14 2024 19:21:20 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 14 2024 19:21:22 GMT+0000",
+  "cq:lastModified": "Mon Aug 12 2024 20:18:12 GMT+0000",
+  "jcr:baseVersion": "57ba1ea1-d294-47ca-a072-013ba105bb50",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:21:19 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/orthopaedic-guidance",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:product/orthopaedic_instruments/ortho-guidance-express-knee-software",
+    "stryker:capability/navigation",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon May 06 2024 18:23:44 GMT+0000",
+  "jcr:uuid": "c50e2f54-52e5-4cbf-a5d1-ca2b5523e1a5",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Express-knee-thumbnail.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+    "jcr:lastModified": "Mon May 06 2024 17:40:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon May 06 2024 17:41:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+    "jcr:lastModified": "Mon May 06 2024 17:41:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton",
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+    "jcr:lastModified": "Mon May 06 2024 17:41:13 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta",
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 18:30:07 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 18:30:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 21:05:05 GMT+0000",
+          "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_png",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 21:14:35 GMT+0000",
+              "alt": "Ortho-Q-Express-Knee-Hero",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Ortho-Q-Express-Knee-Hero.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "10",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 18:31:49 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h1>&nbsp;</h1>\n<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2em\">Ortho Guidance express knee software</span></span></span></span></h1>\n<p>&nbsp;</p>\n<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Express knee surgical planning and guidance software powered by Ortho Q Guidance system</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">The precision and capabilities of our express knee software enables a simpler, less invasive approach to total knee replacement and has helped make us the&nbsp;industry technology leader in orthopaedic navigation.<sup>1</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          }
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:58:34 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:58:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:56:05 GMT+0000",
+          "alt": "Express-knee-anatomy",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Express-knee-anatomy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:04:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Inherent in our express knee software and proprietary active optical tracking technology are numerous features designed to help optimize your performance, workflow and time in the OR while helping simplify the complex clinical tasks and decisions you face.</span></span></p>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "text_968921375": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:30 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:04:03 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Features and benefits</span></span></p>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "-10",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 18:45:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Open, agnostic implant platform</li>\n<li>Rapid registration</li>\n<li>Automatic and semi-automatic processing<br>\n</li>\n<li>Sophisticated anatomical algorithms</li>\n<li>Ability to run active trackers/pointers</li>\n<li>MIS jig for less invasive approach</li>\n<li>Abundant surgeon preferences and workflow options</li>\n<li>Post-operative analysis</li>\n<li>Intuitive ease of use</li>\n</ul>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:08:26 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:08:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    },
+    "cols2_828503435_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:08:31 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:08:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:08:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Less invasive:<br>\n </span></span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-2-5em\">Helps minimize risk</span></span></span></p>\n<ul>\n<li>MIS jig for distal femur/proximal tibia alignment/resection and femoral rotation</li>\n<li>Limits anchoring devices; patient trackers attach to fixation plate</li>\n<li>No additional skin incisions; navigation tracker pins placed on articular surface</li>\n<li>Eliminates need for intramedullary guide</li>\n</ul>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_png",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:08:40 GMT+0000",
+          "alt": "Ortho-Q-Express-Knee-Tracker-Jig",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Ortho-Q-Express-Knee-Tracker-Jig.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_11451": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:15:42 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:15:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Mon Feb 20 2023 19:42:23 GMT+0000",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "-",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 19:17:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\">Smart, streamlined workflow</span></span></span></p>\n<ul>\n<li>Only fully autonomous system in the industry</li>\n<li>Automatic and semi-automatic processing provides a multitude of vital anatomical metrics</li>\n<li>Smart instruments with industry-leading accuracy</li>\n<li>Cut-check verification of distal femoral/proximal tibia resections without requiring an anatomy survey</li>\n<li>No need for tracker pins in femur or tibia shafts</li>\n<li>Low latency PC displays virtual model onscreen in real time</li>\n</ul>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          }
+        },
+        "standaloneimage_1175449649": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_png",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:16:42 GMT+0000",
+          "alt": "Express-knee-Screen-Trio",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Express-knee-Screen-Trio.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "enableBorder": "false"
+        },
+        "cols3_488346315": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Mon Feb 20 2023 19:45:00 GMT+0000",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "6",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Mon Feb 20 2023 19:43:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\">Cut alignment verification<br>\n</p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "6",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Mon Feb 20 2023 19:43:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\">Multiple metrics to aid femoral resection</p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "6",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Mon Feb 20 2023 19:43:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\">Femoral rotation calculations</p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          }
+        }
+      }
+    },
+    "cols2_100567054_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:29:57 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:29:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "bottomPadding": "10",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:17:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\">Precision per patient</span></span></span><br>\n</p>\n<ul>\n<li>Virtual model of patient’s knee helps you tailor surgical approach</li>\n<li>Proven reproducibility of good alignment/positioning<sup>2</sup></li>\n<li>Data and visuals to help you control all six degrees of freedom when making bone cuts</li>\n<li>Virtual cut planning/locations prior to actual execution</li>\n<li>Surgeon confirmation/safety checks built in</li>\n<li>With Ortho Q Guidance system, provides precise navigational guidance<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "leftMargin": "10"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:26:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-4vw\">  </span></span>",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:30:13 GMT+0000",
+          "alt": "Express-knee-register-tibia",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/ortho-q/images/ortho-q-express-knee/Express-knee-register-tibia.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:31:25 GMT+0000",
+          "text": "<p style=\"text-align: center;\">Quick, easy digitization of knee/tibia center and other patient-specific references.</p>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "fullbleedpanel_41522": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:37:33 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:37:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:37:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3-5-vw\"><span class=\"urw-egyptienne\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Proven benefits</span></span>&nbsp;</b><b style=\"background-color: transparent;\">of surgical guidance</b></span></span></span>",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 19:37:43 GMT+0000",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "10",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 19:41:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">95% accuracy</span></span><span class=\"urw-egyptienne\"> <span style=\"color: #ffffff;\">reproducing mechanical axis of knee in TKA<sup>2</sup> compared to 73% for conventional instrumentation<sup>3</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "10",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 19:41:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">Optimizes implant alignment to&nbsp;</span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">promote improved patient outcomes<sup>4</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:mixinTypes": [
+                "cq:LiveRelationship"
+              ],
+              "bottomPadding": "10",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+              "jcr:created": "Fri Feb 17 2023 19:41:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Can help combat anterior femoral notching</span></span> <span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">which occurs in 3.5-26.9% of conventional TKAs<sup>5</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+            }
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 19:50:10 GMT+0000",
+      "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 19:49:06 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Fri Feb 17 2023 19:49:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-precision-knee",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system/ortho-guidance-versatile-hip",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+      "jcr:created": "Fri Feb 17 2023 20:09:42 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 20:09:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "cq:lastRolledout": "Mon May 06 2024 18:06:31 GMT+0000",
+          "jcr:created": "Fri Feb 17 2023 20:09:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">Associated services</span></p>\n<p>Flex Financial – offers alternative payment structures designed to fit your organization’s needs. This flexibility helps enable you to acquire the technology you need, when you need it.</p>\n<p>ProCare – helps ensure your equipment is consistently ready to perform and helps you optimize your investment via loaners, preventative maintenance solutions and service plans.</p>\n",
+          "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 20:18:02 GMT+0000",
+      "jcr:lastModified": "Mon Aug 12 2024 20:18:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Aug 12 2024 20:06:31 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 12 2024 20:03:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Mon Aug 12 2024 20:03:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Siddiqui, Z. (2016) US Market Analysis for Surgical Navigation Systems. Millennium Research Group.</li>\r\n<li>Anderson, K. et al. (2005) Computer navigation in total knee arthroplasty comparison with conventional methods. The Journal of Arthroplasty, Vol. 20 No. 7 Suppl. 3.</li>\r\n<li>Parratte, S. et al. (2010) Effect of postoperative mechanical axis alignment on the fifteen-year survival of modern cemented total knee replacements. J Bone Joint Surg. Am, 92:2143-2149.</li>\r\n<li>Choong, P. et al. (2009) Does Accurate Anatomical Alignment Result in Better Function and Quality of Life? Comparing Conventional and Computer-Assisted Total Knee Arthroplasty. The Journal of Arthroplasty, Vol. 24 No. 4.</li>\r\n<li>Lee, JH. et al. (2015) Risk of Femoral Anterior Notching in Navigated Total knee Arthroplasty. Clinics in orthopedic surgery, 7(2), 217-224. https://doi.org/10.4055/cios.2015.7.2.217</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon May 06 2024 18:06:31 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

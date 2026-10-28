@@ -1,0 +1,1866 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Variable Angle Locking Plate System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "VariAx 2 Foot",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "78f66b0d-a706-4f83-acba-eb31c61e608f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Thumb-Variax2foot",
+  "jcr:predecessors": [
+    "902d9f21-a6bf-47b6-8e21-3f2db0575b0d"
+  ],
+  "contentID": "FA-VAXF-SYK-2497250_REV-0_en_us",
+  "lastPublished": "Fri Oct 09 2026 17:59:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 09 2026 17:59:22 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 09 2026 17:59:32 GMT+0000",
+  "cq:lastModified": "Fri Oct 09 2026 17:59:12 GMT+0000",
+  "newDisplayFlagDate": "Thu Apr 30 2026 00:00:00 GMT-0400",
+  "jcr:description": "he VariAx2 Foot System delivers simplicity and adaptability with seven indication‑specific plates using a comprehensive locking and non‑locking screw system. The patented polyaxial locking technology and low-profile design were created using our SOMA® database. The adaptability design allows for modularity and variable angles, you can base screw positioning on your patient at hand, not a plate’s pre-existing design.",
+  "jcr:baseVersion": "902d9f21-a6bf-47b6-8e21-3f2db0575b0d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jan 28 2026 19:55:22 GMT+0000",
+  "pageTitle": "VariAx 2 Foot",
+  "cq:tags": [
+    "stryker:procedure/foot-and-ankle/lisfranc/plating-platforms",
+    "stryker:procedure/foot-and-ankle/lisfranc/screw-systems",
+    "stryker:procedure/foot-and-ankle/calcaneal-fracture/plating-platforms",
+    "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/screw-systems",
+    "stryker:capability/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/screw-systems",
+    "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis/plating-platforms",
+    "stryker:procedure/foot-and-ankle/talus-fracture/plating-platforms",
+    "stryker:procedure/foot-and-ankle/calcaneal-fracture/screw-systems",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis/plating-platforms",
+    "stryker:content-type/product",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plates",
+    "stryker:procedure/foot-and-ankle/talus-fracture/screw-systems",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screw-systems",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/screw-systems",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis/screw-systems",
+    "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/plating-platforms",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/plating-platforms",
+    "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/screw-systems",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/screws",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/plating-platforms",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staple-solutions",
+    "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/plating-platforms",
+    "stryker:procedure/foot-and-ankle/cuboid-fracture/plating-platforms",
+    "stryker:procedure/foot-and-ankle/cuboid-fracture/screws",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/plating-platforms",
+    "stryker:procedure/foot-and-ankle/navicular-fracture/screw-systems",
+    "stryker:procedure/foot-and-ankle/navicular-fracture/plating-platforms"
+  ],
+  "jcr:lastModified": "Fri Oct 09 2026 17:59:12 GMT+0000",
+  "jcr:uuid": "c94e916a-b3fd-4c24-b37b-e05879ee3e54",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "VariAx 2 Foot",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:38:48 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:38:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Mar 20 2024 17:00:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\">VariAx<sup><span class=\"fontsize-1-5-vw\">®</span></sup> 2 Foot</span></span></span></h1>\r\n",
+          "line2": "<h2><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">Variable Angle Locking Plate System</span></span><br />\r\n</h2>\r\n",
+          "jcr:lastModified": "Fri Nov 07 2025 16:25:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:39:27 GMT+0000",
+          "alt": "Variax 2 foot Product image",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/Variax2foot.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy__902630909": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#specification\">SPECIFICATION OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 27 2025 18:31:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "about",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "about",
+      "jcr:lastModified": "Thu May 30 2024 15:17:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:07:55 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:07:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:51:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:51:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Dec 14 2023 00:47:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">The VariAx2 Foot System delivers simplicity and adaptability with seven indication‑specific plates using a comprehensive locking and non‑locking screw system. The patented polyaxial locking technology and low-profile design were created using our SOMA<sup>®</sup> database. The adaptability design allows for modularity and variable angles, you can base screw positioning on your patient at hand, not a plate’s pre-existing design.</span></span></p>\n",
+          "jcr:lastModified": "Thu Jan 15 2026 17:01:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:51:32 GMT+0000",
+          "jcr:lastModified": "Thu Dec 14 2023 00:51:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_copy_c_346116938": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "specification",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "specification",
+      "jcr:lastModified": "Thu May 30 2024 15:17:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1195512689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:11:17 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:11:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Dec 15 2023 00:24:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Key features</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Compression and locking in one step</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Patented SMARTLock™ polyaxial locking technology<sup>*</sup></span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Seven new indication specific plates</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Locking screws can be angled ±15° for a total range of 30°</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Type II&nbsp;Anodization</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Low profile plate design</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jan 15 2026 16:42:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 23:08:36 GMT+0000",
+          "alt": "Variax 2 Foot Interactive Image",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/Variax2FootInteractive.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_2054259674": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Dec 15 2023 00:24:39 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">System offerings</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The VariAx 2 Foot System consists of a Calcaneus Mesh Plate, Calcaneus Standard Plate, T-Plate, L-Plate, Curved Plate, H-Plate, Rectangular Compression Plate, Broad Straight Plate, 3D Plate, Oblique Plate, Talar Neck Plate, Navicular Plate, Cuboid Plate, NCM Plate, LCL Plate, NC Plate, and TN plate. VariAx 2 Foot also offers plates for Metatarsal Fractures including a Broad Straight Plate, Slim Straight Plate, Broad Y-Plate and Slim Y-Plate that range in hole lengths from 2 hole to 7 hole.</span></span></p>\n",
+      "jcr:lastModified": "Wed Jan 28 2026 19:53:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1451287390": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:04:52 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:04:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 14 2023 01:01:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">VariAx 2 Foot plates</span></span></p>\n",
+      "jcr:lastModified": "Mon Oct 27 2025 19:07:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Calcaneus Mesh",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootCalcaneusMesh.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Calcaneus Mesh</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:29:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Calcaneus Standard",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootCalcaneusStandard.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:44 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Calcaneus Standard</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:30:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "T-Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/Variax2-FootT-Plate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">T-Plate</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:31:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "L-Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootL-Plate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:52 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">L-Plate</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:31:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Curved Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/Variax2-FootCurved.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Curved Plate</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:32:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "H-Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootH-Plate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 08 2024 20:11:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:44 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">H-Plate</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:33:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Rectangular Compression",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootRectangular.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:57:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Rectangular Compression</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:34:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Broad Straight",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootBroadStraight.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:52 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Broad Straight</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:34:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_561519707": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "3D Plate",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-Foot3D.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">3-D Plate</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:35:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Oblique",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootOblique.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:44 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Oblique</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:35:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Talar Neck",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/Variax2-FootTalarNeck.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Talar Neck</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:34:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Navicular",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/Variax2-FootNavicular.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:52 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Navicular</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:34:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_1475718307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Cuboid",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/Variax2-FootTalarNeck.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:58:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Cuboid</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:35:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Medial Column Fusion (NCM)",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootNCM.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 08 2024 20:19:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:44 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Medial Column Fusion (NCM)<br>\n</span> &nbsp;</span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:36:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Lateral Column Lengthening",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootLCL.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Lateral Column Lengthening (LCL)</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:36:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Navicular Cuneiform",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootNC.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:52 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Navicular Cuneiform (NC)</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:36:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1324177473": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 01:00:07 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 01:00:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 01:00:13 GMT+0000",
+          "alt": "Talo Navicular",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax2-foot/images/Variax2-FootTN.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 01:00:18 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Talo-Navicular (TN)</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 18:03:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_635374320": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:04:41 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:04:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator_1324730290": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:06:47 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:06:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 14 2023 01:01:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Metatarsal fracture plates</span></span></p>\n",
+      "jcr:lastModified": "Mon Oct 27 2025 19:07:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_copy_147571830": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 00:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Broad Straight",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/BroadStraight.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:40 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Broad Straight</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:37:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Slim Straight",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/SlimStraight.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:44 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Slim Straight</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:37:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Broad Y",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/BroadY.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:59:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:48 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Broad Y</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:37:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 14 2023 00:54:24 GMT+0000",
+          "alt": "Slim Y",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/SlimY.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:00:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 00:54:52 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Slim Y</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 00:38:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_246593954": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:04:33 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:04:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_103180315": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 00:23:01 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 00:23:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_717": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Dec 14 2023 01:03:31 GMT+0000",
+          "jcr:lastModified": "Thu Dec 14 2023 01:03:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Dec 15 2023 00:24:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Screws and instrumentation</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The VariAx 2 Foot System features a range of low-profile plate and screw options in 2.4mm, 2.7mm and 3.5mm modules. Plates utilize SMARTLock™ variable angle locking technology which permits polyaxial screw placement. T8 and T10 locking screws may be angled +/- 15º in any direction for up to a 30º cone.*</span></span></p>\n",
+          "jcr:lastModified": "Thu Jan 15 2026 16:46:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1259259391": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon Oct 27 2025 19:06:02 GMT+0000",
+      "jcr:lastModified": "Mon Oct 27 2025 19:06:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1357658985_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 22:02:33 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">VariAx 2 screw platform</span></span></p>\n",
+      "jcr:lastModified": "Thu Jan 15 2026 16:05:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_183169502": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 22:19:01 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 22:19:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "2.4mmscrews",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/2.4mmscrews.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Mar 20 2024 18:12:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_319403111_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">2.4mm screws</span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">T8 interface</span></span></p>\n",
+          "jcr:lastModified": "Fri Nov 07 2025 16:20:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "2.7mm screws",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/2.7mm screws.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Mar 20 2024 18:12:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_319403111": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">2.7mm screws</span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">T8 interface</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 22:42:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "3.5mm screws",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/3.5mmscrews.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:05:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_319403111_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">3.5mm screws</span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">T10 interface</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 22:42:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "2.7mmscrew T10",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/2.7mmscrewT10.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:05:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_319403111_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">2.7mm screws</span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">T10 interface</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 22:43:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_49783173_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "Screwdriver blade",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/Screwdriverbladev1.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:00:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Screwdriver blade</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 22:43:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "Screwdriver blade",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/Screwdriverbladev3.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:00:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Screwdriver blade</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 15 2023 22:43:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_49783173_copy_1122502574": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "Color Coded Screws infographic",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/ColorCodingv2.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:01:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Color coding</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The VariAx 2 screws and instrument follow a standardized color-coding scheme whereby the screw color matches the corresponding instrument’s color. The drill bits, lagging drill guides and screws are also instrument coded.</span></span></p>\n",
+          "jcr:lastModified": "Wed Jan 28 2026 19:53:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_49783173": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 22:19:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 22:21:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Locking and non-locking screws</span><br>\n</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Locking and non-locking screws are available in 2.4mm, 2.7mm and 3.5mm diameters. All holes in the locking plates provide an option for locking and non-locking screws. If a locking screw is used in a compression hole, the screw can apply compression and then lock into the plate.</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Notice</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Locking screws are laser marked with a ‘dot’ and ‘ring’ marking on the screw head to differentiate them from non-locking screws.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 16 2024 18:19:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Dec 15 2023 22:21:04 GMT+0000",
+          "alt": "Locking and unlocking screws",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/variax/images/lockingunlocking.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Thu Jun 06 2024 21:01:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "sectionseparator_212": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "altText": ".",
+      "jcr:created": "Fri Dec 15 2023 00:59:56 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Fri Dec 15 2023 20:02:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:50:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Fri Nov 07 2025 16:34:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/variax2-foot/resources/VariAx-2-Operative-Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/variax2-foot/resources/VariAx-2-forefoot-fracture-plates-brochure.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/variax2-foot/resources/VariAx-2 System-Component-List.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Mon Jun 10 2024 18:32:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_669877376": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Nov 07 2025 15:22:45 GMT+0000",
+      "jcr:lastModified": "Fri Nov 07 2025 15:22:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c_162568137": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 26 2019 15:04:56 GMT+0000",
+      "title": "Procedures",
+      "jcr:lastModified": "Fri Apr 26 2019 15:05:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Fri Nov 07 2025 15:23:19 GMT+0000",
+      "jcr:lastModified": "Fri Nov 07 2025 15:23:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/header_forefoot.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 15:08:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Forefoot procedures</span></span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/1st-metatarso-phalangeal--mtp--arthrodesis.html\">1st Metatarso-phalangeal (MTP) Arthrodesis</a></span></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/hallux-valgus-correction.html\" style=\"font-size: 0.8em;\"><span class=\"standalone-link\">Hallux Valgus correction (Bunion)</span></a><br>\n</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Nov 07 2025 15:25:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/Header_Hindfoot.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 15:08:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Hindfoot procedures</span></span></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/calcaneal-fracture.html\"><span class=\"standalone-link\"><span class=\"fontsize-8em\">Calcaneal Fracture</span></span></a></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/calcaneo-cuboid-arthrodesis.html\" style=\"font-size: 0.8em;\">Calcaneo-cuboid Arthrodesis</a></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/talus-fracture.html\"><span class=\"standalone-link\"><span class=\"fontsize-8em\">Talus Fracture</span></span></a><br>\n</p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/talonavicular-joint-arthrodesis.html\">Talonavicular Joint Arthrodesis</a></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/triple-arthrodesis.html\">Triple Arthrodesis</a></span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Nov 07 2025 15:29:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:37 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/images/header_midfoot.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 15:07:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Apr 26 2019 15:07:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Midfoot procedures</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/first-tarsometatarsal-joint-arthrodesis--lapidus-.html\">First tarsometatarsal joint arthrodesis (Lapidus)</a></span></span></p>\n<p><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/cuboid-fracture.html\"><span class=\"standalone-link\"><span class=\"fontsize-1em\"><span class=\"fontsize-8em\">Cuboid Fracture</span></span></span></a></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/lisfranc.html\">LISFRANC</a></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/medial-column-arthrodesis.html\">Medial Column Arthrodesis</a></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/navicular-cuneiform-arthrodesis.html\">Navicular Cuneiform Arthrodesis</a></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-8em\"><a href=\"/content/stryker/us/en/foot-and-ankle/procedures/navicular-fracture.html\">Navicular Fracture</a></span></span></p>\n",
+          "jcr:lastModified": "Fri Nov 07 2025 15:30:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_2128293286": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Dec 15 2023 00:59:56 GMT+0000",
+      "jcr:lastModified": "Fri Dec 15 2023 00:59:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_1902555304": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 18:12:31 GMT+0000",
+      "jcr:lastModified": "Thu Apr 25 2024 18:12:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_copy_c_849126623": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Thu May 30 2024 15:18:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed May 08 2024 13:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">VariAx 2 Foot.</span></span></h4>\n",
+          "jcr:lastModified": "Thu May 30 2024 15:15:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 15 2024 22:11:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 09 2024 18:56:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 18:14:47 GMT+0000",
+      "jcr:lastModified": "Wed Mar 20 2024 18:14:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy_890984227": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Wed May 15 2024 18:42:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 20 2024 16:56:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 20 2024 16:56:22 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Mar 20 2024 16:56:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 20 2024 16:56:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 20 2024 16:56:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 20 2024 16:57:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/all-products/2024-brandrefresh/product-thumbnails/Thumb-Variax2foot.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>SMARTLock technology is licensed from Professor Dietmar Wolter, Hamburg, Germany</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Jan 15 2026 16:39:20 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

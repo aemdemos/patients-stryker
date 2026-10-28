@@ -1,0 +1,846 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProCare Services | Instruments",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "91968184-e6f4-4b49-880c-8a7e7d3c2e45",
+  "cq:template": "/apps/stryker/templates/packagedetail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "ee21ebb0-e511-4827-afc7-49e6754be2f0"
+  ],
+  "contentID": "OI-GSNPS-SYK-2128150_REV-0",
+  "lastPublished": "Wed Dec 17 2025 16:03:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Dec 17 2025 16:03:52 GMT+0000",
+  "cq:lastReplicated": "Wed Dec 17 2025 16:03:55 GMT+0000",
+  "cq:lastModified": "Wed Dec 17 2025 16:03:47 GMT+0000",
+  "jcr:description": "You focus on your patients and staff; we have your equipment covered. \r\nProCare is your trusted partner, offering flexible service solutions to maximize uptime without compromising safety. As the original equipment manufacturer, we provide unmatched service with original Stryker parts, proprietary product knowledge, and expert service professionals—setting the gold standard in equipment care.",
+  "jcr:baseVersion": "ee21ebb0-e511-4827-afc7-49e6754be2f0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:12:45 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/system",
+    "stryker:business-unit/Navigation-NSE",
+    "stryker:content-type/hcp_content",
+    "stryker:services/procare"
+  ],
+  "jcr:lastModified": "Tue Aug 12 2025 15:54:35 GMT+0000",
+  "jcr:uuid": "a9b80355-f7e2-45ed-9342-cb82952856e3",
+  "sling:resourceType": "stryker/components/structure/pages/packagedetail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Thu Jul 31 2025 19:26:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c_1725824757": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:04:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Your </span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\">trusted</span></span></span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\"> partner</span></span></span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">We don't just offer service solutions - its a partnership you can count on</span></span>",
+      "jcr:lastModified": "Tue Aug 12 2025 15:00:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:40:48 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Thu Jul 31 2025 15:57:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/nav-nse/services/procare/videos/procare_long-form-hype-video_update_2025.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/procare_long-form-hype-video_update_2025-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Aug 12 2025 15:09:02 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/procare-instruments-hype-vid-thumbnail"
+      }
+    },
+    "cols_1480162148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:40:00 GMT+0000",
+      "jcr:lastModified": "Wed Jul 30 2025 20:40:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_2009050284": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 25 2025 18:07:39 GMT+0000",
+      "jcr:lastModified": "Mon Aug 25 2025 18:07:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 25 2025 18:14:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h4><span class=\"fontsize-2-5-vw\">What Health Care Professionals are saying about the advantages of Original Equipment Manufacturer service:<sup>1</sup></span></h4>\r\n",
+      "jcr:lastModified": "Mon Aug 25 2025 20:40:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:06:37 GMT+0000",
+      "jcr:lastModified": "Wed Jul 30 2025 20:06:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"fontsize-1-5-vw\">Of healthcare professionals surveyed believed the OEM can offer the highest quality of service and support</span>",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 30 2025 20:06:41 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Sep 19 2025 19:58:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "91",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"fontsize-1-5-vw\">Of healthcare professionals surveyed believe the OEM can offer better knowledge of the equipment</span>",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 30 2025 20:06:41 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Sep 19 2025 19:58:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "73",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"fontsize-1-5-vw\">Of those surveyed noted a top advantage of using an OEM for service is a guarantee of original parts and components</span>",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 30 2025 20:06:41 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Wed Jul 30 2025 20:09:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "68",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:09:36 GMT+0000",
+      "jcr:lastModified": "Wed Jul 30 2025 20:09:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 15:10:19 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 15:10:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_723880009": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "advantage",
+      "jcr:created": "Tue Sep 09 2025 20:20:35 GMT+0000",
+      "title": "ProCare Advantage",
+      "jcr:lastModified": "Tue Sep 09 2025 20:22:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:04:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">The </span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\">ProCare </span></span></span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Advantage</span></span></span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Get the most from your investment with specialized care from ProCare Services. We keep you focused on what matters most- patient safety and staff efficiency.</span></span>",
+      "jcr:lastModified": "Tue Aug 12 2025 15:11:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1_3_2_3_981669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "procare-advantage-image-1",
+          "srcFileRef": "/content/dam/stryker/nav-nse/services/procare/images/procare-advantage-image-1.jpg",
+          "jcr:lastModified": "Thu Jul 31 2025 19:26:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Flexible Service Solutions</span></span></p>\n<p><span class=\"fontsize-1-25em\">We offer flexible service solutions tailored to meet your facility’s needs. From preventative maintenance visits, a repair focused service plan or customized billing options - together we’ll design a solution that works best for your facility</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Aug 12 2025 15:11:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_981669_1436661429": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "procare-advantage-image-2",
+          "srcFileRef": "/content/dam/stryker/nav-nse/services/procare/images/procare-advantage-image-2.jpg",
+          "jcr:lastModified": "Thu Jul 31 2025 19:27:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Original Equipment Manufacturer Quality and Reliability</span></span></p>\n<p><span class=\"fontsize-1-25em\">Stryker is the sole provider of OEM parts, components and product specifications. We maintain and service our products per Stryker original specifications and quality standards to ensure our focus is on patient safety, device reliability and performance resulting in maximized uptime.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 30 2025 20:11:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_981669_1134823152": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "jcr:lastModified": "Wed Dec 12 2018 19:42:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 12 2018 19:25:55 GMT+0000",
+          "alt": "procare-advantage-image-3",
+          "srcFileRef": "/content/dam/stryker/nav-nse/services/procare/images/procare-advantage-image-3.jpg",
+          "jcr:lastModified": "Thu Jul 31 2025 19:27:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1880669833": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 12 2018 19:24:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Specialized support from Stryker Certified Technicians</span></span></p>\n<p><span class=\"fontsize-1-25em\">Proactive care, maintenance and device repair delivered by our expert team of service professionals both in your facility and at our repair Depot in Kalamazoo, MI. Only our certified technicians are equipped with the proprietary device knowledge, training and genuine Stryker parts to deliver patent safety, device reliability and performance.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 30 2025 20:12:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_772351457": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:15:33 GMT+0000",
+      "jcr:lastModified": "Wed Jul 30 2025 20:15:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1331858060": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "coverage",
+      "jcr:created": "Tue Sep 09 2025 20:21:09 GMT+0000",
+      "title": "Coverage",
+      "jcr:lastModified": "Tue Sep 09 2025 20:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 25 2025 18:14:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h4><span class=\"fontsize-2-5-vw\">Coverage at a glance</span></h4>\r\n",
+      "jcr:lastModified": "Mon Aug 25 2025 18:15:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Service</b></td>\n<td style=\"text-align: center;\"><b>ProCare Contract</b></td>\n<td style=\"text-align: center;\"><b>Transactional Service</b></td>\n<td style=\"text-align: center;\"><b>Manufacturer Warranty</b></td>\n</tr><tr><td><p>Repairs meet original OEM quality standards in accordance with:</p>\n<ul>\n<li>FDA regulation (21 C.F.R. Part 820)</li>\n<li>FDA recognized consensus standards (ISO 13485)</li>\n</ul>\n</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Rigorous quality control testing and multi-point inspection per repair</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Exclusive use of proprietary OEM parts and components</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Repairs performed by Stryker-certified technicians</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Overnight or next day shipping of equipment</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Shipping costs included for equipment repairs and loaner devices</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Loaner equipment available (on select devices)</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td style=\"text-align: center;\">&nbsp;</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Hard copy purchase order (PO) required for each repair</td>\n<td style=\"text-align: center;\">&nbsp;</td>\n<td style=\"text-align: center;\">✓</td>\n<td style=\"text-align: center;\">✓</td>\n</tr><tr><td>Unlimited repairs due to damage associated with normal use and wear</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td><p>On-site diagnostic visits and preventative maintenance (PM) inspections</p>\n<ul>\n<li>Labor and travel expenses included</li>\n<li>Proactive scheduling support</li>\n<li>Visit summary and compliance documentation provided</li>\n</ul>\n</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Unlimited battery replacements</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Prioritized equipment repairs and replacements</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Smart Equipment Management (SEM) on connected devices</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr><tr><td>Flexible financing options to bundle equipment and service costs</td>\n<td style=\"text-align: center;\"><b>✓</b></td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:16:13 GMT+0000",
+      "jcr:lastModified": "Wed Dec 17 2025 16:03:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "cols_1566436166": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 30 2025 20:39:17 GMT+0000",
+      "jcr:lastModified": "Wed Jul 30 2025 20:39:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1580109157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "products",
+      "jcr:created": "Tue Sep 09 2025 20:21:42 GMT+0000",
+      "title": "Eligible products",
+      "jcr:lastModified": "Tue Sep 09 2025 20:22:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Click the tabs below to view additional covered products.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 09 2025 20:22:57 GMT+0000",
+      "title": "Covered products",
+      "jcr:lastModified": "Tue Sep 09 2025 20:23:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "cols_313805955": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 15:34:17 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 15:34:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Power Tools",
+      "jcr:lastModified": "Tue Aug 12 2025 15:34:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/system-8"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/system-8-ezout"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools/system-9-ezout"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools/system-9-precision"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/cd-nxt"
+        },
+        "7": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/system-8-cordless-driver-and-sabo"
+        }
+      }
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Neuro and spine instruments",
+      "jcr:lastModified": "Fri Sep 19 2025 19:56:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/bone-mill"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/core-2-console"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/elite-attachments"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/footed-attachments"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/heavy-duty-attachments"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/high-speed-drills"
+        },
+        "7": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/maestro-air-motor"
+        },
+        "8": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/mis-attachments"
+        },
+        "9": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/s2-mini-drill-system"
+        },
+        "10": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/s2_drive-drill"
+        },
+        "11": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/silverglide"
+        },
+        "12": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/sonopet-iq"
+        },
+        "13": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/pidrive"
+        },
+        "14": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/pidrive-plus-motor"
+        }
+      }
+    },
+    "customizable_copy_co_2001375173": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Navigation",
+      "jcr:lastModified": "Tue Aug 12 2025 17:21:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/ortho-q-guidance-system"
+        }
+      }
+    },
+    "customizable_copy_co_1732262681": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Personal Protection Equipment",
+      "jcr:lastModified": "Tue Aug 12 2025 17:24:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/steri-shield-8"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/t7"
+        }
+      }
+    },
+    "customizable_copy_co_568458054": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Surgical Headlights",
+      "jcr:lastModified": "Tue Aug 12 2025 17:29:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/qosmic-led-headlight"
+        }
+      }
+    },
+    "customizable_copy_co_92120363": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Orthopaedic disposables",
+      "jcr:lastModified": "Tue Aug 12 2025 17:37:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/revolution-cement-mixer-system"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/smartpump-tourniquet"
+        }
+      }
+    },
+    "customizable_copy_co_1973648712": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "ENT",
+      "jcr:lastModified": "Tue Aug 12 2025 15:49:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/ent/products/focess-hd"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/ent/products/pello-microdebrider"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/ent/products/seekers"
+        }
+      }
+    },
+    "customizable_copy_co_1316678483": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Reconstructive surgery",
+      "jcr:lastModified": "Tue Aug 12 2025 17:55:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/varispeed"
+        }
+      }
+    },
+    "customizable_copy_co_880384108": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Surgical Suction & Waste management",
+      "jcr:lastModified": "Fri Sep 19 2025 19:56:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/cactus-controlled-substance-waste-management-system"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/neptune-waste-management-system"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/neptune-s"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/safeair-compact-evacuator"
+        }
+      }
+    },
+    "customizable_copy_co_843142109": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Sponge management",
+      "jcr:lastModified": "Tue Aug 12 2025 17:25:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/surgicount-safety-sponge-system"
+        }
+      }
+    },
+    "customizable_copy_co_1477868269": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Radio frequency ablation",
+      "jcr:lastModified": "Mon Aug 25 2025 18:18:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/interventional-spine/products/multigen2-rf-generator"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/interventional-spine/products/cannulae-and-electrodes"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/interventional-spine/products/venom-cannula-and-electrode-system"
+        }
+      }
+    },
+    "customizable_copy_co_1439643867": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 13:01:17 GMT+0000",
+      "title": "Sterile Processing",
+      "jcr:lastModified": "Tue Aug 12 2025 17:35:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/orthopaedic-instruments/products/blu62-pretreatment-foam-and-instrument-detergent/speed-spray62"
+        }
+      }
+    },
+    "title_240600724": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Click the tabs below to view additional resources and downloads.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 09 2025 20:23:55 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Tue Sep 09 2025 20:24:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": "/content/dam/stryker/nav-nse/services/procare/resources/Instruments ProCare Services Brochure.pdf",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 17:29:51 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 18:24:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_1812340640_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 12:57:22 GMT+0000",
+      "jcr:lastModified": "Tue Jul 22 2025 12:57:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 20:03:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/nav-nse/services/procare/images/procare-instruments-hero.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 20:03:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 20:03:58 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 20:04:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. MindGap. (2024, July). ProCare Services voice of customer research [Unpublished internal report]. </p>\r\n",
+    "jcr:lastModified": "Mon Aug 25 2025 20:41:47 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

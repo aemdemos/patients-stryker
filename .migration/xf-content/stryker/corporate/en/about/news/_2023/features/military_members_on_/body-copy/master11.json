@@ -1,0 +1,298 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6b623b8f-3178-42f0-8b43-73ef27ad4028",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "656b88f9-87ac-4df0-a341-5e3939c0a406"
+  ],
+  "jcr:created": "Thu Apr 27 2023 15:18:45 GMT+0000",
+  "cq:lastReplicated": "Thu Apr 27 2023 15:18:47 GMT+0000",
+  "cq:lastModified": "Thu Apr 20 2023 19:04:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "656b88f9-87ac-4df0-a341-5e3939c0a406",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "cb4bd04f-c003-4d17-83dc-abd6eba1aa40",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1526665702": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed May 25 2022 12:58:42 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 12:58:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "RTE",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue May 24 2022 20:54:46 GMT+0000",
+      "jcr:lastModified": "Tue May 24 2022 20:55:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text_copy_copy_copy3": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<h2><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Values align for military members and veterans at Stryker</span><br>\n</span></h2>\n<p>At Stryker, we believe making healthcare better requires a diverse mix of talent, including our active military and veteran employees working across the organization. These individuals, who bring a high level of leadership and teamwork to our organization, include Mike Mills, who has served in the Army Reserve for 30 years. “The values instilled in the military are echoed a lot in what we do at Stryker,” he says, “including leadership, integrity and accountability.”</p>\n<p>As a member of the Army Reserve, Mike is highly trained to ensure that all applicable rules and regulations relating to military equipment are being followed. This closely mimics his job at Stryker, where he’s worked for 25 years. As the manager of the Complaint Intake and Management Centers for our Joint Replacement Division, Mike creates an open dialogue with customers and patients, ensuring all details surrounding a patient’s condition are captured.</p>\n",
+        "jcr:lastModified": "Thu Apr 20 2023 19:04:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_411807400": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "“It’s",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue May 24 2022 20:29:14 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 14:29:53 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed May 18 2022 19:40:19 GMT+0000",
+        "alt": "Face drooping stroke icon",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/military-members-on-a-mission-to-make-healthcare-better/circle_MikeMills.psd",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed May 25 2022 14:42:50 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "3",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "text_copy27217147674": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "5",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">“It’s all about passing on accurate information to leaders so they can make informed decisions,” he says. “If we’re not taking customers and patient voices into consideration, we would be doing them an injustice.” </span></span><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">- Mike Mills</span></span></span></p>\n",
+        "jcr:lastModified": "Wed May 25 2022 14:39:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "9"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "text_167550914232333": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Supporting",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed May 25 2022 14:27:36 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_1675509142323333238645613631253": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-8em\">Military appreciation at Stryker means listening to healthcare professionals who care for military members</span></span></h2>\n<p>Part of making healthcare better is listening, because you can’t solve a challenge unless you understand the problem first. This applies not only to customer feedback, but also to healthcare challenges that affect entire populations.</p>\n<p>Arthritis is a common condition among those who have served in the military, and impacts over one in three veterans – a higher rate than in the general population of US adults.<sup>1</sup></p>\n",
+        "jcr:lastModified": "Thu Apr 20 2023 19:03:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "text_429707787": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Dr.",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue May 24 2022 20:33:56 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 14:30:06 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed May 18 2022 19:40:19 GMT+0000",
+        "alt": "Face drooping stroke icon",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/military-members-on-a-mission-to-make-healthcare-better/circle_SeanMoroze.psd",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed May 25 2022 14:43:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "3",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "text_copy27217147674_225707603": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "5",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">“</span></span><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Dr. Sean Moroze</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">, an orthopaedic surgeon for the United States Air Force, stated, “Mako&nbsp;robotic knee replacement and hip replacement allows my patients to have personalized surgery. In my experience, my patients can have faster functional recovery and reduced pain when the surgery is tailored to their anatomy. Companies like Stryker, much like military medical facilities, have been at the forefront of medical innovation. Continuing such partnerships allows for further development of skills, technology, and procedures that drive the industry forward.”</span></span></p>\n",
+        "jcr:lastModified": "Wed Apr 19 2023 14:19:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "9"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "text_1396992431": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "The",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue May 24 2022 20:35:29 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 14:27:14 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_13969924313238623789540191": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<p>The <a href=\"https://www.stryker.com/us/en/about/news/2021/stryker-expands-its-mako-smartrobotics-footprint-to-reach-more-v.html\">placement of Mako SmartRobotics systems in VA and military hospitals across the country</a> is just one of many efforts happening across Stryker to support military members and veterans.</p>\n<p>From supporting active and veteran employees through Stryker’s Veterans Association (SVA) Employee Resource Group to our involvement with K9s For Warriors, an organization that helps veterans suffering from the invisible wounds of war by providing them with service dogs, our passion for our nation’s heroes is exemplified in many ways.</p>\n<p>The mission to make healthcare better will never be complete. Together, we’ll keep working alongside our customers, creating new and innovative products and services—and our veterans will help lead the way. “We have such an opportunity to make a difference,” Mike says.<br>\n</p>\n",
+        "jcr:lastModified": "Wed May 25 2022 15:47:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Blueprint® Tutorial using Tornier Perform® Anatomic Glenoid with Gilles Walch, MD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "27e4fe6c-27d1-4dd8-86e0-8e795eab11f3",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "603fb8bb-3138-44a5-9575-23338c0d5ef2"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:58:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:00:13 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:00:22 GMT+0000",
+  "cq:lastModified": "Fri Mar 17 2023 18:53:56 GMT+0000",
+  "jcr:baseVersion": "603fb8bb-3138-44a5-9575-23338c0d5ef2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:57:18 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Mar 17 2023 18:53:56 GMT+0000",
+  "jcr:uuid": "c9cbaf88-54a1-4d9f-8036-eb1029f42fcb",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 19:13:08 GMT+0000",
+      "text": "Blueprint® Tutorial using Tornier Perform® Anatomic Glenoid with Gilles Walch, MD Gilles Walch, MD, gives a demonstration of the Blueprint® 3D Software + PSI being used in the planning of anatomic prosthesis. Featuring Tornier Perform® Anatomic Glenoid. AP-016276A",
+      "jcr:lastModified": "Thu Jul 28 2022 19:13:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/blueprint--tutorial-using-aequalis--perform--with-gilles-walch--/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/blueprint-tutorial-using-aequalis-perform-with-gilles-walch/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/BLUEPRINT Tutorial using AEQUALIS PERFORM with Gilles Walch, MD CAW-0578.png"
+  }
+}

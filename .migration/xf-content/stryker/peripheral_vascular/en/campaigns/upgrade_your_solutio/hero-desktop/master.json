@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "19c1d1e7-4de9-46d9-b1ca-91e569d1fe77",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "6cf8c063-d0dc-4d9d-9207-e20f5cf1f255"
+  ],
+  "lastPublished": "Thu Oct 01 2026 15:05:05 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 15:05:11 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 15:05:18 GMT+0000",
+  "cq:lastModified": "Thu Oct 01 2026 03:28:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6cf8c063-d0dc-4d9d-9207-e20f5cf1f255",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 01 2026 15:05:05 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "5960f0c1-dce8-4d19-bd62-1dfc3b2f6a2c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue Sep 29 2026 22:08:35 GMT+0000",
+      "alt": "Upgrade your solutions",
+      "srcFileRef": "/content/dam/stryker/peripheral-vascular/campaigns/upgrade-your-solutions/images/PV-upgrade-your-solutions-hero-1920x640.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 01 2026 03:19:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

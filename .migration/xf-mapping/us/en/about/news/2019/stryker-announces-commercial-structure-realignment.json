@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces commercial structure realignment",
+  "jcr:versionHistory": "1b08cf68-c3c5-45eb-b598-0012e71299b5",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "8581be3b-b99b-4814-a9dc-5177e9081248"
+  ],
+  "lastPublished": "Thu Nov 21 2019 17:48:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Nov 21 2019 17:48:54 GMT+0000",
+  "cq:lastModified": "Thu Nov 21 2019 17:48:41 GMT+0000",
+  "jcr:baseVersion": "8581be3b-b99b-4814-a9dc-5177e9081248",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir"
+  ],
+  "jcr:lastModified": "Thu Nov 21 2019 17:48:41 GMT+0000",
+  "jcr:uuid": "c0f24500-00f1-4107-800b-68848aaf7330",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Mon Aug 12 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Aug-2019",
+    "jcr:lastModified": "Tue Aug 13 2019 17:53:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker (NYSE:SYK) announced today an adjustment to its commercial organizational structure. Spencer S. Stiles will serve as Group President of Orthopaedics and Spine and will oversee Stryker’s Joint Replacement, Trauma &amp; Extremities and Spine divisions. J. Andrew Pierce, Group President of MedSurg and Neurotechnology will oversee Stryker’s Instruments, Medical, Endoscopy, Sustainability and Neurotechnology businesses.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2019/Stryker-announces-commercial-structure-realignment/default.aspx\">See full release here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Tue Aug 13 2019 17:54:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/stryker_logo2015.jpg"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "O.R. Safety Series: Protecting Patients from Retained Surgical Items",
+  "jcr:versionHistory": "5734c22b-5de4-43d4-bc68-20254068ccef",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "2e2b1f12-0b79-47bc-995c-4575545e07fe"
+  ],
+  "lastPublished": "Fri Nov 20 2020 18:56:22 GMT+0000",
+  "jcr:created": "Fri Nov 20 2020 18:56:22 GMT+0000",
+  "cq:lastModified": "Tue Nov 17 2020 19:56:26 GMT+0000",
+  "jcr:baseVersion": "2e2b1f12-0b79-47bc-995c-4575545e07fe",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "864c4965-6a72-4d1b-bde5-742f43526d22",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/surgical"
+    ],
+    "eventContactEmail": "stephanie.eaton@stryker.com",
+    "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/7316055624226/WN_xAmeaRscQiie0lSX7OJ1TQ",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "eventAudience": [
+      "stryker:audience/or-professionals",
+      "stryker:audience/nurses"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/patient-safety"
+    ],
+    "eventContactName": "Stephanie Eaton",
+    "eventDetail": "Join Melony Prince as she discusses the following learning objectives for this CE Course:<br>\r\n<br>\r\n* Describe the potential biohazards associated with hospital air<br>\r\n* List the standards that guide hospital air quality<br>\r\n* Describe the role of infection prevention and control in hospital air quality and filtration<br>\r\n* List the current recommendations for treatment of hospital air and prevention of cross contamination<br>\r\n<br>\r\nThis CE course will provide 1 CE credit for registered nurses, surgical techs, and sterile processing technicians.",
+    "eventEndDateTime": "Thu Jul 15 2021 14:00:00 GMT+0000",
+    "eventLocation": "Virtual",
+    "eventCity": "N/A",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "jcr:lastModified": "Tue Nov 17 2020 19:56:25 GMT+0000",
+    "eventTitle": "O.R. Safety Series: Protecting Patients from Retained Surgical Items",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register Now",
+    "eventStartDateTime": "Thu Jul 15 2021 13:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

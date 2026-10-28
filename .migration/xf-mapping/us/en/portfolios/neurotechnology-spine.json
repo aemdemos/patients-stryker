@@ -1,0 +1,254 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": " Neurotechnology",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c549f758-efc9-44c8-92aa-4215b3e0cd99",
+  "cq:template": "/apps/stryker/templates/portfolio",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/neurotechnology/Thumbnail_Neuro 3.png",
+  "jcr:predecessors": [
+    "f114c1ca-2bb8-4ef8-801c-0e853f6b95f1"
+  ],
+  "contentID": "CORPM-GSNPS-SYK-933352_Rev-1",
+  "lastPublished": "Thu Jul 31 2025 20:02:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jul 31 2025 20:02:58 GMT+0000",
+  "cq:lastReplicated": "Thu Jul 31 2025 20:03:00 GMT+0000",
+  "cq:lastModified": "Wed Jul 30 2025 21:13:53 GMT+0000",
+  "jcr:baseVersion": "f114c1ca-2bb8-4ef8-801c-0e853f6b95f1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:02:58 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/portfolio",
+    "stryker:portfolio/neurotechnology"
+  ],
+  "jcr:lastModified": "Wed Jul 30 2025 21:13:53 GMT+0000",
+  "jcr:uuid": "261b7f8e-2881-4669-adda-c1a6f85e186d",
+  "sling:resourceType": "stryker/components/structure/pages/portfolio",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_254861314": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 31 2023 15:52:06 GMT+0000",
+      "jcr:lastModified": "Mon Jul 31 2023 15:52:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "bannercampaign": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jul 25 2025 23:13:36 GMT+0000",
+      "alt": "RISE",
+      "jcr:lastModified": "Tue Jul 29 2025 20:21:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/bannercampaign",
+      "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+      "openInNewTab": "true",
+      "srcLargeFileRef": "/content/dam/stryker/portfolios/medical-surgical/integration-and-connectivity/rise/images/campaigns/SYK-RISE-Website Banner-1800x300-v2.jpg"
+    },
+    "cols2_265966440": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jul 25 2025 23:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Jul 25 2025 23:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jul 25 2025 23:20:48 GMT+0000",
+      "jcr:lastModified": "Fri Jul 25 2025 23:20:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Jul 25 2025 23:20:52 GMT+0000",
+          "jcr:lastModified": "Fri Jul 25 2025 23:20:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Mon Jan 09 2023 22:07:58 GMT+0000",
+      "jcr:lastModified": "Mon Jan 09 2023 22:07:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 31 2023 15:42:28 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Experience the NEW Neurotechnology <span style=\"color: #ffb500;\">mobile lab!</span><br>\n </span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">We meet you where you are. Our mobile operating room brings world class training and education to you.</span></span></p>\n<ul>\n<li>Six integrated lab stations that allow visitors to experience our full line of products and partner technologies<br>\n<br>\n</li>\n<li>Set up to accommodate a wide variety of surgical specialties, procedures, and situations<br>\n<br>\n</li>\n<li>Continually touring the country, stopping at facilities and institutions across the United States</li>\n</ul>\n<p><span class=\"futura-bold\"><br>\nContact us below for more information</span></p>\n",
+          "jcr:lastModified": "Thu Aug 03 2023 17:32:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 31 2023 15:45:57 GMT+0000",
+          "alt": "Mobile Lab",
+          "srcFileRef": "/content/dam/stryker/portfolios/neurotechnology/images/NT_Mobile-Lab-Date-Poster_Updated-for-stryker_V3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 31 2023 15:51:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1628384216": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 31 2023 15:52:20 GMT+0000",
+      "jcr:lastModified": "Mon Jul 31 2023 15:52:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Jul 31 2023 15:47:05 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Jul 31 2023 15:47:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "2942",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 19 2023 18:34:30 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Wed May 31 2023 16:40:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Thu May 11 2017 15:41:27 GMT-0400",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "description": "You perform complex, highly specialized procedures in the most critical anatomy.  By working together and unifying our Neurotechnology & Spine portfolio’s, we continue to develop the breakthrough ideas, performance-enhancing products, and develop deep, collaborative relationships necessary to help you better serve the needs of your patients and improve clinical and economic outcomes.  ",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "capabilities",
+      "title": "Specializing in you",
+      "jcr:lastModified": "Thu Jan 18 2024 16:46:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  },
+  "bannercampaign": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Wed Aug 23 2017 13:07:14 GMT-0400",
+    "sling:resourceType": "stryker/components/content/bannercampaign"
+  },
+  "featuredcontentcontext": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModified": "Wed May 10 2017 02:48:21 GMT-0400",
+    "sling:resourceType": "stryker/components/content/featuredcontentcontext",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "tagline": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTagLineComp": "true",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Jan 18 2024 16:48:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagline",
+    "backgroundColor": "rgba(182,114,25,1)",
+    "gradientDirectionInverse": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/neurotechnology/Thumbnail_Neuro 3.png"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_72378185_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Neurotechnology</span></span></p>\n",
+      "jcr:lastModified": "Thu Jan 18 2024 16:46:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_72378185_copy_c_1496115885": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Better connected</span></span></p>\n",
+      "jcr:lastModified": "Thu Jan 18 2024 16:47:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 11 2024 19:00:51 GMT+0000",
+      "jcr:lastModified": "Thu Jan 11 2024 19:00:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">By delivering access to meaningful innovation, operational efficiency and the simplification of a single partner, we provide the power of a deeper understanding to help you better serve the needs of your patients and improve clinical and economic outcomes.</span><br>\n</p>\n",
+      "jcr:lastModified": "Thu Jan 18 2024 16:48:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

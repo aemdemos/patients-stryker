@@ -1,0 +1,2308 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "High Speed Drills",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "eefcc43a-58c8-4b4a-8a2e-8d0188929bed",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "High speed drills",
+  "jcr:predecessors": [
+    "63713be3-1432-47d1-91e9-1430f279a26e"
+  ],
+  "contentID": "NS-GSNPS-SYK-1400651_REV-0",
+  "lastPublished": "Wed Feb 19 2025 23:12:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 19 2025 23:12:04 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 19 2025 23:12:06 GMT+0000",
+  "cq:lastModified": "Wed Feb 19 2025 23:10:36 GMT+0000",
+  "jcr:description": "The most comprehensive and customizable neurosurgical high speed drill platform just grew stronger. With mechanics, motors and attachments, Signature 2 Portfolio aims to provide the exact tool and touch you want with the speed, power and durability you need.",
+  "jcr:baseVersion": "63713be3-1432-47d1-91e9-1430f279a26e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 19 2025 23:12:02 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/access-and-decompression-cranial",
+    "stryker:content-type/product",
+    "stryker:business-unit/Navigation-NSE",
+    "stryker:portfolio/neurotechnology",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/neuro-and-spine",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/cranial",
+    "stryker:capability/power-tools",
+    "stryker:specialty/access-and-decompression"
+  ],
+  "jcr:lastModified": "Wed Feb 19 2025 23:07:59 GMT+0000",
+  "jcr:uuid": "1a24f154-50b2-4790-af2c-bdf3a5b9e934",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_504100307": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "altMob": "CORE2_hero",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "backgroundImageMobRef": "/content/dam/stryker/navigation/products/core-2-console/images/signature-2-iBur-family-1500x892.jpg",
+      "layoutOptions": "col-sm-6 pull-left",
+      "backgroundImageRef": "/content/dam/stryker/nav-nse/products/electric-high-speed-drills/images/Electric-HSD-hero.jpg",
+      "jcr:created": "Wed Nov 06 2024 00:03:20 GMT+0000",
+      "alt": "High Speed Drills",
+      "jcr:lastModified": "Mon Feb 17 2025 19:37:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "topMargin": "7",
+          "jcr:created": "Wed Nov 06 2024 00:11:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">High Speed Drills<br>\r\n </span></span></h1>\r\n",
+          "line2": "<br />\r\n<span class=\"fontsize-1-5-vw\">The most comprehensive and customizable neurosurgical high speed drill platform just grew stronger. With mechanics, motors and attachments, Signature 2 Portfolio aims to provide the exact tool and touch you want with the speed, power and durability you need.</span>",
+          "jcr:lastModified": "Thu Jan 23 2025 17:58:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "3"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Nov 21 2024 18:57:58 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact-us",
+          "jcr:lastModified": "Thu Nov 21 2024 18:59:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Wed Nov 06 2024 00:25:22 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Next-level performance</span></span></h3>\n",
+      "jcr:lastModified": "Fri Nov 15 2024 00:33:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_2039982982": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 20 2024 22:36:35 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 22:36:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "startNumber": "1",
+          "counterlabel": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">motors<br>\r\n(electric and pneumatic)</span></span></div>\r\n",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 21 2024 20:25:30 GMT+0000",
+          "numberCounterAlignment": "text-center",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Thu Nov 21 2024 20:27:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "8",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "startNumber": "1",
+          "counterlabel": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">attachments</span></span></div>\r\n",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 21 2024 20:27:21 GMT+0000",
+          "numberCounterAlignment": "text-center",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Thu Nov 21 2024 20:27:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "40",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "startNumber": "1",
+          "counterlabel": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(28,86,135);\">and more&nbsp;</span></span><span class=\"urw-egyptienne\">cutting accessories</span></span></div>\r\n",
+          "fontColor": "rgb(28,86,135)",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 21 2024 20:28:10 GMT+0000",
+          "numberCounterAlignment": "text-center",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Thu Nov 21 2024 20:31:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "700",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 00:17:13 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 00:17:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "topMargin": "0",
+          "jcr:created": "Wed Nov 06 2024 00:22:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-8-5-vw\">One</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\">portfolio serves multiple specialties</span></div>\r\n",
+          "jcr:lastModified": "Thu Nov 21 2024 20:31:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 00:38:17 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 00:38:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:15:27 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:15:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Wed Nov 06 2024 00:38:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Specialties include:</span></span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n </span></span><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">(but aren't limited to)</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Neuro</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Spine</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Orthopaedics</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Neuro otology/ENT</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Dental</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 06:46:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "5"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Wed Nov 06 2024 00:38:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Functionality includes:</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Open, endoscopic/MIS and microscopic procedures</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Cutting, drilling, reaming, decorticating, shaping and smoothing of bone, bone cement and teeth</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Placing or cutting of screws, metals, wires, pins and other fixation devices</span><br>\n</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 06:46:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true",
+              "bottomMargin": "5"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Nov 11 2024 22:44:52 GMT+0000",
+      "jcr:lastModified": "Mon Nov 11 2024 22:44:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1237377426": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 22:58:33 GMT+0000",
+      "jcr:lastModified": "Thu Nov 14 2024 22:58:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 22:56:02 GMT+0000",
+      "jcr:lastModified": "Thu Nov 14 2024 22:56:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Nov 06 2024 00:25:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3 style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Unparalleled customization:</span></span></h3>\n<h3 style=\"text-align: right;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Where signature <br>\n truly gets its name</span></span></h3>\n",
+          "jcr:lastModified": "Fri Nov 15 2024 00:09:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Nov 14 2024 22:49:00 GMT+0000",
+          "alt": "Signature Portfolio table",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/electric-high-speed-drills/images/NS-ESD-Table-asterisk.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 05 2025 22:04:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Feb 05 2025 22:04:44 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">*Competitor information is pulled from Midas RexTM Mr8TM high-speed drill system. Medtronic. (n.d.). https://www.medtronic.com/en-us/healthcare-professionals/products/neurological/powered-surgical-instruments/high-speed-pneumatic-surgical-drills/midas-rex-mr8-high-speed-drill-system.html.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 05 2025 22:05:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 20 2024 19:41:53 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:41:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_2127997601": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Nov 11 2024 22:56:18 GMT+0000",
+      "jcr:lastModified": "Mon Nov 11 2024 22:56:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1992889627": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "motors",
+      "jcr:created": "Wed Nov 20 2024 19:42:43 GMT+0000",
+      "title": "Motors",
+      "jcr:lastModified": "Wed Nov 20 2024 19:46:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_869000_307540484": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: #ffb500;\">Motors</span></span></span></span></span></span></b></span>",
+      "jcr:lastModified": "Wed Nov 20 2024 22:41:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Mon Sep 26 2022 19:03:36 GMT+0000",
+      "jcr:lastModified": "Mon Sep 26 2022 19:13:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 20 2024 22:47:42 GMT+0000",
+          "jcr:lastModified": "Wed Nov 20 2024 22:47:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Nov 20 2024 22:45:32 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Nov 20 2024 22:45:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Oct 14 2022 17:47:26 GMT+0000",
+              "alt": "πdrive 2",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2/Signature-2_Pi Drive_DSC8478a_CROPPED-for-web3-logo.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Feb 05 2025 21:59:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Nov 20 2024 22:45:32 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Nov 20 2024 22:45:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "10",
+              "jcr:created": "Fri Nov 15 2024 00:01:59 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">Features and benefits<sup>1-2</sup></span></span>",
+              "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"> </span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">πdrive 2+ is part of Signature 2 Portfolio, the comprehensive and customizable neurosurgical high speed drill platform.</span></span></p>\r\n",
+              "jcr:lastModified": "Wed Nov 20 2024 22:48:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "bottomMargin": "5"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 22:59:33 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 22:59:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Mon Nov 11 2024 23:00:24 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>Motor bearing grease</b> has higher viscosity and max operating temperature (98.6°F increase; 350.6°F vs 284°F) (37°C increase; 177°C vs 140°C)</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>29% decrease</b> (3.3lbf) in attchment mean peak pullout force</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>Non-footed slam latch</b> and release collar simplify use</span></span></p>\n",
+              "jcr:lastModified": "Mon Nov 11 2024 23:18:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Mon Nov 11 2024 23:03:01 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>Matte anodizing and drill coating</b> reduce light reflection/glare off drill surface, reduce corrosion and preserve exterior marking 4+ years (minimum 400 cycles)</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>~50% reduction</b> in sound energy</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>Up to 36% reduction</b> in cable friction (CoF)</span></span></p>\n",
+              "jcr:lastModified": "Mon Nov 11 2024 23:18:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Mon Nov 11 2024 23:04:22 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">New, exclusive <b>KnurLock grip</b> technology</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>Drill tracker adapter</b> provides future-ready design</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Works with <b>I.D. Touch software</b> for custom drill response</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><b>75K RPM</b> electric motor</span></span></p>\n",
+              "jcr:lastModified": "Mon Nov 11 2024 23:18:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:05:52 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:05:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "4",
+              "jcr:created": "Mon Nov 11 2024 23:05:55 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span style=\"color: #b2b4ae;\">*Compared to original πdrive</span></p>\n",
+              "jcr:lastModified": "Mon Nov 11 2024 23:08:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "5"
+            }
+          }
+        }
+      }
+    },
+    "cols_64378918": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Nov 11 2024 23:09:08 GMT+0000",
+      "jcr:lastModified": "Mon Nov 11 2024 23:09:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Nov 11 2024 23:10:53 GMT+0000",
+      "jcr:lastModified": "Mon Nov 11 2024 23:10:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 20 2019 17:04:01 GMT+0000",
+          "alt": "πdrive motor",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/electric-high-speed-drills/images/piDriveSaberMotors-Black-Blue-Selected_plus_minus_gray_76_v2.png",
+          "jcr:lastModified": "Wed Feb 05 2025 22:15:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "srcFileRef-0": "/content/dam/stryker/nav-nse/products/-drive-Motor/images/chart_webpage.jpg",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\">πdrive</span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"> technology</span></span></span>",
+          "jcr:lastModified": "Fri Nov 15 2024 01:15:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Mon Nov 11 2024 23:09:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Patented, industry-unique design</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Magnets in &quot;pie&quot; configuration replace non-functioning steel core</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Flat wiring encases core, not open loop wiring</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Creates volumetric optimization to enhance performance while limiting housing size</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Nov 15 2024 06:50:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "10"
+        }
+      }
+    },
+    "cols_1106078253": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 20 2024 19:40:31 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:40:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_654872626": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 20 2024 19:40:24 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:40:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "attachments",
+      "jcr:created": "Wed Nov 20 2024 19:41:27 GMT+0000",
+      "title": "Attachments and cutting accessories",
+      "jcr:lastModified": "Wed Nov 20 2024 19:46:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_869000_1482376477": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: #ffb500;\">Attachments and cutting accessories</span></span></span></span></span></b></span>",
+      "jcr:lastModified": "Wed Nov 20 2024 22:41:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Nov 20 2024 19:33:20 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 22:24:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "5",
+              "jcr:created": "Mon Aug 05 2019 15:01:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\">Elite attachments</span></span></span><br />\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">and cutting accessories</span></span></h1>\r\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:56:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 14 2024 23:11:21 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The Elite attachments and cutting accessories in our Signature 2 and Heritage Portfolios are among our most popular.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">They’re compatible with a wide range of our high speed motors and drills, including the electric πdrive 2 Motor and πdrive 2+ Motor—all powered by our CORE 2 Console—and our pneumatic Maestro Air Motor with or without handswitch.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Our 440 and 442 knurled attachments help optimize system length and balance for neuro otologists and ENTs.</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:54:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Thu Nov 14 2024 23:04:31 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:12:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Nov 14 2024 23:03:41 GMT+0000",
+              "alt": "prd-bg-img-1-26",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Elite-cutting-accessories-and-attachments/images/prd-bg-img-1-26.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 14 2024 23:04:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2_1189533391": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 20 2024 19:35:07 GMT+0000",
+          "jcr:lastModified": "Wed Nov 20 2024 19:35:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:43:45 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: #ffb500;\">For use with</span></span></span></span></span></span></span>",
+              "jcr:lastModified": "Thu Nov 14 2024 23:10:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "jcr:lastModified": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2/pi-drive2.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2 Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:51:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2+",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2--motor/pi-drive2+.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2+ Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air-handswitch",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air-handswitch.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor w/ handswitch</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:39:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "customizable_1427790": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 23:49:09 GMT+0000",
+          "jcr:lastModified": "Thu Nov 14 2024 23:49:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/elite-attachments/attachments0"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/elite-attachments/cutting-accessories0"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "5",
+              "jcr:created": "Mon Aug 05 2019 15:01:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\">Footed attachments</span></span></span><br />\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">and cutting accessories</span></span></h1>\r\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:57:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Thu Nov 14 2024 23:11:21 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The Elite attachments and cutting accessories in our Signature 2 and Heritage Portfolios are among our most popular.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">They’re compatible with a wide range of our high speed motors and drills, including the electric πdrive 2 Motor and πdrive 2+ Motor—all powered by our CORE 2 Console—and our pneumatic Maestro Air Motor with or without handswitch.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Our new 8cm and 9cm non-footed attachments with slam latch and release collar permit easier release technique while augmenting safety.</span></span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:34:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Nov 14 2024 23:03:41 GMT+0000",
+              "alt": "Footed attachment",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Footed-cutting-accessories-and-attachments/images/Footed_ZOOM.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 14 2024 23:35:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 20 2024 19:36:55 GMT+0000",
+          "jcr:lastModified": "Wed Nov 20 2024 19:36:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:43:45 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\">For use with</span></span></span></span></span></span></span></span></span>",
+              "jcr:lastModified": "Fri Nov 15 2024 00:00:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols4_copy_copy_6662": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "jcr:lastModified": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2/pi-drive2.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2 Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:51:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2+",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2--motor/pi-drive2+.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2+ Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air-handswitch",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air-handswitch.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor w/ handswitch</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:39:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 23:44:43 GMT+0000",
+          "jcr:lastModified": "Thu Nov 14 2024 23:45:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/footed-attachments/attachments"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/footed-attachments/cutting-accessories"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "5",
+              "jcr:created": "Mon Aug 05 2019 15:01:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\">Heavy Duty attachments</span></span></span><br>\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">and cutting accessories</span></span></h1>\r\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:37:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Thu Nov 14 2024 23:11:21 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Our Heritage and Heavy Duty attachments are ideal when you need stability and power – without compromising the precision and control.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Attachments and accessories work together in five categories in five categories O, M, AM, R and RX.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">They’re compatible with a wide range of our high speed drills, including the electric πdrive 2 Motor and πdrive 2+ Motor—all powered by our CORE 2 Console—and our pneumatic Maestro Air Motor and Maestro Air Motor with handswitch.</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:40:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Nov 14 2024 23:03:41 GMT+0000",
+              "alt": "Heavy Duty attachment",
+              "srcFileRef": "/content/dam/stryker/navigation/products/heavy-duty/images/HeavyDuty_ZOOM.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Nov 15 2024 00:41:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 20 2024 19:37:56 GMT+0000",
+          "jcr:lastModified": "Wed Nov 20 2024 19:37:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:43:45 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\">For use with</span></span></span></span></span></span></span></span></span>",
+              "jcr:lastModified": "Fri Nov 15 2024 00:00:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols4_copy_copy_6662": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "jcr:lastModified": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2/pi-drive2.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2 Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:51:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2+",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2--motor/pi-drive2+.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2+ Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air-handswitch",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air-handswitch.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor w/ handswitch</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:39:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_759136861": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Nov 15 2024 00:52:10 GMT+0000",
+          "jcr:lastModified": "Fri Nov 15 2024 00:52:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_1573639051": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Nov 15 2024 00:53:04 GMT+0000",
+              "alt": "CORE Sumex Drill",
+              "srcFileRef": "/content/dam/stryker/navigation/products/elite-attachments/images/for-use-with/Sumex-Drill-Graphic-01.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Nov 15 2024 00:57:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">CORE Sumex Drill</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:57:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Nov 15 2024 00:53:45 GMT+0000",
+              "alt": "Maestro Drill",
+              "srcFileRef": "/content/dam/stryker/navigation/products/elite-attachments/images/for-use-with/elt-att-fuw-img-7.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Nov 15 2024 00:56:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Drill</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:57:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Nov 15 2024 00:53:49 GMT+0000",
+              "alt": "Maestro Drill w/ handswitch",
+              "srcFileRef": "/content/dam/stryker/navigation/products/elite-attachments/images/for-use-with/elt-att-fuw-img-8.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Nov 15 2024 00:56:43 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Drill w/ handswitch</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:57:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "customizable_3693901": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Nov 15 2024 00:45:47 GMT+0000",
+          "jcr:lastModified": "Fri Nov 15 2024 00:46:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/heavy-duty-attachments/accessories"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/heavy-duty-attachments/cutting-accessories"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "jcr:lastModified": "Mon Nov 11 2024 23:29:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "topMargin": "5",
+              "jcr:created": "Mon Aug 05 2019 15:01:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2-5-vw\">MIS attachments</span></span></span><br>\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">and cutting accessories</span></span></h1>\r\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:59:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(237,238,236)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Thu Nov 14 2024 23:11:21 GMT+0000",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">In minimally invasive procedures, you need attachments and cutting accessories that provide access, precision and performance you can depend on.</span></span><br>\n</p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 01:00:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Nov 14 2024 23:03:41 GMT+0000",
+              "alt": "MIS attachment",
+              "srcFileRef": "/content/dam/stryker/navigation/products/mis-attachments/images/MIS_ZOOM.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Nov 15 2024 01:01:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Nov 20 2024 19:39:00 GMT+0000",
+          "jcr:lastModified": "Wed Nov 20 2024 19:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:43:45 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\">For use with</span></span></span></span></span></span></span></span></span>",
+              "jcr:lastModified": "Fri Nov 15 2024 00:00:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols4_copy_copy_6662": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "jcr:lastModified": "Tue Sep 24 2019 18:31:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2/pi-drive2.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2 Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:51:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "pi-drive2+",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/πdrive-2--motor/pi-drive2+.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">πdrive 2+ Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor</span></span></p>\n",
+              "jcr:lastModified": "Thu Nov 14 2024 23:52:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Sep 24 2019 18:31:23 GMT+0000",
+              "alt": "maestro-air-handswitch",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/Maestro-Air-Motor/images/maestro-air-handswitch.jpg",
+              "jcr:lastModified": "Mon Sep 26 2022 18:37:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Sep 24 2019 18:31:45 GMT+0000",
+              "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Maestro Air Motor w/ handswitch</span></span></p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 00:39:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "customizable_3807917": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Nov 15 2024 01:03:43 GMT+0000",
+          "jcr:lastModified": "Fri Nov 15 2024 01:04:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/mis-attachments/accessories"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/nse/products/mis-attachments/cutting-accessories"
+            }
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Elite"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Footed"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Heavy Duty"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "MIS"
+        }
+      }
+    },
+    "cols_352492728": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 20:24:45 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 20:24:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 00:58:17 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 00:58:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_965627689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "irrigation-sleeves",
+      "jcr:created": "Wed Nov 20 2024 22:23:55 GMT+0000",
+      "title": "Irrigation sleeves",
+      "jcr:lastModified": "Wed Nov 20 2024 22:25:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_869000_649439318": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\">Irrigation sleeves</span></span></span></span></b></span>",
+      "jcr:lastModified": "Wed Nov 20 2024 22:42:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_1195687428": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Nov 11 2024 23:09:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">With an ergonomic design that facilitates surgical site access, our new Irrigation Sleeves stream efficiency and precision into your workflow. The slim, single molded sleeve —constructed from a flexible thermoplastic elastomer —slides effortlessly over Signature Portfolio’s MIS and Elite attachments conforming to their shape for an efficient fit. The low profile and rotatable irrigation jet facilitates site access and provides irrigation exactly where and when you need it.</span></p>\n<p><span class=\"fontsize-1-25em\"><br>\nFor a seamless performance, the sleeves instantly integrate with CORE disposable irrigation cassettes while the CORE Console provides adjustable settings to control your preferences. It’s just one more way to customize and streamline your workflow all while maintaining your surgical technique.</span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Nov 15 2024 01:34:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1866409587_copy_1950774244": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_29240975": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:23:22 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:23:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Nov 29 2022 14:35:24 GMT+0000",
+      "jcr:lastModified": "Tue Nov 29 2022 14:39:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Nov 29 2022 14:35:32 GMT+0000",
+          "jcr:lastModified": "Tue Nov 29 2022 14:35:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Tue Nov 29 2022 14:36:28 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">&quot;I like the fact the shaft is integrated. The irrigation component is nice... it did not get hot at all.&quot;</span></span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n </span></span></span><span style=\"color: #edeeec;\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\">- Spine surgeon</span></span></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 01:22:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Tue Nov 29 2022 14:36:28 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">&quot;The iBur provides a competitive advantage in its design, irrigation and line of sight.&quot;</span></span></span><span style=\"color: #edeeec;\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><br>\n - Spine surgeon</span></span></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Nov 15 2024 01:22:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_1866409587_copy_193324479": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1866409587": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1752708334": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:36:02 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:36:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_745205590": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "6",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Nov 15 2024 01:27:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<div><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Features and benefits</span></span></div>\n<div>&nbsp;</div>\n<ul>\n<li><span class=\"fontsize-1-25em\">Precise irrigation to the surgical site</span></li>\n<li><span class=\"fontsize-1-25em\">Slim, low profile to facilitate access</span></li>\n<li><span class=\"fontsize-1-25em\">Rotatable irrigation jet for precision delivery</span></li>\n<li><span class=\"fontsize-1-25em\">Single molded sleeve eliminates pieces that could disassemble during use</span></li>\n<li><span class=\"fontsize-1-25em\">Adapts to MIS and Elite drill attachment profile</span></li>\n<li><span class=\"fontsize-1-25em\">Integrates with CORE Console disposable irrigation cassettes</span></li>\n<li><span class=\"fontsize-1-25em\">Sterile and disposable</span></li>\n<li><span class=\"fontsize-1-25em\">Available in multiple sizes for MIS and Elite attachments</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Nov 15 2024 01:35:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "6",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 15 2024 01:33:23 GMT+0000",
+          "alt": "irrigationsleeves7",
+          "srcFileRef": "/content/dam/stryker/navigation/products/irrigation-sleeves/images/irrigationsleeves7.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 15 2024 01:33:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_867103430": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 06:52:00 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 06:52:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_382068635": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 06:52:08 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 06:52:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_869000": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Maestro Air Motor</span></span></b></span>",
+      "jcr:lastModified": "Wed Nov 20 2024 19:25:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_1866409587_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 01:34:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Nov 11 2024 23:09:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">As part of the Signature Portfolio, our latest Maestro Air motor reflects multiple refinements aimed at increasing its reliability and your overall experience. Rated up to 150 psi, today’s motor provides the speed, power and torque to handle the most taxing drill scenarios, coupled with the intuitive feel and feedback you like from a pneumatic system. With a wealth of choices to suit your specialty and preferences, you can create a drill portfolio reflective of your own signature style.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 20 2024 22:19:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_463106221": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 06:55:52 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 06:55:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 15 2024 06:55:57 GMT+0000",
+          "alt": "prd-bg-img-1-21",
+          "srcFileRef": "/content/dam/stryker/navigation/products/maestro-air/images/prd-bg-img-1-21.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 15 2024 06:56:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Nov 15 2024 06:59:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<div><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Maestro Air</span></span></div>\n<div>&nbsp;</div>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Power and reliability</span></span></p>\n<ul>\n<li>Pneumatic motor rated up to 150 psi</li>\n<li>20% more torque than previous model</li>\n<li>25% more power in watts</li>\n<li>Speeds up to 75K RPMs</li>\n</ul>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Customization</span></span></p>\n<ul>\n<li>Motors with or without handswitch</li>\n<li>Four foot pedal options</li>\n<li>The industry’s most comprehensive array of attachments</li>\n<li>Industry-unique cutting accessories</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Feb 19 2025 23:10:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_73772564": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 07:04:07 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 07:04:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_823310197": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 07:04:12 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 07:04:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_838557755": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Nov 15 2024 07:04:34 GMT+0000",
+      "jcr:lastModified": "Fri Nov 15 2024 07:04:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_869000": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Aria Drill System</span></span></b></span>",
+          "jcr:lastModified": "Wed Nov 20 2024 19:25:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Nov 15 2024 07:04:45 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Our Aria Drill system delivers the same exceptional performance you appreciate from our Maestro Drill—with a design and titanium accessories that are fully compatibility with, 3.0 Tesla Interoperative MRI Suites.</span></p>\n",
+          "jcr:lastModified": "Fri Nov 15 2024 07:05:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 15 2024 07:05:52 GMT+0000",
+          "alt": "Aria Drill",
+          "srcFileRef": "/content/dam/stryker/navigation/products/aria-drill/images/AriaDrill_hero21.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 15 2024 07:23:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_1012858664": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Aug 06 2019 17:56:38 GMT+0000",
+      "jcr:lastModified": "Tue Aug 06 2019 17:56:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "mixedmediagallery": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Aug 06 2019 17:56:53 GMT+0000",
+          "jcr:lastModified": "Tue Aug 06 2019 17:56:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/mixedmediagallery",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/navigation/products/aria-drill/images/aria_drill_mixedmedia",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/aria_drill_mixedmedia",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Aug 06 2019 17:57:01 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "MixedMediaSet",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "4",
+          "jcr:created": "Tue Aug 06 2019 17:59:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Attachments and titanium cutting accessories</span></span></p>\n<p><span class=\"fontsize-1-25em\">The Aria Drill system includes dedicated attachments and cutting accessories, including the Aria I duraguard, Aria IM attachment, a 2.1 mm titanium tapered router, and a 5.0 mm titanium round bur.&nbsp;You get the cutting performance you expect from Stryker—with complete MRI suite compatibility.</span></p>\n",
+          "jcr:lastModified": "Fri Nov 15 2024 07:20:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Aug 06 2019 18:14:58 GMT+0000",
+      "jcr:lastModified": "Tue Aug 06 2019 18:14:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 06 2019 18:09:55 GMT+0000",
+          "alt": "Foot pedal",
+          "srcFileRef": "/content/dam/stryker/navigation/products/aria-drill/images/maestro.jpg",
+          "jcr:lastModified": "Fri Nov 15 2024 07:22:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Tue Aug 06 2019 18:11:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Expanded foot pedal options</span></span></p>\n<p><span class=\"fontsize-1-25em\">Choose the foot pedal design that matches the way you like to work—they’re all simple to set up and offer variable speed control. The “exhausting” pedal vents pressurized gas immediately at the foot pedal when you remove your foot.</span></p>\n<p><span class=\"fontsize-1-25em\">“Non-exhausting” vents through the motor system; and “universal” gives you both exhausting and non-exhausting and handswitch modes. Our wide/heavy design is well-suited if you prefer a roomier, wider-format foot control.</span></p>\n",
+          "jcr:lastModified": "Thu Jan 23 2025 17:57:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1237374788": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 18:55:36 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 18:55:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_271166101": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "core-two",
+      "jcr:created": "Fri Nov 22 2024 23:02:29 GMT+0000",
+      "title": "CORE 2",
+      "jcr:lastModified": "Fri Nov 22 2024 23:03:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_869000_989653693": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CORE 2</span></span></b></span>",
+      "jcr:lastModified": "Fri Nov 22 2024 23:02:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 18:54:27 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 18:54:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/core-2-console"
+        }
+      }
+    },
+    "cols_1563869443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 18:56:33 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 18:56:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_210760464": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 18:57:48 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 18:57:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_405534296": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-us",
+      "jcr:created": "Thu Nov 21 2024 18:58:10 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Thu Nov 21 2024 18:59:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_869000_1773421626": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 23:13:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 35.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Contact us</span></span></b></span>",
+      "jcr:lastModified": "Thu Nov 21 2024 18:57:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_637780018": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 21 2024 18:56:48 GMT+0000",
+      "jcr:lastModified": "Thu Nov 21 2024 18:56:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3071",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Nov 21 2024 18:56:41 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu Nov 21 2024 18:57:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Nov 20 2024 19:45:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Stryker data on file&nbsp;</p>\r\n<p>2. “Understanding the 3dB rule.” Pulsar Instruments, 26 Oct. 2015, <a href=\"https://pulsarinstruments.com/en/post/understanding-3db-rule\">https://pulsarinstruments.com/en/post/understanding-3db-rule</a> </p>\r\n",
+    "jcr:lastModified": "Wed Feb 05 2025 22:05:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/navigation/products/core-2-console/images/signature-2-iBur-family-1500x892.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Feb 17 2025 20:00:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Carousel - Instruments landing hero - desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7c475616-19d5-4a2e-9355-a32aeeb60dfb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5dfac1fa-db96-4b1d-8473-70cda2f0456f"
+  ],
+  "lastPublished": "Tue May 26 2026 19:02:32 GMT+0000",
+  "jcr:created": "Tue May 26 2026 19:02:33 GMT+0000",
+  "cq:lastReplicated": "Tue May 26 2026 19:02:35 GMT+0000",
+  "cq:lastModified": "Fri Feb 13 2026 19:36:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5dfac1fa-db96-4b1d-8473-70cda2f0456f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue May 26 2026 19:02:32 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "bb7e9b98-25c5-4f51-be0b-9d86534e3363",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 13 2026 19:35:50 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Fri Feb 13 2026 19:35:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/surgical-technologies/landing/videos/65d679c85af2f7ac521bf276_68f9185420e386f0504641f6_hero bg video -home 081125-transcode.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/65d679c85af2f7ac521bf276_68f9185420e386f0504641f6_hero bg video -home 081125-transcode-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Feb 13 2026 19:36:11 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

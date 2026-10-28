@@ -1,0 +1,285 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "How Stryker supports the American Red Cross lifesaving mission",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "828acb79-ceb0-4ac9-bd7b-7d83e97677e0",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Red Cross Zambia",
+  "jcr:predecessors": [
+    "fbe9efca-da61-4d8d-955c-84a0bb78bd6a"
+  ],
+  "contentID": "COMM-GSNPS-SYK-728200_Rev-1",
+  "lastPublished": "Wed Feb 18 2026 20:56:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 18 2026 20:56:01 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 18 2026 20:56:03 GMT+0000",
+  "cq:lastModified": "Wed Feb 18 2026 20:55:19 GMT+0000",
+  "jcr:description": "Learn how Stryker is helping the American Red Cross to prevent and alleviate human suffering.",
+  "jcr:baseVersion": "fbe9efca-da61-4d8d-955c-84a0bb78bd6a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:10:45 GMT+0000",
+  "pageTitle": "How Stryker supports the Red Cross' lifesaving mission",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/cr",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Wed Feb 18 2026 20:55:19 GMT+0000",
+  "jcr:uuid": "56171e8f-9d20-4542-8311-8dfa68887b72",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "How Stryker supports the Red Cross' lifesaving mission",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_1157299121": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 16:02:36 GMT+0000",
+      "text": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-1em\">Across Stryker, our employees are supporting the global effort</span></span></h2>\n",
+      "jcr:lastModified": "Wed Aug 07 2024 13:52:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 15:54:47 GMT+0000",
+      "text": "<p>As part of the largest humanitarian organization in the world, the American Red Cross mobilizes the power of volunteers and the generosity of donors to prevent and alleviate human suffering. Part of the global Red Cross and Red Crescent network, the organization deploys experts and works with communities around the world to prepare for and respond to disasters like wildfires, floods and hurricanes, eliminate deadly diseases like measles and rubella, and reunite families separated by crises, among many other services.</p>\n<p>On average, <span class=\"futura-bold\"><span style=\"color: #85458a;\">the Red Cross provides relief to 1 in 65 people around the world each year</span></span>. With no shortage of disasters — from extreme weather due to the climate crisis to single family home fires — the organization’s lifesaving mission goes far beyond the Red Cross blood donations that the organization is perhaps known for most.</p>\n<p>“We are so grateful to Stryker for their generous commitment to our lifesaving mission,” said Anne McKeough, chief development officer at the American Red Cross. “As families and communities struggle with more frequent and intense disasters, forward-thinking partners like Stryker enable us to offer vital assistance and make a profound impact on those facing adversity.”<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Jun 13 2024 17:06:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Courtesy of the American Red Cross. ©2024 The American National Red Cross ALL RIGHTS RESERVED",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jul 10 2023 15:55:37 GMT+0000",
+      "alt": "Red Cross Zambia",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/how-stryker-supports-the-red-cross-lifesaving-mission/Red Cross Zambia.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 13 2024 17:02:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_1553343585_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jul 10 2023 15:56:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Meeting the blood donation needs of patients, families and communities</span></span><br>\n</h2>\n",
+      "jcr:lastModified": "Tue Aug 13 2024 13:05:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1553343585_copy_1027091711": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jul 10 2023 15:56:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Every two seconds someone in the U.S. needs blood.<sup>1</sup> And when the Red Cross says there is a constant need for blood, it’s not an exaggeration. Somewhere, there’s a mother waiting on the donation that will save her son’s life. There’s a woman with sickle cell disease waiting for a blood transfusion, or a young athlete who has sustained a traumatic injury and needs blood as soon as possible. The Red Cross works to have lifesaving blood available whenever and wherever its needed — and Stryker is helping to make that happen.</p>\n<p>The Red Cross is responsible for supplying about 40% of the nation’s blood, directly impacting Stryker’s customers and their patients. It relies on organizations and individuals to help maintain the nation’s blood supply, because the need never ends.</p>\n<p>In addition to our signature partnership, Stryker provides employees with opportunities to step up and help. Efforts include a 2:1 donation match for the Red Cross and the opportunity to host local blood drives and volunteer events, which many of our divisions and employee resource groups have organized. For example, Stryker employees support the Red Cross during emergency blood shortages by raising awareness or donating blood and/or platelets. They also participate in volunteer opportunities to assemble disaster recovery kits for people affected by natural disasters like floods, hurricanes, blizzards and tornados. Stryker’s partnership with the Red Cross is an important way we deliver on our mission to care for those in need.</p>\n",
+      "jcr:lastModified": "Tue Aug 13 2024 13:07:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Mon Jul 10 2023 15:55:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">For all these humanitarian needs, </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Stryker is proud to stand by the Red Cross</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"> as our signature partner, both globally and locally, amplifying its mission through financial and volunteer support.&nbsp;</span></span></p>\n",
+      "jcr:lastModified": "Mon Jul 10 2023 19:00:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 16:04:45 GMT+0000",
+      "jcr:lastModified": "Mon Jul 10 2023 16:04:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 19:09:46 GMT+0000",
+      "jcr:lastModified": "Mon Jul 10 2023 19:09:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 10 2023 15:57:38 GMT+0000",
+          "alt": "Blood drive",
+          "srcFileRef": "/content/dam/stryker/about/news/2023/features/how-stryker-supports-the-red-cross-lifesaving-mission/Blood drive prep_Freiburg.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 10 2023 19:13:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1669230468_copy_1852877008": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jul 10 2023 15:56:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-8em\"><span class=\"futura-bold\">Stryker employees give blood for patients facing sickle cell disease</span></span></h2>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 13:05:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1669230468_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jul 10 2023 15:56:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>In the U.S., more than 100,000 people — primarily those of African descent — have sickle cell disease and may require regular blood transfusions throughout their lifetime.<sup>2</sup> Sickle cell disease distorts red blood cells, which may lead to severe pain, tissue and organ damage, anemia and even strokes. Frequent transfusions may result in an immune response from donors who are not closely matched to the blood of the recipient, but one in three Black American blood donors are a match for people with sickle cell disease. As the Red Cross continues its new national initiative to reach more blood donors who are Black to help improve health outcomes, Stryker is supporting the effort.<br>\n<br>\nTo help meet this need, Stryker’s African Ancestry Network (SAAN), an employee resource group formed by Stryker employees who aspire to make Stryker a career destination for Black employees, organized multiple local blood drives that members could attend over the past few years in recognition of Black History Month.<br>\n<br>\n“It was encouraging to be able to provide an opportunity for members at each Stryker location,” said Jordan Merritt, Marketing Communications Manager at Stryker and the Communications Lead for SAAN. “Whether it was San Jose, Dallas, Kalamazoo, Mahwah, Memphis or another location, employees used their extra time for good, helping people in need.”<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 13:07:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 16:01:39 GMT+0000",
+      "jcr:lastModified": "Mon Jul 10 2023 16:01:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_971944858": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 15:57:44 GMT+0000",
+      "text": "<p>It’s the blood already on the shelves that helps save lives in an emergency. Stryker is honored to partner with the Red Cross and support blood drives in local communities across the nation.<br>\n<br>\n<span class=\"fontsize-1-5em\"><span class=\"futura-bold\">There are many ways you, too, can support the Red Cross<br>\n </span></span><span class=\"fontsize-1-25em\">Make a donation, sign up to volunteer, give lifesaving blood, learn how to host a blood drive or take a First Aid or CPR class near you.</span></p>\n",
+      "jcr:lastModified": "Tue Jun 11 2024 14:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_832063514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jul 10 2023 19:03:26 GMT+0000",
+      "jcr:lastModified": "Mon Jul 10 2023 19:03:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)|rgba(76,125,122,1)",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 10 2023 19:00:32 GMT+0000",
+          "jcr:lastModified": "Mon Jul 17 2023 14:47:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://stryker.benevity.org/community",
+              "buttonText": "Make a donation",
+              "externalLinkType": "ext"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "http://redcross.org/volunteer",
+              "buttonText": "Sign up to volunteer",
+              "externalLinkType": "ext"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "http://redcrossblood.org/",
+              "internalLink": "http://redcrossblood.org/",
+              "buttonText": "Give lifesaving blood",
+              "externalLinkType": "ext"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.redcrossblood.org/hosting-a-blood-drive/learn-about-hosting/how-hosting-a-blood-drive-works.html",
+              "buttonText": "Learn how to host a blood drive ",
+              "externalLinkType": "ext"
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "http://redcross.org/take-a-class",
+              "buttonText": "Take a First Aid or CPR class near you",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu Jun 13 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "13-Jun-2024",
+    "jcr:lastModified": "Tue Jun 11 2024 14:34:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/features/how-stryker-supports-the-red-cross-lifesaving-mission/Red Cross Zambia.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>National Heart, Lung and Blood Institute ‘Donate Blood. Save Lives.’ 2024. Accessed 30 May 2024 via <a href=\"https://www.nhlbi.nih.gov/education/blood/donation\">https://www.nhlbi.nih.gov/education/blood/donation</a>.</li>\r\n<li>NIH “What Is Sickle Cell Disease?” https://www.nhlbi.nih.gov/health/sickle-cell-disease. Accessed June 2023.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Jun 11 2024 14:48:33 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

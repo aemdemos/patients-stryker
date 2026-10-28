@@ -1,0 +1,389 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Stretcher Support Surface",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ultra Comfort SE",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "43eaf61d-fc5b-4a8a-9479-cf32a4aa11b2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "UltraComfortSE",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/ultracomfortse/images/Thumbnail_UltraComfortSE_full.jpg",
+  "jcr:predecessors": [
+    "32eb38be-ab8b-4cdb-8c08-612eb6cf5a3b"
+  ],
+  "contentID": "SYK MED AC App 8-22-17",
+  "lastPublished": "Thu Aug 13 2026 20:23:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:23:40 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:23:42 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:23:31 GMT+0000",
+  "jcr:description": "The Ultra Comfort SE hospital stretcher support surface is designed with the overall patient experience in mind and has specific features to assist in improving outcomes..",
+  "jcr:baseVersion": "32eb38be-ab8b-4cdb-8c08-612eb6cf5a3b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:08:16 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/acute-care/surfaces---beds-vs-stretchers/stretcher-surfaces",
+    "stryker:capability/support-surfaces",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/stretcher-support-surfaces",
+    "stryker:custom/acute-care/surface-types/basic-foam",
+    "stryker:product/acute-care/ultracomfort-se",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Wed Jun 19 2024 17:21:52 GMT+0000",
+  "jcr:uuid": "94580972-721b-47ba-8f79-8ab6312c443e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/ultracomfort_se/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/ultracomfort-se/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Jun 20 2024 15:10:11 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Ultra Comfort SE</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Stretcher support surface</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The next generation of stretcher support surfaces.</span></span></p>\n",
+              "jcr:lastModified": "Thu Jun 20 2024 15:10:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Jun 20 2024 15:07:09 GMT+0000",
+      "jcr:lastModified": "Thu Jun 20 2024 15:07:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Thu Jun 20 2024 14:48:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><a href=\"https://techweb.stryker.com/\" target=\"_blank\"><span class=\"standalone-link\">Operations and maintenance manuals</span></a></p>\n",
+          "jcr:lastModified": "Thu Jun 20 2024 14:50:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true",
+          "leftMargin": "18"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Related categories</span></span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\">Medical and surgical equipment</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/support-surfaces.html\" target=\"_blank\">Support surfaces</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/support-surfaces/stretcher-support-surfaces.html\">Stretcher support surfaces</a></p>\n",
+          "jcr:lastModified": "Thu Jun 20 2024 15:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "20"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Jun 20 2024 14:50:22 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Ultra Comfort SE at a glance</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The Ultra Comfort SE Support Surface was designed with the overall patient experience in mind and has specific features to assist in improving outcomes.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Three-sided zipper</span></li>\n<li><span class=\"fontsize-1-25em\">Durable cover</span></li>\n<li><span class=\"fontsize-1-25em\">Welded seams</span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jun 20 2024 15:09:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_108156": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Dec 19 2023 14:51:24 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 13 2026 20:23:31 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Mon Feb 05 2024 14:58:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_1061166035": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": "/content/dam/stryker/acute-care/products/ultracomfortse/resources/Ultra Comfort SE_SS_Mkt Lit-1439.pdf",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Thu Jun 20 2024 15:06:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "featuredcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Mon Jan 29 2024 18:23:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/bari-10a"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/mv3"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 20 2024 15:09:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+    "openInNewWindow": true,
+    "linkUrl": "https://patienthandling.stryker.com/en/products/surfaces/surfaces/other-offerings",
+    "jcr:lastModified": "Fri Jun 26 2020 21:19:20 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/ultracomfortse/images/Thumbnail_UltraComfortSE_full.jpg"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 20 2024 15:07:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 20 2024 15:07:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Jun 20 2024 15:07:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LUCAS 3, v3.1 : Setup option VENTILATION ALERT",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6b0f0530-6d99-46b8-8d32-bb3829ce806c",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "018794b4-14c4-4581-80c8-0a5bb3a5a09a"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:41:40 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:41:40 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:41:42 GMT+0000",
+  "cq:lastModified": "Fri Sep 09 2022 18:16:01 GMT+0000",
+  "jcr:baseVersion": "018794b4-14c4-4581-80c8-0a5bb3a5a09a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "d4a2198c-ecb0-49a0-9c17-5368ed72cd5b",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:56:00 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:56:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "This training video demonstrates how to setup the Ventilation Alert option on the LUCAS device.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 19:57:23 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Fri Sep 09 2022 18:16:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lucas-3-v3-1-setup-option-ventilation-alert.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lucas-3-v3-1-setup-option-ventilation-alert-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Sep 09 2022 18:15:50 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

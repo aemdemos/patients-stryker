@@ -1,0 +1,1624 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "DART Mentorship program",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2acf5686-ff48-4726-a715-21fb6a2274d1",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "jcr:predecessors": [
+    "d412987d-07a7-413c-952e-3d6ea32ce1d8"
+  ],
+  "contentID": "JR-GSNPS-SYK-649572",
+  "lastPublished": "Tue Jun 13 2023 15:00:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 13 2023 15:00:01 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 13 2023 15:00:03 GMT+0000",
+  "cq:lastModified": "Tue Jun 13 2023 14:59:39 GMT+0000",
+  "noFollow": "true",
+  "jcr:baseVersion": "d412987d-07a7-413c-952e-3d6ea32ce1d8",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "DART Mentorship program",
+  "jcr:lastModified": "Tue Jun 13 2023 14:59:39 GMT+0000",
+  "jcr:uuid": "5c54c822-e76d-489a-8551-60782c8cde37",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 05 2022 18:57:31 GMT+0000",
+      "jcr:lastModified": "Tue Jul 05 2022 18:57:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/dart/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/dart/hero/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Tue Jul 05 2022 18:57:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed May 31 2023 15:47:49 GMT+0000",
+          "marginRight": "40",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8vw\"><span style=\"color: rgb(255,181,0);\">DA</span>RT</span><span class=\"fontsize-7vw\"><sup><span class=\"fontsize-1vw\"><span class=\"fontsize-4-5-vw\">™</span></span></sup></span></span></h3>\r\n<div><span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Direct Anterior</span></span></span></div>\r\n<div><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Reconstructive technique</span></span></div>\r\n",
+              "jcr:lastModified": "Mon May 15 2023 20:10:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_16037": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:33:06 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:41:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Welcome to the DART™ Mentorship program!</span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 31 2023 15:45:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_823849823": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue May 02 2023 18:54:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">DA</span>RT</span><span class=\"urw-egyptienne\"> Mentorship program </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\n</span><br>\n </span>Stryker’s Direct Anterior Mentorship gives you the opportunity to connect with highly experienced Stryker DA faculty that can help further skills and foster post-program Direct Anterior learning.<br>\nIt is our goal that the conversations from the course you attended will not end there! We encourage you to utilize the Direct Anterior Mentorship by reaching out to your sales representative to determine the best next steps in your DA education journey. We understand the importance of DA education and we are committed to partnering with you along the way.<br>\n<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed May 31 2023 15:54:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1915270904": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:26:24 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:26:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue May 02 2023 18:54:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">2023</span></span><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"> <span style=\"color: #ffb500;\">DA</span>RT </span></span><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">programs</span></span><br>\n</p>\n<p><span class=\"futura-bold\">Strategies for success: Intro to DA</span><br>\nThis is a faculty-led surgical training program for surgeons looking to incorporate the DA approach into their practice.<br>\nTopics include:</p>\n<ul>\n<li>Patient anatomy</li>\n<li>Incision, exposure and femoral releases</li>\n<li>Acetabular and femoral preparation</li>\n<li>Implant options including Insignia and Trident II<br>\n&nbsp;</li>\n</ul>\n<p><span class=\"futura-bold\">Advanced techniques for complex primaries</span><br>\nThis faculty-led surgical training program is for surgeons looking to advance their DA approach for complex primaries and revisions.<br>\nTopics include:</p>\n<ul>\n<li>Implant options including Insignia, Exeter, Restoration Modular, Modular Dual Mobility and Restoration Anatomic Shell</li>\n<li>Acetabular revision</li>\n<li>Femoral fractures/cables</li>\n<li>Hardware removal</li>\n<li>Cement techniques</li>\n<li>Managing instability<br>\n&nbsp;</li>\n</ul>\n<p><span class=\"futura-bold\">Elevating Direct Anterior with Mako Total Hip</span><br>\nThis is a faculty-led surgical training program for surgeons looking to advance their DA approach with Mako Total Hip.<br>\nTopics include:</p>\n<ul>\n<li>Functional hip positioning with CT-based pre-planning</li>\n<li>Optimizing patient positioning and OR set up</li>\n<li>Pelvic registration tips and tricks</li>\n<li>Procedural efficiencies to help get back to time neutral</li>\n<li>Implant portfolio including Insignia and Trident II<br>\n</li>\n</ul>\n",
+      "jcr:lastModified": "Mon Jun 05 2023 20:14:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue May 02 2023 18:56:36 GMT+0000",
+      "jcr:lastModified": "Tue May 02 2023 18:56:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:36:09 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:36:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1826197262_copy_1710403991": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 04 2023 17:52:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">How do I utilize Stryker’s DA mentorship?</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 08 2023 17:35:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1826197262_copy_780928975": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 04 2023 17:52:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b style=\"font-size: 14px;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Medical education mentorship event options:</span></span></b></p>\n",
+      "jcr:lastModified": "Thu Jun 08 2023 17:36:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jun 08 2023 17:34:53 GMT+0000",
+      "jcr:lastModified": "Thu Jun 08 2023 17:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1826197262_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 04 2023 17:52:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n<br>\n <br>\n • Speaking engagements</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\">• Surgical observations</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">• Virtual surgical observation</span></span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">• Surgical training labs</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 08 2023 17:42:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 08 2023 17:35:47 GMT+0000",
+          "alt": "Live OR Training",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/other/JR-mentorship-MedEdoptions-01.png",
+          "borderColor": "rgba(187,188,188,1)",
+          "jcr:lastModified": "Thu Jun 08 2023 17:42:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jun 08 2023 17:35:47 GMT+0000",
+          "alt": "JR-mentorship-MedEdoptions-02",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/other/JR-mentorship-MedEdoptions-02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 08 2023 17:41:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_1826197262_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 04 2023 17:52:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Have your sales representative from Stryker reach out to their respective medical education regional program manager to schedule your next step in your education journey.<br>\n</p>\n<p><span class=\"futura-bold\">Contact information for respective region:</span></p>\n<p><span class=\"futura-bold\">Northeast region:</span><br>\nPeter Mousa,&nbsp;<a href=\"mailto:peter.mousa@stryker.com\">peter.mousa@stryker.com</a></p>\n<p><span class=\"futura-bold\">Southeast region:</span><br>\nAlexis Culhane,&nbsp;<a href=\"mailto:alexis.culhane@stryker.com\">alexis.culhane@stryker.com</a></p>\n<p><span class=\"futura-bold\">Southwest region:</span><br>\nMaria Wygonik,&nbsp;<a href=\"mailto:maria.wygonik@stryker.com\">maria.wygonik@stryker.com</a></p>\n<p><span class=\"futura-bold\">West region:</span><br>\nKrista Brennan, <a href=\"mailto:krista.brennan@stryker.com\">krista.brennan@stryker.com</a></p>\n<p>&nbsp;</p>\n<p><a href=\"mailto:maria.wygonik@stryker.com\">&nbsp;</a></p>\n",
+      "jcr:lastModified": "Thu Jun 08 2023 17:35:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1956109726": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:27:23 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:27:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:28:00 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:28:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Northeast&nbsp;</span></span></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n Faculty</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:06:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_647": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Chen Darwin",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Chen_Darwin.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:25:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Darwin Chen, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">New York, NY</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:Darwin.chen@mountsinai.org\">Darwin.chen@mountsinai.org</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 18:58:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Colacchio Nicholas",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Colacchio_Nicholas.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:25:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Nicholas Colacchio, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Falmouth, ME</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:nicholas.colacchio@gmail.com\">nicholas.colacchio@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 18:59:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Dizdarevic Ismar",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Dizdarevic_Ismar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:25:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Ismar Dizdarevic, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Ridgewood, NJ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:idizdarevic@gmail.com\">idizdarevic@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:00:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Frye Benjamin",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Frye_Benjamin.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:40:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Benjamin Frye, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Morgantown, WV</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:bfrye@hsc.wvu.edu\">bfrye@hsc.wvu.edu</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:00:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "O'Malley Michael",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_O'Malley_Michael.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:40:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Michael O’Malley, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Pittsburg, PA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:omalleymj3@upmc.edu\">omalleymj3@upmc.edu</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:01:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Ong",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Ong.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:41:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Alvin Ong, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Pomona, NJ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:alvin.ong@rothmanortho.com\">alvin.ong@rothmanortho.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:02:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Orozco Fabio",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Orozco_Fabio.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:41:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Fabio R. Orozco, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Pomona, NJ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:Fabio.orozco@orozcoortho.com\">Fabio.orozco@orozcoortho.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:03:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Pizzurro",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Pizzurro.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:42:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Mark Pizzurro, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Ridgewood, NJ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:mpizzurro@gmail.com\">mpizzurro@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:03:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Reid Jeremy",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Reid_Jeremy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Jeremy Reid, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Voorhees, NJ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;None<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:jeremyjreid@gmail.com\">jeremyjreid@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:04:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Sastry",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Sastry.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Akhil Sastry, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Portsmouth, NH</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:akhil70@hotmail.com\">akhil70@hotmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:05:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_169453661": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue May 02 2023 19:06:37 GMT+0000",
+      "jcr:lastModified": "Tue May 02 2023 19:06:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_330569_1130540580": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1_3_2_3_77395509": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:28:23 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:28:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1122096213": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Southeast&nbsp;</span></span></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n Faculty</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:06:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_156": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_1789372230": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Conrad Ivie",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_conrad-ivie.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:43:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Conrad Ivie, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Knoxville, TN</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes and No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:iviecb@tocdocs.com\">iviecb@tocdocs.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:07:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Calendine Cory",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Calendine_Cory.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:43:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Cory Calendine, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Franklin, TN</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:cory.calendine@bjit.org\">cory.calendine@bjit.org</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:08:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Boyd Bradley",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Boyd_Bradley.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:44:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Bradley Boyd, D.O.</span></span><br>\n<span class=\"fontsize-1-25em\">Fairfax, CA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:boyd.brad@gmail.com\">boyd.brad@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:08:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Dounchis Jon",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Dounchis_Jon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:44:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Jon Dounchis, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Naples, FL</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:dounchis@yahoo.com\">dounchis@yahoo.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:09:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_253019403": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Grayson Christopher",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Grayson_Christopher.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:44:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Christopher Grayson, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Tampa, FL</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:cgrayson225@gmail.com\">cgrayson225@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:10:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Knesek David",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Knesek_David.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:45:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">David Knesek, D.O.</span></span><br>\n<span class=\"fontsize-1-25em\">Novi, MI</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:davidknesek@gmail.com\">davidknesek@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:11:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1270407434": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue May 02 2023 19:11:50 GMT+0000",
+      "jcr:lastModified": "Tue May 02 2023 19:11:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_330569_1698146103": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3"
+    },
+    "cols2_1_3_2_3_168823162": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:28:35 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:28:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_2038651290": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Southwest&nbsp;</span></span></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n Faculty</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:13:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_843": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 18:11:42 GMT+0000",
+          "jcr:lastModified": "Fri May 05 2023 18:11:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_1014781614": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Durkin Michael",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Durkin_Michael.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:45:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Michael Durkin, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Hinsdale, IL</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:mdurkin@ibji.com\">mdurkin@ibji.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:12:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Randell Timmothy",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Randell_Timmothy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:45:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Timmothy Randell, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Alexandria, LA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:timrandell@gmail.com\">timrandell@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:13:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_531909246": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue May 02 2023 19:13:32 GMT+0000",
+      "jcr:lastModified": "Tue May 02 2023 19:13:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_330569_657671826": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3"
+    },
+    "cols2_1_3_2_3_146623465": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:28:44 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:28:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1292978963": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">West&nbsp;</span></span></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n Faculty</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 02 2023 19:13:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_970": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 18:12:01 GMT+0000",
+          "jcr:lastModified": "Fri May 05 2023 18:12:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_674423004": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Bellino Michael",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Bellino_Michael.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:46:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Michael Bellino, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Honolulu, HI</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:bellino.m@gmail.com\">bellino.m@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:35:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Blackwood_Brian",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Blackwood_Brian.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:46:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">C. Brian Blackwood, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Boulder, CO</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:cbblackwood@gmail.com\">cbblackwood@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:36:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Gililland_Jeremy",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Gililland_Jeremy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:46:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Jeremy Gililland, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Salt Lake City, UT</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:Jeremy.gililland@hsc.utah.edu\">Jeremy.gililland@hsc.utah.edu</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:37:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Lovell_Timothy",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Lovell_Timothy.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:47:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Timothy Lovell, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Spokane, WA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:tplovell7@gmail.com\">tplovell7@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:37:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_1630998975": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Myerthall_Steven",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Myerthall_Steven.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:47:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Steve Myerthall, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Phoenix, AZ</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:slmbonedoc@gmail.com\">slmbonedoc@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:39:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Nessler_Joseph",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Nessler_Joseph.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:47:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Joseph Nessler, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">St. Cloud, MN</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:jvness60@charter.net\">jvness60@charter.net</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:40:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Schnaser_Erik",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Schnaser_Erik.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:48:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Erik Schnaser, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Palm Springs, CA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;No<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:schnaser22@me.com\">schnaser22@me.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:41:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Tiberi_John",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Tiberi_John.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:48:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">John Tiberi, M.D.</span></span><br>\n<span class=\"fontsize-1-25em\">Los Angeles, CA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:jvtiberi@gmail.com\">jvtiberi@gmail.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:51:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_1444861206": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Toomey_Sean",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/dart/head-shots/JR_MedEd_Fellows_2023_Faculty_Toomey_Sean.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 04 2023 18:48:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Sean Toomey, M,D,</span></span><br>\n<span class=\"fontsize-1-25em\">Seattle, WA</span><br>\n<br>\n<span class=\"futura-bold\">Table:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Mako:</span>&nbsp;Yes<br>\n<span class=\"futura-bold\">Email:</span>&nbsp;<a href=\"mailto:stoomey@orthodoc.com\">stoomey@orthodoc.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu May 04 2023 17:51:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1009997169": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 04 2023 17:54:13 GMT+0000",
+      "jcr:lastModified": "Thu May 04 2023 17:54:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 04 2023 17:55:28 GMT+0000",
+      "jcr:lastModified": "Thu May 04 2023 17:55:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_1_3_2_3_644904824": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:33:42 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:33:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1292978963": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Resources</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri May 05 2023 18:16:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 18:16:07 GMT+0000",
+          "jcr:lastModified": "Fri May 05 2023 18:16:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "resources": [
+        "/content/stryker/us/en/joint-replacement/asset-items/direct-anterior-approach-surgical-technique/jcr:content/par/externalasset",
+        "/content/dam/stryker/education-and-training/joint-replacement/dart/da-resources/Elevate your approach with SmartRobotics - Direct anterior with Mako Total Hip.pdf",
+        "/content/dam/stryker/education-and-training/joint-replacement/dart/da-resources/DART brochure - The muscle-sparing approach.pdf",
+        "/content/dam/stryker/education-and-training/joint-replacement/dart/da-resources/Stryker_ASC-Scottsdale_AZ_Mako_SmartRobotics1.pdf"
+      ],
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 05 2023 17:52:47 GMT+0000",
+      "jcr:lastModified": "Wed May 24 2023 14:47:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols2_1_3_2_3_644904": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed May 31 2023 15:33:42 GMT+0000",
+      "jcr:lastModified": "Wed May 31 2023 15:33:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1292978963": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Videos</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed May 31 2023 15:38:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 18:16:07 GMT+0000",
+          "jcr:lastModified": "Fri May 05 2023 18:16:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 05 2023 17:53:50 GMT+0000",
+      "jcr:lastModified": "Fri May 05 2023 17:53:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:53:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri May 05 2023 17:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/dart/da-videos/DART surgical animation video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/DART surgical animation video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri May 05 2023 17:56:38 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:54:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">DART™ surgical animation video</span></p>\n",
+          "jcr:lastModified": "Fri May 05 2023 17:54:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:53:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri May 05 2023 17:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/dart/da-videos/Direct Anterior Total Hip Arthroplasty featuring Insignia® Hip Stem ATV.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Direct Anterior Total Hip Arthroplasty featuring Insignia® Hip Stem ATV-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri May 05 2023 17:56:15 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:54:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Direct Anterior Total Hip Arthroplasty featuring Insignia® Hip Stem</span></p>\n",
+          "jcr:lastModified": "Fri May 05 2023 17:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:53:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri May 05 2023 17:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/dart/da-videos/Cabling Through DA.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Cabling Through DA-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri May 05 2023 17:56:33 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:54:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Cabling through DA</span></p>\n",
+          "jcr:lastModified": "Fri May 05 2023 17:55:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:53:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri May 05 2023 17:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/dart/da-videos/Identifying tips and tricks for difficult exposures with Dr. Conrad Ivie.appletv.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Identifying tips and tricks for difficult exposures with Dr. Conrad Ivie.appletv-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri May 05 2023 19:28:47 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:54:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Identifying tips and tricks for difficult exposures</span></p>\n",
+          "jcr:lastModified": "Fri May 05 2023 17:55:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1316594674": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 05 2023 17:54:18 GMT+0000",
+      "jcr:lastModified": "Fri May 05 2023 17:54:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:53:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri May 05 2023 17:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/joint-replacement/dart/da-videos/Direct Anterior Total Hip Arthroplasty through a bikini incision ATV.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Direct Anterior Total Hip Arthroplasty through a bikini incision ATV-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri May 05 2023 17:56:25 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 05 2023 17:54:49 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">DART™ Bikini incision</span></p>\n",
+          "jcr:lastModified": "Fri May 05 2023 17:55:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 05 2023 20:15:06 GMT+0000",
+      "jcr:lastModified": "Mon Jun 05 2023 20:15:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "sectionseparator_1888448934": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 05 2023 18:16:46 GMT+0000",
+      "jcr:lastModified": "Fri May 05 2023 18:16:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_919322669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 04 2023 18:54:31 GMT+0000",
+      "text": "<p>The faculty are paid consultants of Stryker Orthopaedics. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\n",
+      "jcr:lastModified": "Thu May 04 2023 18:54:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

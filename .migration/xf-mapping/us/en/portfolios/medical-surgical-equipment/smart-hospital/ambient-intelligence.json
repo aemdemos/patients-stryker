@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Ambient intelligence",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "729daf20-16b5-4200-9b52-479ad3075245",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Ambient intelligence from Stryker turning smart hospital room into always-aware spaces",
+  "jcr:predecessors": [
+    "67cdb091-2dad-485e-8af5-b8d1deaa43f4"
+  ],
+  "contentID": "AC-GSNPS-SYK-1946266_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:35:45 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:35:47 GMT+0000",
+  "cq:lastModified": "Mon Jan 05 2026 13:24:55 GMT+0000",
+  "jcr:description": "Ambient intelligence transforms ordinary care environments into intelligent, always-aware spaces.",
+  "jcr:baseVersion": "67cdb091-2dad-485e-8af5-b8d1deaa43f4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/ambient-intelligence",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital"
+  ],
+  "jcr:lastModified": "Mon Jan 05 2026 13:24:55 GMT+0000",
+  "jcr:uuid": "f14e2a61-29b4-4254-9ce8-d617ceff29bc",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/smarthospital-platform/ambient-itelligence/ambient-intelligence-specialty-thumbnail_675x450.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Dec 11 2025 15:18:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

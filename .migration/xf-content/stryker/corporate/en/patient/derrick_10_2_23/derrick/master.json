@@ -1,0 +1,167 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Derrick",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6e0f1783-8776-40a2-a7bf-f4e806ab4cca",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "adc4e5b0-701e-4795-b5eb-5e95f426a51f"
+  ],
+  "jcr:created": "Tue Oct 03 2023 17:57:26 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 03 2023 17:57:28 GMT+0000",
+  "cq:lastModified": "Mon Oct 02 2023 18:28:23 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "adc4e5b0-701e-4795-b5eb-5e95f426a51f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "55cc239b-034f-4152-b54c-b96d04fbe04d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy53": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Knowing",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Mon Oct 02 2023 18:05:01 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy531197258726621426": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<h1><span class=\"fontsize-2vw\"><span class=\"futura-bold\">Knowing the <b>warning</b> signs of sudden cardiac arrest helped saved his life<br>\r\n</span></span>Derrick’s sudden cardiac arrest story</h1>\r\n",
+        "line2": "After going on a morning run, Derrick began to feel some chest discomfort. His wife, Melissa, a healthcare professional trained in resuscitation, quickly recognized the warning signs of a sudden cardiac arrest. Although he wasn’t having a heart attack, she knew there was no time to wait. On the way to the hospital, Derrick started turning red and became unresponsive. Melissa immediately pulled the car to the side of the road and began administering CPR. Luckily, an off-duty firefighter pulled over from traffic and began assisting. Soon EMS and Fire/Rescue units arrived to apply a LUCAS device. Watch this video to hear Derrick's story.",
+        "jcr:lastModified": "Mon Oct 02 2023 18:26:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(237,238,236,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": 6
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "item1089953560363234": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "topMargin": "-5",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"urw-egyptienne\"></span> ",
+        "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px;background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px;background-color: transparent;color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\">What I took away from this experience was that gratitude just says that it’s enough. You know. I’m enough. We’re enough. It’s enough that we get to live this life.</span></span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px;background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">” </span></span><br />\r\n</p>\r\n<p>______________<br />\r\n<br />\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Derrick</span><br />\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Sudden cardiac arrest survivor</span></span></span></span></p>\r\n",
+        "jcr:lastModified": "Mon Oct 02 2023 18:11:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 6
+          }
+        }
+      }
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Mon Oct 02 2023 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/patients/patient-stories/derrick-10-2-23/videos/stryker_derrick_mosely_v8 (1080p).mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/stryker_derrick_mosely_v8 (1080p)-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Oct 02 2023 18:28:23 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/derrick-thumbnail"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6304a061-76ad-4360-8687-b8bdd0b923a8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "bf32d026-9979-41c7-9118-ead07d2e03a2"
+  ],
+  "jcr:created": "Tue Feb 20 2024 15:19:37 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 20 2024 15:19:39 GMT+0000",
+  "cq:lastModified": "Tue Feb 20 2024 15:19:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "bf32d026-9979-41c7-9118-ead07d2e03a2",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "c42fa9e7-2628-44ea-93c9-a16f16ab86b2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's ProForm hospital mattress for pressure injuries",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/proform/images/Thumbnail_ProForm_16x9.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 06 2024 15:29:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

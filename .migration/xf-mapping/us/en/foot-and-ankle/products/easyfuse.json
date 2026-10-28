@@ -1,0 +1,1646 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Dynamic Compression System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "EasyFuse",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b0a09d2a-ecac-4ecf-9e9b-9cd9b0f28f93",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "EasyFuse Dynamic Compression System",
+  "jcr:predecessors": [
+    "f8eb8fd4-73d5-4fd7-b789-ee41e1650d18"
+  ],
+  "contentID": "AP-017530",
+  "lastPublished": "Mon Mar 31 2025 20:12:53 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 31 2025 20:12:56 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 31 2025 20:12:58 GMT+0000",
+  "cq:lastModified": "Mon Mar 31 2025 20:12:30 GMT+0000",
+  "newDisplayFlagDate": "Sat Feb 22 2025 00:00:00 GMT-0500",
+  "jcr:description": "Stryker - Wright Medical - When you are unwilling to compromise, the choice is easy. EasyFuse. EasyFuse is a comprehensive super-elastic nitinol staple system designed to provide fast and easy fixation in high demand applications of the foot and ankle.",
+  "jcr:baseVersion": "f8eb8fd4-73d5-4fd7-b789-ee41e1650d18",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:03:28 GMT+0000",
+  "pageTitle": "EasyFuse",
+  "cq:tags": [
+    "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis/staples",
+    "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis/staples",
+    "stryker:capability/foot-and-ankle",
+    "stryker:custom/foot-and-ankle/product-type/staple-solutions",
+    "stryker:procedure/foot-and-ankle/medial-column-arthrodesis/staples",
+    "stryker:procedure/foot-and-ankle/lisfranc/staples",
+    "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy/staples",
+    "stryker:content-type/product",
+    "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy/staples",
+    "stryker:specialty/ankle-foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/talus-fracture/staples",
+    "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis/staples",
+    "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy/staples",
+    "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staple-solutions",
+    "stryker:procedure/foot-and-ankle/calcaneal-fracture/staples",
+    "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy/staples",
+    "stryker:specialty/foot-&-ankle",
+    "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)/staples",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/hindfoot",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+    "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+    "stryker:procedure/foot-and-ankle/navicular-fracture/staples",
+    "stryker:specialty/forefoot",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis/staples",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy/staples",
+    "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)/staples",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis/staples",
+    "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)/staples",
+    "stryker:procedure/foot-and-ankle/ankle-fracture/staples",
+    "stryker:specialty/midfoot",
+    "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/staples",
+    "stryker:procedure/foot-and-ankle/cuboid-fracture/staples",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis/staples"
+  ],
+  "jcr:lastModified": "Mon Mar 31 2025 20:12:30 GMT+0000",
+  "jcr:uuid": "94bd9e00-e9f0-4a53-b69c-47b3b7133402",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "EasyFuse",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_689210505": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Mar 07 2024 23:44:54 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 23:44:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "alison.moutinho@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5vw\">EasyFuse<sup><span class=\"fontsize-1-5-vw\">®</span></sup></span></span></span></h1>\r\n",
+          "line2": "<h2><span class=\"fontsize-4vw\">Dynamic Compression System</span></h2>\r\n",
+          "jcr:lastModified": "Mon May 13 2024 18:10:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Jun 17 2024 15:05:40 GMT+0000",
+          "alt": "EasyFuse option2",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/EasyFuse option2.gif",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 17 2024 15:06:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#specification\">SPECIFICATION OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_2000441555_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "about",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "about",
+      "jcr:lastModified": "Tue Jun 04 2024 20:49:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 23:19:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"fontsize-3-5-vw\"><span class=\"urw-egyptienne\">When you are unwilling to compromise, the choice is easy.&nbsp;</span></span><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\">EasyFuse.</span></span></span></span></h3>\r\n",
+      "jcr:lastModified": "Tue Jun 04 2024 20:41:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:03:29 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:03:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:04:05 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">EasyFuse is a comprehensive super-elastic nitinol staple system designed to provide fast and easy fixation in high demand applications of the foot and ankle.</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 23:15:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1814028496": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:05:03 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:05:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:05:19 GMT+0000",
+          "jcr:lastModified": "Fri Mar 08 2024 00:05:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:06:39 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Instrumentation matters</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 17:59:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:06:39 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">EasyFuse is a comprehensive super-elastic nitinol staple system designed to provide fast and easy fixation in high demand applications of the foot and ankle. A variety of implant configurations are offered in compact, sterile implant packs along with a universal, single use instruments pack.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon May 13 2024 20:21:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1396148032": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:13:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:13:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Apr 08 2024 19:11:53 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 08 2024 19:11:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/easyfuse/videos/Video - EasyFuse.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Video - EasyFuse-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 08 2024 19:13:55 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_475907456": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:08:28 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:08:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_913472991": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:14:03 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:14:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:14:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Next level implants</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 17:59:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Mar 08 2024 00:14:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">EasyFuse implants have been designed for maximum strength and resistance to failure or breakage. EasyFuse’s&nbsp;extra wide bridge, robust corners, sharp teeth, and high compressive strength all work together to deliver dynamic compression you can count on.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon May 13 2024 20:23:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy_360969585": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Apr 08 2024 19:11:53 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 08 2024 19:11:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/easyfuse/videos/Animation - EasyFuse.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Animation - EasyFuse-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 08 2024 19:13:49 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols3_305098070": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 23:22:03 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 23:22:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:25:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Designed</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">s<span style=\"color: #ffb500;\">trong.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 00:34:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1688119477_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:35:54 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Extra wide staple bridge designed to distribute forces and provide consistent implant strength.</span><span class=\"fontsize-1-25em\"><br>\n &nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 20:19:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:25:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Designed</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">efficient.</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 00:34:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1169611873_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:36:40 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Universal, sterile packed instrumentation decreases surgical complexity and reduces OR material waste.</span><span class=\"fontsize-1-25em\"><br>\n </span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 20:20:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:25:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Designed</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">easy.</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 00:34:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_682825835_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 00:37:24 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Intuitively designed inserter provides confident deployment of implant while also allowing quick and easy implant reloading if desired.</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 20:20:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c_1633678057": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "specification",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "specification",
+      "jcr:lastModified": "Tue Jun 04 2024 20:49:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_103737517_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1679885360_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 18:51:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Staple overview</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 18:11:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:43:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Wide bridge construction with uniform cross-section is designed to resist internal torsional and bending forces as well as distribute forces across the implant.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Aggressive corner-chamfers designed to allow flush seating on bone and minimizes soft tissue irritation.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Recessed teeth designed to increase implantstrength in the corners, as well as enhance fixation.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Jun 17 2024 20:48:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 00:49:42 GMT+0000",
+          "alt": "EasyFuse-Staple",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/EasyFuse-Staple.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:45:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_103737517": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 18:51:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Product specifications</span></span></p>\n",
+          "jcr:lastModified": "Mon May 13 2024 18:11:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:43:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Wide range of sizes for varying patient and surgical needs.</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 23:37:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 00:49:42 GMT+0000",
+          "alt": "EasyFuse-Legend",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/images/FA-Easyfuse-legend-chart.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 13 2024 19:42:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:19 GMT+0000",
+          "alt": "EasyFuse15x12",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse15x12.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:53:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:35 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">15x12</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:48:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:25 GMT+0000",
+          "alt": "EasyFuse15x15",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse15x15.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:53:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:37 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">15x15</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:48:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:30 GMT+0000",
+          "alt": "EasyFuse15x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse15x20.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:54:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:41 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">15x20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:48:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_1187538583": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:19 GMT+0000",
+          "alt": "EasyFuse18x15",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse18x15.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:54:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:35 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">18x15</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:47:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:25 GMT+0000",
+          "alt": "EasyFuse18x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse18x20.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:55:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:37 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">18x20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:47:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:30 GMT+0000",
+          "alt": "EasyFuse18x25",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse18x25.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:55:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:41 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">18x25</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:49:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_2031320611": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:40:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:19 GMT+0000",
+          "alt": "EasyFuse20x15",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse20x15.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:56:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:35 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">20 x 15</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:51:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:25 GMT+0000",
+          "alt": "EasyFuse20x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse20x20.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:56:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:37 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">20 x 20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:52:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:41:30 GMT+0000",
+          "alt": "EasyFuse20x25",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse20x25.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:41:41 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">20 x 25</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:53:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_827465330": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:03 GMT+0000",
+          "alt": "EasyFuse25x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse25x20.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:58:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:11 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">25 x 20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:58:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:06 GMT+0000",
+          "alt": "EasyFuse25x25",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse25x25.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:57:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:17 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">25 x 25</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:59:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_1560188552": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:03 GMT+0000",
+          "alt": "EasyFuse25x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse25x20-v2.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 18:17:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:11 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">25 x 20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 16:59:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:06 GMT+0000",
+          "alt": "EasyFuse30x20",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuse30x20.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 17:58:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:17 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">30 x 20</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 17:00:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 16:55:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:03 GMT+0000",
+          "alt": "EasyFuseMTPsmall",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuseMTPsmall.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 18:09:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:11 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">MTP small</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 17:00:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Mar 08 2024 16:56:06 GMT+0000",
+          "alt": "EasyFuseMTPlarge",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/EasyFuseMTPlarge.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Mar 08 2024 18:09:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Mar 08 2024 16:56:17 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">MTP large</span></span></p>\n",
+          "jcr:lastModified": "Fri Mar 08 2024 17:09:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy_552883913": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_103737517_copy_1794888287": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 00:49:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 18:51:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Instrumentation</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 23:38:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:43:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Universal staple inserter works with all EasyFuse implants.</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 23:38:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_1952": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "alison.moutinho@stryker.com",
+          "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Dec 20 2021 14:20:23 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/Drill Guide Arrows Graphic V1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 20 2021 14:27:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:43:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Adjustable drill guide for speed and simplicity</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 23:39:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "alison.moutinho@stryker.com",
+          "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 22 2021 16:46:26 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/easyfuse/misc--pics/StapleinserterV5.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 22 2021 16:47:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy__353337201": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions.</span></span></span>",
+          "jcr:lastModified": "Thu Oct 03 2024 15:02:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Thu Oct 03 2024 15:02:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload_1218529494": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "david.gilmour@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/resources/FA-EasyFuse-Operative-Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/resources/FA-EasyFuse-Sell-Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/resources/FA-EasyFuse-Clinical-Paper.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/videos/FA-EasyFuse-video.mp4"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon May 13 2024 20:15:19 GMT+0000",
+              "jcr:lastModified": "Mon May 13 2024 20:17:58 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            },
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "david.gilmour@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/case-studies/AP-017850 EasyFuse Case Study Karl Schweitzer.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/case-studies/AP-017851 EasyFuse Case Study Phong Le.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/case-studies/AP-017852 EasyFuse in Arthrodesis Tarsometatarsal Case Study Kormylo.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/case-studies/AP-017853 EasyFuse Case Study John Lewis.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/easyfuse/case-studies/AP-017854 EasyFuse Case Study Lewis 2.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Mon May 13 2024 20:15:19 GMT+0000",
+              "title": "Case studies",
+              "jcr:lastModified": "Fri Dec 27 2024 19:23:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_1831107478": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 17:29:06 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 17:29:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c_357304973": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Tue Jun 04 2024 20:44:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "section_title_copy_c_1131342747": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Tue Jun 04 2024 20:50:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Mon May 13 2024 19:43:43 GMT+0000",
+      "jcr:lastModified": "Mon May 13 2024 19:43:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed May 08 2024 13:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">EasyFuse&nbsp;</span><span style=\"color: #ffffff;\"><span style=\"color: #000000;\">Dynamic Compression System</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon May 13 2024 19:44:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy__139522656": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 09 2024 18:56:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Mar 08 2024 17:28:12 GMT+0000",
+      "jcr:lastModified": "Fri Mar 08 2024 17:28:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Fri Mar 22 2024 02:38:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/all-products/2024-brandrefresh/product-thumbnails/Thumb-Easyfuse.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>EasyFuse<sup>TM </sup>is a comprehensive super-elastic nitinol staple system designed to provide fast and easy fixation in high demand applications of the foot and ankle. A variety of implant configurations are offered in compact, sterile implant packs along with a universal, single use instruments pack.</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:31 GMT+0000",
+    "linkNewWindowOverride": "1",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 07 2024 23:42:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

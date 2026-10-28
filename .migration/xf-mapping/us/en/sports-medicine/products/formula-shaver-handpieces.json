@@ -1,0 +1,214 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Resection",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Formula Shaver Handpieces",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d4da4ec4-9d51-4ec7-a09d-1304a9cf55d8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/forumlashaverhandpieces/images/thumb-formulashaverhandpieces.jpg",
+  "jcr:predecessors": [
+    "e2019526-e817-44a0-9125-8640b7f33609"
+  ],
+  "contentID": "Literature Number 1000902875",
+  "lastPublished": "Tue Aug 18 2026 21:33:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:33:09 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:33:11 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:33:03 GMT+0000",
+  "jcr:description": "Stryker offers three Formula Shaver Handpieces with the ability to run at 12,000 RPM's to accommodate preferences.",
+  "jcr:baseVersion": "e2019526-e817-44a0-9125-8640b7f33609",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 08 2026 19:37:08 GMT+0000",
+  "pageTitle": "Formula Shaver Handpieces",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+    "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+    "stryker:custom/sports-medicine/anatomy/small-joints",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+    "stryker:capability/surgical-visualization",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/product-type/cutters-and-burs",
+    "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/sports-medicine/procedure/tissue-resection",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:custom/sports-medicine/procedure/tendon-repair",
+    "stryker:specialty/arthroscopic-resection",
+    "stryker:business-unit/sports-medicine",
+    "stryker:specialty/arthroscopy-instrumentation",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/anatomy/arthroscopic-resection",
+    "stryker:product/sports-medicine/formula-shaver-handpieces",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/small-joints",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+    "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+    "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+    "stryker:specialty/knee-sports-medicine"
+  ],
+  "jcr:lastModified": "Wed Dec 22 2021 15:01:28 GMT+0000",
+  "jcr:uuid": "daff2d53-a955-497a-ab9e-ee8ad5bde1eb",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jan 05 2018 14:54:20 GMT-0500",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/forumlashaverhandpieces/images/hero-formulashaverhandpieces.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:32:56 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:32:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Mon Jul 01 2019 21:05:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Designed to be ergonomic and versatile, including customizable hand control buttons to increase efficiency.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Formula Shaver Handpiece with buttons<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Formula Shaver Handpiece without buttons<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Formula 180 Shaver Handpiece<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/forumlashaverhandpieces/images/thumb-formulashaverhandpieces.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:32:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

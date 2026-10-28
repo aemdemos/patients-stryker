@@ -1,0 +1,137 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Guider Softip XF",
+  "jcr:versionHistory": "f4f17ffb-24fe-49ba-8544-8f64cdeb51c7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5dfedea0-2fc6-400b-809e-95f703335149"
+  ],
+  "jcr:created": "Wed Oct 30 2019 13:35:37 GMT+0000",
+  "cq:lastModified": "Mon Oct 28 2019 15:31:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5dfedea0-2fc6-400b-809e-95f703335149",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "47c4d714-c4a3-46e0-a6fc-9155f211d66e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 28 2019 14:52:15 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Oct 28 2019 14:52:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy488896": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Guider Softip XP",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Mon Oct 28 2019 14:53:11 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy488896514074715637185": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><br>\n </span></span><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-5em\">Guider Softip XF</span></span></span><br>\n <br>\n <span class=\"fontsize-1-75em\">Guide Catheter</span></span></p>\n<p>_____________________________________</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Designed for support.</span></span></p>\n<p>The Guider Softip XF Guide Catheter features a braided multi-durometer shaft for proximal support with distal flexibility.<br>\n</p>\n",
+        "jcr:lastModified": "Mon Oct 28 2019 14:53:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "item514074717465920": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Sep 19 2019 19:49:51 GMT+0000",
+        "srcFileRef": "/content/dam/stryker/neurovascular/images/goldBar.jpg",
+        "jcr:lastModified": "Wed Oct 23 2019 17:02:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "1"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/guider-softip-xf/images/Guider-Softip.png",
+      "jcr:lastModified": "Mon Oct 28 2019 14:54:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

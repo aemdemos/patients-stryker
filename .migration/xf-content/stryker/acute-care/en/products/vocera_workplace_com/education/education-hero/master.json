@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Education Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "61ced261-c844-426e-bf81-adf992d5230f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a4b0ff03-3dc6-4e24-9c36-8a82099d827b"
+  ],
+  "lastPublished": "Fri Sep 18 2026 20:40:58 GMT+0000",
+  "jcr:created": "Fri Sep 18 2026 20:40:59 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 18 2026 20:41:02 GMT+0000",
+  "cq:lastModified": "Fri Sep 18 2026 20:24:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a4b0ff03-3dc6-4e24-9c36-8a82099d827b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 12 2024 15:31:20 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "21bf77be-ca6d-474b-8f1d-f1e49750dc62",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Jun 26 2024 20:16:54 GMT+0000",
+      "alt": "teacher wearing Sync Badge is standing in classroom with students behind her",
+      "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/Workplace-Comms_Education-hero-2_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Sep 18 2026 20:24:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

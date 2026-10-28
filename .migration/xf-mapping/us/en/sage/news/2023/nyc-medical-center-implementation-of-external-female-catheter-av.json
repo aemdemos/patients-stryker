@@ -1,0 +1,81 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "NYC Medical Center Implementation of External Female Catheter avoids  $16M in costs over 2 years ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a6d0b73d-2f9d-4805-8166-a32a42ce8a36",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "23-SGC-712791-June_Newsroom3",
+  "thumbnailFileReference": "/content/dam/stryker/sage/news/2023/23-SGC-712791-June_Newsroom3.jpg",
+  "jcr:predecessors": [
+    "cb2f8c20-8305-4a46-be9d-77f9106d77c0"
+  ],
+  "contentID": "SAGE-UM-COMM-712791_REV-0_en_us",
+  "lastPublished": "Tue Sep 10 2024 14:53:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 10 2024 14:53:02 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 14:53:05 GMT+0000",
+  "cq:lastModified": "Tue Sep 10 2024 14:52:53 GMT+0000",
+  "jcr:description": "In 2018, the implementation of the external female urine management device was introduced as a standard of nursing care as an alternative to an indwelling urinary catheter. Data captured in 2019 and 2020 showed utilization of the external female device to be 36% and 46%, respectively.",
+  "jcr:baseVersion": "cb2f8c20-8305-4a46-be9d-77f9106d77c0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:53:02 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Tue Sep 10 2024 14:52:53 GMT+0000",
+  "jcr:uuid": "09568dd1-a446-48a4-a9c8-12c02f10ddfe",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Fri Jun 30 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Jun-2023",
+    "jcr:lastModified": "Fri Jun 30 2023 13:59:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Prima-fit Catheter graphic",
+    "srcFileRef": "/content/dam/stryker/sage/news/2023/23-SGC-712791-June_Newsroom3.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Jun 30 2023 14:01:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "text": "<h2>A CNS initiative led to better patient outcomes – with significant cost avoidance</h2>\n<p>Catheter-associated urinary tract infections (CAUTIs) can lead to complications that increase the length of stay and result in patient discomfort as well as increased healthcare costs and mortality. The risk of acquiring a CAUTI increases by 3%-7% for each day the catheter remains in place. It’s important to note that costs associated with CAUTIs are no longer reimbursed, thus making prevention a priority.&nbsp;</p>\n<p>Staff at an academic medical center in New York City recognized this issue when they identified that almost a quarter of their CAUTI cases (24%) were in bedbound female patients who had an indwelling urinary catheter. Condom catheters were available at the facility as an alternative device for males, but nothing was feasible for females. Utilizing diapers and absorbent pads put them at risk for moisture dermatitis and skin injury; therefore, indwelling catheters were left in longer in the bedbound female patient population.&nbsp;&nbsp;<br>\n&nbsp;<br>\nA team of clinical nurse specialists (CNSs) searched the literature for options for female alternatives and found two alternative devices. Team members were educated on the devices related to significance, placement, patient criteria and contraindications. Both external devices were evaluated, and one device was implemented.&nbsp;<br>\n&nbsp;<br>\nIn 2018, the implementation of the external female urine management device was introduced as a standard of nursing care as an alternative to an indwelling urinary catheter. Data captured in 2019 and 2020 showed utilization of the external female device to be 36% and 46%, respectively. Documentation revealed indwelling catheter avoidance was 90% with the external device. Cost avoidance over the two years with 1,195 patients at $13,786 per patient was $16,473,912 to the organization.&nbsp;&nbsp;<br>\n&nbsp;<br>\nClinical nurse specialists practice in three spheres of influence: patient, nurse, and system. The CNSs recognized the CAUTI risk and potential harm to the female patients. CNSs are change agents who evaluate the evidence to decrease patient harm and empower nurses to practice autonomously. This process will improve the patient experience and reduce the risk of a harm event. The external female urine management device provides a diversion of urine away from the patient addressing the risks associated with CAUTI, avoiding potential skin irritation, bedpan usage or diapers.&nbsp;</p>\n<p>To read the article click <a title=\"Read the article\" href=\"https://pubmed.ncbi.nlm.nih.gov/36546390/\">here</a>.<br>\n</p>\n<p>No catheter. No CAUTI™. To learn more about a product that addresses CAUTI risk factors for patients with female anatomy, click <a title=\"learn more about a product that addresses CAUTI \" href=\"https://www.stryker.com/us/en/sage/products/sage-primafit.html\">here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Jul 06 2023 21:25:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Reference: 1. </b>Tran C, et al., Addressing CAUTIs with an External Female Catheter, The American Journal of Nursing 2023;123(1):50-55.&nbsp;</p>\r\n",
+    "jcr:lastModified": "Fri Jun 30 2023 14:08:22 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2023/23-SGC-712791-June_Newsroom3.jpg"
+  }
+}

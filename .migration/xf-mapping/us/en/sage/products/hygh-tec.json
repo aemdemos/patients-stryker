@@ -1,0 +1,751 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "hygh-tec drainage fecal management system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "625f0486-799e-4b28-bd57-3442a064b443",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "hygh-tec fecal management solution",
+  "jcr:predecessors": [
+    "63bdd141-11c6-404c-9bb5-bf7906cdb489"
+  ],
+  "contentID": "SAGE-IDFM-SYK-3098815_REV-0_en_us",
+  "lastPublished": "Fri Sep 04 2026 14:35:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 04 2026 14:35:54 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 04 2026 14:35:57 GMT+0000",
+  "cq:lastModified": "Fri Sep 04 2026 14:35:33 GMT+0000",
+  "jcr:description": "The hygh-tec drainage system combines innovative design and materials to support improved fecal management performance.",
+  "jcr:baseVersion": "63bdd141-11c6-404c-9bb5-bf7906cdb489",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 11 2026 19:18:53 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/incontinence-management",
+    "stryker:business-unit/SAGE",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/fecal-management",
+    "stryker:content-type/hcp_content",
+    "stryker:product/sage/hygh-tec"
+  ],
+  "jcr:lastModified": "Fri May 15 2026 17:26:28 GMT+0000",
+  "jcr:uuid": "80c9be2a-e90d-4e57-be8e-428a6bf31d49",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/hygh_tec/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/hygh-tec/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "6",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Apr 15 2026 16:24:51 GMT+0000",
+          "marginRight": "45",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">hygh-tec drainage fecal management system</span></span></span></h1>\n<h2>Reshaping fecal incontinence care</h2>\n<p><span class=\"urw-egyptienne\">The hygh-tec drainage system combines innovative design and materials to support improved fecal management performance.<sup>1</sup>&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Rx only.</span></span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Thu May 07 2026 16:18:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "3",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_1782098672": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Mon Apr 13 2026 19:12:55 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 13 2026 19:13:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_515942089": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "performance",
+      "jcr:created": "Mon Apr 13 2026 19:10:31 GMT+0000",
+      "title": "Performance",
+      "jcr:lastModified": "Mon Apr 13 2026 19:10:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 26 2026 23:01:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Reshaping how fecal incontinence is managed&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Current indwelling fecal management systems (FMS) can leak up to 70%.<sup>2</sup> To address this issue, hygh-tec drainage was engineered with air technology to synchronize with the sphincter muscles, allowing it to reduce stool leakage.<sup>1,3,4</sup>*</span></p>\n<p><span class=\"fontsize-1-25em\">The results of a 2025 study published in Australian Critical Care demonstrated:<sup>3</sup></span></p>\n",
+      "jcr:lastModified": "Thu May 07 2026 16:19:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "cols2_1981284448_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Feb 23 2026 18:07:54 GMT+0000",
+      "jcr:lastModified": "Mon Feb 23 2026 18:07:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jan 26 2026 23:04:36 GMT+0000",
+          "alt": "Shield with check mark icon",
+          "srcFileRef": "/content/dam/stryker/sage/products/hygh-tec/images/hygh-tec_sealing_icon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 10 2026 19:44:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jan 26 2026 23:03:03 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #85458a;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #4c7d7a;\">90%</span></span></span>&nbsp;</span><span class=\"fontsize-1-25em\"> sealing efficiency</span></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 19:01:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jan 26 2026 23:04:36 GMT+0000",
+          "alt": "Document with an X on it icon",
+          "srcFileRef": "/content/dam/stryker/sage/products/hygh-tec/images/hygh-tec_no-reports_icon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Mar 10 2026 19:44:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jan 26 2026 23:03:03 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #af6d04;\"><span style=\"color: #4c7d7a;\">0</span>&nbsp;</span></span></span></b><span class=\"fontsize-1-25em\">device-related serious adverse clinical events</span></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 19:01:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_1870983622": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Apr 13 2026 19:11:23 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Apr 13 2026 19:11:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 19:11:53 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 19:11:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:11:57 GMT+0000",
+          "jcr:lastModified": "Mon Apr 13 2026 19:11:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_798628718": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:56:36 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 18:56:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 13 2026 18:56:54 GMT+0000",
+          "alt": "Stryker's hygh-tec fecal management system product visualization ",
+          "srcFileRef": "/content/dam/stryker/sage/products/hygh-tec/images/hygh-tec-design-difference.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 11 2026 15:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Mon Apr 13 2026 18:57:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"fontsize-1-5em\">The difference is the design</span></h4>\n<p><span class=\"fontsize-1-25em\">The polyurethane (PUR) material is lightweight because it’s filled with air, not water.<sup>1</sup> The unique dumbbell design provides adaptability to anatomical structures<sup>1</sup> and reduced stool leakage.<sup>3</sup><br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu May 07 2026 16:35:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:45:10 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 18:45:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 18:45:21 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 18:36:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sage/products/hygh-tec/video/hygh-tec-in-service-video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/hygh-tec-in-service-video-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Apr 27 2026 19:42:36 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/hygh-tec_Video_Thumbnail%202"
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Mon Apr 13 2026 18:45:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Dignity matters &nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The value of preserving patients’ dignity in their most vulnerable time can’t be quantified. By providing that respect, both for staff and patients, this fecal diversion system can have a real impact.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Up to 40% of ICU patients experience fecal incontinence</b>,<sup>5</sup> a challenge that can increase the risk of skin injury, infection and distress for patients.</span></p>\n",
+          "jcr:lastModified": "Thu May 07 2026 16:36:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_798628718_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:56:36 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 18:56:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 13 2026 18:56:54 GMT+0000",
+          "alt": "Hospital patient holding hand with caregiver",
+          "srcFileRef": "/content/dam/stryker/sage/products/hygh-tec/images/Care with confidence.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 11 2026 15:43:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Mon Apr 13 2026 18:57:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Care with confidence</span></span></h2>\n<p><span class=\"fontsize-1-25em\">hygh-tec drainage has demonstrated reduced stool leakage<sup>3</sup> compared to first-generation FMS.<sup>2</sup>* This reduced stool leakage can help support improved patient outcomes and more efficient workflows in the critical care setting.<sup>6</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Diverting semi-liquid and liquid stool away from the skin can help keep the skin dry, helping to address a risk factor of incontinence-associated dermatitis (IAD),<sup>6</sup> hospital-acquired pressure injuries (HAPI)<sup>8</sup> and spread of C. difficile infection associated with acute fecal incontinence.<sup>9</sup></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu May 07 2026 16:36:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:59:50 GMT+0000",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">FAQs</span></span></h3>\n",
+      "jcr:lastModified": "Wed Apr 15 2026 21:19:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:59:45 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 19:00:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 1,
+          "accTitle": "How much air should be used to inflate the drainage head and how will I know it’s the correct amount?"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 2,
+          "accTitle": "What syringe should I use to irrigate the device?"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "Does the device include a lubricant?"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 4,
+          "accTitle": "What syringe should I use to collect stool samples from the device?"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 5,
+          "accTitle": "How often should we irrigate the system?"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 6,
+          "accTitle": "Is the device MRI compatible?"
+        }
+      },
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The drainage head is inflated with 85mL of air and can be filled with the air syringe included in the kit. The syringe has an indicator line at 85mL. Additionally, you can use the pre-anal balloon segment after inflation to double-check the inflation level.<br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Apr 13 2026 19:01:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">A Luer lock syringe (not included in the kit) can be used for irrigation of the device.</span></p>\n",
+          "jcr:lastModified": "Mon Apr 13 2026 19:01:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">No. Lubricant is not included in the kit but per the IFU a lubricant/lubricant gel should be used when preparing the patient and the system.</span></p>\n",
+          "jcr:lastModified": "Mon Apr 13 2026 19:02:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">A Luer slip syringe (not included in the kit) can be used to collect stool samples from the device.</span></p>\n",
+          "jcr:lastModified": "Mon Apr 13 2026 19:02:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 5,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The system should be irrigated once per shift or as needed. Always refer to the Instructions for Use (IFU) and institutional policy for full instructions.</span></p>\n",
+          "jcr:lastModified": "Fri May 08 2026 15:30:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys6": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 6,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:00:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The device is MR conditional, meaning the device can be safely used in an MRI setting only if specific conditions are met. Refer to IFU for specific conditions.</span></p>\n",
+          "jcr:lastModified": "Thu May 07 2026 16:37:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Mon Apr 13 2026 19:09:51 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Mon Apr 13 2026 19:10:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Nov 21 2023 18:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2327",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We received your information and a Stryker Sage representative will be in contact.",
+          "jcr:lastModified": "Fri Feb 10 2023 17:00:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c_277883028": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
+          "text": "Contact information Product feedback Customer service",
+          "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/social-icons/master"
+        }
+      }
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
+      "jcr:lastModified": "Fri Sep 04 2026 14:34:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/sage/resources/Incontinence-associated-Dermatitis-IAD-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Patient-Cleansing-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Infection-Prevention.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:lastModified": "Fri Sep 04 2026 14:33:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "titleFont": "font-egyptienne",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
+          "hideButton": "false",
+          "jcr:lastModified": "Fri Sep 04 2026 14:35:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "hideDescription": "true",
+          "hideThumbnail": "false",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-primafit"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-primofit"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-barrier-cream-cloths"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-incontinence-clean-up-cloths"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 16:28:35 GMT+0000",
+      "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
+      "jcr:lastModified": "Tue Dec 13 2022 16:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/footer/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/footer/footer/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 13 2026 18:35:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 13 2026 18:35:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Apr 13 2026 18:35:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 13 2026 18:35:29 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 13 2026 18:35:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:</b></p>\r\n<p><b>1.</b> Sage Products, LLC. Data on file. 01/2026. <b>2.</b> Sammon, MA, Montague, M, Frame, F, et al., (2015). Randomized controlled study of the effects of 2 fecal management systems on incidence of anal erosion. Journal of Wound Ostomy Continence Nursing, 42(3), 279-286. <b>3. </b>Gutting T, Brobeil A, Strach L, et al., Sealing efficiency and safety of a polyurethane-based fecal management system in intensive care-Results from a real-world study. Australian Critical Care. 2025 Sep;38(5):101296. <b>4.</b> Sage Products, LLC. Data on file, 02/2026. <b>5.</b> García, CB, Binks, R, De Luca, et al., (2013). Expert Recommendations for Managing Acute Faecal Incontinence with Diarrhoea in the Intensive Care Unit. Journal of the Intensive Care Society, 14(4_suppl), 1-9. <b>6. </b>Sheth, H., Rao, S., &amp; Karthik, V. (2023). Clinical and Health Economic Evaluation of a Novel Device for Fecal Management in Bedridden Patients.&nbsp;Indian journal of critical care medicine: peer-reviewed, official publication of Indian Society of Critical Care Medicine,&nbsp;27(10), 759–765. <b>7.</b> Gray M, Bliss DZ, Doughty DB, et al., Incontinence-associated dermatitis: a consensus. Journal of Wound Ostomy Continence Nursing, 2007 Jan-Feb;34(1):45-54; quiz 55-6. <b>8.</b> Kayser SA, Phipps L, VanGilder CA, et al., Examining Prevalence and Risk Factors of Incontinence-Associated Dermatitis Using the International Pressure Ulcer Prevalence Survey. Journal of Wound Ostomy Continence Nursing. 2019 Jul/Aug;46(4):285-290.&nbsp;<b>9.</b><span> Whiteley I, Sinclair G, Lyons AM, et al., (2014). A retrospective review of outcomes using a fecal management system in acute care patients. Ostomy/Wound Management, 60(12), 37–43.</span></p>\r\n<p>* Based on a single-arm, prospective, descriptive study. Leakage defined as considered visible and pronounced contamination of patient pad.</p>\r\n",
+    "jcr:lastModified": "Thu May 07 2026 16:38:09 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/hygh-tec/images/hygh-tec_Hero_Image.jpg"
+  }
+}

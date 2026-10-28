@@ -1,0 +1,63 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Total confidence",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Medium bone power tools",
+  "jcr:versionHistory": "84bbd36c-f78d-4a4c-9425-439123475e9f",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/system8cordlessdriverandsabo/images/Thumbnail_System8CordlessDriverSABO.jpg",
+  "jcr:predecessors": [
+    "bb76c140-fd7c-4d62-869d-265f69cfb91d"
+  ],
+  "contentID": "9100-004-742 Rev. None",
+  "lastPublished": "Tue Aug 28 2018 15:20:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 28 2018 15:20:38 GMT-0400",
+  "cq:lastModified": "Tue Aug 28 2018 15:20:31 GMT-0400",
+  "jcr:description": "Power tools for your sports med and ortho trauma applications.",
+  "jcr:baseVersion": "bb76c140-fd7c-4d62-869d-265f69cfb91d",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Medium bone power tools",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/medium-bone",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/power-tools",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 28 2018 15:20:31 GMT-0400",
+  "jcr:uuid": "91d5563a-3ca4-4f7e-8d18-93c60c7ba59c",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "navTitle": "Medium bone power tools",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:41:19 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/system8cordlessdriverandsabo/images/Thumbnail_System8CordlessDriverSABO.jpg"
+  }
+}

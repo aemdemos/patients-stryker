@@ -1,0 +1,951 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "mild® procedure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "04deec68-226c-4e35-b0a4-4e75e9b0cfdc",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "thumbnailAltText": "The mild procedure addresses a major root cause of lumbar spinal stenosis (LSS) by removing excess ligament tissue to restore space in the spinal canal",
+  "jcr:predecessors": [
+    "abc284d7-5474-45d7-95db-e72a09a975b9"
+  ],
+  "contentID": "IVS-MILD-SYK-1983365_REV-0",
+  "lastPublished": "Thu May 07 2026 01:53:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu May 07 2026 01:53:52 GMT+0000",
+  "cq:lastReplicated": "Thu May 07 2026 01:53:54 GMT+0000",
+  "cq:lastModified": "Thu May 07 2026 01:53:06 GMT+0000",
+  "jcr:description": "The mild procedure addresses a major root cause of lumbar spinal stenosis (LSS) by removing excess ligament tissue to restore space in the spinal canal and does not significantly alter the structural anatomy of the spine.³ ⁴",
+  "jcr:baseVersion": "abc284d7-5474-45d7-95db-e72a09a975b9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 13:25:52 GMT+0000",
+  "pageTitle": "mild® procedure",
+  "cq:tags": [
+    "stryker:product/ivs/mild-procedure",
+    "stryker:content-type/product",
+    "stryker:business-unit/ivs",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu May 07 2026 01:53:06 GMT+0000",
+  "jcr:uuid": "8c47a683-da43-4922-9ffe-b23ee1bbe525",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c_505757962": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "The mild procedure addresses a cause of lumbar spinal stenosis (LSS) by removing excess ligament tissue to restore space in the spinal canal",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/products/mild-procedure/images/mild-hero_1200x680_rev-1.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/products/mild-procedure/images/mild-hero_1920x640_rev-1.png",
+        "alt": "The mild procedure addresses a cause of lumbar spinal stenosis (LSS) by removing excess ligament tissue to restore space in the spinal canal",
+        "jcr:lastModified": "Tue Feb 17 2026 20:37:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Pain doesn't hold the power.</span></span> You do.</span></span></span></h1>\r\n",
+              "jcr:lastModified": "Mon Apr 13 2026 19:42:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "CONTACT A REP",
+              "ctaDeepLinkID": "contact-us",
+              "ctaExternalLink": "https://www.stryker.com/content/patients/us/en/ivs/find-a-doctor.html",
+              "jcr:lastModified": "Mon Apr 13 2026 20:09:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 19:18:49 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 19:18:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_2013809801": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 19:19:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 19:19:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_596541108": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 19:02:32 GMT+0000",
+      "jcr:lastModified": "Fri Apr 10 2026 19:02:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">mild<sup>®</sup> addresses </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">a major root cause of LSS<sup><a href=\"#references\">1</a></sup></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Up to 85% of spinal canal narrowing is caused by thickened ligament. mild addresses this by removing excess ligament tissue using specialized tools and imaging.<sup><a href=\"#references\">2,3</a></sup></span></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2026 01:09:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Apr 10 2026 19:19:10 GMT+0000",
+          "alt": "mild_before-and-after",
+          "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/mild_before-and-after_image.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 13 2026 16:51:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_313900748_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 01 2024 17:50:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3 style=\"text-align: center;\"><span class=\"fontsize-1-25em\">A procedure with<span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">proven results<sup><a href=\"#references\">4</a></sup></span></span></span></h3>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"font-weight: normal;\">With a 76.8% patient satisfaction rate,</span><sup style=\"font-weight: normal;\"><a href=\"#references\">5</a></sup><span style=\"font-weight: normal;\">&nbsp;studies show that mild continues to improve patient functionality over time</span><a href=\"#references\"><span style=\"font-weight: normal;\">.</span><sup style=\"font-weight: normal;\">6</sup></a></span></p>\n",
+      "jcr:lastModified": "Tue Apr 14 2026 01:09:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "leftMargin": "0",
+      "bottomMargin": "-2"
+    },
+    "fullbleedpanel_copy__1364304818": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Nov 01 2024 17:48:37 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:12:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)"
+    },
+    "fullbleedpanel_9192380": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 19:46:25 GMT+0000",
+      "jcr:lastModified": "Fri Apr 10 2026 19:46:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:28:14 GMT+0000",
+          "jcr:lastModified": "Mon Apr 13 2026 19:28:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Apr 13 2026 19:28:17 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 13 2026 19:28:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Apr 13 2026 19:28:17 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 13 2026 19:28:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Fri Apr 10 2026 19:26:58 GMT+0000",
+          "jcr:lastModified": "Fri Apr 10 2026 19:26:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Apr 10 2026 19:28:13 GMT+0000",
+              "alt": "mild_stand-longer",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_stand-7x-longer_icon.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:23:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "0",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Over one year, average standing time increased from <b>8 to 56 minutes</b> with less pain<sup><a href=\"#references\">7</a></sup></span></span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 23:43:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Apr 10 2026 19:28:17 GMT+0000",
+              "alt": "mild_walk-further",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_walk-16x-further_icon.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:24:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "0",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Over one year, average walking distance increased from <b>246 to 3,956 feet</b> with less pain<sup><a href=\"#references\">7</a></sup></span></span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 23:43:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_copy_1458988538": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 19:28:14 GMT+0000",
+          "jcr:lastModified": "Mon Apr 13 2026 19:28:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Apr 13 2026 19:28:17 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 13 2026 19:28:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Mon Apr 13 2026 19:28:17 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 13 2026 19:28:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_1231397535": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:20:06 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:20:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_359779965": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:34:40 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:34:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "deepLinkingId": "patient-expectations",
+      "jcr:created": "Mon Apr 13 2026 20:01:31 GMT+0000",
+      "title": "What patients can expect",
+      "jcr:lastModified": "Mon Apr 13 2026 20:06:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 16:55:12 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 16:55:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,255,255)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Fri Apr 10 2026 19:03:12 GMT+0000",
+          "jcr:lastModified": "Fri Apr 10 2026 19:03:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Apr 10 2026 19:03:35 GMT+0000",
+              "alt": "quick-recovery_icon",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_quick-recovery_iconography.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:36:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Quick recovery time</span></span></span></span></span></h4>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Outpatient procedure and patients are typically discharged within 24 hours<sup><a href=\"#references\">8</a></sup></span></p>\n",
+              "jcr:lastModified": "Tue Apr 14 2026 01:10:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Apr 10 2026 19:04:59 GMT+0000",
+              "alt": "quick-recovery_icon",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_safety-profile_iconography.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:36:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Safety profile</span></span></span></span></span></h4>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Similar to an epidural steroid injection<sup><a href=\"#references\">4</a></sup></span></p>\n",
+              "jcr:lastModified": "Tue Apr 14 2026 01:11:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Apr 10 2026 19:05:01 GMT+0000",
+              "alt": "quick-recovery_icon",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_light-sedation_iconography.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:36:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Sedation</span></span></span></span></span></h4>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Can be performed using local anesthetic and sedation</span></p>\n",
+              "jcr:lastModified": "Thu Apr 16 2026 14:01:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Apr 10 2026 19:05:04 GMT+0000",
+              "alt": "quick-recovery_icon",
+              "srcFileRef": "/content/dam/stryker/ivs/products/mild-procedure/images/campaign/mild_light-sedation_icongraphy.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Apr 13 2026 19:36:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Incision size 5.1mm<sup><a href=\"#references\">9</a></sup></span></span></span></span></span></h4>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Performed through a single incision; no implants used. Incision closed with a bandage</span></p>\n",
+              "jcr:lastModified": "Tue Apr 14 2026 01:11:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_214881380": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:34:52 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1091773000": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:20:43 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:20:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:26:20 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:26:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_492173758": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 18:07:00 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 18:07:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 19:30:52 GMT+0000",
+      "text": "Before, we used epidural steroid injections for lumbar spinal stenosis, but they only eased symptoms temporarily. With the mild procedure, we can now decompress the spinal canal by removing the ligamentum flavum to provide patients lasting relief* without changing the anatomy in a way that could affect future surgery. — Dr. Denis Patterson, DO (Pain Management Physician)",
+      "jcr:lastModified": "Mon Apr 13 2026 19:31:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/campaigns/mild/body-copy/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/campaigns/mild/body-copy/master"
+    },
+    "cols_421098081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 17:27:51 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 17:27:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "16",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 16 2026 14:03:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>*5-year durability<sup>†</sup></p>\n",
+          "jcr:lastModified": "Thu Apr 16 2026 14:07:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_100158675": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 20:25:56 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 20:25:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1111112531": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "deepLinkingId": "patient-testimonials",
+      "jcr:created": "Mon Apr 13 2026 20:24:55 GMT+0000",
+      "title": "Patient testimonials",
+      "jcr:lastModified": "Mon Apr 13 2026 20:25:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Apr 13 2026 20:11:36 GMT+0000",
+      "jcr:lastModified": "Mon Apr 13 2026 20:11:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 20:12:24 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 13 2026 20:19:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/interventional-spine/lss/IVS-MILD-VID-1983629-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IVS-MILD-VID-1983629-EN_US-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Apr 13 2026 20:20:10 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "enablehd": "never",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 13 2025 17:50:21 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">How Lynn returned to everyday activities after mild procedure</span></span></p>\n<p><a href=\"https://view.stryker.com/viewer/5e806e598cd55bc40fbcf030576e5de3\" target=\"_blank\"><span class=\"standalone-link\">Learn More</span></a></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2026 01:04:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 20:12:26 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 13 2026 20:20:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/interventional-spine/lss/IVS-MILD-VID-1983604-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IVS-MILD-VID-1983604-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 13 2026 20:20:31 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 13 2025 17:50:21 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">How Ronnie reclaimed his life after lumbar spinal stenosis</span></span></p>\n<p><a href=\"https://view.stryker.com/viewer/076d4509b1a858f8e7da8f53395627f6\" target=\"_blank\"><span class=\"standalone-link\">Learn More</span></a></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2026 01:05:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Apr 13 2026 20:12:28 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 13 2026 20:20:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/interventional-spine/lss/IVS-MILD-VID-1984129-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IVS-MILD-VID-1984129-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 13 2026 20:20:47 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 13 2025 17:50:21 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">How Dante found relief after the mild procedure</span></span></p>\n<p><a href=\"https://view.stryker.com/viewer/abfa02737fffbed6271bf63953ef81c4\" target=\"_blank\"><span class=\"standalone-link\">Learn More</span></a></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2026 01:06:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_407423485": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-us",
+      "jcr:created": "Mon Apr 13 2026 20:09:33 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Apr 13 2026 20:09:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy__1550248198": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<h3 style=\"text-align: center;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Contact us for a product demonstration or more information</span></span></b><span class=\"fontsize-1-5em\"><b><span class=\"futura-bold\"><br>\n </span></b></span></h3>\n",
+      "jcr:lastModified": "Fri Apr 10 2026 19:09:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_848601864": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 16:53:50 GMT+0000",
+      "jcr:lastModified": "Fri Apr 10 2026 16:53:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">At Stryker, we are partnering with you to make healthcare better. Reach out to discover our interventional solutions that are designed to help relieve pain and improve quality of life.</span></p>\n",
+      "jcr:lastModified": "Tue Apr 14 2026 01:07:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_578984097": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Apr 14 2026 01:07:44 GMT+0000",
+      "jcr:lastModified": "Tue Apr 14 2026 01:07:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "4781",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 16:27:49 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Fri Apr 10 2026 16:28:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "cols_771505549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:28:34 GMT+0000",
+      "jcr:lastModified": "Tue Oct 21 2025 15:28:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1796557246": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "references",
+      "jcr:created": "Tue Apr 14 2026 01:08:38 GMT+0000",
+      "title": "references",
+      "jcr:lastModified": "Tue Apr 14 2026 01:08:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jun 11 2025 19:17:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jun 11 2025 19:18:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jun 11 2025 19:18:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jun 11 2025 19:18:18 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jun 11 2025 19:18:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div>†Mekhail N, et al. The durability of minimally invasive lumbar decompression procedure in patients with symptomatic lumbar spinal stenosis: Long-term follow-up. Pain Pract. 2021 Nov;21(8):826-835<br>\r\n<br>\r\n</div>\r\n<ol>\r\n<li>Staats PS, Benyamin RM; MiDAS ENCORE Investigators. MiDAS ENCORE: Randomized Controlled Clinical Trial Report of 6-Month Results. Pain Physician. 2016 Feb;19(2):25-38. PMID: 26815247.</li>\r\n<li>Hansson T, Suzuki N, Hebelka H, Gaulitz A. The narrowing of the lumbar spinal canal during loaded MRI: the effects of the disc and ligamentum flavum. Eur Spine J. 2009 May;18(5):679-86. doi: 10.1007/s00586-009-0919-7. Epub 2009 Mar 11. PMID: 19277726; PMCID: PMC3234003. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234003.</li>\r\n<li>Jain S, Deer T, Sayed D, Chopra P, Wahezi S, Jassal N, Weisbein J, Jameson J, Malinowski M, Golovac S. Minimally invasive lumbar decompression: a review of indications, techniques, efficacy and safety. Pain Manag. 2020 Sep;10(5):331-348. doi: 10.2217/pmt-2020-0037. Epub 2020 Jul 1. PMID: 32609052. https://www.tandfonline.com/doi/full/10.2217/pmt-2020-0037#d1e525.</li>\r\n<li>Staats PS, Chafin TB, Golovac S, Kim CK, Li S, Richardson WB, Vallejo R, Wahezi SE, Washabaugh EP 3rd, Benyamin RM; MiDAS ENCORE Investigators. Long-Term Safety and Efficacy of Minimally Invasive Lumbar Decompression Procedure for the Treatment of Lumbar Spinal Stenosis With Neurogenic Claudication: 2-Year Results of MiDAS ENCORE. Reg Anesth Pain Med. 2018 Oct;43(7):789-794. doi: 10.1097/AAP.0000000000000868. PMID: 30199512; PMCID: PMC6319572. Retrieved on June 18, 2025 from: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319572/.</li>\r\n<li>Staats PS, Chafin TB, Golovac S, et al. Long-Term Safety and Efficacy of Minimally Invasive Lumbar Decompression Procedure for the Treatment of Lumbar Spinal Stenosis With Neurogenic Claudication: 2-Year Results of MiDAS ENCORE. Reg Anesth Pain Med. 2018;43(7):789-794. doi:10.1097/AAP.0000000000000868.</li>\r\n<li>Deer TR, Chafin TB, Costandi SJ, et al. The MOTION study: Two-year results of a real-world randomized controlled trial of the mild® procedure for treatment of lumbar spinal stenosis. Pain Pract. 2024;24(1):109-119. doi:10.1111/papr.13293.</li>\r\n<li>Mekhail N, Costandi S, Abraham B, Samuel SW. Functional and patient-reported outcomes in symptomatic lumbar spinal stenosis following percutaneous decompression. Pain Pract. 2012 Jul;12(6):417-25. doi: 10.1111/j.1533-2500.2012.00565.x. Epub 2012 Jun 1. PMID: 22651852. <a href=\"https://onlinelibrary.wiley.com/doi/10.1111/j.1533-2500.2012.00565.x\">https://onlinelibrary.wiley.com/doi/10.1111/j.1533-2500.2012.00565.x</a></li>\r\n<li>Deer T, Kim C, Wahezi SE, Qu H, Sayed D; MOTION Study Investigators. Objective Real-World Outcomes of Patients Suffering from Painful Neurogenic Claudication Treated with the mild® Procedure: Interim 6-Month Report of a Randomized Controlled Trial. J Pain Res. 2021 Jun 10;14:1687-1697. doi: 10.2147/JPR.S312573. PMID: 34140805; PMCID: PMC8203201. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201/.</li>\r\n<li>Stryker data on file.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Apr 16 2026 14:06:55 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ivs/products/mild-procedure/images/mild-hero_1200x680_rev-1.png"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Apr 10 2026 16:52:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

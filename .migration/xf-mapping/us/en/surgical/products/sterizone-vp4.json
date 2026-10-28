@@ -1,0 +1,316 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Low Temperature Sterilizer",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Sterizone VP4",
+  "jcr:versionHistory": "091a7164-09e2-4d76-8eb9-ed39aa91bc99",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "eb1908ea-f907-444e-9438-3f0c9a2b8322"
+  ],
+  "lastPublished": "Thu Jan 23 2020 19:37:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 23 2020 19:37:42 GMT+0000",
+  "cq:lastModified": "Tue Jan 14 2020 15:19:34 GMT+0000",
+  "jcr:description": "The Sterizone VP4 Sterilizer is designed to sterilize low temperature sterilizable devices, including some of the most complex and sensitive devices like multi-channel flexible endoscopes that fall within certain dimensions.",
+  "jcr:baseVersion": "eb1908ea-f907-444e-9438-3f0c9a2b8322",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Tue Jan 14 2020 15:19:34 GMT+0000",
+  "jcr:uuid": "0215f1a8-cae0-4f84-b605-a69d457f1540",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Mon Dec 23 2019 16:14:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:17:22 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:17:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:17:29 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:17:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 14:38:44 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 14:38:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:05 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/robot.png",
+          "jcr:lastModified": "Fri Oct 11 2019 14:58:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:14 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Three robotic surgery sets in the </span><span class=\"futura-bold\">same</span><span class=\"urw-egyptienne\"> load</span></span></p>\n",
+          "jcr:lastModified": "Fri Oct 11 2019 19:44:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:05 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/load.png",
+          "jcr:lastModified": "Fri Oct 11 2019 15:02:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:14 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Orthopaedic power tools </span><span class=\"futura-bold\">and</span><span class=\"urw-egyptienne\"> batteries sterilized in the same load</span></span></p>\n",
+          "jcr:lastModified": "Fri Oct 11 2019 19:43:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:05 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/bacteria.png",
+          "jcr:lastModified": "Wed Oct 30 2019 17:53:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 14:58:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Flexible endoscopes that fall within certain dimensions that have come into contact with multi-drug resistant bacteria can now be </span><span class=\"futura-bold\">terminally sterilized</span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 30 2019 17:42:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_775532058": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:04:46 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:04:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/button.png",
+          "jcr:lastModified": "Fri Oct 11 2019 15:05:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Load the device, press the button, and let the machine do the work.</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">With no load calculations, and a mix-and-match load capability up to 75 lb.,*&nbsp;helps to minimize chances for operator error so you&nbsp; can be confident that terminally sterilized instruments go to the OR every time.</span></span></p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 15:42:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/money.png",
+          "jcr:lastModified": "Fri Oct 11 2019 15:05:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The mix-and-match load capability enables you to process the same amount of instruments in fewer loads, which saves you money.</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Our Dynamic Sterilant Delivery System uses only as much sterilant as you need for each load. One cycle reduces the need for multiple biological indicators required in multi-cycle sterilizers.&nbsp;Our load capacity of up to 75 lbs. of mixed instrumentation can increase throughput. And by helping your staff increase their efficiency, you save on overhead costs.</span></span></p>\n",
+          "jcr:lastModified": "Fri Nov 15 2019 18:56:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/surgical/products/sterizone-vp4/images/time.png",
+          "jcr:lastModified": "Fri Oct 11 2019 15:05:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:04:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The Sterizone VP4 Sterilizer delivers with minimal sorting time, staff touchpoints, and training time.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Fri Nov 15 2019 18:57:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_510581696": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:17:35 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:17:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_183233753": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:18:25 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:18:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_1254950794": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:19:03 GMT+0000",
+      "jcr:lastModified": "Wed Oct 30 2019 17:43:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Fri Oct 11 2019 15:20:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">STERIZONE VP4 Sterilizer</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"> is compatible with more than 4,600 devices. Use our online compatibility matrix to see if it meets your needs.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 30 2019 19:22:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Oct 11 2019 15:19:07 GMT+0000",
+          "CTATitle": "Compatibility matrix",
+          "ctaExternalLink": "https://www.tso3.com/compatibility-matrix/",
+          "jcr:lastModified": "Fri Oct 11 2019 15:20:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols_2076054254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2019 15:26:52 GMT+0000",
+      "jcr:lastModified": "Fri Oct 11 2019 15:26:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/sterizone-vp4/images/sterizone_cut_out_open.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>The Sterizone VP4 Sterilizer is intended for use in terminal sterilization of cleaned, rinsed, and dried metal and non-metal reusable medical devices in health care facilities.*</p>\r\n",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModified": "Mon Dec 23 2019 16:15:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*See full indications for use and Compatibility Matrix at TSO3.com/Sterizone</p>\r\n",
+    "jcr:lastModified": "Mon Dec 02 2019 15:41:06 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModified": "Wed Oct 30 2019 17:51:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

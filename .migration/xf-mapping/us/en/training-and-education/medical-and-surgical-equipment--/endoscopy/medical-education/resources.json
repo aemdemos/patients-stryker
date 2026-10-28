@@ -1,0 +1,224 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Resources",
+  "jcr:versionHistory": "6cf66c94-d672-4a50-99f4-1dab34a5ca1b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "c846bf48-30a6-48f1-a205-ab078dcabc24"
+  ],
+  "contentID": "1000903067 Rev A",
+  "lastPublished": "Tue May 19 2020 15:20:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 19 2020 15:20:52 GMT+0000",
+  "cq:lastModified": "Tue Apr 28 2020 22:07:29 GMT+0000",
+  "jcr:baseVersion": "c846bf48-30a6-48f1-a205-ab078dcabc24",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Apr 28 2020 21:22:40 GMT+0000",
+  "jcr:uuid": "6dfe8f9f-4e2c-4390-8e4d-72748ea43c2f",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:42:35 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-4vw\">Resources</span></span>",
+      "jcr:lastModified": "Mon Sep 10 2018 18:42:49 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:42:54 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 18:42:54 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:43:55 GMT-0400",
+          "alt": "General Surgery",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-GenSurg.png",
+          "jcr:lastModified": "Thu May 30 2019 18:52:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/general-surgery"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:43:55 GMT-0400",
+          "alt": "Colorectal",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-Colorectal.png",
+          "jcr:lastModified": "Thu May 30 2019 18:52:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/colorectal-surgery"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:44:01 GMT-0400",
+          "alt": "Arthroscopy",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-Arthro.png",
+          "jcr:lastModified": "Thu May 30 2019 18:53:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/arthroscopy"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:44:04 GMT-0400",
+          "alt": "Ear Nose Throat",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-ENT.png",
+          "jcr:lastModified": "Thu May 30 2019 18:55:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/ent"
+        }
+      }
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:42:54 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 18:42:54 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:43:55 GMT-0400",
+          "alt": "Plastic & Reconstructive Surgery",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-Plastic.png",
+          "jcr:lastModified": "Thu May 30 2019 20:37:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/plastic-surgery"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:43:58 GMT-0400",
+          "alt": "Trauma",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-Trauma.png",
+          "jcr:lastModified": "Thu May 30 2019 18:57:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/trauma"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:45:37 GMT-0400",
+          "alt": "Gynecologic Oncology",
+          "srcFileRef": "/content/dam/stryker/endoscopy/meded/MedEd-GynOnc.png",
+          "jcr:lastModified": "Thu May 30 2019 18:56:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/resources/gynecology"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Apr 28 2020 22:07:20 GMT+0000",
+      "jcr:lastModified": "Tue Apr 28 2020 22:07:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Apr 28 2020 22:07:26 GMT+0000",
+          "jcr:lastModified": "Tue Apr 28 2020 22:07:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:40:10 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Together with our customers,<br>\r\nwe are driven<br>\r\nto make healthcare better.</span></span></div>\r\n",
+      "jcr:lastModified": "Mon Sep 10 2018 18:40:39 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Tue Apr 28 2020 20:56:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigationchild"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Sep 10 2018 18:42:28 GMT-0400",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

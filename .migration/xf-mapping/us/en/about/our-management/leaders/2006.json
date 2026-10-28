@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Tina French",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "127c4e6e-484f-4b9a-ae7b-08e1a53d1018",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "19aafe74-e7f1-4d68-83de-c1ae6fbe4f91"
+  ],
+  "lastPublished": "Mon Sep 23 2024 18:13:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 23 2024 18:13:59 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 23 2024 18:14:01 GMT+0000",
+  "cq:lastModified": "Mon Sep 09 2024 14:03:42 GMT+0000",
+  "jcr:baseVersion": "19aafe74-e7f1-4d68-83de-c1ae6fbe4f91",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:13:59 GMT+0000",
+  "jcr:lastModified": "Mon Sep 09 2024 14:00:27 GMT+0000",
+  "jcr:uuid": "fb88c5a1-5cd2-441a-9049-d2b98c73d206",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_998696161_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_256723897": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
+      "text": "Tina French Vice President, Corporate Secretary Tina French became Vice President, Corporate Secretary in September 2024 Tina is responsible for the corporate law and mergers and acquisitions legal team. Before joining Stryker, Tina was Head of Legal, Americas at Galapagos NV where she led the legal team supporting its research and development, commercialization and business development activities, and supported corporate governance and shareholder engagement strategy. Prior to Galapagos, Tina spent 10 years at Johnson & Johnson (J&J) in a variety of roles, including serving as Vice President Law for Consumer Health North America and as Assistant Corporate Secretary, where she advised the Board of Directors and senior leadership on corporate governance matters. She joined J&J as Senior Counsel in the Business Development Legal Group where she partnered on global acquisitions and divestitures. Prior to J&J, Tina was an Associate at Vinson & Elkins, L.L.P. in New York. Tina earned her law degree from University of Virginia School of Law and holds a bachelor's degree in history and political studies from Rice University.",
+      "jcr:lastModified": "Mon Sep 09 2024 14:03:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our_leadership/2006/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-leadership/2006/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

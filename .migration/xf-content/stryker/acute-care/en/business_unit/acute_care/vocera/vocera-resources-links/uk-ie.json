@@ -1,0 +1,320 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveSync"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "UK & Ireland",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ca66c9b2-078e-4c25-affa-6d42abc1ed16",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:lastRolledout": "Fri Feb 16 2024 16:18:40 GMT+0000",
+  "jcr:predecessors": [
+    "3f32d7d9-c23f-4b1d-a642-a89d04cc4504"
+  ],
+  "jcr:created": "Mon Mar 11 2024 17:26:57 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 11 2024 17:26:59 GMT+0000",
+  "cq:lastModified": "Fri Feb 16 2024 19:45:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3f32d7d9-c23f-4b1d-a642-a89d04cc4504",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "7d610080-af86-48d6-997c-51ad7b102ee5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "cq:lastRolledout": "Fri Feb 16 2024 16:18:40 GMT+0000",
+    "jcr:lastModified": "Fri Feb 16 2024 16:18:40 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledout": "Fri Feb 16 2024 16:18:40 GMT+0000",
+      "deepLinkingId": "vocera-resources-footer-xf",
+      "jcr:created": "Fri Sep 16 2022 20:39:14 GMT+0000",
+      "title": "Vocera resources",
+      "jcr:lastModified": "Fri Feb 16 2024 16:18:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+    },
+    "text5598976517775081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:title": "Customer Support",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
+      "jcr:lastModified": "Fri Feb 16 2024 19:37:33 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "text55989765177750811200728484688802": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Customer support</span></span></p>\n<p><a title=\"Vocera sales and support page\" href=\"/content/stryker/us/en/acute-care/vocera/support.html\">Contact sales and support</a></p>\n<p><a title=\"Vocera customer support portal\" href=\"https://support.vocera.com/s/\" target=\"_blank\">Customer support portal</a></p>\n",
+        "jcr:lastModified": "Fri Feb 16 2024 19:37:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "bottomMargin": "2"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
+          "width": "4",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:33 GMT+0000",
+          "width": "12",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "text5598976517775081_888788438": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:title": "Training",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
+      "jcr:lastModified": "Fri Feb 16 2024 19:37:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "text5598976517775081_8887884381200749882108912": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Training and education</span></span></p>\n<p><a title=\"Vocera University page\" href=\"/content/stryker/us/en/acute-care/vocera/vocera-university.html\">Vocera University</a></p>\n",
+        "jcr:lastModified": "Fri Feb 16 2024 19:37:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
+          "width": "4",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:39 GMT+0000",
+          "width": "12",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "text5598976517775081_2143844140": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:title": "Documentation",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
+      "jcr:lastModified": "Fri Feb 16 2024 19:37:55 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
+          "width": "4",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
+          "width": "12",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      },
+      "text5598976517775081_21438441401200765590946521": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveSyncCancelled"
+        ],
+        "cq:isCancelledForChildren": true,
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "cq:lastRolledout": "Fri Feb 16 2024 19:37:55 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Documentation&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>\n<p><a title=\"Vocera Documentation portal\" href=\"https://pubs.vocera.com/\" target=\"_blank\">Vocera documentation portal</a></p>\n",
+        "jcr:lastModified": "Fri Feb 16 2024 19:45:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+      }
+    },
+    "text5598976517775081_1036293979": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:title": "Legal",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
+      "jcr:lastModified": "Fri Feb 16 2024 19:38:01 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "text5598976517775081_10362939791200779808891073": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "hideComponent": "false",
+        "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Vocera legal</span></span></p>\n<p><a title=\"Vocera legal documents\" href=\"/content/stryker/us/en/acute-care/vocera/legal.html\">Vocera legal documents</a></p>\n",
+        "jcr:lastModified": "Fri Feb 16 2024 19:38:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "bottomMargin": "3"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
+        "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
+          "width": "4",
+          "behavior": "newline",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Feb 16 2024 19:38:01 GMT+0000",
+          "width": "12",
+          "cq:lastRolledoutBy": "kristian.bocage@stryker.com"
+        }
+      }
+    },
+    "text_1283094365": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveSyncCancelled"
+      ],
+      "cq:isCancelledForChildren": true,
+      "sling:resourceType": "wcm/msm/components/ghost"
+    },
+    "text_128309436525019": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveSyncCancelled"
+      ],
+      "cq:isCancelledForChildren": true,
+      "sling:resourceType": "wcm/msm/components/ghost"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "cq:lastRolledout": "Fri Feb 16 2024 16:18:40 GMT+0000",
+      "jcr:created": "Tue Oct 17 2023 20:31:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Fri Feb 16 2024 16:18:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true",
+      "cq:lastRolledoutBy": "kristian.bocage@stryker.com",
+      "bottomMargin": "3"
+    }
+  },
+  "cq:LiveSyncConfig": {
+    "jcr:primaryType": "cq:LiveCopy",
+    "cq:rolloutConfigs": [
+      "/libs/msm/wcm/rolloutconfigs/default"
+    ],
+    "cq:isDeep": true,
+    "cq:master": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master"
+  }
+}

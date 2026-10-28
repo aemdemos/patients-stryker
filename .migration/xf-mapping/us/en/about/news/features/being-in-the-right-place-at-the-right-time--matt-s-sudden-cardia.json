@@ -1,0 +1,203 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Being in the right place at the right time | Matt’s sudden cardiac arrest story",
+  "jcr:versionHistory": "203f5fd9-aec5-40a7-8f86-b61ee27d106c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "7a2ecfbf-f4f8-426c-8666-6aaecf0f7694"
+  ],
+  "lastPublished": "Tue Aug 03 2021 14:13:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 03 2021 14:13:29 GMT+0000",
+  "cq:lastModified": "Fri Jul 30 2021 15:42:09 GMT+0000",
+  "jcr:baseVersion": "7a2ecfbf-f4f8-426c-8666-6aaecf0f7694",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Fri Jul 30 2021 15:42:09 GMT+0000",
+  "jcr:uuid": "492f733f-698e-4d60-800f-672821302691",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 28 2021 19:47:16 GMT+0000",
+      "jcr:lastModified": "Wed Jul 28 2021 19:47:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "danielle.smith@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 03 2020 17:52:55 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Jul 15 2021 15:02:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/matts-story/Survivor-Story_Matt-Cass-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Survivor-Story_Matt-Cass-comp-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Wed Jul 28 2021 19:09:18 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/matt-thumbnail"
+          }
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+          "CTATitle": "Learn more about the LUCAS chest compression system",
+          "jcr:lastModified": "Wed Jul 28 2021 19:57:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/products/lucas-3",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy53": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-1-5-vw\">Studies show the rate of survival from sudden cardiac arrest decreases by 10% for every minute without intervention.<sup>1</sup>&nbsp;Miraculously, after 80 minutes of continuous CPR with the LUCAS chest compression system and critical care from emergency caregivers, Matt regained his pulse and started breathing.</span>",
+          "jcr:lastModified": "Wed Jul 28 2021 19:50:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        },
+        "item1089953560363234": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"></span> ",
+          "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">From the nurses in the field that found me to the nurses and doctors at the hospital,<span class=\"futura-bold\"> I had the best care and best people (taking care of me). I’m thankful for that.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Matt</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Sudden cardiac arrest survivor</span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Wed Jul 28 2021 18:19:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Aug 03 2021 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "03-Aug-2021",
+    "jcr:lastModified": "Wed Jul 28 2021 19:45:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Cummins RO. From concept to standard-of-care? Review of the clinical experience with automated external defibrillators. Ann Emerg Med. 1989 Dec;18(12):1269-75. doi: 10.1016/s0196-0644(89)80257-4. PMID: 2686497.</p>\r\n",
+    "jcr:lastModified": "Wed Jul 28 2021 19:51:27 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/patients/patient-stories/matts-story/matt-thumbnail.png"
+  }
+}

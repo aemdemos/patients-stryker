@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Celebrate survivors hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "81ec5bc1-26ba-495d-81fa-dedecceee1ef",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a6817e95-0932-4672-9671-ab65f8a0d956"
+  ],
+  "jcr:created": "Tue Sep 13 2022 13:59:49 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 13:59:51 GMT+0000",
+  "cq:lastModified": "Tue Sep 13 2022 13:59:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a6817e95-0932-4672-9671-ab65f8a0d956",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "c9e23ba6-188d-4cd8-bff0-d2059364efd8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andy.tanabe@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Fri May 06 2022 18:13:37 GMT+0000",
+      "alt": "Sudden cardiac arrest survivor smiling in the sunshine",
+      "srcFileRef": "/content/dam/stryker/ems/survivors/image/Jordan Schoen 3 Hero.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 13 2022 13:59:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

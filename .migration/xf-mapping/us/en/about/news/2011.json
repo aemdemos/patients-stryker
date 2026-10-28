@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "2011",
+  "jcr:versionHistory": "b6cb5557-19cb-4a01-9f3c-7cd9f8dc7b2b",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:predecessors": [
+    "6dd45d8f-2734-4714-b27a-9a0040f94e50"
+  ],
+  "lastPublished": "Fri Sep 01 2017 10:25:28 GMT+0000",
+  "jcr:created": "Fri Sep 01 2017 10:25:28 GMT-0400",
+  "cq:lastModified": "Tue Aug 22 2017 18:10:22 GMT-0400",
+  "jcr:baseVersion": "6dd45d8f-2734-4714-b27a-9a0040f94e50",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "da641355-21c8-4d80-99f1-5de3f6fe1fb7",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com"
+}

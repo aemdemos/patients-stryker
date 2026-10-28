@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "1346",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "811437e7-f59d-4838-8b3d-7ad7b24fb974",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "eba6a113-28d6-479b-a3be-71d80afb1f2d"
+  ],
+  "lastPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "jcr:created": "Fri Jul 25 2025 15:55:32 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 15:55:37 GMT+0000",
+  "cq:lastModified": "Tue Jul 15 2025 18:42:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "eba6a113-28d6-479b-a3be-71d80afb1f2d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:12 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3f95c643-2e97-4b4c-8fb8-93265701b64e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jan 23 2020 19:03:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Mary</span>&nbsp;Brainerd</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Director since 2017, Governance and Nominating Committee Chair, Compensation and Human Capital Committee<br>\n </span></span><br>\nFormer President and Chief Executive Officer of HealthPartners<br>\n<br>\n&nbsp;</p>\n<p>Ms. Brainerd is the former President and Chief Executive Officer of HealthPartners, the largest, consumer-governed, nonprofit healthcare organization in the United States, which she led from 2002 to May 2017. Prior to joining HealthPartners in 1992, she held various executive roles with Blue Cross and Blue Shield of Minnesota from 1984 to 1992. She also serves as a director of Bremer Financial Corporation, a privately held regional financial services company.<br>\n<br>\nMs. Brainerd’s extensive experience surrounding both healthcare delivery and insurance enable her to provide unique and invaluable insight to our Board discussions, particularly in light of the evolving landscape in the healthcare delivery and payer markets.<br>\n</p>\n",
+      "jcr:lastModified": "Mon Jul 14 2025 18:13:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 20 2020 19:33:18 GMT+0000",
+      "alt": "Mary Brainerd",
+      "srcFileRef": "/content/dam/stryker/about/our-management/Board-of-Directors/new-bod/gold-bar/Our_BOD_Mary_Brainerd_Gold_V2.jpg",
+      "jcr:lastModified": "Tue Jul 15 2025 18:42:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

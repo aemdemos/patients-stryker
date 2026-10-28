@@ -1,0 +1,163 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Reimagining nursing for the future",
+  "jcr:versionHistory": "99c6307c-7511-4fe7-9a4c-ac830071faf8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "987d3d9e-cc97-4728-9c0e-bed97dc76e41"
+  ],
+  "lastPublished": "Mon May 02 2022 19:07:56 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 02 2022 19:07:56 GMT+0000",
+  "cq:lastModified": "Mon May 02 2022 19:07:46 GMT+0000",
+  "jcr:baseVersion": "987d3d9e-cc97-4728-9c0e-bed97dc76e41",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Mon May 02 2022 19:07:46 GMT+0000",
+  "jcr:uuid": "62994439-6d8e-41d8-b655-923087e3515b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c_1574371546": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Mar 04 2022 16:34:18 GMT+0000",
+      "jcr:lastModified": "Fri Mar 04 2022 16:34:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/reimagining_nursing_/carousel/carousel2",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/reimagining-nursing/carousel/carousel2",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/reimagining_nursing_/mobile/mobile2",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/reimagining-nursing/mobile/mobile2",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "30",
+          "jcr:created": "Fri Mar 04 2022 16:34:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Apr 28 2022 14:53:32 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "57",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Fri Mar 04 2022 16:36:17 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\">Reimagining nursing for the future</span></span><br>\r\n<span class=\"fontsize-1-5-vw\">Nurses are innovators</span>",
+              "jcr:lastModified": "Thu Apr 28 2022 17:39:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jan 19 2022 16:49:09 GMT+0000",
+      "jcr:lastModified": "Wed Jan 19 2022 16:49:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jan 19 2022 16:49:28 GMT+0000",
+          "jcr:lastModified": "Wed Jan 19 2022 16:49:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Jan 19 2022 16:49:31 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Jan 19 2022 16:49:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Apr 28 2022 14:06:53 GMT+0000",
+      "jcr:lastModified": "Thu Apr 28 2022 14:06:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Thu Apr 28 2022 14:06:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">CNO Perspective Report by Rhonda Collins, DNP, RN, FAAN</span></p>\n<p>The nursing industry today is facing a staffing shortage unlike any it has seen before. In her latest CNO Perspective report, Rhonda Collins, DNP, RN, FAAN, lays out six ways to address nurses’ call for innovation and improving the work environment to help turn the tide.</p>\n<p><a href=\"https://www.vocera.com/cno-report\"><span class=\"standalone-link\">DOWNLOAD THE 2022 REPORT</span></a></p>\n",
+          "jcr:lastModified": "Fri Apr 29 2022 13:12:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Mon May 02 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "02-May-2022",
+    "jcr:lastModified": "Thu Apr 28 2022 13:34:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/reimagining-nursing-for-the-future/CNO Report Cover Photo_Final.jpg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Apr 28 2022 14:44:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

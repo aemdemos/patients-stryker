@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Healthcare Institute of New Jersey Hosts Life Sciences Celebration ",
+  "jcr:versionHistory": "49d88587-afd7-496d-959b-aa5163ec38a1",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+  "jcr:predecessors": [
+    "a1063474-c3cb-4f58-9177-3e995b33f3f9"
+  ],
+  "lastPublished": "Fri Oct 13 2017 16:33:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 13 2017 16:33:29 GMT-0400",
+  "cq:lastModified": "Fri Oct 13 2017 16:33:14 GMT-0400",
+  "jcr:baseVersion": "a1063474-c3cb-4f58-9177-3e995b33f3f9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Fri Oct 13 2017 16:22:21 GMT-0400",
+  "jcr:uuid": "776ce27e-3364-4095-a83f-c8b4b57950d9",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "Jo.Hawk@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "publishDate": "Thu Oct 12 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Oct-2017",
+    "jcr:lastModified": "Fri Oct 13 2017 16:05:35 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "jcr:lastModified": "Fri Oct 13 2017 15:56:05 GMT-0400",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "srcName": "Yin HINJ Photo.jpg",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Yin HINJ Photo smaller.jpg",
+    "jcr:lastModified": "Fri Oct 13 2017 16:33:14 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "text": "<p>The Healthcare Institute of New Jersey (HINJ), which is chaired by Stryker’s Vice President of Communications and Public Affairs, Yin Becker, honored six recipients at the HINJ’s Life Sciences Awards celebration on Thursday, Oct. 12. Honorees were recognized for their contributions in public service, medical innovation/human health, patient access/advocacy and STEM education.</p>\n<p>Becker is the first ever female chair of the HINJ board and began serving in that role earlier in 2017. Celebrating its 20th anniversary, HINJ is a trade association for the research-based biopharmaceutical and medical technology industry in New Jersey.</p>\n<p>&nbsp;<a href=\"https://njbmagazine.com/njb-news-now/six-honored-hinj-life-sciences-celebration/\">Read the full article:</a><br>\n</p>\n",
+    "jcr:lastModified": "Fri Oct 13 2017 16:11:06 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "externalList": {
+    "jcr:primaryType": "nt:unstructured",
+    "1": {
+      "jcr:primaryType": "nt:unstructured",
+      "relatedOpenInNewWindow": "true",
+      "relatedcheckboxOverride": "0",
+      "relatedExternalLink": "https://njbmagazine.com/njb-news-now/six-honored-hinj-life-sciences-celebration/",
+      "externalLinkText": "Read the full article:",
+      "externalLinkType": "ext"
+    }
+  }
+}

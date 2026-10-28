@@ -1,0 +1,427 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vizient Connections",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "781018ae-007d-4f2f-9d59-cbac4b7e6165",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "2d270c9a-f268-47b4-9be9-787f0b2736c3"
+  ],
+  "contentID": "EAM-GSNPS-SYK-3826750",
+  "lastPublished": "Wed Sep 09 2026 21:04:15 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 09 2026 21:04:17 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 09 2026 21:04:18 GMT+0000",
+  "cq:lastModified": "Wed Sep 09 2026 20:00:19 GMT+0000",
+  "jcr:baseVersion": "2d270c9a-f268-47b4-9be9-787f0b2736c3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Aug 21 2026 20:37:39 GMT+0000",
+  "jcr:lastModified": "Wed Aug 19 2026 19:35:48 GMT+0000",
+  "jcr:uuid": "9a0c2ad9-d9c5-4de3-8e4b-6060c93f90e7",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Apr 01 2025 14:38:02 GMT+0000",
+      "jcr:lastModified": "Tue Apr 01 2025 14:38:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/services/hospital_supply_chai/events/vizient-connections/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/services/hospital-supply-chai/events/vizient-connections/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/services/hospital_supply_chai/events/vizient-connections/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/services/hospital-supply-chai/events/vizient-connections/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "textColor": "rgb(0,0,0)",
+          "verticalMargin": "15",
+          "jcr:created": "Tue Apr 01 2025 14:39:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Aug 21 2026 14:10:20 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "1",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "7",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Apr 01 2025 14:44:43 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"fontsize-3-5-vw\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Meet Stryker</span><b><span style=\"color: rgb(0,0,0);\">&nbsp;</span></b><span style=\"color: rgb(0,0,0);\">at the&nbsp;<br>\r\n</span></span></span><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">Vizient Connections&nbsp;<br>\r\nSummit 2026</span></span></span></b><br>\r\n</h1>\r\n",
+              "line2": "<span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">September 22-24, 2026 | Las Vegas, NV</span></span></span>",
+              "jcr:lastModified": "Fri Aug 21 2026 14:10:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(255,255,255)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon May 11 2026 17:21:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon May 11 2026 17:22:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Thu Jun 25 2026 21:44:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-25em\">Our simplified approach.&nbsp;<br>\n <span class=\"futura-bold\">Your goals in mind.</span></span></h2>\n<p><b><span class=\"fontsize-1-25em\">Stryker is proud to participate in the Vizient Connections Summit, bringing together solutions that help healthcare organizations drive operational efficiency and support strategic priorities.</span></b></p>\n",
+      "jcr:lastModified": "Thu Sep 03 2026 13:58:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Apr 01 2025 16:10:02 GMT+0000",
+      "jcr:lastModified": "Tue Apr 01 2025 16:10:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Wed Mar 26 2025 21:24:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><b><span style=\"color: #1c5687;\">Join us for a Stryker Experience on Tuesday, September 22, from 6:30-9:00 p.m.</span></b> for an interactive experience with your supply chain and hospital administration peers. Learn more about Stryker’s solutions for:​</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Supply chain resiliency and operational efficiency​</span></li>\n<li><span class=\"fontsize-1-25em\">Ambulatory Surgery Center opportunities ​</span></li>\n<li><span class=\"fontsize-1-25em\">Connected care innovations​</span></li>\n<li><span class=\"fontsize-1-25em\">Financial solutions and capital planning​</span></li>\n<li><span class=\"fontsize-1-25em\">Neurotechnology programs​</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 18:29:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "4"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 25 2026 19:28:31 GMT+0000",
+          "jcr:lastModified": "Fri Aug 21 2026 14:37:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=-7udTko5g0WIEFP4H4GeO8spu3StznVHpGnPxI_iRIJUNU8wUTYyWVJNS1cxSzI2VEM0S0tSS0kxMC4u&route=shorturl",
+              "buttonText": "RSVP for the Stryker Experience",
+              "externalLinkType": "ext"
+            }
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "6",
+          "jcr:created": "Wed Mar 26 2025 21:24:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\">Schedule dedicated time with our team at the Vizient Connections Summit</span> </span></b><span class=\"fontsize-1-25em\">to discuss your priorities, learn more about our portfolio and explore opportunities to help advance your goals. ​</span></p>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 18:29:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "4"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Apr 22 2025 16:25:22 GMT+0000",
+          "CTATitle": "Schedule a conversation",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://forms.office.com/r/gnQYC2msGP",
+          "jcr:lastModified": "Fri Aug 21 2026 14:12:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text_392961963": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Jun 25 2026 21:45:33 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Jun 25 2026 21:45:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://forms.cloud.microsoft/pages/responsepage.aspx?id=-7udTko5g0WIEFP4H4GeO8spu3StznVHpGnPxI_iRIJUNU8wUTYyWVJNS1cxSzI2VEM0S0tSS0kxMC4u&route=shorturl",
+          "jcr:created": "Wed Aug 19 2026 19:34:34 GMT+0000",
+          "alt": "Join us for a Stryker Experience Tues, Sept 22 | 6:30-9:00 pm Havana room, Sugarcane, 3355 S Las Vegas Blvd, A 1-minute walk from Vizient Connections Summit!",
+          "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/vizient-connections/images/Vizient Connections_Stryker Experience graphic_website.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 31 2026 18:42:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Aug 28 2026 17:48:47 GMT+0000",
+      "jcr:lastModified": "Fri Aug 28 2026 17:48:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Aug 28 2026 17:48:50 GMT+0000",
+          "jcr:lastModified": "Fri Aug 28 2026 17:48:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_copy_1640848377": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Thu Jun 25 2026 21:44:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Vizient Innovative Technology Exchange ​</span></span></h2>\n",
+      "jcr:lastModified": "Fri Aug 28 2026 17:49:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Wed Mar 26 2025 21:24:32 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Visit Stryker’s Vizient Innovative Technology Exchange finalists at the exhibit hall and learn how these solutions are helping address real-world clinical and operational challenges. ​</span></p>\n",
+      "jcr:lastModified": "Fri Aug 28 2026 17:50:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 31 2026 18:44:48 GMT+0000",
+      "jcr:lastModified": "Mon Aug 31 2026 18:44:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 31 2026 18:44:53 GMT+0000",
+          "alt": "LIFEPAK 35",
+          "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/vizient-connections/images/LIFEPAK-35-Hero-angled-left.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 31 2026 18:52:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/emergency-care/products/lifepak-35.html",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 31 2026 18:46:41 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">LIFEPAK<sup>®</sup> 35 monitor/defibrillator</span><br>\nBooth 419</h3>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/emergency-care/products/lifepak-35.html\" target=\"_blank\">Learn more</a></span></p>\n",
+          "jcr:lastModified": "Wed Sep 09 2026 19:59:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 31 2026 18:44:53 GMT+0000",
+          "alt": "Nico technologies",
+          "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/vizient-connections/images/nico-technologies.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 31 2026 18:53:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/nse/campaigns/nico-technologies.html",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 31 2026 18:46:41 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">NICO<sup>®</sup> Technologies</span><br>\nBooth 601</h3>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/nse/campaigns/nico-technologies.html\" target=\"_blank\">Learn more</a></span></p>\n",
+          "jcr:lastModified": "Wed Sep 09 2026 19:59:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 31 2026 18:44:53 GMT+0000",
+          "alt": "Synchfix EVT",
+          "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/vizient-connections/images/Synchfix-EVT-Main-Hero.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 31 2026 18:53:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/foot-and-ankle/products/synchfix-evt.html",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 31 2026 18:46:41 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Synchfix<sup>™</sup> EVT</span><br>\nBooth 603</h3>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/foot-and-ankle/products/synchfix-evt.html\" target=\"_blank\">Learn more</a></span></p>\n",
+          "jcr:lastModified": "Wed Sep 09 2026 20:00:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Aug 19 2026 19:31:14 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Wed Aug 19 2026 19:31:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Dec 20 2024 17:42:57 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 20:56:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Dec 22 2020 00:46:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Let's get started.</span></span></span>",
+          "line2": "<span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">Please fill out the following form to schedule&nbsp;dedicated&nbsp;time with Stryker's Enterprise Accounts Team at one of the below events.&nbsp;</span></span>",
+          "jcr:lastModified": "Tue Jun 23 2026 16:39:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_225467978_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 20:54:29 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 20:54:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "5073",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 20:19:12 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Fri Jun 19 2026 20:49:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

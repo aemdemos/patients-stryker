@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Header",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "071c2e06-7aa4-48d8-9670-932a5e2b4b0b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3325e5ec-aed9-43e6-9f27-b779f6cfcac3"
+  ],
+  "lastPublished": "Fri Jan 17 2025 19:28:51 GMT+0000",
+  "jcr:created": "Fri Jan 17 2025 19:28:51 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 17 2025 19:28:53 GMT+0000",
+  "cq:lastModified": "Tue Jan 14 2025 22:09:19 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3325e5ec-aed9-43e6-9f27-b779f6cfcac3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 17 2025 19:28:51 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "9bab9656-c12a-482b-9315-7178a08df336",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:08:51 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Jan 14 2025 22:09:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/endoscopy/products/1788-platform/videos/1788-HeaderVideo-V2.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/1788-HeaderVideo-V2-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jan 14 2025 22:09:19 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

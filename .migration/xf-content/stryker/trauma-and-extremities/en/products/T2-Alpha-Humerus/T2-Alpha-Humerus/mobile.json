@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5d2b6536-0206-4fda-b54b-b13bf497a745",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "8493a82c-dd3a-4419-ae74-566f6ec53344"
+  ],
+  "lastPublished": "Mon Oct 13 2025 20:06:02 GMT+0000",
+  "jcr:created": "Mon Oct 13 2025 20:06:03 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 13 2025 20:06:05 GMT+0000",
+  "cq:lastModified": "Thu Sep 04 2025 19:45:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "8493a82c-dd3a-4419-ae74-566f6ec53344",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Oct 13 2025 20:06:02 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1f852cdc-f845-4e43-b3c6-bb7c6e2a21e6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Oct 03 2022 17:58:56 GMT+0000",
+      "alt": "headermobile-evolve",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/evolve-proline/images/headermobile-evolve.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Oct 03 2022 17:59:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

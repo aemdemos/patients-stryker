@@ -1,0 +1,97 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "1000-000-002",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Discography Patient Brochure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a5ebce6f-7bef-40da-9659-e46ee4898931",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "7b3ede24-be34-4705-8981-ae61f439eaac"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:05 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:06 GMT+0000",
+  "cq:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+  "jcr:baseVersion": "7b3ede24-be34-4705-8981-ae61f439eaac",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "jcr:lastModified": "Tue Sep 09 2025 22:11:33 GMT+0000",
+  "jcr:uuid": "24756584-2eb9-4ea3-838d-3cd12a73d82b",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 21:33:39 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 21:33:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 21:34:12 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">B</span></span></p>\n<p><b>Revision Date: 07.31.17</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n</ol>\n",
+      "jcr:lastModified": "Tue Sep 09 2025 22:12:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1975395202": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 21:35:37 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">C<br>\n</span></span></p>\n<p><b>Revision Date: 07.31.17</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n</ol>\n",
+      "jcr:lastModified": "Tue Sep 09 2025 22:13:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_750776360": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 21:37:26 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Rev A</span></span></p>\n<p><b>Revision Date: 12.04.15</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n</ol>\n",
+      "jcr:lastModified": "Tue Sep 09 2025 22:14:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1601545587": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 21:37:26 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Rev None<br>\n</span></span></p>\n<p><b>Revision Date: 12.03.15</b></p>\n<ol>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n<li>Lipetz JS. Pathophysiology of inflammatory, degenerative, and compressive radiculopathies. Phys Med Rehabil Clin N Am 2002 Aug;13(3):439-49</li>\n<li>Prescher A. Anatomy and pathology of the aging spine. Eur J Radiol 1998 Jul;27(3):181-95</li>\n<li>Coppes MH, Marani E, Thomeer RT, Groen GJ. Innervation of the painful lumbar discs. Spine 1997 Oct 15; 22(20):2342-50</li>\n<li>Buenaventura RM, Shah RV, Patel V, Benyamin R, Singh V. Systematic review of discography as a diagnostic test for spinal pain: an update. Pain Physician 2007 Jan;10(1):147-64<br>\n</li>\n</ol>\n",
+      "jcr:lastModified": "Tue Sep 09 2025 22:14:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

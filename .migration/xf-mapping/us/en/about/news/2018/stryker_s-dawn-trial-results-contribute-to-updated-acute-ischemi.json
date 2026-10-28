@@ -1,0 +1,63 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s DAWN Trial results contribute to updated acute ischemic stroke guidelines from the American Heart Association and American Stroke Association",
+  "jcr:versionHistory": "15d27860-8a96-48e9-8694-3f305df61f5a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/images/Dawn Trial Trevo XP 4x20mm.png",
+  "jcr:predecessors": [
+    "c096e3eb-d1b9-4d9e-a6d6-d9f870d13e68"
+  ],
+  "lastPublished": "Thu Jan 25 2018 16:27:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2018 16:27:29 GMT-0500",
+  "cq:lastModified": "Thu Jan 25 2018 16:25:05 GMT-0500",
+  "jcr:baseVersion": "c096e3eb-d1b9-4d9e-a6d6-d9f870d13e68",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Jan 25 2018 16:25:05 GMT-0500",
+  "jcr:uuid": "4081ac17-64a7-4ed2-bdb4-53b497fbb3f5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Thu Jan 25 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Jan-2018",
+    "jcr:lastModified": "Thu Jan 25 2018 15:48:07 GMT-0500",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p><b>Kalamazoo, Michigan, USA – January 25, 2018 – </b>Yesterday the American Heart Association and American Stroke Association updated the ischemic stroke guidelines. The new recommendation expanded the treatment window from six to 16 hours based on overwhelming clinical evidence from the Stryker-sponsored DAWN Trial and confirmed by DEFUSE 3. The guidelines state that it may be reasonable to treat patients up to 24 hours after a stroke, based on the DAWN Trial criteria. The new guidelines mean that more patients will be treated based on clinical presentation rather than a strict time cutoff alone. Currently, less than one in 10 patients suffering from an ischemic stroke receives thrombectomy, a procedure to remove a blood clot that causes stroke. The updated guidelines represent a major step in recognizing that more patients should be eligible for treatment and has the potential to save lives and reduce patient disability.</p>\n<p>“We are excited to see that the hard work and results from the DAWN Trial are being embraced by the AHA. My colleagues and I are looking forward to the opportunity to improve the lives of more patients and their families,” said Raul Nogueira, MD, co-primary investigator of the DAWN&nbsp; Trial and professor of Neurology, Neurosurgery, and Radiology at Emory University.</p>\n<p>The guidelines also reconfirmed that stent retrievers are the only devices proven to effectively treat ischemic stroke with level 1A evidence and remain the first choice for neurointerventional treatment.</p>\n<p>Mark Paul, president of Stryker’s Neurovascular division said, “Stryker is proud to partner with our customers in leading the way in treatment of this devastating disease through clinical excellence and high performing products like the Trevo XP Retriever.”</p>\n<p><b>About the DAWN Trial</b></p>\n<p>Sponsored by Stryker, the DAWN Trial was designed to evaluate functional outcomes at 90 days in stroke patients treated with mechanical thrombectomy using the Trevo® Retriever plus medical management compared to those receiving medical therapy alone. Patients were screened for inclusion in the trial if they had a stroke that started within six to 24 hours, or a stroke with an unknown time of onset—a significantly longer treatment window than the currently cleared thrombectomy indication.</p>\n<p><b>About the Trevo Retriever</b></p>\n<p>Stryker’s Trevo Retriever is a tiny stent-shaped medical device that is attached to a thin wire. In a minimally invasive procedure that utilizes X-ray, the physician navigates the retriever from the femoral artery (located in the upper leg) to the blocked blood artery in the brain. The<br>\nretriever is designed to ensnare the blood clot and remove it from the body. Originally cleared by the FDA in 2012 for the revascularization of patients experiencing ischemic stroke, the Trevo Retriever has been used in thousands of patients worldwide. The retriever’s indication within the DAWN Trial, for use in patients treated six to 24 hours after last seen well, is currently under an Investigational Device Exemption (IDE) only and is currently pending 510k<br>\nclearance. The Trevo Retriever was the only mechanical thrombectomy device used in the DAWN Trial.</p>\n<p>An animation and Important Safety Information of Stryker’s Trevo Retriever is available here: <a href=\"https://youtu.be/PxcERzyI67I\">https://youtu.be/PxcERzyI67I</a></p>\n<p><b>About ischemic stroke</b></p>\n<p>An ischemic stroke occurs when an artery in the brain becomes blocked by a blood clot or other substance such as plaque, a fatty material. Blood vessels carry blood, oxygen and nutrients throughout the body and to the brain. When the brain is deprived of blood and oxygen, it fails to work properly. Depending on the severity of the stroke and the area of the brain affected, loss of brain function or death may occur. According to the World Heart Federation, ischemic stroke contributes to 6 million deaths around the globe.<sup>1</sup></p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at www.stryker.com.</p>\n<p><b>Media contact</b></p>\n<p>Keri Laden</p>\n<p>Stryker</p>\n<p>510 413 2534</p>\n<p>keri.laden@stryker.com</p>\n<p><sup>1.http://www.worldstrokecampaign.org/learn.html. Accessed September 19, 2017</sup><br>\n</p>\n<p>Copyright © 2018 Stryker AP001951 v1.0</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Jan 25 2018 15:54:59 GMT-0500",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Dawn Trial Trevo XP 4x20mm.png",
+    "jcr:lastModified": "Thu Jan 25 2018 16:24:54 GMT-0500",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Dawn Trial Trevo XP 4x20mm.png"
+  }
+}

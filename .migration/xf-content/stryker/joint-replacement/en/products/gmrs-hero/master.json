@@ -1,0 +1,98 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "GMRS Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "59bf76ec-e4f4-473f-9384-e8f74a0aa250",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c2353887-825a-4536-adef-e68ddd09740b"
+  ],
+  "lastPublished": "Wed Sep 17 2025 13:17:00 GMT+0000",
+  "jcr:created": "Wed Sep 17 2025 13:17:00 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 17 2025 13:17:03 GMT+0000",
+  "cq:lastModified": "Wed Aug 27 2025 18:08:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c2353887-825a-4536-adef-e68ddd09740b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 13:17:00 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7dc0c190-96c9-4e4e-9bf5-bf53291c6752",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "20",
+      "topPadding": "10",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Aug 26 2025 18:33:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">GMRS</span></span></span></span></h1>\n<h1>&nbsp;</h1>\n<h1>Global Modular Replacement System&nbsp;</h1>\n",
+      "jcr:lastModified": "Wed Aug 27 2025 18:08:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Aug 26 2025 18:51:00 GMT+0000",
+      "alt": "GMRS Hero single component",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/images/GMRS Hero single component.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 26 2025 18:51:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        }
+      }
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "ctaLinkType": "deep",
+      "ctaOpenInNewTabOverride": "1",
+      "jcr:created": "Tue Aug 26 2025 18:53:16 GMT+0000",
+      "CTATitle": "Contact Us",
+      "ctaDeepLinkID": "contact-us",
+      "jcr:lastModified": "Tue Aug 26 2025 18:57:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        }
+      }
+    }
+  }
+}

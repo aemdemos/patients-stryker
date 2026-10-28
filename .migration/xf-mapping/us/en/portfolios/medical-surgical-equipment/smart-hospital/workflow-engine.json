@@ -1,0 +1,100 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Enhance patient safety and help improve clinical workflow",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Workflow engine",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "58f257ef-e096-4861-839e-39a5097ec343",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "Nursing reading notification on mobile device, patient in hospital bed",
+  "jcr:predecessors": [
+    "cc0575d4-f45d-4166-ac8a-b6c0c48f831e"
+  ],
+  "contentID": "AC-VOEN-SYK-2604567_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:35:45 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:35:47 GMT+0000",
+  "cq:lastModified": "Fri Jan 23 2026 15:57:18 GMT+0000",
+  "jcr:description": "Engage is the core of Stryker's Smart Hospital Platform helping to enhance patient safety and workflow efficiency. Often referred to as a rules engine, Engage can be configured based on your hospital's protocols to filter, route, escalate and prioritize alarms and notifications with patient context to the right person at the right time.",
+  "jcr:baseVersion": "cc0575d4-f45d-4166-ac8a-b6c0c48f831e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital",
+    "stryker:specialty/workflow-engine"
+  ],
+  "jcr:lastModified": "Wed Jan 14 2026 16:37:07 GMT+0000",
+  "jcr:uuid": "f0eff892-e876-4eb9-a928-561c6e788ef6",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/smarthospital-platform/workflow-engine/workflow-engine-hero_nowaves_675x450.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModified": "Thu Dec 18 2025 15:34:15 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tagFolder": "/etc/tags/stryker/specialty/workflow-engine"
+      }
+    },
+    "prodfilters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/smart-care/products/vocera-engage"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Jan 06 2026 14:25:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>The names and characters presented throughout are entirely fictious. Any similarity to names or incidents is entirely coincidental.</p>\r\n",
+    "jcr:lastModified": "Fri Jan 23 2026 15:57:18 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

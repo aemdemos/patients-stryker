@@ -1,0 +1,1135 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SPY-PHI ​Imaging System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1c78699a-6794-4178-94c2-4641e4a7c83d",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "SPY-PHI ​Imaging System",
+  "businessUnitTag": "stryker:business-unit/endoscopy",
+  "jcr:predecessors": [
+    "693cf187-46d6-454d-b2a0-17c822190a98"
+  ],
+  "contentID": "ENDO-SPY-SYK-3858550",
+  "lastPublished": "Thu Oct 22 2026 17:27:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 22 2026 17:27:14 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 22 2026 17:27:16 GMT+0000",
+  "cq:lastModified": "Thu Oct 22 2026 17:26:41 GMT+0000",
+  "jcr:description": "SPY-PHI utilizes SPY Fluorescence Imaging technology to visualize lymph nodes and lymphatic vessels during lymphatic mapping and assess blood flow and tissue perfusion across a variety of surgical procedures.",
+  "jcr:baseVersion": "693cf187-46d6-454d-b2a0-17c822190a98",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:50:00 GMT+0000",
+  "pageTitle": "SPY-PHI ​Imaging System",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:specialty/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:specialty/breast",
+    "stryker:business-unit/endoscopy",
+    "stryker:specialty/camera-systems",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 09 2026 19:13:41 GMT+0000",
+  "jcr:uuid": "52f0c8eb-6b72-46c0-b3da-512917eb37a2",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "SPY-PHI ​Imaging System",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/endoscopy/en/products/spy_phi/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/endoscopy/en/products/spy-phi/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/endoscopy/en/products/spy_phi/hero/hero---mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/endoscopy/en/products/spy-phi/hero/hero-mobile",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Wed Aug 12 2026 18:06:02 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">SPY-PHI</span></span></span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">​Imaging System</span></span></p>\n<p><span class=\"fontsize-1-25em\">The SPY Portable Handheld Imager (SPY-PHI) utilizes SPY Fluorescence Imaging technology to visualize lymph nodes and lymphatic vessels during lymphatic mapping and assess blood flow and tissue perfusion across a variety of surgical procedures.</span><br>\n</p>\n",
+              "jcr:lastModified": "Fri Oct 09 2026 19:08:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(255,181,0)",
+              "textIsRich": "true",
+              "bottomMargin": "5",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact us",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Apr 27 2026 21:30:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_2096343528": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Mon Aug 03 2026 23:31:23 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Mon Aug 03 2026 23:34:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 16:38:33 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 16:38:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy__1314303255": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">SPY Fluorescence technology</span></span></h2>\n<p><span class=\"fontsize-1-25em\">SPY-PHI is a unique and versatile fluorescence imaging system that provides clinicians with a convenient solution for lymphatic mapping and real-time perfusion assessment. Its compact, lightweight<sup>1&nbsp;</sup>design makes it ideal for use in the operating room as well as smaller spaces such as ambulatory surgical centers.</span></p>\n",
+          "jcr:lastModified": "Fri Oct 09 2026 19:39:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Nov 19 2018 19:40:09 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Nov 19 2018 19:40:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/endoscopy/systems/1588/videos/SPY_PHI_commercial_UPDATED.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/SPY_PHI_commercial_UPDATED-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Nov 19 2018 19:40:39 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "jcr:lastModified": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_942119154": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Aug 03 2026 23:54:09 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Aug 03 2026 23:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_860754559_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jul 30 2026 13:49:49 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2026 13:49:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Clear insight for critical decisions</span></span></h2>\n<p><span class=\"fontsize-1-25em\">SPY provides visualization to support your intraoperative workflow, helping inform critical decisions when they matter most.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 14:11:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_1764017589": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 03 2026 23:49:53 GMT+0000",
+      "jcr:lastModified": "Mon Aug 03 2026 23:49:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">SPY lymphatic mapping</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:01:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_1207": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 25 2025 14:20:36 GMT+0000",
+          "alt": "SPY lymphatic mapping",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/Lymphatics_Animation.gif",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 12 2026 14:26:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">For visualization of lymph nodes and lymphatic vessels during lymphatic mapping in adults with breast cancer, Stryker’s SPY-PHI System and SPY AGENT GREEN are the first fluorescence imaging system and fluorescence imaging agent on-label.*</span></p>\n<p><span class=\"fontsize-1-25em\">SPY-PHI and SPY AGENT GREEN are also indicated for lymphatic mapping in cervical and uterine tumors.</span></p>\n<p>*https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/211580s006lbl.pdf</p>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 22:53:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 03 2026 23:56:55 GMT+0000",
+      "jcr:lastModified": "Mon Aug 03 2026 23:56:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">SPY-QP</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:01:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_1207_780878724": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 25 2025 14:20:36 GMT+0000",
+          "alt": "SPY QP",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/QP_Animation-Resize.gif",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 12 2026 14:26:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">The SPY-PHI also features SPY-QP. SPY-QP is an intraoperative and surgeon-controlled fluorescence assessment software designed to allow surgeons to objectively assess the intensity of the fluorescence signal through Relative Values (%) or a Color Maps mode.*</span></p>\n<p>* P46748 - User Guide, SPY-QP Fluorescence Assessment Software</p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:02:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1186172420": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 22:07:36 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 22:07:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1207": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 25 2025 14:20:36 GMT+0000",
+          "alt": "SPY QP combination images",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-qp-combo.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 12 2026 22:20:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 22:02:11 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 22:02:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy__274192566": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Onset ﬂuorescence detection</span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:18:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">When SPY-QP is activated and SPY AGENT GREEN is injected, a timer will automatically start when the system detects fluorescence. An orange arrow icon will appear in the bottom right corner of the screen, thus signaling the onset of&nbsp;fluorescence.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 21:08:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"futura-bold\">Assessment window</span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:19:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy__2132254484": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">When the intensity of the fluorescence signal has stabilized, a green arrow will automatically appear, meaning the Fluorescence Assessment Window has been reached. This means that you have entered into the recommended time to assess fluorescence, and you may choose to assess further with Relative Values (%) or the Color Map mode.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 21:06:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Relative Percentage Values</span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:19:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy__315183080": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">The surgeon can aim the quantification box at a region of interest (ex. well perfused region), set the reference (hold B button on camera head), and evaluate perfusion with relative percentage values.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 21:07:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_1793214526": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 21:13:01 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 21:13:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_979608694": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 03 2026 23:50:31 GMT+0000",
+      "jcr:lastModified": "Mon Aug 03 2026 23:50:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">SPY-PHI images from a sigmoid and rectum LAR case</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 22:19:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Wed Aug 01 2018 18:02:44 GMT-0400",
+      "jcr:lastModified": "Wed Aug 01 2018 18:02:44 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 01 2018 18:03:00 GMT-0400",
+          "alt": "White Light",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsSPY-PHI - White Light.jpg",
+          "jcr:lastModified": "Thu Oct 22 2026 17:26:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Aug 01 2018 18:03:17 GMT-0400",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">White Light</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 23:47:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 01 2018 18:03:04 GMT-0400",
+          "alt": "Overlay Mode",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsSPY-PHI - Overlay.jpg",
+          "jcr:lastModified": "Thu Oct 22 2026 17:26:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Aug 01 2018 18:03:39 GMT-0400",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Overlay Mode</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 23:47:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 01 2018 18:03:07 GMT-0400",
+          "alt": "SPY Mode",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsSPY-PHI - Fluorescence.jpg",
+          "jcr:lastModified": "Thu Oct 22 2026 17:26:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Aug 01 2018 18:03:43 GMT-0400",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">SPY Mode</span></span></p>\n",
+          "jcr:lastModified": "Fri Oct 09 2026 19:05:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 01 2018 18:03:10 GMT-0400",
+          "alt": "Color Segmented Fluorescence (CSF) Mode",
+          "srcFileRef": "/content/dam/stryker/endoscopy/images/SYK.Stryker.com.NovadaqPages_AssetsSPY-PHI - CSF.jpg",
+          "jcr:lastModified": "Thu Oct 22 2026 17:26:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Aug 01 2018 18:03:45 GMT-0400",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Color Segmented Fluorescence (CSF) Mode</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 23:48:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_1676174034": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "jcr:lastModified": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_860754559_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jul 30 2026 13:49:49 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2026 13:49:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Advanced Imaging. Simplified workflow.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The clarity, control and confidence you need at your fingertips.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 18:02:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1714601499": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Aug 03 2026 23:55:22 GMT+0000",
+      "jcr:lastModified": "Mon Aug 03 2026 23:55:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 02 2018 14:18:48 GMT-0400",
+          "alt": "SPY-PHI product",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-phi-gradient-1200x680.jpg",
+          "jcr:lastModified": "Wed Aug 12 2026 17:58:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">High image quality</span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">The 1080p resolution at 60fps, designed to provide realistic color reproduction, results in a sharp, highly detailed image</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Multiple visualization modes</span></span></p>\n<p><span class=\"fontsize-1-25em\">Combines fluorescence signal information with vivid white light imaging in real-time</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Flexible working distance and wide imaging field</span></span></p>\n<p><span class=\"fontsize-1-25em\">SPY-PHI is designed to allow clinicians to assess perfusion in using a wide range of viewing distances, allowing for versatility in the operating room</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Ambient light immunity</span></span></p>\n<p><span class=\"fontsize-1-25em\">Ensures that the operator is able to work fluidly without disrupting activities around the surgical table&nbsp;</span></p>\n",
+          "jcr:lastModified": "Fri Oct 09 2026 19:06:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 02 2018 14:19:15 GMT-0400",
+          "alt": "SPY-PHI with operator controls overlay",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-phi-buttons-gradient-1200x680.jpg",
+          "jcr:lastModified": "Wed Aug 12 2026 17:58:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Intuitive operator controls</span></span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Button A:</span></span> Change between White Light and SPY Fluorescence Mode</span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Button B:&nbsp;</span></span>Focus In/Out</span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Button C:&nbsp;</span></span>Visualization mode</span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Button D:&nbsp;</span></span>Menu for access to all Video Processor Illuminator (VPI) functions including image capture and records controls</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Aug 03 2026 23:40:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_1093279958": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Aug 03 2026 23:53:17 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Aug 03 2026 23:53:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "jcr:lastModified": "Thu Jul 30 2026 13:47:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "jcr:lastModified": "Thu Jul 30 2026 13:47:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_631612600_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 14:27:57 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 14:27:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Resources</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Clicks on the tabs to learn more</span></p>\n",
+          "jcr:lastModified": "Wed Jun 24 2026 14:22:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "tabs_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 15:11:26 GMT+0000",
+          "jcr:lastModified": "Tue Aug 04 2026 00:00:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "resourcesanddownload_2035472790": {
+              "jcr:primaryType": "nt:unstructured",
+              "resources": [
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/film-b-clinical-article-compressed.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/spy-qp-software-and-prevention.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/qp-colorectal-blinded-intraoperative-quantitative.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/breast-qp.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/a-prospective-study-to-evaluate-spy-qp-software.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/desai-a-randomized-comparison-of-intraoperative-indocyanine-green-angiography.pdf",
+                "/content/dam/stryker/endoscopy/products/spy-phi/resources/cas-a-prospective-study-to-evaluate-spy-qp.pdf"
+              ],
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:lastModified": "Thu Aug 13 2026 21:59:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 1,
+              "tabTitle": "Related products"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "2",
+              "tabTitle": "Resources"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": 3,
+              "tabTitle": "Videos"
+            }
+          },
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy_co": {
+              "jcr:primaryType": "nt:unstructured",
+              "titleFont": "font-egyptienne",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Dec 21 2021 18:30:07 GMT+0000",
+              "hideButton": "false",
+              "jcr:lastModified": "Fri Oct 09 2026 19:07:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "hideDescription": "false",
+              "hideThumbnail": "false",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/endoscopy/systems/breast-surgery"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/endoscopy/products/molli"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/endoscopy/products/dermacell"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/portfolios/medical-surgical-equipment/illuminated-instruments"
+                }
+              }
+            }
+          },
+          "tabs_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 3,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cols3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 19 2026 17:49:28 GMT+0000",
+              "jcr:lastModified": "Fri Jun 19 2026 17:49:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "brittany.brady@stryker.com",
+                  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://spyacademy.stryker.com/library/",
+                  "jcr:created": "Wed Aug 26 2026 21:24:24 GMT+0000",
+                  "alt": "Video on SPY Academy",
+                  "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-angiography-video-thumbnail.png",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Wed Aug 26 2026 21:26:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "brittany.brady@stryker.com",
+                  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://spyacademy.stryker.com/library/",
+                  "jcr:created": "Wed Aug 26 2026 21:24:24 GMT+0000",
+                  "alt": "Video on SPY Academy",
+                  "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-imaging-video-thumbnail.png",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Wed Aug 26 2026 21:26:35 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standaloneimage": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "brittany.brady@stryker.com",
+                  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                  "preset": "max_width_1440",
+                  "linkExternal": "https://spyacademy.stryker.com/library/",
+                  "jcr:created": "Wed Aug 26 2026 21:24:24 GMT+0000",
+                  "alt": "Video on SPY Academy",
+                  "srcFileRef": "/content/dam/stryker/endoscopy/products/spy-phi/images/spy-colorectal-surgery-video-thumbnail.png",
+                  "borderColor": "rgba(76,125,122,1)",
+                  "jcr:lastModified": "Wed Aug 26 2026 21:26:31 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standaloneimage",
+                  "openInNewTab": "true",
+                  "enableBorder": "false"
+                }
+              }
+            },
+            "cols3_679420423": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Aug 26 2026 21:24:48 GMT+0000",
+              "jcr:lastModified": "Wed Aug 26 2026 21:24:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_9074": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "subtitle": "Breast Lymphatic Mapping with SPY-PHI",
+                  "jcr:createdBy": "carissa.frausto@stryker.com",
+                  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                  "jcr:created": "Tue Nov 10 2020 04:46:02 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typePath",
+                  "jcr:lastModified": "Wed Aug 12 2026 22:27:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo",
+                  "dynamic-media": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "breakpoints": "",
+                    "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                    "fileReference": "/content/dam/stryker/endoscopy/products/spy-phi/videos/breast-lymphatic-apping-with-spy-phi.mp4",
+                    "s7ImagePreset": "",
+                    "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                    "s7ViewerPreset": "",
+                    "assetID": "stryker/breast-lymphatic-apping-with-spy-phi-AVS",
+                    "urlModifiers": "",
+                    "jcr:lastModified": "Wed Aug 12 2026 14:35:37 GMT+0000",
+                    "s7PresetType": "undefined",
+                    "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                    "assetType": "VideoAVS",
+                    "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                    "s7ViewerPresetPath": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 25 2025 18:02:20 GMT+0000",
+      "jcr:lastModified": "Wed Jun 25 2025 18:02:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 18:18:04 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 18:18:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Aug 03 2026 23:31:12 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Aug 03 2026 23:36:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
+              "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/contact/master"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "4047",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Aug 03 2026 23:34:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Aug 03 2026 23:30:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "http://twitter.com/StrykerEndo",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Jun 25 2025 14:19:25 GMT+0000",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/spy-phi/images/Endoscropy-SPY-PHI-thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1.&nbsp;Data on file</p>\r\n<p>Upon intravenous administration of SPY AGENT GREEN (indocyanine green for injection, USP), the SPY-PHI System is used with SPY AGENT GREEN to perform intraoperative fluorescence angiography. The SPY-PHI System is indicated for use in adult and pediatric patients one month of age and older. The SPY-PHI System is indicated for fluorescence imaging of blood flow and tissue perfusion before, during, and after: vascular, gastrointestinal, organ transplant, and plastic, micro- and reconstructive surgical procedures. Upon interstitial administration of SPY AGENT GREEN, the SPY-PHI System is used to perform intraoperative fluorescence imaging and visualization of the lymphatic system, including lymphatic vessels and lymph nodes. Upon intradermal administration of SPY AGENT GREEN, the SPY-PHI System is indicated for fluorescence imaging of lymph nodes and delineation of lymphatic vessels during lymphatic mapping in adults with breast cancer for which this procedure is a component of intraoperative management.</p>\r\n",
+    "jcr:lastModified": "Thu Oct 22 2026 17:22:31 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jun 25 2025 20:21:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 30 2026 18:17:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Aug 03 2026 23:30:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

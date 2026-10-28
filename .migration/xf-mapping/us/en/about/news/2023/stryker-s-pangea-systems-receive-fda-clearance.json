@@ -1,0 +1,158 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker’s Pangea Systems Receive FDA Clearance ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6e5d5da2-4ce6-40f3-8ff2-df2ec0e85efb",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "logo",
+  "jcr:predecessors": [
+    "0d5b4fc5-a10e-4eea-932e-084ed375ac41"
+  ],
+  "contentID": "PGA-AR-1, 08-2023",
+  "lastPublished": "Wed Sep 13 2023 13:35:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 13 2023 13:35:44 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 13 2023 13:35:46 GMT+0000",
+  "cq:lastModified": "Wed Sep 13 2023 13:35:27 GMT+0000",
+  "jcr:baseVersion": "0d5b4fc5-a10e-4eea-932e-084ed375ac41",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Stryker’s Pangea Systems Receive FDA Clearance ",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Sep 12 2023 15:14:18 GMT+0000",
+  "jcr:uuid": "2bfe9a57-91ce-4218-b065-0175aa87692f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Stryker’s Pangea Systems Receive FDA Clearance ",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 12 2023 14:45:34 GMT+0000",
+      "jcr:lastModified": "Tue Sep 12 2023 14:45:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1521933723_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"urw-egyptienne\">Pangea to offer a comprehensive and versatile portfolio, providing variable-angle plating for a variety of patient populations</span><br>\n</h2>\n",
+          "jcr:lastModified": "Tue Sep 12 2023 14:48:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1521933723_copy_954784943": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">Kalamazoo, Mich., USA – Sept. 12, 2023</span> – Stryker (NYSE: SYK), one of the world’s leading medical technology companies, announced that its Pangea Systems including Femur, Fibula, Tibia, Humerus and Utility have received 510k clearance from the U.S. Food &amp; Drug Administration.&nbsp;</p>\n<p>“FDA clearance is a critical milestone for our Pangea Systems,” said Eric Tamweber, Vice President and General Manager, Stryker’s Trauma business unit. “With these new systems, we are now offering surgeons a comprehensive portfolio that supports a wide range of their trauma needs.”&nbsp;</p>\n<p>Designed by the collaborative efforts of world-renowned orthopaedic surgeons, the Pangea plates offer an evidence-based design for implant fit. The system was designed to enhance plate fit and screw placement while elevating the plating market through anatomically contoured implants in patient populations with a wide variety of fracture patterns. The intuitive and streamlined instrumentation and implant trays will include 20 anatomic plates and 13 utility plates all accessible in one platform.&nbsp;</p>\n<p>The Pangea Systems will be featured at the Orthopaedic Trauma Association meeting (booth #505) in Seattle on Oct. 18-21. Attendees will have the opportunity to learn more about the portfolio and speak with product experts.</p>\n",
+          "jcr:lastModified": "Wed Sep 13 2023 13:35:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:created": "Tue Sep 12 2023 14:53:53 GMT+0000",
+      "jcr:lastModified": "Tue Sep 12 2023 14:53:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_1521933723_copy_1633671648": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at&nbsp;<a href=\"http://www.stryker.com\"><span style=\"color: #4c7d7a;\">www.stryker.com</span></a>.<br>\n</p>\n",
+      "jcr:lastModified": "Tue Sep 12 2023 14:57:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1521933723_copy_2046809092": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Sep 11 2023 21:00:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Media contact</span><br>\nAndrea Sampson<br>\nPresident/CEO, Sampson Public Relations Group<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\"><span style=\"color: #4c7d7a;\">asampson@sampsonprgroup.com</span></a><br>\n562.304.0301<br>\n</p>\n",
+      "jcr:lastModified": "Tue Sep 12 2023 14:52:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Sep 12 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Sep-2023",
+    "jcr:lastModified": "Tue Sep 12 2023 13:46:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Tue Sep 12 2023 14:45:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker_logo2015_web.jpg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Tue Sep 12 2023 14:49:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This document is intended solely for healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>Stryker Corporation or its affiliates own, use, or have applied for the following trademarks or service marks: Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Tue Sep 12 2023 14:48:19 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker_logo2015_left",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Sep 12 2023 14:55:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

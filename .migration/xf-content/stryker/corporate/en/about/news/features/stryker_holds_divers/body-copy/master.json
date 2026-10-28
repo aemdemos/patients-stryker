@@ -1,0 +1,704 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "body copy",
+  "jcr:versionHistory": "930b5f37-1567-484e-8a9b-2fc538875511",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "0c98e29a-6148-4e35-a1d0-6dec879a106c"
+  ],
+  "jcr:created": "Mon Nov 29 2021 19:04:23 GMT+0000",
+  "cq:lastModified": "Mon Nov 22 2021 15:49:42 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0c98e29a-6148-4e35-a1d0-6dec879a106c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "41742d30-8bf5-4914-9e94-d9d7140cbaf4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 18:24:08 GMT+0000",
+      "text": "<p>We recently held our first global diversity, equity and inclusion (DE&amp;I) summit for Stryker employees. The summit challenged all of us to be the difference: for ourselves, for our colleagues, for our customers and for our communities. Learn how our employees are taking what they learned and are turning it into action to advance DE&amp;I at Stryker.</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Four inspiring ways our employees will</span> <span class=\"futura-bold\">advance diversity, equity and inclusion</span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Sep 08 2021 14:00:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 18:56:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-8vw\"><span style=\"color: rgb(255,181,0);\">1</span></span></span>",
+      "jcr:lastModified": "Thu Nov 18 2021 21:35:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "10"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 19:17:38 GMT+0000",
+      "jcr:lastModified": "Wed Sep 01 2021 19:19:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage11581553116919823": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/about/news/features/dei-summit/images/16181-Catalina-Torres.jpg",
+        "borderColor": "rgba(84,88,87,1)",
+        "jcr:lastModified": "Wed Sep 01 2021 19:28:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "largeheadline": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Wed Sep 01 2021 19:19:45 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Catalina Torres</span><br>\r\nLead Communications Specialist</span>",
+        "jcr:lastModified": "Wed Sep 01 2021 19:21:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "largeheadline_912764523": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "topMargin": "7",
+      "jcr:created": "Wed Sep 01 2021 18:57:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\">“I commit to be the difference by challenging myself, my family and my colleagues to think differently, <span class=\"futura-bold\">to learn more about other cultures different from mine and embrace them.</span> I will listen more to others!”</span>",
+      "jcr:lastModified": "Thu Sep 02 2021 17:57:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 19:25:59 GMT+0000",
+      "title": "ㅤ",
+      "jcr:lastModified": "Wed Sep 01 2021 19:26:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 18:56:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-8vw\"><span style=\"color: rgb(255,181,0);\">2</span></span></span>",
+      "jcr:lastModified": "Thu Nov 18 2021 21:33:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage11581": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Sep 01 2021 19:27:03 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage1158111582009551157524": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/about/news/features/dei-summit/images/70426-Lokesh_Khurmi-removebg-preview.jpg",
+        "borderColor": "rgba(84,88,87,1)",
+        "jcr:lastModified": "Wed Sep 01 2021 19:27:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "largeheadline_copy_1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Wed Sep 01 2021 19:19:45 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Lokesh Khurmi</span><br>\r\nSenior Manager, Quality Systems, Corporate Audit</span>",
+        "jcr:lastModified": "Wed Sep 01 2021 19:28:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "largeheadline_912764": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "topMargin": "3",
+      "jcr:created": "Wed Sep 01 2021 18:57:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\">“We all have so many stories to inspire but many times are reluctant to share. This summit is going to help people open up more. <span class=\"futura-bold\">As friends, leaders and colleagues, we need to be genuinely interested, and listen to those (diverse) experiences and be a better person day after day.</span>”</span>",
+      "jcr:lastModified": "Thu Sep 02 2021 17:57:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 19:25:59 GMT+0000",
+      "title": "ㅤ",
+      "jcr:lastModified": "Wed Sep 01 2021 19:26:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "topMargin": "10",
+      "jcr:created": "Wed Sep 01 2021 18:56:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-8vw\"><span style=\"color: rgb(255,181,0);\">3</span></span></span>",
+      "jcr:lastModified": "Thu Nov 18 2021 21:33:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage11581_1595731246": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Sep 01 2021 19:30:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "topMargin": "-4",
+        "jcr:created": "Wed Sep 01 2021 19:32:43 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "ㅤ",
+        "jcr:lastModified": "Wed Sep 01 2021 19:33:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ]
+      },
+      "standaloneimage11581_159573124611582213634564701": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/about/news/features/dei-summit/images/denise.jpg",
+        "borderColor": "rgba(84,88,87,1)",
+        "jcr:lastModified": "Wed Sep 01 2021 19:30:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "largeheadline_copy_1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Wed Sep 01 2021 19:19:45 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">Denise Nazaro <br>\r\n</span>Senior Manager, Quality Systems</span>",
+        "jcr:lastModified": "Wed Sep 01 2021 19:31:24 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_912764_6880489": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 18:57:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">“I commit to embracing the diversity within our teams and face every interaction with new eyes for understanding and welcoming differences.</span> I commit to encourage everyone's participation, to be more aware of my biases and work to overcome them, to ensure people feel welcome, included, and valued for their individuality and true self.”</span>",
+      "jcr:lastModified": "Wed Sep 01 2021 19:32:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy_c_1661523462": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 19:25:59 GMT+0000",
+      "title": "ㅤ",
+      "jcr:lastModified": "Wed Sep 01 2021 19:26:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c_557368651": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 18:56:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-8vw\"><span style=\"color: rgb(255,181,0);\">4</span></span></span>",
+      "jcr:lastModified": "Tue Sep 07 2021 18:16:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage11581_224746918": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Sep 01 2021 19:39:56 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage11581_22474691811582782697834119": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/about/news/features/dei-summit/images/22694-David_Allan-2135-removebg-preview.jpg",
+        "borderColor": "rgba(84,88,87,1)",
+        "jcr:lastModified": "Wed Sep 01 2021 19:40:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "largeheadline_copy_1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Wed Sep 01 2021 19:19:45 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">David Allan <br>\r\n</span>Director of Design</span>",
+        "jcr:lastModified": "Wed Sep 01 2021 19:41:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_912764_1184501001": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "topMargin": "15",
+      "jcr:created": "Wed Sep 01 2021 18:57:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">“Having diverse points of view on our teams is crucial. </span>We owe it to our customers and ourselves. Let’s get to work!”</span>",
+      "jcr:lastModified": "Wed Sep 01 2021 19:43:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1689388563": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 01 2021 19:54:06 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Sep 01 2021 19:54:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 27 2020 15:52:22 GMT+0000",
+      "jcr:lastModified": "Wed Sep 01 2021 20:11:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy11584678522298330": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.linkedin.com/company/stryker/mycompany/",
+        "srcFileRef": "/content/dam/stryker/about/news/features/breast-cancer-awareness-meets-breast-cancer-advancements/images/LinkedIn.jpg",
+        "jcr:lastModified": "Wed Sep 01 2021 20:12:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "4",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "4",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Wed Sep 01 2021 20:11:46 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stay informed</span><br>\n <span class=\"futura-bold\">Follow us on LinkedIn</span></span></p>\n",
+        "jcr:lastModified": "Wed Sep 01 2021 20:12:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Nailing System",
+  "jcr:createdBy": "admin",
+  "jcr:title": "T2 Ankle Arthrodesis",
+  "jcr:versionHistory": "62a9e8c8-3314-4b94-a67c-31295d5854e0",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2anklearthrodesis/images/1210_T2_AAN cover.png",
+  "jcr:predecessors": [
+    "5456e9ae-d3d5-4ca2-ba77-edd7bce576cc"
+  ],
+  "lastPublished": "Fri Jul 12 2019 02:01:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 12 2019 02:01:18 GMT+0000",
+  "cq:lastModified": "Fri Jul 12 2019 02:00:44 GMT+0000",
+  "jcr:description": "Intramedullary nail for the tibiotalocalcaneal fusion. ",
+  "jcr:baseVersion": "5456e9ae-d3d5-4ca2-ba77-edd7bce576cc",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:custom/trauma-and-extremities/Indications/Ankle",
+    "stryker:system/trauma-and-extremities/nailing",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:system/trauma-and-extremities/t2",
+    "stryker:content-type/hcp_content",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:product/trauma-and-extremities/t2-ankle-arthrodesis",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Fri Jul 12 2019 02:00:44 GMT+0000",
+  "jcr:uuid": "5dd60655-1def-4282-acaf-0a2c092fb233",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "megan.foltz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Jul 17 2017 13:47:23 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/t2anklearthrodesis/images/1210_T2_AAN cover.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1029449788",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModified": "Thu Aug 24 2017 13:33:52 GMT-0400",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>T2 Ankle Arthrodesis Nailing System</p>\r\n",
+    "shortDescTop": "<p>The nailing system’s targeting device is made of radiolucent carbon fiber and features our patented friction locking mechanism. T2 also offers controlled internal compression, so with every turn, you achieve 1mm of internal compression and enhanced control.</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Wed Aug 09 2017 11:21:34 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Internal tibio-talar compression of up to 5mm</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>External talo-calcaneal compression</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>T2-AWI-1, 07-2017</p>\r\n",
+    "jcr:lastModified": "Wed Aug 09 2017 11:21:57 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Breast",
+  "jcr:versionHistory": "3fb714e0-c8ca-4734-9585-ca021fb5ad90",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/plastic-surgery/Template-Thumb-PortfolioPage-V2.jpg",
+  "jcr:predecessors": [
+    "65de38d4-f840-41eb-8963-6d785ad46c19"
+  ],
+  "contentID": "Lit number: 1000902784 Rev. A",
+  "lastPublished": "Tue Nov 20 2018 02:51:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 20 2018 02:51:50 GMT+0000",
+  "cq:lastModified": "Tue Nov 20 2018 02:51:30 GMT+0000",
+  "jcr:description": "Through our innovative SPY fluorescence imaging technology and acellular dermal matrix, Stryker is committed to helping surgeons achieve the best possible outcome for every patient undergoing breast reconstruction.",
+  "jcr:baseVersion": "65de38d4-f840-41eb-8963-6d785ad46c19",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:specialty/breast",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Tue Nov 20 2018 02:51:30 GMT+0000",
+  "jcr:uuid": "294c1c42-b394-421f-88d0-fe3d21b9c91a",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Tue Aug 14 2018 12:10:53 GMT-0400",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/plastic-surgery/Template-Hero-PortfolioPage-V2.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/plastic-surgery/Template-Thumb-PortfolioPage-V2.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Tue Nov 20 2018 02:36:58 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "showProcedures": "true"
+  }
+}

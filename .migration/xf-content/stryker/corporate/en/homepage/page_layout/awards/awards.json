@@ -1,0 +1,267 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Awards",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7dd6260e-c980-4eeb-9e1a-bb1e92a71c2e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "dd1a2b16-657a-48a3-9f59-ded7b55b3783"
+  ],
+  "lastPublished": "Fri Jul 17 2026 21:37:10 GMT+0000",
+  "jcr:created": "Fri Jul 17 2026 21:37:11 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 17 2026 21:37:13 GMT+0000",
+  "cq:lastModified": "Fri Jul 17 2026 21:35:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "dd1a2b16-657a-48a3-9f59-ded7b55b3783",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:21:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "f93cd611-874c-4d02-a9fc-a29b55b8b7c4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Thu May 04 2023 15:39:28 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Awards",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Thu May 04 2023 15:39:28 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span style=\"color: #000000;\">Awards</span></span></span></span>",
+        "line2": "<span class=\"fontsize-1-5-vw\">We owe our achievements to our dedicated employees</span>",
+        "jcr:lastModified": "Thu May 04 2023 15:39:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_copy_389361502": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Mon Oct 17 2022 20:34:45 GMT+0000",
+        "alt": "Best-Workplaces-2025",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/2025_worlds_best_workplaces2025_asia_best_workplaces_600x600.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 18:43:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Wed Jan 10 2024 16:58:23 GMT+0000",
+        "alt": "031325_100_best_toolkit_badge_MARK-GSNPS-GRAP-1735186",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/100-best-companies-small.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 19:57:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "standaloneimage_copy_1270019791": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Mon Oct 17 2022 20:34:45 GMT+0000",
+        "alt": "2025_asia_best_workplaces_600x600",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/2025_asia_best_workplaces_600x600.png",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 18:44:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6",
+            "behavior": "newline"
+          }
+        }
+      },
+      "standaloneimage_1532": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Thu Nov 17 2022 17:00:25 GMT+0000",
+        "alt": "gptw_europe2025_600x600",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/100-best-companies-EU-small.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 19:57:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "standaloneimage_copy_1293546725": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Mon Oct 17 2022 20:34:45 GMT+0000",
+        "alt": "2025_latin_america_gptw2025_asia_best_workplaces_600x600",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/GPTW-LatAm-small.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 20:01:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6",
+            "behavior": "newline"
+          }
+        }
+      },
+      "standaloneimage_copy_804582477": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Mon Oct 17 2022 20:34:45 GMT+0000",
+        "alt": "original1_2025_best_wp_manuf_prod_badge_rgb_600x600",
+        "srcFileRef": "/content/dam/stryker/about/Awards/2025/100-best-companies-maufacturing-production-small.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Nov 24 2025 19:57:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6",
+            "behavior": "none"
+          }
+        }
+      },
+      "text_1692620109": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Thu Mar 30 2023 15:52:30 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+        "jcr:lastModified": "Thu May 04 2023 15:39:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "bottomMargin": "-10"
+      },
+      "curatedcta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Wed Mar 29 2023 17:47:45 GMT+0000",
+        "CTATitle": "View all awards",
+        "jcr:lastModified": "Wed Dec 13 2023 18:05:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(76,125,122,1)",
+        "ctaInternalLink": "/content/stryker/us/en/about/awards/awards"
+      }
+    }
+  }
+}

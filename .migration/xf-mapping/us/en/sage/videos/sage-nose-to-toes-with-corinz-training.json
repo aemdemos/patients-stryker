@@ -1,0 +1,95 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Training video",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage Nose to Toes with Corinz 9010",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "17d272c0-bc2e-4b91-95f9-bf5cedc8dec2",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "d90d63ee-3131-4546-948f-31c8ad095b92"
+  ],
+  "contentID": "SAGE-GSNPS-SYK-667782_REV-0_en_us",
+  "lastPublished": "Fri Jun 09 2023 20:59:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jun 09 2023 20:59:34 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 09 2023 20:59:36 GMT+0000",
+  "cq:lastModified": "Fri Jun 09 2023 20:58:31 GMT+0000",
+  "jcr:baseVersion": "d90d63ee-3131-4546-948f-31c8ad095b92",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Sage Nose to Toes with Corinz 9010 training video",
+  "jcr:lastModified": "Fri Jun 09 2023 20:36:48 GMT+0000",
+  "jcr:uuid": "46457598-f4c9-4ceb-8c7d-722436f2d61c",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Jun 09 2023 20:36:59 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Fri Jun 09 2023 20:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/products/noes-to-toes/videos/Sage-Nose-to-Toes-with-Corinz-Oral-Rinse-training-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Sage-Nose-to-Toes-with-Corinz-Oral-Rinse-training-video-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Fri Jun 09 2023 20:58:31 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-Nose-to-Toes-with-Corinz-Oral-Rinse-training-video-thumbnail"
+      }
+    },
+    "curatedcta_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",
+      "CTATitle": "Learn more",
+      "jcr:lastModified": "Fri Jan 20 2023 13:58:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/products/sage-nose-to-toes"
+    }
+  }
+}

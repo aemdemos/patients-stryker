@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Connected OR",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e0ffe98b-fdc8-49f7-a065-f79c7a3dd265",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "eaa4a147-4bd1-4256-ab22-c632e98707e7"
+  ],
+  "lastPublished": "Fri Apr 18 2025 20:14:01 GMT+0000",
+  "jcr:created": "Fri Apr 18 2025 20:14:01 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 18 2025 20:14:03 GMT+0000",
+  "cq:lastModified": "Fri Mar 14 2025 16:27:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "cq:siblingOrder": "master,",
+  "jcr:baseVersion": "eaa4a147-4bd1-4256-ab22-c632e98707e7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Mar 14 2025 16:11:03 GMT+0000",
+  "cq:name": "master",
+  "cq:tags": [],
+  "jcr:uuid": "301c12b1-5296-4946-acf5-f6f10976707a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:parentPath": "/content/experience-fragments/stryker/communications/en/systems/isuite_experience/connected-or",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Mar 14 2025 06:49:01 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Fri Mar 14 2025 16:27:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/communications/systems/conntected-or/videos/COR-AmbientVideo.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/COR-AmbientVideo-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Mar 14 2025 06:49:34 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

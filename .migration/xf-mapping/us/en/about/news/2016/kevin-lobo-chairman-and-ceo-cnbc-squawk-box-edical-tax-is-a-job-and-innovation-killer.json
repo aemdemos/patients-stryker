@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Kevin Lobo, Chairman and CEO, CNBC Squawk Box: Medical tax ",
+  "jcr:versionHistory": "12a7294f-52d3-4d34-a4a4-71c269bfa8db",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+  "jcr:predecessors": [
+    "672354fd-1d2d-4471-8ad0-8900de3e6b53"
+  ],
+  "lastPublished": "Mon Apr 19 2021 18:13:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:24 GMT+0000",
+  "cq:lastModified": "Fri Oct 20 2017 15:53:08 GMT-0400",
+  "jcr:baseVersion": "672354fd-1d2d-4471-8ad0-8900de3e6b53",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Oct 20 2017 14:58:35 GMT-0400",
+  "jcr:uuid": "ad987fec-2722-4f6b-b0ad-6d79edd558e4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Fri Oct 20 2017 15:11:01 GMT-0400",
+      "jcr:lastModified": "Fri Oct 20 2017 15:11:01 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Fri Oct 20 2017 15:11:06 GMT-0400",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Oct 20 2017 15:16:41 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/videos/Kevin-Lobo-Chairman-and-CEO-CNBC-Squawk-Box-Medical-tax.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Kevin-Lobo-Chairman-and-CEO-CNBC-Squawk-Box-Medical-tax-AVS",
+            "unsharpMaskRadius": "0",
+            "jcr:lastModified": "Fri Oct 20 2017 15:53:08 GMT-0400",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0"
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Fri Dec 09 2016 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Dec-2016",
+    "jcr:lastModified": "Tue May 30 2017 17:11:13 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Jo.Hawk@stryker.com",
+    "text": "<p>Kevin Lobo, Stryker chairman &amp; CEO, talks about some of the company's newest technology and the potential impact of the new administration on the MedTech industry.<br>\n</p>\n<p><b>Watch the full video:</b></p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Fri Oct 20 2017 15:20:05 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

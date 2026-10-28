@@ -1,0 +1,69 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Help address bacteria on the skin and standardize your pre-op prep",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Skin prep",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "be6a7417-a202-4092-9d23-fdaec3adbeb9",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Skin prep products to prevent surgical site infection",
+  "jcr:predecessors": [
+    "166609d2-b93e-4849-8ba9-47c2ed342ca8"
+  ],
+  "contentID": "SAGE-SC-SYK-1259654_REV-0_en_us",
+  "lastPublished": "Tue Sep 10 2024 20:34:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 10 2024 20:34:03 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 20:34:05 GMT+0000",
+  "cq:lastModified": "Mon Sep 09 2024 15:50:06 GMT+0000",
+  "jcr:description": "Maximize efficiency with 6 cloths in 1 package and improve compliance to  \r\nprotocol.",
+  "jcr:baseVersion": "166609d2-b93e-4849-8ba9-47c2ed342ca8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:34:03 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/Skin_prep",
+    "stryker:content-type/specialty",
+    "stryker:capability/Pre_op_prep",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Mon Sep 09 2024 15:50:06 GMT+0000",
+  "jcr:uuid": "16389aba-5532-47c7-8dbf-502dd50467ea",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/pre-op-prep/skin-prep/images/Skin-prep-thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Fri Aug 02 2024 16:05:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
+    "jcr:lastModified": "Tue Oct 08 2019 13:55:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

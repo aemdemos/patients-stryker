@@ -1,0 +1,137 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Carousel Mako Total Knee ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4e42e13d-fc62-41d6-aa68-a76be15e935d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1c117750-2c4c-4c4b-960c-56a611d857b1"
+  ],
+  "lastPublished": "Mon Feb 24 2025 20:47:00 GMT+0000",
+  "jcr:created": "Mon Feb 24 2025 20:47:00 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 24 2025 20:47:02 GMT+0000",
+  "cq:lastModified": "Mon Feb 24 2025 20:46:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1c117750-2c4c-4c4b-960c-56a611d857b1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jan 07 2025 18:37:48 GMT+0000",
+  "jcr:uuid": "22358df8-708c-4fa9-8001-b17c819d5b1e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "15",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Jan 06 2025 16:01:54 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span class=\"fontsize-4vw\">Mako Total Knee</span></span></span></h1>\r\n<div> </div>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">With over <b>one million procedures completed*</b>, Mako Total Knee has transformed orthopaedics with its revolutionary technology and clinical outcomes. ​ The unique features of Mako SmartRobotics™, and the powerful combination with Triathlon are designed to help surgeons achieve Functional Knee Positioning™ through 3D CT-based implant planning, dynamic joint balancing and AccuStop™ haptic technology. Mako Total Knee allows you to know more about your patient, so you can cut less.<sup>1,2</sup></span></span>",
+      "jcr:lastModified": "Fri Feb 21 2025 19:01:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 11 2025 17:20:12 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgb(178,180,174)",
+      "jcr:lastModified": "Fri Feb 21 2025 20:40:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        }
+      },
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/joint-replacement/images/1399228 - Stryker.com Mako TKA video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/1399228 - Stryker.com Mako TKA video-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Feb 12 2025 15:32:06 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "curatedcta_656101175": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "ctaLinkType": "deep",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon Jan 06 2025 17:14:49 GMT+0000",
+      "CTATitle": "Connect with the Mako Team",
+      "ctaDeepLinkID": "contact",
+      "ctaExternalLink": "https://www.stryker.com/us/en/joint-replacement/systems/mako-total-knee.html/contact#contact",
+      "jcr:lastModified": "Mon Feb 24 2025 20:46:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "11"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 11 2025 17:26:39 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 11 2025 18:53:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

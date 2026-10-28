@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "IRIS Course",
+  "jcr:versionHistory": "31a15cff-5d36-4435-87cb-409e17ed1f16",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "b4d7ae1a-eb51-4481-afa0-6aaffae3f8fa"
+  ],
+  "contentID": "1000903067 Rev A",
+  "lastPublished": "Fri Jun 28 2019 17:20:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jun 28 2019 17:20:23 GMT+0000",
+  "cq:lastModified": "Wed Jun 12 2019 15:58:25 GMT+0000",
+  "jcr:baseVersion": "b4d7ae1a-eb51-4481-afa0-6aaffae3f8fa",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "IRIS Stent Placement Course",
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jun 12 2019 15:58:25 GMT+0000",
+  "jcr:uuid": "b81225b5-0287-4445-b68f-0dc9fca0f304",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/endoscopy"
+    ],
+    "eventContactEmail": "gianna.scarpetti@stryker.com",
+    "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+    "eventAudience": [
+      "stryker:audience/medical_professionals"
+    ],
+    "hiddenState": "Florida",
+    "eventSpecialty": [
+      "stryker:specialty/surgical-visualization"
+    ],
+    "eventContactName": "Gianna Scarpetti",
+    "eventDetail": "You are invited to Stryker's Infrared Illumination System (IRIS) Ureteral Stent Placement Course led by world renowned MIS surgeon, Dr. Steven McCarus in Winter Park, FL. Our two-day course includes a preceptorship dinner tailored to the exploring the use of infrared lighted ureteral stents. In addition, you will have the opportunity to learn more about the placement of lighted ureteral stents and cystoscopy in live surgery observation as well as in a hands-on cadaveric lab.&nbsp;<br>\r\n<br>\r\nUpon completion of this course you will receive certification from Dr. McCarus himself acknowledging your understanding of diagnostic and operative cystoscopy with passage of ureteral stents.",
+    "eventEndDateTime": "Tue Oct 29 2019 01:00:00 GMT-0700",
+    "eventLocation": "Winter Park Memorial Hospital",
+    "eventCity": "Winter Park",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "eventLatitude": "28.5979947",
+    "jcr:lastModified": "Fri Jun 07 2019 06:58:55 GMT+0000",
+    "eventState": "Florida",
+    "eventTitle": "IRIS Stent Placement Course",
+    "eventLongitude": "-81.3268606",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventStartDateTime": "Mon Oct 28 2019 05:00:00 GMT-0700",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

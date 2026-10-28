@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CR - Good business hero - desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "621b4a66-17af-4299-ac12-4379cf147c89",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4afa874d-6e98-41ca-a05e-09b3eaac11b0"
+  ],
+  "lastPublished": "Fri Mar 14 2025 13:36:59 GMT+0000",
+  "jcr:created": "Fri Mar 14 2025 13:36:59 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 14 2025 13:37:01 GMT+0000",
+  "cq:lastModified": "Wed Mar 12 2025 23:08:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4afa874d-6e98-41ca-a05e-09b3eaac11b0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:36:59 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7ad0243f-1ca4-486c-8651-0726cef54eba",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Fri May 05 2023 15:31:29 GMT+0000",
+      "alt": "Governance and supply chain hero",
+      "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/good-business/CR-goodBusiness-desktop-2025-v3.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Mar 12 2025 23:08:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

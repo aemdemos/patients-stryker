@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Mako Live Thank You Page",
+  "jcr:versionHistory": "1ee252e8-c776-4104-8698-b5b72d8a995e",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:predecessors": [
+    "d1e18804-dcbf-4916-98fa-e6b700d898c5"
+  ],
+  "lastPublished": "Tue Aug 10 2021 00:26:32 GMT+0000",
+  "jcr:created": "Tue Aug 10 2021 00:26:32 GMT+0000",
+  "cq:lastModified": "Fri Aug 06 2021 13:28:39 GMT+0000",
+  "jcr:baseVersion": "d1e18804-dcbf-4916-98fa-e6b700d898c5",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Mako Live Thank You Page",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "465d84a4-0acf-4e26-947c-a4e6c08d1f9d",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "navTitle": "Mako Live Thank You Page",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 16:10:11 GMT+0000",
+      "text": "<h4><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\">Thank you</span> for registering.</span></h4>\n<h2><span class=\"fontsize-1-5em\">You’ll receive an event confirmation via email shortly.</span></h2>\n",
+      "jcr:lastModified": "Fri Aug 06 2021 13:28:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c_1398492607": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 16:11:54 GMT+0000",
+      "jcr:lastModified": "Tue Mar 16 2021 16:11:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 16:12:10 GMT+0000",
+      "jcr:lastModified": "Tue Mar 16 2021 16:12:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 16:11:54 GMT+0000",
+      "jcr:lastModified": "Tue Mar 16 2021 16:11:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Aug 06 2021 13:26:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

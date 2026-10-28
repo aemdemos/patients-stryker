@@ -1,0 +1,283 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "2-8-24 body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8fe7e12b-9087-4775-b6ac-184478d71336",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "d9b59383-41b4-4e72-a8c7-03116af5cd54"
+  ],
+  "lastPublished": "Fri Apr 04 2025 20:50:07 GMT+0000",
+  "jcr:created": "Fri Apr 04 2025 20:50:08 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 04 2025 20:50:10 GMT+0000",
+  "cq:lastModified": "Wed Apr 02 2025 17:40:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d9b59383-41b4-4e72-a8c7-03116af5cd54",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:49:33 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d5990a0d-5de4-4d63-9879-99f38d32a9d0",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_523587647": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Mar 14 2025 21:08:27 GMT+0000",
+      "text": "<h1 style=\"text-align: left;\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Stryker gets medical equipment to regions in need with Project C.U.R.E. partnership</span></span></span></span></h1>\n",
+      "jcr:lastModified": "Wed Apr 02 2025 17:40:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 12 2024 19:46:23 GMT+0000",
+      "alt": "Stryker employees volunteering at Project C.U.R.E. distribution center",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/stryker-gets-medical-equipment-to-regions-in-need-with-project-c-u-r-e--partnership/Stryker employees volunteering at Project CURE distribution center.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Mar 14 2025 20:59:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 08 2024 17:55:29 GMT+0000",
+      "text": "<h3>For under-resourced countries around the world, healthcare professionals and caregivers are faced with daily equipment and supply shortfalls that cause delays in providing care to patients.<sup>1</sup> To help bring more equipment and medical supplies to under-resourced nations across the globe, Stryker has identified Project C.U.R.E as a signature partner. Through product donations and grant funding, our partnership helps bring medical technology to regions in need and ensures Project C.U.R.E. can operate safely and efficiently during times of crisis.</h3>\n<ul>\n<li>Stryker has partnered with Project C.U.R.E. to donate medical equipment and supplies to under-resourced countries since 2007.<br>\n</li>\n<li>Project C.U.R.E., the world’s largest distributor of donated medical equipment and supplies, delivers to hospitals and clinics in need around the world in more than 135 countries.<sup>3</sup></li>\n<li>Project C.U.R.E.’s work advances the sustainable development goals (SDG’s) that were adopted by the United Nations in 2015 to help save lives and advance peace and prosperity for all people.</li>\n<li>In 2024, Stryker equipment was included in nearly all of Project C.U.R.E.’s 161 shipments to 36 countries, impacting 198 facilities.<sup>2</sup></li>\n<li>This collaboration helps both patients and care teams, allowing health systems to increase their capacity and improve the quality of care.</li>\n<li>Stryker is committed to working with partners who help advance access to healthcare and healthcare technology globally.</li>\n</ul>\n<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Why it matters</span></span></h3>\n<p>Of the 313 million surgeries done around the world each year, only 6% of them occur in under-resourced countries.<sup>1</sup> This isn’t because the need is less. “They just don’t have the tools,” says Janet Thomason, Director of National Procurement at Project C.U.R.E. “In the United States, laying people on the floor on a tarp seems inhumane, but in many countries, there aren’t better options. A Stryker bed is a life changing donation. This is what drives the relationship between Stryker and Project C.U.R.E.</p>\n<p>“And it’s not just better for the patient,” adds Dr. Douglas Jackson, CEO of Project C.U.R.E. “You just changed the entire world for a nurse. You don’t have a 100- pound nurse moving a 250-pound man. It’s a miserable day for someone working a 10-hour shift. That equipment revolutionizes healthcare, not only for the patient, but the provider, too.” Similarly, the impact of Stryker’s surgical instruments significantly changes healthcare. “Where Project C.U.R.E. works, the tools are not there, but on the flipside, the talent is there,” says Janet. “There are surgeons and healthcare professionals who just need these tools to take care of their communities.”</p>\n<p>“Stryker and Project C.U.R.E. make a great partnership because we share a similar determination,” says Douglas. “It comes down to saving lives and changing lives. And that really isn’t possible without partners like Stryker.”</p>\n",
+      "jcr:lastModified": "Wed Apr 02 2025 17:30:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 08 2024 17:58:01 GMT+0000",
+      "jcr:lastModified": "Thu Feb 08 2024 17:58:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 1,
+          "accTitle": "Read the full story"
+        }
+      },
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 17:58:31 GMT+0000",
+          "text": "<p>For under-resourced countries around the world, healthcare professionals and caregivers are faced with daily equipment and supply shortfalls that cause delays in providing care to patients.<sup>1&nbsp;</sup>Everyday needs from consumables to surgical equipment are lacking, forcing critical decisions by care teams. In the United States, the shortages during the COVID pandemic were a glimpse into the challenges facing healthcare providers on a regular basis.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:29:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_714514248": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 08 2024 17:59:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span style=\"color: #85458a;\">To help bring more equipment and medical supplies to under-resourced nations across the globe Stryker has developed a “signature partnership” with Project C.U.R.E. Through product donations and grant funding, our partnership helps bring medical technology and critical resources to regions in need and, ensures that Project C.U.R.E. can operate safely and efficiently during times of high demand.</span></h4>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:29:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1643697177": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 17:59:34 GMT+0000",
+          "text": "<p><a href=\"https://projectcure.org/\">Project C.U.R.E.</a>&nbsp;is the world’s largest distributor of donated medical equipment and supplies to resource-limited communities, touching the lives of patients, families and children in more than 135 countries.<sup>3</sup> Each week, on average, Project C.U.R.E. delivers three to five semi-truck-sized containers packed with&nbsp;medical equipment and supplies from seven large U.S. warehouses to local hospitals and clinics in desperate need.&nbsp;In addition, Project C.U.R.E. provides essential supplies and equipment in times of crisis. Since the Russian invasion of Ukraine, Project C.U.R.E. has successfully accomplished over 172 shipments worth over $48 million.<sup>2</sup></p>\n<p>“I do think our containers bring hope. It’s not just the healthcare; it’s the message that the world is listening and on your side. To Ukrainians, that is almost as helpful as the supplies themselves,” said Laura Conti, Director of Client Relations at Project C.U.R.E.</p>\n<p>Since 2007, Stryker and Project C.U.R.E. have been working together to deliver medical relief to communities experiencing incredible poverty and to provide essential supplies and equipment in times of crisis. “We started with Stryker in the orthopedic tools division, receiving drills, saws and other essential items for surgical procedures. That original relationship continues, and it has grown to include beds, sterilization equipment, gurneys, supplies and other items,” says Dr. Douglas Jackson, CEO of Project C.U.R.E. “Going forward, we look forward to continuing our partnership by incorporating other product lines and divisions.&quot;</p>\n<p>In recent years, Stryker elevated Project C.U.R.E. to &quot;signature partner&quot; status, which means that Stryker provides monetary donations to support their efforts in addition to product donations. Stryker’s portfolio of signature partners help advance access to healthcare and healthcare technology globally. We collaborate with Project C.U.R.E. to provide products where needed, including opportunities to support survivors of natural disasters.<br>\n</p>\n",
+          "jcr:lastModified": "Wed Apr 02 2025 17:30:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1041062810": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 08 2024 18:00:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span style=\"color: #85458a;\">Of the 313 million surgeries done around the world each year, only 6% of them occur in under-resourced countries.<sup>1</sup></span></h4>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:31:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_2062602583": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 18:01:03 GMT+0000",
+          "text": "<p>This isn’t because the need is less. “They just don’t have the tools,” says Janet Thomason, Director of National Procurement at Project C.U.R.E. “In the United States, laying people on the floor on a tarp seems inhumane, but in many countries, there aren’t better options. A Stryker bed is a life changing donation.” This is what drives the relationship between Stryker and Project C.U.R.E. “And it’s not just better for the patient,” adds Dr. Douglas Jackson, CEO of Project C.U.R.E. “We change the entire world for a nurse.&nbsp;You don’t have a 100- pound nurse moving a 250-pound man. It’s a miserable day for someone working a 10-hour shift. That equipment revolutionizes healthcare, not only for the patient, but the provider, too.” Similarly, the impact of Stryker’s surgical instruments significantly changes healthcare. “Where Project C.U.R.E. works, the tools are not there, but on the flipside, the talent is there,” says Janet. “There are surgeons and healthcare professionals who just need these tools to take care of their communities.”<br>\n</p>\n<h2><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-8em\">Stryker’s recent impact with Project C.U.R.E.</span></span></span></h2>\n<p>Together, Stryker collaborated with Project C.U.R.E. on record numbers of product shipments across a wide range of Stryker specialties. In 2024, Project C.U.R.E. delivered 161 semi-truck sized cargo shipments around the world to 36 different countries.<sup>2</sup> “Seventy percent of shipments that go out include supplies from Stryker,” says Janet.&nbsp;Thousands of people were impacted and countless lives saved.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:33:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_2062602583_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 18:01:03 GMT+0000",
+          "text": "<p>In 2024, Project C.U.R.E. shipments reached some of the most challenging regions of the world.&nbsp; Disaster aid shipments continued into the Middle East, reached victims of the earthquake in Syria, and the people of Ukraine. Stryker worked with Project C.U.R.E. to transport equipment, beds and surgical care into all these regions.</p>\n<p>Beds, a precious commodity in low-resourced countries, are particularly crucial to quality patient care. Across the country, Stryker field representatives have been supporting the needs of patients in the global community by ensuring that quality beds are sent to Project C.U.R.E. A Stryker employee recently facilitated the transfer of over 700 bed donations from the St. Louis market. Working together with Project C.U.R.E. staff and hospital and volunteers, these beds were delivered to Project C.U.R.E. distribution centers and in less than one month, all beds were allocated. - Very soon these beds will be reaching Malawi, Ethiopia, Lesotho, Ukraine and Haiti.</p>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:35:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Feb 12 2024 16:29:15 GMT+0000",
+          "alt": "Stryker employees pack donations at Project C.U.R.E.’s distribution center in Chicago, IL",
+          "srcFileRef": "/content/dam/stryker/about/news/2023/features/stryker-gets-medical-equipment-to-regions-in-need-with-project-c-u-r-e--partnership/Stryker employees pack donations at Project CUREs distribution center in Chicago IL.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Mar 14 2025 21:00:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_2062602583_copy_377737065": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 08 2024 18:01:03 GMT+0000",
+          "text": "<p>Stryker continues to work with Project C.U.R.E. to offer an Orthopedic Power Tool Grant Program to bring medical equipment to surgeons performing orthopaedic surgery. The program impacted 23 countries in 2024.<sup>2</sup> From Bahamas to Zimbabwe, even into the tiny country of Mauritius, 33 power sets were distributed for surgeon led mission trips and Project C.U.R.E. cargo container programs. Life-changing surgical procedures were performed on these trips, with educational sessions and training provided to local surgical teams.</p>\n<p>Stryker has been working to expand the product lines shared with Project C.U.R.E.&nbsp; Recently donations from Stryker’s instruments team included head lamps which will light up operating theatres in countries where reliable power is limited. In the future, we will work together to include a&nbsp;broader range of product lines to support Project C.U.R.E.</p>\n<p>Employees continue to give their time at Project C.U.R.E. distribution centers which are located in Denver, Phoenix, Nashville, Houston, Chicago, Philadelphia and Kansas City, volunteering to sort incoming donations, provide warehouse support, share valuable technical expertise and prepare equipment for shipment. The passion employees have for volunteering with Project C.U.R.E. continues to grow each year.</p>\n<p>“Stryker and Project C.U.R.E. make a great partnership because we share a similar determination,” says Douglas. “It comes down to saving lives and changing lives. And that really isn’t possible without partners like Stryker.”<br>\n</p>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 20:36:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "8"
+            }
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

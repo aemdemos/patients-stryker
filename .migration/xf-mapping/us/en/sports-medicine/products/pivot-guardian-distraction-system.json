@@ -1,0 +1,2290 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "State-of-the-art surgical table accessories spanning six hip procedures",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Pivot Guardian",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6e807871-a388-413b-970c-2daf2d320b8a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "Pivot Guardian total hip system",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/Pivot-Guardian-total-system.png",
+  "businessUnitTag": "stryker:business-unit/sports-medicine",
+  "jcr:predecessors": [
+    "d714453b-8135-4d6c-a3bb-432a41a8c9e7"
+  ],
+  "contentID": "1000902716 Rev A  ",
+  "lastPublished": "Wed Aug 19 2026 14:17:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 14:17:45 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 14:17:48 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 14:17:30 GMT+0000",
+  "jcr:description": "The Pivot Guardian total hip system includes the Pivot Guardian post-free distraction system for hip arthroscopy and now expands your options to five additional hip procedures with additional state-of-the-art table accessories.",
+  "jcr:baseVersion": "d714453b-8135-4d6c-a3bb-432a41a8c9e7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:41:57 GMT+0000",
+  "pageTitle": "Pivot Guardian total hip system",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+    "stryker:custom/sports-medicine/procedure/tissue-resection",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:specialty/asc",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:specialty/or",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/product-type/positioning",
+    "stryker:specialty/surgical-tables",
+    "stryker:portfolio/orthopaedics",
+    "stryker:product/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/capsulotomy",
+    "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+    "stryker:product/sports-medicine/pivot-guardian-distraction-system",
+    "stryker:custom/sports-medicine/procedure/capsular-repair",
+    "stryker:custom/sports-medicine/procedure-(hip)/capsular-repair"
+  ],
+  "jcr:lastModified": "Fri Mar 14 2025 16:21:38 GMT+0000",
+  "jcr:uuid": "924f9923-5688-489c-9cbe-ac3865b888a8",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Pivot Guardian total hip system",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Thu Aug 18 2022 16:01:27 GMT+0000",
+      "carouselOptionSpeed": "5000",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Sep 08 2022 18:11:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "localpage_nav_bottom",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/total-hip-system/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/pivot-guardian/total-hip-system/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "25",
+          "jcr:created": "Thu Aug 18 2022 16:01:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Aug 18 2022 16:14:42 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "3",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Aug 18 2022 16:02:08 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Pivot Guardian<br>\n Total hip system</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\">Elevating the standard of care — again.</span></span></p>\n",
+              "jcr:lastModified": "Wed Dec 07 2022 17:08:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "carouselslide_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/pivot-guardian-distraction-hip-system/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/pivot-guardian/pivot-guardian-distraction-hip-system/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "25",
+          "jcr:created": "Thu Aug 18 2022 16:01:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Aug 18 2022 16:38:48 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "3",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Aug 18 2022 16:02:08 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Leading the way<br>\n in post-free</span></span></h4>\n<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Pivot Guardian hip distraction system</span></span></h3>\n",
+              "jcr:lastModified": "Wed Sep 07 2022 17:40:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "carouselslide_copy_1040059865": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/pivot-guardian-direct-system/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/pivot-guardian/pivot-guardian-direct-system/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "17",
+          "jcr:created": "Thu Aug 18 2022 16:01:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Aug 18 2022 16:39:29 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "3",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Aug 18 2022 16:02:08 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\">Expanding your options</span></span></span></p>\n<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Pivot&nbsp;Guardian&nbsp;Direct</span></span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">State-of-the-art surgical table accessories for Direct Anterior total hip&nbsp;arthroplasty, hip pinning, hip fracture, PAO, DFO and more</span></span></p>\n",
+              "jcr:lastModified": "Thu Feb 02 2023 04:12:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_copy_14198": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_63535169": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 15:57:24 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 15:57:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Thu Aug 18 2022 15:57:45 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Pivot Guardian total hip system</span></span></p>\n<h2>State-of-the-art surgical table accessories spanning six hip procedures.</h2>\n<ul>\n<li>Hip arthroscopy</li>\n<li>Direct Anterior total hip arthroplasty</li>\n<li>Hip pinning</li>\n<li>Hip fractures</li>\n<li>Periacetabular osteotomy (PAO)</li>\n<li>Derotational femoral osteotomy (DFO)</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Sep 07 2022 17:43:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Aug 18 2022 15:59:21 GMT+0000",
+          "jcr:lastModified": "Thu Aug 18 2022 15:59:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://patients.stryker.com/hip-impingement/treatment-options",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "If you are a patient, click here",
+              "externalLinkType": "ext"
+            }
+          }
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Aug 18 2022 15:59:15 GMT+0000",
+          "jcr:lastModified": "Thu Aug 18 2022 15:59:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 13 2022 15:56:33 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Thu Aug 18 2022 14:04:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/videos/Pivot Guardian Direct animation.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Pivot Guardian Direct animation-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Jul 13 2022 15:57:21 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2_2_3_1_3_829983": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 13 2022 16:17:26 GMT+0000",
+      "jcr:lastModified": "Wed Jul 13 2022 16:17:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:18:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">One system.</span><br>\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">One simplified OR.</span></span></span>",
+          "jcr:lastModified": "Wed Jul 13 2022 16:19:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:17:39 GMT+0000",
+          "text": "<div>&nbsp;</div>\n<div>&nbsp;</div>\n<ul>\n<li><span class=\"fontsize-1-25em\">No patient transfers between hip procedures</span><ul>\n<li><span class=\"fontsize-1-25em\">Interchangeable parts</span></li>\n<li><span class=\"fontsize-1-25em\">One set of boots for all six procedures</span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\">Single system training for OR staff</span></li>\n<li><span class=\"fontsize-1-25em\">Multiple hip surgeon specialties accommodated in one system</span></li>\n<li><span class=\"fontsize-1-25em\">Compact storage for one system, instead of many</span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 13 2022 16:31:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy_1238377486": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 13 2022 16:20:32 GMT+0000",
+      "jcr:lastModified": "Wed Jul 13 2022 16:20:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:20:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-4-5-vw\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(255,255,255);\">The focus on patient safety </span></span></span><span style=\"color: rgb(255,181,0);font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif;font-weight: bold;font-size: 63.0px;background-color: transparent;\">you deserve</span>",
+          "jcr:lastModified": "Wed Jul 13 2022 16:51:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:20:59 GMT+0000",
+          "jcr:lastModified": "Wed Jul 13 2022 16:20:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:03 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/post-free-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jul 13 2022 16:45:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:08 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><b><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">A post-free environment</span></span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">In a study of 1,000 hip arthroscopies performed without the use of a perineal post, there were no groin-related soft tissue or nerve complications reported.<sup>1</sup></span></span></p>\n",
+              "jcr:lastModified": "Thu Feb 02 2023 04:19:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:30 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/heel-slip-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jul 13 2022 16:45:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:35 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><b><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Heel slip mitigation</span></span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Boa system boots with an achilles block designed to secure the patient’s ankle during distraction and hip procedures.</span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 15:52:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:42 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/vertical-spar-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jul 13 2022 16:45:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:46 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><b><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Vertical spar&nbsp;safety mechanism</span></span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Gas shock assisted and designed for precise foot and leg positioning.</span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 15:53:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "largeheadline_1657845998": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:47:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "  ",
+          "jcr:lastModified": "Wed Jul 13 2022 16:51:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_copy_copy_1419893634": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideComponent": "true",
+      "jcr:created": "Wed Jul 13 2022 16:16:03 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 15:55:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "pgds",
+      "jcr:created": "Wed Jul 13 2022 15:58:06 GMT+0000",
+      "title": "Pivot Guardian distraction system",
+      "jcr:lastModified": "Wed Jul 13 2022 16:54:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "jumpbarnav_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 13 2022 16:16:03 GMT+0000",
+      "jcr:lastModified": "Wed Jul 13 2022 16:16:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "fullbleedpanel_18143": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_186304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(255,255,255);\">Pivot Guardian distraction system for hip arthroscopy and PAO</span></span></h3>\r\n",
+          "jcr:lastModified": "Mon Apr 03 2023 13:51:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Aug 14 2018 13:08:42 GMT-0400",
+      "jcr:lastModified": "Thu Aug 23 2018 17:51:04 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+          "text": "<p>&nbsp; &nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Fri Jul 15 2022 00:30:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Study shows</span></span></p>\r\n<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><sub><span class=\"fontsize-8vw\">Zero reported</span></sub></span></span></p>\r\n",
+          "line2": "<span class=\"fontsize-4-5-vw\"><span class=\"urw-egyptienne\">groin-</span></span><span style=\"font-family: URWEgyptienneW01-Light , Rockwell , Georgia , Times , serif;font-size: 63.0px;background-color: transparent;\">related complications</span><sup style=\"font-family: URWEgyptienneW01-Light , Rockwell , Georgia , Times , serif;background-color: transparent;\">1</sup>",
+          "jcr:lastModified": "Fri Aug 19 2022 21:00:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Aug 13 2018 17:37:47 GMT-0400",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">In a recent study of <b>1,000</b> hip arthroscopies performed without the use of a perineal post, investigators found that the procedure allowed for safe, adequate, reproducible access to the hip joint without groin-related soft tissue or nerve complications.<sup>1</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 02 2019 15:49:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Aug 13 2018 17:38:43 GMT-0400",
+          "CTATitle": "Read the study",
+          "ctaExternalLink": "http://journals.sagepub.com/doi/abs/10.1177/0363546517741704",
+          "jcr:lastModified": "Mon Jul 18 2022 15:05:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 13 2018 17:40:36 GMT-0400",
+      "jcr:lastModified": "Mon Aug 13 2018 17:40:36 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Mon Aug 13 2018 17:40:45 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\">Explore the <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">innovative </span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">design</span></span></span></span></span>",
+      "line2": "<span class=\"fontsize-1-5-vw\">Pivot Guardian distraction system for hip arthroscopy and PAO</span><br />\r\n",
+      "jcr:lastModified": "Thu Sep 08 2022 12:08:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_171729792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:55:48 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 13:55:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">1. Post-free</span></span></h4>\n",
+          "jcr:lastModified": "Mon Apr 03 2023 13:53:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_1376777376": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">The Pivot Guardian distraction system is designed to mitigate post-related complications.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">2. Traction force gauge</span></span></p>\n",
+          "jcr:lastModified": "Mon Apr 03 2023 13:52:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_981105079": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">The system includes a traction force guage that estimates the amount of force on the patient.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_896947886_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">3. Fine and gross traction controls</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:14:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_1055185383": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Designed to provide precise control and better range-of-motion. You can easily make adduction, abduction, as well as extension and flexion hip adjustments. It also allows for internal and external hip rotation.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_1103656955": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">4. Carbon fiber construction</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:14:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Radiolucent carbon fiber construction minimizing the amount of metal components surrounding the hip, the anterior and posterior visualization during surgery—a &quot;true AP radiographic shot.&quot;</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 16:06:38 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/Distraction-Full-postfree-numbered.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 18 2022 14:04:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_1643626792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_1543387713": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 16:22:10 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 16:22:25 GMT+0000",
+          "jcr:lastModified": "Tue Jul 26 2022 16:22:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_1468990844_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\">The Pivot Guardian distraction system is designed to minimize the time and effort required for transport, setup and takedown.</span></span></span></p>\n",
+              "jcr:lastModified": "Thu Sep 08 2022 12:09:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "10"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_2130137655": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "7",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "6",
+              "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\">OR turnover</span></span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Mar 29 2023 13:16:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true",
+              "bottomMargin": "6"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_2098352460": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1204107305": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:34:10 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:34:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 17:34:05 GMT+0000",
+          "CTATitle": "View the Pivot Guardian distraction system brochure",
+          "ctaExternalLink": "https://stryker.highspot.com/items/60b65ea43f65f6761cf31739?lfrm=ssrp.0#5",
+          "jcr:lastModified": "Tue Jul 26 2022 17:34:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 17:34:05 GMT+0000",
+          "CTATitle": "View hip arthroscopy post-free distraction space clinical data",
+          "ctaExternalLink": "https://stryker.highspot.com/items/5da9d9d1a4dfa06c8f6882f5?lfrm=ssrp.27",
+          "jcr:lastModified": "Tue Jul 26 2022 17:35:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "text_copy_1862481790": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_199027891": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:29:26 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:29:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "description": "Dr. Richard Mather III*  – Hip FAI surgical technique ",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 17:30:15 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 29 2023 13:17:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/videos/Dr Richard Mather Surgical Technique.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr Richard Mather Surgical Technique-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jul 26 2022 17:41:06 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "description": "Dr. Struan H. Coleman* – Hip labral repair ",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 17:30:15 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 29 2023 13:17:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/videos/Dr Coleman hip labral repair using Cinchlock SS surgical technique video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr Coleman hip labral repair using Cinchlock SS surgical technique video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jul 26 2022 18:01:33 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "section_title_688039802": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "pgd",
+      "jcr:created": "Wed Jul 13 2022 16:00:04 GMT+0000",
+      "title": "Pivot Guardian Direct",
+      "jcr:lastModified": "Tue Jul 26 2022 17:20:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_1926740750": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_1814371474": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_186304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(255,255,255);\">Pivot Guardian Direct</span></span></h3>\r\n",
+          "jcr:lastModified": "Mon Apr 03 2023 13:54:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_copy_742248124": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Aug 14 2018 13:08:42 GMT-0400",
+      "jcr:lastModified": "Thu Aug 23 2018 17:51:04 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Fri Jul 15 2022 00:30:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-7vw\">Expanding</span></span></span>",
+          "line2": "<span class=\"fontsize-4-5-vw\"><span class=\"urw-egyptienne\">your options</span></span>",
+          "jcr:lastModified": "Thu Sep 08 2022 12:09:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 13 2018 17:37:47 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\">Direct Anterior total hip arthroplasty</span></li>\n<li><span class=\"fontsize-1-5em\">Hip pinning</span></li>\n<li><span class=\"fontsize-1-5em\">Hip fractures</span></li>\n<li><span class=\"fontsize-1-5em\">PAO</span></li>\n<li><span class=\"fontsize-1-5em\">DFO</span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 17:27:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 13 2018 17:40:36 GMT-0400",
+      "jcr:lastModified": "Mon Aug 13 2018 17:40:36 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Mon Aug 13 2018 17:40:45 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\">Explore the <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">state-of-the-art </span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">surgical table accessories</span></span></span></span>",
+      "line2": "<span class=\"fontsize-1-5-vw\">Pivot Guardian Direct for Direct Anterior total hip arthroplasty, hip pinning, hip fracture, periacetabular osteotomy, derotational<br>\r\n femoral osteotomy and more.<sup>2</sup></span>",
+      "jcr:lastModified": "Thu Sep 08 2022 12:10:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_2095085319": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:47:06 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 13:47:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 16:06:38 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/Direct-Full-postfree-numbered2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 18 2022 13:50:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">1. Tabletop extension</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:18:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_1171446079": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Carbon fiber tabletop extension designed to support joint replacement and trauma procedures.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">2. Femoral support</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:19:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_1286404036": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Carbon fiber femoral support for stability during surgery and improved visualization* of critical anatomy.<sup>2</sup></span></p>\n<p>*As compared to surgical procedures with no support.<sup>2</sup></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:58:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_896947886_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">3. Vertical spar</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:19:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy_2069834463": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Allows for easy manipulation of the patient’s foot and leg during surgery.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:59:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_1103656955": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:08:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">4. PostFree support</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 13:19:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        },
+        "text_1468990844_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 26 2022 16:09:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Proprietary PostFree design built to support post-free surgery.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:59:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 13 2022 16:20:32 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 14:08:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:20:59 GMT+0000",
+          "jcr:lastModified": "Wed Jul 13 2022 16:20:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:03 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/lafe2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Aug 18 2022 14:15:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:08 GMT+0000",
+              "text": "<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\"><span style=\"color: #000000;\"><b><span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Leg and foot extension</span></span></span></b></span></span></p>\n<p><span style=\"color: #000000;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\"><span>Allows for streamlined patient positioning<br>\n and transfer.</span></span></span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 14:11:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:30 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/mako3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Aug 18 2022 14:15:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:35 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><b><span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako compatibility</span></span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><span>Compatible with the Mako robot for total hip applications.</span></span></p>\n",
+              "jcr:lastModified": "Tue Jul 30 2024 15:41:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Wed Jul 13 2022 16:21:42 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/ds2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Aug 18 2022 14:15:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jul 13 2022 16:21:46 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><b><span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Direct storage</span></span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><span>Smaller for easy storage.</span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 14:11:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "largeheadline_1657845998": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:47:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "  ",
+          "jcr:lastModified": "Wed Jul 13 2022 16:51:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:20:34 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 13:20:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "description": "Drs. Michael Salata* and Robert Wetzel* – Combined hip arthroscopy and PAO",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 17:30:15 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 29 2023 13:20:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/videos/Combined hip arthroscopy and periacetabular osteotomy with Dr Michael Salata and Dr Robert Wetzel.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Combined hip arthroscopy and periacetabular osteotomy with Dr Michael Salata and Dr Robert Wetzel-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Jul 26 2022 17:42:44 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/resources/Pivot Guardian brochure.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 17:32:52 GMT+0000",
+          "CTATitle": "View Pivot Guardian Direct brochure",
+          "ctaExternalLink": "https://stryker.highspot.com/items/62227535874a9e1fe7fcb9df?lfrm=ssrp.3",
+          "jcr:lastModified": "Thu Aug 18 2022 13:20:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/PG-brochure-thumbnail.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products"
+        }
+      }
+    },
+    "section_title_1058716447": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "boa",
+      "jcr:created": "Wed Jul 13 2022 16:00:15 GMT+0000",
+      "title": "BOA system boots",
+      "jcr:lastModified": "Tue Jul 26 2022 20:17:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_18143_1604126112": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_186304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(255,255,255);\">Boa system boots</span></span></h3>\r\n",
+          "jcr:lastModified": "Mon Apr 03 2023 13:54:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_2_3_1_3_1192609207": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:25:23 GMT+0000",
+      "jcr:lastModified": "Thu Aug 18 2022 13:25:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 20:35:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/black-boot-numbered2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 18 2022 13:24:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Mon Aug 13 2018 17:40:45 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\">Discover the next generation&nbsp;</span></span></p>\r\n<h4><span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">traction boot</span></span></span></span></h4>\r\n",
+          "line2": "<span class=\"fontsize-1-5-vw\">Designed to mitigate heel slip.</span>",
+          "jcr:lastModified": "Mon Apr 03 2023 13:55:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 20:43:22 GMT+0000",
+          "CTATitle": "View heel lift clinical data",
+          "ctaExternalLink": "https://stryker.highspot.com/items/5da9d9d03f65f62975f2b0f8?lfrm=ssrp.28",
+          "jcr:lastModified": "Thu Aug 18 2022 16:28:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "fullbleedpanel_1403870220": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 20:42:26 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 20:42:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 20:40:35 GMT+0000",
+          "jcr:lastModified": "Tue Jul 26 2022 20:40:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "20",
+              "jcr:created": "Tue Jul 26 2022 20:36:17 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">1. Boa system</span></span></p>\n<p><span class=\"fontsize-1-25em\">Deliver precise fit and adjustment to distraction system boots.</span></p>\n",
+              "jcr:lastModified": "Fri Mar 31 2023 12:26:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "20",
+              "jcr:created": "Tue Jul 26 2022 20:36:17 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">2. Achilles block</span></span></p>\n<p><span class=\"fontsize-1-25em\">Designed to secure the patient's ankle during distraction.</span></p>\n",
+              "jcr:lastModified": "Fri Mar 31 2023 12:26:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_648547834": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jul 26 2022 20:36:06 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/achilles-bubble.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 05 2022 21:07:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_1460446897": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jul 26 2022 20:36:06 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/boa-bubble.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Aug 05 2022 21:07:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_223213443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "patient-pad",
+      "jcr:created": "Wed Jul 13 2022 16:00:54 GMT+0000",
+      "title": "Patient pad",
+      "jcr:lastModified": "Tue Jul 26 2022 20:46:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_18143_1595045049": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_186304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"urw-egyptienne\">Patient pad</span></span></span>",
+          "jcr:lastModified": "Fri Mar 31 2023 12:27:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_copy_1358754501": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_496374158_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 20:35:44 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 20:35:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c_595338590": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Mon Aug 13 2018 17:40:45 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\">Advanced&nbsp;</span></span><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5vw\"><span class=\"futura-bold\">patient pad</span></span></span><span style=\"font-size: 70.0px; background-color: transparent; font-weight: normal; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"> <span class=\"urw-egyptienne\">for Pivot Guardian distraction system</span></span></span>",
+          "line2": "<span class=\"fontsize-1-5-vw\">No Trendelenburg required.</span>",
+          "jcr:lastModified": "Fri Mar 31 2023 12:27:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 20:43:22 GMT+0000",
+          "CTATitle": "View the Pivot Guardian patient pad brochure",
+          "ctaExternalLink": "https://stryker.highspot.com/items/60be66dc34d6be4de89f3521?lfrm=ssrp.4",
+          "jcr:lastModified": "Thu Aug 18 2022 16:28:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 20:35:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/pg-pp1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 18 2022 13:33:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_14038": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 20:42:26 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 20:42:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 20:49:54 GMT+0000",
+          "jcr:lastModified": "Tue Jul 26 2022 20:49:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Tue Jul 26 2022 20:50:02 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Zero-degrees of Trendelenburg</span></span></b></p>\n<p><span class=\"fontsize-1-25em\">Achieve post-free distraction with zero-degrees of Trendelenburg.</span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 14:13:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "10"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Tue Jul 26 2022 20:50:02 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Freedom to operate</span></span></b></p>\n<p><span class=\"fontsize-1-25em\">Designed with the surgeon in mind and does not require a change in hand position or portal placement.</span></p>\n",
+              "jcr:lastModified": "Thu Aug 18 2022 14:14:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "10"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Tue Jul 26 2022 20:50:02 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Stronger than the leading competition</span></span></b></p>\n<p><span class=\"fontsize-1-25em\">Tensile resistance tested to be 3x stronger than the competition.<sup>3</sup></span></p>\n",
+              "jcr:lastModified": "Thu Sep 01 2022 17:04:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "10"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "10",
+              "jcr:created": "Tue Jul 26 2022 20:50:02 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Resistant to patient<br>\n pre-operative skin preparation chemicals</span></span></b></p>\n<p><span class=\"fontsize-1-25em\">2.5x stronger than the leading competitor when exposed to patient skin preparation chemicals, like Chloraprep.<sup>3</sup></span></p>\n",
+              "jcr:lastModified": "Thu Sep 01 2022 17:05:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "10"
+            }
+          }
+        }
+      }
+    },
+    "section_title_1658485057": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "ase",
+      "jcr:created": "Wed Jul 13 2022 16:01:06 GMT+0000",
+      "title": "Advanced surgical experience",
+      "jcr:lastModified": "Tue Jul 26 2022 20:58:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_18143_1617389413": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 17:24:41 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 17:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(66,83,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_186304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Jul 13 2022 16:53:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"urw-egyptienne\">The advanced surgical experience (ASE) for hip arthroscopy</span></span></span>",
+          "jcr:lastModified": "Fri Mar 31 2023 12:28:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_496374158_copy_1500340514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 20:35:44 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 20:35:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c_595338590": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Mon Aug 13 2018 17:40:45 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-5vw\">The future of hip arthroscopy <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">now.</span></span></span></span>",
+          "line2": "<span class=\"fontsize-1-5-vw\">The Pivot Guardian distraction system along with our pre-operative planning tool, HipMap, and our intra-operative resection planning and execution tool, HipCheck, create an advanced surgical experience for you and your patients.</span><br />\r\n",
+          "jcr:lastModified": "Fri Mar 31 2023 12:29:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 20:43:22 GMT+0000",
+          "CTATitle": "View the Advanced Surgical Experience brochure",
+          "ctaExternalLink": "https://stryker.highspot.com/items/5da9dc9634d6be74125852f6?lfrm=ssrp.36",
+          "jcr:lastModified": "Thu Aug 18 2022 16:28:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 20:35:52 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/ASE_platform_2021.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 18 2022 14:15:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "standalonevideo_419410739": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "description": "Dr. Struan Coleman* talks ASE",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 21:01:42 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Fri Mar 31 2023 12:30:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/videos/Dr Coleman Talks ASE Hip Check Hip Map and Guardian Presentation.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Dr Coleman Talks ASE Hip Check Hip Map and Guardian Presentation-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jul 26 2022 21:12:16 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "text_copy_1358754501_991419710": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Aug 14 2018 13:35:10 GMT-0400",
+      "jcr:lastModified": "Tue Aug 14 2018 13:35:10 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 26 2022 21:14:05 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/hipcheck/images/hipmap-hipcheck-thumbnail-updated.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 26 2022 21:20:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1358754501": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+          "text": "<p>&nbsp; &nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 21:04:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Learn more about HipMap and HipCheck today</span></span></p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 21:06:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 26 2022 21:04:35 GMT+0000",
+          "CTATitle": "Learn more",
+          "jcr:lastModified": "Tue Jul 26 2022 21:05:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/hip-check"
+        },
+        "text_copy_1358754501_2006287506": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Aug 18 2022 13:51:02 GMT+0000",
+          "text": "<p>&nbsp; &nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 18 2022 13:51:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1658164675": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 14:17:19 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 14:17:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Pivot Guardian total hip system</p>\r\n",
+    "shortDescTop": "<p>State-of-the-art surgical table accessories spanning six hip procedures.<br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Aug 18 2022 16:01:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Hip arthroscopy</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Direct Anterior</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Total hip arthroplasty<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Hip pinning</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Hip fractures</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>PAO</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>DFO</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 13 2022 16:16:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Stryker consultant</p>\r\n<p>References\u0003<br>\r\n1. Omer Mei-Dan, MD et. al. Hip Distraction Without a Perineal Post. March 2018, The American Journal of Sports Medicine<br>\r\n2. Data on file, Stryker, DHD13364, “Hip Distractor, Evaluation of Distracted Space and Imaging”<br>\r\n3.&nbsp;TR20502 Rev A</p>\r\n",
+    "jcr:lastModified": "Thu Sep 01 2022 17:05:38 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://patients.stryker.com/hip-impingement/treatment-options",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Thu Aug 18 2022 16:00:49 GMT+0000",
+    "linkText": "If you are a patient, click here",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Aug 18 2022 16:00:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Aug 18 2022 16:00:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/pivotcompletehiparthroscopyaccessandinstrumentationkit/images/Pivot-Guardian-total-system.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Thu Aug 18 2022 16:01:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

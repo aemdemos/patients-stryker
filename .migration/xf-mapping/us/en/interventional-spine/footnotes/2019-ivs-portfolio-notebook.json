@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "D0000015872",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "2019 IVS Portfolio Notebook",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3a148f87-29f5-4bfb-abb5-6d6041ad25d6",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "370fa216-d058-4f59-a50c-01d9244e3584"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:01 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:02 GMT+0000",
+  "cq:lastModified": "Mon Dec 22 2025 18:47:50 GMT+0000",
+  "jcr:baseVersion": "370fa216-d058-4f59-a50c-01d9244e3584",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:58 GMT+0000",
+  "jcr:lastModified": "Tue Sep 16 2025 20:56:09 GMT+0000",
+  "jcr:uuid": "190823e2-ffae-4aad-83f4-a73aa8745d8b",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 16 2025 20:54:28 GMT+0000",
+      "jcr:lastModified": "Tue Sep 16 2025 20:54:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 00:13:43 GMT+0000",
+      "text": "<p><b>Revision Date: 07.29.19</b></p>\n<ol>\n<li>The bioactive response of Cortoss has not been assessed in any clinical investigation and the results from laboratory or animal testing may not be predictive of human clinical experience<br>\n</li>\n<li>U.S. Food and Drug Administration, Center for Devices and Radiological Health. SpineJack Expansion Kit 510(k) Summary (K181262). Available from: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K181262</li>\n<li>Tzermiadianos M et al. Altered disc pressure profile after an osteoporotic vertebral fracture is a risk factor for adjacent vertebral body fracture. European Spine Journal. 2008; 17:1522-1530</li>\n<li>Hulme P et al. Vertebroplasty and kyphoplasty: A systematic review of 69 clinical studies. Spine. 2006; 31(17):1983-2001.</li>\n<li>iVAS Elite Inflatable Vertebral Augmentation System Instructions for Use: 0808-000-700 Rev-AA</li>\n<li>As compared to larger gauge sizes</li>\n<li>As of&nbsp;July 2019</li>\n<li>Based on fill volume</li>\n<li>As of&nbsp;July 2019</li>\n<li>An Evaluation of the Safety and Efficacy of an Alternative Material to Polymethylmethacrylate Bone Cement for Vertebral Augmentation. 5702-0004, Rev. 00</li>\n<li>Bae, H., et al, A Prospective Randomized FDA-IDE Trial Comparing Cortoss to PMMA for Vertebroplasty: A Comparative Effectiveness Research Study with 24-Months Follow-Up. Spine, first published on July 5, 2011 as doi: 10.1097/ BRS.0b013e31822ba50b</li>\n<li>Deramond H, Wright NT, Belko? SM. Temperature elevation caused by bone cement polymerization during vertebroplasty. Bone, 1999. Vol 25 (2) 17S-21S</li>\n<li>Pomrink, et al., Evaluation of the reaction kinetics of Cortoss, a thermoset cortical bone void ller. Biomaterials, 2003, Vol. 24 (6) 1023-1031</li>\n<li>Cortoss Bone Augmentation Material: Instructions for Use (IFU)</li>\n<li>Palussière, Jean et al. &quot;Clinical Results Of An Open Prospective Study Of A Bis-GMA Composite In Percutaneous Vertebral Augmentation&quot;. European Spine Journal 14.10 (2005): 982-991. Web. 18 Aug. 2016</li>\n<li>Bae, Hyun et al. &quot;Clinical Experience Using Cortoss For Treating Vertebral Compression Fractures With Vertebroplasty And Kyphoplasty&quot;. Spine 35.20 (2010): E1030-E1036. Web. &quot;Clinical Experience Using Cortoss For Treating Vertebral Compression Fractures With Vertebroplasty And Kyphoplasty&quot;. Spine 35.20 (2010): E1030-E1036. Web</li>\n<li>Independent lab results from Fluid Dynamics Inc. commissioned by Stryker July 2009. Testing conducted at 20-21° C (68-70° F)</li>\n<li>The Worldwide Orthopaedic Market. Prepared by Knowledge Enterprises. October 2005, p. 11</li>\n<li>Orthopaedic Industry Annual Report: 2008-2009. Orthoworld, Inc. 2009, p. 22</li>\n<li>Based on 18g Venom Cannula and Electrode System</li>\n<li>Stryker Corporation. (2013). Effect of the Stryker Venom Cannula and Venom Electrode Combination on Lesion Size and Anesthesia Delivery During Radiofrequency Ablation[Clinical white paper, 1000-025-195 Rev None]. Kalamazoo, MI.</li>\n<li>Amoretti N, David P, Grimaud A, Flory P, Hovorka I, Roux C, Chevallier P, Bruneton JN. Clinical follow-up of 50 patients treated by percutaneous lumbar discectomy. Clinical Imaging. 2006; 30(4):242-4</li>\n<li>Alò K, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: clinical response in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Practice 2004; 4:19-29</li>\n<li>Alò KM, Wright RE, Sutcliffe J, Brandt SA. Percutaneous lumbar discectomy: one-year follow-up in an initial cohort of 50 consecutive patients with chronic radicular pain. Pain Pract. 2005; 5(2):116-23</li>\n<li>Alò K, Wright RE, Fu ZJ. Open human torso laboratory dissection with annular and nuclear lumbar disc analysis pre and post Dekompressor®. Denver, CO: University of Colorado Health Sciences Center College of Medicine, Department of Anatomy; January 19/20, 2003</li>\n<li>Wright R. Preclinical laboratory analysis of Dekompressor® percutaneous decompression in sheep and human cadaver discs: Internal Data. Fort Collins, CO: Colorado State University; May 2000</li>\n</ol>\n",
+      "jcr:lastModified": "Tue Sep 16 2025 20:57:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

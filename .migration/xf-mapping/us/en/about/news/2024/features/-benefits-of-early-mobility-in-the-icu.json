@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": " Benefits of early mobility in the ICU",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2987d4a5-09f9-494c-b6eb-d983fa9fe88f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "redirectTarget": "/content/stryker/us/en/acute-care/news/early-mobility-benefits-icu",
+  "thumbnailAltText": "ac_newsroom_early-mobility-icu-hero",
+  "jcr:predecessors": [
+    "2180d8dd-539a-4adf-9741-74695fe1d994"
+  ],
+  "lastPublished": "Fri May 01 2026 17:27:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 01 2026 17:27:37 GMT+0000",
+  "cq:lastReplicated": "Fri May 01 2026 17:27:39 GMT+0000",
+  "cq:lastModified": "Thu Apr 30 2026 22:08:12 GMT+0000",
+  "jcr:description": "Implementing early mobility programs in the ICU can bring numerous benefits for both patients and healthcare professionals.",
+  "jcr:baseVersion": "2180d8dd-539a-4adf-9741-74695fe1d994",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 01 2026 17:27:36 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news/featured",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Apr 30 2026 22:08:12 GMT+0000",
+  "jcr:uuid": "1a19c0ba-802b-4d79-942f-7c0dbc2de0db",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "publishDate": "Wed Apr 01 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Apr-2026",
+    "jcr:lastModified": "Thu Apr 30 2026 21:09:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/benefits-of-early-mobility-in-the-icu/images/early-mobility-icu-thumbnail.png"
+  }
+}

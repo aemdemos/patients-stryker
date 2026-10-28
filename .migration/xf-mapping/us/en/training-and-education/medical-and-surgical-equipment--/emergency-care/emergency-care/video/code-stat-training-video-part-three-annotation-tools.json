@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CODE-STAT training video part 3 annotation tools",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4f69f306-7063-4a16-960f-a4a81cc76275",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "b2dadca3-5b73-4f03-a968-46f9d70b995b"
+  ],
+  "lastPublished": "Fri Jan 27 2023 16:08:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jan 27 2023 16:08:25 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 27 2023 16:08:27 GMT+0000",
+  "cq:lastModified": "Thu Jan 26 2023 15:28:26 GMT+0000",
+  "jcr:baseVersion": "b2dadca3-5b73-4f03-a968-46f9d70b995b",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "CODE-STAT training video part 3 annotation tools",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jan 26 2023 15:28:26 GMT+0000",
+  "jcr:uuid": "99c90c73-864c-471b-af0a-5f1d49bcea44",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "CODE-STAT training video part 3 annotation tools",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 17:02:18 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Oct 27 2022 17:13:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/CODE-STAT-training-video-part-three.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/CODE-STAT-training-video-part-three-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Jan 26 2023 15:20:35 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

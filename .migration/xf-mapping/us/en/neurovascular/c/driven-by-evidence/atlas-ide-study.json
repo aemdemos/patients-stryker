@@ -1,0 +1,2992 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ATLAS IDE Study",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4b47e430-322b-4bfc-bc1a-cfa2464e8403",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "fd9fb6a1-abec-4f71-a6f4-69c9f97d736c"
+  ],
+  "contentID": "AP005074 v3.0",
+  "lastPublished": "Fri May 29 2026 15:00:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 29 2026 15:00:11 GMT+0000",
+  "cq:lastReplicated": "Fri May 29 2026 15:00:15 GMT+0000",
+  "cq:lastModified": "Fri May 29 2026 14:57:40 GMT+0000",
+  "jcr:baseVersion": "fd9fb6a1-abec-4f71-a6f4-69c9f97d736c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:45:33 GMT+0000",
+  "jcr:lastModified": "Thu May 28 2026 22:54:51 GMT+0000",
+  "jcr:uuid": "8eb0cd76-1718-4b7f-85a8-13148eb47eb8",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Apr 05 2022 17:56:15 GMT+0000",
+      "text": "<p><span style=\"color: #ffb500;\"><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">&lt; </a><u><a href=\"/content/stryker/us/en/neurovascular/c/driven-by-evidence.html\">Back to Driven By Evidence Home</a></u></span><u></u></p>\n",
+      "jcr:lastModified": "Tue Apr 05 2022 18:01:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "altMob": "neuroform-atlas-hero-graphic",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "backgroundImageMobRef": "/content/dam/stryker/neurovascular/products/neuroform-atlas-stent-system/images/neuroform-atlas-hero-graphic.jpg",
+      "layoutOptions": "col-sm-6 pull-left",
+      "backgroundImageRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/Atlas--product-hero.jpg",
+      "jcr:created": "Fri Feb 18 2022 19:10:06 GMT+0000",
+      "alt": "Atlas IDE Study",
+      "jcr:lastModified": "Fri Apr 24 2026 19:01:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".5",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "10",
+          "topMargin": "15",
+          "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Neuroform Atlas Stent System</span><span class=\"fontsize-2-5em\"><br>\n </span></span></p>\n",
+          "jcr:lastModified": "Thu Apr 23 2026 15:23:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "leftMargin": "10",
+          "bottomMargin": "4"
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 19:10:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"futura-bold\">Proven performance. Long-term results.</span></h2>\r\n",
+          "line2": "Neuroform Atlas®&nbsp;Stent System is the most extensively studied adjunctive stent on the market to date.* From 1-year primary endpoints to 3-year durability, the&nbsp;ATLAS IDE study highlights how Neuroform Atlas is safe and effective long-term.",
+          "jcr:lastModified": "Tue May 12 2026 13:41:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "10"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "text_copy": {
+            "jcr:primaryType": "nt:unstructured",
+            "bottomPadding": ".5",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "3",
+            "topPadding": "1",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "40",
+            "topMargin": "15",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">ATLAS<span class=\"fontsize-8em\"><sup>*</sup></span> IDE Study results</span></span></span><span class=\"fontsize-2-5em\"><br>\n </span></span></p>\n",
+            "jcr:lastModified": "Wed Mar 18 2026 17:43:18 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "backgroundColor": "rgba(255,181,0,1)",
+            "textIsRich": "true",
+            "leftMargin": "10",
+            "bottomMargin": "4"
+          },
+          "text_copy_1654321463": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "garrett.shue@stryker.com",
+            "leftPadding": "10",
+            "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+            "hideComponent": "false",
+            "jcr:created": "Fri Feb 18 2022 19:11:09 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Neuroform Atlas Stent System</span></span></span></h1>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Proven performance. Long-term results.</span></span></h2>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Neuroform Atlas® Stent System is the most extensively studied adjunctive stent on the market to date.* From 1-year primary endpoints to 3-year durability, the ATLAS IDE study highlights how Neuroform Atlas is safe and effective long-term.</span></span></p>\n",
+            "jcr:lastModified": "Mon Apr 20 2026 15:29:42 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "textIsRich": "true"
+          }
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Apr 20 2026 15:40:00 GMT+0000",
+      "jcr:lastModified": "Mon Apr 20 2026 15:40:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "description": "Background: The ATLAS trial was a prospective, multicenter, single-arm, IDE study to evaluate the safety and effectiveness of the Neuroform Atlas Stent System for the treatment of wide-necked bifurcation aneurysms. \r\n",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "three-year-outcomes",
+      "jcr:created": "Mon Apr 20 2026 13:39:01 GMT+0000",
+      "title": "ATLAS study 3-year outcomes",
+      "jcr:lastModified": "Tue Apr 21 2026 13:46:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1323174647_copy_853169952": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 09 2026 18:14:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">ATLAS Study <span style=\"color: #ffb500;\">3-year</span> outcomes&nbsp;</span></span></p>\n<p><b>Background</b></p>\n<p><span class=\"fontsize-1-5em\">The ATLAS trial was a prospective, multicenter, single-arm, IDE study to evaluate the safety and effectiveness of the Neuroform Atlas Stent System for the treatment of wide-necked bifurcation aneurysms.&nbsp;</span><br>\n</p>\n",
+      "jcr:lastModified": "Tue May 12 2026 13:40:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "tabs_1893207629_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Apr 08 2026 17:31:48 GMT+0000",
+      "jcr:lastModified": "Mon Apr 20 2026 15:42:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Anterior circulation</span></b> cohort</span>",
+          "jcr:lastModified": "Tue Apr 21 2026 14:29:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">Of the 182 patients initially enrolled in the anterior cohort, 146 were re assessable for the composite safety analysis. Due to differences between clinical and radiographic follow-up&nbsp;requirements, 44 patients at 24 months and 26 patients at 36 months were assessable for the composite effectiveness analysis.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 17:46:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Apr 23 2026 15:33:09 GMT+0000",
+              "alt": "96.3% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -96_3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 17:04:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 15:37:11 GMT+0000",
+              "alt": "4.1% donut chart ",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -04_1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 17:04:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "92.3% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -92_3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:19:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary efficacy outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">RR1 without retreatment or significant parent artery stenosis</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "5.5%  donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -05_5.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:19:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "0% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -00_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:19:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Delayed target aneurysm rupture</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">146</span></span></span></p>\n<p style=\"text-align: center;\">Patients</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">6.1mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean aneurysm size</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:49:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">1.2</span></span></span></p>\n<p style=\"text-align: center;\">Mean dome/neck ratio</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_456796231_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "text": "<p>Jankowitz B, Jadhav AP, Gross B, et al. Post-approval study 3-year outcomes of the Neuroform Atlas stent for the treatment of wide-necked intracranial aneurysms.&nbsp;J Neurointerv Surg. Published online January 30, 2026. doi:10.1136/jnis-2025-024547<br>\n* As of February 2026</p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 13:50:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_941860237_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:46:54 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:46:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Wed May 20 2026 17:54:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgb(76,125,122)",
+                  "externalLink": "https://pubmed.ncbi.nlm.nih.gov/41617495/",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/41617495/",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 3-year outcomes",
+              "ctaDeepLinkID": "three-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:51:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        },
+        "text_495514356_copy__472645696": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+          "gradientDirection": "diagonal2",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">&quot;The results of the long-term assessment of&nbsp;Neuroform&nbsp;Atlas demonstrate its exceptional safety and efficacy in the treatment of both anterior and posterior wide neck bifurcation aneurysms, with favorable long-term occlusion rates, and no delayed target aneurysms ruptures which reinforces stent-assisted coiling as an effective short term aneurysm occlusion strategy with long term results comparable to flow diversion.&quot;</span></span></span></p>\n<p><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Dr. Brian Jankowitz, Co-PI of the ATLAS IDE Study</span></span></b></span></span></p>\n",
+          "jcr:lastModified": "Tue May 12 2026 13:42:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "backgroundColor": "rgb(99,92,79)",
+          "textIsRich": "true"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Posterior circulation</span></b> cohort</span>",
+          "jcr:lastModified": "Mon Apr 20 2026 14:37:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">Of the 116 patients initially enrolled in the posterior cohort, 101 were assessable for the composite safety analysis. Due to differences between clinical and radiographic follow-up&nbsp;requirements, 29 patients at 24 months and 24 patients at 36 months were assessable for the composite effectiveness analysis.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 17:47:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "79.2% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -79_2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:23:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "5% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -05_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:24:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "75% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -75_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:24:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary efficacy outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">RR1 without retreatment or significant parent artery stenosis</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "8.9% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -08_9.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:24:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "0% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -00_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:20:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Delayed target aneurysm rupture</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">101</span></span></span></p>\n<p style=\"text-align: center;\">Patients</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:38:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">7.0mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean aneurysm size</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:38:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">1.2</span></span></span></p>\n<p style=\"text-align: center;\">Mean dome/neck ratio</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_456796231": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "text": "<p>Jankowitz B, Jadhav AP, Gross B, et al. Post-approval study 3-year outcomes of the Neuroform Atlas stent for the treatment of wide-necked intracranial aneurysms.&nbsp;J Neurointerv Surg. Published online January 30, 2026. doi:10.1136/jnis-2025-024547<br>\n* As of February 2026</p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 13:50:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_copy_1991029233": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:52:34 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:52:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 3-year outcomes",
+              "ctaDeepLinkID": "three-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:51:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Wed May 20 2026 17:54:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgb(76,125,122)",
+                  "externalLink": "https://pubmed.ncbi.nlm.nih.gov/41617495/",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/41617495/",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        },
+        "text_495514356_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+          "gradientDirection": "diagonal2",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">&quot;The results of the long-term assessment of&nbsp;Neuroform&nbsp;Atlas demonstrate its exceptional safety and efficacy in the treatment of both anterior and posterior wide neck bifurcation aneurysms, with favorable long-term occlusion rates, and no delayed target aneurysms ruptures which reinforces stent-assisted coiling as an effective short term aneurysm occlusion strategy with long term results comparable to flow diversion.&quot;</span></span></span></p>\n<p><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Dr. Brian Jankowitz, Co-PI of the ATLAS IDE Study</span></span></b></span></span></p>\n",
+          "jcr:lastModified": "Tue May 12 2026 13:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "backgroundColor": "rgb(99,92,79)",
+          "textIsRich": "true"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Anterior"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Posterior"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Apr 20 2026 13:38:53 GMT+0000",
+      "jcr:lastModified": "Mon Apr 20 2026 13:38:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "description": "Background: The ATLAS trial is a prospective, multicenter, single-arm, open-label study of unruptured, wide-necked intracranial aneurysms treated with the Neuroform Atlas stent and adjunctive coiling. All results are core-lab adjudicated\r\n",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "one-year-outcomes",
+      "jcr:created": "Mon Apr 20 2026 13:39:01 GMT+0000",
+      "title": "Atlas study 1-year outcomes",
+      "jcr:lastModified": "Tue Apr 21 2026 13:46:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1323174647_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 09 2026 18:14:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">ATLAS Study <span style=\"color: #ffb500;\">1-year</span> outcomes&nbsp;</span></span></p>\n<p><b>Background</b></p>\n<p><span class=\"fontsize-1-5em\">The ATLAS trial is a prospective, multicenter, single-arm, open-label study of unruptured, wide-necked intracranial aneurysms treated with the Neuroform Atlas stent and adjunctive coiling. All results are core-lab adjudicated.</span></p>\n",
+      "jcr:lastModified": "Tue May 12 2026 13:40:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "tabs_1893207629_copy_1905479160": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Apr 08 2026 17:31:48 GMT+0000",
+      "jcr:lastModified": "Wed Apr 29 2026 17:48:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Anterior circulation</span></b> cohort</span>",
+          "jcr:lastModified": "Mon Apr 20 2026 14:50:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">The pivotal ATLAS IDE study is the largest evaluation of its kind, including an anterior circulation cohort of 182 patients treated across 25 U.S. centers.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 17:49:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "88.2% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -88_2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:25:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "4.4% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -04_4.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:51:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_120558133": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Apr 24 2026 18:47:04 GMT+0000",
+          "jcr:lastModified": "Fri Apr 24 2026 18:47:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "84.7% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -84_7.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:52:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary efficacy outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">RR1 without retreatment or significant parent artery stenosis</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "3.8% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -03_8.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:26:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">182</span></span></span></p>\n<p style=\"text-align: center;\">Patients</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:47:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">6.1mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean aneurysm size</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:47:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">4.1mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean neck width</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:47:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 23 2026 19:01:46 GMT+0000",
+          "text": "<p>Zaidat OO, Hanel RA, Sauvageau EA, et al. Pivotal Trial of the Neuroform Atlas Stent for Treatment of Anterior Circulation Aneurysm. Stroke. 2020; 51:2087 -2094.</p>\n<p>* As of February 2026</p>\n",
+          "jcr:lastModified": "Thu Apr 23 2026 19:01:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_162987995_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:54:56 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:54:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Fri May 15 2026 10:48:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7306258/",
+                  "externalLinkType": "dam"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 1-year outcomes",
+              "ctaDeepLinkID": "one-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:55:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        },
+        "fullbleedpanel": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:48:11 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(99,92,79)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_495514356_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+              "gradientDirection": "diagonal2",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffffff;\">In the&nbsp;ATLAS IDE anterior circulation aneurysm cohort premarket approval study, the Neuroform Atlas stent with adjunctive coiling met the primary end points and demonstrated high rates of long-term complete aneurysm occlusion at 12 months, with 100% technical success and &lt;5% morbidity.</span></span></span></p>\n",
+              "jcr:lastModified": "Tue May 12 2026 13:43:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Posterior circulation</span></b> cohort</span>",
+          "jcr:lastModified": "Mon Apr 20 2026 15:01:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">The ATLAS IDE study included a posterior circulation cohort of 116 patients with wide-necked intracranial aneurysms, representing the largest clinical evaluation of the Neuroform Atlas Stent in this patient population.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 18:30:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "85.3% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -85_3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue May 12 2026 13:51:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "4.3% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -04_3.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:27:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Apr 24 2026 18:48:01 GMT+0000",
+          "jcr:lastModified": "Fri Apr 24 2026 18:48:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "76.7% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -76_7.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu May 14 2026 00:23:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary efficacy outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">RR1 without retreatment or significant parent artery stenosis</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "7.8% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -07_8.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 18:30:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">116</span></span></span></p>\n<p style=\"text-align: center;\">Patients</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 15:01:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">7.1mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean aneurysm size</p>\n",
+              "jcr:lastModified": "Thu Apr 23 2026 19:05:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">4.7mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean neck width</p>\n",
+              "jcr:lastModified": "Thu Apr 23 2026 19:06:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_456796231_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Jankowitz BT, Jadhav AP, Gross B, et al, Pivotal trial of the Neuroform Atlas stent for treatment of posterior circulation aneurysms: one-year outcomes, Journal of NeuroInterventional Surgery 2022;14:143-148.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 21:21:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_846593495_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:55:29 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:55:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Fri May 15 2026 10:48:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/33722961/",
+                  "externalLinkType": "dam"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 1-year outcomes",
+              "ctaDeepLinkID": "one-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:55:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        },
+        "fullbleedpanel_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:48:11 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(99,92,79)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_495514356_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+              "gradientDirection": "diagonal2",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffffff;\">In the&nbsp;ATLAS IDE aneurysm cohort premarket approval study, Y-stent–assisted coiling with Neuroform demonstrated high rates of complete aneurysm occlusion at 12 months, with low rates of morbidity.</span></span></span></p>\n",
+              "jcr:lastModified": "Tue May 12 2026 13:43:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Y-stenting subset</span></b></span>",
+          "jcr:lastModified": "Mon Apr 20 2026 15:03:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">A subgroup analysis was conducted among subjects treated with Y-stent-assisted coiling in the ATLAS IDE study. Enrollment was not stratified by stenting technique. The most common aneurysm locations in this subgroup were the basilar apex (56.7%), anterior communicating artery (20.0%), and middle cerebral artery bifurcation (11.7%).&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 18:30:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "88% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -88_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:48:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "1.7% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -01_7.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:45:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Apr 24 2026 18:48:48 GMT+0000",
+          "jcr:lastModified": "Fri Apr 24 2026 18:48:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "81.1% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -81_1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:45:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary efficacy outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">RR1 without retreatment or significant parent artery stenosis</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "5% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -05_0.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:44:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">60</span></span></span></p>\n<p style=\"text-align: center;\">Patients</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 14:59:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">6.7mm</span></span></span></p>\n<p style=\"text-align: center;\">Median aneurysm size</p>\n",
+              "jcr:lastModified": "Thu Apr 23 2026 19:06:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">4.3mm</span></span></span></p>\n<p style=\"text-align: center;\">Median neck width</p>\n",
+              "jcr:lastModified": "Thu Apr 23 2026 19:06:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_456796231_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Jadhav AP, Desai SM, Jovin TG, et al. Y-Stent-Assisted Coiling of Wide-Necked Intracranial Aneurysms With the Neuroform Atlas Stent System. Stroke Vasc Interv Neurol. 2022;3(1):e000437. Published 2022 Aug 31. doi:10.1161/SVIN.122.000437<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 14:57:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_201687824_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:55:43 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:55:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Tue May 12 2026 13:56:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/41585758/",
+                  "externalLinkType": "dam"
+                }
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 1-year outcomes",
+              "ctaDeepLinkID": "one-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:55:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        },
+        "fullbleedpanel_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:48:11 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(99,92,79)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_495514356_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+              "gradientDirection": "diagonal2",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffffff;\">In the&nbsp;ATLAS IDE aneurysm cohort premarket approval study, Y-stent–assisted coiling with Neuroform demonstrated high rates of complete aneurysm occlusion at 12 months, with low rates of morbidity.</span></span></span></p>\n",
+              "jcr:lastModified": "Tue May 12 2026 13:43:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">MCA subset</span></b></span>",
+          "jcr:lastModified": "Mon Apr 20 2026 15:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">Of the anterior circulation patients enrolled in the ATLAS IDE study, 35 patients underwent treatment for middle cerebral artery (MCA) aneurysms and were included in a subgroup analysis.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue May 12 2026 13:55:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "80.8% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -80_8.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:44:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Raymond-Roy 1</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "8.5% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -08_5.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:44:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Primary safety outcome</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">Major stroke or neurological death</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:47:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols3_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 13:44:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "5.7% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -sm -05_7.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Apr 23 2026 19:43:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Retreatment</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 13:48:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 09 2026 17:42:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">35</span></span></span></p>\n<p style=\"text-align: center;\">Patients<br>\n27 MCA bifurcation, 5 M1, 3 M2</p>\n",
+              "jcr:lastModified": "Thu Apr 23 2026 19:15:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">6.0mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean aneurysm size</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 15:06:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">4.4mm</span></span></span></p>\n<p style=\"text-align: center;\">Mean neck width</p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 15:06:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_456796231_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Hanel RA, Yoon N, Sauvageau E, et al. Neuroform Atlas Stent for Treatment of Middle Cerebral Artery Aneurysms: 1-Year Outcomes From Neuroform Atlas Stent Pivotal Trial. Neurosurgery. 2021;89(1):102-108. doi:10.1093/neuros/nyab090<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 15:07:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:37:24 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:37:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:55:59 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:55:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 1-year outcomes",
+              "ctaDeepLinkID": "one-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:55:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Tue May 12 2026 13:56:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/33826707/",
+                  "externalLinkType": "dam"
+                }
+              }
+            }
+          }
+        },
+        "fullbleedpanel_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:48:11 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(99,92,79)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_495514356_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+              "gradientDirection": "diagonal2",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffffff;\">Stent-assisted coiling with the Neuroform Atlas Stent is a viable alternative to clipping for selected MCA aneurysms. Complete aneurysm occlusion rates have improved compared to historical data. Proper case selection can lead to acceptable endovascular results.</span></span></span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 15:07:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 21 2026 14:24:46 GMT+0000",
+          "alt": "Divider",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/1-home/images/SYK.ASC.Website.AEM-AssetsASC-Main-Divider.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Apr 21 2026 14:25:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 17:39:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><b><span class=\"futura-bold\">Jailing vs. recrossing subset</span></b></span>",
+          "jcr:lastModified": "Mon Apr 27 2026 21:16:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 09 2026 19:03:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">A total of 298 aneurysms were treated with Neuroform Atlas stent-assisted coiling across 25 centers in the ATLAS IDE study. Procedural technique, including jailing or re-crossing, was selected at the operator's discretion.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 17:54:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols2_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "jcr:lastModified": "Wed Apr 08 2026 18:10:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Apr 23 2026 18:18:02 GMT+0000",
+              "alt": "89.4% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -89_4.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Apr 29 2026 18:28:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate (jailing)</span></span></p>\n<p style=\"text-align: center;\">N=182 (62%)<br>\nRR1 at 12 months DSA<br>\n</p>\n",
+              "jcr:lastModified": "Mon Apr 27 2026 21:27:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Apr 27 2026 21:25:47 GMT+0000",
+              "alt": "83.9% donut chart",
+              "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/images/donut -lg -83_9.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Apr 28 2026 15:14:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 13:45:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Complete occlusion rate (recrossing)</span></span></p>\n<p style=\"text-align: center;\">N=101 (34%)<br>\nRR1 at 12 months DSA<br>\n</p>\n",
+              "jcr:lastModified": "Mon Apr 27 2026 21:28:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:28:41 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:28:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">25</span></span></span></p>\n<p style=\"text-align: center;\">Centers in the US</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 17:46:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:42:39 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\">298</span></span></span></p>\n<p style=\"text-align: center;\">Total patients</p>\n",
+              "jcr:lastModified": "Thu Apr 09 2026 19:04:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "text_329871467": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 20 2026 15:14:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Similar aneurysm size and location were observed between the two groups</li>\n<li>No statistically significant difference in the number of coils used or the duration of the procedure.</li>\n<li>No statistically significant difference in occlusion rate or safety rate at 12 months</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 15:15:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "text_456796231_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 20 2026 13:49:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Snyder T, Jankowitz B, Zaidat OO, et al. Neuroform Atlas stent-assisted coiling: jailing versus re-crossing techniques. J Neurointerv Surg. Published online March 4, 2026. doi:10.1136/jnis-2025-024541.&nbsp;* As of February 2026<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 15:16:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "jcr:lastModified": "Mon Apr 27 2026 21:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "cols4_1757785217_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed May 20 2026 17:56:13 GMT+0000",
+          "jcr:lastModified": "Wed May 20 2026 17:56:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 20 2026 17:48:06 GMT+0000",
+              "CTATitle": "Additional 1-year outcomes",
+              "ctaDeepLinkID": "one-year-outcomes",
+              "jcr:lastModified": "Wed May 20 2026 17:55:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "buttonset_976923534_": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 20:36:24 GMT+0000",
+              "jcr:lastModified": "Tue May 12 2026 13:56:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "item0": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "buttonText": "Read the paper",
+                  "damLink": "https://pubmed.ncbi.nlm.nih.gov/41781211/",
+                  "externalLinkType": "dam"
+                }
+              }
+            }
+          }
+        },
+        "fullbleedpanel_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Apr 09 2026 17:48:11 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(99,92,79)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_495514356_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Apr 09 2026 17:48:41 GMT+0000",
+              "gradientDirection": "diagonal2",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffffff;\">There were no significant differences in safety or efficacy for SAC between the jailing or re-crossing technique.</span></span></span></p>\n",
+              "jcr:lastModified": "Mon Apr 20 2026 15:14:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys6": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 6,
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Anterior"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Posterior"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Y-Stenting subset"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "MCA subset"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "Jailing vs. recrossing subset"
+        }
+      }
+    },
+    "sectionseparator_cop_371248461": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Apr 20 2026 13:38:53 GMT+0000",
+      "jcr:lastModified": "Mon Apr 20 2026 13:38:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "dbe",
+      "jcr:created": "Mon Apr 20 2026 13:39:01 GMT+0000",
+      "title": "Additional Evidence",
+      "jcr:lastModified": "Tue Apr 28 2026 14:40:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_367734885": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 15:36:18 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 15:36:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 18 2022 19:31:32 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Feb 18 2022 20:19:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/atlas-ide-study/videos/Atlas-Legacy-Edited-Dr-Jankowitz.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Atlas-Legacy-Edited-Dr-Jankowitz-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Wed Dec 17 2025 22:07:06 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Mar 10 2026 14:47:39 GMT+0000",
+          "text": "<p>PP-000325</p>\n",
+          "jcr:lastModified": "Tue Mar 10 2026 14:47:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 01 2022 15:43:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">&quot;Atlas was designed to be simple to use and highly effective, with pinpoint accuracy and the lowest metal-to-artery ratio of any device on the US market.&quot;</span></span><br>\n<span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><br>\n <span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dr. Brian Jankowitz</span></span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Mar 10 2026 14:47:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "6",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "buttonset": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)|rgba(76,125,122,1)",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Oct 01 2025 16:21:07 GMT+0000",
+      "jcr:lastModified": "Wed Oct 01 2025 16:22:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "buttonText": "Important safety information",
+          "damLink": "/content/dam/stryker/neurovascular/products/neuroform-atlas-stent-system/resources/Neuroform_Atlas_IFU_US_03-13-2025.pdf",
+          "externalLinkType": "dam"
+        },
+        "item1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "internalLink": "/content/stryker/us/en/neurovascular/products/neuroform-atlas-stent-system",
+          "buttonText": "Learn more about Neuroform Atlas",
+          "externalLinkType": "int"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 21:33:34 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 21:33:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "fullbleedpanel_655567103": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Apr 20 2026 14:08:17 GMT+0000",
+      "jcr:lastModified": "Mon Apr 20 2026 14:13:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Mon Apr 20 2026 14:09:16 GMT+0000",
+          "jcr:lastModified": "Mon Apr 20 2026 14:12:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_87888242": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": "10",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Mon Apr 20 2026 14:01:14 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2em\"><span style=\"color: #ffffff;\">We are driven by clinical evidence and committed to proving the safety and effectiveness of our products in treating the toughest stroke cases.</span></span></p>\n",
+              "jcr:lastModified": "Tue Apr 21 2026 14:20:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true"
+            },
+            "text_1598971407": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": ".05",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "leftPadding": ".5",
+              "topPadding": "1",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "40",
+              "jcr:created": "Tue Apr 28 2026 14:41:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><a href=\"/us/en/neurovascular/c/driven-by-evidence.html\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"><span style=\"color: #000000;\">LEARN MORE</span></span></span></span></a></p>\n",
+              "jcr:lastModified": "Tue Apr 28 2026 14:47:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": ".5",
+              "backgroundColor": "rgb(255,181,0)",
+              "textIsRich": "true",
+              "leftMargin": "40"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Tue Apr 28 2026 14:48:17 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Tue Apr 28 2026 14:49:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_copy_214309751": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Apr 20 2026 13:39:01 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Tue Apr 21 2026 14:19:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_1472797256": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:51:53 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"> <span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Contact us.</span></span></span></span></p>\n",
+      "jcr:lastModified": "Mon Sep 30 2024 16:36:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "1439",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Sep 30 2024 16:37:03 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you for your submission.",
+      "jcr:lastModified": "Mon Apr 20 2026 14:00:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "sectionseparator_514805424": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Mon Mar 09 2026 14:41:56 GMT+0000",
+      "jcr:lastModified": "Mon Mar 09 2026 14:41:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* The&nbsp;ATLAS study was sponsored by Stryker.</p>\r\n<p>This document is intended solely for the use of healthcare professionals.</p>\r\n<p>A physician must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that physicians be trained in the use of any particular product before using it in a procedure. The information presented is intended to demonstrate the breadth of Stryker product offerings. A physician must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.</p>\r\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: Neuroform Atlas, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\r\n",
+    "jcr:lastModified": "Tue May 12 2026 13:44:17 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

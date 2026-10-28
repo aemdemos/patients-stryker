@@ -1,0 +1,620 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Training centers",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "03ab31d0-a738-423a-998e-dc09d99c48f7",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+  "jcr:predecessors": [
+    "36b48744-a2a5-4550-8128-7930df11ca3e"
+  ],
+  "contentID": "AP004176 v1.0",
+  "lastPublished": "Fri Jul 14 2023 17:48:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 14 2023 17:48:18 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 14 2023 17:48:19 GMT+0000",
+  "cq:lastModified": "Tue Jul 11 2023 02:59:59 GMT+0000",
+  "jcr:baseVersion": "36b48744-a2a5-4550-8128-7930df11ca3e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jun 28 2023 19:46:33 GMT+0000",
+  "jcr:uuid": "f8d9a3a5-7f4d-46d1-96e1-2c931556aa04",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brianna.warsen@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "layoutOptions": "col-sm-6 pull-left",
+      "backgroundImageRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Centers -header.jpg",
+      "jcr:created": "Thu Apr 16 2020 18:07:29 GMT+0000",
+      "alt": "SKILL Training Centers (header)",
+      "jcr:lastModified": "Thu May 18 2023 18:34:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2.5",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu May 07 2020 17:55:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h1><span class=\"fontsize-1-25em\">SKILL <span class=\"futura-bold\">Training centers</span></span></h1>\n",
+          "jcr:lastModified": "Thu May 18 2023 18:34:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:12:50 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:12:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1229341572": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:14:05 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:14:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_1257478377_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu May 18 2023 18:00:10 GMT+0000",
+      "text": "<h2>Advancing your <span class=\"futura-bold\">procedural skills</span></h2>\n<p><span class=\"fontsize-1-25em\">Stryker’s globally connected training centers deliver hands-on learning opportunities, involving simulation, flow models, emerging virtual technologies, C-arm and other leading-edge lab equipment, through computer-assisted medical simulation technology for the experiential training of neurointerventional procedures.</span></p>\n<p><span class=\"fontsize-1-25em\">With a realistic, reproducible and safe environment, these simulations allow users and participants to assess and enhance their procedural skills. Additionally, this technology enables healthcare professionals to create a personalized curriculum, and customize programs with progressive levels of training.</span></p>\n",
+      "jcr:lastModified": "Thu May 18 2023 18:38:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Tue May 09 2023 20:06:57 GMT+0000",
+      "jcr:lastModified": "Tue May 09 2023 20:10:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue May 09 2023 20:07:15 GMT+0000",
+          "alt": "SKILL Training Centers -technical knowledge",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -technical knowledge.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu May 18 2023 18:40:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "15",
+          "jcr:created": "Tue May 09 2023 20:07:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>Evolving your <span class=\"futura-bold\">technical knowledge</span></h2>\n<p><span class=\"fontsize-1-25em\">Complementing this technology, Stryker’s training centers also allow healthcare professionals to develop the technical aspects of neuroendovascular procedures and treatments through the use of flow models. Performed under real-time simulated fluoroscopy, participants can reinforce their skills in various treatments.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Diagnostic angiography</span></li>\n<li><span class=\"fontsize-1-25em\">Aneurysm embolization with coils</span></li>\n<li><span class=\"fontsize-1-25em\">Balloon and stent-assisted coiling</span></li>\n<li><span class=\"fontsize-1-25em\">Mechanical thrombectomy</span></li>\n<li><span class=\"fontsize-1-25em\">Angioplasty</span></li>\n<li><span class=\"fontsize-1-25em\">Stenting</span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu May 18 2023 20:26:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_393769139": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brianna.warsen@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed May 24 2023 16:04:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">SKILL Training Centers provide a truly innovative and holistic approach to both <span style=\"color: #000000;\">ischemic</span> and <span style=\"color: #000000;\">hemorrhagic stroke education</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue Jul 11 2023 02:55:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 18 2023 18:43:08 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">With the shared and ultimate goal of improving patient lives, <span class=\"futura-bold\">Stryker is committed to partnering with fellows and healthcare professionals</span> to advance patient care with the right medical education at the right time in their career.</span></p>\n",
+      "jcr:lastModified": "Wed May 24 2023 16:06:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brianna.warsen@stryker.com",
+      "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jul 11 2023 02:56:44 GMT+0000",
+      "alt": "SKILL Training Centers_071023.1",
+      "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Centers_071023.1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jul 11 2023 02:59:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:14:11 GMT+0000",
+      "title": "Global locations",
+      "jcr:lastModified": "Thu May 07 2020 18:14:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1005040476": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Salt Lake City, UT</span></span></p>\n",
+      "jcr:lastModified": "Thu May 18 2023 18:47:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:26:18 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:26:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Salt Lake City, UT",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Salt Lake City UT -room.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:47:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Salt Lake City, UT",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/UT_1.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:47:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_1005040476_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Amsterdam, The Netherlands</span></span></p>\n",
+      "jcr:lastModified": "Thu May 07 2020 18:24:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_76419199": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:26:27 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:26:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Amsterdam, The Netherlands",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Amsterdam_1.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:23:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Amsterdam, The Netherlands",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Amsterdam_2.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:23:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "text_1005040476_copy_1397603401": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Suzhou, China</span></span></p>\n",
+      "jcr:lastModified": "Thu May 07 2020 18:24:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1207911884": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:26:39 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:26:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Suzhou, China",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/China_2.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Suzhou, China",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/China_1.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "text_1005040476_copy_896386931": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Osaka, Japan</span></span></p>\n",
+      "jcr:lastModified": "Thu May 07 2020 18:25:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1283006838": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:26:50 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:26:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Osaka, Japan",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Osaka,Japan_2.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Osaka, Japan",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Osaka,Japan_1.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "text_1005040476_copy_1238079095": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Tokyo, Japan</span></span></p>\n",
+      "jcr:lastModified": "Thu May 07 2020 18:25:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_463345900": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:27:00 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:27:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Tokyo, Japan",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Tokyo,Japan_1.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Tokyo, Japan",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/locations/Tokyo,Japan_2.jpg",
+          "jcr:lastModified": "Thu May 14 2020 14:24:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "text_1005040476_copy_437436805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Gurugram, India</span></span></p>\n",
+      "jcr:lastModified": "Thu May 18 2023 18:48:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_463345900_copy_401489769": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:27:00 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:27:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Gurugram, India",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Gurugram India -OR.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:49:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Gurugram, India",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Gurugram India -signage.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:50:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_1005040476_copy_1370501785": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Mahwah, NJ</span></span></p>\n",
+      "jcr:lastModified": "Thu May 18 2023 18:50:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_463345900_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:27:00 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:27:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Mahwah, NJ",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Mahwah NJ - stadium room.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:51:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Mahwah, NJ",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Mahwah NJ -exterior.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:51:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_1005040476_copy_85477924": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:22:42 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Leesburg, VA</span></span></p>\n",
+      "jcr:lastModified": "Thu May 18 2023 18:51:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_463345900_copy_1157847344": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:27:00 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:27:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Leesburg, VA",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Leesburg VA-exterior.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:52:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu May 07 2020 18:23:29 GMT+0000",
+          "alt": "Leesburg, VA",
+          "srcFileRef": "/content/dam/stryker/education-and-training/skill/images/SKILL Training Center -Leesburg VA -OR.jpg",
+          "jcr:lastModified": "Thu May 18 2023 18:52:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brianna.warsen@stryker.com",
+      "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+      "jcr:created": "Thu May 25 2023 20:13:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\">Contact your local representative to find out more!</span></span>",
+      "jcr:lastModified": "Thu May 25 2023 20:13:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "sectionseparator_1526283186": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu May 07 2020 18:27:42 GMT+0000",
+      "jcr:lastModified": "Thu May 07 2020 18:27:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu May 07 2020 18:11:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brianna.warsen@stryker.com",
+    "disclaimer-type": "path",
+    "path": "/content/stryker/us/en/training-and-education/neurotechnology/neurovascular/skill",
+    "disclaimer": "<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: NeuroElite, SKILL, SKILL Assist MAX, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\r\n<p><b>This document is intended solely for the use of healthcare professionals.</b></p>\r\n<p>A physician must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that physicians be trained in the use of any particular product before using it in a procedure. The information presented is intended to demonstrate the breadth of Stryker product offerings. A physician must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area. </p>\r\n<p>Copyright © 2020 Stryker &#x3;AP002881 v2.0</p>\r\n",
+    "jcr:lastModified": "Wed May 24 2023 16:11:41 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

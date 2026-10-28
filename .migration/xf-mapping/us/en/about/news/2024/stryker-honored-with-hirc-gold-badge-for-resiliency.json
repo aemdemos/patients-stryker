@@ -1,0 +1,124 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker honored with HIRC’s gold badge for resiliency",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e81e40e8-f748-4acd-9e53-33d5376665ee",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "HIRC Resiliency Partner Gold 2024",
+  "jcr:predecessors": [
+    "8494a062-b44f-4992-8a31-75bcfe2c0b92"
+  ],
+  "lastPublished": "Wed Dec 18 2024 15:17:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Dec 18 2024 15:17:37 GMT+0000",
+  "cq:lastReplicated": "Wed Dec 18 2024 15:17:39 GMT+0000",
+  "cq:lastModified": "Tue Dec 17 2024 22:10:11 GMT+0000",
+  "jcr:description": "Stryker has been awarded the gold-level Healthcare Industry Resilience Collaborative (HIRC) resiliency badge, which recognizes organizations that demonstrate exceptional adaptability and performance within the healthcare supply chain.",
+  "jcr:baseVersion": "8494a062-b44f-4992-8a31-75bcfe2c0b92",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Dec 18 2024 15:17:36 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Dec 17 2024 22:10:11 GMT+0000",
+  "jcr:uuid": "818ca8dd-7126-4669-b3ac-76a55d8a2b89",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 17 2024 20:18:12 GMT+0000",
+      "jcr:lastModified": "Tue Dec 17 2024 20:18:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Dec 17 2024 20:18:28 GMT+0000",
+          "alt": "HIRC Resiliency Partner Gold 2024",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/stryker-honored-with-hirc’s-gold-badge-for-resiliency/HIRC-Gold-Badge-2024-300.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Dec 17 2024 20:18:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 17 2024 18:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Dec 17 2024 18:17:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 17 2024 18:17:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Stryker has been awarded the gold-level Healthcare Industry Resilience Collaborative (HIRC) resiliency badge. This badge recognizes organizations that demonstrate exceptional adaptability and performance within the healthcare supply chain. This significant industry award validates the strategic strength and reliability of Stryker’s Orthopaedics and Spine division and its impact across our enterprise and industry.</p>\n<p>“Recognition with the gold-level HIRC Resiliency Badge is a milestone for our Global Quality and Operations (GQO) and the entire enterprise,” said Mike Carlin, president of Customer Solutions for Stryker. “It reinforces the importance of our role and inspires us to continue driving innovation, fostering collaboration and delivering excellence at every level.”</p>\n<p>The third-party evaluation of supply chain resiliency is based on demand planning, inventory management, logistics, supply chain visibility, supplier management, risk management/contingency planning and operational health. Through its comprehensive, multi-layered approach, the HIRC Resiliency Badge program aims to unify the industry with a common and trusted definition of resiliency.</p>\n<p><b>Criteria that set Stryker apart from others vying for this honor:</b></p>\n<ul>\n<li>High level of commitment and an organizational culture towards continuous improvement.</li>\n<li>Robust toolsets for capacity and demand planning.</li>\n<li>Mature processes for assessing upstream visibility and risks.</li>\n<li>Robust Business Continuity Planning process including buffer inventory and safety stock.</li>\n<li>Highly structured approach towards allocation with continuous monitoring of supply continuity.</li>\n<li>Redundancy available at multiple tiers in the supply chain including suppliers, logistic carriers and alternative products.</li>\n</ul>\n<p>Stryker is driving innovation by fostering world-class supply chain in step with current and emerging customer needs, as well as industry trends. With significant investments in Lean methodologies, strategic supplier partnerships and cutting-edge technologies, the company continues to strengthen its global manufacturing and distribution networks. Our focus is on building a resilient, agile supply chain that instills confidence and supports our mission to improve healthcare worldwide.</p>\n",
+          "jcr:lastModified": "Tue Dec 17 2024 19:59:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Tue Dec 17 2024 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "17-Dec-2024",
+    "jcr:lastModified": "Tue Dec 17 2024 18:14:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModified": "Tue Dec 17 2024 18:20:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Dec 17 2024 18:20:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/stryker-honored-with-hirc’s-gold-badge-for-resiliency/HIRC-thumbnail-v2.png"
+  }
+}

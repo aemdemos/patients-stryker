@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker completes acquisition of Amplitude Vascular Systems to add next-generation IVL technology to peripheral vascular portfolio",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3cdce1ac-4dff-4a62-8ac3-18636ff4c561",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Stryker logo",
+  "jcr:predecessors": [
+    "9765c790-e3bc-4a98-880d-4638187ab56c"
+  ],
+  "contentID": "COMM-GSNPS-SYK-3349750",
+  "lastPublished": "Thu May 07 2026 20:09:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu May 07 2026 20:09:18 GMT+0000",
+  "cq:lastReplicated": "Thu May 07 2026 20:09:21 GMT+0000",
+  "cq:lastModified": "Thu May 07 2026 20:08:25 GMT+0000",
+  "jcr:description": "Stryker announced that it has completed the acquisition of Amplitude Vascular Systems, Inc. (AVS), a privately held medical technology company developing a next-generation intravascular lithotripsy (IVL) platform designed to treat complex peripheral arterial disease.",
+  "jcr:baseVersion": "9765c790-e3bc-4a98-880d-4638187ab56c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu May 07 2026 20:09:18 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu May 07 2026 18:14:35 GMT+0000",
+  "jcr:uuid": "8562f643-e1be-4589-ac91-8bdc0e5e6422",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Thu May 07 2026 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "07-May-2026",
+    "jcr:lastModified": "Thu May 07 2026 18:11:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker_logo2015_left",
+    "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu May 07 2026 18:12:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "text": "<p><b>PORTAGE, Mich., USA</b> – <b>May 7, 2026</b> – Stryker (NYSE: SYK) announced that it has completed the acquisition of Amplitude Vascular Systems, Inc. (AVS), a privately held medical technology company developing a next-generation intravascular lithotripsy (IVL) platform designed to treat complex peripheral arterial disease.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2026/Stryker-completes-acquisition-of-Amplitude-Vascular-Systems-to-add-next-generation-IVL-technology-to-peripheral-vascular-portfolio/default.aspx\"><span class=\"standalone-link\">Read full press release here</span></a><br>\n&nbsp;</p>\n",
+    "jcr:lastModified": "Thu May 07 2026 20:08:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

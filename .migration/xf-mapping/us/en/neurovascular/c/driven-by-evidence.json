@@ -1,0 +1,896 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Driven by Evidence",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d06957bf-1282-4919-bda7-3c2c5f88158c",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "27b0edf5-9940-4c67-a6dc-b884756b7950"
+  ],
+  "contentID": "AP003782 v3.0",
+  "lastPublished": "Wed Jan 08 2025 21:18:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 08 2025 21:18:26 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 08 2025 21:18:28 GMT+0000",
+  "cq:lastModified": "Thu Dec 12 2024 00:14:11 GMT+0000",
+  "jcr:description": "At Stryker, we are driven by clinical evidence and committed to proving the safety and effectiveness of our products in treating the toughest stroke cases.",
+  "jcr:baseVersion": "27b0edf5-9940-4c67-a6dc-b884756b7950",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:48:35 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/neurovascular"
+  ],
+  "jcr:lastModified": "Fri Nov 22 2024 01:17:07 GMT+0000",
+  "jcr:uuid": "530e24b0-fc07-4a55-b1e8-e9b4821302a9",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Mon Oct 14 2024 18:38:17 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Oct 14 2024 18:39:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/neurovascular/en/campaigns/driven_by_evidence/homepage/hero-carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurovascular/en/campaigns/driven-by-evidence/homepage/hero-carousel/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/neurovascular/en/campaigns/driven_by_evidence/homepage/hero-carousel/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/neurovascular/en/campaigns/driven-by-evidence/homepage/hero-carousel/mobile",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "16",
+          "jcr:created": "Mon Oct 14 2024 18:38:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Nov 14 2024 21:59:28 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "1",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Sun Sep 29 2024 22:24:29 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5-5-vw\"><span class=\"urw-egyptienne\">Driven by </span><br />\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">evidence</span></span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><br />\r\n For 20+ years, we’ve led advancements in stroke care through sponsored and investigator-initiated studies</span></span>",
+              "jcr:lastModified": "Sun Sep 29 2024 22:36:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:27:31 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:27:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:27:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-8vw\">37</span></span></span>",
+          "line2": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\">Ongoing&nbsp;<br>\r\n clinical studies&nbsp;</span></span>",
+          "jcr:lastModified": "Sun Sep 29 2024 22:28:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:28:57 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">At Stryker, we are driven by clinical evidence and committed to proving the safety and effectiveness of our products in treating the toughest stroke cases.</span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:29:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_940131854": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Oct 14 2024 15:21:05 GMT+0000",
+          "CTATitle": "VIEW ACUTE ISCHEMIC STUDIES",
+          "ctaDeepLinkID": "acute",
+          "jcr:lastModified": "Mon Oct 14 2024 15:23:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Oct 14 2024 15:20:37 GMT+0000",
+          "CTATitle": "VIEW Hemorrhagic stroke STUDIES",
+          "ctaDeepLinkID": "hemorrhagic",
+          "jcr:lastModified": "Mon Oct 14 2024 15:55:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      }
+    },
+    "cols_1909989169_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_1262283822": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "hemorrhagic",
+      "jcr:created": "Mon Oct 14 2024 15:53:39 GMT+0000",
+      "title": "hemorrhagic",
+      "jcr:lastModified": "Mon Oct 14 2024 15:54:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:34:28 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:34:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:34:34 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Hemorrhagic</span></span> <span class=\"urw-egyptienne\">stroke studies</span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:35:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:28:57 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Our unwavering commitment to research and innovation in the treatment of hemorrhagic stroke is driven by evidence.</span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:36:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "studies-hemorrhagic",
+      "jcr:created": "Tue Oct 08 2024 22:45:13 GMT+0000",
+      "title": "Hemorrhagic stroke studies",
+      "jcr:lastModified": "Tue Oct 08 2024 22:47:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:36:21 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:36:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Coil your patients<br>\n with confidence</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:02:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:37:43 GMT+0000",
+          "alt": "Coil your patients with confidence",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/coilyourpatients.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Sun Sep 29 2024 22:41:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:22:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/target-registry.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/target-registry",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text_253390054": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:42:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">The TARGET Registry</span> <span class=\"urw-egyptienne\">is an investigator-initiated prospective, multi center US registry of patients treated exclusively with Target 360 and Helical Detachable Coils led by Dr. Osama Zaidat at Mercy Health St. Vincent Hospital.</span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:03:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reliably handle <br>\nsmall aneurysms</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:02:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:43:05 GMT+0000",
+          "alt": "Reliably handle small aneurysms",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/reliablyhandlesmall.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Sun Sep 29 2024 22:43:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:22:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/ultra-registry.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/ultra-registry",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text_253390054_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:42:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">The ULTRA Registry</span> <span class=\"urw-egyptienne\">is an investigator-initiated prospective, multicenter US registry of patients with small (&lt;5mm) intracranial aneurysms treated exclusively with Target Ultra and Nano Detachable Coils led by Dr. Gaurav Jindal at the University of Maryland.</span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:03:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Effectively treat anterior and posterior aneurysms</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:02:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:44:50 GMT+0000",
+          "alt": "Effectively treat anterior and posterior aneurysms",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/effectivelytreatanterior.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Sun Sep 29 2024 22:45:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:23:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/atlas-ide-study.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/atlas-ide-study",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:45:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">The ATLAS IDE</span> <span class=\"urw-egyptienne\">study has shown excellent results from the largest to date pivotal data with high complete occlusion and low complication rates.</span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 22:03:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "0"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"font-size: 16.25px;\"><b><span class=\"futura-bold\">Attend to bifurcations<br>\n with confidence</span></b></span></p>\n",
+          "jcr:lastModified": "Thu Dec 12 2024 00:12:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:44:54 GMT+0000",
+          "alt": "Better attend to bifurcations",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/betterattendto.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Sun Sep 29 2024 22:45:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:23:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/atlas-y-stenting-subset.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/atlas-y-stenting-subset",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:46:29 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">The ATLAS Y-stenting subset</span> <span class=\"urw-egyptienne\">is the largest to date retrospective subset analysis of a single-arm trial which evaluates Y-stenting treatments of bifuraction aneurysms.*</span></p>\n",
+          "jcr:lastModified": "Thu Dec 12 2024 00:12:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_247419817": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 21:32:21 GMT+0000",
+      "jcr:lastModified": "Thu Nov 14 2024 21:32:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1725452398": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A big deal<br>\n for small spaces</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 21:47:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:37:43 GMT+0000",
+          "alt": "A big deal for small spaces",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/NV-DBE-homepage-Target-Tetra-detachable-coil.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Fri Nov 22 2024 01:14:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Thu Nov 14 2024 21:33:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/target-registry.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/target-tetra",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text_253390054_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:42:07 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\">One-year follow-up study on the </span><span class=\"futura-bold\">Target Tetra Detachable Coil</span><span class=\"urw-egyptienne\"> demonstrated excellent outcomes in the treatment of small spaces as well as filling and finishing in aneurysms of different sizes and morphologies.</span></p>\n",
+          "jcr:lastModified": "Thu Nov 14 2024 21:37:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1909989169_copy_2045900351": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_2029320283": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "acute",
+      "jcr:created": "Mon Oct 14 2024 15:22:42 GMT+0000",
+      "title": "acute",
+      "jcr:lastModified": "Mon Oct 14 2024 15:23:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:34:28 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:34:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:34:34 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Acute ischemic </span></span><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">stroke studies</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 12 2024 00:12:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:28:57 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Grounded in evidence, our steadfast dedication to research and innovation allows us to provide top-tier treatments for acute ischemic stroke.</span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:49:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_272090106": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "studies-ischemic",
+      "jcr:created": "Tue Oct 08 2024 22:47:18 GMT+0000",
+      "title": "Acute Ischemic stroke studies",
+      "jcr:lastModified": "Tue Oct 08 2024 22:47:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:36:21 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:36:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Sun Sep 29 2024 22:37:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Perform thrombectomy with reliability</span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:49:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Sun Sep 29 2024 22:37:43 GMT+0000",
+          "alt": "Perform thrombectomy with reliability",
+          "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/dbe-homepage/2024/images/performthrombectomy.png",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Sun Sep 29 2024 22:51:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:24:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular/c/driven-by-evidence/assist-registry.html",
+              "internalLink": "/content/stryker/us/en/neurovascular/c/driven-by-evidence/assist-registry",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text_253390054": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:42:07 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">The ASSIST Registry</span> <span class=\"urw-egyptienne\">is a core lab adjudicated study which captured real-world data from 1,500 subjects across 71 sites worldwide using Stryker’s Total Stroke Portfolio.</span><br>\n</p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:49:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1909989169_copy_1630154814": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_600120432": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:53:04 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:53:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:51:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Learn more about</span><br>\n <span class=\"futura-bold\"><span style=\"color: #ffb500;\">Stryker’s product portfolio</span></span></span></p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 22:52:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 14 2024 18:25:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://stryker.com/us/en/neurovascular.html",
+              "internalLink": "/content/stryker/us/en/neurovascular",
+              "buttonText": "VISIT STRYKER NEUROVASCULAR",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 23:25:17 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Sun Sep 29 2024 23:25:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1909989169_copy_499085518": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 21:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 21:51:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_600120432_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sun Sep 29 2024 22:53:04 GMT+0000",
+      "jcr:lastModified": "Sun Sep 29 2024 22:53:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sun Sep 29 2024 22:51:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"> <span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Contact us.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Mon Sep 30 2024 16:36:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1439",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Sep 30 2024 16:37:03 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your submission.",
+          "jcr:lastModified": "Mon Sep 30 2024 16:37:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Information contained herein for healthcare professionals in the US only. All illustrations are artist's renditions.</p>\r\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: Nano, Stryker, Target. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.<br>\r\n</p>\r\n<p>*The safety and effectiveness of Y-stenting has not been established.<br>\r\n</p>\r\n<p>Copyright © 2024 Stryker<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Thu Dec 12 2024 00:14:11 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "2025 Comprehensive Report",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e9045362-0b27-4c93-aca4-6bdbffa94b7d",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "820fcba7-6e0e-49c9-bad5-ce063dc8b576"
+  ],
+  "contentID": "SOCI-GSNPS-SYK-3815804",
+  "lastPublished": "Thu Oct 01 2026 19:34:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 01 2026 19:34:29 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 19:34:31 GMT+0000",
+  "cq:lastModified": "Mon Sep 28 2026 18:23:23 GMT+0000",
+  "jcr:baseVersion": "820fcba7-6e0e-49c9-bad5-ce063dc8b576",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 15 2026 12:00:05 GMT+0000",
+  "jcr:lastModified": "Fri Sep 18 2026 13:23:57 GMT+0000",
+  "jcr:uuid": "ed4491d1-155c-42d0-ad8d-4c32df6e6441",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 24 2022 19:56:35 GMT+0000",
+      "jcr:lastModified": "Wed May 10 2023 15:54:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/hero-carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/hero-carousel/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/hero-carousel/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/hero-carousel/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "30",
+          "jcr:created": "Mon Jan 24 2022 19:56:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Sep 08 2026 20:51:04 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Sep 01 2021 20:38:30 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: left;\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(0,0,0);\">Comprehensive Report</span></span></span></span><br />\r\n </span></span><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">Financial, Environmental, <br />\r\n Social and Governance</span></span></span></span></span></span></div>\r\n",
+              "jcr:lastModified": "Wed Mar 13 2024 18:23:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Feb 15 2024 21:49:01 GMT+0000",
+              "CTATitle": "Read the report",
+              "jcr:lastModified": "Thu Sep 17 2026 21:36:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:50:01 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:50:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(182,114,25)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 21:50:17 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Feb 15 2024 21:50:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_2095738228_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_2095738228_copy_910507877": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_2095738228_copy_1160414918": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 24 2022 20:09:11 GMT+0000",
+      "text": "2025 Highlights About our company Financial highlights A message from our Chair and CEO, Kevin Lobo Our mission continues to guide how we grow, both as a company and in the impact we deliver for customers, patients and communities around the world. Read more",
+      "jcr:lastModified": "Fri Sep 04 2026 18:44:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/ceo-letter-and-year-in-review/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/ceo-letter-and-year-in-review/master"
+    },
+    "cols_350568152_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_350568152_copy__1081565916": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1958243255_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:20:34 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:20:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 21:20:56 GMT+0000",
+          "jcr:lastModified": "Thu Feb 15 2024 21:20:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Feb 27 2024 17:43:35 GMT+0000",
+      "jcr:lastModified": "Tue Feb 27 2024 17:43:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_982124495": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 15 2024 18:10:11 GMT+0000",
+          "alt": "good-business",
+          "srcFileRef": "/content/dam/stryker/about/annual-review/2025/phase-2/images/CR-2025-better-healthcare.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Tue Sep 08 2026 20:51:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 18:13:29 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><a href=\"/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf#page=10\" target=\"_blank\"><span class=\"fontsize-1-5em\">Better healthcare</span></a></span></p>\n",
+          "jcr:lastModified": "Mon Sep 28 2026 13:53:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 15 2024 19:03:59 GMT+0000",
+          "alt": "stronger-people",
+          "srcFileRef": "/content/dam/stryker/about/annual-review/2025/phase-2/images/CR-2025-stronger-people.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Tue Sep 08 2026 20:51:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 18:13:29 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><a href=\"/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf#page=22\" target=\"_blank\"><span class=\"fontsize-1-5em\">Stronger people</span></a></span></p>\n",
+          "jcr:lastModified": "Mon Sep 28 2026 13:54:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 15 2024 18:10:11 GMT+0000",
+          "alt": "healthier-planet",
+          "srcFileRef": "/content/dam/stryker/about/annual-review/2025/phase-2/images/CR-2025-healthier-planet.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Tue Sep 08 2026 20:51:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 18:13:29 GMT+0000",
+          "text": "<p><a href=\"/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf#page=33\" target=\"_blank\"><span class=\"standalone-link\"><span class=\"fontsize-1-5em\">Healthier planet</span></span></a></p>\n",
+          "jcr:lastModified": "Mon Sep 28 2026 13:54:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_1283188926": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 15 2024 18:10:11 GMT+0000",
+          "alt": "good-business",
+          "srcFileRef": "/content/dam/stryker/about/annual-review/2025/phase-2/images/CR-2025-good-business.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Tue Sep 08 2026 20:51:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy_1022613709": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 18:13:29 GMT+0000",
+          "text": "<p><a href=\"/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf#page=43\" target=\"_blank\"><span class=\"standalone-link\"><span class=\"fontsize-1-5em\">Good business</span></span></a></p>\n",
+          "jcr:lastModified": "Mon Sep 28 2026 13:55:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_350568152_copy__1670167176": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 19:45:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1958243255_copy_1640237947": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 15 2024 21:20:34 GMT+0000",
+      "jcr:lastModified": "Thu Feb 15 2024 21:20:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 15 2024 21:20:56 GMT+0000",
+          "jcr:lastModified": "Thu Feb 15 2024 21:20:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "fullbleedpanel_32459": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 20 2023 16:29:23 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 16:47:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jan 27 2023 20:51:16 GMT+0000",
+          "text": "Creating a better, healthier world Our Corporate Responsibility objective: We will positively impact people and our planet through responsible, sustainable practices that create a better, healthier world. Learn more",
+          "jcr:lastModified": "Tue Sep 08 2026 20:58:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/creating-a-better-healthier-world/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/creating-a-better-healthier-world/master"
+        }
+      }
+    },
+    "cols_605871420_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 20 2023 17:38:01 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 17:38:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_605871420_copy__2144907503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 20 2023 17:38:01 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 17:38:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_1583528143": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 20:51:16 GMT+0000",
+      "text": "Resources Visit our Reports and Resources to access report supplements, policies, statements and data relating to corporate responsibility at Stryker. Explore Our 2025 Comprehensive Report covers our financial performance, and our responsible, sustainable practices, commitments and progress. Read the full report",
+      "jcr:lastModified": "Fri Sep 04 2026 19:27:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/resources/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/resources/master"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This report’s goal is to inform the company´s results in 2025, it is not intended to promote our products.</p>\r\n",
+    "jcr:lastModified": "Mon Sep 28 2026 18:23:23 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

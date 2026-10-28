@@ -1,0 +1,344 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Flex Financial",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2a464c37-b121-4999-b35f-64700346683b",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/services/flexfinancial/images/thumbnail_FlexFinancial.jpg",
+  "jcr:predecessors": [
+    "18689ea4-a77f-4368-afc7-a7013a051a45"
+  ],
+  "contentID": "FLX-GSNPS-SYK-2491045",
+  "lastPublished": "Thu Jan 29 2026 20:50:51 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 29 2026 20:50:58 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 29 2026 20:50:59 GMT+0000",
+  "cq:lastModified": "Wed Jan 28 2026 20:00:25 GMT+0000",
+  "jcr:baseVersion": "18689ea4-a77f-4368-afc7-a7013a051a45",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:57:20 GMT+0000",
+  "hideInNav": "true",
+  "pageTitle": "Flex Financial",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jan 28 2026 20:00:25 GMT+0000",
+  "jcr:uuid": "f695c70d-8da3-479d-b171-947acd991424",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_944767299": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Oct 31 2025 16:56:32 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(0,0,0);\">Flex Financial</span></span></span></span></span></h1>\r\n",
+      "line2": "<h2><span class=\"fontsize-3vw\">Add <span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\">flexibility</span></span> to your budget</span></h2>\r\n",
+      "jcr:lastModified": "Tue Nov 11 2025 17:42:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Oct 31 2025 17:04:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Overview</span></span></b></p>\n<p><span class=\"fontsize-1-5em\">It’s become extremely important to keep cash on hand, and we know that clinical demands don't go away. Get the equipment you need now and keep your cash for emergencies.</span></p>\n<p><span class=\"fontsize-1-5em\">Through Stryker’s Flex Financial, we provide comprehensive solutions that make it easier to meet your clinical and financial goals. We offer flexibility beyond a cash purchase, enabling you to acquire our full portfolio of products.</span></p>\n",
+      "jcr:lastModified": "Fri Oct 31 2025 17:11:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "4"
+    },
+    "fullbleedpanel_950826304": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Oct 31 2025 17:09:53 GMT+0000",
+      "jcr:lastModified": "Fri Oct 31 2025 17:10:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Oct 31 2025 17:06:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Program offerings</span></span>",
+          "line2": "<span class=\"fontsize-1-5-vw\">We offer numerous payment structures that can be customized to meet budgetary needs and help to build long-term financial stability.</span>",
+          "jcr:lastModified": "Fri Oct 31 2025 17:45:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_2008654930": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Nov 06 2025 22:31:59 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Thu Nov 06 2025 22:32:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "bottomMargin": "3"
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Tue Jul 25 2017 09:34:07 GMT-0400",
+      "jcr:lastModified": "Tue Jul 25 2017 09:34:07 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 25 2017 09:55:29 GMT-0400",
+          "alt": "clock icon",
+          "srcFileRef": "/content/dam/stryker/services/flexfinancial/images/deferred-payment-icon-v2.png",
+          "jcr:lastModified": "Thu Nov 06 2025 18:36:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Oct 31 2025 17:16:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Deferred payment programs</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Get the equipment you need today and pay for it over time.</span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 11 2025 15:35:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 25 2017 09:56:19 GMT-0400",
+          "alt": "money icon",
+          "srcFileRef": "/content/dam/stryker/services/flexfinancial/images/traditional-capital-icon.png",
+          "jcr:lastModified": "Thu Nov 06 2025 18:27:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Oct 31 2025 17:16:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Traditional capital and operating leases</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Whether you want to own the equipment or pay for the use of the equipment, we have a solution.</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 06 2025 21:32:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 25 2017 09:56:52 GMT-0400",
+          "alt": "dollar sign icon",
+          "srcFileRef": "/content/dam/stryker/services/flexfinancial/images/fee-icon-v2.png",
+          "jcr:lastModified": "Thu Nov 06 2025 18:40:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Oct 31 2025 17:16:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Fee per disposable or implant</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Get the capital you need, and pay for it with premiums added to disposables or implants.</span></span></p>\n",
+          "jcr:lastModified": "Thu Nov 06 2025 21:31:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 25 2017 10:01:46 GMT-0400",
+          "alt": "notepad icon",
+          "srcFileRef": "/content/dam/stryker/services/flexfinancial/images/customized-programs-icon.png",
+          "jcr:lastModified": "Thu Nov 06 2025 18:27:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Oct 31 2025 17:16:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Customized programs</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If an 'off the shelf' program doesn’t fit your needs, we can customize a payment program that will work with your individual financial situation.</span></span></p>\n",
+          "jcr:lastModified": "Tue Nov 11 2025 17:43:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Oct 31 2025 17:10:09 GMT+0000",
+      "jcr:lastModified": "Fri Oct 31 2025 17:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_95082": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Oct 31 2025 17:09:53 GMT+0000",
+      "jcr:lastModified": "Fri Oct 31 2025 17:10:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Oct 31 2025 17:06:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Benefits</span></span>",
+          "jcr:lastModified": "Fri Oct 31 2025 17:45:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_2008654930_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Nov 06 2025 22:31:59 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Thu Nov 06 2025 22:32:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "bottomMargin": "3"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Nov 06 2025 21:50:51 GMT+0000",
+      "text": "One payment for multiple pieces of equipment across service lines One plan to add maintenance and service to One invoice that increases operational efficiencies One solution to simplify your budgeting process",
+      "jcr:lastModified": "Thu Nov 06 2025 21:51:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/services/flex_financial/benefits-xf/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/services/flex-financial/benefits-xf/master"
+    },
+    "cols_1803174760": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Nov 06 2025 22:27:33 GMT+0000",
+      "jcr:lastModified": "Thu Nov 06 2025 22:27:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_245829350": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Fri Oct 31 2025 17:29:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b><span class=\"fontsize-1em\">Contact your local Sales Representative for more information about our flexible payment options.</span></b></p>\n",
+      "jcr:lastModified": "Thu Nov 06 2025 22:30:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Oct 31 2025 16:56:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/services/flexfinancial/images/thumbnail_FlexFinancial.jpg"
+  }
+}

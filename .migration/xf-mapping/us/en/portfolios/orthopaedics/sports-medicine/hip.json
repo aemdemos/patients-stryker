@@ -1,0 +1,142 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Our advanced technology. Your surgical best.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hip",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "87d63b1d-2f50-4ec2-9830-0ade51fb498f",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 2.jpg",
+  "jcr:predecessors": [
+    "e79f1328-b4da-4d4c-9565-0745eed6e226"
+  ],
+  "contentID": "Literature Number: 1000902714 Rev A",
+  "lastPublished": "Tue Sep 01 2026 13:07:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 01 2026 13:07:36 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 01 2026 13:07:38 GMT+0000",
+  "cq:lastModified": "Tue Sep 01 2026 12:17:54 GMT+0000",
+  "jcr:description": "We offer an advanced hip arthroscopy platform that allows you the freedom to select what's best for the patient from a wide variety of options.\r\n<br><br>\r\nDeveloped to optimize joint access, visualization and ergonomics, our sports medicine hip platform allows for a variety of procedural techniques, surgeon customization and accommodating designs - all working toward increasing OR efficiency and enhancing patient outcomes.",
+  "cq:siblingOrder": "shoulder,hip,knee,small-joints,sports-biologics,arthroscopy-instrumentation,arthroscopic-resection,fluid-management,displays,camera-systems,media-management,scopes,surgery-center,operating-room,surgical-tables,",
+  "jcr:baseVersion": "e79f1328-b4da-4d4c-9565-0745eed6e226",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:05:57 GMT+0000",
+  "pageTitle": "Hip",
+  "cq:name": "hip",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/sports-medicine",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue May 29 2018 20:25:24 GMT-0400",
+  "jcr:uuid": "bc3e6e51-f269-4009-841e-c89fe50e1fd7",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Tue Sep 01 2026 12:17:54 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "item0": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Procedure",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/procedure-(hip)"
+      },
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/product-type"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/sportsuite-vision"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/prozip-knotless-all-suture-implant"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/FlowPort-Touch-cannula-system"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/hip-check"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/pivot-guardian-distraction-system"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/cinchlock-ss-and-cinchlock-flex-knotless-anchor-system"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/nano-tack-peek-anchor"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Hip.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 2.jpg"
+  }
+}

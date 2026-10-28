@@ -1,0 +1,40 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "mobile",
+  "jcr:versionHistory": "c7bdf610-b89c-4733-ae9c-6f7bb8723689",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "dfce1e50-0b3a-45ed-b861-aa54641c1465"
+  ],
+  "jcr:created": "Tue Sep 07 2021 18:44:40 GMT+0000",
+  "cq:lastModified": "Fri Sep 03 2021 15:06:15 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "dfce1e50-0b3a-45ed-b861-aa54641c1465",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "aff513e0-5300-48e7-bb57-54554df264f4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Sep 01 2021 20:36:47 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/features/dei-summit/images/dei-summit-mobile-1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Sep 03 2021 15:06:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

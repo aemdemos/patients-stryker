@@ -1,0 +1,112 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Watch Kevin Lobo on CNBC’s Mad Money",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8dcd1a3d-807b-437d-9f3b-b83449fdf302",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "8623da66-79e1-426f-a9d8-fa3a5b832fc4"
+  ],
+  "lastPublished": "Tue Jun 25 2024 14:35:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 25 2024 14:35:15 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 25 2024 14:35:17 GMT+0000",
+  "cq:lastModified": "Tue Jun 25 2024 14:34:51 GMT+0000",
+  "jcr:baseVersion": "8623da66-79e1-426f-a9d8-fa3a5b832fc4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:35:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Mon Apr 27 2020 17:16:05 GMT+0000",
+  "jcr:uuid": "afffc3b4-53b2-454e-b20c-7b2d7c579f10",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jan 31 2020 15:05:15 GMT+0000",
+      "jcr:lastModified": "Fri Jan 31 2020 15:05:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jan 31 2020 15:07:39 GMT+0000",
+          "text": "<p>Stryker Chairman and CEO, Kevin Lobo, joins “Mad Money” host Jim Cramer for an update on earnings, robotics, stroke technology and acquisitions.</p>\n",
+          "jcr:lastModified": "Fri Jan 31 2020 15:07:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Jan 31 2020 15:05:21 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "ZMdHcaIKH28",
+          "jcr:lastModified": "Tue Jun 25 2024 14:34:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/videos/CNBC Mad Money __01-29-2020_Stryker.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/CNBC Mad Money __01-29-2020_Stryker-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Jan 31 2020 15:12:00 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Fri Jan 31 2020 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Jan-2020",
+    "jcr:lastModified": "Fri Jan 31 2020 15:04:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Mad Money Jim Cramer 1 29 20.png"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Fri Jan 31 2020 15:07:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

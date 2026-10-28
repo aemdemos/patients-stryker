@@ -1,0 +1,104 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Femoral Hip Stem",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Secur-Fit Advanced",
+  "jcr:versionHistory": "3e8f1c61-1356-45b0-85c4-4346853986cc",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/secur-fitadvanced/images/Hero_JR_Hip_SecurFit_Advanced.png",
+  "jcr:predecessors": [
+    "15bf5add-8c68-403a-b5d4-7055c8b9ad06"
+  ],
+  "contentID": "SECUFA-WC-3_Rev-1_28630",
+  "lastPublished": "Mon Jun 14 2021 13:19:17 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 14 2021 13:19:17 GMT+0000",
+  "cq:lastModified": "Mon Jun 14 2021 13:18:55 GMT+0000",
+  "jcr:description": "Our flagship “fit and fill” femoral stem based on a clinically successful design with modern SOMA-designed refinements*",
+  "jcr:baseVersion": "15bf5add-8c68-403a-b5d4-7055c8b9ad06",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Secur-Fit Advanced",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/joint-replacements/product-type/cementless",
+    "stryker:system/joint-replacements/mako-total-hip",
+    "stryker:business-unit/joint-replacement",
+    "stryker:custom/joint-replacements/procedure/primary",
+    "stryker:product/joint-replacement/secur-fit-advanced",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/joint-replacements/product-type/implants",
+    "stryker:specialty/hip-joint-replacement",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jun 14 2021 13:18:55 GMT+0000",
+  "jcr:uuid": "ad862a91-9fd8-4b69-821f-e06cc103af04",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "navTitle": "Secur-Fit Advanced",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 02 2017 10:13:11 GMT-0400",
+      "compImageRef": "/content/dam/stryker/joint-replacement/products/secur-fitadvanced/images/Hero_JR_Hip_SecurFit_Advanced.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_1563935810",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModified": "Wed Jun 24 2020 15:13:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModified": "Wed Aug 02 2017 10:14:53 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p><b>Proven design, refined</b><br>\r\n</p>\r\n",
+    "shortDescTop": "<p>Secur-Fit Advanced is based on prior clinically successful designs<sup>1-2</sup><span style=\"font-size: 0.8125rem;\"> with refinements to the neck geometry and instrumentation: a proven design, refined.</span><br>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>The Secur-Fit Advanced system offers two neck angles – 127 degrees and 132 degrees – which allows flexibility in adjusting offset intra-operatively. In addition, normalization patterns on the anterior and posterior aspects of the proximal end of the stem facilitate press-fit stability and load transmission. Based on 3D simulations, these normalizations are designed to convert medial and lateral shear stresses to compressive forces, which may facilitate proximal loading.<sup>3</sup> Additional design refinements also include SOMA-designed offsets to help restore patient biomechanics.<sup>4</sup></p>\r\n<p><b>&nbsp;</b></p>\r\n<p><b>&nbsp;</b></p>\r\n<p><b>Advancing our fit and fill stem history</b></p>\r\n<p><b>&nbsp;</b></p>\r\n<p>Secur-Fit Advanced incorporates the signature body geometry and normalizations of OmniFit and Secur-Fit. Published studies demonstrate clinical performance and survivorship of more than 15 years with OmniFit HA<sup>1</sup> and up to 10 years with Secur-Fit HA and Secur-Fit Plus.<sup>2,5</sup>&nbsp;Secur-Fit Advanced also features Stryker’s PureFix HA coating applied proximally, which is supported by over 15 years of clinical success in different stems.<sup>1</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p>&nbsp;</p>\r\n<p><b>Refined instrumentation</b></p>\r\n<p><b>&nbsp;</b></p>\r\n<p>Secur-Fit Advanced instrumentation has been designed to make surgical procedures efficient and reproducible.<sup>6</sup> Secur-Fit Advanced features a transitional press-fit design and refined broach technology that together have demonstrated&nbsp;accurate and reproducible stem seating in bench-top testing.<sup>6</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><sup><br>\r\n*Based on 506 CT scans</sup></p>\r\n",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModified": "Fri Aug 25 2017 13:30:30 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n\r\n<ol>\r\n\r\n<li>Capello W, D’Antonio J, Jaffe W, Geesink R, Manley M, Feinbery J. Hydroxyapetite coated femoral components. 15 year follow-up. Clin Orthop Relat Res. 2006; 453:75-80.<br>\r\n\r\n</li>\r\n\r\n<li>Incavo SJ, Beynnon BD, Couglin KM. Total hip arthroplasty with the Secur-Fit and Secur-Fit Plus femoral stem design. A brief follow up report at 5 to 10 years. J Arthroplasty. 2008; 23: 670-676.</li>\r\n\r\n<li>Effect of Stem normalizations on the stem to bone load transfer mechanism. Stryker Internal Report #Rd-13-001.&nbsp;January, 2013<br>\r\n\r\n</li>\r\n\r\n<li>Determination of Secur-Fit Advanced neck lengths and head center. Based on 556 CT Scans. Stryker Internal Report #RD-13-023.&nbsp;February, 2013<br>\r\n\r\n</li>\r\n\r\n<li>Australian Joint Replacement Registry Annual Report 2012.</li>\r\n\r\n<li>Test Results for 0915A-04: in-vitro comparison of Secur-Fit Advanced to Secur-Fit Max press-fit designs in Sawbones during impaction loading. Stryker Internal Report #Rd-13-029.&nbsp;March, 2013<br>\r\n\r\n</li>\r\n\r\n</ol>\r\n\r\n",
+    "jcr:lastModified": "Fri Aug 25 2017 17:00:53 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/secur-fitadvanced/images/Hero_JR_Hip_SecurFit_Advanced.png"
+  }
+}

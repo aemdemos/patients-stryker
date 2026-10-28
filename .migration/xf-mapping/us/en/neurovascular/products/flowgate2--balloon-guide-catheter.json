@@ -1,0 +1,187 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Balloon Guide Catheter",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "FlowGate² Balloon Guide Catheter",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "76048cac-6d2e-42c7-808a-54e3b3e97bf5",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "FlowGate2",
+  "thumbnailFileReference": "/content/dam/stryker/neurovascular/products/flowgate2-balloon-guide-catheter/images/Thumbnail_FlowGate 2.jpg",
+  "jcr:predecessors": [
+    "07a574fc-c7a6-438c-a79f-7a32ec6aa034"
+  ],
+  "contentID": "AP005081 v1.0",
+  "lastPublished": "Wed Oct 29 2025 15:57:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Oct 29 2025 15:57:23 GMT+0000",
+  "cq:lastReplicated": "Wed Oct 29 2025 15:57:25 GMT+0000",
+  "cq:lastModified": "Wed Oct 29 2025 15:52:41 GMT+0000",
+  "jcr:description": "FlowGate² Balloon Guide Catheter offers proximal flow control and a stable platform to facilitate the insertion and guidance of an intravascular catheter. ",
+  "jcr:baseVersion": "07a574fc-c7a6-438c-a79f-7a32ec6aa034",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 02:06:24 GMT+0000",
+  "pageTitle": "FlowGate2 Balloon Guide Catheter",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/neurovascular/flowgate2-balloon-guide-catheter",
+    "stryker:specialty/access",
+    "stryker:specialty/acute-ischemic-stroke-ais",
+    "stryker:portfolio/neurotechnology",
+    "stryker:business-unit/neurovascular",
+    "stryker:capability/neurovascular",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 03 2025 13:55:20 GMT+0000",
+  "jcr:uuid": "ba88ba2b-8937-4c44-90cd-bac993768e36",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "navTitle": "FlowGate2 Balloon Guide Catheter",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_732653156": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Sep 30 2025 16:18:45 GMT+0000",
+      "text": "FlowGate2® Balloon Guide Catheter The FlowGate2 Balloon Guide Catheter is designed for rapid access and reliable proximal flow control. Contact us X FlowGate2 Balloon Guide Catheter | Stryker Features and benefits Specifications Contact us Features and benefits 1. Proximal flow control with a 10 mm compliant balloon 2. Rapid neurovascular access with a balance of proximal support and distal flexibility 3. Optimized for clot capture and compatibility with AXS Catalyst Distal Access Catheters thanks to 8F outer diameter and .084in inner diameter 4. Improved stability with stainless steel double braid and five transition zones for proximal support and distal flexibility Specifications FlowGate2 Balloon Guide Catheter Balloon inflation volume Balloon diameter Balloon length 0.2mL 7mm 8mm 0.4mL 9mm 9mm 0.6mL 10mm 10mm Guide-assist catheter (dialator) Tip shape Outer diameter Inner diameter Effective length Berenstein tip 6F Proximal: 0.053in/ Distal: 0.043in 124cm *3-way stopcock and syringes (1mL, 20mL, 60mL) are not included, but recommended. Outer diameter Inner diameter Length 8F (0.106in/2.7mm) 0.084in (6.4F/2.1mm) 95cm 8F (0.106in/2.7mm) 0.084in (6.4F/2.1mm) 85cm Learn more about Stryker's product portfolio Learn more Contact us",
+      "jcr:lastModified": "Thu Oct 02 2025 17:48:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/neurovascular/en/products/flowgate2/flowgate2us",
+      "edsFragmentPath": "/us/en/fragments/stryker/neurovascular/en/products/flowgate2/flowgate2us"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "1439",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jan 17 2025 00:06:54 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Fri Mar 07 2025 16:46:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Sep 30 2025 17:39:40 GMT+0000",
+      "jcr:lastModified": "Tue Sep 30 2025 17:39:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_644355": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "safety",
+      "jcr:created": "Mon Feb 24 2025 17:14:48 GMT+0000",
+      "title": "Important safety information",
+      "jcr:lastModified": "Mon Feb 24 2025 17:15:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "christopher.keel@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "ctaDamLink": "/content/dam/stryker/neurovascular/products/flowgate2-balloon-guide-catheter/resources/FlowGate2_DFU_US_3-22-23.pdf",
+      "ctaLinkType": "dam",
+      "ctaOpenInNewTabOverride": "1",
+      "jcr:created": "Mon Feb 03 2020 20:40:06 GMT+0000",
+      "CTATitle": "Important Safety Information",
+      "jcr:lastModified": "Fri Oct 03 2025 13:37:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Feb 24 2025 20:58:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Feb 24 2025 20:58:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 30 2025 16:18:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/neurovascular/products/flowgate2-balloon-guide-catheter/images/Thumbnail_FlowGate 2.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 30 2025 16:17:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 30 2025 16:17:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Sep 30 2025 16:18:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 30 2025 16:18:28 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 30 2025 16:18:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This information is intended solely for the use of healthcare professionals. </p>\r\n<p>A physician must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that physicians be trained in the use of any particular product before using it in a procedure. The information presented is intended to demonstrate the breadth of Stryker product offerings. A physician must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area. </p>\r\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: AXS Catalyst, FlowGate², Stryker. All other trademarks are trademarks of their respective owners or holders. </p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\r\n",
+    "jcr:lastModified": "Wed Oct 29 2025 15:52:41 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

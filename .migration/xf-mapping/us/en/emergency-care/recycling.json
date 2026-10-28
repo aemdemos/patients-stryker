@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Environmental stewardship",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e9b53089-9703-4390-9bf2-c77d576cc828",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "67958dfc-b645-46a4-a675-dd09524e61c1"
+  ],
+  "lastPublished": "Fri Oct 02 2026 16:14:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 02 2026 16:14:03 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 02 2026 16:14:06 GMT+0000",
+  "cq:lastModified": "Fri Oct 02 2026 15:25:52 GMT+0000",
+  "jcr:baseVersion": "67958dfc-b645-46a4-a675-dd09524e61c1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:38:39 GMT+0000",
+  "jcr:lastModified": "Thu Nov 02 2023 18:24:38 GMT+0000",
+  "jcr:uuid": "e2d8d5e0-bbb5-412a-874c-45dcd760e408",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Tue Aug 09 2022 15:20:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Jan 26 2021 15:03:57 GMT+0000",
+      "jcr:lastModified": "Tue Jan 26 2021 15:03:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 26 2021 15:04:04 GMT+0000",
+          "text": "<p><span class=\"fontsize-1em\"><b><a href=\"/content/stryker/gb/en/emergency-care/recycling.html\" target=\"_blank\">Recycling Information for Stryker Customers in the European Union&nbsp;</a></b></span></p>\n<p><span class=\"fontsize-1em\"><b>(WEEE Information)U.S. Devices and Batteries Disposal/Recycling Options</b>&nbsp;Physio-Control is committed to achieving excellence as an environmental steward by conserving natural resources, promoting energy efficiency and eliminating waste. Our goal is to divert the highest possible amount of materials from the landfill through recycling. We strive to meet or exceed all relevant laws, regulations and other environmental legislation which are applicable to our business like e-waste and universal waste.Physio-Control devices, accessories and batteries should be recycled according to federal, state and local laws.</span></p>\n<p><span class=\"fontsize-1em\">Physio-Control devices contain circuit boards and other electrical parts and therefore should be recycled through a government sanctioned recycling facility. These are the same facilities that recycle computer equipment. For electronic recycling locations nearest you search online with keywords “electronics recycler near me” or “e-waste recycler near me”. You should always contact each location prior to arriving to ensure that the facility will accept the devices, accessories and batteries.You may also pay to ship your device to Physio-Control for recycling as follows:</span></p>\n<p><b>Returning devices to Physio-Control for Disposal</b><br>\nIf you would like to send your devices to Physio-Control for disposal, please email <a href=\"mailto:Lifepaksupport@stryker.com\" target=\"_blank\">Lifepaksupport@stryker.com</a> with the following information.&nbsp;</p>\n<p>Device Model<br>\nQuantity<br>\nShipping address and contact information</p>\n<p><span class=\"fontsize-1em\">Rechargeable and non-rechargeable device batteries from Physio-Control are considered to contain hazardous materials but are categorized as universal waste in most states. Therefore all batteries should be recycled/disposed of through a government sanctioned recycling facility. For battery recycling/disposal locations nearest you search online with keywords “battery recycling locations near me” or “battery disposal locations near me”. You should always contact each location prior to arriving to ensure that the facility will accept Physio-Control device batteries.</span></p>\n<p><span class=\"fontsize-1em\"><b>Returning Batteries to Physio-Control for Disposal</b><br>\n Please package and ship your batteries to:<br>\n Stryker Medical<br>\n Attn: Battery disposal&nbsp;<br>\n 11811 Willows Road NE&nbsp;<br>\n Redmond, WA 98052</span></p>\n<p><span class=\"fontsize-1em\"><b>Please note:&nbsp;</b>Customers are responsible for all shipping material and costs involved with shipping items to Physio-Control for disposal. Batteries are considered hazardous material with special shipping requirements. Customers should consult with their shipping company on how to properly ship these items.&nbsp;&nbsp;</span></p>\n<p><span class=\"fontsize-1em\"><b>For questions, contact Technical Support</b> at&nbsp;<a href=\"mailto:medtechsup@stryker.com\" target=\"_blank\"><b>medtechsup@stryker.com</b></a>&nbsp;or Toll-Free (USA) <br>\n 1-800-442-1142, Option 4&nbsp;</span></p>\n<p><span class=\"fontsize-1em\"><b><a href=\"/content/stryker/us/en/emergency-care/contact.html\" target=\"_self\">Service and support options</a></b></span></p>\n",
+          "jcr:lastModified": "Fri Oct 02 2026 15:25:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  }
+}

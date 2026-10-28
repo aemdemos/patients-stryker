@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ENT BU Homepage Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "21c57b78-2e9a-4a3f-90eb-f315a317908a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "be92c6d8-0ca5-4e72-bddf-3bab01ccb007"
+  ],
+  "lastPublished": "Mon May 05 2025 18:00:39 GMT+0000",
+  "jcr:created": "Mon May 05 2025 18:00:40 GMT+0000",
+  "cq:lastReplicated": "Mon May 05 2025 18:00:42 GMT+0000",
+  "cq:lastModified": "Wed Mar 26 2025 15:44:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "be92c6d8-0ca5-4e72-bddf-3bab01ccb007",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 05 2025 18:00:39 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "75e0984d-b738-4be6-adca-55618e864fd5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 14:56:38 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Wed Mar 26 2025 15:44:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ent/videos/Stryker-ENTHeroLoop-V3-Alt.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Stryker-ENTHeroLoop-V3-Alt-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Mar 26 2025 15:32:02 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

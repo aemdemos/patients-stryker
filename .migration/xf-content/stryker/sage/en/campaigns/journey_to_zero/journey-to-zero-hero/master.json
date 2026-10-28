@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Journey to Zero hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5a94f275-e537-4f90-8ab0-1c0c5938bcaa",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a021dfbc-b246-4944-a05f-064cbfd0198b"
+  ],
+  "jcr:created": "Wed Feb 01 2023 18:02:16 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 01 2023 18:02:19 GMT+0000",
+  "cq:lastModified": "Fri Dec 02 2022 17:04:41 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a021dfbc-b246-4944-a05f-064cbfd0198b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "3fca1bb4-431b-4196-ac06-b4e3da4bf842",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Tue Mar 29 2022 14:26:26 GMT+0000",
+      "alt": "Image showing a split screen of a woman who is half healthcare provider and half patient.",
+      "srcFileRef": "/content/dam/stryker/sage/journey-to-zero/images/Journey-to-Zero-hero.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Dec 02 2022 17:04:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

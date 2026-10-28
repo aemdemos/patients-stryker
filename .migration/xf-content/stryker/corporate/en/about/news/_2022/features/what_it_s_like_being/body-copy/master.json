@@ -1,0 +1,247 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7d7890da-9fb1-4b0b-9b55-4e515a702362",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b111f30f-e6f2-46c7-b1dc-1e931b0403e4"
+  ],
+  "jcr:created": "Tue Nov 29 2022 17:17:53 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 29 2022 17:17:55 GMT+0000",
+  "cq:lastModified": "Mon Nov 21 2022 14:45:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b111f30f-e6f2-46c7-b1dc-1e931b0403e4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "b6261cd1-bb09-4933-943c-3a6e44bda2eb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_1728796882": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Oct 21 2022 15:51:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">The Alzheimer’s Association estimates that 6.5 million Americans aged 65 and older are living with Alzheimer’s in 2022.<sup>1</sup> Patty is one of them, and her husband Steve shares how he cares for her at home.</span></span></p>\n<p>My wife Patty and I used to have conversations. She loved children and loved to cook, and we talked about both. I also remember her homemade spaghetti sauce—she was quite the cook. We’ve enjoyed a good life together.</p>\n<p>Now we find ourselves in a new season of life. Patty was diagnosed with Frontal Temporal Lobe Dementia and Alzheimer’s. Many caregivers who understand this neurological disease know how hard it is to watch the rapid personality changes that go with it.</p>\n<p>While I knew that would happen, I didn’t expect it to happen so quickly. The truth is—we have no control over these situations. So I learned to adapt to the changes and accept them—as hard as it was.</p>\n<p>Let me tell you—it’s not easy preparing for the day when your partner no longer communicates with you the way they used to. All I can do now is hang onto the cherished memories we created together.</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\">A devoted husband and caregiver</span></span></span></p>\n<p>As Patty’s decline grew more evident, she stopped walking and eventually stopped feeding herself. Thankfully two caregivers help out because I still work and travel. They provide care when I’m away, but also on a limited basis when I’m home. My wife has a special connection with Teresa, her primary caregiver. No doubt, the two share a bond. People who visit the house notice it right away. When Teresa arrives, Patty can’t take her eyes off Teresa; tracking her every move. Teresa is very special to us because she’s made personal sacrifices that have allowed her to care for Patty.</p>\n<p>Talking to nurses over the years, I eventually discovered Stryker’s home care products since hospitals use the product. My favorite product is the soft foam toothbrush—known as the <a href=\"https://homecare.stryker.com/sage-toothette-plus-oral-swabs-6071-6076\">Toothette Plus Swabs</a>.</p>\n<p>I like how these foam swabs are so gentle on Patty’s mouth. I don’t worry about damaging her gums. Using the Toothette Plus Swabs helps keep my wife comfortable. Once we started using the swabs, it became clear why hospitals use them too.</p>\n",
+      "jcr:lastModified": "Mon Nov 21 2022 14:45:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1342580079_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "leftPadding": "4",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Nov 23 2021 19:42:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><span style=\"color: #edeeec;\"><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">Keeping your mouth clean is an important part of staying healthy.</span>&nbsp;</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Stryker’s oral care&nbsp;products help reduce the risk of plaque buildup in the mouth and promote oral health.&nbsp;</span></span><span class=\"urw-egyptienne\"><span style=\"color: #ffffff;\">Routinely performing oral care can help reduce potential risk of pneumonia.&nbsp;</span></span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #edeeec;\"><span style=\"color: #ffffff;\">A healthy, moisturized mouth makes it easier to eat and communicate.&nbsp;Stryker’s Oral Care products can help you&nbsp;care for someone who needs help with their daily oral hygiene.</span></span></span></span></p>\n",
+      "jcr:lastModified": "Fri Nov 18 2022 16:25:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "4",
+      "backgroundColor": "rgba(28,86,135,1)",
+      "textIsRich": "true"
+    },
+    "text_258564000_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Sep 19 2022 18:48:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Bringing quality care to your home<br>\n</span> </span>Everyone deserves quality care. And, as basic needs get less basic, home care products enable individuals and caregivers to provide quality care. If you're looking for simple ways to bathe, clean, and provide skin care and oral care for yourself or someone important to you, our Stryker home care products can help. Each is designed to be effective and easy to use, as well as provide the comfort needed for care at home.</p>\n",
+      "jcr:lastModified": "Mon Nov 21 2022 14:45:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1231": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Warm bath, without a tub or shower",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/no-rinse-bathing",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Bathing",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0005_Layer 0.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:51:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1231_1908038006": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Incontinence skin protecting cloths",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/Incontinence-Skin-Care-Underpads",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Incontinence",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0004_stryker-home-care-incontinence-product-category.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:51:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1231_1983169043": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Warm soothing shampoo without the mess",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/Rinse-free-Shampoo-Cap",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Hair care",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0003_stryker-home-care-hair-care-product-category.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:51:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1231_1686103046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Helps clean and moisturize the mouth",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/oral-care",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Oral care",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0002_stryker-home-care-oral-care-product-category.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:51:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1231_213185578": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Antiseptic solution helps reduce bacteria on the skin",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/Preoperative-Care",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Before surgery",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0001_stryker-home-care-surgery-prep-product-category.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:50:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1231_1531921551": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "Keeps heels off the mattress to relieve pressure",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://homecare.stryker.com/heel-protectors",
+      "jcr:created": "Tue Nov 23 2021 19:44:57 GMT+0000",
+      "title": "Heel protection",
+      "srcFileRef": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/stryker-home-care-bathing-product-category_0000_stryker-home-care-heel-protection-product-category.jpg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Nov 23 2021 19:50:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_545042136_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Nov 23 2021 19:52:11 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">&nbsp;References &nbsp;&nbsp;</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-8em\">1. Alzheimer’s Association. ‘Facts and figures.’ Accessed 25 October 2021.&nbsp;<a href=\"https://www.alz.org/alzheimers-dementia/facts-figures\">https://www.alz.org/alzheimers-dementia/facts-figures</a></span></p>\n<p><span class=\"fontsize-8em\">22-HC-29310</span></p>\n<p><span class=\"fontsize-8em\">No individuals or organizations were compensated by Stryker for contributing to this article.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-8em\">COMM-OC-WEB-484814</span></p>\n",
+      "jcr:lastModified": "Fri Nov 18 2022 15:38:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

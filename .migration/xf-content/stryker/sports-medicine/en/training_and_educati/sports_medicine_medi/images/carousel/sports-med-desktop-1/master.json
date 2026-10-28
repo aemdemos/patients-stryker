@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sports Med desktop-1",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c1a5951c-e287-4332-a3b3-f644f2019786",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1dba55b8-55c2-4cd5-a605-d4d6ae7193c4"
+  ],
+  "lastPublished": "Fri Apr 18 2025 17:43:19 GMT+0000",
+  "jcr:created": "Fri Apr 18 2025 17:43:20 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 18 2025 17:43:22 GMT+0000",
+  "cq:lastModified": "Tue Dec 08 2020 20:56:46 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1dba55b8-55c2-4cd5-a605-d4d6ae7193c4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Apr 18 2025 17:43:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8c82ec32-68f9-4c1b-8bf8-c690d4a2ec54",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Tue Dec 08 2020 20:35:16 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/images/SportsMed-banner-1.png",
+      "jcr:lastModified": "Tue Dec 08 2020 20:56:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    }
+  }
+}

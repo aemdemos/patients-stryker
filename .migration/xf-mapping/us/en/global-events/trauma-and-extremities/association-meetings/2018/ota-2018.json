@@ -1,0 +1,156 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "OTA 2018",
+  "jcr:versionHistory": "51c68d2a-9d84-436f-ac96-83b1e17ba955",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "405fbabe-e218-4fb2-8d58-a8bb5bb61278"
+  ],
+  "contentID": "CP-AWI-19, 08-2018",
+  "lastPublished": "Wed Sep 12 2018 16:16:52 GMT+0000",
+  "jcr:created": "Wed Sep 12 2018 16:16:52 GMT-0400",
+  "cq:lastModified": "Wed Sep 12 2018 15:57:11 GMT-0400",
+  "jcr:baseVersion": "405fbabe-e218-4fb2-8d58-a8bb5bb61278",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Mon Sep 10 2018 15:04:27 GMT-0400",
+  "jcr:uuid": "08fdd0d5-c7de-4695-994f-f5a732df45b2",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage_1127186765": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "linkExternal": "http://ota2018.sykevents.com/rsvp/hcp/",
+      "jcr:created": "Wed Sep 12 2018 15:47:05 GMT-0400",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018-MAIN.jpg",
+      "jcr:lastModified": "Wed Sep 12 2018 15:47:40 GMT-0400",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "linkExternal": "https://gallery.mailchimp.com/6e777d926244dcd1b8c1ba3a8/files/338a6bb0-cb4b-428b-883c-078e87f1351d/ota_2018.ics",
+      "jcr:created": "Mon Sep 10 2018 15:29:13 GMT-0400",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - MAP.jpg",
+      "jcr:lastModified": "Wed Sep 12 2018 15:48:57 GMT-0400",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 15:29:30 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 15:29:30 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 15:29:48 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-5-5-vw\"><span class=\"futura-bold\">Featured technologies</span><br>\r\n<span class=\"urw-egyptienne\">at the Stryker Experience</span></span>",
+      "jcr:lastModified": "Mon Sep 10 2018 15:30:21 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 15:30:26 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 15:30:26 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 15:30:44 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - PROD1.jpg",
+          "jcr:lastModified": "Mon Sep 10 2018 15:31:07 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 15:30:44 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - PROD2.jpg",
+          "jcr:lastModified": "Mon Sep 10 2018 15:31:13 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 15:30:26 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 15:31:21 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "linkExternal": "https://vimeopro.com/simplescience/trauma-vr",
+          "jcr:created": "Mon Sep 10 2018 15:30:44 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - PROD3.jpg",
+          "jcr:lastModified": "Wed Sep 12 2018 15:52:14 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 15:30:44 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - PROD4.jpg",
+          "jcr:lastModified": "Wed Sep 12 2018 15:50:22 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/gamma3",
+          "openInNewTab": "true"
+        }
+      }
+    },
+    "standaloneimage_996570584": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 15:31:45 GMT-0400",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/SYK.TAE.OTA2018-CampaignWebsite-AssetsOTA2018 - TEACH.jpg",
+      "jcr:lastModified": "Wed Sep 12 2018 15:57:11 GMT-0400",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "linkInternal": "/content/stryker/us/en/trauma-and-extremities/training-and-education",
+      "openInNewTab": "true"
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Ultrasound catheter - delivering an image of excellence",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ViewFlex ICE catheter ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ae378016-8fe9-413d-8bab-19e1f0e9cde7",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "ViewFlex straight",
+  "jcr:predecessors": [
+    "ed01bc74-c1c2-4649-b6a9-f62f7343f921"
+  ],
+  "contentID": "CIS11271",
+  "lastPublished": "Tue Aug 18 2026 20:19:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:19:53 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:19:55 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:19:46 GMT+0000",
+  "jcr:description": "ViewFlex ICE Catheter Resources - Access resources and downloads related to the reprocessed 2D ICE catheter for cardiovascular catheterization procedures.",
+  "jcr:baseVersion": "ed01bc74-c1c2-4649-b6a9-f62f7343f921",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:24:39 GMT+0000",
+  "pageTitle": "ViewFlex ICE: Your catheterization procedure companion",
+  "cq:tags": [
+    "stryker:specialty/ice-catheters",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/sustainability",
+    "stryker:product/sustainability/viewflex",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Tue Mar 25 2025 22:31:04 GMT+0000",
+  "jcr:uuid": "8054d8ba-44e9-47f2-9464-59f1e4e7f2e6",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "hero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "subhead": "Ultrasound catheter - delivering an image of excellence",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "imageAlt": "catheterization procedure",
+      "jcr:created": "Tue Mar 25 2025 22:27:08 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "head": "<p>Reprocessed ViewFlex ICE catheter</p>\r\n",
+      "content": "The ViewFlex is a reprocessed 2D ICE catheter, originally manufactured by Abbott/St. Jude Medical and comes in 9F. ViewFlex is utilized in electrophysiology, interventional radiology, and cardiac catheterization procedures. ",
+      "jcr:lastModified": "Fri Jul 25 2025 14:27:34 GMT+0000",
+      "compImageRef": "/content/dam/stryker/endoscopy/products/viewflex/images/ViewFlex straight.png",
+      "sling:resourceType": "stryker/components/content/hero",
+      "textIsRich": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/endoscopy/products/viewflex/resources/ViewFlex sales sheet.pdf",
+        "/content/dam/stryker/endoscopy/products/viewflex/resources/ViewFlex Xtra ICE White Paper.pdf"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Nov 10 2022 14:46:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:19:35 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:19:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/viewflex/images/ViewFlex straight.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Abbott/St. Jude Medical Reprocessed ViewFlex Xtra ICE Catheter</p>\r\n",
+    "shortDescTop": "<p>The ViewFlex is a 2D ICE catheter providing direct visualization of the pulmonary veins and other anatomical landmarks. The ViewFlex is inserted into the heart via intravascular access.</p>\r\n",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Nov 10 2022 14:45:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>9F ICE catheter compatible with a 10F or larger introducer Sheath</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Compatible with ViewMate II, ViewMate Z and Philips CX50 ultrasound consoles</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Ergonomic handle</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Four-way tip deflection-anterior/posterior and left/right</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Catheter tip is a 64-element linear phased array transducer housed in silicone</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Fully reprocessed, 100% function tested, cleaned and tracked</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Device can be reprocessed one time</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:19:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

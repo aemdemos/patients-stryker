@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ee5cfbd7-cf26-422b-bbd6-d3ce1a809923",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "395f6def-fed0-49b1-95bc-d78290c896aa"
+  ],
+  "jcr:created": "Fri Feb 23 2024 18:47:56 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 23 2024 18:47:58 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 18:47:53 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "395f6def-fed0-49b1-95bc-d78290c896aa",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "5da29843-5f4e-471b-9499-c7e378a607d7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's Symmetry Plus hospital patient room recliner",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/recliners/images/Thumbnail_Recliners.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 18:47:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

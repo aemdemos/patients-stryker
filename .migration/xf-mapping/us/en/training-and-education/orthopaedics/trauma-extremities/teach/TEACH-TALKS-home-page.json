@@ -1,0 +1,720 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Home",
+  "jcr:versionHistory": "058ba9ed-7d1d-4169-9f20-41d90715b79a",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:predecessors": [
+    "1120693c-bfe6-44d7-acb9-b1a562f63da2"
+  ],
+  "contentID": "CP-AWI-33, 07-2019",
+  "lastPublished": "Tue Jul 14 2020 12:34:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 14 2020 12:34:01 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2020 13:05:42 GMT+0000",
+  "jcr:baseVersion": "1120693c-bfe6-44d7-acb9-b1a562f63da2",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Sep 05 2019 20:22:09 GMT+0000",
+  "jcr:uuid": "75f1dace-c0d4-4f3b-a20a-7878ca823ee3",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTopLine": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "childrenNumber": "2",
+    "isParent": "true",
+    "jcr:lastModified": "Thu Mar 05 2020 16:21:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "enableLocalPageNavigation": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-TALKS-app-icon.png"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jul 15 2019 19:37:18 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "&nbsp;",
+      "jcr:lastModified": "Mon Jul 15 2019 19:37:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:46:25 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:46:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+          "jcr:lastModified": "Tue Oct 01 2019 15:30:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Recently</span> <span class=\"urw-egyptienne\">added</span></span></span></p>\n",
+      "jcr:lastModified": "Thu Sep 05 2019 19:50:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Shoulder</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 05 2019 20:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "4xnM4GQljAw",
+          "jcr:lastModified": "Fri Jul 10 2020 13:04:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Subscapularis Management in shoulder arthroplasty</span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 10 2020 13:05:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Fri Jul 10 2020 13:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Subscapularis-Management-in-shoulder-arthroplasty"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Foot &amp; Ankle</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 05 2019 20:06:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:46:08 GMT+0000",
+          "type": "typeId",
+          "videoId": "D5oh1c6T4sM",
+          "jcr:lastModified": "Tue Oct 01 2019 15:00:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Total ankle replacement</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 01 2019 13:44:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Mon Oct 28 2019 15:25:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Foot-Ankle-Talks"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Trending</span> <span class=\"urw-egyptienne\">talks</span></span></span></p>\n",
+      "jcr:lastModified": "Mon Dec 02 2019 17:43:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Dec 02 2019 17:44:47 GMT+0000",
+      "jcr:lastModified": "Mon Dec 02 2019 17:44:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Shoulder</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 17:36:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "X2XIc5rs4os",
+          "jcr:lastModified": "Fri Dec 13 2019 18:12:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Infection in Shoulder Arthroplasty</span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 17:35:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066665005": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Thu Feb 27 2020 15:36:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Infection-in-Shoulder-Arthroplasty"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1351695921": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Shoulder</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 05 2019 20:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:25:49 GMT+0000",
+          "type": "typeId",
+          "videoId": "R8YJ_C5txuU",
+          "jcr:lastModified": "Tue Oct 01 2019 13:25:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Tips &amp; tricks for glenoid exposure</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 01 2019 13:30:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Wed Sep 11 2019 19:37:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Shoulder-talks"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Foot &amp; Ankle</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 05 2019 20:06:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:46:08 GMT+0000",
+          "type": "typeId",
+          "videoId": "D5oh1c6T4sM",
+          "jcr:lastModified": "Tue Oct 01 2019 15:00:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Total ankle replacement</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 01 2019 13:44:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Mon Oct 28 2019 15:25:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Foot-Ankle-Talks"
+        }
+      }
+    },
+    "sectionseparator_cop_186600473": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Dec 02 2019 17:44:47 GMT+0000",
+      "jcr:lastModified": "Mon Dec 02 2019 17:44:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Shoulder</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 17:36:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "m_1ZOu083hU",
+          "jcr:lastModified": "Wed May 27 2020 19:36:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 26 2019 17:49:45 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reverse Shoulder Replacements</span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:37:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Wed May 27 2020 20:01:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Reverse-Shoulder-Replacements-2020"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 20:07:12 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 20:07:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 20:07:16 GMT+0000",
+          "jcr:lastModified": "Thu Sep 05 2019 20:07:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_278521110": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:20:23 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:20:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:09:22 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/trending-icon.png",
+              "jcr:lastModified": "Thu Sep 05 2019 20:09:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:14:29 GMT+0000",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\">Trending topics</span></span></span></span></p>\n<p>Take a deeper dive into conversations that are trending in the industry with our range of courses.</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:16:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:20:26 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:21:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:14:10 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/instructors-icon.png",
+              "jcr:lastModified": "Thu Sep 05 2019 20:19:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:14:29 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Expert instructors</span></span></span></span></p>\n<p>Learn from experienced surgeons in the industry who are passionate about teaching.</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:17:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:20:29 GMT+0000",
+              "text": "<p><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:21:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:14:14 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/documents-icon.png",
+              "jcr:lastModified": "Thu Sep 05 2019 20:20:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Sep 05 2019 20:14:29 GMT+0000",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\">Customized experience</span></span></span></span></p>\n<p>Sign up for notifications when new courses are available in the topics that you want.&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Sep 05 2019 20:17:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1937949924": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Dec 02 2019 15:04:25 GMT+0000",
+      "jcr:lastModified": "Mon Dec 02 2019 15:04:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 15:09:20 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 15:09:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 15:09:20 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 15:09:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1916729897": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Dec 02 2019 15:07:36 GMT+0000",
+      "jcr:lastModified": "Mon Dec 02 2019 15:07:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Dec 03 2019 17:31:40 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Dec 03 2019 17:31:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "849",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 15:04:40 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! ",
+          "jcr:lastModified": "Mon Dec 02 2019 15:07:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Let's start </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">talking</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Dec 03 2019 17:30:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 20:35:54 GMT+0000",
+          "gradientDirection": "top-to-bottom",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">Sign up to receive updates on&nbsp;&nbsp;<br>\n</span><a href=\"mailto:teach@stryker.com\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">TEACH Talks</span></span><span class=\"urw-egyptienne\">\u0003</span></a><a href=\"mailto:teach@stryker.com\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">here&nbsp;</span></span><span style=\"color: #ffffff;\"><span class=\"urw-egyptienne\">&gt;&gt;</span></span></a></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 15:08:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 17:06:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+          "jcr:lastModified": "Tue Oct 01 2019 15:30:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+        }
+      }
+    },
+    "text_1843191629": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 01 2019 14:05:51 GMT+0000",
+      "text": "<p>&nbsp;<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 01 2019 14:05:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1927805128": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 20:37:38 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 20:37:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Drs. Adams, Palanca and Willis are paid consultants of Stryker. The opinions expressed during their presentation are those of Drs. Adams, Palanca and Willis and not necessarily \u0003those of Stryker. Individual results may vary. The material presented is intended for educational purposes only. A surgeon must always rely on his or her own professional clinical \u0003judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained \u0003in the use of any particular product before using it in surgery. Stryker does not endorse or support the unapproved uses of its products.</p>\r\n",
+    "jcr:lastModified": "Wed Oct 30 2019 19:31:11 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

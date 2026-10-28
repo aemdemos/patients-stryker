@@ -1,0 +1,930 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Suture Anchor System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Citrefix",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "895cb2c1-0cd2-4630-9232-4b02c7c47cb2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Citrefix image",
+  "jcr:predecessors": [
+    "2795b8dc-004b-4490-a9d8-1bb408995b8a"
+  ],
+  "contentID": "CTF-AWI-3, 08-2024",
+  "lastPublished": "Mon Nov 18 2024 20:14:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 18 2024 20:14:04 GMT+0000",
+  "cq:lastReplicated": "Mon Nov 18 2024 20:14:06 GMT+0000",
+  "cq:lastModified": "Mon Nov 18 2024 20:13:52 GMT+0000",
+  "newDisplayFlagDate": "Fri Jan 31 2025 00:00:00 GMT-0500",
+  "jcr:description": "Citrefix is utilized in soft tissue reconstruction procedures. Featuring a resorbable biomimetic anchor body and PEEK eyelet with a tapered and barded interference-fit design. Stryker - Wright Medical Group",
+  "jcr:baseVersion": "2795b8dc-004b-4490-a9d8-1bb408995b8a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Nov 18 2024 19:09:11 GMT+0000",
+  "pageTitle": "Citrefix",
+  "cq:tags": [
+    "stryker:procedure/foot-and-ankle/ankle-stabilization/soft-tissue",
+    "stryker:content-type/product",
+    "stryker:specialty/hindfoot",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:custom/foot-and-ankle/product-type/soft-tissue",
+    "stryker:specialty/ankle-foot-and-ankle",
+    "stryker:capability/foot-and-ankle",
+    "stryker:specialty/midfoot",
+    "stryker:content-type/hcp_content",
+    "stryker:product/foot-and-ankle/citrefix",
+    "stryker:procedure/foot-and-ankle/tendon-repair/soft-tissue",
+    "stryker:procedure/foot-and-ankle/tendon-transfer/soft-tissue",
+    "stryker:portfolio/orthopaedics"
+  ],
+  "jcr:lastModified": "Mon Nov 18 2024 20:13:52 GMT+0000",
+  "jcr:uuid": "6d7529aa-a629-4b6b-b821-3c0e610c9bbe",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:18:55 GMT+0000",
+      "jcr:lastModified": "Wed Dec 27 2023 00:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "alison.moutinho@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5vw\">Citrefix<sup><span class=\"fontsize-1-5-vw\">™</span></sup></span></span></span></h1>\r\n",
+          "line2": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Suture Anchor System</span><br />\r\n </span></h2>\r\n",
+          "jcr:lastModified": "Tue Aug 13 2024 17:08:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 17 2024 13:10:11 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "loopVal": "1",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Jun 17 2024 13:10:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/citrefix/videos/CitrefixAnimation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/CitrefixAnimation-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Jun 17 2024 13:10:25 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy__662957679": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#specification\">SPECIFICATION OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_2000441555_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu May 23 2024 17:08:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_652839079_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">The future of bioresorbables<br>\n&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 17:14:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_652839079": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\">Citrefix <span style=\"color: #000000;\">Suture Anchor System</span></span></span></span><span class=\"urw-egyptienne\">&nbsp;is utilized in soft tissue reconstruction procedures, featuring a Citregen&nbsp;anchor body and PEEK eyelet with a tapered and barbed interference-fit design.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 17:14:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Apr 01 2024 18:48:50 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 01 2024 18:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/citrefix/videos/Surgical Animation - Citrefix Suture Anchor System.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Surgical Animation - Citrefix Suture Anchor System-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 01 2024 18:52:23 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "jcr:lastModified": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "testlink",
+          "jcr:created": "Thu May 23 2024 17:09:55 GMT+0000",
+          "title": " TESTLINK",
+          "jcr:lastModified": "Thu May 23 2024 17:13:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:19:12 GMT+0000",
+      "jcr:lastModified": "Wed Dec 27 2023 00:19:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\">Citregen<sup>®</sup></span> material technology</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 13 2024 21:10:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Mar 13 2024 17:53:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Citregen is a biomaterial designed to mimic the hydroxyapatite content of native bone.<sup>2</sup>&nbsp;It is a resorbable biocomposite with a controllable biodegradation process with no chronic inflammation.<sup>1,3,*&nbsp;</sup>Citregen slowly releases citrate, calcium, and phosphate, which play a significant role in bone regeneration.<sup>5</sup></span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 08 2024 19:28:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Apr 01 2024 18:49:03 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 01 2024 18:49:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/foot-and-ankle/products/citrefix/videos/Citrefix (Reusable) - Inserter Assembly Video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Citrefix (Reusable) - Inserter Assembly Video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Apr 01 2024 18:49:15 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1693940019": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:19:39 GMT+0000",
+      "jcr:lastModified": "Wed Dec 27 2023 00:19:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1851733670": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "alison.moutinho@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jan 31 2022 15:43:44 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Citregen vs. thermoplastics</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">A sheep study at Colorado State University showed evidence of biocompatibility and biologic growth into porous Citregen implants, absent of any signs of chronic inflammation.<sup>6</sup></span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Citregen elutes into surrounding tissue via surface erosion, not bulk degradation.<sup>1</sup></span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Citregen’s crosslinked structure provides elasticity and demonstrates recovery from compressive loads that would cause thermoplastics to permanently deform. Even with a high bioceramic content, Citregen composites retain their toughness withstanding large mechanical loads and strain.<sup>6</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Oct 08 2024 19:28:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 27 2023 00:59:28 GMT+0000",
+          "alt": "CitrefixImage",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/dartfire-edge/CitrefixImage.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Dec 29 2023 00:52:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1949150490": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:19:44 GMT+0000",
+      "jcr:lastModified": "Wed Dec 27 2023 00:19:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 27 2023 00:59:33 GMT+0000",
+          "alt": "Citrogen Key Points",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/citrefix/images/CitrogenKeyPoints.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:51:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_2102615124": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:59:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Citregen key points</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><b>Elastomeric</b> – Elastomeric properties provide strong pull-out strength in comparison to thermoplastic polymers or composites<sup>1,4,*</sup><br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><b>Resorbable</b> - Citrate, calcium, and phosphate molecules start releasing into the system on day one<sup>6</sup><br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><b>No bulk degradation</b>, which means no chronic inflammation as the implant resorbs with controlled predictability<sup>6,*</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Nov 11 2024 20:03:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1613186996": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 27 2023 00:19:49 GMT+0000",
+      "jcr:lastModified": "Wed Dec 27 2023 00:19:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 01:00:06 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Implant selection</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Designed to cover a breadth of foot and ankle procedures. Sterile-packed, individual sizes</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Four strategic sizes</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">2.9mm ×&nbsp;12.5mm</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">3.5mm ×&nbsp;15.5mm&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">4.5mm ×&nbsp;24mm&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">5.5mm ×&nbsp;24mm</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 17:36:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Dec 27 2023 01:00:14 GMT+0000",
+          "alt": "Implant Selection",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/citrefix/images/ImplantSelection.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 06 2024 20:52:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions.</span></span></span>",
+          "jcr:lastModified": "Tue Aug 13 2024 16:48:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "sectionseparator_212": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "altText": ".",
+      "jcr:created": "Fri Dec 15 2023 00:59:56 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Fri Dec 15 2023 20:02:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_36909880_copy_c_275481324": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Tue Oct 08 2024 19:28:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/citrefix/documents/Citrefix Suture Anchor Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/citrefix/documents/Citregen-Fast-Facts.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Thu Sep 26 2024 16:29:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu May 23 2024 17:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu May 23 2024 17:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Citrefix</span></span></h4>\n",
+          "jcr:lastModified": "Tue Aug 13 2024 17:59:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 23 2024 17:22:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator_200_220572690": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Fri Jun 28 2024 15:26:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Wed May 15 2024 18:42:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/all-products/2024-brandrefresh/product-thumbnails/Thumb-Citrefix.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 06 2024 16:41:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li><b></b>FDA 510(k) K200725</li>\r\n<li>TM-210503, Acuitive Technologies, Inc</li>\r\n<li>Yang J, Webb AR, et al. Synthesis and evaluation of poly(diol citrate) biodegradable elastomers. Biomaterials. 2006;27(9):1889-98. doi: 10.1016/j.biomaterials.2005.05.106.</li>\r\n<li>TM-190301, Acuitive Technologies, Inc.</li>\r\n<li>Wang H, Huddleston S, et al. Enabling Proregenerative Medical Devices via Citrate-Based Biomaterials: Transitioning from Inert to Regenerative Biomaterials. Adv Mater; 2024:36(6):17. doi: 10.1002/adma.202306326<br />\r\n</li>\r\n<li><a href=\"https://www.acuitivetech.com/technology\">Acuitive Technologies, Inc. website</a></li>\r\n</ol>\r\n<p>*Studies in GLP animal bone models</p>\r\n",
+    "jcr:lastModified": "Thu Oct 10 2024 18:55:08 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 27 2023 00:17:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 27 2023 00:17:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu May 30 2024 14:15:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 06 2024 16:42:01 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Jun 06 2024 16:42:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker completes acquisition of mfPHD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9744fbe2-0740-4941-a945-be432000ef73",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Stryker completes acquisition of mfPHD",
+  "jcr:predecessors": [
+    "dba68e6f-7e46-47d0-a417-9752f4883ec9"
+  ],
+  "lastPublished": "Mon May 04 2026 22:56:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 04 2026 22:56:25 GMT+0000",
+  "cq:lastReplicated": "Mon May 04 2026 22:56:27 GMT+0000",
+  "cq:lastModified": "Mon May 04 2026 22:56:08 GMT+0000",
+  "jcr:baseVersion": "dba68e6f-7e46-47d0-a417-9752f4883ec9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:56:24 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon May 04 2026 22:56:08 GMT+0000",
+  "jcr:uuid": "542d924f-19b5-4fd5-b58f-aaff6a2d65fe",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Apr 26 2024 18:48:33 GMT+0000",
+      "jcr:lastModified": "Fri Apr 26 2024 18:48:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Apr 26 2024 18:56:16 GMT+0000",
+          "alt": "Fortress",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/stryker-completes-acquisition-of-mfphd/Fortress.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 04 2026 22:55:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Apr 26 2024 18:48:38 GMT+0000",
+      "jcr:lastModified": "Fri Apr 26 2024 18:48:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Apr 26 2024 18:49:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Flower Mound, Texas, USA – April 30, 2024</span></p>\n<p>Stryker (NYSE: SYK), a global leader in medical technologies, announced today that it has completed the acquisition of mfPHD, a leader in modular stainless steel wall systems for hospitals and ambulatory surgery centers. Stryker will now be the provider of Fortress, a modular wall system that consolidates construction timelines, allowing for earlier operating room utilization as well as expedited room repair or modification when disruptive events occur. This acquisition allows for innovative product development opportunities to build out an ecosystem of embedded technologies delivering data and analytics for an intelligent operating room, minimizing downtime and costly renovations.</p>\n<p>&quot;mfPHD aligns with Stryker’s enterprise strategic plans of expanding our core offering while emphasizing turn-key OR initiatives,” said Caitlin Clark, vice president and general manager of Stryker’s Communications business. “We look forward to continuing our efforts to enable safer patient care and help our customers improve outcomes.”</p>\n<p>This acquisition of mfPHD accelerates Stryker’s turn-key offerings and will drive focus on modular OR design.</p>\n",
+          "jcr:lastModified": "Mon Apr 29 2024 15:30:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Apr 26 2024 18:51:50 GMT+0000",
+          "jcr:lastModified": "Fri Apr 26 2024 18:51:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1606269074": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Apr 26 2024 18:52:01 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">stryker.com</a>.</p>\n<p>Stryker Corporation or its affiliates own, use or have applied for the following trademarks or service marks:&nbsp; Stryker; Fortress.&nbsp; All other trademarks are trademarks of their respective owners or holders.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue May 28 2024 17:32:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_505878825": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Apr 26 2024 18:52:55 GMT+0000",
+          "jcr:lastModified": "Fri Apr 26 2024 18:52:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_376712626": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Apr 26 2024 18:53:00 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Media contact<br>\n </span>Laura Vickers, Director of Marketing Communications<br>\n<a href=\"mailto:Laura.Vickers@stryker.com\">Laura.Vickers@stryker.com</a></p>\n",
+          "jcr:lastModified": "Fri Apr 26 2024 18:53:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Apr 30 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Apr-2024",
+    "jcr:lastModified": "Fri Apr 26 2024 18:48:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2024/stryker-completes-acquisition-of-mfphd/Fortress-thumbnail.png"
+  }
+}

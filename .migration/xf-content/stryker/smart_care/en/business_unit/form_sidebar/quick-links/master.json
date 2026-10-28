@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Quick Links",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f5edbd95-bf2b-458c-a889-dfc1ec7d98ac",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "eee7039b-2689-4f10-a441-7bd2df7f193a"
+  ],
+  "lastPublished": "Mon Feb 02 2026 20:46:43 GMT+0000",
+  "jcr:created": "Mon Feb 02 2026 20:46:43 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 20:46:45 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 20:46:37 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "eee7039b-2689-4f10-a441-7bd2df7f193a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 15:45:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2539a992-5255-4e90-a152-e29ef0320aeb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_33113951_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 24 2023 13:45:25 GMT+0000",
+      "text": "<p><b><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Quick Links</span></span></b></p>\n<p style=\"text-align: left;\"><a href=\"/content/stryker/us/en/smart-care.html\"><span class=\"standalone-link\">Smart Care homepage</span></a></p>\n<p style=\"text-align: left;\"><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\"><span class=\"standalone-link\">Medical and surgical equipment</span></a></p>\n<p style=\"text-align: left;\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/smart-care/contact.html\" target=\"_self\">Contact information</a></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 20:46:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

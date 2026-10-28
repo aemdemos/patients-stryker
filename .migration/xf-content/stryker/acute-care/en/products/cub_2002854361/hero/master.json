@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0bdc7b4a-c319-43d5-9624-c2d3a5370bb4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6fa66230-f890-4517-bbbf-85b265c42ccf"
+  ],
+  "jcr:created": "Fri Feb 23 2024 18:22:10 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 23 2024 18:22:12 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 18:22:08 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6fa66230-f890-4517-bbbf-85b265c42ccf",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "6288e400-3592-48df-a24d-425ffd29ba32",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's Cub hospital crib ",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/cub/images/Thumbnail_CubCrib.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 18:22:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

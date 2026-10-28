@@ -1,0 +1,121 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Ultra Registry",
+  "jcr:versionHistory": "5a7cb376-f2d2-4b64-8656-bd56d4d1cb21",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "569d67a9-49ce-4cc8-bdff-8d7cae80ff21"
+  ],
+  "jcr:created": "Thu May 05 2022 17:33:40 GMT+0000",
+  "cq:lastModified": "Fri Apr 01 2022 16:36:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "569d67a9-49ce-4cc8-bdff-8d7cae80ff21",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "75af2cce-a365-4d19-bad3-4154d73682f4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_550258104_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "15",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #b2b4ae;\"><span style=\"color: #000000;\">100</span></span></span></span></span></span><br>\n<span class=\"fontsize-1-5em\"><span class=\"futura-bold\">patients</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Apr 01 2022 16:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "infographic with people",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/ultra-registry/images/100Patients_Color_Change.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Apr 01 2022 16:36:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "11"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\">Mean age of 56 years | 75% female</span></p>\n",
+      "jcr:lastModified": "Fri Apr 01 2022 16:19:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #b2b4ae;\">◼ 48 ruptured </span>&nbsp; &nbsp; &nbsp;<span style=\"color: #85458a;\">◼ 52 unruptured</span></span></span></p>\n",
+      "jcr:lastModified": "Fri Apr 01 2022 16:23:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

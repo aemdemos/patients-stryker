@@ -1,0 +1,79 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "e9afcd74-9624-4e7b-9ad0-5c690a684699",
+  "jcr:predecessors": [
+    "3d0adffc-bf86-411c-b946-733fd3feb571"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:51 GMT+0000",
+  "jcr:baseVersion": "3d0adffc-bf86-411c-b946-733fd3feb571",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "0d8d4566-53d7-4e0e-b3db-765c182aad71",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:title": "Chile",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastModified": "Tue Oct 08 2019 16:50:56 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "chile",
+    "jcr:lastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+    "lastFragmentSave": "Thu Oct 31 2019 15:02:59 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information",
+    "dam:relativePath": "stryker/content-fragments/latin-america/en/contact-information/chile",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Mon Feb 24 2020 14:44:51 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "Emails@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "addressBlock1": "<p>Av. Los Conquistadores 2743, Piso 3<br>\nProvidencia, Santiago, Chile</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/cl/es/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "RelatedLinks@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "locationName": "Chile",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "PhoneNumbers": "<p><b>+</b>56 (2) 2-751-2100<br>\n</p>\n",
+        "AddressLabel@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Thu Oct 31 2019 15:02:59 GMT+0000",
+        "BusinessHomePageLabel": "Chile Homepage"
+      }
+    }
+  }
+}

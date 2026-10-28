@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Desktop hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "86a8f477-1033-48ff-8c25-fb9b56608869",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c5c8cb36-45e3-4230-ac7a-8ce505e0e753"
+  ],
+  "lastPublished": "Fri Apr 10 2026 18:08:37 GMT+0000",
+  "jcr:created": "Fri Apr 10 2026 18:08:38 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 10 2026 18:08:40 GMT+0000",
+  "cq:lastModified": "Tue Apr 07 2026 19:52:23 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c5c8cb36-45e3-4230-ac7a-8ce505e0e753",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Apr 10 2026 18:08:37 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e7c77635-a5d8-41c4-8bc4-3164d4c058d5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Apr 02 2026 15:24:43 GMT+0000",
+      "alt": "PV-meded-desktop",
+      "srcFileRef": "/content/dam/stryker/education-and-training/peripheral-vascular/medical-education/images/PV-meded-desktop-v2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Apr 07 2026 19:52:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

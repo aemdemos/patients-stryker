@@ -1,0 +1,303 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Shoulder Talks",
+  "jcr:versionHistory": "77177198-2633-4771-b245-4c67c5fa4c27",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "482a4294-4c04-47f1-ba40-f0fda715396d"
+  ],
+  "lastPublished": "Tue Jul 14 2020 12:31:25 GMT+0000",
+  "jcr:created": "Tue Jul 14 2020 12:31:25 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2020 13:01:57 GMT+0000",
+  "jcr:baseVersion": "482a4294-4c04-47f1-ba40-f0fda715396d",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "4691cb29-8d73-4b09-aa36-babce5b03cdf",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "childrenNumber": "0",
+    "jcr:lastModified": "Thu Feb 27 2020 17:08:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "enableLocalPageNavigation": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jul 15 2019 19:37:18 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "&nbsp;",
+      "jcr:lastModified": "Mon Jul 15 2019 19:37:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:46:25 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:46:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+          "jcr:lastModified": "Tue Oct 01 2019 15:30:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Shoulder </span><span class=\"urw-egyptienne\">talks</span></span></span></p>\n",
+      "jcr:lastModified": "Thu Feb 27 2020 16:55:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Infection in Shoulder Arthroplasty</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 16:56:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "X2XIc5rs4os",
+          "jcr:lastModified": "Fri Dec 13 2019 18:12:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_675300414": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 16:57:56 GMT+0000",
+          "text": "<p>Join us as Dr. Willis presents the latest research in infections around diagnosing, preventing and treating infection shoulder arthroplasty.</p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 16:58:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Thu Feb 27 2020 15:36:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Infection-in-Shoulder-Arthroplasty"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Tips &amp; tricks for glenoid exposure</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 16:56:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 01 2019 13:25:49 GMT+0000",
+          "type": "typeId",
+          "videoId": "R8YJ_C5txuU",
+          "jcr:lastModified": "Tue Oct 01 2019 13:25:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_675300414_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 16:57:56 GMT+0000",
+          "text": "<p>Tune in to Dr. Willis’s class for his personal experience getting to the glenoid with these simple and quick steps.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 16:58:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Wed Sep 11 2019 19:37:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Shoulder-talks"
+        }
+      }
+    },
+    "sectionseparator_cop_1511527310": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:49:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Reverse Shoulder Replacements</span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:41:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "m_1ZOu083hU",
+          "jcr:lastModified": "Wed May 27 2020 19:41:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_675300414": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 16:57:56 GMT+0000",
+          "text": "<p>Reverse shoulder arthroplasty has become a popular treatment option for many patients experiencing shoulder pain. Join us as Dr. Bahk presents the history, evolution, and biomechanical considerations of reverse shoulder arthroplasty options on the market today.<br>\n</p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:41:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Wed May 27 2020 20:01:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Reverse-Shoulder-Replacements-2020"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Subscapularis Management in shoulder arthroplasty</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 10 2020 12:59:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "4xnM4GQljAw",
+          "jcr:lastModified": "Fri Jul 10 2020 13:01:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "text_675300414_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 16:57:56 GMT+0000",
+          "text": "<p>Join Dr. Cagle as he walks us through Subscapularis Management in shoulder arthroplasty, covering a wide range of topics. Chapters include conversations around pre-op discussions, post op care, walking through a surgical case and recovery of the patient.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Jul 10 2020 13:00:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_2066": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Sep 05 2019 20:02:33 GMT+0000",
+          "CTATitle": "VIEW FULL COURSE",
+          "jcr:lastModified": "Fri Jul 10 2020 13:00:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page/Subscapularis-Management-in-shoulder-arthroplasty"
+        }
+      }
+    }
+  }
+}

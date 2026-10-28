@@ -1,0 +1,214 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "The happiness impact",
+  "jcr:versionHistory": "433f7aad-b9ca-4474-8e61-7077a8071052",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "78e651ce-7106-4ba5-b85e-dd46ee963215"
+  ],
+  "contentID": "D0000021897 AA",
+  "lastPublished": "Fri Dec 20 2019 16:37:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Dec 20 2019 16:37:18 GMT+0000",
+  "cq:lastModified": "Fri Dec 20 2019 16:36:57 GMT+0000",
+  "jcr:baseVersion": "78e651ce-7106-4ba5-b85e-dd46ee963215",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Dec 19 2019 14:29:17 GMT+0000",
+  "jcr:uuid": "bd50364f-fa83-46c4-80c9-b859ac3b2856",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 11 2019 15:09:21 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2019 16:28:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "ND",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "layoutOptions": "col-sm-6 pull-left",
+        "backgroundImageRef": "/content/dam/stryker/education-and-training/the-happiness-impact/HI-header-2.png",
+        "jcr:lastModified": "Fri Dec 20 2019 16:36:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Dec 11 2019 15:10:57 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">The</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #ffb500;\">happiness</span></span></span></span></span> <span class=\"urw-egyptienne\">impact</span></span></span></span>",
+              "jcr:lastModified": "Wed Dec 11 2019 15:15:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_copy": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "jcr:created": "Wed Dec 11 2019 15:10:57 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-4vw\"><span style=\"color: #b2b4ae;\"><span class=\"urw-egyptienne\">The</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: #ffb500;\">happiness</span></span></span></span> <span class=\"urw-egyptienne\">impact</span></span></span></span></span>",
+            "jcr:lastModified": "Wed Dec 11 2019 15:16:57 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* Reimnitz, John. “For Hospital Patients, Feelings Are Facts.” Gallup, 2013, https://bit.ly/2Gw3EPU.</p>\r\n",
+    "jcr:lastModified": "Wed Dec 11 2019 15:55:53 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 11 2019 16:28:01 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2019 16:28:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 11 2019 16:18:25 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2019 16:18:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Dec 11 2019 16:24:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">As an industry leader, Stryker continues to innovate in the way it lives its mission and brings value to customers.<br>\r\n </span>______________________________<br>\r\n </span>",
+          "line2": "<br />\r\n<span class=\"fontsize-2vw\">Together with our customers, <br />\r\n we are driven to make healthcare better.</span>",
+          "jcr:lastModified": "Wed Dec 11 2019 16:32:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Dec 11 2019 16:24:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-1-5-vw\">We began to brainstorm: Outside of products, how can we show customers we care? How can we share some of Stryker’s cultural “secret sauce” with hospitals? And thus, Stryker’s first externally available leadership course was born!&nbsp;</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Healthcare professionals can bring The Happiness Impact to their hospitals. The course focuses on changing mindsets, boosting happiness and engagement at work and at home. If we can impact those outcomes, not only can we deepen our partnership, there is potential to raise HCAHP scores and even improve patient recovery.*&nbsp;</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">The Happiness Impact is a 60-90 minute course including a take-home booklet promoting reflection, gratitude and goal tracking.</span></p>\r\n",
+          "jcr:lastModified": "Wed Dec 11 2019 16:24:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_127810191": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 11 2019 18:04:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 11 2019 18:04:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Dec 11 2019 16:48:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-1-5-vw\">The Happiness Impact is facilitated by <span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\">Mark Sims </span></span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Mark, a 30+ year Stryker veteran, is the Director of Sales Development for Stryker’s Instruments Division. Mark’s responsibilities include new hire training and development opportunities for the Instruments sales force. </span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Mark is also part of Stryker’s international training process, a guest lecturer for the UAB Medical Distribution program, a licensed master facilitator for both the Matrix Achievement Group for sales and leadership training and Senn Delaney Corporate Culture programs. Mark was honored to be a contributing author to the “Warrior Sales Monk.”</span></p>\r\n",
+          "jcr:lastModified": "Wed Dec 11 2019 18:04:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "divisioncontactus": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "emailaddressRequired": "true",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "formThankYou": "Thank you!",
+      "jcr:created": "Wed Dec 11 2019 18:10:37 GMT+0000",
+      "formDisclaimerText": "Were you referred to our page by a Stryker rep? If so, who?",
+      "formMailTo": "mark.sims@stryker.com",
+      "lastNameRequired": "true",
+      "messageRequired": "true",
+      "jcr:lastModified": "Wed Dec 11 2019 19:15:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/divisioncontactus",
+      "firstNameRequired": "true",
+      "formTitle": "Interested in booking a course? Send us a message!",
+      "formAddDisclaimer": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

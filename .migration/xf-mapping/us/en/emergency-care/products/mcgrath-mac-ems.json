@@ -1,0 +1,646 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "McGRATH MAC video laryngoscope",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "33d20b3f-2a30-4dac-af6a-f3f7a60fa27f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "McGRATH MAC video laryngoscope",
+  "jcr:predecessors": [
+    "e93da842-d0bf-4197-bbf3-9d3c6a6c5de1"
+  ],
+  "contentID": "M0000009613 REV AB",
+  "lastPublished": "Thu Aug 20 2026 16:17:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 16:17:24 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 16:17:27 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 16:17:12 GMT+0000",
+  "jcr:description": "Built tough for EMS and designed to reinforce paramedics’ direct laryngoscopy skills, the McGRATH MAC video laryngoscope offers EMS providers an easy-to-implement, cost-effective solution to improve visualization and airway management.",
+  "jcr:baseVersion": "e93da842-d0bf-4197-bbf3-9d3c6a6c5de1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:17:23 GMT+0000",
+  "pageTitle": "McGRATH MAC video laryngoscope",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/ems/mcgrath",
+    "stryker:specialty/Airway-Management",
+    "stryker:business-unit/ems",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/emergency-response-and-resuscitation",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Mar 14 2024 21:13:47 GMT+0000",
+  "jcr:uuid": "91bf086b-a7da-4f63-ba30-4ee80a7344ba",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "McGRATH MAC video laryngoscope",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/mcgrath_mac_ems/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/mcgrath-mac-ems/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Mar 11 2024 17:15:25 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\">McGRATH</span></span> <span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\">MAC</span></span> <span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\">video</span></span> <span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\">laryngoscope</span></span></span></span></h1>\n<h2>Make your first attempt your best</h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Optimizes first-attempt success when compared to direct laryngoscopy,<sup>1,2</sup>&nbsp;while helping minimize exposure to support your safety, too.<sup>3,4</sup></span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-8em\">Stryker is a distributor of McGRATH MAC products in the U.S. and Canada markets only.</span></span></p>\n",
+              "jcr:lastModified": "Mon Mar 11 2024 17:29:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_2106211439": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 17:21:49 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 17:21:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_943651311": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "20",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Mar 11 2024 17:25:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2 style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Simple and durable</span></span></span></h2>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:26:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "20",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "8",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "20",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Mar 11 2024 17:21:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Built tough for EMS and designed to reinforce paramedics’ direct laryngoscopy skills, the McGRATH MAC video laryngoscope offers EMS providers an easy-to-implement, cost-effective solution to improve visualization and airway management.</span></p>\n",
+          "jcr:lastModified": "Thu Mar 14 2024 21:13:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "20",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c_19559593": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Tue Dec 19 2023 15:22:22 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Tue Dec 19 2023 15:23:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Mar 11 2024 17:19:20 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 17:19:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 17:22:05 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 17:22:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Mar 11 2024 17:19:25 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">KEY BENEFITS</span></span></span></h3>\n<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Helping protect you and your patients during intubation</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Video laryngoscopy supports first-attempt success of airway intubation. Research shows video laryngoscopy can help prevent clinician exposure to droplet-borne pathogens and further improve your safety.<sup>3&nbsp;</sup>Recent guidelines highlight the risks of contracting COVID-19 among those caring for infected patients.<sup>3</sup>&nbsp;The guidelines recommend airway management clinicians take precautions to further protect against droplet-borne pathogens.<sup>3</sup>&nbsp;The McGRATH™ MAC video laryngoscope is proven to improve first time success rate,<sup>1,2&nbsp;</sup>reduce time,<sup>5&nbsp;</sup>and lessen hemodynamic response to intubation6&nbsp;when compared to the traditional direct visualization technique.<sup>1,2,5</sup></span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:21:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_175606443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Proven technology</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The next-generation McGRATH MAC video laryngoscope is an enhanced, more robust device designed for routine use in fast-paced hospital and EMS environments. The latest design offers:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Enhanced optics</span></li>\n<li><span class=\"fontsize-1-25em\">Increased durability</span></li>\n<li><span class=\"fontsize-1-25em\">Intelligent battery management</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:19:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Product image of the next-generation McGRATH MAC video laryngoscope ",
+          "srcFileRef": "/content/dam/stryker/ems/products/mcgrath_ems/us/Proven_Technology.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 14 2024 21:12:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_175606443_2071986249": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Two EMTs use the McGRATH MAC video laryngoscope on a young patient in the field ",
+          "srcFileRef": "/content/dam/stryker/ems/products/mcgrath_ems/us/Familiar_Technique-color.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 14 2024 21:12:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Evolving a familiar technique</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The McGRATH MAC video laryngoscope combines line-of-sight video from its portrait display with the familiar Macintosh technique, so you retain your traditional laryngoscopy skills.</span></p>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:18:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      }
+    },
+    "cols2_copy_175606443_586137046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Simple. Smart. Versatile.&nbsp;</span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Minute-by-minute battery indication and auto-off optimize battery life</span></li>\n<li><span class=\"fontsize-1-25em\">One handle has multiple blade options</span></li>\n<li><span class=\"fontsize-1-25em\">Use for pediatric and adult patients for both routine and extreme airways<sup>6,7</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:18:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Close-up view of the McGRATH MAC video laryngoscope blade ",
+          "srcFileRef": "/content/dam/stryker/ems/products/mcgrath_ems/us/Simple_Smart_Versatile.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 14 2024 21:12:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_175606443_1776189513": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "An EMT is shown using the McGRATH MAC video laryngoscope on a patient in the field",
+          "srcFileRef": "/content/dam/stryker/ems/products/mcgrath_ems/us/See_Clearly-color.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 14 2024 21:12:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">See clearly. Every time.</span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">2X light spread&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">3X brighter camera</span></li>\n<li><span class=\"fontsize-1-25em\">4X the resolution</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Mar 11 2024 17:17:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      }
+    },
+    "section_title_140431": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 15 2021 21:28:06 GMT+0000",
+      "title": "connect",
+      "jcr:lastModified": "Fri Jul 22 2022 22:22:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Nov 21 2023 18:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 20 2026 16:17:12 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
+          "jcr:lastModified": "Wed May 03 2023 12:58:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Contact Information Customer service product feedback",
+          "jcr:lastModified": "Tue Dec 19 2023 14:44:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/lead-gen-form/social-icons/master"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jul 22 2022 22:25:02 GMT+0000",
+      "jcr:lastModified": "Fri Jul 22 2022 22:25:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 27 2022 13:39:11 GMT+0000",
+      "text": "SERVICE AND SUPPORT Robust support for your team Technical support We'll work with you to quickly assess your situation and find the best solution. Contact support ProCare service plans Focus on saving lives while extending the integrity of your devices with a ProCare service plan. Learn more Product resources Find a variety of documents including best practices, datasheets and clinical information for easy download. Learn more Training and education Discover webinars, online and in-person courses and other resources to strengthen your clinical education. Learn more",
+      "jcr:lastModified": "Wed Jul 27 2022 13:39:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/services-and-support/services-and-support/master"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Dec 19 2023 14:49:20 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Dec 19 2023 14:49:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Mon Mar 11 2024 16:36:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "resources": [
+            "/content/dam/stryker/ems/products/mcgrath_ems/us/resources/M0000008244 REV AA_McGRATH MAC comparison flyer_040522.pdf",
+            "/content/stryker/us/en/emergency-care/asset-items/mcgrath/jcr:content/par/externalasset_copy_c",
+            "/content/stryker/us/en/emergency-care/services/emergency-care-ecommerce-site/jcr:content/par/externalasset"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:14:52 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 17:11:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_copy_co": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Dec 15 2021 21:08:06 GMT+0000",
+          "jcr:lastModified": "Mon Mar 11 2024 17:11:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/lucas-3"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/lifepak-15"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/power-pro-2"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/power-load"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c_456445931": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Tue Dec 19 2023 14:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Mar 11 2024 17:15:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://www.strykeremergencycare.com/products/devices/mcgrath-mac-ems/",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:17:26 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Learn more",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Kriege M, Alflen C, Tzanova l, et al. Evaluation of the McGrath MAC and Macintosh laryngoscope for tracheal intubation in 2000 patients undergoing general anaesthesia; the randomized multicenter EMMA trial study protocol. BMJ Open. 2017; 7;e016907.<br>\r\n<br>\r\n2. Kleine-Brueggeney M, Greif R, Schoettker P, Savoldelli GL, Nabecker S, Theiler LG. Evaluation of six videolaryngoscopes in 720 patients with a simulated difficult airway: a multicentre randomized controlled trial. British journal of anaesthesia. 2016;116(5):670-679.<br>\r\n<br>\r\n3. Cook TM, El-Boghdadly K, McGuire B, McNarry AF, Patel A, Higgs A. Consensus guidelines for managing the airway in patients with COVID-19: Guidelines from the Difficult Airway Society, the Association of Anaesthetists the Intensive Care Society, the Faculty of Intensive Care Medicine and the Royal College of Anaesthetists. Anaesthesia. 2020;75(6):785–799.<br>\r\n<br>\r\n4. Hall D, Steel A, Heij R, Eley A, Young P. Video laryngoscopy increases 'mouth-to-mouth' distance compared with direct laryngoscopy. Anaesthesia. 2020;75(6):822–823.<br>\r\n<br>\r\n5. Alvis BD, Hester D, Watson D, Higgins M, St Jacques P. Randomized controlled trial comparing the McGRATH MAC video laryngoscope with the King Vision video laryngoscope in adult patients. Minerva anestesiologica. 2016;82(1):30-35.<br>\r\n<br>\r\n6. Gaszyński T. Comparison of the glottic view during video-intubation in super obese patients: a series of cases. Ther Clin Risk Manag. 2016;12:1677-1682.<br>\r\n<br>\r\n7. Szarpak L, Truszewski Z, Czyzewski L, et al. A comparison of the McGRATH™ MAC and Macintosh laryngoscopes for child tracheal intubation during resuscitation by paramedics. A randomized, crossover, manikin study. Am J Emerg Med. 2016;34(8):1338-41.</p>\r\n",
+    "jcr:lastModified": "Tue Dec 19 2023 14:50:21 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/mcgrath_ems/us/Proven_Technology.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:17:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:17:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Mar 11 2024 17:15:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

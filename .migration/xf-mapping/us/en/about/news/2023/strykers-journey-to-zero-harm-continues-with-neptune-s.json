@@ -1,0 +1,433 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker's Journey to Zero* harm continues with Neptune S",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "67965229-9ac5-4e34-ac49-fabe190e2f64",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "Journey to Zero",
+  "jcr:predecessors": [
+    "f0f51c43-6de9-44b7-a6ad-de5d27a9f5e7"
+  ],
+  "contentID": "COMM-GSNPS-SYK-760434",
+  "lastPublished": "Fri Aug 25 2023 17:48:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Aug 25 2023 17:48:03 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 25 2023 17:48:05 GMT+0000",
+  "cq:lastModified": "Fri Aug 25 2023 17:47:49 GMT+0000",
+  "jcr:baseVersion": "f0f51c43-6de9-44b7-a6ad-de5d27a9f5e7",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Aug 25 2023 17:40:37 GMT+0000",
+  "jcr:uuid": "6841e7e7-ffe2-4814-8bb2-8a0130766a92",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Nov 04 2020 16:45:08 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Nov 04 2020 19:41:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/hero-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/strykers-journey-to/hero-image/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/strykers-journey-to/hero-image/mobile",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Wed Nov 04 2020 16:46:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Wed Aug 23 2023 17:19:45 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Wed Sep 01 2021 20:38:30 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">Stryker's Journey to Zero* harm continues with Neptune S</span></span></span></span></div>\r\n<p> </p>\r\n",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Stryker's VP/GM of Surgical Technologies gets detailed about hospital waste management</span></span>",
+              "jcr:lastModified": "Fri Aug 25 2023 17:40:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:47:17 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Jan 27 2023 19:18:03 GMT+0000",
+          "alt": "Brandon Jominy, headshot",
+          "srcFileRef": "/content/dam/stryker/about/news/2023/kers-journey-to-zero-harm-continues-with-neptune-s/Jominy_Final.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 16 2023 19:03:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "4"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1427993110_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 25 2023 18:29:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Healthcare professionals perform over 30 million gastrointestinal (GI) procedures in the U.S. every year.<sup>1</sup> It’s a specialty in which many types of healthcare professionals, from gastroenterologists to nurses to technicians, are working alongside each other to serve patients’ needs. In part, that is what drew Brandon Jominy, Vice President and General Manager of Stryker’s Surgical Technologies business, to join Stryker a decade ago.&nbsp;</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Having spent his early career consulting for automotive clients, Brandon was interested in the work but had a desire to move to an industry where he could help make a difference in people’s lives. He had family members that were nurses, and hearing their stories of how they were positively impacting patients inspired him to pursue a career in healthcare. Brandon says, &quot;working at Stryker has given me purpose and pride, and I’m extremely passionate about our mission and feel honored to be a part of a career that has so much meaning.&quot; Today, Brandon is focused on taking Stryker’s well-established technology into a procedural area that is ripe for change, gastroenterology.&nbsp;<span class=\"futura-bold\">Brandon shares how Neptune S, a constantly closed waste management system, helps protect healthcare workers during and after GI cases by reducing exposure to biohazardous fluid and helping ensure the collection of polyps and specimens.**</span><br>\n </span></span></p>\n",
+          "jcr:lastModified": "Fri Aug 18 2023 17:01:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What is the Journey to Zero* harm?&nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:54:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "8",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“Our Surgical Technologies team focuses on improving safety and efficiency in the main operating room, as well as in GI and labor and delivery cases. We are different from many of our other Stryker business units because we have a special focus on the needs of nurses and nurse leadership. Together with our customers, we are on a journey to zero harm. Meaning, we strive for zero hazards in the work environment, to help you on your journey to provide safer care and better patient outcomes.”</p>\n",
+          "jcr:lastModified": "Fri Aug 18 2023 17:05:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">How does Neptune S fit into that journey, and who is it for primarily?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:55:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“With the launch of <a href=\"https://www.safeor.com/products/neptune-s\">Neptune S, our constantly closed waste management system</a>, we have entered the GI space in a meaningful way. Of the 30 million yearly GI procedures in the U.S., many are colon screening procedures to determine if the patient may have cancer. It’s an area where gastroenterologists, nurses, and techs are working in a fast-paced environment, in small, dark rooms, often having to contort their bodies to perform procedures, and one where technology like suction canisters are still being used.”&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 25 2023 17:41:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">How did you work with your customers to develop Neptune S?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&quot;Neptune S was designed for the GI space. The procedures and technologies I just described leave the caregivers exposed to GI waste on a regular basis. It also leaves the patients vulnerable to potential issues like lost polyps, which could lead to the need for additional procedures. Our team observed over a hundred cases and noted all the challenges with workflow and safety. Our team then took these challenges and identified them as opportunities that have allowed us to truly redefine our customer’s workflow.”</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:57:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What is the biggest R&amp;D success from the Neptune S development?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:57:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“The main differentiator of Neptune S is its streamlined specimen collection solution. The specimen collection disposable has an illuminated window to easily visualize the polyp as soon as it’s captured. This disposable also contains a backup polyp trap to help ensure that there are no lost polyps. Not only does the Neptune light up the manifold, but it also offers a smaller footprint and illuminated worksurface, so once the specimen is captured, it can be placed on top of the worksurface, rather than the technician trying to squeeze behind the physician and then run to a different location in the room to hand off the specimen.”</p>\n",
+          "jcr:lastModified": "Fri Aug 18 2023 16:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What does the future hold?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Aug 11 2023 19:58:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "9",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“We recently doubled down on our investment in this space by purchasing a specialty oxygen mask that increases oxygen inhalation for patients undergoing upper GI procedures, or what the healthcare community calls FiO2 levels. It also enables gastroenterologists to easily insert probes through the nose or mouth during upper GI procedures. We will learn a lot more about the challenges in GI over the coming months and years. But I’m most excited to take our established Neptune technology into a procedural area that hasn’t been changed for years. The impact that this innovation can have on our customers and their patients is incredible.”</p>\n",
+          "jcr:lastModified": "Wed Aug 16 2023 18:31:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:41:44 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:43:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "jcr:lastModified": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Thu Feb 09 2023 19:42:51 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Feb 09 2023 20:02:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+          "jcr:created": "Fri Feb 10 2023 18:56:47 GMT+0000",
+          "text": "More about Stryker’s Journey to Zero harm Alongside The Joint Commission, a nonprofit committed to quality improvement and patient safety in healthcare, Stryker has committed to several zero goals in the operating room: blind spots, surgical smoke, retained surgical sponges, drug diversion, splashes and spills, and slips, trips and falls – known collectively as the “Journey to Zero*” harm across the continuum of care. Did you know? Operating rooms generate up to 70% of the total waste produced in hospitals.2 Up to 60% of cases experience splash and spill during collection, removal or disposal of infectious fluid waste.3 Open waste management systems require nearly 3.5 times as much staff time for setup and maintenance during procedures and post-procedure waste disposal.4 Neptune was pioneered by an OR nurse. In 2001 we launched the first-generation Neptune fluid and smoke waste management system as the only constantly closed waste management system on the market.",
+          "jcr:lastModified": "Tue Aug 15 2023 18:18:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/strykers_journey_to_/infographic/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/strykers-journey-to/infographic/master"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "7",
+      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 29 2023 17:47:20 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<div><b>References</b></div>\n<div>&nbsp;</div>\n<ol>\n<li>Impact of Change®, 2019; OptumInsight, 2017; The following 2017 CMS Limited Data Sets (LDS): Carrier, Denominator, Home Health Agency, Hospice, Outpatient, Skilled Nursing Facility; Claritas Pop-Facts®, 2019; Sg2 Analysis, 2019.</li>\n<li>Lee RJ, Mears SC. Greening of orthopedic surgery. Orthopedics. 2012 Jun;35(6):e940-4. doi: 10.3928/01477447-20120525-39.</li>\n<li>Patel, R. “Findings of a Comparative analysis of Operating Room Fluid Waste Removal at Hospital for Special Surgery: A Randomized Study Comparing the Stryker Neptune Waste Management System to Suction Canisters.”</li>\n<li>Horn, Martlie et al. “Traditional canister-based open waste management system versus closed system: hazardous exposure prevention and operating theatre staff satisfaction.” Journal of Perioperative Nursing in Australia. 28:1 (Autumn 2015):18-22.</li>\n</ol>\n<p>*Zero splash and spills, zero airborne contaminants, zero smoke, zero retained surgical sponges, zero blind spots, zero trips &amp; falls, zero drug diversion, and zero doubt messages are not guarantees and are aspirational in nature.</p>\n<p>**2mm or larger<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Aug 16 2023 14:49:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Fri Aug 25 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Aug-2023",
+    "jcr:lastModified": "Fri Aug 25 2023 17:47:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/kers-journey-to-zero-harm-continues-with-neptune-s/JourneytoZero.png"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Aug 11 2023 19:42:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

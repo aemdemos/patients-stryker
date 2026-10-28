@@ -1,0 +1,101 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker announces definitive agreement to acquire Inari Medical, Inc., providing entry into high-growth peripheral vascular segment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "89f0c333-772f-438c-b35f-92c8bb3bc082",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Stryker logo",
+  "jcr:predecessors": [
+    "d5db608c-7a64-4a4b-9781-1322210b1b3f"
+  ],
+  "lastPublished": "Mon Jan 06 2025 22:42:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jan 06 2025 22:42:04 GMT+0000",
+  "cq:lastReplicated": "Mon Jan 06 2025 22:42:06 GMT+0000",
+  "cq:lastModified": "Mon Jan 06 2025 22:07:06 GMT+0000",
+  "jcr:description": "Stryker announced today a definitive agreement to acquire all of the issued and outstanding shares of common stock of Inari Medical, Inc. (NASDAQ: NARI) for $80 per share in cash, representing a total fully diluted equity value of approximately $4.9 billion.",
+  "jcr:baseVersion": "d5db608c-7a64-4a4b-9781-1322210b1b3f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jan 06 2025 22:42:03 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Jan 06 2025 22:07:06 GMT+0000",
+  "jcr:uuid": "d7c6c789-ecf3-44c7-aab2-4b74afe4b4ce",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jan 06 2025 21:56:13 GMT+0000",
+      "jcr:lastModified": "Mon Jan 06 2025 21:56:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jan 06 2025 22:02:21 GMT+0000",
+          "alt": "stryker_logo2015_left",
+          "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jan 06 2025 22:02:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 06 2025 21:57:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Stryker (NYSE: SYK), a global leader in medical technologies, announced today a definitive agreement to acquire all of the issued and outstanding shares of common stock of Inari Medical, Inc. (NASDAQ: NARI) for $80 per share in cash, representing a total fully diluted equity value of approximately $4.9 billion. Inari, which was founded in 2011, will bring a leading peripheral vascular position in the fast-growing segment of venous thromboembolism (VTE) to Stryker. Inari’s innovative product portfolio is highly complementary to Stryker’s Neurovascular business and includes mechanical thrombectomy solutions for peripheral vascular diseases such as deep vein thrombosis and pulmonary embolism.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2025/Stryker-announces-definitive-agreement-to-acquire-Inari-Medical-Inc.-providing-entry-into-high-growth-peripheral-vascular-segment/default.aspx\" target=\"_blank\"><span class=\"standalone-link\">Read full press release here</span></a></p>\n",
+          "jcr:lastModified": "Mon Jan 06 2025 22:03:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Mon Jan 06 2025 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Jan-2025",
+    "jcr:lastModified": "Mon Jan 06 2025 21:56:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Jan 06 2025 22:02:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  }
+}

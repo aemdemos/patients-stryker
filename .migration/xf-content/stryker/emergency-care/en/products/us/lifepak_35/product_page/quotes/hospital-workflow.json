@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Minimal training",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "73ee0510-6e56-4d91-9006-d093beb0491f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "73dccf7d-d26c-45eb-9d7d-7608d85b3871"
+  ],
+  "lastPublished": "Wed May 29 2024 19:12:31 GMT+0000",
+  "jcr:created": "Wed May 29 2024 19:12:37 GMT+0000",
+  "cq:lastReplicated": "Wed May 29 2024 19:12:43 GMT+0000",
+  "cq:lastModified": "Tue May 28 2024 20:46:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "73dccf7d-d26c-45eb-9d7d-7608d85b3871",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:12:31 GMT+0000",
+  "jcr:uuid": "0b739c26-05c0-4dc1-af82-d306734f8a42",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 30 2024 21:00:57 GMT+0000",
+      "alt": "Critical Care Nurse utilizing touchscreen on LIFEPAK 35 monitor/defibrillator",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_workflow-trauma-patient_3x1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue May 28 2024 20:46:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a56983e4-a581-4be4-b1e8-b7f365549f06",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "e13a4272-9e4e-43b3-84c2-9407d205df28"
+  ],
+  "lastPublished": "Tue Jun 16 2026 13:59:58 GMT+0000",
+  "jcr:created": "Tue Jun 16 2026 14:00:00 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 16 2026 14:00:07 GMT+0000",
+  "cq:lastModified": "Thu Jun 11 2026 16:09:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "e13a4272-9e4e-43b3-84c2-9407d205df28",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 16 2026 13:59:58 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e438fef4-189d-4a4b-ab0a-1dd4ce865851",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1727552076": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 15:52:59 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Thu Jun 11 2026 15:53:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jun 11 2026 15:39:31 GMT+0000",
+      "alt": "66c5e9ee82bd8dab3cb4497e_65d679c85af2f7ac521bf5de_ST_SafeAir_NativeArticle-Image_092922_3",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/protect-your-patients-…-and-your-or-staff/66c5e9ee82bd8dab3cb4497e_65d679c85af2f7ac521bf5de_ST_SafeAir_NativeArticle-Image_092922_3.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 15:40:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "4",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jun 11 2026 15:39:34 GMT+0000",
+      "text": "<p>Julie Greenhalgh, RN, BSN, CNOR, never smoked a day in her life, yet she has all the tell-tale signs that will plague her for the rest of her life: the raspy voice, the chest-deep rattle when she inhales, and the persistent cough. That’s because, over the 42 years she spent in the OR as a perioperative nurse, she was exposed to harmful chemicals1 often found in surgical smoke from open electrocautery procedures. In her home state of Rhode Island, however, that risk to OR staff is no longer present, thanks to legislation she championed for five years until it passed in 2019.</p>\n<p>Since that landmark legislation, twenty additional states<sup>2</sup> have enacted surgical smoke legislation, with several others in the planning stages. And healthcare professionals and their employers across the U.S. are paying attention. OR staff, more than anyone, have long recognized the importance of having safety procedures and tools in place. And with today’s current nursing shortage3 many hospitals have begun offering potential hires a safer OR by proactively implementing smoke evacuation policies before legislation becomes law.</p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 15:41:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_6770": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jun 11 2026 15:41:49 GMT+0000",
+      "alt": "66c5e9ee82bd8dab3cb44999_65d679c85af2f7ac521bf5df_ST_SafeAir_NativeArticle-Image_092922_7",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/protect-your-patients-…-and-your-or-staff/66c5e9ee82bd8dab3cb44999_65d679c85af2f7ac521bf5df_ST_SafeAir_NativeArticle-Image_092922_7.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 15:43:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "4",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_127766262521189": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "text": "<p>“Don’t wait for legislation to create your own policy,” says Amy Boone, MBA, BSN, RN, who oversees the Surgery and OB/GYN departments at a large medical center in Cleveland, Ohio. Her facility has had a smoke-free OR policy for several years, despite Ohio’s lack of state legislation. Boone also helped create a similar policy at her previous employer “Don’t underestimate your leadership or legal team. When you stress patient and employee safety, you’ll get less push back than you might expect because they understand the importance of that.”</p>\n<p>“The technology is here, it’s available, and it’s relatively cost-effective,” adds Greenhalgh. “I haven’t met one nurse who doesn’t see the need to effectively evacuate smoke in the OR.”</p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 15:44:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_667655018": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 15:44:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">The right equipment is imperative</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 16:06:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_206199153": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jun 11 2026 15:45:20 GMT+0000",
+      "alt": "667ae9d60983cadc4a6997ae_634da664ec4c39132a1c0e93_ST_SafeAir_NativeArticle-Image_092922_8",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/protect-your-patients-…-and-your-or-staff/667ae9d60983cadc4a6997ae_634da664ec4c39132a1c0e93_ST_SafeAir_NativeArticle-Image_092922_8.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 15:45:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "4",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_766452345": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jun 11 2026 15:45:27 GMT+0000",
+      "text": "<p>Today, Greenhalgh works as an RN emeritus at her local community hospitals, training nurses on technology to help combat surgical smoke. Both Greenhalgh and Boone have experience in using Stryker’s smoke evacuation systems, <a href=\"/content/stryker/us/en/surgical-technologies/products/neptune-waste-management-system.html\">Neptune</a> and <a href=\"/content/stryker/us/en/surgical-technologies/products/safeair-compact-evacuator.html\">SafeAir</a>. Greenhalgh is quick to point out the equipment is not complicated. “Handheld SafeAir evacuation pencils capture the plume during electrosurgical cutting—right at the source.” Paired with either the portable SafeAir Compact Smoke Evacuator or the Neptune Waste Management System, the smoke is suctioned from the pencils through ULPA filters that meet the Association of periOperative Registered Nurses (AORN) recommendations on surgical smoke.4 The multi-tasking Neptune also evacuates and locks away hazardous fluids for added safety.</p>\n<p>Greenhalgh recalls that when SafeAir was first implemented at her facility, Stryker reps worked closely with OR staff to make sure everyone was comfortable and up to speed on the new technology. “It’s nota huge additional process for the staff, but it has huge results.”</p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 15:49:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_676674775": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 15:50:04 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">‍Take the first step toward a smoke-free OR today</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 16:06:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1681338985": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 15:51:00 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Greenhalgh suggests that if your facility isn’t using smoke evacuation technology yet, don’t get discouraged. Get busy. Take that first step by talking with your OR director to make your case. Ask for a demonstration of smoke evacuation products. Ask Purchasing to talk with reps on costs. And don’t be afraid to contact for support and access to data about the risks of surgical smoke</p>\n<p>“When I started this campaign, there wasn’t a nursing crisis in the country. Now there is,” Greenhalgh concludes. “Remember, this is for the safety of the staff in your OR. They aren’t going to continue to work in an OR if they don’t feel safe. And then we’ll be in worse shape than we are now.”</p>\n<p>Knowing that the journey to a smoke-free facility can seem daunting, Stryker partnered with nurses and hospital staff to create an implementation road map. Is your facility prepared to protect your staff and patients? Begin your journey to a smoke-free OR today.</p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 15:59:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jun 11 2026 15:51:49 GMT+0000",
+      "hideBorder": "false",
+      "type": "typeId",
+      "videoId": "ZZeFzYpXots",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 15:52:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1108930098": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "4",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "3",
+      "topMargin": "3",
+      "jcr:created": "Thu Jun 11 2026 15:52:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">“Together, we can make surgical smoke in an operating room a thing of the past.”</span></span></p>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 15:57:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": "true",
+      "leftMargin": "3",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

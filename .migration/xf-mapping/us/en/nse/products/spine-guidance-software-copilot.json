@@ -1,0 +1,1148 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Spine Guidance 5 Software with Copilot",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "634d1687-99fc-4ed8-9056-930510bd8ff7",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "SG5_Copilot_Website page_V2 1",
+  "jcr:predecessors": [
+    "9083c335-3891-4378-af4e-16ab9c4cbe40"
+  ],
+  "contentID": "NS-GSNPS-SYK-1228066",
+  "lastPublished": "Fri Jun 05 2026 05:00:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jun 05 2026 05:00:09 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 05 2026 05:00:11 GMT+0000",
+  "cq:lastModified": "Wed Jun 03 2026 14:08:37 GMT+0000",
+  "jcr:description": "Engineered for precision, Spine Guidance Software featuring Copilot is designed to empower you to plan and perform certain spinal procedures with confidence.",
+  "cq:siblingOrder": "bone-mill,adapt-platform,c2-nervemonitor,core-console,essx-microdebrider,hemopore-hemostatic-bioresorbable-nasal-dressing,maestro-air-motor,malis-bipolar-generator,nasopore-bioresorbable-nasal-dressing,nasopore-fd-bioresorbable-nasal-dressing,otopore-bioresorbable-ear-dressing,profess-software,sonopet-ultrasonic-aspirator,malis-disposable-non-stick-bipolar-forceps,ziehm,pidrive-plus-motor,sonopet-2,aria-drill-system,core-2-console,elite-attachments,footed-attachments,heavy-duty-attachments,irrigation-sleeves,maestro-drill,mis-attachments,s2-mini-drill-system,s2_drive-drill,saber-drill,silverglide,sumex-drill,pidrive,sonopet-iq,adherus-autospray-and-adherus-autospray-et,paediatric-mandibular-distractor,universal-mesh,bone-vac,ibur,quantum,quasar,qosmic-led-headlight,spine-guidance-software-copilot,high-speed-drills,",
+  "jcr:baseVersion": "9083c335-3891-4378-af4e-16ab9c4cbe40",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 26 2024 13:11:01 GMT+0000",
+  "cq:name": "spine-guidance-software-copilot",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/spine-ortho",
+    "stryker:specialty/spine-navigation",
+    "stryker:business-unit/Navigation-NSE",
+    "stryker:portfolio/orthopaedics",
+    "stryker:product/nav-nse/copilot",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Apr 03 2025 21:22:47 GMT+0000",
+  "jcr:uuid": "068f55b1-2cf5-4d81-a0c0-efc3bb53d612",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/nse/products",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_346109467": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "q",
+      "jcr:created": "Wed Jul 17 2024 19:37:09 GMT+0000",
+      "title": "Q Guidance System",
+      "jcr:lastModified": "Wed Jul 17 2024 19:38:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standalonevideo_1334605530": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jul 19 2024 14:52:10 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Fri Jul 19 2024 14:53:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Mon Jul 15 2024 20:22:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2 style=\"text-align: left;\"><span class=\"fontsize-3vw\">Integrated technologies delivering <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">SmartGuidance™</span></span></span><br />\r\n</h2>\r\n",
+      "line2": "<p><span class=\"fontsize-2vw\"><br>\r\n Engineered for precision, Spine Guidance 5 Software featuring Copilot is designed to empower you to plan and perform&nbsp;certain spinal procedures with confidence.</span></p>\r\n<p><span class=\"fontsize-2vw\"><br>\r\nBoasting a range of smart features and seamlessly integrating with various VB Spine screw systems, imaging systems, and CORE 2, these innovative technologies are designed to lead you into the future of spine surgery.</span></p>\r\n<p><span class=\"fontsize-2vw\"><br>\r\nTo learn more or to request a quote contact us below.</span></p>\r\n",
+      "jcr:lastModified": "Mon Mar 02 2026 17:41:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "-2",
+      "bottomMargin": "-3"
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "ctaLinkType": "deep",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon Jul 15 2024 20:32:56 GMT+0000",
+      "CTATitle": "Contact us",
+      "ctaDeepLinkID": "contact",
+      "jcr:lastModified": "Wed Jul 17 2024 19:40:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgb(255,181,0)"
+    },
+    "cols_1398577776": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 15 2024 20:24:37 GMT+0000",
+      "jcr:lastModified": "Mon Jul 15 2024 20:24:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:17:31 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:17:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_389711533": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 17 2024 19:38:35 GMT+0000",
+      "jcr:lastModified": "Wed Jul 17 2024 19:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 17 2024 19:38:29 GMT+0000",
+          "jcr:lastModified": "Wed Jul 17 2024 19:38:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_1378585744": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "spine",
+      "jcr:created": "Wed Jul 17 2024 19:38:43 GMT+0000",
+      "title": "Spine Guidance Software",
+      "jcr:lastModified": "Wed Jul 17 2024 19:39:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:19:00 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:19:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Spine Guidance 5 Software</span></span><br>\r\n Designed to streamline and simplify</span></h3>\r\n",
+          "line2": "<span class=\"fontsize-1-5-vw\">Powered by Q, the latest Spine Guidance Software has been designed to help streamline workflows and simplify complex clinical tasks.</span>",
+          "jcr:lastModified": "Mon Mar 02 2026 17:42:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Capabilities and benefits</span></span></span></h3>\r\n",
+          "line2": "<p><span class=\"fontsize-1-5-vw\">Our latest Spine Guidance 5 Software includes updates to Smart Segmentation and unveils Copilot, designed to enhance your surgical planning and with the potential to increase the efficiency of your procedural workflow.</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">&nbsp;</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Designed to help streamline workflows and simplify clinical tasks. Spine Guidance Software’s innovative features include:</span></p>\r\n",
+          "jcr:lastModified": "Wed Apr 01 2026 19:55:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:22:16 GMT+0000",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Updates to Smart Segmentation</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Automatic and customizable screw suggestions*</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Rod visualization and length estimation*</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Screw Guidance view&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Extended tab visualization for MIS screw systems&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Auto-detect planned screw&nbsp;</span></span></li>\n</ul>\n<p><span class=\"fontsize-8em\">&nbsp;*All planned elements require surgeon confirmation.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Mar 02 2026 17:34:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_3125": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:24:37 GMT+0000",
+          "alt": "Job_10254",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/Job_10254.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:26:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:24:58 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:24:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">4th generation FP8000 camera</span></span><br>\r\n </span></h3>\r\n",
+      "jcr:lastModified": "Thu Jul 18 2024 20:38:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standaloneimage_312512581": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jul 16 2024 19:24:37 GMT+0000",
+      "alt": "FP8000",
+      "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/FP8000.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jul 17 2024 19:26:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols_890399171": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 17 2024 19:26:31 GMT+0000",
+      "jcr:lastModified": "Wed Jul 17 2024 19:26:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_250956158": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:24:54 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:24:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "15",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 16 2024 19:22:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The flexibility of multiple optical tracking methods, including full-spectrum active/ passive hybrid optical tracking<sup>1<br>\n </sup><br>\n </span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Only guidance system/camera with Stryker's proprietary active technology<br>\n</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 24 2024 19:49:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jan 28 2026 20:20:58 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Jan 28 2026 20:21:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/joint-replacement/gsnps/JR-GSNPS-ANIM-2520538-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/JR-GSNPS-ANIM-2520538-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jan 28 2026 20:21:45 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_727306786": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:29:13 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:29:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1647709317": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:29:27 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:29:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:29:33 GMT+0000",
+          "alt": "preferred image for pg 8 right side",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/preferred image for pg 8 right side.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:28:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Automatic screw suggestion:</span></span><br />\r\nThe power of planning ahead</span></h3>\r\n",
+          "line2": "<span class=\"fontsize-1-5-vw\">Algorithm-driven automatic and customizable screw size and trajectory suggestions are confirmed by the surgeon and are designed to:</span>",
+          "jcr:lastModified": "Thu May 21 2026 15:51:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:22:16 GMT+0000",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Help avoid pedicle breaching</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Help avoid contralateral screw tip interference</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Enable you to configure size symmetry per level</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Offer two possible trajectory suggestions for midline and MIS pedicle screw techniques</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu May 21 2026 15:51:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1766965175": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:31:33 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:31:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3 style=\"text-align: center;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Seamlessly integrated technologies:</span></span><br />\r\n</span></h3>\r\n",
+      "line2": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\">Spine Guidance 5 Software featuring Copilot is designed to lead you into the future of spine surgery, seamlessly integrating with various VB Spine&nbsp;pedicle screw systems, CORE 2 Console, GE HealthCare OEC 3D C-arm and the Ziehm Imaging Vision RFD 3D C-arm, enabling optimal utilization of your existing technologies.</span></div>\r\n",
+      "jcr:lastModified": "Fri May 22 2026 13:50:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3_2129764224": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 18 2025 20:01:35 GMT+0000",
+      "jcr:lastModified": "Thu Sep 18 2025 20:01:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "12",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "18",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:33:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4 style=\"text-align: center;\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">Copilot</span></span></h4>\r\n",
+          "jcr:lastModified": "Tue Jul 16 2024 19:36:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "9",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "12",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:33:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4 style=\"text-align: center;\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">Ziehm Imaging <br />\r\nVision RFD 3D C-arm</span></span></h4>\r\n",
+          "jcr:lastModified": "Thu Sep 18 2025 20:05:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "9",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "12",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:33:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4 style=\"text-align: center;\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">GE HealthCare <br />\r\nOEC 3D C-arm</span></span></h4>\r\n",
+          "jcr:lastModified": "Thu Sep 18 2025 20:05:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols3_1606408283": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 15 2025 18:22:05 GMT+0000",
+      "jcr:lastModified": "Wed Oct 15 2025 18:22:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "12",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "18",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:33:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4 style=\"text-align: center;\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">CORE 2</span></span></h4>\r\n",
+          "jcr:lastModified": "Wed Oct 15 2025 18:22:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(237,238,236)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:32:54 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:32:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_6126080": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:38:09 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:38:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c_1480980312": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Seamless planning</span></span><br>\r\n Spine Guidance 5 Software’s user settings allow for&nbsp;individual choice of screw for default screw suggestions.</span></h3>\r\n",
+      "jcr:lastModified": "Mon Mar 02 2026 17:43:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:41:24 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:41:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:45:59 GMT+0000",
+          "jcr:lastModified": "Tue Jul 16 2024 19:45:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:46:02 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 16 2024 19:46:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1276510998": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 17 2024 18:48:51 GMT+0000",
+          "jcr:lastModified": "Wed Jul 17 2024 18:48:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Use VB Spine screws&nbsp;<br>\r\n </span></span>to unlock Copilot’s automatic depth stop for default screw planning.</span></h3>\r\n",
+              "jcr:lastModified": "Thu Apr 03 2025 20:06:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:42:08 GMT+0000",
+              "text": "<h5><span class=\"fontsize-1-5em\">Copilot is compatible with:&nbsp;</span></h5>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">ES2</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest MI&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest MI XT&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Mesa 2&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Serrato&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Xia 3&nbsp;&nbsp;</span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Thu Jul 18 2024 20:41:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:42:08 GMT+0000",
+              "text": "<h5><span class=\"fontsize-1-5em\">Spine Guidance 5 Software is compatible with:</span></h5>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Universal&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">ES2&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest MI&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Everest MI XT&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Mesa 2&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Serrato&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Xia 3&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Xia 4.5&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Xia CT&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Yukon&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Yukon Long Shank&nbsp;</span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Mar 02 2026 17:51:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Jul 17 2024 18:49:09 GMT+0000",
+              "alt": "seamless planning",
+              "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/Job_10214_Cutout-v2.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jul 24 2024 19:56:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:40:05 GMT+0000",
+          "jcr:lastModified": "Tue Jul 16 2024 19:40:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:45:59 GMT+0000",
+          "jcr:lastModified": "Tue Jul 16 2024 19:45:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:46:02 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 16 2024 19:46:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_1060835286": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:46:20 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:46:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1647709317_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:29:27 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:29:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Q Pedicle Instruments</span></span><br />\r\nThoughtfully innovated technologies designed to meet your evolving needs.</span></h3>\r\n",
+          "jcr:lastModified": "Tue Jul 16 2024 19:47:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:22:16 GMT+0000",
+          "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Up to 12.5% lighter weight than equivalent Navigated Spine Instruments<sup>1</sup></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Q Drills, Q Taps, and Q Screwdrivers are designed to connect directly into the ES6 driver&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Q Gearshift Handle includes a strike plate for malleting&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Instrumentation for ES2, Everest, Everest MI, Everest MI XT, Mesa 2, Serrato, and Xia 3 Spinal Systems&nbsp;</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Mar 02 2026 17:52:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:29:33 GMT+0000",
+          "alt": "Job_10214_Cutout",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/Job_10214_Cutout.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:28:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_1368268012": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "copilot",
+      "jcr:created": "Wed Jul 17 2024 19:39:29 GMT+0000",
+      "title": "Copilot",
+      "jcr:lastModified": "Wed Jul 17 2024 19:39:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:48:29 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:48:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/neurosurgical/en/products/copilot/copilot-carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/neurosurgical/en/products/copilot/copilot-carousel/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Tue Jul 16 2024 19:48:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Jul 17 2024 19:34:07 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Jul 16 2024 19:19:06 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Introducing Copilot</span></span><br />\r\nAdding confidence to your workflow.</span></h3>\r\n",
+              "line2": "<span class=\"fontsize-1-5-vw\">Enabled by Spine Guidance Software and ActiveTrak technology, Copilot is designed to enhance your surgical planning and has the potential to increase the efficiency of your procedural workflow.</span>",
+              "jcr:lastModified": "Mon May 11 2026 18:13:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols_1248431290": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 17 2024 19:35:39 GMT+0000",
+      "jcr:lastModified": "Wed Jul 17 2024 19:35:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jan 28 2026 20:09:08 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Jan 28 2026 20:09:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/joint-replacement/gsnps/JR-GSNPS-ANIM-2520538-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/JR-GSNPS-ANIM-2520538-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jan 28 2026 20:13:38 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_1269568971": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:50:08 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:50:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:50:16 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:50:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:50:31 GMT+0000",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Smart Zones</span><br>\n<span class=\"urw-egyptienne\">for bone resection</span></span></h4>\n",
+          "jcr:lastModified": "Thu Jul 18 2024 20:42:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:52:20 GMT+0000",
+          "alt": "CopilotSectionImages3",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/CopilotSectionImages3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:29:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1453096837": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:52:33 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Collision alerts are designed to give assurance during bone resection, allowing you to hear and feel when you cross the planned&nbsp;boundaries of anatomical no-fly zones with the high speed drill.&nbsp;</span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Auditory and tactile feedback with the drop of drill RPM&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Complete&nbsp;drill stop&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Foot pedal - activated drilling&nbsp;</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Copilot’s foot pedal provides vibration alerts when crossing planned boundaries, helping keep you in control.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 24 2024 19:52:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:50:31 GMT+0000",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Smart screw placement</span><br>\n <span class=\"urw-egyptienne\">with automatic depth stop</span></span></h4>\n",
+          "jcr:lastModified": "Tue Jul 16 2024 19:51:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:52:20 GMT+0000",
+          "alt": "CopilotSectionImages2",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/CopilotSectionImages2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:29:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1453096837_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:52:33 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Copilot Smart Driver<sup>2</sup> stops automatically when it reaches the pre-planned depth, supporting your precision during pedicle screw placement.</span></span></p>\n",
+          "jcr:lastModified": "Thu Jul 18 2024 20:43:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:50:31 GMT+0000",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Smart tracking</span><br>\n <span class=\"urw-egyptienne\">with 360° ActiveTrack technology</span></span></h4>\n",
+          "jcr:lastModified": "Mon Mar 02 2026 17:44:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 16 2024 19:52:20 GMT+0000",
+          "alt": "CopilotSectionImages",
+          "srcFileRef": "/content/dam/stryker/nav-nse/products/copilot/images/CopilotSectionImages.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 17 2024 19:29:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1453096837_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Tue Jul 16 2024 19:52:33 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Powered by ActiveTrack technology and enabled by our FP8000 camera, Copilot Q 360° Tracker allows you to follow your plans in near real-time, regardless of your hand position or drill orientation.</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 02 2026 17:53:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1562745595": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:55:23 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:55:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Fields marked with a * are required.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Jul 16 2024 19:55:29 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Tue Jul 16 2024 19:55:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3272",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:56:11 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you",
+      "jcr:lastModified": "Fri Jul 19 2024 14:55:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "cols_637079475": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:56:18 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:56:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:56:23 GMT+0000",
+      "hideButton": "false",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Mar 02 2026 17:53:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "true",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/spine/products/spine-guidance-software"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/spine/products/q-guidance-system"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/nse/products/s2_drive-drill"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/joint-replacement/systems/mako-spine"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 16 2024 19:56:29 GMT+0000",
+      "jcr:lastModified": "Tue Jul 16 2024 19:56:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:17 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jul 15 2024 18:46:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>&nbsp;Stryker data on file</li>\r\n<li>&nbsp;SPINE-COP-BROC-1169302</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Jul 16 2024 20:00:09 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/nav-nse/products/copilot/images/SG5_Copilot_Website page_V2 1.jpg"
+  }
+}

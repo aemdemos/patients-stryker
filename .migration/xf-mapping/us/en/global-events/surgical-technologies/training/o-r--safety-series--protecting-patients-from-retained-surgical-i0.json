@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "O.R. Safety Series: Protecting Patients from Retained Surgical Items",
+  "jcr:versionHistory": "7779722b-4f61-47ee-9b67-1642bba43abb",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "8ffda5e7-acd3-4661-9b55-979d37eae5b0"
+  ],
+  "lastPublished": "Tue Nov 17 2020 20:47:02 GMT+0000",
+  "jcr:created": "Tue Nov 17 2020 20:47:02 GMT+0000",
+  "cq:lastModified": "Tue Nov 17 2020 20:16:35 GMT+0000",
+  "jcr:baseVersion": "8ffda5e7-acd3-4661-9b55-979d37eae5b0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "13f9907a-2ede-4719-b325-e9b37e49c5e0",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:system/surgical_technologies"
+    ],
+    "eventContactEmail": "stephanie.eaton@stryker.com",
+    "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/8016055625204/WN_piZAGy4kTraJ1fG8DHn4RA",
+    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "eventAudience": [
+      "stryker:audience/nurses",
+      "stryker:audience/or-professionals"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/patient-safety"
+    ],
+    "eventContactName": "Stephanie Eaton",
+    "eventDetail": "<p>Join the discussion of the following learning objectives for this CE course: </p>\r\n<p>* Define retained surgical items <br />\r\n* List the clinical, financial, and legal implications of RSI <br />\r\n* Review current practices for prevention of RSI <br />\r\n* Discuss available practices and technology to prevent RSI </p>\r\n<p>This CE course will provide 1 CE credit for registered nurses, sterile processing technicians, and surgical techs.</p>\r\n",
+    "eventEndDateTime": "Sat Jul 10 2021 19:00:00 GMT+0000",
+    "eventLocation": "Online",
+    "eventCity": "Virtual",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "jcr:lastModified": "Tue Nov 17 2020 20:16:35 GMT+0000",
+    "eventTitle": "O.R. Safety Series: Protecting Patients from Retained Surgical Items",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register Here",
+    "eventStartDateTime": "Thu Jul 15 2021 18:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Did you know",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7572491f-b7eb-4b8b-a7c9-c681d9aed121",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f17b1e17-fde1-42f7-b441-f9404b2b13a4"
+  ],
+  "lastPublished": "Thu Aug 07 2025 16:42:22 GMT+0000",
+  "jcr:created": "Thu Aug 07 2025 16:42:22 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 07 2025 16:42:25 GMT+0000",
+  "cq:lastModified": "Thu Aug 07 2025 16:42:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f17b1e17-fde1-42f7-b441-f9404b2b13a4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Aug 07 2025 16:42:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c8e8c8f6-5343-40fa-abd4-121f03b15896",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 08 2022 19:11:08 GMT+0000",
+      "jcr:lastModified": "Mon Jul 14 2025 17:36:26 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy9315545886915511": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_auto",
+        "alt": "Healthcare worker back injury",
+        "srcFileRef": "/content/dam/stryker/sage/images/ow-my-back.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Jul 14 2025 17:36:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1051646430_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "Did",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu May 25 2023 22:02:40 GMT+0000",
+      "jcr:lastModified": "Tue Jul 08 2025 12:38:40 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_784712029": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "leftPadding": "4",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Jul 08 2025 12:38:58 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-2em\">Did you know?</span></span></span></h2>\n",
+        "jcr:lastModified": "Mon Jul 14 2025 18:54:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(66,83,97)",
+        "gradientDirectionInverse": "true",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_1827095911": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "0",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "topPadding": "0",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Jul 14 2025 18:50:40 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p>&nbsp; &nbsp;</p>\n",
+        "jcr:lastModified": "Mon Jul 14 2025 18:52:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "text_107107015": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "12",
+        "jcr:created": "Tue Jul 08 2025 12:43:15 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\">2.5 million</span></span></span></span></span><span class=\"fontsize-1-25em\"></span></p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">patients develop pressure injuries in acute care facilities each year<sup>2</sup></span></p>\n",
+        "jcr:lastModified": "Thu Aug 07 2025 16:41:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_1668843589": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "12",
+        "jcr:created": "Tue Jul 08 2025 12:41:48 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #1c5687;\"><span style=\"color: #ffb500;\">$26.8 billion</span></span></span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">in estimated annual costs due to pressure injuries each year<sup>2</sup></span></p>\n",
+        "jcr:lastModified": "Thu Aug 07 2025 16:41:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "12",
+        "jcr:created": "Tue Jul 08 2025 12:40:50 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\">80%&nbsp;</span></span></span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">of healthcare workers report working with pain or injury<sup>3</sup></span></p>\n",
+        "jcr:lastModified": "Thu Aug 07 2025 16:42:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "bottomMargin": "10",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "sectionseparator": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kent.schwartz@stryker.com",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "jcr:created": "Wed Jul 23 2025 21:33:05 GMT+0000",
+        "jcr:lastModified": "Wed Jul 23 2025 21:33:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/sectionseparator"
+      },
+      "text_1051646430_copy8779279032606490": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-4",
+        "gradientDirection": "left-to-right",
+        "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Registered nurses rank in the <b>top 10 occupations at highest risk</b> for work-related musculoskeletal injuries in the U.S.<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">An article for ergonomic guidlines found workers’ compensation claims cost an estimated <b>$40,400 for low back injuries</b> and <b>$51,800 for shoulder injuries</b><sup>5</sup></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">We’re committed to actively partnering with your facility to reduce the risk of patient handling injuries and improving outcomes. Our <b>Journey to Zero</b> program can help create a culture of safety that benefits your patients, nurses, and your organization. Let’s start the journey to zero – together.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/c/journey-to-zero.html\"><span class=\"standalone-link\">Learn more</span></a></span></p>\n",
+        "jcr:lastModified": "Thu Aug 07 2025 16:42:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "9"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c7e60647-6788-403c-bbba-8472a917757b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "02277809-61f3-49d4-879d-06763b6cf6d5"
+  ],
+  "jcr:created": "Thu Jan 04 2024 13:48:29 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 04 2024 13:48:31 GMT+0000",
+  "cq:lastModified": "Thu Jan 04 2024 13:47:54 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "02277809-61f3-49d4-879d-06763b6cf6d5",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "59b8b876-3eb9-4b48-806f-3cbf7da91cbd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage55200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Sage M2 Microclimate Body Pads absorbs patient skin moisture ",
+      "srcFileRef": "/content/dam/stryker/sage/products/microclimate-body-pads/images/Sage-M2-Microclimate-Body-Pads_16x9.jpg",
+      "jcr:lastModified": "Mon Dec 11 2023 18:59:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

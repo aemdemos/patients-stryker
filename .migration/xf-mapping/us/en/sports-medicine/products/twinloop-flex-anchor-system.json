@@ -1,0 +1,223 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Anchor System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "TwinLoop FLEX",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "58329305-b51a-4fef-9835-dfdd72c9e86d",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/images/Thumb-Twinloop.jpg",
+  "jcr:predecessors": [
+    "6f3c8b16-53c9-498a-bade-cb160646ba14"
+  ],
+  "contentID": "Literature number 1000903161",
+  "lastPublished": "Wed Aug 19 2026 14:07:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 14:07:22 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 14:07:24 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 14:07:15 GMT+0000",
+  "jcr:description": "The TwinLoop FLEX Instrumentation System is designed to provide easy access along the glenoid rim during arthroscopic instability repair. TwinLoop FLEX utilizes flexible instrumentation and is an excellent option for surgeons performing instability repair.",
+  "jcr:baseVersion": "6f3c8b16-53c9-498a-bade-cb160646ba14",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:45:26 GMT+0000",
+  "pageTitle": "TwinLoop FLEX",
+  "cq:tags": [
+    "stryker:product/sports-medicine/twinlop-flex-anchor-system",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:content-type/product",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+  ],
+  "jcr:lastModified": "Wed May 04 2022 16:36:20 GMT+0000",
+  "jcr:uuid": "1ffc91b0-b4ea-47fe-ba88-3db303182503",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "TwinLoop FLEX",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModified": "Wed May 23 2018 13:01:54 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/images/Hero-Twinloop.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/resources/TwinLoop FLEX Technical Information.pdf",
+        "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/resources/TwinLoop FLEX Instrumentation Brochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/videos/TwinLoop FLEX Technical Information.mp4"
+      ],
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Fri Nov 12 2021 21:01:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-proc",
+      "jcr:created": "Tue Nov 11 2025 21:44:30 GMT+0000",
+      "title": "Related procedures",
+      "jcr:lastModified": "Tue Nov 11 2025 21:45:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 21:44:36 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 21:44:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 21:44:41 GMT+0000",
+          "CTATitle": "Shoulder instability",
+          "CTAImageAltText": "instability-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 21:45:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/instability-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/procedures/instability"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 14:07:05 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 14:07:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Wed Nov 13 2019 20:42:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>3.5mm PEEK wedge anchor design<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>5 different drill guides:&nbsp;Straight,&nbsp;12- and 25-degree fishmouth and 12- and 25-degree reverse fishmouth</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/twinloopflexanchorsystem/images/Thumb-Twinloop.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 14:07:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

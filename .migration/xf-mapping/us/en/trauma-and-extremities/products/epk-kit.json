@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Procedural Kit",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Extremity",
+  "jcr:versionHistory": "a041c9bd-8e74-4f57-9956-4135cb4904d7",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "f8c75f1f-55ec-4885-83d1-47ee363d44ba"
+  ],
+  "contentID": "AP-015806",
+  "lastPublished": "Thu Mar 31 2022 18:36:15 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 31 2022 18:36:15 GMT+0000",
+  "cq:lastModified": "Thu Mar 31 2022 18:36:06 GMT+0000",
+  "jcr:description": "As the leader in foot and ankle surgery, Stryker continues to develop cutting edge\r\ntechnologies that help simplify complex surgery and improve outcomes. The\r\nExtremity Procedure Kit provides a system for retrograde drilling for cystic lesions.",
+  "jcr:baseVersion": "f8c75f1f-55ec-4885-83d1-47ee363d44ba",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/trauma-and-extremities/epk-kit-(disposable)",
+    "stryker:capability/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-procedural-kits",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/bone-grafting",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/trauma-and-extremities/biologics/bone-grafting/procedural-kits",
+    "stryker:capability/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Mar 31 2022 18:36:06 GMT+0000",
+  "jcr:uuid": "d1038fe0-139a-4a98-b269-540423270b3f",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Feb 18 2022 19:51:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/epk-kit-(disposable)/images/EPK_AP-015806.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Precise</span></span><br>\nTargeting Guide preserves intact articular cartilage via a retrograde technique.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Enabling</span></span><br>\nPro-Dense can be delivered minimally invasively.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Reproducible</span></span><br>\nTarget lesions and backfill surgically created defects via a disposable instrument kit.</p>\n",
+    "jcr:lastModified": "Fri Feb 18 2022 19:53:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

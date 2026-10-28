@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f19209d1-ed0e-4b5c-98bc-547db748cd6e",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "3a051bd7-a8dd-4aa7-9d5b-c05cc669785d"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:00:56 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:00 GMT+0000",
+  "cq:lastModified": "Tue Mar 21 2023 15:51:08 GMT+0000",
+  "jcr:baseVersion": "3a051bd7-a8dd-4aa7-9d5b-c05cc669785d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Mar 21 2023 15:51:08 GMT+0000",
+  "jcr:uuid": "103cfecc-ea7d-430f-b789-009d1ee80ffd",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Nov 01 2022 20:54:07 GMT+0000",
+      "text": "Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH, courtesy of ASAP. Featured products include Tornier Simpliciti®, Blueprint® PSI guide, NeoReamer, and Tornier Perform® Anatomic Augmented Glenoid. AP-016223A",
+      "jcr:lastModified": "Tue Nov 01 2022 20:55:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest-/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/anatomic-total-shoulder-arthroplasty-live-streamed-from-midwest/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/Anatomic total shoulder arthroplasty live streamed from Midwest Orthopaedics at RUSH courtesy of ASAP.png"
+  }
+}

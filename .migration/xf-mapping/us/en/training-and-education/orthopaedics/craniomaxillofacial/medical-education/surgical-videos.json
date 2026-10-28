@@ -1,0 +1,1410 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Surgical videos",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1ef537c8-ee7d-41d3-afbc-bef434526dbf",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "d8486ccf-9813-42c7-9e21-abbff2dc5071"
+  ],
+  "contentID": "CMF-GSNPS-SYK-1995650",
+  "lastPublished": "Tue Apr 07 2026 20:00:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 07 2026 20:00:14 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 07 2026 20:00:16 GMT+0000",
+  "cq:lastModified": "Mon Apr 06 2026 21:14:13 GMT+0000",
+  "jcr:baseVersion": "d8486ccf-9813-42c7-9e21-abbff2dc5071",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Sep 05 2025 15:33:08 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 04 2026 18:12:32 GMT+0000",
+  "jcr:uuid": "f710c06b-5c8a-4591-a259-3c1b6c9b9cf1",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Thu Jun 26 2025 20:19:10 GMT+0000",
+      "jcr:lastModified": "Tue Feb 24 2026 14:26:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:19:53 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:19:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/harvesting-cranial-bone-on-an-intact-skull.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/harvesting-cranial-bone-on-an-intact-skull-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:24:19 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Harvesting Cranial Bone on an Intact Skull</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:24:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/incisions-for-exposing-the-orbit.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/incisions-for-exposing-the-orbit-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:25:21 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Incisions for Exposing the Orbit</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:25:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/lateral_canthopexy.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/lateral_canthopexy-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:26:03 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Lateral Canthopexy</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:25:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/orbital-floor-fracture.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/orbital-floor-fracture-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:26:29 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Orbital Floor Fracture</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:26:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:19:53 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:19:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/use-of-navigation-in-cmf-surgery.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/use-of-navigation-in-cmf-surgery-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:27:33 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Use of Navigation in CMF Surgery</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:27:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/transnasal-wiring-for-medial-canthus-reattachment.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/transnasal-wiring-for-medial-canthus-reattachment-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:27:56 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Transnasal Wiring for Medial Canthus Reattachment</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:27:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/2026/dr_costello_-_posterior_approach_to_the_mandible_and_subcondylar_region_v2.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/dr_costello_-_posterior_approach_to_the_mandible_and_subcondylar_region_v2-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Mon Apr 06 2026 21:14:13 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Posterior Approach to the Mandible and Subcondylar Region</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:28:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:20:01 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:20:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/orbital-floor-fracture-repair.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/orbital-floor-fracture-repair-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:29:21 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Orbital Floor Fracture Repair</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:29:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:29:56 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:29:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/bilateral-sagittal-split-osteotomy.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/bilateral-sagittal-split-osteotomy-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:31:36 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Bilateral Sagittal Split Osteotomy</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:31:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/genioplasty.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/genioplasty-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:32:04 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Genioplasty</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:32:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/lefort-1-osteotomy.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/lefort-1-osteotomy-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:33:04 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>LeFort 1 Osteotomy</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:33:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/subapical-osteotomy-with-genioglossus-advancement-and-le-fort-1.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/subapical-osteotomy-with-genioglossus-advancement-and-le-fort-1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:37:48 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Subapical Osteotomy with Genioglossus Advancement &amp; Le Fort 1</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:37:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:29:56 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:29:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/sagittal-split-osteotomy-with-segmental-le-fort-1.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/sagittal-split-osteotomy-with-segmental-le-fort-1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:38:16 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Sagittal Split Osteotomy with Segmental Le Fort 1</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:38:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:30:00 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:30:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/double-jaw-surgery-with-vsp-and-facial-id.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/double-jaw-surgery-with-vsp-and-facial-id-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:38:53 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Double Jaw Surgery with VSP and Facial iD</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:38:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/harvesting-an-osteocutaneous-fibula-free-flap.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/harvesting-an-osteocutaneous-fibula-free-flap-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:50:32 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Harvesting an Osteocutaneous Fibula Free Flap</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:50:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/harvesting-cranial-bone-on-an-intact-skull.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/harvesting-cranial-bone-on-an-intact-skull-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:52:11 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Harvesting Cranial Bone on an Intact Skull</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:51:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/lateral_canthopexy.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/lateral_canthopexy-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:52:43 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Lateral Canthopexy</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:52:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/mandibular-reconstruction-utilizing-a-fibular-free-flap-with-vsp.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/mandibular-reconstruction-utilizing-a-fibular-free-flap-with-vsp-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:53:13 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Mandibular Reconstruction Utilizing a Fibular Free Flap with VSP®</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:52:58 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/mandibular-reconstruction-vsp-design-session.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/mandibular-reconstruction-vsp-design-session-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:53:48 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Mandibular Reconstruction VSP® Design Session</h3>\n",
+              "jcr:lastModified": "Tue Nov 18 2025 14:50:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Jun 27 2025 14:48:13 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Jun 27 2025 14:48:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/cmf-microtia-reconstruction-v2",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/cmf-microtia-reconstruction-v2-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Tue Feb 17 2026 18:33:36 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Microtia Reconstruction</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:54:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Jun 27 2025 14:53:31 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Jun 27 2025 14:53:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/use-of-navigation-in-cmf-surgery-V2.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/use-of-navigation-in-cmf-surgery-V2-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Jun 27 2025 14:53:48 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Use of Navigation in CMF Surgery</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:55:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/submandibular-and-retromandibular-exposure-of-the-mandible.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/submandibular-and-retromandibular-exposure-of-the-mandible-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:56:20 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Submandibular and Retromandibular Exposure of the Mandible</h3>\n",
+              "jcr:lastModified": "Mon Feb 09 2026 18:11:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4_copy_1599496104": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_1104273351": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Nov 18 2025 22:23:25 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Tue Nov 18 2025 22:23:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/Mandible-Restoration-with-Immediate-Dental-Prosthesis-Part-1.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Mandible-Restoration-with-Immediate-Dental-Prosthesis-Part-1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Mon Feb 09 2026 18:12:27 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Mandible Restoration with Immediate Dental Prosthesis Part 1</h3>\n",
+              "jcr:lastModified": "Mon Feb 09 2026 18:27:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/2026/Mandible Restoration with Immediate Dental Prosthesis Part 2.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/Mandible Restoration with Immediate Dental Prosthesis Part 2-1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Mon Apr 06 2026 21:13:32 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Mandible Restoration with Immediate Dental Prosthesis Part 2</h3>\n",
+              "jcr:lastModified": "Mon Feb 09 2026 18:27:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Feb 25 2026 19:56:53 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Wed Feb 25 2026 19:57:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/bicoronal_incision_-_dr_joseph_gruss_v3_720p-comp.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/bicoronal_incision_-_dr_joseph_gruss_v3_720p-comp-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Feb 25 2026 19:57:24 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Bicoronal incision - exposing the upper craniofacial skeleton</h3>\n",
+              "jcr:lastModified": "Wed Feb 25 2026 20:00:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/translabyrinthina-approach-to-acoustin-neuroma-removal.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/translabyrinthina-approach-to-acoustin-neuroma-removal-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:57:01 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Translabyrinthine Approach to Acoustic Neuroma Removal</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:56:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/2026/dr_moser_-_temporal_craniotomy_for_recurrent_tumor_v2.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/dr_moser_-_temporal_craniotomy_for_recurrent_tumor_v2-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Mon Apr 06 2026 21:13:50 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Right Temporal Craniotomy for Recurrent Tumor Removal</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:57:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "jcr:lastModified": "Thu Jun 26 2025 20:39:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:39:33 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Jun 26 2025 20:39:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/craniomaxillofacial-medical-education/cmf-meded/videos/videos/bilateral-temporomandibular-joint-replacement.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/bilateral-temporomandibular-joint-replacement-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Jun 26 2025 20:58:09 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Jun 26 2025 20:24:26 GMT+0000",
+              "text": "<h3>Bilateral Temporomandibular Joint Replacement</h3>\n",
+              "jcr:lastModified": "Thu Jun 26 2025 20:57:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Facial Trauma"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Orthognathic surgery"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Facial reconstruction"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "Neurosurgery"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "TMJ"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

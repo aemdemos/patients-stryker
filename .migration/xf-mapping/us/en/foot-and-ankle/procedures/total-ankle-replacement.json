@@ -1,0 +1,781 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Total Ankle Replacement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7b438904-e380-4128-8f71-07a001608644",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Total-Ankle-Replacement/Images/Ankle_TotalAnkleReplacement.jpg",
+  "jcr:predecessors": [
+    "a098f01d-8cdd-4c29-81eb-f6eab6c7b90c"
+  ],
+  "contentID": "AP-018001",
+  "lastPublished": "Mon Mar 24 2025 20:17:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 24 2025 20:17:45 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 24 2025 20:17:48 GMT+0000",
+  "cq:lastModified": "Mon Mar 24 2025 20:17:10 GMT+0000",
+  "newDisplayFlagDate": "Mon Jun 30 2025 00:00:00 GMT-0400",
+  "jcr:description": "Total ankle replacement is a procedure used to treat ankle arthritis. By replacing the ankle joint and allowing motion to occur, it provides an alternative to ankle arthrodesis.",
+  "jcr:baseVersion": "a098f01d-8cdd-4c29-81eb-f6eab6c7b90c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:45:15 GMT+0000",
+  "pageTitle": "Total Ankle Replacement",
+  "cq:tags": [
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/total-ankle-replacement",
+    "stryker:specialty/ankle-foot-and-ankle",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Mar 24 2025 20:17:10 GMT+0000",
+  "jcr:uuid": "53a2b6ba-9146-4c78-aca9-a6b4b1783ce5",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Jun 12 2024 21:23:15 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Wed Jun 12 2024 21:39:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+        "layoutOptions": "col-sm-6 pull-left",
+        "backgroundImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Total-Ankle-Replacement/Images/Header-TotalAnkle.png",
+        "alt": "Header-TotalAnkle",
+        "jcr:lastModified": "Mon Jul 08 2024 16:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "cedu.ocson@stryker.com",
+            "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+            "jcr:created": "Wed Jun 12 2024 21:39:43 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"fontsize-5-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Total Ankle Replacement</span></span></span></h1>\r\n",
+            "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-4-5-vw\">Systems</span></span>",
+            "jcr:lastModified": "Thu Oct 10 2024 19:00:59 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ],
+            "leftMargin": "5"
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_2000441555_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu May 23 2024 17:08:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_652839079": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Total ankle replacement is a procedure used to treat ankle arthritis. By replacing the ankle joint and allowing motion to occur, it provides an alternative to ankle arthrodesis.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Stryker is constantly innovating in the Total Ankle Replacement space.</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">As the market leader in Total Ankle&nbsp;Replacement</span><sup><span class=\"fontsize-1-5em\">1</span></sup><span class=\"fontsize-2em\">, our knowledge, expertise, and passion for improving outcomes for&nbsp;patients suffering from Ankle Arthritis is best displayed by the clinical&nbsp;outcomes of the implants that form our </span></span><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Total&nbsp;Ankle Continuum of Care</span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">.</span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 09 2024 19:10:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "testlink",
+          "jcr:created": "Thu May 23 2024 17:09:55 GMT+0000",
+          "title": " TESTLINK",
+          "jcr:lastModified": "Thu May 23 2024 17:13:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 18 2025 17:06:09 GMT+0000",
+      "jcr:lastModified": "Tue Mar 18 2025 17:06:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_914014063": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jul 01 2024 14:06:49 GMT+0000",
+      "jcr:lastModified": "Mon Jul 01 2024 14:06:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Total Ankle Continuum of Care</span></span></span></h2>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Stryker addresses&nbsp;<span class=\"futura-bold\">End Stage Ankle Arthritis (ESAA)</span> with a full range of solutions. Whether you’re planning a primary or addressing a complex revision, our Total Ankle Replacement&nbsp;portfolio provides a range of solutions for patients with differing needs for their ankle pain issues.</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">The <span class=\"futura-bold\">Total Ankle Continuum of Care</span> is the perfect example of how Stryker is working with our customers to make healthcare better.</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 04 2025 15:01:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 01 2024 14:07:00 GMT+0000",
+          "alt": "Continuum of Care",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/procedures/Total-Ankle-Replacement/Images/FA-TAR-Continuum-of-Care.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 08 2024 16:39:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2000441555_copy_997424054": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_125769604": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 18 2025 17:06:22 GMT+0000",
+      "jcr:lastModified": "Tue Mar 18 2025 17:06:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "jcr:lastModified": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Prophecy</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span></span><span class=\"fontsize-2-5em\"><br>\n <span class=\"urw-egyptienne\">Surgical Planning</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><br>\n</span></span><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">The first</span></span><span class=\"fontsize-1-5em\"><sup>2</sup></span><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"> patient specific instrumentation for Total Ankle Replacement</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Since 2014, </span></span><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">Prophecy</span><sup><span class=\"fontsize-1-5em\">®</span></sup><span class=\"fontsize-2em\"> Surgical Planning</span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> has been leading the way in accurate</span></span><span class=\"urw-egyptienne\"><sup><span class=\"fontsize-1-5em\">3</span></sup></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> implantation of Total Ankle Replacement.</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Through Prophecy, surgeons are able to take the headache out of the operating room by knowing sizing, alignment, and other valuable case details long before stepping into the OR.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Oct 09 2024 19:14:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/foot-and-ankle/products/prophecy-resect-through-guides.html",
+          "jcr:lastModified": "Tue Mar 18 2025 16:42:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 28 2024 21:51:09 GMT+0000",
+          "alt": "Prophecy",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/systems/total-ankle-replacement/images/Thumb-Prophecy.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Jul 15 2024 15:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2000441555_copy_599487497": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_716318422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 18 2025 17:06:37 GMT+0000",
+      "jcr:lastModified": "Tue Mar 18 2025 17:06:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "jcr:lastModified": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy__772154887": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Infinity</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span></span><span class=\"fontsize-2-5em\"><br>\n <span class=\"urw-egyptienne\">Total Ankle Replacement</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><br>\nThe <span class=\"futura-bold\"><span style=\"color: #ffb500;\">Infinity</span></span></span></span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> Total Ankle System</span></span> consists of a low-profile pegged Titanium Alloy tibial tray and a flat or chamfer cut Cobalt Chrome talar dome. In addition, Infinity offers an Adaptis 3D-printed option. All components are available in a range of sizes to better match the patient’s anatomy.</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">The leading choice of surgeons in the US &amp; UK for Total Ankle Replacement.<sup>4,5</sup></span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 18 2025 16:37:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/foot-and-ankle/products/infinity.html",
+          "jcr:lastModified": "Tue Mar 18 2025 16:43:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 28 2024 21:51:09 GMT+0000",
+          "alt": "Infinity",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/systems/total-ankle-replacement/images/Thumb-Infinity.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Jul 15 2024 15:43:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2000441555_copy_385296891": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator_1540254637": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 18 2025 17:06:51 GMT+0000",
+      "jcr:lastModified": "Tue Mar 18 2025 17:06:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "jcr:lastModified": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy__772154887": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Inbone</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span></span><span class=\"fontsize-2-5em\"><br>\n <span class=\"urw-egyptienne\">Total Ankle Replacement</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Enhanced Tibial Fixation for complex primaries</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Since its inception in 2005, the <span class=\"futura-bold\"><span style=\"color: #ffb500;\">Inbone</span></span></span></span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><sup>®</sup></span></span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> Total Ankle System</span></span> has continued to be one of the most distinctive and innovative total ankle replacement systems on the market. For almost 20 years, the Inbone system has aided countless surgeons in addressing&nbsp;high priority complex ankle cases with enhanced tibial fixation.&nbsp;</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><br>\nAfter almost 2 decades, Inbone remains the only<sup>2</sup> modular stemmed ankle prosthesis on the market and continues to be one of the fastest growing choices of TAR surgeons.<sup>6</sup></span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 18 2025 16:38:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/foot-and-ankle/products/inbone.html",
+          "jcr:lastModified": "Tue Mar 18 2025 16:43:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 28 2024 21:51:09 GMT+0000",
+          "alt": "Inbone",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/systems/total-ankle-replacement/images/Thumb-Inbone.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Jul 15 2024 15:43:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_1197009238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Mar 18 2025 17:07:06 GMT+0000",
+      "jcr:lastModified": "Tue Mar 18 2025 17:07:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "jcr:lastModified": "Fri Jun 28 2024 21:41:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_652839079_copy__772154887": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:57:23 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Invision</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span></span><span class=\"fontsize-2-5em\"><br>\n <span class=\"urw-egyptienne\">Total Ankle Revision System</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"><br>\n</span><span class=\"futura-bold\">First and only</span><sup>2</sup><span class=\"futura-bold\"> true TAR revision system</span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">The </span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Invision</span><sup><span class=\"fontsize-1-5em\">®</span></sup><span class=\"fontsize-2em\"> Total Ankle Revision System</span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> was designed with revision surgery in mind. Used as a standalone construct or in conjunction with Inbone</span></span><span class=\"urw-egyptienne\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> and Infinity</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><sup>®</sup></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> components, Invision</span></span><span class=\"urw-egyptienne\"><sup><span class=\"fontsize-1-5em\">®</span></sup></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> adds a level of modularity never seen before* in Total Ankle Arthroplasty.</span></span></p>\n",
+          "jcr:lastModified": "Tue Mar 18 2025 16:38:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/foot-and-ankle/products/invision.html",
+          "jcr:lastModified": "Tue Mar 18 2025 16:44:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 28 2024 21:51:09 GMT+0000",
+          "alt": "invision",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/systems/total-ankle-replacement/images/Thumb-Invision.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 15 2024 15:43:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 14 2024 21:50:56 GMT+0000",
+      "jcr:lastModified": "Fri Jun 14 2024 21:50:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Jun 14 2024 21:51:01 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jun 14 2024 21:51:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "featuredcontentgrid": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "featContGridTitle": "Related products",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Jun 14 2024 21:51:10 GMT+0000",
+          "jcr:lastModified": "Tue Mar 18 2025 17:07:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/featuredcontentgrid",
+          "featContGridShortDesc": "Optimize your surgical practice with our range of related products. From cutting-edge instruments to innovative surgical aids, find everything you need to enhance precision and efficiency in the operating room. ",
+          "featuredPathGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "contentPagePath": "/content/stryker/us/en/foot-and-ankle/products/anchorage"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "contentPagePath": "/content/stryker/us/en/foot-and-ankle/products/asnis-iii-cannulated-screw-system"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "contentPagePath": "/content/stryker/us/en/foot-and-ankle/products/asnis-jfx"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "contentPagePath": "/content/stryker/us/en/foot-and-ankle/products/asnis-micro"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_2000441555_copy_211962840": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 23:24:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "testlink",
+          "jcr:created": "Thu May 23 2024 17:09:55 GMT+0000",
+          "title": " TESTLINK",
+          "jcr:lastModified": "Thu May 23 2024 17:13:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        }
+      }
+    },
+    "cols2_copy_copy_copy_524612523": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu May 23 2024 17:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu May 23 2024 17:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Total Ankle Replacement</span></span></h4>\n",
+          "jcr:lastModified": "Fri Jun 28 2024 21:54:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 23 2024 17:22:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator_200_2018719172": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Wed May 15 2024 18:42:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "childrenNumber": "0",
+    "jcr:lastModified": "Fri Jun 28 2024 21:51:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Total-Ankle-Replacement/Images/Ankle_TotalAnkleReplacement.jpg"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 28 2024 16:33:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 28 2024 16:33:08 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 28 2024 16:33:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 28 2024 16:33:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jun 28 2024 16:33:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>SmartTRAK Data as of Oct 2024</li>\r\n<li>Based on publicly available information as of March 2025</li>\r\n<li>Yau J, Emmerson B, Kakwani R, Murty AN, Townshend DN. Patient-Reported Outcomes in Total Ankle Arthroplasty: Patient Specific Versus Standard Instrumentation. Foot &amp; Ankle Specialist. 2024;17(1_suppl):30S-37S. &nbsp;oi:10.1177/19386400231179124</li>\r\n<li>Based on SmartTrak Data as of 2023</li>\r\n<li>Based on UK NJR Annual Report 2022</li>\r\n<li>Based on data according to SmartTRAK and internal sales data.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Mar 18 2025 16:40:04 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

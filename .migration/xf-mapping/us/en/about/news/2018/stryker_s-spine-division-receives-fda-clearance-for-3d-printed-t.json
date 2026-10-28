@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s Spine Division Receives FDA Clearance for 3D-Printed Tritanium TL Curved Posterior Lumbar Cage",
+  "jcr:versionHistory": "76bc481f-5844-4b7b-a20f-09109971abf2",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "25253ab0-ad60-41d6-9c69-8b80c8432c8a"
+  ],
+  "lastPublished": "Tue May 01 2018 13:52:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 01 2018 13:52:35 GMT-0400",
+  "cq:lastModified": "Tue May 01 2018 13:52:30 GMT-0400",
+  "jcr:baseVersion": "25253ab0-ad60-41d6-9c69-8b80c8432c8a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Tue May 01 2018 13:52:30 GMT-0400",
+  "jcr:uuid": "78606c80-fa33-4cd0-9d24-87e3974ddff4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Wed Mar 07 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "07-Mar-2018",
+    "jcr:lastModified": "Wed Mar 07 2018 08:55:48 GMT-0500",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/TritaniumTL_Fig_001_Cover_785x469.png",
+    "jcr:lastModified": "Wed Mar 07 2018 08:56:02 GMT-0500",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker’s Spine division today announced that its Tritanium<sup>®&nbsp;</sup>TL Curved Posterior Lumbar Cage, a 3D-printed interbody fusion cage intended for use as an aid in lumbar fixation, recently received 510(k) clearance from the U.S. Food and Drug Administration.&nbsp;</p>\n<p>Stryker’s Tritanium TL Curved Posterior Lumbar Cage is a hollow implant that consists of a unique configuration of both solid and porous structures, which are simultaneously built using AMagine™. AMagine is Stryker’s proprietary approach to implant creation using additive manufacturing, also known as 3D printing. The technology is deliberately designed for fusion and inspired by the microstructure of cancellous bone.<sup>1</sup></p>\n<p>The Tritanium TL Cage features Stryker’s <a href=\"http://www.stryker.com/builttofuse/\">Tritanium Technology</a>,<sup>2</sup>&nbsp;a novel, highly porous titanium material designed for bone ingrowth and biological fixation.<sup>1&nbsp;</sup>This In-Growth technology has demonstrated that osteoblasts (bone cells) infiltrated, attached to, and proliferated on the porosity of the Tritanium technology.<sup>3&nbsp;</sup>The unique porous structure is designed to create a favorable environment for cell attachment. Furthermore, the Tritanium material may be able to wick or retain fluid in comparison to traditional titanium material.<sup>4&nbsp;</sup>The Tritanium TL cage complements the Tritanium PL cage, and together they offer alternative posterior lumbar solutions for spinal surgeons.</p>\n<p>“The Tritanium TL Cage is the latest addition to our highly successful Tritanium portfolio, which has been embraced by spinal surgeons nationwide,” said Bradley Paddock, President of Stryker’s Spine division. “The TL cage is accompanied by a new Anterior Placement System that is designed for versatility and procedural flexibility. From instrumentation ergonomics and visualization, to a simplified technique with tactile feedback, Tritanium TL's Anterior Placement System and cage design redefine implant steerability for surgeons.”</p>\n<p>The Tritanium TL Curved Posterior Lumbar Cage features open central graft windows and lateral windows to help reduce stiffness of the cage, aid in visualization of fusion, and allow for bone graft containment. Shaped for steerability,<sup>5</sup>&nbsp;its multidirectional teeth are designed for multidirectional fixation as the cage can be steered and rotated to the surgeon’s desired placement. They are also designed to maximize surface area for endplate contact with the implant. The cage has a smooth, tapered leading edge to facilitate insertion into the intervertebral space and a central column spanning endplate to endplate for structural integrity. The Tritanium TL Cage will be available in a broad range of footprints, heights, and lordotic angles to address varying patient anatomy. It will be available to surgeons in Q2 2018. For a photo of the Tritanium TL Cage, <a href=\"http://www.sullivanpr.com/StrykerSpine/tritanium_tl.png\">click here</a>.</p>\n<p><b>Intended Use (US)</b></p>\n<p>The Stryker Spine Tritanium TL Cage is an intervertebral body fusion device indicated for use with autograft and/or allogenic bone graft comprised of cancellous and/or corticocancellous bone graft when used as an adjunct to fusion in patients with degenerative disc disease (DDD) at one level or two contiguous levels from L2 to S1. The Tritanium TL Cage is to be implanted via a posterior approach. For the full indications for use, please refer to the <a href=\"https://www.accessdata.fda.gov/cdrh_docs/pdf17/K173476.pdf\">Tritanium TL Curved Posterior Lumbar Cage Instructions for Use</a>.</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p>References</p>\n<p>1. Karageorgiou V, Kaplan D. Porosity of 3D biomaterial scaffolds and osteogenesis. <i>Biomaterials</i>,&nbsp;26, 5475-5491</p>\n<p>2. PROJ43909 | Tritanium technology claim support memo</p>\n<p>3. RD0000053710: Tritanium cell infiltration and attachment experiment</p>\n<p>4. RD0000050927: Tritanium material capillary evaluation</p>\n<p>5. PROJ44960 | Coefficient of friction memo</p>\n<p>Content ID TRTTA-PR-8_16961</p>\n<p>Copyright © 2018 Stryker</p>\n<p><b>Contacts</b></p>\n<p>Sullivan &amp; Associates</p>\n<p>Barbara Sullivan</p>\n<p>714/374–6174</p>\n<p>bsullivan@sullivanpr.com</p>\n",
+    "jcr:lastModified": "Wed Mar 07 2018 09:07:45 GMT-0500",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

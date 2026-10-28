@@ -1,0 +1,276 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Connections 3 Columns",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "844b72c7-d4fc-47f6-9adc-78a81d3e1f10",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1b2cb650-4032-4bed-9e4b-83d6024a9e40"
+  ],
+  "lastPublished": "Mon Mar 09 2026 23:51:35 GMT+0000",
+  "jcr:created": "Mon Mar 09 2026 23:51:37 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 09 2026 23:51:39 GMT+0000",
+  "cq:lastModified": "Tue Sep 02 2025 23:31:42 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1b2cb650-4032-4bed-9e4b-83d6024a9e40",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 17:36:05 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c8766e63-bd36-4574-922d-a58150160960",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 19:03:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy5175877384351713": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "iBed Wireless",
+        "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/advanced-digital-healthcare/xf-assets/Connected-1-RGB.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Tue Apr 01 2025 18:50:54 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/ibed-wireless",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy__1935516111": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-10",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">iBed<sup>®&nbsp;</sup>Wireless</span><br>\n <br>\n </span><br>\n</span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/ibed-wireless.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Tue Sep 02 2025 22:39:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy_1318834230": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Fri Aug 16 2024 19:04:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_13188342305175917984304092": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "The Lifenet System",
+        "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/advanced-digital-healthcare/xf-assets/Connected-2-Lifenet_v2.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Tue Apr 01 2025 18:50:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/the-lifenet-system",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy__1610638368": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-10",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">The LIFENET<sup>®&nbsp;</sup>System</span><br>\n <br>\n </span><br>\n</span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/the-lifenet-system.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Tue Sep 02 2025 22:39:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy_1694455696": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Fri Aug 16 2024 19:05:04 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_16944556965175949546553302": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "iSuite",
+        "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/advanced-digital-healthcare/xf-assets/Connected-3-iSuite-v3.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Tue Jun 03 2025 01:11:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/isuite",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy__917584714": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-10",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup></sup>iSuite<sup>®</sup></span><br>\n <br>\n </span><br>\n</span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/isuite.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Tue Sep 02 2025 22:40:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy_2061324498": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModified": "Tue Sep 02 2025 22:34:49 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_20613244983684663255829584": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "iSuite",
+        "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/advanced-digital-healthcare/xf-assets/Connected-4-RISE.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Tue Sep 02 2025 23:30:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/rise",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-10",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">RISE: Your Reimagined Integrated Surgical Experience</span></span><br>\n</span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare/rise.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Tue Sep 02 2025 23:31:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

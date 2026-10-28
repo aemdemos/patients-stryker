@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Key Benefits",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "67e8fe22-1faa-41be-b8c8-f3bf5283cd38",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "282351ed-835b-484e-88ae-67c01c500f52"
+  ],
+  "lastPublished": "Mon Oct 13 2025 15:14:20 GMT+0000",
+  "jcr:created": "Mon Oct 13 2025 15:14:21 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 13 2025 15:14:23 GMT+0000",
+  "cq:lastModified": "Fri Oct 03 2025 13:11:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "282351ed-835b-484e-88ae-67c01c500f52",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Oct 03 2025 13:24:42 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "611565a7-fdf8-40ae-96c4-ff0b517edcb6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Oct 03 2025 13:10:32 GMT+0000",
+      "alt": "Novae Key benefits",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/images/Novae Key benefits.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Oct 03 2025 13:11:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  }
+}

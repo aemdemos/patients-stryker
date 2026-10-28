@@ -1,0 +1,113 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Cannulated Screw System",
+  "jcr:createdBy": "admin",
+  "jcr:title": "AutoFix",
+  "jcr:versionHistory": "f0412339-b0ac-4f1f-b4ca-37d409527dba",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/asnis/images/autofix-single-image.png",
+  "jcr:predecessors": [
+    "cd9a6113-b0a9-4e3e-ae21-c97235c1657f"
+  ],
+  "lastPublished": "Thu Apr 26 2018 19:45:17 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 26 2018 19:45:17 GMT-0400",
+  "cq:lastModified": "Thu Apr 26 2018 19:31:31 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Stainless steel headless compression screw for use in articular surfaces of joints and areas of minimal soft tissue coverage. ",
+  "jcr:baseVersion": "cd9a6113-b0a9-4e3e-ae21-c97235c1657f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/trauma-and-extremities/autofix",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:system/trauma-and-extremities/cannulated-screws",
+    "stryker:custom/trauma-and-extremities/Indications/hand",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/trauma-and-extremities/Indications/wrist",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/screws",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jun 29 2017 15:33:29 GMT-0400",
+  "jcr:uuid": "2c926280-efae-4ddd-a10d-cf320cc92900",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Ernest.Washington@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Thu Jun 29 2017 15:33:57 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/asnis/images/AutoFix.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>AutoFix Cannulated Screw System</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Mon Jul 17 2017 14:02:11 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Self-drilling, self-tapping cannulated screw design available in various lengths</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>The opposing surface thread design optimizes compression toward the fracture/osteotomy</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Available in 2.0/2.5/3.0/4.0mm screw diameters</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>CP-AWI-14, 07-2017</p>\r\n",
+    "jcr:lastModified": "Tue Aug 01 2017 14:28:58 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/asnis/images/autofix-single-image.png"
+  }
+}

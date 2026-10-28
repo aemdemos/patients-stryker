@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Training video",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage Heel Protector OR",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "62a00fff-c74a-49d4-beb3-eca0696416b3",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "27ae1848-8865-41de-a8a1-68ab445e2d3a"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-489450_REV-0_en_us",
+  "lastPublished": "Thu Jan 19 2023 22:55:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 19 2023 22:55:18 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 19 2023 22:55:20 GMT+0000",
+  "cq:lastModified": "Thu Jan 19 2023 22:55:14 GMT+0000",
+  "jcr:baseVersion": "27ae1848-8865-41de-a8a1-68ab445e2d3a",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Sage Heel Protector OR training video",
+  "jcr:lastModified": "Thu Jan 19 2023 22:53:31 GMT+0000",
+  "jcr:uuid": "7902a8f6-e7c7-4a73-a975-72c0d7832084",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Wed Feb 16 2022 19:12:18 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Feb 16 2022 19:29:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/products/heel-protector-or/videos/Sage-Heel-Protector-OR-training-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "errin.pace@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Sage-Heel-Protector-OR-training-video-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Thu Jan 19 2023 22:54:42 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/Sage-Heel-Protector-OR-training-video-thumbnail"
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",
+      "CTATitle": "Learn more",
+      "jcr:lastModified": "Thu Jan 19 2023 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/products/sage-heel-protector-or"
+    }
+  }
+}

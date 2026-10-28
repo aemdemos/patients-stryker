@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Training and education calendar",
+  "jcr:versionHistory": "014b100c-543e-4ab5-81f1-7834ed28fd61",
+  "cq:template": "/apps/stryker/templates/event-calendar",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "5b6b24be-cbe3-4565-b60f-4b005f73856b"
+  ],
+  "lastPublished": "Wed Jul 07 2021 17:11:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 07 2021 17:11:38 GMT+0000",
+  "cq:lastModified": "Wed Jul 07 2021 17:06:23 GMT+0000",
+  "jcr:baseVersion": "5b6b24be-cbe3-4565-b60f-4b005f73856b",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jul 07 2021 17:06:23 GMT+0000",
+  "jcr:uuid": "7086327c-9db1-4ee8-9325-7d2bfc4c6265",
+  "sling:resourceType": "stryker/components/structure/pages/event-calendar",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "navTitle": "Calendar",
+  "eventcalendar": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en/global-events",
+    "title": "Global education calendar",
+    "jcr:lastModified": "Thu May 30 2019 19:59:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/eventcalendar",
+    "parentTag": [
+      "stryker:content-type/event"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures.<br>\r\nFor more information, contact your local sales representative.&nbsp;<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Tue Nov 28 2017 16:16:07 GMT-0500",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

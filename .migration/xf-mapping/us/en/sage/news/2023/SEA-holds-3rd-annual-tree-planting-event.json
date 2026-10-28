@@ -1,0 +1,192 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker’s Environmental Alliance holds 3rd annual tree planting event",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6777db43-9730-46a6-8455-14f5c6e2d250",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Stryker SEA at a tree planting volunteer day",
+  "jcr:predecessors": [
+    "f3b28b79-605e-40d2-879a-5fbcbc42c270"
+  ],
+  "contentID": "SAGE-GSNPS-COMM-844999_REV-0_en_us",
+  "lastPublished": "Wed Feb 07 2024 15:33:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 07 2024 15:33:27 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 07 2024 15:33:29 GMT+0000",
+  "cq:lastModified": "Wed Feb 07 2024 15:33:12 GMT+0000",
+  "jcr:description": "The Stryker Environmental Alliance (SEA) recently partnered with the McHenry County Conservation District (MCCD) to organize the 3rd annual tree planting event at Hickory Nut Grove in Cary, IL.  ",
+  "jcr:baseVersion": "f3b28b79-605e-40d2-879a-5fbcbc42c270",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Stryker’s Environmental Alliance holds 3rd annual tree planting event ",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/3",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Wed Feb 07 2024 15:33:12 GMT+0000",
+  "jcr:uuid": "730973ec-f2af-40b4-82be-dded05e1ebcd",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Oct 30 2023 14:35:19 GMT+0000",
+      "jcr:lastModified": "Mon Oct 30 2023 14:35:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 30 2023 14:35:25 GMT+0000",
+          "alt": "Stryker SEA at a tree-planting day",
+          "srcFileRef": "/content/dam/stryker/sage/news/2023/23-SGC-844999-October_Newsroom.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 30 2023 15:02:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Oct 30 2023 14:35:27 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The Stryker Environmental Alliance (SEA) recently partnered with the McHenry County Conservation District (MCCD) to organize the 3rd annual tree planting event at Hickory Nut Grove in Cary, IL.</span></p>\n<p><span class=\"fontsize-1-25em\">The weather wasn’t ideal, but that didn’t stop our dedicated Stryker employees from showing up and doing their part to help improve our environment. Alongside a few MCCD staff members, the group braved the cool and rainy weather together. The event combined action and education. The MCCD staff explained the history of the forest site and the unique qualities of the oak trees and hazelnut bushes that were being planted.</span></p>\n",
+          "jcr:lastModified": "Mon Oct 30 2023 14:51:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 30 2023 14:50:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Making our community a greener place</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The SEA team helped to plant a combination of oak trees and bushes. The red, white and bur oak trees will grow well together with the hazelnut bushes to reclaim the former farmland. Brian Ecklund, Senior Staff Engineer, and SEA member said, “It’s great to get together with members of our Stryker family – outside the office – making an impact that will last for years.”</span></p>\n<p><span class=\"fontsize-1-25em\">This annual event is an example of our employees taking action to help make a difference in our local community. “It was so rewarding to see the dedication of our co-workers. Showing up with raincoats, boots, and gloves,” said Jan Sahm, Staff Project Specialist Quality Operations and SEA site lead. “There was lots of mud, but also lots of smiles. It’s a great feeling when you’re volunteering your time to help the environment,” she said.</span></p>\n<p><span class=\"fontsize-1-25em\">The SEA team plans to return to the site again next year to see their plantings and continue to help our community by making an environmental impact with another tree planting event.&nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Oct 30 2023 14:53:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Oct 30 2023 14:52:50 GMT+0000",
+      "jcr:lastModified": "Mon Oct 30 2023 14:52:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_7743": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 30 2023 14:50:26 GMT+0000",
+          "alt": "Person in gray raincoat planting a tree",
+          "srcFileRef": "/content/dam/stryker/sage/news/2023/tree-planting-squat.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 30 2023 15:02:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 30 2023 14:57:19 GMT+0000",
+          "alt": "Person in black raincoat planting tree with shovel",
+          "srcFileRef": "/content/dam/stryker/sage/news/2023/20231014_raining-planting.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 30 2023 15:02:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 30 2023 14:57:19 GMT+0000",
+          "alt": "Group of Stryker employees learning how to plant tree",
+          "srcFileRef": "/content/dam/stryker/sage/news/2023/20231014_group-learning.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 30 2023 15:03:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_6508": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 30 2023 14:52:32 GMT+0000",
+          "alt": "Stryker volunteers enjoying break from hard work and rain",
+          "srcFileRef": "/content/dam/stryker/sage/news/2023/stryker-table-group-tree.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 30 2023 15:03:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Mon Oct 30 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Oct-2023",
+    "jcr:lastModified": "Mon Oct 30 2023 15:03:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker-table-group-tree",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Oct 30 2023 14:52:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2023/23-SGC-844999-October_Newsroom.jpg"
+  }
+}

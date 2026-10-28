@@ -1,0 +1,284 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Suture Anchor",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PEEK Zip",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1cccd851-d33c-4fe6-9108-e2faa86f0908",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/peekzipanchor/images/Thumb-PeekZip.jpg",
+  "jcr:predecessors": [
+    "9733a2b3-c050-453b-8d8c-35e4b7dee34c"
+  ],
+  "contentID": "Lit number: 1000902884",
+  "lastPublished": "Tue Aug 18 2026 21:39:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:39:15 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:39:17 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:39:08 GMT+0000",
+  "jcr:description": "The PEEK Zip Anchor is fully cannulated and features a trocar-tip inserter, eliminating the need to tap.",
+  "jcr:baseVersion": "9733a2b3-c050-453b-8d8c-35e4b7dee34c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:08:04 GMT+0000",
+  "pageTitle": "PEEK Zip",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/procedure/ligament-repair",
+    "stryker:custom/sports-medicine/anatomy/small-joints",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:content-type/product",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure/tendon-repair",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+    "stryker:product/sports-medicine/peek-zip-anchor",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/small-joints",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+    "stryker:specialty/knee-sports-medicine"
+  ],
+  "jcr:lastModified": "Wed May 04 2022 15:31:41 GMT+0000",
+  "jcr:uuid": "f9f3d3aa-efb5-4245-ba1c-1fc5dee638a1",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "PEEK Zip",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:lastModified": "Wed May 23 2018 12:48:40 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/peekzipanchor/images/Hero-PeekZip.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 17:41:16 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 17:41:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Professor Scheibel double-row repair with  ReelX and PeekZip surgical technique video featuring Prof. Dr. Med. Markus Scheibel*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Fri Feb 10 2023 17:41:21 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Feb 10 2023 17:42:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/peekzipanchor/videos/Professor Scheibel double-row repair with  ReelX and PeekZip surgical technique video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Professor Scheibel double-row repair with  ReelX and PeekZip surgical technique video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Feb 10 2023 17:59:17 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/sports-medicine/products/peekzipanchor/resources/PEEK Zip Anchor Brochure.pdf",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Nov 02 2021 21:47:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 02 2021 22:09:24 GMT+0000",
+      "jcr:lastModified": "Tue Nov 02 2021 22:09:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-products",
+      "jcr:created": "Fri May 30 2025 21:04:18 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Fri May 30 2025 21:04:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 19:20:32 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 19:20:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:20:37 GMT+0000",
+          "CTATitle": "PEEK Intraline anchors",
+          "CTAImageAltText": "peek-intraline-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 21:05:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/peek-intraline-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/peek-intraline"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:20:52 GMT+0000",
+          "CTATitle": "Biosteon Intraline HA PLLA composite anchors",
+          "CTAImageAltText": "biosteon-intraline-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 21:07:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/biosteon-intraline-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/biosteon-intraline-ha-plla-composite-anchors"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:39:00 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:39:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/peekzipanchor/images/Thumb-PeekZip.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Stryker consultant</p>\r\n",
+    "jcr:lastModified": "Fri May 30 2025 21:07:50 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:38:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

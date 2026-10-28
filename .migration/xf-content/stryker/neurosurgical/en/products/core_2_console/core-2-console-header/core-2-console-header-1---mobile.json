@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Core 2 Console Header 1 - mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "12f2365d-7cab-4793-820a-2e9790a1c292",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "b13d3a87-7e41-42c7-af1b-018dca3f684d"
+  ],
+  "lastPublished": "Thu Aug 29 2024 17:35:52 GMT+0000",
+  "jcr:created": "Thu Aug 29 2024 17:35:55 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 29 2024 17:35:58 GMT+0000",
+  "cq:lastModified": "Mon Aug 26 2024 17:39:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b13d3a87-7e41-42c7-af1b-018dca3f684d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 31 2024 20:42:45 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ba6db76f-a066-4ca4-b21d-a599f45f0af1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jun 14 2024 18:44:30 GMT+0000",
+      "alt": "CORE 2 Console",
+      "srcFileRef": "/content/dam/stryker/navigation/products/core-2-console/images/CORE2_iBur_hero-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Aug 26 2024 17:39:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

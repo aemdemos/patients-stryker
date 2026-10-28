@@ -1,0 +1,158 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Accessories and disposables",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "41242595-08bf-473c-949b-6bcc7bfb20c2",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "25163f8e-81a3-489a-811a-148fc1684d63"
+  ],
+  "lastPublished": "Wed Aug 28 2024 13:25:23 GMT+0000",
+  "jcr:created": "Wed Aug 28 2024 13:25:23 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 28 2024 13:25:25 GMT+0000",
+  "cq:lastModified": "Wed Aug 28 2024 12:18:30 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "25163f8e-81a3-489a-811a-148fc1684d63",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Aug 28 2024 13:25:23 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "868a2228-44a1-4b8b-80f4-54e251b4d9b2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Sep 30 2020 18:42:49 GMT+0000",
+      "alt": "Shop accessories and disposables icon",
+      "srcFileRef": "/content/dam/stryker/ems/images/square-shopping-cart_150x150.png",
+      "jcr:lastModified": "Wed Aug 28 2024 12:18:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Fri Oct 06 2023 14:02:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Shop accessories and disposables</span></span></p>\n<p><span class=\"fontsize-1-25em\">Help keep your staff and patients safe. Our accessories and disposables have been thoroughly tested with our products and you can shop for them here:</span><br>\n</p>\n<p><a href=\"https://shop.stryker.com/\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+      "jcr:lastModified": "Mon Jul 15 2024 14:46:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "9"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "12",
+      "jcr:created": "Tue Jul 23 2024 13:26:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Flex</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Financial</span></span></p>\n",
+      "jcr:lastModified": "Tue Jul 23 2024 13:27:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_295406748_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Mon Jul 20 2020 21:39:54 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Power&nbsp;to purchase</span></span></p>\n<p><span class=\"fontsize-1-25em\">Through our Flex Financial business we can help you acquire our full portfolio of products and offer numerous payment structures that can be customized to meet your budgetary needs.</span></p>\n<p><a href=\"/content/stryker/us/en/services/flex-financial.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+      "jcr:lastModified": "Tue Jul 23 2024 13:28:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "9"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

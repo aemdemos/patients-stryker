@@ -1,0 +1,140 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Reprocessing in the EP Lab ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d2bc3a5d-3e39-4f20-b6fe-4930a1014e3e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sustainability/images/Ep Website banners 300res-02.png",
+  "jcr:predecessors": [
+    "1eec1f77-a149-4c6f-9eb9-1c833c6651b8"
+  ],
+  "contentID": "CIS11413 Rev A",
+  "lastPublished": "Tue Aug 18 2026 19:57:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 19:57:11 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 19:57:14 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 19:53:39 GMT+0000",
+  "jcr:baseVersion": "1eec1f77-a149-4c6f-9eb9-1c833c6651b8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:57:11 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "sustainability:"
+  ],
+  "jcr:lastModified": "Fri Mar 22 2024 16:50:32 GMT+0000",
+  "jcr:uuid": "0d232269-e925-4900-a679-858aad63881e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 19:53:28 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 19:53:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "publishDate": "Mon Mar 25 2024 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Mar-2024",
+    "jcr:lastModified": "Thu Mar 21 2024 18:13:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "text": "<h4>Reprocessing medical devices in the Electrophysiology lab: A sustainable approach</h4>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-8em\">In the dynamic landscape of healthcare, sustainability is becoming increasingly pivotal. Electrophysiology (EP) labs, where intricate procedures are performed to diagnose and treat cardiac rhythm disorders, stand as critical hubs of medical innovation. However, amidst the complexity of these procedures, the environmental impact of medical device usage often goes unnoticed. Today, we delve into the realm of reprocessing medical devices in the EP lab—a sustainable approach that not only benefits the environment but also enhances patient care and cost-effectiveness.</span></h3>\n<p>&nbsp;</p>\n<h4>The challenge of disposable devices</h4>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-8em\">The EP lab is notorious for its heavy reliance on single-use medical devices. These devices, ranging from catheters to diagnostic tools, play an indispensable role in ensuring procedural success. However, the linear &quot;use and dispose&quot; model associated with these devices contributes significantly to medical waste generation. Moreover, it poses financial burdens on healthcare facilities, driving up operational costs.</span></h3>\n<h3><span class=\"fontsize-8em\">&nbsp;</span></h3>\n<h4>Embracing reprocessing: A greener alternative</h4>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-8em\">Enter medical device reprocessing—a sustainable solution that revolutionizes the EP lab landscape. Reprocessing involves the thorough cleaning, sterilization, and testing of single-use devices, rendering them safe for multiple uses. By extending the lifecycle of medical devices, reprocessing minimizes waste generation and reduces the environmental footprint of healthcare facilities.</span></h3>\n<h3><span class=\"fontsize-8em\">&nbsp;</span></h3>\n<h4>Benefits beyond sustainability</h4>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-8em\">Here are some of the EP products that <a href=\"/content/stryker/us/en/sustainability.html\">Stryker’s Sustainability Solutions</a>&nbsp;is reprocessing:</span></h3>\n<h3><span class=\"fontsize-8em\">1. <a href=\"/content/stryker/us/en/sustainability/products/ensite-x.html\">EP Cables</a>: EP cables are an extension cord connecting EP catheters to the mapping or recording system. Often times in-house reprocessing can damage cables when equipment like autoclaves are used<sup>1</sup>. SSS is here to reduce uncertainty by reprocessing your EP cables. Each product is 100% function tested<sup>2</sup> and tracked for the number of uses.</span><br>\n</h3>\n<h3><span class=\"fontsize-8em\">2. <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/reprocessed-products/ice-catheters.html\">ICE catheters</a>: ICE catheters are used for visualization of cardiac anatomy as well as other devices within the heart. The <a href=\"/content/stryker/us/en/sustainability/products/viewflex.html\">ViewFlex Xtra ICE</a> catheter is reprocessed by SSS. In a Life Cycle Assessment, it was found that one reprocessed ViewFlex emits 49% kg less of CO2 emissions than manufacturing the original device<sup>3</sup>. Incorporating reprocessed ViewFlex catheter into your EP lab can help your facility reach their sustainability goals.</span><br>\n</h3>\n<h3><span class=\"fontsize-8em\">3. <a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/reprocessed-products/introducer-sheaths.html\">Catheter Introducer Sheaths</a>: The Sheath helps grant access to hard-to-reach sites and enhances clinical capability for transseptal puncture, mapping of the heart and therapeutic ablation in the left atrium or ventricle. The <a href=\"/content/stryker/us/en/sustainability/products/agilis.html\">Agilis</a> sheath is cleaned through a multi-step process before being sent back to you.</span><br>\n</h3>\n<h3>&nbsp;</h3>\n<h4>&nbsp;Commitment to excellence</h4>\n<p>&nbsp;</p>\n<h3><span class=\"fontsize-8em\">At SSS, we are committed to pioneering sustainable solutions in healthcare. Our state-of-the-art reprocessing facilities are equipped with cutting-edge technology and staffed by experienced professionals dedicated to upholding the highest standards of quality and safety. By partnering with us, EP labs can seamlessly integrate reprocessed devices into their procedural workflows, reaping the benefits of sustainability without compromise.</span></h3>\n<h3><span class=\"fontsize-8em\">As we navigate the evolving landscape of healthcare, let us embrace sustainability as a guiding principle. By reprocessing medical devices in the EP lab, we can pave the way for a greener, more resilient healthcare system—one that prioritizes both patient well-being and environmental stewardship. Together, let's shape a future where sustainability and excellence go hand in hand.<br>\n</span></h3>\n<h3><span class=\"fontsize-8em\">Join us in our mission to redefine healthcare through innovation, sustainability, and excellence. Together, we can make a difference—one reprocessed device at a time.</span></h3>\n<h3>&nbsp;</h3>\n<p>1. Biosense Webster IFU</p>\n<p>2.Cables include St. Jude, Biosense Webster, Boston Scientific and<br>\nMedtronic</p>\n<p>3. Comparative Carbon Footprint of Reprocessed Single Use Medical<br>\nDevices, 2023</p>\n",
+    "jcr:lastModified": "Thu Mar 21 2024 23:42:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Ep Website banners 300res-02",
+    "srcFileRef": "/content/dam/stryker/sustainability/images/Cables EP Webpage.JPG",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Mar 21 2024 18:20:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

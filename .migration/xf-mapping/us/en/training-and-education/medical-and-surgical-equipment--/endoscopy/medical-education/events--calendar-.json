@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Events-Calendar",
+  "jcr:versionHistory": "81c8f09e-cfb9-41ff-881d-2fdc9952a716",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "5449ced8-4ad0-4636-b79d-534f828d513b"
+  ],
+  "contentID": "1000903067 Rev A",
+  "lastPublished": "Fri May 22 2020 21:31:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 22 2020 21:31:45 GMT+0000",
+  "cq:lastModified": "Tue Apr 28 2020 21:27:51 GMT+0000",
+  "jcr:baseVersion": "5449ced8-4ad0-4636-b79d-534f828d513b",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Apr 28 2020 21:27:51 GMT+0000",
+  "jcr:uuid": "f33cdcc9-713c-4f2a-9b17-41d8a70b2b8d",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "eventcalendar": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "searchPath": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/endoscopy/medical-education/events--calendar-",
+      "jcr:created": "Thu Nov 29 2018 21:15:11 GMT+0000",
+      "jcr:lastModified": "Thu Nov 29 2018 21:15:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/eventcalendar",
+      "parentTag": [
+        "/etc/tags/stryker/content-type/event"
+      ]
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

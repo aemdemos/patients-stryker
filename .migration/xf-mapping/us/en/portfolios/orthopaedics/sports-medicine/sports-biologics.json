@@ -1,0 +1,116 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Comprehensive portfolio. More patient solutions.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sports biologics",
+  "jcr:versionHistory": "171979f1-e649-454d-9155-177902de39e6",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 7.jpg",
+  "jcr:predecessors": [
+    "d04e915d-0a76-4c33-b0a2-44e0e403b740"
+  ],
+  "contentID": "Literature Number: 1000902714 Rev A",
+  "lastPublished": "Mon Jul 25 2022 14:19:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jul 25 2022 14:19:25 GMT+0000",
+  "cq:lastModified": "Wed Jun 08 2022 14:38:43 GMT+0000",
+  "jcr:description": "We offer a comprehensive portfolio of sports medicine biologic solutions that work with a variety of procedures and surgeon techniques.\r\n<br><br>\r\nFrom cartilage restoration matrices and wound management scaffolds to a platelet-rich plasma preparation system, our sports biologics platform is designed to offer increased simplicity and convenience for the medical staff and to help maximize efficiency in the office and the OR.",
+  "jcr:baseVersion": "d04e915d-0a76-4c33-b0a2-44e0e403b740",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Sports biologics",
+  "cq:tags": [
+    "stryker:specialty/sports-biologics",
+    "stryker:content-type/specialty",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/sports-medicine"
+  ],
+  "jcr:lastModified": "Tue May 29 2018 20:30:31 GMT-0400",
+  "jcr:uuid": "3b16e467-f547-4855-ab90-e89a1cd39b60",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Biologics.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 7.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Wed Jun 08 2022 14:38:43 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Procedure",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/procedure-(sports-biologics)"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/product-type"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/GraftJacket-Now-Ultra-Thick"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/allosource-tissue-bank"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/tissuemend"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/alamo-tissue-service"
+      }
+    }
+  }
+}

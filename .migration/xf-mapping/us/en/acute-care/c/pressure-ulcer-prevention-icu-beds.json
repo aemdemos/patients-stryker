@@ -1,0 +1,172 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Supporting pressure ulcer prevention using state-of-the-art ICU beds",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b3a11621-4407-4c23-aa92-8c7b2a6d194d",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "nurse standing beside patient in hospital bed",
+  "jcr:predecessors": [
+    "7d7c5765-cfbc-4b48-b6f5-959e41a4ee02"
+  ],
+  "contentID": "AC-PRCY-SYK-1125263_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 19:15:05 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 19:15:05 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 19:15:08 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 19:15:01 GMT+0000",
+  "jcr:description": "Hospital-acquired pressure injuries (also known as pressure ulcers or bed sores) cause substantial patient harm and costs to the healthcare system. In this eGuide, discover how one hospital achieved a 91.7% decrease in hospital-acquired pressure injuries1 using state-of-the-art ICU bed technology – and saved an estimated $660,000 to $5,006,100.*",
+  "jcr:baseVersion": "7d7c5765-cfbc-4b48-b6f5-959e41a4ee02",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 16 2024 15:00:29 GMT+0000",
+  "jcr:lastModified": "Thu Jul 11 2024 15:51:37 GMT+0000",
+  "jcr:uuid": "340f71c0-358d-42ce-bece-b33621b8a722",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jun 13 2024 15:16:29 GMT+0000",
+      "jcr:lastModified": "Thu Jun 13 2024 15:16:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jul 11 2024 16:01:32 GMT+0000",
+      "jcr:lastModified": "Thu Jul 11 2024 16:01:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "richard.thomas2@stryker.com",
+      "jcr:lastModifiedBy": "richard.thomas2@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 19:46:05 GMT+0000",
+      "jcr:lastModified": "Thu Feb 16 2023 19:46:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_908007915_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Supporting pressure ulcer prevention using state-of-the-art ICU beds</span></span></span></span></span></span></h2>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Hospital-acquired pressure injuries (also known as pressure ulcers or bed sores) cause substantial patient harm and costs to the healthcare system. In this eGuide, discover how one hospital achieved a 91.7% decrease in hospital-acquired pressure injuries<sup>1</sup> using state-of-the-art ICU bed technology – and saved an estimated $660,000 to $5,006,100.*</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Specifically, you will also learn how:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Stryker’s ProCuity ZMX ICU bed and our powered Isolibrium PE support surface work together to support protocols for early mobility and pressure injury prevention.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The ICU bed can become the epicenter of patient care, enhancing workflow efficiency and enabling a better experience for care teams.</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Clinical support and data-driven partnership can help with optimizing processes and the use of ICU beds to help drive better patient outcomes.</span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">If you’re striving to drive quality care in the ICU while navigating ongoing turnover and a less experienced staff, this eGuide is for you.</span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Jul 16 2024 14:42:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "richard.thomas2@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 16 2023 19:46:59 GMT+0000",
+          "alt": "Nurse discussing pressure injury prevention with a hospital patient.",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/pressure-ulcer-prevention-icu-beds/ac-procuity-eguide-thumbmail-2_1200x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Apr 23 2025 21:21:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Ready to learn more? <span class=\"futura-bold\">Download the eGuide today.</span></span></h2>\n",
+          "jcr:lastModified": "Thu Jun 13 2024 14:43:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1315",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you. Please check your inbox for the e-Guide download link.",
+          "jcr:lastModified": "Thu Aug 13 2026 19:15:01 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/campaigns/pressure-ulcer-prevention-icu-beds/ac-procuity-eguide-thumbmail-2_1200x680.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*This case study describes the findings of a quality improvement initiative that incorporated ProCuity ZMX and Isolibrium PE with other evidence based HAPI prevention interventions. The hospital's results reflect the policies, protocols, technology and training implemented by the hospital and the results are not necessarily representative of what another hospital may experience.</p>\r\n<p>1. Maass A, Dundalow JL. Case study: Quality Improvement Using Support Surfaces Effectively Decreases the Incidence of Hospital- Acquired Pressure Injuries. <a href=\"https://www.stryker.com/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/bon-secours-mercy-hospital-pressure-injuries.pdf\" target=\"_blank\">https://www.stryker.com/content/dam/stryker/acute-care/campaigns/the-science-behind-support-surfaces/bon-secours-mercy-hospital-pressure-injuries.pdf</a><a href=\"https://view.stryker.com/viewer/664646c192d58daa8e14d558.\">.</a> Retrieved May 17, 2024.</p>\r\n",
+    "jcr:lastModified": "Mon Oct 13 2025 15:38:27 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

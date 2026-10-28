@@ -1,0 +1,79 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Infection Control Today highlights the importance of protecting against waterborne pathogens",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "20da1a31-2644-4ba1-885b-2d39e05a54e8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Water faucet with pathogens",
+  "jcr:predecessors": [
+    "644ec8db-1c41-4c89-8d4a-ece7a99318e0"
+  ],
+  "contentID": "29109",
+  "lastPublished": "Tue Sep 06 2022 22:13:05 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 06 2022 22:13:05 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 06 2022 22:13:07 GMT+0000",
+  "cq:lastModified": "Tue Sep 06 2022 22:12:38 GMT+0000",
+  "jcr:baseVersion": "644ec8db-1c41-4c89-8d4a-ece7a99318e0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/2"
+  ],
+  "jcr:lastModified": "Tue Sep 06 2022 22:07:28 GMT+0000",
+  "jcr:uuid": "cc831d5c-8343-4b8a-bee5-2e437ee8ecaa",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Tue Sep 06 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Sep-2022",
+    "jcr:lastModified": "Tue Sep 06 2022 21:57:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-ICT-water-article.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "alt": "Water faucet with pathogens",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-ICT-water-article.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Sep 06 2022 22:07:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p>Infection Control Today, a journal focused on educating infection control and facility management professionals, recently published an article titled, “Water: Life’s Vital Necessity Can Also Be a Pool for Pathogens.” The article poses the provocative question, “How do you protect against waterborne infections when water itself is nearly ubiquitous?”<sup>1</sup></p>\n<p>The article provides several published studies of infectious outbreaks linked to water and quotes Kiran May Perkins, MD, medical officer and team lead, Outbreak and Response Team, CDC. Perkins advises that the first step a healthcare facility should take is develop or improve a water management program team. Once the multidisciplinary team is in place it should identify areas where pathogens could grow and spread and decide where control measures should be applied to measure and monitor. The team will then be better prepared to intervene when control limits are not met.<sup>1</sup></p>\n<p>“Health care facilities should remain vigilant in keeping these organisms from reaching patients through effective and strong infection prevention and control practices,” Perkins says. “They should also ensure that they’re ready to respond to signals of patient harm due to potential water-related organisms.”<sup>1</sup></p>\n<p>According to the article, every day about 1 in 31 US hospital patients receives a diagnosis of at least 1 infection related to hospital care alone. The cause of many of those? Water. An estimated 65% of healthcare-acquired infections (HAIs) are associated with wet biofilms or the presence of moisture or liquid.<sup>1</sup></p>\n<p>Our prepackaged bathing products can help you reduce patient exposure to cross-contamination risk from basins and hospital tap water. To learn more, <a title=\"View Stryker's prepackaged bathing products.\" href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/patient-cleansing/prepackaged-bathing.html\">click here</a>.</p>\n<p>To read the full article, <a title=\"View the full Water: Life’s Vital Necessity Can Also Be a Pool for Pathogens article.\" href=\"https://www.infectioncontroltoday.com/view/water-life-s-vital-necessity-can-also-be-pool-pathogens\" target=\"_blank\">click here</a>.</p>\n",
+    "jcr:lastModified": "Tue Sep 06 2022 22:12:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References: 1. </b>Dyer J, Water: Life’s Vital Necessity Can Also Be a Pool for Pathogens, Infection Control Today, April 2022, Vol. 26 Issue 3. Available at: <a href=\"https://www.infectioncontroltoday.com/view/water-life-s-vital-necessity-can-also-be-pool-pathogens\" target=\"_blank\" title=\"Water: Life’s Vital Necessity Can Also Be a Pool for Pathogens\">https://www.infectioncontroltoday.com/view/water-life-s-vital-necessity-can-also-be-pool-pathogens</a> Accessed: June 13, 2022.</p>\r\n",
+    "jcr:lastModified": "Tue Sep 06 2022 22:02:35 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

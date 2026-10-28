@@ -1,0 +1,754 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Body Content",
+  "jcr:versionHistory": "61aa5884-a4e4-4be1-9369-7de71990d02a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "eac814a5-b447-4c65-aef4-6b0d6a408394"
+  ],
+  "jcr:created": "Tue Apr 19 2022 17:48:12 GMT+0000",
+  "cq:lastModified": "Tue Apr 19 2022 17:48:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "eac814a5-b447-4c65-aef4-6b0d6a408394",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "3850575e-c550-4a4c-a727-767135930afe",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:49:34 GMT+0000",
+      "jcr:lastModified": "Tue Apr 19 2022 17:46:25 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text140174845397495": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">The results are in</span></span></p>\n<p>The Target Coil platform delivers coil conformability, softness and&nbsp;volume in a single product family—and the Target Registry proves&nbsp;the effectiveness of Target Coils for the treatment of intracranial&nbsp;aneurysms. The investigator-initiated study demonstrated a&nbsp;low 2.4% retreatment rate and strong functional outcomes for&nbsp;the patient. Target Coils have been a trusted product for over a&nbsp;decade. And the evidence is a big reason why.</p>\n<p><span class=\"futura-bold\">Primary endpoints:</span><br>\nAneurysm packing density</p>\n<p><span class=\"futura-bold\">Secondary endpoints:</span><br>\nImmediate and long-term aneurysm occlusion rate<br>\n(Raymond scale) and independent functional outcome (mRS)</p>\n",
+        "jcr:lastModified": "Fri Feb 18 2022 20:55:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "curatedcta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "ctaLinkType": "ext",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Tue Apr 19 2022 17:46:04 GMT+0000",
+        "CTATitle": "View the Full Study",
+        "ctaExternalLink": "https://www.frontiersin.org/articles/10.3389/fneur.2019.00737/full",
+        "jcr:lastModified": "Tue Apr 19 2022 17:47:35 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(255,181,0,1)",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
+      "jcr:lastModified": "Fri Feb 18 2022 20:56:28 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage10596798509211103": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/House_Icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 18 2022 20:53:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "text_550258104": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">12&nbsp;clinical sites</span></span></span></p>\n",
+        "jcr:lastModified": "Fri Feb 18 2022 20:56:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "2",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
+      "jcr:lastModified": "Fri Feb 18 2022 20:56:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy10596828191758080": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Brain_Icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 18 2022 20:53:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        }
+      },
+      "text_550258104_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">157&nbsp;aneurysms<br>\n </span></span></span><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">39% ruptured</span></span></span></span></p>\n",
+        "jcr:lastModified": "Fri Feb 18 2022 20:59:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1409475647": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "3",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
+      "jcr:lastModified": "Fri Feb 18 2022 21:00:01 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_140947564710597011836140029": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/People_Icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 18 2022 20:53:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "10",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        }
+      },
+      "text_550258104_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">148 patients<br>\n </span></span></span><span style=\"color: #1c5687;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Median age of&nbsp;58 years (73% female)</span></span></span></span></p>\n",
+        "jcr:lastModified": "Fri Feb 18 2022 21:01:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1581182448": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "4",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:10 GMT+0000",
+      "jcr:lastModified": "Fri Feb 18 2022 21:00:21 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_158118244810597031233758818": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Calendar_Icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Feb 18 2022 20:53:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        }
+      },
+      "text_550258104_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\">6 months&nbsp;follow up<br>\n </span></span></span><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">29% packing density</span></span></span></span></p>\n",
+        "jcr:lastModified": "Fri Feb 18 2022 21:02:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          }
+        }
+      }
+    },
+    "text_199773436_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": ".1",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Fri Feb 18 2022 19:51:19 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Fri Feb 18 2022 20:22:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(178,180,174,1)",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "standaloneimage_copy_1032120547": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Chart1.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 18 2022 21:09:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "text_550258104_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">90%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Raymond<br>\n I and II</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Feb 18 2022 21:10:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_copy_671413240": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Chart2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 18 2022 21:09:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    },
+    "text_550258104_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">95%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Long-term<br>\nindependent<br>\nfunctional&nbsp;outcome<br>\nachieved</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Feb 18 2022 21:11:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_copy_1659565759": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/Arrow.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 18 2022 21:11:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    },
+    "text_550258104_copy__2014815733": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Low</span></span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n <span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\">95%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">all-cause<br>\n mortality</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Feb 18 2022 21:13:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "text_323582541": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 21 2022 18:39:20 GMT+0000",
+      "jcr:lastModified": "Mon Mar 21 2022 18:39:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "text_550258104_copy__99159603": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "15",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #b2b4ae;\">148</span></span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">patients</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Mon Mar 21 2022 18:38:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_copy_1143483943": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/target-registry/images/148_Patients.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 18 2022 21:15:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        }
+      }
+    },
+    "text_550258104_copy__1838588610": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "15",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Low</span></span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><br>\n <span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\">2.4%</span></span></span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">retreatment<br>\n rate</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Feb 18 2022 21:21:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        }
+      }
+    },
+    "text_2053505301": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 21 2022 18:24:57 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Zaidat et al. Target Intracranial Aneurysm Registry, Frontiers in Neurology, July 2019/Volume10/Article 737&nbsp;<br>\n Target Registry is an Investigator Initiated Study that received grant funding from Stryker Neurovascular.</span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Mar 21 2022 19:54:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_2084961831_copy_1954425191": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+      "text": "<p><span class=\"futura-bold\">Target® Detachable Coil </span><br>\nSee package insert for complete indications, contraindications, warnings and instructions for use.<br>\n<b>RX ONLY</b><br>\n<b>Intended use / indications for use</b></p>\n<ul>\n<li>Target Detachable Coils are intended to endovascularly obstruct or occlude blood flow in vascular abnormalities of the neurovascular and peripheral vessels.</li>\n<li>Target Detachable Coils are indicated for endovascular embolization of:</li>\n<li>Intracranial aneurysms</li>\n<li>Other neurovascular abnormalities such as arteriovenous malformations and arteriovenous fistulae</li>\n<li>Arterial and venous embolizations in the peripheral vasculature</li>\n</ul>\n<p><b>Contraindications</b><br>\nNone known.<br>\nPotential adverse events<br>\nPotential complications include, but are not limited to: allergic reaction, aneurysm perforation and rupture, arrhythmia, death, edema, embolus, headache, hemorrhage, infection, ischemia, neurological/intracranial sequelae, post-embolization syndrome (fever, increased white blood cell count, discomfort), TIA/stroke, vasospasm, vessel occlusion or closure, vessel perforation, dissection, trauma or damage, vessel rupture, vessel thrombosis. Other procedural complications including but not limited to: anesthetic and contrast media risks, hypotension, hypertension, access site complications.<br>\n<b><br>\n Warnings</b></p>\n<ul>\n<li>Contents supplied STERILE using an ethylene oxide (EO) process. Do not use if sterile barrier is damaged. If damage is found, call your Stryker Neurovascular representative.</li>\n<li>For single use only. Do not reuse, reprocess or resterilize. Reuse, reprocessing or resterilization may compromise the structural integrity of the device and/or lead to device failure which, in turn, may result in patient injury, illness or death. Reuse, reprocessing or resterilization may also create a risk of contamination of the device and/or cause patient infection or cross-infection, including, but not limited to, the transmission of infectious disease(s) from one patient to another. Contamination of the device may lead to injury, illness or death of the patient.</li>\n<li>After use, dispose of product and packaging in accordance with hospital, administrative and/or local government policy.</li>\n<li>This device should only be used by physicians who have received appropriate training in interventional neuroradiology or interventional radiology and preclinical training on the use of this device as established by Stryker Neurovascular.</li>\n<li>Patients with hypersensitivity to 316LVM stainless steel may suffer an allergic reaction to this implant.</li>\n<li>MR temperature testing was not conducted in arteriovenous malformations or fistulae models.</li>\n</ul>\n",
+      "jcr:lastModified": "Mon Mar 21 2022 19:53:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2084961831_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+      "text": "<ul>\n<li>The safety and performance characteristics of the Target Detachable Coil System (Target Detachable Coils, InZone Detachment Systems, delivery systems and accessories) have not been demonstrated with other manufacturer’s devices (whether coils, coil delivery devices, coil detachment systems, catheters, guidewires, and/or other accessories). Due to the potential incompatibility of non Stryker Neurovascular devices with the Target Detachable Coil System, the use of other manufacturer’s device(s) with the Target Detachable Coil System is not recommended.</li>\n<li>To reduce risk of coil migration, the diameter of the first and second coil should never be less than the width of the ostium.</li>\n<li>In order to achieve optimal performance of the Target Detachable Coil System and to reduce the risk of thromboembolic complications, it is critical that a continuous infusion of appropriate flush solution be maintained between a) the femoral sheath and guiding catheter, b) the 2-tip microcatheter and guiding catheter, and c) the 2-tip microcatheter and Stryker Neurovascular guidewire and delivery wire. Continuous flush also reduces the potential for thrombus formation on, and crystallization of infusate around, the detachment zone of the Target Detachable Coil.</li>\n<li>Do not use the product after the “Use By” date specified on the package.</li>\n<li>Reuse of the packaging hoop or use with any coil other than the original coil may result in contamination of, or damage to, the coil.<br>\nDamaged delivery wires may cause detachment failures, vessel injury or unpredictable distal tip response during coil deployment. If a delivery wire is damaged at any point during the procedure, do not attempt to straighten or otherwise repair it. Do not proceed with deployment or detachment. Remove the entire coil and replace with undamaged product.</li>\n<li>Utilization of damaged coils may affect coil delivery to, and stability inside, the vessel or aneurysm, possibly resulting in coil migration and/or stretching.</li>\n<li>The fluoro-saver marker is designed for use with a Rotating Hemostatic Valve (RHV). If used without an RHV, the distal end of the coil may be beyond the alignment marker when the fluoro-saver marker reaches the microcatheter hub.</li>\n<li>If the fluoro-saver marker is not visible, do not advance the coil without fluoroscopy.</li>\n<li>Do not rotate delivery wire during or after delivery of the coil. Rotating the Target Detachable Coil delivery wire may result in a stretched coil or premature detachment of the coil from the delivery wire, which could result in coil migration.</li>\n<li>Verify there is no coil loop protrusion into the parent vessel after coil placement and prior to coil detachment. Coil loop protrusion after coil placement may result in thromboembolic events if the coil is detached.</li>\n<li>Verify there is no movement of the coil after coil placement and prior to coil detachment. Movement of the coil after coil placement may indicate that the coil could migrate once it is detached.</li>\n</ul>\n",
+      "jcr:lastModified": "Tue Mar 29 2022 17:44:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2084961831": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 21 2022 18:25:37 GMT+0000",
+      "text": "<ul>\n<li>Failure to properly close the RHV compression fitting over the delivery wire before attaching the InZone® Detachment System could result in coil movement, aneurysm rupture or vessel perforation.</li>\n<li>Verify repeatedly that the distal shaft of the catheter is not under stress before detaching the Target Detachable Coil. Axial compression or tension forces could be stored in the 2-tip microcatheter causing the tip to move during coil delivery. Microcatheter tip movement could cause the aneurysm or vessel to rupture.</li>\n<li>Advancing the delivery wire beyond the microcatheter tip once the coil has been detached involves risk of aneurysm or vessel perforation.</li>\n<li>The long term effect of this product on extravascular tissues has not been established so care should be taken to retain this device in the intravascular space.</li>\n</ul>\n<p><b><br>\nCautions / precautions</b><br>\n</p>\n<ul>\n<li>Federal Law (USA) restricts this device to sale by or on the order of a physician.</li>\n<li>Besides the number of InZone Detachment System units needed to complete the case, there must be an extra InZone Detachment System unit as back up.</li>\n<li>Removing the delivery wire without grasping the introducer sheath and delivery wire together may result in the detachable coil sliding out of the introducer sheath.</li>\n<li>Failure to remove the introducer sheath after inserting the delivery wire into the RHV of the microcatheter will interrupt normal infusion of flush solution and allow back flow of blood into the microcatheter.</li>\n<li>Some low level overhead light near or adjacent to the patient is required to visualize the fluoro-saver marker; monitor light alone will not allow sufficient visualization of the fluoro-saver marker.</li>\n<li>Advance and retract the Target Detachable Coil carefully and smoothly without excessive force. If unusual friction is noticed, slowly withdraw the Target Detachable Coil and examine for damage. If damage is present, remove and use a new Target Detachable Coil. If friction or resistance is still noted, carefully remove the Target Detachable Coil and microcatheter and examine the microcatheter for damage.</li>\n<li>If it is necessary to reposition the Target Detachable Coil, verify under fluoroscopy that the coil moves with a one-to-one motion. If the coil does not move with a one-to-one motion or movement is difficult, the coil may have stretched and could possibly migrate or break. Gently remove both the coil and microcatheter and replace with new devices.</li>\n<li>Increased detachment times may occur when:<ul>\n<li>Other embolic agents are present.</li>\n<li>Delivery wire and microcatheter markers are not properly aligned.</li>\n<li>Thrombus is present on the coil detachment zone.</li>\n</ul>\n</li>\n<li>Do not use detachment systems other than the InZone Detachment System.<br>\n&nbsp;</li>\n</ul>\n",
+      "jcr:lastModified": "Tue Mar 29 2022 17:44:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

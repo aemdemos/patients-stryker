@@ -1,0 +1,669 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "patient transport chair",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Prime TC",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "04c6e884-51a8-4d17-b3c0-52421d0c2973",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Prime TC - patient transport chair ",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/primetc/images/Thumbnail_PrimeTC.jpg",
+  "jcr:predecessors": [
+    "b20f4ceb-49d6-483d-98d8-d2000644d969"
+  ],
+  "contentID": "AC-CLINICAL-SEATING-SYK-1345875_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 20:13:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:13:41 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:13:43 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:13:22 GMT+0000",
+  "jcr:description": "Every aspect of the Prime TC seated transport chair is designed to help create a welcoming and safe environment. Prime TC is not your ordinary wheelchair and redesigned the way we think about seated patient transport. The BackSmart ergonomics have been incorporated into the design to help reduce the bending and reaching that may be associated with caregiver injury. A rigid frame helps enhance durability while reducing the risk of theft. This investment in the well-being of patients and caregivers tells them you care about their comfort and safety.",
+  "jcr:baseVersion": "b20f4ceb-49d6-483d-98d8-d2000644d969",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:39:47 GMT+0000",
+  "pageTitle": "Prime TC patient transport chair",
+  "cq:tags": [
+    "stryker:capability/clinical-seating-and-transport-chairs",
+    "stryker:custom/acute-care/stretcher-departments/transport",
+    "stryker:services/procare/acute-care/clinical-seating",
+    "stryker:custom/acute-care/stretcher-types/transport",
+    "stryker:product/acute-care/prime-tc",
+    "stryker:custom/acute-care/stretcher-departments/emergency-department",
+    "stryker:custom/acute-care/stretcher-departments/intensive-care-unit",
+    "stryker:specialty/emergency-transport-stretchers",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care",
+    "stryker:content-type/product",
+    "stryker:custom/acute-care/stretcher-types/transport-chair",
+    "stryker:custom/acute-care/stretcher-departments/operating-room",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/acute-care/stretcher-departments/pediatric",
+    "stryker:custom/acute-care/stretcher-departments/maternity",
+    "stryker:capability/stretchers",
+    "stryker:specialty/transport-chair",
+    "stryker:custom/acute-care/stretcher-departments/imaging"
+  ],
+  "jcr:lastModified": "Mon Sep 16 2024 20:27:30 GMT+0000",
+  "jcr:uuid": "035f819d-3c00-4f01-a482-86b298cf9311",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "Prime TC patient transport chair",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/prime_tc/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/prime-tc/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "0",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Sep 16 2024 20:02:53 GMT+0000",
+          "marginRight": "45",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Prime TC</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Patient transport chair</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Every aspect of the Prime TC seated transport chair is designed to help create a welcoming and safe environment. Prime TC is not your ordinary wheelchair and it helped redesign the way we think about seated patient transport. This investment in the well-being of patients and caregivers tells them you care about their comfort and safety.</span></span></p>\n",
+              "jcr:lastModified": "Mon Sep 16 2024 20:26:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy_c_1990582016": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Tue Jul 02 2024 18:52:14 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Tue Jul 02 2024 18:52:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Sep 16 2024 19:52:21 GMT+0000",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Patient transport chair features</span></span></h2>\n<h3><span class=\"fontsize-1-25em\">Helping drive better patient outcomes</span></h3>\n<p><span class=\"fontsize-1-25em\">The patient experience is critical to the success of your organization. Designed in partnership with the Michael Graves Design Group, the comforting aesthetics of the Prime TC transport chair visually communicate cleanliness, healing and an enhanced level of care. Our patient Transport Chair was designed to help reduce the risk of adverse events like patient falls and infection while enhancing the patient experience, all in an effort to maximize your reimbursements.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">BackSmart ergonomics have been incorporated into the design to help reduce bending and reaching that may be associated with caregiver injury.</span></li>\n<li><span class=\"fontsize-1-25em\">A rigid frame helps enhance durability while reducing the risk of theft.&nbsp;</span></li>\n</ul>\n",
+      "jcr:lastModified": "Mon Sep 16 2024 20:25:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy_334069851": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "jcr:lastModified": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Patient is transported around a hospital on the Prime TC hospital wheelchair ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_LF6_BigWheel1.jpg",
+          "jcr:lastModified": "Thu Nov 16 2023 16:19:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Big Wheel maneuverability</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The Prime TC utilizes innovation from Stryker stretchers to help ease cornering and steering of patients up to 500 pounds.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:54:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Upright oxygen bottle on the back of a Prime TC hospital transport chair ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_SmF3_O2Tank-2.jpg",
+          "jcr:lastModified": "Thu Nov 16 2023 16:19:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Upright oxygen bottle holder</span></span></h3>\n<p><span class=\"fontsize-1-25em\">This holder minimizes the bending and lifting required to place a heavy O2 tank underneath the chair.</span></p>\n",
+          "jcr:lastModified": "Tue Sep 24 2024 17:51:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_709633650": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Three hospital patient transport wheelchairs nested together to save valuable space ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_SmF1_Nesting1.jpg",
+          "jcr:lastModified": "Thu Nov 16 2023 16:19:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Rigid, nestable frame</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The rigid frame of the Prime TC helps prevent theft, while the nesting design helps save valuable space throughout the facility. Prime TC has undergone rigorous life cycle testing to ensure that it will stand the test of time.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:54:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_334069851_403583866": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "jcr:lastModified": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 19:08:04 GMT+0000",
+          "alt": "A nurse engages the one-touch central brake on the Prime TC transport wheelchair",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_LF5_Brake1.jpg",
+          "jcr:lastModified": "Thu Nov 16 2023 16:20:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_647061357": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">One-touch central brake</span></span></h3>\n<p><span class=\"fontsize-1-25em\">This brake enhances caregiver efficiency and is foot-operated to help reduce bending and reaching. Enclosed mechanics protect the braking system from varying climates, while integrated anti-tip wheels increase safety.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:55:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1756820786": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 19:08:04 GMT+0000",
+          "alt": "Patient using the stand assist armrests on the Prime TC transport chair ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_LF4_StandAssist1.jpg",
+          "jcr:lastModified": "Tue May 09 2023 14:22:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Stand assist armrests</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Uniquely designed, these armrests feature a raised and extended touchpoint for patients during ingress and egress to encourage nose-over-toes positioning. Armrests fold back easily for better patient access.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:55:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 19:08:04 GMT+0000",
+          "alt": "A nurses uses the BackSmart push handles on the Prime TC hospital transport wheelchair",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/prime-tc-push-handles.jpg",
+          "jcr:lastModified": "Tue Oct 15 2024 15:58:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_1647507244": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">BackSmart push handles</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Upright, extended handles allow caregivers to position their elbows at an ergonomic 90-degree angle during transport and accommodate caregivers of virtually any height.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:56:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_334069851_1961175807": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "jcr:lastModified": "Mon Mar 13 2023 21:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Upright footrests provide a clear path to help reduce trip hazards",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_LF2_Footrests1.jpg",
+          "jcr:lastModified": "Tue May 09 2023 14:58:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Flip-up footrests</span></span></h3>\n<p><span class=\"fontsize-1-25em\">The footrests remain in an upright position to provide a clear path of patient ingress and egress, which helps reduce trip hazards for patients and caregivers. Foot-operated levers allow caregivers to position patients with reduced bending and help prevent transfer of germs and debris from touching dirty footrests. With Swing Away functionality, an intuitive foot-operated button swings footrests back and out of the way to provide closer access to beds, cars or tables, and offers unobstructed access to patients.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:56:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Top down view of the Prime TC patient transport chair ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_LF1_Seamless1.jpg",
+          "jcr:lastModified": "Tue May 09 2023 15:07:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Long-lasting, seamless design</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Molded plastic and powder-coated steel eliminate fabric rips and reduce the risk of rust that can be difficult to clean and often harbors infectious bacteria. A simple, power-washable frame makes cleaning quick and easy.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:56:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Black and white image of Michael Graves with an ivy backdrop ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/PH_TPTC_SmF2_Graves1.jpg",
+          "jcr:lastModified": "Tue May 09 2023 15:08:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Michael Graves with Stryker</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Designed in partnership with the Michael Graves Design Group, the open and welcoming aesthetics of the chair visually communicate cleanliness, healing and an enhanced level of care. Prime TC also feels right at home with other medical equipment and furniture.</span></p>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 19:56:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1856319973": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Apr 04 2023 20:12:03 GMT+0000",
+      "jcr:lastModified": "Tue Apr 04 2023 20:12:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 04 2023 20:11:26 GMT+0000",
+          "alt": "Row of six hospital patient transport wheelchairs ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/prime-tc-lineup.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 09 2023 15:08:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_211422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Mar 02 2022 18:12:52 GMT+0000",
+      "title": "contact",
+      "jcr:lastModified": "Wed Mar 02 2022 18:13:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Apr 04 2023 20:13:04 GMT+0000",
+      "jcr:lastModified": "Tue Apr 04 2023 20:13:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:38:32 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 20:13:22 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:43:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/primetc/resources/Prime TC Spec Sheet_mkt-lit-807.pdf",
+            "/content/dam/stryker/acute-care/products/primetc/resources/Prime_TC_Brochure.pdf",
+            "/content/stryker/us/en/acute-care/asset-items/techweb/jcr:content/par/externalasset_copy_c"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Mon Sep 16 2024 19:58:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Mar 10 2020 15:46:27 GMT+0000",
+          "jcr:lastModified": "Mon Sep 16 2024 19:58:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/transport"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/trurize"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/unity-furniture"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>The patient experience is critical to the success of your organization. Designed in partnership with the Michael Graves Design Group, the comforting aesthetics of the Prime TC Transport Chair visually communicate cleanliness, healing and an enhanced level of care. Our patient transport chair was designed to help reduce the risk of adverse events like patient falls and infection, while enhancing the patient experience, all in an effort to maximize your reimbursements.</p>\r\n",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Apr 04 2023 19:25:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://techweb.stryker.com/",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "http://www.stryker.com/primetc/us/",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Tue Apr 04 2023 19:34:43 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "Operations and Maintenance Manuals",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/primetc/images/Thumbnail_PrimeTC.jpg"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Apr 04 2023 19:34:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Sep 16 2024 19:48:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Apr 04 2023 19:42:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Apr 04 2023 19:42:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

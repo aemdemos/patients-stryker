@@ -1,0 +1,1032 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "HeartSine samaritan PAD 450P",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9cf9a4dc-1cc8-436f-ac3d-f5af753736a1",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "HeartSine samaritan PAD 450P",
+  "jcr:predecessors": [
+    "d2df7b59-5024-46e7-b880-32b3765aa7be"
+  ],
+  "contentID": "M0000010070 REV AA",
+  "lastPublished": "Thu Aug 20 2026 16:25:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 16:25:07 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 16:25:09 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 16:24:58 GMT+0000",
+  "jcr:baseVersion": "d2df7b59-5024-46e7-b880-32b3765aa7be",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:25:06 GMT+0000",
+  "pageTitle": "HeartSine samaritan PAD 450P",
+  "cq:tags": [
+    "stryker:capability/public-access",
+    "stryker:content-type/product",
+    "stryker:capability/emergency-response-and-resuscitation",
+    "stryker:business-unit/ems",
+    "stryker:specialty/AEDs",
+    "stryker:content-type/hcp_content",
+    "stryker:product/ems/heartsine-samaritan-pad-450p"
+  ],
+  "jcr:lastModified": "Mon Apr 10 2023 21:27:18 GMT+0000",
+  "jcr:uuid": "f6808c9f-7664-47b5-8d44-f74757646413",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "HeartSine samaritan PAD 450P",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero_copy_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed May 18 2022 16:45:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Oct 01 2021 17:37:13 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Oct 21 2021 19:07:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan_/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/heartsine-samaritan/hero/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "3",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Jan 19 2022 16:20:35 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "15",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "rightMargin": "40",
+              "topMargin": "2",
+              "jcr:created": "Fri Oct 01 2021 17:37:38 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><b><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">A key link in the chain of survival</span></span></b></h1>\r\n",
+              "line2": "<span class=\"fontsize-1-5-vw\">Offering real-time CPR rate feedback, the HeartSine samaritan PAD 450P AED with integrated CPR Rate Advisor meets the needs of two key links in the chain of survival. Not only can the semi-automatic AED deliver a lifesaving shock, but it also provides real-time visual and verbal feedback to the rescuer on the rate of CPR compressions during a sudden cardiac arrest resuscitation.</span>",
+              "jcr:lastModified": "Thu Nov 02 2023 17:41:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "10",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "leftPadding": "20",
+      "topPadding": "10",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:01:20 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2 style=\"text-align: center;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">A lifesaving combination</span></span></span></b></h2>\r\n",
+      "line2": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">When someone collapses from sudden cardiac arrest, time is of the essence. Reducing response time by even one or two minutes from collapse to AED shock can mean the difference between death and survival.<sup>1</sup> More than a simple AED, the HeartSine samaritan PAD 450P with integrated CPR Rate Advisor helps rescuers address two key links in the chain of survival.</span></span></span></div>\r\n",
+      "jcr:lastModified": "Mon Jun 06 2022 21:42:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "20",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullbleedpanel_copy__2087700981": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 18:18:17 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 21:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Nov 16 2021 18:50:35 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Wed Nov 17 2021 14:53:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 18:18:47 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:18:53 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "jcr:lastModified": "Tue Sep 26 2023 16:57:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/ems/products/heartsine-450p/us/videos/450P Testimonial.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video|VIDEO|false",
+                "assetID": "stryker/450P Testimonial-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Tue Jun 07 2022 18:47:54 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "/stryker/Video|VIDEO|false"
+              }
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line2": "<span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(255,181,0);\">Customer&nbsp;<span style=\"color: rgb(255,255,255);\">testimonial</span></span></span></span></span>",
+              "jcr:lastModified": "Tue Jun 07 2022 17:59:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Nov 16 2021 18:50:35 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Wed Nov 17 2021 14:53:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "carouselslidegroup_c_1380962333": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Oct 01 2021 17:37:13 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Oct 21 2021 19:07:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/heartsine_samaritan_/full-width-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/heartsine-samaritan/full-width-image/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Dec 30 2021 19:05:03 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "15",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      }
+    },
+    "cols_1610758879_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:30:12 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:30:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c_672259260": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:22:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2 style=\"text-align: left;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1-5-vw\">PRODUCT HIGHLIGHTS</span></span></span></b></h2>\r\n<h2 style=\"text-align: left;\"><b><span class=\"futura-bold\"><span class=\"fontsize-3vw\">HeartSine samaritan PAD 450P</span></span></b></h2>\r\n",
+      "line2": "<div style=\"text-align: left;\"><span class=\"fontsize-1-5-vw\">The semi-automatic HeartSine samaritan PAD 450P, available with or without Wi-Fi connectivity, helps rescuers deliver a lifesaving shock while also providing real-time visual and verbal feedback on the rate of CPR compressions—assisting the rescuer to perform more effective CPR.</span></div>\r\n",
+      "jcr:lastModified": "Mon Jun 06 2022 21:45:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_copy_175606443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Visual and audible CPR feedback</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Proprietary CPR Rate Advisor technology detects the rate of CPR being applied via the defibrillator electrodes, without the need of accelerometers or pucks that are commonly required in other AED solutions.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 17 2022 15:12:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "A bystander prepares to use the HeartSine samaritan PAD 450P on a make sudden cardiac victim in a park",
+          "srcFileRef": "/content/dam/stryker/ems/products/heartsine-450p/us/heartsine450_improved-cpr-delivery_1200x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:49:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_128815649": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:30:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "A HeartSine samaritan PAD 450P is stored in a wall cabinet in an office setting ",
+          "srcFileRef": "/content/dam/stryker/ems/products/heartsine-450p/us/heartsine450_clinically-validated-technology_1200x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:49:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Readiness made easy</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">HeartSine connected AEDs use the power of Wi-Fi to provide remote readiness information and complete weekly self-tests for every AED in your fleet—reducing the expense and effort needed to manage your AED program.</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 29 2022 18:01:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Remote monitoring</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><a href=\"/content/stryker/us/en/emergency-care/products/lifelink-central.html\" target=\"_self\">LIFELINKcentral AED program manager</a> monitors each HeartSine AED connected to a Wi-Fi network and alerts you to matters that may affect device readiness—all automatically.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 30 2022 14:24:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "A front view of the HeartSine samaritan PAD 450P ",
+          "srcFileRef": "/content/dam/stryker/ems/products/heartsine-450p/us/gateway_450_easy-to-follow-guidance-_1200x680.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:50:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_128815649_761320661": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:31:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Three bystanders help a sudden cardiac arrest victim by performing CPR and preparing the HeartSince samaritan PAD 450P ",
+          "srcFileRef": "/content/dam/stryker/ems/products/heartsine-450p/us/gateway_improve_cpr_quality2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:51:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Unique Pediatric-Pak&nbsp;</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The Pediatric-Pak ensures the Guidelines-recommended energy level is delivered for children between one and eight years of age or up to 55 pounds.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 17 2022 15:13:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Low cost of ownership</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">HeartSine defibrillators come with the practical Pad-Pak—an integrated battery and electrode single-use cartridge with one expiration date, which simplifies AED maintenance.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">With a shelf life of four years from date of manufacture, the Pad-Pak may offer savings as it eliminates the need for separate battery and electrode replacements.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 29 2022 18:02:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "A teacher carries a HeartSine samaritan PAD 450P through a school hallway ",
+          "srcFileRef": "/content/dam/stryker/ems/products/heartsine-450p/us/heartsine450_lightweight_school_1200x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:52:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 21:49:34 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 21:49:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 28 2019 13:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Nov 16 2021 19:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">FAQs</span></span></span></p>\n",
+          "jcr:lastModified": "Wed Dec 15 2021 21:19:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 28 2019 13:17:42 GMT+0000",
+          "jcr:lastModified": "Mon Jun 06 2022 21:50:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys7": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 7,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p>Contact Stryker's customer service or technical support at 1 800 327 0770.</p>\n",
+              "jcr:lastModified": "Tue Nov 16 2021 19:53:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">With the Pad-Pak inserted:</span></p>\n<p><span class=\"fontsize-1-25em\">Height: 8 inches<br>\n Width: 7.25 inches<br>\n Depth: 1.9 inches&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Jun 06 2022 21:55:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The AED weighs 2.14 pounds with the Pad-Pak inserted.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Mon Jun 06 2022 21:55:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "What are the physical dimensions of the HeartSine samaritan PAD 450P? "
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "How much do the HeartSine samaritan PAD 450P weigh? "
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 3,
+              "accTitle": "What is the waveform used in the HeartSine samaritan PAD 450P? "
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 4,
+              "accTitle": "What is the energy sequence for the HeartSine samaritan PAD 450P? "
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 5,
+              "accTitle": "What is the charge time between shocks for the 450P? "
+            },
+            "6": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 6,
+              "accTitle": "What is the warranty for the HeartSine samaritan PAD 450P? "
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The waveform is the Self-Compensating Output Pulse Envelope (SCOPE) optimized biphasic escalating waveform compensates energy, slope and duration for patient impedance.</span><br>\n</p>\n",
+              "jcr:lastModified": "Mon Jun 06 2022 21:56:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">For the Pad-Pak (for adult use):<br>\n Shock 1: 150J<br>\n Shock 2: 150J<br>\n Shock 3: 200J</span></p>\n<p><span class=\"fontsize-1-25em\">For the Pediatric-Pak (for use on children 1-8 years old):<br>\n Shock 1: 50J<br>\n Shock 2: 50J<br>\n Shock 3: 50J&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Aug 29 2022 18:03:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Charge time (typical):<br>\n 150J in &lt; 8 seconds<br>\n 200J in &lt; 12 seconds&nbsp;&nbsp;</span></p>\n",
+              "jcr:lastModified": "Mon Jun 06 2022 21:57:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 6,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The AED is backed by an eight-year limited warranty.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Mon Jun 06 2022 21:57:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_140431": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 15 2021 21:28:06 GMT+0000",
+      "jcr:lastModified": "Wed Dec 15 2021 21:29:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 19:59:58 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 21:07:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Oct 20 2021 20:01:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2 style=\"text-align: left;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">Connect </span></span></span></span></b><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">with an expert</span></span></span></h2>\r\n",
+          "jcr:lastModified": "Wed Dec 15 2021 21:37:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 20 2026 16:24:58 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
+          "jcr:lastModified": "Sun Apr 23 2023 15:56:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c_2106340378": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 21:15:32 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Wed Jul 27 2022 12:52:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/homepage/social-icons/master"
+        }
+      }
+    },
+    "sectionseparator_1393543847": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 21:50:56 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 21:50:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "customizable_5549374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "description": "Check out articles on defibrillation, including innovations and life-saving techniques. ",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "title": "Learn more about defibrillation",
+      "jcr:lastModified": "Tue May 31 2022 21:58:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2022/the-role-of-defibrillation-during-sudden-cardiac-arrest"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2022/defibrillator-101"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/2022/aed-buying-guide"
+        }
+      }
+    },
+    "cols_copy_copy_copy__1248325781": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 27 2022 13:39:11 GMT+0000",
+      "text": "SERVICE AND SUPPORT Robust support for your team Technical support We'll work with you to quickly assess your situation and find the best solution. Contact support ProCare service plans Focus on saving lives while extending the integrity of your devices with a ProCare service plan. Learn more Product resources Find a variety of documents including best practices, datasheets and clinical information for easy download. Learn more Training and education Discover webinars, online and in-person courses and other resources to strengthen your clinical education. Learn more",
+      "jcr:lastModified": "Wed Jul 27 2022 13:39:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/services_and_support/services-and-support/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/services-and-support/services-and-support/master"
+    },
+    "cols_copy_copy_copy__1979637533": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload_420541297": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "resources": [
+        "/content/dam/stryker/ems/products/heartsine-450p/us/resources/heartsine-450p-data-sheet.pdf",
+        "/content/dam/stryker/ems/products/heartsine-450p/us/resources/heartsine-accessories-catalog.pdf",
+        "/content/dam/stryker/ems/resources/flyers/HeartSine 450P CPR Rate Adviser Flyer.pdf",
+        "/content/stryker/us/en/emergency-care/asset-items/heartsine-com/jcr:content/par/externalasset"
+      ],
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 21 2020 22:14:52 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Aug 30 2022 14:23:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "customizable_5549374_4623054": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "title": "Additional resources",
+      "jcr:lastModified": "Thu Nov 10 2022 18:15:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/disclosure-and-safety-information"
+        }
+      }
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Dec 15 2021 21:08:06 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Jun 06 2022 21:54:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/heartsine-smaritan-pad-360p"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lifepak-cr2"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lifepak-1000-defibrillator"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lucas-3"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Jan 10 2022 17:04:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://www.strykeremergencycare.com/products/devices/Heartsine-450/",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:04:33 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Learn more",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Mosesso Jr VN, et al. 2002. Proceedings of the National Center for Early Defibrillation Police AED Issues Forum. Prehospital Emergency Care. 6(3):273–82</p>\r\n",
+    "jcr:lastModified": "Mon Jun 06 2022 21:53:20 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/heartsine/HeartSine_PAD_450P.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:04:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jan 10 2022 17:04:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

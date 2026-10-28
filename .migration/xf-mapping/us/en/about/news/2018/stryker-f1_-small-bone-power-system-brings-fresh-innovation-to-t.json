@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker F1™ Small Bone Power System brings fresh innovation to the power tool market",
+  "jcr:versionHistory": "4c555c3a-ddb1-45cb-a49f-33d991402617",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/images/10162 Stryker_F1 Pistol_Pencil_DSC5277b.jpg",
+  "jcr:predecessors": [
+    "8b569778-9194-4880-8ece-6ddaf9b1a10f"
+  ],
+  "lastPublished": "Wed Oct 03 2018 20:28:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Oct 03 2018 20:28:25 GMT+0000",
+  "cq:lastModified": "Wed Oct 03 2018 20:28:17 GMT+0000",
+  "jcr:baseVersion": "8b569778-9194-4880-8ece-6ddaf9b1a10f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Wed Oct 03 2018 20:28:17 GMT+0000",
+  "jcr:uuid": "bc95c860-1d53-42e9-b3ff-86432c4a3b18",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Fri Mar 23 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "23-Mar-2018",
+    "jcr:lastModified": "Fri Mar 23 2018 11:12:20 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker's Instruments division announced today the launch of the Stryker F1™ Small Bone Power System, providing surgeons with a cordless, balanced, lightweight solution for procedures of the extremities.</p>\n<p>Until now, extremities surgeons have, for the most part, used cord-and-console setups. While a console delivers the requisite power for working with small bones, it also comes with unavoidable compromises. It reduces maneuverability, may break the sterile operating field and with multiple components, can make both operation and troubleshooting less efficient. The Stryker F1 System allows for the elimination of cords, hand switches, and consoles and provides a much more efficient way to perform distal extremity procedures.</p>\n<p>The Stryker F1 System is powered by SmartGRIP™ Technology. Surgeons have the choice of two unique gripping styles – the pencil or pistol-style SmartGRIP. Each SmartGRIP is a lightweight, well- balanced battery control module that contains lithium ion cells and enables the surgeon to operate three micro saws, a micro drill, and a universal motor for inserting k-wires and drilling. The five motors and three attachments are interchangeable between SmartGRIP Control Module, allowing surgeons to choose their specific approach. Each SmartGRIP Control Module:</p>\n<ul>\n<li>Can remain on the shelf, unused, for 30 days without losing power and performance<sup>1</sup></li>\n<li>Provides consistent power and uptime</li>\n<li>Contains insulation to increase resistance to thermal damage during exposure to high temperatures throughout sterilization</li>\n<li>Includes a battery indicator light to display SmartGRIP Control Module status information</li>\n</ul>\n<p>In addition to delivering procedural efficiency, the Stryker F1 System will connect to Smart Equipment Management (SEM), a new online data module designed to help optimize the management of Stryker's smart devices through device-derived, actionable data. The Stryker F1 System pairs exclusively&nbsp;with the&nbsp;Resurfacing Tool, an innovative cutting accessory that provides a reduced level of chatter, increased cut accuracy, and increased cut speed when compared to a 4.0mm fluted egg bur<sup>2</sup>.</p>\n<p>The Stryker F1 system has a small footprint, making it a great addition to both hospitals and surgery centers, and provides an all-inclusive, non-anodized container with two tray inserts to hold every component in the system. This allows SmartGRIP Control Modules to be sterilized in multiple ways<sup>3&nbsp;</sup>allowing facilities to choose the sterile processing option that best meets their needs.</p>\n<p>The Stryker F1 system provides the necessary power to complete the indicated procedures using the gripping style that is most comfortable for the surgeon and allows them to operate at their best.</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><b>Media contact</b>&nbsp;<br>\nJennifer Lentner&nbsp;&nbsp;<br>\nSr. Director, Marketing Communications&nbsp;&nbsp;<br>\njennifer.lentner@stryker.com&nbsp;</p>\n<p><sup>1&nbsp;</sup>Stryker engineering data on file.&nbsp;Kalamazoo, MI<br>\n<sup>2</sup>&nbsp;The 2.5mm egg resurfacing tool (1900-015-025) had an equivalent cut speed when compared to the 4.0 mm fluted egg bur (1608-002-035). Under test lab conditions when compared to the 1608-002-035 using a bone substitute.&nbsp;<br>\n<sup>3</sup>&nbsp;For complete cleaning and sterilization instructions, please refer to Stryker F1 Care Instructions.SOURCE Stryker</p>\n",
+    "jcr:lastModified": "Fri Mar 23 2018 11:23:35 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/10162 Stryker_F1 Pistol_Pencil_DSC5277b.jpg",
+    "jcr:lastModified": "Fri Mar 23 2018 11:25:24 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

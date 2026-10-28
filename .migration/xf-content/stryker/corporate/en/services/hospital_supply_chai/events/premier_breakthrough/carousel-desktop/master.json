@@ -1,0 +1,50 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero carousel - desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d8d891b4-d7b6-411d-a2ce-c7e99d110204",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "844d680b-7780-4c6a-8967-af933f4bf837"
+  ],
+  "lastPublished": "Fri Sep 25 2026 14:10:06 GMT+0000",
+  "jcr:created": "Fri Sep 25 2026 14:10:07 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 25 2026 14:10:09 GMT+0000",
+  "cq:lastModified": "Fri Sep 25 2026 14:07:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "844d680b-7780-4c6a-8967-af933f4bf837",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Sep 25 2026 14:10:06 GMT+0000",
+  "jcr:uuid": "2f25fa25-a8b0-4d4a-aebe-75bd19926dc4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Sep 23 2026 20:26:15 GMT+0000",
+      "alt": "Premier Breakthroughs-desktop",
+      "srcFileRef": "/content/dam/stryker/care-settings/asc/events/images/2026/premier-breakthroughs/Premier Breakthroughs-desktop.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 23 2026 20:29:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

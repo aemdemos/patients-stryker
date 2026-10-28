@@ -1,0 +1,128 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker to Showcase Innovative Portfolio of Spine Solutions  at the North American Spine Society Meeting",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e4891784-a2c8-411d-adb8-614ba5f1fb16",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "stryker_logo2015_web",
+  "jcr:predecessors": [
+    "68bddd17-5933-4d69-93c1-52789ceb901d"
+  ],
+  "contentID": "QGS-MM-2_3426",
+  "lastPublished": "Wed Oct 12 2022 13:57:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Oct 12 2022 13:57:40 GMT+0000",
+  "cq:lastReplicated": "Wed Oct 12 2022 13:57:42 GMT+0000",
+  "cq:lastModified": "Wed Oct 12 2022 13:21:50 GMT+0000",
+  "jcr:baseVersion": "68bddd17-5933-4d69-93c1-52789ceb901d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Wed Oct 12 2022 13:21:50 GMT+0000",
+  "jcr:uuid": "3ec6c5d1-ccfc-43e7-8e77-910bd95bcfe4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Oct 12 2022 13:07:27 GMT+0000",
+      "jcr:lastModified": "Wed Oct 12 2022 13:07:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:07:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Newly Launched Q Guidance System with Spine Guidance Software Receives 2022 Spine Technology Award</span></span></p>\n<p><span class=\"futura-bold\">Kalamazoo, MICH</span>., October 12, 2022 – Stryker (NYSE:SYK), one of the world’s leading medical technology companies, will feature its suite of procedural solutions for spinal surgery, including its award-winning Q Guidance System with Spine Guidance Software, during the North American Spine Society (NASS) annual meeting in Chicago, Oct. 12–15 (booth #4211).</p>\n<p>“Our expanding portfolio of differentiated spinal procedural innovations demonstrates our commitment to bringing state-of-the-art technology to surgeons and their patients,” said Robbie Robinson, President of the Spine division, Stryker. “This has been an exciting year with several new products launched, signifying the continued growth of our Spine business. We are thrilled to reconnect with current and make the acquaintance of future customers as well as showcase our newest additions at NASS.”</p>\n<p>The Company will highlight legacy solutions along with several newly launched products, which include:</p>\n<ul>\n<li><a href=\"https://stryker-my.sharepoint.com/personal/sarah_yerden_stryker_com/Documents/SY/Route/Workfront/PR/New%20at%20NASS%20Press%20Release_vM18_10.10.22.docx\">Q Guidance System with Spine Guidance Software</a> combines a redesigned, 4th generation FP8000 camera with an intuitive user interface and sophisticated algorithms to deliver more surgical spine planning and navigation capability than ever before. The Q Guidance System is the hub of Stryker’s fully integrated ecosystem, driving more value for its customers. With a robust product pipeline in place that will include Cranial Guidance Software*, Stryker is positioned to provide a well-rounded, end-to-end guidance platform for its surgeon customers. The Company is also currently developing the Mako robotic technology for spinal application that is intended to integrate with its navigation technology**. During the meeting, the Q Guidance System with Spine Guidance Software will be awarded the 2022 Best Technology in Spine by Orthopedics This Week, which recognizes excellence in innovation for the year’s best new technologies, along with their engineering teams and inventors.</li>\n<li><a href=\"https://builttofuse.strykerspine.com/\">Monterey® AL Interbody System</a> is a stand-alone interbody fusion device designed for anterior lumbar interbody fusion. The System is the latest cage built using Tritanium In-Growth Technology and is validated by newly presented pre-clinical data demonstrating that undifferentiated stem cells grown on Tritanium exhibited osteogenic Alkaline Phosphatase without requiring growth factor supplements.<sup>1,2</sup></li>\n<li><a href=\"https://www.strykergoodasgold.com/poweringgold/\">Bone Mill+™</a> features an enhanced power base, a new bone mill that can produce 46% more bone yield, 99 times faster compared to manual milling, and a new disposable cartridge for automated tissue removal that is 2.5 times faster than manual tissue removal.<sup>3</sup></li>\n<li><a href=\"https://strykerivs.com/\">OmniCurve™</a> is a curved balloon system built on the strength of <a href=\"https://providers.strykerivs.com/products/avaflex-balloon-system\">AVAFlex balloon system</a> and designed to enhance the user’s capabilities and control. Enabling a one-handed technique, it is designed to reach midline every time and offers unipedicular access with bipedicular results.<sup>4</sup></li>\n</ul>\n<p>Stryker will showcase its portfolio of spine solutions at NASS (booth #4211), including a chance to experience the technologies hands-on during a Surgical Stadium event taking place Friday, October 14 from 10:45a.m. – 12:00p.m. in the Technical Exhibition McCormick Place, West Building with proctors Drs. Shah Dodwad and Griffin R. Baum.</p>\n<p>*Cranial Guidance Software has not yet received 510(k) clearance to market.<br>\n**Mako for spine applications is not available for sale.<br>\n<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Oct 12 2022 13:16:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:07:33 GMT+0000",
+          "jcr:lastModified": "Wed Oct 12 2022 13:07:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1737439289": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:11:56 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, and Orthopaedics and Spine that help improve patient and hospital outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.<br>\n<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Oct 12 2022 13:13:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_1733207847": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:13:33 GMT+0000",
+          "jcr:lastModified": "Wed Oct 12 2022 13:13:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_440164985": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:12:57 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Media contact</span><br>\nAndrea Sampson, Sampson Public Relations Group<br>\n562.304.0301<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a><br>\n<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Oct 12 2022 13:14:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_1700198022": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:14:43 GMT+0000",
+          "jcr:lastModified": "Wed Oct 12 2022 13:14:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_505975798": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Oct 12 2022 13:14:00 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">References: </span><span class=\"fontsize-8em\"><br>\n</span>1. Stryker data on file; RD 62430 Tritanium hMSC osteogenic differentiation.<br>\n2. Reza, A. et al. &quot;Randomized porous titanium impacts cell morphology and induces stem cell differentiation in vitro.&quot; Orthopaedic Research Society 5th International Spine Research Symposium, 2019, 5: 83.<br>\n3. Stryker data on file (10-minute Bone Mill+ cycle vs 10 minutes of manual soft tissue removal)<br>\n4. Stryker data on file (Based on fill volume)<br>\n<span class=\"fontsize-8em\"> </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Oct 12 2022 13:14:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Wed Oct 12 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Oct-2022",
+    "jcr:lastModified": "Wed Oct 12 2022 13:07:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker_logo2015_web.jpg"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Korean corporate policies",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "270d7258-3e72-4f20-9c67-64658b5872d9",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "17476e1b-7b6f-4b6e-a227-6f00a5387241"
+  ],
+  "lastPublished": "Mon Jul 13 2026 18:51:54 GMT+0000",
+  "jcr:created": "Mon Jul 13 2026 18:52:04 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 13 2026 18:52:07 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2026 20:44:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "17476e1b-7b6f-4b6e-a227-6f00a5387241",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:47:51 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "93954331-7bef-4c1c-aa23-3f58b3380321",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 12 2017 19:24:16 GMT-0400",
+      "text": "<ul>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/127328\">차별&nbsp;금지(2 Anti-Discrimination (A4))</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/127228\">성희롱 및 기타 불법적인 직장 내 괴롭힘 (3 Sexual and Other Unlawful Harassment (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/141182\">인가된 제품의 홍보 기업 정책 제5호 (5 On-Label Product Promotion)</a></li>\n<li><a href=\"https://www.stryker.com/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-790605-KO_KR.pdf\">회사 직원에 의한 주식 거래 (6 Trading in Securities by Company Personnel (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/127230\">글로벌 정보 및 시스템 보안 (7 Global Information and Systems Security (Ltr))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/127232\">인허가 업무 및 품질 보 증 정책 (9 Quality (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/127233\">직원 개인 정보 보호 원칙 (11 Global Privacy and Data Protection (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/ko-kr/148458\">정책 제목: 수술 또는 기타 의료 시술 참석 (13 Attendance at Surgery or Other Medical Procedures (A4))</a></li>\n</ul>\n",
+      "jcr:lastModified": "Fri Jul 10 2026 20:44:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

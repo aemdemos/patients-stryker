@@ -1,0 +1,372 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Directory - Latin America",
+  "jcr:versionHistory": "80992e19-ff4f-42a6-a337-01b3e0e1b464",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "322783e9-b98f-433d-a0ae-1281a0d0d949"
+  ],
+  "jcr:created": "Fri Feb 28 2020 00:51:41 GMT+0000",
+  "cq:lastModified": "Tue Feb 18 2020 16:20:16 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "322783e9-b98f-433d-a0ae-1281a0d0d949",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "aa90b7fa-014e-4123-9849-64b0b9e2c97b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c_610454915": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Headquarters</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 16:03:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116903815202_1315541332": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage",
+        "PhoneNumbers"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name Latin America Address 3365 Enterprise Ave Weston, FL 33331 USA Business Home Page Phone Numbers Customer support 954 538 8200 Phone Exports (Central America, Andean, and Caribbean) +57 (1) 7438215",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 17:05:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584110689",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "text_copy_466768941_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Feb 18 2020 13:55:44 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 18 2020 13:55:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 08 2019 04:51:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: #000000;\">Sales</span></span></span></span></span>",
+      "jcr:lastModified": "Tue Feb 18 2020 16:04:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(223,225,222,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "item3666116903815202": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "Location Name Argentina Address Ricardo Gutiérrez 4070/90 – CP: B1605 – Munro, Partido de Vicente López Provincia de Buenos Aires - Argentina. Business Home Page Learn More",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:50:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/argentina",
+      "cq:styleIds": [
+        "1566584110689",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116903815202_261850991": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Brazil            \n\n                        Address                                            Rua Urussuí, 300 - 8º andar\nSão Paulo - SP, 04542-051, Brazil\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:52:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/brazil",
+      "cq:styleIds": [
+        "1566584110689",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "item3666116903815202_947371456": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Mon Oct 07 2019 14:35:25 GMT+0000",
+      "text": "                    Location Name                                            Chile            \n\n                        Address                                            Av. Los Conquistadores 2743, Piso 3\nProvidencia, Santiago, Chile\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Oct 08 2019 16:54:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/chile",
+      "cq:styleIds": [
+        "1566584110689",
+        "1566584137963"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      }
+    },
+    "contentfragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        ""
+      ],
+      "jcr:created": "Tue Feb 18 2020 16:05:49 GMT+0000",
+      "text": "                    Location Name                                            Colombia and Puerto Rico            \n\n                        Address                                            Calle 116 No. 7-15 Piso 10 Oficina 1001.\nBogotá, Colombia\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Feb 18 2020 16:07:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/colombia-and-puerto-rico",
+      "cq:styleIds": [
+        "1566584110689"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "contentfragment_1142221429": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Feb 18 2020 16:17:19 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Tue Feb 18 2020 16:17:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment"
+    },
+    "contentfragment_1331342229": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "PhoneNumbers"
+      ],
+      "jcr:created": "Tue Feb 18 2020 16:12:40 GMT+0000",
+      "text": "Location Name Exports (Central America, Andean, and Caribbean) Address 2555 Davie Road Davie, FL 33317 USA Phone Numbers Customer support: +57 (1) 7438215 Phone",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Feb 18 2020 16:18:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/exports-(central-america,-andean,-and-caribbean)",
+      "cq:styleIds": [
+        "1566584110689"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "contentfragment_973579429": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Tue Feb 18 2020 16:08:28 GMT+0000",
+      "text": "Location Name Latin America Address 3365 Enterprise Ave Weston, FL 33331 USA Business Home Page",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Feb 18 2020 16:09:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/primary-contact",
+      "cq:styleIds": [
+        "1566584110689"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "contentfragment_624490227": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "paragraphScope": "all",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "elementNames": [
+        "locationName",
+        "addressBlock1",
+        "BusinessHomePage"
+      ],
+      "jcr:created": "Tue Feb 18 2020 16:10:50 GMT+0000",
+      "text": "                    Location Name                                            Mexico            \n\n                        Address                                            Mariano Escobedo No. 476, Piso 4, Of. 406\nCol. Nueva Anzures.\nC.P. 11590.\nCiudad de México\n\n\n\n                        Business Home Page                                            Learn More\n\n\n\n",
+      "variationName": "master",
+      "jcr:lastModified": "Tue Feb 18 2020 16:11:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/contentFragment",
+      "displayMode": "multi",
+      "fragmentPath": "/content/dam/stryker/content-fragments/latin-america/en/contact-information/mexico",
+      "cq:styleIds": [
+        "1566584110689"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

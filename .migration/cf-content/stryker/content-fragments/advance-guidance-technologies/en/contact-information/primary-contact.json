@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "b0eb484c-2849-42b4-ab97-57bf9211dd64",
+  "jcr:predecessors": [
+    "2ed58c46-d4f5-46ad-ac61-adece189680f"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:47 GMT+0000",
+  "jcr:baseVersion": "2ed58c46-d4f5-46ad-ac61-adece189680f",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "1e939bb3-44c5-4622-a8ab-b4c8bca542bb",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Thu Jan 04 2024 18:48:01 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Thu Jan 04 2024 18:47:55 GMT+0000",
+    "lastFragmentSave": "Thu Jan 04 2024 18:47:55 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/advance-guidance-technologies/en/contact-information",
+    "dam:relativePath": "stryker/content-fragments/advance-guidance-technologies/en/contact-information/primary-contact",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Thu Jan 04 2024 18:47:59 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "addressBlock1": "<p>4100 East Milham Ave.<br>\nKalamazoo, MI 49001<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "locationName": "Advanced Guidance Technologies",
+        "ShortDesc": "<p>We offer you a spectrum of enabling systems designed to help you optimize precision, ability, efficiency and outcomes.&nbsp;</p>\n",
+        "PhoneNumberLabel": "Customer service",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Thu Jan 04 2024 18:47:55 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "PhoneNumbers": "<p>800 253 3210 Toll Free<br>\n269 323 7700<br>\n800 999 3811 Toll Free Fax</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 14:06:16 GMT+0000",
+        "BusinessHomePageLabel": "Advanced Guidance Technologies Homepage"
+      }
+    }
+  }
+}

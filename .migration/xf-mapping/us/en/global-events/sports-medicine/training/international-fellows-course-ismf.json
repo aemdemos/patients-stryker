@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "International Fellows Course ISMF",
+  "jcr:versionHistory": "1ec30d4f-1a9c-4da4-802e-bca5f2e40293",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "ccc4a13c-5687-44fa-8feb-7c2f0e759c60"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:46 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:46 GMT-0400",
+  "cq:lastModified": "Mon Jun 18 2018 18:04:56 GMT-0400",
+  "jcr:baseVersion": "ccc4a13c-5687-44fa-8feb-7c2f0e759c60",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:uuid": "25bd3990-0b44-45ef-8a4e-ecb85234a0b4",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "eventBU": [
+      "stryker:business-unit/sports-medicine"
+    ],
+    "eventRegistrationLink": "https://www.mcjconsulting.com/myMeeting/login?conferenceid=54&action=Register",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "eventAudience": [
+      "stryker:audience/trainees",
+      "stryker:audience/or-professionals"
+    ],
+    "hiddenState": "California",
+    "eventSpecialty": [
+      "stryker:event-speciailty/sports-medicine"
+    ],
+    "eventDetail": "This course provides a unique opportunity for fellows to learn the latest advancements in articular cartilage treatment and participate in the largest gathering of 2017-2018 orthopaedic sports medicine fellows. The two day course includes a variety of lectures, case presentations, surgical demonstrations and hands-on workshops designed to enhance your knowledge of orthopaedic sports medicine. An interactive, case-based approach will teach the work-up, management and the rehab techniques utilized by the international experts who comprise the faculty.",
+    "eventEndDateTime": "Sun Jan 28 2018 17:00:00 GMT-0500",
+    "eventLocation": "Sheraton Carlsbad Resort and Spa - 5480 Grand Pacific Drive<br>\r\n",
+    "eventDisclaimer": "Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures. For more information, contact your local sales representative. ",
+    "eventCity": "Carlsbad",
+    "eventType": [
+      "stryker:event-type/lab"
+    ],
+    "eventTimeZone": "PST",
+    "jcr:lastModified": "Mon Jun 18 2018 18:04:56 GMT-0400",
+    "eventState": "California",
+    "eventTitle": "International Fellows Course ISMF",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Information",
+    "eventStartDateTime": "Fri Jan 26 2018 08:00:00 GMT-0500",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America",
+    "eventRelatedLinks": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "linkURL": "https://www.mcjconsulting.com/meetings/2018/ISMF/",
+        "linkText": "Event Website"
+      }
+    }
+  }
+}

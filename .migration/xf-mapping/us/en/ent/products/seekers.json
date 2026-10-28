@@ -1,0 +1,91 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Seekers",
+  "jcr:versionHistory": "35fb235c-5128-49ef-8ed7-6bae1b01a79a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "f728ceb6-ec1f-4af9-a30c-38bbc5f3f717"
+  ],
+  "lastPublished": "Thu Dec 23 2021 19:08:39 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Dec 23 2021 19:08:39 GMT+0000",
+  "cq:lastModified": "Wed Dec 22 2021 20:25:51 GMT+0000",
+  "jcr:baseVersion": "f728ceb6-ec1f-4af9-a30c-38bbc5f3f717",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:capability/ent",
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/ent"
+  ],
+  "jcr:lastModified": "Wed Dec 22 2021 17:07:49 GMT+0000",
+  "jcr:uuid": "18e07f3f-1399-475c-a8c7-52cf8d2a1623",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Dec 20 2021 20:20:01 GMT+0000",
+      "compImageRef": "/content/dam/stryker/ent/products/minifess/images/MiniFESS Light Seeker.psd",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ent/products/minifess/images/MiniFESS Light Seeker.psd"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://ent.stryker.com/",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "false",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Dec 22 2021 19:43:41 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Learn more",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 22 2021 20:25:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "text": "<p>MiniFESS sinus seekers offer a simple, precise way to confirm sinus location and device placement. This added measure of assurance enables you to perform sinus dilation procedures with confidence, even when navigating tight or complex anatomy, leading to faster, more convenient procedures and enhanced patient outcomes.</p>\n",
+    "jcr:lastModified": "Wed Dec 22 2021 20:25:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

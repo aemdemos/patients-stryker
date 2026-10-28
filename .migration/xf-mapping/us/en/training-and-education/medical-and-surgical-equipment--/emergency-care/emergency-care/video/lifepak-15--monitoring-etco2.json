@@ -1,0 +1,80 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 15: Monitoring EtCO₂",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5b07c667-0582-4153-af98-553a51c39fdd",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "654da5b2-2b4a-4e6f-9f2b-674c2107b325"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:37:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 13 2022 20:37:27 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:37:29 GMT+0000",
+  "cq:lastModified": "Tue Sep 13 2022 14:45:28 GMT+0000",
+  "jcr:baseVersion": "654da5b2-2b4a-4e6f-9f2b-674c2107b325",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Sep 13 2022 14:44:15 GMT+0000",
+  "jcr:uuid": "f6c60558-dcc8-45cd-8ecf-b044c4fc60f0",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:48:50 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:48:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Monitoring EtCO₂ training for LIFEPAK 15",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 18:09:32 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Sep 13 2022 14:45:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-15-monitoring-etco2.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-15-monitoring-etco2-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 08 2022 18:24:11 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

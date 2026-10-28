@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a4f67371-0344-49cc-8d64-aaa2cff4ca26",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4561a3ac-c8c0-4cc8-9d93-3ba7966812fb"
+  ],
+  "lastPublished": "Thu Sep 19 2024 12:44:19 GMT+0000",
+  "jcr:created": "Thu Sep 19 2024 12:44:20 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 19 2024 12:44:24 GMT+0000",
+  "cq:lastModified": "Thu Sep 19 2024 12:44:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4561a3ac-c8c0-4cc8-9d93-3ba7966812fb",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Sep 19 2024 12:44:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "efbb68d6-7167-4b98-87d6-7df168a132b1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Sep 19 2024 12:43:53 GMT+0000",
+      "alt": "Person in gym setting removing Stryker CR2 AED unit from wall mount",
+      "srcFileRef": "/content/dam/stryker/ems/community-public-safety/images/community-public-safety-hero_aed-gym_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Sep 19 2024 12:44:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

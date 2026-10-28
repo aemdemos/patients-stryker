@@ -1,0 +1,94 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker now offers the only FDA-cleared pyrocarbon bearing material option for shoulder hemiarthroplasty",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6b374e77-9c6d-4b8b-a6a5-d085210e36cc",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "TornierNewsRelease",
+  "jcr:predecessors": [
+    "572a4b3d-789d-4a0a-98e1-e57dc5d6e504"
+  ],
+  "contentID": "AP-016661A MAR-28-2023",
+  "lastPublished": "Thu Mar 30 2023 20:13:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 30 2023 20:13:28 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 30 2023 20:13:30 GMT+0000",
+  "cq:lastModified": "Thu Mar 30 2023 20:13:20 GMT+0000",
+  "jcr:baseVersion": "572a4b3d-789d-4a0a-98e1-e57dc5d6e504",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Mar 30 2023 20:13:20 GMT+0000",
+  "jcr:uuid": "080e568d-1757-495f-9a1b-2eeb2d61afe4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Mar 29 2023 19:22:11 GMT+0000",
+      "jcr:lastModified": "Wed Mar 29 2023 19:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Mar 07 2023 21:02:53 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">First clinical use of Stryker’s Tornier Pyrocarbon Humeral Head completed at Denver Surgery Center in Colorado</span></span></p>\n<p><b>DENVER</b>&nbsp;– Stryker (NYSE:SYK), one of the world’s leading medical technology companies, today announced that Armodios M. Hatzidakis, MD, FAAOS, Western Orthopaedics, PC, Denver Surgery Center and Rose Medical Center, has successfully completed the first case in the United States, since the De Novo clearance, using the Tornier Pyrocarbon Humeral Head. Stryker’s De Novo request was granted in late 2022 after completing an Investigational Device Exemption (IDE) study with the FDA.</p>\n<p>“Historically, joint replacement surgery for younger patients with severe shoulder arthritis has been challenging, with a high early failure risk due to socket component loosening,” said Dr. Hatzidakis, the primary investigator for the IDE. “I'm very pleased with the results my patients in the clinical trial have had with Stryker’s Tornier Pyrocarbon Humeral Head, including those with up to seven years of follow-up. It’s encouraging to have an alternative for patients without the risk of socket component loosening.”</p>\n<p>Pyrocarbon is an advanced bearing material that has surface properties more similar to bone than traditional orthopaedic metallic bearing surfaces. It has been utilized internationally for a variety of orthopaedic procedures since the early 1990s and in shoulder cases since 2013. Stryker is the first company to offer an FDA-cleared pyrocarbon implant for shoulder hemiarthroplasty in the U.S.</p>\n<p>“As a global leader in shoulder arthroplasty, we are excited to bring this technology to the United States,” said Tim Lanier, vice president and general manager, Upper Extremities, Stryker. “Dr. Hatzidakis’ first clinical usage of the Pyrocarbon Humeral Head for shoulder hemiarthroplasty is another milestone demonstrating our drive to provide new options for shoulder surgeons and their patients and make healthcare better.”&nbsp;</p>\n<p><br>\n<br>\n<b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><b><br>\n<br>\n Media contact</b><br>\nAndrea Sampson<br>\nPresident/CEO, Sampson Public Relations Group<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com<br>\n </a>562.304.0301</p>\n",
+          "jcr:lastModified": "Thu Mar 30 2023 13:11:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu Mar 30 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Mar-2023",
+    "jcr:lastModified": "Wed Mar 29 2023 19:21:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Blueprint, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Wed Mar 29 2023 19:22:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/stryker-now-offers-the-only-fda-cleared-pyrocarbon-bearing-material-option-for-shoulder-hemiarthroplasty/TornierNewsRelease.png"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "TornierNewsRelease",
+    "srcFileRef": "/content/dam/stryker/about/news/2023/stryker-now-offers-the-only-fda-cleared-pyrocarbon-bearing-material-option-for-shoulder-hemiarthroplasty/TornierNewsRelease.png",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Mar 30 2023 13:08:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "NanoTack PEEK Anchor",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "NanoTack",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "eaafb66c-a2e0-4627-9c07-84b14276ff47",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+  "thumbnailAltText": "nanotack suture anchor system",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/nanotacksutureanchorsystem/images/NanoTack-Thumb.jpg",
+  "jcr:predecessors": [
+    "b3c8aa6f-93e9-432c-8a97-3ba32d07b9e5"
+  ],
+  "contentID": "Literature Number 1000902875",
+  "lastPublished": "Tue Aug 18 2026 21:38:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:38:22 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:38:24 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:38:15 GMT+0000",
+  "jcr:description": "The NanoTack Flex System is designed to facilitate anchor placement within close proximity to the rim from many trajectories because of its flexible delivery system and small size. Matched anchor and drill hole trajectories along with 2 stage fixation are designed to yield pin-point placement and seamless implantation. The NanoTack Flex System is designed with the hip in mind to allow for anatomic labrum restoration.",
+  "jcr:baseVersion": "b3c8aa6f-93e9-432c-8a97-3ba32d07b9e5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:25:49 GMT+0000",
+  "pageTitle": "NanoTack",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:custom/sports-medicine/procedure/ligament-repair",
+    "stryker:custom/sports-medicine/anatomy/small-joints",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:product/sports-medicine/nano-tack-peek-anchor",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:custom/sports-medicine/procedure/tendon-repair",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/hand-&-wrist-repairs",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/foot-&-ankle-soft-tissue-repairs",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/hand-&-wrist-repairs",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/small-joints",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/ligament-repair",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair"
+  ],
+  "jcr:lastModified": "Mon Sep 16 2024 17:25:20 GMT+0000",
+  "jcr:uuid": "fb7ecdf1-4089-43ad-96d9-983104c43791",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jun 30 2017 19:43:12 GMT-0400",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/nanopasssuturemanagementsystem/images/Hero-NanoTack.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:38:05 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:38:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Tue Aug 13 2019 17:23:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Flexible delivery system may facilitate increased safety margins by reducing joint penetration with multiple angles of approach.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Simplistic coinciding anchor and pilot hole trajectory are designed to allow for seamless implantation where intended.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Compact, high-strength implant yields fixation strength comparable to larger anchors<sup>1</sup> which may allow for optimization of patient outcomes.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "http://sportsmedicine.stryker.com/Product/42/2/2/Pivot-NanoTack-Flex",
+    "linkUrl": "http://sportsmedicine.stryker.com/Product/42/2/2/Pivot-NanoTack-Flex",
+    "jcr:lastModified": "Tue Jun 27 2017 18:57:40 GMT-0400",
+    "linkPath": "",
+    "linkText": "Learn more",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Pivot Medical Internal Data PR01569-A Section 4.1.1 and PR01618-A Section 4.6.1.1</p>\r\n",
+    "jcr:lastModified": "Fri Oct 13 2017 15:31:38 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/nanotacksutureanchorsystem/images/NanoTack-Thumb.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:37:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

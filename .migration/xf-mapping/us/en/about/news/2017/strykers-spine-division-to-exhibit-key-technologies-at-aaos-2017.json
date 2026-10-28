@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s Spine division to exhibit key technologies at AAOS 2017",
+  "jcr:versionHistory": "a247fccc-1cf9-45c3-b625-bbefd8660f1e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "126be6fc-abb8-4518-a928-cceb00cca194"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:00:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:00:02 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 15:59:56 GMT-0500",
+  "jcr:baseVersion": "126be6fc-abb8-4518-a928-cceb00cca194",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 15:59:56 GMT-0500",
+  "jcr:uuid": "252def92-d7c5-4a4d-b3a7-1ed88ebd1a6f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Thu Mar 09 2017 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Mar-2017",
+    "jcr:lastModified": "Tue May 30 2017 16:11:14 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division today announced that it will demonstrate its Aero-C Cervical Stability System (Aero-C) and Xia 4.5 Cortical Trajectory implants and instruments (Xia CT) at the American Academy of Orthopaedic Surgeons (AAOS) Annual Meeting, March 15–18, 2017, in San Diego (booth No. 3133).</p>\n<p><a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.stryker.com%2Faero%2F&amp;esheet=51521967&amp;newsitemid=20170309005195&amp;lan=en-US&amp;anchor=Aero-C&amp;index=3&amp;md5=5a23d7c4180f91b04095dc046c35a270\" target=\"_blank\">Aero-C</a>, the only straight forward anterior cervical discectomy and fusion (ACDF) device that offers uniform compression across the interbody space, will be displayed at AAOS 2017, highlighting its full commercial launch. Using Aerofoil™ Compression Technology, Aero-C is designed to pull the vertebral bodies toward the implant as it is inserted, creating compressive forces at the implant-to-endplate interface.1 Aerofoil Compression Technology is also available for lateral and anterior lumbar interbody fusion procedures (LLIF and ALIF). Since the initial introduction to the market, over 600 cases have been completed.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20170309005195/en/Stryker%E2%80%99s-Spine-division-exhibit-key-technologies-AAOS\" target=\"_blank\">Business Wire</a></p>\n",
+    "jcr:lastModified": "Tue May 30 2017 17:48:00 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

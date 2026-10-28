@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "60d11fa9-4f3b-4ef7-8bdb-4732751124c7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "e801d129-676f-4a88-a770-123f2eb8db4d"
+  ],
+  "jcr:created": "Tue Feb 13 2024 17:26:46 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 13 2024 17:26:49 GMT+0000",
+  "cq:lastModified": "Tue Feb 13 2024 15:04:52 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "e801d129-676f-4a88-a770-123f2eb8db4d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "58034c56-81b2-429b-92d5-64c02ca6cecf",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy_446999329": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's procedural stretcher for surgery centers",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/stretcherchairs/images/Thumbnail_StretcherChair.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 13 2024 15:04:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

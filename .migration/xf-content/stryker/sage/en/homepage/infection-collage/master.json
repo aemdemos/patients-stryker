@@ -1,0 +1,160 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Infection collage",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a7777690-2597-48b4-9edb-d263219ff409",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "0a34ad9f-2bb9-4bd1-8b23-bacaae559440"
+  ],
+  "lastPublished": "Tue Nov 04 2025 18:40:07 GMT+0000",
+  "jcr:created": "Tue Nov 04 2025 18:40:09 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 04 2025 18:40:10 GMT+0000",
+  "cq:lastModified": "Mon Nov 03 2025 17:26:46 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0a34ad9f-2bb9-4bd1-8b23-bacaae559440",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Nov 04 2025 18:40:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b67f9d49-18b4-4d18-b400-5eb2055701ea",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Nurse holding PrimaFit External Urine Management next to a patient in a ProCuity bed",
+      "srcFileRef": "/content/dam/stryker/sage/images/prima-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:23:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Nurse holding out an oral care toothbrush to help prevent hospital-acquired pneumonia",
+      "srcFileRef": "/content/dam/stryker/sage/images/oral-care-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:24:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_777680637": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Nurse wiping a patient's fingernails clean with a cloth",
+      "srcFileRef": "/content/dam/stryker/sage/images/wipe-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:25:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_825887917": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Two nurses sliding a patient on a ProCuity bed",
+      "srcFileRef": "/content/dam/stryker/sage/images/tap-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:25:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1301156251": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Patient wearing heel protector boots to prevent pressure injuries on a ProCuity bed",
+      "srcFileRef": "/content/dam/stryker/sage/images/heel-protector-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:26:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    },
+    "standaloneimage_copy_1299221692": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 02 2025 16:52:39 GMT+0000",
+      "alt": "Two nurses turning a patient using a stabilizing wedge to prevent pressure injuries",
+      "srcFileRef": "/content/dam/stryker/sage/images/wedge-collage-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 03 2025 17:26:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      }
+    }
+  }
+}

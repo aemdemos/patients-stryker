@@ -1,0 +1,558 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Identifying and educating  mild patients",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c265b744-8e69-41b7-85cb-f8cdcaa392b7",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "jcr:predecessors": [
+    "35efd775-b71e-445d-b7c4-c2abbe48a315"
+  ],
+  "contentID": "IVS-MILD-SYK-2679640_REV-0",
+  "lastPublished": "Wed Mar 04 2026 20:39:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 04 2026 20:39:22 GMT+0000",
+  "cq:lastReplicated": "Wed Mar 04 2026 20:39:24 GMT+0000",
+  "cq:lastModified": "Wed Mar 04 2026 20:39:16 GMT+0000",
+  "jcr:baseVersion": "35efd775-b71e-445d-b7c4-c2abbe48a315",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Mar 04 2026 20:39:20 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:custom/ivs"
+  ],
+  "jcr:lastModified": "Thu Jan 22 2026 14:43:04 GMT+0000",
+  "jcr:uuid": "b791f552-1d08-48c0-9fed-025c922bdd84",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "shanna.hearon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jan 21 2025 20:08:44 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">APP Guidance</span></span></span></span></h2>\n<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Identifying and educating mild<sup>®</sup> patients</span></span></h1>\n<p><span class=\"fontsize-1-5em\"><b>Publish date:</b> March 2, 2026</span></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:30:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__877216131": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Does your practice offer the mild<sup>®</sup> procedure? Do you manage patient identification and education? Consider following these 3 steps to optimize your practice routine:<br>\n &nbsp;</span></p>\n<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">1. Start with the symptoms</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\"><b>ID shopping cart syndrome</b><br>\n Shopping Cart Syndrome – lumbar spinal stenosis (LSS) with neurogenic claudication (NC). These patients will often be the first ones to find chairs in your waiting room or use the walking aids, such as a shopping cart, to establish a flexed position. The flexed posture is a common sign of NC because it opens up the spinal canal to alleviate the pressure on the central canal to avoid pain that comes with being straight, upright, or mobile.<sup>1</sup></span></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:28:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_195156014_1245133517": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:40:14 GMT+0000",
+          "alt": "Patients suffering from lumbar spinal stenosis (LSS) will often be the first ones to find chairs in your waiting room or use the walking aids, such as a shopping cart, to establish a flexed position",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_shopping-cart-syndrome-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:41:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy_copy_copy__2134062622": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">LSS with NC patients may present with limited mobility from the onset of symptoms. Patients commonly report pain and may have functional limitations. The functional limitations can include a desire to walk the dog, get the mail, and play with their grandchildren.</span></p>\n",
+      "jcr:lastModified": "Tue Feb 03 2026 14:04:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__74857892": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">2. Possible signs and symptoms of a typical mild<sup>®</sup> patient</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\"><b>Look for the ligament</b> <br>\n Hypertrophic ligamentum flavum (HLF) contributes up to 85% of spinal canal narrowing<sup>2</sup></span></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:28:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_195156014": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 20 2025 17:13:50 GMT+0000",
+          "alt": "Excess hypertrophic ligamentum flavum, a possible symptom seen in typical mild® patients",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_HLF-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:44:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Aug 20 2025 14:47:02 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>Typical patient presentation:</b></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">LSS at levels L1-S1&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Hypertrophic ligamentum flavum (HLF) ≥ 2.5mm is the starting point*</span></li>\n</ul>\n<p><i>*mild device kit Instructions For Use - PRT-00695 Rev C</i></p>\n<p><span class=\"fontsize-1-25em\"><b>Need additional help establishing comfort with imaging review?</b></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><a href=\"https://aspnpain.com/reviewing-mris-a-collaborative-approach-to-patient-selection/\">View the CME course</a> on reading MRIs hosted by Advanced Practice Providers (APPs) Ashley Comer, NP-C; Christine Christensen, MSN, APRN; and Zohra Hussaini, MSN, FNP-BC, MBA, APRN&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Contact your Stryker representative to set up an onsite or virtual educational session&nbsp;</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">If HLF is present, confirm candidacy—even in patients with comorbidities. mild<sup>®</sup> may be an option for a broad spectrum of patients.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Candidates should have:<sup>†</sup></b></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">LSS at levels L1-S1&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Hypertrophic ligamentum flavum&nbsp;</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><b>Candidates may have:<sup>†</sup></b></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Medical comorbidities&nbsp;</span><ul>\n<li><span class=\"fontsize-1-25em\">Osteoporosis, BMI &gt;40&nbsp;</span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\">Spinal comorbidities&nbsp;</span><ul>\n<li><span class=\"fontsize-1-25em\">Grade 1–2 spondylolisthesis, foraminal narrowing, degenerative disc disease, lateral recess narrowing&nbsp;</span></li>\n</ul>\n</li>\n</ul>\n<p><i><span class=\"fontsize-1em\"><sup>†</sup>Please refer to the IFU for a full list of indications, contraindication, warnings, and precautions</span></i></p>\n<p><span class=\"fontsize-1-25em\"><b>Confirm coverage<br>\n </b>mild<sup>®</sup> is covered nationwide by Medicare and Medicare Advantage. Commercial coverage and other plans vary.<sup>††</sup><br>\n </span><i><span class=\"fontsize-1em\"><sup>††</sup>Patients treated with mild under Medicare and Medicare Advantage are required to be entered into a Medicare claims-based study. All claims processed through Medicare programs must include the appropriate National Clinical Trial number (NCT).<sup>3</sup></span></i></p>\n",
+      "jcr:lastModified": "Thu Oct 30 2025 19:20:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1959941083": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">3. Educate patients &amp; establish appropriate outcomes and expectations</span></span></span></h3>\n<p><b><span class=\"fontsize-1-25em\">Educate early – move to mild<sup>®</sup> after the first ESI fails<sup>4</sup></span></b><span class=\"fontsize-1-5em\"><br>\n </span></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:28:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 20 2025 14:57:57 GMT+0000",
+          "alt": "mild® is an efficient procedure with a favorable safety profile, typically performed in an outpatient setting",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_safety-profile-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:42:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 20 2025 14:58:00 GMT+0000",
+          "alt": "mild® is performed through a single incision",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_incision-size-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:42:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_1126484402": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b>Establish appropriate outcomes and expectations</b></span></p>\n<p><span class=\"fontsize-1-25em\"><b>Significant functional improvement<sup>7</sup></b></span></p>\n",
+      "jcr:lastModified": "Wed Aug 20 2025 18:05:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_195156014_1850614352": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 26 2025 14:42:06 GMT+0000",
+          "alt": "Studies show that mild® helps improve patient functionality over time",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_function-improvement-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:42:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1170451214_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Oct 28 2025 13:07:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><i>Cleveland Clinic Study, 1-year study<sup>7</sup></i></p>\n",
+          "jcr:lastModified": "Wed Nov 26 2025 20:42:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_1126484402_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b><span class=\"fontsize-1-25em\">Postoperative patient management</span></b></p>\n",
+      "jcr:lastModified": "Wed Aug 20 2025 18:06:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 14:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 20 2025 16:01:12 GMT+0000",
+          "alt": "mild® is typically performed in an outpatient setting",
+          "srcFileRef": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/images/mild_quick-recovery-time-rev.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 20:42:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_183546058": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Wed Aug 20 2025 15:26:44 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<ul>\n<li><span class=\"fontsize-1-25em\">At-home reconditioning walking program can be initiated immediately, as tolerated&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Assess outcomes at 2-weeks and 4-6 weeks, then monthly. Assess mobility and Quality of Life (QOL) improvements, such as:&nbsp;</span><ul>\n<li><span class=\"fontsize-1-25em\">Transfer ability: Getting in and out of the bed/seat/car&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Walking and standing times&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Activities of daily living: Ability to get dressed, take off shoes, household chores, and grocery shopping</span></li>\n</ul>\n</li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><br>\nIf you would like a mild<sup>®</sup> Quick Reference Card for your office or to learn more about APP-specific educational opportunities, <b>please contact your local sales representative.</b></span></p>\n",
+      "jcr:lastModified": "Wed Nov 26 2025 14:42:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue May 06 2025 19:17:26 GMT+0000",
+      "CTATitle": "Contact A Rep",
+      "ctaExternalLink": "https://providers.strykerivs.com/contact",
+      "jcr:lastModified": "Wed Aug 20 2025 17:06:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgb(255,181,0)",
+      "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+    },
+    "cols2_361734997": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 17:19:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 17:19:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 17:20:01 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Aug 20 2025 17:21:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 17:20:03 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Aug 20 2025 17:21:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_copy__326155593": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Key Resources</span></span></span></span></h3>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 16:30:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2125934138": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 16:45:15 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 16:45:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_1924463574": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild Patient Brochure.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Oct 27 2025 17:26:14 GMT+0000",
+          "CTAImageAltText": "mild® patient brochure",
+          "jcr:lastModified": "Wed Oct 29 2025 16:06:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild_PatientBrochure_040925_XL_rev.png"
+        },
+        "text_1126484402_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+          "text": "<p><span style=\"font-size: 16.25px;\"><b>mild<sup>®</sup> patient brochure</b></span></p>\n",
+          "jcr:lastModified": "Wed Oct 29 2025 16:06:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/ivs/news/app-blogs/identifying-and-educating mild® patients/resources/mild Patient Brochure.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 20 2025 16:50:48 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "jcr:lastModified": "Mon Oct 27 2025 17:26:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 16:45:24 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Aug 20 2025 16:58:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/interventional-spine/lss/IVS-MILD-VID-1621800-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IVS-MILD-VID-1621800-EN_US-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Aug 20 2025 16:59:24 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_1126484402_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 15:25:05 GMT+0000",
+          "text": "<p><span style=\"font-size: 16.25px;\"><b>mild<sup>®</sup> patient education video</b></span></p>\n",
+          "jcr:lastModified": "Thu Oct 30 2025 17:53:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_361734997_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 17:19:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 17:19:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 17:20:01 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Aug 20 2025 17:21:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 17:20:03 GMT+0000",
+          "text": "<p><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Aug 20 2025 17:21:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideDate": "true",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "publishDate": "Mon Mar 02 2026 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "02-Mar-2026",
+    "jcr:lastModified": "Wed Mar 04 2026 20:39:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "jcr:lastModified": "Wed Aug 20 2025 14:40:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div>References<br>\r\n<br>\r\n</div>\r\n<ol>\r\n<li>Wu L, Munakomi S, Cruz R. Lumbar Spinal Stenosis. [Updated 2024 Jan 30]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK531493/&nbsp;</li>\r\n<li>Hansson T, Suzuki N, Hebelka H, Gaulitz A. The narrowing of the lumbar spinal canal during loaded MRI: the effects of the disc and ligamentum flavum. Eur Spine J. 2009;18(5):679–686. doi:10.1007/s00586-009-0919-7.&nbsp;</li>\r\n<li>National Coverage Determination (NCD) for Percutaneous Image-Guided Lumbar Decompression for Lumbar Spinal Stenosis (150.13). Accessed 4/4/25. https://www.cms.gov/medicare-coverage-database/view/ncd.aspx?NCDId=358.&nbsp;</li>\r\n<li>Pryzbylkowski P, Bux A, Chandwani K, et al. Minimally invasive direct decompression for lumbar spinal stenosis: impact of multiple prior epidural steroid injections [published online ahead of print, 2021 Aug 4]. Pain Manag. 2021;10.2217/pmt-2021-0056. doi:10.2217/pmt-2021-0056&nbsp;</li>\r\n<li>Deer TR, Costandi SJ, Washabaugh E, Chafin TB, Wahezi SE, Jassal N, Sayed D. The MOTION Study: A Randomized Controlled Trial with Objective Real-World Outcomes for Lumbar Spinal Stenosis Patients Treated with the mild® Procedure: One-Year Results. Pain Med. 2022 Apr 8;23(4):625-634. doi: 10.1093/pm/pnac028. PMID: 35167700; PMCID: PMC8992575. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8992575&nbsp;</li>\r\n<li>DIOM-2 Rev 11, User Need 1.2.1 PRT-00666 Rev, A, Trocar Diameter: 0.1795 ± 0.0008 inches (4.559 ± 0.02mm)&nbsp;</li>\r\n<li>Mekhail N, Costandi S, Abraham B, Samuel SW. Functional and patient-reported outcomes in symptomatic lumbar spinal stenosis following percutaneous decompression. Pain Pract. 2012;12(6):417–425. doi:10.1111/j.1533-2500.2012.00565.x.&nbsp;</li>\r\n<li>Deer T, Kim C, Wahezi SE, Qu H, Sayed D; MOTION Study Investigators. Objective Real-World Outcomes of Patients Suffering from Painful Neurogenic Claudication Treated with the mild® Procedure: Interim 6-Month Report of a Randomized Controlled Trial. J Pain Res. 2021 Jun 10;14:1687-1697. doi: 10.2147/JPR.S312573. PMID: 34140805; PMCID: PMC8203201. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Aug 20 2025 22:30:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Aug 20 2025 16:18:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

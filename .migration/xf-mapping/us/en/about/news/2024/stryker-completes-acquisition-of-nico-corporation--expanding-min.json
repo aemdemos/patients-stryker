@@ -1,0 +1,103 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker completes acquisition of NICO Corporation, expanding minimally invasive solutions for brain tumor removal and stroke care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9c7f26c4-c913-466d-86b4-52260f81209f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "stryker-logo-thumbnail",
+  "jcr:predecessors": [
+    "b6eaf5d5-7901-4504-b7a6-f33af62cd33a"
+  ],
+  "lastPublished": "Fri Sep 20 2024 13:13:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 20 2024 13:13:42 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 20 2024 13:13:45 GMT+0000",
+  "cq:lastModified": "Fri Sep 20 2024 13:13:38 GMT+0000",
+  "jcr:description": "Stryker announced that it has completed the acquisition of NICO Corporation, a privately held company providing a systematic approach to minimally invasive surgery for tumor and intracerebral hemorrhage (ICH) procedures.",
+  "jcr:baseVersion": "b6eaf5d5-7901-4504-b7a6-f33af62cd33a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Sep 20 2024 12:05:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Sep 20 2024 13:13:38 GMT+0000",
+  "jcr:uuid": "3b49ae9a-9b00-4dbd-97b8-d5c8a970575f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 19 2024 18:59:37 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 18:59:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Sep 19 2024 18:59:50 GMT+0000",
+          "text": "<p><b>PORTAGE, Mich., USA – Sept. 20, 2024</b> – Stryker (NYSE: SYK), a global leader in medical technologies, announced today that it has completed the acquisition of NICO Corporation, a privately held company providing a systematic approach to minimally invasive surgery for tumor and intracerebral hemorrhage (ICH) procedures. This acquisition further strengthens Stryker’s commitment to neurotechnology through tumor and stroke care.</p>\n<p>ICH, or bleeding in the brain caused by a ruptured blood vessel, is the deadliest form of stroke, affecting over 3.4 million people annually around the world, with rising rates due to an aging population.<sup>1,2</sup> ICH has high morbidity and a 30-day mortality rate ranging from 40-50%.<sup>3</sup> NICO’s BrainPath®&nbsp;and Myriad®&nbsp;products enable a treatment option for ICH with improved functional outcomes compared to guideline-based medical management alone, the current standard of care.<sup>4,5</sup></p>\n<p>“The acquisition of NICO Corporation expands Stryker’s portfolio of solutions for tumor resection and the treatment of intracerebral hemorrhage, the deadliest form of stroke,” said Andy Pierce, group president, MedSurg and Neurotechnology, Stryker. “As a global leader in neurosurgical access and removal tools, this strategic addition enables us to deliver differentiated, minimally invasive approaches that will drive meaningful outcomes and improve the lives of patients worldwide.”</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 19 2024 19:01:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Sep 19 2024 19:01:43 GMT+0000",
+          "jcr:lastModified": "Thu Sep 19 2024 19:01:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_298518024": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Sep 19 2024 19:01:54 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Beth Sizemore<br>\nStryker<br>\nSenior Director, Communications<br>\nbeth.sizemore@stryker.com</p>\n",
+          "jcr:lastModified": "Thu Sep 19 2024 19:02:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Fri Sep 20 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Sep-2024",
+    "jcr:lastModified": "Thu Sep 19 2024 18:59:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:</b></p>\r\n<ol>\r\n<li>Sun T, Yuan Y, Wu K, et al. (2023) Trends and patterns in the global burden of intracerebral hemorrhage: a comprehensive analysis from 1990 to 2019. <i>Frontiers in Neurology.</i> 14:1241158.</li>\r\n<li>Katan M, Luft A. Global Burden of Stroke. Semin Neurol. 2018 Apr;38(2):208-211. doi: 10.1055/s-0038-1649503. Epub 2018 May 23. PMID: 29791947.</li>\r\n<li>Woo, D, Comeau ME, Venema SU, et al. (2022). Risk Factors Associated With Mortality and Neurologic Disability After Intracerebral Hemorrhage in a Racially and Ethnically Diverse Cohort. <i>JAMA Netw Open</i>. 5(3):e221103</li>\r\n<li>Pradilla G., Ratcliff, JJ, , Hall, AJ, et al. &nbsp;&nbsp;(2024). Trial of Early Minimally Invasive Removal of Intracerebral Hemorrhage. <i>New England Journal of Medicine.</i> 390(14), 1277-1289.</li>\r\n<li>Greenberg, SM, Ziai WC, Cordonnier C., et al. &nbsp;(2022) 2022 Guideline for the Management of Patients with Spontaneous Intracerebral Hemorrhage: A Guideline from the American Heart Association/American Stroke Association. <i>Stroke</i><span>. &nbsp;53(7), e282-e361.</span></li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Sep 19 2024 19:03:36 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

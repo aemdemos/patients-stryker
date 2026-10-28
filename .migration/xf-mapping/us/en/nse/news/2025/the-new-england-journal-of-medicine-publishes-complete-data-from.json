@@ -1,0 +1,334 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The New England Journal of Medicine Publishes Complete Data from ENRICH",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bbcf49c4-7f47-4061-a312-d36009a78e33",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:predecessors": [
+    "86771042-3aff-4624-9a22-7b57298c515a"
+  ],
+  "contentID": "NS-GSNPS-SYK-2115801_REV-0",
+  "lastPublished": "Thu Aug 14 2025 12:56:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 14 2025 12:56:20 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 14 2025 12:56:23 GMT+0000",
+  "cq:lastModified": "Thu Aug 14 2025 12:56:14 GMT+0000",
+  "jcr:baseVersion": "86771042-3aff-4624-9a22-7b57298c515a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 25 2025 15:44:08 GMT+0000",
+  "cq:tags": [
+    "stryker:custom/nav-nse/neurosurgical-news",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Jul 25 2025 15:33:20 GMT+0000",
+  "jcr:uuid": "71f3facf-2b66-4b09-8f68-72f2383ac2c8",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 16:43:19 GMT+0000",
+      "jcr:lastModified": "Wed Jul 16 2025 16:43:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 16:43:38 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">The New England Journal of Medicine&nbsp;Publishes Complete Data from ENRICH, the First Positive Trial to Improve Functional and Economic Outcomes for Intracerebral Hemorrhage (ICH)</span></p>\n<p>Nico Corporation, now part of Stryker, and a leader in minimally invasive parafascicular surgery (MIPS), has announced the publication of complete ENRICH (Early Minimally-invasive Removal of ICH) trial data in the New England Journal of Medicine. The trial showcased the efficacy of Nico's technology, BrainPath®&nbsp;and Myriad®, in treating intracerebral hemorrhage (ICH), the most deadly and disabling form of stroke.<sup>5</sup></p>\n<p>ENRICH met its primary endpoints showing MIPS improved outcomes for ICH patients with statistically significant improvement in utility-weighted modified Rankin Scale (UWmRS) at 180-days (0.458) versus MM (0.374), the difference showing a 98.1% posterior probability of superiority (95% CI, 0.005 to 0.163) and reduced mortality at 30-days (9.3%) compared to MM alone. Additionally, the MIPS approach decreased ICU length of stay (LOS) by 2.8 days and hospital LOS by 3.1 days.</p>\n<p>The trial utilized Nico’s technological system solution, comprised of our patented technologies including the Nico BrainPath™ – the world’s first and only technology that achieves minimally-disruptive access using a trans sulcal and parafascicular surgical approach – and the Nico Myriad® that provides automated non-ablative tumor removal and hemorrhage evacuation.</p>\n<p>Globally, 3.4 million people suffer hemorrhagic strokes (ICH) each year.<sup>1</sup>&nbsp;While ICH comprises up to 20 percent of all strokes that occur compared to ischemic stroke<sup>,1</sup>&nbsp;mortality and long-term disability are disproportionately higher among ICH patients.<sup>2</sup>&nbsp;In the United States, up to 50 percent will die within 30 days post-hemorrhage, and among survivors, only 25 percent will return to functional independence.<sup>2</sup>&nbsp;In addition to the human toll, hemorrhagic stroke costs the U.S. healthcare system approximately $17 billion, with $12 billion in estimated annual costs of care and productivity losses for survivors<sup>.3</sup> Overall, the trial showed early MIPS intervention for ICH led to improved functional outcomes.<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 25 2025 15:31:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 17:06:15 GMT+0000",
+          "jcr:lastModified": "Wed Jul 16 2025 19:16:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.nejm.org/doi/full/10.1056/NEJMoa2308440",
+              "buttonText": "Read entire results in NEJM",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 16 2025 16:44:25 GMT+0000",
+          "alt": "Enrich-logo-first-positive-ich-trial-1024x512",
+          "srcFileRef": "/content/dam/stryker/nav-nse/resources/Enrich-logo-first-positive-ich-trial-1024x512.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 16 2025 16:47:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 17:01:55 GMT+0000",
+      "jcr:lastModified": "Wed Jul 16 2025 17:01:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1528266216": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 17:25:07 GMT+0000",
+      "jcr:lastModified": "Wed Jul 16 2025 17:25:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 18:42:58 GMT+0000",
+      "jcr:lastModified": "Wed Jul 16 2025 18:43:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 18:59:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-2vw\"><b><span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></span></span></b></span></p>\r\n<p><span class=\"fontsize-2vw\"><b><span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2-5-vw\">ENRICH is World’s First Positive Surgical Trial for ICH</span></span></span></span></span></b></span></p>\r\n",
+          "jcr:lastModified": "Fri Jul 18 2025 18:38:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 18:43:16 GMT+0000",
+          "jcr:lastModified": "Wed Jul 16 2025 18:43:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"margin-left: 80px; text-align: left;\"><span style=\"color: #ffffff;\"><span style=\"color: #323232;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><br>\n The evidence of MIPS.&nbsp;</span></span></span></span><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><span style=\"color: #323232;\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\">The support of Stryker.</span></span></span></span></span></span></span></p>\n<p style=\"margin-left: 80px; text-align: left;\"><span style=\"color: #ffffff;\"><span style=\"color: #323232;\"><span style=\"color: #ffffff;\">You need precision technologies for MIPS. Now, the first clinical trial with positive results shows how these instruments - Nico BrianPath and Myriad - work as a system in minimally invasive ICH surgery.<br>\n &nbsp;</span></span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 14 2025 12:56:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Jul 16 2025 18:44:38 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #ffb500;\"><br>\n Powerful proof for a new protocol</span></span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\">The ENRICH Trial is the first and only clinical trial that demonstrated positive outcomes in lobar ICH.<sup>4</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 14 2025 12:55:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1466599231": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 19:04:12 GMT+0000",
+          "jcr:lastModified": "Wed Jul 16 2025 19:04:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kendra.pilon@stryker.com",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "jcr:created": "Wed Jul 16 2025 18:43:16 GMT+0000",
+          "jcr:lastModified": "Wed Jul 16 2025 18:43:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_1167476424": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Wed Jul 16 2025 18:47:42 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\"><br>\n 88%&nbsp;<br>\n</span> </span></span></span><span style=\"color: #ffffff;\">median hematoma<br>\n volume reduction<sup>4<br>\n</sup><br>\n<br>\n&nbsp;</span></span></p>\n",
+              "jcr:lastModified": "Fri Jul 18 2025 18:27:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Fri Jul 18 2025 18:19:02 GMT+0000",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\">Shorter ICU and hospital lengths of stay<sup>1</sup></span></span></span></span></p>\n",
+              "jcr:lastModified": "Fri Jul 18 2025 18:28:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 17 2025 17:49:39 GMT+0000",
+              "alt": "MRS stay",
+              "srcFileRef": "/content/dam/stryker/nav-nse/image/Length of stay final graphic.png",
+              "borderColor": "rgb(255,255,255)",
+              "jcr:lastModified": "Fri Jul 18 2025 18:24:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_1167476424_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Wed Jul 16 2025 18:47:42 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\"><br>\n only 3%&nbsp;<br>\n</span> </span></span></span><span style=\"color: #ffffff;\">re-bleed rate<sup>4<br>\n</sup><br>\n<br>\n<br>\n <br>\n </span></span></p>\n",
+              "jcr:lastModified": "Fri Jul 18 2025 18:27:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "jcr:created": "Fri Jul 18 2025 18:26:12 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\">30-day mortality, %</span></span></span></span></p>\n",
+              "jcr:lastModified": "Fri Jul 18 2025 18:27:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kendra.pilon@stryker.com",
+              "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 17 2025 17:56:42 GMT+0000",
+              "alt": "Serious adverse events",
+              "srcFileRef": "/content/dam/stryker/nav-nse/image/30-day mortality final graphic.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Jul 18 2025 18:25:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 16:47:21 GMT+0000",
+      "jcr:lastModified": "Wed Jul 16 2025 16:47:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 19:20:02 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Contact us</span></span></p>\n<p>To learn more about Nico products or our other offerings to help advance neurosurgery and transform lives, please complete the form below.</p>\n",
+      "jcr:lastModified": "Wed Jul 16 2025 19:20:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kendra.pilon@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3424",
+      "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+      "jcr:created": "Wed Jul 16 2025 19:17:17 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Wed Jul 16 2025 19:17:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "publishDate": "",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Collaborators GBDS. Global, regional, and national burden of stroke and its risk factors, 1990-2019: a systematic analysis for the Global Burden of Disease Study 2019. Lancet Neurol 2021;20:795-820</p>\r\n<p>2. Macellari F, Paciaroni M, Agnelli G, Caso V. Neuroimaging in intracerebral hemorrhage. Stroke. (2014) 45:903–8. doi:&nbsp; 10.1161/STROKEAHA.113.00370</p>\r\n<p>3. Ratcliff, Jonathan J., et al. “Early Minimally Invasive Removal of Intracerebral Hemorrhage (ENRICH): Study Protocol&nbsp; for a Multi-Centered Two-Arm Randomized Adaptive Trial.” Frontiers in Neurology, vol. 14, 16 Mar. 2023,&nbsp; https://doi.org/10.3389/fneur.2023.1126958. Accessed 29 Mar. 2023.</p>\r\n<p>4. Pradilla G, Ratcliff JJ, Hall AJ, et al. Trial of Early Minimally Invasive Removal of Intracerebral Hemorrhage. New England Journal of Medicine. 2024;390(14):1277-1289.&nbsp;<span>doi:10.1056/NEJMoa2308440</span></p>\r\n<p><span>5. Carmichael, S. T. (2021). The story of intracerebral hemorrhage: From recalcitrant to receptive. <i>Stroke, 52</i>(5), 1905–1914. <a>https://doi.org/10.1161/STROKEAHA.121.033484</a></span></p>\r\n",
+    "jcr:lastModified": "Fri Jul 25 2025 15:43:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

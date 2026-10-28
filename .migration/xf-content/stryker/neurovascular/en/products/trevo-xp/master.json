@@ -1,0 +1,142 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Trevo XP hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6675d773-a631-480b-9263-eb3586d029ba",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "17e8a1cd-5287-4d45-bbf7-31f936777c41"
+  ],
+  "jcr:created": "Wed Aug 24 2022 20:23:28 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 24 2022 20:23:36 GMT+0000",
+  "cq:lastModified": "Tue May 24 2022 16:42:15 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "17e8a1cd-5287-4d45-bbf7-31f936777c41",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "14c6c950-b686-4cad-a641-32720ee7eb1e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 28 2019 13:19:35 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Oct 28 2019 13:19:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy488896": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Trevo XP",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Mon Oct 28 2019 13:20:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy488896508498530535580": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><br>\n </span></span><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-5em\">Trevo XP</span></span></span><br>\n <br>\n <span class=\"fontsize-1-75em\">ProVue Retriever</span></span></p>\n<p>_____________________________________</p>\n<p><br>\nTrevo XP ProVue Retrievers are fully visible and designed specifically for removing a thrombus in patients experiencing an ischemic stroke.</p>\n",
+        "jcr:lastModified": "Mon Oct 28 2019 13:21:07 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "item508498533832312": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Sep 19 2019 19:49:51 GMT+0000",
+        "srcFileRef": "/content/dam/stryker/neurovascular/images/goldBar.jpg",
+        "jcr:lastModified": "Wed Oct 23 2019 17:02:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "1"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/trevo-xp-provue-retriever-/images/Trevo-XP.png",
+      "jcr:lastModified": "Mon Oct 28 2019 13:21:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

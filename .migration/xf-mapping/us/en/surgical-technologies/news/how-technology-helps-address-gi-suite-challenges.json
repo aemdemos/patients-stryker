@@ -1,0 +1,119 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "How Technology Helps Address GI Suite Challenges",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6c15ca48-26e1-41fb-93c1-3df272297b0e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "thumbnail",
+  "jcr:predecessors": [
+    "0e723d6a-993e-479a-8d8d-6e6047f58e40"
+  ],
+  "lastPublished": "Tue Jun 16 2026 13:59:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 16 2026 13:59:23 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 16 2026 13:59:27 GMT+0000",
+  "cq:lastModified": "Thu Jun 11 2026 16:39:32 GMT+0000",
+  "jcr:baseVersion": "0e723d6a-993e-479a-8d8d-6e6047f58e40",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 16 2026 13:59:21 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/surgical_technologies",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Wed Jun 10 2026 18:28:58 GMT+0000",
+  "jcr:uuid": "b9a39765-cadc-4050-92f8-225421f3c3e0",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jun 11 2026 16:37:37 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\">How Technology Helps Address GI Suite Challenges</span></h1>\n<h1><span class=\"futura-bold\"><span class=\"fontsize-8em\">Equipment designed with the GI suite in mind supports a comprehensive approach to safety.</span></span></h1>\n",
+      "jcr:lastModified": "Thu Jun 11 2026 16:39:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 18:56:31 GMT+0000",
+      "jcr:lastModified": "Tue Jun 09 2026 18:56:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/news/how-technology-helps/carousel/master",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Tue Jun 09 2026 18:59:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Jun 09 2026 19:04:09 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 09 2026 18:53:19 GMT+0000",
+      "text": "In the gastrointestinal (GI) suite, a focus on safety is often associated with procedural technique and precision. However, caregivers and patients might face other challenges like exposure to fluid waste, lost polyps and hypoxic injuries. To help transform staff safety and facility efficiency in the GI suite, a comprehensive approach is crucial. Assessing the procedural space and elements—such as fluid waste management and patient monitoring—for areas of improvement is a place to start. Technology can be a silent partner. When exploring areas for improvement, ambulatory surgery centers (ASCs) may benefit from equipment designed with the GI space in mind. Helping reduce room turnover times and the need to dump waste management canisters mid-procedure are just some of the potential benefits. Carol Stevens, a nurse with over 35 years of experience in the GI field, recalls a time in her career when she had to manually empty canisters and was splashed.¹ Now there are other options. A constantly closed waste management system like Stryker’s Neptune S helps protect staff from fluid waste exposure. “We have to be very concerned as nurses at the end of the procedure and what’s happening with the waste we collected,” she says. “The Neptune has helped because we don’t have to empty a canister that’s sitting on the wall.” Stevens, who is a past SGNA president, says the Neptune S system’s integrated specimen collection has also made a positive impact. The device captures polyps that are 2mm in diameter or larger without clogging or needing to turn off suction, and it has a backup basket for added peace of mind. \"If a polyp is collected in the canister on the wall, then it’s not a great opportunity for the nurse or the tech in the room to have to sift through the waste,” she said. “If we lose a polyp, it’s imperative that the physician tells the patient at the end of the colonoscopy…and that’s a hard conversation.” Another product to help support patient safety in the GI suite is the POM Procedural Oxygen Mask. POM is intended to deliver supplemental oxygen and allow for the monitoring of expired gases in non-intubated, spontaneously breathing patients. The mask has helped decrease severe and prolonged hypoxic episodes and in-case interruptions, delay and cancellations.*³,⁴ Help transform staff safety and efficiency at your facility. Innovations like the Neptune S system and POM are meant to integrate seamlessly in a facility’s workflow so caregivers can focus on patients. When compared to an open waste management system, a closed system such as Neptune S is more efficient in room set-up, handling and maintenance.⁵ With a quick turnover between cases, ASCs have the opportunity to care for more patients. And while there is an initial investment in technology, it can deliver lasting value through supporting staff safety, satisfaction and facility efficiency. Judd Adelman, a gastroenterologist with more than 20 years of experience in the specialty, shares⁶ that since adopting the Neptune S system, nurses and technicians he works with have said it’s exactly what they need. Not only can a constantly closed waste management system help reduce fluid waste exposure⁵ and the risk of lost polyps**, but it also helps streamline processes because canisters don’t need to be emptied mid-procedure. “At this point, I don’t think they’d be comfortable working with anything else,” he says. “Due to the ease of use, we’ve almost had no [staff] turnover since that time.” Innovations like the Neptune S system and POM support caregivers where it matters most—enhancing patient and staff safety, streamlining workflows and improving the surgical experience. Stryker is committed to driving change to help make healthcare better. Does your ASC use specialized technology in the GI suite? Learn how equipment like Stryker’s Neptune S and POM can help address challenges. Neptune S POM This is a paid interview with a Stryker consultant, conducted 05/29/2025, on behalf of Stryker. Kim H, Hyun JN, Lee KJ, Kim HS, Park HJ. Oxygenation before Endoscopic Sedation Reduces the Hypoxic Event during Endoscopy in Elderly Patients: A Randomized Controlled Trial. J Clin Med. 2020 Oct 13;9(10):3282. doi: 10.3390/jcm9103282. PMID: 33066213; PMCID: PMC7602052. Gonzalez RM, How Oxygen Masks in Upper Endoscopies Can Improve Patient and Staff Safety. ENDOPRO Magazine, volume 6, issue 6, July/August 2021, pages 14-17. For 1001 model, internal data on file. Horn, Martlie et al. “Traditional canister-based open waste management system versus closed system: hazardous exposure prevention and operating theatre staff satisfaction.” Journal of Perioperative Nursing in Australia. 28:1 (Autumn 2015):18-22. This is a paid interview with a Stryker consultant, conducted 05/29/2025, on behalf of Stryker. *Based on single site experience by Gonzalez. **2 mm or larger This information is intended solely for the use of healthcare professionals. A healthcare professional must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using the product. The information presented is intended to demonstrate the breadth of Stryker product offerings. A healthcare professional must always refer to the package insert, product label and/or instructions for use. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker Representative if you have questions about the availability of Stryker products in your area. Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: Neptune, POM Procedural Oxygen Mask, Stryker. All other trademarks are trademarks of their respective owners or holders. ST-GSNPS-ARTI-2155876_REV-0 Back to trending topics",
+      "jcr:lastModified": "Tue Jun 09 2026 19:04:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/news/how_technology_helps/how-technology-helps-address-gi-suite-challenges/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/news/how-technology-helps/how-technology-helps-address-gi-suite-challenges/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "publishDate": "",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical-technologies/news/2026/how-technology-helps-address-gi-suite-challenges/thumbnail.jpg"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Equipment designed with the GI suite in mind supports a comprehensive approach to safety.</span></span></p>\n",
+    "jcr:lastModified": "Thu Jun 11 2026 16:39:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Jun 11 2026 16:39:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

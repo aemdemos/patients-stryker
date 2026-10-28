@@ -1,0 +1,1461 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mako Spine",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a181c6d2-f501-4ae4-8839-70acb87159a8",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "721fce73-f74e-4a3f-94ff-a76193700f0b"
+  ],
+  "contentID": "JR-GSNPS-SYK-1639258  ",
+  "lastPublished": "Wed Oct 15 2025 18:27:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Oct 15 2025 18:27:50 GMT+0000",
+  "cq:lastReplicated": "Wed Oct 15 2025 18:27:53 GMT+0000",
+  "cq:lastModified": "Wed Oct 15 2025 18:27:32 GMT+0000",
+  "jcr:baseVersion": "721fce73-f74e-4a3f-94ff-a76193700f0b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Mar 10 2025 20:40:03 GMT+0000",
+  "pageTitle": "Mako Spine",
+  "cq:tags": [
+    "stryker:product/joint-replacement/mako-system"
+  ],
+  "jcr:lastModified": "Wed Oct 15 2025 18:27:32 GMT+0000",
+  "jcr:uuid": "98394a06-7472-44d8-9268-ea77b7f89716",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Mako Spine",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 18 2025 18:53:21 GMT+0000",
+      "jcr:lastModified": "Tue Feb 18 2025 18:53:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_spine/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/systems/mako-spine/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_spine/hero/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/joint-replacement/en/systems/mako-spine/hero/mobile",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "7",
+          "jcr:created": "Tue Feb 18 2025 18:53:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Feb 18 2025 19:14:11 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/systems/mako-spine/mako-spine-thumbnail.png"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 18 2025 20:41:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "3",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Integrated technologies​</span></span><br>\n <span style=\"color: #ffb500;\">maximized for Mako</span></span></span></h1>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Mako Spine seamlessly integrates with our OR technologies, simplifying imaging, planning, and execution for spine surgery.</span></span></p>\n",
+      "jcr:lastModified": "Wed Feb 26 2025 20:54:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 18 2025 19:14:52 GMT+0000",
+      "jcr:lastModified": "Tue Feb 18 2025 19:14:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+          "alt": "Confidence with Accustop™ haptic technology",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/high-five.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 24 2025 21:41:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:15:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Confidence with AccuStop™ haptic technology</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Mako Spine is designed to give you confidence that you're executing your procedure to plan and support correct level selection with visual level indication and haptic feedback.</span><span class=\"urw-egyptienne\"><br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Feb 25 2025 16:47:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+          "alt": "Simplified planning, streamlined experience",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Picture3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 24 2025 21:41:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:15:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Simplified planning, streamlined experience</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Enjoy the ease of automatic patient registration, single-step robotic-arm registration, Smart Segmentation, and algorithm-driven automatic screw suggestion and rod length estimation.<br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 19:09:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+          "alt": "Control in your hands",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/headset.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 24 2025 21:40:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:15:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Control in your hands</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Free positioning of the unit and robotic-arm, unrestricted level selection and lock-and-hold features help provide stability within haptic boundaries during pedicle preparation and screw placement.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Feb 25 2025 16:48:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+          "alt": "Smart screw placement with Copilot",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/timer.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Feb 24 2025 21:42:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "15",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:15:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Smart screw placement with Copilot</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">This software feature allows the Copilot Smart Driver to stop automatically when it reaches a pre-planned depth, supporting precision during pedicle preparation and screw placement.&nbsp;</span><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 19:08:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_409369102": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "accustop",
+      "jcr:created": "Wed Feb 26 2025 21:04:12 GMT+0000",
+      "title": "Confidence with Accustop™",
+      "jcr:lastModified": "Wed Feb 26 2025 21:06:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_20724_1256901326": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 17:49:38 GMT+0000",
+      "jcr:lastModified": "Tue Feb 25 2025 18:40:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 20:52:11 GMT+0000",
+          "jcr:lastModified": "Wed Feb 26 2025 20:52:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_913472863": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h2><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\">Confidence with</span></span></span></span></span></h2>\n<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Accustop™ haptic tecnology</span></span><br>\n </span></h2>\n",
+              "jcr:lastModified": "Fri Feb 28 2025 21:10:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            },
+            "text_1821139357_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "6",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"urw-egyptienne\">Align once, and breathe easy</span></span></span></h3>\n<p><br>\n<span class=\"fontsize-1-25em\">Once you have moved the robotic-arm to the area of interest and a vertebral level is identified, Mako Spine is designed to leverage AccuStop™ haptic technology to enable alignment to, and help provide stability within, the haptic boundaries of a pre-planned trajectory that has been suggested by the software and confirmed by you, based on your patient’s unique anatomy.</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:14:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Feb 28 2025 21:09:59 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Feb 28 2025 21:10:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "autoPlayVal": "1",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Tue Feb 18 2025 19:21:00 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "loopVal": "1",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Mon Mar 03 2025 19:11:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/commercial/usa/joint-replacement/met/JR-MAKSP-VID-1632900-EN_US.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/JR-MAKSP-VID-1632900-EN_US-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Tue Feb 25 2025 18:42:18 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          }
+        },
+        "cols4_1813978575": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Tue Feb 25 2025 17:50:56 GMT+0000",
+          "jcr:lastModified": "Tue Feb 25 2025 17:50:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 20:52:57 GMT+0000",
+          "jcr:lastModified": "Wed Feb 26 2025 20:52:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+              "alt": "Purple checkmark",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/images/Purple checkmark-ext1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Feb 25 2025 21:33:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1821139357_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Designed for correct level selection with visual level indication and haptic feedback</span><span class=\"futura-bold\"><br>\n </span>&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:15:19 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+              "alt": "Blue checkmark",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/images/Blue checkmark-ext2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Feb 25 2025 21:33:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1821139357_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Has been shown to provide accurate and repeatable trajectory guidance for pedicle preparation and screw placement<sup>4</sup></span><br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:17:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Feb 18 2025 19:14:58 GMT+0000",
+              "alt": "Orange checkmark",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/images/Orange checkmark-ext1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Feb 25 2025 21:33:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_1821139357_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Allows for reduced errors associated with non-navigated and non-robotic screw placement<sup>4</sup></span></p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:17:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_1373284665": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "simplified-planning",
+      "jcr:created": "Wed Feb 26 2025 21:06:12 GMT+0000",
+      "title": "Simplified Planning",
+      "jcr:lastModified": "Wed Feb 26 2025 21:06:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_194991531": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 20:44:48 GMT+0000",
+      "jcr:lastModified": "Wed Feb 26 2025 20:44:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_913472863_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\">Simplified planning,&nbsp;</span></span></span></span></span></span></span></h2>\n<h2><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">streamlined experience</span></span></span></span></b></span></span></h2>\n<h2>&nbsp;</h2>\n<h2><b>We've taken the guesswork out of planning</b></h2>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:10:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 21:01:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Smart Segmentation</b> automatically identifies and labels vertebrae down to the bone surface level, including vertebral body, posterior elements, endplates, and pedicles.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:11:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        },
+        "text_1713439035": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Fri Feb 28 2025 21:03:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Algorithm-driven</b> <b>automatic and customizable screw size and trajectory suggestions </b>are confirmed by the surgeon and are designed to:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Help avoid pedicle breaching</span></li>\n<li><span class=\"fontsize-1-25em\">Help avoid contralateral screw tip interference</span></li>\n<li><span class=\"fontsize-1-25em\">Enable you to configure size symmetry per level</span></li>\n<li><span class=\"fontsize-1-25em\">Offer two possible trajectory suggestions for midline and MIS pedicle screw techniques</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:11:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        },
+        "text_492831777": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "2",
+          "jcr:created": "Fri Feb 28 2025 21:04:54 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Rod visualization and length estimation</b> aim to help you simplify a complex step of spinal fixation.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:11:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Feb 28 2025 21:10:42 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:10:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 25 2025 17:57:53 GMT+0000",
+          "alt": "Smart Segmentation – the Spine Guidance Software has automatically identified the vertebral levels by using data from the patient’s CT scan",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/guesswork out of planning.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 25 2025 18:34:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "standaloneimage_1512": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 25 2025 17:57:56 GMT+0000",
+          "alt": "monitor screen showing planned spinal implants in the spine. There are three views – sagittal (from the side), axial (from the top of the head down through the feet), and Anterior Posterior, or AP (from the front)",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/vlcsnap-2025-03-04-15h24m27s198.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Mar 05 2025 19:39:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_1190497950": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 20:35:20 GMT+0000",
+      "jcr:lastModified": "Wed Feb 26 2025 20:35:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 20:44:15 GMT+0000",
+          "jcr:lastModified": "Wed Feb 26 2025 20:44:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_913472863_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h2><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\">Control in</span></span></span></span></span></span></span></h2>\n<h2><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">your hands</span></span></span></span></b></span></span></h2>\n",
+              "jcr:lastModified": "Fri Feb 28 2025 21:12:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            },
+            "text_1821139357_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "0",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "6",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"urw-egyptienne\">No two patients are alike&nbsp;</span></span></span></h3>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">No two surgical plans look the same. With Mako Spine, you have the flexibility to move the robotic-arm to the vertebral level you’re ready to instrument next and the freedom to seamlessly transition between navigated and non-navigated workflows.</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 21:39:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Feb 28 2025 21:12:10 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Feb 28 2025 21:12:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "autoPlayVal": "1",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Tue Feb 25 2025 18:39:37 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "loopVal": "1",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Mon Mar 03 2025 19:18:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "jcr:title": "Surgeon moving the Mako Robotic-Arm into position over the spine with the Q Guidance monitor and camera in the background",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/commercial/usa/joint-replacement/met/JR-MAKSP-VID-1632943-EN_US.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/JR-MAKSP-VID-1632943-EN_US-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Tue Feb 25 2025 19:08:55 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Fri Feb 28 2025 21:27:04 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 21:39:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_1270006095": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "copilot",
+      "jcr:created": "Wed Feb 26 2025 21:07:29 GMT+0000",
+      "title": "Copilot",
+      "jcr:lastModified": "Wed Feb 26 2025 21:07:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 20:37:15 GMT+0000",
+      "jcr:lastModified": "Wed Feb 26 2025 20:37:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Feb 28 2025 21:27:04 GMT+0000",
+          "jcr:lastModified": "Fri Feb 28 2025 21:27:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        }
+      }
+    },
+    "cols2_291754539": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 21:35:12 GMT+0000",
+      "jcr:lastModified": "Tue Feb 25 2025 21:35:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_913472863_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Smart screw placement&nbsp;</span></span></span></span></span></span></h2>\n<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><b><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">with Copilot's automatic depth stop</span></span></b></span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:28:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "text_1821139357_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:15:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3>&nbsp;</h3>\n<p><span class=\"fontsize-1-25em\">The Copilot Smart Driver stops automatically when it reaches a pre-planned depth, supporting precision during pedicle preparation and screw placement.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><u><span class=\"fontsize-1-25em\"><span style=\"color: #4c7d7a;\"><a href=\"https://www.stryker.com/us/en/nse/products/spine-guidance-software-copilot.html\" target=\"_blank\">Learn more about Copilot</a></span></span></u></span><br>\n<br>\n</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 21:39:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "autoPlayVal": "1",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Tue Feb 25 2025 18:39:37 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "loopVal": "1",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 19:20:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "jcr:title": "the Copilot Smart Driver putting in a spinal implant and automatically stopping when it’s at the planned depth",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/joint-replacement/gsnps/JR-GSNPS-VID-1636956-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/JR-GSNPS-VID-1636956-EN_US-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Tue Feb 25 2025 19:08:33 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:28:26 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:28:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 22:20:41 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 22:20:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1749398369": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:47:58 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_913472863_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Integrated technologies</span></span></span></span></span></span></h2>\n<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><b><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">maximized for Mako Spine</span></span></b></span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:12:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1422889275": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:48:12 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:48:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2134416753": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Mar 03 2025 19:25:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Airo TruCT</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Feb 26 2025 21:19:19 GMT+0000",
+          "alt": "Airo Truct system",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Airo_Truct_system_specs11.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 21:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 22:12:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Airo TruCT</span></span><span class=\"fontsize-1-5em\"> </span><span class=\"fontsize-1-25em\">supports the demanding requirements of intraoperative imaging in surgery. With fan beam CT technology at its core, Airo TruCT is designed to capture advanced imaging in challenging anatomical locations.​</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:14:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 28 2025 22:13:25 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/spine/products/airo-truct/imaging.html",
+          "jcr:lastModified": "Fri Feb 28 2025 22:14:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text_1569983740": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Mon Mar 03 2025 21:41:46 GMT+0000",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2134416753_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Mar 03 2025 19:25:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Q Guidance System</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Feb 26 2025 21:19:21 GMT+0000",
+          "alt": "Mako 4 Spine and QGuidance Cart",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Mako_4_Spine_and_QCart_2K11.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 21:13:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 22:12:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Today’s Q Guidance System boasts full-spectrum active/passive hybrid optical tracking via a redesigned, proprietary camera; enhanced spinal and cranial software applications; and sophisticated processing algorithms and instrumentation that aim to deliver more surgical planning and navigation capability than ever before.​</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 28 2025 22:16:31 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/spine/products/q-guidance-system.html",
+          "jcr:lastModified": "Fri Feb 28 2025 22:16:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Mon Mar 03 2025 21:41:49 GMT+0000",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2134416753_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Mar 03 2025 19:25:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Spine Guidance 5 Software with Copilot</span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Feb 26 2025 21:19:21 GMT+0000",
+          "alt": "Spine Q Guidance 5",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Q with Copilot2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 21:12:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 22:12:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">​Engineered for precision, Spine Guidance 5 Software featuring Copilot is designed to empower you to plan and perform certain spinal procedures with confidence. Boasting a range of smart features and seamlessly integrating with various Stryker spinal screw systems, imaging systems, and CORE 2, these innovative technologies are designed to lead you into the future of spine surgery.</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 21:14:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 28 2025 22:19:44 GMT+0000",
+          "CTATitle": "Learn More",
+          "ctaExternalLink": "https://www.stryker.com/us/en/nse/products/spine-guidance-software-copilot.html",
+          "jcr:lastModified": "Fri Feb 28 2025 22:20:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Mon Mar 03 2025 21:41:51 GMT+0000",
+          "jcr:lastModified": "Mon Mar 03 2025 21:41:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Feb 26 2025 21:18:15 GMT+0000",
+      "jcr:lastModified": "Wed Feb 26 2025 21:18:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_913472863_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 18 2025 19:14:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Spinal robotics</span></span></span></span></span></span></h2>\n<h2><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #ffffff;\"><b><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">we're just getting started</span></span></b></span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:26:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Wed Feb 26 2025 21:19:12 GMT+0000",
+          "jcr:lastModified": "Wed Feb 26 2025 21:19:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "15",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "15",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "5",
+              "jcr:created": "Fri Feb 28 2025 22:01:22 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">1.6 million spinal fusions are performed each year in the United States</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><sup>5</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:29:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(133,69,138)",
+              "textIsRich": "true",
+              "leftMargin": "5"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "18",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "18",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "5",
+              "jcr:created": "Fri Feb 28 2025 22:01:22 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">10% of spine surgery* is done robotically</span></span><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><sup>6</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:29:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(28,86,135)",
+              "textIsRich": "true",
+              "leftMargin": "5"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "15",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "15",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "rightMargin": "5",
+              "jcr:created": "Fri Feb 28 2025 22:01:22 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">26% growth = fastest growing segment of spine market</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\"><sup>6</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Mon Mar 03 2025 19:29:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgb(76,125,122)",
+              "textIsRich": "true",
+              "leftMargin": "5"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 28 2025 22:06:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>*Posterior thoracolumbar spinal procedures. </p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:09:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1090980929": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:47:48 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:47:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols4_473928440": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Mar 03 2025 19:37:36 GMT+0000",
+      "jcr:lastModified": "Mon Mar 03 2025 19:37:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols4_1849818265": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Mar 03 2025 20:04:27 GMT+0000",
+      "jcr:lastModified": "Mon Mar 03 2025 20:04:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 03 2025 21:35:37 GMT+0000",
+          "alt": "Dr. Sanfilippo",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Sanfilippo headshot1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 20:11:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Mar 03 2025 20:04:31 GMT+0000",
+          "alt": "Dr. Lowenstein",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Lowenstein headshot 21.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Mar 03 2025 21:36:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 25 2025 19:58:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">“The entire Mako platform is outstanding. We just did our first percutaneous Mako case this week using the pelvic tracker, and I found the accuracy to be phenomenal.”&nbsp;</span></span></span></p>\n<p><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">​- Jason Lowenstein, MD*</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 19:44:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 25 2025 19:58:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">“Now using the Mako robotic-arm for targeting the pedicle once instead of three or four times with navigated or manual instruments, that strain and stress have really been relieved for me during surgery.”&nbsp;&nbsp;</span></span></span></p>\n<p><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">- Jim Sanfilippo, MD*</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Mar 03 2025 19:44:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_1978026994": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:44:11 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">*Dr. Sanfilippo and Dr. Lowenstein are paid-consultants of Stryker. The opinions expressed by Dr. Sanfilippo and Dr. Lowenstein are those of Dr. Sanfilippo and Dr. Lowenstein and not necessarily those of Stryker. Individual experiences may vary.</span></p>\n",
+      "jcr:lastModified": "Fri Feb 28 2025 21:44:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Feb 28 2025 21:47:37 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2025 21:47:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_2101244684": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Feb 25 2025 19:35:56 GMT+0000",
+      "title": "Resources and Downloads",
+      "jcr:lastModified": "Tue Feb 25 2025 19:36:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "resources": [
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_2017548639",
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_6936013"
+      ],
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 19:23:04 GMT+0000",
+      "jcr:lastModified": "Wed Feb 26 2025 21:41:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-us",
+      "jcr:created": "Thu Feb 20 2025 21:48:02 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Fri Feb 28 2025 21:40:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 20 2025 21:47:33 GMT+0000",
+      "jcr:lastModified": "Thu Feb 20 2025 21:47:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"fontsize-1-5em\">Contact us</span></h4>\n<h4>Send us a message to learn more about <span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Mako Spine</span></span><br>\n</h4>\n<p><span class=\"fontsize-1-25em\"><b>This contact form is intended for healthcare professionals</b>. If you’re a patient looking to contact us, <a href=\"https://patients.stryker.com\">please click here</a>.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 28 2025 22:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 20 2025 21:43:49 GMT+0000",
+      "jcr:lastModified": "Thu Feb 20 2025 21:43:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3416",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 20 2025 21:44:00 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! ",
+          "jcr:lastModified": "Thu Feb 20 2025 21:44:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Mar 04 2025 18:12:23 GMT+0000",
+          "CTATitle": "NPPES NPI Lookup",
+          "ctaExternalLink": "https://npiregistry.cms.hhs.gov/search",
+          "jcr:lastModified": "Tue Mar 04 2025 18:12:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Resources:&nbsp;</p>\r\n<ol>\r\n<li>Mahoney O, Kinsey T, Sodhi N, et al. Improved Component Placement Accuracy with Robotic-Arm Assisted Total Knee Arthroplasty. J Knee Surg.&nbsp;2022;35(3):337-344.</li>\r\n<li>Sicat CS, Buchalter DB, Luthringer TA, Schwarzkopf R, Vigdorchik JM. Intraoperative Technology Use Improves Accuracy of Functional Safe Zone&nbsp;Targeting in Total Hip Arthroplasty. J Arthroplasty. 2022;37(7S):S540-S545.</li>\r\n<li>Kayani B, Konan S, Tahmassebi J, Rowan FE, Haddad FS. An assessment of early functional rehabilitation and hospital discharge in conventional versus robotic-arm assisted unicompartmental knee arthroplasty:&nbsp;a prospective cohort study. Bone Joint J. 2019;101-B(1):24-33.</li>\r\n<li>Stryker data on file&nbsp;</li>\r\n<li>Mueller KB, Hou Y, Beach K, Griffin LP. Development and validation of a point-of-care clinical risk score to predict surgical site infection following open spinal fusion. N Am Spine Soc J. 2022 Dec 23;13:100196. doi: 10.1016/j.xnsj.2022.100196. PMID: 36691580; PMCID: PMC9860512.</li>\r\n<li>Axiom Health 2023 data</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Mar 03 2025 19:17:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

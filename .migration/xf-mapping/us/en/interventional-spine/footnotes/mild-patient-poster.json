@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "IVS-MILD-PSTR-1617037_REV-1",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "mild Patient Poster",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a1ce99f1-cc80-4efd-ba14-8cf036fb4265",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "f8f0eda4-95c6-448d-a106-a15415bf9a03"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:01 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:02 GMT+0000",
+  "cq:lastModified": "Mon Dec 22 2025 18:50:28 GMT+0000",
+  "jcr:baseVersion": "f8f0eda4-95c6-448d-a106-a15415bf9a03",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "jcr:lastModified": "Thu Sep 18 2025 23:38:34 GMT+0000",
+  "jcr:uuid": "0f5d8413-cf2c-49a7-b5b2-634b0e79de42",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Sep 18 2025 23:39:09 GMT+0000",
+      "jcr:lastModified": "Thu Sep 18 2025 23:39:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Sep 18 2025 23:39:20 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">IVS-MILD-PSTR-1617037_REV-1</span></span></p>\n<p><b>Revision Date: 08.26.25</b></p>\n<ol>\n<li>Hansson T, Suzuki N, Hebelka H, Gaulitz A. The narrowing of the lumbar spinal canal during loaded MRI: the effects of the disc and ligamentum flavum. Eur Spine J. 2009 May;18(5):679-86. doi: 10.1007/s00586-009-0919-7. Epub 2009 Mar 11. PMID: 19277726; PMCID: PMC3234003. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234003/.</li>\n<li>Jain S, Deer T, Sayed D, Chopra P, Wahezi S, Jassal N, Weisbein J, Jameson J, Malinowski M, Golovac S. Minimally invasive lumbar decompression: a review of indications, techniques, efficacy and safety. Pain Manag. 2020 Sep;10(5):331-348. doi: 10.2217/pmt-2020-0037. Epub 2020 Jul 1. PMID: 32609052. https://www.tandfonline.com/doi/full/10.2217/pmt-2020-0037#d1e525.</li>\n<li>Staats PS, Chafin TB, Golovac S, Kim CK, Li S, Richardson WB, Vallejo R, Wahezi SE, Washabaugh EP 3rd, Benyamin RM; MiDAS ENCORE Investigators. Long-Term Safety and Efficacy of Minimally Invasive Lumbar Decompression Procedure for the Treatment of Lumbar Spinal Stenosis With Neurogenic Claudication: 2-Year Results of MiDAS ENCORE. Reg Anesth Pain Med. 2018 Oct;43(7):789-794. doi: 10.1097/AAP.0000000000000868. PMID: 30199512; PMCID: PMC6319572. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319572/.</li>\n<li>Stryker data on file.</li>\n<li>Deer T, Kim C, Wahezi SE, Qu H, Sayed D; MOTION Study Investigators. Objective Real-World Outcomes of Patients Suffering from Painful Neurogenic Claudication Treated with the mild® Procedure: Interim 6-Month Report of a Randomized Controlled Trial. J Pain Res. 2021 Jun 10;14:1687-1697. doi: 10.2147/JPR.S312573. PMID: 34140805; PMCID: PMC8203201. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201/.</li>\n</ol>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">IVS-MILD-PSTR-1617037_REV-0</span></span></p>\n<p><b>Revision Date: 03.12.25</b></p>\n<ol>\n<li>Hansson T, Suzuki N, Hebelka H, Gaulitz A. The narrowing of the lumbar spinal canal during loaded MRI: the effects of the disc and ligamentum flavum. Eur Spine J. 2009 May;18(5):679-86. doi: 10.1007/s00586-009-0919-7. Epub 2009 Mar 11. PMID: 19277726; PMCID: PMC3234003. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3234003/.</li>\n<li>Jain S, Deer T, Sayed D, Chopra P, Wahezi S, Jassal N, Weisbein J, Jameson J, Malinowski M, Golovac S. Minimally invasive lumbar decompression: a review of indications, techniques, efficacy and safety. Pain Manag. 2020 Sep;10(5):331-348. doi: 10.2217/pmt-2020-0037. Epub 2020 Jul 1. PMID: 32609052. https://www.tandfonline.com/doi/full/10.2217/pmt-2020-0037#d1e525.</li>\n<li>Staats PS, Chafin TB, Golovac S, Kim CK, Li S, Richardson WB, Vallejo R, Wahezi SE, Washabaugh EP 3rd, Benyamin RM; MiDAS ENCORE Investigators. Long-Term Safety and Efficacy of Minimally Invasive Lumbar Decompression Procedure for the Treatment of Lumbar Spinal Stenosis With Neurogenic Claudication: 2-Year Results of MiDAS ENCORE. Reg Anesth Pain Med. 2018 Oct;43(7):789-794. doi: 10.1097/AAP.0000000000000868. PMID: 30199512; PMCID: PMC6319572. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6319572/.</li>\n<li>Stryker data on file.</li>\n<li>Deer T, Kim C, Wahezi SE, Qu H, Sayed D; MOTION Study Investigators. Objective Real-World Outcomes of Patients Suffering from Painful Neurogenic Claudication Treated with the mild® Procedure: Interim 6-Month Report of a Randomized Controlled Trial. J Pain Res. 2021 Jun 10;14:1687-1697. doi: 10.2147/JPR.S312573. PMID: 34140805; PMCID: PMC8203201. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8203201/.</li>\n</ol>\n",
+      "jcr:lastModified": "Thu Sep 18 2025 23:40:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

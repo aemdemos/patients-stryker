@@ -1,0 +1,79 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "safety-information",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e60d0018-c448-4a47-a3b2-03e277785edd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "d229d8f3-7a75-4a82-ac8d-5332410ebbc8"
+  ],
+  "jcr:created": "Tue Mar 14 2023 20:49:49 GMT+0000",
+  "cq:lastReplicated": "Tue Mar 14 2023 20:49:52 GMT+0000",
+  "cq:lastModified": "Tue Mar 14 2023 20:49:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d229d8f3-7a75-4a82-ac8d-5332410ebbc8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "c5d5dd47-cec5-47e9-beda-d2be3febffe7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Mar 14 2023 20:26:12 GMT+0000",
+      "jcr:lastModified": "Tue Mar 14 2023 20:26:22 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage1017124785341413": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "adult_child",
+        "srcFileRef": "/content/dam/stryker/ems/images/adult_child_v2.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 14 2023 20:48:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    }
+  }
+}

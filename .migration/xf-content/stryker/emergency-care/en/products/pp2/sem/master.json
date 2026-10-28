@@ -1,0 +1,95 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SEM",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bec44e01-6aad-425a-b585-3d4cff0fa706",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "d1ce8e21-524c-4ea2-ba6b-ec622ee0fe9c"
+  ],
+  "lastPublished": "Thu Oct 01 2026 16:36:00 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 16:36:03 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 16:36:07 GMT+0000",
+  "cq:lastModified": "Tue Aug 25 2026 20:50:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d1ce8e21-524c-4ea2-ba6b-ec622ee0fe9c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:36:01 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8183447a-cb55-4294-9153-9f79597a17b0",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:title": "Maximize",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:07:32 GMT+0000",
+      "jcr:lastModified": "Wed Dec 01 2021 22:37:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage37771": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Clock_teal",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/Clock_teal.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Aug 25 2026 20:39:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy_copy_copy_3777245620655122": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "2",
+        "gradientDirection": "left-to-right",
+        "text": "<h4><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\"><span style=\"color: #4c7d7a;\"><span style=\"color: #000000;\">​Minimize downtime</span></span></span></span></span></span></span></h4>\n",
+        "jcr:lastModified": "Tue Aug 25 2026 20:50:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

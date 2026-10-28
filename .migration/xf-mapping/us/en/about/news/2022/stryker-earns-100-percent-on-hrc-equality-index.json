@@ -1,0 +1,105 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker earns 100 percent rating on HRC Equality Index",
+  "jcr:versionHistory": "bf32b3eb-aea1-4c68-b162-b36a10b4695d",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "dec48960-9d3d-45ab-b298-203d45c2b9bd"
+  ],
+  "lastPublished": "Thu Jan 27 2022 15:01:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 27 2022 15:01:44 GMT+0000",
+  "cq:lastModified": "Thu Jan 27 2022 14:13:36 GMT+0000",
+  "jcr:baseVersion": "dec48960-9d3d-45ab-b298-203d45c2b9bd",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Jan 27 2022 14:12:35 GMT+0000",
+  "jcr:uuid": "2f9d96d2-3647-4bb8-8b54-649b80fa07a4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jan 26 2022 20:12:21 GMT+0000",
+      "jcr:lastModified": "Wed Jan 26 2022 20:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jan 26 2022 20:12:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/stryker-earns-100-percent-on-hrc-equality-index/BPTW 2022_Master RGB_D1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jan 26 2022 20:12:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jan 26 2022 20:06:59 GMT+0000",
+      "jcr:lastModified": "Wed Jan 26 2022 20:06:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jan 26 2022 20:06:11 GMT+0000",
+          "text": "<p>For the sixth year in a row, we earned a 100 percent rating on the&nbsp;Human Rights Campaign (HRC) Foundation’s Corporate Equality Index (CEI) for LGBTQ+ Workplace Equality. This is the United States’ foremost benchmarking survey and report measuring corporate policies and practices related to LGBTQ+ workplace equality.<br>\n<br>\nThe HRC gathers information from an annual CEI survey and assigns a rating. Criteria includes equal employment opportunity policies, equitable benefits for LGBTQ+ workers and their families, supporting an inclusive culture and corporate social responsibility.<br>\n<br>\nTo learn more about the Corporate Equality Index, check out <a href=\"https://www.hrc.org/resources/corporate-equality-index\">Human Rights Campaign’s site</a>.<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Jan 27 2022 14:13:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Thu Jan 27 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "27-Jan-2022",
+    "jcr:lastModified": "Wed Jan 26 2022 20:05:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "jcr:lastModified": "Wed Jan 26 2022 20:05:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/stryker-earns-100-percent-on-hrc-equality-index/BPTW 2022_Master RGB_D1.png"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Wed Jan 26 2022 20:12:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

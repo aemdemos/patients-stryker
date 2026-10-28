@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "100,000th Robotic-Arm Assisted Joint Replacement Procedure Performed in the U.S. with Stryker's Mako System",
+  "jcr:versionHistory": "bbdb62f9-8191-4ecd-9096-86f7ae2f41f6",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "8c282e96-095d-4bbe-a10d-0ad34816dda7"
+  ],
+  "lastPublished": "Fri Sep 15 2017 09:20:41 GMT+0000",
+  "jcr:created": "Fri Sep 15 2017 09:20:41 GMT-0400",
+  "cq:lastModified": "Thu Aug 24 2017 10:45:21 GMT-0400",
+  "jcr:baseVersion": "8c282e96-095d-4bbe-a10d-0ad34816dda7",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins"
+  ],
+  "jcr:uuid": "6aaa345c-8467-46fe-86e3-0af158aaf456",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Tue Jun 06 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Jun-2017",
+    "jcr:lastModified": "Thu Aug 24 2017 10:38:15 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "text": "<p>Stryker Orthopaedics celebrated a landmark moment this month as the 100,000th cumulative robotic-arm assisted procedure in the U.S. was performed using the Mako System.1 This advanced robotic technology transforms the way joint replacement surgery is performed, enabling surgeons to have a more predictable surgical experience with increased accuracy.2,3,4,5</p>\n<p><b><a href=\"http://www.prnewswire.com/news-releases/100000th-robotic-arm-assisted-joint-replacement-procedure-performed-in-the-us-with-strykers-mako-system-300469080.html\">Please click here for the full article.</a></b></p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Aug 24 2017 10:40:16 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "linkExternal": "http://www.prnewswire.com/news-releases/100000th-robotic-arm-assisted-joint-replacement-procedure-performed-in-the-us-with-strykers-mako-system-300469080.html",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Mako_Robot_TKA_NEW.tif",
+    "jcr:lastModified": "Thu Aug 24 2017 10:40:34 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "openInNewTab": "true"
+  }
+}

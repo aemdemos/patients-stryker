@@ -1,0 +1,58 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ZM(X) Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9c008228-4fae-4f39-9de9-facc7a524395",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "99845fb6-748c-4047-b1ad-832c0d30d0f5"
+  ],
+  "lastPublished": "Fri Aug 09 2024 15:12:44 GMT+0000",
+  "jcr:created": "Fri Aug 09 2024 15:12:44 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 09 2024 15:12:46 GMT+0000",
+  "cq:lastModified": "Tue Aug 06 2024 19:20:55 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "Advanced hospital bed designed to enhance safety and outcomes in the ICU while delivering a better experience for care teams",
+  "jcr:baseVersion": "99845fb6-748c-4047-b1ad-832c0d30d0f5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:47:34 GMT+0000",
+  "jcr:uuid": "3016e393-8b2e-4cec-a7dd-44d4e83d0f77",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jul 24 2024 20:18:04 GMT+0000",
+      "alt": "Advanced ICU bed designed to enhance safety and outcomes while delivering a better experience for nurses ",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/ProCuity-ZMX_right-side_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 06 2024 19:20:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

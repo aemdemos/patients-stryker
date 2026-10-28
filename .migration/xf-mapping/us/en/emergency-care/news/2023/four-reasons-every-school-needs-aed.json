@@ -1,0 +1,197 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Four reasons every school needs AEDs",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "45fc504c-01d8-4e92-a9bb-5b0ea6da48e4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "Empty classroom at an elementary school needing an AED ",
+  "thumbnailFileReference": "/content/dam/stryker/ems/news/images/AEDs schools article 1232x515.png",
+  "jcr:predecessors": [
+    "47563072-ca46-423a-9ba4-5375a9eac8a5"
+  ],
+  "contentID": "M0000012631_AA",
+  "lastPublished": "Mon Jun 12 2023 19:25:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 12 2023 19:25:13 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 12 2023 19:25:15 GMT+0000",
+  "cq:lastModified": "Mon Jun 12 2023 19:24:06 GMT+0000",
+  "jcr:baseVersion": "47563072-ca46-423a-9ba4-5375a9eac8a5",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Four reasons every school needs AEDs",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/articles",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Jun 12 2023 19:23:09 GMT+0000",
+  "jcr:uuid": "6dcd2fea-7a5f-4631-ad35-ab9cabdc53a6",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "navTitle": "Four reasons every school needs AEDs",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/master",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Sat Jun 03 2023 13:59:26 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "rightMargin": "35",
+              "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Four reasons every school needs AEDs</span></span></h1>\r\n",
+              "jcr:lastModified": "Sat Jun 03 2023 13:55:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:31:10 GMT+0000",
+      "text": "2-minute read Out-of-hospital sudden cardiac arrest is a leading cause of death in the United States, claiming the lives of approximately 356,000 people each year.1 Sudden cardiac arrest occurs when the heart suddenly stops beating often without warning, causing the victim to collapse, become unresponsive and be unable to breathe normally. The person will die within minutes if a normal heart rhythm is not restored. Automated external defibrillators (AEDs) are lifesaving devices designed to get the heart back to a normal sinus rhythm. Although less than half of the states in the U.S. require AEDs in schools, every elementary and secondary school should seriously consider having one.2 Here are four reasons why: 1. School-aged children are potential victims of experiencing a sudden cardiac arrest This life-threatening event can happen to people of all ages, even those who appear to be in good health. In fact, sudden cardiac arrest strikes 7,000 children and teens every year.1 And while sudden cardiac death among student-athletes has prompted a drive to equip athletic facilities with AEDs, research has found that sudden cardiac arrest occurs more often with school-aged non-athletes.3 2. AEDs in schools save lives In schools with AEDs, about 70 percent of students survive sudden cardiac arrest, which is more than seven times the overall survival rate for school-age children.3 Survival is estimated to decrease by 10 percent every passing minute until a shock from a defibrillator is applied.4 Because early defibrillation significantly increases the survival rate after sudden cardiac arrest, the American Heart Association (AHA) organization encourages making AEDs readily available in public spaces, such as school buildings.5 3. Anyone in a school building may benefit AEDs reduce the risk of death from cardiac arrest for all age groups. There are around 7 million teachers and non-academic staff in U.S. public schools on any given school day.6 Those numbers don’t include private schools or account for the parents, grandparents, coaches, administrators and other visitors who may be on a school campus. A 15-year study by the AHA found that about 90 percent of sudden cardiac arrests in schools occur among adults. The organization concluded that “school-based CPR and AED programs would benefit faculty and staff members, as well as visitors to the school who, because of their age, are at greater risk of cardiac arrest than the students.”7 4. Virtually anyone can use an AED to save a life Operating an AED is not complicated. These portable devices are designed so any bystander – a teacher, a parent or even a student – can administer a lifesaving shock to someone in cardiac arrest.8 With simple audio instructions to guide the user through the proper steps, an AED evaluates the heart’s rhythm to determine if defibrillation is needed. An easily identifiable and accessible AED could mean the difference between life and death for a cardiac arrest victim. Together, we save lives The decision to invest in an AED for your school is an important one that could save lives. Choosing the safest device for your environment and student population is crucial. Connect with an AED expert to learn more about our AEDs and how we can help make your school safer.",
+      "jcr:lastModified": "Sat Jun 03 2023 13:51:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body-",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/four-reasons-every-school-should-have-an-aed/body"
+    },
+    "cols3_1098156374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 20:47:24 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 20:47:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "curatedlinklist_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
+          "jcr:lastModified": "Fri Jun 02 2023 15:36:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedlinklist",
+          "internalLinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "AED buying guide",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/aed-buying-guide"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "Defibrillator 101",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/defibrillator-101"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "The role of defibrillation during sudden cardiac arrest",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/the-role-of-defibrillation-during-sudden-cardiac-arrest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "publishDate": "Mon Jun 12 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Jun-2023",
+    "jcr:lastModified": "Mon Jun 12 2023 19:24:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Jun 02 2023 15:24:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Tsao, et al, Heart Disease and Stroke Statistics—2022 Update: A Report From the American Heart Association. <i style=\"font-size: 0.8125rem;\">Circulation</i>, 2022; 145(8): e 153-e939.<br>\r\n2.&nbsp;<i style=\"font-size: 0.8125rem;\">CPR and AED Laws</i>, Sudden Cardiac Arrest Foundation. Retrieved October 11, 2022, from https://www.sca-aware.org/about-sudden-cardiac-arrest/cpr-and-aed-laws.<br>\r\n3. Sherrid, et al, State Requirements for Automated External Defibrillators in American Schools: Framing the Debate About Legislative Action. <i style=\"font-size: 0.8125rem;\">JACC</i>, April 2017,&nbsp;69 (13) 1735–1743.<br>\r\n<i style=\"font-size: 0.8125rem;\">4. What is AED?,</i> American Red Cross. Retrieved October 11, 2022, from https://www.redcross.org/take-a-class/aed/using-an-aed/what-is-aed.<br>\r\n<i style=\"font-size: 0.8125rem;\">5. AED Programs Q&amp;A,</i> American heart Association. Retrieved October 11, 2022, from https://cpr.heart.org/-/media/cpr-files/training-programs/aed-implementation/aed-programs-qa-ucm501519.pdf.<br>\r\n6. Arabadjaian, et al, Availability and Utilization of Automated External Defibrillators in New York State Schools. <i style=\"font-size: 0.8125rem;\">Frontiers in Pediatrics</i>, September 2021, 9:711124.<br>\r\n7. Lotfi, et al, Cardiac Arrest in Schools. <i style=\"font-size: 0.8125rem;\">Circulation</i>, 2007;116:1374–1379.<br>\r\n8. Kuvaki, et al, School Children Save Lives. <i style=\"font-size: 0.8125rem;\">Turk J Anaesthesiol Reanim</i>, 2018; 46(3):170-175.</p>\r\n",
+    "jcr:lastModified": "Sun Jun 04 2023 13:52:01 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

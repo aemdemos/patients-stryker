@@ -1,0 +1,352 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Infection in Shoulder Arthroplasty",
+  "jcr:versionHistory": "920d9ab0-7cb3-4ebf-b86e-b1eb915f0bca",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:predecessors": [
+    "06819cee-f431-4178-beac-f9f4a035fa95"
+  ],
+  "lastPublished": "Thu Feb 27 2020 19:54:07 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Feb 27 2020 19:54:07 GMT+0000",
+  "cq:lastModified": "Thu Feb 27 2020 17:36:59 GMT+0000",
+  "jcr:baseVersion": "06819cee-f431-4178-beac-f9f4a035fa95",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Feb 27 2020 17:10:15 GMT+0000",
+  "jcr:uuid": "2643e271-0d7d-4778-853e-2dcf661cccb1",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+      "jcr:lastModified": "Tue Oct 01 2019 15:30:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:12:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"fontsize-1em\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\">Shoulder</span></span> </span></span><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">Talks:</span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:25:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "largeheadline_886368": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\">Infection in Shoulder Arthroplasty</span></span>&nbsp;</span></span><br>\r\n</span>",
+      "jcr:lastModified": "Thu Feb 27 2020 17:36:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "X2XIc5rs4os",
+          "jcr:lastModified": "Fri Dec 13 2019 18:12:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:43:16 GMT+0000",
+          "text": "<p><b>Description:&nbsp;<br>\n </b>Joint infection is one of the most common reasons for concern in Shoulder Arthroplasty. Join us as Dr. Willis presents the latest research in infections around diagnosing, preventing and treating infection shoulder arthroplasty.&nbsp;</p>\n<p><b>Learning objective:</b></p>\n<ul>\n<li>Specifics of Cutibacterium acnes (Propionibacterium acnes) &amp; the shoulder biome</li>\n<li>Diagnosis &amp; Management of infections in shoulder arthroplasty</li>\n<li>Steps to reduce bacterial burden of infections<ul>\n<li>Preoperatively</li>\n<li>Intraoperatively</li>\n<li>Postoperatively<br>\n</li>\n</ul>\n</li>\n</ul>\n<p><b>Course instructor:</b> Matthew Willis, MD</p>\n",
+          "jcr:lastModified": "Wed Feb 26 2020 15:28:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop_330664927": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">TE<span style=\"color: #000000;\">ACH&nbsp;</span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Talks: Course overview</span></span></span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "textIsRich": "true"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "RnRQy-fTsoY",
+          "jcr:lastModified": "Thu Feb 27 2020 15:31:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 1: </span><b>Infection in Shoulder Arthroplasty</b></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:35:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"/content/stryker/us/en/trauma-and-extremities/products/reunion-rfx.html\">ReUnion RFX</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:31:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "cg9CeIxTodc",
+          "jcr:lastModified": "Thu Feb 27 2020 15:32:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 2:</span>&nbsp;<b>Pre-operative methods to reduce bacterial burden for your patients</b></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:33:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_962363608": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"/content/stryker/us/en/trauma-and-extremities/products/reunion-rfx.html\">ReUnion RFX</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:31:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "9RGjfam3r7Q",
+          "jcr:lastModified": "Thu Feb 27 2020 15:33:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 3: </span><b>Ways to intra-operatively <br>\nreduce chances for infection</b></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:33:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"/content/stryker/us/en/trauma-and-extremities/products/reunion-rfx.html\">ReUnion RFX</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:31:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "mUGcHMzm1yE",
+          "jcr:lastModified": "Thu Feb 27 2020 15:34:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 4:</span> <b>Post-operatively assessing infections after shoulder arthroplasty</b></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:34:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_1661820210": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><br>\n </span></span><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b>&nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">TSA</a><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n &nbsp; • <a href=\"/content/stryker/us/en/trauma-and-extremities/products/reunion-rfx.html\">ReUnion RFX</a></b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2020 15:31:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Dec 02 2019 13:52:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

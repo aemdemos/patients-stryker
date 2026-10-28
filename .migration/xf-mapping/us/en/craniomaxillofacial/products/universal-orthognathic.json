@@ -1,0 +1,114 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "1.7/2.0/2.3 mm rigid internal fixation system",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Universal Orthognathic",
+  "jcr:versionHistory": "adc65209-c196-4fdf-a5ee-8929dfcee3f6",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/universalmidface/images/Thumbnail_Universal Ortho.png",
+  "jcr:predecessors": [
+    "741b1aba-25d2-483c-95c6-78b9b4cbae3e"
+  ],
+  "contentID": "CMF-WC-28_Rev. None_14666 ",
+  "lastPublished": "Fri Apr 20 2018 21:44:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Apr 20 2018 21:44:37 GMT-0400",
+  "cq:lastModified": "Fri Apr 20 2018 21:44:00 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Comprehensive fixation for orthognathic procedures.",
+  "jcr:baseVersion": "741b1aba-25d2-483c-95c6-78b9b4cbae3e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cmf-implants",
+    "stryker:specialty/orthognathic",
+    "stryker:system/craniomaxillofacial/universal-2-system",
+    "stryker:product/craniomaxillofacial/universal-orthognathic",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jun 29 2017 23:44:29 GMT-0400",
+  "jcr:uuid": "2962accd-2a06-4fb5-9395-119a7d5b9473",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Thu Jun 08 2017 13:39:58 GMT-0400",
+      "compImageRef": "/content/dam/stryker/craniomaxillofacial/systems/Universal-Orthognatahic/images/Thumbnail_Universal Ortho.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "linkUrl": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "jcr:lastModified": "Thu Jun 08 2017 11:00:28 GMT-0400",
+    "linkPath": "",
+    "linkText": "Additional resources",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Simplicity and versatility<br>\r\n</p>\r\n",
+    "shortDescTop": "<p>Drawing on the Leibinger expertise in manufacturing high-quality surgical instruments and plating systems, the Universal Orthognathic module incorporates enhanced technologies to create a comprehensive system. This system accommodates a wide range of surgical techniques used for the management of dentofacial (jaw) deformities with a combination of 1.7 and 2.0/2.3 fixation options in one full size module.<br>\r\n<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModified": "Mon Jul 10 2017 13:57:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>1.7mm section features four “L” plate designs (standard, malleable, graduated stability and locking), pre-bent advancement plates and a selection of locking plates to accommodate all 1.7mm screws including our SMARTLock locking screw.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>2.0/2.3mm provides a variety of mandible osteotomy plates and incorporates SMARTLock locking screws.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Universal Trocar System for transbuccal and intraoral plate and screw application features four cannula options, centric, eccentric and MP drill guides, a variable cheek retractor with light source option, cheek retractor forcep and plate holding forceps designed for simplicity and versatility.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/universalmidface/images/Thumbnail_Universal Ortho.png"
+  }
+}

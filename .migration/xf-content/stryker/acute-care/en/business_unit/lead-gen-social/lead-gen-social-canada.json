@@ -1,0 +1,102 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Lead gen social Canada",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c1ee20e3-7755-4beb-a8d2-208e868b03d4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f233cec0-237f-458d-8ccb-e8069fd70fc4"
+  ],
+  "lastPublished": "Fri Sep 06 2024 20:24:32 GMT+0000",
+  "jcr:created": "Fri Sep 06 2024 20:24:33 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 06 2024 20:24:35 GMT+0000",
+  "cq:lastModified": "Mon Apr 01 2024 15:44:06 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f233cec0-237f-458d-8ccb-e8069fd70fc4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Sep 06 2024 20:24:32 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "dcfaa232-2c76-4925-a4ba-a9ae7d2ad12f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text4216725011870939": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"standalone-link\"><a href=\"/content/stryker/ca/en/acute-care/contact.html\">Contact information</a></span></p>\n<p><a href=\"/content/stryker/ca/en/acute-care/contact.html\"><span class=\"standalone-link\">Customer service</span></a></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/productexperience/\" target=\"_blank\">Product feedback</a></span></p>\n",
+      "jcr:lastModified": "Mon Apr 01 2024 15:44:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1375": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Facebook Icon",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Mon Apr 01 2024 15:42:44 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_13751794558922937715": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.facebook.com/StrykerAcuteCareforNurses/",
+        "alt": "Facebook icon",
+        "srcFileRef": "/content/dam/stryker/acute-care/resources/facebook_logo_100x100.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Mar 15 2024 21:22:52 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage42171": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "LinkedIn icon",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Mon Apr 01 2024 15:43:02 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage421711794576822654227": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "linkExternal": "https://www.linkedin.com/showcase/stryker-acute-care/",
+        "alt": "LinkedIn icon",
+        "srcFileRef": "/content/dam/stryker/ems/images/LinkedIn_100x100.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Fri Mar 15 2024 21:23:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    }
+  }
+}

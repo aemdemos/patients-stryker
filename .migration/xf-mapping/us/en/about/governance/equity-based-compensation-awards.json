@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Equity-Based Compensation Awards",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8d723457-dc25-4801-b801-8b31815cd2d2",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "831733d8-1c70-4c82-8196-9b2219452e4b"
+  ],
+  "contentID": "COMM-GSNPS-WEB-494159",
+  "lastPublished": "Wed Dec 07 2022 17:38:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Dec 07 2022 17:38:04 GMT+0000",
+  "cq:lastReplicated": "Wed Dec 07 2022 17:38:06 GMT+0000",
+  "cq:lastModified": "Tue Dec 06 2022 14:30:47 GMT+0000",
+  "jcr:baseVersion": "831733d8-1c70-4c82-8196-9b2219452e4b",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Mon Dec 05 2022 14:30:51 GMT+0000",
+  "jcr:uuid": "fb4f8081-ce62-45a7-a54c-545cc6ea267d",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "line1Color": "text-black",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "line2Color": "text-gold",
+      "jcr:created": "Fri Aug 18 2017 10:28:29 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Equity-Based Compensation Awards Granting Policy</span></span></span><br>\r\n",
+      "jcr:lastModified": "Thu Mar 15 2018 11:25:40 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "alignment": "text-left"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+      "jcr:created": "Wed Jun 07 2017 12:50:33 GMT-0400",
+      "jcr:lastModified": "Wed Jun 07 2017 12:50:33 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jane.irwin@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue May 23 2017 17:26:07 GMT-0400",
+          "text": "<p><b>Stock Award Granting Policy</b></p>\n<p><b>Background</b></p>\n<p>The Board of Directors (the “Board”) and Compensation and Human Capital Committee of the Board (the “Committee”) of Stryker Corporation (&quot;Stryker&quot;) believe that stock-based awards are an important component of Stryker’s overall compensation programs. It has been the practice to approve annual stock-based awards to Stryker employees and non-employee directors. In accordance with the Committee’s charter, any stock award granted to the Chief Executive Officer of Stryker is subject to approval by the independent directors. In addition to the annual grants, the Committee has delegated to the Chief Executive Officer (provided that the Chief Executive Officer is a director) the authority (subject to certain limitations) to grant awards at other times in situations where Stryker is seeking to attract a new hire or recognize employees for special achievements (referred to herein as “off-cycle grants”), to new employees as a result of the acquisition of another company (referred to herein as “acquisition-related grants”) or in other special circumstances (referred to herein as “other awards”). Non-employee director awards are granted by the Board.</p>\n<p><b>General Statement of Policy</b></p>\n<p>It is the policy of the Board and the Committee that the Company shall not backdate any stock award or manipulate the stock price. To support this policy, the Board and the Committee have adopted the specific practices described below. All grants shall be made in accordance with applicable laws, rules and regulations, the Committee charter or the delegation authority, as applicable, and the applicable stock plan documents.</p>\n<p><b>Grant Categories</b></p>\n<p>The Board and the Committee believe that establishing fixed grant dates in advance, to the extent possible, is important to ensure the integrity of the award granting process. Accordingly, each grant of stock-based awards shall be made on a pre-determined date, as follows:</p>\n<p><u>Annual Grant</u> - The annual grant of stock-based awards to employees shall be made by the Committee (any grant to the Chief Executive Officer, requires approval by the independent directors), and to non-employee directors shall be made by the Board, in each case on the date of the February meeting of the Board of Directors, and such date shall serve as the grant date of such awards. The date of the February Board meeting is established by the Board at its regular July meeting of the prior year. Any change in the annual grant date must be made with prior Board approval.</p>\n<p><u>Off-Cycle Grants</u> - The Committee has delegated its authority to make off-cycle grants to employees (with the exception of grants to officers subject to the provisions of Section 16 of the Securities Exchange Act of 1934 or intended to be qualified under Section 162(m) of the Internal Revenue Code) to the Chief Executive Officer. Off-cycle grants shall be approved in writing by the Chief Executive Officer and shall be deemed to be granted on the first business day of May, August or November that next follows the date the grant is approved by the Chief Executive Officer, and also after the date of employment in the case of off-cycle grants to new hires. Off-cycle grants approved by the Chief Executive Officer shall be reported to the Committee and the Board of Directors in connection with their next regular meeting.</p>\n<p><u>Acquisition-Related Grants</u> - The Committee has delegated its authority to make acquisition-related grants to employees of an acquired company (with the exception of grants to officers subject to the provisions of Section 16 of the Securities Exchange Act of 1934 or intended to be qualified under Section 162(m) of the Internal Revenue Code) to the Chief Executive Officer. Acquisition-related grants shall be approved in writing by the Chief Executive Officer and shall be deemed to be granted on the business day that the grant is approved by the Chief Executive Officer, which will typically be on the closing date of an acquisition or, if later, the date on which the recipient begins employment with the Company. Acquisition-related grants approved by the Chief Executive Officer shall be reported to the Committee and the Board of Directors in connection with their next regular meeting.</p>\n<p><u>Other Awards</u> - With respect to awards other than the annual grant, off-cycle grants or acquisition-related grants, the date the Board or Committee or, if authority has been granted to the Chief Executive Officer, the Chief Executive Officer acts to approve an award or such later specified date as the Board or Committee or the Chief Executive Officer shall designate in the approval shall be used as the grant date of the award for purposes of Stryker’s stock plans. In this regard, the Board may approve the grant of a stock award to a newly elected director at the meeting at which such director is elected and such award shall be deemed granted on that date. Other awards approved by the Chief Executive Officer shall be reported to the Committee and the Board of Directors in connection with their next regular meeting.</p>\n<p><b>Annual Limits for Delegated Authority</b></p>\n<p>The delegated authority to the Chief Executive Officer with respect to off-cycle grants, acquisition-related grants and other awards is subject to an annual calendar year limit per employee and in the aggregate of 20,000 shares and 300,000 shares, respectively. With respect to each such limit, shares issued in connection with awards other than options shall count as two shares when awarded under the 2006 Plan and 2.86 shares when awarded under the 2011 Plan. The Committee may modify the annual individual and annual aggregate award limits with respect to any year or all future years.</p>\n<p><b>Establishing Fair Market Value</b></p>\n<p>The fair market value of Stryker Stock shall mean the closing sales price as reported on the New York Stock Exchange-Composite Transactions for the last market trading day prior to the grant date, except that in non-U.S. locations fair market value may be determined in the manner required to conform with local law and regulations.</p>\n<p><b>Timing of Public Announcements</b></p>\n<p>Stryker shall not purposely accelerate or delay the public release of material information in consideration of a pending stock award in order to allow the grantee to benefit from a more favorable stock price. The Board and the Committee note, however, that a release of information by Stryker in close proximity to a stock award could create the appearance of an effort to time the announcement to a grantee’s benefit, even if no such benefit was intended. Accordingly, Stryker’s Secretary shall be responsible to advise the Board and Committee whenever material non-public information is planned to be released to the public in close proximity to the grant of a stock-based award in order that they may consider whether the grant should be delayed, including advising the Chief Executive Officer in that regard with respect to off-cycle awards, acquisition-related awards or other awards.</p>\n<p><b>Award Terms and Provisions</b></p>\n<p>The Committee (or Board in the case of non-employee director grants) shall establish the term, vesting, award type, restrictions and other provisions of stock awards within the terms of the stock plan documents.</p>\n<p><b>Grant Communication to Recipients</b></p>\n<p>As soon as administratively possible following approval of any stock award, the material terms of the award and related information will be communicated to the recipient.</p>\n<p><b>Publication</b></p>\n<p>This Policy shall be posted on the “Corporate Governance” page of Stryker’s website.</p>\n<p>Approved by the Board of Directors and the Compensation and Human Capital Committee on November 1, 2022.</p>\n",
+          "jcr:lastModified": "Tue Dec 06 2022 14:30:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

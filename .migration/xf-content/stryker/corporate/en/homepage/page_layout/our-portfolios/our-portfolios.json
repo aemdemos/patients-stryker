@@ -1,0 +1,441 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Our portfolios",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fc820fe3-df05-499a-85b0-351f976f0535",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "db3752dd-8a86-43ac-a9b3-776c7fedc3d5"
+  ],
+  "lastPublished": "Fri Jan 30 2026 18:49:29 GMT+0000",
+  "jcr:created": "Fri Jan 30 2026 18:49:29 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 30 2026 18:49:32 GMT+0000",
+  "cq:lastModified": "Fri Jan 30 2026 18:49:26 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "db3752dd-8a86-43ac-a9b3-776c7fedc3d5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:38:18 GMT+0000",
+  "jcr:uuid": "0cb09a15-716c-4b52-9977-908685bd5b80",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 14 2022 20:48:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">Our focus</span></span></span></span></span></span><br>\r\n",
+      "jcr:lastModified": "Fri Apr 28 2023 19:37:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Medical",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
+      "jcr:lastModified": "Fri Dec 02 2022 14:51:22 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+        "alt": "LP15_V4_Banner_V1",
+        "srcFileRef": "/content/dam/userguide/homepage-redesign-comps/garrett/v6/Test_Images_Portfolio_2.png",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:47:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/medical-surgical-equipment.html",
+        "openInNewTab": "true",
+        "enableBorder": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "text_832606624_copy__505390974": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Medical and Surgical</span><br>\n </span><span class=\"urw-egyptienne\">Empowering people for powerful outcomes</span></span></p>\n<p>By putting people at the heart of every innovation, we optimize pathways across the continuum of care — for the excellence of care delivery, the safety and wellbeing of care teams and the outcomes of patients.</p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Wed Dec 13 2023 18:01:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Orthopaedics",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
+      "jcr:lastModified": "Fri Dec 02 2022 14:51:57 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+        "alt": "LP15_V4_Banner_V1",
+        "srcFileRef": "/content/dam/userguide/kris-bocage/homepage-redesign/mako-column-photo-v2.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:47:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/orthopaedics.html",
+        "openInNewTab": "true",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "3",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Orthopaedics and Spine</span><br>\n </span><span class=\"urw-egyptienne\">Leading what's next</span></span></p>\n<p>Our Orthopaedics portfolio is a culmination of powerful solutions that maximize clinical, financial and operational outcomes. From iconic innovations to reliable platforms, from decision-driving data to medical education, we help move procedures and patients forward.&nbsp;</p>\n<p><a href=\"/content/stryker/us/en/portfolios/orthopaedics.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Wed Dec 13 2023 18:01:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    },
+    "text_copy_copy_1112969454": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Neurotechnology",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 20:42:08 GMT+0000",
+      "jcr:lastModified": "Fri Dec 02 2022 14:52:26 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "standaloneimage_copy_1795893157": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+        "alt": "LP15_V4_Banner_V1",
+        "srcFileRef": "/content/dam/userguide/homepage-redesign-comps/garrett/v6/Test_Images_Portfolio_4.png",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:47:54 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/portfolios/neurotechnology-spine.html",
+        "openInNewTab": "true",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "6",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Neurotechnology</span><br>\n </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Better connected</span></span></p>\n<p>By delivering access to meaningful innovation, operational efficiency and the simplification of a single partner, we provide the power of a deeper understanding to help you better serve the needs of your patients and improve clinical and economic outcomes.</p>\n<p><a href=\"/content/stryker/us/en/portfolios/neurotechnology-spine.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Wed Dec 13 2023 19:20:07 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Mar 29 2023 17:06:04 GMT+0000",
+      "jcr:lastModified": "Wed Mar 29 2023 17:06:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "text_832606624_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Medical",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+      "jcr:lastModified": "Wed Mar 29 2023 17:06:13 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+        "alt": "LP15_V4_Banner_V1",
+        "srcFileRef": "/content/dam/userguide/kris-bocage/homepage-redesign/services-ourFocus.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:48:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/services.html",
+        "openInNewTab": "true",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy__647983200": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "8",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Services</span><br>\n </span><span class=\"urw-egyptienne\">Maximizing your investment</span></span></p>\n<p>From flexible financial options to sustainable options for reprocessing single-use devices to world class technicians trained to maintain and support your equipment—we’re here so you can focus on what matters most, your patients.&nbsp;&nbsp;</p>\n<p><a href=\"/content/stryker/us/en/services-and-solutions.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Fri Jan 30 2026 18:49:26 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+      "jcr:lastModified": "Wed Mar 29 2023 17:06:57 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Wed Oct 19 2022 20:38:57 GMT+0000",
+        "alt": "LP15_V4_Banner_V1",
+        "srcFileRef": "/content/dam/stryker/homepage/layout/our-focus/care-settings-v3.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:48:24 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/care-settings.html",
+        "openInNewTab": "true",
+        "enableBorder": "true"
+      },
+      "text_832606624_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Care settings</span><br>\n </span><span class=\"urw-egyptienne\">Supporting you exactly where you need to be</span></span></p>\n<p>Healthcare doesn’t only happen in the hospital. Are you outfitting your ambulatory surgery center (ASC),&nbsp;looking for emergency response devices for an office or caring for a loved one at home? We have solutions to meet your needs right where you are.</p>\n<p><a href=\"/content/stryker/us/en/care-settings.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Wed Aug 28 2024 14:40:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue May 02 2023 17:40:19 GMT+0000",
+      "jcr:lastModified": "Tue May 02 2023 17:40:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage1985600863275207": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "training and education our focus image",
+        "srcFileRef": "/content/dam/userguide/kris-bocage/homepage-redesign/trainingAndEducation-ourFocus.jpg",
+        "borderColor": "rgba(178,180,174,1)",
+        "jcr:lastModified": "Wed Dec 13 2023 19:48:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/training-and-education.html",
+        "enableBorder": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_832606624_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "leftPadding": "8",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "-8",
+        "jcr:created": "Wed Nov 02 2022 14:03:47 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Training and education</span><br>\n </span><span class=\"urw-egyptienne\">Advancing product and procedural knowledge</span></span></p>\n<p>Our partnership goes beyond delivering the latest technology and solutions. We offer a wide range of training and education options to help ensure you’re making the most of your time and investment.</p>\n<p><a href=\"/content/stryker/us/en/training-and-education.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+        "jcr:lastModified": "Wed Dec 13 2023 17:59:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "15"
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

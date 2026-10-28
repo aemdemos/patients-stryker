@@ -1,0 +1,119 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Innovation through integration.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Arthroscopic fluid management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "61c3a1b9-f716-47a9-98ee-210b67082b30",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+  "thumbnailAltText": "crossflow-arthroscopic-fluid-management",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/crossflow/images/CrossFlow-new-Thumb.jpg",
+  "jcr:predecessors": [
+    "a82bb1cd-8d95-4e1d-93db-936ce175f45d"
+  ],
+  "contentID": "Literature Number: 1000902714 Rev A",
+  "lastPublished": "Fri Nov 03 2023 18:45:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 03 2023 18:45:44 GMT+0000",
+  "cq:lastReplicated": "Fri Nov 03 2023 18:45:46 GMT+0000",
+  "cq:lastModified": "Thu Oct 19 2023 17:59:09 GMT+0000",
+  "jcr:description": "Experience true integration with our arthroscopy fluid management systems, versatility for a wide range of procedures with our cannulas and innovation with our patented ParallelPortal system.\r\n<br><br>\r\nStryker's fluid management platform utilizes ReconiSense technology designed to optimize suction rates and maintain consistent visualization throughout arthroscopic cases, offering hospitals fully integrated solutions and a new standard in minimally invasive surgery.",
+  "jcr:baseVersion": "a82bb1cd-8d95-4e1d-93db-936ce175f45d",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Arthroscopic fluid management",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/specialty",
+    "stryker:capability/sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/fluid-management-medsurg",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/fluid-management"
+  ],
+  "jcr:lastModified": "Thu Oct 19 2023 17:59:09 GMT+0000",
+  "jcr:uuid": "bf6cd1d3-3904-4090-8851-4d279c16b27c",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "imageAlt": "Hero-CrossFlow",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Thu Oct 19 2023 17:52:42 GMT+0000",
+    "compImageRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/Hero-CrossFlow_V2.psd",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/crossflow/images/CrossFlow-new-Thumb.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Wed Jun 08 2022 14:39:27 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/product-type"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/crossflow-tubing"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/dri-lok-cannula"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/transport-and-flowport-cannulas"
+      }
+    }
+  }
+}

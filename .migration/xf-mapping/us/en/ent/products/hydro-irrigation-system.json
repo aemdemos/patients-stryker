@@ -1,0 +1,1605 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hydro irrigation system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "84d87d58-4ffd-4c46-b699-69e232189750",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/ent/hydro-irrigation-system/hydro-webpage-thumbnail.jpg",
+  "jcr:predecessors": [
+    "afbd2532-d99e-4937-8263-6522db82aa2f"
+  ],
+  "lastPublished": "Fri Jul 17 2026 13:38:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 17 2026 13:39:00 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 17 2026 13:39:02 GMT+0000",
+  "cq:lastModified": "Fri Jul 17 2026 13:38:52 GMT+0000",
+  "jcr:baseVersion": "afbd2532-d99e-4937-8263-6522db82aa2f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jul 13 2026 12:37:20 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/ent",
+    "stryker:content-type/product",
+    "stryker:business-unit/ent",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content",
+    "stryker:product/ent/hydro-irrigation-system"
+  ],
+  "jcr:lastModified": "Wed Jul 15 2026 15:55:35 GMT+0000",
+  "jcr:uuid": "2e48b986-2d42-418b-ae1d-ef3d70f87848",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_946126289": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Wed Apr 29 2026 14:46:32 GMT+0000",
+      "jcr:lastModified": "Wed Apr 29 2026 14:52:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Mon May 04 2026 14:42:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": " ",
+          "jcr:lastModified": "Mon May 04 2026 14:43:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_2_3_1_3_1039508783": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Mon May 04 2026 14:40:10 GMT+0000",
+      "jcr:lastModified": "Mon May 04 2026 14:40:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "topMargin": "0",
+          "jcr:created": "Wed Apr 29 2026 14:48:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">Hydro irrigation system</span></span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Stryker’s sinuscope cleaning solution</span></span>",
+          "jcr:lastModified": "Mon Jun 29 2026 18:17:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-right",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Fri Jul 17 2026 13:38:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(255,181,0)",
+              "externalLink": "https://www.stryker.com/us/en/ent/products/hydro-irrigation-system.html#contact-form",
+              "internalLink": "/content/stryker/us/en/ent/ent",
+              "buttonText": "Contact",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "standaloneimage_335912954": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Thu Apr 30 2026 18:18:07 GMT+0000",
+      "alt": "stryker-hydro-intro",
+      "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-intro.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Apr 30 2026 18:18:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Wed Apr 29 2026 15:27:55 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:52:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "topMargin": "0",
+          "jcr:created": "Wed Apr 29 2026 15:28:11 GMT+0000",
+          "gradientDirection": "top-to-bottom",
+          "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">Hydro irrigation system is your partner in ENT and neuro procedures. It simplifies sinuscope cleaning, restoring clarity with just a tap. It is designed to reduce delays from start to finish.<sup>1</sup> It’s visualization, enhanced.</span></span>",
+          "jcr:lastModified": "Tue Jun 30 2026 16:16:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "10",
+          "backgroundColor": "rgb(255,181,0)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 30 2026 17:20:59 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:21:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "largeheadline_258840019": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 18:19:02 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Thu Apr 30 2026 18:19:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_634394141": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "introducing-hydro",
+      "jcr:created": "Thu Apr 30 2026 17:21:38 GMT+0000",
+      "title": "Introducing Hydro irrigation system",
+      "jcr:lastModified": "Wed May 06 2026 18:34:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 16:42:06 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 16:44:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:42:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Confidence begins with a clear view</span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-3vw\"> </span></span></p>\r\n",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">In the OR, every second of clarity counts. Inefficiencies like complex setups, unresponsive systems or repeated steps can impact visualization and slow momentum. That’s why Hydro irrigation system was created — to remove the obstacles between you and a clear view. With simple setup, intuitive interface and responsive visualization that restores clarity in seconds, Hydro irrigation system helps you focus where it matters most.<sup>1</sup></span></span>",
+          "jcr:lastModified": "Tue Jun 30 2026 16:16:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_1243343126": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:42:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">See the crystal-clear difference.</span></span></span>",
+          "jcr:lastModified": "Wed May 06 2026 18:36:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 16:43:11 GMT+0000",
+          "alt": "stryker-hydro-with-without",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-withwithout.jpg",
+          "borderColor": "rgb(255,255,255)",
+          "jcr:lastModified": "Mon May 11 2026 17:06:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "largeheadline_258840": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 18:19:02 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Thu Apr 30 2026 18:19:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 16:45:36 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgb(178,180,174)",
+      "jcr:lastModified": "Thu Apr 30 2026 19:06:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ent/hydro-irrigation-system/stryker_hydro_video_2026_ (1080p).mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/stryker_hydro_video_2026_ (1080p)-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Jun 30 2026 16:11:05 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "largeheadline_14839735": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 17:48:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Thu Apr 30 2026 19:19:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_698114904": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features-and-benefits",
+      "jcr:created": "Thu Apr 30 2026 17:22:23 GMT+0000",
+      "title": "Features and Benefits",
+      "jcr:lastModified": "Thu Apr 30 2026 17:22:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:14:34 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 19:14:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 16:50:08 GMT+0000",
+          "alt": "stryker-hydro-irrigation-bubble",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-irrigation-bubble-edit.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 30 2026 16:07:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:49:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Rapid response</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">Reduce delays while maintaining visualization</span></span>",
+          "jcr:lastModified": "Thu Apr 30 2026 19:16:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">A simple tap of the foot pedal initiates cleaning, with an average lens-to-retraction irrigation time of less than 3.0 seconds.<sup>1</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 30 2026 16:16:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed May 06 2026 18:52:06 GMT+0000",
+      "alt": "line",
+      "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/line.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 06 2026 18:52:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols2_2_3_1_3_302917776": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:16:52 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 19:16:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:49:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">RISE integration</span></span></span>",
+          "line2": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">Elevate your experience</span></span>",
+          "jcr:lastModified": "Thu Apr 30 2026 19:36:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Pairing Hydro irrigation system with RISE provides a customized and connected surgical experience with practical upgrades, like voice activation and vivid images with the 1788 platform.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed May 06 2026 18:38:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Wed May 06 2026 18:38:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Apr 30 2026 16:55:38 GMT+0000",
+          "alt": "stryker-hydro-rise-cart",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-rise-cart-line.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 19:21:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "standaloneimage_1990": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed May 06 2026 18:52:53 GMT+0000",
+      "alt": "line",
+      "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/line.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 06 2026 18:53:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:17:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Thu Apr 30 2026 19:18:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1197042936": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 17:00:33 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:00:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:49:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">When space is tight</span></span></span>",
+          "line2": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">We’ve got you covered</span></span>",
+          "jcr:lastModified": "Mon Jun 29 2026 18:26:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Stryker’s 3.1 mm and 4.0 mm Precision 4K Sinuscopes are available with multiple viewing angles and working lengths to accommodate a variety of situations. Our state-of-the-art reusable Precision S HydroFlow Sheaths adds less than 1 mm to the scope diameter, preserving working space.<sup>3</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 30 2026 16:17:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:49:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Enhanced visualization</span></span></span>",
+          "line2": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">A difference you can see</span></span>",
+          "jcr:lastModified": "Thu Apr 30 2026 17:41:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Hydro irrigation system’s cleaning performance is effective, often just a single cycle is required to restore image clarity.<sup>1</sup> An electropolished distal tip helps reduce water beading and light reflection for clearer views.<sup>3</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 30 2026 16:18:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_1114394005": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:18:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Thu Apr 30 2026 19:18:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standaloneimage_1612302844": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Thu Apr 30 2026 18:32:57 GMT+0000",
+      "alt": "stryker-hydro-system-wider",
+      "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-system-wide-labels.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 11 2026 17:07:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 17:11:14 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:11:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_1263883263": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Mon May 11 2026 17:08:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">1</span></span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:09:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:11:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Universal compatibility</span></span></span>",
+          "line2": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Pick your preference</span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:08:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">A universal luer lock lets you work with compatible, existing OR systems.* That means you can choose from a broad selection of scopes of various makes and models and be assured of a proper fit.</span></p>\n<p><span class=\"fontsize-1-25em\">*Refer to IFU for scope compatibility</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 29 2026 18:49:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_126388": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Mon May 11 2026 17:08:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">2</span></span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:10:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:11:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Streamlined workflow</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">A friendly addition to your OR</span></span>",
+          "jcr:lastModified": "Mon Jun 29 2026 18:28:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">The irrigation cassette’s one-click connection makes setup effortless.<sup>1</sup> Designed with a minimal footprint, the Hydro irrigation console adapts seamlessly to your OR. Flexible mounting options—on a pole, cart, or boom—give you the freedom to set up your space the way that works best for you.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 30 2026 16:18:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_126388": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Mon May 11 2026 17:08:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">3</span></span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:10:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:11:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Simplified user experience<sup>1</sup></span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Designed for ease of use</span></span>",
+          "jcr:lastModified": "Tue Jun 30 2026 16:18:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">An intuitive interface allows you to quickly navigate the system’s functions and master its capabilities.</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 29 2026 18:30:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_126388": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Mon May 11 2026 17:08:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">4</span></span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:10:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:11:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Cost effective and sustainable</span></span></span>",
+          "line2": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Save money and the planet with each use</span></span>",
+          "jcr:lastModified": "Mon May 11 2026 17:09:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Components like our Precision S HydroFlow Sheath are reusable, which makes them more economical and environmentally friendly than disposable products.<sup>2</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 30 2026 16:19:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_1581558046": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:18:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "&nbsp;",
+      "jcr:lastModified": "Thu Apr 30 2026 19:18:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_402933_119621485": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "resources-and-downloads",
+      "jcr:created": "Thu Apr 30 2026 17:23:20 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Apr 30 2026 17:23:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4_806246427_copy_2037342734": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 17:24:05 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:24:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:24:18 GMT+0000",
+          "alt": "stryker-hydro-hydrobrochure-thumbnail",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-hydrobrochure-2026-thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed May 06 2026 18:47:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:24:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Hydro irrigation system brochure</span></span>",
+          "jcr:lastModified": "Mon Jun 29 2026 18:33:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Wed Jul 01 2026 13:14:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/ent.html",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "damLink": "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-BROC-2654122-EN_US.pdf",
+              "externalLinkType": "dam"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:24:18 GMT+0000",
+          "alt": "stryker-hydro-entcatalog-thumbnail",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-entcatalog-thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 17:25:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:24:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">ENT Product Catalog</span></span>",
+          "jcr:lastModified": "Mon May 04 2026 15:28:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Mon Jun 29 2026 18:33:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/content/dam/stryker/ent/products/cliq-suction/resources/ENT%20product%20catalog.pdf",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:24:18 GMT+0000",
+          "alt": "stryker-hydro-procare-thumbnail",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-procare-thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 17:25:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:24:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">ProCare</span></span>",
+          "jcr:lastModified": "Mon May 04 2026 15:29:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Mon Jun 29 2026 18:33:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/us/en/services-and-solutions/procare.html",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:24:18 GMT+0000",
+          "alt": "stryker-hydro-flexfinancial-thumbnail",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-flexfinancial-thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 17:25:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:24:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Flex Financial</span></span>",
+          "jcr:lastModified": "Mon May 04 2026 15:29:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Mon Jun 29 2026 18:34:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/us/en/services-and-solutions/flex-financial.html",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "largeheadline_198211": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Fri May 01 2026 16:20:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Fri May 01 2026 16:20:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "product-specifications",
+      "jcr:created": "Thu Apr 30 2026 17:13:59 GMT+0000",
+      "title": "Product specifications",
+      "jcr:lastModified": "Thu Apr 30 2026 17:14:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Description</b></td>\n<td><b>Part number</b></td>\n</tr><tr><td>Hydro irrigation system console</td>\n<td>5027-500-000</td>\n</tr><tr><td>Hydro irrigation system foot pedal</td>\n<td>5027-500-100</td>\n</tr><tr><td>Hydro irrigation system pole mount</td>\n<td>5027-500-200</td>\n</tr><tr><td>Hydro irrigation system irrigation cassettes (qty 10)</td>\n<td>5027-500-400</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Fri May 01 2026 16:17:12 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 18:33:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "mobileDesign": "true",
+      "textIsRich": "true"
+    },
+    "largeheadline_1303984718": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:18:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "&nbsp;",
+      "jcr:lastModified": "Thu Apr 30 2026 19:18:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_1313622186": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "related-products",
+      "jcr:created": "Thu Apr 30 2026 17:27:43 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Thu Apr 30 2026 17:28:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_10200260": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 17:28:05 GMT+0000",
+      "jcr:lastModified": "Thu Apr 30 2026 17:28:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:28:14 GMT+0000",
+          "alt": "stryker-hydro-relatedproducts-rise",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-relatedproducts-rise.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 17:29:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:28:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\">RISE</span></span>",
+          "jcr:lastModified": "Thu Apr 30 2026 17:37:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Designed with ENT and neurosurgery in mind, RISE integrates existing Stryker solutions to create a connected surgical experience tailored just for you. Our advanced platform prioritizes visualization, control and integration with features like custom surgeon profiles, voice activation, a consolidated foot pedal and the 1788 camera.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Apr 30 2026 17:36:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Mon May 04 2026 15:10:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/ent.html",
+              "internalLink": "/content/stryker/us/en/portfolios/medical-surgical-equipment/integration-and-connectivity/or-integration/rise",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 30 2026 17:28:14 GMT+0000",
+          "alt": "stryker-hydro-relatedproducts-pello",
+          "srcFileRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-relatedproducts-pello.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Apr 30 2026 17:29:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 17:28:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\">Pello microdebrider</span></span>",
+          "jcr:lastModified": "Thu Apr 30 2026 17:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "0"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Powered by Stryker’s CORE 2 console, the Pello microdebrider’s proprietary blades help reduce clogging and transform your surgical experience. With its balanced ergonomic design and the quality of Stryker, Pello provides reliable and efficient cutting in ENT procedures.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Apr 30 2026 17:37:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Thu Apr 30 2026 16:56:52 GMT+0000",
+          "jcr:lastModified": "Mon May 04 2026 15:11:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "externalLink": "https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/ent.html",
+              "internalLink": "/content/stryker/us/en/ent/products/pello-microdebrider",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "largeheadline_426282293": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:19:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Tue Jul 07 2026 14:29:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_841364928": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "learn-more",
+      "jcr:created": "Thu Apr 30 2026 17:30:08 GMT+0000",
+      "title": "Learn more",
+      "jcr:lastModified": "Thu Apr 30 2026 17:30:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "altMob": "stryker-hydro-learnmore-mobile",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "backgroundImageMobRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-learnmore-mobile.png",
+      "textColor": "rgb(0,0,0)",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-learnmore-bg.jpg",
+      "jcr:created": "Fri May 01 2026 16:26:18 GMT+0000",
+      "alt": "stryker-hydro-learnmore-bg",
+      "jcr:lastModified": "Mon May 04 2026 14:33:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "zach.deyoung@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+          "jcr:created": "Fri May 01 2026 16:26:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\">Discover Hydro irrigation system with an in-person visit. <span style=\"color: rgb(255,181,0);\">Contact your rep to get hands-on.</span></span></span></span>",
+          "jcr:lastModified": "Mon Jun 29 2026 18:41:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "section_title_681662702": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-form",
+      "jcr:created": "Wed Jul 01 2026 13:04:27 GMT+0000",
+      "jcr:lastModified": "Wed Jul 01 2026 13:04:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_29230039": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andrew.reynolds@stryker.com",
+      "leftPadding": "69",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jul 07 2026 14:24:47 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Follow Us On:</span></span></span></p>\n",
+      "jcr:lastModified": "Tue Jul 07 2026 14:27:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_1245588258": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Wed Jul 01 2026 12:50:05 GMT+0000",
+      "jcr:lastModified": "Wed Jul 01 2026 12:50:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "andrew.reynolds@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2918",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Wed Jul 01 2026 12:39:36 GMT+0000",
+          "useProduction": "true",
+          "message": "Thanks!",
+          "jcr:lastModified": "Wed Jul 01 2026 12:44:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "andrew.reynolds@stryker.com",
+          "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+          "jcr:created": "Tue Jul 07 2026 14:22:36 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Tue Jul 07 2026 14:25:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/ent/en/homepage/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/ent/en/homepage/social-icons/master"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "andrew.reynolds@stryker.com",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "jcr:created": "Tue Jul 07 2026 14:29:11 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "&nbsp;",
+      "jcr:lastModified": "Tue Jul 07 2026 14:29:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_151321": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "risk-and-safety-information",
+      "jcr:created": "Thu Apr 30 2026 17:33:45 GMT+0000",
+      "title": "Risk and safety information",
+      "jcr:lastModified": "Mon Jun 29 2026 18:36:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">See the instructions for use for full indications, risk and safety information.</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Mon Jun 29 2026 18:37:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true"
+    },
+    "buttonset": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 18:37:24 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 18:38:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "externalLink": "https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=07613327631388",
+          "buttonText": "INSTRUCTIONS FOR USE",
+          "externalLinkType": "ext"
+        }
+      }
+    },
+    "largeheadline_123850": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:19:18 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Mon Jun 29 2026 18:50:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_1513216816": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "disclaimer",
+      "jcr:created": "Thu Apr 30 2026 17:33:45 GMT+0000",
+      "title": "Disclaimer",
+      "jcr:lastModified": "Mon Jun 29 2026 18:35:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>This information is intended solely for the use of healthcare professionals. A healthcare professional must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using the product. The information presented is intended to demonstrate the breadth of Stryker product offerings. A healthcare professional must always refer to the package insert, product label and/or instructions for use. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker Representative if you have questions about the availability of Stryker products in your area.Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service mark: Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\n<p>ENT-GSNPS-SYK-3379300_REV-0</p>\n<p>Copyright ©2026 Stryker</p>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 16:08:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true"
+    },
+    "largeheadline_123850_1786129922": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "jcr:created": "Thu Apr 30 2026 19:19:18 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": " ",
+      "jcr:lastModified": "Mon Jun 29 2026 18:50:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "section_title_151321_1262224870": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "deepLinkingId": "references",
+      "jcr:created": "Thu Apr 30 2026 17:33:45 GMT+0000",
+      "title": "References",
+      "jcr:lastModified": "Mon Jun 29 2026 18:42:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_29289652": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "zach.deyoung@stryker.com",
+      "jcr:lastModifiedBy": "zach.deyoung@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Apr 30 2026 17:34:45 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>1. D0000246203<br>\n2. 1000904493<br>\n3. 1000904469</p>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 16:20:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ent/hydro-irrigation-system/stryker-hydro-system-wide-labels.jpg"
+  }
+}

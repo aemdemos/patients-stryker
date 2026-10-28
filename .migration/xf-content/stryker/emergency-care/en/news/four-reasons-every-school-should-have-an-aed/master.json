@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Four reasons every school should have an AED",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3e16460e-f424-49f1-8fbc-f861683a693d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "639b3152-57c3-48a9-b3a5-77d03fd8a26d"
+  ],
+  "jcr:created": "Mon Jun 12 2023 19:25:04 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 12 2023 19:25:06 GMT+0000",
+  "cq:lastModified": "Sat Jun 03 2023 13:37:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "639b3152-57c3-48a9-b3a5-77d03fd8a26d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "bca53f73-9f49-41be-84d3-f96f8f23482f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jun 02 2023 15:10:49 GMT+0000",
+      "alt": "Why every school needs AEDs",
+      "srcFileRef": "/content/dam/stryker/ems/news/images/AEDs schools article 1232x515.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Sat Jun 03 2023 13:37:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

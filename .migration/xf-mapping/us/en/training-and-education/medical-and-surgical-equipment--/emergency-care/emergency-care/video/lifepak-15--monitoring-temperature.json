@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 15: Monitoring temperature",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4962900b-d765-4505-9b4f-10f58809dd6e",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3749c5da-a3f0-4acc-94c5-ca94ec28fb1e"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:37:47 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:37:47 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:37:49 GMT+0000",
+  "cq:lastModified": "Thu Sep 08 2022 18:45:39 GMT+0000",
+  "jcr:baseVersion": "3749c5da-a3f0-4acc-94c5-ca94ec28fb1e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "d98a6760-a4aa-468e-9688-6f883ba8a059",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:49:41 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Monitoring temperature training for LIFEPAK 15",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 18:44:11 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Sep 08 2022 18:44:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-15-monitoring-temperature.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-15-monitoring-temperature-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 08 2022 18:45:39 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

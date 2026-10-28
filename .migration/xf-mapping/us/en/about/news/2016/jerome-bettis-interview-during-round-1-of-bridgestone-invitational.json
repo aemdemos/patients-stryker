@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Jerome Bettis interview during Round 1 of Bridgestone Invitational",
+  "jcr:versionHistory": "10e67cb2-be26-4c0b-84c4-6ec680d98683",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "bed3762b-37f9-42c1-98ca-a61a59ccefd0"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:24:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:24:47 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 16:24:43 GMT-0500",
+  "jcr:baseVersion": "bed3762b-37f9-42c1-98ca-a61a59ccefd0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 16:24:43 GMT-0500",
+  "jcr:uuid": "c57a5046-d54a-4bc6-9f0c-820e5801cd9b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Fri Jul 01 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Jul-2016",
+    "jcr:lastModified": "Wed May 31 2017 22:18:58 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>During the 2016 World Golf Championships - Bridgestone Invitational, 2015 Pro Football Hall of Fame Inductee Jerome &quot;The Bus&quot; Bettis talks about his involvement with Stryker Orthopedics regarding joint pain education.<br>\n</p>\n<p><b>Watch the full video:</b></p>\n<p><a href=\"http://www.pgatour.com/video/2016/06/30/jerome-bettis-interview-during-round-1-of-bridgestone-invitation.html\" target=\"_blank\">PGATour.com</a></p>\n",
+    "jcr:lastModified": "Wed May 31 2017 22:20:02 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

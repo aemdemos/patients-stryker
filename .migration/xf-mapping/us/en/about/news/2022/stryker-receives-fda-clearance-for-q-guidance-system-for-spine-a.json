@@ -1,0 +1,106 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Receives FDA Clearance for Q Guidance System for Spine Applications",
+  "jcr:versionHistory": "66ee81f9-fe36-4dd3-9c9d-4f8493929ec9",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "2facc7e0-7086-4b4c-b66e-6644e4b094c5"
+  ],
+  "contentID": "QGS-PR-1_33501",
+  "lastPublished": "Wed Jun 01 2022 23:22:49 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 01 2022 23:22:49 GMT+0000",
+  "cq:lastModified": "Wed Jun 01 2022 23:21:10 GMT+0000",
+  "jcr:baseVersion": "2facc7e0-7086-4b4c-b66e-6644e4b094c5",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Wed Jun 01 2022 23:21:10 GMT+0000",
+  "jcr:uuid": "1c8e1b50-cb92-47e5-8c2e-3fc821eabaf3",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 20:47:55 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 20:47:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Mar 22 2022 14:18:13 GMT+0000",
+          "text": "<p><i><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Innovative planning and intraoperative platform designed to be a procedural ecosystem for surgeons and their patients during image-guided surgery</span></span></i><br>\n<br>\n<b>Kalamazoo, Mich.&nbsp;</b>— Stryker today announced that its Q Guidance System received 510(k) clearance from the U.S. Food and Drug Administration. The System, when used with the Spine Guidance Software, is an advanced planning and intraoperative guidance system designed to enable open or percutaneous computer-assisted surgery. The Spine Guidance Software is the first spine navigation software to receive clearance from the FDA for use with pediatric patients aged 13 and older.</p>\n<p>Stryker’s Q Guidance System aims to deliver surgical spine planning and navigation capability through multiple tracking options, sophisticated software algorithms and smart instrumentation. It features a high-performance navigation camera built on the company’s 20 years of experience developing guidance technologies. Q Guidance features completely redesigned software applications, semi-automatic and automatic segmentation features, gesture recognition, and broad compatibility with various types of image sets. When used with Airo TruCT mobile CT scanner, this ecosystem delivers automatic image registration and pairs high performance tracking capabilities with cutting edge intraoperative image quality and scan volume.</p>\n<p>“The versatility of the Q Guidance System will help to streamline our technologies across multiple specialties such as cranial, spine, ENT and orthopaedics,” said Robbie Robinson, President of the Spine division. “The System is designed for future compatibility with a fully integrated ecosystem, driving more value for our customers. With a robust product pipeline in place, we are positioned to provide a well-rounded, end-to-end platform for our surgeon customers, with the ability to incorporate robotics and intelligent handheld instruments in the future.”</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 01 2022 20:57:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Jun 01 2022 20:48:05 GMT+0000",
+          "jcr:lastModified": "Wed Jun 01 2022 20:48:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Mar 22 2022 14:18:13 GMT+0000",
+          "text": "<p><b>About Stryker</b><br>\n</p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.<br>\n<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 01 2022 20:55:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Feb 21 2022 14:41:43 GMT+0000",
+          "jcr:lastModified": "Mon Feb 21 2022 14:41:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Mar 22 2022 14:18:13 GMT+0000",
+          "text": "<p><b>Media contact</b><br>\n</p>\n<p>Andrea Sampson, Sampson Public Relations Group<br>\n562.304.0301<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n<p><br>\n<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 01 2022 20:55:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Wed Jun 01 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Jun-2022",
+    "jcr:lastModified": "Wed Jun 01 2022 23:15:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker_logo2015_web.jpg"
+  }
+}

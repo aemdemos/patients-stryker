@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b6cda348-19c0-4399-8e46-4e6487beeb15",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "1289b633-c8c8-48d0-90b8-2c2a4a794e93"
+  ],
+  "lastPublished": "Thu May 08 2025 16:58:30 GMT+0000",
+  "jcr:created": "Thu May 08 2025 16:58:30 GMT+0000",
+  "cq:lastReplicated": "Thu May 08 2025 16:58:33 GMT+0000",
+  "cq:lastModified": "Thu May 08 2025 16:58:28 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1289b633-c8c8-48d0-90b8-2c2a4a794e93",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:12:08 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1275101b-0df4-46e1-bbea-602e9790b852",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Lithium-Ion Battery System",
+      "srcFileRef": "/content/dam/stryker/ems/products/lithium-ion/images/lithium-ion_battery.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 08 2025 16:58:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

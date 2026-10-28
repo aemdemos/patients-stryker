@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Orthopaedic Instruments Newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "851c33f9-4c97-4698-bb53-4470165455bb",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "jcr:predecessors": [
+    "506877ef-951a-4dc1-883a-7a4b2b1f2399"
+  ],
+  "contentID": "OI-GSNPS-SYK-1849400_REV-0  ",
+  "lastPublished": "Tue Apr 29 2025 12:56:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 29 2025 12:56:19 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 29 2025 12:56:21 GMT+0000",
+  "cq:lastModified": "Tue Apr 29 2025 12:55:18 GMT+0000",
+  "jcr:description": "The Orthopaedic Instruments Newsroom is your source for industry news, clinical information, product and business updates, inspiring stories and more.\r\n\r\n\r\n",
+  "jcr:baseVersion": "506877ef-951a-4dc1-883a-7a4b2b1f2399",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 29 2025 12:56:18 GMT+0000",
+  "cq:tags": [
+    "stryker:custom/orthopaedic_instruments/news"
+  ],
+  "jcr:lastModified": "Tue Apr 29 2025 12:55:18 GMT+0000",
+  "jcr:uuid": "937baeca-f146-4767-a1f6-1c610b732287",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "searchPath": "/content/stryker/us/en/orthopaedic-instruments/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Wed Apr 09 2025 20:10:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 20,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:custom/orthopaedic_instruments/news"
+    ]
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "imageAlt": "Orthopaedic Instruments newsroom",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Apr 08 2025 13:43:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "text": "<p><b><span class=\"fontsize-1-75em\"><span class=\"fontsize-8em\"><span class=\"futura-bold\">Be in the know</span></span></span></b></p>\n<p>Engage with us on LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data, and more.</p>\n<p><a href=\"https://www.instagram.com/stryker.orthopaedicinstruments/\">Instagram</a></p>\n<p><a href=\"https://www.linkedin.com/showcase/18960150/admin/dashboard/\">LinkedIn</a></p>\n",
+    "jcr:lastModified": "Tue Apr 08 2025 15:53:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "textIsRich": "true"
+  }
+}

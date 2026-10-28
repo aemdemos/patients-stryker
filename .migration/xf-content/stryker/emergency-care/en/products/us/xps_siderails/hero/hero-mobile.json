@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "04dd230d-48f8-44d9-85c6-908843ed1617",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "e8a9f4ec-bb9a-4c67-8432-d8a90ab5a420"
+  ],
+  "jcr:created": "Tue Jan 02 2024 14:11:09 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 02 2024 14:11:11 GMT+0000",
+  "cq:lastModified": "Tue Jan 02 2024 14:11:05 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "e8a9f4ec-bb9a-4c67-8432-d8a90ab5a420",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "94df69a8-ca01-4e8f-a20d-beda096a89ef",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage14367": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Stryker's XPS ambulance cot siderails ",
+      "srcFileRef": "/content/dam/stryker/ems/products/xps-siderails/images/Thumbnail_XPS_16x9.jpg",
+      "jcr:lastModified": "Tue Jan 02 2024 14:11:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SEM",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3c7cd51a-0496-4360-bf28-c3334e402528",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0e419548-d5d1-4992-98c4-5852928563b7"
+  ],
+  "lastPublished": "Thu Oct 01 2026 16:36:01 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 16:36:06 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 16:36:09 GMT+0000",
+  "cq:lastModified": "Tue Aug 25 2026 20:50:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0e419548-d5d1-4992-98c4-5852928563b7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:36:01 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "978419b5-72aa-4c82-b085-cbb90bf99628",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage37771_1176101767": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModified": "Wed Dec 01 2021 22:40:31 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage37771_11761017673777441468879062": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Services_purple",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/Services_purple.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Aug 25 2026 20:39:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "2",
+        "gradientDirection": "left-to-right",
+        "text": "<h4><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #85458a;\"><span style=\"color: #000000;\">Manage your fleet</span></span></span></span></span></span></span></h4>\n",
+        "jcr:lastModified": "Tue Aug 25 2026 20:50:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

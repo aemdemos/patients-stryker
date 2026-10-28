@@ -1,0 +1,168 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "subtitle": "Manual instrumentation",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Rev360 Semi-Flexible Instrumentation",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6f7a6f2f-abc8-479b-be41-75ac758b5a80",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/endoscopy/products/rev360semi-flexibleinstrumentation/images/Rev360-SemiFlexible-Thumb.jpg",
+  "jcr:predecessors": [
+    "3d76bb75-6225-4f48-8bcd-97ec1820b377"
+  ],
+  "contentID": "Literature Number: 1000902489, Rev. A",
+  "lastPublished": "Wed Jul 01 2026 14:51:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 01 2026 14:51:50 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 01 2026 14:51:52 GMT+0000",
+  "cq:lastModified": "Wed Jul 01 2026 14:51:47 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Flexible, stainless steel gynecology instruments offered in a variety of options to meet individual surgeon preference. Intended to be used with rigid Rev360 gynecologic endoscope and hardware to cut and grab tissue.",
+  "jcr:baseVersion": "3d76bb75-6225-4f48-8bcd-97ec1820b377",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:51:50 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:product/endoscopy/rev-360-semi-flexible-instrumentation",
+    "stryker:content-type/product",
+    "stryker:business-unit/endoscopy",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 31 2017 14:21:24 GMT-0400",
+  "jcr:uuid": "94839fea-7a7b-4e2b-8c56-a253a5b75658",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jun 30 2017 17:34:41 GMT-0400",
+      "compImageRef": "/content/dam/stryker/endoscopy/products/rev360semi-flexibleinstrumentation/images/Hero-SemiFlexible.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 01 2026 14:51:46 GMT+0000",
+      "jcr:lastModified": "Wed Jul 01 2026 14:51:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
+              "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/contact/master"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "4047",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/rev360semi-flexibleinstrumentation/images/Rev360-SemiFlexible-Thumb.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 01 2026 14:51:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 01 2026 14:51:41 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

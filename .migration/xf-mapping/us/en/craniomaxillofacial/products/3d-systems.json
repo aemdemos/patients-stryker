@@ -1,0 +1,387 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "3D Systems",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "01dc477e-0e1b-4c7e-af8e-e02a9e5f9343",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "3DS-logo-thumbnail",
+  "jcr:predecessors": [
+    "600cb864-e7df-4ee6-b072-2f4237138460"
+  ],
+  "contentID": "CMF-GSNPS-SYK-1947850_REV-0",
+  "lastPublished": "Mon Sep 15 2025 15:48:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 15 2025 15:48:33 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 15 2025 15:48:35 GMT+0000",
+  "cq:lastModified": "Mon Sep 15 2025 15:48:21 GMT+0000",
+  "jcr:baseVersion": "600cb864-e7df-4ee6-b072-2f4237138460",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Sep 15 2025 15:46:20 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:capability/cmf-implants",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:portfolio/neurotechnology",
+    "stryker:content-type/procedure",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic",
+    "stryker:specialty/aesthetics",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/closure",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cranial"
+  ],
+  "jcr:lastModified": "Mon Jul 07 2025 18:11:24 GMT+0000",
+  "jcr:uuid": "aeabd3e0-402d-457a-8189-76ae4396399c",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_211193": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "jcr:lastModified": "Tue Feb 25 2025 21:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
+          "alt": "Stryker & 3D systems logos",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/3d-systems/images/1599188082_Stryker.3DS-logo.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 06 2025 21:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Mar 06 2025 21:52:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><b>Advancing personalized surgery</b>, </span></span><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">together</span></span></span></p>\n<p><span style=\"color: #b2b4ae;\"><span class=\"futura-bold\"><b><span class=\"fontsize-1-25em\">Proud to provide you with 3D Systems' medical models and VSP<sup>®</sup> solutions</span></b></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 06 2025 21:58:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1971668492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span style=\"color: #ffb500;\"><b><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Overview</span></span></b></span></h2>\n<p>The combination of VSP<sup>®</sup> and patient-specific plates for the craniomaxillofacial specialty can allow for accurate placement of bony segments and lead to significant time savings in the OR compared to traditional surgery.<sup>1,2</sup> Read more about our partnership here.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 15 2025 15:41:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
+          "CTATitle": "Request information",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Tue Feb 11 2025 20:24:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Mar 06 2025 20:07:49 GMT+0000",
+      "jcr:lastModified": "Thu Mar 06 2025 20:07:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "VSP Orthognathics",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Mar 06 2025 20:04:34 GMT+0000",
+          "CTATitle": "VIEW PRODUCT",
+          "CTAImageAltText": "Model skull with splints",
+          "jcr:lastModified": "Wed Apr 30 2025 15:11:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)",
+          "CTAImageFileReference": "/content/dam/stryker/craniomaxillofacial/products/3d-systems/images/1596738539_VSP03_Anatomical-Models-2.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/craniomaxillofacial/products/vsp-orthognathic"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "VSP Reconstruction",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Mar 06 2025 20:04:34 GMT+0000",
+          "CTATitle": "View Product",
+          "CTAImageAltText": "Instruments used for reconstructive surgery",
+          "jcr:lastModified": "Wed Apr 30 2025 15:13:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)",
+          "CTAImageFileReference": "/content/dam/stryker/craniomaxillofacial/products/3d-systems/images/1504632866_Thumbnail_VSP-Recon.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/craniomaxillofacial/products/vsp-reconstruction"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "VSP Cranial",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Mar 06 2025 20:04:34 GMT+0000",
+          "CTATitle": "View Product",
+          "CTAImageAltText": "3D model skull",
+          "jcr:lastModified": "Wed Apr 30 2025 15:14:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)",
+          "CTAImageFileReference": "/content/dam/stryker/craniomaxillofacial/products/3d-systems/images/1527190874_Preop-Resected.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/craniomaxillofacial/products/vsp-cranial"
+        }
+      }
+    },
+    "sectionseparator_780825716": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Mar 06 2025 21:44:26 GMT+0000",
+      "jcr:lastModified": "Thu Mar 06 2025 21:44:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_995385999_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:16 GMT+0000",
+      "text": "<h2><b><span class=\"futura-bold\">Resources</span></b></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_736080451": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1596737850_OT-FL-18_Rev.None_24775--VSP-Scanning--New-model.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1597148959_CMF-FL-60_Rev.-None_14137-VSP-Recon-flyer.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1493049332_CMF-FL-58_Rev.-None_13854_VSP-Cranial-flyer-FINAL.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1543957191_CMF-SS-2_Rev.-1_17456-VSP-Ortho-order-form.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1543957161_CMF-SS-1_Rev.-1_17455-VSP-Recon-order-form.pdf",
+        "/content/dam/stryker/craniomaxillofacial/products/3d-systems/resources/1493654168_CMF-SS-3_Rev.-None_14140-VSP-demo-web-meeting-form.pdf"
+      ],
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Thu Mar 06 2025 20:02:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_2090444076_copy_984268808": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:55:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:28:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "featuredcontent_copy_606002207": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Tue Sep 02 2025 21:51:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/anatomical-models"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/facial-id"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/universal-select"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/vsp-guides"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Sep 15 2025 15:48:12 GMT+0000",
+      "title": "Request information",
+      "jcr:lastModified": "Mon Sep 15 2025 15:48:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1663437304_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 22:27:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3226",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Thu Feb 06 2025 18:37:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 25 2025 18:01:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-8em\">References<br>\n 1. Fleury CM, Sayyed AA, Baker SB. Custom Plates in Orthognathic Surgery: A Single Surgeon's Experience and Learning Curve. J Craniofac Surg. 2022 Oct 1;33(7):1976-1981.<br>\n 2. Palines PA, Ferrer JR, Yoo A, St Hilaire H, Stalder MW. Simplifying Bony Midface Reconstruction with Patient-specific Titanium Plates. Plast Reconstr Surg Glob Open. 2021 Apr 23;9(4):e3555.</span></p>\n<p><span class=\"fontsize-8em\">VSP is a registered trademark of 3D Systems, Inc.<br>\n </span></p>\n",
+      "jcr:lastModified": "Mon Sep 15 2025 15:37:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/3d-systems/images/3DS-logo-thumbnail.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 06 2025 17:27:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Mar 06 2025 17:27:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 06 2025 17:27:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 06 2025 17:27:58 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 06 2025 17:28:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Mar 06 2025 17:28:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Thu May 29 2025 13:37:54 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

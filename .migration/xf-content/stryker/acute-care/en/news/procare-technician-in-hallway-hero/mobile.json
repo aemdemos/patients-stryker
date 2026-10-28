@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "21208537-cde4-45d4-8f42-49006411c57d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "c0631c49-e1da-4229-8888-30758b65bf30"
+  ],
+  "jcr:created": "Thu Jan 25 2024 15:48:17 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 15:48:19 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 15:45:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c0631c49-e1da-4229-8888-30758b65bf30",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "7d1f5a0d-8f38-4380-bb07-973abdab50e1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 25 2024 15:44:29 GMT+0000",
+      "alt": "ProCare technician standing in hallway",
+      "srcFileRef": "/content/dam/stryker/acute-care/Services/ProCare/Images/600x300_ProCare_main2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jan 25 2024 15:45:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Health Affairs Forefront article urges policy makers to confront hospital-acquired pneumonia",
+  "jcr:versionHistory": "88e1e127-9c02-447b-9e9a-2893e37c8c7f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Patient in hospital bed",
+  "jcr:predecessors": [
+    "3f969786-e73f-4462-8915-c11c49a960bb"
+  ],
+  "contentID": "28976",
+  "lastPublished": "Mon May 02 2022 18:24:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 02 2022 18:24:09 GMT+0000",
+  "cq:lastModified": "Mon May 02 2022 18:22:12 GMT+0000",
+  "jcr:baseVersion": "3f969786-e73f-4462-8915-c11c49a960bb",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/2"
+  ],
+  "jcr:lastModified": "Mon May 02 2022 18:22:12 GMT+0000",
+  "jcr:uuid": "061c5fb3-be58-44e0-8074-34f653ecd345",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Mon May 02 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "02-May-2022",
+    "jcr:lastModified": "Mon May 02 2022 18:16:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Health-Affairs-Forefront.jpg"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p>In an article published last month in Health Affairs Forefront, authors Dian Baker, Karen Giuliano, Chantal Worzala, Annie Cloke, and Lu Zawistowich assert that hospital-acquired pneumonia is a threat to patient safety – and that policymakers must act to confront it.</p>\n<p>The authors state that as policymakers and other stakeholders work to strengthen the health system for the future, reprioritizing patient safety and infection control will be imperative. They recommend that efforts should include a focus on hospital-acquired pneumonia, a significant patient safety issue that must be addressed through federal policy, including Medicare.<sup>1</sup></p>\n<p>Health Affairs Forefront is a vehicle for commentary and analysis on health policy and issues affecting health and healthcare. It features posts from noted health policy experts and commentators and is a daily destination for health policy professionals. Many articles in this digital publication are cited in congressional testimony and by members of Congress.</p>\n<p>To read the full article, <a title=\"Read the full Health Affairs Forefront article.\" href=\"https://www.healthaffairs.org/do/10.1377/forefront.20220418.65994\" target=\"_blank\">click here</a>.</p>\n<p>To learn more about products that address the risk factors associated with hospital-acquired pneumonia, <a title=\"View Stryker's oral hygiene products.\" href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\">click here</a>.</p>\n",
+    "jcr:lastModified": "Mon May 02 2022 18:15:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Reference: 1.</b> Baker D, Giuliano K, Worzala C, Cloke A, Zawistowich L, Hospital Acquired Pneumonia Threatens Patient Safety – Policy Makers Must Act To Confront It, Health Affairs Forefront, https://www.healthaffairs.org/do/10.1377/forefront.20220418.65994 April 20, 2021.</p>\r\n",
+    "jcr:lastModified": "Mon May 02 2022 16:22:44 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "alt": "Patient in hospital bed",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Health-Affairs-Forefront.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon May 02 2022 18:20:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

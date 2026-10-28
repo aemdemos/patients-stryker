@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Terms of sale",
+  "jcr:versionHistory": "bdea91fd-f40e-4b54-9d2d-6a724314c78d",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "a86f0e24-2a46-4428-91f5-01538c08e97a"
+  ],
+  "lastPublished": "Thu Jun 03 2021 16:04:18 GMT+0000",
+  "jcr:created": "Thu Jun 03 2021 16:04:18 GMT+0000",
+  "cq:lastModified": "Thu Jun 03 2021 16:02:26 GMT+0000",
+  "jcr:baseVersion": "a86f0e24-2a46-4428-91f5-01538c08e97a",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "67082302-6a23-44b9-885d-a9da53d8168a",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Feb 22 2018 16:26:33 GMT-0500",
+      "jcr:lastModified": "Thu Feb 22 2018 16:26:33 GMT-0500",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 22 2018 16:26:37 GMT-0500",
+          "text": "<h3>Endoscopy</h3>\n<ul>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Endo%20Terms%20of%20Sale%20-%202021%20Update.pdf\">Terms of Sale - current</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Endo%20Terms%20of%20Sale%20-%20090117%20(Partial%20Edits).pdf\">Terms of Sale - for agreements through 05/14/2021</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Terms of Sale - for agreements through 08-31-2017.pdf\">Terms of Sale - for agreements through 08/31/2017</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Terms of Sale - for agreements through 10-23-2016.pdf\">Terms of Sale - for agreements through 10/23/2016</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Additional%20Terms%20of%20Placement%20-%20Update%202021.pdf\">Additional Terms for Placement – current</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Additional%20Terms%20of%20Placement%20-%20current.pdf\">Additional Terms for Placement – 5/14/2021</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/Additional Terms for Placement - for agreements through 12-04-2017.pdf\">Additional Terms for Placement – for agreements through 12/04/2017</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/DermaCELL%20Terms%20of%20Sale%20-%202021%20Update.pdf\">DermaCELL Terms of Sale – current</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/endoscopy/DermaCELL%20Terms%20of%20Sale%20-%20current.pdf\">DermaCELL Terms of Sale – for agreements through 5/14/2021</a></li>\n</ul>\n<p>&nbsp;</p>\n<h3>Communications</h3>\n<ul>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/communications/Communications Data Mediator Terms.pdf\">Communications Data Mediator Terms</a></li>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/communications/Communications Studio3 Terms.pdf\">Communications Studio3 Terms</a></li>\n</ul>\n<p>&nbsp;</p>\n<h3>ProCare</h3>\n<ul>\n<li><a href=\"/content/dam/stryker/endoscopy/legal/resources/procare/ProCare Terms.pdf\">ProCare Terms</a><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jun 03 2021 16:02:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  }
+}

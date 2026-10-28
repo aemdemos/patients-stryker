@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Media Management Solution",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Media and data management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1acdfedb-0252-4087-b57e-7af8775eadad",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Media and data management",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-DataManagement.jpg",
+  "jcr:predecessors": [
+    "b11296ad-a30e-4c83-b8b0-39b2e6b2480c"
+  ],
+  "contentID": "Literature Number: 1000902492, Rev. A",
+  "lastPublished": "Wed Aug 14 2024 20:48:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 14 2024 20:48:33 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 14 2024 20:48:35 GMT+0000",
+  "cq:lastModified": "Thu Aug 01 2024 23:43:33 GMT+0000",
+  "jcr:description": "The Data Management portfolio is designed to increase efficiency and satisfaction by simplifying workflows, streamlining communications, and connecting surgeons, staff and patients.",
+  "jcr:baseVersion": "b11296ad-a30e-4c83-b8b0-39b2e6b2480c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:48:33 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/specialty",
+    "stryker:specialty/media-management",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Aug 01 2024 23:42:12 GMT+0000",
+  "jcr:uuid": "6b6137a8-5a0e-4c67-b21a-222eca455bfc",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 21:17:03 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "imageAlt": "Media and data management",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Thu Aug 01 2024 23:43:33 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/0724/Portfolio-Media-Management-v2.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/0724/Thumb-Media-Management-v3.jpg"
+  }
+}

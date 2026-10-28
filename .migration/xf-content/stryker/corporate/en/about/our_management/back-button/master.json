@@ -1,0 +1,39 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Back Button",
+  "jcr:versionHistory": "b88fb74a-09c3-4947-b9a6-8f5c94016981",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a79a4054-b424-4f66-afce-8c2655c80615"
+  ],
+  "jcr:created": "Fri Jul 01 2022 00:41:44 GMT+0000",
+  "cq:lastModified": "Mon Jun 06 2022 18:34:52 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a79a4054-b424-4f66-afce-8c2655c80615",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "433d6611-04a1-441c-b377-ae4b3603c029",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 18:31:27 GMT+0000",
+      "text": "<p><a href=\"/content/stryker/us/en/about/our-management.html\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">◁&nbsp;Back</span></span></a></p>\n",
+      "jcr:lastModified": "Mon Jun 06 2022 18:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

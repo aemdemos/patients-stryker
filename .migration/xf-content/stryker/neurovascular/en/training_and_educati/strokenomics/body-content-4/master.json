@@ -1,0 +1,39 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Body Content 4",
+  "jcr:versionHistory": "0638043f-9dd1-4ba1-8692-3de7cf7795a9",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "66f71778-5df0-40eb-a42f-3d4cca6a89d1"
+  ],
+  "jcr:created": "Fri Jun 18 2021 16:42:18 GMT+0000",
+  "cq:lastModified": "Fri Jun 18 2021 16:42:05 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "66f71778-5df0-40eb-a42f-3d4cca6a89d1",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "96ffb1be-8209-4a6c-aa17-b87d49b6aacc",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_120115561_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 17 2020 17:27:44 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Have </span><span class=\"futura-bold\"><span style=\"color: #af6d04;\"><span style=\"color: #000000;\">questions?</span></span></span></span><span class=\"fontsize-2em\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Connect with us anytime. We’re ready to help.</span></span></p>\n<p><a href=\"mailto:strokenomics@stryker.com\"><span class=\"standalone-link\"><span class=\"fontsize-1-5em\">Talk to us</span></span></a><br>\n</p>\n",
+      "jcr:lastModified": "Tue Jun 08 2021 18:37:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Procedural stretchers",
+  "jcr:versionHistory": "d32ea08b-4827-40cf-b160-8216d1b6b810",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/eyesurgery/images/Thumbnail_EyeSurgeryStretcher.jpg",
+  "jcr:predecessors": [
+    "7bf892fe-b9d6-4207-a7d8-ce02ae6b2afe"
+  ],
+  "lastPublished": "Tue Aug 28 2018 15:28:51 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 28 2018 15:28:51 GMT-0400",
+  "cq:lastModified": "Tue Aug 28 2018 15:28:45 GMT-0400",
+  "jcr:baseVersion": "7bf892fe-b9d6-4207-a7d8-ce02ae6b2afe",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/stretchers",
+    "stryker:specialty/procedural-stretchers",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 28 2018 15:28:45 GMT-0400",
+  "jcr:uuid": "39e1b6a7-6967-416f-80cf-7e349eb1af0c",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:49:42 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Aug 01 2017 15:13:08 GMT-0400",
+    "compImageRef": "/content/dam/stryker/acute-care/images/Thumbnail_OR_AC.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/eyesurgery/images/Thumbnail_EyeSurgeryStretcher.jpg"
+  }
+}

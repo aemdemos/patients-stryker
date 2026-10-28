@@ -1,0 +1,522 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Interventional spine education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "07b1d3fc-07e6-4131-97f2-17dc44a9c317",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "968d09e4-6492-4719-ab72-5d6e912ad427"
+  ],
+  "contentID": "IVS-GSNPS-SYK-1996025_REV-0",
+  "lastPublished": "Wed Jun 24 2026 13:47:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 24 2026 13:47:19 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 24 2026 13:47:21 GMT+0000",
+  "cq:lastModified": "Wed Jun 24 2026 13:47:12 GMT+0000",
+  "jcr:baseVersion": "968d09e4-6492-4719-ab72-5d6e912ad427",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 14:33:57 GMT+0000",
+  "jcr:lastModified": "Fri Aug 29 2025 14:21:56 GMT+0000",
+  "jcr:uuid": "22211120-0f38-4957-8a50-361e4f961f3b",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "Our Medical Education team is driven to offer comprehensive trainings and events that can be customized to suit your needs",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/medical-education/images/MedEd_hero_1200x680.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/medical-education/images/MedEd_hero_1920x640.png",
+        "alt": "Our Medical Education team is driven to offer comprehensive trainings and events that can be customized to suit your needs",
+        "jcr:lastModified": "Thu Feb 19 2026 17:04:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">Interventional Spine Education</span></span></span></h1>\r\n",
+              "line2": "<h2>We’re relentless about education, too</h2>\r\n",
+              "jcr:lastModified": "Thu Feb 19 2026 15:29:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "int",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "CONTACT A REP",
+              "ctaExternalLink": "https://www.stryker.com/content/patients/us/en/ivs/find-a-doctor.html",
+              "jcr:lastModified": "Tue Feb 17 2026 19:13:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1868438939": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Aug 29 2025 14:22:42 GMT+0000",
+      "jcr:lastModified": "Fri Aug 29 2025 14:22:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Aug 29 2025 13:37:23 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">Innovation isn’t the only place we’re relentless. Our Medical Education team is driven to offer comprehensive trainings and events that can be customized to suit your needs. Our trainings focus in the following areas:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Vertebral compression fracture treatment</b></span></li>\n<li><span class=\"fontsize-1-25em\"><b>Bone tumor ablation</b></span></li>\n<li><span class=\"fontsize-1-25em\"><b>Radiofrequency nerve ablation</b></span></li>\n<li><span class=\"fontsize-1-25em\"><b>Basivertebral nerve ablation</b></span></li>\n<li><span class=\"fontsize-1-25em\"><b>Minimally invasive lumbar decompression (mild)</b></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">Whether you’re an attending physician, resident, fellow, or APP take advantage of our broad and ever-expanding Medical Education opportunities.</span></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 17:02:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_2081354454": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 19:29:07 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 19:29:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 12 2024 14:59:21 GMT+0000",
+      "jcr:lastModified": "Wed Jun 12 2024 14:59:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Jun 12 2024 15:00:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Product training labs</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 18:46:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(62,82,69)",
+          "textIsRich": "true"
+        },
+        "text_872081231": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-15",
+          "jcr:created": "Wed Jun 12 2024 15:02:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Gain hands-on experience with Stryker’s product portfolio led by expert faculty or Stryker representatives.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Cadaveric labs<br>\n </span></li>\n<li><span class=\"fontsize-1-25em\">Anatomical model trainings</span></li>\n<li><span class=\"fontsize-1-25em\">Stryker's mobile labs</span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 19 2026 15:27:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Jun 12 2024 15:00:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Peer-to-peer training</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 18:46:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(89,75,97)",
+          "textIsRich": "true"
+        },
+        "text_872081231_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-15",
+          "jcr:created": "Wed Jun 12 2024 15:02:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Have an upcoming first or challenging case? Be paired 1:1 with expert faculty for training tailored to your schedule and learning needs.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Product and procedure didactics<br>\n </span></li>\n<li><span class=\"fontsize-1-25em\">Case review</span></li>\n<li><span class=\"fontsize-1-25em\">Case proctoring<br>\n </span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 19 2026 15:27:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_984083707": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 12 2024 14:59:21 GMT+0000",
+      "jcr:lastModified": "Wed Jun 12 2024 14:59:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Jun 12 2024 15:00:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">Virtual webinars</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Jun 16 2025 18:46:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(66,83,97)",
+          "textIsRich": "true"
+        },
+        "text_872081231": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-15",
+          "jcr:created": "Wed Jun 12 2024 15:02:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Join live virtual sessions where faculty panels share clinical expertise and best practices.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Product and procedure didactics<br>\n </span></li>\n<li><span class=\"fontsize-1-25em\">Case studies</span></li>\n<li><span class=\"fontsize-1-25em\">Live Q&amp;A</span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 19 2026 15:28:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Wed Jun 12 2024 15:00:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\">On-demand video library</span></span></span></h4>\n",
+          "jcr:lastModified": "Fri Aug 29 2025 13:48:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(99,92,79)",
+          "textIsRich": "true"
+        },
+        "text_872081231_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-15",
+          "jcr:created": "Wed Jun 12 2024 15:02:41 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Explore our virtual training library available anytime on <a href=\"https://www.vumedi.com/channel/stryker/tab/interventional-spine/\">VuMedi</a> or <a href=\"https://vimeo.com/showcase/ivsmeded\">Vimeo</a>.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Product and procedure didactic recordings</span></li>\n<li><span class=\"fontsize-1-25em\">Webinar recordings</span></li>\n<li><span class=\"fontsize-1-25em\">Procedural videos</span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 19 2026 15:28:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 18:55:26 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 18:55:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 18:55:32 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 18:55:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jun 16 2025 19:09:58 GMT+0000",
+          "jcr:lastModified": "Mon Jun 16 2025 19:09:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "10",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "7",
+              "jcr:created": "Mon Jun 16 2025 18:56:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">At Stryker Interventional Spine, we understand the pivotal role education plays in healthcare. Every day, we are dedicated to empowering physicians like you with invaluable educational experiences that elevate healthcare standards.</span></span></h4>\n",
+              "jcr:lastModified": "Mon Jun 16 2025 19:12:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "10",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Jun 16 2025 18:55:55 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "loopVal": "1",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Wed Sep 17 2025 14:32:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/education-and-training/ivs/interventional-spine-training-and-education/videos/ivs-medical-education-hype-video.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/ivs-medical-education-hype-video-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Mon Jun 16 2025 19:09:17 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols_1839757334": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 18:57:09 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 18:57:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_1189372171": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 15:28:36 GMT+0000",
+      "jcr:lastModified": "Thu Feb 19 2026 15:28:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+          "text": "<h2>Pain is unrelenting. But so are we.</h2>\n<p><span class=\"fontsize-1-25em\">Thank you for your interest in Stryker's Interventional Spine products—bold and innovative approaches for treating patients experiencing pain. Tell us how we can help by answering the following questions, and we’ll work to get you what you need.</span></p>\n<p><span class=\"fontsize-1-25em\">To place an order, contact your Stryker's Sales Representative or Stryker's Customer Service at 1 800 253 3210.</span></p>\n",
+          "jcr:lastModified": "Thu May 08 2025 18:56:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "5111",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your interest. If you have opted in to learn more about Stryker Interventional Spine Medical Education offerings, you will receive updates on educational opportunities and upcoming events as they become available.",
+          "jcr:lastModified": "Wed Jun 24 2026 13:47:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h2><span style=\"font-weight: normal;\">Be in the know</span></h2>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Thu Jun 05 2025 12:49:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Fri Aug 29 2025 13:43:26 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

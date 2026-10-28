@@ -1,0 +1,410 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Surgical Technologies Medical Education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "60a3fa73-7c9f-4d2d-837d-0d9487a0b5b4",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "jcr:predecessors": [
+    "095deb43-df0e-4532-856d-b05c2005edb2"
+  ],
+  "contentID": "ST-GSNPS-SYK-3659600_REV-0",
+  "lastPublished": "Fri Jul 31 2026 15:45:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 31 2026 15:45:28 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 31 2026 15:45:31 GMT+0000",
+  "cq:lastModified": "Fri Jul 17 2026 17:10:42 GMT+0000",
+  "jcr:baseVersion": "095deb43-df0e-4532-856d-b05c2005edb2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:29:24 GMT+0000",
+  "jcr:lastModified": "Fri Jul 17 2026 17:10:42 GMT+0000",
+  "jcr:uuid": "39260d6c-a149-4a39-9446-9e40f9573bcb",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "navTitle": "Home",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "opacityLocal": "50",
+      "textColorNav": "rgba(0,0,0,1)",
+      "jcr:created": "Mon Feb 22 2021 16:47:29 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Feb 22 2021 18:45:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/surgical_technologie/carousel---surgical-technologies-medical-education---desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/surgical-technologie/carousel-surgical-technologies-medical-education-desktop/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "12",
+          "jcr:created": "Mon Feb 22 2021 16:47:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Feb 22 2021 16:50:38 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Feb 22 2021 16:48:03 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\">Surgical Technologies</span><br />\r\n medical education</span>",
+              "line2": "<br>\r\n<span class=\"fontsize-1-5-vw\">Our goal is <span class=\"futura-bold\">zero doubt</span> you have the knowledge to inspire change.</span>",
+              "jcr:lastModified": "Fri Apr 30 2021 19:55:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 22 2021 16:51:51 GMT+0000",
+              "CTATitle": "Connect with us",
+              "ctaExternalLink": "https://www.safeor.com/contact",
+              "jcr:lastModified": "Thu Sep 02 2021 18:23:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTopLine": "true",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "childrenNumber": "0",
+    "isParent": "true",
+    "jcr:lastModified": "Fri Apr 30 2021 19:56:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "enableLocalPageNavigation": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 18:21:03 GMT+0000",
+      "jcr:lastModified": "Fri Feb 19 2021 18:21:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 18:20:48 GMT+0000",
+      "title": "Mobile experience",
+      "jcr:lastModified": "Fri Feb 19 2021 18:21:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 18:26:06 GMT+0000",
+      "jcr:lastModified": "Fri Feb 19 2021 18:26:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 19 2021 18:26:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #1c5687;\">Education at your doorstep</span></span></span><br>\n<br>\n<span class=\"fontsize-1-25em\">The Stryker Surgical Technologies Mobile Experience is a full length semi trailer that transforms into a teaching and showroom environment. The Mobile Experience is fully equipped to give participants hands on experience with our latest technologies that are redefining the surgical standards of care.</span></p>\n",
+          "jcr:lastModified": "Fri Apr 30 2021 20:07:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 19 2021 18:26:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">With content, equipment and location customized to you, the Mobile Experience is another example of how we’re dedicated to making healthcare better. The Mobile Experience provides an ideal environment for:</span></p>\n<ul>\n<li>Medical education</li>\n<li>Continuing education<br>\n</li>\n<li>Customer experiences</li>\n</ul>\n",
+          "jcr:lastModified": "Fri Apr 30 2021 20:07:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 19 2021 18:34:58 GMT+0000",
+          "alt": "Stryker mobile trailer truck",
+          "srcFileRef": "/content/dam/stryker/education-and-training/st-meded/images/2023_Mobile_Experience_with_new_wrap-removebg-preview.png",
+          "jcr:lastModified": "Thu Jun 11 2026 17:55:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">See the mobile lab schedule to visit the lab at a stop near you.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 12 2026 20:37:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/education-and-training/st-meded/resources/2026 Mobile Lab Schedule.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 19 2021 18:40:49 GMT+0000",
+          "CTATitle": "2026 Schedule",
+          "ctaExternalLink": "https://www.safeor.com/mobile-experience",
+          "jcr:lastModified": "Thu Jun 11 2026 17:55:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)"
+        }
+      }
+    },
+    "cols_158991661": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 19:44:36 GMT+0000",
+      "jcr:lastModified": "Fri Feb 19 2021 19:44:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1069113924": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 20:01:45 GMT+0000",
+      "title": "Journey to Zero",
+      "jcr:lastModified": "Wed May 05 2021 20:44:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1900268995": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 20:10:17 GMT+0000",
+      "jcr:lastModified": "Fri Feb 19 2021 20:10:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed May 05 2021 20:50:51 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Wed May 05 2021 20:51:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/st-meded/videos/Hectic-OR-trailer.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Hectic-OR-trailer-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 05 2021 20:51:12 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 19 2021 18:26:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Explore the Surgical Technologies portfolio and discover our Journey to Zero on Stryker.com.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 12 2026 20:39:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 19 2021 18:40:49 GMT+0000",
+          "CTATitle": "Explore Surgical Technologies",
+          "ctaExternalLink": "https://www.safeor.com/",
+          "jcr:lastModified": "Fri Jun 12 2026 20:39:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/surgical-technologies"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 19 2021 20:13:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\">Our Goal is</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Zero</span></span></span><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><sup>®</sup></span></span></span>",
+          "jcr:lastModified": "Tue Jun 16 2026 14:14:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Feb 19 2021 20:15:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">splashes and spills</span></span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">lost polyps**</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">surgical smoke</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">retained surgical sponges</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">maternal harm</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">hypoxic injuries***</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">trips and falls</span><br>\n</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Zero</span> <span class=\"urw-egyptienne\">drug diversions</span></span></p>\n",
+          "jcr:lastModified": "Wed Jun 17 2026 15:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_832794957": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "topMargin": "10",
+          "jcr:created": "Fri Feb 19 2021 20:19:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-8em\"><span style=\"color: #b2b4ae;\">*Zero splash and spills, zero airborne contaminants, zero smoke, zero retained surgical sponges, zero blind spots, zero trips&amp; falls, zero drug diversion, and zero doubt messages are not guarantees and are aspirational in nature.</span></span></p>\n<p><span style=\"color: #b2b4ae;\"><span class=\"fontsize-8em\">**2mm or smaller</span></span></p>\n<p><span style=\"color: #b2b4ae;\"><span class=\"fontsize-8em\">***POM mask can provide consistent and reliable capnography waveforms to identify hypoxic events</span></span></p>\n",
+          "jcr:lastModified": "Wed Jun 17 2026 15:21:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1442018030": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 26 2021 15:08:03 GMT+0000",
+      "jcr:lastModified": "Fri Feb 26 2021 15:08:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">How can we help you?</span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Together, our goal is zero. Partner with us today to start your journey.</span></span></span></span>",
+      "jcr:lastModified": "Mon Jun 01 2026 17:53:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "5",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:45:01 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3248",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:25:28 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu Feb 12 2026 22:02:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:46:32 GMT+0000",
+          "text": "Quick links Contact information Customer service Surgical technologies homepage Be in the know. Follow us on social media and be among the first to gain information about our technologies, education opportunities and more.",
+          "jcr:lastModified": "Mon Jun 01 2026 17:46:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/footer-contact/quick-links/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:46:32 GMT+0000",
+      "text": "Resources Explore Surgical technologies Newsroom Videos Learn Training and education Information for use Support Contact information",
+      "jcr:lastModified": "Mon Jun 01 2026 17:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/footer-contact/resources/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/st-meded/images/ButtonforStrykerdotcom.png"
+  }
+}

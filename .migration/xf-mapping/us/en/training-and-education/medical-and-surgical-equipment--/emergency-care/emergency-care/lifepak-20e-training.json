@@ -1,0 +1,436 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 20e training",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f55bcbdf-9fb5-4a38-8730-16f0c95f2365",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "39a5f771-5b0f-4ab8-8c35-680a29e4874f"
+  ],
+  "lastPublished": "Thu Mar 16 2023 14:27:30 GMT+0000",
+  "jcr:created": "Thu Mar 16 2023 14:27:30 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 16 2023 14:27:33 GMT+0000",
+  "cq:lastModified": "Thu Mar 16 2023 12:52:27 GMT+0000",
+  "jcr:baseVersion": "39a5f771-5b0f-4ab8-8c35-680a29e4874f",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "fef1d9ea-72e9-47b3-8d51-3713d5e9b56a",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Mon May 10 2021 17:32:55 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Sat Sep 11 2021 04:03:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "localpage_nav_Overlay",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/training/lifepak-20e/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/training/lifepak-20e/master",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Mon May 10 2021 17:33:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Mon Aug 15 2022 21:04:04 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "1",
+              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "rightMargin": "1",
+              "topMargin": "1",
+              "jcr:created": "Thu Mar 04 2021 22:29:42 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(133,69,138);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-3-5-vw\">Medical Education resources</span></span></span></span></h1>\r\n",
+              "line2": "<h3><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">LIFEPAK 20e defibrillator/monitor with CodeManagement module</span></span></h3>\r\n",
+              "jcr:lastModified": "Mon Aug 15 2022 21:03:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "1",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "leftMargin": "1",
+              "bottomMargin": "1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy_copy_12471": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:01:20 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2 style=\"text-align: left;\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(76,125,122);\"><span class=\"fontsize-1-5-vw\"><span class=\"futura-bold\">LIFEPAK 20e defibrillator/monitor</span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Wed Aug 17 2022 20:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 28 2019 13:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Nov 16 2021 19:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 28 2019 13:17:42 GMT+0000",
+          "jcr:lastModified": "Tue Sep 13 2022 19:51:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-getting-started.mp4\" target=\"_blank\">LIFEPAK CR2 setup getting started</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifelinkcentral-account-setup.mp4\" target=\"_blank\">LIFELINKcentral account setup</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-maintaining-readiness.mp4\" target=\"_blank\">LIFEPAK CR2 maintenance maintaining readiness, USB devices only</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-replacing-electrodes-and-battery.mp4\" target=\"_blank\">LIFEPAK CR2 maintenance replacing electrodes and battery</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-wireless-setup.mp4\" target=\"_blank\">LIFEPAK CR2 setup wireless setup</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 20:26:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 6,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/adult-semi-auto-hands-only.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, hands only CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-hands-only-cpr-with-cprinsight-analysis-technology.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, hands only CPR with cprINSIGHT</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-30-2-cpr.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, 30:2 CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-30-2-cpr-with-cprinsight.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, 30:2 CPR with cprINSIGHT</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on a child, 30:2 CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr-with-cprinsight.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on a child, 30:2 CPR with cprINSIGHT</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 22:31:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys7": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 7,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifelinkcentral-account-setup.mp4\" target=\"_blank\">LIFELINKcentral AED program manager training video</a></span></span><br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 20:27:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys8": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 8,
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/products/smith-s-food-and-drug-testimonial.mp4\" target=\"_blank\">Smith's Food and Drug testimonial</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/stryker/us/en/emergency-care/news.html\" target=\"_blank\">Survivor Stories</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 05 2022 22:30:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys9": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 9
+          },
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-introduction.mp4\" target=\"_blank\">Introduction</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-aed-mode.mp4\" target=\"_blank\">AED mode introduction</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-switching-from-aed-to-manual-mode.mp4\" target=\"_blank\">Switching from AED mode to manual mode</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-monitoring-the-ecg.mp4\" target=\"_blank\">Monitoring the ECG</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-monitoring-spo2.mp4\" target=\"_blank\">Monitoring Sp0<sub>2</sub></a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-monitoring-etco2.mp4\" target=\"_blank\">Monitoring EtC0<sub>2</sub></a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-manual-defibrillation.mp4\" target=\"_blank\">Manual defibrillation</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-synchronized-cardioversion.mp4\" target=\"_blank\">Synchronized cardioversion</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-noninvasive-pacing.mp4\" target=\"_blank\">Noninvasive pacing</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-general-maintenance-and-testing.mp4\" target=\"_blank\">General maintenance and testing</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-connecting-to-power.mp4\" target=\"_blank\">Connecting to power</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-20e-data-management.mp4\" target=\"_blank\">Data management</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Aug 17 2022 13:53:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/training/lifepak-20e/lifepak_20e_instructors_guide.pdf\" target=\"_blank\">Instructor's guide</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/training/lifepak-20e/lifepak-20-20e-quad-fold-quick-reference-for-clinical-use.pdf\" target=\"_blank\">Quick reference for clinical use</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/training/lifepak-20e/lifepak-20-20e-quick-reference-guide.pdf\" target=\"_blank\">Quick reference guide</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Aug 17 2022 13:51:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/connectivity-literature/lpcr2_wireless_setup_guide_us.pdf\" target=\"_blank\">LIFEPAK CR2 wireless set up guide</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/connectivity-literature/lpcr2_pre-implementation_checklist_us.pdf\" target=\"_blank\">LIFEPAK CR2 pre-implementation checklist (for Wi-Fi setup)</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 14:07:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/aed-state-project/resources/lifepak-cr2-state-project-faq.pdf\" target=\"_blank\">First responder program</a> </span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/aed-state-project/resources/lpcr2_state_project_rma_sticker.pdf\" target=\"_blank\">FAQ&nbsp;&nbsp;State project RMA sticker</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 14:16:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Videos"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "2",
+              "accTitle": "Additional resources"
+            }
+          }
+        }
+      }
+    },
+    "cols_copy_copy_12471_515654986": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Aug 04 2022 16:47:23 GMT+0000",
+      "jcr:lastModified": "Thu Aug 04 2022 16:47:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_2004296610": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 04 2022 16:47:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/ems/images/T-amp-e-thumbnail_419x279.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 06 2022 14:12:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__727792054": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Training and education</span></span></p>\n<p><span class=\"fontsize-1-5em\">Discover webinars, online and in-person courses and other resources to strengthen your clinical education.</span></p>\n",
+          "jcr:lastModified": "Tue Sep 06 2022 13:52:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_1757146086": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Jul 27 2022 20:39:40 GMT+0000",
+          "CTATitle": "Training and education",
+          "jcr:lastModified": "Tue Sep 06 2022 13:52:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 04 2022 16:47:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/ems/images/Product resources thumbnail_419x280.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 05 2022 13:53:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Product resources</span></span></p>\n<p><span class=\"fontsize-1-5em\">Find a variety of documents including best practices, datasheets and clinical information for easy download.</span></p>\n",
+          "jcr:lastModified": "Fri Aug 05 2022 13:32:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Jul 27 2022 20:39:40 GMT+0000",
+          "CTATitle": "Product Resources",
+          "jcr:lastModified": "Wed Jul 27 2022 20:40:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/product-resources"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 04 2022 16:47:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/ems/images/Learning center thumbnail 419x280.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 05 2022 14:00:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Learning center</span></span></p>\n<p><span class=\"fontsize-1-5em\">Learn. Understand. Implement. Enhance your product knowledge with online training.</span></p>\n",
+          "jcr:lastModified": "Thu Aug 04 2022 16:53:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Jul 27 2022 20:39:40 GMT+0000",
+          "CTATitle": "Learning center ",
+          "ctaExternalLink": "https://ec.stryker-learning.com/",
+          "jcr:lastModified": "Thu Mar 16 2023 12:52:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/product-resources"
+        }
+      }
+    }
+  }
+}

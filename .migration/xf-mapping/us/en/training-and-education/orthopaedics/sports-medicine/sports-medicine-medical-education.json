@@ -1,0 +1,684 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sports Medicine Medical Education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ccaba0b5-913e-4a8b-89de-3748ff808136",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "9bc59726-5354-4034-8c66-1eea207d6fa5"
+  ],
+  "contentID": "SM-GSNPS-SYK-1541399_Rev-1",
+  "lastPublished": "Tue Aug 18 2026 21:02:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:02:44 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:02:46 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:02:35 GMT+0000",
+  "jcr:baseVersion": "9bc59726-5354-4034-8c66-1eea207d6fa5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Apr 18 2025 17:41:18 GMT+0000",
+  "jcr:lastModified": "Wed Jun 11 2025 18:50:33 GMT+0000",
+  "jcr:uuid": "b639aa9c-8a77-4624-b65e-ed5f9264401a",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Home",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(223,225,222,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "75",
+      "textColorNav": "rgba(0,0,0,1)",
+      "jcr:created": "Mon Apr 13 2020 16:52:04 GMT+0000",
+      "carouselOptionSpeed": "10000",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Nov 04 2024 20:44:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/training_and_educati/sports_medicine_medi/images/carousel/sports-med-desktop-1/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/training-and-educati/sports-medicine-medi/images/carousel/sports-med-desktop-1/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "25",
+          "jcr:created": "Mon Apr 13 2020 16:52:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Dec 08 2020 21:11:44 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Apr 08 2020 17:50:22 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4-5-vw\"><span style=\"color: #000000;\">Sports medicine</span></span></span></span><br>\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-4-5-vw\">Medical education</span></span>",
+              "line2": "<span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Your confidence, </span><span class=\"futura-bold\">elevated<br />\r\n<br />\r\n</span></span>",
+              "jcr:lastModified": "Tue Dec 08 2020 21:12:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Nov 22 2019 18:31:50 GMT+0000",
+              "CTATitle": "Connect with us",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Fri Dec 06 2024 16:25:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(133,69,138,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "childrenNumber": "0",
+    "jcr:lastModified": "Mon Nov 04 2024 20:43:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1387136817": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 20:17:35 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 20:17:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">HCP’s educated in 2025</span></span>",
+          "fontColor": "rgb(255,181,0)",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Nov 04 2024 20:15:52 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-9vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Mon Jul 13 2026 16:28:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "4875",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Fri Nov 01 2024 19:31:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\">Your sports medicine education partner</span></h3>\n<p><span class=\"fontsize-1-25em\">At Stryker, we strive to deliver world class education and experiences that allow healthcare professionals like you to safely and effectively use our products. We accomplish this with a diverse mix of programs to fit a variety of needs. Our extensive medical education and training will help advance your product and procedural knowledge and skills to help drive better patient outcomes.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 04 2024 20:38:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1586888907": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 20:38:42 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 20:38:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:10 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 04 2024 20:38:38 GMT+0000",
+          "jcr:lastModified": "Mon Nov 04 2024 20:38:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "alt": "SM MedEd Wheel",
+          "srcFileRef": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/images/offerings-chart-2023.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Dec 06 2024 16:40:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "10",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\">Tailored learning experiences for you</span></h3>\n<p><span class=\"fontsize-1-25em\">No matter where you are, or where you are in your journey, we are here to support you.</span></p>\n<p><span class=\"fontsize-1-25em\">Our medical education team is here to support you throughout your extensive medical training and into your practice with product and procedural knowledge and skills.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 04 2024 20:35:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "virtual",
+      "jcr:created": "Fri Nov 01 2024 19:32:08 GMT+0000",
+      "title": "Virtual education",
+      "jcr:lastModified": "Fri Nov 01 2024 19:32:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "12",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Join Sports Medicine and our esteemed faculty for our 2024-2025 Teaching Institution Webinar Series and Virtual Education on Surgical Techniques (V.E.S.T) series from the comfort of your home. Expand your knowledge of contemporary Sports Medicine topics throughout the academic year.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Sep 04 2025 17:18:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/resources/2025-26 Stryker Sports Medicine Webinar Schedule.pdf",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Nov 04 2024 18:29:00 GMT+0000",
+          "CTATitle": "Contact Us",
+          "ctaDeepLinkID": "connect-form",
+          "ctaExternalLink": "https://stryker.com",
+          "jcr:lastModified": "Mon Jul 13 2026 16:31:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "alt": "HCP staring at computer screen",
+          "srcFileRef": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/images/HCP staring at computer screen.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Nov 04 2024 20:35:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "courses",
+      "jcr:created": "Fri Nov 01 2024 19:32:08 GMT+0000",
+      "title": "National courses",
+      "jcr:lastModified": "Wed Nov 20 2024 16:17:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "alt": "sportsmed-banner",
+          "srcFileRef": "/content/dam/stryker/education-and-training/st-meded/images/sportsmed-banner.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 20 2024 16:53:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Experience hands-on training utilizing cadaveric specimens across the country at our joint specific National Courses.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 20 2024 16:54:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/resources/2024 National Course Calendar.pdf",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Nov 04 2024 18:29:00 GMT+0000",
+          "CTATitle": "Contact Us",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://stryker.com",
+          "jcr:lastModified": "Mon Jul 13 2026 16:29:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols_354303076": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "visits",
+      "jcr:created": "Fri Nov 01 2024 19:32:08 GMT+0000",
+      "title": "Customer experience visits",
+      "jcr:lastModified": "Fri Nov 01 2024 19:33:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "20",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">We offer personalized labs at our Denver, CO Sports Medicine HQ for 1:1 hands-on education with Stryker faculty and your local support team.</span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Nov 21 2024 21:03:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Nov 04 2024 18:29:00 GMT+0000",
+          "CTATitle": "Contact US",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Fri Dec 06 2024 16:43:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "alt": "surgeons in operating room",
+          "srcFileRef": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/images/surgeons in operating room.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Nov 21 2024 21:03:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_354303076_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c_1011013814": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "engagement",
+      "jcr:created": "Fri Nov 01 2024 19:32:08 GMT+0000",
+      "title": "Peer-to-peer engagement",
+      "jcr:lastModified": "Mon Jul 13 2026 16:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy_1506687441": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "alt": "doctors shaking hands",
+          "srcFileRef": "/content/dam/stryker/education-and-training/st-meded/images/doctors shaking hands.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 20 2024 16:50:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "12",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\">Surgeon-to-Surgeon&nbsp;</span></h3>\n<p><span class=\"fontsize-1-25em\">Consult 1:1 with a Stryker physician consultant virtually or in person with case observation. Talk through or observe best practices surrounding Stryker platforms.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 20 2024 16:51:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Nov 04 2024 18:29:00 GMT+0000",
+          "CTATitle": "Contact Us",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Fri Dec 06 2024 16:43:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols_354303076_copy_907827357": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 20:43:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c_2097402177": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "know",
+      "jcr:created": "Fri Nov 01 2024 19:32:08 GMT+0000",
+      "title": "Stay in the know",
+      "jcr:lastModified": "Fri Nov 01 2024 19:34:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy_copy_144137202": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 18:27:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 04 2024 18:27:29 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Stryker Sports Medicine is proud to give you the Technique of the Month</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Nov 20 2024 16:40:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 22 2024 20:03:48 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Nov 22 2024 20:04:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/sports-medicine-medical-education/videos/AIR animation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/AIR animation-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Nov 22 2024 20:19:07 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "jcr:lastModified": "Mon Nov 04 2024 18:28:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:02:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:02:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title_584977": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "contact",
+          "jcr:created": "Fri Dec 06 2024 15:56:48 GMT+0000",
+          "title": "Connect with us",
+          "jcr:lastModified": "Tue Aug 18 2026 21:01:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 04 2024 19:59:24 GMT+0000",
+      "jcr:lastModified": "Mon Nov 04 2024 19:59:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3382",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 04 2024 19:59:29 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Nov 27 2024 16:21:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

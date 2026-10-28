@@ -1,0 +1,127 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Survivor: John Jimenez",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a7934436-e90a-4962-b926-98cdd33ddd18",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Survivor John Jimenez talking about his story",
+  "jcr:predecessors": [
+    "6a100f17-d1c1-4aa3-8cec-08c90805f211"
+  ],
+  "contentID": "EC-LCR2-COMM-1745207_REV-0_en_us",
+  "lastPublished": "Tue May 27 2025 20:26:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 27 2025 20:26:21 GMT+0000",
+  "cq:lastReplicated": "Tue May 27 2025 20:26:23 GMT+0000",
+  "cq:lastModified": "Tue May 27 2025 20:26:17 GMT+0000",
+  "jcr:description": "John Jimenez was at Seattle-Tacoma International Airport when, without warning, he collapsed after getting off the tram. Thanks to the airport’s accessible AEDs and the quick thinking of those around him, John’s life was saved. ",
+  "jcr:baseVersion": "6a100f17-d1c1-4aa3-8cec-08c90805f211",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue May 27 2025 16:45:02 GMT+0000",
+  "pageTitle": "Survivor: John Jimenez",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/survivor-stories",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news/videos",
+    "stryker:business-unit/ems/news"
+  ],
+  "jcr:lastModified": "Tue May 27 2025 20:03:29 GMT+0000",
+  "jcr:uuid": "b0393833-bbf6-4479-80c6-77188bee8a2d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Survivor: John Jimenez",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu May 22 2025 21:56:26 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue May 27 2025 16:42:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-john-jimenez.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/survivor-john-jimenez-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue May 27 2025 16:43:02 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/john-jimenez-video-thumbnail"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Thu May 22 2025 21:56:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">John Jimenez was at Seattle-Tacoma International Airport when, without warning, he collapsed after getting off the tram. His condition quickly deteriorated, and bystander Brooke Reece noticed he had stopped breathing and had no pulse. Without hesitation, she began performing CPR and called for an AED. Fortunately, a CR2 was immediately brought into action. With its cprINSIGHT technology, the device provided real-time rhythm analysis while compressions continued and delivered a shock that revived John. Thanks to the airport’s accessible AEDs and the quick thinking of those around him, John’s life was saved. This powerful example shows us just how important it is to have life-saving equipment nearby and brave individuals ready to act when every second counts.</span></p>\n",
+      "jcr:lastModified": "Tue May 27 2025 16:44:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 27 2025 16:29:46 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Tue May 27 2025 20:03:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-mark-dundore"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-denis-legault"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Mon Apr 28 2025 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "28-Apr-2025",
+    "jcr:lastModified": "Tue May 27 2025 20:26:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/john-jimenez-video-thumbnail.jpg"
+  }
+}

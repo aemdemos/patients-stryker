@@ -1,0 +1,185 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "629290a5-a03b-4ce1-8d1d-81a19b0d0cdd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a285d42e-bebc-4c9a-a82d-325424d37068"
+  ],
+  "jcr:created": "Mon Mar 06 2023 15:16:45 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 06 2023 15:16:47 GMT+0000",
+  "cq:lastModified": "Mon Mar 06 2023 15:07:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a285d42e-bebc-4c9a-a82d-325424d37068",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "6f83c327-e6c7-4a5b-b4a0-c1be2e9deedb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:26:16 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Sep 19 2022 18:26:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:26:26 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Mon Sep 19 2022 18:57:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        }
+      },
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/about/news/2023/features/restoring-form,-function-and-hope---emily's-jaw-replacement/patient_story_-_emily (2160p) updated.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/patient_story_-_emily (2160p) updated-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Mar 06 2023 15:07:01 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/EmilyHartmann_thumbnail"
+      }
+    },
+    "largeheadline_copy53": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "When",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Feb 27 2023 14:34:13 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy533640737678819681": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-1-5-vw\">In 2007, Emily began experiencing muscle spasms in her jaw. She was eventually diagnosed with a rare disorder called Parry-Romberg syndrome, which causes the slow deterioration of the skin and soft tissue in half the face<sup>1</sup>. Watch Emily as she shares how after years of pain, avoiding talking and relying on liquid diets, her surgeon not only restored her function but helped her feel beautiful again.</span>",
+        "jcr:lastModified": "Mon Feb 27 2023 15:47:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(237,238,236,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": 4
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        }
+      },
+      "item1089953560363234": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"urw-egyptienne\"></span> ",
+        "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\">To have [the procedure] be successful and to be functional [with] no pain was just an answer to prayer.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Emily Hartmann</span></span></span></span><br>\r\n<span class=\"fontsize-1-5-vw\">Jaw replacement patient</span></p>\r\n",
+        "jcr:lastModified": "Mon Feb 27 2023 14:53:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 6
+          }
+        }
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "ctaLinkType": "ext",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+        "CTATitle": "Learn more about CMF solutions",
+        "ctaExternalLink": "https://www.stryker.com/us/en/portfolios/orthopaedics/craniomaxillofacial.html",
+        "jcr:lastModified": "Mon Feb 27 2023 14:42:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(133,69,138,1)",
+        "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/spine--ortho-",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    }
+  }
+}

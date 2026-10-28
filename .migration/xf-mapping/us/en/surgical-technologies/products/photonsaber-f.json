@@ -1,0 +1,91 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Surgical suction, Frazier suction, lighted instruments",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PhotonSaber F",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f5edee5f-3634-4f31-a0e9-aa4da4189281",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+  "thumbnailAltText": "PhotonSaber F",
+  "jcr:predecessors": [
+    "231ab9e4-46ef-452b-84eb-a5c10ef495be"
+  ],
+  "contentID": "D0000022961 Rev. AA",
+  "lastPublished": "Thu Sep 18 2025 17:43:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 18 2025 17:43:17 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 18 2025 17:43:19 GMT+0000",
+  "cq:lastModified": "Thu Sep 18 2025 17:41:38 GMT+0000",
+  "jcr:description": "Handheld illuminator incorporated in a traditional Frazier suction platform. This innovative device provides on-field illumination, aspiration, smoke evacuation, blunt dissection, and soft tissue retraction in one device.",
+  "jcr:baseVersion": "231ab9e4-46ef-452b-84eb-a5c10ef495be",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:43:16 GMT+0000",
+  "jcr:lastModified": "Thu Sep 18 2025 17:41:38 GMT+0000",
+  "jcr:uuid": "cea58c0e-5b2d-4d88-b26c-b839a0340496",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kendra.pilon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Jan 27 2020 15:26:19 GMT+0000",
+      "compImageRef": "/content/dam/stryker/surgical-technologies/products/PhotonSaber F with light.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>PhotonSaber F - handheld illuminator with aspiration</p>\r\n",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Thu Feb 13 2020 15:44:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>All in one illumination and suction</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Directs light exactly where and when it is needed</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Enables surgeons to work efficiently in deep, dark cavities through small incisions</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  }
+}

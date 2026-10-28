@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s Spine division announces launch of New LITe® BIO Delivery System",
+  "jcr:versionHistory": "7d542b07-86ff-4884-8724-8b27f26971a9",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "1de66b6b-1871-4f8b-a769-f57e6c85ff97"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:20 GMT-0400",
+  "cq:lastModified": "Tue Aug 22 2017 18:37:26 GMT-0400",
+  "jcr:baseVersion": "1de66b6b-1871-4f8b-a769-f57e6c85ff97",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Jul 31 2017 15:14:41 GMT-0400",
+  "jcr:uuid": "39ab6dbe-c792-4d4f-b701-7236e1c0be31",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Tue Oct 04 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Oct-2016",
+    "jcr:lastModified": "Wed May 31 2017 21:57:48 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division today announced the launch of its LITe BIO Delivery System, a hand-held device used to facilitate delivery of bone graft material to spinal surgery sites, which simplifies graft delivery, accommodates a surgeon’s preferred graft materials,1 and allows for direct visualization of graft placement.</p>\n<p>The unique design of the LITe BIO Delivery System provides surgeons with a single-handed method to deliver any type of autograft, allograft, or synthetic bone graft material without obstructing visibility. The innovative delivery tool provides tactile, visual, and audible confirmation of bone graft delivery, and the mallet-free system eliminates the impaction of bone graft.</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20161004005125/en/Stryker%E2%80%99s-Spine-Division-Announces-Launch-LITe%C2%AE-BIO\" target=\"_blank\">Business Wire</a></p>\n",
+    "jcr:lastModified": "Wed May 31 2017 21:58:23 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

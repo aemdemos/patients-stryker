@@ -1,0 +1,326 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "ACFAS",
+  "jcr:versionHistory": "75a71ab0-2624-4aff-8a16-2359b28dd587",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "8b9f572f-47c4-4467-9d38-96d003e6297a"
+  ],
+  "contentID": "9100-005-162 Rev. None",
+  "lastPublished": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:lastModified": "Mon Feb 11 2019 20:48:26 GMT+0000",
+  "jcr:baseVersion": "8b9f572f-47c4-4467-9d38-96d003e6297a",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Mon Mar 05 2018 08:39:38 GMT-0500",
+  "jcr:uuid": "ceb7c696-7efd-41a8-93b9-3aaa242ca9cd",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Feb 22 2018 11:26:08 GMT-0500",
+      "gradientDirection": "left-to-right",
+      "line1": "<p><span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">Stryker's</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> ACFAS&nbsp;Experience</span></span></span></p>\r\n<p>&nbsp;</p>\r\n",
+      "jcr:lastModified": "Fri Feb 23 2018 10:46:11 GMT-0500",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "layoutOptions": "col-sm-3",
+      "backgroundImageRef": "/content/dam/stryker/campaigns/acfas/images/booth.png",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "jcr:lastModified": "Mon Feb 26 2018 11:31:35 GMT-0500",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Thu Feb 22 2018 16:56:40 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1-5-vw\">New Orleans, LA<br>\r\n February 14-17, 2019</span></span><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><br>\r\n</span></span></span></p>\r\n<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></p>\r\n",
+          "jcr:lastModified": "Wed Feb 06 2019 16:52:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Thu Feb 22 2018 16:56:40 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Visit us at&nbsp;<br>\r\n </span></span><sub><span class=\"futura-bold\"><span style=\"color: rgb(133,69,138);\"><span class=\"fontsize-3vw\">Booth&nbsp;#639</span></span></span></sub><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\"><br>\r\n</span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></p>\r\n",
+          "jcr:lastModified": "Wed Feb 06 2019 16:52:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "hero_large_carousel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Fri Feb 23 2018 09:55:49 GMT-0500",
+      "jcr:lastModified": "Fri Feb 23 2018 09:55:49 GMT-0500",
+      "sling:resourceType": "stryker/components/content/hero-large-carousel",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "slide_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "textTheme": "2",
+          "imageRef": "/content/dam/stryker/campaigns/acfas/images/ACFAS F1 Banner_Nobg_c.png",
+          "linkExternal": "https://www.stryker.com/us/en/surgical/products/stryker-f1-system-cordless-small-bone-power-tool-system.html",
+          "textCoverage": "1",
+          "jcr:created": "Fri Feb 23 2018 09:55:59 GMT-0500",
+          "title": "<p>Stryker F1 Small Bone Micro Power&nbsp;Tool&nbsp;System</p>\r\n",
+          "jcr:lastModified": "Mon Mar 05 2018 08:37:20 GMT-0500",
+          "linkText": "Learn more about F1",
+          "sling:resourceType": "stryker/components/content/hero-large-carousel/slide",
+          "backgroundColor": "rgba(66,83,97,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "textWeighting": "2",
+          "openInNewTab": "true",
+          "imagePosition": "2"
+        },
+        "slide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "textTheme": "2",
+          "imageRef": "/content/dam/stryker/campaigns/acfas/images/landingpage_fa_hexapod.png",
+          "linkExternal": "https://footankle.stryker.com/en/products/external-fixation-systems/hoffmann-lrf-hexapod",
+          "textCoverage": "1",
+          "jcr:created": "Fri Feb 23 2018 09:55:59 GMT-0500",
+          "title": "<p>Hoffmann LRF Hexapod<br>\r\n</p>\r\n",
+          "jcr:lastModified": "Mon Mar 05 2018 11:51:42 GMT-0500",
+          "linkText": "Learn more about Hexapod",
+          "sling:resourceType": "stryker/components/content/hero-large-carousel/slide",
+          "backgroundColor": "rgba(89,75,97,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "textWeighting": "2",
+          "openInNewTab": "true",
+          "imagePosition": "2"
+        },
+        "slide_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "textTheme": "2",
+          "imageRef": "/content/dam/stryker/surgical/products/resurfacing-tool/images/Resurfacing tool family.png",
+          "textCoverage": "1",
+          "jcr:created": "Fri Feb 23 2018 09:55:59 GMT-0500",
+          "title": "<p>Resurfacing tool<br>\r\n</p>\r\n",
+          "jcr:lastModified": "Mon Mar 05 2018 08:38:59 GMT-0500",
+          "linkText": "Learn more about resurfacing tool",
+          "sling:resourceType": "stryker/components/content/hero-large-carousel/slide",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "textWeighting": "2",
+          "linkInternal": "/content/stryker/us/en/surgical/products/resurfacing-tool",
+          "openInNewTab": "true",
+          "imagePosition": "2"
+        }
+      }
+    },
+    "curatedcta_1884126553": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon Mar 05 2018 10:22:01 GMT-0500",
+      "ctaExternalLink": "https://foot-ankle.strykerhub.com/assets/files/1dy/2018-acfas-product--tech-fair-invite--online.pdf?mkt_tok=eyJpIjoiTURVME9HWTRaR1JtWW1aaSIsInQiOiJvRDhCWU9MMkNBd1A3WjZmRjJPMGNoYUwyVHZUaVwvTGJ0RkZYWXgwZGFmWkg2NlZqNFFVYWR6b1UxcGs0QTVyb2ZURjdhdm1VMHF1UjFCMDBtRWhUcmlhYnYzSnZsbEFuakJsXC9mOWdKYlo2a0JiVFVQSXl5XC9hUzhjb0VyaGhiRCJ9",
+      "jcr:lastModified": "Mon Mar 05 2018 10:22:44 GMT-0500",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "links": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://foot-ankle.strykerhub.com/assets/files/1dy/2018-acfas-product--tech-fair-invite--online.pdf?mkt_tok=eyJpIjoiTURVME9HWTRaR1JtWW1aaSIsInQiOiJvRDhCWU9MMkNBd1A3WjZmRjJPMGNoYUwyVHZUaVwvTGJ0RkZYWXgwZGFmWkg2NlZqNFFVYWR6b1UxcGs0QTVyb2ZURjdhdm1VMHF1UjFCMDBtRWhUcmlhYnYzSnZsbEFuakJsXC9mOWdKYlo2a0JiVFVQSXl5XC9hUzhjb0VyaGhiRCJ9",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "REGISTER HERE",
+          "externalLinkType": "ext"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Fri Feb 23 2018 15:47:08 GMT-0500",
+      "jcr:lastModified": "Fri Feb 23 2018 15:47:08 GMT-0500",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Mon Mar 05 2018 12:26:56 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4><span style=\"color: rgb(28, 86, 135);\">Introducing Hoffmann LRF Hexapod</span>&nbsp;</h4>\r\n",
+          "jcr:lastModified": "Tue Mar 06 2018 12:54:36 GMT-0500",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standalonevideo_2112976541": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Mon Feb 26 2018 11:56:13 GMT-0500",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Mar 05 2018 12:28:04 GMT-0500",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/campaigns/acfas/images/Hexapod_v7.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Hexapod_v7-AVS",
+            "unsharpMaskRadius": "0",
+            "jcr:lastModified": "Tue Mar 06 2018 09:28:32 GMT-0500",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0"
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Mon Mar 05 2018 12:25:36 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4><span style=\"color: rgb(76, 125, 122);\">Resurfacing tool in action&nbsp;</span></h4>\r\n",
+          "jcr:lastModified": "Mon Mar 05 2018 12:26:21 GMT-0500",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standalonevideo_191572544": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Thu Mar 01 2018 07:53:21 GMT-0500",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Mar 05 2018 12:26:29 GMT-0500",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/surgical/products/resurfacing-tool/video/ResurfacingToolAnimation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/ResurfacingToolAnimation-AVS",
+            "unsharpMaskRadius": "0",
+            "jcr:lastModified": "Thu Mar 01 2018 07:53:41 GMT-0500",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0"
+          }
+        }
+      }
+    },
+    "largeheadline_493899": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Mar 06 2018 12:33:40 GMT-0500",
+      "gradientDirection": "top-to-bottom",
+      "line1": "<h3><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\">Connect with us! &nbsp;</span></span></h3>\r\n",
+      "jcr:lastModified": "Tue Mar 06 2018 12:36:02 GMT-0500",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Fri Feb 23 2018 16:10:13 GMT-0500",
+      "jcr:lastModified": "Fri Feb 23 2018 16:10:13 GMT-0500",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    }
+  }
+}

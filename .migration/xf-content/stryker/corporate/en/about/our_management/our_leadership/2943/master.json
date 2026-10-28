@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leader - 2943",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9bfd9f6e-2314-44a6-be44-e52370fdb1da",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "cf829325-69c2-4eb9-89d0-69fca1714ac1"
+  ],
+  "lastPublished": "Tue Jan 28 2025 22:02:49 GMT+0000",
+  "jcr:created": "Tue Jan 28 2025 22:02:49 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 28 2025 22:02:52 GMT+0000",
+  "cq:lastModified": "Thu Jan 09 2025 19:39:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cf829325-69c2-4eb9-89d0-69fca1714ac1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:02:49 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b7fd257a-6534-479e-ab97-90ecedea3e53",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Jill</span> Duffy</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Vice President, Assurance and Risk Advisory</span></span></p>\n<p>Jill Duffy became Vice President, Assurance and Risk Advisory in December 2024.</p>\n<p>&nbsp;</p>\n<p>Jill leads our Assurance and Risk Advisory (ARA) organization with responsibility for developing and implementing the company’s internal audit strategic plan aimed at mitigating a wide range of strategic, financial, compliance and operational risks while strengthening Stryker’s internal controls.</p>\n<p>Jill joins Stryker with over 26 years of experience. Most recently, Jill worked at Diageo where she held the role of Senior Vice President, Global Audit and Risk with responsibility for global business audits. Prior to Diageo, she held a variety of senior leadership roles at Warner Music Group, including Senior Vice President, Internal Audit and Risk Management, and Vice President, Shared Services. She also held several finance and audit positions at Bristol-Myers Squibb and KPMG.</p>\n<p>Jill holds a bachelor’s degree in accounting from the University of Missouri-Kansas City and is a Certified Public Accountant.</p>\n<p><br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Thu Jan 09 2025 19:39:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 19:56:34 GMT+0000",
+      "alt": "Jill Duffy",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Our_Management_Redesign_Jill_Duffy.png",
+      "jcr:lastModified": "Tue Jan 07 2025 21:49:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

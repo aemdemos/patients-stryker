@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "IACP 2023 landing page header ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fcfdc163-c1d5-4d62-9abf-ba8076dcad00",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b3062506-de6c-4d6d-9637-a004cfb1a68d"
+  ],
+  "jcr:created": "Wed Jul 05 2023 18:52:51 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 05 2023 18:52:53 GMT+0000",
+  "cq:lastModified": "Wed Jul 05 2023 18:52:35 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b3062506-de6c-4d6d-9637-a004cfb1a68d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1038efe3-1b89-4284-aa78-0d3bf0087337",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jul 05 2023 18:52:19 GMT+0000",
+      "alt": "IACP-2023-header",
+      "srcFileRef": "/content/dam/stryker/ems/tradeshows/images/IACP-2023-header.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jul 05 2023 18:52:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

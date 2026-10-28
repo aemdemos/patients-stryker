@@ -1,0 +1,49 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b80044b0-53b0-4fe3-97a8-7763a79937b6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "11531f6e-a7ed-42d3-ab76-08c0c0749382"
+  ],
+  "jcr:created": "Tue Oct 25 2022 13:09:51 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 25 2022 13:09:53 GMT+0000",
+  "cq:lastModified": "Fri Oct 21 2022 17:13:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "11531f6e-a7ed-42d3-ab76-08c0c0749382",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "f273e044-09e2-4e29-8550-95680d1bd987",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Oct 21 2022 15:42:39 GMT+0000",
+      "alt": "hero",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/more-than-able-to-make-healthcare-better/hero.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Oct 21 2022 17:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

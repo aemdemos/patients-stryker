@@ -1,0 +1,398 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Reverse Shoulder Replacements",
+  "jcr:versionHistory": "1b677139-f515-48f5-949c-3e9f458b7c7e",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:predecessors": [
+    "783b29fc-23f6-4be6-aa22-27c058524a0f"
+  ],
+  "lastPublished": "Fri Jun 12 2020 14:27:43 GMT+0000",
+  "jcr:created": "Fri Jun 12 2020 14:27:43 GMT+0000",
+  "cq:lastModified": "Fri Jun 12 2020 13:41:09 GMT+0000",
+  "jcr:baseVersion": "783b29fc-23f6-4be6-aa22-27c058524a0f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "0428bcf9-9bd0-4d86-8263-389f662920af",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:38:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:45:00 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/teach-talks/TEACH-talks-wordmark-hzn.png",
+      "jcr:lastModified": "Tue Oct 01 2019 15:30:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 19:48:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:12:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"fontsize-1em\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\">Shoulder</span></span> </span></span><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">Talks:</span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:25:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "showDimensionalBox": "true",
+      "textIsRich": "true"
+    },
+    "largeheadline_886368": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><b>Reverse Shoulder Replacements</b></span></span></span></span><br>\r\n </span>",
+      "jcr:lastModified": "Wed May 27 2020 19:47:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:40:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Dec 02 2019 17:46:57 GMT+0000",
+          "type": "typeId",
+          "videoId": "m_1ZOu083hU",
+          "jcr:lastModified": "Wed May 27 2020 19:49:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:43:16 GMT+0000",
+          "text": "<p><b>Description:&nbsp;<br>\n</b>Reverse shoulder arthroplasty has become a popular treatment option for many patients experiencing shoulder pain. Join us as Dr. Bahk presents the history, evolution, and biomechanical considerations of reverse shoulder arthroplasty options on the market today.</p>\n<p><b>Learning objective:</b></p>\n<ul>\n<li>Take a look at the biomechanics and anatomy of the glenohumeral joint</li>\n<li>Review the evolution of the reverse shoulder replacements and where the research has brought us to today&nbsp;</li>\n<li>The key components of a lateralized design and the benefits potentially to the patient</li>\n<li>Find out why reverse shoulder replacements have become so popular and how modernized implant designs have impacted the shoulder market</li>\n</ul>\n<p><b>Course instructor:</b>&nbsp;Michael Bahk, MD</p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:50:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop_68667941": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:46:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 19:49:38 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">TE<span style=\"color: #000000;\">ACH&nbsp;</span></span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Talks: Course overview</span></span></span></span></span></p>\n",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "textIsRich": "true"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:19:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "yFEZWM1iFM4",
+          "jcr:lastModified": "Wed May 27 2020 19:51:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 1: </span><b>Kinematics of our shoulder and how it relates to the reverse design</b></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:52:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n</b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:53:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "tetP89J17OE",
+          "jcr:lastModified": "Wed May 27 2020 19:51:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 2:</span>&nbsp;<b>A little French history</b></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:52:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_962363608": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n</b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:54:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "luX0429_Rkc",
+          "jcr:lastModified": "Wed May 27 2020 19:51:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 3: </span><b>Lateralization, what’s the big deal?</b></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:53:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n</b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:54:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "mqp_FBBzypM",
+          "jcr:lastModified": "Wed May 27 2020 19:52:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 4:</span> <b>Data and research around lateralized reversed shoulders</b></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:53:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_1661820210": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n</b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:54:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_copy_copy_copy_2098063315": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 19:48:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 27 2020 15:31:45 GMT+0000",
+          "type": "typeId",
+          "videoId": "76gKeim_dII",
+          "jcr:lastModified": "Fri Jun 12 2020 13:41:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Chapter 5: </span><b>Tips &amp; Tricks for implanting a reverse shoulder arthroplasty</b></p>\n",
+          "jcr:lastModified": "Fri Jun 12 2020 13:40:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 19:48:51 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1em\">View more information</span></span></span></span><span class=\"fontsize-8em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"standalone-link\"><b><br>\n &nbsp; • <a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">RSA</a><br>\n</b></span></span></span></span></p>\n",
+          "jcr:lastModified": "Wed May 27 2020 19:54:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "jcr:lastModified": "Wed Sep 11 2019 20:21:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "jcr:lastModified": "Wed Sep 11 2019 20:21:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed May 27 2020 19:45:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

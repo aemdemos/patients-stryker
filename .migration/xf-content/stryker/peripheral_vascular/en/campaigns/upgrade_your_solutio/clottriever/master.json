@@ -1,0 +1,187 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ClotTriever",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d5e5a356-865f-4609-b7f7-9b89208d1055",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3afa33a5-7742-4556-9a46-3ba6ce66a4be"
+  ],
+  "lastPublished": "Thu Oct 01 2026 15:05:05 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 15:05:11 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 15:05:18 GMT+0000",
+  "cq:lastModified": "Thu Oct 01 2026 03:06:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3afa33a5-7742-4556-9a46-3ba6ce66a4be",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 01 2026 15:05:05 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "887637db-af67-4429-95c2-5af9f22d86df",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Sep 29 2026 23:04:30 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Sep 29 2026 23:13:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "5"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue Sep 29 2026 22:55:54 GMT+0000",
+      "alt": "DownArrow",
+      "srcFileRef": "/content/dam/stryker/peripheral-vascular/campaigns/upgrade-your-solutions/images/DownArrow.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 29 2026 22:56:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "rightMargin": "0",
+      "topMargin": "1",
+      "jcr:created": "Tue Sep 29 2026 22:56:18 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">The <span style=\"color: #ffb500;\">lowest 2-year PTS rates</span> ever reported in a major DVT study.<sup>2</sup></span></span>",
+      "jcr:lastModified": "Tue Sep 29 2026 23:14:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Sep 29 2026 22:57:52 GMT+0000",
+      "jcr:lastModified": "Tue Sep 29 2026 22:57:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    },
+    "largeheadline_785432213": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "rightMargin": "0",
+      "topMargin": "-7",
+      "jcr:created": "Tue Sep 29 2026 22:59:04 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-5-5-vw\">94%</span></span></span>",
+      "jcr:lastModified": "Tue Sep 29 2026 23:14:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "5"
+        }
+      }
+    },
+    "largeheadline_1701551514": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "rightMargin": "0",
+      "topMargin": "0",
+      "jcr:created": "Tue Sep 29 2026 22:58:09 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">None or mild PTS symptoms at 2 years<sup>2</sup></span></span>",
+      "jcr:lastModified": "Tue Sep 29 2026 23:11:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        }
+      }
+    }
+  }
+}

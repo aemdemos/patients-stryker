@@ -1,0 +1,457 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "PEEK-Optima suture or titanium anchor",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Gravity",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7fd143be-a707-434b-9e7b-1fe51681a362",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+  "thumbnailAltText": "gravity-thumbnail",
+  "jcr:predecessors": [
+    "132dfbae-9deb-47bd-8c7d-aea71b88a4dc"
+  ],
+  "contentID": "1. AP-005923B_10-Oct-2018",
+  "lastPublished": "Wed Aug 19 2026 16:47:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 16:47:29 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 16:47:31 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 16:47:18 GMT+0000",
+  "jcr:description": "Designed by foot and ankle surgeons for foot and ankle surgery",
+  "jcr:baseVersion": "132dfbae-9deb-47bd-8c7d-aea71b88a4dc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:05:49 GMT+0000",
+  "cq:tags": [
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/small-joints",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:business-unit/sports-medicine",
+    "stryker:product/sports-medicine/gravity",
+    "stryker:capability/sports-medicine",
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Nov 16 2023 21:41:14 GMT+0000",
+  "jcr:uuid": "12e2fbf8-c0a2-40d1-b33f-5ffd240ed40c",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Tue Feb 28 2023 15:13:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:17:59 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Feb 28 2023 15:23:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sports-medicine/products/gravity/videos/Gravity Ti animation.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Gravity Ti animation-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Feb 28 2023 15:23:18 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:18:32 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:18:36 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:18:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Feb 28 2023 15:19:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Gravity&nbsp;PEEK-Optima suture anchor</span></p>\n",
+          "jcr:lastModified": "Wed Mar 15 2023 17:40:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 28 2023 15:19:39 GMT+0000",
+          "alt": "Gravity-titanium-suture-anchor",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/gravity/images/Gravity-titanium-suture-anchor.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 28 2023 15:20:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Feb 28 2023 15:19:20 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Gravity Titanium suture anchor</span></p>\n",
+          "jcr:lastModified": "Wed Mar 15 2023 17:40:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 28 2023 15:19:42 GMT+0000",
+          "alt": "gravity-peek-optima",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/gravity/images/gravity-peek-optima.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 28 2023 15:20:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1987566628": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:18:39 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:18:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1439579881": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:21:15 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:21:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Feb 28 2023 15:19:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Explore the design:</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 15 2023 17:42:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-5"
+        }
+      }
+    },
+    "cols2_1768767083": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:18:47 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:18:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 28 2023 15:21:48 GMT+0000",
+          "alt": "gravity-selfcutting-flutes-feature",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/gravity/images/gravity-selfcutting-flutes-feature.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 28 2023 15:22:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_2109393415": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Feb 28 2023 15:19:20 GMT+0000",
+          "text": "<p>Aggressive self-cutting flutes ease anchor insertion</p>\n",
+          "jcr:lastModified": "Tue Feb 28 2023 15:20:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Feb 28 2023 15:21:52 GMT+0000",
+          "alt": "gravity-modular-handle-design",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/gravity/images/gravity-modular-handle-design.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 28 2023 15:22:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_2109393415": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Feb 28 2023 15:19:20 GMT+0000",
+          "text": "<p>Modular handle design allows for organized suture and needle deployment, saving time and streamlining the procedure</p>\n",
+          "jcr:lastModified": "Tue Feb 28 2023 15:21:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1735872239": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:18:51 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:18:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/gravity/resources/Gravity PEEK-Optima brochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/gravity/resources/Gravity PEEK anchor surgical technique.pdf",
+        "/content/dam/stryker/sports-medicine/products/gravity/resources/Gravity Ti anchor brochure.pdf"
+      ],
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Feb 28 2023 15:26:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_690887150": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 15:28:51 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 15:28:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Mar 15 2023 18:08:23 GMT+0000",
+      "title": "Related procedures and products",
+      "jcr:lastModified": "Wed Mar 15 2023 18:08:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 19:57:56 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 19:57:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 19:58:01 GMT+0000",
+          "CTATitle": "Rotator cuff repair",
+          "CTAImageAltText": "rcr-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 19:58:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/rcr-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/procedures/Rotator_Cuff_Repair"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 19:58:04 GMT+0000",
+          "CTATitle": "Reelx STT knotless anchor system",
+          "CTAImageAltText": "reelx-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 20:04:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/reelx-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/reelx-stt-reelx-knotless-peek-anchor"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 19:58:07 GMT+0000",
+          "CTATitle": "Omega self-punching knotless anchor system",
+          "CTAImageAltText": "omega-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 19:59:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/omega-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/omega"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 16:47:08 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 16:47:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/gravity/images/gravity-thumbnail.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "text": "<p>Fully threaded PEEK or titanium anchor with tapered needles to provide stability. Gravity anchors may be used to address a variety of soft tissue applications that span the forefoot, midfoot and hindfoot.</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\">Gravity suture anchor</span></p>\n<ul>\n<li>Available in 2.7 mm, 3.5 mm and 5.5 mm sizes</li>\n<li>Aggressive self-cutting flutes to support ease of anchor insertion<sup>1</sup></li>\n<li>Contain Ultra-High Molecular Weight Polyethylene sutures</li>\n<li>Modular handle design allows for organized suture and needle deployment</li>\n<li>Platform instruments work with all Gravity implants</li>\n<li>Available in titanium or PEEK-Optima</li>\n</ul>\n",
+    "jcr:lastModified": "Wed Mar 15 2023 17:35:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Feb 28 2023 15:16:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 15 2023 18:10:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 16:47:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "296560c9-94f5-4532-a655-c1dc83b1235b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9adf091a-bc06-4dc9-8f38-e7ec0db04ff3"
+  ],
+  "jcr:created": "Tue Feb 20 2024 15:23:12 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 20 2024 15:23:14 GMT+0000",
+  "cq:lastModified": "Tue Feb 20 2024 15:23:07 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9adf091a-bc06-4dc9-8f38-e7ec0db04ff3",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "3d8ca96a-bf05-4656-9075-236ecd0f6731",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's sleek overbed hospital table",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/tru-fit/images/Thumbnail_Tru-Fit_Overbed_Table_2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 13 2024 15:14:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

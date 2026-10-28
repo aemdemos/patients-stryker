@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProAssure Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5dfa12b7-660f-451f-8dab-3197e645b2cb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "0a30b17f-6ca2-43c1-9faf-016c0342e3a2"
+  ],
+  "lastPublished": "Fri Oct 03 2025 20:22:32 GMT+0000",
+  "jcr:created": "Fri Oct 03 2025 20:22:33 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 03 2025 20:22:35 GMT+0000",
+  "cq:lastModified": "Fri Sep 12 2025 13:03:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0a30b17f-6ca2-43c1-9faf-016c0342e3a2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Oct 03 2025 20:22:32 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2fe7ea95-3928-427d-92f5-97584e67802b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 20 2025 13:16:13 GMT+0000",
+      "alt": "Business professionals collaborating in a modern office setting, reviewing ProAssure service details on a laptop",
+      "srcFileRef": "/content/dam/stryker/acute-care/Services/proassure/images/ProAssure_hero_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Sep 12 2025 13:03:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,853 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Incompass",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d00dd780-4801-48c2-9786-440af262504b",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Incompass Total Ankle System",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/products/incompass/images/S06-10-Incompass-4withPoly-web.png",
+  "jcr:predecessors": [
+    "6175bb61-66ad-4c53-a1b5-e76222c4ef7f"
+  ],
+  "contentID": "FA-INCO-SYK-2216762_REV-0_en_us",
+  "lastPublished": "Wed Jul 29 2026 18:43:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 29 2026 18:43:36 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 29 2026 18:43:38 GMT+0000",
+  "cq:lastModified": "Wed Jul 29 2026 18:43:27 GMT+0000",
+  "jcr:baseVersion": "6175bb61-66ad-4c53-a1b5-e76222c4ef7f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Aug 27 2025 18:00:10 GMT+0000",
+  "hideInNav": "true",
+  "pageTitle": "Incompass",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Aug 27 2025 18:03:29 GMT+0000",
+  "jcr:uuid": "32f7864d-0df7-4a9c-84f7-ffed414cb652",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "navTitle": "Incompass",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "layoutOptions": "col-sm-6 pull-left",
+      "backgroundImageRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/IncompassBanner_v3 800-noborder.png",
+      "jcr:created": "Tue Jun 02 2026 23:26:09 GMT+0000",
+      "alt": "IncompassBanner_v3 800",
+      "jcr:lastModified": "Wed Jun 03 2026 23:42:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Jun 03 2026 23:42:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-4-5-vw\"><span class=\"futura-bold\">Incompass<sup>TM<br />\r\n</sup></span><span class=\"urw-egyptienne\">Total Ankle System</span></span><br />\r\n",
+          "line2": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Total understanding of the arthritic ankle</span></span>",
+          "jcr:lastModified": "Wed Jun 03 2026 23:44:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:44:00 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-4vw\">Not just our next innovation.</span></span></p>\r\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,181,0);\">A new understanding.</span></span></span></p>\r\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:41:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-2",
+      "jcr:created": "Tue Dec 12 2023 22:34:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Incompass isn’t just our next advancement—it’s a reimagining of the arthritic ankle, built from the ground up with surgeon insight and real-world data. Every decision was driven by the goal to reinvent what’s possible for total ankle care—streamlining workflow, expanding intraoperative flexibility, and enabling surgeons in their pursuit of improved patient outcomes.</span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:22:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:47:29 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:47:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 21:12:57 GMT+0000",
+      "jcr:lastModified": "Wed Mar 26 2025 21:12:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Mon Jun 01 2026 17:47:50 GMT+0000",
+          "alt": "CTA-1",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/CTA-1.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 26 2026 18:14:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/foot-and-ankle/products/Incompass.html#contact",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_copy_1374179868": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 18:13:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\">Intentional <span class=\"futura-bold\"><span style=\"color: #ffb500;\">design.</span></span></span><br>\n</span> <span class=\"fontsize-1-75em\">Implants driven by a total understanding of the arthritic ankle</span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:19:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 01 2026 17:55:25 GMT+0000",
+          "alt": "shapedbydata-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/shapedbydata-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 22:53:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Shaped by data unique to Stryker</span></span></p>\n<p><span class=\"fontsize-1-5em\">The implants were designed using SOMA, Stryker’s Orthopedic Modeling and Analytics tool, which analyzed real patient anatomy from arthritic ankle CT scans in the Prophecy® database. SOMA was used to study bone quality and optimize implant location.</span></p>\n<p><span class=\"fontsize-1-5em\"><br>\nFurther insights were gained from more than 80,000 Prophecy scans.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:22:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_552397689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 01 2026 17:55:25 GMT+0000",
+          "alt": "harmonizedcontinuum-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/harmonizedcontinuum-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 22:53:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">A harmonized continuum</span></span></p>\n<p><span class=\"fontsize-1-5em\">Incompass allows seamless switching between peg and stemmed implants, with a low-profile, bone preserving approach.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:22:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:53:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 01 2026 17:55:25 GMT+0000",
+          "alt": "adaptis-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/adaptis-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 22:54:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Elevated by Adaptis</span></span></p>\n<p><span class=\"fontsize-1-5em\">Incompass implements Adaptis Boney Ingrowth Technology across all implant components which is designed to act as a scaffold that facilitates boney ingrowth, which can improve long-term fixation.<sup>2</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:23:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_298313840_copy__1883893048": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 20:44:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b>&nbsp; &nbsp;</b></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:57:56 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:57:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 18:13:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\">Improving <span class=\"futura-bold\"><span style=\"color: #ffb500;\">performance.</span></span><sup>5</sup></span><br>\n</span> <span class=\"fontsize-1-75em\">Instruments driven by a total understanding of surgeon needs</span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2064985580_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "surgeon-centric-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/surgeon-centric-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:02:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Surgeon-centric design</span></span></p>\n<p><span class=\"fontsize-1-5em\">Designed with insights from 100,000 total ankle cases<sup>1</sup>, the Incompass instrumentation is refined for precision, efficiency and ease of use. The Adjustment Arc and C-Bracket are designed to deliver the stability and accuracy you count on, while the additional redesigned instruments deliver enhanced feel and fit.</span></p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:23:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2064985580": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Less instruments. More choices.</span></span></p>\n<p><span class=\"fontsize-1-5em\">By harmonizing the system and streamlining the instruments, Incompass helps minimize setup and sterilization time and improve overall efficiency. Incompass offers a continuum of implant options which support versatility across cases, allowing surgeons to respond quickly intraoperatively to different anatomies.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:23:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "lessinstruments-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/lessinstruments-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:02:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text_298313840_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 20:44:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b>&nbsp; &nbsp;</b></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_690837280": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:23:32 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:23:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Jun 02 2026 18:23:56 GMT+0000",
+          "alt": "CTA -2",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/CTA -2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 07 2026 18:31:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/foot-and-ankle/products/Incompass.html#contact",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 02 2026 18:13:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\">Stryker’s ankle <span class=\"futura-bold\"><span style=\"color: #ffb500;\">legacy and data.</span></span></span><br>\n</span> <span class=\"fontsize-1-75em\">Instruments driven by a total understanding of surgeon needs</span></span></p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:24:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2064985580_cop_1116567206": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "provensuccess-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/provensuccess-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Built on proven success</span></span></p>\n<p><span class=\"fontsize-1-5em\">Incompass Total Ankle System was designed to mimic the profile and fixation of both Infinity and Inbone. The profile, fixation, and sulcus articulation from both Infinity and Inbone and the clinical survivorship (98% survivorship at 5 years for Inbone Total Ankle3 &amp; 1.6% Revision Rate for Infinity Total Ankles at 2-5 year follow-up<sup>4</sup>) informed the initial design.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:24:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "enhancedfixation-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/enhancedfixation-dropshadow.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:08:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Enhanced fixation</span></span></p>\n<p><span class=\"fontsize-1-5em\">Incompass offers a complete system of 3D-printed porous metal tibial and talar components, which act like scaffolds, promoting early boney ingrowth (often as early as four weeks).<sup>2</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:27:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2064985580_cop_1926666548": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "surgicalflex-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/surgicalflex-img.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:06:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Surgical flexibility</span></span></p>\n<p><span class=\"fontsize-1-5em\">The Incompass instrumentation is designed specifically for intraoperative flexibility, allowing surgeons to seamlessly switch implant types to meet the needs of a variety of patient’s unique anatomies.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:24:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 18:18:32 GMT+0000",
+          "alt": "opefficiency-img",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/incompass/images/opefficiency-img-dropshadow.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 02 2026 23:08:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:55:30 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Operational efficiency</span></span></p>\n<p><span class=\"fontsize-1-5em\">The system streamlines OR flow by reducing the instrument burden, enhancing planning accuracy, and saving the hospital sterilization time leading to a reduction in cost.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:24:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_298313840_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 20:44:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffffff;\">.</span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 20:45:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 18:32:00 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 18:32:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 02 2026 18:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">We applied the science of the Stryker Orthopaedic Modeling and Analytics (SOMA) system to define the anatomy of the arthritic ankle. We then merged this knowledge with the data and experience of Infinity and Inbone to create the ideal next generation implant. With Incompass, we have designed a total ankle replacement that harmonizes pegged and stemmed implants into a single streamlined system that is designed to match the anatomy of the arthritic ankle.&nbsp;</span></span></span></p>\n<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><br>\n<span class=\"fontsize-2em\"><span class=\"futura-bold\">“Incompass is a <span style=\"color: #ffb500;\">technically advanced, easy to use total ankle system</span> that surgeons can implant efficiently to optimize patient outcomes.”</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:47:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 02 2026 18:13:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Jeremy McCormick, MD<br>\n </span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Chief, Foot and Ankle Surgery<br>\n Washington University in St. Louis</span></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-8em\">Dr. McCormick is a paid-consultant of Stryker Orthopaedics.<br>\nThe opinions expressed by Dr. McCormick are those of Dr. McCormick and not necessarily those of Stryker.&nbsp;Individual experiences may vary.</span></span></p>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:42:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_298313840": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 02 2026 20:44:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><b>&nbsp; &nbsp;&nbsp;</b></p>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 23:43:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_524_23522658": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 23:37:32 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 23:37:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1305650619": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 20:44:04 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 20:44:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "contact",
+          "jcr:created": "Wed Jun 03 2026 23:54:27 GMT+0000",
+          "title": "Contact",
+          "jcr:lastModified": "Wed Jun 03 2026 23:54:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "section_title_500366153": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "contact-us",
+          "jcr:created": "Fri Jun 26 2026 17:16:00 GMT+0000",
+          "title": "contact-us",
+          "jcr:lastModified": "Fri Jun 26 2026 17:16:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        }
+      }
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Jun 03 2026 23:54:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact Us!</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Incompass<sup>™</sup><span style=\"color: #000000;\">&nbsp;Total Ankle System</span></span></span></h4>\n",
+          "jcr:lastModified": "Tue Jun 02 2026 23:37:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 20:12:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_524152238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 23:37:32 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 23:37:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Follow us to join the conversation.</span></span></h3>\n<h4><span class=\"urw-egyptienne\">Stay in the know and never miss an update!</span><br>\n</h4>\n",
+      "jcr:lastModified": "Tue Jun 02 2026 22:14:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "ctaLinkType": "none",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Jun 02 2026 22:14:27 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 22:20:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "links": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "Linkedin",
+          "externalLinkType": "ext"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://www.instagram.com/strykerfoot.ankle/",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "Instagram",
+          "externalLinkType": "ext"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://www.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "Facebook",
+          "externalLinkType": "ext"
+        }
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:30 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 30 2025 19:20:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/incompass/images/S06-10-Incompass-4withPoly-web.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<p>&nbsp;</p>\r\n<ol>\r\n<li>Based on internal data as of 5/1/2025.&nbsp;</li>\r\n<li>Data on file at Stryker. Claim based on data from rabbit femur model. It is unknown how these results compare with clinical results in humans&nbsp;</li>\r\n<li>Gagne OJ, Day J. Kim J, Caolo K, O’Malley MJ, Deland JT, Ellis SJ, Demetracopoulos CA. Midterm Survivorship of the INBONE II Total Ankle Arthroplasty. Foot &amp; Ankle International. 2022 May;43(5):628-636. doi: 10.1177/10711007211060047&nbsp;</li>\r\n<li>Early experience and patient-reported outcomes of 503 Infinity total ankle arthroplasties: A Concise Follow Up Townshend et al.| Oct 2023 | The Bone &amp; Joint Journal | Vol. 103-B, No.</li>\r\n<li>Compared to legacy Stryker Total Ankle System’s Infinity and Inbone.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Jun 03 2026 23:45:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "StrykeCam HD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "22869be5-2b57-48d4-aa6f-be8ec4c9f50d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4c90ed6e-5676-4943-b936-f16d4d278d6f"
+  ],
+  "jcr:created": "Wed Aug 24 2022 18:33:32 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 24 2022 18:33:48 GMT+0000",
+  "cq:lastModified": "Thu May 05 2022 18:09:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4c90ed6e-5676-4943-b936-f16d4d278d6f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1dbad596-193b-4670-9e8e-9a9fd8a10d3a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 28 2021 18:45:53 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"fontsize-2vw\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">StrykeCam HD</span><br>\r\n</span></b></span>Surgical in-light camera</h1>\r\n",
+      "line2": "<h2><span class=\"fontsize-1-5-vw\">The StrykeCam HD surgical in-light camera mounts directly in the middle of your Stryker surgical light to provide an alternative overhead view of the surgical field, enabling your surgical team to share the procedure around the room or around the world.</span></h2>\r\n",
+      "jcr:lastModified": "Thu Apr 14 2022 19:55:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 28 2021 18:49:19 GMT+0000",
+      "alt": "StrykeCam HD",
+      "srcFileRef": "/content/dam/stryker/communications/products/strykecamhd/images/Hero-StrykeCamHD.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 05 2022 18:09:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "srcFileRef-0": "/content/dam/stryker/acute-care/products/primeseries/images/Thumbnail_PrimeSeries.jpg",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Oct 28 2021 18:53:31 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">StrykeCam HD </span></span></p>\n<p>The StrykeCam HD in-light camera produces the highest quality 1080p HD image for a multitude of uses in your OR. With an outstanding 20x optical zoom capability, distinct HD images can be viewed wherever your surgical image is required. From recording to broadcasting a procedure, our surgical in-light camera offers a vantage point with impeccable detail.</p>\n<p>The StrykeCam HD in-light camera is designed to capture&nbsp;and record procedures at the surgical site while minimizing disruption in the OR. By allowing the clinical staff to follow your progress without breaking the sterile field, the StrykeCam HD in-light camera strives to improve workflow and enable easier documentation for training and case study purposes.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Apr 14 2022 19:55:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1341353581": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 06 2022 18:37:23 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Apr 06 2022 18:37:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy__1685985434": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 06 2022 18:37:23 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">Literature Number: 1000902497, Rev. A</span></p>\n",
+      "jcr:lastModified": "Thu Apr 14 2022 19:56:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

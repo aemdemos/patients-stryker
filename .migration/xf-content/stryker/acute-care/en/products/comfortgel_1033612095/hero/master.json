@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "633ab97e-d66a-4f2c-bed1-df6d818a5701",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "ee77d5ae-17c1-47d8-a4c8-4f0867b0f706"
+  ],
+  "jcr:created": "Fri Feb 23 2024 18:31:59 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 23 2024 18:32:01 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 18:31:49 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ee77d5ae-17c1-47d8-a4c8-4f0867b0f706",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "62c5d5bd-72cb-4da4-9525-1988ba11807d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's ComfortGel hospital mattress",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/comfortgel/images/Thumbnail_ComfortGelSurface.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 18:31:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

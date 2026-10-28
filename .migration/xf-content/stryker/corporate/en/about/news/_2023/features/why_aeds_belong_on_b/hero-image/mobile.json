@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "06a1382b-b2cb-4c76-a3d7-4503fefa93f5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5799aa84-7085-49c3-9587-f564db5b3c11"
+  ],
+  "jcr:created": "Thu Sep 14 2023 20:11:30 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 14 2023 20:11:32 GMT+0000",
+  "cq:lastModified": "Thu Sep 14 2023 15:21:49 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5799aa84-7085-49c3-9587-f564db5b3c11",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e10261a2-6cdf-4962-a7a9-5608e39b00dd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Sep 14 2023 15:21:43 GMT+0000",
+      "alt": "back-to-school-hero-mobile",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/why-aeds-belong-on-back-to-school-checklists/images/back-to-school-hero-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Sep 14 2023 15:21:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

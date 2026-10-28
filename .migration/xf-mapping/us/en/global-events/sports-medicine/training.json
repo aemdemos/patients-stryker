@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Training",
+  "jcr:versionHistory": "3f119f37-92f2-4eaa-9515-e34ff449e474",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:predecessors": [
+    "b3be748c-44ca-47f3-b486-5e52c7d8fa4d"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:49 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:49 GMT-0400",
+  "cq:lastModified": "Mon Nov 20 2017 12:23:10 GMT-0500",
+  "jcr:baseVersion": "b3be748c-44ca-47f3-b486-5e52c7d8fa4d",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "92ff898e-6b82-4293-9063-e43a7642e3a4",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com"
+}

@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Heads To The Midwest For First PGA TOUR Champions Stop Of The Year",
+  "jcr:versionHistory": "4aecfc78-715b-49b5-bc57-23f3458dccf8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "b5ff2b76-9f22-469c-a053-eb4ec4fbdf1f"
+  ],
+  "lastPublished": "Fri Sep 15 2017 09:20:41 GMT+0000",
+  "jcr:created": "Fri Sep 15 2017 09:20:41 GMT-0400",
+  "cq:lastModified": "Thu Aug 24 2017 13:26:37 GMT-0400",
+  "jcr:baseVersion": "b5ff2b76-9f22-469c-a053-eb4ec4fbdf1f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:uuid": "60b79d0d-1790-4d0b-ac36-0bf9e8942e81",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Sun Aug 06 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Aug-2017",
+    "jcr:lastModified": "Thu Aug 24 2017 10:12:25 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "text": "<p>Official Joint Replacement Products of the PGA TOUR® and PGA TOUR Champions to Offer Joint Health Education to Golf Fans at the Wakonda Club in Des Moines, Iowa. Stryker Orthopaedics will make its first PGA TOUR Champions appearance of 2017 at The Principal Charity Classic in Des Moines, Iowa. During the tournament, Stryker will continue to reinforce its commitment to the health and well-being of joint pain sufferers through its on-site activation, The Mobility Zone.</p>\n<p><b>Read the full article:</b></p>\n<p><b><a href=\"http://www.prnewswire.com/news-releases/stryker-heads-to-the-midwest-for-first-pga-tour-champions-stop-of-the-year-300469947.html\">PRNewswire</a></b></p>\n",
+    "jcr:lastModified": "Thu Aug 24 2017 13:26:37 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "linkExternal": "http://www.prnewswire.com/news-releases/stryker-heads-to-the-midwest-for-first-pga-tour-champions-stop-of-the-year-300469947.html",
+    "srcFileRef": "/content/dam/stryker/about/news/images/stryker_lock_combined_new_2.jpg",
+    "jcr:lastModified": "Thu Aug 24 2017 10:32:42 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "openInNewTab": "true"
+  }
+}

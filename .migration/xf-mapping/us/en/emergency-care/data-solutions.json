@@ -1,0 +1,633 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Data solutions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3818b925-b8ca-4df1-87c4-5a5bc03c27b3",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Patient data shown on LIFENET Care",
+  "jcr:predecessors": [
+    "5c4f5a16-6413-43ef-b1a9-ef3d8e220c74"
+  ],
+  "contentID": "M0000010309 REV AA",
+  "lastPublished": "Wed Aug 19 2026 21:20:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 21:20:38 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 21:20:40 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 21:20:30 GMT+0000",
+  "jcr:baseVersion": "5c4f5a16-6413-43ef-b1a9-ef3d8e220c74",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:20:37 GMT+0000",
+  "pageTitle": "Data solutions",
+  "jcr:lastModified": "Tue Sep 13 2022 13:50:30 GMT+0000",
+  "jcr:uuid": "2c99ce95-fc5d-48ba-b62c-2e06ef43fcbe",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "Data solutions",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Feb 07 2022 16:25:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    },
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Oct 01 2021 17:37:13 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Oct 21 2021 19:07:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/data_solutions/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/data-solutions/hero/master",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "3",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Jul 22 2022 17:17:12 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Fri Oct 01 2021 17:37:38 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><b><span class=\"futura-bold\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-3-5-vw\">Better data. Better performance.</span></span></span></b></h1>\r\n",
+              "line2": "<h3><span class=\"fontsize-1-5-vw\">Stryker's data solutions help make it faster and easier to share information, collaborate and generate insights to help improve operational effectiveness and team communication.</span></h3>\r\n",
+              "jcr:lastModified": "Thu Nov 02 2023 18:29:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "CONNECT WITH AN EXPERT",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Fri Jul 22 2022 18:48:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/data-solution/images/lifenet-care.png"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy_copy_12471_1704953728": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:22:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><b style=\"background-color: transparent;\"><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\"><b>Integrated data solutions so you can deliver better care</b></span></span></span></b><br />\r\n</h2>\r\n",
+      "line2": "<span class=\"fontsize-1-5-vw\">An unmatched set of data tools helps connect and accelerate caregiving teams to empower better decisions and enabled improved team mobilization. Choose the solution that meets your clinical and operational needs.</span>",
+      "jcr:lastModified": "Mon Aug 29 2022 16:07:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "3",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "The LIFENET System data and asset management system shown on a computer screen",
+          "srcFileRef": "/content/dam/stryker/ems/products/lifenet/us/lifenet-manage-equipment.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:09:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">The LIFENET System<br>\n </span></span><span class=\"fontsize-1-5em\">Data and asset management system</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Smoother communication. Faster care. Stronger teams.</span></span></p>\n<p><span class=\"fontsize-1-5em\">The LIFENET System is a comprehensive cloud-based platform that provides information and tools EMS and hospital teams need to work together seamlessly. Access and share critical patient data for STEMI patients, stroke patients and other time-sensitive emergencies. Quickly and easily obtain consultations from remote clinicians and activate care teams across your organization. Rapidly distribute post-event review insights and manage your LIFEPAK device fleet-wide with innovative tools that help save time and empower improvement.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 24 2022 21:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Sun Feb 13 2022 18:04:35 GMT+0000",
+          "CTATitle": "More about lifenet system",
+          "jcr:lastModified": "Wed Aug 17 2022 13:53:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/products/lifenet-system"
+        }
+      }
+    },
+    "cols2_copy_128815649_2107763955": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Mon Feb 07 2022 16:14:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">LIFENET Care<br>\n </span></span><span class=\"fontsize-1-5em\">Stryker's next-generation patient data communication platform.</span></p>\n<p><span class=\"fontsize-1-5em\">Get a more unified view of your patient's journey on a modern, clean interface. LIFENET Care helps make it easier to consolidate patient data, organize your workflow and connect care teams.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 24 2022 21:10:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Sun Feb 13 2022 18:04:35 GMT+0000",
+          "CTATitle": "MORE ABOUT LIFENET CARE",
+          "jcr:lastModified": "Wed Aug 24 2022 21:12:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/products/lifenet-care"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102_1702527648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "The LIFENET Care patient data communication platform show on a computer screen",
+          "srcFileRef": "/content/dam/stryker/ems/products/data_solutions/lifenet-care.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 12 2022 14:10:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_128815649": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Mon Feb 07 2022 16:14:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Two medical professionals review data using the CODE-STAT data review software",
+          "srcFileRef": "/content/dam/stryker/ems/products/codestate/CODE-STAT_1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 13 2022 13:49:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">CODE-STAT<br>\n </span></span><span class=\"fontsize-1-5em\">Data review software and service</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">The insights you need to drive improved performance and patient outcomes.</span></span></p>\n<p><span class=\"fontsize-1-5em\">Identify and quickly make targeted improvements when you can easily understand team performance immediately after a response. CODE-STAT software gives you precision access to relevant, detailed CPR and resuscitation performance data to help you monitor and improve response. Customized reports deliver actionable information back to your teams for improvement.</span></p>\n<p><span class=\"fontsize-1-5em\">With CODE-STAT data review service, you gain access to all the data and functionalities of your CODE-STAT software along with the ease of expert annotations. CODE-STAT data review service matches you with an expert clinical annotator to determine target metrics, design reports and return CPR reports quickly.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 24 2022 21:11:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "CTATitle": "More about code-stat",
+          "jcr:lastModified": "Wed Aug 24 2022 21:12:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)",
+          "ctaInternalLink": "/content/stryker/us/en/emergency-care/products/code-stat"
+        }
+      }
+    },
+    "cols_copy_copy_12471_1828072774": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 18:18:17 GMT+0000",
+      "jcr:lastModified": "Wed Nov 17 2021 14:52:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Nov 16 2021 18:50:35 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Wed Nov 17 2021 14:53:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 18:18:47 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:18:53 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "jcr:lastModified": "Tue Sep 26 2023 16:45:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/ems/videos/products/strykers_data_solutions_story_video1080p.mp4 (1080p).mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+                "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video|VIDEO|false",
+                "assetID": "stryker/strykers_data_solutions_story_video1080p.mp4 (1080p)-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Fri Apr 07 2023 15:19:52 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "/stryker/Video|VIDEO|false"
+              }
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span style=\"color: rgb(255,255,255);\"><span class=\"futura-bold\"><span class=\"fontsize-4vw\">Data solutions</span></span></span>",
+              "line2": "<span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\">Stryker's data solutions story</span></span><a></a>",
+              "jcr:lastModified": "Wed Aug 17 2022 13:55:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "jcr:lastModified": "Wed Nov 17 2021 14:52:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Nov 16 2021 18:50:35 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Wed Nov 17 2021 14:53:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "3",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_1205868232": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Feb 07 2022 16:23:32 GMT+0000",
+      "jcr:lastModified": "Mon Feb 07 2022 16:23:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_12471": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 15:18:11 GMT+0000",
+      "text": "Service and support Quickly and easily put data solutions to work Speed deployment and develop confident users faster so you can start improving and making the most of your healthcare software investment. ABOUT PROFESSIONAL SERVICES",
+      "jcr:lastModified": "Tue Jul 26 2022 15:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/data_solutions/professional-services/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/data-solutions/professional-services/master"
+    },
+    "cols_copy_copy_12471_944890385": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 15 2021 21:30:50 GMT+0000",
+      "title": "connect",
+      "jcr:lastModified": "Fri Jul 22 2022 18:49:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 19:59:58 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 21:07:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Oct 20 2021 20:01:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2 style=\"text-align: left;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">Connect </span></span></span></span></b><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">with an expert</span></span></span></h2>\r\n",
+          "jcr:lastModified": "Wed Dec 15 2021 21:37:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_copy_copy_12471_1452960759": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Wed Aug 19 2026 21:20:30 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
+          "jcr:lastModified": "Fri Aug 14 2026 13:36:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 21:15:32 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Wed Jul 27 2022 12:52:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/homepage/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/homepage/social-icons/master"
+        }
+      }
+    },
+    "customizable_5549374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Oct 19 2020 20:25:16 GMT+0000",
+      "title": "Additional resources",
+      "jcr:lastModified": "Tue Oct 04 2022 15:53:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/data-solutions/software-hosting"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Physio-Control University Hospitals LIFENET System Best Practice, GDR 3335506_A</p>\r\n",
+    "jcr:lastModified": "Tue Jul 26 2022 18:52:30 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

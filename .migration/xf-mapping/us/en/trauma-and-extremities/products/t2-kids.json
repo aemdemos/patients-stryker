@@ -1,0 +1,538 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Pediatric Nailing System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "T2 Kids",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "726ba431-b2cc-4aa4-a283-abe296cc30c1",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2kids/images/T2-Kids.png",
+  "jcr:predecessors": [
+    "711130e9-d581-4a07-b4f5-1c2cf224060f"
+  ],
+  "lastPublished": "Wed Feb 22 2023 20:31:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 22 2023 20:31:37 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 22 2023 20:31:39 GMT+0000",
+  "cq:lastModified": "Wed Feb 22 2023 20:31:30 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Intramedullary nail for treatment of mid-diaphyseal, proximal and distal fractures of the femur, tibia and fibula in pediatric patients.",
+  "jcr:baseVersion": "711130e9-d581-4a07-b4f5-1c2cf224060f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:system/trauma-and-extremities/pediatrics",
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:system/trauma-and-extremities/nailing",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:custom/trauma-and-extremities/Indications/femur",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:product/trauma-and-extremities/t2-kids",
+    "stryker:system/trauma-and-extremities/t2",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Oct 23 2017 15:33:57 GMT-0400",
+  "jcr:uuid": "6634077f-7aff-4d80-818c-060473da1485",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "cols2_493997791_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "jcr:lastModified": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 10 2022 19:00:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">T2 Kids</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Pediatric Nailing System</span></span>",
+          "jcr:lastModified": "Wed Dec 14 2022 02:13:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Intramedullary nail for treatment of mid-diaphyseal, proximal and distal fractures of the femur, tibia and fibula in pediatric patients.</span></span>",
+          "jcr:lastModified": "Wed Dec 14 2022 02:13:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Nov 10 2022 19:00:40 GMT+0000",
+          "alt": "T2 Kids Pediatric Nail",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/t2kids/images/T2-Kids.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 22 2023 20:31:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">T2 Flexible Nail is intended for the temporary stabilization of bone segments or fragments until bone consolidation has been achieved for upper and lower extremity fractures of pediatric patients. Specific indications include the fixation of mid-diaphyseal, proximal and distal fractures of the femur, tibia, fibula, humerus and forearm fractures in pediatric patients only.</span></span>",
+          "jcr:lastModified": "Wed Dec 14 2022 02:13:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "text_copy_1060583734": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">T2 Kids</span><br>\n </span><span class=\"urw-egyptienne\">Product features&nbsp;</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Titanium and stainless steel flexible nails</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Sizes of 300 or 450mm</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Diameters range from 1.5 - 4mm</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Pre-curved shaft designed for easy insertion</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Dedicated instrumentation allows for small and large bone treatment and extraction</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 14 2022 02:14:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 18:31:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 18:31:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">T2 Kids</span></span><span class=\"urw-egyptienne\">&nbsp;<span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about T2 Kids by exploring our collection of unique clinical resources including surgical reduction technique, exposure, and product overview videos, brochures, whitepapers, and more.</span></span></span>",
+          "jcr:lastModified": "Mon Feb 20 2023 23:17:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "sectionseparator_159": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 18:34:32 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 18:34:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 23:16:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/t2-alpha-femur-retrograde-operativetechnique.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE AND SYSTEM COMPONENT GUIDE - T2 ALPHA FEMUR RETROGRADE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/advanced-locking-screws-sell-sheet.pdf\" target=\"_blank\">ADVANCED LOCKING SCREWS INFO SHEET - T2 ALPHA</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/Performance%20of%20IMN%20Screws%20(1).pdf\" target=\"_blank\">PERFORMANCE OF IMN SCREWS</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/Anatmical%20Compliance%20of%20T2%20Alpha%20Femur.pdf\" target=\"_blank\">ANATOMICAL COMPLIANCE OF T2 ALPHA FEMUR</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/K203819.pdf\" target=\"_blank\">FDA CLEARANCE LETTER - T2 ALPHA FEMUR RETROGRADE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/T2_SS_14.pdf\" target=\"_blank\">INFO SHEET - T2 ALPHA FEMUR RETROGRADE</a></b></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Jan 13 2023 18:54:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/t2-alpha-retrograde-indication-tray-layout.pdf\" target=\"_blank\">TRAY LAYOUT CARD - T2 ALPHA FEMUR RETROGRADE INDICATION TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/t2-alpha-imn-basic-tray-layout.pdf\" target=\"_blank\">TRAY LAYOUT CARD (IMN) BASIC - INSTRUMENTS T2 ALPHA</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/t2-alpha-proximal-targeting-device-tray-layout.pdf\" target=\"_blank\">TRAY LAYOUT CARD - T2 ALPHA FEMUR RETROGRADE PROXIMAL TARGETING DEVICE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/T2-Alpha-Femur-Retrograde-Inventory-Control-Sheet.pdf\" target=\"_blank\">INVENTORY CONTROL SHEET - T2 ALPHA FEMUR RETROGRADE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/Basic%20Instruments%20Count%20Sheet%20-%20T2%20Alpha.pdf\" target=\"_blank\">COUNT SHEET - IMN BASIC INSTRUMENTS</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/T2-Alpha-Femur%20-Retrograde-Count-sheet-Indication-Tray.pdf\" target=\"_blank\">COUNT SHEET - T2 ALPHA FEMUR RETROGRADE INDICATION TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/T2-Alpha-Femur-Retrograde-Tray-Count-Sheet-Proximal-Targeting.pdf\" target=\"_blank\">COUNT SHEET - T2 ALPHA FEMUR RETROGRADE PROXIMAL TARGETING TRAY</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/t2alpharetrogradefemur/resources/Brochure%20-%20T2%20Alpha%20(Comparison%20of%20Screw%20heads).pdf\" target=\"_blank\">COMPARISON OF SCREW HEAD BROCHURE</a></b></span></li>\n</ul>\n",
+              "jcr:lastModified": "Thu Dec 15 2022 16:21:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 1,
+          "accTitle": "Internal resources"
+        }
+      },
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed57af3f7794d0543b0ee1b\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 20 2023 23:17:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:45:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about T2 Kids and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 02:17:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_495": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 18:34:45 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 18:34:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Fri Aug 26 2022 17:59:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://stryker.highspot.com/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "HIGHSPOT (Internal Only)",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>T2 Flexible Nail is intended for the temporary stabilization of bone segments or fragments until bone consolidation has been achieved for upper and lower extremity fractures of pediatric patients. Specific indications include the fixation of mid-diaphyseal, proximal and distal fractures of the femur, tibia, fibula, humerus and forearm fractures in pediatric patients only.</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 02:17:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Titanium and stainless steel flexible nails</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Sizes of 300 or 450mm</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Diameters range from 1.5 - 4mm</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Pre-curved shaft designed for easy insertion</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Dedicated instrumentation allows for small and large bone treatment and extraction</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>T2-AWI-1_Rev 2, 07-2018</p>\r\n",
+    "jcr:lastModified": "Wed Jul 25 2018 13:23:12 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/t2kids/images/T2-Kids.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 02:17:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 02:17:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

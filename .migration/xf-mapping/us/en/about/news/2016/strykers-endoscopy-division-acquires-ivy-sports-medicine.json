@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker's Endoscopy division acquires Ivy Sports Medicine",
+  "jcr:versionHistory": "f6ed4c50-2f0b-4578-b262-6faa4bcc39df",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "68a5cd88-478e-43e7-8432-77ae6e4f6eca"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:20 GMT-0400",
+  "cq:lastModified": "Tue Aug 22 2017 18:37:26 GMT-0400",
+  "jcr:baseVersion": "68a5cd88-478e-43e7-8432-77ae6e4f6eca",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 15:19:53 GMT-0400",
+  "jcr:uuid": "9a0e24e3-8a10-4e7c-ae16-029fbe6378ff",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Thu Sep 01 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Sep-2016",
+    "jcr:lastModified": "Wed May 31 2017 22:04:55 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>KALAMAZOO, Michigan, USA,&nbsp;Sept. 1, 2016&nbsp;/PRNewswire/ -- Stryker's Endoscopy division announced today it has acquired Ivy Sports Medicine, LLC, whose portfolio is comprised of a comprehensive minimally invasive meniscal repair platform. The addition of Ivy Sports Medicine's portfolio enables Stryker to provide customers with a complete meniscal platform to better serve their patients.</p>\n<p>The portfolio includes the only FDA-approved collagen meniscus implant (CMI®) on the market, a reliable and innovative all-inside repair device, as well as an inside-out meniscal suturing platform. Ivy's history and sole focus on advancing the treatment of meniscal injuries is also highly complementary to Stryker's current portfolio of visualization, resection, fluid management, and ACL reconstruction platforms.<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/strykers-endoscopy-division-acquires-ivy-sports-medicine-300321449.html?tc=eml_cleartime\" target=\"_blank\">PRNewswire</a><br>\n</p>\n",
+    "jcr:lastModified": "Fri Jun 02 2017 11:03:28 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

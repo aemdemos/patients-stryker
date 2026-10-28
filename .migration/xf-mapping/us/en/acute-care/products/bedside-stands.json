@@ -1,0 +1,531 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Patient room furniture",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Bedside Stands",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5549106b-9ed6-4a80-89b0-7b4cf767d6e2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Thumbnail_BedsideStands_16x9",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/bedsidestands/images/Thumbnail_BedsideStands.jpg",
+  "jcr:predecessors": [
+    "0df9c990-d062-4837-9664-182a82406746"
+  ],
+  "contentID": "Mkt Lit-1926 26 MAR 2020 REV A",
+  "lastPublished": "Thu Aug 13 2026 17:28:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 17:28:04 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 17:28:06 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 17:27:57 GMT+0000",
+  "jcr:description": "A lasting piece for patient rooms.",
+  "jcr:baseVersion": "0df9c990-d062-4837-9664-182a82406746",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 00:04:10 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/patient-room-furniture",
+    "stryker:custom/acute-care/furniture-type/bedside-stand",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:product/acute-care/bedside-stands",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Tue Jan 30 2024 14:37:12 GMT+0000",
+  "jcr:uuid": "027c0ded-7275-4a00-80b0-7d0618464a9e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/bedside_stands/hero-desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/bedside-stands/hero-desktop/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Feb 20 2024 15:50:57 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Bedside stands</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Patient room furniture</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">A lasting piece for patient rooms</span></span></p>\n",
+              "jcr:lastModified": "Tue Feb 06 2024 14:32:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    },
+    "herolargeheader": {
+      "jcr:primaryType": "nt:unstructured"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_562336094": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 03 2020 16:13:25 GMT+0000",
+      "jcr:lastModified": "Tue Mar 03 2020 16:13:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Feb 02 2024 14:00:58 GMT+0000",
+      "jcr:lastModified": "Fri Feb 02 2024 14:00:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Feb 02 2024 14:01:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Bedside stands at a glance</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Durable yet elegant, Stryker's bedside stands are designed to meet the demanding needs of today’s clinical environment. With five unique styles and a variety of laminate and hardware options, these bedside stands provide design latitude to coordinate your patient suites.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Concealed 1.5&quot; (4 cm) twin-wheel casters</span></li>\n<li><span class=\"fontsize-1-25em\">Vented back</span></li>\n<li><span class=\"fontsize-1-25em\">Removable drawers and plastic drawer liners</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Feb 06 2024 14:33:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Related categories</span></span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\">Medical and surgical equipment</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-room-furniture.html\">Patient room furniture</a></p>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 18:29:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "20"
+        }
+      }
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_52491454_copy_1560898532": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue May 11 2021 22:35:26 GMT+0000",
+      "jcr:lastModified": "Tue May 11 2021 22:35:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": 2,
+          "leftPadding": 3,
+          "topPadding": 3,
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Product <span style=\"color: #ffb500;\"><span style=\"color: #000000;\">features</span></span></span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:39:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": 3,
+          "backgroundColor": "rgba(182,114,25,1)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 03 2020 16:29:21 GMT+0000",
+      "jcr:lastModified": "Tue Mar 03 2020 16:29:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 03 2020 16:29:25 GMT+0000",
+          "alt": "Hospital bedside table with removable drawers",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/bedsidestands/images/PC_FurnitureBSS_SmF1_Drawers.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 14:32:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Durable design</span></span></p>\n<p><span class=\"fontsize-1-25em\">Removable drawers and plastic liners are extremely durable and make the stands easy to clean.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 13:59:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 03 2020 16:29:25 GMT+0000",
+          "alt": "Hospital bedside table with spill containment top",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/bedsidestands/images/PC_FurnitureBSS_SmF2_RaisedEdges.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 14:33:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Spill containment top</span></span></p>\n<p><span class=\"fontsize-1-25em\">Raised, seamless Dura-edge on top helps contain spills and facilitates cleaning.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 13:59:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Mar 03 2020 16:29:25 GMT+0000",
+          "alt": "Hospital bedside tables come in a variety of styles",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/bedsidestands/images/PC_FurnitureBSS_LF_UniqueStyles.jpg",
+          "jcr:lastModified": "Tue Feb 06 2024 14:34:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Design options</span></span></p>\n<p><span class=\"fontsize-1-25em\">Five unique styles and a variety of laminate and hardware options provide design latitude to coordinate your patient suites.</span></p>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 14:00:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 21:48:23 GMT+0000",
+          "text": "<p><a title=\"Wood finishes\" href=\"https://designmix.com/Finishes/browse.jsp?lid=1003&amp;gid=1340\" target=\"_blank\"><span class=\"standalone-link\">Wood finishes</span></a></p>\n<p><a title=\"Dura Edge finishes\" href=\"https://designmix.com/Finishes/browse.jsp?lid=1003&amp;gid=2487\" target=\"_blank\"><span class=\"standalone-link\">Dura-Edge finishes</span></a></p>\n",
+          "jcr:lastModified": "Tue May 11 2021 19:19:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Feb 02 2024 18:28:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for your interest. A Stryker representative will reach out to you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 17:27:57 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_991038152": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Mon Jan 29 2024 18:23:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/bedsidestands/resources/Bedside stand_spec sheet_mkt lit-96.pdf",
+            "/content/dam/stryker/acute-care/products/bedsidestands/resources/MG Bedside stands_Spec Sheet_mkt lit-488.pdf",
+            "/content/dam/stryker/acute-care/products/bedsidestands/resources/Furniture_options-spec_sheet-Mkt lit-105-03302005.pdf",
+            "/content/stryker/us/en/acute-care/products/operations-and-maintenance-manuals/jcr:content/par/externalasset"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Tue Jan 30 2024 14:38:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue May 11 2021 19:20:41 GMT+0000",
+          "jcr:lastModified": "Fri Feb 02 2024 19:04:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/tru-fit"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 02 2024 14:03:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://www.designmix.com/Finishes/Samples.jsp#epholsteryAnchor",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "https://patientcare.stryker.com/en/products/furniture/overbed-table-and-bedside-stands/bedside-stand",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Fri Feb 02 2024 14:02:52 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "View Finishes",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/bedsidestands/images/Thumbnail_BedsideStands_16x9.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Feb 02 2024 14:02:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Fri Feb 02 2024 14:00:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 02 2024 14:02:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 02 2024 14:02:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

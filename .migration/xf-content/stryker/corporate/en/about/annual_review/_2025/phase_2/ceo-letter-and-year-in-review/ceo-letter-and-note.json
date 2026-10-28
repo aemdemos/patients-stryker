@@ -1,0 +1,97 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CEO letter and note",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8cf0f961-8462-4997-ac91-d23e423eb88a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "df310673-ed1c-4f4e-bed3-60db395ec923"
+  ],
+  "lastPublished": "Thu Oct 01 2026 19:35:43 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 19:35:43 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 19:35:45 GMT+0000",
+  "cq:lastModified": "Thu Oct 01 2026 19:35:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "df310673-ed1c-4f4e-bed3-60db395ec923",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 13:04:33 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c2d11f37-7ea6-4663-9e7a-3e669766e95f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Sep 04 2026 18:41:52 GMT+0000",
+      "alt": "Kevin Lobo",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Our_Management_Redesign_Kevin_Lobo.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 01 2026 19:35:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_copy_copy774939": {
+      "jcr:primaryType": "nt:unstructured",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-75em\"><span style=\"font-size: 1.25em; font-family: URWEgyptienneW01-Light, Rockwell, Georgia, Times, serif; color: rgb(255, 181, 0);\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">A message from our Chair and CEO,</span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> <br>\n Kevin Lobo</span></span></span></span></span><br>\n</p>\n<p><span class=\"fontsize-1-25em\">Our mission continues to guide how we grow, both as a company and in the impact we deliver for customers, patients and communities around the world.</span></p>\n",
+      "jcr:lastModified": "Fri Sep 04 2026 18:41:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "ctaDamLink": "/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf#page=6",
+      "ctaLinkType": "dam",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Wed Feb 14 2024 20:41:34 GMT+0000",
+      "CTATitle": "Read more",
+      "jcr:lastModified": "Thu Sep 17 2026 21:33:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

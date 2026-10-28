@@ -1,0 +1,164 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker Advances Urology Portfolio with Launch of Flexible Ureteroscope",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "38667893-1b65-49ee-b7db-df022d7791f3",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "F88",
+  "jcr:predecessors": [
+    "24445fef-496a-4c60-93ba-98627c338357"
+  ],
+  "contentID": "ENDO-SPYC-ARTI-2935576",
+  "lastPublished": "Wed Feb 25 2026 20:59:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 25 2026 20:59:59 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 25 2026 21:00:01 GMT+0000",
+  "cq:lastModified": "Wed Feb 25 2026 20:59:55 GMT+0000",
+  "jcr:description": "Urology continues to push the limits of minimally invasive care - and Stryker is reinforcing its commitment to the specialty with new technology, expanded service capabilities and continued engagement with the urology community.",
+  "jcr:baseVersion": "24445fef-496a-4c60-93ba-98627c338357",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 25 2026 19:42:23 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/endoscopy"
+  ],
+  "jcr:lastModified": "Wed Feb 25 2026 19:50:37 GMT+0000",
+  "jcr:uuid": "6265fd91-949d-4657-8698-5ac72b1fe276",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 19:17:20 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 19:17:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Feb 25 2026 00:08:21 GMT+0000",
+          "alt": "F88 ureteroscope",
+          "srcFileRef": "/content/dam/stryker/endoscopy/news/2026/stryker-advances-urology-portfolio/F88-ureteroscope.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 00:27:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3_878883277": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 00:13:20 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 00:13:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Feb 24 2026 23:28:54 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Urology continues to push the limits of minimally invasive care - and Stryker is reinforcing its commitment to the specialty with new technology, expanded service capabilities and continued engagement with the urology community.</span></p>\n<p><span class=\"fontsize-1-25em\">That commitment shows up through ongoing participation across regional AUA meetings and the national American Urological Association (AUA) Annual Meeting each spring, creating more opportunities to connect with clinicians and share what’s new in urology.</span></p>\n<p><span class=\"fontsize-1-25em\">At the center of this launch is Stryker’s new F88, a flexible reusable ureteroscope designed to help clinicians go for hard-to-reach anatomy with confidence<sup>1</sup>. The F88 features 270° up / 270° down deflection and an insertion tube designed with graduated flexibility along its length to help reduce stress, along with a high-strength bending section produced through a proprietary manufacturing process<sup>1</sup>.</span></p>\n<p><span class=\"fontsize-1-25em\">Early limited-launch feedback supports this design focus. In surgeon surveys, 96% of respondents reported high confidence in the F88’s overall performance<sup>2</sup>, and 92% reported confidence in the scope’s durability when attempting to visualize difficult anatomy<sup>3</sup>.</span></p>\n<p><span class=\"fontsize-1-25em\">The urology offering is further supported by Stryker’s <a href=\"/content/stryker/us/en/endoscopy/products/1788-platform.html\" target=\"_blank\">1788 visualization platform</a> with SPY Cyan Spectral Imaging (CSI), an advanced imaging modality designed to enhance visualization of non-muscle invasive bladder tumors by using targeted green and short blue wavelengths to increase contrast of vascular structures on the mucosal surface<sup>4</sup>. SPY CSI requires no drugs or additional equipment.</span></p>\n<p><span class=\"fontsize-1-25em\">The launch is complemented by <a href=\"/content/stryker/us/en/endoscopy/products/thermaclear.html\" target=\"_blank\">ThermaClear</a> fluid management system and backed by Stryker’s F88 service model, the ProCareSelect plan, designed to deliver on rapid turnaround times and predictable pricing to support OR efficiency and minimize disruptions to clinical workflows.<sup>5</sup></span></p>\n<p><span class=\"fontsize-1-25em\">To learn more, visit Stryker’s <a href=\"/content/stryker/us/en/endoscopy/products/1788-platform/urology.html\">website</a>.<br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Feb 25 2026 20:59:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Feb 25 2026 00:35:21 GMT+0000",
+      "jcr:lastModified": "Wed Feb 25 2026 00:35:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Feb 24 2026 23:49:22 GMT+0000",
+          "alt": "1788",
+          "title": "1788 Platform visualizing SPY CSI",
+          "srcFileRef": "/content/dam/stryker/endoscopy/news/2026/stryker-advances-urology-portfolio/1788-400x400.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 01:10:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/endoscopy/products/1788-platform",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Feb 24 2026 23:49:35 GMT+0000",
+          "alt": "Thermaclear",
+          "title": "ThermaClear",
+          "srcFileRef": "/content/dam/stryker/endoscopy/news/2026/stryker-advances-urology-portfolio/ThermaClear-400x400.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 25 2026 01:10:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/endoscopy/products/1788-platform/urology",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Wed Feb 25 2026 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Feb-2026",
+    "jcr:lastModified": "Tue Feb 24 2026 23:28:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModified": "Tue Feb 24 2026 23:28:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/news/2026/stryker-advances-urology-portfolio/F88-ureteroscope.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>F88 Flexible Ureteroscope design intent and durability features. <b>DFHD 17934 Rev A</b></li>\r\n<li>F88 Limited Launch surgeon survey: overall performance confidence. <b>DFHD 17934 Rev A</b></li>\r\n<li>F88 Limited Launch surgeon survey: durability confidence when visualizing difficult anatomy. <b>DFHD 17934 Rev A</b></li>\r\n<li>1000904469</li>\r\n<li>1000902089 Rev A - Stryker ProCare Customer Engagement Study. 2014 Gallup Inc. Published August 2014</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Feb 24 2026 23:34:24 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

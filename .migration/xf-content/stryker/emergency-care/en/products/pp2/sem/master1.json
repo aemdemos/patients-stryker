@@ -1,0 +1,100 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SEM",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5ab20ea9-4b3e-4bd3-92f3-c4a14f3b448c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0a376ff1-b381-47fb-a61e-3a92f34d7efa"
+  ],
+  "lastPublished": "Thu Oct 01 2026 16:36:01 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 16:36:02 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 16:36:04 GMT+0000",
+  "cq:lastModified": "Tue Aug 25 2026 20:51:02 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0a376ff1-b381-47fb-a61e-3a92f34d7efa",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:36:01 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e8095126-8b1a-4e99-a6fe-7ae2df56a8ad",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Dec 01 2021 22:35:53 GMT+0000",
+      "jcr:lastModified": "Wed Dec 01 2021 22:36:13 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage3777183441936844": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/Money_blue.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 22 2021 21:24:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<h4><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #000000;\">Maximize your investment&nbsp;</span></span></span></span></span></span></h4>\n",
+        "jcr:lastModified": "Tue Aug 25 2026 20:51:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "9"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

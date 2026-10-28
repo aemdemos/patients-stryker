@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "203eece2-8fe3-4f1e-b24c-a8890cfc2a43",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a0283101-cae8-411c-8c3d-cd2c8c38181d"
+  ],
+  "lastPublished": "Tue Apr 22 2025 16:59:44 GMT+0000",
+  "jcr:created": "Tue Apr 22 2025 16:59:44 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 22 2025 16:59:47 GMT+0000",
+  "cq:lastModified": "Tue Apr 22 2025 16:59:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a0283101-cae8-411c-8c3d-cd2c8c38181d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 12 2025 22:23:39 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "6bff2505-291c-4a41-b630-efedb06acf56",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Dec 17 2024 19:30:50 GMT+0000",
+      "alt": "LIFEPAK CR2 AED",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-cr2/LIFEPAK_CR2_hero-thumb_640x380.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Apr 22 2025 16:59:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

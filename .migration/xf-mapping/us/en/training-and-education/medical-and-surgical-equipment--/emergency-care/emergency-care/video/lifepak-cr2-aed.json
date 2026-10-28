@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK CR2 AED",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "30a6eb29-5f85-47b4-82c8-c67496781a9b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "d1db0468-c0f4-4cb1-92ff-0cf496f5bb86"
+  ],
+  "lastPublished": "Fri May 30 2025 18:24:35 GMT+0000",
+  "jcr:created": "Fri May 30 2025 18:24:36 GMT+0000",
+  "cq:lastReplicated": "Fri May 30 2025 18:24:38 GMT+0000",
+  "cq:lastModified": "Fri May 30 2025 15:59:46 GMT+0000",
+  "jcr:baseVersion": "d1db0468-c0f4-4cb1-92ff-0cf496f5bb86",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:24:35 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "e6dd5504-0174-4eb5-822d-08b26f83b757",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:51:39 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:51:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Getting started",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 19:13:10 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Sep 08 2022 19:13:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-getting-started-video_us-canada.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-cr2-getting-started-video_us-canada-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri May 30 2025 15:59:46 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

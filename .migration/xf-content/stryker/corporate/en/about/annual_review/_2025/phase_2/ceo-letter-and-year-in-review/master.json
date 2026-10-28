@@ -1,0 +1,91 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "2-col",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4c8c777d-9c1a-4c70-a920-df9b90a721a7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "c168d8a3-0112-4eeb-a39a-e76924e542b5"
+  ],
+  "lastPublished": "Thu Oct 01 2026 19:34:50 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 19:34:51 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 19:34:54 GMT+0000",
+  "cq:lastModified": "Thu Sep 17 2026 21:27:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c168d8a3-0112-4eeb-a39a-e76924e542b5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 13:00:16 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b9184856-bb46-4187-a3d9-a2bb438ecc02",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Feb 14 2024 20:54:59 GMT+0000",
+      "text": "2025 Highlights About our company Financial highlights",
+      "jcr:lastModified": "Wed Feb 14 2024 20:55:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/ceo-letter-and-year-in-review/2025-year-in-review",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/ceo-letter-and-year-in-review/2025-year-in-review",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Feb 14 2024 20:54:59 GMT+0000",
+      "text": "A message from our Chair and CEO, Kevin Lobo Our mission continues to guide how we grow, both as a company and in the impact we deliver for customers, patients and communities around the world. Read more",
+      "jcr:lastModified": "Thu Feb 15 2024 21:17:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/ceo-letter-and-year-in-review/ceo-letter-and-note",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2025/phase-2/ceo-letter-and-year-in-review/ceo-letter-and-note",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

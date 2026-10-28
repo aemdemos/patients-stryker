@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "792d1d7f-03ba-4700-8871-9bc2fbd2eee1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3f02fd6a-e7a8-4f35-9729-dbeaf352c493"
+  ],
+  "jcr:created": "Tue Feb 20 2024 15:19:15 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 20 2024 15:19:17 GMT+0000",
+  "cq:lastModified": "Tue Feb 20 2024 15:19:12 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3f02fd6a-e7a8-4f35-9729-dbeaf352c493",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "cb2d36d7-a389-4d89-8e8a-5df914fa4e50",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's Michael Graves furniture line for hospital rooms",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/michaelgraveswithstryker/images/Thumbnail_Michael Graves_16x9.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 02 2024 20:00:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

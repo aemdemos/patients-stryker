@@ -1,0 +1,56 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder arthroplasty featuring Tornier Simpliciti® Shoulder System: Tornier Simpliciti® User Experience – Armodios Hatzidakis, MD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9bc44d67-f8ba-41f3-83cf-d9b198c90d17",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "25c86e9a-96fc-4971-a28d-b2b5684ea5d4"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:57:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 20:59:47 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:59:49 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 20:04:27 GMT+0000",
+  "jcr:baseVersion": "25c86e9a-96fc-4971-a28d-b2b5684ea5d4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:57:18 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 20 2024 20:04:27 GMT+0000",
+  "jcr:uuid": "4792d3ed-b02e-425d-9b9b-e14dfa00103d",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 19:29:13 GMT+0000",
+      "text": "Shoulder arthroplasty featuring Tornier Simpliciti® Shoulder System: Tornier Simpliciti® User Experience – Armodios Hatzidakis, MD Orthopedic surgeon, Armodios Hatzidakis, MD, explains his experience when using the Tornier Simpliciti® Shoulder System and Blueprint®. AP-016283A",
+      "jcr:lastModified": "Thu Jul 28 2022 19:30:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-simpliciti--simpliciti--user-exp/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/shoulder-arthroplasty-featuring-simpliciti-simpliciti-user-exp/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/Shoulder Arthroplasty featuring Simpliciti- SIMPLICITI User Experience - Armodios Hatzidakis MD CAW-3631.png"
+  }
+}

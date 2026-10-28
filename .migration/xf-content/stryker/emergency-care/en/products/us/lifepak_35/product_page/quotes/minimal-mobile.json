@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Minimal training mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "072713a3-2472-4c89-b6da-895520b83c02",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "34dd880c-116c-46c7-825e-47ae47e44b5e"
+  ],
+  "lastPublished": "Wed May 29 2024 19:12:31 GMT+0000",
+  "jcr:created": "Wed May 29 2024 19:12:36 GMT+0000",
+  "cq:lastReplicated": "Wed May 29 2024 19:12:38 GMT+0000",
+  "cq:lastModified": "Tue May 28 2024 20:49:24 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "34dd880c-116c-46c7-825e-47ae47e44b5e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:12:31 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ccc23989-e2e4-42ad-89e5-78b4f104c334",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 30 2024 21:00:57 GMT+0000",
+      "alt": "LIFEPAK 35 monitor/defibrillator in use in the ED ",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_trauma-check-monitor_mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue May 28 2024 20:49:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

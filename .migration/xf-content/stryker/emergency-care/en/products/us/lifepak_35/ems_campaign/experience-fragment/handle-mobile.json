@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Handle mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b848cb40-a453-4f0c-b727-d3abc88ee4b4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4f9ff965-e313-4887-b426-3206ea487cdf"
+  ],
+  "lastPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "jcr:created": "Wed May 29 2024 19:15:50 GMT+0000",
+  "cq:lastReplicated": "Wed May 29 2024 19:15:58 GMT+0000",
+  "cq:lastModified": "Wed May 29 2024 12:45:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4f9ff965-e313-4887-b426-3206ea487cdf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 29 2024 19:15:42 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "17e7c05a-afe2-400e-b90d-8a6c943d4c0d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 16 2024 15:23:23 GMT+0000",
+      "alt": "Designer sketching the outline of the LIFEPAK 35 monitor/defibrillator",
+      "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_handle-design_mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 29 2024 12:45:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

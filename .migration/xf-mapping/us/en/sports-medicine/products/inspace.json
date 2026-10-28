@@ -1,0 +1,2299 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Subacromial balloon spacer",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "InSpace",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7b407a23-1125-4b52-841b-9ce7f3a63da1",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "thumbnailAltText": "InSpace subacromial balloon spacer",
+  "jcr:predecessors": [
+    "136fd439-420a-4e12-84e4-76940b5545b8"
+  ],
+  "contentID": "1000903848 Rev. B",
+  "lastPublished": "Fri Oct 23 2026 20:13:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 23 2026 20:13:10 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 23 2026 20:13:13 GMT+0000",
+  "cq:lastModified": "Fri Oct 23 2026 20:12:19 GMT+0000",
+  "jcr:description": "InSpace is the industry’s only minimally invasive biodegradable, subacromial balloon spacer for arthroscopic treatment of massive, irreparable rotator cuff tears (MIRCTs)†. ",
+  "jcr:baseVersion": "136fd439-420a-4e12-84e4-76940b5545b8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:36:35 GMT+0000",
+  "pageTitle": "InSpace subacromial balloon spacer",
+  "cq:tags": [
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/massive-irreperable-rotator-cuff-tear",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/product-type/implant",
+    "stryker:content-type/product",
+    "stryker:product/sports-medicine/inspace",
+    "stryker:custom/sports-medicine/procedure/massive-irreperable-rotator-cuff-tear",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/sports-medicine",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair"
+  ],
+  "jcr:lastModified": "Wed Dec 11 2024 21:52:26 GMT+0000",
+  "jcr:uuid": "1b031141-eff4-43c2-bf65-0cdfd762a441",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "InSpace",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Jun 22 2022 16:07:28 GMT+0000",
+      "carouselOptionSpeed": "6500",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "true",
+      "jcr:lastModified": "Fri May 19 2023 21:47:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_542711": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/InSpace-balloon-implant/master1",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/inspace-balloon-implant/master1",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/InSpace-balloon-implant/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/inspace-balloon-implant/master",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Wed May 25 2022 15:56:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Sat Sep 07 2024 01:01:22 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "7",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jun 22 2022 16:09:50 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-5-5-vw\">InSpace</span></span></span></span></h1>\r\n<h1><span class=\"fontsize-3-5-vw\">Subacromial balloon spacer</span></h1>\r\n",
+              "line2": "<h1>A breakthrough in the shoulder continuum of care</h1>\r\n",
+              "jcr:lastModified": "Thu Aug 18 2022 16:51:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/patient-testimonials/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/patient-testimonials/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/inspace_carousel_and/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/inspace-carousel-and/hero-image/mobile",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "30",
+          "jcr:created": "Mon May 15 2023 18:23:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Jun 29 2023 21:33:56 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 15 2023 18:25:11 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-2-5-vw\">Restoring shoulder motion and confidence</span><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><br />\r\n Jeff Six's InSpace story</span></span>",
+              "jcr:lastModified": "Thu Jun 29 2023 21:27:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri May 08 2020 17:58:51 GMT+0000",
+              "CTATitle": "Learn more",
+              "ctaDeepLinkID": "patient-testimonials",
+              "jcr:lastModified": "Thu May 18 2023 13:15:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        },
+        "carouselslide_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/jbjs-banner/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/jbjs-banner/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/jbjs-banner/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/jbjs-banner/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "23",
+          "jcr:created": "Wed May 25 2022 15:52:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Jul 12 2022 01:53:00 GMT+0000",
+          "marginRight": "43",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "7",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jun 22 2022 16:09:50 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h3><span class=\"futura-bold\"><span style=\"color: rgb(178,180,174);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-2vw\">InSpace:</span></span></span></span></span></h3>\r\n<h3><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-5vw\">Simple. Efficient.</span></span></span></h3>\r\n<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Potential for improved shoulder function with early pain relief<sup>1</sup></span></span></h3>\r\n",
+              "jcr:lastModified": "Fri Jul 08 2022 18:35:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Jun 22 2022 16:14:46 GMT+0000",
+              "CTATitle": "Read the JBJS article",
+              "ctaDeepLinkID": "inspace-surgical-technique",
+              "ctaExternalLink": "https://www.jbjs.org/reader.php?rsuite_id=3282610&native=1&source=The_Journal_of_Bone_and_Joint_Surgery/Publish%20Ahead%20of%20Print//10.2106/JBJS.21.00667/abstract&topics=sh#info",
+              "jcr:lastModified": "Fri Jul 08 2022 17:10:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)"
+            }
+          }
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 19:59:31 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 19:59:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Jun 20 2022 17:48:04 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jun 20 2022 17:48:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_1256325526": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 19:59:41 GMT+0000",
+          "CTATitle": "Important prescribing information",
+          "ctaExternalLink": "https://stryker.highspot.com/items/6114189466bbaa7192c38638?lfrm=rhp.35",
+          "jcr:lastModified": "Wed Jun 08 2022 20:41:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 19:59:37 GMT+0000",
+          "CTATitle": "Contact Us",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Wed Aug 19 2026 16:38:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/contact"
+        },
+        "curatedcta_1162579173": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 17 2023 03:15:09 GMT+0000",
+          "CTATitle": "If you are a patient, click here",
+          "ctaExternalLink": "https://patients.stryker.com/shoulder/minimally-invasive-treatment-options/shoulder-arthroscopy/inspace-subacromial-balloon",
+          "jcr:lastModified": "Mon Mar 09 2026 18:15:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Jun 20 2022 17:48:04 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jun 20 2022 17:48:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_556813114": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Oct 26 2022 16:18:22 GMT+0000",
+      "jcr:lastModified": "Wed Oct 26 2022 16:18:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "ctaDeepLinkID": "understanding-inspace",
+          "jcr:lastModified": "Fri May 27 2022 16:39:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/ui-button2-grey2.png"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "CTAImageAltText": "par-button-grey",
+          "ctaDeepLinkID": "post-op-rehab",
+          "jcr:lastModified": "Wed Oct 26 2022 16:59:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/par-button-grey.png"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "ctaDeepLinkID": "clinically-proven-results",
+          "jcr:lastModified": "Fri May 27 2022 16:05:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/cpr-button2.png"
+        },
+        "curatedcta_copy_1139": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "ctaDeepLinkID": "upcoming-events",
+          "jcr:lastModified": "Fri May 27 2022 16:39:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/ue-button2-grey2.png"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "CTAImageAltText": "par-button-grey",
+          "ctaDeepLinkID": "patient-selection",
+          "jcr:lastModified": "Wed Oct 26 2022 16:59:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/psps-button.png"
+        },
+        "curatedcta_copy_2072": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "ctaDeepLinkID": "economics-and-reimbursement",
+          "jcr:lastModified": "Fri May 27 2022 16:14:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/ear-button2-grey.png"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "ctaDeepLinkID": "surgical-technique",
+          "jcr:lastModified": "Fri May 27 2022 16:13:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/st-button2-grey.png"
+        },
+        "curatedcta_copy_2072": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 13:25:28 GMT+0000",
+          "CTAImageAltText": "patient testimonials",
+          "ctaDeepLinkID": "patient-testimonials",
+          "jcr:lastModified": "Wed May 17 2023 04:31:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/pt-button2-grey.png"
+        }
+      }
+    },
+    "cols_846572870": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 13 2021 01:59:16 GMT+0000",
+      "jcr:lastModified": "Tue Jul 13 2021 01:59:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1231583992": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "understanding-inspace",
+      "jcr:created": "Mon May 23 2022 13:19:32 GMT+0000",
+      "title": "Understanding InSpace",
+      "jcr:lastModified": "Mon May 23 2022 19:47:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Apr 26 2022 16:12:42 GMT+0000",
+      "jcr:lastModified": "Tue Apr 26 2022 16:12:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "fullbleedpanel_1950967224": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:33:14 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:34:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:33:20 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:33:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/surgtech-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri May 27 2022 13:48:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\">Understanding InSpace</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon May 23 2022 20:33:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_1657628669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_204394187": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 19:52:04 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 19:52:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 19:52:34 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">The solution </span><span class=\"urw-egyptienne\">you've been waiting for</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">InSpace is the industry’s only minimally invasive biodegradable, subacromial balloon spacer for arthroscopic treatment of massive, irreparable rotator cuff tears (MIRCTs)<sup>†</sup>. It is designed to restore the subacromial space without requiring sutures or fixation devices.</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">The InSpace balloon implant helps fill an unmet clinical need and presents a streamlined, arthroscopic procedural option with potential for early functional recovery and pain relief for your patients.<sup>1</sup></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Jun 20 2022 17:23:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon May 23 2022 19:56:17 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/InSpace-in-cuff-fade-new.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 23 2022 19:56:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_728066148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 13 2021 02:58:14 GMT+0000",
+      "jcr:lastModified": "Tue Jul 13 2021 02:58:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1908668742": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 13 2021 02:19:50 GMT+0000",
+      "jcr:lastModified": "Tue Jul 13 2021 02:19:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Jul 13 2021 02:20:08 GMT+0000",
+          "text": "<h4><span class=\"fontsize-2-5em\">See the <span style=\"color: #ffb500;\">efficiency</span></span></h4>\n",
+          "jcr:lastModified": "Tue Jul 13 2021 02:21:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_60907792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Aug 05 2022 19:59:47 GMT+0000",
+      "jcr:lastModified": "Fri Aug 05 2022 19:59:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/sports-medicine/products/inspace/images/InSpace_Brochure_1000903813RevB.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 15:20:54 GMT+0000",
+          "CTATitle": "Download InSpace balloon implant brochure",
+          "CTAImageAltText": "InSpace patient brochure",
+          "jcr:lastModified": "Tue Sep 19 2023 21:16:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/InSpace-brochure-thumb-new.png",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "externalLinkType": "none"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jul 13 2021 02:19:56 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Sat Sep 07 2024 00:25:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace_Rebrand_US_shortPromo2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/InSpace_Rebrand_US_shortPromo2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Jul 16 2021 12:06:27 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/levy-setting-expectations_1000904211reva.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/JSS_MIRCTs-treatment-options.mp4"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 11 2024 18:32:33 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 16:54:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_1234498615": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "clinically-proven-results",
+      "jcr:created": "Mon May 23 2022 13:21:01 GMT+0000",
+      "title": "Clinically proven results",
+      "jcr:lastModified": "Mon May 23 2022 19:43:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_594547309": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 19:43:40 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 19:44:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:18:33 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:18:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\">Clinically proven results</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon May 23 2022 20:24:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/cpr-banner5.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri May 27 2022 16:43:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_1140366698": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_845552221": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Aug 09 2022 16:44:11 GMT+0000",
+      "jcr:lastModified": "Tue Aug 09 2022 16:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1737559865_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Tue Jul 13 2021 01:47:39 GMT+0000",
+          "text": "<p><b data-rte-class=\"rte-temp\"><span class=\"urw-egyptienne\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-5em\">InSpace is the only FDA-cleared MIRCT surgical solution supported by level 1 clinical evidence that preserves musculoskeletal tissues and bone and does not require the use of an anchor or permanent implant placement<sup>1</sup>.</span></b></span></b></span></b></p>\n",
+          "jcr:lastModified": "Sun Jun 12 2022 20:17:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jul 13 2021 01:47:58 GMT+0000",
+          "CTATitle": "Read JBJS article",
+          "ctaExternalLink": "https://www.jbjs.org/reader.php?rsuite_id=3282610&native=1&source=The_Journal_of_Bone_and_Joint_Surgery/Publish%20Ahead%20of%20Print//10.2106/JBJS.21.00667/abstract&topics=sh#info",
+          "jcr:lastModified": "Tue Apr 26 2022 03:23:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "InSpace InSights | Strengths of pivotal study featuring Dr. Nikhil Verma*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Apr 26 2022 03:40:06 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Aug 09 2022 16:47:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/inspace/videos/DrVerma_StrengthOfStudy_1000904219revA.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/DrVerma_StrengthOfStudy_1000904219revA-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Aug 09 2022 16:47:46 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Apr 26 2022 03:24:59 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 18:38:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 18:34:59 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 18:36:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/verma-quote/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/verma-quote/master"
+        }
+      }
+    },
+    "text_1751692509_copy_384520823": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "largeheadline_157974": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:52:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Clinical results demonstrate<sup>1</sup>:</span></span>",
+      "jcr:lastModified": "Sun Jun 12 2022 20:25:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols4_1232434759": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 15:24:09 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 15:24:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon May 23 2022 15:33:21 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/short-operative-time-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 23 2022 15:33:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 15:24:23 GMT+0000",
+          "text": "<h2 style=\"text-align: center;\">Shorter operative time</h2>\n",
+          "jcr:lastModified": "Mon May 23 2022 21:08:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon May 23 2022 15:33:21 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/early-function-recovery-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 23 2022 15:34:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 15:24:23 GMT+0000",
+          "text": "<h2 style=\"text-align: center;\">Early functional recovery</h2>\n",
+          "jcr:lastModified": "Mon May 23 2022 21:08:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon May 23 2022 15:33:21 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/early-pain-relief-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 23 2022 15:34:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 15:24:23 GMT+0000",
+          "text": "<h2 style=\"text-align: center;\">Early pain relief post procedure</h2>\n",
+          "jcr:lastModified": "Mon May 23 2022 21:08:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon May 23 2022 15:33:21 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/safe-and-effective-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon May 23 2022 15:34:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 15:24:23 GMT+0000",
+          "text": "<h2 style=\"text-align: center;\">Demonstrated safety profile</h2>\n",
+          "jcr:lastModified": "Wed Jun 08 2022 20:43:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 18:11:14 GMT+0000",
+      "jcr:lastModified": "Thu Jun 09 2022 00:18:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 18:32:38 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 18:33:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/shorter-op-time/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/shorter-op-time/master"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue May 24 2022 22:02:15 GMT+0000",
+          "jcr:lastModified": "Tue May 24 2022 22:10:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/pain-relief/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/pain-relief/master"
+        },
+        "cols2_2_3_1_3_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "jcr:lastModified": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "35",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 13 2021 01:27:23 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: left;\">Figure 1. Percentage of subjects meeting the <b>American Shoulder and Elbow Score (ASES)</b> minimally clinically important difference (MCID), substantial clinical benefit (SCB) and patient acceptable symptomatic state (PASS) thresholds for the InSpace group (n=93) and the partial repair group (n=91). Significant improvements in the ASES score from baseline were noted in both groups at Month 12 and were maintained at Month 24.<br>\n</p>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 23:47:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jul 13 2021 01:27:31 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/Figure 1 .png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jun 08 2022 23:50:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "jcr:lastModified": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "35",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 13 2021 01:27:23 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: left;\">Figure 2. Box-and-whisker plot showing forward elevation <b>Range of Motion (ROM)</b>, presented as a change from baseline, for the InSpace group (n=93) and the partial repair group (n=91). ROM can range from 0° to 180°, with a higher value indicating improvement. Significant improvements, indicated by asterisks, from baseline in favor of the InSpace group were noted at Day 10 (p=0.041), Week 6 (p=0.0001), Month 12 (p=0.0048) and Month 24 (p=0.003). The median values are indicated with horizontal lines, IQRs are indicated with boxes, and whiskers denote data<br>\npoints within ± 1.5 IQR. Circles indicate outliers.&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 23:53:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jun 08 2022 23:42:44 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">ROM change from baseline through Month 24<br>\n Month 24 intent-to-treat population</span></span></p>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 23:44:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jul 13 2021 01:27:31 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/Boxplot_graph.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri May 27 2022 16:18:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        },
+        "cols2_2_3_1_3_copy_230702479": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "jcr:lastModified": "Wed Jun 08 2022 23:40:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "35",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 13 2021 01:27:23 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: left;\">Figure 3. Box-and-whisker plot showing the overall <b>Constant- Murley Score</b>, presented as a change from baseline, for the InSpace group (n=93) and the partial repair group (n=91). The Constant score can range from 0 to 100, with a higher score indicating improvement. Significant improvements, indicated by asterisks, from baseline in favor of the InSpace group were noted at Week 6 (p=0.021) and Month 24 (p=0.05). The median values are indicated with horizontal lines, IQRs are indicated with boxes, and whiskers denote data points within ± 1.5 IQR. Circles indicate outliers.&nbsp;<br>\n</p>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 23:55:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Wed Jun 08 2022 23:42:44 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span style=\"font-size: 17.5px;\"><b><span class=\"futura-bold\">Constant-Murley change from baseline through Month 24<br>\n Month 24 intent-to-treat population</span></b></span></p>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 23:56:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jul 13 2021 01:27:31 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/Boxplot_graph2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Jun 09 2022 00:09:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Shorter operative time"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "Early functional recovery and pain relief post procedure"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "Demonstrated safety profile"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 18:21:49 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 18:33:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/InSpace/safe-and-effective/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/inspace/safe-and-effective/master"
+        }
+      }
+    },
+    "text_1751692509_copy_217573816": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1214828821": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Oct 07 2022 18:50:09 GMT+0000",
+      "jcr:lastModified": "Fri Oct 07 2022 18:50:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 15:39:47 GMT+0000",
+          "CTATitle": "Download InSpace Value Packet",
+          "CTAImageAltText": "inspace value packet document",
+          "ctaExternalLink": "https://view.stryker.com/viewer/64bf0e67659011c2513d0765",
+          "jcr:lastModified": "Mon Jul 24 2023 23:55:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/inspace-key-lit-summary-thumb-new.png"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_1280695225": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "patient-selection",
+      "jcr:created": "Tue Apr 26 2022 16:14:07 GMT+0000",
+      "title": "Patient selection",
+      "jcr:lastModified": "Mon May 23 2022 20:34:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_743648336": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:34:32 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:34:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:34:43 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:34:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\">Pivotal study patient selection</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon Jun 20 2022 17:21:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/cpr-banner4.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon May 23 2022 20:28:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_1088914860": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullbleedpanel_492059188": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 15:57:04 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 15:57:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 21:06:34 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 21:06:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 21:06:38 GMT+0000",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Mon May 23 2022 21:06:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "largeheadline_157974415": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:52:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">The eligibility criteria from the Level 1 Pivotal Study<sup>1</sup>:</span></span>",
+          "jcr:lastModified": "Sun Jun 12 2022 20:19:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols2_1759218228": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jun 08 2022 21:58:39 GMT+0000",
+          "jcr:lastModified": "Wed Jun 08 2022 21:58:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Wed Jun 08 2022 21:59:13 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Inclusion</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Full thickness MRCT​</span></li>\n<li><span class=\"fontsize-1-5em\">Measuring ≥ 5 cm in diameter</span></li>\n<li><span class=\"fontsize-1-5em\">Involving ≥ 2 tendons</span></li>\n<li><span class=\"fontsize-1-5em\">VAS score &gt;30</span></li>\n<li><span class=\"fontsize-1-5em\">4 months failed conservative Rx​</span></li>\n<li><span class=\"fontsize-1-5em\">Functional deltoid muscle with preserved passive ROM</span></li>\n<li><span class=\"fontsize-1-5em\">Good health<br>\n&nbsp;</span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 22:04:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            },
+            "text_1725652961": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "annie.werner@stryker.com",
+              "jcr:lastModifiedBy": "annie.werner@stryker.com",
+              "jcr:created": "Sun Jun 12 2022 20:19:55 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">For complete eligibility criteria, please refer to the <a href=\"https://www.jbjs.org/reader.php?rsuite_id=3282610&amp;native=1&amp;source=The_Journal_of_Bone_and_Joint_Surgery/Publish%20Ahead%20of%20Print//10.2106/JBJS.21.00667/abstract&amp;topics=sh#info\">JBJS publication.</a></span></p>\n",
+              "jcr:lastModified": "Sun Jun 12 2022 20:24:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Wed Jun 08 2022 21:59:13 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Exclusion</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\">Known allergy to InSpace<sup>TM</sup> implant</span></li>\n<li><span class=\"fontsize-1-5em\">​Severe glenohumeral or acromiohumeral arthritis​</span></li>\n<li><span class=\"fontsize-1-5em\">Full thickness cartilage loss on MRI</span></li>\n<li><span class=\"fontsize-1-5em\">Deltoid defect or palsy​</span></li>\n<li><span class=\"fontsize-1-5em\">Partial thickness tears of the supraspinatus</span></li>\n<li><span class=\"fontsize-1-5em\">Glenohumeral joint trauma, infection or necrosis​</span></li>\n<li><span class=\"fontsize-1-5em\">Fully reparable cuff tear​</span></li>\n<li><span class=\"fontsize-1-5em\">Requires concomitant subscapularis or labral repair</span></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jun 08 2022 22:09:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "4",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "bottomMargin": "12"
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_657527339": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon Jul 11 2022 22:06:08 GMT+0000",
+      "jcr:lastModified": "Mon Jul 11 2022 22:06:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 15:39:47 GMT+0000",
+          "CTATitle": "Download InSpace indications brochure",
+          "ctaExternalLink": "https://stryker.highspot.com/items/6114189466bbaa7192c38638?lfrm=srp.1",
+          "jcr:lastModified": "Tue May 31 2022 20:27:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "resourcesanddownload_419473650": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/DrVerma_PatientSelection_1000904220revA.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/DrKrupp_my-patient-selection-persective_1000904212.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/DrAmini_PatientSelection_1000904214revA.mp4"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 16:55:03 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:18:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_1751692509_copy_14903536": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1715638985": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 16:12:13 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 16:12:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 16:12:35 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Surgeon experience case presentations</span></span></p>\n",
+          "jcr:lastModified": "Mon May 23 2022 16:13:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "resourcesanddownload_1330811436": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace patient follow along video Dr. Levy.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Amini InSpace Patient Follow Along 1000904079.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Dr. Hartzler InSpace patient follow along video.mp4"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 16:55:03 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 18:15:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols2_1992449313": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 16:13:22 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 16:13:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_1532937072": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "inspace-surgical-technique",
+      "jcr:created": "Tue Apr 26 2022 16:14:44 GMT+0000",
+      "title": "Surgical technique",
+      "jcr:lastModified": "Wed May 25 2022 16:12:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_1281797933": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:35:48 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:36:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:35:53 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:35:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/inspace-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri May 27 2022 13:48:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\">Surgical technique</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon May 23 2022 20:39:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_165267665": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace surgical technique video.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace surgical technique video featuring Christopher Baker MD_New.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace surgical technique video with Robert Hartzler.mp4"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 18:16:19 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:20:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols3_1186708070": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Jul 08 2022 18:21:20 GMT+0000",
+      "jcr:lastModified": "Fri Jul 08 2022 18:21:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon May 23 2022 15:39:47 GMT+0000",
+          "CTATitle": "Download InSpace surgical technique guide",
+          "ctaExternalLink": "https://view.stryker.com/viewer/628bdd6805091c7282d106f1",
+          "jcr:lastModified": "Mon May 23 2022 19:16:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/InSpacesurgtech-thumb.png"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "post-op-rehab",
+      "jcr:created": "Mon May 23 2022 19:27:29 GMT+0000",
+      "title": "Post-op and rehab",
+      "jcr:lastModified": "Wed Oct 26 2022 16:37:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_12889": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:36:40 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:36:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:36:45 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:36:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1vw\"></span>Post-op and rehab</span></span></h4>\r\n",
+              "jcr:lastModified": "Wed Oct 26 2022 16:38:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "alt": "postop-rehab-banner",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/postoprehab-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Oct 26 2022 16:56:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_679964348": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_151108029": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/DrHasan_PostOpRehabFDAClearance_1000904256revA.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace InSights_PT and strengthening featuring Dr Hilary Malcarney.mp4",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/InSpace InSights_Setting patient expectations featuring Dr Hilary Malcarney.mp4"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 18:18:37 GMT+0000",
+      "jcr:lastModified": "Wed Nov 20 2024 19:24:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_1751692509_copy_2044253051": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_1927245829": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "upcoming-events",
+      "jcr:created": "Mon May 23 2022 13:22:58 GMT+0000",
+      "title": "Upcoming events",
+      "jcr:lastModified": "Mon May 23 2022 20:37:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_1288943427": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:36:40 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:36:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:36:45 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:36:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1vw\"></span>Upcoming events</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon May 23 2022 20:37:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/events-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon May 23 2022 20:46:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509_copy_1883972955": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Aug 09 2022 19:31:10 GMT+0000",
+      "jcr:lastModified": "Tue Aug 09 2022 19:31:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "economics-reimbursement",
+      "jcr:created": "Mon May 23 2022 19:27:29 GMT+0000",
+      "title": "Economics and reimbursement",
+      "jcr:lastModified": "Mon May 23 2022 20:41:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_1418064352": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:37:41 GMT+0000",
+      "jcr:lastModified": "Fri Apr 07 2023 15:39:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:37:46 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:37:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/reimbur-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon May 23 2022 20:46:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1vw\"></span>Economics and reimbursement</span></span></h4>\r\n",
+              "jcr:lastModified": "Mon May 23 2022 20:38:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "text_1751692509": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon May 23 2022 19:29:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">For assistance with your reimbursement questions, please contact Stryker's Reimbursement Services at 800 698 9985 (option 1) or inspace.reimbursement@stryker.com.</span></p>\n",
+      "jcr:lastModified": "Mon Aug 29 2022 20:11:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_782592502": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "patient-testimonials",
+      "jcr:created": "Wed May 17 2023 03:39:47 GMT+0000",
+      "title": "Patient testimonials",
+      "jcr:lastModified": "Wed May 17 2023 03:40:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_12889_529897756": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:36:40 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:36:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon May 23 2022 20:36:45 GMT+0000",
+          "jcr:lastModified": "Mon May 23 2022 20:36:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10px",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Mon May 23 2022 20:16:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h4><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1vw\"></span>Patient testimonials</span></span></h4>\r\n",
+              "jcr:lastModified": "Wed May 17 2023 03:25:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Mon May 23 2022 20:18:46 GMT+0000",
+              "alt": "testimonials-banner",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/inspace/images/testimonials-banner1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed May 17 2023 04:34:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed May 17 2023 03:25:54 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n",
+      "jcr:lastModified": "Wed May 17 2023 03:25:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload_483423372": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Craig Raucher's story",
+        "/content/dam/stryker/sports-medicine/products/inspace/Jeff Six's story",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Barbara Corcoran's story",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Dorene Mendola's story",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Robert Lahm's story",
+        "/content/dam/stryker/sports-medicine/products/inspace/videos/Cathi Mintautas's story"
+      ],
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 06 2024 18:20:39 GMT+0000",
+      "jcr:lastModified": "Wed Nov 06 2024 18:22:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "fullbleedpanel_396731586": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed May 25 2022 17:25:17 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 17:25:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed May 25 2022 17:28:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "  ",
+          "line2": "<span class=\"fontsize-1vw\"><span style=\"color: #545857;\">.</span></span>",
+          "jcr:lastModified": "Wed May 25 2022 17:29:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text_1751692509_copy_1376544254": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:39:42 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 20:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1801458470": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed May 25 2022 17:33:13 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 17:33:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_188864592": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 09 2021 17:05:55 GMT+0000",
+          "CTATitle": "Experience our full rotator cuff offering",
+          "jcr:lastModified": "Wed May 25 2022 17:31:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/procedures/rcr-shoulder/images/rcr-procedural-thumbnail.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/procedures/Rotator_Cuff_Repair"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 09 2021 17:03:59 GMT+0000",
+          "CTATitle": "See Stryker’s comprehensive shoulder portfolio",
+          "jcr:lastModified": "Mon Dec 06 2021 21:03:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SM-Hero-R1Artboard 1.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/shoulder"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 09 2021 17:03:59 GMT+0000",
+          "CTATitle": "Rotator Cuff Healing Index (RoHI) calculator",
+          "CTAImageAltText": "Calculator symbols",
+          "jcr:lastModified": "Fri Oct 23 2026 20:12:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/tools/rohi/calculator-cta.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/tools/rotator-cuff-healing-index-calculator"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 23 2022 20:41:12 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 20:41:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_1716673371": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Aug 19 2026 16:38:43 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Wed Aug 19 2026 16:38:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/inspace/images/IMG_0006_1.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p><b>Elevating motion</b></p>\r\n",
+    "shortDescTop": "<p>InSpace is the industry’s only minimally invasive biodegradable, subacromial spacer for arthroscopic treatment of massive, irreparable rotator cuff tears (MIRCTs)<sup>*</sup>. It is designed to restore the subacromial space without requiring sutures or fixation devices.</p>\r\n<p> </p>\r\n<p>InSpace presents a streamlined, arthroscopic procedural option that may result in sustained, clinically meaningful improvements in shoulder function and symptoms for your patients. (NCT02493660)</p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon May 23 2022 13:15:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<p>InSpace is the industry’s only minimally invasive biodegradable, subacromial balloon spacer for arthroscopic treatment of massive, irreparable rotator cuff tears (MIRCTs)**. This balloon implant is designed to restore the subacromial space without requiring sutures or fixation devices.</p>\n",
+    "jcr:lastModified": "Fri May 27 2022 12:32:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://patients.stryker.com/",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Mon May 23 2022 20:03:24 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Click here if you are a patient",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Apr 26 2022 16:15:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon May 09 2022 18:55:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon May 23 2022 20:03:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Verma N, Srikumaran U, Roden CM, Rogusky EJ, Lapner P, Neill H, Abboud JA. (2022). InSpace implant compared with partial repair for treatment of full-thickness massive rotator cuff tears<i>. J Bone Joint Surg Am.</i> Advance online publication. doi. 10.2106/JBJS.21.00667. http://ow.ly/wjSB50IRYym</p>\r\n<p>*A Stryker consultant</p>\r\n<p>† The InSpace™ subacromial tissue spacer system is indicated for the treatment of patients with massive, irreparable full-thickness torn rotator cuff tendons due to trauma or degradation with mild to moderate gleno-humeral osteoarthritis in patients greater than or equal to 65 years of age whose clinical conditions would benefit from treatment with a shorter surgical time compared to partial rotator cuff repair.</p>\r\n",
+    "jcr:lastModified": "Mon Jun 20 2022 17:23:28 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

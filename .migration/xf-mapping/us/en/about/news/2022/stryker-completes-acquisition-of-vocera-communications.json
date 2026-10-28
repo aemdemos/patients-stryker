@@ -1,0 +1,56 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker completes acquisition of Vocera Communications",
+  "jcr:versionHistory": "aa3930aa-9a8e-4ee6-961c-a52b431d1a59",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "62b2cae6-1db9-432a-aac8-4ac7c4dfa4ab"
+  ],
+  "lastPublished": "Tue Apr 05 2022 18:21:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 05 2022 18:21:58 GMT+0000",
+  "cq:lastModified": "Tue Apr 05 2022 13:43:35 GMT+0000",
+  "jcr:baseVersion": "62b2cae6-1db9-432a-aac8-4ac7c4dfa4ab",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Tue Apr 05 2022 13:43:35 GMT+0000",
+  "jcr:uuid": "af4b2f49-db58-433a-9aa0-100b13546450",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Wed Feb 23 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "23-Feb-2022",
+    "jcr:lastModified": "Wed Feb 23 2022 14:07:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "text": "<p>Stryker (NYSE: SYK) announced today that it has completed the previously announced acquisition of Vocera Communications, Inc. (NYSE: VCRA), a leader in digital care coordination and communication.<br>\n<br>\n“This acquisition provides significant opportunities to advance innovations and accelerate our digital aspirations,” said Kevin Lobo, Chair and Chief Executive Officer, Stryker. “We welcome the Vocera team to Stryker and look forward to working together to enable safer patient care and help our customers improve outcomes.”<br>\n<br>\nVocera brings a highly complementary and innovative portfolio to Stryker’s Medical division that will enhance the company’s Advanced Digital Healthcare offerings and further advance Stryker’s focus on preventing adverse events throughout the continuum of care.</p>\n<p>The acquisition is expected to have a neutral impact to net earnings per diluted share in 2022.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2022/Stryker-completes-acquisition-of-Vocera-Communications/default.aspx\"><span class=\"standalone-link\">SEE FULL PRESS RELEASE HERE&nbsp;</span></a></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Wed Feb 23 2022 14:14:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker_logo2015_web.jpg"
+  }
+}

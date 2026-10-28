@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Compliance Form for Education Event 2018",
+  "jcr:versionHistory": "a7de6766-0f84-497d-83a5-b2ef67d392ae",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "11fac3f7-f269-4481-8c22-9258f7bc1e2a"
+  ],
+  "lastPublished": "Tue Jan 08 2019 16:25:40 GMT+0000",
+  "jcr:created": "Tue Jan 08 2019 16:25:40 GMT+0000",
+  "cq:lastModified": "Tue Jan 08 2019 16:22:43 GMT+0000",
+  "jcr:baseVersion": "11fac3f7-f269-4481-8c22-9258f7bc1e2a",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Compliance Form for Education Event-2018",
+  "jcr:uuid": "40b09198-4af9-4e02-8062-69476437f64d",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Dec 06 2018 16:47:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Compliance Form for Education Event&nbsp;</span><br>\n We are delighted that you have agreed to receive Product Training from Stryker Orthopaedics on the safe and effective use of Stryker Orthopaedics Products. This form establishes the terms under which you will receive this Product Training from Stryker.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">Stryker is providing this Product Training to you because you currently use or may use a Stryker product. Stryker agrees to pay for or to reimburse the reasonable expenses in accordance with Stryker’s Travel and Expense Guidelines (including meals, lodging and transportation) that are actually incurred by you in attending this Product Training. Stryker will not compensate you for attending this Product Training. You understand and acknowledge that Stryker may report the reimbursement of the expenses to federal, state, or local authorities.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">You also acknowledge and agree that the reimbursement provided for participation in this training has been determined in a manner that does not take into account the volume or value of any referrals or business otherwise generated between Stryker and you. Further, you are not obligated to purchase, use, recommend or arrange for the use of Stryker products or those of any organization affiliated with Stryker.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Thu Dec 06 2018 16:47:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

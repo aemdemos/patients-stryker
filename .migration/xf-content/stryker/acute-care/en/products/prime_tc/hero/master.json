@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a360b166-5a29-4a1e-a6f2-30f4ca963a9b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f9c9f2c0-8e70-4eab-b92c-0fa9512f30fc"
+  ],
+  "lastPublished": "Tue Oct 15 2024 21:39:20 GMT+0000",
+  "jcr:created": "Tue Oct 15 2024 21:39:21 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 15 2024 21:39:23 GMT+0000",
+  "cq:lastModified": "Mon Sep 16 2024 20:00:13 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f9c9f2c0-8e70-4eab-b92c-0fa9512f30fc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 14:07:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8810e8ce-3b4f-484b-b389-398175d3916a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Prime TC patient transport chair being pushed by a nurse",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/prime-tc-in-use.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Sep 16 2024 19:47:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "7",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

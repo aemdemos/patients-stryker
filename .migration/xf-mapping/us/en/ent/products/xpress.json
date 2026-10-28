@@ -1,0 +1,1351 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "XprESS ENT dilation system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b314d829-5f72-4069-ba0b-721d32c1bed8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "XprESS ENT dilation system",
+  "jcr:predecessors": [
+    "5bfca61a-cb3d-4cdf-8281-e7b645a2fbca"
+  ],
+  "contentID": "ENT-XPR-SYK-1179213_REV-2",
+  "lastPublished": "Wed May 06 2026 14:09:17 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed May 06 2026 14:09:20 GMT+0000",
+  "cq:lastReplicated": "Wed May 06 2026 14:09:22 GMT+0000",
+  "cq:lastModified": "Tue May 05 2026 13:35:04 GMT+0000",
+  "jcr:description": "XprESS ENT dilation system delivers control and versatility for balloon dilation to address chronic rhinosinusitis or Eustachian tube dysfunction.<sup>1-2</sup>",
+  "jcr:baseVersion": "5bfca61a-cb3d-4cdf-8281-e7b645a2fbca",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jun 13 2024 18:24:08 GMT+0000",
+  "pageTitle": "XprESS ENT dilation system",
+  "cq:tags": [
+    "stryker:capability/ent",
+    "stryker:content-type/product",
+    "stryker:business-unit/ent",
+    "stryker:content-type/hcp_content",
+    "stryker:product/ent/xpress"
+  ],
+  "jcr:lastModified": "Mon Apr 27 2026 17:04:53 GMT+0000",
+  "jcr:uuid": "b09f7554-a077-4737-8eeb-313bef6e9c99",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "hero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "imageAlt": "XprESS ENT dilation system",
+      "jcr:created": "Thu Jun 13 2024 18:18:16 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "head": "<p>XprESS ENT dilation system</p>\r\n",
+      "content": "The XprESS ENT dilation system delivers a unique combination of control and versatility for ENT balloon dilation. Its familiar seeker-based design and tip malleability provide the tactile feel you are accustomed to and the flexibility you need to address both chronic rhinosinusitis or Eustachian tube dysfunction patients.<sup>1-2</sup>",
+      "jcr:lastModified": "Tue Apr 28 2026 15:18:33 GMT+0000",
+      "compImageRef": "/content/dam/stryker/ent/products/xpress/images/7-XprESS-Stills_topAngle_LightPack_V4.jpg",
+      "sling:resourceType": "stryker/components/content/hero",
+      "textIsRich": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1569378859": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Apr 29 2026 21:44:57 GMT+0000",
+      "jcr:lastModified": "Wed Apr 29 2026 21:44:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Apr 29 2026 21:45:04 GMT+0000",
+          "CTATitle": "Contact",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Wed Apr 29 2026 21:52:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "internalLink": "/content/stryker/us/en/ent/clinical-information.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "1",
+              "linkText": "Read clinical studies",
+              "externalLinkType": "int"
+            }
+          }
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Apr 29 2026 21:45:24 GMT+0000",
+          "jcr:lastModified": "Wed Apr 29 2026 21:45:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Apr 29 2026 21:50:06 GMT+0000",
+      "jcr:lastModified": "Wed Apr 29 2026 21:50:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_1827983814": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Apr 28 2026 14:51:29 GMT+0000",
+      "jcr:lastModified": "Tue Apr 28 2026 14:51:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Designed based on the tools you know and use²",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Apr 10 2023 18:37:17 GMT+0000",
+      "title": "Features and benefits",
+      "jcr:lastModified": "Tue Apr 28 2026 15:15:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_313227009": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Apr 28 2026 15:15:37 GMT+0000",
+      "jcr:lastModified": "Tue Apr 28 2026 15:15:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Apr 23 2026 15:26:59 GMT+0000",
+      "jcr:lastModified": "Thu Apr 23 2026 15:26:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 10 2023 18:38:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b><span class=\"fontsize-1-25em\">The XprESS ENT dilation system offers surgeons a unique set of features and benefits.<sup>1</sup> These features include:<br>\n</span></b></p>\n<ul>\n<li>A slim profile that enables easy visualization, access and navigation of narrow anatomy</li>\n</ul>\n<ul>\n<li>The integrated Path Assist LED light fiber delivers light confirmation through trans-illumination and excursion, eliminating the need for an extra light source and cables</li>\n</ul>\n<ul>\n<li>Malleable tip that allows for customization based on patient anatomy to treat the frontal, maxillary, sphenoid sinuses and the eustachian tube</li>\n</ul>\n<ul>\n<li>Compatible with the Stryker ENT navigation system, allowing for navigated confirmation<sup>*</sup></li>\n</ul>\n<ul>\n<li>Compact balloon sizes for use across patient populations including pediatrics</li>\n</ul>\n<p><span class=\"fontsize-8em\">*The XprESS LoProfile dilation device is trackable with the Stryker ENT navigation system during balloon sinus dilation procedures, when used with the TGS guidewire<br>\n </span></p>\n",
+          "jcr:lastModified": "Wed Apr 29 2026 21:18:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Thu Apr 23 2026 15:27:14 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Thu Apr 23 2026 15:31:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/ent/products/xpress/videos/final-xpress-refresh-hype-video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/final-xpress-refresh-hype-video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Apr 23 2026 15:42:03 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_1168453057": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Apr 23 2026 17:02:48 GMT+0000",
+      "jcr:lastModified": "Thu Apr 23 2026 17:02:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Apr 23 2026 15:52:18 GMT+0000",
+      "jcr:lastModified": "Thu Apr 23 2026 15:52:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 23 2026 17:04:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Apr 28 2026 15:22:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "bottomMargin": "4"
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Thu Apr 23 2026 15:53:38 GMT+0000",
+          "jcr:lastModified": "Thu Apr 23 2026 15:53:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Thu Apr 23 2026 15:56:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">550K</span></span></span></div>\r\n",
+              "line2": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">patients treated<sup>4</sup></span></span></div>\r\n",
+              "jcr:lastModified": "Thu Apr 23 2026 15:58:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Thu Apr 23 2026 15:56:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">8</span></span></span></div>\r\n",
+              "line2": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">clinical trials</span></span></div>\r\n",
+              "jcr:lastModified": "Thu Apr 23 2026 15:59:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Thu Apr 23 2026 15:56:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">98%</span></span></span></div>\r\n",
+              "line2": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">technical success rate<sup>5</sup></span></span></div>\r\n",
+              "jcr:lastModified": "Thu Apr 23 2026 16:00:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Thu Apr 23 2026 15:56:33 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3-5-vw\">~0.07%</span></span></span></div>\r\n",
+              "line2": "<div style=\"text-align: center;\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">complication  rate<sup>4</sup></span></span></div>\r\n",
+              "jcr:lastModified": "Fri Apr 24 2026 21:00:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Apr 23 2026 17:04:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Apr 28 2026 15:23:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "bottomMargin": "4"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "topMargin": "3",
+      "jcr:created": "Fri Apr 24 2026 21:04:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Proven patient outcomes</span></span>",
+      "jcr:lastModified": "Tue Apr 28 2026 15:23:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols4_676313941": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Apr 24 2026 21:03:52 GMT+0000",
+      "jcr:lastModified": "Fri Apr 24 2026 21:03:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 24 2026 21:05:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2em\">3x<br>\n Faster*</span></span></span></p>\n<p>Return to normal activities<br>\nwith BSD vs. ESS<sup>6</sup></p>\n<p><span class=\"fontsize-8em\">* in adult patients&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Apr 28 2026 15:24:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "text_1525290597": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "topMargin": "10",
+          "jcr:created": "Mon Apr 27 2026 14:14:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 27 2026 14:17:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "leftMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 24 2026 21:05:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2em\"><span style=\"color: #85458a;\">≤1.4%<br>\n</span> <span style=\"color: #85458a;\">Revision rate*&nbsp;&nbsp;</span></span></span></span></p>\n<p>At 1 year post-procedure<sup>5,7<br>\n</sup>&nbsp;</p>\n<p><span class=\"fontsize-8em\">* in adult patients&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 14:11:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "text_1525290597_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "topMargin": "10",
+          "jcr:created": "Mon Apr 27 2026 14:14:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 27 2026 14:17:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "leftMargin": "3"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 24 2026 21:05:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2em\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\">&gt;96% Patency*<br>\n &nbsp;</span></span></span></span></span></p>\n<p>At 1 year post-procedure<sup>8<br>\n &nbsp;</sup></p>\n<p><span class=\"fontsize-8em\">* in adult patients&nbsp;<br>\n </span></p>\n",
+          "jcr:lastModified": "Tue Apr 28 2026 15:26:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "text_1525290597_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "topMargin": "10",
+          "jcr:created": "Mon Apr 27 2026 14:14:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 27 2026 14:17:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "leftMargin": "3"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "10",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Apr 24 2026 21:05:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2em\"><span style=\"color: #85458a;\">4 out of 5 Responders*</span></span></span></span></p>\n<p>SNOT-20 improvement at 1 year<sup>8<br>\n &nbsp;</sup></p>\n<p><span class=\"fontsize-8em\">* in adult patients&nbsp;</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Apr 28 2026 15:27:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "10",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "text_1525290597_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "topMargin": "10",
+          "jcr:created": "Mon Apr 27 2026 14:14:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 27 2026 14:18:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "leftMargin": "3"
+        }
+      }
+    },
+    "text_1591835388_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:00:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Apr 27 2026 14:19:53 GMT+0000",
+      "alt": "features_benefits-1",
+      "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/features_benefits-1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Apr 27 2026 14:30:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Apr 27 2026 15:07:42 GMT+0000",
+      "jcr:lastModified": "Mon Apr 27 2026 15:07:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_1759674806": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Apr 27 2026 14:33:04 GMT+0000",
+      "jcr:lastModified": "Mon Apr 27 2026 14:33:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 27 2026 14:33:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">1 | Designed for performance&nbsp;</span></span></p>\n<p>Ergonomically engineered to fit naturally in your hand, XprESS enables one-finger advancement while supporting your technique for stability, control and precise positioning in procedures.<sup>9</sup></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 15:13:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 27 2026 14:33:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">2 | Compact design&nbsp;</span></span></p>\n<p>A slim, 1.25mm profile enables easy visualization and precise access in narrow and pediatric anatomy.¹</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 15:13:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 27 2026 14:33:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">3 | Light confirmation&nbsp;</span></span></p>\n<p>Integrated Path Assist LED light fiber delivers light confirmation through trans-illumination and excursion, eliminating the need for an extra light source and cables.</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 15:13:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_238320900": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Apr 27 2026 14:33:08 GMT+0000",
+      "jcr:lastModified": "Mon Apr 27 2026 14:33:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 27 2026 14:33:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">4 | Tactile feel&nbsp;</span></span></p>\n<p>Malleable, seeker-based tip inspired by traditional ENT instruments designed to support precise placement and atraumatic navigation.</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 15:13:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 27 2026 14:33:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">5 | Distal markers&nbsp;</span></span></p>\n<p>1cm and 2cm depth markings provide visual cues on placement.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 15:13:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_1591835388": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 14:59:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Apr 27 2026 14:56:15 GMT+0000",
+      "jcr:lastModified": "Mon Apr 27 2026 14:56:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Apr 10 2023 18:38:58 GMT+0000",
+          "alt": "Traditional ENT instruments: Olive tip probe, Frontal sinus seekers, Frontal curette, Double ball probe vs. XprESS ENT dilation device: Rounded ball tip delivers tactile fell vs. XprESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/xpress-diagram-image.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 05 2026 13:35:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "25",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 10 2023 18:38:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>The XprESS instrument technology is designed for both office and OR procedures. XprESS takes inspiration from traditional ENT tools and other FESS instruments, such as the frontal seeker, frontal curette, olive tip probe and double ball probe. The slim profile of the XprESS device is designed to enable easy endoscopic visualization and placement of the device.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 14:57:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "textIsRich": "true"
+        },
+        "text_1525290597_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "4",
+          "topMargin": "10",
+          "jcr:created": "Mon Apr 27 2026 14:14:26 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 27 2026 16:24:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "leftMargin": "4"
+        }
+      }
+    },
+    "text_1591835388_copy_89762472": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Tue Apr 28 2026 15:10:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "xpress",
+      "jcr:created": "Mon Apr 10 2023 18:37:17 GMT+0000",
+      "title": "XprESS confirmation techniques",
+      "jcr:lastModified": "Tue Apr 28 2026 14:34:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hank.ewbank@stryker.com",
+      "jcr:created": "Mon Apr 10 2023 18:46:05 GMT+0000",
+      "jcr:lastModified": "Tue Sep 19 2023 18:22:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 10 2023 18:49:44 GMT+0000",
+          "alt": "distal markers for XpreESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/distal-markers.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 15:20:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hank.ewbank@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Distal markers</span><br>\n1 and 2 cm reference markings provide visual cue on placement position.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Sep 19 2023 18:21:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 10 2023 18:49:44 GMT+0000",
+          "alt": "tactile feel on XprESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/tactile-feel.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 15:20:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Tactile feel</span><br>\nProvides healthcare provider confidence and control to access the sinus.<sup>1</sup></p>\n",
+          "jcr:lastModified": "Mon Jul 24 2023 18:04:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 10 2023 18:49:44 GMT+0000",
+          "alt": "Light illumination for XprESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/light-illumination.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 15:22:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Light illumination </span><br>\nLeverage light confirmation* to confirm access.<sup>1</sup></p>\n<p><span class=\"fontsize-8em\">*Using the PathAssist LED light fiber packaged with the XprESS ENT dilation system</span></p>\n",
+          "jcr:lastModified": "Thu Jun 15 2023 18:34:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Apr 10 2023 18:46:05 GMT+0000",
+      "jcr:lastModified": "Mon Apr 10 2023 18:46:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 10 2023 18:49:44 GMT+0000",
+          "alt": "Light and excursion XprESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/light-and-excursion.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 15:23:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Light and&nbsp;Excursion</span><br>\nFor frontal and maxillary dilations, leverage medial to lateral excursion.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 16:24:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 06 2023 17:33:40 GMT+0000",
+          "alt": "dependable tracking screen on XprESS ENT dilation system",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/dependable-tracking-crop.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 16:23:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Dependable tracking*</span><br>\nTrackable with the Stryker ENT navigation system when used with a TGS guidewire and the XprESS LoPro Balloon Dilation System<sup>1,3</sup></p>\n<p><span class=\"fontsize-8em\">*The XprESS LoProfile dilation device is trackable with the Stryker ENT navigation system during balloon sinus dilation procedures, when used with the TGS guidewire</span></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 16:25:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 12 2023 15:29:55 GMT+0000",
+          "alt": "XprESS ENT dilation system hero shot",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/vizualization.jpg",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Apr 27 2026 15:29:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:46:09 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Visualization</span><br>\nThe sleek profile design allows for endoscopic visualization of treatment areas<br>\n</p>\n",
+          "jcr:lastModified": "Fri Jul 07 2023 20:27:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_1591835388_copy_482318015": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "in-use",
+      "jcr:created": "Mon Apr 10 2023 18:37:17 GMT+0000",
+      "title": "XprESS in use",
+      "jcr:lastModified": "Tue Apr 28 2026 14:34:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Apr 10 2023 18:50:37 GMT+0000",
+      "jcr:lastModified": "Mon Apr 10 2023 18:50:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Apr 10 2023 18:53:02 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "n3m3xxfHQjg",
+          "jcr:lastModified": "Tue Aug 08 2023 15:33:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/ent/products/xpress/videos/XprESS ENT dilation system - Dr Wells frontal access procedural video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hank.ewbank@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/XprESS ENT dilation system - Dr Wells frontal access procedural video-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Sep 22 2023 14:49:18 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_1591835388_copy_1816922068": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Tue Apr 28 2026 15:10:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_copy_c_391918367": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "specs",
+      "jcr:created": "Mon Apr 10 2023 18:37:17 GMT+0000",
+      "title": "Product specifications",
+      "jcr:lastModified": "Tue Apr 28 2026 14:34:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1644824016": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 16:32:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p>A balloon sinuplasty device in the office. A tool for hybrid FESS cases in the OR. One versatile device designed to support your technique—<b>product options include:</b>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Apr 28 2026 15:43:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Product</b></td>\n<td><b>Ordering no.</b></td>\n<td><b>Description</b></td>\n</tr><tr><td>XprESS LoProfile system</td>\n<td>LPLF-106</td>\n<td>6 x 20 mm, 1 system</td>\n</tr><tr><td>XprESS LoProfile system</td>\n<td>LPLF-107</td>\n<td>7 x 20 mm, 1 system</td>\n</tr><tr><td>XprESS LoProfile system</td>\n<td>LPLF-205</td>\n<td>5 x 8 mm, 1 system</td>\n</tr><tr><td>XprESS LoProfile system</td>\n<td>LPLF-206</td>\n<td>6 x 8 mm, 1 system</td>\n</tr><tr><td>XprESS Ultra system</td>\n<td>ULF-106</td>\n<td>6 x 20 mm, 1 system</td>\n</tr><tr><td>XprESS Ultra system</td>\n<td>ULF-206</td>\n<td>6 x 8 mm, 1 system</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Apr 10 2023 18:56:40 GMT+0000",
+      "jcr:lastModified": "Mon May 01 2023 18:35:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Apr 10 2023 19:00:22 GMT+0000",
+      "text": "<p><b>One system includes</b>: 1 balloon dilation device, 1 inflation syringe, 1 extension line, 1 bending tool, 1 PathAssist LED light fiber</p>\n",
+      "jcr:lastModified": "Mon May 01 2023 18:35:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1591835388_copy_1115086007": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_702832293": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "description": "See the instructions for use for full indications, risk and safety information. ",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "safety",
+      "jcr:created": "Tue Apr 28 2026 14:52:14 GMT+0000",
+      "title": "Risk and safety information",
+      "jcr:lastModified": "Tue Apr 28 2026 14:52:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon Apr 27 2026 16:53:24 GMT+0000",
+      "CTATitle": "Instructions for use",
+      "ctaExternalLink": "https://labeling.stryker.com/hcp/XHR/US/pthxr?keycode=00857326005017",
+      "jcr:lastModified": "Mon Apr 27 2026 16:58:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)"
+    },
+    "text_1591835388_copy_1068564332": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_174068": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "resources",
+      "jcr:created": "Wed Jun 07 2023 18:58:18 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Apr 28 2026 14:56:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload_1591623768": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/commercial/usa/ent/gsnps/ENT-GSNPS-PRDC-655033-EN_US.pdf",
+        "/content/dam/commercial/usa/ent/xpr/ENT-XPR-BROC-2686499-EN_US.pdf"
+      ],
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:lastModified": "Tue Apr 28 2026 14:13:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "text_1591835388_copy_839870032": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_735190485": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Additional balloon dilation products and complementary tools:",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "related-products",
+      "jcr:created": "Thu Jun 15 2023 18:36:16 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Tue Apr 28 2026 15:47:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 07 2023 18:35:05 GMT+0000",
+      "jcr:lastModified": "Wed Jun 07 2023 18:35:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 07 2023 18:35:18 GMT+0000",
+          "alt": "Tools_RAN-reinforced-anesthesia-needle_left-1",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/Tools_RAN-reinforced-anesthesia-needle_left-1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jun 07 2023 18:39:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Jun 07 2023 18:39:12 GMT+0000",
+          "text": "<h3>Reinforced anesthesia needle</h3>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/ent/products/reinforced-anesthesia-needle.html\">Learn More</a></span></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 19:50:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 07 2023 18:35:18 GMT+0000",
+          "alt": "Audion_hero_angeled_left",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/Audion_hero_angeled_left.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jun 07 2023 18:39:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Jun 07 2023 18:39:12 GMT+0000",
+          "text": "<h3>Audion<sup>®</sup>&nbsp;ET dilation system</h3>\n<p><a href=\"/content/stryker/us/en/ent/products/audion.html\"><span class=\"standalone-link\">Learn More</span></a></p>\n",
+          "jcr:lastModified": "Tue Apr 28 2026 15:48:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 07 2023 18:35:18 GMT+0000",
+          "alt": "Audion_hero_angeled_left",
+          "srcFileRef": "/content/dam/stryker/ent/products/xpress/images/navigation.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 12 2023 19:51:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Jun 07 2023 18:39:12 GMT+0000",
+          "text": "<h3>Stryker ENT navigation system</h3>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/ent/products/stryker-ent-navigation-system.html\">Learn More</a></span></p>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 19:52:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Jun 07 2023 18:39:12 GMT+0000",
+          "text": "<h3>Questions about XprESS or<br>\nballoon dilation products?</h3>\n",
+          "jcr:lastModified": "Mon Apr 27 2026 16:56:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Apr 27 2026 16:56:22 GMT+0000",
+          "CTATitle": "Contact us",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Tue Apr 28 2026 14:30:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "text_1591835388_copy_898260084": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "section_title_326989952": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Apr 28 2026 14:28:53 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Tue Apr 28 2026 15:09:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "marketoform": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "2918",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Apr 28 2026 14:14:30 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Tue Apr 28 2026 14:17:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "text_1591835388_copy_634708261": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 27 2026 14:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Apr 27 2026 15:01:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ent/products/xpress/images/7-XprESS-Stills_topAngle_LightPack_V4.jpg"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "internalLink": "/content/stryker/us/en/ent/clinical-information",
+    "jcr:lastModified": "Wed Apr 29 2026 21:53:28 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Read clinical studies",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hank.ewbank@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Sep 19 2023 18:08:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Thu Jun 15 2023 18:27:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>XprESS Instructions for use 4322-001</li>\r\n<li>Data on file at Stryker DHF 1656-001</li>\r\n<li>TGS guidewire instructions for use 5176-001</li>\r\n<li>Internal data on file&nbsp;</li>\r\n<li>Chandra, R. K., Kern, R. C., Cutler, J. L., Welch, K. C., &amp; Russell, P. T. (2016). REMODEL larger cohort with long-term outcomes and meta-analysis of standalone balloon dilation studies. The Laryngoscope, 126(1), 44–50. https://doi.org/10.1002/lary.25507&nbsp;</li>\r\n<li>Cutler, J., Bikhazi, N., Light, J., Truitt, T., Schwartz, M., Armstrong, M., Bikhazi, N., Chandler, S., Cutler, J., Ferouz-Colborn, A., Gould, J., Light, J., Marvel, J., Schwartz, M., &amp; Truitt, T. (2013). Standalone Balloon Dilation versus Sinus Surgery for Chronic Rhinosinusitis: A Prospective, Multicenter, Randomized, Controlled Trial. American Journal of Rhinology &amp; Allergy, 27(5), 416–422. https://doi.org/10.2500/ajra.2013.27.3970&nbsp;</li>\r\n<li>Gould, J., Alexander, I., Tomkin, E., &amp; Brodner, D. (2014). In-Office, Multisinus Balloon Dilation: 1-Year Outcomes from a Prospective, Multicenter, Open Label Trial. American Journal of Rhinology &amp; Allergy, 28(2), 156–163. https://doi.org/10.2500/ajra.2014.28.4043&nbsp;</li>\r\n<li>Bikhazi, N., Light, J., Truitt, T., Schwartz, M., Cutler, J., &amp; Investigators, R. S. (2014). Standalone balloon dilation versus sinus surgery for chronic rhinosinusitis: A prospective, multicenter, randomized, controlled trial with 1-year follow-up. American Journal of Rhinology &amp; Allergy, 28(4), 323–329. https://doi.org/10.2500/ajra.2014.28.4064&nbsp;</li>\r\n<li>D0000397950 - Internal data on file</li>\r\n</ol>\r\n<div><b><u>Disclaimer</u></b></div>\r\n<div><b><u><br>\r\n</u></b>This document is intended solely for the use of healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. We do not dispense medical advice and recommend that surgeons be trained in the use of any particular product before using it in surgery.</div>\r\n<div>&nbsp;</div>\r\n<div>A physician using XprESS for Eustachian tube dilation must either have: (i) experience with a Eustachian tube balloon dilation device or (ii) undergone cadaver training on the use of a balloon dilation device for Eustachian tube dilation.&nbsp;</div>\r\n<div>&nbsp;</div>\r\n<div>If a physician who intends to use XprESS for Eustachian tube dilation does not meet at least one of these criteria, please contact your Stryker representative to arrange training</div>\r\n<div>&nbsp;</div>\r\n<div>The information presented is intended to demonstrate Stryker’s products. A surgeon must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your representative if you have questions about the availability of Stryker’s products in your area.</div>\r\n<div>&nbsp;</div>\r\n<div>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: TGS, XprESS and Stryker. All other trademarks are trademarks of their respective owners or holders. The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</div>\r\n",
+    "jcr:lastModified": "Mon Apr 27 2026 19:48:26 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Apr 29 2026 21:53:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Apr 29 2026 21:53:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Apr 29 2026 21:53:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

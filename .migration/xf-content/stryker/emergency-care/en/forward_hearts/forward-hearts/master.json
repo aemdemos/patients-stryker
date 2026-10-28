@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Forward Hearts",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e3864475-54b7-470c-bf62-1216e766efc0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "660f391e-2530-4ac9-b7e2-41a37c68a144"
+  ],
+  "jcr:created": "Tue Sep 13 2022 14:00:54 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 14:00:56 GMT+0000",
+  "cq:lastModified": "Tue Sep 13 2022 14:00:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "660f391e-2530-4ac9-b7e2-41a37c68a144",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1c478979-649a-48ce-95a2-3ee3b954c0e1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jul 29 2022 14:15:55 GMT+0000",
+      "alt": "Women grabs HeartSine samaritan PAD 450P off a wall cabinet in a workplace",
+      "srcFileRef": "/content/dam/stryker/ems/forward-hearts/images/ForwardHearts_Banner_SubmitAStory_2500x833.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 13 2022 14:00:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

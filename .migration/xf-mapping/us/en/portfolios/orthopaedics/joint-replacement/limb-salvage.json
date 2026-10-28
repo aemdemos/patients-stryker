@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Limb salvage",
+  "jcr:versionHistory": "93dcdd71-886b-42b9-8b97-f59e8507d629",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+  "jcr:predecessors": [
+    "3d8c8e00-f733-4e7c-9e34-116b2fcc2994"
+  ],
+  "contentID": "GMRS-WC-4_26472",
+  "lastPublished": "Mon Jun 14 2021 13:17:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 14 2021 13:17:21 GMT+0000",
+  "cq:lastModified": "Fri Jun 11 2021 16:12:18 GMT+0000",
+  "jcr:description": "Our limb salvage portfolio is designed for patients who need extensive\r\nreconstruction of the hip joint and/or knee joint from bone loss due to trauma, a failed previous prosthesis and/or tumor resection.",
+  "jcr:baseVersion": "3d8c8e00-f733-4e7c-9e34-116b2fcc2994",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/limb-salvage",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jun 11 2021 16:12:18 GMT+0000",
+  "jcr:uuid": "384b7274-ca3d-44c9-8a2a-f994b8ff6895",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "stephen.brown@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Tue Jul 28 2020 19:17:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/gmrs/images/JR_US_GMRS_Group.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModified": "Wed Jul 29 2020 17:47:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  }
+}

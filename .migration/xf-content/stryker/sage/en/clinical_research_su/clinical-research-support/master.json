@@ -1,0 +1,43 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Clinical Research Support",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0c580ff2-ca59-4dfd-8d80-bf94219cbf36",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "00b015b1-c964-4bb4-8812-e9ba201b9756"
+  ],
+  "jcr:created": "Thu Feb 29 2024 20:36:27 GMT+0000",
+  "cq:lastReplicated": "Thu Feb 29 2024 20:36:29 GMT+0000",
+  "cq:lastModified": "Thu Feb 29 2024 20:35:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "00b015b1-c964-4bb4-8812-e9ba201b9756",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e95101aa-8b99-426f-a2d5-fda175aa20f4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "adobesignwebform_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "widgetID": "CBFCIBAA3AAABLblqZhCdGtBIR9Cvb87xkrN2xj6_Lb6UDWMbe70vAnZEBvFfqIERFEzMFjQkbly3QgrPi3s*",
+      "minwidth": "100%",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Apr 26 2022 14:50:58 GMT+0000",
+      "minheight": "700px",
+      "jcr:lastModified": "Thu Feb 29 2024 20:35:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/adobesignwebform"
+    }
+  }
+}

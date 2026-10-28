@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Iconix IntelliBraid Technology slide",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "571fa861-a704-44ed-84c2-18e7cbfe82cd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4da55c88-361a-4ed3-88a7-a2f5bd55f96e"
+  ],
+  "jcr:created": "Thu Jun 08 2023 22:14:54 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 08 2023 22:14:56 GMT+0000",
+  "cq:lastModified": "Thu Jun 08 2023 22:14:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "A bunching like no other on first line and then second line Proven fixation and strength1 for you and your patients",
+  "jcr:baseVersion": "4da55c88-361a-4ed3-88a7-a2f5bd55f96e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "07b4965d-41c3-4dfc-8f81-e2ff721711ef",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Wed Feb 15 2023 23:11:48 GMT+0000",
+      "alt": "iconix-expfrag-intellibraid",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconixallsutureanchorsystem/images/iconix-expfrag-intellibraid-new.gif",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 08 2023 22:14:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

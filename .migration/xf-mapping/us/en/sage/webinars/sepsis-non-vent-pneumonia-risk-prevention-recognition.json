@@ -1,0 +1,82 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sepsis and non-vent hospital-acquired pneumonia: Understanding the risk, prevention and early recognition",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "95afd927-129c-4562-aa51-0a79430eef72",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:predecessors": [
+    "d0dcf10a-c57e-4290-bcb9-c1d938e92485"
+  ],
+  "contentID": "SAGE-WBNR-WEBNR-3992800_REV-0_en_us",
+  "lastPublished": "Tue Oct 13 2026 19:27:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 13 2026 19:27:30 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 13 2026 19:27:33 GMT+0000",
+  "cq:lastModified": "Tue Oct 13 2026 19:27:20 GMT+0000",
+  "jcr:baseVersion": "d0dcf10a-c57e-4290-bcb9-c1d938e92485",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Oct 13 2026 19:27:30 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Mon Oct 12 2026 20:44:40 GMT+0000",
+  "jcr:uuid": "6f1d52ca-07ec-4593-bc0f-e8be77d215fc",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue May 26 2026 20:19:38 GMT+0000",
+      "jcr:lastModified": "Tue May 26 2026 20:19:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "standalonevideo_copy_286551408": {
+      "jcr:primaryType": "nt:unstructured",
+      "subtitle": "Kathleen Vollman MSN, RN, CCNS, FCCM, FCNS, FAAN",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "description": " This session reviews the impact of sepsis, emerging quality initiatives, evidence-based pneumonia prevention strategies and the nurse's role in early sepsis recognition and intervention. Attendees will leave with practical strategies for addressing risk and supporting improved outcomes for hospitalized patients.\r\n",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 14 2025 19:33:55 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Oct 13 2026 15:12:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/focusrn-live/videos/kathleen-vollman-sepsis-focusrn-webinar-3992800.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/kathleen-vollman-sepsis-focusrn-webinar-3992800-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Oct 13 2026 19:27:20 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Data review software and service",
+  "jcr:versionHistory": "6759e716-008d-4ee9-8cde-3cc3b597a3ac",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+  "jcr:predecessors": [
+    "b0a11221-0660-4a69-9120-f0713c99a2d1"
+  ],
+  "lastPublished": "Tue Aug 20 2019 19:36:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 20 2019 19:36:58 GMT+0000",
+  "cq:lastModified": "Mon Jul 08 2019 17:48:15 GMT+0000",
+  "jcr:description": "Deliver better care with integrated data solutions – simply choose the solution that meets your clinical and operational needs, and then deploy to empower better decisions, faster team mobilization, and improved outcomes.  ",
+  "cq:siblingOrder": "epcr,data-and-asset-management,data-review-software-and-service,",
+  "jcr:baseVersion": "b0a11221-0660-4a69-9120-f0713c99a2d1",
+  "jcr:isCheckedOut": true,
+  "cq:name": "data-review-software-and-service",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/Data-review-software-and-service",
+    "stryker:capability/emergency-data-solutions"
+  ],
+  "jcr:lastModified": "Mon Jul 08 2019 17:48:15 GMT+0000",
+  "jcr:uuid": "f8de973f-710b-4b86-9987-f8809779641f",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-data-solutions",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "andy.tanabe@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/codestate/CODE-STAT_1.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Mon Jun 17 2019 13:42:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

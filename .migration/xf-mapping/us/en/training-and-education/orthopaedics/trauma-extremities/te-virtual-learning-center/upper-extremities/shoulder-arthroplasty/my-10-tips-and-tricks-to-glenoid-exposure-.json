@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "My 10 tips and tricks to glenoid exposure.",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d03c06df-691d-4818-af74-09b48aa9ad97",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "39b0729e-8979-48a1-ba82-3cc7e49a5572"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:01:02 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:14 GMT+0000",
+  "cq:lastModified": "Tue Mar 21 2023 15:48:56 GMT+0000",
+  "jcr:baseVersion": "39b0729e-8979-48a1-ba82-3cc7e49a5572",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Mar 21 2023 15:48:56 GMT+0000",
+  "jcr:uuid": "6ca33ca5-f0ba-4bbd-9be6-8121fff93309",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Nov 01 2022 20:48:26 GMT+0000",
+      "text": "My 10 tips and tricks to glenoid exposure. Dr. Sanchez-Sotelo reviews his techniques for gaining exposure of the glenoid for shoulder arthroplasty surgery by sharing details from skin-incision, to capsular release, to retractors. Featured products include Blueprint® and ReUnion®. AP-016224A",
+      "jcr:lastModified": "Tue Nov 01 2022 20:49:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/my-10-tips-and-tricks-to-glenoid-exposure-/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/my-10-tips-and-tricks-to-glenoid-exposure/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/My 10 tips and tricks to glenoid exposure.png"
+  }
+}

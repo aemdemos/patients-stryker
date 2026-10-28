@@ -1,0 +1,79 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sepsis and hospital-acquired pneumonia",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7fc13469-3f20-4af1-bec9-137b99971cdc",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6ddb5453-34b0-4b2d-b1f4-486e5cb03ddc"
+  ],
+  "lastPublished": "Fri Jun 13 2025 14:14:40 GMT+0000",
+  "jcr:created": "Fri Jun 13 2025 14:14:40 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 13 2025 14:14:43 GMT+0000",
+  "cq:lastModified": "Fri Jun 13 2025 14:14:37 GMT+0000",
+  "jcr:baseVersion": "6ddb5453-34b0-4b2d-b1f4-486e5cb03ddc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 05 2025 16:55:18 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/ems",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:uuid": "d5d3d7b8-dd5e-4c1c-b013-21441fb11b5f",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Thu Apr 03 2025 21:24:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\">Sepsis and hospital-acquired pneumonia</span></h1>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Elias Coury MPH, BHSc and&nbsp;Jo Ann Brooks PhD, RN, FAAN, FCC<br>\n</span></span></p>\n<p><span class=\"fontsize-1-25em\">A moderated virtual panel discussion with Elias Coury and Jo Ann Brooks where they will discuss Sepsis- including updates on ties to hospital acquired infections and the quality impact.</span></p>\n",
+      "jcr:lastModified": "Fri Jun 13 2025 14:14:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 14 2025 19:33:55 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Apr 14 2025 19:34:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/focusrn-live/videos/Sepsis and Hospital Acquired Pneumonia.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Sepsis and Hospital Acquired Pneumonia-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Apr 14 2025 19:36:37 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/FocusRN-sepsis-webinar-thumbnail"
+      }
+    }
+  }
+}

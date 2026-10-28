@@ -1,0 +1,676 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "subtitle": "Plating System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "AxSOS 3 Ti Distal Tibia",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ef22a866-c940-4bd8-8ac1-dbe6f8248e63",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "devin.doran@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/axsos3/images/AxSOS-double-distal-tibia.png",
+  "jcr:predecessors": [
+    "5f823602-3499-4223-969b-7d8e5315910f"
+  ],
+  "lastPublished": "Wed Feb 22 2023 20:19:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 22 2023 20:19:45 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 22 2023 20:19:47 GMT+0000",
+  "cq:lastModified": "Wed Feb 22 2023 20:19:31 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "Monoaxial locking plate system for treating distal tibia fractures. ",
+  "jcr:baseVersion": "5f823602-3499-4223-969b-7d8e5315910f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/foot-&-ankle",
+    "stryker:content-type/product",
+    "stryker:procedure/foot-and-ankle/ankle-fracture/plating-platforms",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/plating",
+    "stryker:specialty/tibia-&-femur",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/trauma-and-extremities/plating",
+    "stryker:custom/trauma-and-extremities/Indications/tibia",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:system/trauma-and-extremities/axsos-3",
+    "stryker:product/trauma-and-extremities/axsos-3-distal-tibia",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Aug 16 2017 16:00:47 GMT-0400",
+  "jcr:uuid": "cd4dbd30-db6e-46eb-8b56-3af9fb7cf302",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_493997791_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "jcr:lastModified": "Thu Nov 10 2022 19:00:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 10 2022 19:00:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">AxSOS 3 Ti <br>\r\nDistal Tibia</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Plating System</span></span>",
+          "jcr:lastModified": "Wed Dec 28 2022 00:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Nov 10 2022 19:00:40 GMT+0000",
+          "alt": "AxSOS 3 Distal Tibia Plating System",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/axsos3/images/AxSOS-double-distal-tibia.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 22 2023 20:19:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 21:30:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">Monoaxial locking plate system for treating distal tibia fractures.</span></span>",
+          "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><br>\r\n </span></span><span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Plating that fits.&nbsp;</span></span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">We understand the importance of a well-fitting implant. An implant that fits may reduce OR time, may decrease fracture malalignment, and potentially reduce patient discomfort, especially in areas such as the distal tibia where there is little soft tissue coverage.&nbsp;</span></span></p>\r\n",
+          "jcr:lastModified": "Wed Dec 28 2022 00:55:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 28 2022 00:00:27 GMT+0000",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Low profile plate designed to minimize screw prominence</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Patented locking screw head design helps ease extraction<sup>1</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">May allow for a less rigid construct, potentially resulting in increased callus formation and secondary healing<sup>2</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Provides increased CT imaging clarity<sup>3</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Offers excellent biocompatibility<sup>4,5</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 28 2022 00:55:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 28 2022 00:59:41 GMT+0000",
+      "jcr:lastModified": "Wed Dec 28 2022 00:59:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1060583734": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">AxSOS 3 Ti&nbsp;</span><br>\n </span><span class=\"urw-egyptienne\">Distal Anterolateral Tibia</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">4 rafting screws close to articular surface<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">2.7mm/3.5mm cortical screws used in the distal extension&nbsp;<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Kickstand screw designed to capture medial malleolus</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 28 2022 01:04:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_1060583734_1601389303": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:16:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">AxSOS 3 Ti</span><br>\n</span><span class=\"urw-egyptienne\">Distal Medial Tibia</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Designed to minimize screw prominence<br>\n <br>\n </span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Diverging screw trajectories in parallel plane<br>\n</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 28 2022 01:05:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "devin.doran@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jun 14 2017 16:05:33 GMT-0400",
+          "alt": "Distal-Medial-Anterolateral-Tibia",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/axsos3distaltibia/images/Distal-Medial-Anterolateral-Tibia.png",
+          "jcr:lastModified": "Wed Feb 22 2023 20:19:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Dec 28 2022 00:59:41 GMT+0000",
+      "jcr:lastModified": "Wed Dec 28 2022 00:59:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_519042781_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 18:53:04 GMT+0000",
+      "jcr:lastModified": "Tue Dec 13 2022 18:53:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 13 2022 18:53:10 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Dec 13 2022 18:53:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">AxSOS 3 Ti Distal Tibia</span></span><span class=\"urw-egyptienne\">&nbsp;<span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about AxSOS 3 Ti Distal Tibia by exploring our collection of clinical resources including&nbsp;surgery videos, brochures, and more.&nbsp;</span></span></span>",
+          "jcr:lastModified": "Wed Dec 28 2022 01:11:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 18:51:22 GMT+0000",
+      "jcr:lastModified": "Tue Dec 13 2022 18:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 13 2022 18:51:28 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Dec 13 2022 18:51:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "accordion_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 22:58:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><b><a href=\"OPERATIVE%20TECHNIQUE\" target=\"_blank\"><span class=\"futura-bold\">OPERATIVE TECHNIQUE</span></a></b></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 20 2023 23:00:58 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Mon Feb 20 2023 22:59:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed57b276a3b1173f71b7b6b&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+              "jcr:lastModified": "Thu Jan 12 2023 07:56:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:56:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Resources"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 2,
+          "accTitle": "Internal Resources"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "cols2_624753639_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+              "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed57a6734d6be14bf8b23fc&amp;overview=false\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Feb 20 2023 23:01:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+              "jcr:lastModified": "Mon Feb 20 2023 22:58:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 18:51:22 GMT+0000",
+      "jcr:lastModified": "Tue Dec 13 2022 18:51:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Dec 13 2022 18:51:28 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Dec 13 2022 18:51:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_159": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 18:34:32 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 18:34:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about AxSOS 3 Ti Distal Tibia and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 28 2022 01:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_495": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 18:34:45 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 18:34:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Fri Aug 26 2022 17:59:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://stryker.highspot.com/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "HIGHSPOT (Internal Only)",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Plating that fits. </p>\r\n",
+    "shortDescTop": "<p>We understand the importance of a well-fitting implant. An implant that fits may reduce OR time, may decrease fracture malalignment, and potentially reduce patient discomfort, especially in areas such as the distal tibia where there is little soft tissue coverage. </p>\r\n<p> </p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 28 2022 01:12:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Low profile plate designed to minimize screw prominence&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Patented locking screw head design helps ease extraction<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>May allow for a less rigid construct, potentially resulting in increased callus formation and secondary healing<sup>2</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Provides increased CT imaging clarity<sup>3</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Offers excellent biocompatibility<sup>4,5</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>AxSOS-WP-4 White Paper: Konowalczyk, S . et al. AxSOS 3 Titanium Plating System- Screw Removal Safety. September 2014</li>\r\n<li>Henderson, CE et al. 2010 Mid-America Orthopedic Association Physician in Training Award: Healing Complications are Common After Locked Plating for Distal Femurs. Clinical Orthopaedics and Related Research (2011) 469:1757-1765.</li>\r\n<li>Kataoka, ML et al. A Review of factors that affect artifact from metallic hardware on multi-row detector computed tomography. Current Problems in Diagnostic Radiology, July/August 2010.</li>\r\n<li>Williams, DF. On the mechanisms of biocompatibility. Biomaterials (2008), 1-13</li>\r\n<li>Pohler, O EM. Unalloyed titanium for implants in bone surgery. Injury 31 (2000) S-D7-13.</li>\r\n</ol>\r\n<p>CP-AWI-14, 07-2017<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Fri Aug 11 2017 11:48:04 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/axsos3/images/AxSOS-double-distal-tibia.png"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 28 2022 01:12:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 28 2022 01:12:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 28 2022 01:13:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

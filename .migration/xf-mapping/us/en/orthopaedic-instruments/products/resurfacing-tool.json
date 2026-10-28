@@ -1,0 +1,601 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Built for ease-of-use and minimal vibration,  skiving and chatter",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Resurfacing Tool",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d714bcee-f751-4318-9ca2-ec3725748a81",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "thumbnailAltText": "Stryker's resurfacing tool",
+  "jcr:predecessors": [
+    "f7740e69-4780-4720-9c6d-24ca70909ccc"
+  ],
+  "contentID": "D0000087153 Rev AA",
+  "lastPublished": "Wed Apr 10 2024 17:55:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Apr 10 2024 17:55:02 GMT+0000",
+  "cq:lastReplicated": "Wed Apr 10 2024 17:55:04 GMT+0000",
+  "cq:lastModified": "Wed Apr 10 2024 17:54:53 GMT+0000",
+  "jcr:description": "Designed to provide procedural efficiency in your OR. Crafted with control, accuracy and optimal cutting speeds in mind, Stryker’s resurfacing tool is a versatile option in your OR.",
+  "jcr:baseVersion": "f7740e69-4780-4720-9c6d-24ca70909ccc",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Resurfacing tool",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/surgical",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:product/orthopaedic_instruments/Resurfacing_tool",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Tue Aug 16 2022 22:34:17 GMT+0000",
+  "jcr:uuid": "0aa0f23b-3067-4f4a-a506-5f71c877d74d",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Resurfacing tool",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Feb 09 2018 16:19:26 GMT-0500",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 17:50:18 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 17:50:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "topMargin": "5",
+          "jcr:created": "Fri Jul 01 2022 17:50:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-3vw\">For efficiency and accuracy you can rely on.</span></span></span>",
+          "line2": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(237,238,236);\">Stryker’s resurfacing tool is designed to provide a fast, clean cut and minimal heat, chatter and skiving during use.</span></span></span>",
+          "jcr:lastModified": "Fri Jul 01 2022 17:51:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Feb 09 2018 15:17:00 GMT-0500",
+      "jcr:lastModified": "Fri Jul 01 2022 17:51:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 17:52:07 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 17:57:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_2056998590": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 17:52:18 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 17:52:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_1819567381": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Fri Feb 16 2018 15:12:27 GMT-0500",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Feb 16 2018 15:13:41 GMT-0500",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/surgical/products/resurfacing-tool/video/ResurfacingToolAnimation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/ResurfacingToolAnimation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Feb 16 2018 15:12:53 GMT-0500",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_1396721546": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:00:17 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:00:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:00:24 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #000000;\"><span class=\"fontsize-2-5em\">Engineered for greater control and efficiency</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:00:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:01:05 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:01:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:01:14 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/moreflutes.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:50:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:01:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">More flutes = more control, less efficiency</span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:05:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:01:19 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/lessflutes.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:51:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:01:31 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Less flutes = more efficiency</span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:05:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_2128184296": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:52:10 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:52:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:52:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:52:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "description": "“What impresses me the most about the resurfacing tool is the accuracy and efficiency of its cuts. In my OR, I value how the resurfacing tool’s clean cuts make my work easier.”",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:06:23 GMT+0000",
+      "title": "Dr. Adam Schiff, Loyola Medicine, Maywood, IL",
+      "jcr:lastModified": "Fri Jul 01 2022 18:52:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_2128184296_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:52:10 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:52:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:52:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:52:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_1545195527": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:19:44 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:19:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "topMargin": "5",
+          "jcr:created": "Fri Jul 01 2022 18:19:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: #edeeec;\">A family of power tools built for the whole hospital.</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span style=\"color: #edeeec;\"><span class=\"fontsize-2-5-vw\">Engineered for optimized performance when paired with our handsets</span></span></span>",
+          "jcr:lastModified": "Fri Jul 01 2022 18:20:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "cols_1616640140": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:21:00 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:21:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:21:06 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:21:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:21:15 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:21:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:21:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/cta-precisionsaw.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:51:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Stryker Precision Saw",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 01 2022 18:22:17 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "ctaExternalLink": "https://www.stryker.com",
+          "jcr:lastModified": "Tue Aug 16 2022 22:26:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/orthopaedic-instruments/products/precision-falcon"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:22:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/cta-performanceseries.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:51:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Performance Series Blades",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 01 2022 18:22:22 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "ctaExternalLink": "https://www.stryker.com",
+          "jcr:lastModified": "Tue Aug 16 2022 22:27:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/orthopaedic-instruments/products/performance-series-blades"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:22:35 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/cta-ezout.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:51:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "System 8 EZout",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jul 01 2022 18:22:43 GMT+0000",
+          "CTATitle": "LEARN MORE",
+          "ctaExternalLink": "https://www.stryker.com",
+          "jcr:lastModified": "Tue Aug 16 2022 22:27:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/orthopaedic-instruments/products/system-8-ezout"
+        }
+      }
+    },
+    "cols_1891962722": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:22:59 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:22:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jul 01 2022 18:23:04 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">High-quality cutting technology for your OR</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">For versatile and efficient blades, use our cutting technology</span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 01 2022 18:24:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1298959809": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jul 01 2022 18:24:07 GMT+0000",
+      "jcr:lastModified": "Fri Jul 01 2022 18:24:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jul 01 2022 18:24:13 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/familypic.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 01 2022 18:51:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "description": "Learn more about our cutting technology",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "deepLinkingId": "contact",
+          "jcr:created": "Wed Apr 10 2024 17:42:59 GMT+0000",
+          "title": "Request a demo",
+          "jcr:lastModified": "Wed Apr 10 2024 17:54:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Sep 08 2023 14:54:51 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Fri Sep 08 2023 14:55:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>One cutting edge with four benefits</p>\r\n",
+    "shortDescTop": "<p>Stryker’s resurfacing tool provides a reduced level of chatter, increased cut accuracy, and increased cut speed<sup>1</sup> when compared to a 4.0mm fluted egg bur.<sup>1,2</sup><br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModified": "Tue Feb 27 2018 15:46:01 GMT-0500",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Creates a more accurate cut path when compared to the current 4.0mm fluted egg bur<sup>2&nbsp;</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Offers a significant reduction in chatter when compared to the 4.0mm fluted egg bur<sup>2</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>When compared to fluted burs of similar geometries, the material removal&nbsp;of the Resurfacing Tools is improved over the current 4.0mm fluted egg bur<sup>1,2</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Designed to not clog<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div><b>References</b></div>\r\n<ol>\r\n<li>The 2.5mm egg resurfacing tool had an equivalent cut speed when compared to the 1608-002-035.</li>\r\n<li>Under test lab conditions when compared to the 1608-002-035 using a bone substitute.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Jul 01 2022 22:20:08 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/resurfacing-tool/images/Hero.png"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jul 01 2022 18:51:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jul 01 2022 18:51:48 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Jul 01 2022 18:51:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

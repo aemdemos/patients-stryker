@@ -1,0 +1,127 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Inari Medical, now part of Stryker, launches the all-new InThrill® Thrombectomy System, designed to address arteriovenous access and small vessel thrombus cases",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "140daacc-1520-47b5-9d93-0b30d218bd9a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "InThrill thrombectomy system",
+  "jcr:predecessors": [
+    "715d7abb-8847-4013-a301-a0c6854de584"
+  ],
+  "contentID": "PRO-2360-USA-EN-v1",
+  "lastPublished": "Tue Jul 29 2025 15:16:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 29 2025 15:16:11 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 29 2025 15:16:13 GMT+0000",
+  "cq:lastModified": "Tue Jul 29 2025 15:16:01 GMT+0000",
+  "jcr:description": "This is the first and only purpose-built small vessel and arteriovenous (AV) access thrombectomy system that can deliver fast, full luminal clot removal.",
+  "jcr:baseVersion": "715d7abb-8847-4013-a301-a0c6854de584",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 29 2025 13:15:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Jul 29 2025 15:16:01 GMT+0000",
+  "jcr:uuid": "1b6b1457-79f4-4dd2-80cd-bb85cea030a1",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jul 28 2025 18:59:18 GMT+0000",
+      "jcr:lastModified": "Mon Jul 28 2025 18:59:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 28 2025 19:05:40 GMT+0000",
+          "alt": "InThrill thrombectomy system",
+          "srcFileRef": "/content/dam/stryker/about/news/2025/inari-medical-now-part-of-stryker-launches-the-all-new-inthrill-thrombectomy-system/images/Inari-InThrill.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 28 2025 19:14:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Jul 28 2025 18:59:34 GMT+0000",
+          "text": "<p><b>PORTAGE, Mich.</b> – <b>July 29, 2025</b> — Inari Medical, now part of Stryker (NYSE: SYK), a global leader in medical technologies, announced the launch of its next-generation InThrill Thrombectomy System, the first and only purpose-built small vessel and arteriovenous (AV) access thrombectomy system that can deliver fast, full luminal clot removal.</p>\n<p>The second generation InThrill Thrombectomy System is an 8 French over-the-wire system comprising the InThrill thrombectomy catheter and the InThrill sheath. InThrill is built upon a familiar platform, optimized to become the standard for AV access and small vessel thrombectomy. Offering unmatched efficiency and clot removal, InThrill has distinctive features which include:</p>\n<ul>\n<li><b>Increased radial force</b> for improved luminal wall apposition for optimized clot removal</li>\n<li><b>Offset single open mouth</b> to optimize clot capture and removal</li>\n<li><b>Internal struts</b> for even clot distribution within the element</li>\n<li><b>Redesigned backend</b> to streamline ergonomics and improve the user experience.</li>\n</ul>\n<p>On May 19, 2025, Dr. Joshua Pinter and Dr. Anish Ghodadra of the UPMC health care system performed the first commercial case using the new InThrill Thrombectomy System. &quot;The next generation of InThrill has made our thrombectomies more effective and consistent than ever,&quot; said Dr. Pinter. &quot;Inari's dedication to building a small vessel tool has changed our paradigm of treatment for AV access thrombectomy,&quot; added Dr. Ghodadra.</p>\n<p>“The launch of the next-generation InThrill Thrombectomy System reflects our deep commitment to solving real-world challenges in vascular care,” said Tim Lanier, president, Inari Division. “This latest innovation delivers new tools and enriches our work with physicians in the vascular space.”</p>\n<p>For more information, visit <a href=\"https://www.inarimedical.com/inthrill-thrombectomy-system\" target=\"_blank\">https://www.inarimedical.com/inthrill-thrombectomy-system</a></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jul 28 2025 19:16:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Jul 28 2025 19:01:55 GMT+0000",
+          "jcr:lastModified": "Mon Jul 28 2025 19:01:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_2094773327": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Jul 28 2025 19:02:01 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p>On February 19, 2025, Stryker acquired Inari Medical, a medical device company with a mission to treat and transform the lives of patients suffering from venous and other diseases.<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jul 28 2025 19:02:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1064578294": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Mon Jul 28 2025 19:03:01 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Media contact:</span><br>\nSacha Ricarte<br>\nDirector, Communications - Inari<br>\n<a href=\"mailto:Sacha.ricarte@stryker.com\">Sacha.ricarte@stryker.com</a><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Jul 28 2025 19:03:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Tue Jul 29 2025 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Jul-2025",
+    "jcr:lastModified": "Mon Jul 28 2025 19:15:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/inari-medical-now-part-of-stryker-launches-the-all-new-inthrill-thrombectomy-system/images/Inari-InThrill-thumbnail.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Drs. Anish Ghodadra and Joshua Pinter are not paid consultants of Inari Medical. All views and opinions expressed here are their own and do not represent those of Inari Medical.</p>\r\n<p><br>\r\n<b>Indications for Use:</b></p>\r\n<p>The InThrill Thrombectomy System is indicated for (1) the non-surgical removal of thrombi and emboli from blood vessels, including arteriovenous fistulae and arteriovenous grafts for dialysis access, and synthetic grafts and (2) injection, infusion, and/or aspiration of contrast media and other fluids into or from a blood vessel/graft. The InThrill Sheath is indicated for use as a conduit for the insertion of endovascular devices into the peripheral vasculature while minimizing blood loss associated with such insertions. The InThrill Thrombectomy System is intended for use in the peripheral vasculature. The InThrill Thrombectomy System is not intended for use in deep vein thrombosis (DVT) treatment.</p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and Contraindications prior to use of the product.​</p>\r\n",
+    "jcr:lastModified": "Mon Jul 28 2025 19:17:00 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

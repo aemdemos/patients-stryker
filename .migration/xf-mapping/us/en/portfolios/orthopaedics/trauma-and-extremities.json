@@ -1,0 +1,325 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Trauma",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "302c4d7a-5914-4042-bbde-6a7a9bfe71d6",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Trauma and Extremities",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/systems/trauma-running-man.jpg",
+  "jcr:predecessors": [
+    "ff062f62-9444-4192-887c-372a45bdde89"
+  ],
+  "lastPublished": "Mon May 06 2024 13:57:31 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 06 2024 13:57:31 GMT+0000",
+  "cq:lastReplicated": "Mon May 06 2024 13:57:33 GMT+0000",
+  "cq:lastModified": "Wed May 01 2024 18:04:32 GMT+0000",
+  "jcr:description": "Our trauma and extremities portfolio offers you market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements. \r\n",
+  "cq:siblingOrder": "advanced-digital-healthcare,craniomaxillofacial,foot-and-ankle,joint-replacement,spine--ortho-,sports-medicine,trauma-and-extremities,upper-extremities,",
+  "jcr:baseVersion": "ff062f62-9444-4192-887c-372a45bdde89",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:name": "trauma-and-extremities",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/trauma-and-extremities/product-type/nailing",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/plating",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Jan 10 2023 21:58:36 GMT+0000",
+  "jcr:uuid": "552ff6ed-ac7d-4512-a4e4-e85e644ea8c6",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics",
+  "cq:childrenOrder": "elbow--hand-and-wrist,foot-and-ankle,hip-fracture,pediatrics,shoulder,tibia-and-femur,biologics,biologics-redirect,clavicle,proximal-humerus,elbow,pelvis,hip-fracture0,femur,tibia,alliance,",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "bannercampaign_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
+      "alt": "Trauma Story",
+      "jcr:lastModified": "Wed May 01 2024 17:12:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/bannercampaign",
+      "linkInternal": "/content/stryker/us/en/trauma-and-extremities",
+      "srcLargeFileRef": "/content/dam/stryker/trauma-and-extremeties/images/trauma-story-banner-1b.jpg"
+    },
+    "cols2_2_3_1_3_993566": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "curatedcta_105712785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 24 2017 12:50:59 GMT-0400",
+          "CTATitle": "Download Trauma Sterilization Guide",
+          "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-42116",
+          "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "CTAUrl": "",
+          "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
+        }
+      }
+    },
+    "cols2_2_3_1_3_993566_2114078531": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "curatedcta_105712785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 24 2017 12:50:59 GMT-0400",
+          "CTATitle": "eIFU presentation",
+          "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-46979",
+          "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "CTAUrl": "",
+          "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
+        }
+      }
+    },
+    "cols2_2_3_1_3_993566_831644258": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+        "curatedcta_105712785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 24 2017 12:50:59 GMT-0400",
+          "CTATitle": "eIFU Customer Letter",
+          "ctaExternalLink": "http://cdn.stryker.com/SYKGCSDOC-2-46991",
+          "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+          "CTAUrl": "",
+          "ctaInternalLink": "/content/stryker/control_copy/en/trauma-and-extremities/contact"
+        }
+      }
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Wed May 01 2024 18:04:32 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "200",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/trauma-and-extremities/product-type"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "headColor": "rgba(255,181,0,1)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "title": "Product categories",
+    "jcr:lastModified": "Fri Jan 07 2022 21:17:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities/hip-fracture"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities/tibia-and-femur"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities/foot-and-ankle"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities/shoulder"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities/elbow--hand-and-wrist"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>&nbsp;</p>\r\n<p>The SR MCP and PIP Arthroplasty System is sold as a HUMANITARIAN USE DEVICE in the US. The effectiveness of this device for this use has not been demonstrated.</p>\r\n<p>CP-AWI-13, 07-2017</p>\r\n",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/systems/trauma-running-man.jpg",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  }
+}

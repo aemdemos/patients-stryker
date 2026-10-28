@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Officer - 6278",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ef62675d-b2b2-45a0-a0af-5581e879d7ab",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "42abc80f-7c7a-4648-8e8a-118a02f4a1a5"
+  ],
+  "lastPublished": "Fri Jan 02 2026 23:31:58 GMT+0000",
+  "jcr:created": "Fri Jan 02 2026 23:31:58 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 02 2026 23:32:00 GMT+0000",
+  "cq:lastModified": "Fri Jan 02 2026 22:36:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "42abc80f-7c7a-4648-8e8a-118a02f4a1a5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 04:05:07 GMT+0000",
+  "jcr:uuid": "42c8a77f-7dd0-4cb9-9044-20c2eef56d73",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "ray.maniaci@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Dylan&nbsp;</span>Crotty</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Group President, Orthopaedics</span></span></p>\n<p>Dylan Crotty became Group President, Orthopaedics in January 2026.<br>\n</p>\n<p>&nbsp;</p>\n<p>Dylan oversees our Joint Replacement, Trauma &amp; Extremities and Ortho Tech Businesses.</p>\n<p>In his previous role as President, Instruments, Dylan oversaw Orthopaedic Instruments, Surgical Technologies, Neurosurgical, Craniomaxillofacial, Interventional Spine and ENT.</p>\n<p>Dylan began his career with Stryker in 1999 and has held a series of senior leadership positions including Vice President and General Manager roles in Surgical, Neuro Spine and ENT, and Foot &amp; Ankle. Earlier in his career, he served as Managing Director for Stryker UK, Ireland, South Africa and General Manager of Trauma and Craniomaxillofacial across Europe.</p>\n<p>Dylan serves on the Board of StacheStrong, supporting research and initiatives dedicated to combating brain cancer.</p>\n<p>He holds a bachelor's degree in business administration from Hope College and has served on multiple healthcare and nonprofit boards in southwest Michigan.</p>\n",
+      "jcr:lastModified": "Fri Jan 02 2026 22:36:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 19:56:34 GMT+0000",
+      "alt": "Leadership_Template_Dylan_Crotty",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Template_Dylan_Crotty.jpg",
+      "jcr:lastModified": "Mon Dec 22 2025 15:17:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

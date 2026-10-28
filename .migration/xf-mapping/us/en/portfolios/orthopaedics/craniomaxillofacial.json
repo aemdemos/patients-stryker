@@ -1,0 +1,93 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Maxillofacial surgical solutions",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Craniomaxillofacial",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "88983945-a66e-4f8f-a538-543c10da5f95",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/Hero_CMF landing.jpg",
+  "jcr:predecessors": [
+    "f55e4295-d1d4-473f-9995-0b901520f4f9"
+  ],
+  "contentID": "CMF-WC-28_Rev. None_14666 ",
+  "lastPublished": "Wed Jan 11 2023 16:18:07 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 11 2023 16:18:07 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 11 2023 16:18:09 GMT+0000",
+  "cq:lastModified": "Tue Jan 10 2023 21:57:32 GMT+0000",
+  "jcr:description": "Your patients deserve best in class products delivered by people who care. Our comprehensive portfolio features rigid bone fixation systems, biomaterials, porous polyethylene implants, microdissection needles and patient-specific implants to address a wide variety of surgical specialties and procedures.",
+  "jcr:baseVersion": "f55e4295-d1d4-473f-9995-0b901520f4f9",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cmf-implants",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Jan 10 2023 21:57:32 GMT+0000",
+  "jcr:uuid": "5cb04843-68ff-4196-b973-a87de1693bb4",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 16:04:17 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:53 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:53 GMT+0000",
+    "compImageRef": "/content/dam/stryker/craniomaxillofacial/Hero_CMF landing.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/Hero_CMF landing.jpg"
+  }
+}

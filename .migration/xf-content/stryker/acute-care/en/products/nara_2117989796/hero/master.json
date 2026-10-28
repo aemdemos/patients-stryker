@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f8cee71a-f816-4f70-9836-f001b4722dc6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "dddb7152-5dd2-4c31-8275-43edd40968b4"
+  ],
+  "lastPublished": "Tue Oct 15 2024 21:39:29 GMT+0000",
+  "jcr:created": "Tue Oct 15 2024 21:39:29 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 15 2024 21:39:32 GMT+0000",
+  "cq:lastModified": "Tue Sep 24 2024 17:50:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "dddb7152-5dd2-4c31-8275-43edd40968b4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 14:07:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "44ad76bd-b0c7-4e6b-9eee-770a94dce54f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Nära hospital bassinet to bring mothers closer to their newborns",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/narabassinet/images/nara-hero-shot-3x2.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 24 2024 17:50:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

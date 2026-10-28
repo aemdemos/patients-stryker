@@ -1,0 +1,194 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The art of triage: Preparing for chemical warfare agents",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "76b03b92-9649-40cd-99f1-e6b031b7aa5c",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:predecessors": [
+    "89be0fe0-4474-49c5-b0a6-d130e88dcf54"
+  ],
+  "contentID": "EC-ECCL-COMM-1426256_REV-0_en_us ",
+  "lastPublished": "Thu Nov 28 2024 12:54:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Nov 28 2024 12:54:30 GMT+0000",
+  "cq:lastReplicated": "Thu Nov 28 2024 12:54:33 GMT+0000",
+  "cq:lastModified": "Thu Nov 28 2024 12:53:52 GMT+0000",
+  "jcr:description": "This lecture will focus on a toxidrome-based method of triage to rapidly identify the most lethal and rapidly acting toxins that can be used in a chemical attack. We will discuss how the information gained during this process will have direct implications for management of casualties first identified in the prehospital environment.  We will also review commonly discussed mass casualty incident (MCI) triage tools and how they can be incorporated during these complex events. ",
+  "jcr:baseVersion": "89be0fe0-4474-49c5-b0a6-d130e88dcf54",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Nov 13 2024 21:05:06 GMT+0000",
+  "jcr:lastModified": "Fri Nov 08 2024 19:34:37 GMT+0000",
+  "jcr:uuid": "e5b1e4fc-9d26-4d1f-a90c-e606ad34a6c1",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Nov 12 2024 17:55:46 GMT+0000",
+      "jcr:lastModified": "Tue Nov 12 2024 17:55:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Oct 01 2024 12:18:49 GMT+0000",
+      "jcr:lastModified": "Tue Oct 01 2024 12:18:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Aug 20 2024 12:53:01 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Emergency Care </span>|<span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">Webinars</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 21 2024 19:16:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Aug 22 2024 15:44:15 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2024 15:44:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 08 2024 19:36:16 GMT+0000",
+          "alt": "Headshot of Asa Margolis, DO, MPH, MS, FACEP, FAEMS",
+          "srcFileRef": "/content/dam/stryker/ems/campaigns/webinars/speakers-headshots/asa-margolis_headshot_440x440.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 08 2024 19:55:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 19 2024 21:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">The art of triage: Preparing for chemical warfare agents</span></span></span></h1>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">December 12, 2024&nbsp;1–2 p.m. ET/10–11 a.m. PT&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">Presented by:</span></b></span></p>\n<p><span class=\"fontsize-1-25em\">Asa Margolis, DO, MPH, MS, FACEP, FAEMS&nbsp;<br>\n Associate Professor, Division of Special Operations, Department of Emergency Medicine&nbsp;<br>\n Executive Director, James J. Scheulen Center for Transport and Resuscitative Medicine&nbsp;&nbsp;<br>\n Program Director, Johns Hopkins University School of Medicine Emergency Medical Services Fellowship&nbsp;<br>\n Deputy Medical Director, United States Secret Service&nbsp;</span></p>\n",
+          "jcr:lastModified": "Thu Nov 28 2024 12:51:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Register to watch the webinar",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Nov 28 2024 12:42:22 GMT+0000",
+          "CTATitle": "Register Now",
+          "ctaExternalLink": "https://stryker.zoom.us/webinar/register/1417327173030/WN_2_OM1nLLRWGdRgvn9Nl05Q#/registration",
+          "jcr:lastModified": "Thu Nov 28 2024 12:51:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      }
+    },
+    "cols2_2_3_1_3_151557": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Aug 22 2024 15:45:02 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2024 15:45:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_188497224": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 19 2024 21:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Description:</span></span><br>\n</p>\n<p><span class=\"fontsize-1-25em\">This lecture will focus on a toxidrome-based method of triage to rapidly identify the most lethal and rapidly acting toxins that can be used in a chemical attack. We will discuss how the information gained during this process will have direct implications for management of casualties first identified in the prehospital environment. We will also review commonly discussed mass casualty incident (MCI) triage tools and how they can be incorporated during these complex events.</span></p>\n",
+          "jcr:lastModified": "Thu Nov 28 2024 12:53:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_563209906": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 19 2024 21:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Objectives:</span></span></p>\n<ol>\n<li><span class=\"fontsize-1-25em\">Recall commonly discussed triage models.</span></li>\n<li><span class=\"fontsize-1-25em\">Describe how to integrate poisoning from chemical warfare agents (CWAs) into triage models.</span></li>\n<li><span class=\"fontsize-1-25em\">Demonstrate understanding of how to use MARCHE2 as a framework for management of casualties from CWAs.</span></li>\n</ol>\n",
+          "jcr:lastModified": "Thu Nov 28 2024 12:53:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1920514816": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Aug 22 2024 19:08:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>Important: Due to changes in the compliance policy, a $10 fee will be charged for receiving a CE. Attendees can view the webinar for free.&nbsp;</p>\n<p>This CE activity is approved for 1.0 CEH by ResponderCast, an organization accredited by the Commission on Accreditation for Prehospital Continuing Education (CAPCE). This educational activity is approved for 1.0 contact hours by Saxe Healthcare Communications, an accredited provider for continuing education. Provider approved by California Board of Nursing. Provider #14477 and the Florida Board of Nursing Provider #50-17032. This program has been approved for 1.0 contact hours Continuing Respiratory Care Education (CRCE) credit by the American Association of Respiratory Care.&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 28 2024 12:53:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 21 2024 17:30:41 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Wed Aug 21 2024 17:31:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

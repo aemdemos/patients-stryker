@@ -1,0 +1,1834 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Our management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8c2fdc9b-b9bc-4477-b6e3-527a77e7e297",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "58a7b9b9-c8f3-4037-9f26-040bd38a3816"
+  ],
+  "lastPublished": "Fri Sep 11 2026 01:05:24 GMT+0000",
+  "jcr:created": "Fri Sep 11 2026 01:05:24 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 11 2026 01:05:27 GMT+0000",
+  "cq:lastModified": "Thu Sep 03 2026 15:14:33 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "58a7b9b9-c8f3-4037-9f26-040bd38a3816",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:13:40 GMT+0000",
+  "jcr:uuid": "1c7e8185-8cfb-4e59-9025-f47635e06c45",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1263488792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 27 2022 15:29:15 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\">Our management</span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">We have a high-performance team of diverse and talented leaders that live our mission and values.<br>\n<br>\n&nbsp;</span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Fri May 27 2022 15:31:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 11 2021 18:48:27 GMT+0000",
+      "title": "Leadership team",
+      "jcr:lastModified": "Mon May 23 2022 19:56:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Kevin Lobo",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:24:43 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy3065672665948323": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Kevin A. Lobo",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/KevinLobo-V2.png",
+        "jcr:lastModified": "Fri Mar 21 2025 18:46:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/3326",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Kevin</span>&nbsp;Lobo<br>\n </span></span><span class=\"urw-egyptienne\">Chair and CEO<br>\n </span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:12:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/3326.html\">Meet Kevin</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:54:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1905888255": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Mon Dec 22 2025 15:25:13 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_19058882555460544694085792": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Dylan Crotty",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/DylanCrotty.jpg",
+        "jcr:lastModified": "Mon Dec 22 2025 15:29:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/6278",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Dylan</span>&nbsp;Crotty&nbsp;<br>\n </span></span><span class=\"urw-egyptienne\">Group President, Orthopaedics</span></p>\n",
+        "jcr:lastModified": "Mon Dec 22 2025 15:28:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__1829984344": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/6278.html\">Meet Dylan</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Mon Dec 22 2025 15:28:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1237357148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "2",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:25:49 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Katy Fink",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/KatyFinkV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:55:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/7462",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Katy</span>&nbsp;Fink&nbsp;<br>\n </span></span><span class=\"urw-egyptienne\">Vice President, Chief Human Resources Officer</span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:13:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/7462.html\">Meet Katy</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:56:54 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1455891782": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "3",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:26:26 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Rob Fletcher",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/RobFletcherV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:55:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/1361",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_153305467": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Rob</span>&nbsp;Fletcher&nbsp;<br>\n </span></span><span class=\"urw-egyptienne\">Vice President, Chief Legal Officer&nbsp;&nbsp;</span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:14:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__230823091": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/1361.html\">Meet Rob</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:57:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 02 2025 17:43:04 GMT+0000",
+      "jcr:lastModified": "Wed Jul 02 2025 17:43:16 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage8279155176463265": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Debra King",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/Debra-King-v2.jpg",
+        "jcr:lastModified": "Fri Apr 17 2026 18:47:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/8739",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Debra</span>&nbsp;King&nbsp;<br>\n</span></span><span class=\"urw-egyptienne\">Vice President, Chief Digital and Information Officer</span></p>\n",
+        "jcr:lastModified": "Wed Jul 02 2025 17:45:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__1621245578": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/8739.html\">Meet debra</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jul 02 2025 17:55:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_749693791": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "4",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:26:48 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Viju Menon",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/VijuMenonV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:56:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/1942",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Viju</span>&nbsp;Menon&nbsp;<br>\n </span></span><span class=\"urw-egyptienne\">Group President, Global Quality and Operations</span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:14:26 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/1942.html\">Meet Viju</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:57:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_323611184": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "5",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:27:24 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Kim Montagnino",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/KimMontagninoV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:56:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/9122",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Kim</span>&nbsp;Montagnino<br>\n </span></span><span class=\"urw-egyptienne\">Vice President, Chief Communications Officer</span></p>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 18:41:16 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__1470036943": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/9122.html\">Meet Kim</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Fri Jun 20 2025 13:30:46 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_484945182": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "6",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:27:59 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Andy Pierce",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/AndyPierce.png",
+        "jcr:lastModified": "Wed Aug 26 2026 20:07:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/5238",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Andy</span>&nbsp;Pierce&nbsp;</span><br>\n </span><span class=\"urw-egyptienne\">Group President, MedSurg and Neurotechnology&nbsp;</span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:14:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/5238.html\">Meet Andy</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:58:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1294049874": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "7",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:28:51 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Spencer Stiles",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/SpencerStilesV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:55:35 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/9569",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Spencer&nbsp;</span>Stiles&nbsp;</span><br>\n </span><span class=\"urw-egyptienne\">President and Chief Operating Officer</span></p>\n",
+        "jcr:lastModified": "Mon Feb 02 2026 19:59:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/9569.html\">Meet Spencer</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 16:58:32 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_1719324836": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "8",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 23 2022 14:28:57 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Preston Wells",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/PrestonWellsV2.jpg",
+        "jcr:lastModified": "Thu Aug 07 2025 19:56:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/6401",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Preston</span>&nbsp;Wells&nbsp;<br>\n </span></span><span class=\"urw-egyptienne\">Vice President, Chief Financial Officer</span></p>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 18:43:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/6401.html\">Meet Preston</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Fri Mar 21 2025 18:43:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:33:23 GMT+0000",
+      "text": "<p><br>\n<br>\n<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon May 23 2022 14:33:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy_1_2094182621": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 11 2021 18:48:27 GMT+0000",
+      "title": "Other officers",
+      "jcr:lastModified": "Mon May 23 2022 14:33:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standaloneimage_copy_1039452803": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Aug 26 2026 18:51:16 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_10394528031868209287067193": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Emily Baculik",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/EmilyBaculik.png",
+        "jcr:lastModified": "Wed Aug 26 2026 19:17:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/1004.html",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Emily&nbsp;<span style=\"color: #000000;\">Baculik</span></span></span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Corporate Controller<br>\n </span></p>\n",
+        "jcr:lastModified": "Wed Aug 26 2026 18:52:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/1004.html\">Meet emily</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Aug 26 2026 18:53:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_2084242298": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon Sep 09 2024 13:40:40 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_565189019": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Robert Cummings",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/RobertCummingsV2.jpg",
+        "jcr:lastModified": "Fri Aug 08 2025 16:58:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/4473",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy_1576666562": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Rob&nbsp;<span style=\"color: #000000;\">Cummings</span></span></span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Tax<br>\n</span></p>\n",
+        "jcr:lastModified": "Wed Jul 27 2022 15:41:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy__526348795": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/4473.html\">Meet Robert</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 17:00:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text_2023193285_copy_1107376430": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "4",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:35:57 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 14:39:01 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Jill Duffy",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/Jill-Duffy-framed-headshot.png",
+        "jcr:lastModified": "Tue Jan 07 2025 23:17:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/2943",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Jill</span>&nbsp;Duffy</span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Assurance and Risk Advisory&nbsp;</span></p>\n",
+        "jcr:lastModified": "Tue Jan 07 2025 21:41:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><a href=\"/content/stryker/us/en/about/our-management/leaders/2943.html\"><span class=\"standalone-link\">Meet Jill</span></a></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 07 2025 23:15:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_2023193285_copy_1695902241": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "5",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:35:57 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 14:39:11 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Tina French",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/Tina French framed headshot.png",
+        "jcr:lastModified": "Tue Jan 07 2025 23:17:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/2006",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Tina</span>&nbsp;French</span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Corporate Secretary&nbsp;</span></p>\n",
+        "jcr:lastModified": "Mon Sep 09 2024 13:42:16 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/2006.html\">Meet TINA</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 07 2025 23:16:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_2023193285_copy_910715368": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "6",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:35:57 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 14:39:18 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Jeanne Blondia",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/Lindsay Gardner framed headshot.png",
+        "jcr:lastModified": "Fri May 10 2024 15:24:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/2158",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Lindsay</span>&nbsp;Gardner</span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Treasurer&nbsp;</span></p>\n",
+        "jcr:lastModified": "Tue Jan 07 2025 21:38:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/2158.html\">Meet LINDSAY</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Fri May 10 2024 14:30:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_42955994": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Wed Aug 26 2026 18:54:42 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_429559941868415161491897": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "JamieLeary-Erickson",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/JamieLeary-Erickson.png",
+        "jcr:lastModified": "Wed Aug 26 2026 19:17:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/6659.html",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Jamie&nbsp;<span style=\"color: #000000;\">Leary-Erickson</span></span></span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Global Real Estate and Facilities<br>\n </span></p>\n",
+        "jcr:lastModified": "Wed Aug 26 2026 18:56:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/6659.html\">Meet Jamie</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Aug 26 2026 18:57:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_2023193285_copy_1507345802": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "7",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:35:57 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 14:39:24 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6",
+          "behavior": "none"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Dana McMahon",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/DanaMcMahon.png",
+        "jcr:lastModified": "Wed Jun 01 2022 17:01:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/1997",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Dana <span style=\"color: #000000;\">McMahon</span></span></span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Chief Compliance Officer<br>\n </span></p>\n",
+        "jcr:lastModified": "Wed Jul 27 2022 15:44:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/1997.html\">Meet Dana</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 17:01:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy_349186891": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Fri Apr 24 2026 20:11:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_3491868917569287832816703": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Nick Mead",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/NickMead-V2.png",
+        "jcr:lastModified": "Mon Apr 27 2026 20:44:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/8540",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_202319328530665": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Nick</span>&nbsp;Mead</span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Investor Relations</span><br>\n</p>\n",
+        "jcr:lastModified": "Wed Apr 22 2026 20:05:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/8540.html\">Meet Nick</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Apr 22 2026 20:06:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_2023193285_copy_988649246": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "8",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon May 23 2022 14:35:57 GMT+0000",
+      "jcr:lastModified": "Mon May 23 2022 14:39:30 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6",
+          "behavior": "none"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Jody Powell",
+        "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/JodyPowell.png",
+        "jcr:lastModified": "Wed Jun 01 2022 17:01:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/about/our-management/leaders/1652",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_2023193285_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Jody <span style=\"color: #000000;\">Powell&nbsp;</span></span></span></span><br>\n<span class=\"urw-egyptienne\">Vice President, Global Regulatory Affairs and Quality Assurance&nbsp;</span></p>\n",
+        "jcr:lastModified": "Mon May 23 2022 20:21:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Tue Feb 23 2021 17:54:04 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/our-management/leaders/1652.html\">Meet Jody</a></span></span></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Wed Jun 01 2022 17:01:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "buildingblock": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "10",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Mar 22 2023 19:10:55 GMT+0000",
+      "jcr:lastModified": "Wed Mar 22 2023 19:10:55 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_782041849": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 19 2022 17:27:54 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">COMM-GSNPS-WEB-596150_Rev-17</span><br>\n</p>\n",
+      "jcr:lastModified": "Wed Aug 26 2026 18:58:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

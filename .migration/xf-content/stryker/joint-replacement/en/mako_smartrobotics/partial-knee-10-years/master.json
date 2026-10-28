@@ -1,0 +1,450 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Partial Knee 10 years",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3482e15d-ee60-4499-9654-26169c302b06",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "ed7d5bcf-f41f-4b78-b05c-3c02c9cedc3c"
+  ],
+  "lastPublished": "Mon Aug 18 2025 19:03:29 GMT+0000",
+  "jcr:created": "Mon Aug 18 2025 19:03:29 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 18 2025 19:03:31 GMT+0000",
+  "cq:lastModified": "Mon Aug 18 2025 18:53:49 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ed7d5bcf-f41f-4b78-b05c-3c02c9cedc3c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:03:29 GMT+0000",
+  "jcr:uuid": "070956cf-1aa5-4459-8597-4164a3e64e55",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_636794021_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Aug 18 2025 18:50:23 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Over 10 years of clinical success</span></span></span></h3>\n",
+      "jcr:lastModified": "Mon Aug 18 2025 18:53:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Aug 18 2025 18:51:56 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">At a mean follow-up of&nbsp;11.1 years, patients who underwent medial partial knee arthroplasty displayed the following:</span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 18 2025 18:53:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 30 2024 17:11:25 GMT+0000",
+      "jcr:lastModified": "Tue Apr 30 2024 17:24:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Fri May 03 2024 00:42:20 GMT+0000",
+        "alt": "Knee icon with Partial Knee implants",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Partial-Knee/images/10-years-icons/MakoPKA-Knee-icon-with-Partial-Knee-implants.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu May 09 2024 21:01:16 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      },
+      "text1054792543863921": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Survivorship rate of </span></span><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">96.4%</span></span></span><span style=\"color: #85458a;\"><span style=\"color: #000000;\"><sup><span class=\"fontsize-1-25em\">8</span></sup></span></span><br>\n</p>\n",
+        "jcr:lastModified": "Thu Jul 31 2025 15:47:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed May 15 2024 21:44:21 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Wed May 15 2024 21:45:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_1701": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 30 2024 20:19:09 GMT+0000",
+      "jcr:lastModified": "Tue Apr 30 2024 20:31:18 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Fri May 03 2024 00:43:36 GMT+0000",
+        "alt": "5 stars with 4.4 filled",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Partial-Knee/images/10-years-icons/MakoPKA-4.4-stars.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu May 09 2024 21:01:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Thu May 02 2024 23:48:32 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">4.4 out of 5</span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"> satisfied or very satisfied</span></span><span class=\"fontsize-1-25em\"><sup>8</sup></span><br>\n</p>\n",
+        "jcr:lastModified": "Thu Jul 31 2025 15:48:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed May 15 2024 21:44:21 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Wed May 15 2024 21:45:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_2138": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:lastModified": "Tue Apr 30 2024 20:31:52 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Fri May 03 2024 00:44:13 GMT+0000",
+        "alt": "Thumbs up icon",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Partial-Knee/images/10-years-icons/MakoPKA-thumbs-up-icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu May 09 2024 21:01:42 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Thu May 02 2024 23:49:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">Excellent</span></span><span class=\"urw-egyptienne\"> </span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Forgotten Joint Score of </span></span><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-1-5em\">82.2</span></span></span><span class=\"fontsize-1-25em\"><sup>8</sup></span><br>\n</p>\n",
+        "jcr:lastModified": "Thu Jul 31 2025 15:48:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "jcr:created": "Wed May 15 2024 21:44:21 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Wed May 15 2024 21:45:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_2132690104": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Apr 30 2024 20:22:48 GMT+0000",
+      "jcr:lastModified": "Tue Apr 30 2024 20:32:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Fri May 03 2024 00:44:55 GMT+0000",
+        "alt": "Person Walking icon",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Partial-Knee/images/10-years-icons/MakoPKA-person-walking-icon.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu May 09 2024 21:01:50 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "carolyn.lee@stryker.com",
+        "topPadding": "0",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "0",
+        "jcr:created": "Thu May 02 2024 23:51:44 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #af6d04;\"><span class=\"fontsize-1-5em\">88.8%</span></span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"> of patients achieved </span></span><span class=\"futura-bold\"><span style=\"color: #af6d04;\"><span class=\"fontsize-1-5em\">Patient Acceptable Symptoms State</span></span></span><span class=\"fontsize-1-25em\"><sup>8</sup></span><br>\n</p>\n",
+        "jcr:lastModified": "Thu Jul 31 2025 15:48:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          }
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

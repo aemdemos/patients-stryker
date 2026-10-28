@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker and Fred Funk Host Second \"Get on the Bus\" Contest Winner in Jacksonville to Promote Importance of Joint Health",
+  "jcr:versionHistory": "d2d7810a-220c-40ea-b6db-87550f3339d4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "f6815b41-f068-439a-9a6a-2028ceccf3a0"
+  ],
+  "lastPublished": "Tue Jul 17 2018 12:11:25 GMT+0000",
+  "jcr:created": "Tue Jul 17 2018 12:11:25 GMT-0400",
+  "cq:lastModified": "Tue Jul 17 2018 12:11:19 GMT-0400",
+  "jcr:baseVersion": "f6815b41-f068-439a-9a6a-2028ceccf3a0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:uuid": "3491f95d-eba7-4c9c-9f48-dcdb0f6a93b1",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Tue Jul 17 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "17-Jul-2018",
+    "jcr:lastModified": "Tue Jul 17 2018 12:07:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/stryker_banner_1024X768_A_r9.jpg",
+    "jcr:lastModified": "Tue Jul 17 2018 12:07:57 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Today,&nbsp;Stryker's Joint Replacement Division announced the second winner of its &quot;Get on the Bus&quot; contests - aimed at encouraging people living with joint pain to see a healthcare professional to learn about treatment options and take the first steps to a healthier lifestyle. Stryker teamed up with longstanding athlete ambassador and current PGA TOUR Champions Golfer,&nbsp;Fred Funk, to welcome the second contest winner on board Stryker's custom bus.&nbsp;&nbsp;</p>\n<p>The winner,&nbsp;Carol Simpson, is a&nbsp;Jacksonville&nbsp;local who is finally ready to address the joint pain that has been plaguing her for years. Funk and Simpson will spend their day driving around&nbsp;Jacksonville&nbsp;on Stryker's bus, and make a trip to Simpson's doctor so that she can discuss ways to prioritize her joint health. Similar to Funk, Simpson enjoys volunteering for charities and important causes, so they'll finalize the day giving back to the&nbsp;Jacksonville&nbsp;community.</p>\n<p>&quot;In 2008 I was experiencing such tremendous right knee pain that I couldn't do the things I enjoy, like walking my dog and keeping up with my kids, without the discomfort,&quot; said&nbsp;Fred Funk. &quot;Eventually, my wife convinced me to go to the doctor to talk about my options for managing my joint pain. After consulting with my doctor, I decided to have my knee replaced – which turned out to be best decision for me. I wouldn't have made the decision so confidently without encouragement from my wife. That's why I understand how important it is to give people that extra push to seek help.&quot;</p>\n<p>The &quot;Get on the Bus&quot; contests were launched earlier this year, rallying people to share why they or their loved ones may need some extra encouragement to go to the doctor to learn about joint health. &nbsp;The first winner of the contests,&nbsp;Pittsburgh&nbsp;local,&nbsp;Chris Crytzer, was announced on&nbsp;June 12. Stryker Ambassador,&nbsp;Jerome Bettis, spent the day with Chris who visited her doctor and is now setting up a game plan that works best for her joint pain. The last &quot;Get On The Bus&quot; contest continues to run in the Northern NJ area and the winner of that contest will be invited to get on board the bus with both of Stryker's athlete ambassadors, Funk and Bettis. &nbsp;For more information about Stryker, our ambassadors and &quot;Get on the Bus,&quot; please visit patients.stryker.com.</p>\n<p><b><u>Contest Details</u></b></p>\n<p>The last contest is still active in the Northern NJ area. If you or someone you know is experiencing joint pain in their hips or knees and/or unable to live an active lifestyle because of joint pain, go to patients.stryker.com to sign up today. To enter, entrants must provide basic information, and tell Stryker in 200 words or less why you or your loved one needs that extra push to go to the doctor. There will be one grand prize winner for the Northern NJ contest — totaling one for each of the identified local markets listed in each contest's rules.</p>\n<p>NO PURCHASE NECESSARY TO ENTER ONE OF THE THREE CONTESTS.&nbsp; Void where prohibited by law.&nbsp;&nbsp;New Jerseycontest open to legal residents of&nbsp;Bergen,&nbsp;Essex,&nbsp;Hudson, and&nbsp;Passaic&nbsp;Counties in NJ, begins at&nbsp;12:01 AM EDT&nbsp;on 4/10/18, and ends at&nbsp;11:59 PM EDT&nbsp;on 7/20/18.&nbsp; The&nbsp;Florida&nbsp;and&nbsp;Pennsylvania&nbsp;contests are closed.&nbsp; Entrants for the NJ contest must be 21+ as of the date of entry.&nbsp; Other eligibility and entry restrictions apply.&nbsp; For Official Rules for each contest, visit&nbsp;<a href=\"https://patients.stryker.com/\">patients.stryker.com</a>. Sponsored by Stryker Corporation.</p>\n<p>For more information about Stryker, our ambassadors and &quot;Get on the Bus,&quot; please visit patients.stryker.com.</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://urldefense.proofpoint.com/v2/url?u=http-3A__www.stryker.com&amp;d=DwMFAg&amp;c=9wxE0DgWbPxd1HCzjwN8Eaww1--ViDajIU4RXCxgSXE&amp;r=r0jYHiCkrxkUtd8oC-qZ0zIWCYxR_lOsx6KFco6LRiw&amp;m=MQNqfDVibGM-fu_rOgVjTNkVo4TWIlPftXv9HcMc2fU&amp;s=VKLwxbiVDeZcWQ9YawyuV87tIuzGhTWsmhxvch09eJE&amp;e=\">www.stryker.com</a>.</p>\n<p>Jerome Bettis&nbsp;and&nbsp;Fred Funk&nbsp;are paid spokespersons of Stryker, and their statements represent their personal views based on their personal experiences.&nbsp;Jerome Bettis&nbsp;does not have any Stryker implants and his comments do not constitute an endorsement of Stryker products.</p>\n<p>All surgery carries risk. See your orthopaedic surgeon to discuss your potential benefits and risks.&nbsp; Not all patients will have the same post-operative recovery and activity level. Individual results vary.</p>\n",
+    "jcr:lastModified": "Tue Jul 17 2018 12:11:19 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

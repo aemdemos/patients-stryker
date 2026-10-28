@@ -1,0 +1,165 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "News Content",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "82c81f90-ff58-417c-81cb-d3f0437f4135",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "eb108194-f84d-4dc7-a917-217d4b6dca4c"
+  ],
+  "jcr:created": "Thu Aug 10 2023 17:12:52 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 10 2023 17:12:54 GMT+0000",
+  "cq:lastModified": "Thu Aug 10 2023 17:11:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "eb108194-f84d-4dc7-a917-217d4b6dca4c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1ea00b29-8f86-4337-9b89-fe553dcbef59",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy53": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Mon May 15 2023 16:35:44 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy533104905901583104": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\">Taking action<br>\r\n</span>Boris’ stroke story</span>",
+        "line2": "<p><br>\r\nBoris was driving his grandson Benjamin to soccer practice when he suddenly became unresponsive.&nbsp;</p>\r\n<p>Learn how Benjamin took heroic actions to save his grandfather and how Boris’ healthcare team was able to quickly identify and treat his stroke, saving his life.</p>\r\n",
+        "jcr:lastModified": "Mon May 15 2023 16:37:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(237,238,236,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": 6
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "item1089953560363234": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<span class=\"urw-egyptienne\"></span> ",
+        "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\">Benjamin saved his life, but Dr. Puri, he brought him back to normal life,</span></span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”&nbsp;</span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Boris’s wife says. “[Without Dr. Puri] it can be a completely different story, different ending.”&nbsp;</span></span></span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Boris&nbsp;</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Stroke survivor</span></span></span></span></p>\r\n",
+        "jcr:lastModified": "Mon May 15 2023 16:38:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,0)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 12
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": 6
+          }
+        }
+      }
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+      "hideBorder": "false",
+      "type": "typeId",
+      "videoId": "8_q2hoWp6AA",
+      "jcr:lastModified": "Thu Aug 10 2023 17:11:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "curatedcta_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+      "CTATitle": "Learn more about angioplasty and stenting",
+      "ctaExternalLink": "https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular/angioplasty-and-stenting.html",
+      "jcr:lastModified": "Mon May 15 2023 16:38:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(133,69,138,1)",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "SurgiCount+ Together, we can help prevent retained surgical sponges",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sponge management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4d3e44b3-cb8b-48a8-a0e8-9c0496ce2f85",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "SC+ Full Stand Beauty Shot",
+  "jcr:predecessors": [
+    "ecb17913-4e61-48e3-a9ba-7a85e0733041"
+  ],
+  "contentID": "9100-004-749 Rev. None",
+  "lastPublished": "Fri May 10 2024 15:51:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 10 2024 15:51:14 GMT+0000",
+  "cq:lastReplicated": "Fri May 10 2024 15:51:16 GMT+0000",
+  "cq:lastModified": "Fri May 10 2024 15:51:02 GMT+0000",
+  "jcr:description": "We’re on a mission to make healthcare better. This includes helping you in your fight against retained surgical sponges.",
+  "jcr:baseVersion": "ecb17913-4e61-48e3-a9ba-7a85e0733041",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "pageTitle": "Sponge management",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/sponge-management",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri May 10 2024 15:49:29 GMT+0000",
+  "jcr:uuid": "322c9bb7-a926-4f0c-8d6e-38ab8b0a3c13",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "imageAlt": "SC+ Full Stand Beauty Shot",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Wed May 08 2024 19:09:33 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/sponge-management/images/SC Full Stand Beauty Shot.png",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+    "jcr:lastModified": "Wed May 08 2024 19:08:06 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/sponge-management/images/SC Full Stand Beauty Shot.png"
+  }
+}

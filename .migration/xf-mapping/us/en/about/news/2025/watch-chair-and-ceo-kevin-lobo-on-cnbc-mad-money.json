@@ -1,0 +1,109 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Watch Chair and CEO Kevin Lobo on CNBC’s Mad Money",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "55b404c6-e040-4cdd-9f4f-243a708dbdc8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "kevin-lobo-mad-money-jim-cramer-thumbnail",
+  "jcr:predecessors": [
+    "ac0e59a7-1aa4-48f7-8bc5-17ceb53039b5"
+  ],
+  "lastPublished": "Fri Jan 31 2025 20:26:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jan 31 2025 20:26:19 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 31 2025 20:26:22 GMT+0000",
+  "cq:lastModified": "Fri Jan 31 2025 20:26:15 GMT+0000",
+  "jcr:description": "Stryker Chair and CEO, Kevin Lobo, joins CNBC’s Mad Money with Jim Cramer to discuss our 2024 performance, excitement around our Mako Shoulder application and the overall strength of our diverse portfolio driving our company’s continued growth.",
+  "jcr:baseVersion": "ac0e59a7-1aa4-48f7-8bc5-17ceb53039b5",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 31 2025 20:25:08 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Fri Jan 31 2025 20:26:15 GMT+0000",
+  "jcr:uuid": "0134de8c-1174-4e7a-8295-83b40522eea6",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jan 31 2025 20:00:31 GMT+0000",
+      "jcr:lastModified": "Fri Jan 31 2025 20:00:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jan 31 2025 20:00:34 GMT+0000",
+          "text": "<p>Stryker Chair and CEO, Kevin Lobo, joins CNBC’s Mad Money with Jim Cramer to discuss our 2024 performance, excitement around our Mako Shoulder application and the overall strength of our diverse portfolio driving our company’s continued growth.</p>\n",
+          "jcr:lastModified": "Fri Jan 31 2025 20:00:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jan 31 2025 20:00:58 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Fri Jan 31 2025 20:05:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2025/watch-chair-and-ceo-kevin-lobo-on-cnbc-mad-money/CNBC Mad Money 250130 Stryker Kevin Lobo-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/CNBC Mad Money 250130 Stryker Kevin Lobo-comp-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Jan 31 2025 20:10:44 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "enablehd": "never",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/kevin lobo mad money jim cramer 7"
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Fri Jan 31 2025 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Jan-2025",
+    "jcr:lastModified": "Fri Jan 31 2025 20:00:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/watch-chair-and-ceo-kevin-lobo-on-cnbc-mad-money/kevin-lobo-mad-money-jim-cramer-thumbnail.jpg"
+  }
+}

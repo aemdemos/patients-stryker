@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "be13dc21-3e2f-4176-90a0-4263647a070f",
+  "jcr:predecessors": [
+    "b36307d1-631e-41db-8527-c7c099aa38b1"
+  ],
+  "jcr:created": "Fri Dec 20 2019 18:21:03 GMT+0000",
+  "jcr:baseVersion": "b36307d1-631e-41db-8527-c7c099aa38b1",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "d0c04aa9-1949-44ce-9dc2-59b7de15fab2",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastReplicated": "Fri May 17 2024 14:56:25 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:01:29 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Mon Mar 18 2024 16:46:03 GMT+0000",
+    "lastFragmentSave": "Mon Mar 18 2024 16:46:03 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/australia/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Fri May 17 2024 14:56:24 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "Emails@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "addressBlock1": "<p><b>Sydney, NSW office </b><br>\n8 Herbert Street<br>\nSt Leonards<br>\nNSW, 2065</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/au/en/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "RelatedLinks@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "locationName": "Australia",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "RelatedLinksLabel@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "PhoneNumbers": "<p>+61 2 9467 1000 Phone<br>\n+61 2 9467 1010 Fax</p>\n",
+        "AddressLabel@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Thu Feb 20 2020 14:58:03 GMT+0000",
+        "BusinessHomePageLabel": "Our Location in Australia and New Zealand"
+      }
+    }
+  }
+}

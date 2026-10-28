@@ -1,0 +1,138 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sustainability",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "14627f53-b1c3-4b34-bdea-3ee0c0b5963b",
+  "cq:template": "/apps/stryker/templates/contactdivision",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:predecessors": [
+    "b452af20-a522-468a-a273-a9ffff49cf1d"
+  ],
+  "lastPublished": "Tue Aug 18 2026 20:48:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:48:24 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:48:26 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:47:44 GMT+0000",
+  "jcr:baseVersion": "b452af20-a522-468a-a273-a9ffff49cf1d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:48:24 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/business-unit-contact",
+    "stryker:geography/north-america",
+    "stryker:business-function/manufacturing/usa",
+    "stryker:business-function/hq",
+    "stryker:business-unit/sustainability",
+    "stryker:customer-support-centers/USA",
+    "stryker:business-function/hq/usa",
+    "stryker:business-function/sales/usa"
+  ],
+  "jcr:lastModified": "Thu Aug 17 2017 02:17:12 GMT-0400",
+  "jcr:uuid": "076e590f-7e6e-4013-98ad-a0b51e8a44d3",
+  "sling:resourceType": "stryker/components/structure/pages/contactdivision",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jan 27 2023 20:40:46 GMT+0000",
+      "title": "Connect with us",
+      "jcr:lastModified": "Tue Aug 18 2026 20:47:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:47:41 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:47:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Nov 30 2022 19:24:17 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Nov 30 2022 19:24:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:47:25 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:47:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "contactus": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "group2Address": "<p>5307 Great Oak Drive<br>\r\nLakeland, FL 33815<br>\r\nUSA<br>\r\n</p>\r\n",
+    "group2Title": "Florida Production Facility",
+    "title": "Contact us",
+    "groupContact": "1",
+    "jcr:lastModified": "Mon Jun 12 2017 16:00:16 GMT-0400",
+    "sling:resourceType": "stryker/components/content/contactus",
+    "textIsRich": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "group2Addresslabel": "Address",
+    "group1Addresslabel": "Address",
+    "group1Address": "<p>1810 West Drake Drive<br>\r\nTempe, AZ 85283<br>\r\nUSA<br>\r\n</p>\r\n",
+    "group1Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Phone",
+        "phoneNumber": "480 763 5300"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "480 763 5310  Fax"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Customer support",
+        "phoneNumber": "888 888 3433 Toll Free (USA Only)"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "888 763 8803 Product Complaint Hotline"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "480 809 4970  Fax"
+      }
+    },
+    "group2Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Phone",
+        "phoneNumber": "863 683 8680"
+      }
+    }
+  }
+}

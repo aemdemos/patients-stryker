@@ -1,0 +1,40 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Cybersecurity",
+  "jcr:versionHistory": "427f1a52-78e7-4613-b9bd-d9042b61b339",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "6dd61930-6243-4fda-a964-393f37c24bee"
+  ],
+  "jcr:created": "Wed Mar 31 2021 15:14:51 GMT+0000",
+  "cq:lastModified": "Wed Mar 24 2021 19:42:12 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6dd61930-6243-4fda-a964-393f37c24bee",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "4923c8f4-a66e-4f9e-a04b-a70aca000b6e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Mar 24 2021 19:41:39 GMT+0000",
+      "alt": "Cybersecurity hero image",
+      "srcFileRef": "/content/dam/stryker/about/CorporateGovernance/cybersecurity/cybersecurity-header.jpg",
+      "jcr:lastModified": "Wed Mar 24 2021 19:42:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Fueling her softball career with the help of sports medicine technology",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8d147a38-0d6c-498b-9326-251046690a14",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "1bbf4683-00b0-4445-8684-93897c030989"
+  ],
+  "contentID": "SYK CORP 2022-08-127",
+  "lastPublished": "Thu Sep 01 2022 15:36:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 01 2022 15:36:13 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 01 2022 15:36:15 GMT+0000",
+  "cq:lastModified": "Thu Sep 01 2022 15:35:50 GMT+0000",
+  "jcr:baseVersion": "1bbf4683-00b0-4445-8684-93897c030989",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Thu Sep 01 2022 15:35:50 GMT+0000",
+  "jcr:uuid": "5b9343ed-d241-4e21-9725-c6950f5ac9dd",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 16 2022 20:50:41 GMT+0000",
+      "jcr:lastModified": "Mon May 16 2022 20:50:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy_1867662095": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "danielle.smith@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 03 2020 17:52:55 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 23 2022 19:40:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/kurumi-8-25-22/ENG Japan Patient Story 2022_Kurumi's Story-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/ENG Japan Patient Story 2022_Kurumis Story-comp-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Thu Aug 25 2022 19:33:15 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/kurumi photo thumbnail"
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy53": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line2": "<span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1-5-vw\">Kurumi Matsuoka is a softball player at Hitachi Sundiva, one of the top teams in the Japan Women’s Softball League. Watch as Kurumi shares how her doctor helped her overcome her knee injuries so she could return to the sport she loves.</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 19:35:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Aug 30 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Aug-2022",
+    "jcr:lastModified": "Thu Aug 25 2022 19:30:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/patients/patient-stories/kurumi-8-25-22/kurumi photo thumbnail.jpg"
+  }
+}

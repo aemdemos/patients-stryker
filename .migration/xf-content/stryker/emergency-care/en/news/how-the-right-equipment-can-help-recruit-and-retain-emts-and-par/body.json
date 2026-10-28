@@ -1,0 +1,120 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5bef2ee0-140b-48c7-ad63-49f5fed6398f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3f9596f6-2fc1-45e4-aadd-4fb286fa8348"
+  ],
+  "jcr:created": "Fri May 17 2024 17:04:40 GMT+0000",
+  "cq:lastReplicated": "Fri May 17 2024 17:04:42 GMT+0000",
+  "cq:lastModified": "Fri May 17 2024 17:04:20 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3f9596f6-2fc1-45e4-aadd-4fb286fa8348",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "2ccde4de-1cb5-46df-87ac-2a0835324bf2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Tue May 31 2022 18:13:48 GMT+0000",
+      "text": "<p><i>3-minute read</i></p>\n<p><span class=\"fontsize-1-25em\">Being an EMT is a demanding job, both physically and emotionally. The repetition of loading and unloading cots in and out of an ambulance day after day can take its toll on the body.</span></p>\n<p><span class=\"fontsize-1-25em\">EMS workers experience musculoskeletal injuries from overexertion five times more often than the average U.S. worker.<sup>1</sup>&nbsp;Studies show manual patient handling is the single greatest risk factor for overexertion injuries for healthcare workers.<sup>1<br>\n &nbsp;</sup></span></p>\n<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">A costly problem</span></span></h3>\n<p><span class=\"fontsize-1-25em\">At any given time, 10 percent of the EMS workforce is out of work due to EMT injury.<sup>2</sup>&nbsp;In fact, one in four caregivers suffer a career-ending back injury within the first four years of employment<sup>3</sup>&nbsp;and low back strain causes 78 percent of compensation days in the U.S. alone.<sup>4</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Incredibly, the cost of a typical strain injury is $67,248 ($32,023 direct and $35,225 indirect costs).<sup>5&nbsp;</sup>With these grim statistics, what can be done to recruit and retain EMTs and paramedics in your community?&nbsp;<br>\n &nbsp;</span></p>\n<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Six tips for success</span></span></h3>\n<p><span class=\"fontsize-1-25em\">In 2017, the Center for Disease Control and Prevention (CDC) and National Institute for Occupational Safety and Health (NIOSH) published six recommendations for reducing risk in EMS:<sup>6</sup></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">1. Protect workers and promote safety, health and well-being through workplace policies, programs and activities</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">2. Promote safe patient-handling techniques</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">3. Protect workers from exposures to blood and other potentially infectious body fluids</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">4. Prevent slips, trips and falls</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">5. Improve motor vehicle safety</span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">6. Prevent violence by patients</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">Unfortunately, many of the recommended risk-mitigation steps outlined above are overlooked, causing unnecessary injuries, loss of staff and high workers' compensation costs.<sup>6</sup></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Apr 26 2023 14:09:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage14536": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "EMT loads patient into ambulance using a Power-PRO 2 powered ambulance cot and a Power-LOAD powered cot fastener ",
+      "srcFileRef": "/content/dam/stryker/ems/news/images/PP2_ambulance_1200x500.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 26 2023 14:38:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "11"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "11"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 18:21:33 GMT+0000",
+      "jcr:lastModified": "Wed Apr 26 2023 13:54:30 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "brittany.brady@stryker.com",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "jcr:created": "Tue May 31 2022 18:13:48 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\">Better equipment matters</span><br>\n </span></span><span class=\"fontsize-1-25em\"><br>\nWhile Stryker's been developing innovative products for more than 80 years, nobody knows what works in the field better than EMS caregivers. That's why we reimagined our proven powered ambulance cot design to redefine the EMT's partner on scene—focusing on what matters most to help them get the job done.</span></p>\n<p><span class=\"fontsize-1-25em\">Our response inspired <a href=\"/content/stryker/us/en/emergency-care/products/power-pro-2.html\">Power-PRO 2 powered ambulance cot</a>—the industry's first connected powered ambulance cot—performs a true, unassisted lift with smarter hydraulic assembly and load-sensing capabilities, effectively raising and lowering a cot and patient up to 700* pounds with just the touch of a button—reducing spinal loading, lost or modified workdays<sup>7</sup> and helping increase recruitment and retention. The Power-PRO 2 also reduces the chance of cot damage and medic or patient injury with new bumper detection technology.</span></p>\n<p><span class=\"fontsize-1-25em\">The <a href=\"/content/stryker/us/en/emergency-care/products/power-load.html\">Power-LOAD powered cot fastener</a> system is a safe, durable and easy-to-use solution that could help reduce the risk of debilitating back injuries for EMS caregivers. Power-LOAD improves guided loading and unloading of patients, with a safe working load of up to 700 pounds, eliminating the need to lift the cot into and out of the ambulance. The Power-LOAD inductively charges your Power-PRO 2 or <a href=\"/content/stryker/us/en/emergency-care/products/power-pro-xt.html\">Power-PRO XT</a> powered ambulance cot battery when in the transport position —helping keep your powered cots charged and ready to use.</span></p>\n<p><span class=\"fontsize-1-25em\">Both the Power-PRO 2 powered ambulance cot and Power-LOAD powered cot fastener meet dynamic crash test standards<sup>†</sup>—helping attract and retain EMTs and paramedics by reducing the likelihood of job-related injuries.<br>\n &nbsp;</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\">Proven to save guarantee<sup>8,9</sup>&nbsp;</span><br>\n </span></span><span class=\"fontsize-1-25em\"><br>\nAt Stryker, we stand behind our products. For qualifying purchasers<sup>8</sup>, upon standardization, Stryker offers a program that guarantees at least a 50 percent reduction in cot-related injuries pertaining to raising, lowering, loading and unloading cots and 100 percent reduction in missed safety hooks while unloading cots with the Power-PRO and Power-LOAD in full power operation. If not, Stryker will refund the price paid for the Power-PRO cots and Power-LOAD cost fastening systems.<sup>9</sup></span></p>\n",
+        "jcr:lastModified": "Fri May 17 2024 17:04:18 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_866727560": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Tue May 31 2022 18:17:07 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\"><br>\n Saving lives shouldn’t be back breaking</span></span></span><br>\n</p>\n<p><span class=\"fontsize-1-25em\">A 100 percent reduction in cot related injuries saved one organization $545,500 over four and a half years,<sup>10</sup>&nbsp;and 99 percent of those surveyed agree that Stryker’s Powered System makes their jobs easier.<sup>11&nbsp;</sup></span></p>\n<p>&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\">“The Powered System has extended the careers of our paramedics, protected patients<br>\n and reduced on the job injuries costs by hundreds of thousands of dollars,”</span><br>\n </span></span><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\">- Shane Cohea, Director of Safety and Security for Norman Regional Health System&nbsp;</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\"><span class=\"urw-egyptienne\">&nbsp;</span></span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-25em\">Together, we save lives</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/us/en/emergency-care/contact.html#contact\"><b>Connect with a Stryker representative</b></a>&nbsp;to learn more about the Powered System.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Wed Apr 26 2023 14:23:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

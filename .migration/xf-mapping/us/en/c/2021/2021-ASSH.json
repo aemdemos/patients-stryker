@@ -1,0 +1,673 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "2021 ASSH Annual Meeting",
+  "jcr:versionHistory": "5e9ed110-a41d-4aa5-b63b-fc4f2ced268a",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:predecessors": [
+    "e0c52c6e-9200-4b67-af92-2ade9f31f707"
+  ],
+  "lastPublished": "Fri Sep 03 2021 15:50:52 GMT+0000",
+  "jcr:created": "Fri Sep 03 2021 15:50:52 GMT+0000",
+  "cq:lastModified": "Fri Sep 03 2021 15:50:42 GMT+0000",
+  "jcr:baseVersion": "e0c52c6e-9200-4b67-af92-2ade9f31f707",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "2021 ASSH Annual Meeting",
+  "jcr:uuid": "83e55b01-76b6-4882-ba0a-16e880dacecc",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_1063445144_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Jul 16 2019 20:03:12 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">2021</span></span></span></span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"> <span style=\"color: #ffb500;\">ASSH Annual Meeting</span></span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><br>\n </span></span></span><span style=\"color: #ffb500;\">__________________________________________________________________________________________________________________________________________________________</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">George R. Moscone Convention Center&nbsp;&nbsp; |&nbsp; San Francisco, CA | September 30 - October 2, 2021&nbsp; |&nbsp; Visit us at booth 633</span></span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 23 2021 16:21:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/SF-2021-ASSH image.jpg",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "jcr:lastModified": "Wed Aug 11 2021 18:12:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 26 2019 20:00:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\">Visit Stryker <br />\r\n during ASSH 2021</span></span></span></span></h3>\r\n",
+          "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\">Booth 633</span></span></span>",
+          "jcr:lastModified": "Wed Aug 18 2021 17:01:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_129425689": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 26 2019 20:02:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h5><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">George R. Moscone Convention Center</span></span><br>\r\n</h5>\r\n",
+          "jcr:lastModified": "Mon Aug 23 2021 16:21:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "sectionseparator_685": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 08 2018 11:57:12 GMT-0400",
+      "jcr:lastModified": "Wed Aug 08 2018 11:57:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:31:30 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 19:44:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "jcr:lastModified": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:35:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Stryker events at ASSH</span></span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"></span></span></span></span></p>\n",
+              "jcr:lastModified": "Tue Aug 24 2021 14:13:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1847271198_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Aug 02 2018 11:18:24 GMT-0400",
+      "jcr:lastModified": "Thu Aug 02 2018 11:18:24 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span class=\"fontsize-2vw\"><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">Sept. 29</span></b><span style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\">&nbsp; | <span class=\"futura-bold\">6:00pm-9:00pm</span></span></span><br>\r\n</h3>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\">Complex Case Discussions</span></span><span class=\"fontsize-1vw\"><br>\r\n</span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1vw\">Featuring: Melvin Rosenwasser, MD and Harry Hoyen, MD</span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\"><b><span class=\"futura-bold\">Foreign Cinema</span></b><span class=\"urw-egyptienne\"><br>\r\n 2534 Mission St.<br>\r\n San Francisco, CA 94110</span></span></p>\r\n",
+          "jcr:lastModified": "Fri Sep 03 2021 15:50:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy_1813": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Aug 26 2019 21:13:10 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://cvent.me/YPo5nb",
+          "jcr:lastModified": "Wed Sep 01 2021 20:13:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(28,86,135,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1_545124263": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">Sept. 30</span></b><span style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\">&nbsp; | <span class=\"futura-bold\">10:00am-10:30am</span></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Course: Elbow Fracture Stabilization.<br>\r\n </span></span><span class=\"futura-bold\"><span class=\"fontsize-1vw\">George R. Moscone Convention Center, Solutions Center</span></span></p>\r\n",
+          "jcr:lastModified": "Mon Aug 23 2021 16:27:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy_1813739578": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Aug 26 2019 21:13:10 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://www.assh.org/annualmeeting/s/session?Id=a135b000009CLWmAAO",
+          "jcr:lastModified": "Wed Sep 01 2021 17:18:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(28,86,135,1)"
+        },
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">Sept. 30</span></b><span style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\">&nbsp; | <span class=\"futura-bold\">3:30pm-4:00pm</span></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Course:&nbsp;Clavicular Stabilization</span><br>\r\n</span><span class=\"futura-bold\"><span class=\"fontsize-1vw\">George R. Moscone Convention Center, Solutions Center</span></span></p>\r\n",
+          "jcr:lastModified": "Mon Aug 23 2021 16:28:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Aug 26 2019 21:13:10 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://www.assh.org/annualmeeting/s/session?Id=a135b000009CLWnAAO",
+          "jcr:lastModified": "Wed Sep 01 2021 17:18:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(28,86,135,1)"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:31:30 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 19:46:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(133,69,138,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "jcr:lastModified": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:35:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Featured</span></span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"> products</span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 11 2021 19:46:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Aug 11 2021 19:51:15 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/DR-FP-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 23 2021 17:04:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/variax-2-distal-radius-plating-system",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 23 2021 16:29:05 GMT+0000",
+          "jcr:lastModified": "Mon Aug 23 2021 16:31:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:37:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<ul>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/cablefix-xpress-carpometacarpal-fixation-system.html\" target=\"_blank\">Cablefix</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/foot-and-ankle/products/easyclip.html\" target=\"_blank\">EasyClip</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/endotrac-ectr.html\" target=\"_blank\">Endotrac ECTR (Endoscopic Carpal Tunnel Release)</a></li>\n<li><a href=\"https://www.stryker.com/us/en/foot-and-ankle/products/Hoffmann-Micro-Lengthener.html\">Hoffmann Micro Lengthener</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/knifelight.html\" target=\"_blank\">Knifelight Carpal Tunnel</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/remotion-total-wrist.html\" target=\"_blank\">ReMotion Total Wrist</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/Swanson-Fingers.html\" target=\"_blank\">Swanson Fingers (PIP/MCP)</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/variax-hand.html\" target=\"_blank\">VariAx™ 2 Hand</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/VariAx2-Mini-Fragment-System.html\" target=\"_blank\">VariAx™ 2 Mini Fragment System</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/variax-2-wrist-fusion-plating-system.html\" target=\"_blank\">VariAx™ 2 Wrist Fusion</a><br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Mon Aug 30 2021 16:50:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "More Hand & Wrist Solutions"
+            }
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "25",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 23 2021 16:45:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 23 2021 16:46:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Aug 11 2021 19:51:15 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/EP-FP-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 23 2021 17:04:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/Evolve-Proline",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 23 2021 16:29:05 GMT+0000",
+          "jcr:lastModified": "Mon Aug 23 2021 16:33:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:37:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<ul>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/axsos-3-compression.html\" target=\"_blank\">AxSOS 3 Compression Plates</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/evolve-triad.html\" target=\"_blank\">Evolve EPS (Elbow Plating System)</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/evolve-triad.html\" target=\"_blank\">Evolve Triad Radial Head Plates</a></li>\n<li><a href=\"https://www.wright.com/products-upper/latitude-ev-total-shoulder-arthroplasty\" target=\"_blank\">Latitude EV™ Total Elbow Arthroplasty</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/Rayhack-Ulnar-Shortening.html\" target=\"_blank\">Rayhack<sup>™</sup> Ulnar Shortening</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/variax-2-compression-plating-system.html\" target=\"_blank\">VariAx™ 2 Compression Plates</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/variax-2-elbow-plating-system.html\" target=\"_blank\">VariAx™ 2 Elbow Plates</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/VariAx2-Mini-Fragment-System.html\" target=\"_blank\">VariAx™ 2 Mini Fragment System</a><br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 31 2021 13:42:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "More Elbow & Forearm Solutions"
+            }
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "25",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 23 2021 16:45:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 23 2021 16:52:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Aug 11 2021 19:51:15 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/VC-FP-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 23 2021 17:03:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/products/variax-2-clavicle-plating-system",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 23 2021 16:29:05 GMT+0000",
+          "jcr:lastModified": "Mon Aug 23 2021 16:33:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_2009390789": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:37:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<ul>\n<li><a href=\"https://www.wright.com/products-upper/aequalis-im-nail-humeral-fracture-system\" target=\"_blank\">Aequalis Humeral Nail</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/aequalis--perform--reversed.html\" target=\"_blank\">Aequalis™ Perform™ Reversed Glenoid</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/approach-.html\" target=\"_blank\">Approach™ Shoulder Arthroplasty Program</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/axsos-3-proximal-humerus.html\" target=\"_blank\">AXSOS 3 Proximal Humerus</a>&nbsp;</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/blueprint.html\" target=\"_blank\">Blueprint™&nbsp;3D planning Software + PSI</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/Ortholoc-SPS.html\" target=\"_blank\">Ortholoc SPS</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rfx.html\" target=\"_blank\">ReUnion RFX&nbsp;</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-rsa.html\" target=\"_blank\">ReUnion RSA</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/reunion-tsa.html\" target=\"_blank\">ReUnion TSA</a>&nbsp;</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/simpliciti-.html\" target=\"_blank\">Simpliciti™&nbsp;Shoulder System</a><br>\n</li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/t2-proximal-humeral-nailing-system.html\" target=\"_blank\">T2 Proximal Humeral Nailing System</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/tornier-perform.html\" target=\"_blank\">Tornier Perform™ Humeral Stem</a><br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 31 2021 13:41:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "More Clavicle/Proximal Humerus/Shoulder Solutions"
+            }
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "25",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 23 2021 16:45:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 23 2021 16:46:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Aug 11 2021 19:51:15 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/H-FP-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 23 2021 17:04:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/trauma-and-extremities/systems/biologics",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 23 2021 16:29:05 GMT+0000",
+          "jcr:lastModified": "Mon Aug 23 2021 16:34:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:37:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<ul>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fproducts-biologics%2Factishield&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132779693%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=%2FtH4UmEyWOjapcAYbrSimskGlYkeSVf1wpRGEhB6XVA%3D&amp;reserved=0\" target=\"_blank\">Actishield</a></li>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fproducts-biologics%2Fallomatrix-dr-dbm-putty-large-cancellous-chips&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132789700%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=G7zF7yPMnwOjeNlNRCyipbUO1J0rgMIRER6sTIrCUnk%3D&amp;reserved=0\" target=\"_blank\">Allomatrix DR</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/allowrap-ds-amniotic-membrane.html\" target=\"_blank\">Allowrap</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/bio4.html\" target=\"_blank\">Bio<sup>4</sup></a></li>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fproducts-biologics%2Fgraftjacket-total-regenerative-tissue-matrix&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132799695%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=n3dAiWWEeloAxfl%2FrUMV%2BXojc%2Fg8I5gYSg5Gm%2F%2FF%2B6A%3D&amp;reserved=0\" target=\"_blank\">Graftjacket Now</a></li>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fproducts-biologics%2Fignite&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132799695%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=w7ttXAJnrN6rw7a6VUueGcv2SKhV0jec9hshlgLI9tU%3D&amp;reserved=0\" target=\"_blank\">Ignite</a></li>\n<li><a href=\"https://www.stryker.com/us/en/trauma-and-extremities/products/nerve-repair.html\" target=\"_blank\">Neuroflex</a></li>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fhealthcare-professionals%2Fpro-dense-graft-home&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132789700%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=bS6KMLZzc%2FTzK0fTRsOAs8l5uEuQr1uEvqF%2FLytmCLQ%3D&amp;reserved=0\" target=\"_blank\">Pro-Dense</a></li>\n<li><a href=\"https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.wright.com%2Fproducts-biologics%2Fpro-stim&amp;data=04%7C01%7Cvince.wolff%40stryker.com%7C8d9d60fe381d424d1c5508d9688ab047%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C637655767132809686%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=Qrk7A9oA2NvZw2z3g1g1JxnX7VKT%2F6Cy9X95VszgxMs%3D&amp;reserved=0\" target=\"_blank\">Pro-Stim</a></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 31 2021 20:28:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "showDimensionalBox": "true",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "More Biologic Solutions"
+            }
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Aug 23 2021 16:45:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Aug 23 2021 16:52:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_685_1486742268": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 08 2018 11:57:12 GMT-0400",
+      "jcr:lastModified": "Wed Aug 08 2018 11:57:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jul 08 2019 13:50:43 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Follow</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> Trauma</span></span>&nbsp;<span class=\"urw-egyptienne\">on social media</span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 30 2021 16:49:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Jul 15 2019 17:36:24 GMT+0000",
+      "jcr:lastModified": "Mon Jul 15 2019 17:36:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "http://mkto.stryker.com/MzM4LVdBUC01NzEAAAF9451YTeiV9pevplony_QKFoePeEniE8E9Rdg7U7WuhGQcFFru6ICLgD8xN24bzOg8pRBp0uw=",
+          "jcr:created": "Mon Apr 22 2019 17:46:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/instagram.png",
+          "jcr:lastModified": "Mon Aug 30 2021 16:56:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Aug 11 2021 18:23:40 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">@StrykerTrauma</span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 11 2021 18:23:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "http://mkto.stryker.com/MzM4LVdBUC01NzEAAAF9451YTfb8WU2En47NnAz01nc1qwBRWYdvBVVWlFcxUUJy9Yp1ZXeOyJ7WfdeAJXFKDFbpOs8=",
+          "jcr:created": "Tue Feb 26 2019 15:04:21 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/linkedin-icon.png",
+          "jcr:lastModified": "Mon Aug 30 2021 16:56:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  }
+}

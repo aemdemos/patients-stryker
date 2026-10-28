@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches Synchfix™ EVT, expanding options for flexible syndesmotic fixation",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "060323ae-76ce-497c-be3a-33b3a4f6917c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "synchfix-evt-press-release",
+  "jcr:predecessors": [
+    "41e5631a-6089-40f6-b213-8632c93c6b5a"
+  ],
+  "contentID": "FA-SEVT-PRESS-3006634",
+  "lastPublished": "Tue Feb 24 2026 13:45:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 24 2026 13:45:06 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 24 2026 13:45:08 GMT+0000",
+  "cq:lastModified": "Mon Feb 23 2026 18:16:10 GMT+0000",
+  "jcr:description": "Elevating care with Stryker’s next generation device, Synchfix EVT, which will be featured at the 2026 American College of Foot and Ankle Surgeons (ACFAS) Annual Meeting",
+  "cq:siblingOrder": "features,stryker-launches-t2-alpha-humerus-nailing-system,stryker-introduces-mako-handheld-robotics-mako-rps,stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation,",
+  "jcr:baseVersion": "41e5631a-6089-40f6-b213-8632c93c6b5a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Feb 24 2026 13:45:00 GMT+0000",
+  "cq:name": "stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Feb 23 2026 18:16:10 GMT+0000",
+  "jcr:uuid": "593eb206-08a3-4e9b-aa02-2fa25e45a247",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/news/2026",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Feb 06 2026 22:17:12 GMT+0000",
+      "jcr:lastModified": "Fri Feb 06 2026 22:17:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Feb 06 2026 22:17:20 GMT+0000",
+          "jcr:lastModified": "Fri Feb 06 2026 22:17:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 06 2026 22:17:25 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at&nbsp;<a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nFrank Mastrangelo<br>\nDirector, Communications<br>\nStryker Trauma &amp; Extremities<br>\n<a href=\"mailto:frank.mastrangelo@stryker.com\">frank.mastrangelo@stryker.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Fri Feb 20 2026 21:44:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Feb 24 2026 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Feb-2026",
+    "jcr:lastModified": "Fri Feb 20 2026 21:36:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "FA-Synchfix-LinkedIn-banner",
+    "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation/FA-Synchfix-LinkedIn-banner.png",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Feb 20 2026 21:38:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><b>PORTAGE, Mich. – February 24, 2026</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced the launch of <a href=\"/content/stryker/us/en/foot-and-ankle/products/synchfix-evt.html\">Synchfix™ EVT</a>, its next-generation flexible syndesmotic fixation device designed to simplify surgical deployment while supporting ankle stabilization in patients with syndesmotic disruptions.</p>\n<p>Commonly associated with sports trauma and ankle fractures, ankle syndesmotic injuries can significantly affect patient mobility and recovery. Synchfix EVT builds on the legacy Synchfix platform, incorporating design enhancements that reduce procedural complexity compared to the predicate device.</p>\n<p>“Stryker is dedicated to helping foot and ankle surgeons treat their patients more efficiently while enhancing patient care and the overall healthcare experience,” said Adam Jacobs, vice president and general manager of Stryker’s Foot &amp; Ankle business. “Synchfix EVT reflects our commitment to delivering next-generation solutions in soft tissue by designing technologies that help surgeons work more efficiently while keeping patient care and safety at the center.”</p>\n<p>Synchfix EVT features an all-in-one system that integrates suture tensioning handles within the implant instrumentation, along with a handle design for one-handed surgical implant deployment. The device is engineered to provide a seamless user experience with an ergonomic handle and a low-profile titanium medial implant.</p>\n<p>Synchfix™ EVT is intended for soft tissue and bone fixation for ankle syndesmosis disruptions with or without ankle fractures and as an adjunct in connection with hardware for ankle fractures such as Weber B, Weber C and Maisonneuve in adult and adolescent patient populations. Notably, it is the first ankle syndesmotic flexible fixation device on the market indicated for use in adolescents, expanding treatment options for younger patients. The system has also been recognized with the prestigious <a href=\"https://www.red-dot.org/project/synchfix-evt-83301\">Red Dot Design Award</a>, honoring its innovative, all-in-one implant and instrumentation designed to simplify syndesmotic fixation and enhance surgical efficiency compared to the previous generation of the device.</p>\n<p>“At Stryker, we’re continually energized by our customers’ commitment to their patients,” said Jacobs. “Synchfix EVT demonstrates how listening to their needs helps shape meaningful design and procedural advancements.”</p>\n<p>Stryker is showcasing Synchfix EVT at the ACFAS meeting. The event will feature engaging demonstrations that will highlight how this sterile, single-use, knotless, and flexible, suture-button system is designed to stabilize syndesmotic ankle injuries.</p>\n",
+    "jcr:lastModified": "Mon Feb 23 2026 15:44:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation/synchfix-evt-press-release.jpg"
+  }
+}

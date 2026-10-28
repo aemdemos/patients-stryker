@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Study to be presented at NASS 2016 evaluating bone in-growth for Stryker’s 3D-Printed Tritanium® PL Cage",
+  "jcr:versionHistory": "64bcd8ae-b467-4dd3-be43-824f4c6eaba8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "5a457ce6-f52e-4e1f-95b3-a405f1c19eee"
+  ],
+  "lastPublished": "Thu Sep 14 2017 16:52:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 14 2017 16:52:20 GMT-0400",
+  "cq:lastModified": "Tue Aug 22 2017 18:37:32 GMT-0400",
+  "jcr:baseVersion": "5a457ce6-f52e-4e1f-95b3-a405f1c19eee",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Jul 31 2017 14:57:23 GMT-0400",
+  "jcr:uuid": "621f7414-941b-4cd9-a19b-af5a68d65c0c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Fri Oct 28 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "28-Oct-2016",
+    "jcr:lastModified": "Tue May 30 2017 17:45:19 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division today announced that the results of a pre-clinical study for its new 3D-printed <a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.stryker.com%2Fbuilttofuse%2F&amp;esheet=51447943&amp;newsitemid=20161028005028&amp;lan=en-US&amp;anchor=Tritanium+PL+Interbody+Cage&amp;index=1&amp;md5=85ba6c21770560dda1dea1e9bcf74174\" target=\"_blank\">Tritanium PL Interbody Cage</a> will be presented at the North American Spine Society (NASS) Meeting. The conference is being held in Boston, Oct. 26-29, 2016, and Stryker’s Spine division will demonstrate the Tritanium PL Cage at booth No. 1415.</p>\n<p>The objective of this study was to compare the biomechanical, radiographic, and histological performance of implants with different surface technologies in an ovine lumbar interbody fusion model. The interbody fusion cages involved in this study included traditional PEEK cages, plasma-sprayed titanium-coated PEEK cages, and Stryker’s 3D-printed, highly porous Tritanium PL cages.<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20161028005028/en/Study-Presented-NASS-2016-Evaluating-Bone-In-Growth\" target=\"_blank\">Business Wire</a></p>\n",
+    "jcr:lastModified": "Fri Jun 02 2017 10:55:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

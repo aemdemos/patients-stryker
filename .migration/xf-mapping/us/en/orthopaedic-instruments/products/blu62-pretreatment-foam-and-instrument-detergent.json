@@ -1,0 +1,311 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Pretreatment Foam and Instrument Detergent",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Blu62",
+  "jcr:versionHistory": "dc69a9c2-302b-4339-956a-76cb11b7cf3e",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/blu62/images/Thumbnail_Blu62.jpg",
+  "jcr:predecessors": [
+    "c0fa2dda-5fcd-4c9d-a2b2-d7b6ddf088d9"
+  ],
+  "contentID": "D0000004099 Rev. AA",
+  "lastPublished": "Mon Apr 19 2021 18:13:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:28 GMT+0000",
+  "cq:lastModified": "Mon Apr 29 2019 20:31:23 GMT+0000",
+  "jcr:description": "Blu62 Pretreatment Foam and Instrument Detergent aim to take the effort out of washing. As non-enzymatic cleaners, they're less dependent on contact time, water type or temperature - meaning less details or sink changes for you to manage.",
+  "jcr:baseVersion": "c0fa2dda-5fcd-4c9d-a2b2-d7b6ddf088d9",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Blu62",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/sterile-processing",
+    "stryker:capability/cleaners-and-disinfectants",
+    "stryker:services/procare/surgical",
+    "stryker:specialty/cleaners-and-detergents",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:product/orthopaedic_instruments/Blu62"
+  ],
+  "jcr:lastModified": "Mon Apr 29 2019 20:31:23 GMT+0000",
+  "jcr:uuid": "ab148433-a75c-443d-b1b8-1ebf5ec57951",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Wed Jun 07 2017 15:29:09 GMT-0400",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Aug 14 2018 10:16:55 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "text": "<h4><span><span class=\"fontsize-2em\"><span class=\"fontsize-1em\"></span>Blu62 rinses 100% residual free for:</span></span></h4>\n",
+      "jcr:lastModified": "Tue Aug 14 2018 13:41:26 GMT-0400",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Feb 26 2019 13:30:59 GMT+0000",
+      "jcr:lastModified": "Tue Feb 26 2019 13:30:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "numbercounter_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "startNumber": 1,
+          "counterlabel": "<div><span class=\"fontsize-1-5-vw\"></span><span class=\"fontsize-2vw\">decrease in repairs<sup>1</sup></span></div>\r\n",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-5vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Tue Aug 14 2018 13:31:07 GMT-0400",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": 32,
+          "textIsRich": "true"
+        },
+        "numbercounter_982897": {
+          "jcr:primaryType": "nt:unstructured",
+          "startNumber": 1,
+          "counterlabel": "<span class=\"fontsize-2vw\">decrease in complaints<sup>1</sup></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-5vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Tue Aug 14 2018 10:32:14 GMT-0400",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": 54,
+          "textIsRich": "true"
+        },
+        "numbercounter_406916": {
+          "jcr:primaryType": "nt:unstructured",
+          "startNumber": 1,
+          "counterlabel": "<span class=\"fontsize-2vw\">decrease in medical device report (MDR) filings<sup>1</sup></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-5vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Tue Aug 14 2018 10:32:23 GMT-0400",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": 63,
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Feb 26 2019 13:31:15 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Feb 26 2019 14:08:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/surgical/products/blu62/video/Blu62 Animation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Blu62 Animation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Feb 26 2019 14:08:28 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "layoutOptions": "col-sm-8 pull-left​",
+      "backgroundImageRef": "/content/dam/stryker/surgical/products/blu62/images/FeaturedContent_Blu62_v3.jpg",
+      "jcr:created": "Tue Aug 14 2018 10:32:43 GMT-0400",
+      "jcr:lastModified": "Tue Aug 14 2018 13:40:33 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Aug 14 2018 13:18:08 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255, 181, 0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0, 0, 0);\">Jump start your cleaning with</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\"> Blu62</span></span></span></span>",
+          "jcr:lastModified": "Tue Aug 14 2018 13:31:46 GMT-0400",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-25em\">Surfactants begin cleaning and prevent drying at the point of care</span></li>\n<li><span class=\"fontsize-1-25em\">Enables visual verification of coverage by foam and color</span></li>\n<li><span class=\"fontsize-1-25em\">Makes cleaning more efficient</span></li>\n<li><span class=\"fontsize-1-25em\">Helps fulfill recommended pretreatment practices of AAMI and AORN<sup>2-3</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Oct 02 2018 18:18:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Fri Jun 15 2018 14:34:12 GMT-0400",
+      "jcr:lastModified": "Fri Jun 15 2018 14:34:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Fri Jun 29 2018 14:29:29 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Rinsability</span></span></span></h3>\n<ul>\n<li>Optimizes cleaning results by preventing redistribution and adhesion of chemical residuals and biofilm particulate in wash sink water</li>\n<li>Rinses spot and residue free under running water; no need for scrubbing, wiping or mechanical&nbsp;action/agitation</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Aug 14 2018 13:25:31 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Fri Jun 29 2018 16:31:16 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\"><span class=\"fontsize-1-5em\">Cleanability</span></span></span></h3>\n<p>Removes build up, even build up from past detergents used</p>\n<p>Revitalizes instruments by removing stubborn soil, biofilm, protein soil and total organic carbon (TOC)</p>\n<p>Deodorizes unpleasant soils via lavender-mint fragrance</p>\n<p>Effectively cleans complex instruments such as those with crevasses, irregular surface textures and multiple moving parts</p>\n",
+          "jcr:lastModified": "Tue Oct 02 2018 18:19:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_1061112785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Dilara.Atkins@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Fri Jun 29 2018 16:51:03 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: rgb(255, 181, 0);\">Efficiencies</span></span></span></h3>\n<p>Enhances longevity and quality of reprocessed devices; optimizing your investment</p>\n<p>Demonstrated to reduce repairs for corrosion of electrical and mechanical components, rough/sticky assemblies and damaged or seized motor bearings</p>\n<p>Effective on Stryker and non-Stryker medical instruments</p>\n<p>pH neutral for compatibility with a range of metals, plastics and composite materials</p>\n<p>Compatibled with Stryker's Instrument Detergent System (IDS) for automated, precision dosing into sink, basin or sonic washer</p>\n",
+          "jcr:lastModified": "Tue Oct 02 2018 18:19:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Fri Aug 17 2018 12:24:10 GMT-0400",
+      "srcFileRef": "/content/dam/stryker/surgical/products/blu62/images/Blu62 Study Results2.jpg",
+      "jcr:lastModified": "Fri Aug 17 2018 12:24:18 GMT-0400",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "cols3_405730503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Fri Aug 17 2018 12:29:51 GMT-0400",
+      "jcr:lastModified": "Fri Aug 17 2018 12:29:51 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Knock out soils with a 1-2 punch<br />\r\n</p>\r\n",
+    "shortDescTop": "<p>Simply spray the pretreatment foam at the point of care to begin removing stubborn soils. Then clean with Blu62 Instrument Detergent which rinses residue free under running water, without the &quot;elbow grease&quot; of scrubbing and wiping or extra steps for mechanical agitation. Our ease of use is matched by our effectiveness, yielding the consistently repeatable cleaning results achieved by AAMI.<br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModified": "Tue Oct 02 2018 18:18:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModified": "Tue Aug 14 2018 10:14:30 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. ProClean white paper. &quot;ProClean adds value to any powered equipment account.&quot; Stryker Instruments, 2012.</p>\r\n<p>2. Association for the Advancement of Medical Instrumentation (AAMI). &quot;Comprehensive guide to steam sterilization\r\nand sterility assurance in health care facilities.&quot; ST 79, section 6/4. 2010\r\n</p>\r\n<p>3. Association of Perioperative Nurses (AORN). &quot;Guidelines for sterilization and disinfection.&quot; Section III.G. 2017. </p>\r\n",
+    "jcr:lastModified": "Mon Sep 17 2018 14:38:07 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/blu62/images/Thumbnail_Blu62.jpg"
+  }
+}

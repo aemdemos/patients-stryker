@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Smoke Evacuation/Dangers of Smoke Plume",
+  "jcr:versionHistory": "913075cc-27c9-4e69-811d-c61019d7e57a",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "f10a6e95-f29d-4230-be68-066484f5385f"
+  ],
+  "lastPublished": "Thu Sep 03 2020 14:24:09 GMT+0000",
+  "jcr:created": "Thu Sep 03 2020 14:24:09 GMT+0000",
+  "cq:lastModified": "Thu Sep 03 2020 14:23:48 GMT+0000",
+  "jcr:baseVersion": "f10a6e95-f29d-4230-be68-066484f5385f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content",
+    "stryker:event-type/medical_education"
+  ],
+  "jcr:uuid": "dba2fb47-8768-4775-a814-abbe728047a8",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/surgical_technologies"
+    ],
+    "eventContactEmail": "stephanie.eaton@stryker.com",
+    "eventRegistrationLink": "https://us02web.zoom.us/webinar/register/WN_90u61d1BTnynjXWJGFDCuw",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "eventAudience": [
+      "stryker:audience/nurses"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/other"
+    ],
+    "eventContactName": "Stephanie Eaton",
+    "eventDetail": "Pfiedler Nurse Education CE Course on the hazards of surgical smoke",
+    "eventEndDateTime": "Tue Sep 29 2020 14:00:00 GMT+0000",
+    "eventLocation": "Virtual",
+    "eventCity": "Virtual",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "jcr:lastModified": "Thu Sep 03 2020 14:23:48 GMT+0000",
+    "eventTitle": "Smoke Evacuation/Dangers of Smoke Plume",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register here",
+    "eventStartDateTime": "Tue Sep 29 2020 13:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

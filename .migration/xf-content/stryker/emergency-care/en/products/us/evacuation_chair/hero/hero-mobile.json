@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d79a314c-120f-4698-88e5-e6461aa7ce0a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "36360447-1b62-4cb2-8e91-f537c4ad16ba"
+  ],
+  "jcr:created": "Tue Jan 02 2024 14:59:39 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 02 2024 14:59:41 GMT+0000",
+  "cq:lastModified": "Fri Dec 22 2023 16:04:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "36360447-1b62-4cb2-8e91-f537c4ad16ba",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "9b43962a-214a-49cb-9ed4-4b0dc14851d6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage55200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Stryker's evacuation chair",
+      "srcFileRef": "/content/dam/stryker/ems/products/evacuationchair/images/Thumbnail_evacuation_chair_16x9.jpg",
+      "jcr:lastModified": "Tue Dec 19 2023 14:40:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

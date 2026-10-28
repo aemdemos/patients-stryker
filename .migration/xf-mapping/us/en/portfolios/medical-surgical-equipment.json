@@ -1,0 +1,161 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "   Medical and surgical equipment    ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "14b4bb5e-6ad8-4425-8595-1e47b83b5b15",
+  "cq:template": "/apps/stryker/templates/portfolio",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "4cc1e9be-196c-44ab-b422-f42d4c150396"
+  ],
+  "contentID": "CORPM-GSNPS-SYK-933152",
+  "lastPublished": "Mon Jun 01 2026 13:07:39 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 01 2026 13:07:39 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 01 2026 13:07:42 GMT+0000",
+  "cq:lastModified": "Mon Jun 01 2026 13:07:25 GMT+0000",
+  "jcr:baseVersion": "4cc1e9be-196c-44ab-b422-f42d4c150396",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 05:00:00 GMT+0000",
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/portfolio",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Mon Jun 01 2026 13:07:25 GMT+0000",
+  "jcr:uuid": "33b7235b-e012-46fe-9fda-b7b3da2c3869",
+  "sling:resourceType": "stryker/components/structure/pages/portfolio",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontentitem": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Wed May 10 2017 02:44:44 GMT-0400",
+      "amountProductDetail": "2",
+      "jcr:lastModified": "Thu Jun 08 2017 17:40:13 GMT-0400",
+      "sling:resourceType": "stryker/components/content/featuredcontentitem"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Tue Oct 23 2018 18:22:09 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 18:22:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4"
+    }
+  },
+  "featuredcontentcontext": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Thu Jun 08 2017 17:40:43 GMT-0400",
+    "sling:resourceType": "stryker/components/content/featuredcontentcontext",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "bannercampaign": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Thu Jun 08 2017 17:41:32 GMT-0400",
+    "sling:resourceType": "stryker/components/content/bannercampaign"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed May 10 2017 02:45:09 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "tagline": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTagLineComp": "true",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jan 10 2024 14:57:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagline",
+    "backgroundColor": "rgba(182,114,25,1)",
+    "gradientDirectionInverse": "true"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 15:15:55 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "40",
+    "defaultFilterOption": "Show All",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "description": "By putting people at the heart of every innovation, we optimize pathways across the continuum of care — for the excellence of care delivery, the safety and wellbeing of care teams and the outcomes of patients.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "med-surg",
+      "title": "Empowering people for powerful outcomes",
+      "jcr:lastModified": "Mon Jan 08 2024 14:34:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_72378185_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Medical and surgical equipment&nbsp;</span></span></p>\n",
+      "jcr:lastModified": "Wed Jan 10 2024 14:57:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_72378185": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:01 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Empowering people for powerful outcomes</span></span></p>\n",
+      "jcr:lastModified": "Mon Jan 08 2024 14:36:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "jcr:lastModified": "Mon Jan 08 2024 14:30:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Mon Jan 08 2024 14:29:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\">By putting people at the heart of every innovation, we optimize pathways across the continuum of care — for the excellence of care delivery, the safety and wellbeing of care teams and the outcomes of patients.</span></p>\n",
+      "jcr:lastModified": "Mon Jan 08 2024 14:35:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

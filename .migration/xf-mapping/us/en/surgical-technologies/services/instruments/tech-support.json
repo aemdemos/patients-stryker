@@ -1,0 +1,679 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Tech support",
+  "jcr:versionHistory": "0e4b3ca1-0205-4fbd-a37b-2af38816ee31",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "36911407-2e32-47fd-8d67-6d73cb3b751a"
+  ],
+  "contentID": "D0000071450 Rev. AA",
+  "lastPublished": "Mon May 03 2021 14:19:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 03 2021 14:19:50 GMT+0000",
+  "cq:lastModified": "Wed Apr 21 2021 20:15:58 GMT+0000",
+  "jcr:description": "Technical Support for all Stryker Instruments Products. Field Service dispatching for Neptune, Navigation, and VP4 units. Request of IFU’s (instructions for use), MSDS (Medical Safety Data Sheet), letters of obsolescence, and care instructions. Connect with Surgi count on badge request, user guides, and UDI. Tools and Info to support your products. Use the email form below to request information not on this page, you will be connected with one of our Technical support team members to support your requests. ",
+  "jcr:baseVersion": "36911407-2e32-47fd-8d67-6d73cb3b751a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content",
+    "stryker:custom/instruments/tech-support/stryker-instruments-products",
+    "stryker:custom/instruments/tech-support/customer-documents",
+    "stryker:custom/instruments/tech-support/manuals",
+    "stryker:custom/instruments/tech-support/instructions-for-use",
+    "stryker:custom/instruments/tech-support/medical-safety-data-sheets",
+    "stryker:custom/instruments/tech-support/letters-of-obsolescence",
+    "stryker:custom/instruments/tech-support/care-instructions",
+    "stryker:custom/instruments/tech-support/connect",
+    "stryker:custom/instruments/tech-support/tech-support",
+    "stryker:custom/instruments/tech-support/neptune",
+    "stryker:custom/instruments/tech-support/navigation",
+    "stryker:custom/instruments/tech-support/smart-sink",
+    "stryker:custom/instruments/tech-support/stryker-malis",
+    "stryker:custom/instruments/tech-support/vp4",
+    "stryker:custom/instruments/tech-support/sterizone",
+    "stryker:custom/instruments/tech-support/core-console",
+    "stryker:custom/instruments/tech-support/surgi-count",
+    "stryker:custom/instruments/tech-support/training",
+    "stryker:custom/instruments/tech-support/repairs",
+    "stryker:custom/instruments/tech-support/field-service",
+    "stryker:custom/instruments/tech-support/procare-service",
+    "stryker:custom/instruments/tech-support/protocols",
+    "stryker:custom/instruments/tech-support/cybersecurity",
+    "stryker:custom/instruments/tech-support/waste-management",
+    "stryker:custom/instruments/tech-support/operational-manual",
+    "stryker:custom/instruments/tech-support/performance",
+    "stryker:custom/instruments/tech-support/preventive-maintenance",
+    "stryker:custom/instruments/tech-support/blue-62",
+    "stryker:custom/instruments/tech-support/enzymatic-detergent",
+    "stryker:custom/instruments/tech-support/ortho-instruments",
+    "stryker:custom/instruments/tech-support/surgical-technologies",
+    "stryker:custom/instruments/tech-support/f1",
+    "stryker:custom/instruments/tech-support/zip-line"
+  ],
+  "jcr:lastModified": "Wed Apr 21 2021 20:15:58 GMT+0000",
+  "jcr:uuid": "27949fb3-2afd-440d-9613-765f18b7bbcc",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 08 2020 20:46:16 GMT+0000",
+      "jcr:lastModified": "Tue Sep 08 2020 20:46:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 08 2020 20:46:33 GMT+0000",
+          "text": "<p>&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Sep 08 2020 20:46:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1244824012": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 14:29:41 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 14:29:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_635190721": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 14:19:39 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 14:19:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 17:25:05 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 17:25:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 08 2020 19:06:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\">Tech</span>&nbsp;Support</span></span><br>\r\n<span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">Please contact the technical support team for questions about Stryker instruments products.</span></span>",
+          "jcr:lastModified": "Wed Nov 11 2020 16:15:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c_1557087676": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 08 2020 19:32:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Tech support</span></span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">1-800-253-3210 <br>\r\n Opt. 2 Then Opt. 3<br>\r\n </span></span><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">instsvctechsupport@stryker.com</span></span></p>\r\n",
+          "jcr:lastModified": "Wed Nov 18 2020 16:05:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_751149470": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 08 2020 20:46:43 GMT+0000",
+      "jcr:lastModified": "Tue Sep 08 2020 20:46:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 08 2020 20:46:40 GMT+0000",
+      "jcr:lastModified": "Tue Sep 08 2020 20:46:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols_1945033882": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 14:42:37 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 14:42:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 14:42:42 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 14:42:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 06 2020 19:57:19 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 14:15:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:23:38 GMT+0000",
+          "jcr:lastModified": "Tue Oct 06 2020 20:23:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Oct 06 2020 20:20:06 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Online SurgiCount Training</span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Username: surgicount<br>\r\n Password: Oncecountatatime1</span></span>",
+              "jcr:lastModified": "Tue Oct 06 2020 20:34:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "buttonset": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Oct 06 2020 20:21:37 GMT+0000",
+              "jcr:lastModified": "Tue Oct 06 2020 20:34:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "externalLink": "http://www.surgicountmedical.com/resources/customer-tools/",
+                  "buttonText": "Link",
+                  "externalLinkType": "ext"
+                }
+              }
+            },
+            "buttonset_1031597575": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(255,181,0,1)|rgba(255,181,0,1)|rgba(255,181,0,1)|rgba(255,181,0,1)|rgba(255,181,0,1)",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Oct 12 2020 15:06:23 GMT+0000",
+              "jcr:lastModified": "Mon Oct 12 2020 19:45:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(255,181,0,1)",
+                  "externalLink": "https://www.stryker.com/us/en/surgical-technologies/products/surgicount-safety-sponge-system/surgicount-index/badge-request---contact-us.html",
+                  "buttonText": "Badge Request",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(255,181,0,1)",
+                  "externalLink": "https://www.stryker.com/content/dam/stryker/surgical/products/surgicount/resources/D0000004795.PDF",
+                  "buttonText": "SC User Guide",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(255,181,0,1)",
+                  "externalLink": "http://strykersurgicount.com/resources/customer-tools/",
+                  "buttonText": "SC User Tools and Info",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(255,181,0,1)",
+                  "externalLink": "https://ifu.stryker.com/",
+                  "buttonText": "IFUs",
+                  "externalLinkType": "ext"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(255,181,0,1)",
+                  "externalLink": "https://www.stryker.com/us/en/about/udi.html#providerimpact",
+                  "buttonText": "UDI",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 14:21:05 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 14:21:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+        },
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/surgicount/D0000004795.PDF",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:37:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 14:18:03 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 14:18:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Oct 06 2020 20:20:06 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">Online Neptune Training</span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Username: nurse<br />\r\nPassword: 4safety</span></span>",
+              "jcr:lastModified": "Tue Oct 06 2020 20:21:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "buttonset": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonSeriesColors": "rgba(76,125,122,1)",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "buttonAlignment": "horizontal-alignment align-left",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Oct 06 2020 20:21:37 GMT+0000",
+              "jcr:lastModified": "Tue Oct 06 2020 20:22:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/buttonset",
+              "buttonSetList": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "buttonColor": "rgba(76,125,122,1)",
+                  "externalLink": "https://neptunecustomercare.com/neptune-3-waste-management-system/?reg=en",
+                  "buttonText": "Link",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        },
+        "cols2_1512571508": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 14:21:10 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 14:21:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+        },
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": [
+            "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/neptune/Stryker Neptune Service Protocol for VCJD.doc",
+            "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/neptune/Buffalo Filter Neptune ULPA Filter Letter-Short.pdf"
+          ],
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:01:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/navigation/TB191 Accompanying Customer Memo Cybersecurity Nav Platforms.pdf",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:25:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/smart-sink/Proper Disposal of Cartridges Veolia.pdf",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:28:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/stryker-malis/Malis Operational Performance Memo.pdf",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:29:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys6": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 6,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/vp4-sterizone/VP4 Order to cash customer letter.pdf",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Tue Oct 06 2020 20:27:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "SurgiCount"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Neptune"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Navigation"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "Smart Sink"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "5",
+          "tabTitle": "Stryker Malis"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "6",
+          "tabTitle": "VP4 Sterizone"
+        },
+        "7": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 7,
+          "tabTitle": "Core Console"
+        }
+      },
+      "tabs_parsys7": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 7,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": "/content/dam/stryker/surgical-technologies/landing/resources/tech-support/core-console/Core 2 Annual PM Letter.pdf",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Oct 06 2020 20:00:02 GMT+0000",
+          "title": "Customer facing documents",
+          "jcr:lastModified": "Mon Oct 12 2020 14:16:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      }
+    },
+    "cols_2002037210": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 15:09:30 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 15:09:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "grouplist": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 15:09:40 GMT+0000",
+          "grouplisttitle": "Products",
+          "jcr:lastModified": "Mon Oct 12 2020 15:10:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/grouplist",
+          "groups": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "groupName": "Orthopaedic Instruments",
+              "groupTag": [
+                "stryker:business-unit/orthopaedic_instruments"
+              ]
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "groupName": "Surgical Technologies",
+              "groupTag": [
+                "stryker:business-unit/surgical_technologies"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols_956707605": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 12 2020 15:11:11 GMT+0000",
+      "jcr:lastModified": "Mon Oct 12 2020 15:11:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 15:11:15 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 15:11:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 08 2020 20:04:17 GMT+0000",
+      "jcr:lastModified": "Tue Sep 08 2020 20:04:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 12 2020 14:42:47 GMT+0000",
+          "jcr:lastModified": "Mon Oct 12 2020 14:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1488",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 08 2020 19:05:21 GMT+0000",
+          "useProduction": "true",
+          "message": "Thanks!",
+          "jcr:lastModified": "Tue Oct 27 2020 18:31:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "backgroundNav": "rgba(237,238,236,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "40",
+      "textColorNav": "rgba(0,0,0,1)",
+      "jcr:created": "Thu Apr 23 2020 17:23:36 GMT+0000",
+      "carouselOptionSpeed": "9000",
+      "transitionEffects": "false",
+      "hcpBannerCheckbox": "hcp-banner-overlay",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Fri May 01 2020 17:48:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-right",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/trauma-and-extremities/en/teach/carousel-support---blinking-lights/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/trauma-and-extremities/en/teach/carousel-support-blinking-lights/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "30",
+          "jcr:created": "Thu Apr 23 2020 17:23:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Thu Apr 23 2020 18:05:15 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(0,0,0,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Sep 08 2020 20:19:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Tech </span></span><span class=\"fontsize-2-5-vw\">Support</span>",
+              "jcr:lastModified": "Tue Sep 08 2020 20:45:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Sep 08 2020 20:45:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

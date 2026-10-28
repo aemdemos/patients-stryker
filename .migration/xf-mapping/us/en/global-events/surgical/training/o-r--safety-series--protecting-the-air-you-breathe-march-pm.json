@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "O.R. Safety Series: Protecting the Air You Breathe",
+  "jcr:versionHistory": "74cee926-ad24-4977-9f10-baa65a4d8e7a",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "0c0a5919-84ca-45de-bf25-d7d199800287"
+  ],
+  "lastPublished": "Fri Nov 20 2020 18:56:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Nov 20 2020 18:56:22 GMT+0000",
+  "cq:lastModified": "Tue Nov 17 2020 19:43:10 GMT+0000",
+  "jcr:baseVersion": "0c0a5919-84ca-45de-bf25-d7d199800287",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Nov 17 2020 19:40:51 GMT+0000",
+  "jcr:uuid": "08b174ec-b2d6-4f34-8d28-ea81c0fb328e",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/surgical"
+    ],
+    "eventContactEmail": "stephanie.eaton@stryker.com",
+    "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/4716055503752/WN_32E51-9rRuOENpoAUbx38A",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "eventAudience": [
+      "stryker:audience/or-professionals",
+      "stryker:audience/nurses"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/patient-safety"
+    ],
+    "eventContactName": "Stephanie Eaton",
+    "eventDetail": "Join Melony Prince as she discusses the following learning objectives for this CE Course:<br>\r\n<br>\r\n* Describe the potential biohazards associated with hospital air<br>\r\n* List the standards that guide hospital air quality<br>\r\n* Describe the role of infection prevention and control in hospital air quality and filtration<br>\r\n* List the current recommendations for treatment of hospital air and prevention of cross contamination<br>\r\n<br>\r\nThis CE course will provide 1 CE credit for registered nurses, surgical techs, and sterile processing technicians.",
+    "eventEndDateTime": "Thu Mar 11 2021 14:00:00 GMT+0000",
+    "eventLocation": "Virtual",
+    "eventCity": "N/A",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "jcr:lastModified": "Tue Nov 17 2020 19:43:10 GMT+0000",
+    "eventTitle": "O.R. Safety Series: Protecting the Air You Breathe",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register Now",
+    "eventStartDateTime": "Thu Mar 11 2021 13:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

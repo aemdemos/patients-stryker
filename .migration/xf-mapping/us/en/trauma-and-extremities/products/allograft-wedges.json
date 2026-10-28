@@ -1,0 +1,113 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Biologics",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Foot and Ankle Wedges",
+  "jcr:versionHistory": "3440a6c4-b9db-49ca-bf51-ac37eb97bc97",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/allograftwedges/images/allograft-wedges.jpg",
+  "jcr:predecessors": [
+    "354562ec-dd49-41c5-975a-1eb1b7d0d2d9"
+  ],
+  "lastPublished": "Wed Jul 06 2022 13:05:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 06 2022 13:05:29 GMT+0000",
+  "cq:lastModified": "Wed Jul 06 2022 13:05:20 GMT+0000",
+  "jcr:description": "Pre-shaped allograft wedges enable convenient use without the need for intraoperative shaping. ",
+  "jcr:baseVersion": "354562ec-dd49-41c5-975a-1eb1b7d0d2d9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/foot-&-ankle-wedges-f&a-wedges",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+    "stryker:capability/foot-and-ankle",
+    "stryker:capability/biologics",
+    "stryker:product/trauma-and-extremities/allograft-wedges",
+    "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/foot-and-ankle-wedges",
+    "stryker:custom/foot-and-ankle/product-type/biologics",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+    "stryker:system/trauma-and-extremities/biologics",
+    "stryker:portfolio/orthopaedics",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis"
+  ],
+  "jcr:lastModified": "Thu Mar 31 2022 18:55:16 GMT+0000",
+  "jcr:uuid": "601d1fa1-ea09-4dba-97c3-b58722ece44f",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Jun 21 2017 16:03:36 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/allograftwedges/images/allograft-wedges.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_111235",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Wed Jul 06 2022 13:05:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>Every wedge features two cortical sides for enhanced structural strength. You can use Allograft Wedges in conjunction with EasyClip Superelastic Fixation Systems and VariAx Plating Systems.</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Tue Aug 01 2017 09:08:42 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Convenient use without the need for intraoperative shaping</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Terminally sterilized to 10<sup>-6</sup> SAL</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Processed by: Allosource 6278 S Troy Cir. Centennial, CO 80111 t: 800 557 3587<br>\r\n</p>\r\n<p>CP-AWI-12, 07-2017</p>\r\n",
+    "jcr:lastModified": "Thu Aug 24 2017 11:17:12 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/allograftwedges/images/allograft-wedges.jpg"
+  }
+}

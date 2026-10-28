@@ -1,0 +1,359 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LUCAS resources",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c5cc3ff4-2ba1-410d-a245-82626ef81e8b",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:predecessors": [
+    "0dfad982-192f-4490-aa84-de776d1174c1"
+  ],
+  "lastPublished": "Tue Apr 01 2025 18:48:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 01 2025 18:48:55 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 01 2025 18:48:57 GMT+0000",
+  "cq:lastModified": "Fri Mar 28 2025 18:19:01 GMT+0000",
+  "jcr:description": "Find LUCAS Instructions for Use, Declaration of Conformity, one-sheets, case studies and more. ",
+  "jcr:baseVersion": "0dfad982-192f-4490-aa84-de776d1174c1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 18:48:48 GMT+0000",
+  "jcr:lastModified": "Wed Jan 22 2025 19:13:46 GMT+0000",
+  "jcr:uuid": "00febd58-6ee4-44da-9340-f112c0ac1928",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Mar 17 2025 17:40:08 GMT+0000",
+      "jcr:lastModified": "Mon Mar 17 2025 17:40:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1808265124": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jan 23 2025 15:52:36 GMT+0000",
+      "jcr:lastModified": "Thu Jan 23 2025 15:52:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Jan 23 2025 15:52:40 GMT+0000",
+          "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">LUCAS chest compression system resources</span></span></span></h1>\n<p><span class=\"fontsize-1-25em\">LUCAS product resources and documentation.</span></p>\n",
+          "jcr:lastModified": "Mon Mar 17 2025 17:32:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Mar 17 2025 17:33:24 GMT+0000",
+      "jcr:lastModified": "Mon Mar 17 2025 17:33:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Mar 11 2025 15:51:44 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Product documentation</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Looking for Instructions for Use and Declararion of Conformity?</span></p>\n<p><a href=\"https://www.lucas-cpr.com/resources/\" target=\"_blank\"><span class=\"standalone-link\">View documentation</span></a></p>\n",
+          "jcr:lastModified": "Fri Mar 28 2025 17:47:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Mar 11 2025 15:51:44 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Web training</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Read, listen and watch how to apply the LUCAS&nbsp;chest compression system for training and re-training purposes.</span></p>\n<p><a href=\"https://www.lucas-cpr.com/web_training/\" target=\"_blank\" title=\"LUCAS Web Training\"><span class=\"standalone-link\">Visit web training portal</span></a></p>\n",
+          "jcr:lastModified": "Fri Mar 28 2025 17:47:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jan 23 2025 15:52:40 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Product resources</span></span></h2>\n",
+      "jcr:lastModified": "Mon Mar 17 2025 17:39:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jan 21 2025 21:40:27 GMT+0000",
+      "jcr:lastModified": "Fri Mar 28 2025 18:12:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys7": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 7
+      },
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "jcr:lastModified": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:41:55 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS 3, v3.1 Your partner in life support<br>\n <a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Brochure_US-Canada.pdf\">US</a> / <a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Pre-hospital-Brochure_Europe-MEA.pdf\">Europe/MEA</a> (Pre-hosp) / <a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Hospital-Brochure_Europe-MEA.pdf\">Europe/MEA</a> (In-hosp)</span></p>\n<p><span class=\"fontsize-1-25em\">Meet LUCAS 3, v3.1 Data sheet<br>\n </span><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Spec-Sheet_US-Canada.pdf\">US</a> / <a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Spec-Sheet_Europe-MEA.pdf\">Europe/MEA</a></span></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 3 Accessories catalog<br>\n </span><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS_3_Accessories-catalog-US_Canada.pdf\">US</a></span></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 2-3 Accessories catalog<br>\n </span><span data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><a></a><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS_2-3_Accessories-catalog-Europe_MEA_Canada.pdf\">Europe/MEA</a></span></span></p>\n",
+              "jcr:lastModified": "Sun Mar 16 2025 17:28:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:41:55 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS Connectivity Guide<br>\n <span data-rte-class=\"rte-temp\"><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Connectivity-Guide_US-Canada-Europe-MEA.pdf\">US</a></span></span></p>\n<p><span class=\"fontsize-1-25em\">Checklist LUCAS 3, v3.1 - Defining setup options<br>\n <span data-rte-class=\"rte-temp\"><a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Setup-Options-Checklist_US-Canada.pdf\">US</a> / <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Setup-Options-Checklist_Europe-MEA.pdf\">Europe/MEA</a></span></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS Implementation Guide<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Implementation-Guide_US-Canada.pdf\" target=\"_blank\">US</a> / <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/brochures/LUCAS-3-v3.1-Implementation-Guide_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 13:50:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "jcr:lastModified": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:41:55 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS System Values<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-System-Values_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-System-Values_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS by the numbers, Emergency Care<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-by-the-numbers_EMS_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-by-the-numbers_EMS_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS by the numbers, Hospital <br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-by-the-numbers_Hospital_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-by-the-numbers_Hospital_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS in helicopter<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-v3.1-in-a-Helicopter_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-v3.1-in-a-Helicopter_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 14:21:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_268168968": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:41:55 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Manual CPR has hidden costs, Emergency Care<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-Hidden-Cost-of-Manual-CPR-EMS_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">Manual CPR has hidden costs, Hospital<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-Hidden-Cost-of-Manual-CPR-Hospital_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">Eliminate the mattress effect<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-v3.1-Mattress-Effect_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/one-sheet-topics/LUCAS-3-v3.1-Mattress-Effect_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 14:22:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jan 22 2025 19:27:33 GMT+0000",
+          "jcr:lastModified": "Wed Jan 22 2025 19:27:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_72859544": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:46:18 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS in the Cath Lab<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-3-v3.1-Cath-Lab-Brochure_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-3-v3.1-Cath-Lab-Brochure_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">Koster Clinical Summary <br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Koster-Clinical Summary_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Koster-Clinical Summary_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">Levy Clinical Summary <br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Levy-Clinical Summary_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Levy-Clinical Summary_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">Rolston Clinical Summary<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Rolston-Clinical Summary_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Rolston-Clinical Summary_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 14:39:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:46:18 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS fits large patients<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS_3_Size-Comparison_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS_3_Size-Comparison_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS Selected bibliography<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Selected-Bibliography_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Selected-Bibliography_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS Selected bibliography summaries <br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Bibliography-Summaries_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Bibliography-Summaries_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LINC Clinical Summary<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-LINC-Clinical-Summary_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">Defibrillation and ventilation with LUCAS<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Defibrillation-Ventilation_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/clinical-material/LUCAS-Defibrillation-Ventilation_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><b data-rte-class=\"rte-temp\">&nbsp;</b></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 14:45:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "jcr:lastModified": "Tue Jan 21 2025 21:41:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS 3 Training test<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-Training-Test-US_Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 3 Training test answer key<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-Training-Answer-Key-US_Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 3 Performance evaluation checklist<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-Performance-Evaluation-Checklist_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-Performance-Evaluation-Checklist_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 3 Quick reference poster<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS_3_QR-Poster_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS_3_QR-Poster_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><b data-rte-class=\"rte-temp\">&nbsp;</b></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 15:26:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_2115366056": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Tue Jan 21 2025 21:41:55 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">LUCAS DT Express - Quick user guide<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-DT-EXPRESS-quick-user-guide_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-3-DT-EXPRESS-quick-user-guide_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 3 Instructor guidebook<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS_3_Instructors-Guide_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">LUCAS 2 User performance evaluation<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/training-materials/LUCAS-2-Performance-Evaluation-Checklist_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n",
+              "jcr:lastModified": "Mon Mar 17 2025 15:18:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 5,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 22:03:31 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">White paper - University of Chicago Medicine LUCAS Cath Lab<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/case-studies/LUCAS-3-University-of-Chicago_US-Canada.pdf\" target=\"_blank\">US</a></span></p>\n<p><span class=\"fontsize-1-25em\">University of Rochester Medical Center<br>\n <a href=\"/content/dam/stryker/ems/products/lucas-3/resources/case-studies/LUCAS-3-University-Rochester-Medical-Center_US-Canada.pdf\" target=\"_blank\">US</a>&nbsp;/&nbsp;<a href=\"/content/dam/stryker/ems/products/lucas-3/resources/case-studies/LUCAS-3-University-Rochester-Medical-Center_Europe-MEA.pdf\" target=\"_blank\">Europe/MEA</a></span></p>\n",
+          "jcr:lastModified": "Mon Mar 17 2025 15:22:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "cols": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jan 22 2025 19:32:22 GMT+0000",
+          "jcr:lastModified": "Wed Jan 22 2025 19:32:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Brochures"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "One-sheet topics"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "3",
+          "accTitle": "Clinical material"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "4",
+          "accTitle": "Training materials"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "5",
+          "accTitle": "Case studies"
+        },
+        "6": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 6,
+          "accTitle": "Videos"
+        }
+      },
+      "accordion_parsys6": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 6,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 21 2025 22:03:31 GMT+0000",
+          "text": "<p><b><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">LUCAS 3, v3.1 - Setup options</span></span></b></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://author-stryker-prod.adobecqms.net/assetdetails.html/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Ventilation-Alert-Signal.mp4\" target=\"_blank\">Ventilation Alert</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Audible-Timers.mp4\" target=\"_blank\">Timer Alert</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_Rate-Change-During-Operation.mp4\" target=\"_blank\">Rate change on the fly</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lucas-3/videos/LUCAS_v3.1_AutoFit.mp4\" target=\"_blank\">AutoFit</a></span></p>\n<p><b data-rte-class=\"rte-temp\">&nbsp;</b></p>\n",
+          "jcr:lastModified": "Fri Mar 28 2025 18:19:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

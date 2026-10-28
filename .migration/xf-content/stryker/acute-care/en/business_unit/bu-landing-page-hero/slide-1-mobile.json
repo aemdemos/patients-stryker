@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Slide 1 Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b5f9572f-d36b-4788-b47a-2be86964b92d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4f5c160d-afb3-4d47-95a6-5d75917c523d"
+  ],
+  "lastPublished": "Tue Jun 11 2024 15:07:15 GMT+0000",
+  "jcr:created": "Tue Jun 11 2024 15:07:19 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 11 2024 15:07:20 GMT+0000",
+  "cq:lastModified": "Tue Jun 11 2024 15:00:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4f5c160d-afb3-4d47-95a6-5d75917c523d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 10 2024 22:20:15 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d2605dab-4143-4727-aade-740698ca5605",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jun 10 2024 22:15:18 GMT+0000",
+      "alt": "Nurse caring for patient in Stryker's Procuity hospital bed",
+      "srcFileRef": "/content/dam/stryker/acute-care/images/ac_bu_hero_main_1280x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 11 2024 15:00:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

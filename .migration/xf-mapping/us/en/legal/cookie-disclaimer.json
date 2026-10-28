@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Cookie Disclaimer",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a1b0d3ca-2b1c-4f67-b35b-587ad30e45db",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "93271f23-cb75-4461-8728-8ac70da13f46"
+  ],
+  "contentID": "LEGA-GSNPS-OTHD-1144050",
+  "lastPublished": "Tue May 21 2024 18:42:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 21 2024 18:42:04 GMT+0000",
+  "cq:lastReplicated": "Tue May 21 2024 18:42:06 GMT+0000",
+  "cq:lastModified": "Tue May 21 2024 18:41:13 GMT+0000",
+  "jcr:baseVersion": "93271f23-cb75-4461-8728-8ac70da13f46",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Cookie Disclaimer",
+  "jcr:lastModified": "Tue May 21 2024 18:41:13 GMT+0000",
+  "jcr:uuid": "798e2290-b2b2-47a9-abd7-841ade183a15",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Dec 01 2021 15:24:19 GMT+0000",
+      "text": "Cookie Statement Our website uses cookies and related tracking technologies to help us gather certain data analytics, improve website functionality, and in some instances, with your consent, serve targeted advertising to customize your experience. Our Cookie Statement provides information about the use of cookies on our websites and for certain online services. What tracking technologies do we use? Cookies: cookies are small pieces of data stored on a user's device. Cookies can be stored on your device either temporarily for that browser session (session cookies) only or permanently on your device (persistent cookie) and allow Stryker or a third-party (where cookies are served from anywhere else than from stryker.com) to recognize you based on certain interactions with a website and personalize your user experience. Pixels: pixels are invisible graphic elements embedded in web pages. They help measure the effectiveness of advertising campaigns by analyzing user behavior and improving targeted advertising. Tags: tags are snippets of code or scripts embedded in web pages. They are used to implement various functionalities, such as tracking user interactions, collecting data for analytics, integrating with third-party services (e.g., advertising platforms), and measuring the performance of online content. How does this site use cookies? This website uses multiple categories of cookies, serving the following purposes: Strictly necessary cookies: These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information. Functional cookies: These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies, then some or all services may not function properly. Performance cookies: These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. If you do not allow these cookies we will not know when you have visited our site and will not be able to monitor its performance. Targeting cookies: These cookies may be set through our site by our advertising partners and social media platforms (e.g. Instagram, LinkedIn, Facebook, etc.). They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising. What information might be collected? Our cookies collect various types of information depending on what you allow. This information may include but is not limited to: IP Addresses Unique Identifiers Browsing History Device Information Location Data Search History Preferences Timestamps Marketing Referral Data Certain users' preference information may be stored in cookies to personalize and enhance your user experience, improve website functionality, or, in some instances, serve personalized advertisements. Specific choices and settings may include the following: Customizations Theme Selections Language Preferences Display Settings What are your choices regarding cookies? Managing your cookie preferences You can use the banner at the bottom of the website to learn more about cookies. When we deploy cookies other than strictly necessary you can also use the banner to manage your cookie preferences. In the banner you can either ‘Accept All Cookies’, ‘Reject All’ (strictly necessary cookies will still drop, as explained above) and click ‘Cookie Settings’. By clicking ‘Cookie Settings’ you can access our Privacy Preference Center, where you can either accept or decline the categories of cookies dropping from our website. When your preferences are logged in, the banner will no longer appear. You can gain access to the Privacy Preference Center by clicking the green cookie on the bottom left of the website. You can also communicate opt-out preferences in your web browser using Global Privacy Control (GPC). You can learn more about Global Privacy Control here. Online behavioral advertising Our third-party advertisers are members of the Network Advertising Initiative (NAI) and adhere to its Code of Conduct regarding online behavioral advertising. As part of our commitment to transparency and user choice, we provide mechanisms for users to opt out of targeted advertising. You can exercise your opt-out rights by visiting the NAI's opt-out page here or by following the instructions provided above. Please note that opting out may not block all advertisements and does not mean you will no longer receive online ads. However, it will prevent us from using your data for targeted advertising purposes. For more information about how we collect, use, and protect your data, please refer to our Privacy Statement. Deletion Mechanisms If you'd like to delete cookies, including those related to preference settings or instruct your web browser to delete or refuse cookies, please visit the help pages of your web browser. Please note, however, that if you delete or choose to reject them you might not be able to use all the features we offer, you may not be able to store your preferences, and some of our pages might not display properly. To learn more about your privacy rights you can read our Privacy Statement. Updates to Cookie Statement We review and update this Statement continuously to improve it. You can review updates on this page. For more information on how we collect, process, and share information please see our Privacy Statement. LEGA-GSNPS-OTHD-1144050",
+      "jcr:lastModified": "Wed Dec 01 2021 15:24:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/legal/cookie-disclaimer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/legal/cookie-disclaimer/master"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "adam.wenz@stryker.com",
+      "jcr:lastModifiedBy": "adam.wenz@stryker.com",
+      "jcr:created": "Fri Dec 14 2018 21:43:22 GMT+0000",
+      "jcr:lastModified": "Fri Dec 14 2018 21:43:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

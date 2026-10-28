@@ -1,0 +1,309 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "On-demand FocusRN webinars",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8d546c4f-3760-4800-a2d0-cc45491d4364",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:predecessors": [
+    "08c1b36f-3a31-4a13-a64f-0934b756f0d0"
+  ],
+  "contentID": "SAGE-WBNR-SYK-1702350_REV-0_en_us",
+  "lastPublished": "Tue Oct 13 2026 19:27:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 13 2026 19:27:46 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 13 2026 19:27:48 GMT+0000",
+  "cq:lastModified": "Mon Oct 12 2026 20:47:11 GMT+0000",
+  "jcr:description": "FocusRN provides clinical education and tools to help you fulfill your education requirements and advance your knowledge to improve patient care. Revisit some of FocusRN's most popular on-demand webinars below.",
+  "jcr:baseVersion": "08c1b36f-3a31-4a13-a64f-0934b756f0d0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Apr 28 2025 14:23:23 GMT+0000",
+  "pageTitle": "On-demand FocusRN webinars",
+  "cq:tags": [
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Tue Apr 15 2025 16:20:45 GMT+0000",
+  "jcr:uuid": "8c7e8dc8-faf8-4719-ab28-722e416a020b",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 16:22:12 GMT+0000",
+      "text": "< BACK",
+      "jcr:lastModified": "Fri May 13 2022 16:23:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/focusrn/subpage-brand-bar/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/focusrn/subpage-brand-bar/master"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Thu Apr 03 2025 20:28:01 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">On-demand webinars</span></span></h1>\n<p><span class=\"fontsize-1-25em\">FocusRN provides clinical education and tools to help you fulfill your education requirements and advance your knowledge to help improve patient care. Revisit some of FocusRN's most popular on-demand webinars below.</span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Apr 25 2025 22:15:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "text_1756560165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Apr 07 2025 21:04:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><a href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/upcoming-events.html\"><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">Register for the upcoming FocusRN webinar</span></span></a></p>\n",
+      "jcr:lastModified": "Mon Apr 07 2025 21:14:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 07 2025 21:06:41 GMT+0000",
+      "jcr:lastModified": "Tue Apr 15 2025 15:59:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols3_636968576_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Apr 03 2025 21:27:47 GMT+0000",
+          "jcr:lastModified": "Thu Apr 03 2025 21:27:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue May 26 2026 20:23:16 GMT+0000",
+              "alt": "Mobility matters: Positive impact of safe mobilization",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/3179600_mobility-matters-title-screen.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Tue May 26 2026 20:24:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization",
+              "enableBorder": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Apr 03 2025 21:28:08 GMT+0000",
+              "text": "<h4>Mobility Matters: Positive impact of safe mobilization</h4>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Jan Powers PhD, RN, CCNS, CCRN, NE-BC, EBP-C, FCNS, FCCM, FAAN</span></span></p>\n<p><span class=\"fontsize-1-25em\">This webinar will review the effects of immobility and emphasize the importance of early mobility for driving better patient outcomes. We will highlight the nurse's role in safe patient handling to help reduce caregiver injuries and outline best practices for mobilizing patients. We will cover effective strategies for implementing mobility programs to enhance consistency, safety and long-term success.</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/mobility-matters-impact-safe-patient-mobilization.html\" target=\"_blank\"><span class=\"standalone-link\">Watch Now</span></a></p>\n",
+              "jcr:lastModified": "Wed Jun 03 2026 19:51:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Apr 15 2025 15:47:44 GMT+0000",
+              "alt": "FocusRN-pip-operative-procedure-thumbnail",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/FocusRN-pip-operative-procedure-thumbnail.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Tue Apr 15 2025 15:56:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/risk-of-pip-procedural-operational-areas",
+              "enableBorder": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Apr 03 2025 21:28:08 GMT+0000",
+              "text": "<h4>Risk of Pressure Injury in Operative and Procedure Areas</h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Suzy Scott MSN, RN, FAAN</span></span></p>\n<p><span class=\"fontsize-1-25em\">Undergoing any operative procedure can place a patient at higher risk of pressure injury development. Depending on time, position and vital parameters, a patient's skin injury may not be apparent for several days post-op. During this webinar, you will learn to identify patients' risk factors as well as common surgical positions and instrumentation and devices used during this phase of care that increase risk. Interventions to reduce the risk to your patients in a structured perioperative pressure injury prevention program will be discussed.&nbsp;&nbsp;</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/risk-of-pip-procedural-operational-areas.html\" target=\"_blank\"><span class=\"standalone-link\">Watch now</span></a></p>\n",
+              "jcr:lastModified": "Fri Jun 13 2025 14:10:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Wed Oct 01 2025 19:47:42 GMT+0000",
+              "alt": "Safe patient  handling and mobility - Reducing the risk through evidence-based interventions",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/safe-patient-handling-july-webinar-thumbnail.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Wed Oct 01 2025 19:51:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/safe-patient-handling-mobility-webinar",
+              "enableBorder": "true"
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Apr 03 2025 21:28:08 GMT+0000",
+              "text": "<h4>Safe patient handling and mobility - Reducing the risk through evidence-based interventions</h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Susan Salsbury BS, OTR/L, CSPHP, CDMS-R</span></span></p>\n<p><span class=\"fontsize-1-25em\">A comprehensive overview of safe patient handling and mobility (SPHM) practices, emphasizing the dual goals of enhancing patient outcomes and ensuring caregiver safety. We will identify risk factors that contribute to patient handling injuries, explore resources to help implement and maintain a SPHM program, and understand the interconnectedness between early mobility, SPHM, fall prevention, pressure injury prevention and improved patient outcomes.&nbsp;&nbsp;</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/safe-patient-handling-mobility-webinar.html\" target=\"_blank\"><span class=\"standalone-link\">Watch now</span></a></p>\n",
+              "jcr:lastModified": "Wed Oct 01 2025 19:50:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "cols3_351065640_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Apr 03 2025 21:24:03 GMT+0000",
+          "jcr:lastModified": "Thu Apr 03 2025 21:24:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Apr 15 2025 15:47:44 GMT+0000",
+              "alt": "Sepsis and non-vent hospital-acquired pneumonia: Understanding the risk, prevention and early recognition",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/Kathleen-Vollman-sepsis-webinar-thumbnail.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Mon Oct 12 2026 20:45:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition",
+              "enableBorder": "true"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Apr 03 2025 21:24:57 GMT+0000",
+              "text": "<h4>Sepsis and non-vent hospital-acquired pneumonia: Understanding the risk, prevention and early recognition</h4>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Kathleen Vollman MSN, RN, CCNS, FCCM, FCNS, FAAN</span></span></p>\n<p><span class=\"fontsize-1-25em\">This session reviews the impact of sepsis, emerging quality initiatives, evidence-based pneumonia prevention strategies and the nurse's role in early sepsis recognition and intervention. Attendees will leave with practical strategies for addressing risk and supporting improved outcomes for hospitalized patients.<br>\n</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/sepsis-non-vent-pneumonia-risk-prevention-recognition.html\" target=\"_blank\"><span class=\"standalone-link\">Watch now</span></a></p>\n",
+              "jcr:lastModified": "Mon Oct 12 2026 20:47:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Apr 15 2025 15:47:44 GMT+0000",
+              "alt": "Hidden in plain sight: NVHAP title card",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/318005_nv-hap-title-screen.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Tue May 26 2026 20:27:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/nv-hap-hidden-plain-sight",
+              "enableBorder": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Apr 03 2025 21:24:57 GMT+0000",
+              "text": "<h4>Hidden in plain sight: non-ventilator hospital-acquired pneumonia (NVHAP) - the #1 hospital-acquired infection</h4>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Dian Baker PhD, MA, MS, APRN</span></span></p>\n<p><span class=\"fontsize-1-25em\">This course will provide healthcare professionals with an in-depth understanding of non-ventilator hospital-acquired pneumonia (NVHAP), its clinical consequences and the role of the human lung microbiome in the development of this infection. The session will also introduce the adapted island model of the lung microbiome and explore how this model may help inform preventive measures and actionable practices to address the risk of NVHAP among critically ill patients.</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/nv-hap-hidden-plain-sight.html\" target=\"_blank\"><span class=\"standalone-link\">Watch now</span></a></p>\n",
+              "jcr:lastModified": "Wed Jun 03 2026 19:52:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Jun 24 2025 21:31:08 GMT+0000",
+              "alt": "Urinary incontinence webinar thumbnail",
+              "srcFileRef": "/content/dam/stryker/sage/focusrn-live/videos/urinary-incontinence-protecting-patients-skin.jpg",
+              "borderColor": "rgb(0,0,0)",
+              "jcr:lastModified": "Tue Jun 24 2025 21:33:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "linkInternal": "/content/stryker/us/en/sage/webinars/managing-urinary-incontinence-webinar",
+              "enableBorder": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "4",
+              "jcr:created": "Tue Jun 24 2025 21:28:10 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h4><span class=\"futura-bold\">Making it Happen: Managing Urinary Incontinence and Protecting Patients' Skin</span></h4>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Carmen Davis MSN, RN, CCRN, CNS-BC&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">This presentation offers an overview of the prevalence, costs and risk factors of urinary incontinence (UI), incontinence-associated dermatitis (IAD), and pressure injury (PI). We will examine how one phenomenon can lead to another, along with strategies to help prevent and manage these conditions in the clinical setting. Basic physiology will be reviewed to support understanding potential etiologies and best practice treatment strategies. Change management approaches will be discussed to help our team members adopt best practices and improve patient outcomes.</span></p>\n<p><a href=\"/content/stryker/us/en/sage/webinars/managing-urinary-incontinence-webinar.html\"><span class=\"standalone-link\">Watch now</span></a></p>\n",
+              "jcr:lastModified": "Tue Jun 24 2025 21:32:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Injury prevention"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "Infection prevention"
+        }
+      }
+    },
+    "video": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "<style>    .c-accordion .panel-title a {       text-transform: none;       font-size: 1.5em;    }    .c-accordion .panel-title a.collapsed {       padding-bottom: 24px;       padding-top: 24px;       border-bottom: none;    }    .c-accordion .panel-heading a.collapsed {       border-bottom: 1px solid #aeb3a6;    }    .accordion-summary {       color: #000;    }    .panel-heading {       padding-bottom: 15px;    }    .panel-title {       margin-bottom: 5px;    } </style> <script>    $('#heading_0__e1831156').append(\"<a role=\\\"button\\\" data-toggle=\\\"collapse\\\" data-parent=\\\"#accordion_1173c033\\\" class=\\\"no-reload collapsed\\\" href=\\\"#collapse_0_1173c033\\\" aria-expanded=\\\"false\\\" aria-controls=\\\"collapse_0_1173c033\\\"><p><span class=\\\"fontsize-1-25em accordion-summary\\\">These webinars are focused on the intrinsic and extrinsic risk factors for the development of pressure injuries, and best practices to help prevent them.</span></p></a>\");    $('#heading_1__e1831156').append(\"<a role=\\\"button\\\" data-toggle=\\\"collapse\\\" data-parent=\\\"#accordion_1173c033\\\" class=\\\"collapsed no-reload\\\" href=\\\"#collapse_1_1173c033\\\" aria-expanded=\\\"false\\\" aria-controls=\\\"collapse_1_1173c033\\\"><p><span class=\\\"fontsize-1-25em accordion-summary\\\">Learn about hospital-acquired pneumonia and strategies to prevent it through proper oral care.</span></p></a>\"); </script>",
+      "height": "0",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 07 2025 21:06:49 GMT+0000",
+      "width": "0",
+      "jcr:lastModified": "Mon May 05 2025 17:00:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/video"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

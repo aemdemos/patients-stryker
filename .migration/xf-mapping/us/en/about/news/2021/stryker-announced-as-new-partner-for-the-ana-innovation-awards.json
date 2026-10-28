@@ -1,0 +1,110 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Announced as New Partner for the ANA Innovation Awards",
+  "jcr:versionHistory": "f0cc1373-40f8-496c-8a76-d05317c16095",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "ea29b004-5958-4a56-be4f-a937e22413c7"
+  ],
+  "lastPublished": "Wed Jun 09 2021 16:01:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 09 2021 16:01:58 GMT+0000",
+  "cq:lastModified": "Wed Jun 09 2021 16:01:48 GMT+0000",
+  "jcr:baseVersion": "ea29b004-5958-4a56-be4f-a937e22413c7",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Wed Jun 09 2021 16:01:48 GMT+0000",
+  "jcr:uuid": "a39e7666-e3bf-4b31-b3f2-f6221744c0f5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 09 2021 14:57:13 GMT+0000",
+      "jcr:lastModified": "Wed Jun 09 2021 14:57:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jun 09 2021 14:57:18 GMT+0000",
+          "text": "<p><b>SILVER SPRING, MD</b> – The <a href=\"https://www.nursingworld.org/ana/\">American Nurses Association (ANA)</a>, the premier organization representing the interests of the nation’s more than 4.2 million nurses, and the <a href=\"https://www.nursingworld.org/foundation/\">American Nurses Foundation (the Foundation)</a>, the philanthropic arm of ANA, announced <a href=\"https://www.stryker.com/us/en/index.html\">Stryker</a>, one of the world’s leading medical technology companies, as the new partner for the ANA Innovation Awards. Applications for the <a href=\"https://www.nursingworld.org/practice-policy/innovation/events/awards/\">2022 ANA Innovation Awards sponsored by Stryker</a> are now open.</p>\n<p>Stryker offers innovative products and services in Orthopedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. Their portfolio also offers various engagement and training opportunities to enrich the experiences of nurses to help improve patient care and safety. Stryker’s mission, ‘We are driven to make healthcare better,’ aligns with the principles of ANA and the Foundation to promote nursing excellence, and to advance and support the profession by empowering nurses to transform healthcare and <a href=\"https://www.nursingworld.org/practice-policy/innovation\">build a culture of innovation across the profession</a> to improve the lives of their patients.</p>\n<p>Launched in 2019, the ANA Innovation Awards highlight, recognize, and celebrate exemplary nurse-led innovation that improves patient safety and health outcomes. Two awards are conferred each year – the Individual Nurse Award and the Nurse-led Team Award – and recipients will receive monetary prizes of $25,000 and $50,000, respectively. Stryker’s support will further both organizations’ goals of nurturing and activating nurse-led innovation through the presentation of the awards annually through 2024.</p>\n<p>“We are so privileged to begin working with an innovative and highly respected company like Stryker. They understand nurse-led innovation and the essential role of nursing’s contributions at present and into the future. Stryker’s commitment is critical to growing innovation across the nursing profession and for the communities nurses serve. Nurses have risen to every challenge across healthcare delivery, and we look forward to amplifying their work,” said ANA Enterprise Vice President of Nursing Innovation Oriana Beaudet, DNP, RN, PHN.</p>\n<p>“On behalf of the Foundation, we are grateful that Stryker is the kind of company that is committed to making healthcare better. These funds will help nurture creative minds and propel the next generation of nurse innovators into the future,” said the American Nurses Foundation Executive Director, Kate Judge.</p>\n<p>“We are a loyal advocate and supporter of the nursing community, and we are honored to be partnering with ANA and the American Nurses Foundation as the proud sponsor of ANA’s Innovation Awards – helping to further the goals of nurturing and activating nurse-led innovation. From day one, science and innovation have run through our company’s history. We are excited to see all the inspiring ideas from nurses around the country,” said Stryker’s Vice President and General Manager of Acute Care, Jessica Mathieson.</p>\n<p>To submit an application for the 2022 ANA Innovation Awards sponsored by Stryker, please visit the <a href=\"https://www.nursingworld.org/practice-policy/innovation/events/awards/#:~:text=The%20ANA%20Innovation%20Awards%20highlight,patient%20safety%20and%2For%20outcomes.\">ANA Innovation Awards website</a>. Application submissions will close on October 31 at 12 p.m. EST. To learn more about <a href=\"https://www.nursingworld.org/practice-policy/innovation\">ANA’s innovation work</a>, visit the virtual <a href=\"https://www.nursingworld.org/practice-policy/innovation/events/#lounges\">ANA Innovation Lounges</a> to discover, engage, network, learn, and support. The ANA Innovation Lounges will go live on June 22.<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 09 2021 15:10:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_429570790": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 09 2021 14:59:53 GMT+0000",
+      "jcr:lastModified": "Wed Jun 09 2021 14:59:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jun 09 2021 14:59:58 GMT+0000",
+          "jcr:lastModified": "Wed Jun 09 2021 14:59:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 09 2021 14:57:13 GMT+0000",
+      "jcr:lastModified": "Wed Jun 09 2021 14:57:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jun 09 2021 14:57:18 GMT+0000",
+          "text": "<p><b>About the ANA Enterprise</b><br>\nThe <a href=\"https://www.nursingworld.org/\">ANA Enterprise</a> is the organizing platform of the American Nurses Association (ANA), the American Nurses Credentialing Center (ANCC), and the American Nurses Foundation. The ANA Enterprise leverages the combined strength of each to drive excellence in practice and ensure nurses’ voice and vision are recognized by policy leaders, industry influencers and employers. From professional development and advocacy, credentialing and grants, and products and services, the ANA Enterprise is the leading resource for nurses to arm themselves with the tools, information, and network they need to excel in their individual practices. In helping individual nurses succeed—across all practices and specialties, and at each stage of their careers—the ANA Enterprise is lighting the way for the entire profession to succeed.</p>\n<p><b>About Stryker</b><br>\n<a href=\"https://www.stryker.com/us/en/index.html\">Stryker</a> is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. For more information visit, <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><b>MEDIA CONTACT:</b><br>\nKeziah Proctor<br>\n301.628.5197<br>\n<a href=\"mailto:Keziah.proctor@ana.org\">Keziah.proctor@ana.org</a><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jun 09 2021 15:06:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Wed Jun 09 2021 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Jun-2021",
+    "jcr:lastModified": "Wed Jun 09 2021 14:56:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/stryker_logo2015.jpg"
+  }
+}

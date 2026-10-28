@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leader - 3326",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e9ac971d-d40a-4e65-985d-6f5374402ad4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "22b80894-f2e3-4d30-9839-26ed42846955"
+  ],
+  "lastPublished": "Tue Apr 07 2026 13:06:50 GMT+0000",
+  "jcr:created": "Tue Apr 07 2026 13:06:50 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 07 2026 13:06:54 GMT+0000",
+  "cq:lastModified": "Tue Apr 07 2026 13:06:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "22b80894-f2e3-4d30-9839-26ed42846955",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:00:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "5c1ac197-a328-4b27-be62-09d2b4b5677e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jan 23 2020 19:03:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Kevin</span> Lobo</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Chair and CEO<br>\n </span></span><br>\nKevin has been CEO of Stryker since October 1, 2012, and also assumed the role of Chair of the Board on July 22, 2014. He had previously been Group President of Orthopaedics. Since he joined the company in 2011, Stryker has completed more than 60 acquisitions and advanced innovation and global market presence.</p>\n<p>Kevin serves on the Boards of GE HealthCare (Nasdaq: GEHC), Parker Hannifin (NYSE: PH) and the Advanced Medical Technology Association (AdvaMed) and is also a member of the Business Council. Additionally, he serves as Chair of the Valley Health System's board of trustees in New Jersey.</p>\n<p>Prior to Stryker, he held leadership roles at Johnson &amp; Johnson, including President of Ethicon Endo Surgery, President of J&amp;J Medical Products Canada, and CFO roles within its consumer and women’s health divisions. Earlier in his career, he held finance and management roles at Rhone-Poulenc, including international assignments in Europe, as well as at Kraft Canada, Unilever, and KPMG.</p>\n<p>He holds a Bachelor of Commerce from McGill University, an MBA from the University of Toronto, and is a Chartered Accountant.</p>\n<p><span class=\"fontsize-8em\">COMM-GSNPS-SYK-3185901</span></p>\n",
+      "jcr:lastModified": "Tue Apr 07 2026 13:06:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 20 2020 19:33:18 GMT+0000",
+      "alt": "Kevin A. Lobo",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Our_Management_Redesign_Kevin_Lobo.png",
+      "jcr:lastModified": "Fri Mar 21 2025 18:49:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

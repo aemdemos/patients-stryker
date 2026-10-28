@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces Annual Meeting of Shareholders",
+  "jcr:versionHistory": "76d43056-7c77-4e1d-845e-7569eff69449",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "8ef7a213-16e3-4d8a-a317-b1a86a2f5fac"
+  ],
+  "lastPublished": "Fri Sep 15 2017 09:20:46 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 15 2017 09:20:46 GMT-0400",
+  "cq:lastModified": "Thu Sep 14 2017 16:43:37 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:baseVersion": "8ef7a213-16e3-4d8a-a317-b1a86a2f5fac",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 09:42:03 GMT-0400",
+  "jcr:uuid": "5c348d3e-fe88-4118-b300-88a7fda0650e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Mon Mar 20 2017 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Mar-2017",
+    "jcr:lastModified": "Tue May 30 2017 09:42:37 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>Kalamazoo, Michigan - Stryker Corporation (NYSE:SYK) announced that its 2017 Annual Meeting of Shareholders is scheduled as follows:</p>\n<p>May 3, 2017 - 2:00 p.m. Eastern Time<br>\nRadisson Plaza Hotel &amp; Suites at The Kalamazoo Center<br>\nKalamazoo, Michigan<br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=2255270\" target=\"_blank\">Stryker Investor Relations</a><br>\n</p>\n",
+    "jcr:lastModified": "Tue May 30 2017 09:41:53 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

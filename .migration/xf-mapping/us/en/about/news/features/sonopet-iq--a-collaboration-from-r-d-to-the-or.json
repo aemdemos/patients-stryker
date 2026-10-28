@@ -1,0 +1,371 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Sonopet iQ: A collaboration from R&D to the OR",
+  "jcr:versionHistory": "1c003db1-dcea-4b1b-885d-619a1a1b3771",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "8c8f5dd9-3cc1-49af-90f5-418f085a31c6"
+  ],
+  "contentID": "SYK CORP 2019-10-01",
+  "lastPublished": "Tue Oct 08 2019 15:40:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 08 2019 15:40:48 GMT+0000",
+  "cq:lastModified": "Tue Oct 08 2019 15:39:49 GMT+0000",
+  "jcr:baseVersion": "8c8f5dd9-3cc1-49af-90f5-418f085a31c6",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Tue Oct 08 2019 15:39:49 GMT+0000",
+  "jcr:uuid": "2dfd3f25-120d-474d-bcd9-6fe4070e8338",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_985225766": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:16:40 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:16:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:16:30 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:16:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "sectionseparator_1531489526": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 15:54:24 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 15:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3_1971664743": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1425899821": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:10:27 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">A story of persistence</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><br>\n </span>__________________________________</span></p>\n<p>The day started like any other, presenting a new prototype that would greatly improve how surgeons use aspirators to fragment and emulsify soft tissue and bone during complex surgical procedures. Engineers working on the Sonopet iQ were making last minute adjustments before showing Dr. Padilla, a GYN surgeon from New Mexico, the progress of the latest iteration. Just a minute into the demonstration, the prototype stopped working. The engineers tried to troubleshoot, but quickly realized that all the team could do was apologize and say that it was not a good day for the device. With so much built-up anticipation, it was hard not to feel frustration in that moment. However, the team understood that with such a critical piece of technology, any failure can be turned into key learnings in the development stage. Fortunately, Dr. Padilla shared those beliefs, and the collaboration continued between our engineers and surgical teams in a fluid manner across every stage of development. We’re not afraid to partner with customers through the highs and lows of any project, because it can only make both us and the technology better.</p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 15:57:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:23:20 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Kyle and Dr. Padilla3.jpg",
+          "jcr:lastModified": "Wed Sep 18 2019 15:44:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:23:32 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">In the lab with Stryker program manager, Kyle Walberg, and Dr. Padilla</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 13:24:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:17:12 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:17:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3_197166": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:10:27 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Everyone gets heard</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><br>\n </span>________________________________</span></p>\n<p>By including the input of physicians like Dr. Padilla, as well as nurses, scrub techs, sterile processing and staff, insights become holistic and often uncover real gaps that users are seeing. The Sonopet iQ team fostered a continuous feedback loop with these stakeholders to identify where improvements would best address real needs. Conferences, mobile lab events, medical education courses and more were leveraged to gather a critical mass of insights.</p>\n<p>Geographic diversity was also key to ensuring evaluations were reflective of Sonopet’s global footprint. Medical professionals from the U.S., the UK, Ireland, Italy, Spain, Canada and Japan—where the tool was originally invented—were consulted during development.</p>\n<p>In all, over 250 surgeon evaluations were collected to shape the final product. Common themes brought up—such as ease of set-up and the speed of bone cutting and fibrous tissue resection—became priorities and were worked into the final design.</p>\n",
+          "jcr:lastModified": "Tue Oct 08 2019 15:25:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 14:29:18 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 14:29:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 14:29:23 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Picture of team preparing (cadaveric specimens) for customer lab in Kalamazoo.jpg",
+          "jcr:lastModified": "Wed Sep 18 2019 14:29:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:06:29 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">Stryker team preparing (cadaveric specimens) for customer lab in Kalamazoo</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 15:07:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 14:29:23 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Stryker team in mobile lab.jpg",
+          "jcr:lastModified": "Wed Sep 18 2019 14:29:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:06:29 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">Collecting feedback in our mobile lab</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 19:32:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:33:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">&quot;Our feedback loop was continuous — that was important — we didn't want to take for granted that we had enough input.&quot;</span></span>",
+          "line2": "<br>\r\n<span class=\"futura-bold\">Kyle Walberg</span><br>\r\nProgram Manager, Stryker<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+          "jcr:lastModified": "Wed Sep 18 2019 16:00:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "sectionseparator_1458869549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:17:19 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:17:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3_197166_602477742": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:10:27 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">A successful launch</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><br>\n </span>______________________________</span></p>\n<p>The Sonopet iQ launched in June 2019 at the American Association of Neurological Surgeons meeting in San Diego, California. The complex system used for such critical procedures is not something we take lightly. These procedures include: supporting spinal decompression procedures; working near critical blood vessels and nerves while removing fibrous tumors.</p>\n<p>Sonopet iQ would not have been possible without extensive collaboration between hundreds of surgeons, nurses, hospital staff and our teams. Since launching in June, the Sonopet iQ has assisted with more than 500 procedures, and we expect 10,000 procedures in its first year on the market.</p>\n<p>The initial launch of Sonopet iQ is just the beginning. As launches in Japan, Europe and Canada are planned for the end of 2019, the team is preparing to deliver the results of years of collaboration and development to hospitals around the globe.<sup>1</sup> In doing so, they’ll continue collecting feedback for future generations of Sonopet technology.</p>\n",
+          "jcr:lastModified": "Tue Sep 24 2019 19:29:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_2_3_1_3_197166_826856617": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 13:10:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:10:27 GMT+0000",
+          "jcr:lastModified": "Wed Sep 18 2019 13:10:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        }
+      }
+    },
+    "cols3_1223987493": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 18 2019 15:36:48 GMT+0000",
+      "jcr:lastModified": "Wed Sep 18 2019 15:36:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:55:10 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Dr. Zada edit.png",
+          "jcr:lastModified": "Wed Sep 18 2019 18:07:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:51:32 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">“I was asked to [offer] customer feedback at multiple … scientific and neurosurgical meetings going back over the last five years. What I am seeing as the final product is a really fantastic blend overall of some of the best features that I would have hoped for.”</span></span></p>\n<p><span class=\"futura-bold\">Gabriel Zada, M.D. </span><br>\n<span class=\"urw-egyptienne\">Associate Professor of Neurological Surgery <br>\n Keck School of Medicine, University of Southern California <br>\n Stryker consultant</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 18:08:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:45:45 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Dr Figuero edit.png",
+          "jcr:lastModified": "Wed Sep 18 2019 18:07:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:49:26 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">“It’s exciting to see something coming online that is such a unique blend of the engineering know-how and modifications that have been made in anticipation of surgeon’s needs. [While] also incorporating the direct surgeon input and that of the operating room staff.”</span></span></p>\n<p><span class=\"futura-bold\">Bryan Figueroa, M.D. </span><br>\n<span class=\"urw-egyptienne\">Surgical Director, Comprehensive Stroke Program Metro Health, <br>\n University of Michigan Health <br>\n Director of Cranial and Cerebrovascular Neurosurgery <br>\n Saint Mary’s Health Center <br>\n Stryker consultant</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 18:08:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:37:18 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/sonopet-iq/images/Dr Prevedello edit.png",
+          "jcr:lastModified": "Wed Sep 18 2019 18:07:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 15:46:33 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">“The collaboration with Stryker developing Sonopet has been great. I like that Stryker listened to us, [which] is very important when I express a need in the operating room. And at all levels I noticed that there is this commitment to really push and listen to the surgeon. Over the years I have been giving ideas and feedback…and the fact that Stryker listened to us, it does feel [like] its designed for us.”</span></span></p>\n<p><span class=\"futura-bold\">Daniel Prevedello, M.D. </span><br>\n<span class=\"urw-egyptienne\">Professor, Dept. of Neurological Surgery,<br>\n Director, Minimally Invasive Cranial Surgery Program,<br>\n The Ohio State University Wexner Medical Center<br>\n Stryker consultant</span></p>\n",
+          "jcr:lastModified": "Wed Sep 18 2019 18:08:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Oct 08 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "08-Oct-2019",
+    "jcr:lastModified": "Tue Oct 08 2019 15:38:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>A surgeon relays feedback to his Stryker representative about the performance of a product he’s just used. In the lab, another surgeon shares her thoughts on the latest features added to the technology she’s testing. Input like this is welcomed by our teams, but how does that feedback get accumulated, weighted, tested and finally incorporated into future design iterations? In an effort to better understand how an emphasis on listening to our customers helps shape the latest in medical technology, let’s explore the development of Sonopet iQ Ultrasonic Aspirator System.<br>\n</p>\n",
+    "jcr:lastModified": "Tue Sep 24 2019 19:27:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/sonopet-iq/images/Picture of team preparing (cadaveric specimens) for customer lab in Kalamazoo.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Product not available in all markets. Please reach out to your local sales representative for availability in your market.</p>\r\n",
+    "jcr:lastModified": "Tue Sep 24 2019 19:29:33 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

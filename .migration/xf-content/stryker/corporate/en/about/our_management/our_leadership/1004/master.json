@@ -1,0 +1,90 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": " Officer - 1004",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8ca8ecb7-0910-4959-8a9a-d3032285fb7a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "091c4aee-a4df-415d-b0b4-3c0251c912a8"
+  ],
+  "lastPublished": "Fri Sep 11 2026 01:09:05 GMT+0000",
+  "jcr:created": "Fri Sep 11 2026 01:09:06 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 11 2026 01:09:07 GMT+0000",
+  "cq:lastModified": "Fri Sep 11 2026 01:08:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "091c4aee-a4df-415d-b0b4-3c0251c912a8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 01 2026 14:06:19 GMT+0000",
+  "jcr:uuid": "472ad0e6-7714-48bd-a848-5cf4bda25485",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "ray.maniaci@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy__46557074": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Emily&nbsp;</span>Baculik</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Vice President, Corporate Controller</span></span></p>\n<p>Emily Baculik became Vice President, Corporate Controller in November 2024.<br>\n</p>\n<p>&nbsp;</p>\n<p>Emily is responsible for our internal and external financial reporting, ensuring compliance with internal control and financial statement audit requirements, technical accounting and other accounting policy and compliance-related matters. She also oversees our finance training and development programs and finance indirect channel management.</p>\n<p>Emily has more than 20 years of finance and accounting experience with publicly traded companies. Prior to her current role as Corporate Controller, she spent several years in various positions spanning the Instruments Division and Enterprise FP&amp;A, as well as Vice President, Finance for the Spine Division. Emily also has prior experience in FP&amp;A, external financial reporting, technical accounting, compliance and controllership at Wabtec Corporation, Eaton, Rockwell Collins, Ingersoll Rand and U.S. Steel.</p>\n<p>She earned her bachelor’s degree from the University of Notre Dame and a master’s degree in accounting from The Ohio State University. She is a Certified Public Accountant (CPA) and Certified Management Accountant (CMA).<br>\n</p>\n",
+      "jcr:lastModified": "Fri Sep 11 2026 01:08:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 19:56:34 GMT+0000",
+      "alt": "Emily Baculik",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Template_Emily_Baculik.png",
+      "jcr:lastModified": "Wed Aug 26 2026 18:18:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker's mobility zone makes final stop of 2018 at Charles Schwab Cup Championship",
+  "jcr:versionHistory": "8ffc6ec7-8446-4d9e-9db6-4fc01345e207",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:predecessors": [
+    "100a0c5f-0ce6-46e6-8bee-474dd5ea9b17"
+  ],
+  "lastPublished": "Tue Nov 13 2018 16:23:12 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 13 2018 16:23:12 GMT+0000",
+  "cq:lastModified": "Tue Nov 13 2018 16:22:30 GMT+0000",
+  "jcr:baseVersion": "100a0c5f-0ce6-46e6-8bee-474dd5ea9b17",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:event-type",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Nov 09 2018 19:31:23 GMT+0000",
+  "jcr:uuid": "155a7ac7-b7c9-42a5-ab55-f95192b53bc4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "publishDate": "Thu Nov 08 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "08-Nov-2018",
+    "jcr:lastModified": "Fri Nov 09 2018 19:15:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/AC13 123.jpg",
+    "jcr:lastModified": "Tue Nov 13 2018 16:22:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "gradientDirection": "left-to-right",
+    "text": "<p>MAHWAH, N.J., November 8, 2018 – Today, Stryker makes its final stop of the 2018 season at theCharles Schwab Cup Championship in Phoenix, Arizona. Fulfilling its commitment to providing jointhealth education to golf fans, Stryker is excited to finish the year at the finale of the PGA TOURChampions tour with engaging opportunities for tournament-goers to learn about the important role oftheir joints and about Mako Technology.</p>\n<p>The Mobility Zone® is the perfect destination at the tournament for anyone who has questions aboutjoint health or joint replacement. It features the Accuracy Challenge to teach fans the basics of jointreplacement surgery and local orthopaedic surgeons onsite to answer questions. The AccuracyChallenge is a life size model, named Art H. Ritis, where fans can replace his replica arthritic bones withStryker’s hip and knee implants. Additionally, local orthopaedic surgeons onsite at The Mobility Zone willbe answering questions about joint health and potential treatment options, including Mako Robotic-Arm Assisted Surgery.</p>\n<p>Additionally, Stryker will be encouraging fans to stay active throughout the course with its 2.1-mileHealth Walk. The Health Walk includes interactive signs at quarter-mile increments that provide jointhealth education and challenging golf trivia.</p>\n<p>“It’s been extremely rewarding for us to educate so many golf fans about joint health and jointreplacement throughout 2018,” said Stuart Simpson, President, Stryker’s Joint Replacement Division.“We’re very excited to be talking with fans about Stryker’s Mako Technology and to sponsor our 21stservice dog for a veteran at the Charles Schwab Cup Championship. We’re finishing the year strong witha fantastic tournament!”</p>\n<p>During the military appreciation ceremony on Friday, Stryker will sponsor its 21st service dog with K9sFor Warriors, a non-profit organization which trains and matches service dogs with veterans sufferingfrom Post-Traumatic Stress Disability, traumatic brain injury or other military trauma as a result ofmilitary service post 9/11.</p>\n<p>Michelle Luthi, Army veteran and a graduate of the K9s For Warriors program, will be at the ceremonywith her service dog, DJ, to share her story and to talk about how DJ has changed her life. After beingpaired with DJ earlier this year, Luthi says she started to experience relief from the anxiety and fear thatchallenged her life.</p>\n<p>Fans at the tournament can help support the cause by purchasing the same hat that PGA TOURprofessional, and longtime brand ambassador, Fred Funk wears. With each purchase, Stryker will make adonation to K9s For Warriors.</p>\n<p><b><u>About Stryker</u></b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, isdriven to make healthcare better. The company offers innovative products and services in Orthopaedics,Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes.More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">stryker.com.</a></p>\n<p><b><u>About PGA TOUR</u></b></p>\n<p>By showcasing golf’s greatest players, the PGA TOUR engages, inspires and positively impacts our fans,partners and communities worldwide.</p>\n<p>The PGA TOUR co-sanctions more than 130 tournaments on the PGA TOUR, PGA TOUR Champions,Web.com Tour, PGA TOUR Latinoamérica, Mackenzie Tour-PGA TOUR Canada and PGA TOUR Series-China. Members on the PGA TOUR represent the world’s best players, hailing from 27 countries (88members are from outside the United States). Worldwide, PGA TOUR tournaments are broadcast tomore than 1 billion households in 226 countries and territories in 23 languages. Virtually all tournamentsare organized as non-profit organizations to maximize charitable giving. In 2017, tournaments across allTours generated a record of more than $180 million for local and national charitable organizations,bringing the all-time total to $2.65 billion.</p>\n<p>The PGA TOUR's web site is PGATOUR.COM, the No. 1 site in golf, and the organization is headquarteredin Ponte Vedra Beach, Florida.</p>\n<p>&nbsp;</p>\n<p>Contact:</p>\n<p><b>Jeanine Guilfoyle&nbsp;&nbsp;</b></p>\n<p>Stryker</p>\n<p>201-831-6277</p>\n<p>jeanine.guilfoyle@stryker.com&nbsp;</p>\n<p><b>Stephanie Bostaph-Martin</b></p>\n<p>Ketchum</p>\n<p>646-935-4297</p>\n<p>stephanie.bostaph@Ketchum.com</p>\n",
+    "jcr:lastModified": "Fri Nov 09 2018 19:44:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

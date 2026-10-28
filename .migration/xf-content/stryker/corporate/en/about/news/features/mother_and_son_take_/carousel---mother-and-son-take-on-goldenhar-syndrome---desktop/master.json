@@ -1,0 +1,42 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Carousel - Mother and son take on Goldenhar syndrome - desktop",
+  "jcr:versionHistory": "f4f2aaf3-2b00-48c8-a18d-2bcbb2ca9fc8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a083a4e3-5adc-4256-b4af-81b85b2f5d72"
+  ],
+  "jcr:created": "Wed Jul 28 2021 19:03:56 GMT+0000",
+  "cq:lastModified": "Wed Jul 28 2021 19:03:46 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a083a4e3-5adc-4256-b4af-81b85b2f5d72",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "421a3fe7-2a20-4e37-be7f-70dc91c655c2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Thu Jul 15 2021 15:38:53 GMT+0000",
+      "alt": "Mother holding baby's hand",
+      "srcFileRef": "/content/dam/stryker/patients/patient-stories/philips-story/AdobeStock_200852490-carousel.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jul 15 2021 15:39:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

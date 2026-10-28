@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "ED Prevention is IN: Reducing Falls and Saving Skin Pro",
+  "jcr:versionHistory": "8d1e12b2-a9f8-4067-ba13-be49eb369829",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "444ec884-7c72-494a-ad34-16761fb75af9"
+  ],
+  "lastPublished": "Tue Nov 17 2020 17:13:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 17 2020 17:13:36 GMT+0000",
+  "cq:lastModified": "Tue Nov 17 2020 17:13:34 GMT+0000",
+  "jcr:baseVersion": "444ec884-7c72-494a-ad34-16761fb75af9",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Nov 10 2020 19:27:57 GMT+0000",
+  "jcr:uuid": "02b32c83-7770-445c-baeb-71af8b9152f6",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-05:00) Eastern Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/acute-care"
+    ],
+    "eventRegistrationLink": "https://stryker.zoom.us/webinar/register/6816037281703/WN_9XeT_3L4SoSR6RBg7ZbarQ",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "eventAudience": [
+      "stryker:audience/Critical_Care_Nurses",
+      "stryker:audience/nurses"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/patient-safety"
+    ],
+    "eventDetail": "As more and more patients enter the hospital through the ED, emergency nurses are not only tasked with saving lives in emergencies – but they’re also responsible for keeping patients safe from adverse outcomes such as pressure injuries and falls. During our free webinar, “ED Prevention is IN: Reducing Falls and Saving Skin,” our clinical nurse consultant, Chantelle Hicks, will offer insights into how you can prevent falls and save skin – helping to ensure a patient’s care starts and ends in the ED. She will also share eye-opening statistics, discuss the human and financial costs of pressure injuries and falls, identify risk factors and interventions, and more – providing you with a holistic overview of why prevention is essential in the ED.",
+    "eventEndDateTime": "Tue Nov 17 2020 14:00:00 GMT+0000",
+    "eventLocation": "N/A",
+    "eventDisclaimer": "This program has been approved for 1.0 contact hours. Stryker is accredited as a provider of continuing education in nursing by the California Board of Registered Nursing",
+    "eventCity": "N/A",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "America/New_York",
+    "jcr:lastModified": "Tue Nov 17 2020 17:13:34 GMT+0000",
+    "eventTitle": "ED Prevention is IN: Reducing Falls and Saving Skin",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register now",
+    "eventStartDateTime": "Tue Nov 17 2020 13:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

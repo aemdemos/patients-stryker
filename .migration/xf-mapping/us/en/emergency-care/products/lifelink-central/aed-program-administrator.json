@@ -1,0 +1,320 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFELINKcentral AED program manager solutions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "69361280-f027-42c1-9bf9-2c8582a2b28d",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "36372f9a-2579-43d8-bda9-8395d419c384"
+  ],
+  "lastPublished": "Thu Sep 01 2022 15:50:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 01 2022 15:50:48 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 01 2022 15:50:50 GMT+0000",
+  "cq:lastModified": "Tue Aug 30 2022 20:58:06 GMT+0000",
+  "noFollow": "true",
+  "jcr:baseVersion": "36372f9a-2579-43d8-bda9-8395d419c384",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "LIFELINKcentral AED program manager solutions",
+  "jcr:lastModified": "Fri Aug 26 2022 15:49:06 GMT+0000",
+  "jcr:uuid": "e737fbbb-de4d-404d-afac-54e124e33210",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "andy.tanabe@stryker.com",
+  "navTitle": "LIFELINKcentral AED program manager solutions",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Aug 05 2022 21:59:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/lifelink-central/LIFELINKcentral_Hero_Image (2).jpg"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Oct 01 2021 17:37:13 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Oct 21 2021 19:07:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifelink_central/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifelink-central/hero/master",
+          "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "3",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Aug 30 2022 20:58:06 GMT+0000",
+          "marginRight": "45",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "15",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "topMargin": "2",
+              "jcr:created": "Fri Oct 01 2021 17:37:38 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h2><b><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span class=\"fontsize-1-5-vw\"></span>AED program resources</span></span></b></h2>\r\n",
+              "line2": "<p><span class=\"fontsize-1-5-vw\">Literature, videos and training tools for the LIFEPAK CR2 defibrillator, HeartSine samaritan PAD 450P, HeartSine samaritan PAD 350P and 360P AEDs and LIFELINKcentral AED program manager<br>\r\n <br>\r\n</span></p>\r\n<p><span class=\"fontsize-1vw\"><b>Contact your dedicated AED program administrator for more information.</b></span></p>\r\n",
+              "jcr:lastModified": "Mon Aug 29 2022 19:51:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols3_1341500114_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 17 2021 14:46:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols_copy_copy_copy__843548792": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 28 2019 13:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Nov 16 2021 19:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jun 28 2019 13:17:42 GMT+0000",
+          "jcr:lastModified": "Fri Aug 05 2022 22:49:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/lifepak-cr2-literature/lpcr2_getting_started_guide_us.pdf\" target=\"_blank\">LIFEPAK CR2 getting started guide</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/resources/operating-instructions/3321515-008_lpcr2_operating_instructions_with_cprinsight.pdf\" target=\"_blank\">LIFEPAK CR2 operation instructions</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/resources/product-brochures/lpcr2_brochure_us.pdf\" target=\"_blank\">LIFEPAK CR2 brochure</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/resources/data-sheets/lpcr2_data_sheet_us.pdf\" target=\"_blank\">LIFEPAK CR2 data sheet</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/resources/accessory-catalogs/lrcr2_accessory_catalog_us.pdf\" target=\"_blank\">LIFEPAK CR2 accessory catalog</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/lifepak-cr2-literature/lpcr2_cprinsight_whitepaper_us.pdf\" target=\"_blank\">cprINSIGHT analysis technology white paper</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/lifepak-cr2-literature/lifelinkcentral-users-access-post-event-data-from-a-connected-lpcr2.zip\">LIFEPAK&nbsp;CR2 post-event data extraction</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Aug 29 2022 19:55:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/H009-041-001-5_450P_Data_US_0820_web.pdf\" target=\"_blank\">HeartSine samaritan PAD 450P data sheet</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/H009-032-340-3_350P_360P_Data_US_0820_web.pdf\" target=\"_blank\">HeartSine samaritan PAD 350P/360P data sheet</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/H009-043-004-2_Connected_450P_Data_US_web.pdf\" target=\"_blank\">HeartSine Connected 450P data sheet</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/1118_H009-043-001-1_Gateway_Data_Intl_web.pdf\" target=\"_blank\">HeartSine Gateway data sheet</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/heartsine-350p-360p-connected-data-sheet.pdf\" target=\"_blank\">HeartSine 350P/360P connected data sheet</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/heartsine-literature/0120_H052-019-300-1_Gateway_User_Manual_web.pdf\" target=\"_blank\">HeartSine Gateway user manual</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Mon Aug 29 2022 19:55:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/resources/LIFELINKcentral%20AED%20Program%20Manager%20Brochure%20for%20HeartSine%20Connected%20AED.pdf\" target=\"_blank\">LIFELINKcentral AED program manager for LIFEPAK CR2</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/lifelinkcentral-aed-program-manager-brochure-for-heartsine-connected-aed.pdf\" target=\"_blank\">LIFELINKcentral AED program manager brochure for HeartSine Connected</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/LLC_LIFEPAK-CR2-inspection-instructions.pdf\" target=\"_blank\">LIFEPAK CR2 AED maintenance inspection update instructions</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/LLC_LIFEPAK-CRPlus-inspection-instructions.pdf\" target=\"_blank\">LIFEPAK CR Plus maintenance inspection update instructions</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/LLC_NON-LIFEPAK-inspection-instructions.pdf\" target=\"_blank\">Non-LIFEPAK AED maintenance inspection update instructions</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/LLC_LIFEPAK-1000-inspection-instructions.pdf\" target=\"_blank\">LIFEPAK 1000 AED maintenance inspection update instructions</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/program-manager/LLC_Training-upload-instructions.pdf\" target=\"_blank\">Training upload instructions</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 05 2022 22:49:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/connectivity-literature/lpcr2_wireless_setup_guide_us.pdf\" target=\"_blank\">LIFEPAK CR2 wireless set up guide</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/connectivity-literature/lpcr2_pre-implementation_checklist_us.pdf\" target=\"_blank\">LIFEPAK CR2 pre-implementation checklist (for Wi-Fi setup)</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/products/lifelink-central/aed-program-administrator/connectivity-literature/H009-043-008-1_Gateway_Imp_Checklist_US_0820_web.pdf\" target=\"_blank\">HeartSine Gateway pre-implementation checklist</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 05 2022 22:40:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-getting-started.mp4\" target=\"_blank\">LIFEPAK CR2 setup getting started</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifelinkcentral-account-setup.mp4\" target=\"_blank\">LIFELINKcentral account setup</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-maintaining-readiness.mp4\" target=\"_blank\">LIFEPAK CR2 maintenance maintaining readiness, USB devices only</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-replacing-electrodes-and-battery.mp4\" target=\"_blank\">LIFEPAK CR2 maintenance replacing electrodes and battery</a></span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-wireless-setup.mp4\" target=\"_blank\">LIFEPAK CR2 setup wireless setup</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 20:23:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 6,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/adult-semi-auto-hands-only.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, hands only CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-hands-only-cpr-with-cprinsight-analysis-technology.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, hands only CPR with cprINSIGHT</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-30-2-cpr.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, 30:2 CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-an-adult-30-2-cpr-with-cprinsight.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on an adult, 30:2 CPR with cprINSIGHT</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on a child, 30:2 CPR</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-semi-automatic-aed-on-a-child-30-2-cpr-with-cprinsight.mp4\" target=\"_blank\">AED use: using a semi automatic CR2 on a child, 30:2 CPR with cprINSIGHT</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 22:30:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys7": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 7,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><a href=\"/content/dam/stryker/ems/videos/training-and-tutorials-products/lifelinkcentral-account-setup.mp4\" target=\"_blank\">LIFELINKcentral AED program manager training video</a></span></span><br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Tue Aug 09 2022 20:19:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys8": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 8,
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/dam/stryker/ems/videos/products/smith-s-food-and-drug-testimonial.mp4\" target=\"_blank\">Smith's Food and Drug testimonial</a></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"><a href=\"/content/stryker/us/en/emergency-care/news.html\" target=\"_blank\">Survivor Stories</a></span></span></li>\n</ul>\n",
+              "jcr:lastModified": "Fri Aug 05 2022 22:30:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys9": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 9
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "LIFEPAK CR2 literature"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "HeartSine literature"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "3",
+              "accTitle": "LIFELINKcentral AED program manager"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "4",
+              "accTitle": "Connectivity literature"
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "5",
+              "accTitle": "Admin videos"
+            },
+            "6": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "6",
+              "accTitle": "CPR videos"
+            },
+            "7": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "7",
+              "accTitle": "Training materials"
+            },
+            "8": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "8",
+              "accTitle": "Suggested videos"
+            }
+          }
+        }
+      }
+    }
+  }
+}

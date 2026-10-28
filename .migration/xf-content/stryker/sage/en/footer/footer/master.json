@@ -1,0 +1,134 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Footer",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dd1bd8d8-252a-4695-b54f-cab3b4dfff8c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "53f345c0-349d-4235-b049-a87f718923ba"
+  ],
+  "lastPublished": "Thu Dec 04 2025 00:02:26 GMT+0000",
+  "jcr:created": "Thu Dec 04 2025 00:02:26 GMT+0000",
+  "cq:lastReplicated": "Thu Dec 04 2025 00:02:29 GMT+0000",
+  "cq:lastModified": "Thu Dec 04 2025 00:02:23 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "53f345c0-349d-4235-b049-a87f718923ba",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:45:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "0a114ece-ce12-4070-afac-fdf571ce68e3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "deepLinkingId": "sage",
+      "jcr:created": "Fri Sep 16 2022 20:39:14 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Oct 30 2023 18:05:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:title": "NewsSage",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Sep 21 2022 18:16:24 GMT+0000",
+      "jcr:lastModified": "Wed Sep 21 2022 18:18:33 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text5598976517775081": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Explore</span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage.html\">Sage homepage</a></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\"><a href=\"/content/stryker/us/en/sage/news.html\" target=\"_self\" title=\"Visit the Sage Newsroom.\">Newsroom</a></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\"><a href=\"/content/stryker/us/en/sage/news-and-updates.html\" target=\"_self\" title=\"Sign up for the Sage e-newsletter.\">Newsletter sign-up</a></span></span></p>\n",
+        "jcr:lastModified": "Mon Oct 30 2023 18:05:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text5598976517775081": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "NewsSage",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModified": "Wed Sep 21 2022 18:18:49 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text55989765177750815598993197908829": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Learn</span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn.html\" target=\"_self\" title=\"Learn more about our FocusRN clinical education program.\">FocusRN</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://ifu.stryker.com/\" target=\"_blank\" title=\"View instructions for use manuals.\">Instructions for use manuals</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://sageproducts.com/training/\" target=\"_blank\" title=\"Visit the Sage training center.\">Training center</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/videos.html\">Videos</a></span></p>\n",
+        "jcr:lastModified": "Wed Nov 06 2024 18:45:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text5598976517775081_1477708612": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "SupportInvestigator-Initiated",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:lastModified": "Wed Sep 21 2022 18:21:47 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text5598976517775081_14777086125599170413028019": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Support</span></span></p>\n<p><span class=\"fontsize-1-25em\"><a title=\"View full contact information for Stryker's Sage business unit.\" href=\"/content/stryker/us/en/sage/sage.html\">Contact information</a></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\"><a href=\"/content/stryker/us/en/sage/clinical-research-support.html\" target=\"_self\" title=\"View the investigator-initiated studies request for support form.\">Investigator-initiated studies request for support form</a></span></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/medical-information-request.html\" target=\"_blank\" title=\"View the medical information request form.\">Medical information request form</a></span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/sage/environmental-data-sheets.html\">Environmental data sheets</a></span></p>\n<p><a href=\"/content/stryker/us/en/sage/disclosure-and-safety-information.html\"><span class=\"fontsize-1-25em\">Product safety information</span></a></p>\n",
+        "jcr:lastModified": "Thu Dec 04 2025 00:02:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6",
+          "behavior": "newline"
+        }
+      }
+    }
+  }
+}

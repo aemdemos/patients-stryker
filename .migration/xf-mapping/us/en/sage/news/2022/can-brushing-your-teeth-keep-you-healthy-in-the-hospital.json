@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Houston Chronicle asks, “Can brushing your teeth keep you healthy in the hospital?”",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "93762cd5-73e7-4d2e-b20b-f36867e9db59",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Sage Newsroom Houston Chronicle article",
+  "jcr:predecessors": [
+    "988c9c2b-f641-4568-9279-7fe0734a9218"
+  ],
+  "contentID": "29175",
+  "lastPublished": "Thu Sep 29 2022 14:12:46 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 29 2022 14:12:46 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 29 2022 14:12:48 GMT+0000",
+  "cq:lastModified": "Thu Sep 29 2022 14:11:10 GMT+0000",
+  "jcr:baseVersion": "988c9c2b-f641-4568-9279-7fe0734a9218",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/2"
+  ],
+  "jcr:lastModified": "Thu Sep 29 2022 14:05:41 GMT+0000",
+  "jcr:uuid": "3f98c1e9-b2aa-4a07-9b86-2d851e578bf9",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Thu Sep 29 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Sep-2022",
+    "jcr:lastModified": "Thu Sep 29 2022 14:05:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Houston-Chronicle-article.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Sage Newsroom Houston Chronicle article",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-Houston-Chronicle-article.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Sep 29 2022 14:06:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p>Chron.com, the online version of the Houston Chronicle, is widely regarded as one of the top newspaper websites in the country. Recently, Chron.com published an article advocating for patients to receive proper oral care using high-quality products during hospitalization. It’s an important issue that needs to be addressed. To read the full article, <a title=\"Read the Houston Chronicle oral care article.\" href=\"https://www.chron.com/sponsoredarticles/lifestyle/senior-living/article/Can-brushing-your-teeth-keep-you-healthy-in-the-17345068.php\" target=\"_blank\">click here</a>.</p>\n<p>Our oral care products can help you reduce the risk factors that can lead to hospital-acquired infection. To learn more, <a title=\"Learn more about how Stryker's Sage oral care products can help you reduce the risk factors that can lead to hospital-acquired infection.\" href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\">click here</a>.</p>\n",
+    "jcr:lastModified": "Thu Sep 29 2022 14:11:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

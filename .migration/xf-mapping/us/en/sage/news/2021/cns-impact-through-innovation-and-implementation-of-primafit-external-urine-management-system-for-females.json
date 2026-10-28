@@ -1,0 +1,74 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "CNS impact through innovation and implementation of PrimaFit External Urine Management for the Female Anatomy",
+  "jcr:versionHistory": "3268e3b5-599a-4f4d-9b02-53f2f86e3eb6",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Terrie Beeson and Carmen Davis",
+  "jcr:predecessors": [
+    "e10c52fe-21ea-4759-babe-b0ec6b7eebaf"
+  ],
+  "contentID": "28555B",
+  "lastPublished": "Mon Jan 24 2022 20:46:43 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jan 24 2022 20:46:43 GMT+0000",
+  "cq:lastModified": "Mon Jan 24 2022 20:44:54 GMT+0000",
+  "jcr:baseVersion": "e10c52fe-21ea-4759-babe-b0ec6b7eebaf",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "CNS impact through innovation and implementation of PrimaFit External Urine Management for the Female Anatomy",
+  "cq:tags": [
+    "stryker:content-type/news/sage/4",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Mon Jan 24 2022 20:44:54 GMT+0000",
+  "jcr:uuid": "1263fa34-c462-423f-bf4d-a86e38ffb80b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2021/Sage-newsroom-PrimaFit-outcome.jpg"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Mon Jan 24 2022 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jan-2022",
+    "jcr:lastModified": "Mon Jan 24 2022 20:14:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModified": "Mon Jan 24 2022 20:01:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "alt": "Terrie Beeson and Carmen Davis",
+    "srcFileRef": "/content/dam/stryker/sage/news/2021/Sage-newsroom-PrimaFit-outcome.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Nov 30 2021 16:23:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Urinary tract infections (UTIs) are one of the most common healthcare-acquired infections (HAIs), making up nearly 40% of all HAIs.<sup>1&nbsp;</sup></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Of these:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Approximately 70-80% are associated with urinary catheters<sup>2</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">As many as 95% of UTIs in ICUs are associated with catheters<sup>3</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Approximately 12-16% of adult hospital inpatients will have an indwelling urinary catheter at some point during their stay<sup>2</sup></span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">CAUTIs are associated with increases in morbidity, mortality, and costs.</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Estimated 449,334 CAUTI harm events per year<sup>4</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">In 2002, the estimated number of UTI related deaths was 13,000<sup>5</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">The cost of a CAUTI is approximately $600 - nationally, CAUTIs result in an estimated $131 million of annual excess medical costs<sup>3</sup></span></span></li>\n</ul>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Background</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">Terrie Beeson and Carmen Davis are Clinical Nurse Specialists at University Hospital, a part of the Indiana University Health System. In an effort to reduce CAUTI prevalence and harm, Beeson and Davis evaluated strategies designed to help decrease indwelling urinary catheter usage for female anatomy. Additionally, they conducted data collection surveys exploring workflow impact on nursing practice with the use of a urine management system in acute and critically ill women.</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Intervention</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">Beeson and Davis initiated a quality improvement pilot program using an external female urine management system in an 18-bed adult SICU. Patients with female anatomy were identified for early removal of indwelling urinary catheters during interdisciplinary rounds for CAUTI prevention. Daily rounds included a review of the Centers for Disease Control (CDC) indications for ongoing catheter need. For patients with female anatomy who remained incontinent after a catheter was removed or when output management was needed, the PrimaFit External Urine Management System was applied. The device was used on a range of surgical and medical patients with variable ages and body mass indexes.<sup>6</sup> CAUTI rates and Standard Infection Ratio (SIR) metrics were compared. For data collection, the pre-implementation time was April to September 2016 and the post-implementation was April to September 2017.<sup>6</sup></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Results</span></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">SIR decreased considerably in the six-month pilot time of 2017, from 1.395 to 0.381.<sup>6</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">CAUTI rates during the pilot decreased 27%, from 2.55 in 2016 to 0.70 in 2017.<sup>6</sup></span></span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\">In addition, nurses caring for these patients reported satisfaction associated with a decreased workload of frequent linen changes, the ability to capture and record drainage output, and general excitement about a viable alternative to help keep patients safe from infection and skin injury. 100% of the nurses surveyed agreed that the product helped to manage female urinary incontinence.<sup>7</sup></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Conclusion</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">PrimaFit External Urine Management for the Female Anatomy can be a viable alternative to an indwelling urinary catheter or intervention for urinary incontinence. The device addresses risk factors for skin injury, which may lead to infection for patients with female anatomy.</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-8em\"><span class=\"standalone-link\"><b>REFERENCES: 1.</b> Saint S, et al., Preventing Hospital-Acquired Urinary Tract Infection in the United States: A National Study, Clinical Infectious Diseases(CID), 2008;46:243-50. <b>2. </b>Warren C, Fosnacht JD, Tremblay EE, Implementation of an external female urinary catheter as an alternative to an indwelling urinary catheter, American Journal of Infection Control. 2021; 49(6):764-768.&nbsp;<b>3. </b>Chenoweth C, Saint S, Preventing catheter-associated urinary tract infections in the intensive care unit. Critical care clinics, 29(1),19-32. <b>4. </b>Scott RD, The direct medical costs of healthcare-associated infections in US hospitals and the benefits of prevention. Division of Healthcare Quality Promotion National Center for Preparedness, Detection, and Control of Infectious Diseases Coordinating Center for Infectious Diseases Centers for Disease Control and Prevention March 2009. <b>5.</b> Klevens RM, et al., Estimating health care-associated infections and deaths in US hospitals, 2002. Public health reports, 122(2), 160-166. <b>6. </b>Beeson T, Davis C, Vollman K, Chasing Zero Catheter-Associated Urinary Tract Infections (CAUTIs) through Implementing a Novel Female External Urine Collection Devicein a Tertiary Academic Surgical Intensive Care Unit (SICU) Presented at APIC 2018. <b>7. </b>Beeson T, Davis C, An Innovative Technique for Managing Female Urinary Incontinence in Acute and Critically Ill Women. Presented at Wound Ostomy and Continence Nurses annual conference. June 3-6, 2018Philadelphia, PA.</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">About the Clinicians</span></span></span></p>\n<p><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">With nearly 40 years of experience, Terrie Beeson MSN, RN, CCRN, ACNS-BC, and 20 years of experience, Carmen R. Davis MSN, RN, CCRN, CNS-BC are practicing critical care clinical nurse specialists in an academic tertiary referral center (Surgical and Medical Intensive Care Units, respectively). They are responsible for providing clinical leadership and promoting optimal patient outcomes. In addition, they collaborate with all members of the healthcare team to design, implement, and provide safe, cost-effective, evidence-based care strategies. Both clinicians are consultants for Sage/Stryker.</span></span></p>\n",
+    "jcr:lastModified": "Mon Nov 29 2021 23:15:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

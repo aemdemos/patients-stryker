@@ -1,0 +1,170 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Safe care for you and your patients",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Patient positioning",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8eb18992-7437-4654-a608-fb59374475f4",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Patient positioning products",
+  "jcr:predecessors": [
+    "beb5af3b-35de-435d-ada3-835c9ee04b1e"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-485135_REV-1_en_us",
+  "lastPublished": "Wed Jan 21 2026 17:37:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 21 2026 17:37:37 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 21 2026 17:37:39 GMT+0000",
+  "cq:lastModified": "Wed Jan 21 2026 16:14:58 GMT+0000",
+  "jcr:description": "Address the risk factors of pressure injury and healthcare worker injury.",
+  "jcr:baseVersion": "beb5af3b-35de-435d-ada3-835c9ee04b1e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:04:56 GMT+0000",
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/Patient_positioning",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Wed Jan 21 2026 16:14:58 GMT+0000",
+  "jcr:uuid": "8b4e5ed6-f0c5-4711-9c99-6060cfef7e67",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/patient-positioning/images/patient-positioning-thumbnail-2025.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Sep 10 2019 20:09:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModified": "Wed Sep 18 2019 19:10:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning/turning-and-positioning"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning/heel-protection"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning/lateral-transfer"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning/seated-positioning"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-positioning/patient-positioning-hardware-and-accessories"
+      }
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "jcr:lastModified": "Tue Jan 20 2026 16:20:19 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-airtap"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-airtap-lc"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-airtap-xxl"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-tap-1-0"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-tap-2-0"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-tap-xl-xxl"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-tap-lc"
+      },
+      "8": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-mats"
+      },
+      "9": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-multi-position-mats"
+      },
+      "10": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-heel-protector-i"
+      },
+      "11": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-heel-protector-ii"
+      },
+      "12": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-heel-protector-iii"
+      },
+      "13": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge"
+      },
+      "14": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-heel-protector-or"
+      },
+      "15": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-halfmats"
+      },
+      "16": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-sps"
+      },
+      "17": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sage/products/sage-air-pump"
+      }
+    }
+  }
+}

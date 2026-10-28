@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 15: Monitoring noninvasive blood pressure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1d46af37-8036-4a76-a92d-5be7af4eab5f",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "b98a993b-afef-4b0b-b253-e4d9e99199ac"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:37:37 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:37:37 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:37:39 GMT+0000",
+  "cq:lastModified": "Thu Sep 08 2022 18:30:03 GMT+0000",
+  "jcr:baseVersion": "b98a993b-afef-4b0b-b253-e4d9e99199ac",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "c8f7a3c4-b708-4523-93ab-37723ba1aabd",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:49:19 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:49:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Monitoring noninvasive blood pressure training for LIFEPAK 15",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 18:28:14 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Sep 08 2022 18:28:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-15-monitoring-noninvasive-blood-pressure.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-15-monitoring-noninvasive-blood-pressure-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 08 2022 18:30:03 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

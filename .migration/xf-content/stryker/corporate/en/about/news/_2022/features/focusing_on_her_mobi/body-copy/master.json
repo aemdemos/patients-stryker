@@ -1,0 +1,141 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b8ba5e54-2dfb-476b-a048-29ff56a89762",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "23e38fe7-b34d-4b46-bab2-f49f24fb6c05"
+  ],
+  "lastPublished": "Wed Aug 07 2024 13:55:38 GMT+0000",
+  "jcr:created": "Wed Aug 07 2024 13:55:38 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 07 2024 13:55:40 GMT+0000",
+  "cq:lastModified": "Wed Jul 24 2024 16:38:49 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "23e38fe7-b34d-4b46-bab2-f49f24fb6c05",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:55:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4e69dbb4-2fbe-4fd2-834e-3976d642d4ce",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1339721398": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 11 2024 15:36:29 GMT+0000",
+      "text": "<p>When Janet fell to the floor after tripping on the stairs in her Louisiana home, she knew something wasn’t right. After experiencing several weeks of lower back pain that wasn’t improving, she reached out to her doctor and learned she had suffered from a compression fracture in her spine, a broken bone that can cause the vertebrae to collapse and become shorter.</p>\n<p>Janet worked with Dr. Jason Smith to learn about the treatment options for her T11 vertebral compression fracture, or ‘VCF’ for short. He performed a kyphoplasty, a minimally invasive procedure to help restore function to her spine. “She did great. She was able to move and came in on her own at two weeks without any sort of independent devices, like a brace or walker. She was back to doing her normal things pretty quickly,” says Dr. Smith. “If someone was going to have the procedure I had and is wondering if they should or not, absolutely have it. It allows me to do the things I need to do,” says Janet.</p>\n",
+      "jcr:lastModified": "Thu Jan 11 2024 15:39:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_365379186": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 11 2024 15:38:04 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">How Janet recovered from a compression fracture in her spine</span></span></h2>\n",
+      "jcr:lastModified": "Wed Jul 24 2024 16:38:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:26:26 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Mon Sep 19 2022 18:57:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/about/news/2022/features/focusing-on-her-mobility-/janet_kliebert_patient_testimonial_v5.mp4 (Original).mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/janet_kliebert_patient_testimonial_v5.mp4 (Original)-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Mon Sep 19 2022 19:10:33 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/IVS social media - July 2022_LinkedIn-REV_patient testimonial"
+      }
+    },
+    "curatedcta_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+      "CTATitle": "Learn more about VCF solutions",
+      "ctaExternalLink": "https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/image-guided-therapies/vertebral-compression-fractures.html",
+      "jcr:lastModified": "Mon Sep 19 2022 18:30:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(133,69,138,1)",
+      "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/spine--ortho-",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

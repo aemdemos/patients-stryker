@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Thank you",
+  "jcr:versionHistory": "d1e2ec18-2c41-4d52-b25b-ab49bba74a9f",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:predecessors": [
+    "0de56b24-c243-43e8-a758-2af2a993be39"
+  ],
+  "lastPublished": "Fri Feb 01 2019 20:35:38 GMT+0000",
+  "jcr:created": "Fri Feb 01 2019 20:35:38 GMT+0000",
+  "cq:lastModified": "Mon Aug 20 2018 14:47:08 GMT-0400",
+  "jcr:baseVersion": "0de56b24-c243-43e8-a758-2af2a993be39",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "7c12df26-af75-4e93-9196-9d99ef98bb1f",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "jcr:created": "Thu Apr 05 2018 16:55:48 GMT-0400",
+      "jcr:lastModified": "Thu Apr 05 2018 16:55:48 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:created": "Thu Apr 05 2018 16:55:58 GMT-0400",
+          "text": "<p>We have received your request. A Stryker representative will be in contact with you soon.</p>\n",
+          "jcr:lastModified": "Mon Aug 20 2018 14:47:08 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

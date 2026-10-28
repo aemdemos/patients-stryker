@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Introducing the new Multi-Position MATS 2.0",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Advancing patient positioning and transfers in the OR",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6da56f05-c812-4af0-86f0-aa1f1e74b371",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Nurses transferring patient on an MP MATS 2.0",
+  "jcr:predecessors": [
+    "fea4ceab-5987-4c07-a687-88f01c2b6d87"
+  ],
+  "contentID": "SAGE-MPM2-COMM-3139451_REV-0_en_us",
+  "lastPublished": "Thu May 14 2026 14:44:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu May 14 2026 14:44:26 GMT+0000",
+  "cq:lastReplicated": "Thu May 14 2026 14:44:31 GMT+0000",
+  "cq:lastModified": "Thu May 14 2026 14:42:43 GMT+0000",
+  "jcr:description": "Multi-Position MATS 2.0 was developed to support perioperative nurses as they coordinate patient movement and positioning in dynamic surgical environments.",
+  "jcr:baseVersion": "fea4ceab-5987-4c07-a687-88f01c2b6d87",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu May 14 2026 14:44:25 GMT+0000",
+  "pageTitle": "Advancing patient positioning and transfers in the OR",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage",
+    "stryker:business-unit/SAGE",
+    "stryker:content-type/news/sage/1"
+  ],
+  "jcr:lastModified": "Thu May 14 2026 14:42:43 GMT+0000",
+  "jcr:uuid": "a942f4d6-a2d6-4bed-b86e-e2866ab7831b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu May 14 2026 14:29:23 GMT+0000",
+      "alt": "Nurses transferring patient on MP MATS 2.0",
+      "srcFileRef": "/content/dam/stryker/sage/news/2026/MP MATS Newsroom-Promo.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu May 14 2026 14:41:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu May 14 2026 14:29:28 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Introducing the new Multi-Position MATS 2.0</span></h2>\n<p><span class=\"fontsize-1-25em\">We recently announced the launch of Multi-Position MATS 2.0, the next generation of our air-assisted patient transfer and positioning system designed for the demands of the operating room.</span></p>\n<p><span class=\"fontsize-1-25em\">Perioperative nurses play a critical role in preparing patients for surgery. From transferring patients onto the surgical surface to maintaining stable positioning throughout a procedure, these tasks require coordination, vigilance and physical effort. When positioning changes are needed, such as Trendelenburg, reverse Trendelenburg or lateral tilt, the process can place additional strain on care teams while requiring careful attention to patient stability.</span></p>\n<p><span class=\"fontsize-1-25em\">Multi-Position MATS 2.0 was developed to help support these moments in care. By combining air-assisted lateral transfer technology with positioning support, the system is designed to help nurses move and stabilize patients more efficiently while maintaining focus on the patient and the procedure.</span></p>\n<p><span class=\"fontsize-1-25em\">Research has shown that overexertion is a leading cause of injury among nurses, often occurring during patient handling tasks.¹ In response to these well-documented challenges, tools designed to support patient movement and positioning are increasingly being incorporated into perioperative workflows.</span></p>\n<h3>Designed to support the perioperative workflow</h3>\n<p><span class=\"fontsize-1-25em\">Multi-Position MATS 2.0 integrates several features intended to support both nurse safety and patient stability throughout surgical positioning.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Air-assisted lateral transfer</b></span></li>\n</ul>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">A two-phase inflation system helps create a cushion of air beneath the patient to assist with lateral transfers onto the surgical surface. This approach may help reduce the physical effort required from the care team during patient movement.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Support for surgical positioning</b></span></li>\n</ul>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">The system is designed to help maintain patient stability during procedures requiring positioning changes, including Trendelenburg and lateral tilt. Secure positioning may help support surgical access while helping minimize repositioning interruptions.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Integrated arm wraps</b></span></li>\n</ul>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">Arm wraps are designed to help support arm positioning during surgery, helping maintain consistent alignment throughout the procedure.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Microclimate body pad</b></span></li>\n</ul>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">An integrated M² microclimate body pad is designed to help manage heat and moisture beneath the patient, supporting patient comfort during longer procedures.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Imaging compatibility</b></span></li>\n</ul>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">Multi-Position MATS 2.0 is compatible with common imaging modalities used in the OR, including X-ray, CT and ultrasound, helping support uninterrupted workflow during procedures requiring imaging.</span></p>\n<p><span class=\"fontsize-1-25em\">Together, these capabilities are intended to support perioperative nurses as they coordinate patient movement and positioning in dynamic surgical environments.</span></p>\n<h3>Supporting the people who support patients</h3>\n<p><span class=\"fontsize-1-25em\">Operating rooms demand precision, teamwork and speed. For nurses responsible for patient preparation and positioning, having tools designed with their workflow in mind can help make those moments more manageable.</span></p>\n<p><span class=\"fontsize-1-25em\">With Multi-Position MATS 2.0, Stryker continues its commitment to developing solutions that support both caregivers and the patients they serve.</span></p>\n<h3>Learn more about Multi-Position MATS 2.0</h3>\n<p><span class=\"fontsize-1-25em\">Discover how the next generation of air-assisted transfer and positioning technology may support patient movement and improved workflow in the operating room.</span></p>\n<p><span class=\"fontsize-1-25em\">Visit the <a href=\"/content/stryker/us/en/sage/products/sage-multi-position-mats.html\">Multi-Position MATS product page</a> to explore features or connect with a Stryker representative.</span><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Thu May 14 2026 14:37:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "publishDate": "",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2026/MP MATS Newsroom-Promo.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Reference: 1. </b>Dressner MA, Kissinger SP, Occupational injuries and illnesses among registered nurses, Monthly Labor Review, U.S. Bureau of Labor Statistics, November 2018. Available at: <br>\r\n<a href=\"https://www.bls.gov/opub/mlr/2018/article/occupational-injuries-and-illnesses-among-registered-nurses.htm\">https://www.bls.gov/opub/mlr/2018/article/occupational-injuries-and-illnesses-among-registered-nurses.htm</a> Accessed April 9, 2026.<b></b></p>\r\n",
+    "jcr:lastModified": "Thu May 14 2026 14:35:18 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

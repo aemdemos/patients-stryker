@@ -1,0 +1,966 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Fellows Summit 2022",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "593e1d78-ddf0-43c3-84c1-2170e4bc6016",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "c1a1da53-ad4a-43cc-a18a-971bff2e10b1"
+  ],
+  "contentID": "GSNPS-WC-52_34333",
+  "lastPublished": "Mon Oct 17 2022 19:03:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 17 2022 19:03:34 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 17 2022 19:03:36 GMT+0000",
+  "cq:lastModified": "Mon Oct 17 2022 19:03:10 GMT+0000",
+  "noFollow": "true",
+  "jcr:baseVersion": "c1a1da53-ad4a-43cc-a18a-971bff2e10b1",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Wed Oct 05 2022 20:13:14 GMT+0000",
+  "jcr:uuid": "eb52a915-0e3d-492b-8e8e-b57e4e4eefd6",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 05 2022 18:57:31 GMT+0000",
+      "jcr:lastModified": "Tue Jul 05 2022 18:57:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/fellows_summit_2022/carousel/carousel---desktop/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/fellows-summit-2022/carousel/carousel-desktop/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/fellows_summit_2022/carousel/carousel---mobile/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/fellows-summit-2022/carousel/carousel-mobile/master",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Tue Jul 05 2022 18:57:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Oct 06 2022 23:08:21 GMT+0000",
+          "marginRight": "40",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "3",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Orthopaedic</span></span>&nbsp;Fellow Summit</span></h1>\r\n",
+              "line2": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\">October 14-15</span> <span style=\"color: rgb(255,181,0);\">|</span> <span style=\"color: rgb(76,125,122);\">Mako Education Center<br />\r\n</span></span></span><span style=\"background-color: transparent;\"><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Ft Lauderdale, FL</span></span></span>",
+              "jcr:lastModified": "Mon Oct 10 2022 19:40:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_16037170": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:33:06 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:36:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(76,125,122,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Welcome to the 2022 Orthopaedic Fellows Summit!</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Oct 10 2022 14:41:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:52:26 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:52:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Agenda</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Mon Oct 10 2022 14:51:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:50:46 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:50:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Oct 06 2022 23:09:40 GMT+0000",
+          "CTATitle": "2022 Orthopaedic Fellows Summit agenda",
+          "ctaExternalLink": "http://az621074.vo.msecnd.net/syk-mobile-content-cdn/global-content-system/SYKGCSDOC-1794883387-58801/7LheCRSYH2G5vW7MNygcsok9ND9auA/GSNPS_AG_24.pdf",
+          "jcr:lastModified": "Thu Oct 06 2022 23:10:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:45:45 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:45:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1_3_2_3_330569070": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:52:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Faculty</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Oct 10 2022 14:37:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:34:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Calendine, Cory picture",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Calendine, Cory.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 06 2022 22:33:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Cory Calendine, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Franklin, TN&nbsp;</span><br>\n<br>\n<b>Residency</b>: Vanderbilt University Medical Center&nbsp;<br>\n<b>Fellowship</b>: Anderson Orthopaedic Research Institute&nbsp;<br>\n<b>Email:&nbsp;</b><a href=\"mailto:Cory.Calendine@bjit.org\">Cory.Calendine@bjit.org&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:40:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Headshot_Claps,-Charles",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Claps,-Charles.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:34:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Charles Claps, D.O.&nbsp;&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Atlanta, GA&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Pittsburgh Medical Center – Pinnacle Health<br>\n<b>Fellowship</b>: Wake Forest University<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:Ceclaps26@gmail.com\">Ceclaps26@gmail.com</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:42:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:39 GMT+0000",
+          "alt": "Headshot_Frye,-Benjamin",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Frye,-Benjamin.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:35:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Benjamin Frye, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Morgantown, WV&nbsp;</span><br>\n<br>\n<b>Residency</b>: West Virginia University School of Medicine&nbsp;<br>\n<b>Fellowship</b>: Joint Implant Surgeons, Inc.&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:bfrye@hsc.wvu.edu\">bfrye@hsc.wvu.edu&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:44:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:43 GMT+0000",
+          "alt": "Headshot_Grayson,-Christopher",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Grayson,-Christopher.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:36:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Christopher Grayson, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Dunedin, FL&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Florida&nbsp;<br>\n<b>Fellowship</b>: Indiana University Health&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:cgrayson225@gmail.com\">cgrayson225@gmail.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_939460507": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:36:34 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:36:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:52 GMT+0000",
+          "alt": "Headshot_Higuera-Rueda, Carlos",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Higuera-Rueda, Carlos.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 16:27:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Carlos Higuera-Rueda, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Weston, FL&nbsp;</span>&nbsp;<br>\n<br>\n<b>Residency</b>: Cleveland Clinic&nbsp;<br>\n<b>Fellowship</b>: Thomas Jefferson University Hospital&nbsp;<br>\n<b>Fellowship:</b>&nbsp;<a href=\"mailto:Higuerc@ccf.org\">Higuerc@ccf.org&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:49:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:54 GMT+0000",
+          "alt": "Hartley, Brandi_headshot",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Hartley, Brandi.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Oct 06 2022 22:33:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Brandi Hartley, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Louisville, KY&nbsp;</span><br>\n<br>\n<b>Residency</b>: University of Louisville Hospital&nbsp;<br>\n<b>Fellowship</b>: Grant Medical Center&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:bhartley644@gmail.com\">bhartley644@gmail.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:50:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:57 GMT+0000",
+          "alt": "Headshot_Howe, David",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Howe, David.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 16:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">David Howe, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Winston-Salem, NC&nbsp;</span><br>\n<br>\n<b>Residency</b>: Wake Forest University Baptist Medical Center&nbsp;<br>\n<b>Fellowship</b>: Anderson Orthopaedic Institute&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:David.Howe@orthocarolina.com\">David.Howe@orthocarolina.com&nbsp;&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:51:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:34:59 GMT+0000",
+          "alt": "Headshot_Kaplan,-Lige",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Kaplan,-Lige.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:37:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Lige Kaplan, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Phoenix, AZ&nbsp;</span><br>\n<br>\n<b>Residency</b>: Henry Ford Hospital&nbsp;<br>\n<b>Fellowship</b>: William Beaumont Hospital&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:Ligekaplan@yahoo.com\">Ligekaplan@yahoo.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:53:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_1130649723": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:36:39 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:36:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:35:03 GMT+0000",
+          "alt": "Headshot_Molloy,-Robert",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Molloy,-Robert.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:37:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Robert Molloy, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Cleveland, OH&nbsp;</span><br>\n<br>\n<b>Residency</b>: Cleveland Clinic&nbsp;<br>\n<b>Fellowship</b>: New England Baptist Hospital&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:Molloyr@ccf.org\">Molloyr@ccf.org&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:54:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:35:05 GMT+0000",
+          "alt": "Headshot_Randell,-Timmothy",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Randell,-Timmothy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:37:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Timmothy Randell, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Alexandria, LA&nbsp;</span><br>\n<br>\n<b>Residency</b>: Baylor Scott &amp; White Medical Center&nbsp;<br>\n<b>Fellowship</b>: Duke University School of Medicine&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:Timrandell@gmail.com\">Timrandell@gmail.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:56:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:35:07 GMT+0000",
+          "alt": "Valadie, Arthur_headshot",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Valadie, Arthur_headshot.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:37:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Arthur Valadie, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Bradenton, FL&nbsp;</span><br>\n<br>\n<b>Residency</b>: Emory University&nbsp;<br>\n<b>Fellowship</b>: Kerlan-Jobe Orthopaedic Clinic&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:ArthurV@coastalorthopedics.com\">ArthurV@coastalorthopedics.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:57:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Oct 05 2022 15:35:10 GMT+0000",
+          "alt": "Headshot_Wooster,-Benjamin",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/headshots/Headshot_Wooster,-Benjamin.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 05 2022 15:37:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Benjamin Wooster, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Charlotte, NC&nbsp;</span>&nbsp;<br>\n<br>\n<b>Residency</b>: University Medical Center&nbsp;<br>\n<b>Fellowship</b>: Mayo Clinic&nbsp;<br>\n<b>Email:</b>&nbsp;<a href=\"mailto:Benjamin.Wooster@orthocarolina.com\">Benjamin.Wooster@orthocarolina.com&nbsp;</a></p>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 15:59:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 14:36:26 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 14:36:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1_3_2_3_282947121": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:53:19 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:53:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Additional education</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Oct 10 2022 14:40:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_copy_1139286102": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Oct 06 2022 22:38:52 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #4c7d7a;\">JR</span></span><span style=\"color: #b2b4ae;\">45&nbsp;</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Year of Learning</span></span></p>\n",
+      "jcr:lastModified": "Mon Oct 10 2022 14:55:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 17:25:24 GMT+0000",
+      "jcr:lastModified": "Thu Oct 06 2022 22:44:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 18:59:11 GMT+0000",
+          "text": "<p>JR45, Year of learning, is Stryker’s interactive and on-demand monthly education series focused on the latest techniques and technologies in hip and knee arthroplasty.&nbsp;</p>\n<p>JR45 is designed to accompany fellows on their journey to practice with on-demand e-learning content plus live monthly 45-minute faculty-led webinars. Each webinar will feature orthopaedic case reviews, decision making discussions with faculty and bonus faculty pearls on the business of orthopaedics at the end of the 45-minute session.&nbsp;</p>\n<ul>\n<li>Fellows, advanced residents, and surgeons register only one time to access all or any part of the education series&nbsp;</li>\n<li>Registrants can join the series at any point throughout the year&nbsp;</li>\n<li>Unique e-learning and webinar content will be unlocked each month. E-learning available now …&nbsp;<ul>\n<li>What would you do? Complex total knee&nbsp;</li>\n<li>Simplifying revision knee&nbsp;</li>\n<li>What would you do? Complex total hip&nbsp;</li>\n</ul>\n</li>\n<li>Registrants will be notified about new e-learning content and invited to watch that month’s webinar&nbsp;</li>\n<li>Webinars will be available on-demand for 48 hours&nbsp;</li>\n<li>Content will stay unlocked for the duration of the year, so registrants can catch up on what they missed or revisit particular content.</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Oct 05 2022 19:03:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Oct 05 2022 19:03:27 GMT+0000",
+          "CTATitle": "JR45 Registration",
+          "ctaExternalLink": "https://stryker-apps.formstack.com/forms/jr45registration",
+          "jcr:lastModified": "Wed Oct 05 2022 19:04:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        },
+        "curatedcta_516208164": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Oct 05 2022 19:04:43 GMT+0000",
+          "CTATitle": "JR45 Flyer",
+          "ctaExternalLink": "http://az621074.vo.msecnd.net/syk-mobile-content-cdn/global-content-system/SYKGCSDOC-2-52466/bot_H30A2l9oRLNl8l8a_X2hgZRbFA/GSNPS_BRO_27.pdf",
+          "jcr:lastModified": "Wed Oct 05 2022 19:07:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1"
+        }
+      }
+    },
+    "cols_1354397930": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Oct 06 2022 22:42:31 GMT+0000",
+      "jcr:lastModified": "Thu Oct 06 2022 22:42:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1025929566": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:44:25 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:44:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_632977041": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 10 2022 14:53:51 GMT+0000",
+      "jcr:lastModified": "Mon Oct 10 2022 14:53:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 05 2022 14:22:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Resources</span></span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Oct 10 2022 14:44:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 10 2022 14:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "accordion_1825519503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 18:21:17 GMT+0000",
+      "title": "Joint Replacement",
+      "jcr:lastModified": "Wed Oct 05 2022 19:11:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "resources": [
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/1.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/2.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/3.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/4.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/5.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/6.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/1--knees/7.pdf"
+          ],
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Oct 11 2022 16:08:50 GMT+0000",
+          "jcr:lastModified": "Tue Oct 11 2022 16:19:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Knees"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 2,
+          "accTitle": "Hips"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "Mako"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "resources": [
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/1.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/2.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/3.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/4.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/5.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/2--hips/6.pdf"
+          ],
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Oct 11 2022 16:09:11 GMT+0000",
+          "jcr:lastModified": "Tue Oct 11 2022 16:21:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "resources": [
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/3--mako/1.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/3--mako/2.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/3--mako/3.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/3--mako/4.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/resources/3--mako/5.pdf"
+          ],
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Oct 11 2022 16:09:16 GMT+0000",
+          "jcr:lastModified": "Tue Oct 11 2022 16:28:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Oct 11 2022 18:42:39 GMT+0000",
+          "text": "Mako Total Hip 4.0 SmartRobotics™ - Direct anterior approach (Enhanced) Mako Total Hip 4.0 SmartRobotics™ - Direct anterior approach (Express) Mako Total Hip 4.0 SmartRobotics™ - Posterior approach Preplanning with Mako Total Hip 4.0 SmartRobotics™",
+          "jcr:lastModified": "Tue Oct 11 2022 18:43:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/fellows_summit_2022/_3_mako_resources/mako-resources/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/fellows-summit-2022/3-mako-resources/mako-resources/master"
+        }
+      }
+    },
+    "cols_772269375": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 20:31:53 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 20:31:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "accordion_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:16:27 GMT+0000",
+      "title": "Ambulatory Surgery Center",
+      "jcr:lastModified": "Wed Oct 05 2022 20:33:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": [
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/asc-resources/ASC brochure.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/asc-resources/ASC Customer Education FAQs.pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/asc-resources/Stryker ASC customer snapshot - Phoenix, AZ (Integrated Orthopedics).pdf",
+            "/content/dam/stryker/joint-replacement/training-and-education/orthopaedic-fellows-summit/asc-resources/Integrated Surgical Services and Stryker's ASC business_full.mp4"
+          ],
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 18:11:01 GMT+0000",
+          "jcr:lastModified": "Tue Oct 11 2022 17:53:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1"
+        }
+      }
+    },
+    "cols_179016374": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 20:32:44 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 20:32:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "accordion_1505157036": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 20:32:08 GMT+0000",
+      "title": "Trauma",
+      "jcr:lastModified": "Wed Oct 05 2022 20:32:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Oct 05 2022 17:35:29 GMT+0000",
+          "jcr:lastModified": "Wed Oct 05 2022 20:12:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "Trauma and Extremities",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1"
+        }
+      }
+    },
+    "cols_832450756": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 20:43:27 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 20:43:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 20:42:35 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 20:45:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Oct 06 2022 21:59:55 GMT+0000",
+      "text": "Thank you for attending the 2022 Orthopaedic Fellows Summit! Don’t hesitate to contact Kimberly.Wylde@stryker.com with questions.",
+      "jcr:lastModified": "Thu Oct 06 2022 22:00:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/fellows_summit_2022/kimberly-wylde/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/fellows-summit-2022/kimberly-wylde/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

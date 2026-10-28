@@ -1,0 +1,262 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Enhancing hospital communication for patient and family satisfaction",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0ca0f522-85c2-4b3c-8dda-e809da160e47",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "Mobile screen showing patient texting on EASE app",
+  "jcr:predecessors": [
+    "543acd30-40b2-4946-9eac-d68324e521c9"
+  ],
+  "contentID": "AC-VOES-COMM-1494044_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 20:01:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 20:01:34 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 20:01:35 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 16:55:40 GMT+0000",
+  "jcr:description": "The hospital experience can be stressful for patients and families. When a patient is undergoing a procedure, timely communication with patients and families helps relieve the anxiety of waiting and wondering.",
+  "jcr:baseVersion": "543acd30-40b2-4946-9eac-d68324e521c9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 12 2025 23:32:44 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:custom/acute-care/acute-care-bu-news"
+  ],
+  "jcr:lastModified": "Mon Mar 10 2025 20:56:20 GMT+0000",
+  "jcr:uuid": "d59536f3-43f7-4735-9d63-11f6aa1d85de",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 04 2025 16:16:47 GMT+0000",
+      "alt": "Individual sending message on Stryker’s Ease app",
+      "srcFileRef": "/content/dam/stryker/acute-care/news/ease-sase-study-feb-2025/ac-newsroom_ease-case-study-app-screen_1440x900.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Feb 12 2025 18:20:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 04 2025 16:33:13 GMT+0000",
+      "jcr:lastModified": "Tue Feb 04 2025 16:33:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "leftPadding": "2",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 05 2025 12:16:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">92%<br>\n strongly agree</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">because of Ease, they would <br>\nrecommend a hospital</span></p>\n",
+          "jcr:lastModified": "Wed Feb 05 2025 12:25:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "leftPadding": "2",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 05 2025 12:16:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2em\"><span class=\"futura-bold\">94%<br>\n strongly agree</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Ease would influence their <br>\n<span style=\"white-space: nowrap;\">choice of hospital&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Feb 05 2025 12:25:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 05 2025 12:16:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">9.5/10<br>\n experience rating</span></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Experience with Ease <br>\n demonstrates care&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Feb 05 2025 12:25:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_549364603": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Feb 05 2025 12:24:33 GMT+0000",
+      "text": "<p>Results are from 4,955 families who were surveyed after receiving Ease updates from Lehigh Valley Health Network.*<sup>1</sup></p>\n",
+      "jcr:lastModified": "Wed Feb 05 2025 12:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 04 2025 16:16:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><i><span class=\"fontsize-1-25em\">5-minute read</span></i></p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Stryker’s Ease patient and family communication solution</span></span></h2>\n",
+      "jcr:lastModified": "Wed Feb 12 2025 18:22:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 04 2025 16:16:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">The hospital experience can be stressful for patients and families. When a patient is undergoing a procedure, timely communication with patients and families helps relieve the anxiety of waiting and wondering.</span></p>\n<p><span class=\"fontsize-1-25em\">Stryker’s Ease app is a patient and family communication solution that has been shown to increase patient and family satisfaction and reduce anxiety.<sup>2</sup> Lehigh Valley Health Network (LVHN), a subsidiary of Jefferson Health, is one organization that has seen positive results and feedback from patients and their loved ones – as well as from nurses – from using the app.</span></p>\n<h3><span class=\"futura-bold\">Enhancing patient and family engagement</span></h3>\n<p><span class=\"fontsize-1-25em\">The mission of LVHN is to heal, comfort and care for the people of their community by providing advanced and compassionate health care of superior quality and value supported by education and clinical research.</span></p>\n<p><span class=\"fontsize-1-25em\">In 2017, the perioperative leadership team at LVHN wanted a solution to improve communication and enhance patient and family engagement. Knowing that patients and their families have a choice in electing where to have surgery, they wanted to provide elevated services and prove their commitment to transparency, communication, compassion and care.</span></p>\n<p><span class=\"fontsize-1-25em\">A multidisciplinary team consisting of perioperative leadership and technology and operating room staff researched solutions and selected the Ease patient and family hospital communication solution from Vocera, now part of Stryker, because it fit best with the health network’s compassionate culture and mission.</span></p>\n<p><span class=\"fontsize-1-25em\">“It was our hope that connecting with patients’ loved ones in a more timely and personal way would help provide more comfort and care to them,” said Hope Johnson, DNP, MBA, RN, CNOR, NEA-BC, Vice President of Perioperative Services at LVHN.</span></p>\n<h3><span class=\"futura-bold\">Supporting patient and family engagement – even across languages</span></h3>\n<p><span class=\"fontsize-1-25em\">Ease has several unique features that make it a powerful tool for connecting care teams with patients and families.</span></p>\n<p><span class=\"fontsize-1-25em\">First, because it’s a native app downloaded to the mobile phone, the care provider can share encrypted information directly with family members, providing a rich user experience that includes photos and video.</span></p>\n<p><span class=\"fontsize-1-25em\">Second, messages are kept for only 60 seconds after being viewed, which helps address security and privacy concerns.</span></p>\n<p><span class=\"fontsize-1-25em\">Third – and one of the most remarkable things about Ease – is that it can communicate across multiple languages. The care provider can select a message in English and send it to the family, translated into Spanish or one of several other languages.</span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Feb 12 2025 23:31:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Feb 04 2025 16:40:42 GMT+0000",
+      "jcr:lastModified": "Tue Feb 04 2025 16:40:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Feb 04 2025 16:45:13 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Feb 04 2025 16:45:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/products/vocera-ease/videos/Vocera-Ease_Lehigh-Valley-testimonial-video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Vocera-Ease_Lehigh-Valley-testimonial-video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Feb 04 2025 16:48:14 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Feb 04 2025 16:16:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\">Communicating effectively while enhancing nurse satisfaction</span></h3>\n<p><span class=\"fontsize-1-25em\">Prior to a procedure, the LVHN pre-admissions team lets the patient and family know the app is available and educates them on how to use it. The patient determines who will receive Ease updates, and everyone in the patient’s contact network receives the same updates at the same time throughout the procedure, whether they’re in the hospital’s waiting room, across town or across the country.</span></p>\n<p><span class=\"fontsize-1-25em\"> <br>\n “With Ease, it’s personal,” said Johnson. “A story that’s resonated with me is we’ve gotten to a son that was in Afghanistan while his mom was having surgery. That’s why you do it.”</span></p>\n",
+          "jcr:lastModified": "Wed Feb 05 2025 12:26:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_271324212": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "text": "<p><span class=\"fontsize-1-25em\">The personalized messages sent via Ease serve as a bridge to face-to-face communication with the operating room team. “The Ease app updates go a long way to alleviate loved ones’ anxieties,” said Johnson. “By receiving real-time messages from our care team members directly on their smartphone, family members no longer worry or risk missing an update from the care team.”</span></p>\n<p><span class=\"fontsize-1-25em\">A HIMSS Market Insights study at Jupiter Medical Center in Jupiter, Florida, sponsored by Stryker, showed that using the Ease app to communicate with family members saved time for OR circulating nurses and recovery room nurses, who tend to make and field a lot of family calls.<sup>3</sup> Instead of having to find names and numbers and step away from the patient to make calls, the nurse can open the Ease app and send an update in seconds. The time savings can be used to focus on other nursing duties and to promote greater patient engagement. The same study found that more than half of nurses said the Ease app positively impacted job satisfaction, while none experienced a negative impact.</span></p>\n<p><span class=\"fontsize-1-25em\">LVHN’s Johnson noted that nurses receive validation when patients send messages of gratitude through the app survey’s “comment” box or respond to messages from the nurse with a heart, thumbs-up or prayer hands emoji.</span></p>\n<p><span class=\"fontsize-1-25em\">“The second nurses see those positive comments, it just reinforces why they do what they do – and reminds them that what they do matters,” Johnson said. “We’ve seen nurses say, ‘Oh my gosh, I got back this shoutout and an emoji from them.’ So, we immediately see the difference that feedback can make.”</span></p>\n<h3><span class=\"futura-bold\">Learn more</span></h3>\n<p><span class=\"fontsize-1-25em\">Ease helps improve satisfaction and engagement for patients, families and staff while helping to strengthen patient safety, quality of care and transparency. To learn more about how Ease helps create a richer, more human connection for patients and their loved ones before, during and after care, visit <a href=\"/content/stryker/us/en/smart-care/products/vocera-ease.html\" target=\"_blank\">https://www.stryker.com/us/en/smart-care/products/vocera-ease.html</a>.<br>\n </span>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 16:55:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Feb 12 2025 18:23:53 GMT+0000",
+      "hideButton": "false",
+      "title": "Related",
+      "jcr:lastModified": "Mon Feb 02 2026 16:55:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "false",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/smart-care/products/vocera-ease"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/dynamic-clinical-workflow"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Wed Feb 12 2025 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Feb-2025",
+    "jcr:lastModified": "Wed Feb 12 2025 18:25:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/news/ease-sase-study-feb-2025/ac-newsroom_ease-case-study-app-screen_1200x680.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*In addition to the Ease app, the facility’s results may reflect the additional training, policies, procedures and specific configuration parameters implemented by the facility. The results are not necessarily representative of what another facility may experience.</p>\r\n<p>1. Stryker customer case study. Lehigh Valley Health Network - improving patient and family communication. Retrieved December 10, 2024.</p>\r\n<p>2. De La Roza, Kevin J. and Munro, Hamish M. 13 July 2017. Improving communication from the operating room: a new mobile application to enhance the family experience. NEJM Catalyst. https://catalyst.nejm.org/doi/full/10.1056/CAT.17.0450.</p>\r\n<p>3. HIMSS Market Insights. Enhancing the patient and family experience – and nurse workflow and job satisfaction. Retrieved December 10, 2024. &nbsp;</p>\r\n",
+    "jcr:lastModified": "Wed Feb 12 2025 18:23:42 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

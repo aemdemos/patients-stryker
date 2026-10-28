@@ -1,0 +1,488 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fceb70a9-ae83-4a5e-bede-990b36b219d1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "81794fa0-610d-4033-90ac-65c740c987e5"
+  ],
+  "jcr:created": "Wed Dec 13 2023 14:33:16 GMT+0000",
+  "cq:lastReplicated": "Wed Dec 13 2023 14:33:17 GMT+0000",
+  "cq:lastModified": "Wed Dec 13 2023 14:31:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "81794fa0-610d-4033-90ac-65c740c987e5",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "653c67d6-bddc-433f-ba32-bb131f13c1a9",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_967880009": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Dec 08 2023 14:48:04 GMT+0000",
+      "alt": "Stryker's additive manufacturing",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing/image v2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Dec 08 2023 15:24:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "topMargin": "-4",
+      "jcr:created": "Mon Dec 04 2023 19:44:33 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\"> </span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Stryker's Senior Director of Disruptive Research Solutions gets detailed about 3D printing</span></span></p>\r\n",
+      "jcr:lastModified": "Fri Dec 08 2023 15:05:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Each",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Dec 04 2023 19:50:02 GMT+0000",
+      "jcr:lastModified": "Mon Dec 04 2023 19:56:08 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text6647125034676309": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Each day, </span></span><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Naomi Murray</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"> wakes up wondering, “What will we learn today? How will we translate that into making healthcare better?” As the Senior Director of Disruptive Research Solutions at Stryker, Naomi is continually working with her team to leverage technologies that can improve patient outcomes. One of those solutions is additive manufacturing (AM).</span></span></p>\n",
+        "jcr:lastModified": "Wed Dec 13 2023 14:09:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text_772930884": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "0",
+        "topMargin": "0",
+        "jcr:created": "Mon Dec 04 2023 19:52:43 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><b><span style=\"color: #1c5687;\"><span class=\"futura-bold\">AM, also known as 3D printing</span>,</span> </b>uses computer-aided design software to create objects one layer at a time. In contrast to subtractive manufacturing, in which a manufacturer creates a product by cutting away at a block of material, AM produces less waste, allows for greater product customization and provides novel design features.<sup>1</sup></span></span></p>\n",
+        "jcr:lastModified": "Tue Dec 05 2023 21:39:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "0",
+        "bottomMargin": "0",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "9"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_1055694927_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Dec 04 2023 19:54:21 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Stryker began innovating in AM in 2001. The goal was to find novel ways to make titanium mimic the properties of bone. Shortly after Stryker’s AM journey began, Murray joined the organization – and she has been part of expanding the company’s AM capabilities ever since.</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Over the past two decades, Murray and her team helped make Stryker a global leader in additive manufacturing – from the development of the technology to its use. Not only did AM prove to be a successful manufacturing method for titanium, but it also allowed us to create a range of other products that ultimately deliver on Stryker’s mission to improve patient outcomes and save lives.<br>\n</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Murray shares how her team uses advanced manufacturing technology to unlock innovation in new products across Stryker’s portfolio.&nbsp;</span></span></p>\n",
+        "jcr:lastModified": "Fri Dec 08 2023 15:29:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Dec 04 2023 19:50:19 GMT+0000",
+      "alt": "Naomi Murray, Senior Director of Disruptive Research at Stryker",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/how-stryker-is-accelerating-innovation-in-additive-manufacturing/IMG_9053_v2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Dec 08 2023 15:24:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1238679809": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "RTE",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Dec 04 2023 20:03:04 GMT+0000",
+      "jcr:lastModified": "Mon Dec 04 2023 20:03:14 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_12386798096647551521714382": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "4.3",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What is the goal of Stryker’s Disruptive Research Solutions team?</span></span></b></p>\n<p style=\"text-align: left;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:34:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_123867980966475": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "24.5",
+        "leftPadding": "8",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p>“Disruptive Research Solutions partners cross-functionally within Stryker to provide new solutions for our customers. We specialize in innovation in our manufacturing processes to enable innovation in our products. We have a special team called ‘AMagine scouts’ that incubates, develops and industrializes new platform manufacturing technologies to make design dreams a reality. They come up with ways to deliver innovative materials, design features and faster product availability while building state-of-the-art manufacturing and supply chains at scale. We do this by focusing on first-principles thinking – a way to reverse-engineer complex challenges – as well as creativity and continuous learning through diverse viewpoints to reinvent what is possible. Each day we’re presented with a new challenge – it makes things exciting.”</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:51:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": "true"
+      }
+    },
+    "text_123867980966475": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "RTE",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Dec 04 2023 20:03:36 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_1238679809664756647573615173534": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">What’s been Stryker’s biggest advancement in additive manufacturing in recent years, and how does it positively impact our customers?</span></span></b></p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:21:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_123867980966475": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "8",
+        "leftPadding": "8",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><sup></sup>“We scaled the application of additive manufacturing at Stryker through our <a href=\"https://www.stryker.com/us/en/about/news/2022/stryker-advances-its-global-additive-manufacturing-leadership-wi.html\">AMagine<sup>®</sup> Institute, headquartered in Cork, Ireland</a>, which explores and industrializes innovative platform technologies to enable innovation in healthcare products. Our initial products focused on the design, development and delivery of complex shapes that were difficult to manufacture using traditional manufacturing technology.&nbsp;</p>\n<p>AM has been game-changing for enabling Stryker’s Triathlon<sup>®</sup> Tritanium<sup>®</sup> Tibial Baseplate and Patella, for example – a design that can only be made by AM. Such design features include the strategic placement of Stryker’s highly porous biologic fixation Tritanium technology. This product has become a trusted solution for surgeons around the world, showing a statistically significant increase in survivorship compared to all other knee implants at five years.<sup>2</sup> Stryker’s AMagine technology is used in other joint replacement, spine, shoulder, and ankle products as well.”</p>\n",
+        "jcr:lastModified": "Fri Dec 08 2023 15:36:26 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": "true"
+      }
+    },
+    "text_123867980966475_1958062309": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "RTE",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Dec 04 2023 20:03:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_123867980966475_19580623096647595534579617": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "4.3",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">What is the impact of additive manufacturing on sustainability efforts?</span></span></b></p>\n<p style=\"text-align: left;\">&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:34:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_123867980966475": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "20.9",
+        "leftPadding": "8",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p>“Although all manufacturing requires the use of energy, materials and resources and generates waste and byproducts, it is important to understand the environmental impacts of various manufacturing processes when evaluating the best ones to use in production.</p>\n<p>For example, last year Stryker performed a life cycle analysis of the Triathlon Tritanium tibial baseplate to assess the environmental impact of AM compared to traditionally manufactured products. This analysis showed that our AM process has benefits over conventionally manufactured tibial trays beyond waste reduction* by contributing less to ozone depletion, global warming, smog formation and fossil fuel depletion. It’s rewarding to know that our efforts are making a real impact.”</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:50:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": "true"
+      }
+    },
+    "text_1952853953": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Dec 04 2023 20:08:56 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Dec 04 2023 20:11:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_123867980966475_38049721": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "What",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Dec 04 2023 20:09:06 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_123867980966475_380497216647903898856316": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">As a woman in engineering, how have you seen diversity and inclusion efforts in MedTech change over the years?</span></span></b></p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:22:01 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true"
+      },
+      "text_123867980966475": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "8",
+        "leftPadding": "8",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p>“When I first joined Stryker over 20 years ago, I was the only woman on my engineering team. My team was aware of how this could be challenging and took accountability for being inclusive by modeling it in their day-to-day behavior. Stryker’s values have driven an appreciation for diversity in culture, experience and thought processes. This has been a big part of opening up the dialogue on how to increase diversity, equity and inclusion for both our customers and <a href=\"https://www.stryker.com/us/en/about/news/2023/features/stryker-s-third-annual-de-i-summit--ensuring-every-employee-is-s.html\">our employees</a>. I am passionate about giving back to both Stryker and others in our community through engagement in our employee resource groups, most recently as part of Stryker’s Women's Network and Women in Science and Engineering leadership. Interacting with people from diverse backgrounds makes me more innovative and engaged. I’m happy to share that as a result of the inclusive behaviors my colleagues modeled, today there are many intelligent women working as engineers at Stryker and my team is made up of many women that I enjoy partnering with each day.&quot;</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:55:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": "true",
+        "bottomMargin": "8"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_123867980966475_1962506720": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "As",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Dec 04 2023 20:10:35 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_123867980966475_19625067206647992697501647": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "7",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">What makes you most excited about the disruptive technology space overall?</span></span></b></p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:36:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_123867980966475": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "47.8",
+        "leftPadding": "8",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p>“As a young child, I became interested in the precision of math, the enlightened feeling of learning how something works and the discovery of a new concept. I find this ability to discover how something works, and then using that information to create something new – whether it’s a new concept, idea or product to improve or save people's lives – to be very exciting. Both of my parents were teachers. They instilled in me the value of sharing knowledge and helping others learn to live to their full potential. My current role as leader of a disruptive solutions team neatly combines all these passions.”</p>\n",
+        "jcr:lastModified": "Tue Dec 12 2023 21:52:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": "true"
+      }
+    },
+    "curatedcta": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "ctaLinkType": "ext",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Mon Dec 04 2023 20:33:49 GMT+0000",
+      "CTATitle": "Learn more about our focus on sustainable design",
+      "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/about/annual-review/2022/stryker-2022-comprehensive-report#page=50",
+      "jcr:lastModified": "Wed Dec 13 2023 14:31:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)"
+    }
+  }
+}

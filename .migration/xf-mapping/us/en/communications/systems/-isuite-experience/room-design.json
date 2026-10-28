@@ -1,0 +1,443 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reimagine your OR.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Room design",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3c1e3238-d1da-41b0-bd6a-86b3e71aa8a8",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "sheila.brennan@stryker.com",
+  "thumbnailAltText": "Room Design ",
+  "jcr:predecessors": [
+    "c95b3b0e-7f05-4393-8f09-3642997718e3"
+  ],
+  "contentID": "Lit number: 1000902250 Rev F",
+  "lastPublished": "Mon Jun 29 2026 19:37:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 19:37:20 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 19:37:23 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 19:37:12 GMT+0000",
+  "jcr:description": "The Meta Quest 3, together with ByDesign AR, brings your OR design to life as you are able to walk around the room and visually validate the space using mixed reality.",
+  "jcr:baseVersion": "c95b3b0e-7f05-4393-8f09-3642997718e3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:25:14 GMT+0000",
+  "pageTitle": "Room design",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jul 19 2024 21:21:29 GMT+0000",
+  "jcr:uuid": "bd6acdd0-38a4-4c5f-939f-2e6aa1271756",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Room design",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:34:48 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\"><br>\n Design your OR with Stryker and</span> <br>\n <span class=\"futura-bold\"><span style=\"color: #ffb500;\">see the difference.</span></span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">We know the importance of OR design and workflow, and better yet, know how poor design can not only affect the clinical aspect of day to day operations but also your bottom line. Meta Quest 3 with ByDesign AR will streamline the planning phase, reduce the number of change orders, and will allow you to walk through your room or floor before the buildout begins.</span></span></p>\n",
+      "jcr:lastModified": "Thu Jul 17 2025 15:56:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1869967566": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:34:48 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\"><br _rte_temp_br=\"brEOB\">\n<br>\n</span></span></p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 22:19:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Apr 01 2020 19:15:03 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "videoId": "FTPxUGRGpnA",
+      "jcr:lastModified": "Fri May 24 2024 17:19:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/communications/systems/isuite-experience/ByDesign-2024-v1.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+        "unsharpMaskAmount": "0",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/ByDesign-2024-v1-AVS",
+        "unsharpMaskRadius": "0",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Fri May 24 2024 17:25:11 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "jpegQuality": "85",
+        "unsharpMaskThreshold": "0",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols_610896125": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:22:16 GMT+0000",
+      "jcr:lastModified": "Wed Mar 20 2024 21:22:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:34:48 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"> <span class=\"futura-bold\"><span style=\"color: #ffb500;\">Streamlined </span></span><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">OR design process</span></span></span></span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 21:49:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:47:57 GMT+0000",
+      "jcr:lastModified": "Wed Mar 20 2024 21:47:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Mar 20 2024 21:49:25 GMT+0000",
+          "alt": "RoomDesign2023-Step1",
+          "srcFileRef": "/content/dam/stryker/communications/systems/RoomDesign2023-Step1.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Wed Mar 20 2024 22:15:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 20 2024 21:48:53 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #b2b4ae;\">Step 1:</span> Review of drawings</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 21:55:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Mar 20 2024 21:49:25 GMT+0000",
+          "alt": "RoomDesign2023-Step2",
+          "srcFileRef": "/content/dam/stryker/communications/systems/RoomDesign2023-Step2.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Wed Mar 20 2024 22:15:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 20 2024 21:48:53 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #b2b4ae;\">Step 2:</span> ByDesign design session</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 21:56:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Mar 20 2024 21:49:25 GMT+0000",
+          "alt": "RoomDesign2023-Step3",
+          "srcFileRef": "/content/dam/stryker/communications/systems/RoomDesign2023-Step3.png",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Wed Mar 20 2024 22:15:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Mar 20 2024 21:48:53 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #545857;\"><span style=\"color: #b2b4ae;\">Step 3:</span></span> Meta Quest 3 demo</span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 21:56:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_190333745": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 20 2024 21:34:48 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\"><br _rte_temp_br=\"brEOB\">\n<br>\n</span></span></p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 22:15:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1620476123": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Sat Aug 29 2020 04:50:15 GMT+0000",
+      "jcr:lastModified": "Sat Aug 29 2020 04:50:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:48:58 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:48:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Sat Aug 29 2020 04:50:41 GMT+0000",
+      "jcr:lastModified": "Sat Aug 29 2020 04:50:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:07:53 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Planning, design, and construction</span><br>\n</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Today's healthcare environment is the definition of complexity, and modernizing the environments within a patient care facility is a perfect illustration. Stryker understands this complexity and has the critical pieces in place for you to complete this picture: a modern and efficient patient care environment.&nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 21:51:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:22:47 GMT+0000",
+          "jcr:lastModified": "Thu Oct 08 2020 18:37:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://strykerpdc.com/",
+              "buttonText": "Learn more",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sat Aug 29 2020 04:55:13 GMT+0000",
+          "alt": "RoomDesign-Update",
+          "srcFileRef": "/content/dam/stryker/communications/systems/RoomDesign-Update.jpg",
+          "jcr:lastModified": "Wed Mar 20 2024 22:22:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:37:02 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:37:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Jul 12 2018 20:08:21 GMT-0400",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "titleColor": "rgba(255,255,255,1)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Mar 31 2020 20:17:26 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Tue Mar 31 2020 20:18:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "RoomDesign-2024-Mobile",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/communications/systems/RoomDesign-2024-Mobile.png",
+        "layoutOptions": "col-sm-6 pull-left",
+        "backgroundImageRef": "/content/dam/stryker/communications/systems/RoomDesign-2024.png",
+        "alt": "RoomDesign-2024",
+        "jcr:lastModified": "Wed Mar 20 2024 22:14:38 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "lee.fuller1@stryker.com",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "jcr:created": "Tue Mar 31 2020 20:43:33 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"fontsize-5-5-vw\"><span class=\"futura-bold\">Reimagine</span><br />\r\n <span class=\"urw-egyptienne\">your OR.</span></span></h1>\r\n",
+            "line2": "<span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">The Meta Quest 3, together with ByDesign AR, brings your OR design to life as you are able to walk around the room and visually validate the space using mixed reality.</span></span>",
+            "jcr:lastModified": "Wed Mar 20 2024 21:33:27 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/systems/RoomDesign-2024-Mobile.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>Based on a study of 106 OR personnel (surgeons, OR managers and circulating nurses) in US hospitals that have Stryker integrated operating rooms, the following information was concluded: Consequential trips and falls were reduced by 93%; An average decrease of 0.8 man-hours per case was found; Room turnover was shortened by 11 minutes on average; 95% of circulating nurses surveyed said there was no need to locate mobile equipment in order to set up the room for surgery. Improving OR Efficiency and Economics with Stryker iSuite Integration.” (pp. 3-14, White Paper). Frost and Sullivan. 2015. </li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Mar 30 2020 20:54:23 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

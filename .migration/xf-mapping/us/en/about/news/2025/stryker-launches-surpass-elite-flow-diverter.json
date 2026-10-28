@@ -1,0 +1,106 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches Surpass Elite® Flow Diverter in the U.S., South Korea and Europe",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a980d163-e929-462d-af6b-34ea9308620a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "surpass-elite-thumbnail",
+  "jcr:predecessors": [
+    "989b2aab-39fa-407a-b298-2a78a4cd4132"
+  ],
+  "contentID": "AP-004954 v1.0",
+  "lastPublished": "Tue Jul 22 2025 20:45:57 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 22 2025 20:45:57 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 22 2025 20:45:59 GMT+0000",
+  "cq:lastModified": "Tue Jul 22 2025 20:45:52 GMT+0000",
+  "jcr:description": "This next-generation device represents a significant advancement in flow diversion, combining an upgraded implant design with a proprietary surface modification for enhanced performance and reduced thrombin generation.",
+  "jcr:baseVersion": "989b2aab-39fa-407a-b298-2a78a4cd4132",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 22 2025 20:41:41 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Jul 22 2025 20:45:52 GMT+0000",
+  "jcr:uuid": "129b5410-828e-4112-b436-218f1e69d21c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Jul 22 2025 16:38:09 GMT+0000",
+      "jcr:lastModified": "Tue Jul 22 2025 16:38:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_191512237_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 24 2025 21:06:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology, and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n",
+      "jcr:lastModified": "Tue Jul 22 2025 17:38:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "publishDate": "Tue Jul 22 2025 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "22-Jul-2025",
+    "jcr:lastModified": "Tue Jul 22 2025 20:41:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "bottomPadding": "3",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "text": "<p>Stryker recently announced the commercial launch of the Surpass Elite Flow Diverter in the United States, South Korea and Europe. This next-generation device represents a significant advancement in flow diversion, combining an upgraded implant design with a proprietary surface modification for enhanced performance and reduced thrombin generation.</p>\n<p>Surpass Elite Flow Diverter introduces BioStealth Surface, a new surface modification developed through a proprietary neutralization process that creates a more thromboresistant cobalt chromium and is backed by both in vitro and in vivo studies.</p>\n<p>Surpass Elite Flow Diverter also introduces a fundamentally improved implant design—engineered with a higher braid angle and optimized heat treatment to enable better opening, improved vessel-wall apposition, and reduced manipulation during deployment. These enhancements address common procedural challenges physicians face in flow diversion, helping streamline deployment and build confidence in complex cases.</p>\n<p>“Surpass Elite Flow Diverter captures the essence of a cobalt chromium device, delivering outstanding performance and exceptional ease of use,” noted Dr. Alejandro Tomasello, Vall d'Hebron University Hospital, Barcelona, Spain.</p>\n<p>This blend of innovation and usability is echoed by others with firsthand experience and deep familiarity with the device.</p>\n<p>“I have been fortunate to be part of the development of the Surpass Elite Flow Diverter, Stryker’s most sophisticated flow-diverting stent to date,” said Dr. Alex Coon, Carondelet Neurological Institute, Tucson, Arizona. “My early experience suggests that this device gives physicians the exact blend of device opening, vessel-wall apposition, and surface treatment for which we have all been waiting a decade.”</p>\n<p>Surpass Elite Flow Diverter received FDA approval and CE Mark in 2024. Stryker implemented a measured rollout focused on physician training and real-world clinical validation before scaling commercially.</p>\n<p>“This cadenced launch strategy reflects our commitment to clinical excellence,” said Jim Marucci, president of Stryker’s Neurovascular division. “After carefully validating performance across a diverse set of early cases, we’re pleased to move to this next step and help address unmet customer needs.”</p>\n<p>Now commercially available, Surpass Elite Flow Diverter delivers the latest in surface science and implant design.</p>\n<p>For more information on the Surpass Elite Flow Diverter:<br>\nFor US HCPs visit: <a href=\"/content/stryker/us/en/neurovascular/products/surpass-elite.html\">Surpass Elite Flow Diverter_US</a><br>\nFor OUS HCPs visit: <a href=\"/content/stryker/gb/en/neurovascular/products/surpass-elite.html\">Surpass Elite Flow Diverter_OUS</a></p>\n",
+    "jcr:lastModified": "Tue Jul 22 2025 17:33:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>For use of healthcare professionals only.</p>\r\n<p>A physician must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that physicians be trained in the use of any particular product before using it in a procedure. The information presented is intended to demonstrate the breadth of Stryker product offerings. A physician must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.</p>\r\n<p>For US: To access product risks and important safety information go to: <a href=\"https://www.stryker.com/us/en/neurovascular/dfu.html\" target=\"_blank\">Important Safety Information</a></p>\r\n",
+    "jcr:lastModified": "Tue Jul 22 2025 17:36:08 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "surpass-elite-hero-graphic",
+    "srcFileRef": "/content/dam/stryker/about/news/2025/stryker-launches-surpass-elite-flow-diverter/surpass-elite-hero-graphic.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Jul 22 2025 17:04:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/stryker-launches-surpass-elite-flow-diverter/surpass-elite-thumbnail.jpg"
+  }
+}

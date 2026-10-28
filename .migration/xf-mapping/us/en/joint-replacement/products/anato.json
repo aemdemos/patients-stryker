@@ -1,0 +1,102 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Femoral Hip Stem",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Anato",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8c2222ff-48e8-4725-bf20-d5c16dc6e9aa",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Anato thumbnail",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/anato/images/Hero_JR_Hip_Anato.png",
+  "jcr:predecessors": [
+    "5523a376-23fb-4afb-93ea-2319771f1910"
+  ],
+  "contentID": "ANATO-WC-4_Rev-1_28631",
+  "lastPublished": "Wed Mar 20 2024 13:55:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 20 2024 13:55:04 GMT+0000",
+  "cq:lastReplicated": "Wed Mar 20 2024 13:55:06 GMT+0000",
+  "cq:lastModified": "Wed Mar 13 2024 19:38:42 GMT+0000",
+  "jcr:description": "Short anatomic “fit and fill” femoral stem that is SOMA-designed for optimized stem length* and low profile lateral shoulder to accommodate your muscle-sparing surgical technique",
+  "jcr:baseVersion": "5523a376-23fb-4afb-93ea-2319771f1910",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Anato",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/joint-replacements/product-type/cementless",
+    "stryker:system/joint-replacements/mako-total-hip",
+    "stryker:business-unit/joint-replacement",
+    "stryker:custom/joint-replacements/procedure/primary",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/joint-replacements/product-type/implants",
+    "stryker:product/joint-replacement/anato",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 13 2024 19:38:42 GMT+0000",
+  "jcr:uuid": "8a28520e-9a87-4dfe-bd51-fe611317734d",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Femoral Hip Stem",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jul 14 2017 16:17:17 GMT-0400",
+      "compImageRef": "/content/dam/stryker/joint-replacement/products/anato/images/Hero_JR_Hip_Anato.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_149583996",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:lastModified": "Wed Jun 24 2020 15:16:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p><b>Evolving the anatomic stem for your surgical approach</b></p>\r\n",
+    "shortDescTop": "<p>Anato is an evolution of past clinically successful anatomic femoral stem iterations, offering the confidence of clinical history based on the heritage of Porous Coated Anatomic (PCA), ABG and Citation. Published studies demonstrate over 11 years of clinical performance and survivorship with predecessor stems.<sup>1,2,3</sup></p>\r\n",
+    "jcr:lastModifiedBy": "Michelle.Covello@stryker.com",
+    "jcr:lastModified": "Thu Aug 31 2017 22:19:10 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "shortDescBottom": "<p><b>The advantages of Anato include:</b></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><b>Flexibility</b></p>\r\n<p><b>&nbsp;</b></p>\r\n<p>Anato features an optimized stem length and low-profile lateral shoulder suitable for a variety of surgical approaches, including muscle-sparing techniques.<sup>4</sup> In addition to the standard Anato instrumentation, the system is compatible with Stryker’s Direct Anterior and Direct Superior instrument sets.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>SOMA-designed anteverted and neutral neck options allow intraoperative flexibility to assist with recreating patients’ natural femoral version.<sup>5,6*</sup>. In general, studies on total hip arthroplasty have shown that recreation of the combined anteversion of the femoral and acetabular components may allow for enhanced range of motion (ROM).<sup>7,8,9</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><b>Stability</b></p>\r\n<p><b>&nbsp;</b></p>\r\n<p>Anato is designed to promote physiological load transfer and positive bone remodeling for stability.<sup>3,5,9,10,11</sup>&nbsp;The design features proximal plasma spray, normalizations and PureFix HA to facilitate mechanical stability.<sup>12,13</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p>Anato is verified by SOMA to help maximize conformity to the natural 3D shape of the femoral canal.<sup>10,11</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p>Anato implant sizing is available in a 130 degree left and right anteverted and neutral options sizes.<sup>1-7</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><sup>&nbsp;</sup></p>\r\n<p><sup><br>\r\n*based on 506 CT scans</sup></p>\r\n"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Nourissat C., Essig J., Asencio G. The Cementless Anatomic Benoist Girard (ABG) II Total Hip Arthroplasty A Minimum 8-year follow up study. JOA 2013; 28: 707-711.</li>\r\n<li>Bejescul, JA, Xenos JS, Callaghan JJ, et a. Results of Porous-Coated Anatomic Total Hip Arthroplasty without Cement at Fifteen Years: A Concise Follow-Up of a Previous Report. Journal of Bone and Joint Surgery Series A 2003; 85; 1079-1083.</li>\r\n<li>Herrera A, Mateo J, Lobo-Escolar A, et al. Long-Term Outcomes of a New Model of Anatomical Hydroxyapatite-Coated Hip Prosthesis. The Journal of Arthroplasty 2013; 28: 1160-1166.</li>\r\n<li>Lovell T, Hozack W, Kreuzer S, Merritt P, Nogler M, Puri L, Wuestemann T, Bastian A. Influence of Stem Length on the Insertion Path in THR. 2009 ORS Poster #2040.</li>\r\n<li>Global native Femoral Anteversion SOMA analysis. Stryker Internal Report #RD-14-071.&nbsp;September, 2014.<br>\r\n</li>\r\n<li>Gerges J, Hozack, W, Essig J, Boucher F, Asencio G. Changes in Femoral Version During Implantation of Anatomic Stems. ORS Abstract.</li>\r\n<li>Pederson DR, Callaghan JJ, Brown TD. Activity Dependence of the “Safe Zone” for Impingement Versus Dislocation Avoidance. Medical Engineering and Physics 2005; 27:323-328.&nbsp;</li>\r\n<li>Patel AB, Wagle RR, Usrey MM, et al. Guideline for Implant Placement to Minimize Impingement During Activities of Daily Living After Total Hip Arthroplasty. The Journal of Arthroplasty 2010; 25; 1275-1281.</li>\r\n<li>Dorr LD, Malik A, Dastane M, et al. Combined Anteversion Technique f or Total Hip Arthroplasty. Clin Orthop 2009; 467: 119-127.</li>\r\n<li>Gerges J, Krebs V, Hedley A, Hitt K. Three-Dimensional Metaphyseal Fit Analysis of Anatomic Stems. ISTA Abstract.</li>\r\n<li>Anatomic Stem Analysis. Stryker Internal Report #RD-13-050.&nbsp;May, 2013<br>\r\n</li>\r\n<li>Capello, W., D’Antonio J., Jaffe, W., Geesink, R., Manley, M., Feinbery, J. “Hydrdoxyapatite coated Femoral Component, 15 year follow-up”. Clin Orthop Relat Res. 2006 Dec(453); pp.75-80.<br>\r\n</li>\r\n<li>Micromotion, Strain and Force at fracture Comparing ABG II vs. Anato. Stryker Internal Report #RD-13-020.February, 2013.<br>\r\n</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Mar 02 2021 15:04:53 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/anato/images/Hero_JR_Hip_Anato.png"
+  }
+}

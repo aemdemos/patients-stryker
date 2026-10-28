@@ -1,0 +1,1185 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "subtitle": "Minimally Invasive Surgery",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PROstep Minimally Invasive Surgery",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "91715e69-2b06-49d9-b87e-7a72dbda373c",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "PROstep™ MIS",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/products/prostep/HERO_PROstep MICA Foot_LG.png",
+  "jcr:predecessors": [
+    "ef7acbb8-5dda-4082-be1f-0dafad84c3e9"
+  ],
+  "contentID": "AP-017559",
+  "lastPublished": "Fri Oct 09 2026 18:37:52 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 09 2026 18:37:53 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 09 2026 18:37:55 GMT+0000",
+  "cq:lastModified": "Fri Oct 09 2026 18:37:40 GMT+0000",
+  "newDisplayFlagDate": "Fri Nov 01 2024 00:00:00 GMT-0400",
+  "jcr:description": "Delivered by Stryker, the leader in foot and ankle, PROstep minimally invasive surgery helps you give patients the bunion pain relief they need, while also providing the faster recovery they desire. PROstep MIS utilizes percutaneous, micro incisions to correct bunions as well as perform a multitude of forefoot, midfoot and hindfoot procedures. These procedures include: hammertoe, DMMO, bunionette, calcaneal osteotomies, MIS arthrodesis and joint fusion, and many more. (2,3,5)\r\n(Stryker - Wright Medical Technologies)",
+  "jcr:baseVersion": "ef7acbb8-5dda-4082-be1f-0dafad84c3e9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:48:47 GMT+0000",
+  "pageTitle": "PROstep MIS",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/foot-and-ankle/prostep",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:custom/foot-and-ankle/product-type/screw-systems",
+    "stryker:capability/foot-and-ankle",
+    "stryker:specialty/forefoot",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plating-platforms",
+    "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)/plates"
+  ],
+  "jcr:lastModified": "Fri Oct 09 2026 18:37:40 GMT+0000",
+  "jcr:uuid": "65aed0b6-d435-4c77-ade5-c6fac40ef997",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Tue Jun 18 2024 19:34:29 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Jul 01 2024 18:14:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/foot-and-ankle/en/products/prostep/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/foot-and-ankle/en/products/prostep/master",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Tue Jun 18 2024 19:34:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Mon Jul 01 2024 18:15:08 GMT+0000",
+          "marginRight": "6",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "alison.moutinho@stryker.com",
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 19:17:34 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-6-5-vw\">PROstep<sup><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\">®</span></span></sup></span></span></span></span></span></h1>\r\n",
+              "line2": "<h2><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Minimally Invasive Surgery<span class=\"fontsize-4vw\"><span class=\"fontsize-3-5-vw\">&nbsp;<br>\r\n </span></span></span></span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><br>\r\n</span></span></span></span></span><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-2-5-vw\">Relieving the pain.</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><br>\r\n </span></span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-2-5-vw\">Resetting the standard.</span></span></span></span></span></h2>\r\n",
+              "jcr:lastModified": "Wed Aug 12 2026 13:59:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel_copy__343724707": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 23:28:17 GMT+0000",
+      "jcr:lastModified": "Thu Mar 07 2024 19:18:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:28:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 23:33:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#contact\">CONTACT US</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#about\">ABOUT</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:39:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#portfolio\">PORTFOLIO OVERVIEW</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu Aug 29 2024 18:24:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Nov 30 2023 23:29:20 GMT+0000",
+              "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #edeeec;\"><span class=\"fontsize-1-5em\"> <br>\n <a href=\"#resources\">RESOURCES</a></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 30 2024 14:40:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "section_title_copy_c_1703274621": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "about",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "about",
+      "jcr:lastModified": "Thu May 30 2024 14:40:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 01 2023 18:43:29 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 18:43:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:43:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">Delivered by Stryker, the leader in foot and ankle<sup>5</sup>, PROstep Minimally Invasive Surgery (MIS) helps you give patients the bunion pain relief they need, while also providing the faster recovery<sup>2,3 </sup>they desire.<sup>5</sup> PROstep MIS utilizes percutaneous, micro incisions to correct bunions as well as perform a multitude of forefoot, midfoot and hindfoot procedures. These procedures include: hammertoe, DMMO, bunionette, calcaneal osteotomies, MIS arthrodesis and joint fusion, and many more.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 16:15:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "remotecomponent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html|https://microapp.stryker.com/trauma-pangea-femur/|https://microapp.stryker.com/fa-prostep/",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion|trauma-pangea-femur|fa-prostep",
+      "hiddenSelCompId": "fa-prostep",
+      "componentUrl": "https://microapp.stryker.com/fa-prostep/",
+      "jcr:created": "Fri Aug 07 2026 17:01:51 GMT+0000",
+      "hiddenSelCompUrl": "https://microapp.stryker.com/fa-prostep/",
+      "jcr:lastModified": "Fri Aug 07 2026 17:01:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/remotecomponent"
+    },
+    "section_title_copy_c_1820382659": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "specification",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "specification",
+      "jcr:lastModified": "Thu May 30 2024 14:41:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_228884675": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 13:55:10 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 13:55:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 18:48:56 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Untraditional surgery. Undeniable results.</span></span><span class=\"urw-egyptienne\"><sup><span class=\"fontsize-1-75em\">1,2</span></sup></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:48:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_644381929": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 22:35:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">When it comes to foot and ankle implants, surgeons consistently tell us about the importance of efficacy and reproducibility. PROstep minimally invasive surgery strives to deliver both. Rely on our specialized PROstep MICA SOLO procedure guide every step of the way.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:47:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_1385": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+          "jcr:created": "Thu May 05 2022 17:57:01 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "5izoEi_591M",
+          "jcr:lastModified": "Fri Jun 28 2024 18:00:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 13:55:34 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 13:55:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_492765279": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu May 05 2022 17:56:55 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:33:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_303419035": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 18:48:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Support for your&nbsp;<span style=\"color: #ffb500;\">entire practice</span></span></span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:47:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_644381929_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 22:35:24 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">From introduction to your first case and beyond, Stryker provides best-in-class surgical training, equipment and support. Our team can also assist with patient outreach, raising awareness about the relief you can offer. With PROstep minimally invasive surgery, you get more than a new surgical technique.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:47:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Nov 01 2023 22:45:24 GMT+0000",
+          "jcr:lastModified": "Wed Nov 01 2023 22:45:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "linkText": "TEST",
+              "externalLinkType": "none"
+            }
+          }
+        },
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)|rgba(255,181,0,1)|rgba(255,181,0,1)|rgba(255,181,0,1)",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "alison.moutinho@stryker.com",
+          "jcr:created": "Thu May 05 2022 18:00:49 GMT+0000",
+          "jcr:lastModified": "Mon Jun 24 2024 16:19:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "internalLink": "/content/stryker/us/en/foot-and-ankle/products/prostep/video-library",
+              "buttonText": "Video Library",
+              "externalLinkType": "int"
+            },
+            "item1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "externalLink": "https://view.stryker.com/viewer/66799c3a586608c6e69d5381",
+              "internalLink": "/content/stryker/us/en/index",
+              "buttonText": "Medical Education",
+              "externalLinkType": "ext"
+            },
+            "item2": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "externalLink": "https://patients.stryker.com/prostep",
+              "internalLink": "/content/stryker/us/en/index",
+              "buttonText": "PROstep Patient Site",
+              "externalLinkType": "ext"
+            },
+            "item3": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "externalLink": "https://www.stryker.com/us/en/training-and-education/orthopaedics/foot-and-ankle/patient-marketing-toolkit/bunion.html",
+              "buttonText": "Patient Marketing Toolkit",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Nov 01 2023 22:37:02 GMT+0000",
+          "alt": "EntirePractice",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/EntirePractice.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 22:54:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_567670105": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Aug 12 2026 13:55:51 GMT+0000",
+      "jcr:lastModified": "Wed Aug 12 2026 13:55:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_652839079_copy_": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "cols_1163187928_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 01 2023 18:50:37 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 18:50:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 18:51:23 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">The <span style=\"color: #ffb500;\">PROstep MIS</span> platform</span></span></h2>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 14:01:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "portfolio",
+          "jcr:created": "Thu Aug 29 2024 18:23:33 GMT+0000",
+          "title": "portfolio",
+          "jcr:lastModified": "Thu Aug 29 2024 18:23:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        }
+      }
+    },
+    "cols4_371732784": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 01 2023 22:55:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:55:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 12 2026 13:45:03 GMT+0000",
+          "alt": "PROstep Calc Guides",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/FA-PROCG-SURGP-2780150-PROstep-Calc-Guides-hero.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Aug 12 2026 13:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep&nbsp;Calcaneal Guides</span></span></p>\n<p>Transverse and Zadek Osteotomies</p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:46:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MicaScrewSystem.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:03:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MICA Screw System</span></span></p>\n<p>Fully threaded titanium alloy screw system offers the simplicity of self-tapping cannulated screws in 3mm and 4mm diameters for MIS bunion fixation.</p>\n",
+          "jcr:lastModified": "Fri Apr 12 2024 16:06:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MicaSoloProcedure.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:49:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MICA SOLO procedure guide</span></span></p>\n<p>Shift. Stabilize. Target.<br>\nAll-in-one procedure guide for PROstep MICA MIS Bunion procedure.</p>\n",
+          "jcr:lastModified": "Fri Apr 26 2024 18:26:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MISLapidus.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:49:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MIS Lapidus</span></span></p>\n<p>The PROstep MIS Lapidus system is an internal fixation system intended for minimally invasive reduction of hallux valgus deformity and subsequent fusion of the first metatarsal cuneiform joint.</p>\n",
+          "jcr:lastModified": "Wed Nov 01 2023 23:46:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4_371732784_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Nov 01 2023 22:55:38 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:55:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MISBuinionette.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:49:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MIS Bunionette</span></span></p>\n<p>Simple. Strong. Reproducible.<br>\nPROstep MIS Bunionette is a simple, easy to use, fully sterile minimally invasive system specifically designed to treat bunionette deformity.</p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 13:59:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/Instrumentation.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:50:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Instrumentation</span></span></p>\n<p>PROstep burrs sterile packed for sterility and traceability. Laser marked lines for ease of length identification. Minimally invasive surgery instrumentation specifically designed for minimally invasive foot and ankle procedures.<br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 12 2026 14:00:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_484974431": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MISArthrodesis.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:50:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_448895632": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MIS Arthrodesis Burrs</span></span></p>\n<p>Three types of arthrodesis burrs including cartilage, sculpting and cortical burrs in multiple diameter offerings. Use these burrs to preferentially remove cartilage in a multitude of joints in the foot and ankle.</p>\n",
+          "jcr:lastModified": "Thu Dec 07 2023 23:28:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 01 2023 23:00:08 GMT+0000",
+          "alt": "MicaScrewSystem",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/MISJointFusion.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 01 2023 23:50:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Nov 01 2023 23:00:20 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">PROstep MIS Joint Fusion Kit</span></span></p>\n<p>The system is provided as a single-use sterile packs and is comprised of blades, elevators, wires, drivers, arthrodesis burrs, awls, high-flow irrigation sleeves, drills, depth gauges, compression sleeves, and screws.</p>\n",
+          "jcr:lastModified": "Wed Nov 01 2023 23:47:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Wed Nov 01 2023 22:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Product</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover a wealth of product resources at your fingertips. From informative videos to comprehensive brochures and handy downloads, access all the tools you need to make informed decisions and maximize the benefits of our innovative solutions.</span></span></span>",
+          "jcr:lastModified": "Tue Aug 06 2024 18:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "sectionseparator_200": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "id": "resources",
+          "jcr:lastModified": "Fri Jun 28 2024 17:36:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "resourcesanddownload": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "resources": [
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS MICA SOLO Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS MICA SOLO Sell Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS MICA SOLO Tips and Tricks.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Arthrodesis Burrs Sell Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Bunionette Reimbursement Guide 2022.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Bunionette Sell Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Bunionette Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Akin Osteotomy Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS DMMO Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Calcaneal Osteotomy Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Cheilectomy Operative Technique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Joint Fusion Sell Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Joint Fusion Operative Techique.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Lapidus Sell Sheet.pdf",
+                "/content/dam/stryker/foot-and-ankle/products/prostep/documents/PROstep MIS Lapidus OpTech Final AP-AP-016869B 10-2024.pdf",
+                "/content/dam/commercial/usa/foot-and-ankle/fa-mis/FA-PROCG-SURGP-2780150-EN_US.pdf"
+              ],
+              "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+              "jumpbarHidden": "true",
+              "jcr:created": "Wed May 18 2022 14:15:31 GMT+0000",
+              "jcr:lastModified": "Wed Aug 12 2026 13:37:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/resourcesanddownload"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Quick-Reference-Guide.pdf\" target=\"_blank\">QUICK REFERENCE GUIDE</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 14:20:27 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Hunter-Tendon-Operative-Technique-AP-013169B.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"/content/dam/stryker/trauma-and-extremeties/products/hunter-tendon-rods/resources/Count%20Sheet%20-%20Hunter%20Tendon%20Rods.pdf\" target=\"_blank\">COUNT SHEET</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Sun Feb 12 2023 15:22:15 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:35:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:34 GMT+0000",
+                  "text": "<ul>\n<li><b><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=6154574603dbad1bcec4aa9b\" target=\"_blank\"><span class=\"futura-bold\">HIGHSPOT</span></a></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 05:39:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Resources"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_200_1027974801": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:18:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_1902555304": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 18:12:31 GMT+0000",
+      "jcr:lastModified": "Thu Apr 25 2024 18:12:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Thu May 23 2024 17:23:11 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Thu May 30 2024 14:41:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "jcr:lastModified": "Thu Apr 25 2024 17:57:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed May 08 2024 13:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "marketoform_copy_cop_1803250666": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1079",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue May 07 2024 19:25:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Contact us</span></span></h3>\n<h4>Send us a message to learn more about&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">PROstep </span><span style=\"color: #ffffff;\"><span style=\"color: #000000;\">Minimally Invasive Surgery</span></span></span></h4>\n",
+          "jcr:lastModified": "Wed May 15 2024 21:46:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_1717217014": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "text": "<p><span class=\"fontsize-1-25em\">Have questions or inquiries? We’re&nbsp;here to help! Fill out the contact form, and our dedicated team will get back to you promptly. Your feedback and inquiries are important to us, and we look forward to assisting you with any information or support you may need.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Are you a patient looking for more information or a physician in your area?</span></span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Click the button below for our patient website.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu May 09 2024 15:26:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Mar 22 2024 02:53:47 GMT+0000",
+          "CTATitle": "VISIT OUR PATIENT SITE",
+          "ctaExternalLink": "https://patients.stryker.com/",
+          "jcr:lastModified": "Thu May 09 2024 18:56:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "sectionseparator_844": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Mar 13 2024 18:42:55 GMT+0000",
+      "jcr:lastModified": "Wed Mar 13 2024 18:42:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Stay in the know and never miss an update! <br>\r\n</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Follow us to join the conversation.</span></span></span>",
+          "jcr:lastModified": "Wed Nov 01 2023 21:59:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Wed May 15 2024 18:42:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/stryker-foot-&-ankle/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykerfoot.ankle/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://m.facebook.com/p/Stryker-Foot-and-Ankle-100087048039691/?locale=te_IN",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "FACEBOOK",
+                  "externalLinkType": "ext"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.youtube.com/user/stryker",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "YOUTUBE",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cols2_1779484608": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Aug 07 2024 21:32:16 GMT+0000",
+      "jcr:lastModified": "Wed Aug 07 2024 21:32:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/products/prostep/HERO_PROstep MICA Foot_LG.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Nov 01 2023 22:28:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Nov 01 2023 22:28:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Lam P, Lee M, Xing J, Di Nallo M. Percutaneous Surgery for Mild to Moderate Hallux Valgus. Foot Ankle Clin N Am 2016; 21: 459-477.</li>\r\n<li>Lee M, Walsh J, Smith MM, Ling J, Wines A, Lam P. Hallux Valgus Correction Comparing Percutaneous Chevron/Akin (PECA) and Open Scarf/Akin Osteotomies. Fioot Ankle Intl 2017; 38(8): 838-846.</li>\r\n<li>Maffulli N, Longo UG, Oliva F, Denaro V, Coppola C. Bosch Osteotomy and Scarf Osteotomy for Hallux Valgus</li>\r\n<li>Jimmy J. Chan, MD; Javier Z. Guzman, MD; Andrewa Nordio, MD; Jesse C. Chan; Carl M. Cirino, MD; Ettore Vulcano, MD. Opioid Consumption and Time to Return to Work After Percutaneous Osteotomy in Foot Surgery. Orthopaedics. May 7, 2020.</li>\r\n<li>Data on file</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu May 02 2024 18:16:55 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu May 05 2022 17:57:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 18 2022 14:12:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 18 2022 14:12:42 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed May 18 2022 14:14:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

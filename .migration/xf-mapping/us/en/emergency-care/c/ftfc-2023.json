@@ -1,0 +1,159 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "FTFC",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8c47263c-4fe3-437c-b8f8-578c5fa70d58",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "9068318e-0a2c-4d1b-bd15-836f3ee3de25"
+  ],
+  "lastPublished": "Tue May 30 2023 19:47:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 30 2023 19:47:41 GMT+0000",
+  "cq:lastReplicated": "Tue May 30 2023 19:47:43 GMT+0000",
+  "cq:lastModified": "Tue May 30 2023 19:45:42 GMT+0000",
+  "jcr:baseVersion": "9068318e-0a2c-4d1b-bd15-836f3ee3de25",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Mar 02 2023 14:52:13 GMT+0000",
+  "jcr:uuid": "c42bac1c-41c2-49ec-a148-12350f636d94",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:22:54 GMT+0000",
+      "jcr:lastModified": "Tue May 31 2022 17:22:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/tradeshows/ftfc-landing-page-header-image-/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/tradeshows/ftfc-landing-page-header-image/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/emergency-care/en/tradeshows/ftfc-landing-page-header-image-/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/emergency-care/en/tradeshows/ftfc-landing-page-header-image/master",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Tue May 31 2022 17:22:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue May 30 2023 19:45:42 GMT+0000",
+          "marginRight": "75",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span class=\"fontsize-3-5-vw\"></span>FTFC 2023</span></span></h1>\r\n",
+              "line2": "<div style=\"text-align: center;\"><span class=\"fontsize-1-5-vw\">June 12 - 16 | Hollywood, FL</span></div>\r\n",
+              "jcr:lastModified": "Tue May 30 2023 14:25:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:22:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line2": "<p><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">You work in one of the world’s most demanding, fast-paced environments. You need durable, powerful connected devices to help save lives and coordinate teams to deliver the highest quality of care. We are excited to get to know you better and work with you to help you deliver the best care possible.</span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Please fill out the form below to connect with one of our product experts.&nbsp;</span></span></p>\r\n",
+      "jcr:lastModified": "Fri Jan 06 2023 16:37:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2804",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "redirectPage": "/content/stryker/us/en/emergency-care/products/power-pro-2",
+          "message": "Thanks!",
+          "jcr:lastModified": "Mon Jan 09 2023 15:50:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000012801 REV AA</span></p>\n",
+          "jcr:lastModified": "Mon Jan 09 2023 16:06:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  }
+}

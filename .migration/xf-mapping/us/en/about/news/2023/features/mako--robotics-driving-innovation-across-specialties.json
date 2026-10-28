@@ -1,0 +1,515 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Stryker's Vice President & General Manager, Mako, gets detailed about Mako Systems",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mako: Robotics driving innovation across specialties",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8a2d4bd6-26ba-41c2-9f13-bf7cd6a089cd",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "Mako Total Knee 2.0_hero with trialing_no text",
+  "jcr:predecessors": [
+    "eaf88967-99c1-4b4b-a09e-0d856f38a7dd"
+  ],
+  "contentID": "JR-MKOSYM-ARTI-677450",
+  "lastPublished": "Thu Jul 06 2023 20:52:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jul 06 2023 20:52:50 GMT+0000",
+  "cq:lastReplicated": "Thu Jul 06 2023 20:52:51 GMT+0000",
+  "cq:lastModified": "Thu Jul 06 2023 20:52:29 GMT+0000",
+  "jcr:baseVersion": "eaf88967-99c1-4b4b-a09e-0d856f38a7dd",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Mako: Robotics driving innovation across specialties",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins"
+  ],
+  "jcr:lastModified": "Thu Jul 06 2023 20:52:29 GMT+0000",
+  "jcr:uuid": "6e13e70d-4415-43fe-97fd-e047071a2281",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "navTitle": "Mako: Robotics driving innovation across specialties",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Nov 04 2020 16:45:08 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Nov 04 2020 19:41:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/mako-robotics-drivin/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/hero/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/mako-robotics-drivin/hero/mobile",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "20",
+          "jcr:created": "Wed Nov 04 2020 16:46:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Fri Jun 30 2023 18:58:34 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Wed Sep 01 2021 20:38:30 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\">Mako: Robotics driving innovation across specialties</span></span></span></span><br />\r\n</div>\r\n",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Stryker's Vice President &amp; General Manager, Mako, gets detailed about Mako&nbsp;<a><span style=\"color: #000000;\">Systems</span></a></span></span>",
+              "jcr:lastModified": "Thu Jul 06 2023 20:44:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jun 29 2023 17:28:09 GMT+0000",
+      "jcr:lastModified": "Thu Jun 29 2023 17:28:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:47:17 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 27 2023 19:18:03 GMT+0000",
+          "alt": "Tom Chergey, Vice President & General Manager, Mako",
+          "srcFileRef": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Joint-Replacement-Chergey,-Thomas_Resized_Edited_V2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 05 2023 18:20:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "4"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1427993110_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 25 2023 18:29:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Osteoarthritis is the most common form of arthritis, impacting more than 500 million people worldwide.<sup>1</sup>&nbsp;In addition, it’s the leading cause of disability in older adults.<sup>1</sup>&nbsp;It’s also one of the reasons that Tom Chergey, Vice President &amp; General Manager, Mako, became passionate about working for Stryker. Seeing how a hip replacement changed his grandmother’s life for the better drove him to apply for a position as Joint Replacement Sales Representative 18 years ago.&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Throughout his tenure, Tom has seen the orthopaedics industry transform, with new surgical implants, approaches, systems and robotics entering the space. Today, he’s never been more excited to work at Stryker, in an industry where he and his team help improve patient lives. <b>Tom shares insights into how Mako SmartRobotics<sup>TM</sup>&nbsp;continues to drive innovation in hip and knee replacement, and how it&nbsp;is poised to&nbsp;do the same across specialties over the next five to 10 years.</b></span></span></p>\n",
+          "jcr:lastModified": "Thu Jul 06 2023 20:48:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What is Mako SmartRobotics?&nbsp;&nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:36:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "8",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“Since the introduction of Mako in 2006, and the launch of Mako Total Knee&nbsp;in 2017, Stryker’s industry leadership with Mako SmartRobotics&nbsp;has transformed orthopaedics with its revolutionary technology and clinical outcomes.&nbsp;We believe that the CT scan is critical to unlocking clinical value for the surgeon and patient.&nbsp;Mako enables surgeons to place implants based on an individual patient’s unique&nbsp;anatomy.&nbsp;It's been fantastic to see Mako Systems installed in 35 countries with over 1 million Mako global procedures completed to date.”</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 18:16:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">How is the R&amp;D team innovating?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:36:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "22",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“Stryker invests heavily in R&amp;D. We are always thinking about what’s next and how we can improve —that will not change. If we look at the formation of Stryker’s Digital, Robotics and Enabling Technologies (DRE) organization and the&nbsp;<a href=\"https://www.stryker.com/us/en/portfolios/medical-surgical-equipment/advanced-digital-healthcare.html\">Advanced Digital Healthcare innovations</a>&nbsp;we offer, both were designed to help make healthcare better for care teams and drive innovation across the enterprise.”</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 18:16:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What’s new with Mako robotics?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:36:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&quot;This year, during the American Academy of Orthopaedic Surgeons 2023 Annual Meeting,&nbsp;<a href=\"https://www.stryker.com/us/en/about/news/2023/stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet.html\">we announced the next advancement of Mako SmartRobotics – Mako Total Knee 2.0</a>. Over 500,000 Mako Total Knee procedures over the past six years helped us design Mako Total Knee 2.0. It’s designed to deliver the same, trusted outcomes surgeons expect from Mako with a new, elevated user experience.&nbsp;The system combines the&nbsp;Mako Technology with our clinically proven Triathlon implants to help surgeons provide enhanced outcomes for patients.”</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 18:20:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:48:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">How did you work with your customers to develop Mako Total Knee 2.0? &nbsp;</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:36:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "9",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>“As we looked for ways to evolve Mako Total Knee 1.0, we had many conversations with surgeons using Mako. We wanted to know: What was working well? What could work better or easier? Taking their feedback and all the information we had gathered from more than half a million Mako procedures, we focused Mako Total Knee 2.0 on enhancing surgeon experience, confidence and efficiencies. It introduces a new intuitive design, customizable workflow and other key features, including a digital tensioner that allows surgeons to assess the stability of the knee intraoperatively during a total knee arthroplasty without the need&nbsp;for additional instrumentation.”</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 18:16:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": ".05",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:05:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">What makes you most excited about the future?</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:35:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        },
+        "text_1627779321_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Jan 30 2023 20:07:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&quot;There’s often a perception that robotics is complex and can be intimidating, which is why we are so excited about the launch of the Mako Total Knee 2.0 update – it’s designed for ease of use.&nbsp;I see Mako Total Knee 2.0 continuing to expand our global position as the leader in robotics, setting us even further apart from alternative technologies. Mako SmartRobotics™ will drive innovation across specialties.&nbsp;Our teams are collecting feedback&nbsp;to support the development of&nbsp;new clinical applications and indications,&nbsp;and so far, that feedback has been positive. It’s such a privilege to be part of a team that is transforming orthopaedics and helping to make healthcare better through the continuum of care.”&nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Jun 29 2023 17:39:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1601987131": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jun 29 2023 17:28:39 GMT+0000",
+      "jcr:lastModified": "Thu Jun 29 2023 17:28:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Feb 09 2023 19:41:44 GMT+0000",
+      "jcr:lastModified": "Thu Feb 09 2023 19:43:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "jcr:lastModified": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Thu Feb 09 2023 19:42:51 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Feb 09 2023 20:02:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Feb 10 2023 18:56:47 GMT+0000",
+          "text": "More about Stryker’s Mako SmartRobotics™ Our robotic surgery expertise is 17 years in the making. In 2013, Stryker saw the long-term potential benefit that Mako robotic surgery could have on patients undergoing joint replacement surgery and acquired MAKO Surgical Corp. We continue to bring this evidence-based healthcare technology to care teams around the world. 1 million+ Mako procedures performed globally to date Mako Systems installed in 35 countries and every U.S. state 17 years of robotic-arm assisted surgery experience 330+ studies published, peer reviewed studies 1,500+ patents and patent applications established globally 1 million+ patient records and 105 million actionable data points in Mako Insightful Data Analytics database Learn more about Mako",
+          "jcr:lastModified": "Thu Jun 29 2023 17:46:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2023/features/mako_robotics_drivin/infographic-text/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2023/features/mako-robotics-drivin/infographic-text/master"
+        },
+        "cols2_copy_1437728370": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "jcr:lastModified": "Thu Feb 09 2023 19:42:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Thu Feb 09 2023 19:42:51 GMT+0000",
+              "text": "<p><br>\n<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Feb 09 2023 20:03:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1948734879": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jun 29 2023 17:28:53 GMT+0000",
+      "jcr:lastModified": "Thu Jun 29 2023 17:28:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jun 30 2023 19:15:01 GMT+0000",
+      "title": "Related news",
+      "jcr:lastModified": "Wed Jul 05 2023 18:14:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/about/news/2023/stryker-unveils-mako-total-knee-2-0-at-the-aaos-2023-annual-meet"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/about/news/2022/stryker-s-stiles-shares-the-art-and-science-used-in-integrating-"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/about/news/2020/stryker-releases-mako--total-hip-4-0-software"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/about/news/features/mako-smartrobotics--hits-500-000--procedures"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jun 29 2023 17:47:20 GMT+0000",
+      "text": "<div><b>References</b></div>\n<ol>\n<li>Hunter J., David, March, Lyn, Chew, Mabel. Osteoarthritis in 2020 and beyond: a Lancet Commission. Volume 396, Issue P1711-1712. Published November 4, 2020. Accessed May 3, 2023 via <a href=\"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32230-3/fulltext#seccestitle10\">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)32230-3/fulltext#seccestitle10</a><br>\n</li>\n</ol>\n<p>Those living with joint pain are encouraged to speak with their healthcare professional about available treatment plans. As a provider, surgeons can help patients get educated on options that may help prevent further pain and complications. To learn more about joint health treatment options for patients, please visit makosmartrobotics.com.<br>\n<br>\nAll surgery carries risk. Surgeons must rely on their own professional clinical judgment when deciding whether to utilize a particular technology when treating a patient in their own practice. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any technology before using it in surgery. Not all patients will have the same postoperative recovery and activity level. Individual results vary.<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Jun 29 2023 19:41:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Thu Jul 06 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Jul-2023",
+    "jcr:lastModified": "Thu Jul 06 2023 20:50:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Jun 29 2023 17:29:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Thu Jun 29 2023 17:47:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/features/mako--robotics-driving-innovation-across-specialties/Mako Total Knee 2.0_hero with trialing_no text.jpg"
+  }
+}

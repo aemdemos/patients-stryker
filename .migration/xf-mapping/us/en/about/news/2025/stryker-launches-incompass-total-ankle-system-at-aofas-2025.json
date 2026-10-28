@@ -1,0 +1,130 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches Incompass Total Ankle System at AOFAS 2025",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "070db9a8-6897-4bef-b408-4c111f24f3e5",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Incompass-news-brief-thumbnail",
+  "jcr:predecessors": [
+    "943679a0-4a21-4dcc-a587-5ec481aa2e32"
+  ],
+  "contentID": "FA-INCO-PRESS-2253361",
+  "lastPublished": "Tue Sep 09 2025 12:59:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 09 2025 12:59:50 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 09 2025 12:59:53 GMT+0000",
+  "cq:lastModified": "Tue Sep 09 2025 12:59:42 GMT+0000",
+  "jcr:description": "Press release announcing Stryker will launch its Incompass™ Total Ankle System at the 2025 American Orthopaedic Foot & Ankle Society (AOFAS) Annual Meeting in Savannah, Georgia, September 10–13, 2025",
+  "jcr:baseVersion": "943679a0-4a21-4dcc-a587-5ec481aa2e32",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 09 2025 12:07:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Sep 09 2025 12:59:42 GMT+0000",
+  "jcr:uuid": "f0480a80-4dfc-470f-bb4e-1c9d280984c4",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jun 24 2025 21:05:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 24 2025 21:05:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 24 2025 21:17:46 GMT+0000",
+          "alt": "Incompass",
+          "srcFileRef": "/content/dam/stryker/about/news/2025/stryker-launches-incompass-total-ankle-system-at-aofas-2025/images/incompass-press-release-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 08 2025 19:30:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_497723027": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 24 2025 21:19:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Next-generation solution designed to simplify procedures and support long-term outcomes</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 08 2025 19:11:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:05:22 GMT+0000",
+          "text": "<p><b>PORTAGE, Mich. – Sept. 9, 2025</b>&nbsp;–&nbsp;Stryker (NYSE:SYK), a global leader in medical technologies, will launch its Incompass™ Total Ankle System at the 2025 American Orthopaedic Foot &amp; Ankle Society (AOFAS) Annual Meeting in Savannah, Georgia, September 10–13, 2025 (booth # 401). The <a href=\"/content/stryker/us/en/about/news/2025/stryker-receives-fda-clearance-for-incompass-total-ankle-system.html\">FDA-cleared system</a> is intended for patients with end-stage ankle arthritis and introduces an innovative implant with an enhanced instrument platform.</p>\n<p>“Incompass was developed with one goal in mind: to give surgeons more flexibility and confidence in the OR while improving outcomes for their patients,” said Adam Jacobs, vice president and general manager of Stryker’s Foot &amp; Ankle business. “This advanced system has been fully reimagined by the insights of countless surgeons, engineers, and real-world use cases built on 20 years of experience. We’re proud to continue leading the way in total ankle innovation and help shape what’s next for ankle arthroplasty.”</p>\n<p>Incompass provides a comprehensive approach to total ankle replacement. It was developed to mimic Stryker’s Infinity and Inbone with a similar implant profile, fixation and sulcus articulation. Leveraging these two legacy designs, Stryker created Incompass, aiming to advance clinical performance, address evolving surgeon needs and deliver meaningful value to hospitals and patients. Both legacy systems have documented five-year survivorship rates of 98% or higher.<sup>1,2</sup></p>\n<p>The system offers intraoperative flexibility, enabling surgeons to adjust implant configurations in real time to support patient-specific needs. Incompass includes 3D-printed porous metal tibial and talar components engineered to promote early bony ingrowth, often as early as four weeks.<sup>3</sup> By combining implant options and reducing instrumentation, the system helps reduce procedural complexity, enhance decision-making and lower sterilization demands.</p>\n<p>The implants were designed using SOMA, Stryker’s Orthopedic Modeling and Analytics tool, which analyzed real patient anatomy from arthritic ankle CT scans in the Prophecy® database. SOMA was used to study bone quality and optimize implant location.</p>\n<p>Further insights were gained from more than 80,000 Prophecy scans<sup>4</sup>. The system’s instrumentation was refined with input from a global clinical advisory team of experienced foot and ankle surgeons and informed by more than 100,000 total ankle cases,<sup>4</sup> reinforcing Stryker’s commitment to evidence-based design and long-term patient outcomes.</p>\n<p>Visit Booth #401 at AOFAS 2025 to learn more.</p>\n",
+          "jcr:lastModified": "Mon Sep 08 2025 20:09:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:06:33 GMT+0000",
+          "jcr:lastModified": "Tue Jun 24 2025 21:06:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_191512237": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:06:35 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;<a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nSampson Public Relations Group<br>\nAndrea Sampson<br>\nPresident/CEO<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n",
+          "jcr:lastModified": "Mon Sep 08 2025 19:13:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Sep 09 2025 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Sep-2025",
+    "jcr:lastModified": "Mon Sep 08 2025 18:41:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Gagne OJ, Day J, Kim J, Caolo K, O’Malley MJ, Deland JT, Ellis SJ, Demetracopoulos CA. Midterm Survivorship of the INBONE II Total Ankle Arthroplasty. Foot &amp; Ankle International. 2022 May;43(5):628–636. doi:10.1177/10711007211060047</li>\r\n<li>Early experience and patient-reported outcomes of 503 Infinity total ankle arthroplasties: A Concise Follow Up Townshend et al., Oct 2023 | The Bone &amp; Joint Journal | Vol. 103-B, No. 7</li>\r\n<li>Data on file at Stryker. Claim based on data from rabbit femur model. It is unknown how these results compare with clinical results in humans.</li>\r\n<li>Based on internal data.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Sep 08 2025 19:13:58 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/stryker-launches-incompass-total-ankle-system-at-aofas-2025/images/incompass-press-release-thumbnail.jpg"
+  }
+}

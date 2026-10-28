@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Women’s Network at Sage supports International Women’s Day",
+  "jcr:versionHistory": "97328ccd-0869-4ded-b240-8abc8c29d489",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "International Women's Day",
+  "jcr:predecessors": [
+    "18912199-19ba-4833-a17f-916e571d82d1"
+  ],
+  "contentID": "28928",
+  "lastPublished": "Tue Mar 29 2022 21:44:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Mar 29 2022 21:44:08 GMT+0000",
+  "cq:lastModified": "Tue Mar 29 2022 21:41:09 GMT+0000",
+  "jcr:baseVersion": "18912199-19ba-4833-a17f-916e571d82d1",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/3"
+  ],
+  "jcr:lastModified": "Tue Mar 29 2022 21:35:40 GMT+0000",
+  "jcr:uuid": "7c50fd78-7faf-4ca0-8ee8-c8e0349b99a9",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Tue Mar 29 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Mar-2022",
+    "jcr:lastModified": "Tue Mar 29 2022 16:43:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-International-Womens-Day.jpg"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<h2>Promoting equality</h2>\n<p>The world came together for International Women’s Day (IWD) on March 8th to celebrate women’s achievements and reinforce a commitment to women’s equality. This year, the Stryker Women’s Network (SWN) Cary organized an office event to celebrate with the entire Cary site. The Sage SWN committee leveraged the event to also support a local community partner, Girls on the Run, to forge positive change for women.</p>\n<h2>Striking a pose and supporting a cause</h2>\n<p>The event held at Sage included a photo opportunity to strike the IWD 2022 pose and share the image with the hashtag #Breakthebias on social media. This stance not only shows a commitment but also encourages others to help forge an inclusive world.</p>\n<p>To support Girls on Run, the SWN Cary Committee created a Floral Appreciation Donation event. This event featured handmade floral arrangements with special messages of appreciation and empowerment and all proceeds went toward Girls on the Run to support the next generation of women.</p>\n<p><a title=\"Girls on the Run\" href=\"https://www.girlsontherun.org/\" target=\"_blank\">Girls on the Run</a>, a national non-profit organization, designs programming that strengthens third to eighth grade girls’ social, emotional, physical, and behavioral skills to successfully navigate life experiences. The program’s intentional curriculum places an emphasis on developing competence, confidence, connection, character, caring, and contribution in young girls through lessons that incorporate running and other physical activities.</p>\n",
+    "jcr:lastModified": "Tue Mar 29 2022 21:41:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "alt": "International Women's Day",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-International-Womens-Day.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Mar 29 2022 21:34:42 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

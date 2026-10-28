@@ -1,0 +1,659 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "subtitle": "Critical Care Bed",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "InTouch",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8970511b-b243-4f33-8cb8-d4152edd8791",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Stryker's InTouch Critical Care Bed",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouchBed.jpg",
+  "jcr:predecessors": [
+    "b3a5d7fa-0b01-4462-a5f0-ce42b86bfc36"
+  ],
+  "contentID": "Mkt Lit-1995 09 JUN 2020 REV A",
+  "lastPublished": "Thu Aug 13 2026 17:37:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 17:37:35 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 17:37:37 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 17:37:29 GMT+0000",
+  "jcr:description": "Basic needs. Simplified care. Exceptional outcomes.",
+  "jcr:baseVersion": "b3a5d7fa-0b01-4462-a5f0-ce42b86bfc36",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 01:04:12 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/bedframes",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/icu-critical-care-beds",
+    "stryker:product/acute-care/intouch",
+    "stryker:specialty/increased-census",
+    "stryker:capability/covid-19-products",
+    "stryker:services/procare/acute-care/beds",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care",
+    "stryker:custom/acute-care/department/icu-critical-care"
+  ],
+  "jcr:lastModified": "Mon Nov 29 2021 14:15:34 GMT+0000",
+  "jcr:uuid": "7245f605-1326-4ba5-aa1e-23a5aca201e5",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/intouch_176844626/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/intouch-176844626/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Feb 21 2024 14:55:37 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">InTouch</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Critical care bed</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Basic needs. Simplified care. Exceptional outcomes.</span></span></p>\n",
+              "jcr:lastModified": "Fri Feb 23 2024 18:42:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_1680377284": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 17:57:05 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 17:57:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_696942433": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Feb 21 2024 15:07:35 GMT+0000",
+      "jcr:lastModified": "Wed Feb 21 2024 15:07:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "1",
+          "jcr:created": "Tue Nov 28 2023 18:15:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Related categories</span></span></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment.html\">Medical and surgical equipment</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/bedframes.html\">Bed frames</a></p>\n<p><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/bedframes/icu-critical-care-beds.html\">ICU critical care beds</a></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:08:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "20"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Wed Feb 21 2024 15:08:57 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">InTouch at a glance</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The InTouch critical care bed delivers intuitive, advanced technology and supports it with hospital programs and processes that enable you to minimize the risk of never events while providing a higher quality of care safely and conveniently.Intuitive controls on all four sides of the bed</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">One touch electric brake</span></li>\n<li><span class=\"fontsize-1-25em\">Protocol reminders</span></li>\n<li><span class=\"fontsize-1-25em\">Spoken language translations</span></li>\n<li><span class=\"fontsize-1-25em\">Sound therapy&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Feb 23 2024 17:54:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_818130461_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 17:00:07 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 17:00:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:03:10 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Product <span style=\"color: #ffb500;\">features</span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Feb 02 2024 18:49:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "jcr:lastModified": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols4_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 17:59:07 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 17:59:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Stryker's InTouch critical care bed touchscreen",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/PC_InTouch_SmF3_TouchScreen.jpg",
+          "jcr:lastModified": "Fri Feb 23 2024 17:56:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Touch screen</span></span></p>\n<p><span class=\"fontsize-1-25em\">Control all bed functions with an easy, intuitive touch screen interface using a powerful on-bed Windows computer.</span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Mar 22 2024 21:59:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Caregiver using the Zoom Motorized Drive System on Stryker's InTouch critical care bed",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/PC_InTouch_SmF2_Zoom.jpg",
+          "jcr:lastModified": "Fri Feb 23 2024 17:57:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Zoom Motorized Drive System</span></span></p>\n<p><span class=\"fontsize-1-25em\">Our Zoom Drive System is fully integrated and helps to provide mobility and efficiency for both the patient and the caregiver.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:14:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Patient lying in Stryker's InTouch critical care bed with iBed Awareness activated",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/PC_InTouch_SmF1_DarkRoom.jpg",
+          "jcr:lastModified": "Fri Feb 23 2024 17:58:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">iBed Awareness</span></span></p>\n<p><span class=\"fontsize-1-25em\">iBed Awareness monitors local bed status information, alerting caregivers visually, audibly or remotely if preset parameters are compromised.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:14:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 17:59:19 GMT+0000",
+          "alt": "Braden Scale for Predicting Pressure Sore Risk shown on Stryker's InTouch critical care bed's touch screen",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/InTouch-BradenScaleTouchScreen copy.jpg",
+          "jcr:lastModified": "Fri Feb 23 2024 17:58:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:00:49 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Connect to help prevent adverse events</span></span></p>\n<p><span class=\"fontsize-1-25em\">By providing better bedside data and greater flexibility to connect, you can help improve patient care and help prevent adverse events. Open architecture reduces your total cost of ownership and gives you the freedom to build a custom solution.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:15:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Feb 21 2024 15:12:36 GMT+0000",
+      "jcr:lastModified": "Wed Feb 21 2024 15:12:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "jcr:lastModified": "Fri Feb 02 2024 18:49:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Feb 21 2024 15:16:58 GMT+0000",
+      "jcr:lastModified": "Wed Feb 21 2024 15:16:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 28 2020 18:04:13 GMT+0000",
+          "alt": "Rendering of caregiver assisting patient to stand from Stryker's InTouch critical care bed",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/intouch/images/InTouch-EarlyMobility_Step03Bed_alt.tif",
+          "jcr:lastModified": "Fri Feb 23 2024 18:00:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 21 2024 15:11:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Benefits of early mobility&nbsp;</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Stryker's InTouch bed has features that may assist in early mobility exercises such as a 16&quot; low bed height, an independent knee gatch and foot drop, a one-touch cardiac chair position, and siderails that support transferable skills and the necessary nose-over-toes position.</span></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:12:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 05 2020 19:56:41 GMT+0000",
+      "jcr:lastModified": "Thu Mar 05 2020 19:56:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 05 2020 19:56:47 GMT+0000",
+          "alt": "iBed Wireless helps provide advanced fall prevention, asset management and documentation",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/ibedwireless/images/Thumbnail_iBedWireless_2.jpg",
+          "jcr:lastModified": "Fri Feb 23 2024 18:01:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/acute-care/products/ibed-wireless",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1510377016": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 21 2024 15:10:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Connected and confident care&nbsp;</span></span></h3>\n<p><span class=\"fontsize-1-25em\">iBed Wireless, available on Stryker’s InTouch Critical Care Bed, is compatible with many information management systems allowing your facility to build a custom end solution. This gives caregivers the ability to help provide advanced fall prevention*, asset management and documentation from the bedside.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Wed Feb 21 2024 15:12:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 05 2020 20:02:03 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/acute-care/products/ibed-wireless.html\">More</a></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 05 2020 20:13:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Feb 02 2024 18:28:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_279238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "jcr:lastModified": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:38:32 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for your interest in our new ProCuity bed series. A Stryker representative will reach out to you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 17:37:29 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 15:16:03 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Oct 02 2023 15:17:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Mon Feb 05 2024 15:19:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_1341844888": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/intouch/resources/ICU_Brochure_MktLit1348.pdf",
+            "/content/dam/stryker/acute-care/products/intouch/resources/InTouch_Brochure_Mkt Lit-181.pdf",
+            "/content/dam/stryker/acute-care/products/intouch/resources/InTouch_SpecSheet_Mkt-180.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Wed Feb 21 2024 14:53:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue May 11 2021 19:20:41 GMT+0000",
+          "jcr:lastModified": "Fri Feb 02 2024 19:04:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/michael-graves-with-stryker"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/tru-fit"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://techweb.stryker.com/",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "https://patientcare.stryker.com/en/products/beds/critical-care-beds/intouch",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Feb 21 2024 15:09:59 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "Operations and Maintenance Manuals",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Feb 21 2024 15:09:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/intouch/images/Thumbnail_InTouch_SYK_2.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>The features listed are only available when iBed Wireless is integrated with third party systems that bring data to EHRs, Handheld devices, Alert Management Systems, Nurse Call, or Asset Management Systems. The iBed Wireless System requires iBed Radios, iBed Locators, and a Stryker Server application.</li>\r\n</ol>\r\n<div>*&nbsp;When combining the proper processes and technologies to help reduce risk of bed related falls.</div>\r\n",
+    "jcr:lastModified": "Thu Mar 05 2020 20:32:17 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Feb 21 2024 15:09:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Feb 21 2024 15:09:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Feb 21 2024 15:10:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  }
+}

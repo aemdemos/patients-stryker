@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "93332693-a197-4e95-901b-9c6dc9fb5ad1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "d0684746-bcbe-4c19-96cf-f084e04a7726"
+  ],
+  "lastPublished": "Mon Oct 19 2026 00:49:55 GMT+0000",
+  "jcr:created": "Mon Oct 19 2026 00:49:56 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 19 2026 00:50:05 GMT+0000",
+  "cq:lastModified": "Tue Oct 13 2026 20:15:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d0684746-bcbe-4c19-96cf-f084e04a7726",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Oct 19 2026 00:49:55 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ad767fc0-2944-4fd1-8a83-7165abb7010a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Tue Oct 13 2026 20:15:29 GMT+0000",
+      "alt": "product-donation-hero-mobile",
+      "srcFileRef": "/content/dam/stryker/about/contact/product-donations/images/product-donation-hero-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Oct 13 2026 20:15:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

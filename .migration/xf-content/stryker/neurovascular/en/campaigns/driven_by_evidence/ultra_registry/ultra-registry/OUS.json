@@ -1,0 +1,214 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveSync"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "OUS",
+  "jcr:versionHistory": "7b98e97e-0596-4f26-bec1-53eb07ccb79e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+  "jcr:predecessors": [
+    "c2336049-7178-4cc9-b5d3-85a59a0bdcad"
+  ],
+  "jcr:created": "Fri Jul 22 2022 03:32:56 GMT+0000",
+  "cq:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c2336049-7178-4cc9-b5d3-85a59a0bdcad",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "2aaf1744-71c1-4648-952e-69fdd2575f59",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+    "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+    "text_550258104_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "topMargin": "15",
+      "jcr:created": "Fri Feb 18 2022 20:53:52 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #b2b4ae;\"><span style=\"color: #000000;\">100</span></span></span></span></span></span><br>\n<span class=\"fontsize-1-5em\"><span class=\"futura-bold\">patients</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "1",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "3",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "2",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "alt": "infographic with people",
+      "srcFileRef": "/content/dam/stryker/neurovascular/campaigns/driven-by-evidence/ultra-registry/images/100Patients_Color_Change.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "10",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "11",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "7",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\">Mean age of 56 years | 75% female</span></p>\n",
+      "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "offset": "0",
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "6",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "jcr:created": "Fri Apr 01 2022 16:19:38 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #b2b4ae;\">◼ 48 ruptured </span>&nbsp; &nbsp; &nbsp;<span style=\"color: #85458a;\">◼ 52 unruptured</span></span></span></p>\n",
+      "jcr:lastModified": "Fri Jul 15 2022 20:33:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+        "cq:lastRolledoutBy": "garrett.shue@stryker.com",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:LiveRelationship"
+          ],
+          "cq:lastRolledout": "Fri Jul 15 2022 20:33:58 GMT+0000",
+          "width": "6",
+          "cq:lastRolledoutBy": "garrett.shue@stryker.com"
+        }
+      }
+    }
+  },
+  "cq:LiveSyncConfig": {
+    "jcr:primaryType": "cq:LiveCopy",
+    "cq:rolloutConfigs": [],
+    "cq:isDeep": true,
+    "cq:master": "/content/experience-fragments/stryker/neurovascular/en/campaigns/driven_by_evidence/ultra_registry/ultra-registry/master"
+  }
+}

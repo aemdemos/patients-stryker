@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Tornier BIO-RSA® for A2 Glenoid Erosion",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "76f41346-b0eb-488f-bf77-00a5ecd2a5ad",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "c628e97e-e06a-49d8-98ca-dc953ef9ba19"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:54:50 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 20:54:56 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:54:59 GMT+0000",
+  "cq:lastModified": "Mon Mar 20 2023 19:56:53 GMT+0000",
+  "jcr:baseVersion": "c628e97e-e06a-49d8-98ca-dc953ef9ba19",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:54:50 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Mar 20 2023 19:56:53 GMT+0000",
+  "jcr:uuid": "45042653-c2ab-4abc-9eb4-9aa3baff6c98",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:07:00 GMT+0000",
+      "text": "Tornier BIO-RSA® for A2 Glenoid Erosion In this video, Dr. George Athwal discusses Tornier BIO-RSA® for A2 Glenoid Erosion, featuring Blueprint® to assist with surgical planning. AP-016264A",
+      "jcr:lastModified": "Thu Jul 28 2022 18:07:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/bio-rsa-for-a2-glenoid-erosion/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/bio-rsa-for-a2-glenoid-erosion/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/BIO-RSA for A2 Glenoid Erosion AP-014092A.png"
+  }
+}

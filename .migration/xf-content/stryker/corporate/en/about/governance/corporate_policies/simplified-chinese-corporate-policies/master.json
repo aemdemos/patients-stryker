@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Simplified Chinese Corporate policies",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1b3e386a-3260-4001-98e7-178fc26e56db",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "d5279f89-0ea5-4d5b-9bf0-0254cea19f5f"
+  ],
+  "lastPublished": "Mon Jul 13 2026 18:51:54 GMT+0000",
+  "jcr:created": "Mon Jul 13 2026 18:52:07 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 13 2026 18:52:11 GMT+0000",
+  "cq:lastModified": "Fri Jul 10 2026 20:41:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d5279f89-0ea5-4d5b-9bf0-0254cea19f5f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:47:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ae844b14-3bfb-41d3-9c0c-d9771a357c82",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 08 2017 15:47:38 GMT-0400",
+      "text": "<ul>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/127328\">反歧视 (2 Anti-Discrimination(A4))</a><br>\n</li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/127038\">性骚扰及其他非法骚扰 (3 Sexual and Other Unlawful Harassment (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/141174\">按标示推销产品(5 On-Label Product Promotion)</a></li>\n<li><a href=\"https://www.stryker.com/content/dam/commercial/usa/legal/gsnps/LEGA-GSNPS-PROT-790605-ZH_CN.pdf\">公司人员的证券交易 (6 Trading in Securities by Company Personnel (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/127040\">全球信息和系统安全 (7 Global Information and Systems Security (Ltr))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/127042\">法规事务和质量保证政策 (9 Quality (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/127044\">员工隐私权原则 (11 Global Privacy and Data Protection (A4))</a></li>\n<li><a href=\"/content/dam/stryker/corporate/policies/zh-hans/148416\">政策標題：參與手術或其他醫療程序 (13 Attendance at Surgery or Other Medical Procedures (A4))</a></li>\n</ul>\n",
+      "jcr:lastModified": "Fri Jul 10 2026 20:41:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

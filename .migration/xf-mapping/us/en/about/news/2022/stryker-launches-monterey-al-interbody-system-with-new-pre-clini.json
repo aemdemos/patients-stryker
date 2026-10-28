@@ -1,0 +1,126 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches Monterey AL Interbody System with new pre-clinical data",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "46017872-41fa-47fa-a7eb-c19baad47795",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Monterey AL",
+  "jcr:predecessors": [
+    "43ee45c7-3de6-4fa3-a5c4-1a9d72aeb7ea"
+  ],
+  "contentID": "MONT-PR-1_34247",
+  "lastPublished": "Tue Oct 04 2022 13:12:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 04 2022 13:12:37 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 04 2022 13:12:39 GMT+0000",
+  "cq:lastModified": "Mon Oct 03 2022 20:17:38 GMT+0000",
+  "jcr:baseVersion": "43ee45c7-3de6-4fa3-a5c4-1a9d72aeb7ea",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Oct 03 2022 17:12:11 GMT+0000",
+  "jcr:uuid": "0f26b514-86ca-4432-a3e2-ae007b3bc1ff",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 03 2022 17:03:39 GMT+0000",
+      "jcr:lastModified": "Mon Oct 03 2022 17:03:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Oct 03 2022 17:03:44 GMT+0000",
+          "alt": "Monterey AL",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/stryker-launches-monterey-al-interbody-system-with-new-pre-clinical-data/Monterey AL.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 03 2022 17:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Oct 03 2022 17:02:55 GMT+0000",
+      "jcr:lastModified": "Mon Oct 03 2022 17:02:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 03 2022 17:03:00 GMT+0000",
+          "text": "<p><i><span class=\"fontsize-1-25em\">Monterey AL Interbody System is the latest addition to Stryker’s growing 3D-printed interbody device portfolio</span></i></p>\n<p><b>Kalamazoo, Mich.</b>&nbsp;– Stryker (NYSE:SYK), one of the world’s leading medical technology companies, announced today the launch of the Monterey AL Interbody System, a stand-alone interbody fusion device designed for anterior lumbar interbody fusion (ALIF). Monterey AL is made up of both solid and porous structures within a single implant, leveraging Stryker’s proprietary Tritanium In-Growth Technology, a material designed to mimic cancellous bone and provide an environment favorable to bone regeneration and fusion.<sup>1-4</sup> New data demonstrates that undifferentiated stem cells grown on Tritanium exhibited osteogenic Alkaline Phosphatase without requiring growth factor supplements.<sup>5-6</sup></p>\n<p>“No one understands 3D-printing like Stryker. The fact that they’ve been able to dial in the right mix of small, medium, and large pores in a reproducibly randomized matrix is incredible. Their growing body of pre-clinical data, specifically the cellular findings published most recently<sup>5-6</sup>, makes my decision to go with these products very straightforward. Our goal with any implant is spinal fusion, and Stryker has taken a very intentional approach to designing the Tritanium cages with this goal in mind,” said Bala Giri, MD, president and founder, Texas Neuro Spine Institute.</p>\n<p>Monterey AL Interbody System highlights:</p>\n<ul>\n<li><b>Tritanium In-Growth Technology:</b> Tritanium is a 3D-printed, novel, highly porous titanium material designed for bone in-growth and biological fixation, built using AMagine, Stryker’s proprietary approach to implant creation using additive manufacturing.<sup>1</sup></li>\n<li><b>Functionally optimized footprint options:</b> Strategically deeper and narrower cage footprints allow surgeons to create indirect decompression by distracting the disc space posteriorly.<sup>2</sup> These geometries are designed to both help prevent the cage from impinging posteriorly into the neural foramen and lessen the need to countersink the cage, thereby allowing for easy access to the anterior screw holes.<sup>2</sup></li>\n<li><b>Straightforward instruments:</b> The robust medial attachment, multiple technique possibilities, and a wide variety of screwdriver options are designed to facilitate clear visualization of and easy access to the surgical site once the approach is complete and a retractor is in place.<sup>2</sup></li>\n</ul>\n<p>“This is an exciting time for our division, as we continue to build momentum and expand our portfolio to bring new technology to our surgeon customers,” said Robbie Robinson, president of the Spine division, Stryker. “One of our goals as a medical technology company and an implant manufacturer is to complement clear visualization and easy access with intuitive instruments and biologically inspired implant designs. Monterey AL combines more than 20 years of expertise in the creation of porous materials using additive manufacturing with innovative implants and instruments that are designed to give surgeons the flexibility to use our system without having to alter their preferred technique.”</p>\n<p>Stryker will showcase the Monterey AL System as well as its recently launched <a href=\"https://www.businesswire.com/news/home/20220927005511/en/Stryker-Launches-Q-Guidance-System-with-Spine-Guidance-Software\">Q Guidance System and Spine Guidance Software</a> at the Congress of Neurological Surgeons (CNS) 2022 Annual Meeting in San Francisco, Oct. 8–12, 2022 (booth #419) and the North American Spine Society (NASS) Annual Meeting in Chicago, Oct. 12-15, 2022 (booth 4211).</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Oct 03 2022 20:17:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 03 2022 17:17:00 GMT+0000",
+          "jcr:lastModified": "Mon Oct 03 2022 17:17:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1391234376": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Oct 03 2022 17:17:04 GMT+0000",
+          "text": "<p><b>About Stryker<br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, and Orthopaedics and Spine that help improve patient and hospital outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p>Dr. Bala Giri is a paid consultant of Stryker. His statements represent his own opinions based on personal experience and are not necessarily those of Stryker. Individual results may vary.</p>\n<p><b>Media contact<br>\n </b>Andrea Sampson, Sampson Public Relations Group<br>\n562.304.0301<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n",
+          "jcr:lastModified": "Mon Oct 03 2022 17:18:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Tue Oct 04 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Oct-2022",
+    "jcr:lastModified": "Mon Oct 03 2022 17:02:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/stryker-launches-monterey-al-interbody-system-with-new-pre-clinical-data/Monterey AL.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Stryker data on file | PROJ 43909 Tritanium technology claim support memo, Rev-1</li>\r\n<li>Stryker data on file | DHF 0370 Monterey AL Design History File (including DHF 68852 Monterey AL Validation Report)</li>\r\n<li>Karageorgiou, V. et al. &quot;Porosity of 3D biomaterial scaffolds and osteogenesis.&quot; Biomaterials. 2005, 26: 5474–5491.</li>\r\n<li>Khan, I. et al. &quot;Clinical and cost-effectiveness of lumbar interbody fusion using Tritanium Posterolateral Cage (vs. propensity-matched cohort of PEEK cage).&quot; Spine Surgery and Related Research, 2022.</li>\r\n<li>Stryker data on file; RD 62430 Tritanium hMSC osteogenic differentiation</li>\r\n<li>Reza, A. et al. &quot;Randomized porous titanium impacts cell morphology and induces stem cell differentiation in vitro.&quot; Orthopaedic Research Society 5th International Spine Research Symposium, 2019, 5: 83.</li>\r\n<li>Mobbs RJ, Phan K, Malham G, Seex K, Rao PJ. Lumbar interbody fusion: techniques, indications and comparison of interbody fusion options including PLIF, TLIF, MI-TLIF, OLIF/ATP, LLIF and ALIF. J Spine Surg. 2015.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Oct 03 2022 17:24:30 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

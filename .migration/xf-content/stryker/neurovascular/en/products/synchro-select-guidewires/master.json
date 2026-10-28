@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Synchro SELECT Guidewires",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fda85f55-5453-4323-ac58-b35d290ae9bd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "20713e67-b135-4bf5-a445-6a072e5ea525"
+  ],
+  "lastPublished": "Wed Jan 08 2025 16:51:11 GMT+0000",
+  "jcr:created": "Wed Jan 08 2025 16:51:28 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 08 2025 16:51:30 GMT+0000",
+  "cq:lastModified": "Mon Nov 06 2023 20:38:11 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "20713e67-b135-4bf5-a445-6a072e5ea525",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:11 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "139fc005-c434-4c6f-a6d2-48a871468d9c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy488896": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Fri Apr 02 2021 19:12:08 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy4888969316691404671826": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><br>\n </span></span><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">Synchro SELECT<sup>™</sup> Guidewires</span></span><br>\n <br>\n <span class=\"fontsize-1-75em\">Excellence comes down to the wire</span></span></h1>\n<p>_____________________________________</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Synchro SELECT Guidewires are the Synchro Guidewires you trust, fully optimized.</span></span></p>\n<p>Based on years of partnership with our customers, we understand that neurointerventional procedures now require access to distal tortuous anatomy, and that guidewires need to navigate with greater ease and control. That’s why we created Synchro SELECT Guidewires.<br>\n</p>\n",
+        "jcr:lastModified": "Mon Nov 06 2023 20:38:10 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "item514449043902550_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Sep 19 2019 19:49:51 GMT+0000",
+        "srcFileRef": "/content/dam/stryker/neurovascular/images/goldBar.jpg",
+        "jcr:lastModified": "Wed Oct 23 2019 17:02:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "1"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/synchro-select-guidewires/Synchro_SELECT.gif",
+      "jcr:lastModified": "Fri Apr 02 2021 19:12:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

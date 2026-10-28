@@ -1,0 +1,130 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker receives FDA clearance for Incompass Total Ankle System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8e7f5627-7cad-4831-8902-6b7e9c57b610",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Incompass",
+  "jcr:predecessors": [
+    "b5f61b85-06c8-45c5-95a8-1b2c0b5afdf6"
+  ],
+  "contentID": "FA-INCO-PRESS-2016296",
+  "lastPublished": "Wed Jun 25 2025 17:33:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 25 2025 17:33:37 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 25 2025 17:33:39 GMT+0000",
+  "cq:lastModified": "Wed Jun 25 2025 17:33:30 GMT+0000",
+  "jcr:description": "Stryker's Incompass™ Total Ankle System is an implant intended for patients with ankle joints damaged by severe rheumatoid, post-traumatic, or degenerative arthritis.",
+  "jcr:baseVersion": "b5f61b85-06c8-45c5-95a8-1b2c0b5afdf6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jun 25 2025 13:01:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Wed Jun 25 2025 17:33:30 GMT+0000",
+  "jcr:uuid": "f2b1a4e3-4be6-43f2-89c8-2756ae4269b5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jun 24 2025 21:05:17 GMT+0000",
+      "jcr:lastModified": "Tue Jun 24 2025 21:05:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 24 2025 21:17:46 GMT+0000",
+          "alt": "Incompass",
+          "srcFileRef": "/content/dam/stryker/about/news/2025/stryker-receives-fda-clearance-for-incompass-total-ankle-system/images/Incompass-news-brief.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 24 2025 21:18:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_497723027": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jun 24 2025 21:19:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Streamlining total ankle replacement with data-driven implants and surgical flexibility</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jun 24 2025 22:42:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:05:22 GMT+0000",
+          "text": "<p><b>PORTAGE, Mich.</b> – <b>June 25, 2025</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced it has received U.S. Food and Drug Administration (FDA) 510(k) clearance for the Incompass™ Total Ankle System, an implant intended for patients with ankle joints damaged by severe rheumatoid, post-traumatic, or degenerative arthritis. This new platform integrates the innovative technologies of Stryker’s Inbone<sup>®</sup> and Infinity<sup>®</sup> systems into a single, comprehensive solution for total ankle replacement.</p>\n<p>“Incompass reflects our commitment to redefining what’s possible in total ankle replacement,” said Adam Jacobs, vice president and general manager of Stryker’s Foot &amp; Ankle business. “By building on decades of clinical experience and leveraging extensive data insights, we’re setting a new standard—one that empowers surgeons to deliver more personalized care with greater efficiency and confidence.”</p>\n<p>Incompass incorporates Adaptis<sup>®</sup> Boney Ingrowth Technology and redesigned instrumentation to support long-term fixation, surgical flexibility and streamlined workflow. Developed to address key challenges in total ankle replacement, including intraoperative adaptability and procedural efficiency, the system is informed by data from more than 85,000 CT scans<sup>1</sup> and 100,000 clinical cases.<sup>1</sup> It also offers a broad range of implant and instrumentation options to support patient-specific care.<br>\n</p>\n<p>Built using the Stryker Orthopaedic Modeling &amp; Analytics (SOMA) platform in combination with arthritic ankle scans from the company’s Prophecy Surgical Planning System, Incompass provides a continuum of implant and instrument options designed to accommodate both surgeon preference and patient anatomy. System enhancements include a redesigned alignment system for greater control across multiple planes, updated implant holders and trial tools for improved handling, and instrumentation refinements designed to reduce surgical steps and set up time.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 25 2025 17:33:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:06:33 GMT+0000",
+          "jcr:lastModified": "Tue Jun 24 2025 21:06:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_191512237": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 24 2025 21:06:35 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, and Orthopaedics that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nSampson Public Relations Group<br>\nAndrea Sampson<br>\nPresident/CEO<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a></p>\n",
+          "jcr:lastModified": "Tue Jun 24 2025 22:45:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Wed Jun 25 2025 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Jun-2025",
+    "jcr:lastModified": "Tue Jun 24 2025 21:05:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<ol>\r\n<li>Based on internal data as of 5/1/2025.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Jun 24 2025 21:07:35 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/stryker-receives-fda-clearance-for-incompass-total-ankle-system/images/Incompass-news-brief-thumbnail.png"
+  }
+}

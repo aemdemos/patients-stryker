@@ -1,0 +1,307 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body1",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ec812496-db0f-41f2-b066-0bb3dea24842",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "8d73b165-76ac-4d8b-afc0-52dcef0e87dd"
+  ],
+  "lastPublished": "Tue Sep 30 2025 21:18:38 GMT+0000",
+  "jcr:created": "Tue Sep 30 2025 21:18:38 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 30 2025 21:18:40 GMT+0000",
+  "cq:lastModified": "Mon Sep 22 2025 14:11:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "8d73b165-76ac-4d8b-afc0-52dcef0e87dd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:36:55 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8eed7556-5cca-4d82-a8c5-0b788bd118c6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_484727420": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 19:38:23 GMT+0000",
+      "jcr:lastModified": "Tue Jan 30 2024 19:39:08 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_4847274204816515434307146": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "DART Direct Anterior Reconstructive Technique logo",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/products/hip-portfolio/images/DART-wordmark.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Feb 27 2025 21:35:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_535804888": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "topPadding": "4",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "hideComponent": "false",
+        "rightMargin": "15",
+        "topMargin": "2",
+        "jcr:created": "Tue Jan 30 2024 19:40:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/joint-replacement/procedures/dart-direct-anterior-reconstructive-technology.html\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\">Learn more about DART</span></span></a></span></p>\n",
+        "jcr:lastModified": "Fri Sep 19 2025 17:37:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "backgroundColor": "rgb(255,181,0)",
+        "showDimensionalBox": "true",
+        "textIsRich": "true",
+        "leftMargin": "15"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_282388331": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Jan 29 2024 20:05:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3 style=\"text-align: center;\"><span class=\"fontsize-2vw\">When it comes to the <span class=\"futura-bold\">Direct Anterior (DA) </span><span class=\"urw-egyptienne\">Approach,</span> where the field of view may be obscured and the use of fluoroscopy may be misleading, knowing more about a patient’s unique anatomy can make a difference.<sup><span class=\"fontsize-1vw\">13,14</span></sup></span></h3>\r\n",
+      "jcr:lastModified": "Fri Sep 19 2025 20:38:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_777168361": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "RTE",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 29 2024 20:05:19 GMT+0000",
+      "jcr:lastModified": "Mon Jan 29 2024 20:05:23 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Tue Jan 30 2024 16:53:04 GMT+0000",
+        "alt": "Purple checkmark-ext",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/Purple checkmark-ext.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Jan 30 2024 17:07:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "2",
+            "width": "8"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Tue Jan 30 2024 16:53:14 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-1em\">Accurate and reproducible implant placement</span></span><span class=\"fontsize-1em\"><sup>18</sup></span></span></span></p>\n",
+        "jcr:lastModified": "Fri Sep 19 2025 16:24:04 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 16:53:04 GMT+0000",
+      "jcr:lastModified": "Tue Jan 30 2024 16:54:53 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy4806659892832480": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Blue checkmark-ext",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/Blue checkmark-ext.png",
+        "jcr:lastModified": "Tue Jan 30 2024 17:07:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "2",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "jcr:created": "Tue Jan 30 2024 16:53:14 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">Enhanced surgeon experience</span><sup><span class=\"fontsize-1em\"><span class=\"fontsize-8em\">4</span></span></sup></span></span></span></p>\n",
+        "jcr:lastModified": "Fri Sep 19 2025 16:25:13 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Accurate",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 16:53:14 GMT+0000",
+      "jcr:lastModified": "Tue Jan 30 2024 16:55:14 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Orange checkmark-ext",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/Orange checkmark-ext.png",
+        "jcr:lastModified": "Tue Jan 30 2024 17:07:52 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "2",
+            "width": "8"
+          }
+        }
+      },
+      "text_copy4806681511331920": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #af6d04;\"><span class=\"fontsize-1-25em\">Reduce, if not eliminate, fluoroscopy</span></span></span></span></p>\n",
+        "jcr:lastModified": "Wed Mar 05 2025 14:54:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_214574944_copy__1910964433": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 19:14:53 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Jan 31 2024 15:59:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Sep 19 2025 17:35:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Learn how to reduce, if not eliminate, fluoroscopy in your OR with <span style=\"color: #ffb500;\">Mako Total Hip</span> and <span style=\"color: #ffb500;\">Direct Anterior Reconstructive technology</span> (DART™).</span></span></p>\n",
+      "jcr:lastModified": "Mon Sep 22 2025 14:11:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "10"
+    }
+  }
+}

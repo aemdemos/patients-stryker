@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Emergency and transport stretchers",
+  "jcr:versionHistory": "8cb44297-7225-44e1-b049-d4c90533ae48",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/primeseries/images/Thumbnail_PrimeSeries.jpg",
+  "jcr:predecessors": [
+    "2269b14f-341a-465a-81f8-a1544b8000c4"
+  ],
+  "lastPublished": "Thu Aug 30 2018 10:13:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 30 2018 10:13:10 GMT-0400",
+  "cq:lastModified": "Tue Aug 28 2018 15:28:09 GMT-0400",
+  "jcr:description": "Satisfy department and patient needs. Then surpass them.",
+  "jcr:baseVersion": "2269b14f-341a-465a-81f8-a1544b8000c4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/stretchers",
+    "stryker:specialty/emergency-transport-stretchers",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 28 2018 15:28:09 GMT-0400",
+  "jcr:uuid": "ae30fd0a-4515-43d0-8db5-6f011e9be1e3",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:49:53 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Fri Aug 04 2017 14:09:32 GMT-0400",
+    "compImageRef": "/content/dam/stryker/acute-care/images/Thumbnail_PrimeX_sectioned.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/primeseries/images/Thumbnail_PrimeSeries.jpg"
+  }
+}

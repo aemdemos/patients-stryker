@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "958d9080-1de1-4709-a5e9-55fc9b7bc838",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3fd74b6f-24ce-4106-813a-6020f67cef02"
+  ],
+  "lastPublished": "Thu Jun 11 2026 20:41:44 GMT+0000",
+  "jcr:created": "Thu Jun 11 2026 20:41:44 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 11 2026 20:41:47 GMT+0000",
+  "cq:lastModified": "Thu Jun 11 2026 20:29:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3fd74b6f-24ce-4106-813a-6020f67cef02",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Feb 12 2026 19:19:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "376834a8-7eeb-45cb-be0d-344a70d316a7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Dec 18 2025 21:23:37 GMT+0000",
+      "alt": "Yellow wave pattern on a white background",
+      "srcFileRef": "/content/dam/stryker/acute-care/images/gold-adh-wave_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 20:29:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

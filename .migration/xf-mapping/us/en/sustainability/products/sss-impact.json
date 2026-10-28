@@ -1,0 +1,188 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Stryker's Sustainability Solutions",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ASC saving made simple ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "900f36b6-f8cb-4c65-8b80-770baa705d28",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "jcr:predecessors": [
+    "853562b6-a4a4-4099-934c-48b299eb831e"
+  ],
+  "lastPublished": "Tue Aug 18 2026 20:36:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:36:35 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:36:37 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:36:22 GMT+0000",
+  "jcr:baseVersion": "853562b6-a4a4-4099-934c-48b299eb831e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 23:03:31 GMT+0000",
+  "pageTitle": "ASC savings with reprocessing ",
+  "cq:tags": [
+    "stryker:business-unit/sustainability",
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content",
+    "sustainability:"
+  ],
+  "jcr:lastModified": "Fri Aug 29 2025 17:48:32 GMT+0000",
+  "jcr:uuid": "df28c6c8-2299-42f5-84a8-4b4b35528e9b",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "layoutOptions": "col-sm-3",
+      "backgroundImageRef": "/content/dam/stryker/sustainability/images/ASC Landing page graphic-02.png",
+      "jcr:created": "Tue Sep 16 2025 21:22:32 GMT+0000",
+      "alt": "ASC Landing page graphic-02",
+      "jcr:lastModified": "Tue Sep 16 2025 21:22:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Fri Aug 29 2025 17:54:12 GMT+0000",
+      "text": "<h4><span class=\"fontsize-1-5em\">The problem:&nbsp;</span></h4>\n<h3>Over 31% of ASC professionals cite rising operational costs as their top concern in 2025.<sup>1</sup> While ASCs help patients save 20–40% on out-of-pocket expenses compared to hospitals, many facilities aren’t seeing the same savings internally.<sup>2</sup></h3>\n<h4><br>\n<span class=\"fontsize-1-5em\">Our solution:</span></h4>\n<h3>Stryker's Sustainability Solutions (SSS) helps Ambulatory Surgical Centers lower their cost per case through high-quality reprocessed medical devices.<sup>3</sup> By partnering with SSS, facilities can achieve meaningful savings without compromising workflows.</h3>\n<h3>&nbsp;</h3>\n<h3>We make reprocessing simple and impactful. Connect with our experts today.</h3>\n<h3>&nbsp;</h3>\n<h3>&nbsp;</h3>\n",
+      "jcr:lastModified": "Wed Sep 24 2025 18:06:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:35:52 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:35:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Mon Sep 15 2025 22:13:45 GMT+0000",
+      "title": "Learn more about Stryker ASC",
+      "jcr:lastModified": "Wed Sep 17 2025 16:51:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/care-settings/asc"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 15 2024 15:56:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Fri Aug 29 2025 17:53:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1 Holly R. From budget bleed to burnout: the top ASC challenges defining 2025. Ambulatory Surgery Center News. Published March 25, 2025. Accessed July 2, 2025. https://ascnews.com/2025/03/from-budget-bleed-to-burnout-the-top-asc-challenges-defining-2025/</p>\r\n<p>2 Linder J. Ambulatory Surgery Centers Statistics: Market Data Report 2025. Gitnux. Published April 29, 2025. Accessed July 2, 2025. https://gitnux.org/ambulatory-surgery-centers-statistics/</p>\r\n<p>3 Internal data on file</p>\r\n",
+    "jcr:lastModified": "Tue Aug 18 2026 20:35:22 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

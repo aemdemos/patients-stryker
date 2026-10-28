@@ -1,0 +1,207 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Total Knee System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Triathlon Primary",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "119a38a1-3417-4bf5-8aeb-4f4521b51bb8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Triathlon total knee system thumbnail",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/triathlontotalkneesystem/images/Hero_JR_Knee_TriathlonKneeSystem.png",
+  "jcr:predecessors": [
+    "54682759-2935-47aa-a010-adc17771dd1c"
+  ],
+  "contentID": "TRIATH-WC-7_28616",
+  "lastPublished": "Tue Jul 21 2026 19:24:39 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 21 2026 19:24:39 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 21 2026 19:24:41 GMT+0000",
+  "cq:lastModified": "Tue Jul 21 2026 18:21:56 GMT+0000",
+  "jcr:description": "The Triathlon Total Knee System is a primary total knee replacement system designed to work with the body. Triathlon has been implanted in over 3 million patients worldwide. Triathlon Total Knee is available for use with the Mako System for Mako Total Knee.",
+  "jcr:baseVersion": "54682759-2935-47aa-a010-adc17771dd1c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:31:32 GMT+0000",
+  "pageTitle": "Triathlon",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:business-unit/joint-replacement",
+    "stryker:specialty/knee-joint-replacement",
+    "stryker:product/joint-replacement/triathlon-total-knee-system",
+    "stryker:custom/joint-replacements/procedure/primary",
+    "stryker:specialty/mako-robotic-arm-assisted-surgery",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/joint-replacements/product-type/implants",
+    "stryker:custom/joint-replacements/mako-type",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Apr 12 2023 20:16:41 GMT+0000",
+  "jcr:uuid": "71b4e808-7518-40ab-8a4a-2550e5c97336",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Aug 25 2017 16:14:13 GMT-0400",
+      "compImageRef": "/content/dam/stryker/joint-replacement/products/triathlon/Hero_JR_Knee_Triathlon_Primary.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "tiffany.mlinscek@stryker.com",
+      "jcr:lastModifiedBy": "tiffany.mlinscek@stryker.com",
+      "jcr:created": "Tue Jun 27 2017 16:32:45 GMT-0400",
+      "jcr:lastModified": "Tue Jun 27 2017 16:32:45 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Triathlon 15 year anniversary video",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "description": "TRIATH-VA-21",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Wed Jul 12 2017 16:00:10 GMT-0400",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Feb 04 2021 16:59:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/joint-replacement/products/triathlontotalkneesystem/videos/Triathlon_Milestone_15-TRIATH_VA_21.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Triathlon_Milestone_15-TRIATH_VA_21-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Feb 24 2020 18:03:56 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "resources": [
+        "/content/dam/commercial/usa/joint-replacement/knee/JR-TRIAGLD-DESR-2339900-EN_US.pdf",
+        "/content/dam/commercial/usa/joint-replacement/knee/JR-TRIA-DESR-2770300-EN_US.pdf",
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_176852414"
+      ],
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Jul 06 2026 21:13:33 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Jul 07 2026 19:07:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols2_2_3_1_3_188122514": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "jcr:created": "Fri Apr 26 2019 17:15:42 GMT+0000",
+      "jcr:lastModified": "Fri Apr 26 2019 17:15:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "linkExternal": "https://www.linkedin.com/showcase/stryker-joint-replacement/",
+          "jcr:created": "Fri Apr 26 2019 17:15:46 GMT+0000",
+          "alt": "JR LinkedIn banner.",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/campaigns/linkedin/JR-LinkedIn-banner.jpg",
+          "jcr:lastModified": "Fri Apr 26 2019 17:23:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div>References:</div>\r\n<ol>\r\n<li>Gómez-Barrena E, Fernandez-García C, Fernandez-Bravo A, Cutillas-Ruiz R, Bermejo-Fernandez G. Functional performance with a single-radius femoral design total knee arthroplasty. Clin Orthop Relat Res. 2010;468(5):1214-1220. doi:10.1007/s11999-009-1190-2</li>\r\n<li>Piazza S. Designed to maintain collateral ligament stability throughout the range of motion. Stryker-Initiated Dynamic Computer Simulations of Passive ROM and Oxford Rig Test. 2003.</li>\r\n<li>Mistry JB, Elmallah RK, Chughtai M, Oktem M, Harwin SF, Mont MA. Long-term survivorship and clinical outcomes of a single radius total knee arthroplasty. Surg Technol Int. 2016;28:247-251.</li>\r\n<li>Cook LE, Klika AK, Szubski CR, Rosneck J, Molloy R, Barsoum WK. Functional outcomes used to compare single radius and multiradius of curvature designs in total knee arthroplasty. J Knee Surg. 2012;25(3):249-253. doi:10.1055/s-0031-1299660</li>\r\n<li>Shimizu N, Tomita T, Yamazaki T, Yoshikawa H, Sugamoto K. In vivo movement of femoral flexion axis of a single-radius total knee arthroplasty. J Arthroplasty. 2014;29(12):2407-2411. doi:10.1016/j.arth.2013.12.001</li>\r\n<li>Larsen B, Jacofsky MC, Jacofsky DJ. Quantitative, comparative assessment of gait between single-radius and multi-radius total knee arthroplasty designs. J Arthroplasty. 2015;30(6):1062-1067. doi:10.1016/j.arth.2015.01.014</li>\r\n<li>Stoker M. Mid-term results of patient satisfaction following total knee arthroplasty. Presented at: ICJR Transatlantic Orthopaedic Congress (15th Annual ISK Sports Medicine &amp; Total Knee &amp; Hip Course in Collaboration with EKA); October 3-5, 2014; New York, NY. Orthopaedics Joint Replacement Knee Triathlon® Total Knee System Clinical evidence Triathlon 15 year anniversary video TRIATH-VA-21</li>\r\n<li>Scott CE, Clement ND, MacDonald DJ, et al. Five-year survivorship and patient-reported outcome of the Triathlon single-radius total knee arthroplasty. Knee Surg Sports Traumatol Arthrosc. 2015;23(6):1676-1683. doi:10.1007/s00167-014-2922-8</li>\r\n<li>National Joint Registry for England, Wales and Northern Ireland and Isle of Man. 13th Annual Report. 2016. Excerpt from Table 3.28: Kaplan-Meier estimated cumulative percentage probability of first revision (95% CI) of a primary total knee replacement by main type of implant brand at the indicated number of years after primary operation.</li>\r\n<li>National Joint Replacement Registry. Hip, Knee &amp; Shoulder Arthroplasty Annual Report 2016. Australian Orthopaedic Association; 2016. Excerpts from Figure KT8: Cumulative Percent Revision of Primary Total Knee Replacement with Cement Fixation and Figure KT29: Cumulative Incidence Revision Diagnosis of Primary Total Knee Replacement by Polyethylene Type (Primary Diagnosis OA).</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed May 12 2021 16:52:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Designed to work with the body</p>\r\n",
+    "bullet": [
+      "",
+      "",
+      ""
+    ],
+    "shortDescTop": "<p>With over 15 years and over 3 million implantations worldwide, Triathlon has a long clinical history.<sup>1-3</sup>&nbsp;In a 10-year follow-up study, Triathlon showed 99% survivorship.<sup>3</sup> Triathlon was designed to incorporate some of the most studied features of Stryker’s prior designs that have been shown to address many of the main reasons for revision TKA, such as instability, patellofemoral tracking complications and loosening/osteolysis.<sup>3</sup></p>\r\n<p>The Triathlon knee system offers surgeons a variety of options depending on disease, deformity and patient demand including cruciate-retaining, condylar-stabilizing, posterior-stabilizing and difficult primary options. Studies have shown that Triathlon and the single radius provide:</p>\r\n",
+    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Jul 21 2026 18:21:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Stability: Triathlon’s single radius design allows for mid-flexion stability.<sup>4-6</sup> A single vs. multi-radius functional outcome study concluded that Triathlon’s advantages in stability, walking, stair climbing and knee straightening stem from the single radius design, particularly its longer moment arm and enhanced ligament stability based on maintained isometry throughout knee range of motion.<sup>4</sup> A fluoroscopic study on Triathlon patients showed the femoral component was kinematically stabilized in mid-flexion ranges.<sup>5</sup> Additionally, gait reviews comparing patients with a single or multi-radius knee implant showed that patients with a single radius knee implant experienced gait patterns that more closely mimicked that of the non-diseased control group.<sup>6</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Satisfaction: A review of Triathlon patients showed a high level of satisfaction at seven year follow up.<sup>7</sup>&nbsp;</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Survivorship: Multiple studies&nbsp;and joint registries<sup>8-10</sup> from around the world consistently show a high rate of survivorship with Triathlon with more than 10 years of follow up.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/triathlontotalkneesystem/images/Hero_JR_Knee_TriathlonKneeSystem.png"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+    "jcr:lastModified": "Tue Oct 06 2020 14:52:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  }
+}

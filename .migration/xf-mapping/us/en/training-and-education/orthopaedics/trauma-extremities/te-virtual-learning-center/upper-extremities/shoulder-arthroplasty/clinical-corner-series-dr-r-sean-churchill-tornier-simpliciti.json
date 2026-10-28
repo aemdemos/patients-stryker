@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Clinical Corner Series: Dr. R. Sean Churchill (Tornier Simpliciti)",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c7f234c7-54f5-4e25-97f0-2fe32a79bdfa",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "684005e6-1859-4814-b562-0c036fafe43f"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:00:55 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:00:57 GMT+0000",
+  "cq:lastModified": "Wed Aug 02 2023 19:58:29 GMT+0000",
+  "jcr:baseVersion": "684005e6-1859-4814-b562-0c036fafe43f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Aug 02 2023 19:58:29 GMT+0000",
+  "jcr:uuid": "1c89564b-cef6-436a-a636-fb66701a5783",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:03:19 GMT+0000",
+      "text": "Clinical Corner Series: Dr. R. Sean Churchill (Tornier Simpliciti) Dr. R. Sean Churchill, Aurora Health Care – St. Luke’s Hospital at Milwaukee, WI, discusses this publication “Clinical and Radiographic Outcomes of the [Tornier Simpliciti] Canal-Sparing Shoulder Arthroplasty System: A Prospective Two-Year Multicenter Study.” AP-014459B Churchill_Tornier Simpliciti_Clinical Article Summary.pdf J Bone Joint Surg Am. 2016;98:552-60 The full article can be found at: http://dx.doi.org/10.2106/JBJS.15.00181 AP-016251A",
+      "jcr:lastModified": "Wed Aug 02 2023 19:42:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/clinical-corner-series--dr--r--sean-churchill--tornier-simplicit/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/clinical-corner-series-dr-r-sean-churchill-tornier-simplicit/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/Clinical Corner Series Dr. R Sean Churchill Tornier Simpliciti.png"
+  }
+}

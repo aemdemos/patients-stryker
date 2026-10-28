@@ -1,0 +1,136 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Implants",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hip",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e02f5d28-36e3-46a5-9a8c-808100c7e265",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_Replacement_2.png",
+  "jcr:predecessors": [
+    "6024c3ee-838a-49de-9a46-83c772599e0d"
+  ],
+  "contentID": "GSNPS-WC-33_27568, JR-GSNPS-PHOT-595035",
+  "lastPublished": "Fri Apr 07 2023 16:35:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Apr 07 2023 16:35:09 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 07 2023 16:35:11 GMT+0000",
+  "cq:lastModified": "Wed Mar 29 2023 15:49:17 GMT+0000",
+  "jcr:description": "We offer market-leading hip replacement implants for total hip arthroplasty, including our primary and revision portfolios designed to offer you a wide variety of implants, instrumentation and muscle-sparing surgical approach options. ",
+  "jcr:baseVersion": "6024c3ee-838a-49de-9a46-83c772599e0d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/hip-joint-replacement",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 29 2023 15:49:17 GMT+0000",
+  "jcr:uuid": "061021cb-2ecb-4fa7-ae86-8af258a26322",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "description": "Many of our primary and revision hip implants are SOMA-designed for optimal fit and function. We are on the forefront of the latest surgical approaches, including novel muscle-sparing surgical approaches to THA and Mako Total Hip Replacement. ",
+      "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "title": "No two patients are the same. Variety is what you need. ",
+      "jcr:lastModified": "Thu Feb 04 2021 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "filterName": "Product type",
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+        "tagFolder": "/etc/tags/stryker/custom/joint-replacements/product-type",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:LiveRelationship"
+        ],
+        "filterName": "Procedure",
+        "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+        "tagFolder": "/etc/tags/stryker/custom/joint-replacements/procedure",
+        "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:55 GMT+0000",
+    "imageAlt": "Hero_JR_Hip_Replacement_2023",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Wed Mar 29 2023 15:22:49 GMT+0000",
+    "compImageRef": "/content/dam/stryker/joint-replacement/images/Hero_JR_Hip_Replacement_2023.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "hideBottomLine": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/images/Hero_JR_Hip_Replacement_2023.png"
+  }
+}

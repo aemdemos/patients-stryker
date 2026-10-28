@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Total Joint and Trauma hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "017c7ea2-ff99-42f5-8375-ed03cbddb608",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "2c1c0591-469c-40fc-8f85-aedb30e06969"
+  ],
+  "lastPublished": "Fri May 01 2026 13:57:17 GMT+0000",
+  "jcr:created": "Fri May 01 2026 13:57:17 GMT+0000",
+  "cq:lastReplicated": "Fri May 01 2026 13:57:20 GMT+0000",
+  "cq:lastModified": "Mon Apr 13 2026 19:54:46 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "2c1c0591-469c-40fc-8f85-aedb30e06969",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 01 2026 13:57:17 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "389778dd-916c-41bc-99a6-005431f9688e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Apr 13 2026 19:54:39 GMT+0000",
+      "alt": "tpx-hd-image-header-tjt",
+      "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx-hd/images/tpx-hd-image-header-tjt.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Apr 13 2026 19:54:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

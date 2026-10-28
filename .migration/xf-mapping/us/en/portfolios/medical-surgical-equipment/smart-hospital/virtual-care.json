@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Virtual care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4ae78e1b-7e1d-4af3-99f1-b36b2a00a690",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "Patient on monitor in virtual care session with doctor and virtual nurse",
+  "jcr:predecessors": [
+    "81b439f1-ce5f-40b2-a985-9adbfd60d305"
+  ],
+  "contentID": "AC-GSNPS-SYK-1946182_REV-0_en_us",
+  "lastPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:35:43 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:35:45 GMT+0000",
+  "cq:lastModified": "Tue Jan 06 2026 14:27:07 GMT+0000",
+  "jcr:description": "Virtual care includes Virtual Nursing and Virtual Monitoring workflows designed in alignment with your facility's protocols and processes.",
+  "jcr:baseVersion": "81b439f1-ce5f-40b2-a985-9adbfd60d305",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:35:42 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/virtual-care",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital"
+  ],
+  "jcr:lastModified": "Fri Jan 02 2026 16:59:45 GMT+0000",
+  "jcr:uuid": "d88ba272-fc8b-44d9-b3a0-2326f0e52297",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/smarthospital-platform/virtual-care/virtual-care-specialty-thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Jan 06 2026 14:27:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker signs definitive agreement to acquire ZuriMED to enhance its shoulder offering",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d315b5c4-8ae5-401d-833b-15458f655e20",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "stryker-logo-thumbnail",
+  "jcr:predecessors": [
+    "1a06b216-fc01-4b16-b5eb-a4252a81fd4d"
+  ],
+  "contentID": "COMM-GSNPS-SYK-3870200",
+  "lastPublished": "Mon Aug 31 2026 20:07:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Aug 31 2026 20:07:47 GMT+0000",
+  "cq:lastReplicated": "Mon Aug 31 2026 20:07:50 GMT+0000",
+  "cq:lastModified": "Mon Aug 31 2026 18:25:24 GMT+0000",
+  "jcr:description": "Stryker has signed a definitive agreement to acquire ZuriMED, developer of the FiberLocker System, a commercialized technology that provides a novel approach for rotator cuff augmentation designed for increased biomechanical strength. ",
+  "cq:siblingOrder": "features,stryker-launches-t2-alpha-humerus-nailing-system,stryker-introduces-mako-handheld-robotics-mako-rps,stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation,stryker-honored-with-hircs-first-ever-enterprise-gold-resiliency-badge,stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting,stryker-launches-smarthospital-platform,a-message-to-our-customers-03-2026,stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems,hirc-enterprise-gold-resiliency-badge,stryker-completes-acquisition-of-amplitude-vascular-systems,avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study,stryker-launches-tpx-hd-power-tool,stryker-partners-with-fortune-to-share-our-digital-innovation-st,stryker-partners-professional-golfer-shane-lowry-caregiver-journey,stryker-expands-incompass-total-ankle-system-to-include-prophecy-surgical-planning,listen-to-stryker-chair-and-ceo-kevin-lobo-on-bain-and-companys-founders-mentality-podcast,stryker-expands-mako-robotics-portfolio,glassdoor-names-kevin-lobo-one-of-the-best-ceos-of-2026,kevin-lobo-spencer-stiles-bloomberg-intelligence-vanguards-of-healthcare-podcast,stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case,stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance,",
+  "jcr:baseVersion": "1a06b216-fc01-4b16-b5eb-a4252a81fd4d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 31 2026 20:07:47 GMT+0000",
+  "cq:name": "stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Aug 31 2026 18:06:39 GMT+0000",
+  "jcr:uuid": "67538dea-efa1-49fa-849c-e4c6626b56fa",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/news/2026",
+  "videoType": "typeId",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 18 2026 12:43:49 GMT+0000",
+      "jcr:lastModified": "Mon May 18 2026 12:43:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon May 18 2026 12:43:54 GMT+0000",
+          "jcr:lastModified": "Mon May 18 2026 12:43:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 06 2026 22:17:25 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Contacts</span><br>\n<b>For investor inquiries:</b><br>\nNick Mead<br>\nVice President, Investor Relations<br>\n<a href=\"mailto:nick.mead@stryker.com\">nick.mead@stryker.com</a></p>\n<p><b>For media inquiries:</b><br>\nKim Montagnino<br>\nVice President, Chief Communications Officer<br>\n<a href=\"mailto:kim.montagnino@stryker.com\">kim.montagnino@stryker.com</a></p>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 16:13:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Mon Aug 31 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Aug-2026",
+    "jcr:lastModified": "Mon Aug 31 2026 16:09:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker_logo2015_web",
+    "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Aug 31 2026 16:10:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<ul>\n<li>Stryker has signed a definitive agreement to acquire ZuriMED, developer of the FiberLocker System, a commercialized technology that provides a novel approach for rotator cuff augmentation designed for increased biomechanical strength.</li>\n<li>The acquisition strengthens Stryker’s shoulder portfolio, enhancing its ability to support specialists across the continuum of care.</li>\n<li>The FiberLocker System is a soft tissue augmentation technology designed to reduce the occurrence of a key clinical failure mode in rotator cuff repair, one of the fastest-growing segments in sports medicine.</li>\n</ul>\n<p>&nbsp;</p>\n<p><b>PORTAGE, Mich., USA – Aug. 31, 2026</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced it has signed a definitive agreement to acquire ZuriMED, a privately held company and developer of the FiberLocker® System. This commercialized technology provides a novel approach for rotator cuff augmentation with increased biomechanical strength to address a key clinical failure mode in rotator cuff repair.</p>\n<p>Rotator cuff augmentation is one of the fastest-growing areas in sports medicine and represents a significant opportunity within shoulder care.<sup>1</sup> The acquisition will enhance Stryker’s ability to support shoulder specialists across both sports medicine and arthroplasty, strengthening its portfolio in rotator cuff augmentation.</p>\n<p>“ZuriMED has developed a differentiated technology that addresses an important clinical need within shoulder care,” said Andy Pierce, Group President, MedSurg and Neurotechnology, Stryker. “We are excited about the opportunity to add the FiberLocker System to Stryker's portfolio. This acquisition reflects our continued commitment to advancing innovation and improving patient outcomes.”</p>\n<p>This transaction is subject to customary closing conditions. Stryker and ZuriMED will continue to operate as separate entities and proceed with business as usual until the transaction closes.</p>\n",
+    "jcr:lastModified": "Mon Aug 31 2026 18:25:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>Mordor Intelligence. Rotator Cuff Treatment Market Size and Share Analysis – Growth, Trends, and Forecasts (2026–2031). <a href=\"https://www.mordorintelligence.com/industry-reports/rotator-cuff-treatment-market?utm_source=chatgpt.com\">Mordor Intelligence report</a>.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Aug 31 2026 16:14:27 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

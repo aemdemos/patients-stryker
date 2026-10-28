@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a7e2b6e0-db21-4841-9571-dd46a3360622",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "76f10187-5467-4911-bdbd-3467323df71b"
+  ],
+  "jcr:created": "Tue Feb 13 2024 17:27:00 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 13 2024 17:27:02 GMT+0000",
+  "cq:lastModified": "Tue Feb 13 2024 15:06:18 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "76f10187-5467-4911-bdbd-3467323df71b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "d18bfbca-153a-4c78-8301-862d9bbb6329",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's easy patient transport stretcher",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/transport/images/Thumbnail_TransportStretcher.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 13 2024 15:06:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

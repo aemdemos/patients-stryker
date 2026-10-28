@@ -1,0 +1,509 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "27c784bd-970b-4c3e-a254-224174f76b22",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b7a5b687-520b-4930-b90a-ba7628921c67"
+  ],
+  "lastPublished": "Wed Oct 23 2024 20:13:34 GMT+0000",
+  "jcr:created": "Wed Oct 23 2024 20:13:35 GMT+0000",
+  "cq:lastReplicated": "Wed Oct 23 2024 20:13:37 GMT+0000",
+  "cq:lastModified": "Wed Oct 23 2024 20:06:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b7a5b687-520b-4930-b90a-ba7628921c67",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:18:41 GMT+0000",
+  "jcr:uuid": "b2a4b5cd-ab7c-4215-a5eb-529052e90663",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Nov 18 2021 21:19:37 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\">According to the American Heart Association, many people who’ve had a stroke also have high blood pressure.<sup>1</sup> Learn about the connection between high blood pressure and stroke, and our focus on advancing the practice of less invasive stroke therapies.</span></p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:25:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_635304108": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 15 2024 19:26:16 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:26:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:28:24 GMT+0000",
+      "jcr:lastModified": "Mon Feb 21 2022 16:29:46 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Oct 15 2024 19:01:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-7vw\"><span style=\"color: rgb(255,181,0);\">1</span></span></span></div>\r\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:22:35 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_1001708579_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "1",
+        "jcr:created": "Wed Nov 24 2021 14:16:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span style=\"color: #323232;\"><span style=\"color: #1c5687;\">What can I do to prevent high blood pressure?</span></span></span></h2>\n<p>Hypertension, or high blood pressure, is a leading risk factor for heart disease and stroke in the United States.<sup>2</sup> While our genetics, age and certain medical conditions can play a role in the diagnosis, there are things that each of us can do to reduce our risk of developing hypertension.<sup>3</sup></p>\n<p>The American Heart Association says maintaining a healthy weight through exercise, a diet low in sodium and sugar and limiting alcohol consumption can help.<sup>3</sup> They also recommend that patients stop smoking and work with a physician to understand what your blood pressure should be, taking any prescribed medication to manage your levels.<sup>3</sup><br>\n</p>\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:29:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "9"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:40:25 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:27:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage10839": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Feb 21 2022 16:40:05 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Oct 15 2024 19:01:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-7vw\"><span style=\"color: rgb(255,181,0);\">2</span></span></span></div>\r\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:22:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_1001708579_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "1",
+        "jcr:created": "Wed Nov 24 2021 14:16:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span style=\"color: #1c5687;\"><span class=\"futura-bold\">Why is high blood pressure referred to as a ‘silent killer’?</span></span></h2>\n<p>The healthcare community often refers to hypertension as a ‘silent killer,’ and as harsh as the term sounds, it can become true if blood pressure goes unmonitored and unmanaged. Some patients with hypertension won’t have any visible symptoms to signal that they have a health problem.<sup>2</sup></p>\n<p>However, a different story is occurring inside the body. Untreated hypertension can cause damage to arteries – they can get clogged and in the most serious cases, the artery may burst.<sup>1</sup><br>\n</p>\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:30:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "9"
+          }
+        }
+      }
+    },
+    "text_2112549893": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:40:41 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:27:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage10839_446013035": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Feb 21 2022 16:40:57 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Oct 15 2024 19:01:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-7vw\"><span style=\"color: rgb(255,181,0);\">3</span></span></span></div>\r\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:22:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_1001708579_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "1",
+        "jcr:created": "Wed Nov 24 2021 14:16:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Are there different types of strokes?</span></span></h2>\n<p>Yes, there are several different types of strokes.<sup>3</sup> The one thing that they have in common is that they can be caused by high blood pressure.<sup>2</sup><br>\n</p>\n<ul>\n<li>An <b>ischemic stroke</b> occurs when there is a blockage of blood flow to the brain, usually caused by a blood clot or another substance such as plaque.<sup>3</sup><br>\n</li>\n<li>A <b>hemorrhagic stroke</b> occurs when a weakened blood vessel ruptures, causing blood to leak out of the vessel and into the surrounding brain tissue. One type of weakened blood vessel is an aneurysm. An aneurysm occurs when part of a blood vessel becomes weak and fills with blood, causing the vessel to balloon or bulge.<sup>3</sup></li>\n</ul>\n",
+        "jcr:lastModified": "Mon Oct 21 2024 15:48:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "9"
+          }
+        }
+      }
+    },
+    "text_2112549893_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:40:41 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:27:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage10839_1017514269": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Feb 21 2022 16:41:28 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Oct 15 2024 19:01:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-7vw\"><span style=\"color: rgb(255,181,0);\">4</span></span></span></div>\r\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:03:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_1001708579_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "1",
+        "jcr:created": "Wed Nov 24 2021 14:16:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span style=\"color: #1c5687;\">How are strokes treated?</span></span></h2>\n<p>A stroke generally happens suddenly, and medical care needs to be administered as quickly as possible. To help keep this top of mind, we use the acronym <a href=\"/content/m/stroke-awareness/index.html\">B.E. F.A.S.T</a>. which identifies signs of a stroke. The best course of treatment depends on the type of stroke, the patient’s age, the severity of the stroke and other risk factors.</p>\n",
+        "jcr:lastModified": "Wed Oct 23 2024 20:02:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "9"
+          }
+        }
+      }
+    },
+    "text_2134542422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:41:48 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:27:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage10839_1779937274": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Mon Feb 21 2022 16:41:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Oct 15 2024 19:01:33 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-7vw\"><span style=\"color: rgb(255,181,0);\">5</span></span></span></div>\r\n",
+        "jcr:lastModified": "Tue Oct 15 2024 19:23:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgba(255,255,255,1)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_1001708579_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "1",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "1",
+        "jcr:created": "Wed Nov 24 2021 14:16:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<h2><span class=\"futura-bold\"><span style=\"color: #1c5687;\">How has patient care in stroke treatment evolved over the past 10 years?</span></span></h2>\n<p>Improving stroke care starts before and goes beyond the point of treatment. Programs like our <a href=\"/content/stryker/us/en/training-and-education/neurotechnology/neurovascular/skill.html\">SKILL Medical Education</a> create dynamic experiences that bring learning to the cutting edge, and help physicians continuously increase their skills and stroke practice.</p>\n<p>We’re also committed to helping physicians address the challenges of stroke management with programs like <a href=\"/content/stryker/us/en/neurovascular/services/strokenomics.html\">StrokEnomics</a>, where our team equips healthcare teams with the highest level of clinical and economic data to formulate strategies that help them navigate funding barriers. Through this program healthcare systems increase patient access to the best treatment modalities and quality of care.<br>\n</p>\n",
+        "jcr:lastModified": "Wed Oct 23 2024 20:03:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "9"
+          }
+        }
+      }
+    },
+    "text_2134542422_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Feb 21 2022 16:41:48 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 15 2024 19:27:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_373021788": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Oct 15 2024 19:34:49 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\"><b>References</b></span></p>\n<p><span class=\"fontsize-8em\">1. American Heart Association. (2024, May 10). How high blood pressure can lead to stroke. <a href=\"http://www.heart.org\">www.heart.org</a>. Retrieved September 17, 2024, from <a href=\"https://www.heart.org/en/health-topics/high-blood-pressure/health-threats-from-high-blood-pressure/how-high-blood-pressure-can-lead-to-stroke\">https://www.heart.org/en/health-topics/high-blood-pressure/health-threats-from-high-blood-pressure/how-high-blood-pressure-can-lead-to-stroke</a><br>\n 2. Centers for Disease Control and Prevention. (2024, May 15). High Blood Pressure Facts. Centers for Disease Control and Prevention. Retrieved September 30, 2024, from <a href=\"https://www.cdc.gov/high-blood-pressure/data-research/facts-stats/index.html\">https://www.cdc.gov/high-blood-pressure/data-research/facts-stats/index.html</a><br>\n 3. American Heart Association. (2024, September). Types of Stroke and Treatment. Retrieved September 30, 2024, from <a href=\"https://www.stroke.org/en/about-stroke/types-of-stroke\">https://www.stroke.org/en/about-stroke/types-of-stroke</a></span></p>\n<p><span class=\"fontsize-8em\">MARK-GSNPS-SYK-1413190<br>\n AP003733 v1.0<br>\n Copyright © 2024 Stryker</span></p>\n",
+      "jcr:lastModified": "Mon Oct 21 2024 18:43:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

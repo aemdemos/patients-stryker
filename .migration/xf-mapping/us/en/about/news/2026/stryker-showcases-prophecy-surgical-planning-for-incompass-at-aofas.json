@@ -1,0 +1,118 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker showcases Foot & Ankle innovation at AOFAS 2026 with Prophecy® Surgical Planning for Incompass™ and Hoffmann® LRF smartHEX™",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "75c4be7a-958c-4ff1-8787-9e9b2e0a9225",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Stryker showcases Foot & Ankle innovation at AOFAS 2026 with Prophecy® Surgical Planning for Incompass™ and Hoffmann® LRF smartHEX™",
+  "jcr:predecessors": [
+    "36fda7ba-c496-4e2a-88dc-00542ab8566f"
+  ],
+  "contentID": "FA-GSNPS-PRESS-3907900",
+  "lastPublished": "Wed Sep 16 2026 13:10:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 16 2026 13:10:07 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 16 2026 13:10:08 GMT+0000",
+  "cq:lastModified": "Tue Sep 15 2026 20:23:13 GMT+0000",
+  "jcr:description": "Stryker announced that it will showcase new advancements across its Foot & Ankle portfolio at the 2026 American Orthopaedic Foot & Ankle Society (AOFAS) Annual Meeting in Seattle, including the launch of Prophecy Surgical Planning for the Incompass Total Ankle System and the introduction of Hoffmann LRF smartHEX.",
+  "cq:siblingOrder": "features,stryker-launches-t2-alpha-humerus-nailing-system,stryker-introduces-mako-handheld-robotics-mako-rps,stryker-launches-synchfix-evt-expanding-options-for-flexible-syndesmotic-fixation,stryker-honored-with-hircs-first-ever-enterprise-gold-resiliency-badge,stryker-showcases-continued-innovation-across-orthopaedics-at-aaos-2026-annual-meeting,stryker-launches-smarthospital-platform,a-message-to-our-customers-03-2026,stryker-signs-definitive-agreement-acquire-amplitude-vascular-systems,hirc-enterprise-gold-resiliency-badge,stryker-completes-acquisition-of-amplitude-vascular-systems,avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study,stryker-launches-tpx-hd-power-tool,stryker-partners-with-fortune-to-share-our-digital-innovation-st,stryker-partners-professional-golfer-shane-lowry-caregiver-journey,listen-to-stryker-chair-and-ceo-kevin-lobo-on-bain-and-companys-founders-mentality-podcast,stryker-expands-mako-robotics-portfolio,glassdoor-names-kevin-lobo-one-of-the-best-ceos-of-2026,kevin-lobo-spencer-stiles-bloomberg-intelligence-vanguards-of-healthcare-podcast,stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case,stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance,stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas,",
+  "jcr:baseVersion": "36fda7ba-c496-4e2a-88dc-00542ab8566f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 16 2026 13:10:00 GMT+0000",
+  "cq:name": "stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Sep 15 2026 20:23:13 GMT+0000",
+  "jcr:uuid": "ad07bebc-fe31-4419-946b-b38df7658c11",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/news/2026",
+  "videoType": "typeId",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon May 18 2026 12:43:49 GMT+0000",
+      "jcr:lastModified": "Mon May 18 2026 12:43:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon May 18 2026 12:43:54 GMT+0000",
+          "jcr:lastModified": "Mon May 18 2026 12:43:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 06 2026 22:17:25 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nJenny Braga<br>\nSenior Director, External Affairs<br>\n<a href=\"mailto:jenny.braga@stryker.com\">jenny.braga@stryker.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 31 2026 15:34:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Wed Sep 16 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "16-Sep-2026",
+    "jcr:lastModified": "Mon Sep 14 2026 19:59:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>New additions advance surgical planning, implant flexibility and connected care across Stryker’s Foot &amp; Ankle portfolio</p>\n<ul>\n<li>Stryker is launching <a href=\"/content/stryker/us/en/foot-and-ankle/products/prophecy.html\">Prophecy® Surgical Planning</a> for the <a href=\"/content/stryker/us/en/foot-and-ankle/products/Incompass.html\">Incompass™ Total Ankle System</a> and introducing Hoffmann® LRF smartHEX™ at the 2026 American Orthopaedic Foot &amp; Ankle Society Annual Meeting in Seattle.</li>\n<li>Prophecy® Surgical Planning, which has supported patient-specific planning for more than 100,000 ankle cases over 14 years, is now available with the Incompass™ Total Ankle System, giving surgeons access to 3D visualization and both resect-through and pin-through fixation options within a single connected platform.</li>\n<li><a href=\"/content/stryker/us/en/foot-and-ankle/products/hoffmann-lrf.html\">Hoffmann LRF smartHEX</a> expands Stryker's limb reconstruction portfolio with new rings, struts and frame components along with a mobile app and reimagined planning software designed to enhance frame versatility and support connected care.</li>\n</ul>\n<p><b><br>\nPORTAGE, Mich., USA – Sept. 16, 2026&nbsp;</b>–&nbsp;Stryker (NYSE:SYK), a global leader in medical technologies, announced today that it will showcase new advancements across its Foot &amp; Ankle portfolio at the 2026 American Orthopaedic Foot &amp; Ankle Society (AOFAS) Annual Meeting in Seattle, including the launch of Prophecy Surgical Planning for the Incompass Total Ankle System and the introduction of Hoffmann LRF smartHEX.</p>\n<p>Prophecy has established itself as an important surgical planning tool in ankle surgery, processing more than 100,000<sup>1</sup> cases over the past 14 years. Now available with Incompass, Stryker’s comprehensive total ankle replacement system, Prophecy enables surgeons to leverage this depth of experience through patient-specific surgical planning, enhanced 3D planning tools, and both resect-through and pin-through fixation options. The integration of these two products further reflects Stryker’s commitment to delivering technology-enabled solutions.</p>\n<p>“We’ve seen incredible customer adoption and feedback around Prophecy, and we’re excited to extend that offering to Incompass,” said Adam Jacobs, vice president and general manager of Stryker’s Foot &amp; Ankle business. “By bringing Prophecy to Incompass, we’re combining the power of patient-specific planning with our newest total ankle system, helping surgeons make more informed decisions before they ever enter the operating room.”</p>\n<p>The Incompass Total Ankle System was created using insights generated through Prophecy and SOMA (Stryker Orthopaedic Modeling and Analytics), incorporating real-world anatomy and surgical planning into the implant design. The addition of Prophecy Surgical Planning further strengthens the connection between preoperative planning and implant selection, enabling surgeons to make more informed decisions.</p>\n<p>Expanding beyond total ankle replacement, Stryker will also introduce Hoffmann LRF smartHEX, the newest advancement in its limb reconstruction portfolio. The platform combines expanded frame options, mobile guidance and updated planning software designed to support complex deformity correction. Through the mobile application, smartHEX creates a connection between patients and their surgeon-prescribed correction plan, bringing patient guidance, surgeon planning and correction capabilities together throughout treatment.</p>\n<p>“AOFAS gives us an important opportunity to demonstrate how Stryker is building on decades of foot and ankle experience, customer insight and data,” said Jacobs. “By bringing Prophecy Surgical Planning to Incompass and introducing Hoffmann LRF smartHEX, we are continuing to connect planning, implants and reconstruction technologies in ways that give surgeons more flexibility across the continuum of foot and ankle care.”</p>\n<p>Attendees can experience both technologies and Stryker’s full Foot &amp; Ankle portfolio through exhibit and educational programming at AOFAS 2026, booth #601.</p>\n<p>For more information about Stryker’s complete Foot &amp; Ankle portfolio, visit <a href=\"http://www.stryker.com/\">www.stryker.com</a>.</p>\n",
+    "jcr:lastModified": "Tue Sep 15 2026 20:04:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "stryker_logo2015_left",
+    "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-showcases-foot-ankle-innovation-at-aofas-2026-with-prophecy-surgical-planning-for-incompass-and-hoffmann-lrf-smarthex/images/Press Release-AOFAS_hero.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Sep 15 2026 20:03:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/stryker-showcases-foot-ankle-innovation-at-aofas-2026-with-prophecy-surgical-planning-for-incompass-and-hoffmann-lrf-smarthex/images/Press Release-AOFAS_Thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Based on internal data.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Sep 14 2026 20:01:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

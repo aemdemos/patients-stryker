@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Awareness campaign launched to support World Restart a Heart Day and World Stroke Day ",
+  "jcr:versionHistory": "ff00219e-d64f-4dc6-81bd-aad4f5641576",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "fb2e4d50-bca4-4e55-9d3e-734a92799fa2"
+  ],
+  "lastPublished": "Tue Oct 20 2020 19:26:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Oct 20 2020 19:26:03 GMT+0000",
+  "cq:lastModified": "Tue Oct 20 2020 19:26:00 GMT+0000",
+  "jcr:baseVersion": "fb2e4d50-bca4-4e55-9d3e-734a92799fa2",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Tue Oct 20 2020 18:40:35 GMT+0000",
+  "jcr:uuid": "3154c97f-c160-465d-acd2-622f3f45210b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/stryker_logo2015_web.jpg"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Tue Oct 20 2020 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Oct-2020",
+    "jcr:lastModified": "Tue Oct 20 2020 18:41:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "text": "<p>Globally, cardiovascular disease accounts for nearly 18 million deaths annually, and 40–50% of cardiovascular deaths are sudden cardiac deaths.<sup>1</sup> One in four people over age 25 will have a stroke in their lifetime.<sup>2</sup> To raise awareness about both issues, Stryker has launched a campaign that recognizes World Restart a Heart Day (16 October 2020) and World Stroke Day (29 October 2020). But more than raising awareness, the campaign focuses on education to take immediate action.</p>\n<p>In the case of a sudden cardiac arrest, studies show the rate of survival decreases by 10% for every minute without intervention.<sup>3</sup> Similarly, knowing the warning signs may be the difference between recovery and disability when a stroke happens. That’s why education is critically important for all people, not only healthcare professionals.</p>\n<p>The campaign message is simple: Sudden cardiac arrest and stroke are more common than you think. So, you need the knowledge and ability to respond very quickly and confidently when they happen.</p>\n<p>The campaign will provide opportunities to learn how to respond and help save a life—including performing CPR when sudden cardiac arrest strikes and recognizing the signs of a stroke using the acronym FAST. This statement helps people remember the warning signs of a stroke—Face, Arms, Speech and Time—because every second counts.</p>\n<p>The campaign will run until the end of the month. <a href=\"https://www.stryker.com/nl/en/c/2020/stroke-and-sca-awareness-initiative.html\">Learn more here.</a><br>\n<br>\n&nbsp;</p>\n<p>1. Cardiovascular diseases (CVDs). Who.int. <a href=\"https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)\">https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds).</a> Accessed October 2020.<br>\n<br>\n2. V. Feigin et al. Global, Regional and Country-Specific Lifetime Risks of Stroke, 1990 and 2016. New Engl J Med 2018;379:2429-2437</p>\n<p>3. Cummins RO. 1989. From concept to standard of care? Review of the clinical experience with automated external defibrillators. Annals of Emergency Medicine. 18: 1269–75.<br>\n&nbsp;</p>\n",
+    "jcr:lastModified": "Tue Oct 20 2020 19:26:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

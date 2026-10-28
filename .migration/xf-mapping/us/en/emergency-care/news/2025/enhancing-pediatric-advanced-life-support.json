@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "The LIFEPAK 35 is designed to support clinical teams when every second counts",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Enhancing pediatric advanced life support: A tool for lifesaving care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9efff719-c2ab-4978-a609-0b5ff57d8b99",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Students walking in school hallway",
+  "jcr:predecessors": [
+    "b66d4856-af86-44b3-9044-bf6429664454"
+  ],
+  "contentID": "EC-L35-COMM-1710201",
+  "lastPublished": "Wed Jun 11 2025 20:46:46 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 11 2025 20:46:47 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 11 2025 20:46:49 GMT+0000",
+  "cq:lastModified": "Wed Jun 11 2025 20:46:38 GMT+0000",
+  "jcr:description": "The LIFEPAK 35 monitor/defibrillator was designed to support pediatric resuscitation and advanced care, helping clinicians respond with precision in critical moments.",
+  "jcr:baseVersion": "b66d4856-af86-44b3-9044-bf6429664454",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jun 11 2025 20:46:46 GMT+0000",
+  "pageTitle": "Enhancing pediatric advanced life support: A tool for lifesaving care",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news"
+  ],
+  "jcr:lastModified": "Wed Jun 11 2025 20:46:38 GMT+0000",
+  "jcr:uuid": "8dead1d6-6fa8-4354-b9d8-b5966a939923",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "navTitle": "Enhancing pediatric advanced life support: A tool for lifesaving care",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jun 10 2025 19:54:42 GMT+0000",
+      "alt": "Students walking in school hallway",
+      "srcFileRef": "/content/dam/stryker/ems/news/images/ec-newsroom_pediatric-technology_thumbnail_1440x816.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 10 2025 21:22:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 19:54:55 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>3-minute read</i></span></p>\n<h2><span class=\"futura-bold\">The LIFEPAK 35 is designed to support clinical teams when every second counts</span></h2>\n<p><span class=\"fontsize-1-25em\">Pediatric cardiac arrest is rare, but when it happens, clinicians are on the front lines of care.<sup>1,2</sup> While survival rates for in-hospital pediatric cardiac arrests have improved, there’s still a need to enhance outcomes both inside and outside the hospital.<sup>3</sup> The LIFEPAK 35 monitor/defibrillator was designed to support pediatric resuscitation and advanced care, helping clinicians respond with precision in critical moments. By addressing the unique challenges of pediatric resuscitation, the LIFEPAK 35 helps clinicians optimize their clinical strategies.</span></p>\n<h2><span class=\"futura-bold\">Enhancing pediatric CPR: Continuous monitoring for effective resuscitation</span></h2>\n<p><span class=\"fontsize-1-25em\">The LIFEPAK 35 includes cprINSIGHT, a technology designed to analyze a patient’s ECG rhythm during ongoing chest compressions, providing a shock, no-shock decision without interrupting chest compressions. In CPR and resuscitation efforts, minimizing pre-shock pauses is essential—cprINSIGHT has been shown to decrease pre-shock pause time for shockable rhythms and increase overall chest compression fraction (hands-on time).<sup>4</sup> With a 95.5% sensitivity for detecting shockable rhythms and a 98.2% specificity for identifying non-shockable rhythms,<sup>4</sup> it can help clinicians make timely, informed decisions. The LIFEPAK 35 aligns with AHA guidelines to reduce pauses in chest compressions,<sup>3</sup> supporting more effective resuscitation when every second counts.</span></p>\n<h2><span class=\"futura-bold\">Optimizing care with customizable settings for pediatric patients</span></h2>\n<p><span class=\"fontsize-1-25em\">When entering AED mode, clinicians are prompted with a critical decision point, prompting them to choose between ADULT or PEDIATRIC mode. By putting this choice in the hands of the provider, the LIFEPAK 35 supports more precise, patient-specific resuscitation.</span></p>\n<p><span class=\"fontsize-1-25em\">In Pediatric AED mode, the compression-to-ventilation (C:V) metronome ratios automatically adjust to pediatric default settings, streamlining care during pediatric emergencies.</span></p>\n<p><span class=\"fontsize-1-25em\">For additional flexibility, clinicians can customize additional C:V ratios, metronome settings, and energy escalation protocols when configuring the device—helping teams align resuscitation efforts with their specific protocols and patient needs.<sup>5</sup></span></p>\n<h2><span class=\"futura-bold\">Pediatric resuscitation: A full defibrillation energy range (1-360 Joules)</span></h2>\n<p><span class=\"fontsize-1-25em\">The LIFEPAK 35 is designed to give clinicians full control over defibrillation and synchronized cardioversion, offering a complete energy range from 1 Joule to 360 Joules of biphasic shock energy. This range aligns with AHA-recommended weight-based shock energy dosing for pediatric patients, ensuring appropriate treatment for pediatric patients of varying weights.<sup>3</sup> Unlike low-energy biphasic defibrillators that max out at 200 Joules, the LIFEPAK 35 accommodates pediatric patients who may require higher shock energies—such as those weighing 36 kg (79 lb), where the recommended energy range is 72 Joules to 360 Joules.</span></p>\n<p><span class=\"fontsize-1-25em\">Pediatric cardiac arrest is rare, and shockable rhythms in these cases are also uncommon, so the need to deliver electrical therapy to pediatric patients can be a rare event.<sup>1</sup> To support clinical decision-making, the LIFEPAK 35 includes a post-synchronized cardioversion cognitive stopping point, prompting providers to confirm their next steps and reinforcing patient safety.<sup>5</sup></span></p>\n<h2><span class=\"futura-bold\">Customized monitoring for pediatric and neonate patients</span></h2>\n<p><span class=\"fontsize-1-25em\">With patient-specific monitoring capabilities, the LIFEPAK 35 automatically adjusts parameters and alarms based on the selected patient type—Pediatric (less than 12 years old) or Neonate (birth to 28 days old). This feature ensures age-appropriate monitoring by modifying alarm thresholds and vital sign parameters to match the unique physiology of younger patients.</span></p>\n<p><span class=\"fontsize-1-25em\">Clinicians can also enable individual alarms within each monitoring channel or activate multiple alarms at once using the &quot;All ON&quot; option in the alarms menu.</span></p>\n<h2><span class=\"futura-bold\">Glasgow 12/15-lead ECG analysis: Age-specific insights for accurate interpretation</span></h2>\n<p><span class=\"fontsize-1-25em\">Pediatric ECG interpretation requires a keen understanding of age-based physiological differences and criteria—yet recalling these distinctions in a high-pressure situation can be challenging.</span></p>\n<p><span class=\"fontsize-1-25em\">To address this, the LIFEPAK 35 incorporates the Glasgow v30.<sup>4</sup> interpretative algorithm, which applies age-specific criteria to ECG waveforms, timing intervals, and other key elements. This ensures that pediatric ECGs are analyzed appropriately, helping to prevent misinterpretations that could occur if analyzed using adult criteria. Without this level of specificity, an ECG could be inaccurately categorized, potentially leading to misleading conclusions and treatment decisions.<sup>6</sup></span></p>\n<h2><span class=\"futura-bold\">Bringing precision to neonatal and pediatric resuscitation</span></h2>\n<p><span class=\"fontsize-1-25em\">Pediatric emergencies require technology that adapts to the unique needs of young patients. With a full defibrillation energy range, patient-specific monitoring, and advanced ECG interpretative algorithms, the LIFEPAK 35 is built to support clinicians in delivering precise, confident care during pediatric resuscitation. When every second counts, having the right tools in place can make all the difference.</span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Jun 11 2025 20:18:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Mar 03 2025 14:27:21 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Wed Jun 11 2025 16:53:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lifepak-35"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/hospitals-clinics"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Tue Jun 17 2025 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "17-Jun-2025",
+    "jcr:lastModified": "Tue Jun 10 2025 19:54:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Cardiac Arrest Registry to Enhance Survival 2023 Annual Report, 2023. </p>\r\n<p>2. Holmberg MJ, Ross CE, Fitzmaurice GM, et al. Annual incidence of adult and pediatric in-hospital cardiac arrest in the United States. Circulation: Cardiovascular Quality and Outcomes. 2019;12(7):e005580. </p>\r\n<p>3. Topjian AA, Raymond TT, Atkins D, et al. Part 4: Pediatric basic and advanced life support: 2020 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2020;142(16):S469–S523. </p>\r\n<p>4. de Graaf C, Beesems SG, Oud S, et al. Analyzing the heart rhythm during chest compressions: Performance and clinical value of a new AED algorithm. Resuscitation. 2021;162:320-28. </p>\r\n<p>5. Data on file, Styker, 3338373 LIFEPAK 35 Human Factors Validation Report - Sections 6.1.2 and 6.1.. </p>\r\n<p>6. Data on file, Stryker, 3350429. 7. Data on file, Styker, 3350840 LIFEPAK 35 OI.</p>\r\n<p>This information is intended solely for the use of healthcare professionals. A healthcare professional must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that healthcare professionals be trained in the use of any particular product before using the product.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker product offerings. A healthcare professional must always refer to the package insert, product label and/or instructions for use.</p>\r\n<p>Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker Representative if you have questions about the availability of Stryker products in your area.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: cprINSIGHT, LIFEPAK, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Tue Jun 10 2025 19:58:42 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/news/images/ec-newsroom_pediatric-technology_thumbnail_1440x816.jpg"
+  }
+}

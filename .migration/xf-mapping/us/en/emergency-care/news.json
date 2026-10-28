@@ -1,0 +1,109 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Emergency Care Newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2412a911-1c87-40c6-ae6a-d662294eaaba",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "EMTs removing powered ambulance cot from an ambulance ",
+  "jcr:predecessors": [
+    "7539c531-f48b-447c-88c3-5384796b7415"
+  ],
+  "lastPublished": "Tue May 16 2023 13:38:56 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 16 2023 13:38:56 GMT+0000",
+  "cq:lastReplicated": "Tue May 16 2023 13:38:58 GMT+0000",
+  "cq:lastModified": "Tue May 16 2023 13:38:39 GMT+0000",
+  "jcr:description": "The Emergency Care Newsroom is your source for industry news, clinical information, product and business updates, inspiring stories and more.\r\n",
+  "jcr:baseVersion": "7539c531-f48b-447c-88c3-5384796b7415",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Emergency Care Newsroom",
+  "jcr:lastModified": "Fri Sep 16 2022 12:10:03 GMT+0000",
+  "jcr:uuid": "6de2613f-4267-41e0-b092-089e2dcc015d",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Emergency Care Newsroom",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "searchPath": "/content/stryker/us/en/emergency-care/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Fri Aug 05 2022 23:35:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 40,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:content-type/news"
+    ],
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:business-unit/ems/news/articles"
+        ]
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:business-unit/ems/news/survivor-stories"
+        ]
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:business-unit/ems/news/videos"
+        ]
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:business-unit/ems/news/podcasts"
+        ]
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:business-unit/ems/news/case-studies"
+        ]
+      }
+    }
+  },
+  "longtexthero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "imageMap": "[poly(1478,728,1488,728,1488,718,1478,718,1478,728)\"quickview:sku=\"|\"\"|\"Hotspot 1\"]",
+    "jcr:lastModified": "Tue May 09 2017 18:28:06 GMT-0400",
+    "sling:resourceType": "stryker/components/content/longtexthero",
+    "textIsRich": [
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/thumbnails/ems-stories-memphis-fire-department.png"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Follow us on social media for more updates:</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><a href=\"https://www.facebook.com/StrykerEmergencyCare\" target=\"_blank\"><span style=\"color: #4c7d7a;\">Facebook</span></a></span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"https://twitter.com/StrykerEC\" target=\"_blank\"><span style=\"color: #4c7d7a;\">Twitter</span></a></span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"https://www.linkedin.com/showcase/stryker-emergency-care-/\" target=\"_blank\"><span style=\"color: #4c7d7a;\">LinkedIn</span></a></span></li>\n<li><span class=\"fontsize-1-25em\"><a href=\"https://www.youtube.com/user/stryker/featured\" target=\"_blank\"><span style=\"color: #4c7d7a;\">Youtube</span></a></span></li>\n</ul>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Celebrate survivors of sudden cardiac arrest&nbsp;</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/celebrate-survivors.html\" target=\"_self\">Submit your story</a></span></li>\n</ul>\n",
+    "jcr:lastModified": "Tue May 16 2023 13:38:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Fri Jul 22 2022 15:45:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

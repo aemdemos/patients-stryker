@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Cranial access and decompression",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c382cac3-57a1-410c-9ea2-c9abfbae9801",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Sonopet iQ",
+  "jcr:predecessors": [
+    "a45d8563-5667-4392-9f3b-9663eee39173"
+  ],
+  "contentID": "CMF-WC-36_Rev.None_15561",
+  "lastPublished": "Thu Feb 02 2023 19:18:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Feb 02 2023 19:18:45 GMT+0000",
+  "cq:lastReplicated": "Thu Feb 02 2023 19:18:47 GMT+0000",
+  "cq:lastModified": "Thu Feb 02 2023 19:17:44 GMT+0000",
+  "jcr:baseVersion": "a45d8563-5667-4392-9f3b-9663eee39173",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/access-and-decompression-cranial",
+    "stryker:content-type/specialty",
+    "stryker:portfolio/neurotechnology",
+    "stryker:capability/cranial",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Feb 02 2023 19:17:44 GMT+0000",
+  "jcr:uuid": "a82d50d4-bf35-4a24-b9e9-7e641343307d",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 17:53:18 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/nav-nse/products/sonopet-iq/images/sonopet-iq-console-handpiece.jpg"
+  }
+}

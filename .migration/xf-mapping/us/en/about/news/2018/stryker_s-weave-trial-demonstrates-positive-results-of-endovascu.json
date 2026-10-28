@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s WEAVE Trial demonstrates positive results of endovascular treatment for patients with intracranial atherosclerotic disease",
+  "jcr:versionHistory": "c544e0a8-43e1-48b5-aa76-53dd0490a585",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "a249459e-0718-4bbb-9976-1195031be999"
+  ],
+  "lastPublished": "Fri Mar 23 2018 11:28:05 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Mar 23 2018 11:28:05 GMT-0400",
+  "cq:lastModified": "Fri Mar 23 2018 11:27:58 GMT-0400",
+  "jcr:baseVersion": "a249459e-0718-4bbb-9976-1195031be999",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Mar 23 2018 11:27:58 GMT-0400",
+  "jcr:uuid": "5b1c58bb-4e3f-4366-9557-9879476093a6",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Fri Jan 26 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "26-Jan-2018",
+    "jcr:lastModified": "Mon Jan 29 2018 09:13:09 GMT-0500",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/WingSpan-Only.png",
+    "jcr:lastModified": "Mon Jan 29 2018 09:22:45 GMT-0500",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p><b>Kalamazoo, Michigan, USA – January 26, 2018</b> – Results from the Wingspan® StEnt System Post MArket SurVEillance Study (WEAVE™ Trial) were presented yesterday at the International Stroke Conference, providing compelling evidence that more patients suffering from intracranial atherosclerotic disease (ICAD) may benefit from endovascular treatment with the Wingspan Stent System.</p>\n<p>Results from this FDA-mandated post-market surveillance trial showed that patients receiving on-label treatment with the Wingspan Stent System demonstrated a 2.6% observed rate of stroke or death, compared to the pre-specified rate for early success, which was established as 4.0% with a minimum 150 patients. These results are significant when compared to the study’s null hypothesis with high predictive probability (&gt;95%) that the true rate is 9.7%, and suggest that endovascular treatment of ICAD patients receiving on-label use of the Wingspan Stent may provide promising results.</p>\n<p>Dr. Michael Alexander, director of the Neurovascular Center at Cedars-Sinai in Los Angeles and principal investigator of the trial, noted,&nbsp;“These trial results have the potential to change how stroke patients are treated in the future. Using approved stents in the brain arteries may give new hope to patients suffering from stroke due to blockages from cholesterol plaque.”</p>\n<p>Stryker’s sponsored WEAVE Trial is a multi-center, prospective, post-market surveillance study designed to evaluate the rate of stroke or death within 72 hours of the procedure in patients treated with the Wingspan Stent System.</p>\n<p>Stryker and the WEAVE investigators believe the final results from the trial may lead to a critical shift in how physicians approach patient selection for endovascular therapy for ICAD. The endovascular treatment success rate shown for on-label patients in the WEAVE Trial is compelling \\ and a considerable development beyond what has been shown in previously reported trials.</p>\n<p>“The WEAVE Trial results are a great step forward for the treatment of intracranial atherosclerotic disease,” said Mark Paul, president of Stryker’s Neurovascular division. “The unprecedented low complication rate shows that endovascular treatment may play an important role in optimizing clinical outcomes for patients suffering from this highly complex disease.”</p>\n<p>The WEAVE Trial represents an important milestone in the treatment of ICAD, yet there is still significant work required to ensure patients with ICAD receive optimal treatment. Best outcomes may be achieved when patients are treated on-label.</p>\n<p><b>About the Wingspan Stent System and Gateway Balloon</b></p>\n<p>The Wingspan Stent System is a self-expanding Nitinol stent and delivery system intended for use in the treatment of intracranial atherosclerotic disease. The Gateway PTA Balloon Catheter is an over-the-wire balloon catheter used to pre-dilate the lesion prior to insertion and deployment of the Wingspan Stent System. Stryker’s Wingspan Stent System with Gateway® Percutaneous Transluminal Angioplasty (PTA) Balloon Catheter was approved in the United States under a Humanitarian Device Exemption (HDE) and received CE Mark in 2005.</p>\n<p><b>About Intracranial atherosclerotic disease (ICAD)</b></p>\n<p>ICAD is characterized by focal accumulation of material, which can vary from soft lipid pools to stiff calcified plaques, within intracranial arteries. This accumulation can restrict blood flow to the brain. ICAD is a common cause of stroke worldwide that is associated with a particularly high risk for recurrent stroke. The high rate of recurrent strokes in ICAD-patients despite medical therapy prompted intracranial angioplasty and stenting as an adjunctive treatment option to improve cerebral perfusion and restore luminal patency through a minimally invasive approach.&nbsp;</p>\n<p><b>Humanitarian Device</b></p>\n<p>The Wingspan Stent System with Gateway PTA Balloon Catheter is Authorized by Federal law for use in improving cerebral artery lumen diameter in patients 22 to 80 years old with recurrent (2 or more) strokes refractory to a comprehensive regimen of medical therapy and due to atherosclerotic disease of intracranial vessels with 70-99% stenosis that are accessible to the system. The most recent stroke must have occurred more than 7 days prior to treatment with the Wingspan Stent System. Patients are eligible for treatment with the Wingspan Stent System if their Modified Rankin Score (mRS) is 3 or less at the time of treatment. The effectiveness of this device for this use has not been demonstrated.&quot;</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at www.stryker.com.</p>\n<p><b>Media contact</b></p>\n<p>Keri Laden</p>\n<p>510 413 2534</p>\n<p>keri.laden@stryker.com</p>\n<p>&nbsp;</p>\n<p><sub>Copyright © 2018 Stryker</sub></p>\n<p><sub>AP001947 v2.0</sub></p>\n",
+    "jcr:lastModified": "Mon Jan 29 2018 09:18:30 GMT-0500",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

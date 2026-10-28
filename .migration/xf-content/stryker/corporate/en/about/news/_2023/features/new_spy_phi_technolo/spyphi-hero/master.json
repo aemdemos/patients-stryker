@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SPYPHI Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f60540e1-a994-41eb-b8ed-f90a27178445",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "49be2dc5-34de-4459-b0be-6c7a79dcad48"
+  ],
+  "jcr:created": "Fri Oct 27 2023 19:11:28 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 27 2023 19:11:30 GMT+0000",
+  "cq:lastModified": "Fri Oct 27 2023 19:07:26 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "49be2dc5-34de-4459-b0be-6c7a79dcad48",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "50b363e6-6fb3-43ca-95e3-eab02468da8b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Oct 25 2023 15:02:41 GMT+0000",
+      "alt": "Surgeon",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/new-spy-phi-technology--to-help-breast-cancer-surgeons-see-more-during-surgery/HeroImage_SPYPHI_redo.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Oct 27 2023 19:07:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

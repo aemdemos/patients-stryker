@@ -1,0 +1,103 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Bone Cement Mixer",
+  "jcr:createdBy": "admin",
+  "jcr:title": "MixeVac III",
+  "jcr:versionHistory": "106b53c9-2bdd-4239-a77c-47916c26245f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/mixevaciii/images/Thumbnail_MixeVac III.jpg",
+  "jcr:predecessors": [
+    "cbd31b0e-9d15-4af5-88ca-bd3a1d2282f5"
+  ],
+  "contentID": "9100-004-753 Rev. None",
+  "lastPublished": "Wed Jan 15 2020 20:05:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 15 2020 20:05:16 GMT+0000",
+  "cq:lastModified": "Mon Apr 29 2019 20:38:05 GMT+0000",
+  "jcr:description": "MixeVac III is an advanced cement mixer that quickly mixes any type of PMMA-based bone cements safely and thoroughly.",
+  "jcr:baseVersion": "cbd31b0e-9d15-4af5-88ca-bd3a1d2282f5",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "MixeVac III ",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/orthopedic-disposables",
+    "stryker:services/procare/surgical",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/cement-mixing-systems",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:product/orthopaedic_instruments/MixeVac_III"
+  ],
+  "jcr:lastModified": "Mon Apr 29 2019 20:38:05 GMT+0000",
+  "jcr:uuid": "c70400b3-d8de-40cd-b6c8-dce68b4541fb",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Fri Jun 30 2017 15:05:57 GMT-0400",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>Unique blade biasing system ensures blades scrape bowl whether mixing with or without vacuum.</p>\r\n",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "jcr:lastModified": "Wed Jun 07 2017 15:04:07 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "Can mix up to 3 batches of any type of bone cement including high viscosity "
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "Clear bowl and lid for clear view of the mixing process"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "Low porosity mixing because of scrape and smear mixing mechanism"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "2:1 gear ratio for quicker mixing"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "Builtin charcoal filter reduces harmful PMMA fumes"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

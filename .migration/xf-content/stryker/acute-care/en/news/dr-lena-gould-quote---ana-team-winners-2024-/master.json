@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Dr Lena Gould Quote - ANA Team Winners 2024 ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c0ceecc2-0715-409b-992c-19449e39d746",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "cd6318d4-595b-4626-b2d2-ffeb828b70c9"
+  ],
+  "lastPublished": "Wed Jul 10 2024 15:06:00 GMT+0000",
+  "jcr:created": "Wed Jul 10 2024 15:06:02 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 10 2024 15:06:04 GMT+0000",
+  "cq:lastModified": "Mon Jul 08 2024 15:40:28 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cd6318d4-595b-4626-b2d2-ffeb828b70c9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 03 2024 21:23:37 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "52295fbc-1aab-458d-a214-3e09bfe85ccb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jul 03 2024 21:00:15 GMT+0000",
+      "alt": "Dr Lena Gould quote - As a result of what we're doing, we are changing the culture of nurse anesthesia. ",
+      "srcFileRef": "/content/dam/stryker/acute-care/news/ana-team-winners-2024/ANA-Team-Winners-news-article_dr-lena-gould-quote_640x320.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jul 08 2024 15:40:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

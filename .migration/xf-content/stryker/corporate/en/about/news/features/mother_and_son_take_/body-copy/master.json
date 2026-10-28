@@ -1,0 +1,448 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "98fa13d9-9aa8-4401-8abc-92b9849f02a2",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a511935c-bc88-41eb-9336-029ffb28751d"
+  ],
+  "jcr:created": "Tue Jan 23 2024 14:55:34 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 23 2024 14:55:36 GMT+0000",
+  "cq:lastModified": "Tue Jan 23 2024 14:55:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a511935c-bc88-41eb-9336-029ffb28751d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "60e43609-da4a-4f9b-a0be-1fd07d99d0da",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 15:49:54 GMT+0000",
+      "text": "<p>No parent is prepared to hear that their newborn baby has a rare condition, so when the Sadlier family had their fourth child, the diagnosis came as a shock. When Philip’s mother Wilhelmine first learned that her son Philip had Goldenhar syndrome, she had lots of questions and no answers. ‘What was Goldenhar syndrome?’ and ‘Who do I speak to about a treatment plan?’ crossed her mind. Distressed by his inability to eat and troubling facial development, she reached out to his pediatrician for support. The pediatrician recommended Dr. Kevin Lung, a pediatric oral and maxillofacial surgeon who has 27 years of experience in treating complex craniofacial cases.</p>\n<p>Wilhelmine was thankful for the recommendation but concerned about the rest of the family. The Sadlier family lives in a remote town in northern Canada, so to ensure Philip received the best treatment, he and his mother had to spend months away from the rest of the family, traveling to several hospitals during the COVID-19 pandemic, so he could receive the necessary care.</p>\n<p>Philip met Dr. Lung and his colleagues, experts in the field of oral and maxillofacial surgery, at a hospital (Strollery Children’s Hospital) in Alberta, Canada. The healthcare team worked quickly to develop a treatment plan for one of the world’s most rare diseases.</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 15:53:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 15:55:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">Wilhelmine learned that Goldenhar syndrome is a rare congenital condition that can affect the development of the <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">eye, ear, nose, throat, jaw or spine</span></span>.<sup>2</sup></span></span>",
+      "jcr:lastModified": "Thu Jul 15 2021 15:59:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(28,86,135,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2001972900": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:14:25 GMT+0000",
+      "text": "<p>After doing a physical assessment and reviewing Philip’s CT scan, Dr. Lung diagnosed him with a <b>hemifacial microsomia</b>, a condition in which the tissues on one side of the face are underdeveloped. In Philip’s case, the right side of his jaw and throat was underdeveloped, causing challenges with his breathing and eating.</p>\n<p>Dr. Lung recalls the initial diagnosis. “With respect to Philip, I was asked to diagnose him based on his respiratory insufficiency (difficulty breathing). After working with the craniofacial team and discussing the diagnosis with the parents, we felt that the most improvement could occur with a <b>mandibular distraction</b>.”</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:15:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2001972900_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "leftPadding": "3",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "-3",
+      "jcr:created": "Thu Jul 15 2021 17:14:25 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Common signs and symptoms of Goldenhar syndrome<sup>3</sup></span></span></span></p>\n<ul>\n<li>Cleft lip and/or palate</li>\n<li>Difficulty eating</li>\n<li>Difficulty breathing</li>\n<li>Ear abnormalities, like a partially formed or completely absent ear</li>\n<li>Growths on the eyes, also called eipbulbar tumors</li>\n<li>Hearing loss</li>\n<li>Speech impediment</li>\n<li>Underdeveloped jaw, cheekbone and/or temple bone</li>\n</ul>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 20:08:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "3",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1929599077_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:41:21 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:41:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:23:47 GMT+0000",
+      "title": "A treatment for one of the world’s most rare diseases",
+      "jcr:lastModified": "Thu Jul 15 2021 17:40:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2001972900_copy_1019187017": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:14:25 GMT+0000",
+      "text": "<p>Mandiblular distraction is a surgical procedure that can increase the length of the jaw. Dr. Lung began the distraction using Stryker’s <a href=\"https://cmf.stryker.com/products/pediatric-mandibular-distractor\">Pediatric Mandibular Distractor (PMD) with anti-reverse mechanism</a>, a tool intended to help elongate Philip’s lower jaw. By fixating the linear distractor to Philip’s mandible and slowly turning it half a millimeter to a millimeter a day, Dr. Lung was able to open up Philip’s airway. Similar to palate expanders used in orthodontics, a small end of the distractor is accessible by the parent, who uses a special screwdriver at a specified time to make the exact measured turns. Dr. Lung was proud to report that Philip’s surgery was a success.</p>\n<p>“In Philip’s case, it was quite interesting because not only did I want to open up his airway but I also wanted to improve his (facial) symmetry. Before surgery, we developed a virtual surgical plan so I knew before going in to surgery what we could achieve. We provided a surgical simulation video to Philip’s parents so they could actually see what was going to happen before we did the surgery. They were extremely impressed,” says Dr. Lung.</p>\n<p>After reviewing the surgical plan and asking questions, Wilhelmine was ready to take on Goldenhar syndrome with her son. She felt hopeful that the surgical procedure could improve his facial structure and most importantly, his quality of life.</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:37:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jul 15 2021 17:32:36 GMT+0000",
+      "alt": "A look inside at a mandible reconstruction plate",
+      "srcFileRef": "/content/dam/stryker/patients/patient-stories/philips-story/mandible reconstruction plate.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jul 19 2021 20:11:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1726778110": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:35:01 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #b2b4ae;\"><span class=\"fontsize-8em\"><span style=\"color: #000000;\">A look inside at a mandible reconstruction plate</span></span></span></span></p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:39:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1929599077": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:41:21 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:41:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:23:47 GMT+0000",
+      "title": "A new beginning",
+      "jcr:lastModified": "Thu Jul 15 2021 17:40:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_2001972900_copy_453927895": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:14:25 GMT+0000",
+      "text": "<p>Wilhelmine happily holds Philip as she says, “I remember asking Dr. Lung after surgery, ‘Is that actually his jaw?’ Philip looks so good. I’m so impressed that there’s so much new bone growth on the side of his jaw that was missing. Seeing all the room in the back of his mouth is very exciting because he can finally breathe normally.”</p>\n<p>Philip is happy with the result as well. He gazes up at his mother, smiling, as she says, “He’s just so much happier. He’s thriving. He’s eating two teaspoons a day, which is so good and a lot of progress. We’re hoping that his swallowing keeps getting better and his throat keeps improving so he can eat more and more by mouth. That’s our goal!”</p>\n<p>It’s been a long journey for Philip, but thanks to his mother’s support and the skills of his surgical team, he has a new beginning.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:46:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "5"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jul 15 2021 17:32:36 GMT+0000",
+      "alt": "Philip post-surgery with his brother and sisters",
+      "srcFileRef": "/content/dam/stryker/patients/patient-stories/philips-story/philip-and-family.jpeg",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Jul 19 2021 20:11:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1726778110_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:35:01 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #b2b4ae;\"><span class=\"fontsize-8em\"><span style=\"color: #000000;\">Philip post-surgery with his brother and sisters</span></span></span></span></p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 20:07:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "7",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_1929599077_copy_1825653293": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:41:21 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Jul 15 2021 17:41:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 17:23:47 GMT+0000",
+      "title": "Meet Philip",
+      "jcr:lastModified": "Thu Jul 15 2021 17:52:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "danielle.smith@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Sep 03 2020 17:52:55 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Jul 15 2021 15:02:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      },
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/patients/patient-stories/philips-story/Philip-video-edit-comp.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Philip-video-edit-comp-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Jan 23 2024 14:55:15 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "||",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/philip-video-tn"
+      }
+    }
+  }
+}

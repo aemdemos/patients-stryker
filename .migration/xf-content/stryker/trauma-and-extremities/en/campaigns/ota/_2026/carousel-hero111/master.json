@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Carousel Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bfb845ff-4c5a-4955-8543-0335ca4c818c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9bd77f76-c6b5-4147-9777-8a4e302fe934"
+  ],
+  "lastPublished": "Tue Jun 23 2026 14:39:22 GMT+0000",
+  "jcr:created": "Tue Jun 23 2026 14:39:25 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 23 2026 14:39:31 GMT+0000",
+  "cq:lastModified": "Mon Jun 22 2026 14:57:42 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9bd77f76-c6b5-4147-9777-8a4e302fe934",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 23 2026 14:39:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "0db46437-d9a4-4830-be54-89dfa2f27ea7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Aug 16 2022 17:46:25 GMT+0000",
+      "alt": "OTA-carousel-slide4",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/campaigns/ota/OTA-carousel-slide4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 22 2026 14:57:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

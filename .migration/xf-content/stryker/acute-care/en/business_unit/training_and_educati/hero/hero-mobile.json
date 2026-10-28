@@ -1,0 +1,58 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "472e0c19-be21-4a3e-94c4-8118e4f0ddea",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "2359d285-cb27-472f-bc93-75d1876174e0"
+  ],
+  "lastPublished": "Fri Jun 07 2024 17:40:45 GMT+0000",
+  "jcr:created": "Fri Jun 07 2024 17:40:46 GMT+0000",
+  "cq:lastReplicated": "Fri Jun 07 2024 17:40:48 GMT+0000",
+  "cq:lastModified": "Fri Jun 07 2024 17:40:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "2359d285-cb27-472f-bc93-75d1876174e0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 07 2024 17:40:45 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b2b15e86-9b7b-49ff-9928-147167cbf593",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Jun 07 2024 17:37:34 GMT+0000",
+      "alt": "Nurse standing in hallway wearing blue scrubs holding tablet and smiling",
+      "srcFileRef": "/content/dam/stryker/acute-care/images/smiling-nurse-with-ipad_680x400.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jun 07 2024 17:38:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Jun 07 2024 17:39:54 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Fri Jun 07 2024 17:40:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    }
+  }
+}

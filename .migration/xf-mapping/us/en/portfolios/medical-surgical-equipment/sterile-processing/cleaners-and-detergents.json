@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Cleaners and detergents",
+  "jcr:versionHistory": "72643464-c5e3-4147-9692-b10c2da1719e",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:predecessors": [
+    "bdff4330-dc21-4d58-8538-b160c7031c2e"
+  ],
+  "lastPublished": "Thu Jan 16 2020 20:35:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 16 2020 20:35:04 GMT+0000",
+  "cq:lastModified": "Mon Jun 19 2017 18:48:17 GMT-0400",
+  "jcr:baseVersion": "bdff4330-dc21-4d58-8538-b160c7031c2e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/sterile-processing",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/cleaners-and-detergents"
+  ],
+  "jcr:lastModified": "Mon Jun 19 2017 18:48:06 GMT-0400",
+  "jcr:uuid": "98e6d246-fe41-4cc3-8fcf-ecb1dfae1e7d",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:48:17 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  }
+}

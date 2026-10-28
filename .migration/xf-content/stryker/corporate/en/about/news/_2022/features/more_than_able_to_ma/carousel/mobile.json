@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d0de1a0c-58e7-4b26-afcc-adcd39c9fdb8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "178b3b40-813f-4a05-9f70-f7818142684d"
+  ],
+  "jcr:created": "Tue Oct 25 2022 13:09:52 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 25 2022 13:09:57 GMT+0000",
+  "cq:lastModified": "Fri Oct 21 2022 17:13:26 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "178b3b40-813f-4a05-9f70-f7818142684d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "ede72608-1851-401b-99bf-213c23bd9200",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Oct 21 2022 15:42:52 GMT+0000",
+      "alt": "mobile",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/more-than-able-to-make-healthcare-better/mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Oct 21 2022 17:13:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

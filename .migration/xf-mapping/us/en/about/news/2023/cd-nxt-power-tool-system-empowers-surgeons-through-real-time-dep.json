@@ -1,0 +1,71 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CD NXT power tool system empowers surgeons through real-time depth measurement",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9bec620f-1c06-4c8e-8c08-051318eedf47",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "CD-NXT-2020.94_Image",
+  "jcr:predecessors": [
+    "487102d4-1358-48ed-af44-9594ab54e8b8"
+  ],
+  "contentID": "COMM-GSNPS-WEB-570352",
+  "lastPublished": "Thu Mar 02 2023 19:10:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 02 2023 19:10:19 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 02 2023 19:10:21 GMT+0000",
+  "cq:lastModified": "Thu Mar 02 2023 19:09:56 GMT+0000",
+  "jcr:baseVersion": "487102d4-1358-48ed-af44-9594ab54e8b8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Mar 02 2023 19:09:56 GMT+0000",
+  "jcr:uuid": "d48ea11f-857e-4e7b-8b03-49faa28a55f0",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Wed Mar 01 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Mar-2023",
+    "jcr:lastModified": "Wed Mar 01 2023 21:45:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "text": "<p><b>KALAMAZOO, Mich., USA </b>– Stryker (NYSE:SYK) announced the launch of its CD NXT System, the latest innovation in the company’s power tools. This patented technology provides real-time depth measurement as the surgeon drills, allowing for fast, accurate, consistent digital depth measurement across various procedures.<br>\n<br>\nCD NXT streamlines instrumentation and surgical steps, offering an accurate and reproducible measurement while removing errors commonly associated with a manual depth gauge. The system works independently of the implant system, allowing broad use across the market.</p>\n<p>&quot;We continuously listen to the needs and pain points of our customers. We discovered the need for a more accurate and dependable depth measurement tool through research. CD NXT fills that gap through a revolutionary technology allowing the power tool to communicate information back to the surgeon, enabling real-time decision-making,&quot; said Bill Scott, vice president and general manager of Stryker's Orthopaedic Instruments business.<br>\n<br>\nCD NXT features include:</p>\n<ul>\n<li>Automatic cortex-to-cortex measurement and digital readout</li>\n<li>One-step drilling and measurement</li>\n<li>Compatibility with all legacy cordless driver attachments&nbsp;<br>\n&nbsp;</li>\n</ul>\n<p>For more information, including videos, please visit Stryker's CD NXT System <a href=\"https://www.stryker.com/us/en/orthopaedic-instruments/products/cd-nxt.html\">product page</a> at <a href=\"https://www.stryker.com//us/en/orthopaedic-instruments/products/cd-nxt.html\">https://www.stryker.com//us/en/orthopaedic-instruments/products/cd-nxt.html</a>&nbsp;<br>\n</p>\n<p><b><br>\nAbout Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p><b>Media contact</b><br>\nBeth Sizemore<br>\nSr. Director, Strategic Communications<br>\nInstruments<br>\nbeth.sizemore@stryker.com<br>\n<br>\n</p>\n",
+    "jcr:lastModified": "Thu Mar 02 2023 14:11:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/cd-nxt-power-tool-system-empowers-surgeons-through-real-time-depth-measurement/CD-NXT-2020.94_Image.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "CD-NXT",
+    "srcFileRef": "/content/dam/stryker/about/news/2023/cd-nxt-power-tool-system-empowers-surgeons-through-real-time-depth-measurement/CD-NXT-2020.94_Image.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Wed Mar 01 2023 21:52:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

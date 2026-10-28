@@ -1,0 +1,245 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Together with our customers around the world",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5b392258-40ff-4c6e-b5cf-a86f1cd75695",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4b6edf3a-63fb-4593-9115-ff8cbb74d60d"
+  ],
+  "lastPublished": "Fri Feb 27 2026 00:34:25 GMT+0000",
+  "jcr:created": "Fri Feb 27 2026 00:34:25 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 27 2026 00:34:28 GMT+0000",
+  "cq:lastModified": "Wed Feb 18 2026 19:44:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4b6edf3a-63fb-4593-9115-ff8cbb74d60d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:42:09 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4ada0535-4641-4671-8988-7b30d1665bc4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 14:22:47 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 14:22:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "in",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 31 2022 17:35:01 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 14:16:41 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy2775685692786001": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">in&nbsp;<br>\n</span><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\">61</span></span></span><span class=\"fontsize-1-5em\"><br>\n countries</span></span></p>\n",
+        "jcr:lastModified": "Mon Feb 16 2026 15:29:12 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "standaloneimage_copy_975313638": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Thu Mar 31 2022 17:38:30 GMT+0000",
+        "alt": "Map of world with green pins",
+        "srcFileRef": "/content/dam/stryker/about/annual-review/2022/images/Together with our customers_Infographic_1.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Feb 20 2023 16:41:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "served",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Mar 31 2022 17:35:01 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 14:17:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy2775719984214848": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">served by<br>\n &nbsp;</span><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\"><span style=\"color: #85458a;\">56K</span></span></span></span><span class=\"fontsize-1-5em\">&nbsp;<br>\n employees</span></span></p>\n",
+        "jcr:lastModified": "Mon Feb 16 2026 15:29:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "standaloneimage_copy_606656489": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_png",
+        "jcr:created": "Thu Mar 31 2022 17:38:30 GMT+0000",
+        "alt": "Map of world with purple people icons",
+        "srcFileRef": "/content/dam/stryker/about/annual-review/2022/images/About_Us_Infographic-02.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Mon Jan 30 2023 17:56:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy_copy2_1110014622": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">we impact more than<br>\n </span><span style=\"color: #4c7d7a;\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\">150M</span></span></span></span></span><span class=\"fontsize-1-5em\">&nbsp;<br>\n patients annually</span></span></p>\n",
+      "jcr:lastModified": "Thu Feb 15 2024 20:14:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Thu Mar 31 2022 17:38:30 GMT+0000",
+      "alt": "4 rows of blue people icons both men and women",
+      "srcFileRef": "/content/dam/stryker/about/annual-review/2022/images/About_Us_Infographic-03.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jan 30 2023 17:56:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "none"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_843535228_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Sat Mar 01 2025 01:19:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-8em\">Data as of December 31, 2025. All numbers are approximate values.<br>\nMARK-GSNPS-INFO-3021100<br>\n &nbsp;</span></p>\n",
+      "jcr:lastModified": "Wed Feb 18 2026 19:44:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1403837006": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Feb 17 2023 14:22:50 GMT+0000",
+      "jcr:lastModified": "Fri Feb 17 2023 14:22:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    }
+  }
+}

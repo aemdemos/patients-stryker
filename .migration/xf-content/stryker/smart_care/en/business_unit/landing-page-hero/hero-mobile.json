@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e9e6b3cb-6e81-4d62-9e24-dafe4d88f420",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "7bd8383e-7e84-41ff-88bb-6ecb1c7b3674"
+  ],
+  "lastPublished": "Thu Jan 29 2026 13:27:53 GMT+0000",
+  "jcr:created": "Thu Jan 29 2026 13:27:57 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 29 2026 13:28:03 GMT+0000",
+  "cq:lastModified": "Thu Jan 15 2026 16:14:43 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7bd8383e-7e84-41ff-88bb-6ecb1c7b3674",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jan 29 2026 13:27:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c68e4195-7f33-42c2-a468-8fad0ff771ee",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 29 2024 19:11:33 GMT+0000",
+      "alt": "Nurse wearing Sync Badge looking back at patient in ProCuity bed",
+      "srcFileRef": "/content/dam/stryker/smart-care/images/smart-care-bu_hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jan 15 2026 16:14:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

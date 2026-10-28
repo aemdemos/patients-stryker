@@ -1,0 +1,1035 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Pelvic and Acetabulum Plating System",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PRO Pelvis",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e43eb87a-46c2-4061-9c2d-670184497251",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "thumbnailAltText": "PRO Pelvic and Acetabulum Plating System",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/pelvis-indication-image.jpg.png",
+  "jcr:predecessors": [
+    "75cd27c1-7c0b-496e-9063-ab860e30d3be"
+  ],
+  "contentID": "PRO-AWI-3_34548, 01-2023",
+  "lastPublished": "Wed Jul 03 2024 12:56:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 03 2024 12:56:45 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 03 2024 12:56:48 GMT+0000",
+  "cq:lastModified": "Wed Jul 03 2024 12:56:12 GMT+0000",
+  "jcr:description": "Focusing on the instrumentation surrounding exposure and reduction for pelvis and acetabulum fractures, PRO Pelvis plating system is uniquely designed to facilitate the Anterior Intrapelvic Approach (AIP), where working in the deep, narrow space in the pelvis poses special surgical challenges.",
+  "jcr:baseVersion": "75cd27c1-7c0b-496e-9063-ab860e30d3be",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:46:12 GMT+0000",
+  "pageTitle": "PRO Pelvis Pelvic and Acetabulum Plating System",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/trauma-and-extremities/pro-pelvis",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/Indications/pelvis",
+    "stryker:custom/trauma-and-extremities/product-type/plating",
+    "stryker:specialty/hip-and-pelvis",
+    "stryker:custom/trauma-and-extremities/Procedures/Fracture",
+    "stryker:portfolio/orthopaedics",
+    "stryker:system/trauma-and-extremities/plating",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jan 12 2023 07:42:56 GMT+0000",
+  "jcr:uuid": "2788621c-51fa-4c18-9783-74057ca5e133",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:lastModified": "Wed Jun 14 2017 15:27:26 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Mon Aug 22 2022 21:54:00 GMT+0000",
+      "carouselOptionSpeed": "0",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Tue Aug 30 2022 18:01:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/pro_pelvis/pro-pelvis/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/trauma-and-extremities/en/products/pro-pelvis/pro-pelvis/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/pro_pelvis/pro-pelvis/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/trauma-and-extremities/en/products/pro-pelvis/pro-pelvis/mobile",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "5",
+          "jcr:created": "Mon Aug 22 2022 21:54:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Sat Oct 15 2022 23:10:11 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Mon Aug 22 2022 21:56:40 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\">PRO Pelvis</span></span>",
+              "line2": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Pelvic and Acetabulum<br>\r\nPlating System</span></span>",
+              "jcr:lastModified": "Fri Sep 23 2022 22:42:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"font-size: 42.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Exposure. Reduction. Fixation.</span></span></b></span>",
+      "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">&nbsp;</span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Focusing on the instrumentation surrounding exposure and reduction for pelvis and acetabulum fractures, PRO Pelvis plating system is uniquely designed to facilitate the Anterior Intrapelvic (AIP) approach, where working in the deep, narrow space in the pelvis poses special surgical challenges</span></span></p>\r\n",
+      "jcr:lastModified": "Fri Jan 13 2023 18:48:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols_1083364148": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 22:51:26 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 22:51:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 21:22:30 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 21:22:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">PRO Pelvis&nbsp;</span></span><span class=\"urw-egyptienne\">interactive model</span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\">Select a point of interest to explore our product portfolio.</span></span>",
+          "jcr:lastModified": "Fri Jan 13 2023 22:52:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jan 13 2023 22:50:24 GMT+0000",
+      "jcr:lastModified": "Fri Jan 13 2023 22:50:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "componentIdList": "Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint",
+          "hiddenSelCompId": "trauma-pro-pelvis",
+          "componentUrl": "https://microapp.stryker.com/trauma-pro-pelvis/",
+          "jcr:created": "Fri Jan 13 2023 22:50:30 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/trauma-pro-pelvis/",
+          "jcr:lastModified": "Fri Jan 13 2023 22:50:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        }
+      }
+    },
+    "cols_1023003861_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Mar 30 2020 20:17:59 GMT+0000",
+      "jcr:lastModified": "Wed Apr 01 2020 17:45:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "jcr:lastModified": "Mon Mar 30 2020 20:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Product</span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"> Specifications</span></span><span class=\"urw-egyptienne\"> </span></span>",
+      "jcr:lastModified": "Sat Oct 15 2022 23:10:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "bottomMargin": "2"
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "Exposure",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/Exposure.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:49:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Accessibility</span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Unique radiolucent retractors designed to provide enhanced visualization during the surgical exposure</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Radiolucent carbon fiber retractors</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Enhanced illumination in the surgical field&nbsp;</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Retractor 1, 2, and 3 may be equipped with a light pipe attachment to better illuminate deep surgical wounds</span></span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Suction device for wound irrigation</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Suction retractor provides dual functionality&nbsp; by irrigating blood and fluid that accumulate in the base of the wound as well as retracting the bladder</span></span></li>\n</ul>\n</li>\n</ul>\n<p style=\"text-align: left;\">&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 20:42:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "Reduction",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/Reduction.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:49:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Minimally disruptive reduction</span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Fracture specific reduction instruments designed to treat a variety of fracture types through a minimally invasive approach</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Offset tines designed to accommodate traditional and less invasive approaches</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Asymmetric webers (right and left specific)</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Large offset jaw clamps (straight and curved)</span></span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Streamlined versatility&nbsp;</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Achieve compression or distraction with 1 instrument by adjusting the farabeuf’s ratchet mechanism</span></span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Longer speed locks</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Offers larger clamp opening and enhances tip and arm angulation</span></span></li>\n</ul>\n</li>\n</ul>\n<p style=\"text-align: left;\">&nbsp;</p>\n",
+          "jcr:lastModified": "Sat Oct 15 2022 23:16:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c_1872495614": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 21:44:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 19 2022 17:22:41 GMT+0000",
+          "alt": "Fixation",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/Fixation.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 15 2022 04:49:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 17:11:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2em\">Comprehensive fixation</span></span></span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">An extensive implant offering capable of treating an array of complex pelvis and acetabulum fractures</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">SOMA designed quadrilateral surface plates indicated for: <sup>1</sup></span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Anterior column&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Anterior column combined with posterior hemi-transverse&nbsp;</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Quadrilateral surface</span></span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Basic fragment annealed and non-annealed plates&nbsp;</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Straight (cold worked)</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Straight (annealed)</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Pubic symphysis</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Curved R108</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Curbed R88</span></span></li>\n</ul>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Compatible with 3.5/4.5mm cortical screws</span></span><ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">3.5mm screws allow for 70 degree cone of angulation</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">4.5mm screws allow for 10 degree cone of angulation</span></span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 20:47:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Sat Jan 14 2023 15:22:11 GMT+0000",
+      "jcr:lastModified": "Sat Jan 14 2023 15:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+          "jcr:lastModified": "Sat Jan 14 2023 15:22:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sat Jan 14 2023 15:22:23 GMT+0000",
+          "jcr:lastModified": "Sat Jan 14 2023 15:22:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sat Jan 14 2023 15:22:30 GMT+0000",
+          "jcr:lastModified": "Sat Jan 14 2023 15:22:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 23:21:30 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 23:21:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(62,82,69,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 21:31:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">PRO Pelvis</span></span><span class=\"urw-egyptienne\"> <span style=\"color: rgb(237,238,236);\">resources</span></span></span>",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\">Discover more about PRO Pelvis by exploring our collection of unique clinical resources including surgical reduction technique, exposure, and product overview videos, brochures, whitepapers, and more.</span></span></span>",
+          "jcr:lastModified": "Sat Oct 15 2022 23:23:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_36909880_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 22:56:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Aug 25 2022 22:56:29 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Aug 25 2022 22:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:27:19 GMT+0000",
+          "jcr:lastModified": "Fri Jun 28 2024 14:45:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols3_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Sat Jan 14 2023 15:22:11 GMT+0000",
+              "jcr:lastModified": "Sat Jan 14 2023 15:22:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "0dUm0cJCgaI",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:41:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:23 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "d2aEN6EkmFo",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:42:50 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:30 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "NxjW5i6fJ4Y",
+                  "jcr:lastModified": "Fri Jun 28 2024 14:43:46 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            },
+            "cols3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Mon Jul 01 2024 19:00:20 GMT+0000",
+              "jcr:lastModified": "Mon Jul 01 2024 19:00:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "qQ__8_4f8sA",
+                  "jcr:lastModified": "Wed Jul 03 2024 12:55:16 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "nAjGdJD_jpk",
+                  "jcr:lastModified": "Wed Jul 03 2024 12:55:35 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "eqxotCeQ214",
+                  "jcr:lastModified": "Wed Jul 03 2024 12:55:49 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            },
+            "cols3_1722902227": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "jcr:created": "Wed Jul 03 2024 12:55:55 GMT+0000",
+              "jcr:lastModified": "Wed Jul 03 2024 12:55:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys"
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Sat Jan 14 2023 15:22:18 GMT+0000",
+                  "hideBorder": "false",
+                  "type": "typeId",
+                  "videoId": "V55ytiR2rg0",
+                  "jcr:lastModified": "Wed Jul 03 2024 12:56:07 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo"
+                }
+              }
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41031\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><b><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41004\" target=\"_blank\">PRO PELVIS FAQ</a></b></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Wed Apr 19 2023 19:15:13 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:38:51 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><span class=\"futura-bold\"><b><a href=\"http://az621074.vo.msecnd.net/syk-mobile-content-cdn/global-content-system/SYKGCSDOC-2-41031/KsaGbjtoMY0IV4lnntQftAXEfiyg2w/PRO_ST_1.pdf\" target=\"_blank\">OPERATIVE TECHNIQUE</a></b></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-45874\" target=\"_blank\">PRO REDUCTION INSTRUMENT TRAY LAY OUT</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41033\" target=\"_blank\">PRO BASIC TRAY LAYOUT</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41023\" target=\"_blank\">PRO SET CONFIGURATION</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41009\" target=\"_blank\">BASIC COUNT SHEET</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41032\" target=\"_blank\">RETRACTOR TRAY LAYOUT</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41011\" target=\"_blank\">COUNT SHEET RETRACTOR</a></span></li>\n<li><span class=\"futura-bold\"><a href=\"http://cdn.stryker.com/SYKGCSDOC-2-41017\" target=\"_blank\">ICS PRO PELVIS</a></span></li>\n</ul>\n",
+                  "jcr:lastModified": "Wed Apr 19 2023 19:20:33 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:38:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "cols2_624753639_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+              "jcr:created": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "jcr:lastModified": "Tue Aug 30 2022 20:36:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:45 GMT+0000",
+                  "text": "<ul>\n<li><b><span class=\"futura-bold\"><a href=\"https://stryker.highspot.com/spots/5ed56ceaf7794d0573ae7d33?list=5ed57a5d6a3b1174081a6508&amp;overview=false\" target=\"_blank\">HIGHSPOT</a></span></b></li>\n</ul>\n",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:42:24 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "lee.fuller1@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Thu Aug 25 2022 23:45:47 GMT+0000",
+                  "jcr:lastModified": "Thu Jan 12 2023 07:38:45 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              }
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "Surgical Exposure and Reduction Technique Videos"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "2",
+              "accTitle": "Surgeon resources"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "3",
+              "accTitle": "Hospital resources"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "4",
+              "accTitle": "Internal resources"
+            }
+          }
+        }
+      }
+    },
+    "cols_127389427_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "jcr:lastModified": "Fri Aug 26 2022 00:37:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Aug 26 2022 00:37:13 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Aug 26 2022 00:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_1529732594": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 22:50:02 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 22:50:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:55:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1254130874_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Related products</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:42:21 GMT+0000",
+          "jcr:lastModified": "Mon Aug 29 2022 18:32:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/Linear-Reduction-Clamp"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/asnis-iii"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/t2-alpha-femur-retrograde"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/trauma-and-extremities/products/omega-3-hip-screw"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_772509226": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 22:50:24 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 22:50:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1890460301_copy_1866119849": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Wed Dec 14 2022 15:34:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "divisioncontactus": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "formThankYou": "Thank you for your message. Our team will get back to you shortly with more information! ",
+          "jcr:created": "Tue Dec 13 2022 18:58:27 GMT+0000",
+          "formDescription": "Send us a message to learn more about PRO Pelvis and its capabilities. ",
+          "jcr:lastModified": "Wed Dec 14 2022 16:15:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/divisioncontactus",
+          "formTitle": "Contact Us"
+        }
+      }
+    },
+    "sectionseparator_1604496630": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Sep 23 2022 22:50:40 GMT+0000",
+      "jcr:lastModified": "Fri Sep 23 2022 22:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1470124152_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "jcr:lastModified": "Mon Aug 22 2022 22:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 22:55:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Follow Stryker's Trauma team on Social Media!&nbsp;</span></span>",
+          "jcr:lastModified": "Thu Aug 25 2022 22:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "0",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "bottomMargin": "2"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "jcr:lastModified": "Mon Aug 22 2022 23:08:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Aug 22 2022 23:09:59 GMT+0000",
+              "jcr:lastModified": "Thu Jan 12 2023 07:42:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.linkedin.com/showcase/strykertrauma/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "LINKEDIN",
+                  "externalLinkType": "ext"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "externalLink": "https://www.instagram.com/strykertrauma/?hl=en",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "linkText": "INSTAGRAM",
+                  "externalLinkType": "ext"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Plating that fits.</p>\r\n",
+    "shortDescTop": "<p>With a special focus on exposure and reduction, the PRO system is uniquely engineered to facilitate less invasive techniques such as the anterior intrapelvic approach, where working in a deep narrow space may pose special surgical challenges.</p>\r\n",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 16:12:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. PRO-WP-1</p>\r\n",
+    "jcr:lastModified": "Thu Jan 12 2023 20:47:15 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/propelvis/images/pelvis-indication-image.jpg.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 16:12:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 16:12:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 16:12:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

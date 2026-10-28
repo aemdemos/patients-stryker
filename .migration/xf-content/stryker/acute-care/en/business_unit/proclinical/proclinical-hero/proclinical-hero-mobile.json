@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProClinical Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7573e389-999f-4116-ba4c-a2629cb6d317",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "1a1adafb-fa98-4890-9a58-943fc1e883b7"
+  ],
+  "lastPublished": "Tue Aug 20 2024 19:50:15 GMT+0000",
+  "jcr:created": "Tue Aug 20 2024 19:50:16 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 20 2024 19:50:18 GMT+0000",
+  "cq:lastModified": "Thu Aug 08 2024 19:45:23 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1a1adafb-fa98-4890-9a58-943fc1e883b7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Aug 20 2024 19:50:15 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ffd90634-c6fb-4e6f-ae88-859f4c3680ec",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jul 29 2024 20:05:02 GMT+0000",
+      "alt": "Stryker's ProClinical team discussing data insights with hospital medical staff.",
+      "srcFileRef": "/content/dam/stryker/acute-care/proclinical/images/proclinical_targeted-solutions_secondary-hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Aug 08 2024 19:45:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

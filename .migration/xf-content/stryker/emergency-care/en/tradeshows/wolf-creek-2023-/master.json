@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Wolf Creek 2023 ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1f86a4c5-92d2-403a-953f-a66e1bade89f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "43893b8c-fd24-4ad5-a03a-528a55aa2c33"
+  ],
+  "jcr:created": "Tue May 30 2023 20:24:46 GMT+0000",
+  "cq:lastReplicated": "Tue May 30 2023 20:24:48 GMT+0000",
+  "cq:lastModified": "Tue May 30 2023 20:23:14 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "43893b8c-fd24-4ad5-a03a-528a55aa2c33",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e695d00b-c525-43c3-8687-d2c009b57fb3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue May 30 2023 20:22:52 GMT+0000",
+      "alt": "Wolf Creek tradeshow header",
+      "srcFileRef": "/content/dam/stryker/ems/tradeshows/images/Wolf Creek tradeshow header.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue May 30 2023 20:23:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

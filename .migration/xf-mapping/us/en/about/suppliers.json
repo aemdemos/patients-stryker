@@ -1,0 +1,881 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Suppliers",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "68195045-86b5-4cbe-a595-6450d1e24a98",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "d81bda43-167c-4cd0-a82c-537b4aaa80e7"
+  ],
+  "contentID": "PRT-GSNPS-SYK-1960450_Rev-1",
+  "lastPublished": "Thu Jun 04 2026 12:00:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jun 04 2026 12:00:02 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 04 2026 12:00:10 GMT+0000",
+  "cq:lastModified": "Wed Jun 03 2026 21:23:22 GMT+0000",
+  "jcr:description": "Stryker’s global supply chain management emphasizes quality. Access supplier standards, tools and policies to support compliance and collaboration.",
+  "cq:siblingOrder": "annual-review,our-culture,our-locations,history,our-board-of-directors,our-management,OurTalent,governance,corporate-responsibility,news,awards,patents,udi,contact,trademarks,corporate-responsibility-new2,global-quality,diversity-and-inclusion,suppliers,",
+  "jcr:baseVersion": "d81bda43-167c-4cd0-a82c-537b4aaa80e7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 25 2025 20:05:11 GMT+0000",
+  "cq:name": "suppliers",
+  "jcr:lastModified": "Fri May 08 2026 17:08:09 GMT+0000",
+  "jcr:uuid": "1979ac24-18e4-4c1d-9698-a7d60891e839",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about",
+  "cq:childrenOrder": "supplier-code-of-conduct,",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "navTitle": "Suppliers",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_1167742388": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 09 2021 22:15:33 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span style=\"font-size: 35px;\"><b><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Suppliers</span></span></b></span></h1>\n",
+      "jcr:lastModified": "Fri Jun 13 2025 20:33:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "textColor": "rgb(0,0,0)",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/about/suppliers/images/Suppliers-header-v4.jpg",
+      "jcr:created": "Wed Jun 11 2025 16:55:03 GMT+0000",
+      "alt": "Suppliers header",
+      "jcr:lastModified": "Mon Jun 23 2025 19:27:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_723474399": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 23:56:16 GMT+0000",
+      "jcr:lastModified": "Tue Jun 10 2025 23:56:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_257000938": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 17:36:21 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 17:36:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(237,238,236)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 10 2025 21:50:31 GMT+0000",
+          "jcr:lastModified": "Tue Jun 10 2025 21:50:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_922571347_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jun 10 2025 23:55:34 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jun 10 2025 23:55:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Tue Jun 10 2025 21:50:16 GMT+0000",
+              "alt": "Tony Long",
+              "srcFileRef": "/content/dam/stryker/about/suppliers/images/tony-long-325x284-t.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jun 11 2025 17:38:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_922571347": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jun 10 2025 23:55:34 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jun 10 2025 23:55:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_2090364700": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "5",
+              "jcr:created": "Tue Jun 10 2025 21:34:29 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\">At Stryker, our mission to make healthcare better is made possible through strategic partnerships with suppliers who share our values and commitment to excellence. We recognize the critical role our suppliers play in supporting the patients and customers we serve around the world. We look for supplier partners who perform at the highest levels across key areas—technology, quality, responsiveness, delivery, cost and overall business health, including financial stability, risk management and environment, human rights and ethics compliance. These are the foundations of a reliable, responsible supply chain—and essential to achieving our shared goals.</span></p>\n<p><span class=\"fontsize-1-25em\">We’re proud to work alongside suppliers who are as dedicated as we are to quality, innovation, ethical practices and making a meaningful difference in healthcare. Together, we can continue to raise the bar and strengthen our position as a world-class supply chain partner.<br>\n</span></p>\n<p style=\"text-align: right;\"><span class=\"fontsize-1-25em\">– <span class=\"futura-bold\">Tony Long</span><b><br>\n </b><span class=\"urw-egyptienne\">Vice President, Chief Procurement Officer</span></span><br>\n</p>\n",
+              "jcr:lastModified": "Wed Jun 11 2025 17:37:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:17:03 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:17:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_2026382937": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 17:35:35 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 17:35:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1875848160": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 16:50:34 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 16:50:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1924066506": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "supplier-policies",
+      "jcr:created": "Fri Jun 13 2025 18:44:48 GMT+0000",
+      "title": "Supplier policies",
+      "jcr:lastModified": "Fri Jun 13 2025 18:55:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 19:38:41 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 19:38:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 13 2025 18:55:15 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">We conduct our business in compliance with all applicable laws and regulations and in accordance with the highest ethical standards. We are committed to setting high expectations for ourselves and our suppliers that align with our mission and core values of Integrity, Accountability, People and Performance.</span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Jul 25 2025 18:22:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "accordion_964229251_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Jun 10 2025 22:07:17 GMT+0000",
+          "jcr:lastModified": "Fri Jun 13 2025 19:03:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols2_2_3_1_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Jun 11 2025 01:18:34 GMT+0000",
+              "jcr:lastModified": "Wed Jun 11 2025 01:18:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_201603842": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "hideComponent": "false",
+                  "jcr:created": "Tue Jun 10 2025 22:01:18 GMT+0000",
+                  "gradientDirection": "left-to-right",
+                  "text": "<p><span class=\"fontsize-1-25em\">Adherence to our Supplier Code of Conduct is required for any supplier doing business with us. Our Supplier Code of Conduct communicates our expectations for suppliers in key areas including:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Business integrity</span></li>\n<li><span class=\"fontsize-1-25em\">Labor and human rights</span></li>\n<li><span class=\"fontsize-1-25em\">Environment</span></li>\n<li><span class=\"fontsize-1-25em\">Workplace health and safety</span></li>\n<li><span class=\"fontsize-1-25em\">Management systems</span></li>\n</ul>\n",
+                  "jcr:lastModified": "Tue Jul 01 2025 14:36:38 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "backgroundColor": "rgba(255,255,255,0)",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "curatedcta": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+                  "ctaDamLink": "/content/dam/stryker/about/corporate-responsiblity/pdfs/170050.pdf",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Tue Jun 10 2025 22:09:11 GMT+0000",
+                  "CTATitle": "Access our Supplier Code of Conduct",
+                  "ctaExternalLink": "https://stryker.com",
+                  "jcr:lastModified": "Mon Aug 11 2025 21:12:41 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgb(255,181,0)",
+                  "ctaInternalLink": "/content/stryker/us/en/about/suppliers/supplier-code-of-conduct"
+                }
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jun 10 2025 23:29:07 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\">To help our suppliers succeed, we provide clear expectations, best practices and tools that support our shared mission to make healthcare better.</span></p>\n",
+              "jcr:lastModified": "Wed Jun 11 2025 01:18:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            },
+            "text_727114797": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "2",
+              "jcr:created": "Wed Jun 11 2025 01:38:26 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span style=\"color: #1c5687;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Supplier quality guidebook</span></span></span></p>\n",
+              "jcr:lastModified": "Wed Jun 11 2025 01:38:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "cols2_2_3_1_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Jun 11 2025 01:22:41 GMT+0000",
+              "jcr:lastModified": "Wed Jun 11 2025 01:22:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_297637114": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "hideComponent": "false",
+                  "jcr:created": "Tue Jun 10 2025 23:29:29 GMT+0000",
+                  "gradientDirection": "left-to-right",
+                  "text": "<p><span class=\"fontsize-1-25em\">Our Supplier Quality Guidebook is intended to serve as a helpful resource providing our suppliers with an overview of our quality requirements and expectations specific to those supplying materials, components or products.</span></p>\n",
+                  "jcr:lastModified": "Wed Jun 11 2025 01:38:51 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "curatedcta": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "CTAOpenInNewTab": "true",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "ctaDamLink": "/content/dam/commercial/usa/procurement/gsnps/PRT-GSNPS-OTHD-1372150-EN_US.pdf",
+                  "ctaLinkType": "dam",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Tue Jun 10 2025 23:30:18 GMT+0000",
+                  "CTATitle": "Download the guidebook",
+                  "ctaExternalLink": "https://stryker.com",
+                  "jcr:lastModified": "Wed Jun 11 2025 17:25:12 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgb(28,86,135)"
+                }
+              }
+            },
+            "text_1642430878": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "2",
+              "jcr:created": "Tue Jun 10 2025 23:30:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\"><span style=\"color: #1c5687;\">Digital tools for supplier collaboration</span></span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">We use digital platforms to help streamline collaboration with our suppliers.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://service.ariba.com/Supplier.aw/109561066/aw?awh=r&amp;awssk=l_nPRK4n&amp;dard=1&amp;ancdc=2\" target=\"_blank\">Login to Ariba</a> to manage purchase orders, advanced shipping notices and invoicing.&nbsp;Two resources are available: <a href=\"https://www.stryker.com/content/m/ariba/en/index.html\" target=\"_blank\">SAP business network supplier portal training</a> for select finished goods suppliers, and <a href=\"https://www.stryker.com/content/m/c/stryker-supplier-training-material/en/index/ariba-functional-training.html\">Ariba training</a> for all other quality-impacting suppliers. Consult with your Stryker representative to confirm which resources are relevant to your engagement.</span></p>\n<p><span class=\"fontsize-1-25em\">Note: These portals are for existing Stryker suppliers. Accessing them does not initiate or imply a business relationship with Stryker.</span></p>\n",
+              "jcr:lastModified": "Wed Jun 11 2025 17:26:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "1"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Supplier code of conduct"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 2,
+              "accTitle": "Purchase Order terms and conditions"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 3,
+              "accTitle": "Conflict minerals"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "cols2_2_3_1_3_538344": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Jun 11 2025 01:18:39 GMT+0000",
+              "jcr:lastModified": "Wed Jun 11 2025 01:18:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_1993722526": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "hideComponent": "false",
+                  "jcr:created": "Tue Jun 10 2025 22:03:35 GMT+0000",
+                  "gradientDirection": "left-to-right",
+                  "text": "<p><span class=\"fontsize-1-25em\">Stryker’s Purchase Order (PO) terms and conditions outline the requirements and expectations for all suppliers conducting business with us. These terms reflect our commitment to quality, compliance and responsible business practices across our global supply chain.</span></p>\n",
+                  "jcr:lastModified": "Wed Jun 11 2025 01:37:33 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "curatedcta_180260102": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "CTAOpenInNewTab": "true",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Tue Jun 10 2025 22:11:39 GMT+0000",
+                  "CTATitle": "Access our PO terms and conditions",
+                  "ctaExternalLink": "https://stryker.com",
+                  "jcr:lastModified": "Tue Jul 01 2025 14:42:30 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgb(255,181,0)",
+                  "ctaInternalLink": "/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains/po-terms"
+                }
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "cols2_2_3_1_3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Tue Jul 01 2025 14:40:21 GMT+0000",
+              "jcr:lastModified": "Tue Jul 01 2025 14:40:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_1412504400_copy": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "hideComponent": "false",
+                  "topMargin": "2",
+                  "jcr:created": "Tue Jun 10 2025 22:04:12 GMT+0000",
+                  "gradientDirection": "left-to-right",
+                  "text": "<p><span class=\"fontsize-1-25em\">Stryker is committed to responsible sourcing and compliance with conflict minerals regulations.</span></p>\n<p><span class=\"fontsize-1-25em\">Suppliers must exercise due diligence in their supply chains to mitigate potential risks of directly or indirectly supporting armed conflict and support Stryker's compliance with the <a href=\"https://www.congress.gov/bill/111th-congress/house-bill/4173/text\" target=\"_blank\">Dodd Frank Wall Street Reform and Consumer Protection Act</a>*, <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L:2017:130:TOC\" target=\"_blank\">EU Conflict Minerals Regulation</a>* and our <a href=\"/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains/supply-chain-transparency-and-ethics.html\" target=\"_blank\">Conflict Minerals Policy</a>. Upon request, suppliers are expected to participate annually in providing Conflict Minerals Reporting Templates in a timely manner and promptly disclose any changes to the status of minerals they become aware of, including the conformant status of smelters or refiners within their supply chain that impact our products.</span></p>\n",
+                  "jcr:lastModified": "Tue Jul 01 2025 14:41:05 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true",
+                  "bottomMargin": "1"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "curatedcta_180260102": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "CTAOpenInNewTab": "true",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "ctaLinkType": "int",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Tue Jun 10 2025 22:11:39 GMT+0000",
+                  "CTATitle": "Access our Conflict Minerals Policy",
+                  "ctaExternalLink": "https://stryker.com",
+                  "jcr:lastModified": "Tue Jul 01 2025 14:42:36 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgb(255,181,0)",
+                  "ctaInternalLink": "/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains/supply-chain-transparency-and-ethics"
+                }
+              }
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 13 2025 19:39:24 GMT+0000",
+          "alt": "Supplier policies",
+          "srcFileRef": "/content/dam/stryker/about/suppliers/images/Supplier-policies-v5.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 24 2025 18:05:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1316022822": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:44:43 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:44:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1749860908": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:21:37 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:21:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "supplier-quality-management",
+      "jcr:created": "Fri Jun 13 2025 18:47:29 GMT+0000",
+      "title": "Supplier quality management",
+      "jcr:lastModified": "Fri Jun 13 2025 18:53:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_836343670": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 19:50:11 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 19:50:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 13 2025 18:51:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Suppliers play a vital role in delivering the high-quality outcomes our customers expect. We are committed to building collaborative relationships with suppliers that share our dedication to quality.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 09 2025 22:27:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 10 2025 23:27:19 GMT+0000",
+          "CTATitle": "Learn more on our Global Quality page",
+          "ctaExternalLink": "https://stryker.com",
+          "jcr:lastModified": "Tue Jul 01 2025 14:34:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)",
+          "ctaInternalLink": "/content/stryker/us/en/about/global-quality.html#supplier-quality-management"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 13 2025 19:54:52 GMT+0000",
+          "alt": "Stryker-supplier-quality",
+          "srcFileRef": "/content/dam/stryker/about/suppliers/images/Supplier-quality-v5.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 23 2025 17:10:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_301583987": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:21:41 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:21:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1611903982": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:50:47 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:50:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1387374216": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "supplier-inclusion",
+      "jcr:created": "Fri Jun 13 2025 18:49:34 GMT+0000",
+      "title": "Global supplier inclusion",
+      "jcr:lastModified": "Thu May 07 2026 18:41:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_1641935617": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 19:40:26 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 19:40:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 13 2025 18:51:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">We aim to engage the best suppliers in the world. Our Global Supplier Inclusion Program helps by expanding visibility to suppliers with qualifications and capabilities that align with our needs.</span></p>\n",
+          "jcr:lastModified": "Tue May 12 2026 15:30:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "curatedcta_117533272": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 10 2025 23:28:33 GMT+0000",
+          "CTATitle": "Learn more on our Global Supplier Inclusion page",
+          "ctaExternalLink": "https://stryker.com",
+          "jcr:lastModified": "Wed Jun 03 2026 21:23:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)",
+          "ctaInternalLink": "/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains/supplier-inclusion"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 13 2025 19:41:15 GMT+0000",
+          "alt": "Supplier diversity",
+          "srcFileRef": "/content/dam/stryker/about/suppliers/images/Supplier-diversity-v3.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jun 19 2025 21:55:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_798313250": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:34:02 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:34:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1203178848": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:22:11 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1144268089": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "deepLinkingId": "additional-resources",
+      "jcr:created": "Fri Jun 13 2025 18:42:15 GMT+0000",
+      "title": "Additional resources",
+      "jcr:lastModified": "Wed Jun 18 2025 20:24:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_1616848007": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 19:50:30 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 19:50:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 13 2025 18:56:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">To help our suppliers succeed, we provide clear expectations, best practices and tools that support our shared mission to make healthcare better.</span></p>\n",
+          "jcr:lastModified": "Wed Jul 09 2025 22:28:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Fri Jun 13 2025 18:42:54 GMT+0000",
+          "jcr:lastModified": "Fri Jun 13 2025 19:05:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "cols2_2_3_1_3_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "jcr:created": "Wed Jun 11 2025 01:22:41 GMT+0000",
+              "jcr:lastModified": "Wed Jun 11 2025 01:22:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "text_297637114": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "hideComponent": "false",
+                  "jcr:created": "Tue Jun 10 2025 23:29:29 GMT+0000",
+                  "gradientDirection": "left-to-right",
+                  "text": "<p><span class=\"fontsize-1-25em\">Our supplier quality guidebook is intended to serve as a helpful resource providing our quality-impacting suppliers with an overview of our quality requirements and expectations.</span><br>\n</p>\n",
+                  "jcr:lastModified": "Wed Jul 09 2025 22:26:07 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/text",
+                  "textIsRich": "true"
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "curatedcta": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "carolyn.lee@stryker.com",
+                  "CTAOpenInNewTab": "true",
+                  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                  "ctaDamLink": "/content/dam/commercial/usa/procurement/gsnps/PRT-GSNPS-OTHD-1372150-EN_US.pdf",
+                  "ctaLinkType": "dam",
+                  "ctaOpenInNewTabOverride": "0",
+                  "jcr:created": "Tue Jun 10 2025 23:30:18 GMT+0000",
+                  "CTATitle": "Download the guidebook",
+                  "ctaExternalLink": "https://stryker.com",
+                  "jcr:lastModified": "Tue Jul 01 2025 14:34:23 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/curatedcta",
+                  "CTAButtonColor": "rgb(255,181,0)"
+                }
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "Supplier quality guidebook"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": 2,
+              "accTitle": "Digital tools for supplier collaboration"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_1642430878_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "2",
+              "jcr:created": "Tue Jun 10 2025 23:30:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-25em\">We use digital platforms to help streamline collaboration with our suppliers.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://service.ariba.com/Supplier.aw/109561066/aw?awh=r&amp;awssk=l_nPRK4n&amp;dard=1&amp;ancdc=2\" target=\"_blank\"><span class=\"standalone-link\">Login to Ariba</span></a> to manage purchase orders, advanced shipping notices and invoicing.&nbsp;</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Two training resources are available. Consult with your Stryker representative to confirm which resources are relevant to your engagement.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/content/m/ariba/en/index.html\" target=\"_blank\"><span class=\"standalone-link\">SAP business network supplier portal training</span></a> for select finished goods suppliers, and</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/content/m/c/stryker-supplier-training-material/en/index/ariba-functional-training.html\" target=\"_blank\"><span class=\"standalone-link\">Ariba training</span></a> for all other quality-impacting suppliers.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Note: These portals are for existing Stryker suppliers. Accessing them does not initiate or imply a business relationship with Stryker.</span></p>\n",
+              "jcr:lastModified": "Tue Jul 01 2025 14:43:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "1"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 13 2025 19:57:53 GMT+0000",
+          "alt": "Stryker-supplier-resources",
+          "srcFileRef": "/content/dam/stryker/about/suppliers/images/Stryker-supplier-resources-v2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 23 2025 17:29:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_2052652973": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:42:10 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:42:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1271636427": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Jun 13 2025 18:13:01 GMT+0000",
+      "jcr:lastModified": "Fri Jun 13 2025 18:13:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 10 2025 23:40:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*External websites, links or platforms referenced within this page are provided for informational purposes only. Stryker does not monitor, control, or endorse the content of external sites and is not responsible for their policies, security or practices.</p>\r\n",
+    "jcr:lastModified": "Thu Jun 19 2025 19:03:59 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

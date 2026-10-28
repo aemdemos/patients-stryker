@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Surgical and exam lighting",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Surgical Lights",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "811b9f66-aaaa-4cf4-bb10-4bf331b24df4",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "jcr:predecessors": [
+    "86f89865-cf4e-48e7-b8c8-f417e9d20cd4"
+  ],
+  "contentID": "1000903759 REV B",
+  "lastPublished": "Mon Nov 18 2024 15:43:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 18 2024 15:43:09 GMT+0000",
+  "cq:lastReplicated": "Mon Nov 18 2024 15:43:11 GMT+0000",
+  "cq:lastModified": "Mon Nov 18 2024 01:18:13 GMT+0000",
+  "jcr:description": "Surgical and exam lighting for the operating room and multiple other care settings throughout the hospital.",
+  "cq:siblingOrder": "asc,ed,icu,or,room-design,lighting,surgical-tables,monitor-and-accessory-support-arms,or-design-and-construction-resources,booms,or-walls,",
+  "jcr:baseVersion": "86f89865-cf4e-48e7-b8c8-f417e9d20cd4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:43:08 GMT+0000",
+  "pageTitle": "Surgical Lights",
+  "cq:name": "lighting",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/infrastructure-and-room-design",
+    "stryker:specialty/lighting"
+  ],
+  "jcr:lastModified": "Mon Nov 18 2024 01:18:13 GMT+0000",
+  "jcr:uuid": "e216f9e9-858b-4f64-affa-3c8dd9e6daa8",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "cedu.ocson@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-web-main-v2.png"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+    "imageAlt": "Surgical lights, operating room lights, OR Lights",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Wed Nov 13 2024 16:51:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

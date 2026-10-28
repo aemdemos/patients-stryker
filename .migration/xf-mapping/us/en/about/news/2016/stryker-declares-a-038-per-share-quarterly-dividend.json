@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker declares a $0.38 per share quarterly dividend",
+  "jcr:versionHistory": "061b3034-e7e9-443a-abdf-004d46b0f12f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+  "jcr:predecessors": [
+    "88f15919-b8f1-4471-8717-6157ed319fa8"
+  ],
+  "lastPublished": "Mon Mar 11 2019 17:30:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 11 2019 17:30:54 GMT+0000",
+  "cq:lastModified": "Mon Mar 11 2019 17:30:43 GMT+0000",
+  "jcr:baseVersion": "88f15919-b8f1-4471-8717-6157ed319fa8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue May 30 2017 09:42:03 GMT-0400",
+  "jcr:uuid": "94fbd97e-e874-4a55-bf54-cc590833e970",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Wed Jul 27 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "27-Jul-2016",
+    "jcr:lastModified": "Tue May 30 2017 11:21:23 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "text": "<p>Stryker Corporation (NYSE:SYK) announced that its Board of Directors has declared a quarterly dividend of $0.38 per share payable on October 31, 2016 to shareholders of record at the close of business on September 30, 2016, representing an increase of 10% versus the prior year and unchanged from the previous quarter.</p>\n<p><a href=\"https://investors.stryker.com/press-releases/news-details/2016/Stryker-declares-a-038-per-share-quarterly-dividend-20160427000000/default.aspx\">See full release here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Mon Mar 11 2019 17:30:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "79f3aee1-6be3-46e0-817d-e8a8e8689a13",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "6d6ad568-542f-4761-9e6a-affd92119cc2"
+  ],
+  "lastPublished": "Thu Aug 29 2024 13:58:07 GMT+0000",
+  "jcr:created": "Thu Aug 29 2024 13:58:07 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 29 2024 13:58:09 GMT+0000",
+  "cq:lastModified": "Thu Aug 29 2024 13:58:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6d6ad568-542f-4761-9e6a-affd92119cc2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Aug 21 2024 19:59:02 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "af11d794-fffa-4408-b6b0-b63be1b4d321",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Large",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 19:59:30 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2024 19:59:36 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline5092821174897263": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "topMargin": "14",
+        "gradientDirection": "left-to-right",
+        "line1": "<h1><span class=\"fontsize-4-5-vw\">Employees share why <span class=\"futura-bold\"><span style=\"color: #ffb500;\">DE&amp;I</span> matters</span> at annual Summit</span></h1>\r\n",
+        "jcr:lastModified": "Thu Aug 29 2024 13:58:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "standaloneimage_1728": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Thu Aug 15 2024 19:59:05 GMT+0000",
+        "alt": "Healthcare professionals preparing an operating room for surgery",
+        "srcFileRef": "/content/dam/stryker/about/news/2024/features/employees-share-why-dei-matters-at-annual-summit/Two Stryker employees smiling at one another and talking at the annual DEI Summit.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Aug 29 2024 13:55:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_1268493064": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 20:03:24 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 20:03:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 20:06:52 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2024 20:06:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Aug 15 2024 18:55:36 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Back in 2021, we hosted our <a href=\"/content/stryker/us/en/about/news/features/stryker-holds-diversity--equity-and-inclusion-summit.html\"><span style=\"color: #4c7d7a;\">first global Diversity, Equity and Inclusion (DE&amp;I) Summit</span></a> for Stryker employees—and we’ve been on an inspiring journey ever since.</span><span class=\"urw-egyptienne\"> For two immersive days, employees dive into the value of diversity, equity and inclusion. And because we believe each one of us should feel seen, heard and valued, our 2024 Summit invited each attendee to share why DE&amp;I is important to them.</span></span></p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 20:09:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1638515972": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Aug 15 2024 18:56:07 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2>Every year, the DE&amp;I Summit demonstrates the power of sharing stories</h2>\n<p>From the beginning of the event, employees were deeply moved by powerful stories from fellow colleagues. We learned why DE&amp;I matters to each person, the value of inclusive language and the critical role of allyship in fostering a culture of inclusion and belonging. Many employees stood on stage and shared their “why” with courage and vulnerability, while others added their reasons to the “What’s your why?” wall. “For me, I added ‘unlock potential’ to the wall because creating a culture where everyone can thrive enables innovation and growth,” said Annie Heath, Vice President, Diversity Equity and Inclusion. “When you feel like you belong, you have the ability to reach your potential.”</p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 19:16:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_232231332": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Aug 15 2024 18:56:41 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2>Stryker employees use learnings to advance DE&amp;I</h2>\n<p>Collective action is the cornerstone of meaningful change. By actively listening, sharing experiences, and adapting individual behaviors, we’re creating a ripple effect that transforms our workplace. Employee reflections highlight the power of shared stories in fostering new perspectives and inspiring positive actions. Here's what some team members shared:</p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 19:21:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "5",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_copy_209060513": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 19:16:36 GMT+0000",
+      "jcr:lastModified": "Thu Aug 15 2024 19:20:23 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_2090605135090469031298764": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<p><span class=\"fontsize-1-5-vw\">&quot;The stories are inspiring and serve as a good reminder of how I can make a difference when it comes to DE&amp;I. Being a minority myself, it also encourages me to continue speaking up and sharing my thoughts.”&nbsp;</span></p>\r\n<p>&nbsp;</p>\r\n<p>–<span class=\"futura-bold\">Vanessa Niederleig, </span>Senior Human Resources Manager</p>\r\n",
+        "jcr:lastModified": "Thu Aug 15 2024 19:28:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "largeheadline_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Aug 15 2024 19:16:36 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<p><span class=\"fontsize-1-5-vw\">“Knowing that everyone has the power to be the spark for change motivates me to challenge my own biases and create a more welcoming environment for all colleagues.&quot;&nbsp;</span></p>\r\n<p>&nbsp;</p>\r\n<p>–<span class=\"futura-bold\">Chris Camacho</span>, Associate Manager for Inventory Accounting</p>\r\n",
+        "jcr:lastModified": "Thu Aug 15 2024 19:28:21 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "largeheadline": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Aug 15 2024 19:16:36 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "line1": "<p><span class=\"fontsize-1-5-vw\">&quot;Together we are stronger,” she said. “We must continue to learn from, inspire and support one another.”&nbsp;<br>\r\n <br>\r\n <br>\r\n</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">&nbsp;</span></p>\r\n<p>–<span class=\"futura-bold\">Franziska de Rooij</span>, Finance Director</p>\r\n",
+        "jcr:lastModified": "Thu Aug 15 2024 19:28:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(237,238,236)",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Thu Aug 15 2024 19:20:57 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Thu Aug 15 2024 19:21:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "text_1866589790": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Aug 15 2024 18:58:38 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2>Stryker employees dedicate time to give back</h2>\n<p>Employee resource group (ERG) members partnered with Stryker’s Global Volunteer Network to organize a volunteer activity to support the American <a href=\"/content/stryker/us/en/about/news/2023/features/how-stryker-supports-the-red-cross-lifesaving-mission.html\">Red Cross</a>. Together, employees assembled disaster relief kits for people affected by disasters like floods, hurricanes, and countless other crises. The Red Cross is one of our key nonprofit partners, and efforts like these help us further our commitment to creating a healthier and more equitable world.<br>\n</p>\n",
+      "jcr:lastModified": "Wed Aug 21 2024 15:14:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Aug 15 2024 19:15:25 GMT+0000",
+      "alt": "Stryker employees  assembling disaster relief kits for the Red Cross",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/employees-share-why-dei-matters-at-annual-summit/Stryker employees  assembling disaster relief kits for the Red Cross.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Aug 15 2024 19:15:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_1883190477": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Aug 15 2024 18:58:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2>Stryker leadership reflects on the value of a diverse workplace</h2>\n<p>After the 2024 Summit, Stryker leaders have been sharing insights on the transformative power of a diverse workplace. &quot;At the end of the day, DE&amp;I is about being a good human,” says Annie Heath. “This means caring for each other, speaking up for those who may not feel they have a voice and recognizing that small steps can add up to big strides.&quot;</p>\n<p>Andy Pierce, Group President, MedSurg and Neurotechnology – also the executive sponsor for SOMOS, our ERG dedicated to the Hispanic/Latino community – shared in his closing remarks: &quot;Be an ally and a champion for others. You can change your perspective through small actions. Empathy is a bridge to acceptance.&quot;</p>\n<p>Our President of Asia Pacific, John Collings shared, “True DE&amp;I goes beyond policies and workshops. It is about creating and fostering a culture where every individual feels safe and included. When we start to embrace true DE&amp;I, we start to foster an environment where everyone can thrive.”</p>\n<p>By understanding each other’s “why,” we cultivate a culture where everyone feels seen, heard and valued. In a recap video, employees summed up our fourth-annual Summit best: “As we return to our daily lives, our work, our communities, friends and teams, we carry with us a piece of every person we have met, enriched by their stories and inspired by their “why.”</p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 19:26:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1755585027": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 19:22:36 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Watch</span> <span class=\"futura-bold\">Stryker’s <span style=\"color: #ffb500;\">DE&amp;I Summit</span></span> <span class=\"urw-egyptienne\">recap video</span></span></p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 19:24:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 19:24:13 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Thu Aug 15 2024 19:24:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/about/news/2024/features/employees-share-why-dei-matters-at-annual-summit/de-i-forum-highlight-video-comp.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/de-i-forum-highlight-video-comp-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Fri Aug 16 2024 18:20:40 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/DEI Summit video thumbnail"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1350323681": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 15 2024 20:10:21 GMT+0000",
+      "text": "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/about/diversity-and-inclusion.html\"><span class=\"fontsize-1-5em\">Learn more about Stryker's DE&amp;I commitments</span></a></span></p>\n",
+      "jcr:lastModified": "Thu Aug 15 2024 20:11:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

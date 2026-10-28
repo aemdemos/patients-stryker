@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker Launches Next Generation Trident® II Acetabular System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "aa597d34-44bd-46d9-a71f-58af27da945e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/images/Trident II.png",
+  "jcr:predecessors": [
+    "1f336c58-a74f-4b2f-baa9-800b1aaf350d"
+  ],
+  "lastPublished": "Tue Feb 27 2024 18:52:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 27 2024 18:52:33 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 27 2024 18:52:35 GMT+0000",
+  "cq:lastModified": "Tue Feb 27 2024 18:52:29 GMT+0000",
+  "jcr:baseVersion": "1f336c58-a74f-4b2f-baa9-800b1aaf350d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Mar 06 2018 10:54:05 GMT-0500",
+  "jcr:uuid": "0891b147-b15f-44d7-b704-d7f40f3d0d7d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Tue Mar 06 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "06-Mar-2018",
+    "jcr:lastModified": "Tue Mar 06 2018 10:25:04 GMT-0500",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModified": "Tue Mar 06 2018 10:25:09 GMT-0500",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Trident II.png",
+    "jcr:lastModified": "Tue Mar 06 2018 10:25:22 GMT-0500",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "text": "<p><b>System features Trident II Tritanium, building on Trident brand legacy, combining the reproducibility of AMagine™ additive manufactured Tritanium® In-Growth Technology with the precision of Mako Robotic-Arm Assisted Surgery[1]</b></p>\n<p><b>MAHWAH, N.J.,&nbsp;March 6, 2018 </b>--&nbsp;Stryker's Joint Replacement Division today announced the commercial launch of its Trident<sup>®</sup>&nbsp;II Acetabular System, featuring Trident II Tritanium, at the 2018 Academy Meeting. Trident II Tritanium combines the reproducibility of Stryker's proprietary AMagine™&nbsp;additive manufactured Tritanium<sup>®</sup>&nbsp;In-Growth Technology and SOMA-verification process with the precision of Mako Robotic-Arm Assisted Surgery which enables surgeons to have a more predictable surgical experience.</p>\n<p>Building on Stryker's Trident brand legacy and successful clinical performance<sup>2-6</sup>, the design of Trident II Tritanium features a slim wall, enabled by additive manufacturing, that allows for large femoral head size options<sup>7&nbsp;</sup>and optimal poly thickness to potentially aid in greater range of motion<sup>8</sup>, joint stability<sup>8</sup>, and lower risk of dislocation<sup>9</sup>. Its Tritanium surface is designed to mimic the complex, highly porous characteristics of cancellous bone<sup>10</sup>&nbsp;to help promote long-term biologic fixation.</p>\n<p>Additionally, Trident II shells maintain Stryker's Innerchange™&nbsp;Locking Mechanism, giving surgeons intraoperative flexibility to choose from clinically proven<sup>11-13</sup>&nbsp;bearing options including: Modular Dual Mobility (MDM), X3 precisely engineered polyethylene or Trident constrained liners.</p>\n<p>&quot;I have trusted the clinical performance of Trident for many years, and I'm thrilled with the latest evolution of Stryker's portfolio of acetabular implants,&quot; said&nbsp;Walter B. Beaver, Jr., MD, a board-certified orthopaedic surgeon at OrthoCarolina. &quot;With Trident II Tritanium, Stryker uses cutting-edge 3D-printing technology to uniquely address biological fixation and hip stability, which ultimately enhances my surgical experience.&quot;<sup>14</sup></p>\n<p>&quot;We're excited to see implant design and innovative technology converge to bring important new products to market which will ultimately help make healthcare better,&quot; said&nbsp;Stuart Simpson, President of Stryker's Joint Replacement Division. &quot;This System highlights our Trident II Tritanium shell, bringing together our leading additive manufacturing expertise, SOMA-design process and Mako Robotic-Arm Assisted Surgery System.&quot;&nbsp;</p>\n<p>Stryker's AMagine™ Institute, its additive manufacturing innovation center in Cork, Ireland, is the largest orthopaedic implant additive manufacturing facility in the world. The company began investigating additive manufacturing technology in 2001 with academic research institutions and has since developed a state-of-the-art production process: AMagine. This latest advancement in joint replacement technology expands Stryker's additive manufacturing implant footprint across multiple orthopaedic applications, including hip, knee and spine.</p>\n<p>The Trident II Tritanium Acetabular System received initial 510(k) market clearance from the U.S. Food and Drug Administration in October 2016&nbsp;and Trident II Tritanium Clusterhole was available through a limited market release in 2017. The full Trident II Acetabular System launching in 2018 offers five shell options: three in Tritanium (Clusterhole, Multihole or Solidback) and two Hydroxyapatite (Hemi Clusterhole or PSL Clusterhole) surfaces.</p>\n<p>More than 2.5 million people are living with a hip replacement in the United States, and demand is expected to further increase due to an aging baby boomer population, higher rates of arthritis treatment and increasing demands for improved mobility<sup>15</sup>.&nbsp;&nbsp;</p>\n<p>Stryker will showcase its latest technologies, including the Trident II Acetabular System, at the Academy meeting in&nbsp;New Orleans (booth #2451) from March 6-10, 2018.</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a>.</p>\n<p><sup>1&nbsp;</sup>Domb B, Redmond J, Louis S, Alden K, Daley R, LaReau J, et al. Accuracy of component positioning in 1980 total hip arthroplasties: a comparative analysis by surgical technique and mode of guidance. The Journal of Arthoplasty. 30(2015)22082218.&nbsp;</p>\n<p><sup>2&nbsp;</sup>Australian Orthopaedic Association. National Joint Replacement Registry. Annual Report. AOA; 2017.&nbsp;</p>\n<p><sup>3&nbsp;</sup>UK National Joint Registry, 2017 Report.&nbsp;</p>\n<p><sup>4&nbsp;</sup>Naziri Q, et al. Excellent results of primary THA using a highly porous titanium cup.&nbsp;<i>Orthopedics</i>. 2013;36(4):390-394.&nbsp;</p>\n<p><sup>5&nbsp;</sup>Ramappa M, et al. Early results of a new highly porous modular acetabular cup in revision arthroplasty.&nbsp;<i>Hip Int</i>.2009;19(3):239-244.&nbsp;</p>\n<p><sup>6&nbsp;</sup>Capello WN, et. al. Arc-deposited hydroxyapatite-coated cups: results at four to seven years.&nbsp;<i>Clin Orthop Relat Res</i>. 2005;441:305-312.&nbsp;</p>\n<p><sup>7&nbsp;</sup>Internal memo: Market Analysis of Poly Bearing Options - Trident II Versus Competitors.&nbsp;October 18, 2017.&nbsp;</p>\n<p><sup>8&nbsp;</sup>Burroughs B, et al. Range of motion and stability in total hip arthroplasty with 28-, 32-, 38- and 44-mm Femoral Head Sizes In Vitro Study.&nbsp;<i>J Arthroplasty</i>. 2005;20(1):11-19.&nbsp;</p>\n<p><sup>9&nbsp;</sup>Berry DJ, et al. Effect of femoral head diameter and operative approach on risk of dislocation after primary total hip arthroplasty.&nbsp;<i>J Bone Joint Sur Am</i>.&nbsp;2005;87(11): 2456-2463.&nbsp;</p>\n<p><sup>10</sup>&nbsp;Stryker R&amp;D Technical Memo: Comparison of Tritanium Porous Surface to Cancellous Bone. A0027625&nbsp;</p>\n<p><sup>11&nbsp;</sup>D'Antonio J, et al. Second-generation annealed highly crosslinked polyethylene has low wear at mean seven year follow-up.&nbsp;<i>Surgical Technology International</i>. 2014;25:219-26.&nbsp;</p>\n<p><sup>12&nbsp;</sup>Jauregui J, et al. Dual mobility cups: an effective prosthesis in revision total hip arthroplasties for preventing dislocations.&nbsp;<i>Hip Int</i>. 2016 Jan-Feb;26(1):57-61.&nbsp;</p>\n<p><sup>13</sup>&nbsp;Su E, et al. The role of constrained liners in total hip arthroplasty.&nbsp;<i>Clin Orthop</i>. 2004;420:122-129.&nbsp;</p>\n<p><sup>14</sup>&nbsp;Dr. Beaver is a paid consultant of Stryker Orthopaedics. The opinions expressed by Dr. Beaver are those of Dr. Beaver and not necessarily those of Stryker. Individual experiences may vary.&nbsp;</p>\n<p><sup>15</sup>&nbsp;Kremers, HM, Larson, DR, Crowson, CS, et al. Prevalence of total hip and knee replacement in&nbsp;the United States.&nbsp;<i>J Bone Joint Sur Am</i>.&nbsp;2015;97:1386-97.</p>\n",
+    "jcr:lastModified": "Tue Feb 27 2024 18:52:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Trident II.png"
+  }
+}

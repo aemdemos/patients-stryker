@@ -1,0 +1,842 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Neurosurgical Medical Education",
+  "jcr:versionHistory": "b8be55ab-f9f9-48cf-accd-01757c35d912",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "219692b5-1548-4b5d-a474-e639d531888b"
+  ],
+  "lastPublished": "Mon Apr 19 2021 18:13:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:32 GMT+0000",
+  "cq:lastModified": "Tue Feb 16 2021 19:35:09 GMT+0000",
+  "jcr:baseVersion": "219692b5-1548-4b5d-a474-e639d531888b",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Tue Dec 22 2020 21:00:46 GMT+0000",
+  "jcr:uuid": "949f3a30-3bac-4b77-a373-bcf6073896de",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:59:06 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 18:59:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/nse/meded/hero---carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/nse/meded/hero-carousel/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "30",
+          "jcr:created": "Wed Jul 22 2020 18:59:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Aug 06 2020 17:56:24 GMT+0000",
+          "marginRight": "45",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "0",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Wed Jul 22 2020 19:00:42 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Neurosurgical&nbsp;</span></span></span></span><span style=\"font-family: URWEgyptienneW01-Light , Rockwell , Georgia , Times , serif; font-size: 49.0px; background-color: transparent;\">Medical Education</span>",
+              "jcr:lastModified": "Wed Jul 22 2020 19:24:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Jul 22 2020 19:20:44 GMT+0000",
+              "CTATitle": "View the Neurosurgical portfolio",
+              "ctaExternalLink": "https://neurosurgical.stryker.com/products/",
+              "jcr:lastModified": "Mon Aug 10 2020 17:08:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "ctaInternalLink": "/content/stryker/us/en/portfolios/neurotechnology-spine"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTopLine": "true",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "childrenNumber": "6",
+    "jcr:lastModified": "Wed Jul 22 2020 19:10:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "hideBottomLine": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_345650448": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:26:49 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:26:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_1622714736": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:44:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffffff;\"><br>\n Our Vision</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"urw-egyptienne\">We are committed to partnering with you to deliver meaningful education that improves outcomes and makes healthcare better. <br>\n Together, we're working to deliver best-in-class educational courses to advance surgical techniques and utilization of surgical devices for healthcare professionals. </span><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Feb 16 2021 19:35:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": "true"
+    },
+    "cols_933120656": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:26:53 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:26:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:25:49 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:25:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 19:25:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/2019-05-18 09.58.39_Resized.jpg",
+          "jcr:lastModified": "Wed Jul 22 2020 19:32:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_1858061740": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 19:25:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/2019-05-18 09.58.39.jpg",
+          "jcr:lastModified": "Wed Jul 22 2020 19:26:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 19:25:57 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/2019-05-18 09.58.39_Resized2.jpg",
+          "jcr:lastModified": "Wed Jul 22 2020 19:32:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:10:58 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Jul 24 2020 18:19:46 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Medical education</span></span><br>\n<br>\nStryker is always exploring and creating new medical devices. We’re committed to bringing you and your team exceptional educational experiences and world-class support to improve care and optimize results. We listen to the needs of healthcare professionals around the world and develop activities that address evolving clinical and operational challenges.<br>\n<br>\nWe offer a full range of learning opportunities and are always developing new, industry-leading education and training resources. Each year, our medical education team trains thousands of healthcare professionals on our neuro, spine, ENT and navigation products. From hands-on laboratory practicums in our Mobile Lab to educational presentations on the most up-to-date medical technologies and care practices, we help you and your team make your skills even stronger.</p>\n",
+          "jcr:lastModified": "Fri Jul 24 2020 18:20:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_113679549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jul 24 2020 18:20:59 GMT+0000",
+      "jcr:lastModified": "Fri Jul 24 2020 18:20:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:52:25 GMT+0000",
+      "title": "Educational Courses",
+      "jcr:lastModified": "Wed Jul 22 2020 18:52:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:15:39 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy_890185074": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 18:46:25 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/110A3328.jpg",
+          "jcr:lastModified": "Fri Aug 07 2020 15:28:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 18:46:25 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/110A3281.jpg",
+          "jcr:lastModified": "Fri Aug 07 2020 15:28:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_copy_787494163": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 17:30:47 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">Programs created for you </span></span></span><br>\n<br>\n<b>We understand that there’s never a typical day in the O.R.</b> That's why we've gone beyond traditional learning settings to provide professionals with an experiential education opportunity through hands-on laboratory practicums or dissection courses, structured exercises and a wide range of application and technique demonstrations. Whether it's conducted at our Mobile Lab, on-site or at one of our state-of-the-art training centers, we’re committed to helping you optimize your performance and potential.<br>\n<br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 22 2020 19:18:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 17:30:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">Advanced Resident Courses</span></span></span><br>\n</p>\n<ul>\n<li>Delivered nationally, regionally and locally, led by Stryker’s Medical Education Team&nbsp;<br>\n</li>\n<li>Topics include: Neurotology, Cranial Approaches, Rhinology, Endoscopic Skull Base, Otology, Spine<br>\n<br>\n</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">O.R. Professional Workshops</span></span></span></p>\n<ul>\n<li>Delivered nationally, regionally and locally, led by Stryker’s Medical Education Team&nbsp;</li>\n<li>Topics include: Cranial, Spine, Ortho and ENT workshops<br>\n<br>\n</li>\n</ul>\n<p><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">Computer Assisted Technology Workshops</span></span></span></p>\n<ul>\n<li>Conducted nationally at state-of-the-art training facilities, led by Stryker's Medical Education Team&nbsp;</li>\n<li>Topics include Cranial, Spine, ENT and CMF<br>\n&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Jul 23 2020 17:42:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_273731709": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:32:39 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:32:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 19:32:44 GMT+0000",
+          "jcr:lastModified": "Wed Jul 22 2020 19:32:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title_2050038066": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 13 2020 14:14:44 GMT+0000",
+      "title": "Mobile lab",
+      "jcr:lastModified": "Tue Oct 13 2020 14:15:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_1125751980_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 17:36:16 GMT+0000",
+      "text": "<p>To us, delivering the best learning experience means providing you with accessible and convenient educational opportunities. Our Mobile Lab is a world-class operating room on wheels, equipped with eight integrated lab stations to provide professionals with realistic simulations in a high-tech setting.</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Oct 13 2020 14:15:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:17:41 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:17:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_1125751980_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 17:36:16 GMT+0000",
+          "text": "<p>With content, equipment and location customized to you, the Mobile Lab is another example of how we’re dedicated to making healthcare better. The Mobile Lab provides an ideal environment for:<br>\n</p>\n<ul>\n<li>Medical Education</li>\n<li>Research and Development</li>\n<li>Customer Experiences<br>\n</li>\n</ul>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jul 22 2020 19:16:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 18:40:28 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Jul 22 2020 18:40:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/nse/meded/videos/18 SYK 0411 Mobile Lab Teaser v4 - original.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/18 SYK 0411 Mobile Lab Teaser v4 - original-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jul 22 2020 19:17:35 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:16:37 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:16:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Apr 10 2020 18:53:07 GMT+0000",
+      "jcr:lastModified": "Fri Apr 10 2020 18:53:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 10 2020 18:59:31 GMT+0000",
+          "jcr:lastModified": "Fri Apr 10 2020 18:59:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 10 2020 18:59:35 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Apr 10 2020 18:59:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_2_3_1_3_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 10 2020 18:53:21 GMT+0000",
+          "jcr:lastModified": "Fri Apr 10 2020 18:53:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Mon Apr 13 2020 17:10:43 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Mon Apr 13 2020 17:10:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 10 2020 18:54:05 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-4vw\"><span class=\"urw-egyptienne\">We've gone</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">virtual</span></span></span></span><span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><br />\r\n </span></span></span>",
+              "line2": "<p><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\">We're taking our MedEd programs virtual. <br>\r\n Whether you are in the office, the OR, or at home, our MedEd team is by your side.</span></span></p>\r\n<p>We’ve expanded our MedEd programs in an effort to help you help your patients, adding a range of online training options. <br>\r\nWe are committed to providing our best in class MedEd programs and resources!</p>\r\n",
+              "jcr:lastModified": "Thu Apr 16 2020 14:08:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "ctaLinkType": "int",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Aug 06 2020 17:46:24 GMT+0000",
+              "CTATitle": "View Events",
+              "jcr:lastModified": "Thu Aug 06 2020 17:47:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(175,109,4,1)",
+              "ctaInternalLink": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/neurosurgical/medical-education/events"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Mon Apr 13 2020 17:10:08 GMT+0000",
+              "srcFileRef": "/content/dam/stryker/education-and-training/spine-medical-education/images/graphics/VirtualSeries_Med Ed_Icon.png",
+              "jcr:lastModified": "Mon Apr 13 2020 17:10:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 10 2020 18:59:31 GMT+0000",
+          "jcr:lastModified": "Fri Apr 10 2020 18:59:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 10 2020 18:59:35 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Apr 10 2020 18:59:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_125890213": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:13:07 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:13:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1278843061": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:33:05 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:33:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_204024157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 19:13:18 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 19:13:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_966375883": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:52:58 GMT+0000",
+      "title": "Grants and donations",
+      "jcr:lastModified": "Wed Jul 22 2020 18:53:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:03:25 GMT+0000",
+      "text": "<p>Stryker recognizes the critical role of medical education in advancing medical technologies, treatments, knowledge and patient care. With review and approval from Stryker’s Grants and Donations Committee, we’re honored to support worthy educational events with educational grants and charitable contributions.<br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Wed Jul 22 2020 18:28:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_copy_1944882166": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:26:38 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2020 18:26:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 18:03:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\"><br>\n <span style=\"color: #000000;\">Learn more and request support</span></span></span></span></span><br>\nTo learn more about our guidelines and apply for an educational grant or charitable contribution, please visit<span style=\"color: #000000;\"><span style=\"color: #000000;\"><span class=\"futura-bold\"> <a href=\"https://globalrequests.stryker.com/\">https://globalrequests.stryker.com/</a></span></span> </span>to apply.<br>\n<br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 22 2020 19:34:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": "true"
+        },
+        "text_copy_583752930": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 18:03:25 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>To help create the maximum benefit for participants and the larger healthcare community, we’ve developed principles that guide our decisions about which programs to support:</p>\n<ul>\n<li>We may make educational grants to bona fide educational activities for healthcare professionals and may include funding for accredited continuing education.<br>\n<br>\n</li>\n<li>We make educational grants to institutions—not to individual healthcare professionals.<br>\n<br>\n</li>\n<li>We don’t use grants to induce customers to purchase or use our products or services, to promote off-label uses of our products or as a substitute for discounts.<br>\n<br>\n</li>\n<li>We make grants to educational programs that are scientifically justified—our support is never intended to be promotional.<br>\n<br>\n</li>\n<li>We make continuing medical education grants only to programs that follow standards for development and delivery established by the FDA, the Accreditation Council for Continuing Medical Education, AdvaMed and other applicable bodies.<br>\n<br>\n</li>\n<li>Stryker is dedicated to supporting medical mission trips. We have partnered with Project C.U.R.E in providing high-quality products for medical missions to developing countries. If you are a medical professional going on a humanitarian trip and are in need of Stryker supplies, please visit <a href=\"https://projectcure.org/\">https://projectcure.org/</a></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jul 22 2020 19:36:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_1547451251": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 18:46:25 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/TPEC (top pic).jpg",
+          "jcr:lastModified": "Thu Aug 06 2020 17:25:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2020 18:46:25 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/education-and-training/nse/meded/images/Project CURE logo (bottom pic).png",
+          "jcr:lastModified": "Thu Aug 06 2020 17:25:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "section_title_966375": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jul 22 2020 18:52:58 GMT+0000",
+      "title": "Surgeon engagement",
+      "jcr:lastModified": "Wed Jul 22 2020 19:37:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_113754532": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 06 2020 18:04:40 GMT+0000",
+      "jcr:lastModified": "Thu Aug 06 2020 18:04:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "mixedmediagallery": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Aug 06 2020 17:17:23 GMT+0000",
+          "jcr:lastModified": "Thu Aug 06 2020 17:17:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/mixedmediagallery",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/nse/meded/images/mixed-media-images/Surgeon_engagement",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Surgeon_engagement",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Aug 06 2020 17:24:05 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "MixedMediaSet",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Neurotech Program",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 18:40:28 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Aug 07 2020 15:11:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/nse/meded/videos/NT Course Video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/NT Course Video-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jul 22 2020 18:41:10 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "standalonevideo_copy_474678727": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Mobile Lab Initiative",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 22 2020 18:40:28 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Aug 07 2020 15:29:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/education-and-training/nse/meded/videos/MedEd Experience v3.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/MedEd Experience v3-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Aug 07 2020 15:29:16 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "section_title_1968319847": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Aug 20 2020 19:03:24 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Thu Aug 20 2020 19:03:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 14:44:02 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 14:44:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Aug 20 2020 19:05:48 GMT+0000",
+          "text": "<p>If you have questions about any of our upcoming virtual events&nbsp;or want to inquire about one of our programs, please send us an email!</p>\n",
+          "jcr:lastModified": "Thu Aug 20 2020 19:05:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_670392308": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "905",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Apr 16 2020 19:03:00 GMT+0000",
+          "useProduction": "true",
+          "message": "Your inquiry has been successfully submitted. Someone from the Medical Education team will be in touch shortly!",
+          "jcr:lastModified": "Thu Apr 16 2020 19:19:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Apr 14 2020 18:01:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Check out our </span><span class=\"futura-bold\">social media</span></span></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2020 18:01:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "engagementcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "buttonColor": "rgba(76,125,122,1)",
+          "buttonAlignment": "Horizontal",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Apr 14 2020 17:52:57 GMT+0000",
+          "buttonTextAlignment": "Center",
+          "jcr:lastModified": "Tue Apr 14 2020 17:55:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/engagementcta",
+          "engCTAButtons": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "engCtaButtonUrl": "https://www.linkedin.com/showcase/stryker-spine/",
+              "engCtaButtonType": "LinkedIn"
+            }
+          }
+        },
+        "engagementcta_1978258354": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "buttonColor": "rgba(76,125,122,1)",
+          "buttonAlignment": "Horizontal",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Apr 14 2020 17:55:36 GMT+0000",
+          "buttonTextAlignment": "Center",
+          "jcr:lastModified": "Tue Apr 14 2020 17:55:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/engagementcta",
+          "engCTAButtons": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "engCtaButtonUrl": "https://twitter.com/stryker_spine",
+              "engCtaButtonType": "Twitter"
+            }
+          }
+        },
+        "engagementcta_129921763": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "buttonColor": "rgba(76,125,122,1)",
+          "buttonAlignment": "Horizontal",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Apr 14 2020 17:55:53 GMT+0000",
+          "buttonTextAlignment": "Center",
+          "jcr:lastModified": "Tue Apr 14 2020 17:56:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/engagementcta",
+          "engCTAButtons": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "engCtaButtonUrl": "https://www.facebook.com/spineatstryker/",
+              "engCtaButtonType": "Facebook"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/nse/meded/images/NS MedEd (002).PNG"
+  }
+}

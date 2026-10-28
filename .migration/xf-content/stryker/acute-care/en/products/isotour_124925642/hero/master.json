@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5bb2115f-b943-4a5a-98d7-2ca540411dc6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "23da7441-97a4-463c-aefa-7d4356fcd835"
+  ],
+  "lastPublished": "Mon Jul 29 2024 15:29:33 GMT+0000",
+  "jcr:created": "Mon Jul 29 2024 15:29:34 GMT+0000",
+  "cq:lastReplicated": "Mon Jul 29 2024 15:29:36 GMT+0000",
+  "cq:lastModified": "Mon Jul 29 2024 15:29:20 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "23da7441-97a4-463c-aefa-7d4356fcd835",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 14:07:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c181866e-310f-4052-9ffa-5ef16e619af5",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "IsoTour gel hospital support surface helps prevent patient pressure injuries",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/isotour/images/IsoTour_blowout-header-image.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jul 29 2024 15:29:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

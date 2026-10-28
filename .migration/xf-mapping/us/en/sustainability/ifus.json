@@ -1,0 +1,506 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "IFUs",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ab364e3b-daa3-4b33-b93e-2d4d27b3fa1c",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "14af4c35-b222-4bbd-a914-296ebd45c257"
+  ],
+  "lastPublished": "Fri Jul 24 2026 23:05:26 GMT+0000",
+  "jcr:created": "Fri Jul 24 2026 23:05:27 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 24 2026 23:05:29 GMT+0000",
+  "cq:lastModified": "Fri Jul 24 2026 23:05:12 GMT+0000",
+  "jcr:baseVersion": "14af4c35-b222-4bbd-a914-296ebd45c257",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:01:45 GMT+0000",
+  "jcr:uuid": "c7c0d33f-b6a8-4580-85ad-1b5d0919fafb",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "morgan.harder@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "grouplist": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Wed Apr 12 2023 22:25:17 GMT+0000",
+      "jcr:lastModified": "Wed Apr 12 2023 22:26:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/grouplist",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:33 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "patient",
+          "jcr:created": "Mon Oct 30 2023 15:39:30 GMT+0000",
+          "title": "Patient Care",
+          "jcr:lastModified": "Fri Dec 01 2023 16:00:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 30 2023 16:33:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span style=\"color: #ffb500;\"></span><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Patient care</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Oct 30 2023 16:37:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "resourcesanddownload_376756431": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/dvt/Reprocessed Compression Sleeves.pdf",
+            "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/EL10175 Rev B Instructions for Use for Reprocessed Compression Sleeves Exposed to Vaporized Hydrogen Peroxide.pdf"
+          ],
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Fri Oct 27 2023 18:40:47 GMT+0000",
+          "title": "Compression sleeves",
+          "jcr:lastModified": "Tue Oct 08 2024 16:23:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/Reprocessed Philips ECG 3-Lead Set and 5-Lead Set.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/Distributed IntelliVue MX40 Patient Cable Adapter Trunk and Extender Cables.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/4.14 Instructions for Use Reprocessed ECG Lead and Wire System Sterilized by Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/Distributed OEM Trunk Cable Adapters.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/Distributed Intellivue MX40 Single-Use-Patient Cables.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ecg/Reprocessed ECG Lead and Wire System.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Philips ECG 5-Lead Grabber.pdf",
+            "/content/dam/stryker/sustainability/ifus/oct-philips-ifu/DISTRIBUTED PHILIPS SINGLE PATIENT USE LEAD SETS.pdf",
+            "/content/dam/stryker/sustainability/ifus/2.7.25 EL10194.pdf",
+            "/content/dam/stryker/sustainability/ifus/2.7.25 EL10166.pdf",
+            "/content/dam/stryker/sustainability/ifus/Distributed Intellivue MX40 Single-Use-Patient Cables.pdf",
+            "/content/dam/stryker/sustainability/ifus/2.7.25 EL10192.pdf",
+            "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.5.25 EL10167 Rev B.pdf",
+            "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.5.25 EL10049 Rev C.pdf"
+          ],
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+          "title": "ECG leads, cables and adaptors",
+          "jcr:lastModified": "Thu Oct 16 2025 15:09:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "resourcesanddownload_1485307902": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sustainability/ifus/Reprocessed DeRoyal Chair Sensor Pad.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/fall-alarms/EL10164 Rev A Instructions for Use for Reprocessed DeRoyal Chair Sensor Pad Exposed to Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed DeRoyal Bed Sensor Pad.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/fall-alarms/EL10163 Rev A Instructions for Use for Reprocessed DeRoyal Bed Sensor Pad Exposed to Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Posey Chair Alarm Sensor Pad.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/fall-alarms/EL10160 Rev A Instructions for Use for Reprocessed Posey Chair Alarm Sensor Pad Exposed to Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Posey Bed Alarm Sensor Pad.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/fall-alarms/EL10159 Rev A Instructions for Use for Reprocessed Posey Bed Alarm Sensor Pad Exposed to Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Stanley Chair Sensor and Sensormat Pads.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Stanley Bed Alarm Sensormat Pad.pdf",
+            "/content/dam/stryker/sustainability/ifus/2024-updates-/NEW EL10162 Rev B Instructions for Use for Reprocessed Stanley Chair Sensormat Pad Exposed to Vaporized Hydrogen Peroxide (002).pdf",
+            "/content/dam/stryker/sustainability/ifus/2024-updates-/NEW EL10161 Rev B Instructions for Use for Reprocessed Stanley Bed Alarm Sensormat Pad Exposed to Vaporized Hydrogen Peroxide (002).pdf"
+          ],
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Fri Oct 27 2023 18:51:47 GMT+0000",
+          "title": "Fall alarms",
+          "jcr:lastModified": "Tue May 28 2024 19:01:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "resourcesanddownload_2087689359": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sustainability/ifus/Reprocessed HoverMatt.pdf",
+            "/content/dam/stryker/sustainability/ifus/Reprocessed Prevalon MATS.pdf",
+            "/content/dam/stryker/sustainability/ifus/2026-ifu/2026 Reprocessed AirTap.pdf"
+          ],
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+          "title": "Patient transfer mats",
+          "jcr:lastModified": "Thu Jul 16 2026 22:25:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        },
+        "resourcesanddownload_703559938": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/pox/Reprocessed Pulse Oximeter Sensor Masimo.pdf",
+            "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/pox/Reprocessed Pulse Oximeter Sensor.pdf",
+            "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/EL10140 Rev B Instructions for Use Reprocessed Pulse Oximeter Sensor Exposed to Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/EL10139 Rev B Instructions for Use Reprocessed Pulse Oximeter Sensor Sterilized by Vaporized Hydrogen Peroxide.pdf",
+            "/content/dam/stryker/sustainability/ifus/RD SET IFU 2025.pdf"
+          ],
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Thu Oct 26 2023 22:25:43 GMT+0000",
+          "title": "Pulse Oximeter Sensors",
+          "jcr:lastModified": "Fri Jan 31 2025 21:25:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      }
+    },
+    "cols_874047797_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Thu Oct 26 2023 22:12:07 GMT+0000",
+      "jcr:lastModified": "Thu Oct 26 2023 22:12:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_509099242_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_509099242_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "surgical",
+          "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
+          "title": "Surgical ",
+          "jcr:lastModified": "Fri Dec 01 2023 16:00:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 30 2023 16:33:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span style=\"color: #ffb500;\"></span><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Surgical</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Oct 30 2023 16:38:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "resources": "/content/dam/stryker/sustainability/ifus/2025-sss-updates/EL10201 Rev A Reprocessed Aquamantys 6.0 Instructions For Use (Stryker).pdf",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jumpbarHidden": "true",
+          "jcr:created": "Fri Oct 27 2023 18:30:48 GMT+0000",
+          "title": "Aquamantys",
+          "jcr:lastModified": "Tue Sep 16 2025 22:58:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      }
+    },
+    "resourcesanddownload_1171287626": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/Reprocessed Stryker External Fixation Devices.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed Non Sterile External Fixation Devices.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Oct 27 2023 18:30:48 GMT+0000",
+      "title": "External fixation ",
+      "jcr:lastModified": "Mon Oct 30 2023 16:25:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_383483901": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/harmonic/Reprocessed HARMONIC ACE7 5mm Diameter Shears with Advanced Hemostasis.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/unlocked/Reprocessed Ultrasonic Scalpels.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/unlocked/Reprocessed Ultrasonic Wave Coagulating Shears.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/unlocked/Reprocessed Ultrasonic Focus Curved Shears.pdf",
+        "/content/dam/stryker/sustainability/ifus",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/har-new-2/EL10154, Instructions for Use (IFU) - Reprocessed Ethicon HARMONIC 1100 Shears (HAR 1100)_Rev. F.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/har-new-2/EL10077 Rev D Instructions for Use - Reprocessed HARMONIC ACE +7, 5mm Diameter Shears with Advanced Hemostasis.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/har-new-2/EL10057 Rev H INSTRUCTIONS FOR USE REPROCESSED HARMONIC FOCUS SHEARS + ADAPTIVE TISSUE TECHNOLOGY.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/har-new-2/EL10189, Instructions for Use Reprocessed HARMONIC 700, 5mm Diameter Shears with Advanced Hemostasis, Rev. D.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+      "title": "HARMONIC ",
+      "jcr:lastModified": "Fri Jul 24 2026 23:05:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_1290048278": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/lap/Reprocessed Endoscopic Instruments Model 5DCS.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/lap/Reprocessed Electrosurgical Laparoscopic Endoscopic Instruments.pdf",
+        "/content/dam/stryker/sustainability/ifus/LAP RM702013 Rev J Laparoscope Accessories.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Oct 27 2023 19:34:47 GMT+0000",
+      "title": "Laparoscopic devices",
+      "jcr:lastModified": "Tue Apr 01 2025 21:25:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_243930546": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/lig-/Reprocessed LigaSure Maryland Jaw SealerDivider - Manufactured March 24 2020 or Later.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/lig-/Reprocessed LigaSure Impact Without Nano-coating Large Jaw Open Sealer Divider - Manufactured March 24 2020 or Later.pdf",
+        "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.12 EL10137.pdf",
+        "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.12 EL10071.pdf",
+        "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.12 El10138.pdf",
+        "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.12 EL10108.pdf",
+        "/content/dam/stryker/sustainability/ifus/june-5-2025-adds/6.12 EL10107.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+      "title": "LigaSure",
+      "jcr:lastModified": "Thu Jun 12 2025 18:32:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_90866982": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/MyoSure XL 2026.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/MyoSure LITE 2026.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/MyoSure XL for Fluent 2026.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/MyoSure Tissue Removal Device 2026.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/MyoSure Reach 2026 IFU.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+      "title": "MyoSure",
+      "jcr:lastModified": "Thu Feb 12 2026 23:14:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_1548729618": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/Reprocessed Arthroscopic Shaver.pdf",
+        "/content/dam/stryker/sustainability/ifus/sup/Reprocessed Suture Passer (1).pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Oct 27 2023 20:37:17 GMT+0000",
+      "title": "Surgical tools",
+      "jcr:lastModified": "Tue Oct 22 2024 21:06:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_1371573810": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "resources": "/content/dam/stryker/sustainability/ifus/Reprocessed Tourniquet Cuffs.pdf",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Oct 27 2023 19:30:30 GMT+0000",
+      "title": "Tourniquet cuffs",
+      "jcr:lastModified": "Mon Oct 30 2023 16:25:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "resourcesanddownload_2077998577": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/Reprocessed XCEL Dilating Tip Trocar with Optiview Technology.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed Covidien Trocars and Cannulas.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed XCEL Universal Trocar Stability Sleeve with Optiview Technology.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed XCEL Bladed Trocars.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed XCEL Bladeless Trocar with Optiview Technology.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed XCEL Bladeless Trocars.pdf",
+        "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/ULE RM702097 Rev C Reprocessed Endoscopic Instruments Model 5DCS.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Fri Oct 27 2023 18:34:06 GMT+0000",
+      "title": "Trocars",
+      "jcr:lastModified": "Tue Oct 08 2024 16:27:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_509099242_copy__48050134": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title_copy_2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "harmonic",
+          "jcr:created": "Mon Dec 12 2022 16:05:47 GMT+0000",
+          "title": "Vascular",
+          "jcr:lastModified": "Fri Dec 01 2023 16:01:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 30 2023 16:33:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span style=\"color: #ffb500;\"></span><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Vascular</span></span></span></h4>\n",
+          "jcr:lastModified": "Mon Oct 30 2023 20:40:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "resourcesanddownload_897859259": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/ep-cables/Reprocessed Reusable Connector Cable.pdf",
+        "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/IFU-ACC-RM702081 Rev M ABLATION CATHETER CABLE (1).pdf",
+        "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/IFU-CEP-RM702005 Rev J EP CATHETER CABLES.pdf",
+        "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/IFU-REC-RM702082 Rev J REUSABLE EP CABLES.pdf",
+        "/content/dam/stryker/sustainability/ifus/Reprocessed Electrophysiology Catheter Cables.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/2026 Catheter Ablation Cables.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+      "title": "EP cables",
+      "jcr:lastModified": "Tue Jul 21 2026 16:12:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_509099242_copy__1580024219": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "resourcesanddownload_1327291319": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed 2515 NAV 2515 NAV eco Variable and LASSO NAV eco Electrophysiology Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/IFU-DUC-RM702086 Rev K.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed SoundStar eco Diagnostic Ultrasound Catheter.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed Diagnostic EP Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed Diagnostic Ultrasound Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed Coronary Sinus Diagnostic EP Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/ecg-leads/renamed/Reprocessed IBI Diagnostic EP Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/Reprocessed ViewFlex Xtra ICE Catheter.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/EL10190 Rev C IFU Reprocessed 014 IVUS Catheters.pdf",
+        "/content/dam/stryker/sustainability/ifus/2026-ifu/EL10191 Rev B IFU Reprocessed Visions PV .035 Digital IVUS Catheter.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Wed Oct 04 2023 18:21:36 GMT+0000",
+      "title": "EP catheters",
+      "jcr:lastModified": "Thu Jun 25 2026 22:12:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_509099242_copy__359300946": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "resourcesanddownload_979975589": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": [
+        "/content/dam/stryker/sustainability/ifus/corrected-2024-ifus-oct/IFU-CIS-RM702502 Rev C Reprocessed Agilis NXT Steerable Introducer.pdf",
+        "/content/dam/stryker/sustainability/ifus/Distributed Stryker 8.5F Steerable Introducer Sheath.pdf",
+        "/content/dam/stryker/sustainability/ifus/Distributed Stryker 12F Steerable Introducer Sheath.pdf"
+      ],
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jumpbarHidden": "true",
+      "jcr:created": "Mon Dec 12 2022 16:14:36 GMT+0000",
+      "title": "Steerable sheaths",
+      "jcr:lastModified": "Tue Jun 17 2025 16:15:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_509099242_copy__2033568036": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "jcr:lastModified": "Mon Dec 12 2022 16:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  }
+}

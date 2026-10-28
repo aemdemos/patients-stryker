@@ -1,0 +1,69 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Deep Vein Thrombosis (DVT) Thrombectomy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dcc78b0c-8045-434d-8536-9963accc41b7",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "390ac5d5-6023-4dc8-9b96-cd94e0753f75"
+  ],
+  "contentID": "PRO-3804-USA-EN-v2",
+  "lastPublished": "Wed Jul 29 2026 21:07:31 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 29 2026 21:07:33 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 29 2026 21:07:34 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 23:52:38 GMT+0000",
+  "jcr:description": "Products designed to clear clots, helping restore blood flow and improve patient quality of life.",
+  "jcr:baseVersion": "390ac5d5-6023-4dc8-9b96-cd94e0753f75",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 29 2026 21:07:31 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/venous-disease",
+    "stryker:portfolio/vascular",
+    "stryker:specialty/deep-vein-thrombosis-thrombectomy-dvt",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Jun 29 2026 23:52:38 GMT+0000",
+  "jcr:uuid": "d32e2bd7-9576-4907-ba57-b8499a2e5f35",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/vascular/venous-disease/images/Deep-vein-thrombosis-666x450.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "imageAlt": "Deep vein thrombosis",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Thu Jun 18 2026 22:26:09 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/vascular/venous-disease/images/Portfolio-Specialty-DVT-v2.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Indications for Use</b></p>\r\n<p>The ClotTriever Thrombectomy System is indicated for: (1) The non surgical removal of thrombi and emboli from blood vessels. (2) Injection, infusion, and/or aspiration of contrast&nbsp;<span style=\"font-size: 0.8125rem;\">media and other fluids into or from a blood vessel. The ClotTriever Thrombectomy System is intended for use in the peripheral vasculature including deep vein thrombosis (DVT).</span></p>\r\n<p>The ClotTriever Sheaths are indicated for use as a conduit for the insertion of endovascular devices into the vasculature while minimizing blood loss associated with such insertions.</p>\r\n<p>Review complete Instructions for Use, Indications for Use, Warnings, Precautions, Possible Adverse Effects and contraindications prior to use of the product.</p>\r\n<p>Caution: Federal (USA) law restricts this device to sale by or on the order of a physician.</p>\r\n",
+    "jcr:lastModified": "Thu Jun 18 2026 22:30:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

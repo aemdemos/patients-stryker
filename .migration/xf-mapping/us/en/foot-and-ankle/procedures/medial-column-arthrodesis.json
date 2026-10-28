@@ -1,0 +1,194 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reduce motion, correct deformity and eliminate pain",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Medial Column Arthrodesis",
+  "jcr:versionHistory": "4598d959-edc8-4ff7-a366-92b28e95daf6",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "thumbnailAltText": "Medial Column Arthrodesis",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Medial-Column-Arthrodesis/Images/Midfoot_MedialColumnFusion.jpg",
+  "jcr:predecessors": [
+    "dda6cfd7-c621-4623-92ee-1f58df347782"
+  ],
+  "contentID": "OT-AWI-26, 07-2017",
+  "lastPublished": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 14 2020 17:59:21 GMT+0000",
+  "cq:lastModified": "Wed Aug 12 2020 19:40:03 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "A medial column arthrodesis involves removing the joints between the navicular, medial cuneiform, and first metatarsal to reduce motion, correct deformity, and eliminate pain.",
+  "jcr:baseVersion": "dda6cfd7-c621-4623-92ee-1f58df347782",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:specialty/midfoot",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 04 2017 08:59:35 GMT-0400",
+  "jcr:uuid": "67d20f08-1be2-445d-8c96-ade696a1b359",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_858621451": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "mauricio.munoz@stryker.com",
+      "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+      "deepLinkingId": "education",
+      "jcr:created": "Fri Mar 03 2017 09:43:03 GMT-0500",
+      "title": "Education",
+      "jcr:lastModified": "Fri Mar 03 2017 09:43:11 GMT-0500",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "mauricio.munoz@stryker.com",
+      "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+      "jcr:created": "Fri Mar 03 2017 09:43:24 GMT-0500",
+      "jcr:lastModified": "Fri Mar 03 2017 09:43:24 GMT-0500",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "mauricio.munoz@stryker.com",
+          "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+          "jcr:created": "Fri Mar 03 2017 09:56:10 GMT-0500",
+          "type": "typeId",
+          "videoId": "o8cwO0ht9TA",
+          "jcr:lastModified": "Fri Mar 03 2017 11:25:36 GMT-0500",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Medial column arthrodesis with VariAx plate",
+          "jcr:createdBy": "mauricio.munoz@stryker.com",
+          "description": "This video demonstrates a medial column fusion. It covers the incision, the desired outcome, the osteotomy and fixation. The demonstration is performed by Dr. Donald Bohay and John Anderson of Grand Rapids, MI.",
+          "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+          "jcr:created": "Fri Mar 03 2017 09:56:56 GMT-0500",
+          "jcr:lastModified": "Fri Mar 03 2017 11:25:54 GMT-0500",
+          "sling:resourceType": "stryker/components/content/curatedcta"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "mauricio.munoz@stryker.com",
+      "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+      "deepLinkingId": "products",
+      "jcr:created": "Fri Mar 03 2017 09:42:24 GMT-0500",
+      "title": "Products",
+      "jcr:lastModified": "Fri Mar 03 2017 09:42:34 GMT-0500",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Aug 12 2020 19:40:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Plating platforms",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-column-arthrodesis/plating-platforms"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Nailing systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-column-arthrodesis/nailing-system"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Screw systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-column-arthrodesis/screw-systems"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Staple solutions",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-column-arthrodesis/staple-solutions"
+        },
+        "5": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Biologics",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-column-arthrodesis/biologics"
+        }
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+    "headColor": "rgba(0,0,0,1)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Fri Mar 03 2017 09:48:07 GMT-0500",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "https://www.stryker.com/",
+    "linkUrl": "https://www.stryker.com/",
+    "jcr:lastModified": "Fri Mar 03 2017 09:51:48 GMT-0500",
+    "linkPath": "",
+    "linkText": "REQUEST A BROCHURE",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "What is medial column arthrodesis?",
+    "shortDescTop": "A medial column arthrodesis involves removing the joints between the navicular, medial cuneiform, and first metatarsal to reduce motion, correct deformity, and eliminate pain.",
+    "jcr:lastModifiedBy": "mauricio.munoz@stryker.com",
+    "jcr:lastModified": "Fri Mar 03 2017 11:24:42 GMT-0500",
+    "sling:resourceType": "stryker/components/content/pageshortdescription"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "jcr:lastModified": "Mon Jun 26 2017 16:56:55 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Ernest.Washington@stryker.com",
+      "jcr:lastModifiedBy": "priscilla.nieto@stryker.com",
+      "jcr:created": "Thu Jul 06 2017 16:03:44 GMT-0400",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jul 21 2017 11:32:20 GMT-0400",
+      "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Medial-Column-Arthrodesis/Images/Midfoot_MedialColumnFusion.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Medial-Column-Arthrodesis/Images/Midfoot_MedialColumnFusion.jpg"
+  }
+}

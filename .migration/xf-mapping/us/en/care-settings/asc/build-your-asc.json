@@ -1,0 +1,835 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Build your ASC",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "526409fd-9642-46dd-8682-39e6758a99b5",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "0fd36b81-8ad0-44f9-85cb-b22b198b0f76"
+  ],
+  "contentID": "MARK-GSNPS-SYK-1515689_Rev-1",
+  "lastPublished": "Wed Sep 10 2025 14:30:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 10 2025 14:30:42 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 10 2025 14:30:44 GMT+0000",
+  "cq:lastModified": "Wed Sep 10 2025 14:23:29 GMT+0000",
+  "jcr:description": "You only get one chance to launch your ASC. We help you do it right.",
+  "jcr:baseVersion": "0fd36b81-8ad0-44f9-85cb-b22b198b0f76",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:48:05 GMT+0000",
+  "pageTitle": "Build your ASC",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jun 05 2025 18:04:10 GMT+0000",
+  "jcr:uuid": "0ab09bae-a6b3-4677-865b-77807d1b3a95",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_482477305": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Jun 05 2024 21:47:04 GMT+0000",
+      "jcr:lastModified": "Wed Jun 05 2024 21:47:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Jul 01 2020 19:59:26 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Jul 01 2020 20:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/asc/hero-banner-6/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/asc/hero-banner-6/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/asc/hero-banner-6/hero-banner-6-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/asc/hero-banner-6/hero-banner-6-mobile",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "textColor": "rgb(84,88,87)",
+          "verticalMargin": "20",
+          "jcr:created": "Wed Jul 01 2020 19:59:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Dec 26 2024 18:21:32 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "jcr:created": "Wed Jul 01 2020 20:09:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(175,109,4);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: #ffffff;\">Build your Ambulatory Surgery Center (ASC)</span></span></span></span></span></span></span></h1>\r\n",
+              "line2": "<span class=\"fontsize-5-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Expertise</span> </span><span class=\"urw-egyptienne\"><br />\r\n<span style=\"color: rgb(237,238,236);\">at every phase</span></span></span><br />\r\n",
+              "jcr:lastModified": "Fri Dec 20 2024 21:19:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "lee.fuller1@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Jul 01 2020 20:13:58 GMT+0000",
+              "CTATitle": "TALK WITH US",
+              "ctaDeepLinkID": "contact",
+              "ctaExternalLink": "https://www.stryker.com/us/en/index.html",
+              "jcr:lastModified": "Fri Dec 20 2024 15:44:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)",
+              "ctaInternalLink": "/content/stryker/us/en/care-settings/asc/contact"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Tue Dec 22 2020 00:27:58 GMT+0000",
+      "jcr:lastModified": "Tue Dec 22 2020 00:48:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:28:09 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">You only get one chance to launch your ASC.<br>\n </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">We help you do it right.</span></span></span></span><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"></span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">Building a successful ASC starts by choosing a partner who’s dedicated to your success from day one. Supported by a team that’s partnered with hundreds of Ambulatory Surgery Centers (ASCs) across the country, you’ll have the insight and support to create a space that delivers outcomes and impact for years to come.</span></p>\n<p><span class=\"fontsize-1-25em\">Wherever you are in your journey, from drafting ambulatory surgery center floor plans and reviewing design guidelines to clinical planning and product selection, we’re here for you. Our dedicated people, resources and ASC programs provide everything you need for peace of mind as your vision comes to life.</span></p>\n",
+          "jcr:lastModified": "Tue Jun 03 2025 20:22:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_762854416": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Jun 03 2025 20:11:40 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\">Stryker ASC program offerings</span></span></span></p>\n",
+      "jcr:lastModified": "Tue Jun 03 2025 20:14:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1522219753": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Apr 30 2025 16:47:02 GMT+0000",
+      "jcr:lastModified": "Wed Apr 30 2025 16:47:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Apr 30 2025 16:48:44 GMT+0000",
+          "alt": "step-by-step-path-icon",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/path-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 02 2025 14:23:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Apr 30 2025 16:48:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span class=\"fontsize-1-5em\">Step-by-step playbook</span></span></span><br>\n<span class=\"fontsize-1-25em\">that simplies a complex process into an intuitive guide</span></p>\n",
+          "jcr:lastModified": "Wed Apr 30 2025 16:50:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Apr 30 2025 16:48:44 GMT+0000",
+          "alt": "best-practices-calendar-icon",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/calendar-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 02 2025 14:23:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Apr 30 2025 16:48:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span class=\"fontsize-1-5em\">Best practices</span></span></span><br>\n<span class=\"fontsize-1-25em\">to help you get it right the first time, supporting an on-time launch</span></p>\n",
+          "jcr:lastModified": "Wed Apr 30 2025 16:51:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Apr 30 2025 16:48:44 GMT+0000",
+          "alt": "peer-to-peer-icon",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/avatars-link-hands-icon.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri May 02 2025 14:23:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Wed Apr 30 2025 16:48:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #545857;\"><span class=\"fontsize-1-5em\">Peer-to-peer education</span></span></span><br>\n<span class=\"fontsize-1-25em\">including virtual and in-person engagement opportunities to learn more</span></p>\n",
+          "jcr:lastModified": "Wed Apr 30 2025 16:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_408437075": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri May 02 2025 17:50:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">ASC New Build Playbook</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">We're here to share our ASC expertise and experience to be your partner throughout this complex new build ASC construction process. Our ASC New Build Playbook was developed through collaboration with 10+ physician ASC owners and faculty across the United States. Explore the development phases of the build process below and <a href=\"#contact\">request access to the full resource</a>.</span></p>\n",
+      "jcr:lastModified": "Tue Jun 03 2025 20:59:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Dec 19 2024 20:50:22 GMT+0000",
+      "jcr:lastModified": "Thu Dec 19 2024 20:50:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: #ffffff;\">Phase 1</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: #ffffff;\">Concept generation</span></span></span></div>\r\n",
+          "jcr:lastModified": "Fri Dec 20 2024 22:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(182,114,25)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:31 GMT+0000",
+          "alt": "concept-generation-phase-1",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/concept-generation-phase-1.jpg",
+          "jcr:lastModified": "Thu Dec 19 2024 19:33:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">36-48+ months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:12:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 2</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Project launch</span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:12:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(85,87,89)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:36 GMT+0000",
+          "alt": "Diagrams for an ambulatory surgery center",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/project-launch-phase-2.png",
+          "jcr:lastModified": "Fri Jan 17 2025 14:52:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">24-36 months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:12:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 3</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Operational planning</span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:12:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(89,75,97)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:36 GMT+0000",
+          "alt": "operational-planning-phase-3",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/operational-planning-phase-3.jpg",
+          "jcr:lastModified": "Thu Dec 19 2024 21:08:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">12-24 months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:12:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1117266253": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Dec 19 2024 20:54:21 GMT+0000",
+      "jcr:lastModified": "Thu Dec 19 2024 20:54:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 4</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Clinical planning</span></span></span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:22:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(62,82,69)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:40 GMT+0000",
+          "alt": "clinical-planning-phase-4",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/clinical-planning-phase-4.png",
+          "jcr:lastModified": "Thu Dec 19 2024 21:18:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">6-12 months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:23:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 5</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Building completion</span></span></span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:22:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(66,83,97)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:45 GMT+0000",
+          "alt": "Modern building exterior of Lighthouse Surgery Center",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/building-completion-phase-5.jpg",
+          "jcr:lastModified": "Fri Jan 17 2025 14:53:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">3-6 months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:26:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 6</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Final prep</span></span></span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:23:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(99,92,79)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:53 GMT+0000",
+          "alt": "final-prep-phase-6",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/final-prep-phase-6.jpg",
+          "jcr:lastModified": "Thu Dec 19 2024 21:32:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">1-3 months prior to first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:23:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1046357146": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu Dec 19 2024 20:56:15 GMT+0000",
+      "jcr:lastModified": "Thu Dec 19 2024 20:56:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 7</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">First cases</span></span></span></span></span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:23:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(182,114,25)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:53 GMT+0000",
+          "alt": "Operating room showcasing a surgical procedure",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/ramp-up-phase-8.jpg",
+          "jcr:lastModified": "Mon May 05 2025 14:21:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Month of first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:27:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Phase 8</span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Ramp up</span></span></span></span></span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Dec 26 2024 15:23:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(85,87,89)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:53 GMT+0000",
+          "alt": " Operating room showcasing an arthroscopic procedure",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/first-cases-phase-7.jpg",
+          "jcr:lastModified": "Mon May 05 2025 14:21:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">1-3 months after first cases</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 20 2024 22:25:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Fri Dec 20 2024 21:54:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Ongoing Operations</span></span></span></span></span></span></div>\r\n",
+          "line2": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\">Continuous improvement</span></span></span></div>\r\n",
+          "jcr:lastModified": "Tue May 13 2025 16:25:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(89,75,97)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 22 2020 01:29:53 GMT+0000",
+          "alt": " Operating room showcasing an arthroscopic procedure",
+          "srcFileRef": "/content/dam/stryker/care-settings/asc/6-buildyourasc/ongoing-operations.jpg",
+          "jcr:lastModified": "Wed Mar 19 2025 20:34:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/index",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 22 2020 00:32:38 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">3+ months after first cases and beyond</span></span></span></p>\n",
+          "jcr:lastModified": "Tue May 13 2025 16:39:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Dec 20 2024 15:43:05 GMT+0000",
+      "title": "Talk With Us",
+      "jcr:lastModified": "Fri Dec 20 2024 15:45:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Dec 20 2024 17:42:57 GMT+0000",
+      "jcr:lastModified": "Fri Dec 20 2024 17:43:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(89,75,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 22 2020 00:46:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Let's get started. </span></span></span><br />\r\n<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(255,255,255);\">Request a copy of the ASC New Build Playbook today. </span></span></span></span></span>",
+          "line2": "<p><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: rgb(237,238,236);\"><span class=\"urw-egyptienne\">&nbsp;</span></span></span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(84,88,87);\"><span style=\"color: rgb(237,238,236);\"><span class=\"urw-egyptienne\">Thank you for your interest in Stryker's ASC solutions.&nbsp;A local Stryker ASC team member will connect with you to learn more on how we can help support you in your ASC journey.</span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Fri May 02 2025 15:41:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Dec 20 2024 20:18:15 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Fri Dec 20 2024 21:46:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "1152",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Wed Dec 18 2024 14:29:46 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Fri Dec 20 2024 15:35:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "cols_862885311": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri May 02 2025 15:28:15 GMT+0000",
+      "jcr:lastModified": "Fri May 02 2025 15:28:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri Apr 18 2025 15:40:24 GMT+0000",
+      "jcr:lastModified": "Fri May 02 2025 15:37:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Thu Jun 25 2020 18:32:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">“</span></span><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">Well before this new facility was opened, </span><span class=\"futura-bold\">we were</span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"> </span></span><span class=\"futura-bold\">in partnership</span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"> </span></span><span class=\"futura-bold\">with Stryker.</span><span class=\"urw-egyptienne\"><span class=\"futura-bold\"> </span></span><span class=\"futura-bold\">They brought a lot of experience to help guide us </span><span class=\"urw-egyptienne\">because we hadn’t done that before.</span></span><b><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">”</span> </span></b>",
+          "line2": "<p><span class=\"fontsize-2vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">&nbsp;</span></span></span></p>\r\n<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-1-5-vw\">- ASC Administrator</span></span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Fri May 02 2025 19:28:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "5",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_342472152": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Fri May 02 2025 17:52:17 GMT+0000",
+      "jcr:lastModified": "Fri May 02 2025 17:52:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Thu Dec 31 2020 21:51:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigationchild"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Dec 22 2020 00:48:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed Sep 10 2025 14:23:29 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

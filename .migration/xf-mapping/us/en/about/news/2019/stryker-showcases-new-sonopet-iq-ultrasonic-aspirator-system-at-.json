@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker showcases new Sonopet iQ Ultrasonic Aspirator System at the American Association of Neurological Surgeons annual meeting ",
+  "jcr:versionHistory": "f8fd13f0-5fd7-4618-a441-2e76f4dbdd26",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "2691e24f-82f4-41e5-8cae-3a4dda32d752"
+  ],
+  "contentID": "D0000010130 Rev. AB",
+  "lastPublished": "Mon Apr 15 2019 17:23:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 15 2019 17:23:14 GMT+0000",
+  "cq:lastModified": "Mon Apr 15 2019 17:23:04 GMT+0000",
+  "hideContentID": "true",
+  "jcr:baseVersion": "2691e24f-82f4-41e5-8cae-3a4dda32d752",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news/events",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Mon Apr 15 2019 17:23:04 GMT+0000",
+  "jcr:uuid": "8fa52342-0200-426c-a243-7606737b8821",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Mon Apr 15 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-Apr-2019",
+    "jcr:lastModified": "Mon Apr 15 2019 12:52:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/Sonopet IQ Console Handpiece Access_DSC2447b-2_w-5500-265-315.png"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/Sonopet IQ Console Handpiece Access_DSC2447b-2_w-5500-265-315.png",
+    "jcr:lastModified": "Mon Apr 15 2019 12:53:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p><b>A result of collaboration with neurosurgeons, exclusive technology promises to reshape complex surgical experiences&nbsp;</b></p>\n<p>Stryker announced today it will showcase its new Sonopet iQ Ultrasonic Aspirator System during the American Association of Neurological Surgeons (AANS) annual meeting, taking place this week in San Diego, CA.&nbsp;&nbsp; &nbsp;</p>\n<p>The new Sonopet iQ is an ultrasonic aspirator system that gives surgeons the ability to fragment, emulsify and aspirate soft tissue and bone during complex cranial neurosurgery, spine, and ear, nose and throat procedures. It was engineered around the user experience, with surgeon input at all stages of development. Stryker used more than 250 neurosurgeon evaluations to shape the final product. The patented technology delivers increased speed and power with improved control and precision, as well as user profile customization options and enhanced ease of use.&nbsp;</p>\n<p>“Sonopet iQ truly is our mission coming to life: Together with our customers, we are driven to make healthcare better,” said Jim Marucci, Vice President and General Manager of Stryker’s Neurosurgical business. “Sonopet iQ would not have been possible without the extensive collaboration between our customers and our team.”&nbsp;</p>\n<p>The Sonopet iQ Ultrasonic Aspirator System reinforces Stryker’s commitment to providing customers with solutions that make a difference in the most delicate and critical procedures.&nbsp;</p>\n<p>&nbsp;“I’m looking forward to seeing Sonopet iQ used in surgery in the coming months. I’m confident it will reshape surgical experiences,” said Marucci. &nbsp;&nbsp;</p>\n<p>More information about the Sonopet iQ Ultrasonic Aspirator System is available at booth number 933 at the AANS annual meeting.&nbsp;</p>\n<p><b>About Stryker<br>\n </b>Stryker is one of the world's leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical, Surgical, Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"http://www.stryker.com/\">www.stryker.com</a>.</p>\n<p><b>Media contact<br>\n </b>Jennifer Lentner<br>\njennifer.lentner@stryker.com</p>\n",
+    "jcr:lastModified": "Mon Apr 15 2019 12:56:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

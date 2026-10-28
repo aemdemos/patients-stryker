@@ -1,0 +1,389 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "A winning spirit",
+  "jcr:versionHistory": "0c0362b0-6e9c-4022-b720-3b1b3ddd444c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "6f57f845-e891-4b67-a39b-92cfab4ac120"
+  ],
+  "jcr:created": "Thu Aug 26 2021 16:06:09 GMT+0000",
+  "cq:lastModified": "Thu Aug 26 2021 16:05:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6f57f845-e891-4b67-a39b-92cfab4ac120",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "33471505-ccdc-4224-96a0-7209852c6d2e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1835260685_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:30:40 GMT+0000",
+      "jcr:lastModified": "Mon Aug 23 2021 20:49:59 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_1835260685_copy10809385578941566": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><br>\nJillian Williams enjoys a busy life—working a job, chasing around two goldendoodles at home and planning her trip to Tokyo for the Paralympic games. But the U.S. sitting volleyball team isn’t the only team Jillian is on. She also works with diverse healthcare teams, impacting patients every day as a Mako Product Specialist at Stryker.</span></span></p>\n",
+        "jcr:lastModified": "Tue Aug 24 2021 16:14:07 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Mon Aug 23 2021 20:31:26 GMT+0000",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><br>\n<br>\n An unexpected diagnosis</span></span><br>\n<br>\nJillian’s journey started while playing college volleyball when she began feeling pain in her left knee. “I thought it was my meniscus and I self-diagnosed myself the entire season.” Eventually, Jillian got an MRI and learned what the real issue was—Ewing's sarcoma, a type of bone cancer, along with a fracture. All this during the week of her 19th birthday.</p>\n<p>Jillian’s doctor, Valerae Lewis, M.D. at the MD Anderson Cancer Center in Houston, provided a few treatment options. Jillian chose the one that gave her the best chance of playing sports—her passion and motivation. It was called rotationplasty. Rotationplasty is an amputation in which the femur and the knee are removed, making room for the bottom half of the leg to rotate 180 degrees and be reattached with the foot facing backwards. This solution would allow Jillian’s ankle to function as a knee. “It prevents phantom pains,” Jillian says. To address the fracture, a plate and screws were used to stabilize the femur.<br>\n&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Aug 24 2021 16:13:46 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "description": "\r\nJillian recovers after rotationplasty surgery",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Aug 23 2021 20:33:06 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/features/a-winning-spirit/Jillian_PostSurgery.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 24 2021 15:54:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:48:05 GMT+0000",
+      "jcr:lastModified": "Mon Aug 23 2021 20:48:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "standaloneimage_copy_793206459": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Aug 23 2021 20:50:33 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/features/a-winning-spirit/Jillian_Volleyball_4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 24 2021 15:34:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    },
+    "text_232435774_copy__843545249": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:35:55 GMT+0000",
+      "jcr:lastModified": "Tue Aug 24 2021 15:45:04 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_232435774_copy__84354524910877490750216360": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Practicing her passion</span></span></p>\n<p>After surgery, as Jillian faced long hours of physical therapy and cancer treatments, she started thinking about how she could be active again. She thought about taking up a new sport like skeet shooting, but her mind kept going back to volleyball, so she decided to teach herself how to play sitting volleyball. “I started practicing by myself, and as I became stronger, I decided to record a video and send it to the U.S. national sitting volleyball team.” To Jillian’s surprise, she was asked to join the program and start training with the team after completing her treatments.</p>\n",
+        "jcr:lastModified": "Thu Aug 26 2021 15:44:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text_232435774_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "4",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "leftPadding": "4",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Aug 23 2021 20:35:55 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">“I didn’t know if I would be good enough to be an Olympic athlete,</span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"><span style=\"color: #ffffff;\"> but it gave me something to look forward after treatment,” she recalls.</span></span></span></p>\n",
+        "jcr:lastModified": "Tue Aug 24 2021 16:12:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "4",
+        "backgroundColor": "rgba(84,88,87,1)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_232435774_copy__26449873": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "text": "<p><br>\nAround the time Jillian received the offer to join the Paralympic team, she also graduated college. She interviewed for a job at Stryker, promising to give 100% as a working athlete. “The hiring manager was completely supportive,” Jillian says.<br>\n</p>\n",
+        "jcr:lastModified": "Thu Aug 26 2021 15:45:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:48:05 GMT+0000",
+      "jcr:lastModified": "Mon Aug 23 2021 20:48:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "text_232435774_copy__497739052": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "2",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:35:55 GMT+0000",
+      "jcr:lastModified": "Tue Aug 24 2021 15:45:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_232435774_copy__49773905210877525081619623": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "4",
+        "leftPadding": "6",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span style=\"color: #ffffff;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">It wasn’t long before Jillian discovered another passion and motivation—helping people. As a Mako Product Specialist, Jillian connects with patients and surgeons in a unique way. </span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">“I feel like I do my job 10 times better,”</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"> she says, crediting her personal experience. “Over the years I have encountered more doctors than I ever wish to say. </span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">I feel like </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">I’m able to empathize with surgeons and see why they chose orthopaedics as a specialty, to help patients like me.</span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"> I love supporting doctors and their patients so much and having the best product on the market helps.”</span></span></span></p>\n",
+        "jcr:lastModified": "Tue Aug 24 2021 16:03:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "6",
+        "backgroundColor": "rgba(84,88,87,1)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_232435774_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "jcr:created": "Mon Aug 23 2021 20:35:55 GMT+0000",
+        "text": "<p>&nbsp;</p>\n<p>Routinely, Jillian sits and empathizes with a patient in fear, comforting them before major surgery. “It makes me feel fulfilled,” she says. Every day, Stryker’s values are lived through Jillian—including accountability for patients and a determination for better outcomes.<br>\n</p>\n",
+        "jcr:lastModified": "Tue Aug 24 2021 15:38:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_838882496_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:40:19 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Five years stronger</span></span></p>\n<p>Today, Jillian is nearing the 5-year mark of diagnosis, at which time she will be considered in remission. “I look forward to competing in the Paralympics for the friends I’ve lost to sarcoma and for those still undergoing treatment five years later,” she says.</p>\n<p>Despite the long journey, Jillian’s determined, joyful, wildly outgoing spirit has never diminished. “Society wants us to believe that you can’t enjoy activities as an adult that we once enjoyed during our childhood and young-adult years. It’s not true,” Jillian says. “No matter what you’ve gone through, you have so much potential!”<br>\n<br>\nThat’s the message Jillian will take with her to Tokyo. And it’s the same message she passes onto the patients she meets.<br>\n<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Aug 24 2021 15:58:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_838882496_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Aug 23 2021 20:40:19 GMT+0000",
+      "text": "<p>Keep Reading: <a href=\"https://www.strykercareersblog.com/post/life-after-the-olympics\"><span class=\"standalone-link\">Life after the Olympics</span></a><br>\n</p>\n",
+      "jcr:lastModified": "Tue Aug 24 2021 15:58:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_1542855226": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.strykercareersblog.com/post/life-after-the-olympics",
+      "jcr:created": "Tue Aug 24 2021 15:58:04 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/features/a-winning-spirit/Screen Shot 2021-08-26 at 11.32.09 AM.png",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Thu Aug 26 2021 15:34:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Clinical performance carousel 4",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6de4319c-7c82-4f45-ac6b-8d2d1eecdd29",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f479bdd8-b9d3-4103-a8b1-b974ac225537"
+  ],
+  "jcr:created": "Mon Dec 19 2022 15:35:19 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 19 2022 15:35:21 GMT+0000",
+  "cq:lastModified": "Fri Nov 18 2022 20:10:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f479bdd8-b9d3-4103-a8b1-b974ac225537",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "37e6f455-e0dc-458f-b03c-b0a1861f96de",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Nov 18 2022 19:58:40 GMT+0000",
+      "alt": "JR_Hip_Accolade_II_Carousel_Figure_09",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Clinical performance carousel 4.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Nov 18 2022 20:10:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ddeccae6-1d46-4262-bd29-e1e78b48d6f4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "12555deb-18b7-4f73-8e66-7e8a26b2c3da"
+  ],
+  "lastPublished": "Tue Oct 15 2024 21:39:37 GMT+0000",
+  "jcr:created": "Tue Oct 15 2024 21:39:39 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 15 2024 21:39:41 GMT+0000",
+  "cq:lastModified": "Wed Sep 18 2024 21:58:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "12555deb-18b7-4f73-8e66-7e8a26b2c3da",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 14:07:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c4a10019-52ca-4f65-92fa-a0394e6f2e91",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "LD304 hospital labor and birthing bed",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/ld304/images/ld304-hero-w-patient.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Sep 18 2024 21:58:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

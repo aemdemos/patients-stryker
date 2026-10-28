@@ -1,0 +1,83 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Making it Happen: Managing Urinary Incontinence and Protecting Patients' Skin",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "86c0a15a-9fa0-4ab9-8bc8-f608d2039b9e",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:predecessors": [
+    "4d2d5a76-9dc9-4ded-978e-b791796b2412"
+  ],
+  "lastPublished": "Tue Jun 24 2025 21:31:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 24 2025 21:31:27 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 24 2025 21:31:29 GMT+0000",
+  "cq:lastModified": "Tue Jun 24 2025 21:31:20 GMT+0000",
+  "jcr:description": "This presentation offers an overview of the prevalence, costs and risk factors of urinary incontinence (UI), incontinence-associated dermatitis (IAD), and pressure injury (PI). We will examine how one phenomenon can lead to another, along with strategies to help prevent and manage these conditions in the clinical setting. ",
+  "jcr:baseVersion": "4d2d5a76-9dc9-4ded-978e-b791796b2412",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 24 2025 21:30:51 GMT+0000",
+  "pageTitle": "Making it Happen: Managing Urinary Incontinence and Protecting Patients' Skin",
+  "jcr:lastModified": "Tue Jun 24 2025 21:30:43 GMT+0000",
+  "jcr:uuid": "bd00ca25-828b-4c68-81bb-67eef0b6db8c",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "4",
+      "jcr:created": "Tue Jun 24 2025 21:28:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\">Making it Happen: Managing Urinary Incontinence and Protecting Patients' Skin</span></h1>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Carmen Davis MSN, RN, CCRN, CNS-BC&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">This presentation offers an overview of the prevalence, costs and risk factors of urinary incontinence (UI), incontinence-associated dermatitis (IAD), and pressure injury (PI). We will examine how one phenomenon can lead to another, along with strategies to help prevent and manage these conditions in the clinical setting. Basic physiology will be reviewed to support understanding potential etiologies and best practice treatment strategies. Change management approaches will be discussed to help our team members adopt best practices and improve patient outcomes.</span></p>\n",
+      "jcr:lastModified": "Tue Jun 24 2025 21:31:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 14 2025 19:33:55 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Apr 14 2025 19:34:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/focusrn-live/videos/SAGE-GSNPS-VID-1223800-EN_US 1.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/SAGE-GSNPS-VID-1223800-EN_US 1-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Jun 24 2025 21:28:35 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/urinary-incontinence-protecting-patients-skin"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

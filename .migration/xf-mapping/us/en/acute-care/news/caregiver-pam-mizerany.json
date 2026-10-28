@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Caregiver: Pam Mizerany",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5b395b8f-d0ee-4bc4-b4b9-7b9174adf9db",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "two patients laying in separate beds next to one another",
+  "jcr:predecessors": [
+    "8d51e3cc-07fe-4929-bbd1-29049bf31254"
+  ],
+  "lastPublished": "Thu Jan 25 2024 22:46:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 22:46:00 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 22:46:02 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:45:36 GMT+0000",
+  "jcr:description": "When Pam Mizerany, RN, learned that one of her best friends and fellow nurse at Tampa General Hospital, Debbie, was in dire need of a life-saving kidney, she immediately raised her hand to help. Fortunately for Debbie, the pair of friends were a perfect match. Hear more about Pam and her selfless act, and the deep bond that exists between them that allowed both to continue doing what they love: caring for their patients.",
+  "jcr:baseVersion": "8d51e3cc-07fe-4929-bbd1-29049bf31254",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/acute-care/news/caregiver-stories"
+  ],
+  "jcr:lastModified": "Wed Oct 18 2023 19:51:37 GMT+0000",
+  "jcr:uuid": "73850c74-2951-4868-a5f6-5f0c65136221",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Oct 10 2023 20:27:33 GMT+0000",
+      "text": "<p>When Pam Mizerany, RN, learned that one of her best friends and fellow nurse at Tampa General Hospital, Debbie, was in dire need of a life-saving kidney, she immediately raised her hand to help. Fortunately for Debbie, the pair of friends were a perfect match. Hear more about Pam and her selfless act, and the deep bond that exists between them that allowed both to continue doing what they love: caring for their patients.&nbsp;&nbsp;&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Oct 19 2023 13:16:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Oct 10 2023 20:27:38 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Oct 10 2023 20:27:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/acute-care/videos/caregiver-stories-pam-mizerany.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/caregiver-stories-pam-mizerany-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Oct 10 2023 20:28:07 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:32:34 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:32:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:45:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-james-bamber"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-judy-gay"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/news/caregiver-temple-university-intensive-care-unit"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Fri Jan 21 2022 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "21-Jan-2022",
+    "jcr:lastModified": "Thu Oct 19 2023 13:15:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/images/pam-mizerany_thumbnail.jpg"
+  }
+}

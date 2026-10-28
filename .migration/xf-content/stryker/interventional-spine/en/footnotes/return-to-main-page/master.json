@@ -1,0 +1,50 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Return to main page",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5c487caa-6e04-4681-bd72-79dd6ed426e9",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "21e45db5-3bc7-4917-a5da-110195495cf0"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:38 GMT+0000",
+  "jcr:created": "Mon Dec 22 2025 18:51:38 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:51:40 GMT+0000",
+  "cq:lastModified": "Tue Dec 09 2025 23:41:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "21e45db5-3bc7-4917-a5da-110195495cf0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8cbad2b1-e5d8-40c5-b259-7a659d7403f3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Dec 09 2025 23:28:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/interventional-spine/footnotes.html\">❮&nbsp;BACK</a></span></p>\n",
+      "jcr:lastModified": "Tue Dec 09 2025 23:41:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "leftMargin": "0",
+      "bottomMargin": "0"
+    }
+  }
+}

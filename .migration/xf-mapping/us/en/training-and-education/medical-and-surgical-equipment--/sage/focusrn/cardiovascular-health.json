@@ -1,0 +1,199 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Cardiovascular health",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d69ecad8-18e9-4b70-8b33-0c2c1f6ec187",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "ecb26af9-9d66-444e-975a-012c02943a16"
+  ],
+  "contentID": "28996",
+  "lastPublished": "Mon May 15 2023 21:05:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 15 2023 21:05:36 GMT+0000",
+  "cq:lastReplicated": "Mon May 15 2023 21:05:38 GMT+0000",
+  "cq:lastModified": "Fri May 12 2023 19:57:45 GMT+0000",
+  "jcr:baseVersion": "ecb26af9-9d66-444e-975a-012c02943a16",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Tue May 10 2022 01:27:07 GMT+0000",
+  "jcr:uuid": "7aec1585-6b77-42a6-a513-03fdfb7cfaf4",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Thu Apr 21 2022 19:30:47 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 16:22:12 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 16:23:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/focusrn/subpage-brand-bar/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/focusrn/subpage-brand-bar/master"
+    },
+    "cols_1263276765_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri May 13 2022 15:57:10 GMT+0000",
+      "jcr:lastModified": "Fri May 13 2022 15:57:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri May 13 2022 15:57:20 GMT+0000",
+          "jcr:lastModified": "Fri May 13 2022 15:57:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Thu Apr 21 2022 18:23:18 GMT+0000",
+      "jcr:lastModified": "Thu Apr 21 2022 18:23:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Apr 21 2022 18:24:21 GMT+0000",
+          "text": "<h1><span class=\"futura-bold\">Cardiovascular health</span></h1>\n<p><span class=\"fontsize-1-25em\">Understanding the myriad of cardiovascular conditions can be challenging. This section houses a variety of cardiovascular conditions, evidence-based strategies for prevention and treatment and up-to-date published guidelines.</span></p>\n",
+          "jcr:lastModified": "Fri May 13 2022 17:47:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Apr 21 2022 18:33:37 GMT+0000",
+          "alt": "Cardiovascular health",
+          "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/Cardiovascular-health.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue May 10 2022 01:04:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "1",
+          "jcr:created": "Fri May 13 2022 12:16:12 GMT+0000",
+          "CTATitle": "View Resources",
+          "ctaExternalLink": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:lastModified": "Fri May 12 2023 19:57:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Mar 17 2022 18:47:38 GMT+0000",
+      "title": "Educational Courses",
+      "jcr:lastModified": "Fri May 12 2023 19:57:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "jcr:lastModified": "Fri Apr 01 2022 19:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:created": "Fri Apr 15 2022 22:13:51 GMT+0000",
+          "alt": "FocusRN Educational Courses",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primetc/images/manuals_icon.jpg",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri May 12 2023 19:57:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Thu Mar 17 2022 18:41:35 GMT+0000",
+          "text": "<h2>Transseptal puncture of the interatrial septum<br>\n</h2>\n<h3>Learning objectives<br>\n</h3>\n<ul>\n<li>Define a transseptal puncture and the indications and contraindications<br>\n</li>\n<li>Describe the anatomical rationale for transseptal puncture<br>\n</li>\n<li>List the steps of the transseptal puncture procedure and equipment needed<br>\n</li>\n<li>Describe the pre and post procedure care of the transseptal puncture patient</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Apr 21 2022 21:59:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 11 2022 02:12:07 GMT+0000",
+          "CTATitle": "TAKE COURSE",
+          "ctaExternalLink": "https://strykerlearning.csod.com/login/render.aspx?id=focusrn",
+          "jcr:lastModified": "Fri May 13 2022 18:27:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

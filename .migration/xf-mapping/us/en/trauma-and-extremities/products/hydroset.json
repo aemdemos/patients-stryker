@@ -1,0 +1,179 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Injectable Bone Substitute",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "HydroSet XT",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dbf42353-0258-4d55-ab26-e67ba8589cc3",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+  "thumbnailAltText": "Hydroset image",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/hydroset/images/397003---397015.png",
+  "jcr:predecessors": [
+    "1518a9b1-e109-4661-8841-80063a789bfa"
+  ],
+  "lastPublished": "Mon Apr 28 2025 15:34:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 28 2025 15:34:31 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 28 2025 15:34:32 GMT+0000",
+  "cq:lastModified": "Mon Apr 28 2025 15:34:13 GMT+0000",
+  "jcr:description": "An injectable, self-setting bone substitute composed of tetra-calcium phosphate that is formulated to convert to hydroxyapatite, the principal mineral component of bone. ",
+  "jcr:baseVersion": "1518a9b1-e109-4661-8841-80063a789bfa",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:34:30 GMT+0000",
+  "cq:tags": [
+    "stryker:procedure/foot-and-ankle/hallux-valgus-correction-(bunion)",
+    "stryker:procedure/foot-and-ankle/cuboid-fracture",
+    "stryker:procedure/foot-and-ankle/calcaneal-fracture",
+    "stryker:custom/foot-and-ankle/product-type/biologics",
+    "stryker:content-type/product",
+    "stryker:procedure/foot-and-ankle/ankle-fracture",
+    "stryker:procedure/foot-and-ankle/total-ankle-replacement",
+    "stryker:procedure/foot-and-ankle/bunionette-(tailor-s-bunion)",
+    "stryker:procedure/foot-and-ankle/navicular-cuneiform-arthrodesis",
+    "stryker:custom/trauma-and-extremities/Indications/Biologics",
+    "stryker:procedure/foot-and-ankle/hammertoe-correction-(pip-dip-joint)",
+    "stryker:system/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/tibio-talo-calcaneal-(ttc)-arthrodesis",
+    "stryker:capability/biologics",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/foot-and-ankle/calcaneo-cuboid-arthrodesis",
+    "stryker:procedure/foot-and-ankle/hallux-interphalangeal-joint-(ipj)-arthrodesis",
+    "stryker:procedure/foot-and-ankle/-subtalar-arthroeresis",
+    "stryker:procedure/foot-and-ankle/subtalar-joint-arthrodesis-(talocalcaneal-arthrodesis)",
+    "stryker:procedure/foot-and-ankle/-ankle-distraction",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/bone-void-fillers",
+    "stryker:procedure/foot-and-ankle/mortons-neuroma",
+    "stryker:procedure/foot-and-ankle/-proximal-5th-metatarsal-fracture-(jones-fracture)",
+    "stryker:procedure/foot-and-ankle/calcaneal-sliding-osteotomy",
+    "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)",
+    "stryker:procedure/foot-and-ankle/lateral-column-lengthening-(evans-osteotomy)",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/bone-grafting-synthetic-bone-void-fillers",
+    "stryker:specialty/bone-grafting",
+    "stryker:procedure/foot-and-ankle/triple-arthrodesis",
+    "stryker:product/foot-and-ankle",
+    "stryker:procedure/foot-and-ankle/medial-column-arthrodesis",
+    "stryker:procedure/foot-and-ankle/bunionette",
+    "stryker:procedure/foot-and-ankle/talus-fracture",
+    "stryker:procedure/foot-and-ankle/medial-cuneiform-dorsal-opening-wedge-(cotton)-osteotomy",
+    "stryker:procedure/foot-and-ankle/navicular-fracture",
+    "stryker:procedure/foot-and-ankle/opening-wedge-osteotomy",
+    "stryker:procedure/foot-and-ankle/closing-wedge-osteotomy",
+    "stryker:custom/trauma-and-extremities/biologics/bone-grafting/synthetic--bone-void-fillers-",
+    "stryker:procedure/foot-and-ankle/metatarsal-shortening-(weil)-osteotomy",
+    "stryker:procedure/foot-and-ankle/lisfranc",
+    "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+    "stryker:system/trauma-and-extremities/biologics",
+    "stryker:procedure/foot-and-ankle/1st-metatarso-phalangeal-(mtp)-arthrodesis",
+    "stryker:product/trauma-and-extremities/hyrdoset",
+    "stryker:portfolio/orthopaedics",
+    "stryker:procedure/foot-and-ankle/talonavicular-joint-arthrodesis",
+    "stryker:procedure/foot-and-ankle/first-tarsometatarsal-joint-arthrodesis-(lapidus)",
+    "stryker:procedure/foot-and-ankle/charcot-neuroarthropathy",
+    "stryker:procedure/foot-and-ankle/brachymetatarsia/biologics"
+  ],
+  "jcr:lastModified": "Mon Apr 28 2025 15:34:13 GMT+0000",
+  "jcr:uuid": "2627e5d6-8c23-4b8e-98cb-fa6bac94fbf6",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed May 31 2017 16:21:03 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/hydroset/images/397003---397015.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_102944",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1733916018",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_780467320",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1260443829"
+      ],
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Wed Jul 06 2022 13:21:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>HA injectable bone substitute&nbsp;</p>\r\n",
+    "shortDescTop": "<p>HydroSet is specifically formulated to effectively set in a wet field environment and exhibits outstanding wet-field characteristics. The crystalline structure and porosity offer osteoconductive and osteointegrative properties, with biocompatibility and mechanical characteristics. Hydroset is designed to offer rigidity, structure, and to encourage new bone formation.<sup>1,2,3,4</sup><br />\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Mar 29 2022 14:33:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Under wet conditions, HydroSet is shown to set significantly faster than competitive products<sup>5,6</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Indicated to augment provisional hardware to support bone fragments during the surgical procedure<sup>7</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Fast setting crystalline structure is able to set within eight minutes after implantation under normal physiological circumstances<sup>8</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>HydroSet XT simplifies product preparation by eliminating bowl mixing, mixing inconsistencies and the transfer into syringe<sup>1,8,9</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>HydroSet XT enhances ease of use by using a self-contained delivery system with a locking torque handle<sup>1,8,9</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>HydroSet XT increases working time by reducing preparation time and using a torque handle to continue working while HydroSet XT begins to set<sup>1,9</sup></p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>K161447</li>\r\n<li>DB-152:Histology Study and PVP Tracking</li>\r\n<li>TR-1808 E501</li>\r\n<li>TR-1808 E703</li>\r\n<li>TR-1808 E706</li>\r\n<li>TR-1808 A701</li>\r\n<li>IFU 0419-055-088 REV A</li>\r\n<li>HydroSet XT IFU, 5334-2000 Rev00, July 2016</li>\r\n<li>1000-2034R XA-06 REV 00 HydroSet XT Physical Testing Master Plan Report</li>\r\n</ol>\r\n<p>BIHYD-WB-1_15373<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Mon Aug 28 2017 09:24:17 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/hydroset/images/397003---397015.png"
+  }
+}

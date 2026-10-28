@@ -1,0 +1,155 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Midfoot",
+  "jcr:versionHistory": "85fb642a-5e78-476a-84d9-e320bed4e292",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "thumbnailAltText": "Midfoot",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/header_midfoot.jpg",
+  "jcr:predecessors": [
+    "306d2b97-1dd5-4c11-9811-fdc1b97a2e4b"
+  ],
+  "contentID": "OT-AWI-46, 08-2017",
+  "lastPublished": "Wed Nov 11 2020 14:46:15 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Nov 11 2020 14:46:15 GMT+0000",
+  "cq:lastModified": "Wed Nov 11 2020 14:33:57 GMT+0000",
+  "jcr:description": "Serving as a shock absorber, the midfoot forms the arches of your feet. It connects the forefoot to the hindfoot.",
+  "cq:siblingOrder": "forefoot,midfoot,ankle,hindfoot,biologics,",
+  "jcr:baseVersion": "306d2b97-1dd5-4c11-9811-fdc1b97a2e4b",
+  "jcr:isCheckedOut": true,
+  "cq:name": "midfoot",
+  "cq:tags": [
+    "stryker:capability/foot-and-ankle",
+    "stryker:content-type/specialty",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/midfoot",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 04 2017 09:04:34 GMT-0400",
+  "jcr:uuid": "0c3fbd61-a65e-40cd-a64b-580215c8e95c",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/foot-and-ankle",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "featuredcontentconte": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "jcr:created": "Thu May 11 2017 15:57:22 GMT-0400",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/featuredcontentcontext",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "featuredcontentitem": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:createdBy": "dominik.soldo@stryker.com",
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "jcr:created": "Thu May 11 2017 15:57:27 GMT-0400",
+      "amountProductDetail": "2",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/featuredcontentitem",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    },
+    "bannercampaign_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "linkExternal": "https://strykerwelcomeswright.com/",
+      "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
+      "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/bannercampaign",
+      "openInNewTab": "true",
+      "srcLargeFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Stryker-Wright-RBL-Stryker-Banner-2049x572.png"
+    },
+    "bannercampaign_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "linkExternal": "https://bit.ly/T2ICFINFO",
+      "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
+      "jcr:lastModified": "Mon Aug 31 2020 18:53:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/bannercampaign",
+      "openInNewTab": "true",
+      "srcLargeFileRef": "/content/dam/stryker/foot-and-ankle/images/T2 ICF Stryker.com Banner.png"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 15:13:36 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "headColor": "rgba(255,181,0,1)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:54 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/header_midfoot.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/header_midfoot.jpg"
+  }
+}

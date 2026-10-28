@@ -1,0 +1,600 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Global Power Tools",
+  "jcr:versionHistory": "0f4e75a3-4d2a-4dad-af8e-ef30a55b9f68",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "767aa07d-f2e5-400e-8a67-4488ed803014"
+  ],
+  "contentID": "D0000008434 Rev. AA",
+  "lastPublished": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:lastModified": "Wed Aug 05 2020 15:36:03 GMT+0000",
+  "jcr:baseVersion": "767aa07d-f2e5-400e-8a67-4488ed803014",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Global Power Tools",
+  "jcr:lastModified": "Wed Jun 19 2019 16:00:22 GMT+0000",
+  "jcr:uuid": "ff91c132-9814-4c22-990d-e707937c2e5b",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Global Power Tools",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "layoutOptions": "col-sm-6 pull-right",
+      "backgroundImageRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/GlobalPower-Hero-WithBar1.jpg",
+      "jcr:created": "Wed Apr 03 2019 19:58:00 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 18:14:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 15:06:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<div style=\"text-align: right;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Built on history.&nbsp;<br>\r\n Built on innovation.&nbsp;<br>\r\n Built on solutions.</span></span><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><br>\r\n </span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\">Built on trust.</span></span></span></div>\r\n",
+          "jcr:lastModified": "Thu Apr 04 2019 17:43:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 17:23:48 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 17:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Apr 03 2019 19:58:34 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">We don’t just<br>\n build power tools.&nbsp;<br>\n </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">We build trust.</span></span></span></span></p>\n<p>No matter where you are in the world, no matter your surgical setting, Stryker is there to support you. Our surgical power tools, sales, and service offerings are created to help you do your best work, every time.&nbsp;</p>\n",
+          "jcr:lastModified": "Fri May 10 2019 14:43:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Apr 03 2019 20:03:37 GMT+0000",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Let's </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">talk</span></span></span></span></p>\n<p><span class=\"urw-egyptienne\">At Stryker, we offer you a total value experience that includes an obsessive level of service from the operating room to the boardroom. Every customer is seen as a long-term surgical power tool partner. From day one we offer you unsurpassed sales, service, and financing support to tailor your experience to your needs.</span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"futura-bold\">Contact a rep today and get the conversation started.</span></span></p>\n",
+          "jcr:lastModified": "Thu Apr 04 2019 17:21:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Apr 03 2019 20:03:48 GMT+0000",
+          "CTATitle": "Contact Us",
+          "jcr:lastModified": "Fri Jun 21 2019 22:51:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "ctaInternalLink": "/content/stryker/us/en/c/2019/global-power-tools/contact-us"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 15:09:09 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Apr 04 2019 15:09:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/campaigns/surgical/global-power-tools/Stryker_PowerTools_WeBuildTrust_Global_V2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Stryker_PowerTools_WeBuildTrust_Global_V2-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Apr 04 2019 15:10:00 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 17:20:00 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 17:20:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 17:20:09 GMT+0000",
+          "jcr:lastModified": "Thu Apr 04 2019 17:20:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Thu May 09 2019 19:44:37 GMT+0000",
+      "jcr:lastModified": "Thu May 09 2019 19:44:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:29:45 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/GPT_History of excellence3.jpg",
+          "jcr:lastModified": "Fri Nov 08 2019 19:39:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:10:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">A history of</span><br>\n <span class=\"futura-bold\"><span style=\"color: #85458a;\">excellence</span></span></span></p>\n<p>When your founder is a surgeon, every product you make is held to a different standard. Every Stryker power tool needs to live up to our rigorous internal standards before it ever makes it to your operating room. We develop and test our products in ways that exceed the demands of real-life situations.</p>\n",
+          "jcr:lastModified": "Tue Nov 12 2019 21:14:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1827445973": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "numbercounter": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(133,69,138);\">generations of power tools</span></span></span>",
+          "fontColor": "rgba(133,69,138,1)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:21:04 GMT+0000",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Wed Aug 05 2020 15:36:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "15",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "numbercounter_361277081": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: #85458a;\">years of power tool innovations</span></span></span>",
+          "fontColor": "rgba(133,69,138,1)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:34 GMT+0000",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Nov 08 2019 19:23:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "75",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy_1578443237": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "numbercounter_361277": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "9990",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(133,69,138);\">hours of you gaining feedback</span></span></span>",
+          "fontColor": "rgba(133,69,138,1)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:34 GMT+0000",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Nov 08 2019 19:26:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "10000",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy_2090590721": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:29:45 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/GPT_Innovation2.jpg",
+          "jcr:lastModified": "Fri Nov 08 2019 19:36:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:10:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Innovation is a</span><br>\n <span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\">universal language</span></span></span></span></p>\n<p>We involve surgical experts from all over the world—at every step of our research, development, and testing process—to develop innovative power tools that are built to exceed customer expectations. By utilizing our learnings, Stryker is able to take the best data, feedback, and insights from around the world and offer you unique forward-thinking products, services, and support programs globally.</p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:16:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "numbercounter_361277": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "79990",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(133,69,138);\"><span style=\"color: #1c5687;\">testing hours</span></span></span></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:34 GMT+0000",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Nov 08 2019 19:27:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "80000",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy_513257903": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "numbercounter_361277_1756387304": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "startNumber": "0",
+          "counterlabel": "<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(133,69,138);\"><span style=\"color: #1c5687;\">service hours</span></span></span></span>",
+          "fontColor": "rgba(28,86,135,1)",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:34 GMT+0000",
+          "numberTypeNumberCounter": "1",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-4-5-vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Fri Nov 08 2019 19:28:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "75",
+          "textIsRich": "true"
+        },
+        "text_1827445973_copy_1802114350": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:22:07 GMT+0000",
+          "text": "<p><span style=\"color: #b2b4ae;\">_________________</span></p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:22:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:29:45 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/GPT_Tailored Solutions2.jpg",
+          "jcr:lastModified": "Fri Nov 08 2019 19:36:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Nov 08 2019 19:10:41 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Solutions</span><br>\n <span class=\"futura-bold\"><span style=\"color: #85458a;\"><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\">tailored to you</span></span></span></span></span></p>\n<p>Every customer and surgical setting has specific needs, which is why Stryker offers a complete line of products and attachments for the operating room, along with programs and services designed around you hospital or surgery center's unique situation. Stryker treats every customer as a long-term surgical power tools partner. From day one we offer you unsurpassed sales, service, and financing support. Your Stryker power tools experience is tailored to you.</p>\n",
+          "jcr:lastModified": "Fri Nov 08 2019 19:19:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_929561965_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Nov 08 2019 19:29:37 GMT+0000",
+      "jcr:lastModified": "Fri Nov 08 2019 19:29:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3_929561965": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Nov 08 2019 19:29:37 GMT+0000",
+      "jcr:lastModified": "Fri Nov 08 2019 19:29:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_1541527133_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 17:05:17 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Our </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">products</span></span></span><span class=\"futura-bold\"></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\">Every customer and surgical setting has their own needs, which is why we offer a complete line of products and attachments for the operating room.<br>\n Learn more about our various product lines by clicking a category below.</span></span></p>\n",
+      "jcr:lastModified": "Thu Apr 04 2019 17:41:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 16:17:27 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 16:17:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:40:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/Box_System8.jpg",
+          "jcr:lastModified": "Thu Apr 04 2019 16:41:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:43:22 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"standalone-link\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Large bone power tools</span><span class=\"fontsize-1-75em\"><br>\n </span></span></span><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/large-bone.html\"><span class=\"standalone-link\">Learn More</span></a></p>\n",
+          "jcr:lastModified": "Thu Apr 04 2019 18:16:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:40:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/Box_System8CordlessDriverSABO.jpg",
+          "jcr:lastModified": "Thu Apr 04 2019 16:41:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:43:22 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"standalone-link\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Medium bone power tools</span><span class=\"fontsize-1-75em\"><br>\n </span></span><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/medium-bone.html\">Learn More</a></span></p>\n",
+          "jcr:lastModified": "Thu Apr 04 2019 18:17:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:40:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/Box_SignatureFamilyImage.jpg",
+          "jcr:lastModified": "Thu Apr 04 2019 16:41:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:43:22 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"standalone-link\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Neuro and spine</span><span class=\"fontsize-1-75em\"><br>\n </span></span><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/neuro-and-spine.html\">Learn More</a></span></p>\n",
+          "jcr:lastModified": "Thu Apr 04 2019 18:17:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:40:55 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/campaigns/surgical/global-power-tools/Box_StrykerF1.jpg",
+          "jcr:lastModified": "Thu Apr 04 2019 16:41:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 16:43:22 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"standalone-link\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Small bone power tools</span><span class=\"fontsize-1-75em\"><br>\n </span></span><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories/small-bone.html\">Learn More</a></span></p>\n",
+          "jcr:lastModified": "Thu Apr 04 2019 18:17:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_574960545_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 17:22:19 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 17:22:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Apr 04 2019 17:22:32 GMT+0000",
+          "jcr:lastModified": "Thu Apr 04 2019 17:22:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Apr 04 2019 19:09:04 GMT+0000",
+      "jcr:lastModified": "Thu Apr 04 2019 19:09:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 03 2019 20:03:29 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: center;\"><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">We don't just build power tools.&nbsp;</span><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\">We build trust.</span></span></span></div>\r\n",
+      "jcr:lastModified": "Thu Apr 04 2019 15:25:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_1572503464_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 03 2019 20:05:30 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">This website is intended solely for the use of healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">The information presented is intended to demonstrate a Stryker product. A surgeon must always refer to the package insert, product label, and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Stryker Corporation or its affiliates own, use, or have applied for the following trademarks or service marks: Stryker Corporation or its divisions or other corporate affiliated entities own, use, or have applied for the following trademarks or service marks: ADAPT, Building Blocks, CORE, CranialMap, ESSx, HemoPore, ID Touch, KWIC, Maestro Air, Maestro, Malis, NasoPore, NAV3, NAV3i, NavSuite, nGenius, OrthoMap, OtoPore, πdrive, ProCare, PROFESS, S2 Mini, S2 πDrive, Scopis, SILVERGlide, SONOPET, Spetzler-Malis, SpineMap, SpineMask, Stryker, Sumex, TGS, VSP Orthognathic, VSP Reconstruction, Xia. All other trademarks are trademarks of their respective owners or holders. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Sales Representative if you have questions about the availability of our products in your area. All other trademarks are trademarks of their respective owners or holders.</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Literature number: D0000008434 Rev. AA&nbsp;</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Copyright © 2019 Stryker</span></span></p>\n",
+      "jcr:lastModified": "Thu Apr 04 2019 15:20:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

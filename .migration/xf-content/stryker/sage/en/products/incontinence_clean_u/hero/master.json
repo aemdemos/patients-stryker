@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d3239bdc-2e14-4ba7-8fde-c382886f75b8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5ed5ff38-8635-421e-a3da-f7a2bb5cd27b"
+  ],
+  "jcr:created": "Fri Mar 01 2024 15:41:43 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 01 2024 15:41:45 GMT+0000",
+  "cq:lastModified": "Fri Mar 01 2024 15:41:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5ed5ff38-8635-421e-a3da-f7a2bb5cd27b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e3339db2-531e-4ee8-9173-64c0457c94b7",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage incontinence clean up cloths help hospitals with their incontinence care strategy",
+      "srcFileRef": "/content/dam/stryker/sage/products/incontinence-clean-up-cloths/images/Sage-Incontinence-Clean-up-Cloths-Thumbnail.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Mar 01 2024 15:41:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

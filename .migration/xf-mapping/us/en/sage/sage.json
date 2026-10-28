@@ -1,0 +1,179 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bad8cb6d-bf94-455a-8d09-5eb141241fc2",
+  "cq:template": "/apps/stryker/templates/contactdivision",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "jcr:predecessors": [
+    "389c3a45-792a-4abb-a70b-c0bbd54814bc"
+  ],
+  "contentID": "26634",
+  "lastPublished": "Thu Aug 20 2026 19:49:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 19:49:23 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 19:49:25 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 19:49:16 GMT+0000",
+  "jcr:baseVersion": "389c3a45-792a-4abb-a70b-c0bbd54814bc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:49:23 GMT+0000",
+  "pageTitle": "Contact Sage",
+  "cq:tags": [
+    "stryker:content-type/business-unit-contact",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Thu Sep 12 2019 15:27:37 GMT+0000",
+  "jcr:uuid": "ba01fb44-d5df-4224-a121-ee38828abf40",
+  "sling:resourceType": "stryker/components/structure/pages/contactdivision",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "description": "Fill out the form to be contacted by your local Stryker Sage representative:",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:23:11 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Fri Feb 10 2023 16:38:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1259",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! We received your information and a Stryker Sage representative will be in contact.",
+          "jcr:lastModified": "Thu Aug 20 2026 19:49:16 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Feb 10 2023 16:33:10 GMT+0000",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/sage.html\" target=\"_self\"><span class=\"standalone-link\">ABOUT SAGE</span></a></span></span></p>\n",
+          "jcr:lastModified": "Tue Feb 21 2023 20:07:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "contactus": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "group2Title": "Customer service",
+    "group3Title": "International office",
+    "group4Title": "Shipping and receiving",
+    "title": "Contact information",
+    "groupContact": "1",
+    "group2ShortDescription": "7:30 am to 5:00 pm CST\r\nMonday through Friday",
+    "jcr:lastModified": "Wed Jul 19 2023 12:22:39 GMT+0000",
+    "group3Address": "<p>Herikerbergweg 145 • 1101 CM<br />\r\nAmsterdam, The Netherlands</p>\r\n",
+    "sling:resourceType": "stryker/components/content/contactus",
+    "textIsRich": [
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "group1Addresslabel": "Address",
+    "group1Address": "<p>3909 Three Oaks Rd<br />\r\nCary, IL 60013<br />\r\nUSA</p>\r\n",
+    "group1Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Toll free (U.S. and Canada)",
+        "phoneNumber": "800 323 2220"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Phone",
+        "phoneNumber": "815 455 4700"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Fax",
+        "phoneNumber": "815 455 5599"
+      }
+    },
+    "group1Links": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "linkLabel": "Employment opportunities",
+        "checkboxOverride": "0",
+        "openInNewWindow": "true",
+        "linkUrl": "https://careers.stryker.com/",
+        "linkText": "Visit our careers page"
+      }
+    },
+    "group2Emails": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "emailAddress": "SMC@stryker.com",
+        "emailLabel": "Email"
+      }
+    },
+    "group3Emails": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "emailAddress": "caryglobalcustserv@stryker.com",
+        "emailLabel": "International distributor inquiries"
+      }
+    },
+    "group4Phones": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Shipping",
+        "phoneNumber": "East dock"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "7:30 am to 5:30 pm CST Monday through Friday"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneLabel": "Receiving",
+        "phoneNumber": "West dock"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "phoneNumber": "11:00 pm Sunday through 10:00 pm Friday CST"
+      }
+    }
+  }
+}

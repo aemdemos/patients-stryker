@@ -1,0 +1,93 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Training video",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage PrimoFit+ External Urine Management for the Male Anatomy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c2439d52-212a-4201-8e2c-0c451538b496",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "jcr:predecessors": [
+    "54c8698d-e653-40aa-a954-d276705a43a8"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-489450_REV-0_en_us",
+  "lastPublished": "Wed Aug 28 2024 18:20:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 28 2024 18:20:58 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 28 2024 18:21:00 GMT+0000",
+  "cq:lastModified": "Wed Aug 28 2024 18:20:49 GMT+0000",
+  "jcr:baseVersion": "54c8698d-e653-40aa-a954-d276705a43a8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:20:58 GMT+0000",
+  "pageTitle": "Sage PrimoFit External Urine Management for the Male Anatomy training video",
+  "jcr:lastModified": "Mon Oct 09 2023 19:19:10 GMT+0000",
+  "jcr:uuid": "93c37438-e9c0-498c-9a65-ff7720e3db93",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Oct 09 2023 19:19:33 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Oct 09 2023 19:19:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/sage/products/primofit/videos/Primo-plus-in-service-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Primo-plus-in-service-video-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Aug 28 2024 18:20:49 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "curatedcta_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "ctaLinkType": "int",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Thu Jan 19 2023 17:14:14 GMT+0000",
+      "CTATitle": "Learn more",
+      "jcr:lastModified": "Thu Jan 19 2023 17:43:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(255,181,0,1)",
+      "ctaInternalLink": "/content/stryker/us/en/sage/products/sage-primofit"
+    }
+  }
+}

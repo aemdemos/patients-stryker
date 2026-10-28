@@ -1,0 +1,494 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reprocessing is what we do.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker's Sustainability Solutions ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a1985786-5e71-4060-b276-e9c486609984",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Reprocessed LigaSure Device ",
+  "businessUnitTag": "sustainability:",
+  "jcr:predecessors": [
+    "d959569e-35a7-407f-b6a5-3402fe189f9b"
+  ],
+  "contentID": "CIS11385 Rev A",
+  "lastPublished": "Tue Aug 18 2026 20:29:57 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:29:57 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:29:59 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:29:48 GMT+0000",
+  "jcr:baseVersion": "d959569e-35a7-407f-b6a5-3402fe189f9b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:29:57 GMT+0000",
+  "pageTitle": "SSS Quality ",
+  "jcr:lastModified": "Wed Feb 14 2024 17:43:33 GMT+0000",
+  "jcr:uuid": "52ac763f-8a24-43f6-b983-ab2734f26f6e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "SSS Quality ",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Thu Feb 02 2023 16:22:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_copy__383559997": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Tue Mar 09 2021 17:33:35 GMT+0000",
+      "jcr:lastModified": "Thu Nov 30 2023 18:58:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(62,82,69)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_439430354": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 09 2021 17:33:49 GMT+0000",
+          "jcr:lastModified": "Tue Mar 09 2021 17:33:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jcr:created": "Thu Sep 07 2023 17:35:35 GMT+0000",
+          "jcr:lastModified": "Thu Sep 07 2023 17:35:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        },
+        "cols2_1_3_2_3_1027118366": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 18:57:34 GMT+0000",
+          "jcr:lastModified": "Thu Nov 30 2023 18:57:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:18:53 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "jcr:lastModified": "Fri Dec 01 2023 22:17:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/sustainability/videos/SSS Overview Video 2023 .mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+                "s7ViewerPreset": "/conf/global/settings/dam/dm/presets/viewer/Video|VIDEO|false",
+                "assetID": "stryker/SSS Overview Video 2023-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Mon Dec 11 2023 17:49:36 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": "/stryker/Video|VIDEO|false"
+              }
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+              "jcr:created": "Tue Nov 16 2021 18:21:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line2": "<p><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"futura-bold\">At Stryker's Sustainability Solutions (SSS),</span><span class=\"urw-egyptienne\"> we&nbsp;</span>reprocess more single-use medical devices than any other provider—always striving for the highest quality and performance&nbsp;standards.&nbsp;We’ve&nbsp;helped over 3,000 customers save approximately $1 billion through reprocessing programs and divert over 26 million pounds of waste from landfills.</span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">&nbsp;</span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\">Driven by our shared ambition, we help improve healthcare through innovation—from manufacturing to collections and every step&nbsp;beyond. Every device we reprocess is individually&nbsp;inspected to ensure it meets Stryker's quality and performance standards.</span></span></p>\r\n",
+              "jcr:lastModified": "Thu Feb 08 2024 22:49:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 18:18:47 GMT+0000",
+      "jcr:lastModified": "Wed Nov 17 2021 14:52:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "largeheadline_copy_c_1668644064": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:22:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\">QUALITY YOU CAN COUNT ON</span></span></span></b></h2>\r\n<h2> </h2>\r\n",
+      "jcr:lastModified": "Thu Nov 30 2023 16:57:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0%"
+    },
+    "cols2_copy_175606443": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Every device. Every time.</span><span class=\"fontsize-1-75em\"></span></span></h2>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">All reprocessed devices are 100% function tested, including in-line testing and multi-point inspection.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Before being sent back to you, all reprocessed devices undergo thorough verifications.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stryker's Sustainability Solutions devices have a 99.96% success rate<sup>1</sup>.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Dec 01 2023 22:11:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "Universal lithium-ion battery ",
+          "srcFileRef": "/content/dam/stryker/sustainability/images/LigaSure Device 1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Nov 16 2023 17:44:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_copy_128815649": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:30:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1102": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Collaboration with clinicians",
+          "srcFileRef": "/content/dam/stryker/sustainability/images/SSS Stock Clinician.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Dec 01 2023 22:09:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Patient outcomes</span></span></h2>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">For the last 22 years, SSS has partnered with clinicians to build out a reprocessing program with patient outcomes at the forefront.</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">As part of the 510(k) submission, SSS submits extensive cleaning, performance, and sterilization data for their independent review before reprocessed SUDs can be legally marketed.&nbsp;</span></span></li>\n</ul>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">According to a Banner Health study, original manufactured bipolar and ultrasound diathermy devices are reported as defective 4.9 times more frequently than reprocessed devices<sup>2</sup>.&nbsp;</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Dec 01 2023 22:12:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_175606443_1748810276": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "jcr:lastModified": "Wed Oct 20 2021 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 16 2021 20:06:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Sustainably designed&nbsp;</span></span></h2>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Redesigned for Sustainability is our commitment to deliver exceptional products that have less impact on the environment.&nbsp;</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Optimized manufacturing, packaing and replacement components all play a role in reprocessing sustainability.&nbsp;</span></span></li>\n</ul>\n<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">SSS has two product linges that are part of Redesigned for Sustainability; MyoSure™ and LigaSure™.&nbsp;</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Dec 01 2023 21:48:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 20 2021 20:21:56 GMT+0000",
+          "alt": "Sustainable design for MyoSure",
+          "srcFileRef": "/content/dam/stryker/sustainability/images/Redesigned for sustainability_MyoSure.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Dec 01 2023 21:45:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Feb 14 2023 15:18:08 GMT+0000",
+      "jcr:lastModified": "Tue Feb 14 2023 15:18:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "morgan.harder@stryker.com",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "jcr:created": "Thu Nov 30 2023 18:45:56 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">Product spotlight</span> <span class=\"urw-egyptienne\">reprocessed LigaSure™</span></span></p>\n",
+      "jcr:lastModified": "Fri Dec 01 2023 21:48:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_copy_copy_18989_1170670434": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "jcr:lastModified": "Mon Jan 10 2022 16:29:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "morgan.harder@stryker.com",
+          "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Nov 30 2023 16:49:05 GMT+0000",
+          "alt": "LigaSure Quality at SSS",
+          "srcFileRef": "/content/dam/stryker/sustainability/images/SSS LIG Quality Banner.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Dec 01 2023 21:46:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Mon Dec 05 2022 20:42:30 GMT+0000",
+      "title": "connect",
+      "jcr:lastModified": "Mon Dec 05 2022 20:43:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "section_title_883406664": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Tue Feb 07 2023 16:07:43 GMT+0000",
+      "title": "connect",
+      "jcr:lastModified": "Tue Feb 07 2023 16:08:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload_1027551245": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/endoscopy/products/ligasure/resources/Banner Health Case Study.pdf",
+      "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Thu Nov 30 2023 18:41:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:29:36 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:29:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sustainability/reprocessing-and-remanufacturing-/images/sorting image.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 05 2022 20:40:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 05 2022 20:40:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. SSS Internal Data, Nov 2023</p>\r\n<p>2. ASME Journal of Medical Devices, Dec 2015</p>\r\n<p>*As compared to Stryker’s Stair-PRO® and Ferno® EZGLIDE® PowerTraxx® stair chairs.</p>\r\n",
+    "jcr:lastModified": "Tue Aug 18 2026 20:29:28 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Feb 07 2023 16:23:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

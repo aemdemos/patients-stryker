@@ -1,0 +1,462 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3229e381-78eb-4808-9c6e-348f6f11469a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9bb45c44-0c18-48cc-b16e-245d16565a75"
+  ],
+  "jcr:created": "Tue Feb 21 2023 16:28:22 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 21 2023 16:28:23 GMT+0000",
+  "cq:lastModified": "Fri Feb 17 2023 16:59:39 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9bb45c44-0c18-48cc-b16e-245d16565a75",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "a7cc40ce-a877-4d80-94d5-dc92548b531d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 20:00:12 GMT+0000",
+      "text": "<p><b>Walk through the halls of 1941 Stryker Way in Portage, Michigan and you’ll experience a powerful showcase of our legacy and innovation story. You’ll also notice our relentless commitment to creating a healthy workplace where employees can thrive—the reason 1941 earned Michigan’s first-ever WELL-Certified Platinum-level award.</b></p>\n<p>From walking trails to workout areas, from the way meals are cooked to the way sound is dampened, every detail of 1941 Stryker Way was intentionally designed to best support our people and inspire their future innovations. The space wasn’t just designed for work. It was also designed for wellbeing—and that’s something the <a href=\"https://www.wellcertified.com/\" target=\"_blank\">International WELL Building Institute</a> recognized.</p>\n<p>As the International WELL Building Institute website states, “Projects pursuing WELL Certification can earn points based on performance outcomes for various policy, design and operational strategies and can achieve one of four certification levels: Bronze, Silver, Gold or Platinum.” For 1941 Stryker Way, points were determined via written documentation and on-site testing and verification, with the facility earning enough points to be certified at the Platinum level. The building is also Leadership in Energy and Environmental Design (LEED) Silver certified, making it the first building in Michigan to receive both certifications.</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Feb 16 2023 20:54:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_491788699": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Easy",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 20:05:28 GMT+0000",
+      "jcr:lastModified": "Thu Feb 16 2023 20:27:05 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Thu Feb 16 2023 20:44:58 GMT+0000",
+        "alt": "sprout-icon",
+        "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/sprout-icon.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Feb 16 2023 20:45:14 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_4917886992711510430360135": {
+        "jcr:primaryType": "nt:unstructured",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Easy access to daylight, fresh air, and nature</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Filtered water throughout the building</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">High-quality, locally-sourced, and healthy meal options, with free fruit on Tuesdays and Thursdays</span></span></span></p>\n",
+        "jcr:lastModified": "Thu Feb 16 2023 20:23:13 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(76,125,122,1)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_491788699_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "On-site",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 20:05:28 GMT+0000",
+      "jcr:lastModified": "Thu Feb 16 2023 20:27:14 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Thu Feb 16 2023 20:44:58 GMT+0000",
+        "alt": "lifestyle-icon",
+        "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/lifestyle-icon.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Feb 16 2023 20:53:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_491788699_copy2711519083459611": {
+        "jcr:primaryType": "nt:unstructured",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">On-site fitness center with instructor-led classes; plus walking trails, bike storage, etc.</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Signage detailing the health benefits of the space</span></span></span></p>\n",
+        "jcr:lastModified": "Thu Feb 16 2023 20:53:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(175,109,4,1)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_491788699_copy_2084283245": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Meditation/mothers’",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 20:05:28 GMT+0000",
+      "jcr:lastModified": "Thu Feb 16 2023 20:27:23 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Thu Feb 16 2023 20:44:58 GMT+0000",
+        "alt": "mindfullness-icon",
+        "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/mindfullness-icon.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Feb 16 2023 20:53:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_491788699_copy_20842832452711527896547554": {
+        "jcr:primaryType": "nt:unstructured",
+        "leftPadding": "8",
+        "topPadding": "6",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Meditation/mothers’ rooms on every floor</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Sound masking and absorption</span></span></span></p>\n",
+        "jcr:lastModified": "Thu Feb 16 2023 20:25:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "8",
+        "backgroundColor": "rgba(28,86,135,1)",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 16 2023 20:00:12 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p><br>\n“I love coming to work at this facility,” says Kristen Hicks, Senior Portfolio Manager, Neurosurgical. “The conference rooms and open shared spaces help foster greater collaboration and creativity amongst the teams. It’s also rewarding to show customers who come to visit our commitment to the health and wellbeing of all people. It’s a true physical representation of our mission to make healthcare better.” &nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Feb 16 2023 21:42:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 16 2023 21:34:17 GMT+0000",
+      "alt": "Stryker Jan 2020 0023",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/Stryker Jan 2020 0023.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 21:37:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 16 2023 21:34:17 GMT+0000",
+      "alt": "Stryker Jan 2020 0007",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/Stryker Jan 2020 0007.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 21:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy_1825974956": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 16 2023 21:34:17 GMT+0000",
+      "alt": "Stryker Jan 2020 0016",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/Stryker Jan 2020 0016.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 21:38:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_1275203222": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 16 2023 21:38:23 GMT+0000",
+      "alt": "Stryker Exterior 0001",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/Stryker Exterior 0001.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 21:38:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_1275": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 16 2023 21:38:23 GMT+0000",
+      "alt": "Stryker Jan 2020 0001",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/a-building-well-done/images/Stryker Jan 2020 0001.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 21:39:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        }
+      }
+    }
+  }
+}

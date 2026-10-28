@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Trees, landfills and the environment: How we're partnering with customers to address sustainability",
+  "jcr:versionHistory": "29daf68f-fd4b-45de-a09a-ab79fa43419a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "bcdc964c-a220-4573-97f1-ead87ee7c6e7"
+  ],
+  "contentID": "SYK CORP 2019-06-07",
+  "lastPublished": "Tue Aug 13 2019 18:37:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 13 2019 18:37:34 GMT+0000",
+  "cq:lastModified": "Tue Aug 13 2019 18:35:04 GMT+0000",
+  "jcr:baseVersion": "bcdc964c-a220-4573-97f1-ead87ee7c6e7",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Tue Aug 13 2019 18:35:04 GMT+0000",
+  "jcr:uuid": "4380dfeb-424b-4ba8-bc0a-ea6376499c12",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_2102079646": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 17:20:35 GMT+0000",
+      "jcr:lastModified": "Fri Jun 14 2019 17:20:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jun 14 2019 17:20:39 GMT+0000",
+          "jcr:lastModified": "Fri Jun 14 2019 17:20:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jun 14 2019 18:10:46 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/images/features/grass.jpg",
+          "jcr:lastModified": "Fri Jun 14 2019 18:10:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 17:10:25 GMT+0000",
+      "jcr:lastModified": "Fri Jun 14 2019 17:10:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Jun 14 2019 17:10:29 GMT+0000",
+          "text": "<p>We sit down with senior portfolio manager, <span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dorothy <span style=\"color: #000000;\">Ma</span>shburn</span></span></span>, at our Sustainability Solutions division to learn how its programs positively impact the environment and communities we serve.<br>\n&nbsp;</p>\n<p><span class=\"futura-bold\">According to a recent article in Forbes, landfills in the U.S. are estimated to reach capacity by the year 2036<sup>1</sup>. What is the Sustainability Solutions division doing to divert waste from landfills?</span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dorothy:</span></span></span> In the last three years we’ve helped divert just shy of 40 million pounds of waste from landfills.<sup>2</sup> We do this by safely reprocessing products which might typically be single-use. This allows them to be reused and extends the lifecycle of the product lines. The reprocessed devices are regulated for safety under the FDA in the U.S., and customers know they’re receiving a product which meets our quality standards.</p>\n<p>In addition to reprocessing, we partner with a waste-to-energy company to convert end-of-life devices from our Phoenix location into synthetic gas. Through this partnership we will divert around 25,000 lbs. per month of waste from the landfills.<br>\n&nbsp;</p>\n<p><span class=\"futura-bold\">75% of adults in the U.S. are particularly concerned about helping the environment<sup>3</sup>. Do you find this plays a role in a facility’s choice to partner with us?</span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dorothy:</span></span></span> Yes. We make it simple. Our solutions help hospitals reduce waste through reprocessing and remanufacturing. Our Save Simply program increases the return on the partnership for our customers through streamlined ordering, which bundles the reprocessed devices with new devices. Save Simply offers the peace-of-mind that you’re making a choice which helps the environment, while also reducing supply expenses.<br>\n&nbsp;</p>\n<p><span class=\"futura-bold\">Stryker recently donated more than 14,000 trees to the National Forest Foundation. Why?</span></p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dorothy:</span></span></span> Our Products for the Planet program provides hospitals with the opportunity to contribute to the restoration of National Forests by achieving annual collection goals for certain single-use devices. We partner with the National Forest Foundation to plant trees in areas that are in the most need, based on environmental concerns. This past year the program grew over 22% and we are on track to plant 80,000 trees in 2019.<br>\n&nbsp;</p>\n<p><span class=\"futura-bold\">How does your team bring together Stryker’s mission with the sustainability goals of healthcare providers?</span></p>\n<p><span style=\"color: #000000;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Dorothy:</span></span></span> </span>Our mission is to make healthcare better by working with our customers to make the world better for patients, caregivers, employees and the environment. Our customers told us they needed a way to reduce and reuse without sacrificing outcomes. We deliver solutions that address this need through reprocessing that puts quality first.&nbsp; &nbsp;&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jun 19 2019 18:19:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Mon Jul 01 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Jul-2019",
+    "jcr:lastModified": "Tue Jul 30 2019 17:45:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Fri Jun 14 2019 17:08:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p><span class=\"fontsize-2em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Trees, landfills and the environment:</span></span> <br>\n </span></span></p>\n<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">How we're partnering with customers to address sustainability</span></span></p>\n",
+    "jcr:lastModified": "Wed Jun 19 2019 18:36:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/features/grass.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Harrison, K. The Philadelphia Eagles Are Addressing The Landfill Crisis With This Tech. Your Company Could Too. Forbes.com. https://www.forbes.com/sites/kateharrison/2019/04/22/the-philadelphia-eagles-are-addressing-the-landfill-crisis-with-this-tech-your-company-could-too/#5478b57631a8. Published April 22, 2019. Accessed May 10, 2019.&nbsp; &nbsp;&nbsp;<br>\r\n<br>\r\n</li>\r\n<li>Calculation based on data reported in Annual Reviews from 2018, 2017 and 2016.&nbsp; &nbsp;&nbsp;<br>\r\n<br>\r\n</li>\r\n<li>Anderson, M. For Earth Day, here’s how Americans view environmental issues. Pewresearchcenter.org. https://www.pewresearch.org/fact-tank/2017/04/20/for-earth-day-heres-how-americans-view-environmental-issues/. Published April 20, 2017. Accessed May 6, 2019.&nbsp; &nbsp;&nbsp;</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Jun 14 2019 18:07:24 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

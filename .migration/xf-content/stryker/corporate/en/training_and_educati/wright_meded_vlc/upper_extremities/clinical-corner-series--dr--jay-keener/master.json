@@ -1,0 +1,150 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Clinical Corner Series: Dr. Jay Keener",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3d637724-2855-441f-9190-05a48f8ee7b7",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f3c93cca-a726-4401-ac4b-22a14c985798"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:54:50 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 20:54:55 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:54:57 GMT+0000",
+  "cq:lastModified": "Fri Mar 17 2023 17:20:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f3c93cca-a726-4401-ac4b-22a14c985798",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:54:50 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4a565b29-5b68-4dad-8278-72fc303eeb00",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/AP-013581B_jay_keener_-_publication (1080p).mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/AP-013581B_jay_keener_-_publication (1080p)-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Sep 23 2022 19:09:33 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Dr. Jay Keener discusses the effects of Range of Motion (ROM) in Reverse Total Shoulder Arthroplasty (RTSA) utilizing different positions of both baseplate and humeral components in severely retroverted glenoids utilizing Blueprint® Preoperative Planning software.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Clinical Corner Series: Dr. Jay Keener",
+      "jcr:lastModified": "Fri Sep 23 2022 19:10:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Mar 17 2023 17:17:14 GMT+0000",
+      "jcr:lastModified": "Fri Mar 17 2023 17:20:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload_v1",
+      "internalResources": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "documentPath": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/resources/upper-extremities/AP-013800B Keener_Clinical Article Summary.pdf",
+          "thumbnailPath": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/resources/upper-extremities/AP-013800B Keener_Clinical Article Summary.pdf"
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "11"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 27 2022 15:31:12 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">J Shoulder Elbow Surg. 2018 Feb;27(2):339-349.The abstract can be found at: https://doi.org/10.1016/j.jse.2017.09.011</span></p>\n<p><span class=\"fontsize-8em\">AP-016249A</span></p>\n",
+      "jcr:lastModified": "Wed Mar 15 2023 19:16:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  }
+}

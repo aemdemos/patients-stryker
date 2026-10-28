@@ -1,0 +1,148 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Fall Reduction Tool Calculator",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "243cb580-7389-4ccd-8aad-100fb9e54425",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+  "jcr:predecessors": [
+    "5d54f220-1c36-4a70-8d45-fd68dc1fc5c9"
+  ],
+  "contentID": "MKT LIT-2012 25 JUN 2020 REV A",
+  "lastPublished": "Wed Aug 19 2026 19:26:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 19:26:11 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 19:26:13 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 19:26:06 GMT+0000",
+  "jcr:description": "Identify the potential savings your facility could realize by reducing costly patient falls.",
+  "jcr:baseVersion": "5d54f220-1c36-4a70-8d45-fd68dc1fc5c9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:26:10 GMT+0000",
+  "pageTitle": "Fall Reduction Tool Calculator",
+  "jcr:lastModified": "Tue Jul 28 2020 21:01:44 GMT+0000",
+  "jcr:uuid": "6401921b-dbae-4b03-9ba9-0313a0e90876",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "Fall Reduction Tool Calculator",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "hero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "subhead": "Calculate potential savings over time",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Thu Apr 23 2020 18:10:28 GMT+0000",
+      "headColor": "rgb(255,181,0)",
+      "head": "<p>Fall Reduction Tool Calculator</p>\r\n",
+      "content": "Identify the potential savings your facility could realize by reducing costly patient falls.",
+      "jcr:lastModified": "Thu Apr 23 2020 18:11:20 GMT+0000",
+      "compImageRef": "/content/dam/stryker/acute-care/images/calculator_guaranteePrograms.jpg",
+      "sling:resourceType": "stryker/components/content/hero",
+      "textIsRich": "true"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Thu Apr 23 2020 18:11:42 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2vw\">Calculate Potential Savings</span></span></h3>\r\n",
+      "line2": "Please fill in ALL fields with your specific data, click the &quot;Calculate&quot; button, and view your facility's potential 1-year and 5-year savings.",
+      "jcr:lastModified": "Thu Apr 23 2020 18:12:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "remotecomponent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html|https://microapp.stryker.com/trauma-pangea-femur/|https://microapp.stryker.com/fa-prostep/",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion|trauma-pangea-femur|fa-prostep",
+      "hiddenSelCompId": "Fall reduction calculator",
+      "componentUrl": "https://microapp.stryker.com/fall-reduction-calculator/index.html",
+      "jcr:created": "Thu Apr 23 2020 18:12:26 GMT+0000",
+      "hiddenSelCompUrl": "https://microapp.stryker.com/fall-reduction-calculator/index.html",
+      "jcr:lastModified": "Thu Apr 23 2020 18:12:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/remotecomponent"
+    },
+    "cols_554544993_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Mon Dec 21 2020 16:46:42 GMT+0000",
+      "jcr:lastModified": "Mon Dec 21 2020 16:46:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1195287680_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+      "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:29:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-3-5-vw\">Connect with <span class=\"futura-bold\">Acute Care</span> today</span></h2>\r\n",
+          "jcr:lastModified": "Tue Mar 16 2021 17:40:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(182,114,25,1)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Mar 16 2021 17:31:04 GMT+0000",
+      "jcr:lastModified": "Tue Mar 16 2021 17:31:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:30:33 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Wed Aug 19 2026 19:26:06 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

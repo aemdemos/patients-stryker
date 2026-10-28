@@ -1,0 +1,77 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Andy Pierce",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8b6dd297-7f6a-4543-98b7-d716e7db8149",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "hidePublicationDate": "true",
+  "jcr:predecessors": [
+    "a84008b8-c1b5-4868-95ce-b14a347ae410"
+  ],
+  "lastPublished": "Mon Jan 26 2026 22:12:28 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jan 26 2026 22:12:28 GMT+0000",
+  "cq:lastReplicated": "Mon Jan 26 2026 22:12:31 GMT+0000",
+  "cq:lastModified": "Mon Jan 26 2026 22:12:18 GMT+0000",
+  "jcr:baseVersion": "a84008b8-c1b5-4868-95ce-b14a347ae410",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:11:16 GMT+0000",
+  "pageTitle": "Andy Pierce",
+  "jcr:lastModified": "Mon Jan 26 2026 22:12:18 GMT+0000",
+  "jcr:uuid": "7c98be8e-6856-4af7-8098-18c1281be9af",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "navTitle": "Andy Pierce",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_998696161_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_1122693646": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
+      "text": "Andy Pierce Group President, MedSurg and Neurotechnology Andy Pierce became Group President, MedSurg and Neurotechnology in August 2019. Andy oversees our Endoscopy, Instruments, Medical, Neurovascular and Peripheral Vascular Divisions. He joined Stryker in 1996 and has held various marketing, sales and product management roles in our Instruments Division and CMF Business, later moving into leadership positions within CMF. Andy became the Vice President and General Manager of CMF in 2008, Vice President and General Manager for Stryker's Surgical and Neuro Spine ENT Business Units in 2009 and in 2013, President of the Endoscopy Division. In 2018, he served as Group President, MedSurg and assumed responsibility for the Neurotechnology Group in 2019. From 2021 to 2025, he was also responsible for the Asia Pacific Region and Enterprise Strategy Function. Andy graduated from Hope College, where he earned a bachelor's degree in business, psychology and political science. Andy also serves on the Board of Directors for Envista Holdings (NYSE: NVST). COMM-GSNPS-SYK-2901950",
+      "jcr:lastModified": "Mon Jun 06 2022 15:58:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our_leadership/5238/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-leadership/5238/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

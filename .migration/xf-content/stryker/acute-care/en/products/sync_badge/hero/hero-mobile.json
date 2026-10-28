@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "add0336d-cc57-4a95-b2d7-740d50ff5014",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6d6b286e-ff56-40dd-9251-1707b40d0316"
+  ],
+  "lastPublished": "Fri Feb 21 2025 16:01:44 GMT+0000",
+  "jcr:created": "Fri Feb 21 2025 16:01:44 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 21 2025 16:01:47 GMT+0000",
+  "cq:lastModified": "Thu Jan 16 2025 17:06:35 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6d6b286e-ff56-40dd-9251-1707b40d0316",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jan 16 2025 17:06:48 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "9166b6b9-0ee2-4cfd-bf0e-6ed5080faeea",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Dec 20 2024 14:15:41 GMT+0000",
+      "alt": "Sync Badge",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/sync-badge/images/sync-badge-angled-profile_1200x680.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jan 16 2025 17:06:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

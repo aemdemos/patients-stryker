@@ -1,0 +1,138 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Target Helical Detachable Coils hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5b50e7fa-39c2-48ba-88ad-01ed8a835aa3",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "94edba1c-fb16-4581-85ca-d3134b2c4b1c"
+  ],
+  "lastPublished": "Thu Feb 27 2025 22:56:02 GMT+0000",
+  "jcr:created": "Thu Feb 27 2025 22:56:02 GMT+0000",
+  "cq:lastReplicated": "Thu Feb 27 2025 22:56:05 GMT+0000",
+  "cq:lastModified": "Fri Feb 21 2025 02:26:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "94edba1c-fb16-4581-85ca-d3134b2c4b1c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jan 08 2025 16:51:11 GMT+0000",
+  "jcr:uuid": "6917a47d-2506-4922-aafb-37e2f4b15d33",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 25 2019 20:16:46 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Fri Oct 25 2019 20:16:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy488896": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Target®",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Aug 21 2024 13:28:24 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text_copy_copy4888965587749565636919": {
+        "jcr:primaryType": "nt:unstructured",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\">Target<sup>®</sup>&nbsp;Helical Detachable Coil<br>\n </span></span></span></span></span><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span style=\"color: #000000;\">A versatile shape for a wide range of cases</span></span></span></span></span></p>\n<p>Target Helical Detachable Coils offer excellent versatility, featuring a broad selection of sizes and varying degrees of softness to accommodate a wide range of clinical cases.<br>\n<br>\n</p>\n",
+        "jcr:lastModified": "Fri Feb 21 2025 02:22:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "curatedcta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "ctaLinkType": "deep",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Wed Dec 04 2024 14:23:44 GMT+0000",
+        "CTATitle": "CONTACT US",
+        "ctaDeepLinkID": "contact-us",
+        "jcr:lastModified": "Wed Dec 04 2024 14:24:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgb(255,181,0)"
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Fri Sep 27 2019 19:48:29 GMT+0000",
+      "alt": "Target-360_primary (1)",
+      "srcFileRef": "/content/dam/stryker/neurovascular/products/target-helical-detachable-coils/images/Target-Coil-Hel copy.png",
+      "jcr:lastModified": "Wed Aug 21 2024 15:29:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

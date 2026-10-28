@@ -1,0 +1,40 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Hero Banner 2",
+  "jcr:versionHistory": "a71613e7-5782-4055-a55a-db854ac142c4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "08c1d54b-be54-43b0-a192-bfa2e86170c8"
+  ],
+  "jcr:created": "Mon Oct 18 2021 19:22:58 GMT+0000",
+  "cq:lastModified": "Mon Oct 18 2021 15:39:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "08c1d54b-be54-43b0-a192-bfa2e86170c8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "138f6c5f-2b26-4c2d-8f47-130b344d03c6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jul 01 2020 17:57:59 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/care-settings/asc/heros/ASC-Update_V2.jpg",
+      "jcr:lastModified": "Mon Oct 18 2021 15:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

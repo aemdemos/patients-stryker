@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "903ce636-3020-41e0-a1df-99b889cde334",
+  "jcr:predecessors": [
+    "a0910954-5e0e-4f2b-8fb3-31fb48c65f30"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:53 GMT+0000",
+  "jcr:baseVersion": "a0910954-5e0e-4f2b-8fb3-31fb48c65f30",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "62a62d86-6ade-410b-8091-85e2b46be3eb",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastReplicated": "Wed Feb 11 2026 15:32:10 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:01:36 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Fri Feb 06 2026 21:29:51 GMT+0000",
+    "lastFragmentSave": "Fri Feb 06 2026 21:29:51 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/eemea/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Wed Feb 11 2026 15:32:07 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Fri Feb 06 2026 21:29:51 GMT+0000",
+        "Emails@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "addressBlock1": "<p>Stryker ESCS BV - Dubai Branch<br>\nCentral Park Towers – Office Tower - Level 25 – DIFC<br>\nDubai<br>\nUnited Arab Emirates</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "BusinessHomePage": "<p><a href=\"/content/stryker/ae/en/about/our-locations.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "locationName": "Middle East",
+        "ShortDesc": "<p><b>Covering sales for Bahrain, Iran, Israel, Jordan, Kuwait, Malta, Morocco, Oman, Qatar, Saudi Arabia, Tunisia.</b></p>\n",
+        "PhoneNumberLabel": "Phone and fax",
+        "ShortDesc@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "PhoneNumbers": "<p>971 4 205 4222<br>\n971 4 205 4288 Fax</p>\n<p><b>Customer support</b><br>\n971 4 205 4299 Fax</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 09 2021 16:51:44 GMT+0000",
+        "BusinessHomePageLabel": "UAE Homepage",
+        "Emails": "<p>info.mea@stryker.com</p>\n"
+      }
+    }
+  }
+}

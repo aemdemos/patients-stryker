@@ -1,0 +1,945 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Flexible and retrograde reaming system",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "VersiTomic",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "691bedd1-89ba-4907-ada8-5abb706772dd",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/Versitomic-Thumb.jpg",
+  "jcr:predecessors": [
+    "e4c006b9-3a87-4814-8c2b-1c8b950e196b"
+  ],
+  "contentID": "Literature Number: 1000903919, Rev. A",
+  "lastPublished": "Wed Aug 19 2026 14:08:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 14:08:55 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 14:08:57 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 14:08:46 GMT+0000",
+  "jcr:description": "The VersiTomic ligament reconstruction system allows for simplified flexible and retrograde options for creating independent bone tunnels during ACL, PCL and meniscal root reconstruction. No matter your technique, we've got you covered. ",
+  "jcr:baseVersion": "e4c006b9-3a87-4814-8c2b-1c8b950e196b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:49:22 GMT+0000",
+  "pageTitle": "VersiTomic",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/procedure-(knee)/meniscal-root-repair",
+    "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+    "stryker:content-type/product",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/product-type/instrumentation",
+    "stryker:capability/sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:product/sports-medicine/versitomic-flexible-reaming-system",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:custom/sports-medicine/procedure/meniscal-root-repair",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/knee-sports-medicine"
+  ],
+  "jcr:lastModified": "Wed Dec 22 2021 15:08:28 GMT+0000",
+  "jcr:uuid": "a838c1b7-1834-4d38-be9f-dcff7f3ad5f1",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "carouselOptionAutoplay": "true",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri May 28 2021 18:44:40 GMT+0000",
+      "carouselOptionSpeed": "3977",
+      "transitionEffects": "true",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "firstItem": "first-item",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Tue Jun 22 2021 18:04:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "carouselOptionInfinite": "true",
+      "alignHCP": "hcp-left",
+      "localNav": "localpage_nav_Overlay",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_114617367": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-3/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/versitomic-flexible/hero-image-3/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri May 28 2021 18:45:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri May 28 2021 21:42:25 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Fri May 28 2021 20:46:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">VersiTomic</span></span></h1>\r\n<h2>Flexible and retrograde reaming system</h2>\r\n",
+              "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1vw\">ACL, PCL and meniscal root reconstruction&nbsp;</span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: rgb(178,180,174);\"><span class=\"fontsize-2-5-vw\">No matter your technique,</span></span></span></span><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\"><br>\r\n </span></span><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">we've got you covered.</span></span></span></p>\r\n",
+              "jcr:lastModified": "Tue Jun 22 2021 17:59:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-2/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/versitomic-flexible/hero-image-2/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri May 28 2021 18:44:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri May 28 2021 21:41:18 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Fri May 28 2021 20:45:58 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">VersiTomic RR</span></span></h1>\r\n<h2>Retrograde reaming </h2>\r\n",
+              "line2": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: #ffb500;\">Confidence </span><span style=\"color: #b2b4ae;\">from the outside in</span></span></span>",
+              "jcr:lastModified": "Tue Jun 22 2021 18:00:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "carouselslide_605528395": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/versitomic_flexible_/hero-image-1/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/versitomic-flexible/hero-image-1/master",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri May 28 2021 18:45:01 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri May 28 2021 21:39:10 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "jcr:created": "Fri May 28 2021 20:45:53 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">VersiTomic</span></span></h1>\r\n<h2>Flexible reaming</h2>\r\n",
+              "line2": "<span class=\"fontsize-2-5-vw\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Bending the rules<span style=\"color: #b2b4ae;\"> in ACL and PCL reconstruction</span></span></span></span>",
+              "jcr:lastModified": "Tue Jun 22 2021 18:01:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "description": "ACL, PCL and meniscus root reconstruction",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon May 24 2021 20:19:55 GMT+0000",
+      "title": "Retrograde reaming",
+      "jcr:lastModified": "Mon May 24 2021 20:24:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1957439682": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "annie.werner@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Wed Feb 24 2021 13:30:13 GMT+0000",
+      "jcr:lastModified": "Wed Feb 24 2021 13:30:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 24 2019 19:14:59 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Sep 13 2022 17:01:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/VersiTomic RR animation2022.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/VersiTomic RR animation2022-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Sep 13 2022 17:01:32 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "annie.werner@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Feb 24 2021 13:30:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\">Confidence from the outside in</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><b>Discover the reliability in retrograde</b> with consistent tunnel trajectory, our robust, truly fluted reamer shaft and self-deploying flat cutting tooth.</span></p>\n",
+          "jcr:lastModified": "Fri May 28 2021 16:23:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_688481824": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "annie.werner@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Feb 24 2021 13:44:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">The advanced design</span></span></span>",
+      "jcr:lastModified": "Fri May 28 2021 16:19:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullwidthimage_1804966505": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "layoutOptions": "col-sm-3 pull-right",
+      "backgroundImageRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/versitomic-rr-full.png",
+      "jcr:created": "Fri May 28 2021 16:18:31 GMT+0000",
+      "alt": "VersiTomic RR features",
+      "jcr:lastModified": "Thu Nov 17 2022 18:30:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Nov 17 2022 17:54:58 GMT+0000",
+      "jcr:lastModified": "Thu Nov 17 2022 17:54:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Nov 17 2022 17:54:34 GMT+0000",
+          "jcr:lastModified": "Thu Nov 17 2022 17:54:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:36:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Nov 17 2022 17:54:43 GMT+0000",
+              "alt": "trocar-tip-bubble",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/trocar-tip-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 17 2022 18:26:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b>Sharp trocar tip</b></p>\n<p>Optimal for tunnel creation</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:37:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:36:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Nov 17 2022 17:54:43 GMT+0000",
+              "alt": "selfdeploying-cutter-bubble2",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/selfdeploying-cutter-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 17 2022 18:26:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b>Self-deplying flat cutting tooth</b></p>\n<p>Designed to create clean bone tunnels</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 18:26:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:36:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Nov 17 2022 17:54:43 GMT+0000",
+              "alt": "proximity-markings-bubble2",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/proximity-markings-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 17 2022 18:26:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b>Proximity markings</b></p>\n<p>10mm safety reference approaching cortex</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 18:27:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp; &nbsp;</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:36:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Nov 17 2022 17:54:43 GMT+0000",
+              "alt": "kwire-bubble2",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/kwire-bubble2.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Nov 17 2022 18:26:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "10",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "10",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Nov 17 2022 17:55:25 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><b>Removable k-wire</b></p>\n<p>Cannulation for suture passage</p>\n",
+              "jcr:lastModified": "Thu Nov 17 2022 19:37:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "text_1651110227": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Nov 17 2022 18:35:07 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Nov 17 2022 18:35:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Sep 13 2022 15:17:18 GMT+0000",
+      "jcr:lastModified": "Tue Sep 13 2022 15:17:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "All-Inside ACL reconstruction utilizing a quad tendon autograft and Stryker’s VersiTomic RR with Dr. B. Christian Balldin*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Dec 01 2021 17:51:11 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Jul 08 2022 16:41:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "jcr:title": " All-Inside ACL reconstruction utilizing a quad tendon autograft and Stryker’s VersiTomic RR with Dr. B. Christian Balldin*",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/Balldin_all-inside_ACL-recon.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Balldin_all-inside_ACL-recon-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Jul 08 2022 16:40:54 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "All-inside ACL reconstruction technique using Stryker's VersiTomic RR with Dr. Hunter Greene*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Dec 01 2021 17:51:11 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Jul 08 2022 16:39:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "jcr:title": "All-inside ACL reconstruction technique using Stryker's Versitomic RR with Dr. Hunter Greene",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/All inside ACL surgical technique video utilizing Stryker VersiTomic RR.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/All inside ACL surgical technique video utilizing Stryker VersiTomic RR-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Jul 08 2022 16:37:08 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "ACL reconstruction utilizing quad autograft and Stryker’s VersiTomic RR with Dr. Braden Mayer*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Dec 01 2021 17:51:11 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Sep 13 2022 17:01:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/Dr. Braden Mayer - Quad autograft all-inside ACL reconstruction surgical technique video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr. Braden Mayer - Quad autograft all-inside ACL reconstruction surgical technique video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Sep 13 2022 17:01:18 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols3_1643264036": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Dec 22 2022 15:50:50 GMT+0000",
+      "jcr:lastModified": "Thu Dec 22 2022 15:50:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "ACL reconstruction all-inside with quad autograft utilizing Stryker's AIR+, VersiTomic flexible reaming, VersiTomic RR and ProCinch adjustable loop with Dr. James Genuario*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Nov 17 2022 18:44:39 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Nov 17 2022 18:44:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/All Inside ACL reconsruction with quad tendon autograft and AIR plus by Dr Jamie Genuario.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/All Inside ACL reconsruction with quad tendon autograft and AIR plus by Dr Jamie Genuario-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Nov 17 2022 18:57:22 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Arthroscopic ACL reconstruction using an all-inside technique with hamstring allograft with Dr. Jack Skendzel*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Nov 17 2022 18:44:39 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Dec 22 2022 15:50:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/videos/Dr Skendzel presents a hamstring ACL reconstruction2.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr Skendzel presents a hamstring ACL reconstruction2-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Dec 22 2022 15:50:30 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "section_title_1351749757": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "description": "Maximum versatility in achieving optimal, anatomic results.1,2",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Mon May 24 2021 20:25:15 GMT+0000",
+      "title": "Flexible reaming",
+      "jcr:lastModified": "Tue Jun 08 2021 22:20:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/flexible_reamer.png",
+      "jcr:created": "Wed Oct 02 2019 17:02:26 GMT+0000",
+      "alt": "versitomic flexible reamer",
+      "jcr:lastModified": "Wed Oct 02 2019 17:30:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_859174137": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "90px",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Wed Oct 02 2019 17:25:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\">Bending the rules in ACL and PCL reconstruction</span></span></span></h3>\r\n",
+          "line2": "<p><span class=\"fontsize-1vw\">Designed to support safe<span style=\"background-color: transparent;\">&nbsp;intra-articular placement with longer tunnels and reduced risk of posterior wall blowout, due&nbsp;to its eccentric cutting&nbsp;</span>flute head and flexible&nbsp;puzzle piece shaft.3,4<sup>&nbsp;</sup></span></p>\r\n<p><span class=\"fontsize-1vw\"><span style=\"background-color: transparent;\">The flexible system can be utilized through an AM or TT approach without restriction in tunnel placement and the need for hyperflexion.</span></span></p>\r\n<p><span class=\"fontsize-1vw\"><span style=\"background-color: transparent;\">Reamers are available in&nbsp;4.5mm–12.0mm sizes in 0.5mm increments.</span></span></p>\r\n",
+          "jcr:lastModified": "Tue Jun 08 2021 22:21:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "90px"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 24 2019 19:14:51 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2019 19:14:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Jul 24 2019 19:14:56 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Jul 24 2019 19:15:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/resources/VersiTomic Animation.m4v",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/VersiTomic Animation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jul 24 2019 19:16:04 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/resources/VersiTomic flexible reamer brochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/resources/ACL Technique Guide.pdf",
+        "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/resources/PCL Technique Guide.pdf"
+      ],
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Aug 13 2019 20:27:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prods",
+      "jcr:created": "Tue Jun 03 2025 17:10:57 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Tue Jun 03 2025 17:11:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jun 03 2025 17:11:31 GMT+0000",
+      "jcr:lastModified": "Tue Jun 03 2025 17:11:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 03 2025 17:11:35 GMT+0000",
+          "CTATitle": "VersiTomic ISI system",
+          "CTAImageAltText": "versitomic-isi-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 21:47:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/versitomic-isi-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/versitomic-isi"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 03 2025 17:11:37 GMT+0000",
+          "CTATitle": "Procinch suspensory fixation adjustable loop",
+          "CTAImageAltText": "procinch-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 21:49:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/procinch-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/procinch-suspensory-fixation-adjustable-loop"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 14:08:31 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 14:08:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>The VersiTomic ligament reconstruction system allows for simplified flexible and retrograde options for creating independent bone tunnels during ACL, PCL and meniscal root reconstruction.</p>\r\n",
+    "jcr:lastModifiedBy": "annie.werner@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Tue Jun 08 2021 22:19:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "openInNewWindow": true,
+    "linkUrl": "https://www.youtube.com/watch?v=Q2RhlHWYP6A",
+    "jcr:lastModified": "Thu Jun 27 2019 21:19:36 GMT+0000",
+    "linkNewWindowOverride": "1",
+    "linkPath": "",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/versitomicflexiblereamingandinterferencescrewsystem/images/Versitomic-Thumb.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 14:07:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Stryker consultant</p>\r\n<ol>\r\n<li>Ho JY et al. Equal kinematics between central anatomic single-bundle and double-bundle anterior cruciate ligament reconstructions. Arthroscopy, 25:464-472, 2009.</li>\r\n<li>Steiner ME et al. Independent drilling outperforms conventional trans-tibial drilling in anterior cruciate ligament reconstruction. J Knee Surg, 22:171-6, 2009.</li>\r\n<li>Steiner and Smart, Flexible Instruments Outperform Rigid Instruments to Place Anatomic Anterior Cruciate Ligament Femoral Tunnels Without Hyperflexion. Arthroscopy, 28(6):835-843, 2012.</li>\r\n<li>Fitzgerald J. et al. Anterior Cruciate Ligament Reconstruction Using a Flexible Reamer System. Orthopaedic Journal of Sports Medicine, 3(7), 2015.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Aug 19 2026 14:08:26 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

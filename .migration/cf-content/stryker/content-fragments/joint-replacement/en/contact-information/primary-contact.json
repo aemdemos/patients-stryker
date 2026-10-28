@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "a668312d-a0a9-4bdb-9bb1-35e3c9665e82",
+  "jcr:predecessors": [
+    "3cec6b95-b3fe-4cb2-9980-af503c0eb46c"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:48 GMT+0000",
+  "jcr:baseVersion": "3cec6b95-b3fe-4cb2-9980-af503c0eb46c",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "24e01548-55eb-4a81-af7e-8e587b9e779f",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Wed Jan 03 2024 16:39:32 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:02:23 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Wed Jan 03 2024 16:39:26 GMT+0000",
+    "lastFragmentSave": "Wed Jan 03 2024 16:39:26 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/joint-replacement/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Wed Jan 03 2024 16:39:30 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "addressBlock1": "<p>325 Corporate Drive<br>\nMahwah, NJ 07430<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"https://www.stryker.com/us/en/joint-replacement/contact.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "locationName": "Joint Replacement",
+        "ShortDesc": "<p>Our joint replacement solutions offer you the combination of market-leading implants for hips and knees, along with Mako Robotic-Arm Assisted Technology and Performance Solutions consultative services for the orthopaedic service line.</p>\n",
+        "PhoneNumberLabel": "Phone",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jan 03 2024 16:39:26 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "PhoneNumbers": "<p>201 831 5000<br>\n201 831 6288 Fax</p>\n<p><b>Customer support</b><br>\n877 946 9678 Toll Free<br>\n866 672 7747 Toll Free OR Assist Hotline</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 14:21:06 GMT+0000",
+        "BusinessHomePageLabel": "Joint Replacement Homepage"
+      }
+    }
+  }
+}

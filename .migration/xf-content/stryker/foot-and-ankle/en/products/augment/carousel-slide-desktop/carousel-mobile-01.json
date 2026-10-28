@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "carousel mobile 01",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dc05f542-8a56-4298-a360-68c8521e987c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6a3f49f2-aafc-44f1-ab9c-ec4af0c0ea09"
+  ],
+  "lastPublished": "Thu Sep 12 2024 13:53:53 GMT+0000",
+  "jcr:created": "Thu Sep 12 2024 13:54:02 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 12 2024 13:54:07 GMT+0000",
+  "cq:lastModified": "Mon Aug 19 2024 20:34:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6a3f49f2-aafc-44f1-ab9c-ec4af0c0ea09",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Sep 12 2024 13:53:53 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "c0247011-0ad0-4f66-b82b-acb1f08f6f0f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Aug 19 2024 18:09:19 GMT+0000",
+      "alt": "fa-augment-carousel-image-hero-00",
+      "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/augment/images/fa-augment-carousel-image-hero-00-mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Aug 19 2024 20:34:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

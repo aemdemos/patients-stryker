@@ -1,0 +1,574 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Mobile application",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vocera Vina",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fdc86b2f-50e5-43f8-a303-c0326c911d7f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Medical professionals reviewing patient information using the Vocera Vina app",
+  "thumbnailFileReference": "/content/dam/stryker/acute-care/products/vocera-engage/images/nurse-with-doctor-pointing-at-mobile-device.png",
+  "jcr:predecessors": [
+    "617d39db-9067-46b4-abe7-3cd29c3aff85"
+  ],
+  "contentID": "M0000015117 REV AA",
+  "lastPublished": "Mon Feb 02 2026 19:54:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 19:55:00 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 19:55:05 GMT+0000",
+  "cq:lastModified": "Mon Feb 02 2026 15:23:48 GMT+0000",
+  "jcr:description": "Help optimize patient safety by enabling clinicians to see the most important communications first in an intuitive, customizable experience.",
+  "jcr:baseVersion": "617d39db-9067-46b4-abe7-3cd29c3aff85",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:13:02 GMT+0000",
+  "pageTitle": "Vocera Vina",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/smart-care/vocera-vina",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/smart-hospital",
+    "stryker:business-unit/smart-care",
+    "stryker:specialty/clinical-communication",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/smart-care/product-type/clinical-communication"
+  ],
+  "jcr:lastModified": "Fri Jan 02 2026 20:54:01 GMT+0000",
+  "jcr:uuid": "12d30b09-037e-47a3-afa1-d9a04ac874ff",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "imageAlt": "Healthcare employees reviewing patient information using the Vocera Vina app ",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Wed Jul 05 2023 13:50:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jun 01 2023 16:44:27 GMT+0000",
+      "jcr:lastModified": "Thu Jun 01 2023 16:44:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed May 31 2023 20:55:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2 style=\"text-align: center;\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Find people quickly</span></span> and <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">communicate faster</span></span></b>.</span></span></h2>\r\n",
+          "jcr:lastModified": "Fri Jun 09 2023 18:48:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "2",
+          "backgroundColor": "rgba(84,88,87,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_87926059": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Jun 08 2023 19:51:24 GMT+0000",
+      "jcr:lastModified": "Thu Jun 08 2023 19:51:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 16:04:47 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 16:04:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 16:04:55 GMT+0000",
+          "alt": "Vocera Vina communication example on a mobile phone",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_screen_conversation.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 05 2023 13:51:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 02 2023 15:51:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Prioritize patient safety with ranking by priority</span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">View calls, messages, and notifications in order of priority, and get a more complete picture of a situation faster. Receive prioritized communications with patient, event, and care team context, enabled by interoperability with the clinical and operational systems you use and according to rules set by your organization.&nbsp;&nbsp;<br>\n</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Priority ranking within Vina is determined by whether a communication is a notification with urgent, high, or medium priority, a patient-related notification or conversation, a message that requires acknowledgement, or a message someone has read or responded to.</span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:48:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Jun 02 2023 19:39:53 GMT+0000",
+          "CTATitle": "Connect with an expert",
+          "ctaDeepLinkID": "marketo-form",
+          "jcr:lastModified": "Fri Jun 02 2023 19:40:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 16:08:20 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 16:08:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 16:04:55 GMT+0000",
+          "alt": "Screenshot of a communication between healthcare colleagues using Vocera Vina",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_zebra_screen_patient-info.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 05 2023 13:51:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Jun 02 2023 15:51:35 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Find people quickly, even across a geographically dispersed organization<br>\n </span><span class=\"urw-egyptienne\">Access a unified directory encompassing your whole healthcare system. Navigate intuitively or use voice commands to call by saying the name, role, or group of whom you want to reach from anywhere in the application.&nbsp;</span></span></p>\n<p><span class=\"fontsize-8em\">&nbsp;</span></p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Help enable uninterrupted focus on critical patient-care activities<br>\n </span><span class=\"urw-egyptienne\">Divert calls into voicemail or allow incoming calls and notifications to automatically escalate to other people or groups. When a matter is truly urgent, a caller can break through “Do Not Disturb” mode. If the intended recipient of a communication or notification isn’t available, the notification will go to the next person in the escalation path.**</span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">See the full history of calls, messages and notifications pertaining to a patient or event, linked within a single conversational thread&nbsp;<br>\n </span><span class=\"urw-egyptienne\">Help offload the need to retrieve, retain, and record information and strengthen the integrity of the information chain</span>.&nbsp;</span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Drive accountability and responsibility with an audit trail for messages&nbsp;<br>\n </span><span class=\"urw-egyptienne\">Enable a sender to request that a recipient acknowledge receipt. One tap says, “Got it” and the communication loop is closed.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:48:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_451074105": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Fri Jun 02 2023 19:39:08 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Fri Jun 02 2023 19:39:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1306361601": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Sat Jun 03 2023 14:44:32 GMT+0000",
+      "jcr:lastModified": "Sat Jun 03 2023 14:44:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Sat Jun 03 2023 14:44:39 GMT+0000",
+          "text": "<h2 style=\"text-align: center;\"><span class=\"fontsize-1-25em\">With the&nbsp;Vocera Vina&nbsp;smartphone app, you can <span class=\"futura-bold\">see the most important communications first</span> in an intuitive, customizable experience.</span></h2>\n",
+          "jcr:lastModified": "Sat Jun 03 2023 14:46:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:53:11 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:53:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 15:53:36 GMT+0000",
+          "alt": "Screenshot example of an alert from the Vocera Vina app",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_screen_alert.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 05 2023 13:52:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jun 02 2023 16:02:44 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Receive alarm* notifications with contextual patient information from multiple systems</span></p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:43:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 15:53:36 GMT+0000",
+          "alt": "Screenshot of additional patient data as delivered by the Vocera Vina app",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_screen_patient-info.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:52:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jun 02 2023 16:02:44 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Access additional patient details from within a conversation or alarm* notification.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:43:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 15:53:36 GMT+0000",
+          "alt": "View of the Vocera Vina app with colleague collaboration on a patient alert ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_screen_patient-chat.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:53:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jun 02 2023 16:02:44 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Enable the whole care team to see the history of communication about the patient or event within a single conversational thread.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:44:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_404983112": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 02 2023 15:53:36 GMT+0000",
+          "alt": "Screenshot of how toadd care team members to an alert in the Vocera Vina app ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/vocera-vina/images/vocera-vina_screen_add-participant.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 26 2023 19:54:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_1578330580": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jun 02 2023 16:02:44 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">View and add care team members.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jul 05 2023 13:44:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:47:28 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:47:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Sep 11 2025 15:56:23 GMT+0000",
+          "jcr:lastModified": "Thu Sep 11 2025 15:56:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "marketo-form",
+      "jcr:created": "Fri Jun 02 2023 19:41:04 GMT+0000",
+      "title": "marketo-form",
+      "jcr:lastModified": "Fri Jun 02 2023 19:41:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_c_706179325": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 15:01:38 GMT+0000",
+      "text": "ProAssure We’ll handle the technology, you handle the patient care Technology should make care easier, not harder. ProAssure specialists work with your team—remotely or on site—to maintain, optimize and support your Styker clinical communications solutions. From updates and training to workflow optimization, it’s ongoing support that helps keep your system reliable and your teams connected. Click the \"Learn More\" button below and discover how ProAssure can support patient care. Learn more AC-ACCL-SYK-2133106_REV-0_en_us",
+      "jcr:lastModified": "Thu Sep 11 2025 15:01:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/services/proassure/proassure-cta/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/services/proassure/proassure-cta/master"
+    },
+    "cols_1413686394": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Sep 11 2025 15:56:26 GMT+0000",
+      "jcr:lastModified": "Thu Sep 11 2025 15:56:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Apr 17 2020 20:40:07 GMT+0000",
+      "jcr:lastModified": "Fri Apr 17 2020 20:40:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 15 2020 00:09:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Interested in learning more?&nbsp;</span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\">Talk to a rep today.</span></span></h3>\n",
+          "jcr:lastModified": "Thu May 25 2023 19:06:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_157571": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed May 24 2023 14:01:01 GMT+0000",
+      "jcr:lastModified": "Wed May 24 2023 14:01:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed May 24 2023 14:01:12 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for filling out the form! A Stryker representative will be in contact with you shortly.",
+          "jcr:lastModified": "Fri Jul 07 2023 20:07:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_7": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Feb 02 2026 15:20:17 GMT+0000",
+          "text": "Quick Links Smart Care homepage Medical and surgical equipment Contact information",
+          "jcr:lastModified": "Mon Feb 02 2026 15:20:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/business-unit/form-sidebar/quick-links/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Sep 28 2022 21:49:32 GMT+0000",
+      "text": "Vocera resources Customer support Contact sales and support Customer support portal Training and education Vocera University Documentation Vocera documentation portal Resources and downloads Vocera legal Vocera legal documents Professional services Vocera professional services Vocera Accessories Shop the Vocera Store",
+      "jcr:lastModified": "Mon Oct 02 2023 19:05:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/acute_care/vocera/vocera-resources-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/acute-care/vocera/vocera-resources-links/master"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "description": "Explore Vocera products and solutions.",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed May 24 2023 13:17:48 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Mon Oct 06 2025 20:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-engage"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-edge"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-smartbadge"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/vocera-minibadge"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/vocera-engage/images/nurse-with-doctor-pointing-at-mobile-device.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 01 2023 21:18:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Jun 01 2023 21:19:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 01 2023 21:22:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 01 2023 21:23:00 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 01 2023 21:23:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 01 2023 21:23:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* Alarm notifications require Engage Medical Device Alarm Notification (EMDAN), FDA 510(k)-cleared middleware </p>\r\n<p>** Filtering, routing, escalation and prioritization of notifications are based on your facility’s protocols.</p>\r\n",
+    "jcr:lastModified": "Wed Jun 21 2023 16:22:30 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

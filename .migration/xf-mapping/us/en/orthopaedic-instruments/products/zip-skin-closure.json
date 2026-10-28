@@ -1,0 +1,398 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Zip skin closure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ea81bc6f-e019-4cc1-8cc0-b5dcc85ecfdb",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:predecessors": [
+    "94947fc6-609e-48d1-abf8-225a03270ed4"
+  ],
+  "contentID": "D0000022844 Rev AA",
+  "lastPublished": "Wed Aug 14 2024 19:13:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 14 2024 19:13:29 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 14 2024 19:13:31 GMT+0000",
+  "cq:lastModified": "Mon Aug 12 2024 20:11:36 GMT+0000",
+  "jcr:description": "Zip is a non-invasive skin closure device for surgical incisions and lacerations. It's designed to distribute strain along the incision. This helps reduce wound complications<sup>1,2</sup>, saving you cost and time.<sup>3,5</sup>\r\n<br><br>\r\nZip’s benefits aren’t only limited to healthcare providers. The puncture-free skin closure method also leads to greater patient satisfaction.<sup>6</sup> This means less pain, a greater range of motion during recovery, and reduced scarring. <sup>7,8</sup>",
+  "jcr:baseVersion": "94947fc6-609e-48d1-abf8-225a03270ed4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:13:29 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/skin-closure",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/orthopaedic_instruments"
+  ],
+  "jcr:lastModified": "Thu Feb 10 2022 18:41:25 GMT+0000",
+  "jcr:uuid": "f70beaee-b347-45f8-8124-5946293cab42",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Wed Aug 04 2021 20:38:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+      "jcr:lastModified": "Fri Jul 30 2021 19:13:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_1429056838": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 14:59:04 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 14:59:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 14:47:08 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 14:47:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 14:47:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-5-5-vw\">4x</span></span></span>",
+          "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\">faster</span></span></span>",
+          "jcr:lastModified": "Fri Jun 12 2020 17:23:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 14:50:51 GMT+0000",
+          "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">than sutures<sup>5</sup></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 12 2020 17:24:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 14:47:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(0,0,0);\">12x</span></span></span></span>",
+          "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">stronger</span></span></span></span>",
+          "jcr:lastModified": "Fri Jun 12 2020 17:13:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "nadia.conard@stryker.com",
+          "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+          "jcr:created": "Fri Jun 12 2020 17:13:56 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">than sutures<sup>9</sup></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 12 2020 17:25:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 14:47:24 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-5-5-vw\"><span style=\"color: rgb(0,0,0);\">2x</span></span></span></span>",
+          "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\">better<br>\r\n </span></span></span></span>",
+          "jcr:lastModified": "Wed Nov 10 2021 20:08:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "nadia.conard@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "jcr:created": "Fri Jun 12 2020 17:13:56 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">cosmetic appearance<sup>4</sup></span></span></p>\n",
+          "jcr:lastModified": "Wed Nov 10 2021 20:10:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 14:54:27 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 14:54:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 14:58:08 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 14:58:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 14:58:33 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 14:58:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1684626383": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 15:21:00 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 15:21:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_258418347": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 15:21:04 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 15:21:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 15:56:39 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/zip-skin-closure/images/thumbup-img.png",
+          "jcr:lastModified": "Tue Jan 28 2020 16:02:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jan 28 2020 15:42:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Creates a better experience for you and your patients</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Easier, faster, and less painful to apply and remove<sup>8</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Reduced scarring<sup>10</sup></span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Increased range of motion during recovery<sup>8</sup></span></span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jul 30 2021 19:41:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2020 15:56:39 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/zip-skin-closure/images/money-img.png",
+          "jcr:lastModified": "Tue Jan 28 2020 16:02:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jan 28 2020 15:42:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Saves you cost and time</span></span></p>\n<ul>\n<li style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Fewer wound complications<sup>1</sup></span></span></li>\n<li style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Reduced post-discharge cost<sup>3</sup></span></span><br>\n</li>\n<li style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">No added entry sites for bacteria<sup>6</sup><br>\n </span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jul 30 2021 19:41:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_129403915": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 15:46:54 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 15:46:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_142976577": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 16:03:07 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 16:03:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 15:30:12 GMT+0000",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Jan 28 2020 15:33:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/zip-skin-closure/videos/STI23 - Stryker Zip Skin Closure.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+        "unsharpMaskAmount": "0",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/STI23 - Stryker Zip Skin Closure-AVS",
+        "unsharpMaskRadius": "0",
+        "urlModifiers": "",
+        "jcr:lastModified": "Mon Feb 14 2022 15:38:48 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "jpegQuality": "85",
+        "unsharpMaskThreshold": "0",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols_1912999967": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 15:47:12 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 15:47:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_900188947": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2020 16:03:02 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2020 16:03:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Aug 12 2024 20:06:31 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 12 2024 20:03:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Mon Aug 12 2024 20:03:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/zip-skin-closure/images/zip_thumbnail.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Carli A., Haas SB. Novel Non-Invasive Secure Skin Closure Following Total Knee Arthroplasty: Fewer Wound Complications &amp;amp; No Patient Home Care Visits Compares to Staples, Paper presented at ISTA; 1 Oct 2015; Vienna, Austria.</li>\r\n<li>Davis, A., et. al., Effect of Surgical Incision Closure Device on Skin Perfusion Following Total Ankle Arthoplasty, UF Health Poster Presentation at ACFAS, March 2017</li>\r\n<li>Alnachoukati O, Emerson R, Muraguri M (March 20,2019) Non-Invasive, Zip Type Skin Closure Device vs. Conventional Staples in Total Knee Arthroplasty: Which Method Holds Greater Potential for Bundled Payments?. Cures 11(3):e4281. DOI 10.7759/cureus.4281</li>\r\n<li>Tanaka, Y. et al. Randomized Study of a New Noninvasive Skin Closure Device for Use After Congenital Heart Operations. Ann Thorac Surg 2016.</li>\r\n<li>Goldman DS, Hammill E, Aasbo J, Storne E, Reddy S. Improvement in S-ICD Incision Closure Time and High Implanter Satisfaction Using a Novel Skin Closure Device. Scientific presentation given at Asia-Pacific Heart Rhythm Society 2017 Meeting; Sep 16, 2017; Yokohama, Japan.</li>\r\n<li>Menkowitz B, Olivieri G, Belson O (January 19, 2020) Patient Satisfaction and Cosmetic Outcome in a Randomized, Prospective Study of Total Knee Arthroplasty Skin Closure Comparing Zip Surgical Skin Closure with Staples. Cureus 12(1): e6705. DOI 10.7759/cureus.6705</li>\r\n<li>Alnachoukati O, Emerson R, Muraguri M (March 20,2019) Non-Invasive, Zip Type Skin Closure Device vs. Conventional Staples in Total Knee Arthroplasty: Which Method Holds Greater Potential for Bundled Payments?. Cures 11(3):e4281. DOI 10.7759/cureus.4281</li>\r\n<li>Benner RW, Behrens JP. Poster Presentation: “A Novel Skin Closure Device for (Bilateral) Total Knee Arthroplasty: Randomized Controlled Trial vs. Staples.” Poster Presentation presented at American Association of Hip and Knee Surgeons; Nov 3, 2017;</li>\r\n<li>Levi K, Ichiryu K, Kefel P, et al. (October 12, 2016) Mechanics of Wound Closure: Emerging Tape-Based Wound Closure Technology vs. Traditional Methods. Cureus 8(10); e827. DOI 10.7759/cureus.827</li>\r\n<li>Ko, J. H., Yang, I. H., Ko, M. S., Kamolhuja, E. and Park, K. K. (2016), Do zip-type skin-closing devices show better wound status compared to conventional staple devices in total knee arthroplasty?. Int Wound J, 14: 250-254. doi:10.1111/iwj.12596</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Jul 30 2021 19:38:54 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Aug 12 2024 20:11:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://ifu.stryker.com/",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "hideComponent": "false",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Nov 10 2021 20:01:38 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "See instructions for use",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

@@ -1,0 +1,784 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Text - Body copy",
+  "jcr:versionHistory": "6df53add-f3d8-4d63-9015-a08be99f5772",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5809d417-b9df-45e5-bfe6-d415fda2fef5"
+  ],
+  "jcr:created": "Wed Jan 27 2021 19:39:54 GMT+0000",
+  "cq:lastModified": "Tue Jan 26 2021 20:07:03 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5809d417-b9df-45e5-bfe6-d415fda2fef5",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "44c34a4c-e3dc-459e-878f-31ab7efdd5da",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1096786249": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 15:50:26 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">Employees inspire a new generation of robotics engineers through Discovery Channel’s BattleBots</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\"><br>\nOn BattleBots, a Discovery Channel television series, individuals and teams build robots to combat in an arena elimination tournament. Each match consists of two robots competing for three minutes, where the goal is to destroy or disable the opponent. Teams come to compete from all over the world, one of which also works on Mako SmartRobotics</span><sup><span class=\"fontsize-8em\">TM</span></sup><span class=\"fontsize-1-25em\">, Stryker’s solution for robotic-arm assisted joint replacement.</span></span></p>\n<p>The team’s leader is Victor Soto, a senior staff systems engineer based in Fort Lauderdale, FL. He’s been building robots since college, and when BattleBots invited Victor to the show in 2016, he asked a few people from the Mako team if they wanted to compete. They did.</p>\n<p>After a few years of competition, Victor has made a name for himself, and so has his team, which is sponsored by Stryker. We asked Victor what the experience has been like. Here’s what he said.</p>\n",
+      "jcr:lastModified": "Tue Jan 26 2021 20:06:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_974089664_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+      "title": "⠀",
+      "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_974089664_copy__1594547483": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+      "text": "<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Text block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 18 2021 21:34:28 GMT+0000",
+      "jcr:lastModified": "Mon Jan 18 2021 21:35:17 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">What has the BattleBots competition been like over the years?</span></span></p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:49:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">We started in 2016 and lost right away. There wasn’t a 2017 season, but 2018 was our breakout year. We won a lot of fights and made it to the single elimination tournament round. In 2019 we went back with some major upgrades and had some really good fights. For 2020, the season airing now, we made even more upgrades—and it’s going to be a great season. &nbsp;</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:37:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text_974089664_copy_128731085": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_1229248191": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">What’s your team name?</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_619464411": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">In 2016, we started calling ourselves “Team Revolution” because our robot is named Rotator.</span></span><br>\n</p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:55 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_1655900923": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_1492931370": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy_954897775": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">How does Stryker support you?</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:40:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_704297694": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Stryker is our team’s official sponsor, which allows us to get materials for the robot. We also get help from machinists, when they’re available. And I have to mention the cool logos created by Juan Querubin and the hotrod gold paint job done by our VP, Shawn Kroll.</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:41:05 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_341801558": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy_c": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_974089664_copy_724626880": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy_954897775_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">What does the engineering process look like?</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:41:29 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_1869912719": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">I hand-picked people based on their backgrounds – like electrical or mechanical engineering – and we get together on certain days to strategize how we’re going to attack the build plan. We treat it like a mini project where we have a pre-determined number of months to finish.</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:41:47 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy_c_7497059": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_397959203": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy_954897775__1829528858": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">How does this all intersect with your work on Mako SmartRobotics</span><sup>TM</sup><span class=\"fontsize-1-5em\">?</span></span></p>\n",
+        "jcr:lastModified": "Tue Jan 26 2021 20:07:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_1090097265": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">We have a lot of talented engineers in our Florida office because we work on robotics on a day-to-day basis. Most of the BattleBot components are off the shelf—simple parts. But sometimes we don’t like the way they perform so one of the engineers will modify something to make it behave differently. We use a lot of the same engineering principles we use with Mako to strengthen Rotator. &nbsp;</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:42:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_1893996995": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy_c_1536716961": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_236734942": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy_954897775__413030756": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">What has the experience meant to you?</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:43:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_1686828769": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">It’s been fantastic. We aren’t just working on a hobby. We’re bringing awareness of Stryker to the world, and also inspiring the new generation of engineers.</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:43:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_1723624719": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy_c_951167606": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_800154323": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "text_copy_954897775__1128456359": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:35:45 GMT+0000",
+        "text": "<p style=\"text-align: right;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Is inspiring the next generation something you take pride in?</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:44:11 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "text2931680875030613_309822560": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Of course. We receive fan mail, emails and photos from kids, or we’ll get messages from parents about their child wanting to be an engineer and asking us questions about how to get into the field. That’s the really cool thing.</span></span></p>\n",
+        "jcr:lastModified": "Mon Jan 18 2021 21:44:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_562892543": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      },
+      "section_title_copy_c_388636474": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Mon Jan 18 2021 21:37:40 GMT+0000",
+        "title": "⠀",
+        "jcr:lastModified": "Mon Jan 18 2021 21:39:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/section-title",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_974089664_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+        "text": "<p>&nbsp;&nbsp;</p>\n",
+        "jcr:lastModified": "Tue Jan 19 2021 15:34:33 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 19 2021 16:44:15 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/features/employees-inspire-a-new-generation-of-robotics-engineers-through-discovery-channels-battlebots/team-photo-1.jpg",
+      "jcr:lastModified": "Tue Jan 19 2021 16:44:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "text_1006665922_copy_179406001": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 16:55:26 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\"><span class=\"futura-bold\">2019 team photo (from left to right)</span><br>\n <span class=\"urw-egyptienne\">Radu Iorgulescu, Kadija McAnuff, Goran Kadribasic, Victor Soto, Carl Gayle, Jordan Sangerman, Roberto Montane</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Team members not pictured: Mark Palm, Kevin Bechtold and Jennifer Fox</span></span></p>\n<p><span class=\"fontsize-8em\"><span class=\"urw-egyptienne\">Support from our machine shop: Doug Boyer, Daryle Lee, Nestor Lumibao</span></span></p>\n",
+      "jcr:lastModified": "Thu Jan 21 2021 16:26:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "3",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_974089664_copy__1727257984": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 15:34:28 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 19 2021 18:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1006665922_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 19 2021 16:55:26 GMT+0000",
+      "text": "<p><span style=\"color: #b2b4ae;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #000000;\">Want to see Rotator in action?<br>\n </span></span><span style=\"color: #000000;\"><span class=\"urw-egyptienne\"><a href=\"https://www.discovery.com/shows/battlebots\">Watch BattleBots on the Discovery channel</a> to see how the 2020 competition turns out.</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue Jan 19 2021 18:17:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hospital enterprise software",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9073fa84-5477-4738-84ab-edf00eaadb43",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Hospital enterprise software",
+  "jcr:predecessors": [
+    "d125d152-8ddb-499c-974a-56484b3c438b"
+  ],
+  "contentID": "ENDO-GSNPS-SYK-1839050",
+  "lastPublished": "Thu Oct 30 2025 22:37:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 30 2025 22:37:02 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 30 2025 22:37:03 GMT+0000",
+  "cq:lastModified": "Wed Oct 15 2025 23:01:07 GMT+0000",
+  "jcr:description": "Our hospital enterprise software offering securely integrates information systems with your compatible devices, and allows you to stay connected both inside your facility and to the outside world. Our platform allows the flexibility to archive, edit and share surgical content. In addition, it allows you to communicate important information internally and externally to maximize educational opportunities and expand your continuity of patient care.",
+  "jcr:baseVersion": "d125d152-8ddb-499c-974a-56484b3c438b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:37:01 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:specialty/hospital-enterprise-software",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Oct 15 2025 22:24:43 GMT+0000",
+  "jcr:uuid": "9100150d-8efe-4f58-8e0e-a0db0977dc54",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:20:33 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "imageAlt": "Hospital enterprise",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Wed Oct 15 2025 23:01:07 GMT+0000",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/integration-and-connectivity/images/Hospital-enterprise-specialty-hero.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/integration-and-connectivity/images/Hospital-Enterprise-thumbnail.jpg"
+  }
+}

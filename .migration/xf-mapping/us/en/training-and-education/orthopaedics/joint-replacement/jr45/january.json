@@ -1,0 +1,396 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "January",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0c4548c3-6354-4c5e-aeb0-e14fe872e55d",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "34bc5248-7d33-4cf9-9bf1-b3c448e7f337"
+  ],
+  "contentID": "MKOTHA-WC-4_34529",
+  "lastPublished": "Mon Apr 24 2023 19:01:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 24 2023 19:01:14 GMT+0000",
+  "cq:lastReplicated": "Mon Apr 24 2023 19:01:16 GMT+0000",
+  "cq:lastModified": "Mon Apr 24 2023 17:55:50 GMT+0000",
+  "noFollow": "true",
+  "jcr:baseVersion": "34bc5248-7d33-4cf9-9bf1-b3c448e7f337",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Jan 12 2023 20:45:52 GMT+0000",
+  "jcr:uuid": "8ad6a239-a2fc-43e5-9f27-165f4acb10c5",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "noIndex": "true",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "jcr:lastModified": "Tue Jul 26 2022 18:08:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kimberly.wylde@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:37:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-4vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Part 1, </span></span><b>Should we care about the spine/hip relationship?</b></span></h1>\r\n",
+          "jcr:lastModified": "Fri Jan 20 2023 20:05:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program objectives</span></span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Evaluate the conceptual explanation of the relationship between the spine and hip</span></li>\n<li><span class=\"fontsize-1-25em\">Explore the evolution on how to solve it in total hip surgery</span><ul>\n<li><span class=\"fontsize-1-25em\">X-rays</span></li>\n<li><span class=\"fontsize-1-25em\">Navigation</span></li>\n<li><span class=\"fontsize-1-25em\">Mako Total Hip SmartRobotics™</span></li>\n</ul>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Dec 13 2022 19:58:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:46:47 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Program focus</span></span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Mako Total Hip</span><br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Dec 14 2022 21:48:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:11:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "jcr:lastModified": "Mon Jul 25 2022 19:11:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 18:39:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Jeremy Reid, M.D.",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/jr45/images/january/Jeremy Reid.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Dec 13 2022 20:34:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Jeremy Reid, M.D.&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">Voorhees, NJ&nbsp;&nbsp;&nbsp;</span>&nbsp;<br>\n<br>\n<b>Residency</b>: University of California Los Angeles Medical Center&nbsp;<br>\n<b>Fellowship</b>: Adult Reconstruction, Hospital for Special Surgery&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Dec 13 2022 20:24:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 25 2022 18:43:02 GMT+0000",
+          "alt": "Seth Jerabek, M.D.",
+          "srcFileRef": "/content/dam/stryker/education-and-training/joint-replacement/jr45/images/january/seth jerabek.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Dec 21 2022 19:08:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 18:39:50 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Seth Jerabek, M.D.&nbsp;&nbsp;</span></span><br>\n<span class=\"fontsize-1-25em\">New York, NY&nbsp;&nbsp;&nbsp;</span>&nbsp;<br>\n<br>\n<b>Residency</b>:&nbsp;Harvard Combined Orthopaedic Residency Program, Massachusetts General Hospital / Harvard Medical School &nbsp;&nbsp;<br>\n<b>Fellowship</b>: Adult Reconstruction, Hospital for Special Surgery<br>\n<b>Fellowship</b>: Sports Medicine, Massachusetts General Hospital / Harvard Medical School &nbsp;</p>\n",
+          "jcr:lastModified": "Wed Dec 21 2022 19:09:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "topMargin": "3",
+          "jcr:created": "Wed Oct 05 2022 15:58:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-1-5-vw\">Watch Jeremy Reid, M.D. and&nbsp;Seth Jerabek, M.D. as they discuss the relationship between the spine and hip, and how they address it in total hip surgery.</span>",
+          "jcr:lastModified": "Fri Apr 21 2023 20:07:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 21 2023 20:07:11 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Apr 21 2023 20:07:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/january/10539 JR45_Hip spine relationship webinar edits-comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/10539 JR45_Hip spine relationship webinar edits-comp-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Apr 21 2023 20:18:54 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Should we care about hip_spine relationship video image"
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Part I, Should we care about the hip/spine relationship?</span><br>\n<span class=\"urw-egyptienne\">37:25 minutes</span></p>\n",
+          "jcr:lastModified": "Mon Apr 24 2023 17:55:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1347437557_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "jcr:lastModified": "Mon Jul 25 2022 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:18:53 GMT+0000",
+      "title": "E-learning",
+      "jcr:lastModified": "Wed Dec 07 2022 19:19:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:20:06 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">VIDEOS</span></span></p>\n",
+      "jcr:lastModified": "Wed Dec 07 2022 19:21:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols4_1140126676_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "jcr:lastModified": "Mon Aug 08 2022 18:36:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Nov 03 2022 15:46:24 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Nov 03 2022 15:46:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/january/10456 JR45_January e-learning video part 1 edits v4.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/10456 JR45_January e-learning video part 1 edits v4-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Thu Jan 12 2023 19:24:49 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Illgen spine_hip relationship"
+          }
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Why I pay attention to the spine/hip relationship with Dr. Richard Illgen&nbsp;</span><br>\n<span class=\"urw-egyptienne\">08:45 minutes&nbsp;</span></p>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 19:01:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Nov 03 2022 15:46:24 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Nov 03 2022 15:46:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/no-index/training-and-education/jr45/january/10458 JR45_January e-learning video part 2 edits v3.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/10458 JR45_January e-learning video part 2 edits v3-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Thu Jan 12 2023 19:25:14 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Jerabek spine_hip relationship"
+          }
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jul 25 2022 19:18:06 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Clinical synopsis of 'A Simple Hip-Spine Classification for THA' with Dr. Seth Jerabek&nbsp;</span><br>\n<span class=\"urw-egyptienne\">11:57 minutes&nbsp;</span></p>\n",
+          "jcr:lastModified": "Thu Jan 12 2023 19:02:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Dec 07 2022 19:31:44 GMT+0000",
+      "jcr:lastModified": "Wed Dec 07 2022 19:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Dec 14 2022 21:47:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker's product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker's products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\r\n<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Mako, SmartRobotics, Stryker. All other trademarks are trademarks of their respective owners or holders.</p>\r\n<p>The faculty are paid consultants of Stryker. The opinions expressed by the faculty are those of the faculty and not necessarily those of Stryker. Individual experiences may vary.</p>\r\n",
+    "jcr:lastModified": "Tue Dec 13 2022 20:22:12 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

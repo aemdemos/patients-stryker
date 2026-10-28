@@ -1,0 +1,62 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Carousel - 80 years together hero - desktop",
+  "jcr:versionHistory": "dc7e9019-2889-47a4-a298-44cb02640993",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "96f3a838-3b0b-49d5-a243-cdb2c5984cc0"
+  ],
+  "jcr:created": "Mon Feb 22 2021 15:51:56 GMT+0000",
+  "cq:lastModified": "Mon Feb 22 2021 15:51:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "96f3a838-3b0b-49d5-a243-cdb2c5984cc0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "90f9639b-8b65-4291-9b44-1c02bd85875b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 19 2021 21:46:54 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Mon Feb 22 2021 15:51:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://gateway-na.assetsadobe.com/DMGateway/public/stryker",
+        "fileReference": "/content/dam/stryker/homepage/full-bleed-carousel/80-years-together/80th-AE-with-ani.mp4",
+        "s7ImagePreset": "",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "unsharpMaskAmount": "0",
+        "s7ViewerPreset": "",
+        "assetID": "/content/dam/stryker/homepage/full-bleed-carousel/80-years-together/80th-AE-with-ani.mp4",
+        "unsharpMaskRadius": "0",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Feb 19 2021 21:47:10 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://stryker-h.assetsadobe.com/is/image/",
+        "jpegQuality": "85",
+        "unsharpMaskThreshold": "0",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

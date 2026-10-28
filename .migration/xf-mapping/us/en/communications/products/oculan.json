@@ -1,0 +1,863 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Redefining the standard of surgical lighting. ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The Oculan Platform",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e163b239-4cca-440a-b5f1-537d52ef3970",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Oculan-web-main-v2",
+  "jcr:predecessors": [
+    "d174f098-f821-411e-8db8-1446ed2587d7"
+  ],
+  "contentID": "COMMS-LGHT-SYK-1429155",
+  "lastPublished": "Tue Aug 04 2026 13:14:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 04 2026 13:14:47 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 04 2026 13:14:49 GMT+0000",
+  "cq:lastModified": "Thu Jul 30 2026 18:36:08 GMT+0000",
+  "jcr:description": "The Oculan Platform redefines the surgical lighting experience while providing innovative, clinical solutions to common lighting challenges.",
+  "jcr:baseVersion": "d174f098-f821-411e-8db8-1446ed2587d7",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Nov 18 2024 15:37:32 GMT+0000",
+  "pageTitle": "The Oculan Platform",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/infrastructure-and-room-design",
+    "stryker:specialty/lighting"
+  ],
+  "jcr:lastModified": "Tue Jul 28 2026 16:05:07 GMT+0000",
+  "jcr:uuid": "27142a6e-2ad0-4530-99c6-c7e9d85da631",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "The Oculan Platform",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/communications/en/products/oculan/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/communications/en/products/oculan/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/communications/en/products/oculan/oculan-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/communications/en/products/oculan/oculan-mobile",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Jul 28 2026 16:04:14 GMT+0000",
+          "marginRight": "55",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">The Oculan Platform</span></span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Redefining the standard of surgical lighting.&nbsp;</span></span><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n",
+              "jcr:lastModified": "Tue Jul 28 2026 16:05:18 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact us",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Fri Jun 19 2026 17:45:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(84,88,87)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:41:01 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:41:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_492052814": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Fri Jun 19 2026 17:45:55 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Fri Jun 19 2026 17:46:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 16:38:33 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 16:38:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy__1314303255": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">The Oculan Platform</span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Moving the needle forward in surgical lighting</span></span></p>\n<p><span class=\"fontsize-1-25em\">The Oculan Platform redefines the surgical lighting experience while providing innovative, clinical solutions to common lighting challenges.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Inclusive of two unique surgical lights, the Oculan Platform is built to deliver consistent, bright light to the surgical site while providing differentiated solutions to customer needs.</span></li>\n<li><span class=\"fontsize-1-25em\">Leveraging our modular suspension and the addition of our advanced clinical applications Microspot and SHD Mode, this lighting platform is designed to provide a smoother visual experience for clinical staff.</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Jun 23 2026 16:42:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_1934": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Oct 22 2024 20:43:20 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Sun Jan 19 2025 16:50:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-Hype2025.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Oculan-Hype2025-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Sun Jan 19 2025 16:50:45 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_194614950": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:07:54 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:07:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 18:07:59 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 18:07:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_508131482": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:52:23 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:52:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Personalized, uniform, high-quality light&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Enables clear visualization for illumination of the surgical site.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Jun 23 2026 16:42:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:52:50 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:52:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 17:39:23 GMT+0000",
+          "alt": "Superior brightness",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/Oculan-Web-2-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:07:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__862785885": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Superior brightness</span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:09:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 17:39:26 GMT+0000",
+          "alt": "Range of spot sizes",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/oculan-web-rangeofsizes-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:08:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__1194486451": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Range of spot sizes</span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:10:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 17:39:29 GMT+0000",
+          "alt": "Color temperatures",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/Oculan-web-4.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:08:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy__571075153": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Color temperatures</span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:10:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1197333108": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:07:43 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:07:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 18:07:47 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 18:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Enhanced image quality</span></span></p>\n<p><span class=\"fontsize-1-25em\">Visualize cases with enhanced image quality using the StrykeCam 4K surgical in-light camera. The new 4K HDMI output delivers an improved visual experience with 240× zoom and 700° picture rotation, all while maintaining the same footprint and physical dimensions as the previous generation.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">StrykeCam 4K surgical in-light camera is designed to optimize workflow by enabling light-to-light mobility within the Oculan surgical lighting system.&nbsp;</span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:19:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 18:17:00 GMT+0000",
+          "alt": "StrykeCam 4K",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/4k-ilc.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Jul 30 2026 18:36:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Reduce OR downtime</span></span></p>\n<p><span class=\"fontsize-1-25em\">The Oculan Platform leverages our modular Chromophare suspension for seamless upgrades with backwards compatibility to reduce OR downtime and prioritize innovation. This suspension also provides intentional light head design to prioritize optimal OR conditions with laminar flow, heat dissipation, and consistent maneuverability to minimize workflow challenges.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:17:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 18:17:00 GMT+0000",
+          "alt": "Modular Chromophare suspension",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/Oculan-web-5-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:07:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1854798032": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:03:45 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:03:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_6181": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Sun Jan 19 2025 16:48:48 GMT+0000",
+          "alt": "SHD (Surgical High-Definition) Mode",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/SHD-2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:07:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Enhance clarity</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">The Oculan Platform delivers Stryker’s first clinical advancement in surgical lighting.&nbsp;The Oculan + feature of SHD Mode.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">SHD (Surgical High-Definition) Mode, offered exclusively with Oculan +, enables the removal of perceived red from the surgical site which is designed to improve contrast, tissue differentiation, and reduction of glare off instrumentation to improve the visual experience.&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">The Oculan Platform includes specialized clinical applications such as Microspot and SHD Mode* (Oculan +) to enhance clarity and improve the visualization experience in open surgeries. These cutting-edge features provide new levels of illumination and precision.</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jun 19 2026 18:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy_1642537889": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 18:03:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "kourtney.hatcher@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jan 24 2024 19:35:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Designed for flexibility&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">The clinical roll stand, available with the Oculan or Oculan+ light head, gives the platform the mobility needed to deliver a flexible lighting solution. Whether used as a standalone fixture or paired with our Chromophare suspension system, it offers ease of use and enhanced adaptability for your hospital environment. &nbsp;</span></p>\n",
+          "jcr:lastModified": "Thu Jul 30 2026 18:34:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 23 2024 18:17:00 GMT+0000",
+          "alt": "Clinical roll stand",
+          "srcFileRef": "/content/dam/stryker/communications/products/occulan/oculan-clinical-roll-stand.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jul 28 2026 16:01:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Jul 08 2024 16:26:19 GMT+0000",
+      "jcr:lastModified": "Mon Jul 08 2024 16:26:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_1003459704": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jun 19 2026 17:45:14 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Fri Jun 19 2026 17:45:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:44:38 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:44:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:25:47 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:25:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2951",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Fri Jun 19 2026 17:44:05 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Fri Jun 19 2026 17:44:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 04 2024 16:22:57 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Resources</span></span></p>\n",
+      "jcr:lastModified": "Tue Jul 28 2026 16:06:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_2028364095": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 19 2026 17:25:35 GMT+0000",
+      "jcr:lastModified": "Fri Jun 19 2026 17:25:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "tabs_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 15:11:26 GMT+0000",
+          "jcr:lastModified": "Tue Jul 28 2026 16:05:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tabs",
+          "tabs_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 1,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "customizable_copy_co": {
+              "jcr:primaryType": "nt:unstructured",
+              "titleFont": "font-egyptienne",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Dec 21 2021 18:30:07 GMT+0000",
+              "hideButton": "false",
+              "jcr:lastModified": "Fri Jun 19 2026 17:48:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/customizable",
+              "hideDescription": "false",
+              "hideThumbnail": "false",
+              "featuresCta": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/communications/products/isuite-powered-by-connected-or-operating-system"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/communications/products/Fortress-wall-system"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/communications/products/s-series-equipment-management-system"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "cta": "/content/stryker/us/en/portfolios/medical-surgical-equipment/infrastructure-and-room-design/surgical-tables"
+                }
+              }
+            }
+          },
+          "tabs_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "tabPosId": 2,
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "cols3": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Fri Jun 19 2026 17:49:28 GMT+0000",
+              "jcr:lastModified": "Fri Jun 19 2026 17:49:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+              "col1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_1934": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Tue Oct 22 2024 20:43:20 GMT+0000",
+                  "hideBorder": "true",
+                  "type": "typePath",
+                  "borderColor": "rgb(178,180,174)",
+                  "jcr:lastModified": "Sun Jan 19 2025 16:50:56 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo",
+                  "dynamic-media": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "breakpoints": "",
+                    "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                    "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-Hype2025.mp4",
+                    "s7ImagePreset": "",
+                    "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                    "s7ViewerPreset": "",
+                    "assetID": "stryker/Oculan-Hype2025-AVS",
+                    "urlModifiers": "",
+                    "jcr:lastModified": "Sun Jan 19 2025 16:50:45 GMT+0000",
+                    "s7PresetType": "undefined",
+                    "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                    "assetType": "VideoAVS",
+                    "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                    "s7ViewerPresetPath": ""
+                  }
+                }
+              },
+              "col2": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_1934": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Tue Oct 22 2024 20:43:20 GMT+0000",
+                  "hideBorder": "true",
+                  "type": "typePath",
+                  "borderColor": "rgb(178,180,174)",
+                  "jcr:lastModified": "Sun Jan 19 2025 16:50:56 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo",
+                  "dynamic-media": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "breakpoints": "",
+                    "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                    "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-Hype2025.mp4",
+                    "s7ImagePreset": "",
+                    "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                    "s7ViewerPreset": "",
+                    "assetID": "stryker/Oculan-Hype2025-AVS",
+                    "urlModifiers": "",
+                    "jcr:lastModified": "Sun Jan 19 2025 16:50:45 GMT+0000",
+                    "s7PresetType": "undefined",
+                    "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                    "assetType": "VideoAVS",
+                    "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                    "s7ViewerPresetPath": ""
+                  }
+                }
+              },
+              "col3": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "wcm/foundation/components/parsys",
+                "standalonevideo_1934": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "jcr:createdBy": "cedu.ocson@stryker.com",
+                  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                  "jcr:created": "Tue Oct 22 2024 20:43:20 GMT+0000",
+                  "hideBorder": "true",
+                  "type": "typePath",
+                  "borderColor": "rgb(178,180,174)",
+                  "jcr:lastModified": "Sun Jan 19 2025 16:50:56 GMT+0000",
+                  "sling:resourceType": "stryker/components/content/standalonevideo",
+                  "dynamic-media": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "breakpoints": "",
+                    "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                    "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-Hype2025.mp4",
+                    "s7ImagePreset": "",
+                    "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+                    "s7ViewerPreset": "",
+                    "assetID": "stryker/Oculan-Hype2025-AVS",
+                    "urlModifiers": "",
+                    "jcr:lastModified": "Sun Jan 19 2025 16:50:45 GMT+0000",
+                    "s7PresetType": "undefined",
+                    "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                    "assetType": "VideoAVS",
+                    "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                    "s7ViewerPresetPath": ""
+                  }
+                }
+              }
+            }
+          },
+          "tabsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "tabPosId": "1",
+              "tabTitle": "Related products"
+            }
+          }
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/occulan/Oculan-web-main-v2.png"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Oct 23 2024 21:53:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Jan 19 2025 16:44:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Jan 19 2025 16:44:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Sun Jan 19 2025 16:44:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Jan 19 2025 16:44:19 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Sun Jan 19 2025 16:44:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. If upgrading F528/SLX528 to Oculan or Oculan Plus, please contact PE for restriction information.</p>\r\n",
+    "jcr:lastModified": "Fri Jun 19 2026 17:25:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

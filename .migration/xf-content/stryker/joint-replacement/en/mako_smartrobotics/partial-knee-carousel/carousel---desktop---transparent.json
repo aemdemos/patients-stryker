@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "carousel - desktop - transparent",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "727d7d60-3f96-4638-80b1-748a66fcd8eb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5e032d91-75e1-4a7b-9d31-a4efddfecce4"
+  ],
+  "jcr:created": "Wed May 15 2024 21:55:14 GMT+0000",
+  "cq:lastReplicated": "Wed May 15 2024 21:55:16 GMT+0000",
+  "cq:lastModified": "Mon May 13 2024 21:16:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5e032d91-75e1-4a7b-9d31-a4efddfecce4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "81e1ac75-f89e-4417-a51c-2443b4dce006",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue Jan 16 2024 14:55:27 GMT+0000",
+      "alt": "Mako Partial Knee planning screen",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Partial-Knee/images/hero-update/hero 1.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 13 2024 21:16:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

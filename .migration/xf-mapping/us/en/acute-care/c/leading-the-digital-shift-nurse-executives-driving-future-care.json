@@ -1,0 +1,244 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leading the Digital Shift Nurse Executives Driving Future Care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b402f45b-fac5-4485-99d7-c7ddd33d6938",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Nurse wearing Sync Badge, looking at large monitor on wall",
+  "jcr:predecessors": [
+    "9280b0d9-eed7-4c36-b1d3-487f96c231d4"
+  ],
+  "contentID": "AC-ACCL-SYK-3022150_REV-0_en_us",
+  "lastPublished": "Sat Apr 25 2026 13:45:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Sat Apr 25 2026 13:45:55 GMT+0000",
+  "cq:lastReplicated": "Sat Apr 25 2026 13:45:57 GMT+0000",
+  "cq:lastModified": "Sat Apr 25 2026 13:45:48 GMT+0000",
+  "jcr:description": "Healthcare is experiencing a digital shift, and nurse executives are critical to its success. This webinar will feature a fireside chat with nursing leaders who are guiding organizations through change. ",
+  "jcr:baseVersion": "9280b0d9-eed7-4c36-b1d3-487f96c231d4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Sat Apr 25 2026 13:44:38 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/acute-care",
+    "stryker:business-unit/smart-care"
+  ],
+  "jcr:lastModified": "Mon Apr 20 2026 16:57:39 GMT+0000",
+  "jcr:uuid": "1b61938a-3416-4a87-b269-5fdf0dc2bb17",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Sun Apr 05 2026 13:31:45 GMT+0000",
+      "jcr:lastModified": "Sun Apr 05 2026 13:31:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1283327520_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Thu Sep 10 2020 15:10:39 GMT+0000",
+      "jcr:lastModified": "Thu Sep 10 2020 15:10:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
+          "alt": "nurse looking at wearing Sync Badge, looking at large monitor on wall",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/leading-the-digital-shift/Leading-the-digital-shift-webinarhero_1440x816.jpg",
+          "jcr:lastModified": "Mon Apr 06 2026 15:09:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_908007915_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "jcr:created": "Thu Sep 10 2020 13:09:36 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Leading the Digital Shift: Nurse Executives Driving the Future of Care</span></span></span></h1>\n<p><span class=\"fontsize-1-25em\">Healthcare is experiencing a digital shift, and nurse executives are critical to its success. This webinar will feature a fireside chat with nursing leaders who are guiding organizations through change. Topics include integrating new technologies, preparing the workforce and addressing equity and ethics in digital adoption. Participants will gain insights into practical strategies, leadership priorities and what the future of digital care looks like for nursing.</span></p>\n<p><span class=\"fontsize-1-25em\"><b>Learning objectives:</b></span></p>\n<ol>\n<li><span class=\"fontsize-1-25em\">The why: urgency for digital transformation</span></li>\n<li><span class=\"fontsize-1-25em\">The role of nurse executives</span></li>\n<li><span class=\"fontsize-1-25em\">High-impact technologies in practice</span></li>\n<li><span class=\"fontsize-1-25em\">Vision and call to action</span></li>\n</ol>\n",
+          "jcr:lastModified": "Thu Apr 09 2026 13:38:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Apr 06 2026 14:31:02 GMT+0000",
+      "jcr:lastModified": "Mon Apr 06 2026 14:31:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 06 2026 14:31:08 GMT+0000",
+          "alt": "Rebecca Paalman headshot",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/leading-the-digital-shift/Rebecca-Paalman_headshot-frame_1024x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 06 2026 21:18:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Apr 06 2026 14:31:16 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Rebecca Paalman - Moderator</b><br>\n Sr. Director of Clinical Strategy and Solutions, Stryker</span></p>\n",
+          "jcr:lastModified": "Mon Apr 06 2026 15:17:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 06 2026 14:31:08 GMT+0000",
+          "alt": "Dianna Tai headshot",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/leading-the-digital-shift/Diana-Tai_headshot-frame_1024x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 06 2026 21:18:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 06 2026 14:31:16 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Diana Tai - Speaker</b><br>\n Executive Director, Acute Care Services, MemorialCare Orange Coast, Fountain Valley</span></p>\n",
+          "jcr:lastModified": "Mon Apr 20 2026 16:55:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 06 2026 14:31:08 GMT+0000",
+          "alt": "Julie Ference headshot",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/leading-the-digital-shift/Julie-Ference_headshot-frame_1024x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Apr 06 2026 21:18:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Apr 06 2026 14:31:16 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>Julie Ference - Speaker</b><br>\n Chief Nursing Officer, AHN Neighborhood Hospitals</span></p>\n",
+          "jcr:lastModified": "Mon Apr 06 2026 15:17:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "jcr:lastModified": "Wed Nov 30 2022 18:05:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "5",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-2em\"><span class=\"futura-bold\">Register now</span> to watch the webinar!</span></h3>\n",
+          "jcr:lastModified": "Fri Mar 14 2025 17:34:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,181,0,1)",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Thu Jun 27 2024 20:53:39 GMT+0000",
+          "jcr:lastModified": "Thu Jun 27 2024 20:53:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "redirectToPage",
+          "formId": "2921",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "redirectPage": "/content/stryker/us/en/acute-care/c/leading-the-digital-shift-nurse-executives-driving-future-care/webinar",
+          "jcr:lastModified": "Sat Apr 25 2026 13:45:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri May 23 2025 12:42:48 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Resources</span></span></h3>\n<p><a href=\"https://www.stryker.com/us/en/acute-care/training-and-education.html\"><span class=\"standalone-link\">Medical Training and Education</span></a></p>\n",
+          "jcr:lastModified": "Fri May 23 2025 12:44:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/campaigns/leading-the-digital-shift/Leading-the-digital-shift-webinarhero_1440x816.jpg"
+  }
+}

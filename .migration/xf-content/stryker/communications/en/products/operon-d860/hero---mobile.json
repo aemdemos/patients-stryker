@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero - mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "138e5083-95a1-4cb5-b20a-15b3c532030a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "86a48a85-8007-48cc-9e09-ff28423ae615"
+  ],
+  "lastPublished": "Tue Sep 15 2026 20:32:55 GMT+0000",
+  "jcr:created": "Tue Sep 15 2026 20:32:55 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 15 2026 20:32:58 GMT+0000",
+  "cq:lastModified": "Tue Sep 15 2026 20:32:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "86a48a85-8007-48cc-9e09-ff28423ae615",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 15 2026 19:34:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d88e8558-a8a4-417e-be95-e48dbf5cfb62",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 19 2026 17:27:01 GMT+0000",
+      "alt": "Operon D860 Surgical Table",
+      "srcFileRef": "/content/dam/stryker/communications/products/operond860/images/operon-hero-3-mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 15 2026 20:32:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

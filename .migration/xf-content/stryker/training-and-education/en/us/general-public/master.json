@@ -1,0 +1,236 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "General public",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "60bc8ce9-bb63-4896-8dc4-2899067ac7df",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f58e26d5-23fa-4d33-a0bc-e30e387b5ca4"
+  ],
+  "lastPublished": "Wed Jun 24 2026 17:54:44 GMT+0000",
+  "jcr:created": "Wed Jun 24 2026 17:54:45 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 24 2026 17:54:47 GMT+0000",
+  "cq:lastModified": "Wed Jun 24 2026 17:54:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f58e26d5-23fa-4d33-a0bc-e30e387b5ca4",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:54:44 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "310b89ed-4f53-45c5-9fab-787011c73527",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:title": "General public",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Mon Mar 08 2021 05:32:08 GMT+0000",
+      "jcr:lastModified": "Sat Sep 11 2021 06:07:05 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy12398011509363794": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_auto",
+        "alt": "The happiness impact",
+        "srcFileRef": "/content/dam/stryker/education-and-training/image/thumbnails/happiness_thumbnail.jpg",
+        "borderColor": "rgba(255,181,0,1)",
+        "jcr:lastModified": "Fri Apr 12 2024 18:17:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/surgical/the-happiness-impact",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "jeannie.chan@stryker.com",
+        "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+        "jcr:created": "Mon Mar 08 2021 14:56:10 GMT+0000",
+        "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">The happiness impact&nbsp;</span></span></h2>\n",
+        "jcr:lastModified": "Fri Sep 10 2021 18:55:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "jeannie.chan@stryker.com",
+        "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+        "jcr:created": "Mon Mar 08 2021 14:56:10 GMT+0000",
+        "text": "<p>Stryker’s first externally available leadership course, The&nbsp;Happiness Impact, is a 60-90 minute course focusing on changing mindsets, boosting&nbsp;happiness and engagement at work and at home.<br>\n</p>\n",
+        "jcr:lastModified": "Fri Sep 10 2021 18:55:35 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "3"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_979115755": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:lastModified": "Wed Feb 14 2024 14:34:51 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_9791157556094258145895094": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_auto",
+        "alt": "Community and workplace",
+        "srcFileRef": "/content/dam/stryker/ems/training/images/emergency-care-workplace.jpg",
+        "borderColor": "rgba(255,181,0,1)",
+        "jcr:lastModified": "Fri Apr 12 2024 18:17:52 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "linkInternal": "/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/emergency-care/emergency-care",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_copy_copy_": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "jeannie.chan@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:created": "Mon Mar 08 2021 14:56:10 GMT+0000",
+        "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Community and workplace&nbsp;</span></span></h2>\n",
+        "jcr:lastModified": "Wed Feb 14 2024 14:35:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "text_copy_copy_copy__339612288": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "jeannie.chan@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "jcr:created": "Mon Mar 08 2021 14:56:10 GMT+0000",
+        "text": "<p>On-demand webinars, online training and additional resources around CPR and AED preparedness.<br>\n</p>\n",
+        "jcr:lastModified": "Thu Feb 15 2024 21:08:41 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "3"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      }
+    }
+  }
+}

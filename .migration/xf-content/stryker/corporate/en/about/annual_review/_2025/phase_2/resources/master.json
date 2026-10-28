@@ -1,0 +1,277 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Resources",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4500d19c-465d-4080-9954-2942dff8046d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "a26b2a61-05bc-442f-b496-b7bbaf675dcf"
+  ],
+  "lastPublished": "Thu Oct 01 2026 16:00:51 GMT+0000",
+  "jcr:created": "Thu Oct 01 2026 16:00:52 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 01 2026 16:00:55 GMT+0000",
+  "cq:lastModified": "Thu Sep 17 2026 21:31:56 GMT+0000",
+  "cq:xfVariantType": "web",
+  "cq:siblingOrder": "master,",
+  "jcr:baseVersion": "a26b2a61-05bc-442f-b496-b7bbaf675dcf",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Apr 01 2025 13:00:12 GMT+0000",
+  "cq:name": "master",
+  "cq:tags": [],
+  "jcr:uuid": "55c9f55e-eb31-4d73-a1f4-b628b739b995",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:parentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2025/phase_2/resources",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "1",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jan 26 2022 16:33:32 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 17:18:39 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "preset": "max_width_auto",
+        "jcr:created": "Tue Jan 31 2023 19:29:55 GMT+0000",
+        "alt": "Document icon",
+        "srcFileRef": "/content/dam/stryker/about/annual-review/2022/images/paper-gif-optimized.gif",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Mar 21 2023 18:04:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Tue Mar 21 2023 18:05:53 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\">Resources</span></span></span><br>\n<br>\n<span class=\"fontsize-1-5em\">Visit our Reports and Resources to access report supplements, policies, statements and data relating to corporate responsibility at Stryker.</span></p>\n",
+        "jcr:lastModified": "Wed Mar 26 2025 18:00:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "ctaLinkType": "int",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Wed Jan 26 2022 16:40:27 GMT+0000",
+        "CTATitle": "Explore",
+        "ctaExternalLink": "https://www.stryker.com/us/en/about/corporate-responsibility/cr-hub.html",
+        "jcr:lastModified": "Wed Mar 22 2023 19:04:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(255,181,0,1)",
+        "ctaInternalLink": "/content/stryker/us/en/about/corporate-responsibility/cr-hub",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3",
+            "behavior": "none"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "2",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Feb 20 2023 17:19:51 GMT+0000",
+      "jcr:lastModified": "Mon Feb 20 2023 17:20:33 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage3045918433028334": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "2024 Comprehensive Report",
+        "srcFileRef": "/content/dam/stryker/about/annual-review/2025/phase-2/images/Comprehensive-Report-2025-Cover.jpg",
+        "borderColor": "rgba(187,188,188,1)",
+        "jcr:lastModified": "Fri Sep 04 2026 19:27:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "garrett.shue@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "10",
+        "jcr:created": "Mon Feb 20 2023 17:24:42 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\">Our 2025 Comprehensive Report covers our financial performance, and our responsible, sustainable practices, commitments and progress.</span></p>\n",
+        "jcr:lastModified": "Thu Sep 17 2026 21:18:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "3"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "curatedcta_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "CTAOpenInNewTab": "true",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "ctaDamLink": "/content/dam/stryker/about/annual-review/2025/Stryker-2025-Comprehensive-Report.pdf",
+        "ctaLinkType": "dam",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Wed Jan 26 2022 16:40:27 GMT+0000",
+        "CTATitle": "Read the full report",
+        "ctaExternalLink": "https://www.stryker.com/content/dam/stryker/about/annual-review/2022/stryker-2022-comprehensive-report",
+        "jcr:lastModified": "Thu Sep 17 2026 21:31:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgba(255,181,0,1)",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    }
+  }
+}

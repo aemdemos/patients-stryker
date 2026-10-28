@@ -1,0 +1,641 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "TEACH training and education",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d48b19ad-ff6f-4ce0-8dc8-d5ad42696f7f",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "ccded1bb-616d-4e50-afd4-a45562400968"
+  ],
+  "lastPublished": "Tue Apr 14 2026 18:37:42 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 14 2026 18:37:43 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 14 2026 18:37:45 GMT+0000",
+  "cq:lastModified": "Tue Apr 14 2026 18:37:26 GMT+0000",
+  "jcr:description": "Trauma & Extremities Academic Courses for healthcare. The educational experience that matters.",
+  "jcr:baseVersion": "ccded1bb-616d-4e50-afd4-a45562400968",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:03:04 GMT+0000",
+  "jcr:lastModified": "Tue Dec 22 2020 20:37:14 GMT+0000",
+  "jcr:uuid": "835b63fd-3e85-488c-8927-ca95d68421cf",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "david.gilmour@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_909015741": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Dec 22 2020 20:36:07 GMT+0000",
+      "jcr:lastModified": "Tue Dec 22 2020 20:36:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Dec 22 2020 20:34:47 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Training and education</span></span></span></p>\n",
+      "jcr:lastModified": "Tue Dec 22 2020 20:35:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Dec 22 2020 20:35:25 GMT+0000",
+      "jcr:lastModified": "Tue Dec 22 2020 20:35:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Dec 22 2020 20:35:32 GMT+0000",
+          "jcr:lastModified": "Tue Dec 22 2020 20:35:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 16:10:53 GMT-0400",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-wordmark-small.jpg",
+      "jcr:lastModified": "Thu Sep 13 2018 16:13:11 GMT-0400",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "layoutOptions": "col-sm-6 pull-left",
+      "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/TEACH-header-banner-2020.jpg",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "alt": "TEACH Header Banner",
+      "jcr:lastModified": "Mon Apr 20 2020 17:27:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Feb 22 2018 16:56:40 GMT-0500",
+          "gradientDirection": "diagonal",
+          "line2": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\"><span style=\"color: rgb(223,225,222);\">Trauma &amp; Extremities</span></span><br>\r\n</span>",
+          "jcr:lastModified": "Wed Jun 02 2021 15:17:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "fullbleedpanel_1479263049": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Jun 02 2021 15:20:35 GMT+0000",
+      "jcr:lastModified": "Wed Jun 02 2021 15:21:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 14 2025 15:44:07 GMT+0000",
+      "jcr:lastModified": "Fri Feb 14 2025 15:44:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3_758854310_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Fri Jan 28 2022 14:31:44 GMT+0000",
+      "jcr:lastModified": "Fri Jan 28 2022 14:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 17:05:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">2026 Medical Education Calender</span></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">additional course opportunities coming soon</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Jan 06 2026 21:20:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/trauma-and-extremeties/teach-courses/Trauma-Medical-Education-Course-Calendar.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Dec 15 2023 17:06:35 GMT+0000",
+          "CTATitle": "2026 Medical Education Calendar",
+          "jcr:lastModified": "Tue Jan 06 2026 21:20:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 17:05:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Upper&nbsp;Extremities Virtual Learning Center</span></span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">View shoulder arthroplasty surgical videos</span></span></span></p>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 20:30:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Dec 15 2023 17:06:35 GMT+0000",
+          "CTATitle": "Virtual Learning Center",
+          "jcr:lastModified": "Fri Feb 14 2025 15:45:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(28,86,135)",
+          "ctaInternalLink": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/te-virtual-learning-center/upper-extremities"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Fri Dec 15 2023 17:05:19 GMT+0000",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">2026 Foot &amp; Ankle Medical Education calendar</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Apr 14 2026 18:37:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/trauma-and-extremeties/teach-courses/FA-GSNPS-SYK-3071650_FA-EXTERNAL-CALENDAR.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Dec 15 2023 17:06:35 GMT+0000",
+          "CTATitle": "2026 Foot & Ankle Medical Education calendar",
+          "jcr:lastModified": "Tue Apr 14 2026 18:37:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(76,125,122)"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Sep 22 2017 14:39:38 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 18:13:06 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(89,75,97,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "testimonial": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 14:39:52 GMT-0400",
+          "heading": "The educational experience that matters.",
+          "jcr:lastModified": "Thu Oct 05 2017 15:03:39 GMT-0400",
+          "sling:resourceType": "stryker/components/content/testimonial",
+          "subheading": "Our ambition to be the leading medical education partner, drives us to continually offer you an educational experience. "
+        }
+      }
+    },
+    "cols_545285112": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Nov 19 2019 21:28:50 GMT+0000",
+      "jcr:lastModified": "Tue Nov 19 2019 21:28:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Fri Sep 22 2017 14:43:23 GMT-0400",
+      "jcr:lastModified": "Fri Sep 22 2017 14:43:23 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 16:19:04 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-icon4.jpg",
+          "jcr:lastModified": "Thu Sep 13 2018 16:28:07 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Sep 25 2017 10:48:46 GMT-0400",
+          "text": "<h4><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">A meaningful experience</span></span></h4>\n<h4>Make the most of your time.</h4>\n<p>We promise to keep things relevant year in and year out.&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 13 2018 16:21:30 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 16:22:26 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-icon5.jpg",
+          "jcr:lastModified": "Thu Sep 13 2018 16:22:34 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Sep 25 2017 10:48:46 GMT-0400",
+          "text": "<h4><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">An effective experience</span></span></h4>\n<h4>Stay in the know.</h4>\n<p>Take what you learn here today, and apply it tomorrow.</p>\n",
+          "jcr:lastModified": "Thu Sep 13 2018 16:23:45 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 15:33:20 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/TEACH-icon6.jpg",
+          "jcr:lastModified": "Thu Sep 13 2018 16:24:26 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Sep 25 2017 10:48:46 GMT-0400",
+          "text": "<h4><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">A personalized experience</span></span></h4>\n<h4>We'll keep up.&nbsp;</h4>\n<p>As you progress, so will our offerings.&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Sep 13 2018 16:24:14 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_1959062736": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:created": "Fri Sep 22 2017 16:16:08 GMT-0400",
+      "jcr:lastModified": "Mon Oct 02 2017 12:05:33 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(85,87,89,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "fastfacts": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 16:16:13 GMT-0400",
+          "title": "A meaningful experience",
+          "linkNewWindow": "true",
+          "jcr:lastModified": "Thu Aug 15 2019 17:32:34 GMT+0000",
+          "linkNewWindowOverride": "0",
+          "linkType": "none",
+          "sling:resourceType": "stryker/components/content/fastfacts"
+        }
+      }
+    },
+    "cols_2025990037": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Nov 19 2019 21:29:13 GMT+0000",
+      "jcr:lastModified": "Tue Nov 19 2019 21:29:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1877186565": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "frank.mastrangelo@stryker.com",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:created": "Mon Oct 02 2017 12:47:11 GMT-0400",
+      "jcr:lastModified": "Mon Oct 02 2017 12:47:11 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "frank.mastrangelo@stryker.com",
+          "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+          "jcr:created": "Mon Oct 02 2017 12:47:43 GMT-0400",
+          "text": "<h5>Make the most of your time. We promise to keep things relevant year in and year out.</h5>\n<ul>\n<li>We strive to provide you with useful courses. Consulting with the industry's top key opinion leaders helps us design a broad and relevant curriculum<br>\n</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>Your opinion counts. We collect feedback after every session and the advice you give helps to make our programs even better</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>Our focus is on your practical education and training, not product promotion&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Oct 03 2017 11:01:18 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "stephen.brown@stryker.com",
+          "jcr:created": "Mon Oct 02 2017 15:21:10 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/section1.jpg",
+          "jcr:lastModified": "Thu Aug 15 2019 17:32:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "fullbleedpanel_1104110905": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:created": "Fri Sep 22 2017 16:17:36 GMT-0400",
+      "jcr:lastModified": "Mon Oct 02 2017 12:05:43 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(85,87,89,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "fastfacts": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 16:17:40 GMT-0400",
+          "title": "An effective experience",
+          "linkNewWindow": "true",
+          "jcr:lastModified": "Fri Sep 22 2017 16:18:46 GMT-0400",
+          "linkNewWindowOverride": "0",
+          "linkType": "none",
+          "sling:resourceType": "stryker/components/content/fastfacts"
+        }
+      }
+    },
+    "cols_401303142": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Nov 19 2019 21:29:18 GMT+0000",
+      "jcr:lastModified": "Tue Nov 19 2019 21:29:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_2029880044": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "frank.mastrangelo@stryker.com",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:created": "Mon Oct 02 2017 12:31:02 GMT-0400",
+      "jcr:lastModified": "Mon Oct 02 2017 12:31:02 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "frank.mastrangelo@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Oct 02 2017 12:36:57 GMT-0400",
+          "text": "<h5><b style=\"color: inherit;\">Stay in the know. </b>Take what you learn today, and apply it tomorrow.&nbsp;<br>\n</h5>\n<ul>\n<li>We can give you the hands-on experience you want. We offer a wide range of cadaveric labs to help hone your surgical skills</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>Supporting you is the number one priority for our faculty. Wide ranging and in-depth teaching experience gives them the insight to help you get the most out of each course</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>Learning is more effective in small groups. Our courses have a high ratio of faculty to trainees&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Mon Oct 02 2017 15:41:41 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Oct 02 2017 15:01:38 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/section2.jpg",
+          "jcr:lastModified": "Mon Oct 02 2017 15:21:02 GMT-0400",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "fullbleedpanel_1374417444": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+      "jcr:created": "Fri Sep 22 2017 16:18:11 GMT-0400",
+      "jcr:lastModified": "Mon Oct 02 2017 12:05:50 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(85,87,89,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "fastfacts": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Sep 22 2017 16:18:15 GMT-0400",
+          "title": "A personalized experience",
+          "jcr:lastModified": "Fri Sep 22 2017 16:18:27 GMT-0400",
+          "linkNewWindowOverride": "0",
+          "linkType": "none",
+          "sling:resourceType": "stryker/components/content/fastfacts"
+        }
+      }
+    },
+    "cols_337069760": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Nov 19 2019 21:29:22 GMT+0000",
+      "jcr:lastModified": "Tue Nov 19 2019 21:29:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1794642881": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Mon Sep 25 2017 16:33:30 GMT-0400",
+      "jcr:lastModified": "Mon Sep 25 2017 16:33:30 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Sep 25 2017 16:39:27 GMT-0400",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/systems/teach/section3.jpg",
+          "jcr:lastModified": "Tue Dec 03 2019 20:26:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "frank.mastrangelo@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Oct 02 2017 12:31:22 GMT-0400",
+          "text": "<h5><b>We'll keep up. </b>As you progress so will our offerings.</h5>\n<ul>\n<li>Your need for tiered levels of training and education is met byour extensive course offering ranging from basic resident traning to advanced surgical techniques.</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>By partnering with industry societies, we offer educational grants to give you the opportunity to attend other courses that you may need.&nbsp;</li>\n</ul>\n<div>&nbsp;</div>\n<ul>\n<li>We're bringing training to you. Our cutting-edge mobile operation room experience (the TEACH mobile lab) is a first-class lab on wheels.</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Feb 13 2018 14:50:59 GMT-0500",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_993566": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Fri Aug 04 2017 14:48:56 GMT-0400",
+      "jcr:lastModified": "Fri Aug 04 2017 14:48:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carlos.castaneda@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "Paul.Zurlini@stryker.com",
+          "jcr:created": "Tue May 23 2017 14:07:44 GMT-0400",
+          "CTATitle": "contact us",
+          "jcr:lastModified": "Wed May 24 2017 12:50:22 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta"
+        },
+        "text_1230802295": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 16:31:35 GMT-0400",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Get in touch with</span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 13 2018 16:32:33 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_726506715": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 16:31:05 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span class=\"fontsize-2em\">Trauma &amp; Extremities</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Sep 13 2018 16:32:12 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(89,75,97,1)",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "frank.mastrangelo@stryker.com",
+          "jcr:created": "Fri Aug 04 2017 14:33:08 GMT-0400",
+          "text": "<p><b>Trauma &amp; Extremities&nbsp;<br>\n </b>325 Corporate Drive<br>\nMahwah, NJ 07430<br>\n201 831 5000</p>\n",
+          "jcr:lastModified": "Mon Oct 02 2017 13:30:59 GMT-0400",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta_105712785": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Paul.Zurlini@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed May 24 2017 12:50:59 GMT-0400",
+          "CTATitle": "Contact us",
+          "jcr:lastModified": "Fri Aug 04 2017 14:33:01 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAUrl": "",
+          "ctaInternalLink": "/content/stryker/us/en/trauma-and-extremities/contact"
+        }
+      }
+    }
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "jcr:lastModified": "Fri Sep 22 2017 14:18:47 GMT-0400",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Content ID:&nbsp;AP-017990A</p>\r\n",
+    "jcr:lastModified": "Wed Mar 05 2025 19:42:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/image/TeachBanner.jpg"
+  }
+}

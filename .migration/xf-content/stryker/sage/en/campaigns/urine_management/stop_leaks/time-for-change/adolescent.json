@@ -1,0 +1,126 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Adolescent",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "63b00551-8f0e-4e1a-a194-86b2bf373a1f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "4b41c049-c191-47a9-b6ef-57517c92fe59"
+  ],
+  "lastPublished": "Wed Sep 25 2024 20:57:07 GMT+0000",
+  "jcr:created": "Wed Sep 25 2024 20:57:09 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 25 2024 20:57:14 GMT+0000",
+  "cq:lastModified": "Wed Sep 25 2024 19:44:56 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4b41c049-c191-47a9-b6ef-57517c92fe59",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 25 2024 20:57:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "8a8e16aa-ff23-463b-84c1-9a7d07b1fe0d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:title": "For",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Aug 26 2024 14:34:48 GMT+0000",
+      "jcr:lastModified": "Thu Aug 29 2024 16:59:51 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage60237": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Grown woman and child icon",
+        "srcFileRef": "/content/dam/stryker/sage/urine-management/primafit-competitor/images/woman-and-adolescent-icon.png",
+        "jcr:lastModified": "Wed Sep 25 2024 19:44:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4"
+          }
+        }
+      },
+      "text_copy6291636250193514": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "2",
+        "gradientDirection": "left-to-right",
+        "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-5em\">For adolescent and adult patients</span></span></span><span class=\"fontsize-1-25em\"> with female anatomy<sup>4</sup></span></p>\n",
+        "jcr:lastModified": "Thu Aug 29 2024 17:23:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_627413130": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "vertical-separator",
+      "srcFileRef": "/content/dam/stryker/sage/urine-management/primafit-competitor/images/long-line-separator.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Aug 29 2024 17:32:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "behavior": "hide"
+        }
+      }
+    }
+  }
+}

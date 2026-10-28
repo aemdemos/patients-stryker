@@ -1,0 +1,104 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Watch Kevin Lobo on Fox Business Network’s Claman Countdown",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ea6579d9-7d29-46c2-ab16-f91e312d739b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "kevin and liz claman fox business 2",
+  "jcr:predecessors": [
+    "2675143f-15dc-4760-a6c8-471d4b6b8b0d"
+  ],
+  "lastPublished": "Wed Feb 08 2023 21:54:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 08 2023 21:54:02 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 08 2023 21:54:04 GMT+0000",
+  "cq:lastModified": "Wed Feb 08 2023 21:46:07 GMT+0000",
+  "jcr:baseVersion": "2675143f-15dc-4760-a6c8-471d4b6b8b0d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Wed Feb 08 2023 21:45:50 GMT+0000",
+  "jcr:uuid": "035ecb9f-7f53-4cf2-9925-6f1b9884fccf",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Feb 08 2023 21:42:51 GMT+0000",
+      "jcr:lastModified": "Wed Feb 08 2023 21:42:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Feb 08 2023 21:42:56 GMT+0000",
+          "alt": "Kevin and Liz Claman Fox Business",
+          "srcFileRef": "/content/dam/stryker/about/news/2023/watch-kevin-lobo-on-fox-business-network’s-claman-countdown/kevin and liz claman fox business 2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Feb 08 2023 21:45:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Feb 08 2023 21:43:15 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">Stryker Chair and CEO, Kevin Lobo, discusses our return to pre-pandemic growth with Liz Claman, and how our innovations – driven by AI-enabled digital technology – will continue improving the lives of our customers and their patients in 2023 and beyond.</span></span></p>\n",
+          "jcr:lastModified": "Wed Feb 08 2023 21:43:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Feb 08 2023 21:43:57 GMT+0000",
+          "CTATitle": "Continue to watch video",
+          "ctaExternalLink": "https://video.foxbusiness.com/v/6319894156112#sp=show-clips",
+          "jcr:lastModified": "Wed Feb 08 2023 21:44:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Wed Feb 08 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "08-Feb-2023",
+    "jcr:lastModified": "Wed Feb 08 2023 21:46:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/watch-kevin-lobo-on-fox-business-network’s-claman-countdown/kevin and liz claman fox business 2.png"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "The Dangers of Third-Party Service Agreements",
+  "jcr:versionHistory": "34a19112-cb19-4483-b228-ede276553422",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "61a08653-8ace-40e2-b721-ab5e0163d8dd"
+  ],
+  "lastPublished": "Fri Oct 04 2019 14:16:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 04 2019 14:16:32 GMT+0000",
+  "cq:lastModified": "Fri Oct 04 2019 14:11:32 GMT+0000",
+  "jcr:description": "Perioperative Nurses | Sterile Processing Personnel | 2 contact hours",
+  "jcr:baseVersion": "61a08653-8ace-40e2-b721-ab5e0163d8dd",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 04 2019 14:11:32 GMT+0000",
+  "jcr:uuid": "cdc48fff-4dd7-4762-8d43-1c5fce6ae62f",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Oct 02 2019 19:05:16 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\">Course code: 4262</span></p>\n<p>2 contact hours</p>\n<p>Perioperative Nurses</p>\n<p>Sterile Processing Personnel<br>\n</p>\n<p>Third-party repair and replacement of parts in battery-powered, air-powered, and micro-electric orthopedic surgical instruments and equipment open the door for a range of risks to the patient and the healthcare organization. Third-party servicing uses parts that may not be manufactured by the original instrument company and therefore are non-compatible parts that can result in serious equipment malfunction and can reduce the lifespan of these instruments. Through this education activity, perioperative personnel will gain a clear understanding of the negative implications associated with third-party servicing and part replacement, as well as the knowledge regarding regulatory perspectives on third-party servicing. This knowledge can help perioperative teams in planning accordingly to prevent patient injury and costly lawsuits as a result of third-party servicing that can also harm the reputation of a healthcare organization and its perioperative professionals.</p>\n",
+      "jcr:lastModified": "Wed Oct 02 2019 19:08:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/training-and-education/images/Thumbnail_ServiceAgreements.jpg"
+  }
+}

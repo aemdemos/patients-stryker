@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker completes acquisition of K2M",
+  "jcr:versionHistory": "7f616f5e-eb38-4359-9dee-547a9b3a87e5",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:predecessors": [
+    "a90242e9-bbfe-48a8-97ab-8d0ee233ed8d"
+  ],
+  "lastPublished": "Mon Mar 11 2019 18:51:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 11 2019 18:51:54 GMT+0000",
+  "cq:lastModified": "Mon Mar 11 2019 18:51:46 GMT+0000",
+  "jcr:baseVersion": "a90242e9-bbfe-48a8-97ab-8d0ee233ed8d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/ir",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Feb 14 2019 20:58:56 GMT+0000",
+  "jcr:uuid": "21803751-ae39-45bf-9ee9-1ceeeb6aa289",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Fri Nov 09 2018 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Nov-2018",
+    "jcr:lastModified": "Fri Nov 09 2018 18:30:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/K2M-Logo-Tag_cmyk (002).png"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "text": "<p>Stryker&nbsp;(NYSE:SYK) has completed the previously announced acquisition of&nbsp;K2M Group Holdings, Inc., a global leader of complex spine and minimally invasive solutions.</p>\n<p>See full press release <a href=\"https://investors.stryker.com/press-releases/news-details/2018/Stryker-completes-acquisition-of-K2M/default.aspx\">here</a>.&nbsp;</p>\n",
+    "jcr:lastModified": "Mon Mar 11 2019 18:51:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

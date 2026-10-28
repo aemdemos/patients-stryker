@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hoffmann Compact",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c27c6439-ec76-4156-92ad-40f1e9c8aab8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "3767e421-20d2-4944-be2f-e485f9112513"
+  ],
+  "lastPublished": "Fri Jul 19 2024 18:49:50 GMT+0000",
+  "jcr:created": "Fri Jul 19 2024 18:49:51 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 19 2024 18:49:53 GMT+0000",
+  "cq:lastModified": "Tue Dec 13 2022 19:55:21 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3767e421-20d2-4944-be2f-e485f9112513",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:49:50 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3f9e4c5d-8049-4fb9-9ce3-a165210a4897",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Oct 03 2022 17:58:29 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Mon Oct 03 2022 17:58:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/trauma-and-extremeties/experience-fragment-assets/products/2023-header-banners/Hoffmann-Compact.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Hoffmann-Compact-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Dec 13 2022 19:55:21 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

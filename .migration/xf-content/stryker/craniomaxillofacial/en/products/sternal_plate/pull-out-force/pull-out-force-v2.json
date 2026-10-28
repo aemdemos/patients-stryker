@@ -1,0 +1,118 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Pull out force v2",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "de412b20-ce16-47ab-a851-68318aa50cb4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f2640741-80e6-4259-9ead-c9b18e84db26"
+  ],
+  "lastPublished": "Tue Jul 29 2025 14:20:47 GMT+0000",
+  "jcr:created": "Tue Jul 29 2025 14:21:13 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 29 2025 14:21:15 GMT+0000",
+  "cq:lastModified": "Fri Jul 25 2025 16:33:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f2640741-80e6-4259-9ead-c9b18e84db26",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jul 29 2025 14:20:47 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4adabc4e-19ac-4c42-a4b9-7a570f2c54c2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "topMargin": "7",
+      "jcr:created": "Fri Jul 25 2025 16:04:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line2": "<span class=\"fontsize-4-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">AXS Screw</span></span></span><br>\r\n <span style=\"color: rgb(223,225,222);\"><span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(223,225,222);\"><span style=\"color: #ffffff;\">pull-out force</span></span></span></span></span>",
+      "jcr:lastModified": "Fri Jul 25 2025 16:33:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0"
+    },
+    "largeheadline_687774337": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "topMargin": "0",
+      "jcr:created": "Fri Jul 25 2025 16:07:32 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line2": "<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4-5-vw\">+15%</span></span></span></p>\r\n<p><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(223,225,222);\"><span class=\"fontsize-1vw\"><span style=\"color: #ffffff;\">pull-out force compared to a competitive product<sup>7</sup></span></span></span></span></p>\r\n",
+      "jcr:lastModified": "Fri Jul 25 2025 16:33:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue Jun 04 2024 18:08:14 GMT+0000",
+      "alt": "1585685123_Plate_2_Angled-1--web",
+      "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/sternalplate/images/Plate_2_Angled_1-300x298 copy.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 05 2024 17:27:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    }
+  }
+}

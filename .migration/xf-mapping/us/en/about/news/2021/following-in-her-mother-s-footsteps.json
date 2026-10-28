@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Following in her mother’s footsteps",
+  "jcr:versionHistory": "d900d823-202e-42c2-a372-e73230ed79c1",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "101b43cc-b3f1-4248-9938-f7e94721c49a"
+  ],
+  "contentID": "SYK CORP 2021-11-109",
+  "lastPublished": "Tue Nov 30 2021 16:57:46 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 30 2021 16:57:46 GMT+0000",
+  "cq:lastModified": "Tue Nov 30 2021 16:49:32 GMT+0000",
+  "jcr:baseVersion": "101b43cc-b3f1-4248-9938-f7e94721c49a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/patients",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Tue Nov 23 2021 19:59:16 GMT+0000",
+  "jcr:uuid": "739bb8c3-f58f-4485-8fa0-50fc83baead7",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Nov 30 2021 16:42:51 GMT+0000",
+      "jcr:lastModified": "Tue Nov 30 2021 16:42:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2021/following_in_her_mot/hero-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2021/following-in-her-mot/hero-image/master",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "10",
+          "jcr:created": "Tue Nov 30 2021 16:42:57 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Tue Nov 30 2021 16:48:31 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Tue Nov 30 2021 16:47:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Following in her&nbsp;mother's footsteps</span></span>",
+              "jcr:lastModified": "Tue Nov 30 2021 16:49:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Nov 30 2021 16:44:04 GMT+0000",
+      "jcr:lastModified": "Tue Nov 30 2021 16:44:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Nov 23 2021 19:54:16 GMT+0000",
+      "jcr:lastModified": "Tue Nov 23 2021 19:54:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2021/following_in_her_mot/following-in-her-mother-s-footsteps/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2021/following-in-her-mot/following-in-her-mother-s-footsteps/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Mon Nov 29 2021 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Nov-2021",
+    "jcr:lastModified": "Mon Nov 29 2021 14:23:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2021/following-in-her-mother’s-footsteps/AdobeStock_457789691.jpeg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Nov 30 2021 16:43:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Nov 30 2021 16:48:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

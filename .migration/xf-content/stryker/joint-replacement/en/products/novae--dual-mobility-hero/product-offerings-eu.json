@@ -1,0 +1,317 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Product offerings EU",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "39402d65-9e4b-453e-8943-6ec766e015d4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "ec6b41b5-5c7e-4394-83e7-145e5cc1fb85"
+  ],
+  "lastPublished": "Tue Feb 03 2026 21:42:10 GMT+0000",
+  "jcr:created": "Tue Feb 03 2026 21:42:14 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 03 2026 21:42:16 GMT+0000",
+  "cq:lastModified": "Fri Jan 09 2026 00:07:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ec6b41b5-5c7e-4394-83e7-145e5cc1fb85",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Feb 03 2026 21:42:10 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ca29079e-973b-4ce6-a104-a0a59a3c83fa",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Sep 29 2025 19:46:55 GMT+0000",
+      "jcr:lastModified": "Tue Dec 23 2025 01:09:57 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy5495628309433763": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Novae Sunfit TH",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/images/2007_Novae SunFit TH insert(1).jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 03 2025 01:08:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "joelle.battista@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Sep 29 2025 19:59:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Novae Sunfit TH</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">(Primary)​</span></span></p>\n<p><span class=\"fontsize-1-25em\">Cylindro-hemispherical cup with demonstrated increased jump distance compared to fixed bearing.<sup>1 ​</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Dedicated to primary cementless THA. Press fit fixation and dual coating (Ti+HA).</span></p>\n",
+        "jcr:lastModified": "Wed Dec 03 2025 01:48:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_1696098734": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Sep 29 2025 19:47:12 GMT+0000",
+      "jcr:lastModified": "Tue Dec 23 2025 01:10:31 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_16960987345495662968961286": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Novae Stick",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/images/Novae Stick insert(2).png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 03 2025 01:08:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "joelle.battista@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Sep 29 2025 19:59:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Novae Stick</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">(Primary and revision cemented)​</span></span></p>\n<p><span class=\"fontsize-1-25em\">Cemented dual mobility for acetabular revisions and poor bone quality.​<br>\n</span></p>\n<p><span class=\"fontsize-1-25em\">Dedicated to primary and acetabular revisions.&nbsp;</span></p>\n",
+        "jcr:lastModified": "Wed Dec 03 2025 17:26:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_731624921": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Sep 29 2025 19:47:15 GMT+0000",
+      "jcr:lastModified": "Tue Dec 23 2025 01:10:54 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_7316249215495685397075788": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Novae E TH",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/products/novae/eu/images/Novae-E-TH-EU-v2.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 03 2025 01:47:09 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy_18747": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "joelle.battista@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Sep 29 2025 19:59:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Novae E TH&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">(Primary and revision)​</span></span></p>\n<p><span class=\"fontsize-1-25em\">Dedicated to primary cementless THA or small revision. Press fit fixation with pegs, screw and dual coating (Ti+HA). ​</span></p>\n<p><span class=\"fontsize-1-25em\">Fixation with:</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">1 flange</span></li>\n<li><span class=\"fontsize-1-25em\">2 pegs</span></li>\n</ul>\n",
+        "jcr:lastModified": "Wed Dec 03 2025 17:26:44 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy_1948760667": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Sep 29 2025 19:47:20 GMT+0000",
+      "jcr:lastModified": "Tue Dec 23 2025 01:11:16 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy_19487606675495707440212022": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Novae Coptos",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/products/novae/eu/images/Novae-Coptos-TH-EU.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 03 2025 01:43:46 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "text_copy_copy_18712": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "joelle.battista@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Sep 29 2025 19:59:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Novae Coptos TH&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">(Revision)​</span></span></p>\n<p><span class=\"fontsize-1-25em\">Dedicated to revision cementless THA. Press fit fixation with pegs, screws and dual coating (Ti+HA). ​</span></p>\n<p><span class=\"fontsize-1-25em\">Cage-like construct with:​</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">2 flanges​</span></li>\n<li><span class=\"fontsize-1-25em\">Obturator hook</span></li>\n<li><span class=\"fontsize-1-25em\">​2 pegs</span><br>\n</li>\n</ul>\n",
+        "jcr:lastModified": "Thu Dec 11 2025 16:22:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 23 2025 01:18:37 GMT+0000",
+      "jcr:lastModified": "Tue Dec 23 2025 01:21:10 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage5496301320718191": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Novae KE cross-plate",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/products/novae/eu/images/Novae-KE-Crossplate-EU.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Dec 23 2025 01:19:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy_copy_18712": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "jcr:createdBy": "joelle.battista@stryker.com",
+        "leftPadding": "3",
+        "topPadding": "2",
+        "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Mon Sep 29 2025 19:59:56 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Novae KE cross-plate</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">(Revision cemented)​</span></span></p>\n<p><span class=\"fontsize-1-25em\">The NOVAE K E cross-plate is intended to recreate a background for the implantation of a NOVAE STICK cup for cemented acetabular revision cases.</span><br>\n</p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Anatomical shape </span></li>\n<li><span class=\"fontsize-1-25em\">4 PMMA (bio compatible plastic) spacers on each branch </span></li>\n<li><span class=\"fontsize-1-25em\">4 holes in the impaction plate for screws Ø5 mm</span></li>\n</ul>\n",
+        "jcr:lastModified": "Tue Dec 23 2025 01:21:06 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

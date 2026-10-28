@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker featured in LinkedIn’s “Top Companies to Work For” video series",
+  "jcr:versionHistory": "2fceb6e7-ab4e-4b3e-95db-7eae20aff94a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:predecessors": [
+    "97d2e66f-ea36-4159-87cb-b82b21b55cfc"
+  ],
+  "lastPublished": "Thu Sep 13 2018 15:08:16 GMT+0000",
+  "jcr:created": "Thu Sep 13 2018 15:08:16 GMT-0400",
+  "cq:lastModified": "Thu Sep 13 2018 15:08:03 GMT-0400",
+  "jcr:baseVersion": "97d2e66f-ea36-4159-87cb-b82b21b55cfc",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:uuid": "d27af8dd-ee39-4bce-bd96-1c8f2ccce7cb",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Thu Sep 13 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "13-Sep-2018",
+    "jcr:lastModified": "Thu Sep 13 2018 15:06:59 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p>Stryker was featured in LinkedIn’s “Top Companies to Work For” video series after being ranked No. 30 on the 2018 list! LinkedIn bases this list on the billions of actions taken by its 500+ million members in three categories: interest in a company's jobs, interest in a company's brand and employees, and employee retention.</p>\n<p>Watch the <a href=\"https://www.youtube.com/watch?v=yUudMeI_OE8&amp;feature=youtu.be\">full video</a> to hear why people love working for Stryker.&nbsp;</p>\n",
+    "jcr:lastModified": "Thu Sep 13 2018 15:08:03 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

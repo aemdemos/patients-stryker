@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ENT BU Homepage Hero mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "146a1cf9-9254-4cef-98a8-f4ebe631662b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "cbb63505-6141-4349-8bbd-d031ffeab523"
+  ],
+  "lastPublished": "Mon May 05 2025 18:00:39 GMT+0000",
+  "jcr:created": "Mon May 05 2025 18:00:41 GMT+0000",
+  "cq:lastReplicated": "Mon May 05 2025 18:00:42 GMT+0000",
+  "cq:lastModified": "Wed Mar 26 2025 16:35:02 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cbb63505-6141-4349-8bbd-d031ffeab523",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 05 2025 18:00:39 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "99430c29-02ff-4082-9242-c0ac4e6b43fd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Mar 26 2025 16:34:48 GMT+0000",
+      "alt": "Stryker-ENTHero-still",
+      "srcFileRef": "/content/dam/stryker/ent/images/Stryker-ENTHero-still.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Mar 26 2025 16:35:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

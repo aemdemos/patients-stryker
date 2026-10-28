@@ -1,0 +1,223 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Knowing when to use an AED: CPR and AED guidelines for sudden cardiac arrest",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b0c6d24f-47d7-48fa-a2ca-395c146c9d08",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "When to use an AED",
+  "jcr:predecessors": [
+    "1026d282-8853-4e9b-b02e-c4f87ae1ef3e"
+  ],
+  "contentID": "M0000017323 REV AA",
+  "lastPublished": "Fri Feb 07 2025 22:43:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Feb 07 2025 22:43:16 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 07 2025 22:43:18 GMT+0000",
+  "cq:lastModified": "Fri Feb 07 2025 22:43:10 GMT+0000",
+  "jcr:description": "When to use an AED is crucial in sudden cardiac arrest situations. Learn how to recognize sudden cardiac arrest symptoms and act promptly to help increase the chance of survival.\r\n",
+  "jcr:baseVersion": "1026d282-8853-4e9b-b02e-c4f87ae1ef3e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:12:56 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/articles",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news"
+  ],
+  "jcr:lastModified": "Fri Feb 07 2025 22:43:10 GMT+0000",
+  "jcr:uuid": "5e1a1216-c296-49e2-bd41-edb84d2f9841",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Dec 01 2023 20:18:05 GMT+0000",
+      "jcr:lastModified": "Fri Dec 01 2023 20:18:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/when-to-use-and-aed/master",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Dec 01 2023 20:18:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Dec 01 2023 20:18:44 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "rightMargin": "40",
+              "jcr:created": "Tue May 31 2022 17:26:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><b>Knowing when to use an AED: Guidelines for sudden cardiac arrest&nbsp;&nbsp;</b></span></span></h1>\r\n",
+              "jcr:lastModified": "Tue Jan 02 2024 14:37:57 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,181,0,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:30:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Nov 15 2023 20:15:50 GMT+0000",
+      "text": "2-minute read Sudden cardiac arrest is a life-threatening condition that can strike anyone, anywhere, at any time. When it occurs, every second counts, making it crucial to initiate prompt and effective life-saving measures. Cardiopulmonary resuscitation (CPR) combined with the use of an automated external defibrillator (AED) can significantly increase the chances of survival. In this article, we'll delve into the importance of knowing when to use an AED during a sudden cardiac arrest episode. Understanding sudden cardiac arrest Sudden cardiac arrest is distinct from a heart attack, though it can be triggered by one. A heart attack is caused by a blockage in a coronary artery, preventing blood flow to part of the heart muscle.1 In contrast, cardiac arrest results from malfunctioning electrical impulses in the heart, causing it to suddenly stop beating effectively. When this happens, the individual will collapse without warning, lose consciousness, and will not have a discernible pulse.2 The crucial link in the chain of survival for someone experiencing sudden cardiac arrest is swift intervention. Every second matters. CPR is an important first aid technique whose primary goal is maintain circulatory flow and oxygenation to preserve vital organ function until further medical treatment is possible.3 Imagine the heart as a pump and the blood as the water it needs to circulate. If the pump stops, the water remains stagnant. CPR effectively acts as a manual pump, ensuring oxygenated blood keeps flowing to crucial organs, especially the brain.4 It's a stopgap measure until more advanced medical interventions, like the use of an AED, can be implemented. When to use an AED An AED is a portable device designed to analyze the heart's rhythm and deliver an electric shock, if necessary, to restore normal heartbeat. AEDs are user-friendly and can be operated by individuals with minimal or no medical training. Here's when you should use an AED: Immediately: If a person collapses and is unresponsive and not breathing normally, the first step is to call emergency services (911 or your local emergency number) and start CPR.3 After initiating CPR, if an AED is available, it should be brought to the scene and turned on. After two Minutes of CPR: AEDs are most effective when used in conjunction with CPR.5 After approximately two minutes of performing chest compressions, you should attach the AED pads to the victim's chest as directed by the device. For shockable rhythms: AEDs are specifically designed to treat shockable rhythms like ventricular fibrillation (VF) and pulseless ventricular tachycardia (VT).6 These rhythms are irregular and chaotic, preventing the heart from pumping blood effectively. The AED will analyze the victim's heart rhythm and determine whether a shock is needed. Sudden cardiac arrest can happen at any moment, and knowing when to use an AED can make the difference between life and death. By understanding the importance of early defibrillation, the role of CPR, and the appropriate situations to use an AED, you can be better prepared to respond effectively during a sudden cardiac arrest episode. Remember, quick action and proper use of an AED can significantly increase the chances of survival, turning ordinary individuals into potential lifesavers.7 Together, we save lives The decision to invest in an AED is an important one that could save lives. Choosing the safest device for your needs is crucial. Connect with an AED expert to learn more about our AEDs and how we can help you make your community safer.",
+      "jcr:lastModified": "Thu Nov 30 2023 22:13:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/news/when-to-use-and-aed/body"
+    },
+    "cols3_1098156374_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Nov 16 2021 19:26:23 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-75em\">Learn more</span></span></span></span></p>\n",
+      "jcr:lastModified": "Tue May 31 2022 20:51:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1098156374_cop_1259848941": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 02 2023 15:34:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedlinklist_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Nov 16 2021 19:04:43 GMT+0000",
+          "jcr:lastModified": "Fri Dec 01 2023 20:04:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedlinklist",
+          "internalLinks": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "AED buying guide",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/aed-buying-guide"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "Defibrillator 101",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/defibrillator-101"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "linkNewWindowOverride": "0",
+              "internalLinkType": "int",
+              "titleInternal": "The role of defibrillation during sudden cardiac arrest",
+              "linkInternal": "/content/stryker/us/en/emergency-care/news/2022/the-role-of-defibrillation-during-sudden-cardiac-arrest"
+            }
+          }
+        }
+      }
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Wed Jan 31 2024 15:15:51 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Wed Jan 31 2024 15:17:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/lifepak-cr2"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/heartsine-smaritan-pad-360p"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/products/heartsine-samaritan-pad-450p"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "publishDate": "Wed Jan 31 2024 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "31-Jan-2024",
+    "jcr:lastModified": "Wed Jan 31 2024 18:31:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Nov 30 2023 21:57:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Citations</p>\r\n<ol>\r\n<li><a href=\"https://www.mayoclinic.org/diseases-conditons/heart-atack/symptoms-causes/syc-20373106\" target=\"_blank\">https://www.mayoclinic.org/diseases-conditons/heart-atack/symptoms-causes/syc-20373106</a></li>\r\n<li><a href=\"https://www.heart.org/en/health-topics/cardiac-arrest/about-cardiac-arrest\" target=\"_blank\">https://www.heart.org/en/health-topics/cardiac-arrest/about-cardiac-arrest</a></li>\r\n<li><a href=\"https://www.sca-aware.org/campus/the-chain-of-survival\" target=\"_blank\">https://www.sca-aware.org/campus/the-chain-of-survival</a></li>\r\n<li><a href=\"https://www.mayoclinic.org/first-aid/first-aid-cpr/basics/art-20056600\" target=\"_blank\">https://www.mayoclinic.org/first-aid/first-aid-cpr/basics/art-20056600</a></li>\r\n<li><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3116356/\" target=\"_blank\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3116356/</a></li>\r\n<li><a href=\"https://nhcps.com/lesson/acls-cases-ventricular-fibrillation-pulseless-ventricular-tachycardia/\" target=\"_blank\">https://nhcps.com/lesson/acls-cases-ventricular-fibrillation-pulseless-ventricular-tachycardia/</a></li>\r\n<li><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3008654/\" target=\"_blank\">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3008654/</a></li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Dec 04 2023 13:34:38 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/news/images/When-to-use-an-AED-thumb_1200x680.jpg"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Microcatheter",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Excelsior XT-17",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "caf3b53f-0446-4330-88a9-cb18f352a1c3",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Excelsior XT-17",
+  "jcr:predecessors": [
+    "9477cd7d-6702-4e01-beaf-0b4614d5b70e"
+  ],
+  "contentID": "AP001666 v2.0",
+  "lastPublished": "Wed Jan 08 2025 16:51:11 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 08 2025 16:51:21 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 08 2025 16:51:23 GMT+0000",
+  "cq:lastModified": "Mon Dec 30 2024 20:25:30 GMT+0000",
+  "jcr:description": "Excelsior XT-17 Microcatheter provides smooth tracking, stable delivery and a versatile platform. ",
+  "jcr:baseVersion": "9477cd7d-6702-4e01-beaf-0b4614d5b70e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:11 GMT+0000",
+  "pageTitle": "Excelsior XT-17 Microcatheter",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:product/neurovascular/excelsior-xt-17-microcatheter",
+    "stryker:specialty/access",
+    "stryker:portfolio/neurotechnology",
+    "stryker:business-unit/neurovascular",
+    "stryker:capability/neurovascular",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/hemorrhagic-stroke-hem"
+  ],
+  "jcr:lastModified": "Mon Dec 30 2024 20:25:30 GMT+0000",
+  "jcr:uuid": "670e394d-bd33-4c45-8d4e-42f3475d1f31",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Excelsior XT-17 Microcatheter",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Oct 28 2019 15:36:52 GMT+0000",
+      "jcr:lastModified": "Mon Oct 28 2019 15:37:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/neurovascular/en/products/excelsior-xt-17/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/neurovascular/en/products/excelsior-xt-17/master"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "erika.brown-connolly@stryker.com",
+      "jcr:lastModifiedBy": "erika.brown-connolly@stryker.com",
+      "jcr:created": "Tue Dec 18 2018 23:09:22 GMT+0000",
+      "jcr:lastModified": "Tue Dec 18 2018 23:09:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "christopher.keel@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "christopher.keel@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/neurovascular/products/excelsior-xt-17-microcatheter/resources/Excelsior-XT-17_DFU_US_Jul19.pdf",
+          "ctaLinkType": "dam",
+          "ctaOpenInNewTabOverride": "1",
+          "jcr:created": "Mon Feb 03 2020 19:33:47 GMT+0000",
+          "CTATitle": "Important Safety Information",
+          "jcr:lastModified": "Mon Feb 03 2020 19:34:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "christopher.keel@stryker.com",
+    "jcr:lastModified": "Tue Aug 27 2019 23:18:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/neurovascular/products/excelsior-xt-17-microcatheter/images/Thumbnail_EX XT-17.jpg"
+  }
+}

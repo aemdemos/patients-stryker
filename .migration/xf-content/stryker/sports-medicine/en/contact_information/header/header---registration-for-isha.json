@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Header - registration for ISHA",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "42a2c79b-91c4-4171-a88b-a42c86e9257e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "81e69ecb-50c2-4116-b82c-0a25dbbe71ee"
+  ],
+  "lastPublished": "Thu Sep 17 2026 19:37:48 GMT+0000",
+  "jcr:created": "Thu Sep 17 2026 19:37:50 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 17 2026 19:37:52 GMT+0000",
+  "cq:lastModified": "Tue Sep 08 2026 23:22:16 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "81e69ecb-50c2-4116-b82c-0a25dbbe71ee",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Sep 17 2026 19:37:48 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "202d82bf-4548-4106-9fe7-a1373a39a54a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Register for ISHA Stryker sessions</span></span></h2>\n",
+      "jcr:lastModified": "Tue Sep 08 2026 23:22:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": "true"
+    },
+    "text4216725011870939": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "1",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<p>Have feedback about Stryker’s products and services? Visit our <a title=\"Product experience page\" href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.</p>\n",
+      "jcr:lastModified": "Tue Aug 18 2026 15:30:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

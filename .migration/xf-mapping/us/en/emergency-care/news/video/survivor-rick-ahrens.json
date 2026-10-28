@@ -1,0 +1,112 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Survivor: Rick Ahrens",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1c2a3b33-c4b3-4a74-bbb1-3f877d0d84ca",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "7fed9a49-d29e-4cb5-8dd2-12cf578fecfc"
+  ],
+  "lastPublished": "Thu Jan 25 2024 23:01:12 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 23:01:12 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 23:01:14 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:55:05 GMT+0000",
+  "jcr:description": "When one of our own Team Members, Rick Ahrens, succumbed to cardiac arrest, his co-workers didn't hesitate to start CPR and apply an AED. This is his story. ",
+  "jcr:baseVersion": "7fed9a49-d29e-4cb5-8dd2-12cf578fecfc",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:business-unit/ems/news/survivor-stories",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news/videos"
+  ],
+  "jcr:lastModified": "Tue Aug 30 2022 15:06:48 GMT+0000",
+  "jcr:uuid": "dee44a20-1c3b-4303-ae83-f6a4a22d9bb5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "description": "When one of our own Team Members, Rick Ahrens, succumbed to cardiac arrest, his co-workers didn't hesitate to start CPR and apply an AED. This is his story. ",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Aug 30 2022 15:06:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-rick-ahrens.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/survivor-rick-ahrens-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jul 12 2022 18:22:22 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:55:05 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:55:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-denis-legault"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Thu Aug 12 2021 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Aug-2021",
+    "jcr:lastModified": "Fri Jul 29 2022 20:07:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/thumbnails/Survivor---Rick-Ahrens.png"
+  }
+}

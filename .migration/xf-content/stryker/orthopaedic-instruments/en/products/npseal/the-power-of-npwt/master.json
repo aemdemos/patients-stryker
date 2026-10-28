@@ -1,0 +1,171 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "The power of NPWT",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "cc42a2c1-b8a2-4b0d-ab59-2a49fce8413d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "87afe00c-80a5-438a-b378-c6552677652b"
+  ],
+  "lastPublished": "Tue Oct 13 2026 15:46:20 GMT+0000",
+  "jcr:created": "Tue Oct 13 2026 15:46:20 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 13 2026 15:46:23 GMT+0000",
+  "cq:lastModified": "Fri Sep 18 2026 16:44:51 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "87afe00c-80a5-438a-b378-c6552677652b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Feb 20 2026 17:35:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "dbb0f1b4-f59a-4046-afdc-4a31cd0de2cd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Feb 10 2026 18:35:49 GMT+0000",
+      "text": "<h2 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">The power of NPWT&nbsp;</span></span></span></span></h2>\n<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">NPWT may reduce the risk of***</span></span></span></p>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 23:52:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1259958421": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "5",
+      "jcr:created": "Tue Feb 10 2026 18:36:21 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">SSIs by&nbsp;</span></span></span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">61%</span></span></span></span><span class=\"fontsize-2-5em\"><span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\"><sup>1</sup></span></span></span></span><br>\n</p>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 23:52:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_848024342": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "5",
+      "jcr:created": "Tue Feb 10 2026 18:36:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span style=\"color: #ffb500;\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Wound complications by&nbsp;</span></span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\">56%</span></span></span><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\"><sup>1</sup></span></span></span><br>\n</p>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 23:53:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1675452503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "5",
+      "jcr:created": "Tue Feb 10 2026 18:36:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Re-operations by</span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-2-5em\">&nbsp;63%</span></span><span class=\"fontsize-2-5em\"><sup>1</sup></span></span></span></p>\n",
+      "jcr:lastModified": "Fri Sep 18 2026 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_1404357814": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Thu Sep 17 2026 23:48:12 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span style=\"color: #ffffff;\"><span class=\"fontsize-8em\">***Compared with conventional dressings</span></span></p>\n",
+      "jcr:lastModified": "Thu Sep 17 2026 23:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

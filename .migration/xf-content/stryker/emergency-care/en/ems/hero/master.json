@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ab228386-b06d-44d1-b53a-0468dd5c2dc4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b3b2cc8e-3dd6-4738-a19d-93e5790e297c"
+  ],
+  "jcr:created": "Tue Sep 13 2022 13:55:35 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 13:55:37 GMT+0000",
+  "cq:lastModified": "Tue Sep 13 2022 13:55:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b3b2cc8e-3dd6-4738-a19d-93e5790e297c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "8c978c18-12ff-4c3b-8585-7773661a52ad",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_1824212580": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Sun Feb 13 2022 15:23:22 GMT+0000",
+      "alt": "Paramedic uses a Power-PRO 2 powered ambulance cot to load a patient into the back of an ambulance",
+      "srcFileRef": "/content/dam/stryker/ems/ems/images/EC_marketpage_header_v1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Sep 13 2022 13:55:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

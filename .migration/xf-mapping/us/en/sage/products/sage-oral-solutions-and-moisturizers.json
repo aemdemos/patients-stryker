@@ -1,0 +1,504 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Implementing an effective oral cleaning protocol is essential for all your patients.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sage oral solutions and moisturizers",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2aa6a10e-bbe7-4d19-ac2c-311e4b12768c",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "Mouth moisturizer and oral solutions 6142 6083 6065 6080",
+  "jcr:predecessors": [
+    "063757ac-a88c-450e-8586-29288aca4d07"
+  ],
+  "contentID": "SAGE-OC-WEB-485090_REV-2_en_us",
+  "lastPublished": "Thu Aug 20 2026 19:26:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 19:26:32 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 19:26:35 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 19:26:22 GMT+0000",
+  "jcr:description": "Our solutions and moisturizers are designed to help you keep patients’ mouths clean and moisturized. They promote consistent oral cleansing practices and can improve patient satisfaction and cater to their oral healthcare needs.",
+  "jcr:baseVersion": "063757ac-a88c-450e-8586-29288aca4d07",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:04:10 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:business-unit/SAGE",
+    "stryker:capability/Oral_hygiene",
+    "stryker:product/sage/Sage-oral-antiseptics-and-moisturizers",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/Non_ventilator_patients",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Aug 12 2024 18:20:17 GMT+0000",
+  "jcr:uuid": "f2d52eb0-dc76-4f99-af03-337f170dac49",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 13:54:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/products/oral_solutions_and_m/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/products/oral-solutions-and-m/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Jul 26 2024 18:45:02 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">Sage oral solutions and mouth moisturizers</span></span></span></h1>\n<h2>Implementing an effective oral cleansing protocol is essential for all your patients.</h2>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Our solutions and moisturizers are designed to help you keep patients’ mouths clean and moisturized. They promote consistent oral cleansing practices and can improve patient satisfaction and cater to their oral healthcare needs.</span></span></p>\n",
+              "jcr:lastModified": "Tue Aug 27 2024 20:08:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Wed Dec 06 2023 13:59:41 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Wed Dec 13 2023 19:25:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Jul 31 2024 13:49:42 GMT+0000",
+      "jcr:lastModified": "Wed Jul 31 2024 13:49:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jul 26 2024 18:40:33 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Sage oral solutions and moisturizers can help address the risk factors for infection</span></h3>\n<p><span class=\"fontsize-1-25em\">Our portfolio of oral solutions and mouth moisturizers can help you clean your patients’ mouths.</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\">Corinz antiseptic cleansing and moisturizing oral rinse</span></li>\n<li><span class=\"fontsize-1-25em\">Perox-A-Mint solution</span></li>\n<li><span class=\"fontsize-1-25em\">Mouth moisturizer</span></li>\n<li><span class=\"fontsize-1-25em\">Sodium bicarbonate mouthpaste</span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Aug 27 2024 20:08:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Jul 31 2024 13:48:17 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">#1</span></span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\">missed practice</span></span></span></p>\n<p><span class=\"fontsize-1-25em\">Oral care is the #1 missed practice from the patients' perspectve.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Tue Aug 27 2024 20:08:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1292266792_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 11 2023 15:44:00 GMT+0000",
+      "jcr:lastModified": "Tue Jul 11 2023 15:44:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jul 26 2024 18:44:29 GMT+0000",
+          "jcr:lastModified": "Fri Jul 26 2024 18:44:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 11 2023 15:44:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Help protect all your patients from pneumonia</span></span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Address pneumonia risk factors across the continuum of care.</span></span></p>\n<p><a href=\"/content/stryker/us/en/sage/c/oral-care-for-all.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 18:44:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_645812": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Wed Dec 06 2023 13:59:47 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Wed Dec 06 2023 14:00:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Connect with an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Nov 21 2023 18:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "jcr:lastModified": "Fri Feb 10 2023 16:19:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1259",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 01 2022 21:37:57 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! We received your information and a Stryker Sage representative will be in contact.",
+          "jcr:lastModified": "Thu Aug 20 2026 19:26:22 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c_56052924": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
+          "text": "Contact information Product feedback Customer service",
+          "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/social-icons/master"
+        }
+      }
+    },
+    "section_title_162452": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Wed Dec 06 2023 13:59:54 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Dec 06 2023 14:00:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "carouselslide_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "experienceFragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/master",
+      "edsExperienceFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/master",
+      "experienceFragmentPathMobile": "/content/experience-fragments/stryker/sage/en/business_unit/homecare-callout/carousel-option-mobile",
+      "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/sage/en/business-unit/homecare-callout/carousel-option-mobile",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "mobileOverlay": "mobile_Bottom",
+      "verticalMargin": "5",
+      "jcr:created": "Mon Oct 28 2024 21:35:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Oct 28 2024 21:38:21 GMT+0000",
+      "marginRight": "5",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "marginLeft": "5"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 29 2023 15:17:02 GMT+0000",
+      "jcr:lastModified": "Tue Feb 27 2024 17:42:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/sage/resources/Sage-Oral-Care-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Hospital-acquired-Pneumonia-HAP-Brochure.pdf",
+            "/content/dam/stryker/sage/resources/Sage-Product-Catalog-Infection-Prevention.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Tue Feb 27 2024 17:42:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "resources": [
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-Cetylpyridinium-Chloride-as-an-Oral-Antiseptic.pdf",
+            "/content/dam/stryker/sage/resources/What-the-Experts-Say-The-Role-of-Pneumonia-and-Sepsis.pdf",
+            "/content/dam/stryker/sage/resources/What-The-Experts-Say-The-Impact-of-Surgical-Site-Infections-SSI-and-Hospital-Acquired-Pneumonia-HAP.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Aug 30 2019 20:10:12 GMT+0000",
+          "jcr:lastModified": "Tue Feb 27 2024 17:42:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "featuredcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Fri Jul 26 2024 18:37:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-ventilated-patients"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-systems-for-non-ventilated-patients"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-self-oral-care"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-oral-hygiene-tools"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 29 2023 15:54:00 GMT+0000",
+          "jcr:lastModified": "Wed Dec 06 2023 14:33:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-heel-protector-i"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-heel-protector-iii"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-heel-protector-or"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/sage/products/sage-foot-and-leg-stabilizer-wedge"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Guidelines and recommendations"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Related products"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Tue Dec 13 2022 16:10:28 GMT+0000",
+      "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
+      "jcr:lastModified": "Tue Dec 13 2022 16:10:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/footer/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/footer/footer/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/oral-solutions-and-moisturizers/images/Sage-Oral-Antiseptics-and-Moisturizers-Thumbnail.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jul 26 2024 18:41:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "internalLink": "/content/stryker/us/en/sage",
+    "jcr:lastModified": "Tue Feb 14 2023 13:57:44 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "About Sage",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Feb 14 2023 13:57:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Fri Jul 26 2024 18:41:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jul 12 2023 16:10:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jul 26 2024 18:41:25 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:</b></p>\r\n<p><b>1.</b> Kalisch BJ. Errors of Omission: How Missed Nursing Care Imperils Patients. Silver Spring, MD: American Nurses Association; 2016</p>\r\n",
+    "jcr:lastModified": "Wed Jul 31 2024 13:49:33 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

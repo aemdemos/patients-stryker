@@ -1,0 +1,442 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Meniscal repair system",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "AIR+",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "fd177948-f132-47db-994a-d18f2d53e31f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "annie.werner@stryker.com",
+  "thumbnailAltText": "air-plus_thumbnail",
+  "jcr:predecessors": [
+    "cba9da54-f829-4d6a-9033-54ea924ac48e"
+  ],
+  "contentID": "Literature number 1000903389",
+  "lastPublished": "Wed Aug 19 2026 16:28:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 16:28:14 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 16:28:16 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 16:28:06 GMT+0000",
+  "jcr:description": "AIR+ is the market's first all-inside repair device with a flexible needle.",
+  "jcr:baseVersion": "cba9da54-f829-4d6a-9033-54ea924ac48e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:12:32 GMT+0000",
+  "pageTitle": "AIR+ All-Inside Repair",
+  "cq:tags": [
+    "stryker:procedure/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/meniscus-repair",
+    "stryker:content-type/product",
+    "stryker:business-unit/sports-medicine",
+    "stryker:capability/sports-medicine",
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:product/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:system/sports-medicine",
+    "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/product-type/implant"
+  ],
+  "jcr:lastModified": "Wed Jun 08 2022 15:27:31 GMT+0000",
+  "jcr:uuid": "7beaa776-2174-4878-a80b-fce9737b1379",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "AIR+ All-Inside Repair",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "titleColor": "rgba(255,255,255,1)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Wed Jan 22 2020 21:50:20 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Tue Jun 30 2020 22:37:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "AIR+",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "annie.werner@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/sports-medicine/products/air-plus/images/Air-plus_header1.jpg",
+        "layoutOptions": "col-sm-4",
+        "backgroundImageRef": "/content/dam/stryker/sports-medicine/products/air-plus/images/Air-plus_header1.jpg",
+        "alt": "AIR+",
+        "jcr:lastModified": "Tue Jun 30 2020 22:35:23 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "carissa.frausto@stryker.com",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "jcr:created": "Wed Jan 22 2020 21:55:46 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<span class=\"fontsize-5-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">AIR<sup>+</sup></span></span></span>",
+            "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">All-inside meniscal repair system</span></span>",
+            "jcr:lastModified": "Thu Jan 30 2020 17:27:21 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jan 22 2020 18:38:02 GMT+0000",
+      "jcr:lastModified": "Wed Jan 22 2020 18:38:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jan 22 2020 22:01:38 GMT+0000",
+      "jcr:lastModified": "Wed Jan 22 2020 22:01:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "jcr:created": "Wed Jan 22 2020 21:30:43 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Explore </span><span style=\"color: rgb(50,50,50);\"><span style=\"color: rgb(255,181,0);\">AIR<sup>+</sup></span></span> <span class=\"urw-egyptienne\">features</span></span></span>",
+      "line2": "<span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Stryker's AIR<sup>+</sup> is an all-inside meniscal repair device designed with ease of use and reliability as its highest priorities. AIR<sup>+</sup>&nbsp;includes a flexible needle that can be bent to enable placement in the meniscus, and the device will still function even if it’s flexed intra-operatively.<sup>1</sup></span></span>",
+      "jcr:lastModified": "Thu Jul 08 2021 19:23:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "fullwidthimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "altMob": "air-plus-features",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "backgroundImageMobRef": "/content/dam/stryker/sports-medicine/products/air-plus/images/Air-plus_features_lg.jpg",
+      "layoutOptions": "col-sm-3",
+      "backgroundImageRef": "/content/dam/stryker/sports-medicine/products/air-plus/images/Air-plus_features_lg.jpg",
+      "jcr:created": "Wed Jan 22 2020 21:05:30 GMT+0000",
+      "alt": "air-plus-features",
+      "jcr:lastModified": "Wed Jan 22 2020 22:59:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Jan 30 2020 18:46:32 GMT+0000",
+      "jcr:lastModified": "Thu Jan 30 2020 18:46:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Jan 30 2020 18:46:38 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Jan 30 2020 18:46:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/air-plus/images/air-plus-animation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/air-plus-animation-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Thu Jan 30 2020 18:46:54 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Jan 30 2020 18:47:12 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"futura-bold\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\">Procedure </span><span class=\"urw-egyptienne\">walkthrough</span></span></span>",
+          "jcr:lastModified": "Thu Jan 30 2020 18:48:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "largeheadline_286910": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Apr 03 2020 01:33:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Featured video library</span></span>",
+      "jcr:lastModified": "Fri Apr 03 2020 01:33:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Feb 28 2023 19:42:04 GMT+0000",
+      "jcr:lastModified": "Tue Feb 28 2023 19:42:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_9074": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Lateral meniscal repair using AIR+ surgical technique video with Dr. James Genuario**",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Nov 10 2020 04:46:02 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Feb 28 2023 20:05:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/air-plus/vidoes/Dr Genuario lateral meniscal repair using AIR plus surgical technique video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr Genuario lateral meniscal repair using AIR plus surgical technique video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Feb 28 2023 20:04:11 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/sports-medicine/products/air-plus/resources/KNEE_AIRPlus_Technique_Brochure_1000903343_FNL.pdf",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Jan 22 2020 21:46:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Wed May 28 2025 20:06:26 GMT+0000",
+      "title": "Related products and procedures",
+      "jcr:lastModified": "Wed May 28 2025 20:06:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 19:20:32 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 19:20:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:20:37 GMT+0000",
+          "CTATitle": "SharpShooter inside-out meniscal repair system",
+          "CTAImageAltText": "sharpshooter-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 19:23:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/sharpshooter-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 19:20:52 GMT+0000",
+          "CTATitle": "2-0 Knot pusher/suture cutter and slotted cannula set",
+          "CTAImageAltText": "knotpusher-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 19:24:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/knotpusher-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/2-0-knot-pusher-suture-cutter-and-slotted-cannula-set"
+        }
+      }
+    },
+    "sectionseparator_1866641625": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 16:27:57 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 16:27:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Excessive bending of the delivery needle may render the device unusable. Do not kink the delivery needle.</p>\r\n<p>**Stryker consultant</p>\r\n<p>References</p>\r\n<p>1. TR19036 and TR18604</p>\r\n",
+    "jcr:lastModified": "Tue Feb 28 2023 20:05:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/air-plus/images/air-plus_thumbnail.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>AIR<sup>+</sup> is the market's only all-inside repair device with a flexible needle.</p>\r\n",
+    "jcr:lastModifiedBy": "annie.werner@stryker.com",
+    "jcr:lastModified": "Tue Jun 30 2020 22:25:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "annie.werner@stryker.com",
+    "jcr:lastModified": "Tue Jun 30 2020 22:28:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Aug 19 2026 16:27:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

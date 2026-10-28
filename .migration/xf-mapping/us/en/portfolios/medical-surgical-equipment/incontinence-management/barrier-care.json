@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Address incontinence-associated dermatitis (IAD) risk factors with an all-in-one solution that moisturizes, treats and protects your patient’s skin.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Barrier Care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "913b7fc2-9078-46ea-b197-916ab01b55f0",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Sage Comfort Shield Barrier Cream Cloths",
+  "jcr:predecessors": [
+    "b708fc4b-cbbd-4b19-8094-c49f01e8ad65"
+  ],
+  "contentID": "SAGE-CSBC-SYK-3098728_REV-0_en_us",
+  "lastPublished": "Fri May 29 2026 19:50:32 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 29 2026 19:50:33 GMT+0000",
+  "cq:lastReplicated": "Fri May 29 2026 19:50:35 GMT+0000",
+  "cq:lastModified": "Tue May 19 2026 16:14:25 GMT+0000",
+  "jcr:description": "Incontinent patients are at increased risk for incontinence-associated dermatitis (IAD), a condition that can also contribute to pressure injuries.¹ Stryker’s medical barrier cream cloths help support consistent skin protection by combining cleansing, moisturizing and barrier application in one step—helping clinicians address key risk factors while streamlining care.",
+  "jcr:baseVersion": "b708fc4b-cbbd-4b19-8094-c49f01e8ad65",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 29 2026 19:50:32 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/barrier-care",
+    "stryker:content-type/specialty",
+    "stryker:capability/incontinence-management",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Fri May 01 2026 16:40:31 GMT+0000",
+  "jcr:uuid": "92eadae3-ae12-4bbf-b43c-12af5d5a4557",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/barrier-cream-cloths/images/Sage-Comfort-Shield-Barrier-Cream-Cloths-thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Fri May 01 2026 15:09:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<p>1. Gray M, Guiliano K, Incontinence-Associated Dermatitis, Characteristics and Relationship to Pressure Injury A Multisite Epidemiologic Analysis, Journal of Wound Ostomy Continence Nursing, January/February 2018;45(1):63-7.</p>\r\n",
+    "jcr:lastModified": "Tue May 19 2026 16:14:25 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Motion regained. Life renewed. ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sports Medicine",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e25c330f-67a4-4bfd-9c8c-d070c7a73ed4",
+  "cq:template": "/apps/stryker/templates/division",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "annie.werner@stryker.com",
+  "jcr:predecessors": [
+    "ea312771-ef91-4bfa-8114-a128a5289bc6"
+  ],
+  "contentID": "Literature Number: 1000902691 Rev A",
+  "lastPublished": "Tue Sep 01 2026 12:56:36 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 01 2026 12:56:37 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 01 2026 12:56:39 GMT+0000",
+  "cq:lastModified": "Tue Sep 01 2026 12:56:29 GMT+0000",
+  "jcr:description": "We are driven to lead the advancement of sports medicine with you.",
+  "jcr:baseVersion": "ea312771-ef91-4bfa-8114-a128a5289bc6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:01:16 GMT+0000",
+  "pageTitle": "Sports Medicine",
+  "cq:tags": [
+    "stryker:content-type/business-unit",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:lastModified": "Thu Sep 08 2022 17:29:43 GMT+0000",
+  "jcr:uuid": "dadfc722-67f5-4646-8222-7321d2c6d5db",
+  "sling:resourceType": "stryker/components/structure/pages/division",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Sports Medicine",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon Nov 23 2020 14:06:51 GMT+0000",
+      "jcr:lastModified": "Mon Nov 23 2020 14:06:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "annie.werner@stryker.com",
+      "imageAlt": "woman running up stairs - shoulder, hip, knee and small joints sports medicine indications",
+      "jcr:lastModified": "Wed Jun 08 2022 14:46:38 GMT+0000",
+      "compImageRef": "/content/dam/stryker/sports-medicine/images/sports-med-runner-header-2022.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "titleFont": "font-egyptienne",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideButton": "false",
+      "title": "Featured Sports Medicine products",
+      "jcr:lastModified": "Tue Sep 01 2026 12:56:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "hideDescription": "false",
+      "hideThumbnail": "false",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/sportsuite-vision"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/Iconix-Knotless"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/Iconix-HA-plus"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sports-medicine/products/AlphaVent-hard-body-screw-in-anchor-platform"
+        }
+      }
+    },
+    "cols_2020938679": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Wed Jun 20 2018 19:18:12 GMT-0400",
+      "jcr:lastModified": "Wed Jun 20 2018 19:18:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1866434500": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Wed Jun 20 2018 19:55:02 GMT-0400",
+      "jcr:lastModified": "Wed Jun 20 2018 19:55:02 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 18:41:33 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-5vw\"><span class=\"urw-egyptienne\">We</span> <span class=\"futura-bold\">deliver</span></span>",
+          "jcr:lastModified": "Thu Sep 13 2018 18:42:58 GMT-0400",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 18:41:15 GMT-0400",
+          "jcr:lastModified": "Thu Sep 13 2018 18:41:15 GMT-0400",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "jcr:created": "Thu Sep 13 2018 18:38:38 GMT-0400",
+          "text": "<h2><span class=\"fontsize-8em\"><span class=\"fontsize-1em\">Stryker's Sports Medicine business is driven to advance sports medicine with you. We are a leading sports medicine company that delivers an integrated sports medicine product portfolio inclusive of the latest technology for arthroscopic and open shoulder, hip, knee and small joint procedures.</span></span></h2>\n<h2><span class=\"fontsize-8em\"><span class=\"fontsize-1em\">Our innovative sports medicine equipment includes implants, instrumentation, resection and biologic solutions to meet your needs in any repair.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Jun 21 2022 21:32:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "jcr:lastModified": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Shoulder",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Sep 14 2018 14:42:57 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Shoulder arthroscopy indication",
+          "jcr:lastModified": "Wed Jun 08 2022 14:47:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 1 Shoulder.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/shoulder"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Hip",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:49 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Hip arthroscopy indication",
+          "jcr:lastModified": "Wed Jun 08 2022 14:47:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 2 Hip.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/hip"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Knee",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:52 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Knee arthroscopy indication",
+          "jcr:lastModified": "Wed Jun 08 2022 14:47:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 3 Knee.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/knee"
+        }
+      }
+    },
+    "cols3_copy_2107482684": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "jcr:lastModified": "Mon Sep 17 2018 13:28:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Small Joints",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Sep 14 2018 14:42:57 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Small Joints sports medicine indication - foot and ankle",
+          "jcr:lastModified": "Wed Jun 08 2022 14:47:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets-4-Small-Joints-2022.png",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/small-joints"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Sports Biologics",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:49 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Sports Biologics indication",
+          "jcr:lastModified": "Wed Jun 08 2022 14:48:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 7 - Sports Biologics.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/sports-biologics"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Arthroscopic Resection",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "annie.werner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:52 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Arthroscopic Resection",
+          "jcr:lastModified": "Wed Jun 08 2022 14:48:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 6 Arthroscopic Resection.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/arthroscopic-resection"
+        }
+      }
+    },
+    "cols3_copy_1067147120": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "jcr:lastModified": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Fluid Management",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Sep 14 2018 14:42:57 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Fluid Management",
+          "jcr:lastModified": "Thu Oct 19 2023 17:54:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow_new_smbu-corrected.jpeg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/fluid-management"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Camera Systems",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:49 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Camera Systems",
+          "jcr:lastModified": "Mon Sep 17 2018 13:35:23 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 8 - Camera Systems.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/camera-systems"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Displays",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:52 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Displays",
+          "jcr:lastModified": "Mon Sep 17 2018 13:35:34 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 9 - Displays.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/displays"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "jcr:lastModified": "Thu Sep 13 2018 18:38:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Media Management",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Sep 14 2018 14:42:57 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Media Management",
+          "jcr:lastModified": "Mon Sep 17 2018 13:35:47 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 10 - Media Management.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/media-management"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Scopes",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Sep 17 2018 13:26:52 GMT-0400",
+          "CTATitle": "LEARN MORE",
+          "CTAImageAltText": "Scopes",
+          "jcr:lastModified": "Mon Sep 17 2018 13:36:10 GMT-0400",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/SYK.SM.Stryker.com_RoundX_Assets- 13 - Scopes.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine/scopes"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Fri Mar 26 2021 16:24:28 GMT+0000",
+          "jcr:lastModified": "Fri Mar 26 2021 16:24:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:03:59 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:03:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

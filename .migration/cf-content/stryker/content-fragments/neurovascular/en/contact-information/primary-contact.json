@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "0891578c-c2dd-41dd-9c37-4b24724859b8",
+  "jcr:predecessors": [
+    "d12b4b9a-41d3-481f-a21e-12f14bd15ad1"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:57 GMT+0000",
+  "jcr:baseVersion": "d12b4b9a-41d3-481f-a21e-12f14bd15ad1",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "977f00a6-250f-4daa-82b2-281091bd7145",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Wed Jan 17 2024 19:18:11 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:02:14 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Wed Jan 03 2024 17:00:24 GMT+0000",
+    "lastFragmentSave": "Wed Jan 03 2024 17:00:24 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/neurovascular/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Wed Jan 17 2024 19:18:00 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "addressBlock1": "<p>47900 Bayside Parkway<br>\nFremont, California 94538-6515<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "BusinessHomePage": "<p><a href=\"https://www.stryker.com/us/en/neurovascular/contact.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "locationName": "Neurovascular",
+        "ShortDesc": "<p>Stryker’s Neurovascular division strives to propel the field of stroke care through continuous, purposeful innovation that powers meaningful outcomes.</p>\n",
+        "PhoneNumberLabel": "Phone and Fax",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jan 03 2024 16:41:27 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "PhoneNumbers": "<p>510 413 2500<br>\n269 488 7419 Fax</p>\n<p><b>Customer support</b><br>\n855 916 3876<br>\n855 488 8801 Fax orders</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 14:23:06 GMT+0000",
+        "BusinessHomePageLabel": "Neurovascular Homepage",
+        "Emails": "<p><a href=\"mailto:NVCustomerService@stryker.com\">NVCustomerService@stryker.com</a></p>\n"
+      }
+    }
+  }
+}

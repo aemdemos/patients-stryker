@@ -1,0 +1,115 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Survivor: Bob Whetton",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d1436f3c-542d-4209-9f6c-4b380311d0c8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "Survivor: Bob Whetton",
+  "jcr:predecessors": [
+    "b833a1b3-2fcb-4b97-be13-37e4fa51d128"
+  ],
+  "lastPublished": "Thu Jan 25 2024 23:02:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 23:02:40 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 23:02:42 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:55:43 GMT+0000",
+  "jcr:description": "Seven cardiac arrest events, seven saves. Watch this video to discover more about the cardiac arrest response system at Brighton FC's AMEX stadium.",
+  "jcr:baseVersion": "b833a1b3-2fcb-4b97-be13-37e4fa51d128",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Survivor: Bob Whetton",
+  "cq:tags": [
+    "stryker:business-unit/ems/news/survivor-stories",
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news/videos"
+  ],
+  "jcr:lastModified": "Mon Apr 10 2023 17:35:19 GMT+0000",
+  "jcr:uuid": "1559a218-f61a-442f-a73f-003c5b478354",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Survivor: Bob Whetton",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "description": "Seven cardiac arrest events, seven saves. Watch this video to discover more about the cardiac arrest response system at Brighton FC's AMEX stadium.",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 12 2022 17:45:04 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Mon Apr 10 2023 17:35:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/stories/survivor-bob-whetton.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/survivor-bob-whetton-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Fri Apr 07 2023 20:29:57 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:55:43 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:55:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:51:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/community-public-safety"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-denis-legault"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/survivor-derrick-mosley"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Mon Apr 10 2023 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Apr-2023",
+    "jcr:lastModified": "Fri Apr 07 2023 20:29:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/thumbnails/bob-whetton.jpg"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Persistent",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c1afe7bb-24d1-4a0e-9298-2457a8c82cc1",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "39eb0f03-c51d-4c94-9e07-b8991f697606"
+  ],
+  "lastPublished": "Tue Sep 10 2024 15:48:34 GMT+0000",
+  "jcr:created": "Tue Sep 10 2024 15:48:35 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 15:48:39 GMT+0000",
+  "cq:lastModified": "Wed Aug 21 2024 14:53:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "39eb0f03-c51d-4c94-9e07-b8991f697606",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 10 2024 15:48:34 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e1721fd5-8479-43a0-ba7b-3fb57510139c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text3704554468626402": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #85458a;\">Persistent</span></span><br>\n</span></h3>\n<p><span class=\"fontsize-1-25em\">Rinse-free formula provides antimicrobial activity up to 6 hours after application</span></p>\n",
+      "jcr:lastModified": "Tue Jul 30 2024 20:28:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "10",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 21 2024 14:32:57 GMT+0000",
+      "alt": "vertical-separator",
+      "srcFileRef": "/content/dam/stryker/sage/products/chg-cloths/images/vertical-separator.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Aug 21 2024 14:33:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "behavior": "hide"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Homepage brand bar",
+  "jcr:versionHistory": "d9a70d1a-39d1-4cc3-81ae-09d3052f0ece",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9032447c-55e6-4f6d-b728-16de536a1395"
+  ],
+  "jcr:created": "Sun May 15 2022 16:43:15 GMT+0000",
+  "cq:lastModified": "Fri May 13 2022 16:14:02 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9032447c-55e6-4f6d-b728-16de536a1395",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "77c9e421-a332-44ab-9638-15c84c50f6d8",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue May 10 2022 19:21:03 GMT+0000",
+      "alt": "FocusRN clinical education program",
+      "srcFileRef": "/content/dam/stryker/education-and-training/focusrn/images/FocusRN-clinical-education-program-wordmark.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue May 10 2022 21:59:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "4"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

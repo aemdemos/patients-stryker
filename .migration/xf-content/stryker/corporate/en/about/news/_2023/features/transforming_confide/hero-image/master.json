@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero image",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b9a0a535-cf2f-488a-a9a8-b9318a800b9b",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "5ec99e3e-3346-47f1-9cfe-5d41ae30016b"
+  ],
+  "lastPublished": "Tue Oct 22 2024 21:02:10 GMT+0000",
+  "jcr:created": "Tue Oct 22 2024 21:02:11 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 22 2024 21:02:13 GMT+0000",
+  "cq:lastModified": "Thu Sep 19 2024 16:48:37 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5ec99e3e-3346-47f1-9cfe-5d41ae30016b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:02:10 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "7378981b-377e-4c92-bc69-00cfb63ed0b2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Oct 11 2023 19:58:32 GMT+0000",
+      "alt": "Dilan smiles with his before photo where he has a cleft lip.",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile/images/herocarousel_desktop.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Sep 19 2024 16:48:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

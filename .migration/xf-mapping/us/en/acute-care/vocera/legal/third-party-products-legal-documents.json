@@ -1,0 +1,324 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Third-Party Products Legal Documents",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c751a586-ba29-4a7d-aebc-0098c922e89b",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "0f3d8cd2-cfa6-4ebe-a3d9-66d615c251e1"
+  ],
+  "lastPublished": "Fri Sep 29 2023 18:30:25 GMT+0000",
+  "jcr:created": "Fri Sep 29 2023 18:30:25 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 29 2023 18:30:27 GMT+0000",
+  "cq:lastModified": "Mon Sep 11 2023 21:45:15 GMT+0000",
+  "jcr:baseVersion": "0f3d8cd2-cfa6-4ebe-a3d9-66d615c251e1",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "9816431b-c91d-49ea-9011-dfd37ed96591",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 09 2023 20:10:27 GMT+0000",
+      "jcr:lastModified": "Wed Aug 09 2023 20:10:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Aug 09 2023 20:03:20 GMT+0000",
+          "jcr:lastModified": "Wed Aug 09 2023 20:14:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Sep 11 2023 21:41:34 GMT+0000",
+              "text": "<h3>Zebra</h3>\n<p><a title=\"Open Zebra Hardware Products Limited Warranty\" href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/zebra-hardware-products-limited-warranty-optional-coverage.pdf\">Zebra Hardware Products - Limited Warranty and Optional Coverage</a></p>\n<p><a title=\"Open Zebra Warranty Terms\" href=\"https://www.digi.com/legal/terms\" target=\"_blank\">Digi One SP Serial Converter - Warranty Terms</a></p>\n<p><a title=\"Open Engage Appliance Warranty\" href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/vocera-engage-appliance-hardware-limited-warranty.pdf\">Engage Appliance - 1-Year Hardware Warranty</a></p>\n<p>&nbsp;</p>\n<h3>Spectralink</h3>\n<p><a title=\"Open Spectralink Products and Services\" href=\"https://www.stryker.com/content/dam/stryker/acute-care/vocera/legal/spectralink-products-services.pdf\">Products and Services</a></p>\n",
+              "jcr:lastModified": "Mon Sep 11 2023 21:45:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "curatedlinklist_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
+              "jcr:lastModified": "Wed Aug 09 2023 20:08:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedlinklist",
+              "internalLinks": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Consolidated Master Purchase Agreement"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Supplemental Terms and Conditions"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Limited Warranty - Vocera"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "End User License Agreement"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Software Maintenance and Technical Support Policy"
+                },
+                "6": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Professional Services Agreement"
+                }
+              }
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "curatedlinklist_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
+              "jcr:lastModified": "Wed Aug 09 2023 20:08:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedlinklist",
+              "internalLinks": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Consolidated Master Purchase Agreement"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Supplemental Terms and Conditions"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Limited Warranty - Vocera"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "End User License Agreement"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Software Maintenance and Technical Support Policy"
+                },
+                "6": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Professional Services Agreement"
+                }
+              }
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "curatedlinklist_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
+              "jcr:lastModified": "Wed Aug 09 2023 20:08:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedlinklist",
+              "internalLinks": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Consolidated Master Purchase Agreement"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Supplemental Terms and Conditions"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Limited Warranty - Vocera"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "End User License Agreement"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Software Maintenance and Technical Support Policy"
+                }
+              }
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "curatedlinklist_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Wed Aug 09 2023 20:04:46 GMT+0000",
+              "jcr:lastModified": "Wed Aug 09 2023 20:08:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedlinklist",
+              "internalLinks": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Consolidated Master Purchase Agreement"
+                },
+                "2": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Supplemental Terms and Conditions"
+                },
+                "3": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Limited Warranty - Vocera"
+                },
+                "4": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "End User License Agreement"
+                },
+                "5": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkDam": "/content/dam/",
+                  "linkNewWindow": "true",
+                  "linkNewWindowOverride": "0",
+                  "internalLinkType": "dam",
+                  "titleInternal": "Software Maintenance and Technical Support Policy"
+                }
+              }
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "defaultExpanded": "true",
+              "accPosId": "1",
+              "accTitle": "United States / Canada"
+            }
+          }
+        }
+      }
+    }
+  }
+}

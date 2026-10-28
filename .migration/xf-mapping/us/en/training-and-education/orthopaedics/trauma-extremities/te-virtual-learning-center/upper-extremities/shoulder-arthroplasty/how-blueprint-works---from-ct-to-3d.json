@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "How Blueprint® Works - from CT to 3D",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3a350067-c607-486b-8d5e-41d09f45533a",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "1672ceda-0fea-41d6-9f75-d6ebbb0061ce"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:56:31 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 20:56:40 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 20:56:42 GMT+0000",
+  "cq:lastModified": "Wed Aug 09 2023 20:54:41 GMT+0000",
+  "jcr:baseVersion": "1672ceda-0fea-41d6-9f75-d6ebbb0061ce",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:56:31 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Aug 09 2023 20:54:41 GMT+0000",
+  "jcr:uuid": "9b124858-2a41-4cb8-aa45-0e13b7401486",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:58:34 GMT+0000",
+      "text": "How Blueprint® Works – from CT to 3D This video demonstrates how Blueprint® 3D Planning Software can help healthcare providers quickly and accurately plan for total shoulder arthroplasty. AP-016271A",
+      "jcr:lastModified": "Thu Jul 28 2022 18:58:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/how-blueprint-works---from-ct-to-3d/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/how-blueprint-works-from-ct-to-3d/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/How Blueprint Works - from CT to 3D.png"
+  }
+}

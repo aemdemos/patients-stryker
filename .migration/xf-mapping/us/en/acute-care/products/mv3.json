@@ -1,0 +1,597 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Helping inspire dignified bariatric patient care",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "MV3 | Bariatric hospital bed",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "14997014-48e4-4fbb-96ec-978609ab1343",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "thumbnailAltText": "MV3 bariatric hospital bed can accommodate up to 1,102 pounds safe working load",
+  "jcr:predecessors": [
+    "1517b33a-cf81-41b3-8e18-2b56f50fa4de"
+  ],
+  "contentID": "Mkt lit-1879 12 DEC 2019 REV B",
+  "lastPublished": "Thu Aug 13 2026 20:26:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:26:14 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:26:16 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:26:03 GMT+0000",
+  "jcr:description": "As the obese and morbidly obese population has risen, the need for providing bariatric patient care in a safe and dignified manner has become increasingly important.",
+  "jcr:baseVersion": "1517b33a-cf81-41b3-8e18-2b56f50fa4de",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 22:23:53 GMT+0000",
+  "pageTitle": "MV3 Bariatric Bed",
+  "cq:tags": [
+    "stryker:capability/bedframes",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/acute-care/department/bariatric",
+    "stryker:specialty/specialty-beds",
+    "stryker:content-type/hcp_content",
+    "stryker:services/procare/acute-care/beds",
+    "stryker:business-unit/acute-care",
+    "stryker:product/acute-care/mv3"
+  ],
+  "jcr:lastModified": "Mon Apr 10 2023 21:47:17 GMT+0000",
+  "jcr:uuid": "64ad8469-9016-45d0-a186-6b53fa8df7e6",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "MV3 Bariatric Bed",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/mv3_927218581/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/mv3-927218581/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Nov 18 2024 22:17:20 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520_444798865": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\">MV3 | Bariatric hospital bed</span></span></span></h1>\n<h2>Helping inspire dignified bariatric patient care</h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">As the obese and morbidly obese population has risen, the need for providing bariatric patient care in a safe and dignified manner has become increasingly important.</span></span></p>\n",
+              "jcr:lastModified": "Mon Nov 18 2024 22:17:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Mon Jan 22 2024 14:57:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy_412353062": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 25 2019 13:28:02 GMT+0000",
+      "jcr:lastModified": "Fri Oct 25 2019 13:28:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Nov 18 2024 22:18:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 25 2019 13:18:51 GMT+0000",
+      "jcr:lastModified": "Fri Oct 25 2019 13:18:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 13:27:18 GMT+0000",
+          "alt": "MV3 helps keep your patients safe and secure during their hospital stay with low bed height",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/MV3_800x500_Lowbedheight.png",
+          "jcr:lastModified": "Mon Nov 07 2022 16:22:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 13:18:55 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Promotes fall prevention</span></h3>\n<p><span class=\"fontsize-1-25em\">Featuring advanced fall prevention technologies like our exclusive iBed Awareness exit system and a low height of 12 inches, MV3 helps keep your patients safe and secure during their hospital stay.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:09:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 13:27:18 GMT+0000",
+          "alt": "MV3 can accommodate bariatric patients up to 1,102 pounds safe working load",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/Image 2_300x300.jpg",
+          "jcr:lastModified": "Mon Nov 07 2022 16:23:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_1268259589": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 13:18:55 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Safely accommodates patients of various sizes&nbsp;</span></h3>\n<p><span class=\"fontsize-1-25em\">MV3 can accommodate up to 1,102 pounds safe working load – beating the industry standard by 100 lbs.<sup>2</sup>&nbsp;– and features an adjustable litter deck that expands to three widths: 36”/42”/48&quot;.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:09:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 13:27:18 GMT+0000",
+          "alt": "Stryker's MV3 bariatric hospital bed has an aesthetically-pleasing design",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/20190524-Stryker_MV3xBariMat-1.png",
+          "jcr:lastModified": "Mon Nov 07 2022 16:25:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 13:18:55 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Designed with dignity in mind</span></h3>\n<p><span class=\"fontsize-1-25em\">With its aesthetically-pleasing design, MV3 looks and feels like the rest of our fleet – helping to preserve the dignity of bariatric patients.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:10:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 13:27:18 GMT+0000",
+          "alt": "MV3 bariatric bed encourages independence with a multi-handle patient helper",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/encourage.jpg",
+          "jcr:lastModified": "Mon Nov 07 2022 16:27:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 13:18:55 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\">Encourages independence</span></h3>\n<p><span class=\"fontsize-1-25em\">MV3’s multi-pivotal patient helper is an optional accessory intended to help patients of size reposition themselves in bed and to the edge of the bed.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:10:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_13545469": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Nov 18 2024 22:19:27 GMT+0000",
+      "jcr:lastModified": "Mon Nov 18 2024 22:19:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jan 08 2020 17:37:21 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Jan 08 2020 17:38:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/products/mv3/videos/MV3_FinalWeb_comp.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/MV3_FinalWeb_comp-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Jan 08 2020 17:38:20 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1516447756_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "12",
+          "jcr:created": "Tue Dec 10 2019 15:17:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Between 1975 and 2018, worldwide obesity nearly</span>&nbsp;<span class=\"futura-bold\">tripled</span><sup>1</sup></span></p>\n<p><span class=\"fontsize-1-75em\">&nbsp;</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">Nearly</span>&nbsp;<span class=\"futura-bold\">40%</span><span class=\"urw-egyptienne\">&nbsp;of americans are obese<sup>3</sup></span></span></p>\n<p><span class=\"fontsize-1-75em\">&nbsp;</span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">By 2030, it's estimated that&nbsp;</span><span class=\"futura-bold\">50%</span><span class=\"urw-egyptienne\">&nbsp;of the population will be obese<sup>3</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:19:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Oct 25 2019 18:00:26 GMT+0000",
+      "jcr:lastModified": "Fri Oct 25 2019 18:00:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 18:00:40 GMT+0000",
+          "alt": "Dollar sign icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/ROI_image.png",
+          "jcr:lastModified": "Mon Nov 07 2022 16:38:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 18:00:58 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Boost your ROI with MV3</span></span></h3>\n<p><span class=\"fontsize-1-25em\">MV3 is more than a bariatric bed frame —it’s a smart, long-term investment. Eliminating the need to rent a bariatric bed every time a patient of size arrives at your facility, MV3 is ready for your patient.</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:05:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Oct 25 2019 18:00:40 GMT+0000",
+          "alt": "Stryker’s Financial Guarantee Program for MV3",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/mv3/images/Guarantee-image.jpg",
+          "jcr:lastModified": "Mon Nov 07 2022 16:37:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Oct 25 2019 18:00:58 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Stryker’s Financial Guarantee Program</span></span></h3>\n<p><span class=\"fontsize-1-25em\">That’s why we’re willing to share the risk with you – by guaranteeing a 30% reduction in bed-related falls occurring on our beds with a combination of our bed exit system and falls-education training. If a 30% reduction is not met, Stryker will pay back a portion of the cost of the product.*</span></p>\n",
+          "jcr:lastModified": "Mon Nov 18 2024 22:05:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Aug 31 2021 18:16:42 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Oct 18 2024 20:13:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_1617859742": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Tue Nov 12 2019 15:50:48 GMT+0000",
+      "jcr:lastModified": "Tue Nov 12 2019 15:50:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Nov 11 2019 15:06:13 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 20:26:03 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_9": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Fri Oct 18 2024 16:37:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_1481094052": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": "/content/dam/stryker/acute-care/products/mv3/resources/mv3-spec-sheet.pdf",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Mon Nov 18 2024 22:04:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_copy_co": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 21 2021 18:30:07 GMT+0000",
+          "title": "Related products",
+          "jcr:lastModified": "Mon Nov 18 2024 22:03:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/procuity"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/bari-10a"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/barimatt-plus"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/prime-tc"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c_432008192": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/mv3/images/2019_MV3-Website-product-page-layout.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*we guarantee a 30% reduction in bed-related falls with the combination of Stryker bods equipped with a bed exit system and falls-education training. lf a reduction of 30% in bed-related falls is not recognized after one full year (based on delivery date) of product use by the facility, we will pay you back a portion of the cost. Facility must meet eligibility requirements as outlined in the fall reduction contract.</p>\r\n<p>References:</p>\r\n<ol>\r\n<li>VHA Center for Engineering and Occupational Safety and Health, St. Louis, Missouri (July 2015). Bariatric Safe Patient Handling and Mobility Guidebook: A Resource Guide for Care of Person of Size. Retrieved from https://www.asphp.org/wp-content/uploads/2011/05/Baraiatrice-SPHM-guidebook-care-of-Person-of-Size.pdf</li>\r\n<li>Bariatric Safe Patient Handling and Mobility Guidebook: A Resource Guide for Care of Person of Size (Retrieved July 18, 2019) https://www.asphp.org/wp-content/uploads/2011/05/Baraiatrice-SPHM-guidebook-care-of-Person-of-Size.pdf</li>\r\n<li>Prevalence of Obesity Among Adults and Youth: United States, 2015–2016. NCHS Data Brief, Number 288, October 2017. https://www.cdc.gov/nchs/data/databriefs/db288.pdf&nbsp;</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Oct 28 2022 13:54:16 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 18 2024 22:08:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 07 2022 16:32:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 07 2022 16:33:02 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 18 2024 22:08:23 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Nov 18 2024 22:08:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

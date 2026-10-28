@@ -1,0 +1,84 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Virtual command center",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1d1c7a4a-3247-49fb-857e-9dc39aaada76",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "eecfb345-d92b-4f18-bd86-e7d2374e5c43"
+  ],
+  "lastPublished": "Thu Jan 29 2026 13:29:00 GMT+0000",
+  "jcr:created": "Thu Jan 29 2026 13:29:01 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 29 2026 13:29:03 GMT+0000",
+  "cq:lastModified": "Wed Jan 07 2026 16:23:05 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "eecfb345-d92b-4f18-bd86-e7d2374e5c43",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Jan 29 2026 13:29:00 GMT+0000",
+  "jcr:uuid": "e3065b63-e4d9-4bde-8201-d348771b7e97",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Oct 28 2025 16:27:42 GMT+0000",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Virtual command center</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The virtual command center is the intelligence hub for care.ai solutions, bringing together virtual care and ambient intelligence into one seamless experience. For virtual care workflows, care providers work from the command center supporting a curated task list or monitoring multiple patients at once.</span></p>\n",
+      "jcr:lastModified": "Wed Nov 19 2025 22:27:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Oct 28 2025 16:25:18 GMT+0000",
+      "alt": "A nurse talking to a patient through the care.ai intelligence hub",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/virtual-monitoring/care.ai Virtual_Command_Center_680x400_DRAFT-v1.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jan 07 2026 16:23:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Oct 28 2025 16:25:22 GMT+0000",
+      "text": "<h4>Automate workflows, streamline compliance monitoring</h4>\n<p><span class=\"fontsize-1-25em\">In Ambient Monitoring scenarios, the command center draws on near-real-time data from always-aware ambient sensors. It automates workflows, streamlines protocol compliance monitoring and delivers actionable insights that support proactive interventions.</span></p>\n<h4>Get a single source of truth for situational awareness</h4>\n<p><span class=\"fontsize-1-25em\">The command center unifies capabilities, systems and more, delivering predictive intelligence and enterprise-wide visibility to enable smarter, more human-centered care. The command center can integrate with a wide variety of systems like the EHR, nurse call, documentation tools, interpretation services and IoT devices.</span></p>\n<h4>Support flexibility in managing care delivery</h4>\n<p><span class=\"fontsize-1-25em\">The command center’s workflow orchestration tools support flexibility in managing aspects of care delivery like receiving and completing tasks or notifying team members.<br>\n </span>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 06 2026 15:53:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

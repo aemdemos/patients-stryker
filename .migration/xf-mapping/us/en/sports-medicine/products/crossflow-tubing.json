@@ -1,0 +1,647 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Cassette tube sets",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "CrossFlow Tubing",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d34b0210-252a-479b-9c05-ded8e2864184",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+  "thumbnailAltText": "crossflow tubing",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/CrossFlow-Tubing-Thumb.jpg",
+  "jcr:predecessors": [
+    "cb6015b3-679e-406d-b7d8-c4132864375a"
+  ],
+  "contentID": "Literature Number: 1000902666, Rev. B",
+  "lastPublished": "Tue Aug 18 2026 21:25:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:25:23 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:25:25 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:25:12 GMT+0000",
+  "jcr:description": "Easy-to-use color-coded inflow/outflow cassettes that save time on setup. The outflow tubes are labeled to limit the potential for errors. There are a variety of tubing options available, including inflow, integrated and day-use tubing.",
+  "jcr:baseVersion": "cb6015b3-679e-406d-b7d8-c4132864375a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:21:41 GMT+0000",
+  "pageTitle": "CrossFlow Tubing",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:custom/sports-medicine/procedure/cartilage-repair0",
+    "stryker:capability/surgical-visualization",
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair",
+    "stryker:business-unit/sports-medicine",
+    "stryker:specialty/arthroscopy-instrumentation",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:content-type/hcp_content",
+    "stryker:product/sports-medicine/crossflow-tubing",
+    "stryker:specialty/small-joints",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure/capsulotomy",
+    "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+    "stryker:custom/sports-medicine/product-type/arthroscopy-equipment",
+    "stryker:custom/sports-medicine/procedure-(knee)/cartilage-repair",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/anatomy/fluid-management",
+    "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+    "stryker:custom/sports-medicine/anatomy/small-joints",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:custom/sports-medicine/procedure-(small-joints)/soft-tissue-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/tendon-repair",
+    "stryker:custom/sports-medicine/procedure/meniscus-repair",
+    "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/sports-medicine/procedure/tissue-resection",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:custom/sports-medicine/procedure/tendon-repair",
+    "stryker:custom/sports-medicine/procedure/soft-tissue-repair",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/product-type/arthroscopy-pumps",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/elbow-repairs",
+    "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(knee)/meniscus-repair",
+    "stryker:specialty/fluid-management"
+  ],
+  "jcr:lastModified": "Mon Sep 25 2023 18:41:42 GMT+0000",
+  "jcr:uuid": "f73aa837-2e55-47e7-bc0b-522204d510d4",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "imageAlt": "Crossflow-cassettes-both",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon Oct 16 2023 22:04:17 GMT+0000",
+      "compImageRef": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/Hero-CrossFlowPlug-2.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Thu Jul 20 2023 18:03:15 GMT+0000",
+      "jcr:lastModified": "Mon Sep 25 2023 18:40:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(62,82,69)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Sep 25 2023 18:10:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(255,255,255);\">Easy-to-use color-coded </span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">cassette tube sets</span></span></span></h2>\r\n",
+          "jcr:lastModified": "Mon Sep 25 2023 18:12:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Oct 16 2023 21:30:37 GMT+0000",
+          "alt": "crossflow-colored-tubing-reference",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/crossflow-colored-tubing-reference.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Oct 16 2023 21:56:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "cols3_2112629657": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Thu Jul 20 2023 18:04:18 GMT+0000",
+          "jcr:lastModified": "Thu Jul 20 2023 18:04:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+              "alt": "crossflow-tubing-inflow-cassette",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow-tubing-inflow.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 18:27:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Inflow</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Includes a pressure sensing membrane which the CrossFlow pump uses to determine joint pressure and a dampening chamber to facilitate consistent fluid flow to the joint space</span></span></p>\n",
+              "jcr:lastModified": "Mon Sep 25 2023 18:41:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            },
+            "text_copy_46507839": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 25 2023 17:52:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 25 2023 17:53:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+              "alt": "crossflow-tubing-outflow-cassette",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow-tubing-outflow.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 18:27:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Outflow</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Includes three labeled suction lines for shaver, RF and dedicated suction. The CrossFlow pump utilizes pinch clamp suction technology designed to facilitate outflow waste management</span></span></p>\n",
+              "jcr:lastModified": "Mon Oct 16 2023 21:38:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            },
+            "text_copy_537916833": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 25 2023 17:52:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 25 2023 17:53:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+              "alt": "crossflow-tubing-both-cassettes",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/crossflow-tubing-cassettes-both.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Oct 16 2023 21:45:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Integrated</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">Includes Inflow and Outflow packaged together</span></span></p>\n",
+              "jcr:lastModified": "Mon Oct 16 2023 21:46:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            },
+            "text_copy_1728518023": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 25 2023 17:52:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 25 2023 17:53:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Oct 16 2023 21:40:07 GMT+0000",
+          "jcr:lastModified": "Mon Oct 16 2023 21:40:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+              "alt": "crossflow-tubing-day-use",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow-tubing-day-use.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Sep 25 2023 18:28:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+              "alt": "crossflow-tubing-day-use",
+              "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/patient-use-tubing.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Mon Oct 16 2023 21:45:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Day-use tubing</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">The day-use inflow cassette tubing is used for a single day's cases (no more than 10 cases, 8 hours of active use or 24 hours from the point of first use)</span></span></p>\n",
+              "jcr:lastModified": "Thu Oct 19 2023 16:50:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<h3><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Patient-use tubing</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\">The patient-use tubing is connected to the day-use inflow cassette tubing for a single procedure, then removed and discarded</span></span></p>\n",
+              "jcr:lastModified": "Thu Oct 19 2023 16:50:35 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Oct 16 2023 21:49:16 GMT+0000",
+          "jcr:lastModified": "Mon Oct 16 2023 21:49:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_1728518023": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "carissa.frausto@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jul 25 2023 17:52:52 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Jul 25 2023 17:53:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Mon Sep 25 2023 18:15:39 GMT+0000",
+      "jcr:lastModified": "Mon Sep 25 2023 18:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Mon Sep 25 2023 18:10:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-3-5-vw\"><span style=\"color: rgb(0,0,0);\">Accessories and gravity</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">tube options</span></span></span></h2>\r\n",
+          "jcr:lastModified": "Thu Oct 05 2023 16:51:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+          "alt": "crossflow-tubing-dual-irrigation",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow-tubing-dual-irrigation.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 18:38:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\">Dual irrigation adapter</span></h3>\n<p><span class=\"fontsize-1-25em\">For spiking multiple bags at once</span></p>\n",
+          "jcr:lastModified": "Mon Sep 25 2023 18:18:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Jul 20 2023 18:03:28 GMT+0000",
+          "alt": "crossflow-gravity-tubing",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/crossflow/images/crossflow-tubing-gravity.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 25 2023 18:39:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Jul 20 2023 18:03:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\">Gravity tubing</span></h3>\n<p><span class=\"fontsize-1-25em\">Available in two-spike or four-spike configurations</span></p>\n",
+          "jcr:lastModified": "Mon Sep 25 2023 18:18:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Wed May 28 2025 20:06:26 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Fri May 30 2025 20:05:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 20:05:28 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 20:05:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:05:38 GMT+0000",
+          "CTATitle": "CrossFlow integrated arthroscopy pump",
+          "CTAImageAltText": "crossflow-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:06:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/crossflow-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/crossflow-integrated-arthroscopy-pump"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:24:57 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:24:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTop": "<p>  </p>\r\n",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Oct 05 2023 16:51:10 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Easy-to-use color-coded cassettes.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Three dedicated, specifically labeled tubes for Outflow.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Pinch clamp suction technology designed for more efficient outflow waste management.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Day-Use/Patient-Use tubing options available.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/crossflowtubing/images/CrossFlow-Tubing-Thumb.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:24:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

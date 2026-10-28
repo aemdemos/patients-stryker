@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Amniotics",
+  "jcr:versionHistory": "05f70677-f7a9-480b-b932-e484aa28f5f9",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "015f4e4f-d0d0-4a0c-89b1-648ec768ffdc"
+  ],
+  "lastPublished": "Thu Mar 03 2022 20:02:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Mar 03 2022 20:02:08 GMT+0000",
+  "cq:lastModified": "Fri Jan 14 2022 20:27:49 GMT+0000",
+  "jcr:baseVersion": "015f4e4f-d0d0-4a0c-89b1-648ec768ffdc",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:capability/biologics",
+    "stryker:content-type/specialty",
+    "stryker:specialty/amniotics",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jan 14 2022 20:23:24 GMT+0000",
+  "jcr:uuid": "7e9d8cc4-0c31-4a74-9eed-3ed9dc494900",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/orthopaedics/biologics/amniotics/Amniotics.png"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Fri Jan 07 2022 20:39:10 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tagFolder": "/etc/tags/stryker/custom/trauma-and-extremities/biologics/amniotics"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Fri Jan 14 2022 20:27:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  }
+}

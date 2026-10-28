@@ -1,0 +1,131 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Launches SurgiCount+ Safety-Sponge System",
+  "jcr:versionHistory": "32f8b89e-959a-47db-a74e-f9b986945a67",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "2d66f89a-c685-44d9-ad2e-59d2ba3fb62e"
+  ],
+  "contentID": "D0000099178",
+  "lastPublished": "Tue Apr 05 2022 18:21:15 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 05 2022 18:21:15 GMT+0000",
+  "cq:lastModified": "Tue Apr 05 2022 13:36:44 GMT+0000",
+  "jcr:baseVersion": "2d66f89a-c685-44d9-ad2e-59d2ba3fb62e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Tue Apr 05 2022 13:36:44 GMT+0000",
+  "jcr:uuid": "bd69d435-1b7c-4732-9d57-173a81d3c4ae",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_816346416": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 12 2021 14:15:30 GMT+0000",
+      "jcr:lastModified": "Thu Aug 12 2021 14:15:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 12 2021 14:15:34 GMT+0000",
+          "text": "<p><b>KALAMAZOO, Mich.&nbsp;</b>– Stryker, one of the world’s leading medical technology companies, announced today the launch of SurgiCount™+ Safety-Sponge System, its next generation surgical sponge counting technology.</p>\n<p>SurgiCount+ is Stryker’s most intelligent surgical sponge counting technology and allows healthcare providers to count and scan sponges and connect to hospital electronic medical records (EMR). Built on Stryker’s existing technology, it is designed to assist with sponge management, a leading safety concern in the operating room (OR) due to inadequate tools, manual processes and inconsistent practices.</p>\n<p>One out of every 11 cases has a missing sponge,<sup>1 </sup>resulting in nurses spending almost 10 minutes searching.<sup>2</sup> Current data show sponges are the number one retained surgical item<sup>3</sup> – occurring 11 times a day in the U.S. alone.<sup>1</sup> This negatively impacts patients and causes millions of dollars in costs for hospitals each year.</p>\n<p>“Stryker is collaborating with surgical teams across the country to create safer ORs and equip healthcare providers with the tools needed to avoid retained surgical sponges,” said Mike Carlin, vice president and general manager of Stryker’s Surgical Technologies business. “We want healthcare providers to know they can count on us to make zero retained surgical sponges* the expectation and reality and provide certainty when they need it most.”</p>\n<p>SurgiCount+ advances Stryker’s mission of making healthcare better by simplifying workflow and streamlining processes, resulting in less time spent searching for missing sponges. To date, medical staff have trusted SurgiCount in over 16 million procedures with zero retained sponges*. Features of SurgiCount+ include:</p>\n<ul>\n<li><b>UHF-RFID tagged sponges</b> enabling unique identification, eliminating false-correct, duplicate or unknown counts</li>\n<li><b>A wireless reader</b> for scanning, counting and finding sponges in the operating room<br>\n</li>\n<li><b>Intuitive</b>, user-friendly tablet interface<br>\n</li>\n<li><b>A workstation stand</b> equipped with sponge hanging bags and sterile reader covers situated on wheels for easy maneuverability and minimal floor space<br>\n</li>\n<li><b>A digital platform</b> enabling EMR connectivity and documented proof<br>\n</li>\n</ul>\n<p>For more information about Stryker’s SurgiCount+ technology please visit <a href=\"https://www.safeor.com/products/surgicount\">safeor.com/products/surgicount</a>.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 12 2021 15:46:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 12 2021 14:06:39 GMT+0000",
+      "jcr:lastModified": "Thu Aug 12 2021 14:06:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 12 2021 14:07:00 GMT+0000",
+          "jcr:lastModified": "Thu Aug 12 2021 14:07:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Wed Jul 14 2021 15:02:50 GMT+0000",
+          "text": "<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at&nbsp;<a href=\"http://www.stryker.com\">www.stryker.com</a>.<br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Wed Jul 14 2021 15:04:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1393816347_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jul 14 2021 15:03:25 GMT+0000",
+          "text": "<p><b>Contact</b><br>\nJennifer Lentner<br>\nSenior Director, Marketing Communications<br>\n<a href=\"mailto:jennifer.lentner@stryker.com\">jennifer.lentner@stryker.com</a><br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 12 2021 14:08:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Thu Aug 12 2021 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Aug-2021",
+    "jcr:lastModified": "Thu Aug 12 2021 14:16:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Makary, M et al. “Medical error—the third leading cause of death in the US.” The BMJ (May 2016). Web. Sept. 2016.&nbsp;<br>\r\n2. Double-blinded survey of 154 Operating Room Nurses from 154 different facilities across the United States. Data on file internally. Conducted August 2020.&nbsp;<br>\r\n3. The Joint Commission. “Preventing unintended retained foreign objects.” Sentinel Event Alert. Issue 51. Oct. 2013.&nbsp;<br>\r\n* When used and implemented correctly</p>\r\n",
+    "jcr:lastModified": "Thu Aug 12 2021 14:46:19 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "SurgiCount plus",
+    "srcFileRef": "/content/dam/stryker/about/news/2021/surgicount-plus/surgicount-plus.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Aug 12 2021 14:40:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2021/surgicount-plus/surgicount-plus.jpg"
+  }
+}

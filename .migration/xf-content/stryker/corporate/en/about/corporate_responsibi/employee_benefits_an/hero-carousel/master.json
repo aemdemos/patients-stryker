@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero carousel",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "bf621830-48b7-47b8-b3d9-4f61833591c5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "bdcd585b-8df6-4773-9ed3-49f34040e03a"
+  ],
+  "lastPublished": "Thu Mar 13 2025 20:07:10 GMT+0000",
+  "jcr:created": "Thu Mar 13 2025 20:07:10 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 13 2025 20:07:13 GMT+0000",
+  "cq:lastModified": "Thu Mar 13 2025 20:01:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "bdcd585b-8df6-4773-9ed3-49f34040e03a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Mar 13 2025 20:07:10 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b283372d-9f75-425a-9218-f0e201ef6fca",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 11 2025 15:55:53 GMT+0000",
+      "alt": "CR-EmployeeBenefitsAndResources-desktop-2025",
+      "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/empolyee-benefits-and-resources/images/CR-EmployeeBenefitsAndResources-desktop-2025.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 11 2025 15:56:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

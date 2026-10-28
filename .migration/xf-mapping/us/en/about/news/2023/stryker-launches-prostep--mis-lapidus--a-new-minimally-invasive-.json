@@ -1,0 +1,144 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker Launches PROstep® MIS Lapidus, a New Minimally Invasive Surgical Option for Treating Patients with Bunions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d6e67e1f-a58a-4341-a7a7-39ef66d0c58e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "prostep lapidus",
+  "jcr:predecessors": [
+    "54ba90cf-d78b-4498-a698-ae47796df974"
+  ],
+  "lastPublished": "Tue Sep 19 2023 13:35:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 19 2023 13:35:02 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 19 2023 13:35:04 GMT+0000",
+  "cq:lastModified": "Tue Sep 19 2023 13:20:15 GMT+0000",
+  "jcr:baseVersion": "54ba90cf-d78b-4498-a698-ae47796df974",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Mon Sep 18 2023 20:44:50 GMT+0000",
+  "jcr:uuid": "1d175efb-2f64-49c9-be8f-61927e603b59",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 20:42:27 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-2vw\"><span class=\"futura-bold\">Stryker Launches PROstep<sup>®</sup> MIS Lapidus, a New Minimally Invasive Surgical Option for Treating Patients with Bunions</span></span>",
+      "jcr:lastModified": "Mon Sep 18 2023 20:42:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:28:54 GMT+0000",
+      "jcr:lastModified": "Mon Sep 18 2023 19:28:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 18 2023 19:28:59 GMT+0000",
+          "alt": "PROstep Lapidus Stryker.com Image_1388x817",
+          "srcFileRef": "/content/dam/stryker/foot-and-ankle/products/prostep/images/PROstep Lapidus Stryker.com Image_1388x817.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 18 2023 19:29:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:29:16 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Stryker’s PROstep MIS portfolio will be featured at the American Orthopaedic Foot &amp; Ankle Society Annual Meeting</span></span></p>\n<p><span class=\"futura-bold\">MAHWAH, N.J.—Stryker (NYSE: SYK)</span>, one of the world’s leading medical technology companies, announced the launch of PROstep® MIS Lapidus, a new internal fixation system intended for treating bunions using a minimally invasive surgical reduction of hallux valgus deformity and subsequent fusion of the first metatarsal cuneiform joint. The system , which will debut at the <a href=\"https://www.aofas.org/annual-meeting\">American Orthopaedic Foot &amp; Ankle Society (AOFAS)</a> Annual Meeting in Louisville, Ky., Sept. 20-23 (booth no. 101).</p>\n<p>Traditionally, surgeons performing Lapidus bunion procedures use an open approach, but minimally invasive surgery techniques are being adopted in numerous surgical specialties because of the surgeon and patient advantages.<sup>1,2 </sup>PROstep MIS Lapidus offers powerful fixation stability through a minimal incision. The new technology features MIS joint preparation, triplanar reduction, and a three-screw construct designed to create a tension band for biomechanical stability.</p>\n<p>&quot;This&nbsp;procedure can be a better option for patients who are worried about cosmetic scarring from surgery and can mitigate the potential loss of correction caused by improper bone healing,&quot; said Dr. Alastair Younger, Head of the Distal Extremities Division at the University of British Columbia. &quot;I appreciate having a viable minimally invasive surgery option that provides surgeons and their patients more options for treating bunions.&quot;</p>\n<p>Benefits of the PROstep MIS Lapidus system include:</p>\n<ul>\n<li>2.5% decrease in recurrence compared to open Lapidus procedures<sup>3</sup></li>\n<li>9% reduction in non-union rates as a result of MIS Lapidus joint preparation<sup>3</sup></li>\n<li>76% reduction in scar size compared to open bunion correction procedures<sup>4</sup></li>\n<li>Less opioid usage post-op compared to open Lapidus procedures<sup>5</sup></li>\n</ul>\n<p>“PROstep MIS Lapidus puts the power back in our surgeon customers' hands to make the best decision for their patients,“ said Patrick Fisher, Vice President and General Manager for Stryker’s Foot and Ankle business unit. “At Stryker, we're continuing to expand our surgery options to support our commitment to advancing minimally invasive foot and ankle surgery.”</p>\n<p>Stryker will host the PROstep MIS Lapidus Lab at AOFAS on Sept. 21 from 12:30-2:00 p.m., in the Stryker mobile lab at the Exhibit Hall. Design surgeons Dr. Alastair Younger and Dr. Steven Steinlauf will also be available to meet with attendees during the Meet the Experts session to demonstrate PROstep MIS Lapidus, at Stryker’s booth no. 101, on Sept. 20 at 5-6 p.m., Sept. 21 at 10-10:45 a.m., and Sept. 22 at 1-2 p.m. ET.</p>\n<p>Additionally at AOFAS, Stryker will be debuting the 4WEB Cotton, Evans, and Utility wedge implants and instruments, which are part of the 4WEB Osteotomy Truss System™ (OTS). Stryker is now the exclusive distributor of the OTS that contains the wedge implants for osteotomies of the foot. OTS has an advanced structural design that incorporates 4WEB Medical’s proprietary Truss Implant Technology™.<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Sep 19 2023 13:20:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:45:59 GMT+0000",
+      "jcr:lastModified": "Mon Sep 18 2023 19:45:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:29:16 GMT+0000",
+      "text": "<p><b><span class=\"futura-bold\">About Stryker</span><br>\n </b>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 130 million patients annually. More information is available at <a href=\"http://www.stryker.com\">www.stryker.com</a>.</p>\n<p>Follow Stryker Foot &amp; Ankle on <a href=\"https://www.linkedin.com/showcase/stryker-foot-&amp;-ankle/\">LinkedIn</a>.</p>\n<p><span class=\"futura-bold\">Media contact</span><br>\nAndrea Sampson, Sampson Public Relations Group<br>\n<a href=\"mailto:asampson@sampsonprgroup.com\">asampson@sampsonprgroup.com</a><br>\n562.304.0301<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Sep 18 2023 20:29:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_349498225": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:47:29 GMT+0000",
+      "jcr:lastModified": "Mon Sep 18 2023 19:47:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 18 2023 19:29:16 GMT+0000",
+      "text": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.<br>\n</p>\n<p>The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</p>\n<p>References:<br>\n1. Trnka HJ, Krenn S, Schuh R. Minimally Invasive Hallux Valgus Surgery: a Critical Review of the Evidence. International Orthopaedics 2013; 37: 1731-1735.<br>\n2. Brogan K, Lindisfarne E, Akehurts H, Farook U, Shrier W, Palmer S. Minimally Invasive and Open Distal Chevron Osteotomy for Mild to Moderate Hallux Valgus. Foot Ankle Intl 2016; 37 (11): 1197-1204.<br>\n3. Diogo, V.C., Velijkovi, A., Wing, K., Penner, M., Gagne, O., &amp; Younger, A (2022). Cohort Comparison of Radiographic Correction and Complications between Minimal Invasive and Open Lapidus Procedures for Hallux Valgus. Foot &amp; Ankle International, 43(10), 1277-1284. https://doi.org/10.1177/10711007221112088.<br>\n4. Lam P, Lee M, Xing J, &amp; Di Nallo M (2016). Percutaneous Surgery for Mild to Moderate Hallux Valgus. Foot &amp; Ankle Clinics N Am, 21(3), 459-477 (data only with respect to chevron osteotomy procedure)<br>\n5. Jimmy J. Chan, MD; Javier Z. Guzman, MD; Andrea Nordio, MD; Jesse C. Chan; Carl M. Cirino, MD; Ettore Vulcano, MD. Opioid Consumption and Time to Return to Work After Percutaneous Osteotomy in Foot Surgery. Orthopedics. May 7, 2020.<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Sep 18 2023 19:47:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Tue Sep 19 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "19-Sep-2023",
+    "jcr:lastModified": "Mon Sep 18 2023 19:28:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/stryker-launches-prostep®-mis-lapidus,-a-new-minimally-invasive-surgical-option-for-treating-patients-with-bunions/prostep lapidus.png"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Sep 18 2023 20:44:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

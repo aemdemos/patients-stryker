@@ -1,0 +1,214 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Getting her life back Christina’s bunionectomy story",
+  "jcr:versionHistory": "d993ad5e-1f51-46ba-a8b0-be462aebcb07",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "61e2df7a-7706-40d7-b030-8f2aa65697ab"
+  ],
+  "contentID": "SYK CORP 2022-04-40",
+  "lastPublished": "Mon Apr 18 2022 20:07:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 18 2022 20:07:45 GMT+0000",
+  "cq:lastModified": "Mon Apr 18 2022 20:07:33 GMT+0000",
+  "jcr:baseVersion": "61e2df7a-7706-40d7-b030-8f2aa65697ab",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Wed Apr 13 2022 17:16:07 GMT+0000",
+  "jcr:uuid": "b96edabc-434e-4b1f-8108-d5c03cc6e0ce",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Apr 11 2022 20:16:51 GMT+0000",
+      "jcr:lastModified": "Mon Apr 11 2022 20:16:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy53": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\">Getting her life back</span><span class=\"urw-egyptienne\"><br>\r\n</span>Christina’s bunionectomy story</span></span>",
+          "line2": "<br>\r\n<span style=\"color: rgb(0,0,0);\">About 30% of women experience a painful bump on the outside of their big toe, known as a bunion.<sup>1</sup>&nbsp;Due to their location, bunions can often reduce the flexibility of the toe and cause continuous pain. Watch Christina as she shares how PROstep provided her with less pain<sup>2</sup>, smaller scars<sup>2,3</sup>&nbsp;and a quicker recovery<sup>3,4</sup>&nbsp;so she could get back to her nursing career and bodybuilding.</span>",
+          "jcr:lastModified": "Mon Apr 11 2022 20:13:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        },
+        "item1089953560363234": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"></span>&nbsp;",
+          "line2": "<p><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">“</span></span><span style=\"font-size: 21.0px; background-color: transparent; color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\">Before PROstep I feared that I would have to give up my nursing career and passion for bodybuilding. PROstep gave me my life back!</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Christina&nbsp;</span><br>\r\n</span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">PROstep bunionectomy patient&nbsp;</span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Mon Apr 11 2022 20:14:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+          "CTATitle": "Learn more about PROstep",
+          "jcr:lastModified": "Mon Apr 11 2022 20:15:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/foot-and-ankle/products/prostep",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy_437978741": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Tue Mar 22 2022 16:14:57 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Mar 22 2022 16:15:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/christina's-story-4-11-2022/21-SYK Christina story V4 final.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/21-SYK Christina story V4 final-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Apr 18 2022 20:07:20 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "||",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Christina_Story_Thumb2"
+          },
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Apr 13 2022 14:45:05 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">References<br>\n 1. Kuhn J, Alvi F. Hallux Valgus. [Updated 2021 Jul 25]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2022 Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK553092/<br>\n 2. Lam P, Lee M, Xing J, Di Nallo M. Percutaneous Surgery for Mild to Moderate Hallux Valgus. Foot Ankle Clin N Am 2016; 21: 459-477.<br>\n 3. Lee M, Walsh J, Smith MM, Ling J, Wines A, Lam P. Hallux Valgus Correction Comparing Percutaneous Chevron/Akin (PECA) and Open Scarf/Akin Osteotomies. Foot Ankle Intl 2017; 38(8): 838-846.<br>\n 4. Maffulli N, Longo UG, Oliva F, Denaro V, Coppola C. Bosch Osteotomy and Scarf Osteotomy for Hallux Valgus</span></p>\n",
+      "jcr:lastModified": "Wed Apr 13 2022 14:45:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Mon Apr 18 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "18-Apr-2022",
+    "jcr:lastModified": "Mon Apr 18 2022 20:07:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Wed Apr 13 2022 14:44:58 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/patients/patient-stories/christina's-story-4-11-2022/Christinas_Story_Thumb.png"
+  }
+}

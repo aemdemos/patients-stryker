@@ -1,0 +1,200 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "ENT",
+  "jcr:versionHistory": "42096f34-452a-4b31-adfc-05a23b2b83fa",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "jcr:predecessors": [
+    "ffb99c75-d89c-4750-a645-853942ccc706"
+  ],
+  "contentID": "1000903067 Rev A",
+  "lastPublished": "Mon Apr 19 2021 18:13:31 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:31 GMT+0000",
+  "cq:lastModified": "Fri Jun 14 2019 01:34:40 GMT+0000",
+  "jcr:baseVersion": "ffb99c75-d89c-4750-a645-853942ccc706",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jun 12 2019 15:54:32 GMT+0000",
+  "jcr:uuid": "487514c3-7287-48e4-868c-3c08cfaa64c1",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "lee.fuller1@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:42:35 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-4vw\">Resources</span></span>",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">ENT</span></span>",
+      "jcr:lastModified": "Mon Sep 10 2018 20:02:51 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 20:01:41 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 20:01:41 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:48:40 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Videos and animations</span></span>",
+      "jcr:lastModified": "Mon Sep 10 2018 18:48:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:49:01 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 18:49:01 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri Jun 14 2019 01:31:43 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Fri Jun 14 2019 01:31:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/endoscopy/meded/resources/arthroscopy/video/1688AIMLaunchVideo.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/1688AIMLaunchVideo-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Jun 14 2019 01:31:58 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Mon Sep 10 2018 18:49:18 GMT-0400",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">1688 Advanced Imaging Modalities (AIM) 4K Platform Clinical Footage</span></span></p>\n<p>Clinical footage from Stryker's latest surgical visualization platform, the 1688 Advanced Imaging Modalities (AIM) 4K Platform! The FIRST to fluorescence imaging in 4K... A new era of surgical visualization has officially arrived.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Jun 14 2019 01:32:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_882948681": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 01:33:17 GMT+0000",
+      "jcr:lastModified": "Fri Jun 14 2019 01:33:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_7_1584595140": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:48:40 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-3-5-vw\">Documents</span></span>",
+      "jcr:lastModified": "Mon Sep 10 2018 18:51:03 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "resources": [
+        "/content/dam/stryker/endoscopy/meded/resources/ent/brochures/AIM Platform and ENT Info Sheet.pdf",
+        "/content/dam/stryker/endoscopy/meded/resources/ent/cas/0897-NDQ-CAS - Intraoperative Assessment of Perfusion in Gastric Grafts for Reconstruction-8a1fde53-bc52-47d8-9387-540386db4cf2.pdf",
+        "/content/dam/stryker/endoscopy/meded/resources/ent/cas/MS-0437 Rev B Conduit Vacular Evaluation is associated with reduction SYK-d9713823-6780-475d-84fa-71c42982543d.pdf"
+      ],
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 01:33:29 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Fri Jun 14 2019 01:34:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator_1204881517": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 20:02:30 GMT-0400",
+      "jcr:lastModified": "Mon Sep 10 2018 20:02:30 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Sep 10 2018 18:40:10 GMT-0400",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: center;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-4vw\">Together with our customers,<br>\r\nwe are driven<br>\r\nto make healthcare better.</span></span></div>\r\n",
+      "jcr:lastModified": "Mon Sep 10 2018 18:40:39 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Mon Sep 10 2018 20:01:27 GMT-0400",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Why right‑sided and posterior MIs demand a clear view, quickly",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "What you're not seeing on a 12-lead ECG",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1b07978a-da0a-4602-80cd-abc1c7da0ec2",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Older man suffering a right-sided PI",
+  "jcr:predecessors": [
+    "4c86dc3e-7ab8-43ba-8d72-1747bec4c256"
+  ],
+  "contentID": "EC-L35-COMM-3008650_REV-0_en_us",
+  "lastPublished": "Thu Jun 18 2026 16:53:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jun 18 2026 16:53:11 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 18 2026 16:53:13 GMT+0000",
+  "cq:lastModified": "Thu Jun 18 2026 16:53:06 GMT+0000",
+  "jcr:description": "Discover how integrated 15‑lead ECG can impact diagnosis, decisions and outcomes.",
+  "jcr:baseVersion": "4c86dc3e-7ab8-43ba-8d72-1747bec4c256",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed May 20 2026 16:53:41 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news",
+    "stryker:business-unit/ems",
+    "stryker:business-unit/ems/news/case-studies"
+  ],
+  "jcr:lastModified": "Wed May 20 2026 14:32:01 GMT+0000",
+  "jcr:uuid": "1f667652-bdbb-4ef8-b96f-19280d6579d5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed May 20 2026 14:24:19 GMT+0000",
+      "alt": "Older man suffering a right-sided PI",
+      "srcFileRef": "/content/dam/stryker/ems/news/images/Power to Save- LP35 15-Lead White Paper Article.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 20 2026 15:44:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed May 20 2026 14:24:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Why right‑sided and posterior MIs demand a clear view, quickly</span></h2>\n<p><span class=\"fontsize-1-25em\">Every minute matters when a patient presents with chest pain. You trust the 12-lead ECG because it’s been the standard for decades. But what if the information you need most—the information that could change treatment decisions, transport pathways and outcomes—is the very thing you can’t see?</span></p>\n<p><span class=\"fontsize-1-25em\">Standard 12-lead ECGs provide a valuable first look at cardiac activity, but they don’t tell the whole story. Critical regions of the heart, including the right ventricle and posterior wall, are not directly visualized.<sup>1</sup></span></p>\n<p><span class=\"fontsize-1-25em\">And when ischemia hides there, the consequences can be significant.</span></p>\n<p><span class=\"fontsize-1-25em\">Posterior myocardial infarctions are often subtle and can be difficult to distinguish from other conditions without additional leads.<sup>2</sup> Right ventricular involvement, especially in inferior wall MIs, can influence how patients respond to medications, fluids and reperfusion strategies.<sup>3,4</sup> Without clear visualization, clinicians often rely on indirect signs, including ST-segment changes that can be challenging to identify in practice.<sup>1,2</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The result can be delayed cath lab activation, missed or delayed STEMI recognition and treatment decisions made with incomplete information.<sup>2,5,6</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Now imagine a different scenario.</span></p>\n<p><span class=\"fontsize-1-25em\">Imagine having immediate access to right-sided and posterior views of the heart—without relocating existing leads or securing a second ECG. Imagine identifying a posterior MI early enough to support appropriate triage decisions, cath lab activation and transport to definitive care.<sup>5</sup> Imagine more clearly determining whether right ventricular involvement should inform your approach to nitrates, beta-blockers or fluid resuscitation.<sup>2,3</sup></span></p>\n<p><span class=\"fontsize-1-25em\">This is where integrated 15-lead ECG capability comes in.</span></p>\n<p><span class=\"fontsize-1-25em\">By enabling direct visualization of areas long considered blind spots, a 15-lead ECG may provide a more complete picture of myocardial ischemia when decisions matter most.</span></p>\n<p><span class=\"fontsize-1-25em\">When lives depend on you, confidence matters. In the emergency department. In prehospital care. In every handoff where seconds count and assumptions can be costly.</span></p>\n<p><span class=\"fontsize-1-25em\">The <a href=\"/content/stryker/us/en/emergency-care/products/lifepak-35.html\">LIFEPAK 35 monitor/defibrillator</a> was designed to meet this challenge. With integrated 15-lead ECG capability and clear on-screen labeling, it allows clinicians to capture additional views quickly, without relocating existing leads or securing a second ECG.</span></p>\n<p><span class=\"fontsize-1-25em\">This white paper explores the clinical gaps associated with traditional 12-lead ECGs, the real-world implications of missed right-sided and posterior MIs, and how expanded cardiac visualization may support triage and treatment decisions.<sup>6</sup></span></p>\n<p><span class=\"fontsize-1-25em\">If you believe better visibility can support better decisions, and better decisions can help improve patient care, this is a perspective you don’t want to miss.</span></p>\n<p><span class=\"fontsize-1-25em\">Download the white paper to see what a fuller view of the heart can reveal.<br>\n </span>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed May 20 2026 15:49:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Click below to open the whitepaper.</span></span></h2>\n",
+      "jcr:lastModified": "Wed May 20 2026 16:52:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu May 21 2026 17:05:03 GMT+0000",
+      "jcr:lastModified": "Thu May 21 2026 17:05:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3901",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu May 21 2026 17:05:10 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your interest! Check your email for the whitepaper.",
+          "jcr:lastModified": "Thu Jun 18 2026 16:53:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Thu May 21 2026 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "21-May-2026",
+    "jcr:lastModified": "Wed May 20 2026 14:29:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/news/images/Power to Save- LP35 15-Lead White Paper Article.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:</b></p>\r\n<p>1. Thygesen K, Alpert J, Jaffe A, et al. ESC/ACC/AHA/WHF Fourth Universal Definition of Myocardial Infarction (2018). J Am Coll Cardiol. 2018;72:2234–2260.</p>\r\n<p>2. Khan JN, Chauhan A, Mozdiak E, Khan JM, Varma C. Posterior myocardial infarction: are we failing to diagnose this? Emerg Med J. 2012;29:15.</p>\r\n<p>3. Goldstein JA, Lerakis S, Moreno PR. Right Ventricular Myocardial Infarction—A Tale of Two Ventricles. J Am Coll Cardiol. 2024;83:1779–1798.</p>\r\n<p>4. Mehta SR, et al. Impact of right ventricular involvement on mortality and morbidity in patients with inferior myocardial infarction. J Am Coll Cardiol. 2001;37:37–43.</p>\r\n<p>5. Oraii S, Maleki M, Tavakolian AA, et al. Prevalence and outcome of ST-segment elevations in posterior electrocardiographic leads during acute myocardial infarction. J Electrocardiol. 1999;32(3):275–278.</p>\r\n<p>6. Park J, et al. Prognostic implications of door-to-balloon time and onset-to-door time on mortality in patients with ST-segment–elevation myocardial infarction treated with primary PCI. J Am Heart Assoc. 2019;8:e012188.</p>\r\n<p>7.&nbsp; Scenario-based and diagnostic challenges described in LIFEPAK 35 15-lead ECG clinical overview white paper (Stryker, 2026).</p>\r\n<p>8. Rao SV, O’Donoghue ML, Ruel M, et al. 2025 ACC/AHA/ACEP/NAEMSP/SCAI guideline for the management of patients with acute coronary syndromes. Circulation. 2025.</p>\r\n",
+    "jcr:lastModified": "Wed May 20 2026 14:26:40 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

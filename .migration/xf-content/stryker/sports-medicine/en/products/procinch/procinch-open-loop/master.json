@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ProCinch Open Loop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1848f5f8-bf9e-4db0-b8ac-0ab711720983",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9f7df18a-67ed-4c02-a3ee-a06c8a0df01c"
+  ],
+  "jcr:created": "Tue Aug 09 2022 19:00:09 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 09 2022 19:00:11 GMT+0000",
+  "cq:lastModified": "Fri Dec 17 2021 20:21:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9f7df18a-67ed-4c02-a3ee-a06c8a0df01c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "f25435f9-52dd-43a2-981c-c959d6e38d50",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Thu Dec 16 2021 22:43:47 GMT+0000",
+      "alt": "ProCinch Open Loop Open to a multitude of graft options",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/products/procinchadjustablefixationsystem/images/procinch-4-expfrag.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Dec 17 2021 20:21:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

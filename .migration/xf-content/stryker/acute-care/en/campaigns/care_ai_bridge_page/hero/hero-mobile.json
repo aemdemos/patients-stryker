@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1ebecb55-b259-4753-9b6b-2fa5d320dd63",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3716492c-b56b-4221-ae4f-a96e55fbcb80"
+  ],
+  "lastPublished": "Fri Jan 31 2025 23:08:06 GMT+0000",
+  "jcr:created": "Fri Jan 31 2025 23:08:06 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 31 2025 23:08:09 GMT+0000",
+  "cq:lastModified": "Fri Jan 31 2025 20:58:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3716492c-b56b-4221-ae4f-a96e55fbcb80",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 31 2025 21:13:43 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4886e3f6-8351-4cce-af1a-96081ebbe4ff",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 14 2025 22:24:12 GMT+0000",
+      "alt": "Stryker and care.ai virtual nursing and ambient monitoring station",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/care-ai_patient-viewing-screen_1440x960.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jan 31 2025 20:58:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

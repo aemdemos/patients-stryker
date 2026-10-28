@@ -1,0 +1,69 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "90c88b05-d5b9-458c-8fcb-4caee5566900",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "cf6fc7dd-8090-45c2-8fab-9fee8fe43a8c"
+  ],
+  "lastPublished": "Mon Jun 16 2025 15:19:31 GMT+0000",
+  "jcr:created": "Mon Jun 16 2025 15:19:31 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 16 2025 15:19:33 GMT+0000",
+  "cq:lastModified": "Fri Feb 16 2024 14:06:03 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cf6fc7dd-8090-45c2-8fab-9fee8fe43a8c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:19:31 GMT+0000",
+  "jcr:uuid": "e994b297-4cb7-45fd-ae32-346d7589cf41",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage13409": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Thu Dec 21 2023 19:45:32 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage134091360898930941331": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Stryker's manual cot fastener Performance-LOAD",
+        "srcFileRef": "/content/dam/stryker/ems/products/performance-load/images/Thumbnail_Performance_LOAD_16x9.jpg",
+        "jcr:lastModified": "Tue Jan 02 2024 14:00:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured",
+    "min-cols": "1",
+    "max-cols": "1"
+  }
+}

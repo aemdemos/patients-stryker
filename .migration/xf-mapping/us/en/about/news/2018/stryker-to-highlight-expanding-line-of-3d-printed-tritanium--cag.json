@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker to highlight expanding line of 3D-printed Tritanium® Cages at AANS ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "813526f1-50d8-4855-85aa-b3148bdedcca",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/images/TritaniumTL_Fig_001_Cover_785x469 (002).png",
+  "jcr:predecessors": [
+    "1606f7ad-94ec-4396-906c-e507ebbe2688"
+  ],
+  "lastPublished": "Tue Feb 27 2024 18:55:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 27 2024 18:55:03 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 27 2024 18:55:05 GMT+0000",
+  "cq:lastModified": "Tue Feb 27 2024 18:54:59 GMT+0000",
+  "jcr:baseVersion": "1606f7ad-94ec-4396-906c-e507ebbe2688",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Thu Aug 30 2018 11:52:27 GMT-0400",
+  "jcr:uuid": "38764f81-c160-4f7e-9241-c497e815f198",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Fri Apr 27 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "27-Apr-2018",
+    "jcr:lastModified": "Mon Apr 30 2018 07:41:52 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/TritaniumTL_Fig_001_Cover_785x469 (002).png",
+    "jcr:lastModified": "Mon Apr 30 2018 07:42:02 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "text": "<p style=\"text-align: center;\">Stryker to highlight expanding line of 3D-printed Tritanium® Cages at AANS&nbsp;</p>\n<p><a href=\"http://www.strykerspine.com/\">Stryker’s Spine division</a> will showcase its expanding line of Tritanium® cages, including the new Tritanium® TL Curved Posterior Lumbar Cage, a 3D-printed interbody fusion cage intended for use as an aid in lumbar fixation, at the American Association of Neurological Surgeons (AANS) Annual Scientific Meeting, April 28–May 2, 2018, in New Orleans (booth No. 413).</p>\n<p>Tritanium Cages are built usingStryker’s proprietary Tritanium In-Growth Technology,<sup>1 </sup>a novel, highly porous titanium material designed for bone in-growth and biological fixation.<sup>1</sup> AMagine™ technology, Stryker's proprietary approach to implant creation using additive manufacturing, allows for the production of randomized yet reproducible porous structures.2 The result is Tritanium Technology, which features an interconnected architecture with rugged irregular pore sizes and shapes that is designed to mimic cancellous bone.<sup>2</sup> The Tritanium material also may be able to wick or retain fluid in comparison to traditional titanium material.<sup>3</sup></p>\n<p>According to Bradley Paddock, president of the Spine division, Tritanium cages have been well-received by surgeon users and continue to gain momentum. Since their launch, the Spine division has sold nearly 26,000 Tritanium Posterior Lumbar (PL) and Tritanium Anterior Cervical (C) Cages, combined.</p>\n<p>“We are delighted to feature our growing family of Tritanium Cages at AANS this year and especially proud to introduce the Tritanium TL Curved Posterior Lumbar Cage,” Paddock said. “The new Tritanium TL Cage complements our Tritanium PL Cage, and together they offer alternative posterior lumbar solutions for spine surgeons and their patients.”</p>\n<p>The Tritanium TL’s new Anterior Placement System and cage design combine to enable the surgeon's desired apophyseal placement. The Tritanium TL Cage has a unique, curved shape and rounded teeth to facilitate multidirectional fixation.</p>\n<p>Stryker will host a <a href=\"https://www.aans.org/Online-Program/ProgramItem1?eventid=48732&amp;itemid=X155&amp;page=1\">Lunch-and-learn</a> Seminar at AANS titled, “Evidence-Based Biomaterials in Spine,” on Monday, April 30 from 1:10–1:55 p.m. The seminar will be presented by Domagoj Coric, M.D., FAANS, neurosurgeon at Carolina Neurosurgery &amp; Spine Associates in Charlotte, N.C.</p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"https://www.stryker.com/us/en/index.html\">stryker.com</a> and <a href=\"https://builttofuse.strykerspine.com/\">builttofuse.com</a>. Follow the Spine division on Twitter <a href=\"https://twitter.com/stryker_spine\">@stryker_spine</a>.</p>\n<p style=\"text-align: center;\">###</p>\n<p><b>Media Contact</b></p>\n<p>Andrea Sampson, Sullivan &amp; Associates<br>\nasampson@sullivanpr.com, 714/374–6174</p>\n<p><b>References</b></p>\n<p><sup>1. PROJ43909 | Tritanium technology claim support memo.<br>\n 2. Karageorgiou V, Kaplan D. (2005) Porosity of 3D biomaterial scaffolds and osteogenesis. Biomaterials, 26, 5474-5491.<br>\n 3. TREP0000053045 | Tritanium Wicking Verification Test.</sup></p>\n<p><sup>Dr. Coric is a paid consultant of Stryker. His statements represent his own opinions based on personal experience and are not necessarily those of Stryker. Individual experiences may vary.&nbsp;</sup></p>\n<p><sup>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</sup></p>\n<p><sup>The information presented is intended to demonstrate the breadth of Stryker product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area.&nbsp;</sup></p>\n<p><sup>&nbsp;</sup></p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Tue Feb 27 2024 18:54:59 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/TritaniumTL_Fig_001_Cover_785x469 (002).png"
+  }
+}

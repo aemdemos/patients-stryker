@@ -1,0 +1,111 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "EMS Stories: Anchorage Area Wide EMS",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "212b9072-5896-4a0f-911b-85b11743665d",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "04fdf52a-da5a-4eb4-b3b3-37a55481f258"
+  ],
+  "lastPublished": "Thu Jan 25 2024 23:02:14 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jan 25 2024 23:02:14 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 25 2024 23:02:16 GMT+0000",
+  "cq:lastModified": "Thu Jan 25 2024 22:57:31 GMT+0000",
+  "jcr:description": "We connected with the men and women of Anchorage Area-wide EMS for the latest installment of our EMS Stories series. Hear their perspectives on what it's like to work in Emergency Medical Services in the unforgiving, rugged terrain of Alaska.",
+  "jcr:baseVersion": "04fdf52a-da5a-4eb4-b3b3-37a55481f258",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:business-unit/ems/news/videos"
+  ],
+  "jcr:lastModified": "Tue Aug 30 2022 15:11:09 GMT+0000",
+  "jcr:uuid": "994c7e31-6fe8-45a3-9c7b-d95a9060d57c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "description": "We connected with the men and women of Anchorage Area-wide EMS for the latest installment of our EMS Stories series. Hear their perspectives on what it's like to work in Emergency Medical Services in the unforgiving, rugged terrain of Alaska.",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 12 2022 18:35:32 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Tue Aug 30 2022 15:11:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/stories/ems-stories-anchorage-area-wide-ems.mov",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/ems-stories-anchorage-area-wide-ems-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Jul 12 2022 18:40:23 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:57:22 GMT+0000",
+      "jcr:lastModified": "Thu Jan 25 2024 22:57:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable_copy_co": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Jan 25 2024 22:31:12 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Thu Jan 25 2024 22:57:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/emergency-medical-services"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/ems-stories-community-ambulance-las-vegas"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/emergency-care/news/video/ems-stories-memphis-fire-department"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Wed Feb 23 2022 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "23-Feb-2022",
+    "jcr:lastModified": "Fri Jul 29 2022 20:04:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/videos/stories/thumbnails/ems-stories-anchorage-area-wide-ems.png"
+  }
+}

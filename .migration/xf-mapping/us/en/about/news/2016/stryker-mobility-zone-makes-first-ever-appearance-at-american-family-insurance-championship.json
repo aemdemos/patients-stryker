@@ -1,0 +1,52 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Mobility Zone Makes First-Ever Appearance At American Family Insurance Championship",
+  "jcr:versionHistory": "1440a958-72d2-4971-a0cb-204c2affc5c1",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "5d68b1a4-e1a9-4b6e-874d-1ebd8330b80a"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:26:01 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:26:01 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 16:25:55 GMT-0500",
+  "jcr:baseVersion": "5d68b1a4-e1a9-4b6e-874d-1ebd8330b80a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 16:25:55 GMT-0500",
+  "jcr:uuid": "7cc3f2e1-5a3a-45fd-94da-7b722f70aadd",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Wed Jun 22 2016 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "22-Jun-2016",
+    "jcr:lastModified": "Wed May 31 2017 22:26:43 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>MAHWAH, N.J.,&nbsp;June 22, 2016&nbsp;/PRNewswire/ --&nbsp;Stryker Orthopaedics, the Official Joint Replacement Products of the PGA TOUR and PGA TOUR Champions, will be kicking off the second half of its 2016 tournament schedule at the American Family Insurance Championship in Madison, WI. This tournament marks the sixth stop of the year for the company and its premiere on-site destination, the Stryker Mobility Zone. Through the Stryker Mobility Zone, Stryker has been able to focus its efforts educating tournament goers on the importance of joint health by enhancing the golf fan experience with interactive initiatives.</p>\n<p>Since the beginning of the 2016 season, Stryker has committed to promoting joint health through the Stryker Challenge – a collection of engaging activities within the Stryker Mobility Zone, designed to address questions specifically related to joint health, mobility and golf in a fun and engaging way. Fans have the opportunity to enter for a chance to win a trip for two to TPC® Sawgrass to play alongside former PLAYERS Championship winners and longtime Stryker ambassadors, Fred Funk and Hal Sutton. <sup>1, 2</sup><br>\n</p>\n<p><b>Read the full article:</b></p>\n<p><a href=\"http://www.prnewswire.com/news-releases/stryker-mobility-zone-makes-first-ever-appearance-at-american-family-insurance-championship-300288063.html\" target=\"_blank\">PRNewswire</a></p>\n",
+    "jcr:lastModified": "Fri Jun 02 2017 11:09:55 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

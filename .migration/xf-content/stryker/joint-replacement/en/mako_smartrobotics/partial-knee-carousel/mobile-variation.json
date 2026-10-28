@@ -1,0 +1,135 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile Variation",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dec400ee-50cf-4ac1-b66c-03af2b8635c3",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "e360b19f-04d4-4984-a703-e2b07b9c8c74"
+  ],
+  "lastPublished": "Wed Sep 03 2025 17:14:15 GMT+0000",
+  "jcr:created": "Wed Sep 03 2025 17:14:15 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 03 2025 17:14:17 GMT+0000",
+  "cq:lastModified": "Fri Aug 29 2025 16:41:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "e360b19f-04d4-4984-a703-e2b07b9c8c74",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 18 2025 16:55:40 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "6d0fb371-7420-4baf-909e-2c468fbb4f99",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_1650597411_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Aug 06 2025 18:29:17 GMT+0000",
+      "text": "<p>&nbsp; &nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Aug 06 2025 18:29:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "5",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "2",
+      "topMargin": "2",
+      "jcr:created": "Wed Aug 06 2025 18:26:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-75em\">Mako Partial Knee</span></span></span><span class=\"fontsize-2em\"><span class=\"futura-bold\"><br>\n </span></span></h1>\n<h1 style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Let's talk SmartRobotics™</span></span></h1>\n<h1>&nbsp;</h1>\n",
+      "jcr:lastModified": "Wed Aug 06 2025 18:47:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true",
+      "leftMargin": "2",
+      "bottomMargin": "2",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 06 2025 18:26:17 GMT+0000",
+      "alt": "Mako PKA Planning Screen",
+      "srcFileRef": "/content/dam/stryker/joint-replacement/images/PKA Hero.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Aug 06 2025 18:26:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_398681104": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "5",
+      "topMargin": "5",
+      "jcr:created": "Wed Aug 06 2025 18:26:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2>Mako Partial Knee with the Restoris MCK implant system helps enable surgeons to dynamically balance soft tissue tensioning intraoperatively, with the goal of recreating natural knee kinematics. Clinical studies have shown that Mako Partial Knee has the potential to reproducibly deliver component placement that is accurate to the 3D patient-specific preoperative plans,<sup>1,2</sup>&nbsp;reduce damage to the surrounding soft tissue through AccuStop™ haptic technology<sup>3</sup> and to help surgeons reestablish soft tissue balance using dynamic joint balancing.<sup>4</sup><br>\n</h2>\n",
+      "jcr:lastModified": "Fri Aug 29 2025 16:41:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "2",
+      "textIsRich": "true",
+      "leftMargin": "5",
+      "bottomMargin": "5",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

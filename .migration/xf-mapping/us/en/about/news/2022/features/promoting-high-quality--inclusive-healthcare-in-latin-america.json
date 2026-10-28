@@ -1,0 +1,158 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Promoting high quality, inclusive healthcare in Latin America",
+  "jcr:versionHistory": "e5b4b72c-1b40-4637-b14c-dd6c6c35224e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "9ca9b409-3151-46a9-a104-bad3ddf57995"
+  ],
+  "contentID": "SYK CORP 2022-05-66",
+  "lastPublished": "Mon May 16 2022 15:07:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon May 16 2022 15:07:13 GMT+0000",
+  "cq:lastModified": "Mon May 16 2022 15:06:41 GMT+0000",
+  "jcr:baseVersion": "9ca9b409-3151-46a9-a104-bad3ddf57995",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/diversity-equity-inclusion"
+  ],
+  "jcr:lastModified": "Mon May 16 2022 15:06:41 GMT+0000",
+  "jcr:uuid": "d73cedf4-ec8e-4d5e-910f-af4a8fff064c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 27 2022 18:56:20 GMT+0000",
+      "jcr:lastModified": "Wed Apr 27 2022 18:56:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/carousel/hero-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/promoting-high-quali/carousel/hero-image/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/carousel/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/promoting-high-quali/carousel/hero-image/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "29",
+          "jcr:created": "Wed Apr 27 2022 18:56:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Apr 27 2022 18:58:12 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "57",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Apr 27 2022 18:57:13 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"futura-bold\"><span class=\"fontsize-3vw\">Promoting high quality, inclusive healthcare in Latin America</span></span>",
+              "jcr:lastModified": "Wed Apr 27 2022 18:57:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 27 2022 18:58:34 GMT+0000",
+      "jcr:lastModified": "Wed Apr 27 2022 18:58:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Apr 27 2022 18:58:49 GMT+0000",
+          "jcr:lastModified": "Wed Apr 27 2022 18:58:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Wed Apr 27 2022 18:58:52 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Apr 27 2022 18:58:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 27 2022 18:56:14 GMT+0000",
+      "jcr:lastModified": "Wed Apr 27 2022 18:56:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Apr 27 2022 18:19:03 GMT+0000",
+      "text": "Making healthcare better is our mission, but it doesn’t belong to us alone. We actively seek partnerships with organizations that align with that mission—like Operation Smile and the Teletón Foundation—because making healthcare better often requires a collaborative effort. Learn how our employees in Latin America are improving healthcare where they live and work. Latin America and the Caribbean is made up of 33 countries, each of which has their own unique healthcare system.1,2 Ranging from universal to private healthcare, and big cities to rural communities, access to quality care for patients varies.2 Employees working across Latin America use this information as an opportunity to improve healthcare and most importantly, their local community. Driven by this strong sense of purpose, our employees have aligned with two nonprofit organizations to volunteer their time and talents to spread awareness of how to improve the healthcare provided in the region. Did you know? 41% of the top hospitals in Latin America are located in Colombia.2 Healing smiles by spreading awareness of cleft lip and palate in Bogotá, Columbia Operation Smile believes that every child suffering from cleft lip or cleft palate deserves exceptional surgical care. At Stryker, we believe the same. That’s why we support their efforts to provide critically needed surgical care for children with cleft conditions in under-resourced communities. We’ve been a loyal partner of Operation Smile since the early 1990s, providing cash and gifts in kind to deliver the highest quality surgical care to the world’s most marginalized populations. Together with Operation Smile, we’ve helped them grow their reach to more than 60 countries worldwide, including countries in Latin America. Catalina Torres, a communications specialist in Latin America, is an Operation Smile ambassador site lead for Stryker, which is a volunteer position within the company that focuses on inspiring other employees to volunteer and fundraise for Operation Smile. She works with her colleagues in Latin America to develop engaging educational events and campaigns that benefit Operation Smile in Bogotá, Colombia. Proceeds from all efforts benefit children who need surgical care and their families. Did you know? The country with the highest reported prevalence of cleft lip is Bolivia.3 “Over the years, our Operation Smile Ambassadors have invited speakers who have participated in medical mission trips, like colleagues, physicians and past patients, to educate us all on the importance of offering quality healthcare to communities all over the world,” says Catalina. “To see a child who is living a healthier life as a result of our donations reminds me of why I enjoy working in healthcare.” ‎ Developing the right tools for the task Our founder Dr. Homer Stryker, who was also an orthopaedic surgeon, dedicated his life to serving patients, and his inspirational words, “If your tools don’t work, make them work,” continue to inspire and push us forward on behalf of the physicians and healthcare providers we serve. Our Craniomaxillofacial (CMF) and Surgical Technologies Teams continue to follow in our founder’s footsteps by developing tools that physicians use to help restore form, function and hope to patients around the world. Since 1999, our CMF Team has donated cleft lip and palate surgical instruments to Operation Smile medical missions. Below, a plastic surgeon uses a PhotonBlade from our Surgical Technologies Team in a general surgery case on an Operation Smile medical mission in Rwanda, Africa to address the patient's condition and illuminate the surgical area. ‎ Driving inclusion in healthcare with Fundación Teletón Ensuring that every patient receives high-quality care is another focus we have. The Teletón Fundación is a partner that we work with to help raise the quality of life of people with disabilities, autism and cancer by creating ways for them to be fully included in society. “We had the opportunity to donate surfaces, or mattresses, to Teletón last year for use as intensive therapy beds for children going through their cancer journey,” says employee Paola De la Torre. “Every patient, no matter their diagnosis, deserves to receive high-quality care and as employees of Stryker, we’re proud to impact our community so deeply.” References 1. Countries in Latin America and the Caribbean: Worldometer. (n.d.). Retrieved February 17, 2022, from https://www.worldometers.info/geography/how-many-countries-in-latin-america/ 2. Ránking de Clínicas y hospitales: Estos son los mejores de latinoamérica 2019. Cluster Salud | AméricaEconomía. (n.d.). Retrieved February 17, 2022, from https://clustersalud.americaeconomia.com/gestion-hospitalaria/ranking-de-clinicas-y-hospitales-estos-son-los-mejores-de-latinoamerica-2019[FJ1] [FJ1]Taken from this blog, which links to source https://www.pacificprime.lat/blog/an-overview-of-latin-american-healthcare-systems/ 3. World Health Orgranization. (n.d.). Craniofacial anomalies and associated birth defects. Global registry and database on craniofacial anomalies. Retrieved February 17, 2022, from https://www.who.int/genomics/anomalies/en/Chapter02.pdf 4. Teleton Foundation. Who we are. Retrieved February 17, 2022, from https://teleton.org/nosotros/",
+      "jcr:lastModified": "Wed Apr 27 2022 18:53:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/promoting_high_quali/body-copy/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/promoting-high-quali/body-copy/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Mon May 16 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "16-May-2022",
+    "jcr:lastModified": "Mon May 16 2022 14:55:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Apr 27 2022 18:59:11 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/features/promoting-high-quality,-inclusive-healthcare-in-latin-america-/Stryker-4.jpeg"
+  }
+}

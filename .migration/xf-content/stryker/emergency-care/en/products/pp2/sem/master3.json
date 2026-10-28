@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SEM",
+  "jcr:versionHistory": "4267654f-8e2d-49ae-832b-8daff370438a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "3d153ec4-5822-4a05-9b77-565212559855"
+  ],
+  "jcr:created": "Thu Jun 23 2022 15:06:10 GMT+0000",
+  "cq:lastModified": "Thu Jun 23 2022 15:04:15 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3d153ec4-5822-4a05-9b77-565212559855",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "4bd0e11f-acd8-4d5c-85c2-6e20797bd82e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:title": "Maximize",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jul 20 2020 20:07:32 GMT+0000",
+      "jcr:lastModified": "Wed Dec 01 2021 22:37:15 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage37771": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "preset": "max_width_1440",
+        "srcFileRef": "/content/dam/stryker/ems/products/power-pro-2/images/Clock_blue copy.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Wed Dec 22 2021 21:24:37 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "2"
+          }
+        }
+      },
+      "text_copy_copy_copy_3777245620655122": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "text": "<h4><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #000000;\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\">​Minimiser les immobilisations</span></span></span></span></span></h4>\n",
+        "jcr:lastModified": "Thu Jun 23 2022 15:04:15 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "8"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

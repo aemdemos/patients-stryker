@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "AHRMM26",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9fde9d9a-e30d-4bd3-b510-df0428a6f2d8",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a50e78c7-d78e-43bf-939a-31482af45971"
+  ],
+  "lastPublished": "Wed Jul 08 2026 17:31:23 GMT+0000",
+  "jcr:created": "Wed Jul 08 2026 17:31:25 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 08 2026 17:31:29 GMT+0000",
+  "cq:lastModified": "Mon Jun 22 2026 20:33:45 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a50e78c7-d78e-43bf-939a-31482af45971",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jul 08 2026 17:31:23 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "06e5b60e-1df5-4d6d-af03-c27654f5c979",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jun 22 2026 20:33:28 GMT+0000",
+      "alt": "AHRMM26-hero-desktop",
+      "srcFileRef": "/content/dam/stryker/services/hospital-supply-chain/events/ahrmm26/images/AHRMM26-hero-desktop.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 22 2026 20:33:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

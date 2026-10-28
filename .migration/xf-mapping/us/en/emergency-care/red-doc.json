@@ -1,0 +1,210 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Radio Equipment Directive Declaration of Conformity",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d8650e6a-55a1-436a-8ae0-c9536c7550b5",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+  "jcr:predecessors": [
+    "b2ad1fdc-616c-4312-9172-222addfe9c0c"
+  ],
+  "lastPublished": "Tue Sep 06 2022 20:32:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 06 2022 20:32:08 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 06 2022 20:32:11 GMT+0000",
+  "cq:lastModified": "Tue Sep 06 2022 20:30:12 GMT+0000",
+  "noFollow": "true",
+  "jcr:description": "Click the link below to download the Radio Equipment Directive Declaration of Conformity (DoC) for your chosen product in your chosen language.",
+  "jcr:baseVersion": "b2ad1fdc-616c-4312-9172-222addfe9c0c",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Sat Aug 06 2022 00:31:25 GMT+0000",
+  "jcr:uuid": "5ae175a8-cc9c-4c19-91fb-884256c1def8",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Tue Jul 19 2022 17:13:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jul 19 2022 17:18:53 GMT+0000",
+      "jcr:lastModified": "Tue Jul 19 2022 17:18:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 28 2019 13:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Nov 16 2021 19:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 28 2019 13:17:42 GMT+0000",
+          "jcr:lastModified": "Tue Jul 19 2022 18:50:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_1930297230": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Jul 19 2022 18:39:09 GMT+0000",
+              "text": "<ul>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_cs.pdf\" target=\"_blank\">Czech</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_da.pdf\" target=\"_blank\">Danish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_nl.pdf\" target=\"_blank\">Dutch</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_en.pdf\" target=\"_blank\">English</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_fi.pdf\" target=\"_blank\">Finnish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_fr.pdf\" target=\"_blank\">French</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_de.pdf\" target=\"_blank\">German</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_hu.pdf\" target=\"_blank\">Hungarian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_it.pdf\" target=\"_blank\">Italian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_ja.pdf\" target=\"_blank\">Japanese</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_ko.pdf\" target=\"_blank\">Korean</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_no.pdf\" target=\"_blank\">Norwegian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_pl.pdf\" target=\"_blank\">Polish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_pt-br.pdf\" target=\"_blank\">Portuguese (Brazil)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_pt.pdf\" target=\"_blank\">Portuguese (Portugal)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_ru.pdf\" target=\"_blank\">Russian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_es.pdf\" target=\"_blank\">Spanish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_sv.pdf\" target=\"_blank\">Swedish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/codemanagement-module/codemanagement-module_red-dofc_zh-tw.pdf\" target=\"_blank\">Chinese (Taiwan)</a></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jul 20 2022 15:33:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_1250725490": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Jul 19 2022 18:41:07 GMT+0000",
+              "text": "<ul>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_cs.pdf\" target=\"_blank\">Czech</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_da.pdf\" target=\"_blank\">Danish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc.pdf\" target=\"_blank\">English</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_fr.pdf\" target=\"_blank\">French</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_-fi.pdf\" target=\"_blank\">Finnish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_de.pdf\" target=\"_blank\">German</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_hu.pdf\" target=\"_blank\">Hungarian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_it.pdf\" target=\"_blank\">Italian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_ja.pdf\" target=\"_blank\">Japanese</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_ko.pdf\" target=\"_blank\">Korean</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_no.pdf\" target=\"_blank\">Norwegian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_pl.pdf\" target=\"_blank\">Polish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_ptbr.pdf\" target=\"_blank\">Portuguese (Brazil)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_ptpt.pdf\" target=\"_blank\">Portuguese (Portugal)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_ru.pdf\" target=\"_blank\">Russian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_es.pdf\" target=\"_blank\">Spanish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-15/lp15_red_doc_sv.pdf\" target=\"_blank\">Swedish</a></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jul 20 2022 15:41:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "text_1617655447": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Jul 19 2022 18:42:00 GMT+0000",
+              "text": "<ul>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_ar.pdf\" target=\"_blank\">Arabic</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_zhcn.pdf\" target=\"_blank\">Chinese (Simplified)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_zhtw.pdf\" target=\"_blank\">Chinese (Traditional)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_da.pdf\" target=\"_blank\">Danish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_nl.pdf\" target=\"_blank\">Dutch</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red-dofc_en.pdf\" target=\"_blank\">English</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_fr.pdf\" target=\"_blank\">French</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_fi.pdf\" target=\"_blank\">Finnish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_de.pdf\" target=\"_blank\">German</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_he.pdf\" target=\"_blank\">Hebrew</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_hu.pdf\" target=\"_blank\">Hungarian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_it.pdf\" target=\"_blank\">Italian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_ja.pdf\" target=\"_blank\">Japanese</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_ko.pdf\" target=\"_blank\">Korean</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_no.pdf\" target=\"_blank\">Norwegian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_pl.pdf\" target=\"_blank\">Polish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_es.pdf\" target=\"_blank\">Spanish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_sv.pdf\" target=\"_blank\">Swedish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/lifepak-cr2/lpcr2_red_doc_tr.pdf\" target=\"_blank\">Turkish</a></li>\n</ul>\n",
+              "jcr:lastModified": "Tue Sep 06 2022 20:30:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text_1574398021": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Jul 19 2022 18:42:40 GMT+0000",
+              "text": "<ul>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_zhcn.pdf\" target=\"_blank\">Chinese</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_cs.pdf\" target=\"_blank\">Czech</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_da.pdf\" target=\"_blank\">Danish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_nl.pdf\" target=\"_blank\">Dutch</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red-dofc_en.pdf\" target=\"_blank\">English</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_fi.pdf\" target=\"_blank\">Finnish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_fr.pdf\" target=\"_blank\">French</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_de.pdf\" target=\"_blank\">German</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_el.pdf\" target=\"_blank\">Greek</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_it.pdf\" target=\"_blank\">Italian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_ko.pdf\" target=\"_blank\">Korean</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_no.pdf\" target=\"_blank\">Norwegian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_pl.pdf\" target=\"_blank\">Polish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_ptpt.pdf\" target=\"_blank\">Portuguese (Portugal)</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_ru.pdf\" target=\"_blank\">Russian</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_es.pdf\" target=\"_blank\">Spanish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_sv.pdf\" target=\"_blank\">Swedish</a></li>\n<li><a href=\"/content/dam/stryker/ems/resources/red-doc/truecpr/truecpr_red_doc_tr.pdf\" target=\"_blank\">Turkish</a></li>\n</ul>\n",
+              "jcr:lastModified": "Wed Jul 20 2022 16:17:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">ClearVoice technology detects background noise and adjusts audio and voice prompts to ensure they can be heard clearly in noisy environments.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Wed May 25 2022 17:57:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 6,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The LIFEPAK CR2 comes with a lithium battery and QUIK-STEP electrode pads that can be used on both adult and pediatric patients.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Fri Jun 10 2022 17:24:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys7": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 7,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The standby life of the included battery is four years if installed on a device that is not used. The battery will provide 166 200 joule shocks (with one minute of CPR between shocks) or 103 360 joule shocks (with one minute of CPR between shocks) or 800 minutes of operating time.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Thu Jun 02 2022 17:42:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "CodeManagement Module"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "LIFEPAK 15"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "3",
+              "accTitle": "LIFEPAK CR2"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "4",
+              "accTitle": "TrueCPR"
+            }
+          }
+        }
+      }
+    }
+  }
+}

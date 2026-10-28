@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Pediatric mandibular distractor",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2127f708-6639-42fc-9aea-3c8a3be578cd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "f88c4929-1d07-473b-b1a9-48bab8eb43cd"
+  ],
+  "lastPublished": "Fri Jul 25 2025 20:27:29 GMT+0000",
+  "jcr:created": "Fri Jul 25 2025 20:27:30 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 20:27:31 GMT+0000",
+  "cq:lastModified": "Wed Feb 12 2025 18:38:59 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "f88c4929-1d07-473b-b1a9-48bab8eb43cd",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 25 2025 20:27:29 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "fb4070f6-ebf5-4b6a-acf9-1f00a71669e3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "dynamicmedia": {
+      "jcr:primaryType": "nt:unstructured",
+      "breakpoints": "",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "videoserverurl": "https://media-assets.stryker.com/is/content/",
+      "fileReference": "/content/dam/stryker/craniomaxillofacial/products/paediatric-mandibular-distractor/images/3x3_right",
+      "s7ImagePreset": "",
+      "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "s7ViewerPreset": "",
+      "assetID": "stryker/3x3_right",
+      "urlModifiers": "",
+      "jcr:created": "Wed Feb 12 2025 18:27:48 GMT+0000",
+      "jcr:lastModified": "Wed Feb 12 2025 18:27:55 GMT+0000",
+      "s7PresetType": "undefined",
+      "sling:resourceType": "dam/components/scene7/dynamicmedia",
+      "assetType": "MixedMediaSet",
+      "imageserverurl": "https://media-assets.stryker.com/is/image/",
+      "s7ViewerPresetPath": "",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

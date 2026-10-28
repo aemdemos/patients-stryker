@@ -1,0 +1,77 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "366a1757-61ce-43ee-8d60-b7ee5d5a6d34",
+  "jcr:predecessors": [
+    "51ba82c0-7b78-4698-b2c3-bd0987213656"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:53 GMT+0000",
+  "jcr:baseVersion": "51ba82c0-7b78-4698-b2c3-bd0987213656",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "461284ee-87e5-4356-b1d2-e46a663d3cfb",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:title": "Trauson Medical Instrument Company Limited",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "trauson-medical-instrument-company-limited",
+    "jcr:lastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+    "lastFragmentSave": "Tue Feb 18 2020 15:49:17 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/greater-china/en/contact-information",
+    "dam:relativePath": "stryker/content-fragments/greater-china/en/contact-information/trauson-medical-instrument-company-limited",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Mon Feb 24 2020 14:44:53 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ]
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "addressBlock1": "<p><b>Trauson Medical Instrument Company Limited</b></p>\n<p>No.9 Longmen Road<br>\nWujin Hi-tech Industrial Zone, 213164<br>\nChangzhou City, Jiangsu Province<br>\nPeople's Republic of China (PRC)</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel": "Email",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "locationName": "China",
+        "PhoneNumberLabel": "Phone",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "PhoneNumbers": "<p>86 519 8166 5318</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 15:49:17 GMT+0000",
+        "Emails": "<p><a href=\"mailto:hanlijun@trauson.com\">hanlijun@trauson.com</a></p>\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero 2024 Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e94a70b2-0a14-4db8-b14d-2692e18185b0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "de93095b-1fa5-4a98-b0ad-f3c64edb605b"
+  ],
+  "lastPublished": "Tue May 06 2025 16:38:22 GMT+0000",
+  "jcr:created": "Tue May 06 2025 16:38:23 GMT+0000",
+  "cq:lastReplicated": "Tue May 06 2025 16:38:25 GMT+0000",
+  "cq:lastModified": "Tue May 06 2025 16:37:55 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "de93095b-1fa5-4a98-b0ad-f3c64edb605b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:38:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "e861919c-31a5-4efd-b871-58da5325c8c1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon May 06 2024 15:49:28 GMT+0000",
+      "alt": "Paramedics loading patient into ambulance with Power-PRO 2 powered ambulance cot ",
+      "srcFileRef": "/content/dam/stryker/ems/ems/images/EMSLandingPageHeader_mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue May 06 2025 16:37:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

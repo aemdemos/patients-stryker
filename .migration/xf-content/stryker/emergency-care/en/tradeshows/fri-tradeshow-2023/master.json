@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "FRI tradeshow 2023",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0dc51a3d-2644-4297-92ff-b3d96860a38e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "7a37dbfe-777f-4df4-a56c-1d799bdbbef4"
+  ],
+  "jcr:created": "Tue Jun 27 2023 14:02:23 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 27 2023 14:02:25 GMT+0000",
+  "cq:lastModified": "Tue Jun 27 2023 14:02:10 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "7a37dbfe-777f-4df4-a56c-1d799bdbbef4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "b2bc084e-9973-47eb-98a2-62bda2f31904",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "katie.boertman@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jun 27 2023 14:01:54 GMT+0000",
+      "alt": "FRI tradeshow header 2023",
+      "srcFileRef": "/content/dam/stryker/ems/tradeshows/images/FRI tradeshow header 2023.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 27 2023 14:02:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

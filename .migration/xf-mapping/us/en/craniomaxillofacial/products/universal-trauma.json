@@ -1,0 +1,135 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:lockable",
+    "mix:versionable"
+  ],
+  "subtitle": "Rigid internal fixation system",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Universal Trauma",
+  "jcr:versionHistory": "24f02118-0a94-4046-bf86-68f53c95bf1c",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/systems/Universal-Trauma/images/Thumbnail_Trauma2.png",
+  "jcr:predecessors": [
+    "727e744a-a90f-4a0d-8cbf-51d851d97b67"
+  ],
+  "contentID": "CMF-WC-28_Rev. None_14666 ",
+  "lastPublished": "Fri Apr 20 2018 21:44:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Apr 20 2018 21:44:38 GMT-0400",
+  "cq:lastModified": "Fri Apr 20 2018 21:43:59 GMT-0400",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "A 1.2, 1.7, 2.0 and 2.3 mm fixation system for your facial fracture, trauma and reconstruction needs.",
+  "jcr:baseVersion": "727e744a-a90f-4a0d-8cbf-51d851d97b67",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/trauma",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cmf-implants",
+    "stryker:system/craniomaxillofacial/universal-2-system",
+    "stryker:product/craniomaxillofacial/universal-trauma",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jun 30 2017 13:51:17 GMT-0400",
+  "jcr:uuid": "dabbe617-8ff1-425c-aba1-9971fd65b40b",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jun 30 2017 13:51:45 GMT-0400",
+      "compImageRef": "/content/dam/stryker/craniomaxillofacial/systems/Universal-Trauma/images/Hero_Trauma.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Modular design. Optimal versatility.<br>\r\n</p>\r\n",
+    "shortDescTop": "<p>Our Universal Trauma System is a comprehensive craniomaxillofacial plating system built from our experience with the Leibinger platform. The system includes a wide selection of high quality implants for bone fixation for craniomaxillofacial fractures, orthognathic and reconstructive surgery. Due to its modular concept, you can more easily achieve the balance between a comprehensive offering and a solution for specific indications. Module options include: 1.2 upperface, 1.7 midface, 2.0 mini plating, 2.0/2.3 mandible fracture, SMARTLock Hybrid MMF, MMF screws, skeletal anchorage, auxiliary screws, lag screws, bone grafting, screw removal and mesh.&nbsp;<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModified": "Mon Sep 18 2017 13:38:10 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>You can customize modules based on your specific needs and preferences.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Color-coding of modules and instruments allows for easy identification.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Graduated Stability Plates (GSP) offer the progressive level of fixation required as the advancement increases.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>We offer malleable, low-profile plates in both the upperface and midface fixation modules that are an excellent micro-implant for the management of small bone fragments in non-load bearing regions of the skull.<br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>SMARTLoad screw delivery field in each module features recessed screw holes that may facilitate easy loading of the screw.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Screw disc delivery system incorporates SMARTLoad screw delivery field for easy loading, color coding for easy identification and protects unexposed screws from spillage.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Midface and mandible modules feature SMARTLock technology; a one step locking screw with a locking capability and up to 10˚ of angulation.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "linkUrl": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "jcr:lastModified": "Wed Jun 07 2017 16:43:04 GMT-0400",
+    "linkPath": "",
+    "linkText": "Additional resources",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/systems/Universal-Trauma/images/Thumbnail_Trauma2.png"
+  }
+}

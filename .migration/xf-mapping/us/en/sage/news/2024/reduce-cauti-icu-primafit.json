@@ -1,0 +1,184 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "A Regional Medical Center’s 100% CAUTI reduction* ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6c8e3aaf-8dd5-4953-84a0-b307be3d629c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "Nurse holding a PrimaFit",
+  "jcr:predecessors": [
+    "2ac7fafd-be8f-4041-be6e-374e2d7ff9c1"
+  ],
+  "contentID": "SAGE-UM-COMM-1407803_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 17:59:58 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 18:06:59 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 18:07:01 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 17:47:26 GMT+0000",
+  "jcr:description": "Preventing catheter-associated urinary tract infections (CAUTIs) is a critical priority in the Neuro and Trauma ICUs at many medical centers. This whitepaper describes how one regional medical center implemented the Sage PrimaFit External Urine Management System for the Female Anatomy, aiming to reduce infection rates. In just one year, they recorded a 100% reduction in CAUTIs in these high-acuity units, alongside substantial cost savings for the facility. ",
+  "jcr:baseVersion": "2ac7fafd-be8f-4041-be6e-374e2d7ff9c1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 09 2024 20:45:04 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/2",
+    "stryker:business-unit/SAGE"
+  ],
+  "jcr:lastModified": "Mon Dec 09 2024 16:29:44 GMT+0000",
+  "jcr:uuid": "26e78a39-97ca-4426-bc18-5b19996e37f7",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Dec 09 2024 14:45:36 GMT+0000",
+      "alt": "Nurse holding a PrimaFit external catheter for urine management",
+      "srcFileRef": "/content/dam/stryker/sage/news/2024/um-whitepaper-header-2024.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Dec 09 2024 16:26:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Dec 09 2024 14:45:39 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\">No catheter. <span class=\"futura-bold\">No CAUTI.</span><sup><span class=\"urw-egyptienne\">TM</span></sup></span></p>\n<p><i>1-minute read</i></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Reducing CAUTI risk factors in the ICU with external urine management<sup>1</sup></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Preventing catheter-associated urinary tract infections (CAUTIs) is a critical priority in the Neuro and Trauma ICUs at many medical centers. These infections, often stemming from traditional urinary catheterization, not only increase patient risks but also add significant healthcare costs. Recognizing this, one regional medical center implemented the Sage PrimaFit External Urine Management System for the Female Anatomy, aiming to reduce infection rates. In just one year, they recorded a 100% reduction in CAUTIs in these high-acuity units, alongside substantial cost savings for the facility.</span></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Improving safety and lowering costs in urine management<sup>1</sup>&nbsp;&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Shifting from indwelling catheters to this external urine management system has not only enhanced patient safety but also demonstrated an impressive financial return. Through targeted staff training, continuous monitoring, and a commitment to patient-centered care, this medical center is making healthcare better.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Fri Dec 13 2024 18:03:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1692744286_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "3",
+      "jcr:created": "Fri Sep 27 2024 20:15:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Want to learn more?</span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"> Download the full whitepaper.</span></span></h2>\n",
+      "jcr:lastModified": "Fri Sep 27 2024 20:17:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Dec 09 2024 14:48:27 GMT+0000",
+      "jcr:lastModified": "Mon Dec 09 2024 14:48:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1284",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Dec 09 2024 14:48:05 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you! Check your email for the whitepaper.",
+          "jcr:lastModified": "Thu Aug 13 2026 17:47:26 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 21 2023 18:42:46 GMT+0000",
+          "text": "Contact information Product feedback Customer service",
+          "jcr:lastModified": "Tue Nov 21 2023 18:43:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sage/en/business-unit/social-icons/master"
+        }
+      }
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Sep 13 2024 20:08:26 GMT+0000",
+      "title": "Learn more about CAUTI and Urine management",
+      "jcr:lastModified": "Mon Dec 09 2024 14:54:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2023/nyc-medical-center-implementation-of-external-female-catheter-av"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-primafit"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/products/sage-primofit"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/urine-management/stop-urinary-incontinence-device-leaks"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Wed Sep 28 2022 21:49:32 GMT+0000",
+      "text": "Resources Explore Sage homepage Newsroom Newsletter sign-up Learn FocusRN Instructions for use manuals Training center Videos Support Contact information Investigator-initiated studies request for support form Medical information request form Environmental data sheets Product safety information",
+      "jcr:lastModified": "Wed Sep 28 2022 21:50:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sage/en/footer/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sage/en/footer/footer/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Mon Dec 09 2024 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "09-Dec-2024",
+    "jcr:lastModified": "Mon Dec 09 2024 20:44:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2024/um-whitepaper-header-2024.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Reference: 1.</b> Data on file, Stryker. CustomerOne Report 200831.</p>\r\n<p>* The hospital's results reflects the policies, protocols, technology and training implement by the hospital and the results are not necessarily representative of what another hospital may experience.</p>\r\n",
+    "jcr:lastModified": "Mon Dec 09 2024 14:51:48 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Say \"yes\" to reprocessing: a smart choice for healthcare providers",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c0e7c077-d05c-4bc2-a413-c04308a83db8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Say Yes to reprocessing website banner",
+  "jcr:predecessors": [
+    "18a2b2ba-d7de-4298-9b29-6a2ca1f7ffcb"
+  ],
+  "lastPublished": "Tue Aug 18 2026 20:03:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:03:22 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:03:24 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:03:12 GMT+0000",
+  "jcr:baseVersion": "18a2b2ba-d7de-4298-9b29-6a2ca1f7ffcb",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Oct 15 2024 22:07:52 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Tue Oct 15 2024 22:08:56 GMT+0000",
+  "jcr:uuid": "d11ea69c-5368-444a-98a3-92bd7c8a3590",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:03:08 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:03:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "publishDate": "Tue Oct 15 2024 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "15-Oct-2024",
+    "jcr:lastModified": "Tue Oct 15 2024 22:07:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "text": "<h3>&nbsp;</h3>\n<p><span class=\"fontsize-1-25em\">In today's healthcare landscape, providers face numerous challenges: rising costs, increasing patient demands and growing environmental concerns.&nbsp; Medical device reprocessing, which is regulated by the FDA, is one solution to addressing these challenges. Reprocessing refers to approved methods for sanitizing, testing and repackaging “single-use” medical devices, rendering them safe for reuse by hospitals and clinics. Here’s why saying &quot;yes&quot; to reprocessing with <a href=\"/content/stryker/us/en/sustainability.html\">Stryker’s Sustainability Solutions (SSS)</a> is a smart choice for healthcare providers.</span></p>\n<h3>Uncompromising quality: setting the gold standard</h3>\n<p><span class=\"fontsize-1-25em\">When it comes to patient safety, there's no room for compromise. That's why the success rate of SSS reprocessed devices is nothing short of impressive: 99.97%.<sup>1</sup>&nbsp;At SSS, quality assurance starts with our FDA-regulated processes, which ensure that each of our devices meets or exceeds the same stringent safety and efficacy standards as new devices. By choosing reprocessing, healthcare providers can deliver top-tier care while optimizing their resources.</span></p>\n<h3>A trusted partner in healthcare</h3>\n<p><span class=\"fontsize-1-25em\">The true measure of any service lies in its adoption and trust within the industry. Medical device reprocessing has taken root globally, with more than 11,900 hospitals implementing programs<sup>2</sup>. Across the United States and Canada alone, SSS has become the reprocessing partner for more than 3,250 hospitals of all sizes<sup>1</sup>.&nbsp;&nbsp;This widespread adoption isn't just about numbers—it's about relationships. As a reprocessing partner, we work closely with healthcare providers, understanding their unique needs and challenges. Our team becomes an extension of the hospital's team, committed to delivering safe, effective and cost-efficient solutions<sup>1</sup>.</span></p>\n<h3>Reinvesting in patient care: the financial impact</h3>\n<p><span class=\"fontsize-1-25em\">In an era of tightening budgets and increasing healthcare costs, finding ways to save without compromising care is crucial. Reprocessing offers a powerful solution: over the past five years, SSS has driven an astounding $1 billion in customer savings.<sup>1</sup>&nbsp;But the impact of these savings goes far beyond the bottom line. When healthcare providers reduce costs through reprocessing, they free up valuable resources that can be reinvested where they matter most—improving patient outcomes. Whether it's upgrading equipment, hiring additional staff or implementing new care programs, these savings can translate directly into enhanced patient care.</span></p>\n<h3>A sustainable choice for a greener future</h3>\n<p><span class=\"fontsize-1-25em\">Healthcare's environmental footprint is significant, with medical waste being a major contributor. Reprocessing offers a sustainable alternative that makes a real difference. In just five years, SSS has partnered with customers to divert 26 million pounds of waste from landfills over the past five years.<sup>1</sup>&nbsp;Numerous peer review life cycle assessments find that reprocessed devices reduce greenhouse gas emissions by, on average, 41% compared to the use of virgin devices.<sup>2</sup> By choosing reprocessing, healthcare providers become stewards of environmental health, aligning their practices with broader sustainability goals and setting an example for other industries.</span></p>\n<h3>&nbsp;Embracing the future of healthcare</h3>\n<p><span class=\"fontsize-1-25em\">Saying &quot;yes&quot; to reprocessing isn't just a decision—it's a commitment to quality, financial responsibility and environmental stewardship. It's a choice that allows healthcare providers to deliver exceptional care while addressing some of the most pressing challenges in modern healthcare.&nbsp;As we look to the future, reprocessing stands out as a key strategy for healthcare institutions aiming to thrive in an evolving landscape. By partnering with SSS, providers can ensure they're not just keeping pace with change—they're leading the way towards a more sustainable, efficient and patient-focused healthcare system.</span></p>\n<p>1. SSS Internal Data</p>\n<p>.2. Association of Medical Device Reprocessors (AMDR). AMDR statement on Medtronic LigaSure study failings. Published October 2024. Accessed October 7, 2024. https://amdr.org/wp-content/uploads/2024/10/AMDR-Statement-on-Medtronic-Ligasure-Study-Failings.pdf</p>\n",
+    "jcr:lastModified": "Thu Oct 10 2024 20:36:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "jcr:lastModified": "Thu Oct 10 2024 20:14:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sustainability/images/Say Yes to reprocessing website banner.png"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Say Yes to reprocessing website banner",
+    "srcFileRef": "/content/dam/stryker/sustainability/images/Say Yes to reprocessing website banner.png",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Oct 11 2024 18:48:41 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

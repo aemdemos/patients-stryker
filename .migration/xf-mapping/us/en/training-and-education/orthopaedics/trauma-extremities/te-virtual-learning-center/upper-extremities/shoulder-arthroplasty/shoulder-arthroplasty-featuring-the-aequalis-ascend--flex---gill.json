@@ -1,0 +1,56 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder arthroplasty featuring the Tornier Flex Shoulder System – Gilles Walch, MD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "87e793ab-8148-4f54-bac9-8c8bc9fe778b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "0f893c57-01ff-41c4-8964-59c9dfbba858"
+  ],
+  "lastPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:00:56 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:00 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 20:07:56 GMT+0000",
+  "jcr:baseVersion": "0f893c57-01ff-41c4-8964-59c9dfbba858",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 20:59:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 20 2024 20:07:56 GMT+0000",
+  "jcr:uuid": "83c66605-967b-457b-8270-758f885fe036",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 19:34:53 GMT+0000",
+      "text": "Shoulder arthroplasty featuring the Tornier Flex Shoulder System – Gilles Walch, MD Orthopaedic surgeon, Gilles Walch, MD, performs a shoulder arthroplasty on an 82-year-old female patient, using the Tornier Flex Shoulder System. AP-016284A",
+      "jcr:lastModified": "Thu Jul 28 2022 19:35:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/shoulder-arthroplasty-featuring-the-aequalis-ascend--flex---gill/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/shoulder-arthroplasty-featuring-the-aequalis-ascend-flex-gill/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/Shoulder Arthroplasty featuring the Aequalis Ascend Flex - Gilles Walch MD CAW-5684.png"
+  }
+}

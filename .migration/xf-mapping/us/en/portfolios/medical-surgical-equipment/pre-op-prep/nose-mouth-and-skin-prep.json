@@ -1,0 +1,72 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Standardize your pre-op prep and reduce a risk factor for surgical site infection (SSI)",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Nose, mouth, and skin prep",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dd98bae1-352d-43a2-837c-1d207be9c1e5",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Nose, mouth, and skin prep products",
+  "jcr:predecessors": [
+    "0f3ccb65-1595-4b44-a9db-8b740d6f6417"
+  ],
+  "contentID": "SAGE-SC-WEB-485275_REV-0_en_us",
+  "lastPublished": "Fri Feb 16 2024 14:40:26 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Feb 16 2024 14:40:26 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 16 2024 14:40:28 GMT+0000",
+  "cq:lastModified": "Fri Feb 16 2024 14:29:43 GMT+0000",
+  "jcr:description": "Address bacteria on three main reservoirs: the nares, the oral cavity, and the skin.",
+  "cq:siblingOrder": "skin-prep,nose-mouth-and-skin-prep,plumbing-protection,",
+  "jcr:baseVersion": "0f3ccb65-1595-4b44-a9db-8b740d6f6417",
+  "jcr:isCheckedOut": true,
+  "cq:name": "nose-mouth-and-skin-prep",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/Pre_op_prep",
+    "stryker:specialty/Nose_mouth_and_skin_prep",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Fri Feb 16 2024 14:29:43 GMT+0000",
+  "jcr:uuid": "b4ef5bd9-dcdc-48dd-9d8f-0ae7ff316291",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/pre-op-prep",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/noes-to-toes/images/Sage-Nose-to-Toes-Thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue May 04 2021 19:02:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
+    "jcr:lastModified": "Tue Oct 08 2019 13:56:29 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

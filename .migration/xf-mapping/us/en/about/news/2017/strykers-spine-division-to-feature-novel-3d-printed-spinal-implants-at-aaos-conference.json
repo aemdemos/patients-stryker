@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker’s Spine division to feature novel 3D-printed spinal implants at AAOS Conference",
+  "jcr:versionHistory": "7d07dda7-36d5-4bc4-9821-134ee0efa6d4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "e1a8e459-91f8-4eef-b491-683b3ee6c254"
+  ],
+  "lastPublished": "Mon Nov 06 2017 16:01:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 06 2017 16:01:04 GMT-0500",
+  "cq:lastModified": "Mon Nov 06 2017 16:00:59 GMT-0500",
+  "jcr:baseVersion": "e1a8e459-91f8-4eef-b491-683b3ee6c254",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/events"
+  ],
+  "jcr:lastModified": "Mon Nov 06 2017 16:00:59 GMT-0500",
+  "jcr:uuid": "c36ddc12-8ca7-42ea-8e9c-bbdd5acfc5b5",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "publishDate": "Wed Mar 08 2017 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "08-Mar-2017",
+    "jcr:lastModified": "Tue May 30 2017 16:15:03 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+    "text": "<p>ALLENDALE, N.J.--(<a href=\"http://www.businesswire.com/\" target=\"_blank\">BUSINESS WIRE</a>)--Stryker’s Spine division will feature its 3D-printed <a href=\"http://cts.businesswire.com/ct/CT?id=smartlink&amp;url=http%3A%2F%2Fwww.stryker.com%2Fbuilttofuse%2F&amp;esheet=51521962&amp;newsitemid=20170308005200&amp;lan=en-US&amp;anchor=Tritanium+Posterior+Lumbar+%28PL%29+Cage&amp;index=1&amp;md5=8f6ea2d30555e9a352508d5a22c83e90\" target=\"_blank\">Tritanium Posterior Lumbar (PL) Cage</a> and introduce a variety of new cage sizes at the American Academy of Orthopaedic Surgeons (AAOS) Annual Meeting, March 15-18, 2017, in San Diego (booth No. 3133).</p>\n<p>Stryker’s Tritanium PL Cage launch initially included four footprint options, eight height options, and two lordosis options. The company now offers several additional sizes based on surgeon needs and requests, including a hyper-lordotic (12°) cage option, as well as two new footprints—9 x 32 mm and 11 x 32 mm.<br>\n</p>\n<p><b>Read entire article:</b></p>\n<p><a href=\"http://www.businesswire.com/news/home/20170308005200/en\" target=\"_blank\">Business Wire</a></p>\n",
+    "jcr:lastModified": "Tue May 30 2017 17:55:34 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

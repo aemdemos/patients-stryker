@@ -1,0 +1,613 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Electrosurgery needle",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Colorado MicroDissection Needle",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5dc2fc08-9ee9-4462-a015-c2764a4b7074",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "1587402787_1449766327_colorado-needle-hero (1)",
+  "jcr:predecessors": [
+    "5cfa8f79-4346-426b-a39f-06e2d909cf61"
+  ],
+  "contentID": "CMF-COLO-SYK-1966750_REV-0",
+  "lastPublished": "Thu Sep 04 2025 20:47:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 04 2025 20:47:26 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 04 2025 20:47:28 GMT+0000",
+  "cq:lastModified": "Thu Sep 04 2025 20:32:29 GMT+0000",
+  "jcr:description": "An ultra-sharp, single-use device designed for precision cutting and coagulation of soft tissue.",
+  "jcr:baseVersion": "5cfa8f79-4346-426b-a39f-06e2d909cf61",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:47:25 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:specialty/access-and-decompression-cranial",
+    "stryker:capability/cmf-implants",
+    "stryker:product/craniomaxillofacial/colorado-microdissection-needle",
+    "stryker:portfolio/neurotechnology",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:specialty/aesthetics",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/closure",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/cranial"
+  ],
+  "jcr:lastModified": "Thu Sep 04 2025 20:25:02 GMT+0000",
+  "jcr:uuid": "60852715-13f8-4183-8a3f-daaa79a69a40",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "leftPadding": "3",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 06 2025 18:56:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Colorado&nbsp;MicroDissection Needle</span></span></h1>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 20:40:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "5",
+      "textIsRich": "true"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 06 2025 18:52:52 GMT+0000",
+      "alt": "1587402787_1449766327_colorado-needle-hero (1)",
+      "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/coloradomicrodissectionneedle/images/1587402787_1449766327_colorado-needle-hero (1).jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 14 2025 20:48:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 19:49:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1971668492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:52:38 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\">Overview</span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Precision</span></span><span class=\"urw-egyptienne\">&nbsp;at your fingertips.</span></span></p>\n<p>The Colorado Needle is an ultra-sharp microdissection needle designed for precision cutting. It is a single-use device intended for cutting, dissecting and cauterizing soft tissue.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Sep 04 2025 20:32:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 19:51:16 GMT+0000",
+          "CTATitle": "Request information",
+          "ctaDeepLinkID": "request-information",
+          "jcr:lastModified": "Thu Feb 06 2025 19:51:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        },
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 19:43:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      }
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:50:31 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:50:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Feb 07 2025 20:50:35 GMT+0000",
+          "jcr:lastModified": "Fri Feb 07 2025 20:50:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_421968903_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 19:53:23 GMT+0000",
+      "text": "<h2><span class=\"futura-bold\">Features and benefits</span></h2>\n",
+      "jcr:lastModified": "Fri Feb 14 2025 21:18:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:52:33 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:52:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:52:14 GMT+0000",
+          "alt": "1504633848_Colorado",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/coloradomicrodissectionneedle/images/1504633848_Colorado.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 14 2025 20:48:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">5</span>&nbsp;micron tip</span></span></p>\n<p>Creates high current density allowing for hemostasis at low power settings.<sup>1<br>\n </sup>&nbsp;</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Highly polished tungsten</span></span></p>\n<p>Maintains sharpness and&nbsp;is designed to help&nbsp;prevent tissue build-up.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 20:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Feb 07 2025 20:52:14 GMT+0000",
+          "alt": "1587393501_CN.StylizedFamily-Web",
+          "srcFileRef": "/content/dam/stryker/craniomaxillofacial/products/coloradomicrodissectionneedle/images/1587393501_CN.StylizedFamily-Web.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 14 2025 20:48:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 06 2025 18:28:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Variety of designs</span></span></p>\n<p>Full selection of lengths and angles providing exceptional versatility for procedural and surgeon preference.<br>\n</p>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 20:43:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_328557979_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 21:00:41 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 21:00:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1879940623": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Resources</span></h2>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 21:19:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "resources": "/content/dam/mrm-migration/us/Craniomaxillofacial/Neuro/CMF-BR-227_Rev.+None_22546.pdf",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 13 2025 21:30:56 GMT+0000",
+      "jcr:lastModified": "Fri Feb 14 2025 20:55:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "cols_70867890_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 21:00:44 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 21:00:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1879940623": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Clinical evidence</span></h2>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 21:19:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "accordion_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:30:08 GMT+0000",
+      "jcr:lastModified": "Thu Sep 04 2025 20:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "cols": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 20:18:22 GMT+0000",
+          "jcr:lastModified": "Thu Feb 06 2025 20:18:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Feb 06 2025 18:32:06 GMT+0000",
+              "text": "<p>&quot;Microneedle&quot; electrocautery was compared against the standard-size needle electrocautery and the Shaw hemostatic scalpel to determine the differences in tissue necrosis when used as a cutting instrument. Incisions were made on the dorsal skin of anesthetized white rats using each of the three devices with the no. 15 scalpel as control. The specimens were submitted for histological evaluation. The microneedle caused less necrosis than the standard-size needle electrocautery (0.18 vs 0.27 mm, p &lt; 0.01) and less necrosis than the Shaw hemostatic scalpel set at 220 degrees F (0.18 vs 0.25 mm, p &lt; 0.05). The microneedle electrocautery was also found to be an instrument that causes very little tissue distortion during fine dissection and helps to minimize blood loss in craniofacial and neurosurgical operations.</p>\n",
+              "jcr:lastModified": "Fri Feb 14 2025 20:49:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "carolyn.lee@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+              "CTATitle": "Full Article",
+              "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/8215134/",
+              "jcr:lastModified": "Fri Feb 14 2025 20:49:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(133,69,138)"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "Advantages of less skin necrosis when using Colorado Needle"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 2,
+          "accTitle": "Comparing the outcomes of incisions made by colorado microdissection needle, electrosurgery tip, and surgical blade during periodontal surgery: A randomized controlled trial"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 3,
+          "accTitle": "The short pulse carbon dioxide laser versus the colorado needle tip with electrocautery for upper and lower eyelid blepharoplasty"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": 4,
+          "accTitle": "Nonresective shrinkage of the septum and fat compartments of the upper and lower eyelids: a comparative study with carbon dioxide laser and Colorado needle"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/29238142/",
+          "jcr:lastModified": "Mon Jun 23 2025 18:02:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/18306246/",
+          "jcr:lastModified": "Mon Jun 23 2025 18:02:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Feb 06 2025 18:32:57 GMT+0000",
+          "CTATitle": "Full Article",
+          "ctaExternalLink": "https://pubmed.ncbi.nlm.nih.gov/16651943/",
+          "jcr:lastModified": "Mon Jun 23 2025 18:02:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      }
+    },
+    "cols_1943014942_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 21:00:49 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 21:00:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 20:12:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1879940623": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:53:48 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 21:19:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "customizable_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:56:08 GMT+0000",
+      "jcr:lastModified": "Thu Mar 27 2025 20:43:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/products/medpor-oculoplastic"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/craniomaxillofacial/systems/medpor"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/surgical-technologies/products/neptune-e-sep-smoke-evacuation-pencil"
+        }
+      }
+    },
+    "cols_1598962680_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 21:00:52 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 21:00:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "request-information",
+      "jcr:created": "Fri Feb 14 2025 20:41:57 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Fri Feb 14 2025 20:42:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_135584854_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Fri Feb 07 2025 20:59:09 GMT+0000",
+      "jcr:lastModified": "Fri Feb 07 2025 20:59:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1663437304_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Feb 06 2025 19:54:50 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\">Request information</span></h2>\n",
+          "jcr:lastModified": "Fri Feb 14 2025 21:19:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "3226",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 18:37:06 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Thu Feb 06 2025 18:37:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "shortDescBottom": "<p>  </p>\r\n"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "openInNewWindow": true,
+    "linkUrl": "https://cmf.stryker.com/products/colorado-microdissection-needle",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:41 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkPath": "",
+    "linkText": "Additional resources",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/coloradomicrodissectionneedle/images/1587402787_1449766327_colorado-needle-hero (1).jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:34 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Feb 14 2025 20:33:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<p>1: Rokhsar, C.K., Ciocon, D.H., Detweiler, S., Fitzpatrick, R.E. &quot;The Short Pulse Carbon Dioxide Laser versus the Colorado Needle Tip with Electorocautery for Upper and Lower Eyelid Blepharoplasty&quot;, Lasers in Surgery and Medicine, 40:159-164 [2008].</p>\r\n",
+    "jcr:lastModified": "Wed Jun 04 2025 18:10:46 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

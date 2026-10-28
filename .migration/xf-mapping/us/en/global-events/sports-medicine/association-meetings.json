@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Association meetings",
+  "jcr:versionHistory": "7d95d2ab-6b51-484c-b46c-4cb96c2693ef",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:predecessors": [
+    "0b561b51-5883-4a00-9ad4-75699af35f5f"
+  ],
+  "lastPublished": "Tue Jun 19 2018 10:23:49 GMT+0000",
+  "jcr:created": "Tue Jun 19 2018 10:23:49 GMT-0400",
+  "cq:lastModified": "Mon Nov 20 2017 12:22:57 GMT-0500",
+  "jcr:baseVersion": "0b561b51-5883-4a00-9ad4-75699af35f5f",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "48852dc6-e743-4ddd-a34f-f57aae5298c3",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com"
+}

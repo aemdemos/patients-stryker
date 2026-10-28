@@ -1,0 +1,124 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "The importance of patient oral care ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Prevent hospital-acquired pneumonia by reducing any potential risk factors",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5daae53a-21bd-4df9-941c-ef7759897bc0",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+  "thumbnailAltText": "Toothbrush with Corinz Antiseptic Cleansing and Moisturizing Oral Rinse",
+  "jcr:predecessors": [
+    "691b4fd4-7c64-4187-be83-08965eba1264"
+  ],
+  "contentID": "SAGE-UM-COMM-930847_REV-0_en_us",
+  "lastPublished": "Tue Sep 10 2024 15:02:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 10 2024 15:02:48 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 15:02:50 GMT+0000",
+  "cq:lastModified": "Tue Sep 10 2024 15:02:45 GMT+0000",
+  "jcr:description": "Hospital oral care plays a pivotal role in reducing the risk of HAP by minimizing the colonization of harmful bacteria in the respiratory tract.",
+  "jcr:baseVersion": "691b4fd4-7c64-4187-be83-08965eba1264",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:02:48 GMT+0000",
+  "pageTitle": "Prevent hospital-acquired pneumonia by reducing any potential risk factors",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/2"
+  ],
+  "jcr:lastModified": "Wed Apr 17 2024 12:36:07 GMT+0000",
+  "jcr:uuid": "e56cb63e-2e3a-4f99-ba64-56a88c0bbf46",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "Prevent hospital-acquired pneumonia by reducing any potential risk factors",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jan 31 2024 00:48:27 GMT+0000",
+      "jcr:lastModified": "Wed Jan 31 2024 00:48:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jan 31 2024 00:27:45 GMT+0000",
+      "title": "Learn more",
+      "jcr:lastModified": "Wed Jan 31 2024 00:28:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2023/Strategies_to_help_prevent_pneumonia_in_hospitals_2022_update"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2023/study-shows-sepsis-occurred-in-20-percent-of-nv-hap-patients"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/sage/news/2022/can-brushing-your-teeth-keep-you-healthy-in-the-hospital"
+        }
+      }
+    },
+    "cols2_142653770": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jan 31 2024 00:48:35 GMT+0000",
+      "jcr:lastModified": "Wed Jan 31 2024 00:48:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "publishDate": "Tue Jan 30 2024 00:00:00 GMT-0600",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "30-Jan-2024",
+    "jcr:lastModified": "Wed Jan 31 2024 00:25:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2024/24-SGC-930847-January_Newsroom3.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Eber MR, Laxminarayan R, Perencevich EN, Malani A. Clinical and economic outcomes attributable to health care-associated sepsis and pneumonia. Arch Intern Med. 2010;170(4):347–353. doi: 10.1001/archinternmed.2009.509.</p>\r\n<p>2. Park H, Adeyemi AO, Rascati KL. Direct Medical costs and utilization of health care services to treat pneumonia in the United States: an analysis of the 2007–2011 medical expenditure panel survey. Clin Ther. 2015;37(7):1466–76.e1. doi: 10.1016/j.clinthera.2015.04.013. </p>\r\n<p>3. Sopena N, Sabrià M. Multicenter study of hospital-acquired pneumonia in non-ICU patients. Chest. 2005;127(1):213–219. doi: 10.1378/chest.127.1.213. </p>\r\n<p>4. American Thoracic Society, Infectious Diseases Society of America. Guidelines for the management of adults with hospital-acquired, ventilator-associated, and healthcare-associated pneumonia. Am J Respir Crit Care Med. 2005 Feb 15;171(4):388–416. Epub: 2005/02/09.&nbsp;</p>\r\n",
+    "jcr:lastModified": "Wed Jan 31 2024 00:26:40 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "text": "<p><i><span class=\"fontsize-1-25em\">4-minute read</span></i></p>\n<h2><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The importance of patient oral care&nbsp;</span></span><br>\n</h2>\n<p><span class=\"fontsize-1-25em\">Hospital-acquired pneumonia (HAP) is a significant concern in healthcare facilities, leading to extended hospital stays, increased medical costs and increased morbidity and mortality.<sup>1-3&nbsp;</sup>HAP is the leading cause of hospital-acquired infection in the ICU.<sup>4&nbsp;</sup>In the ICU setting, HAP accounts for up to 25 percent of all infections and for more than 50 percent of the antibiotics prescribed.<sup>4&nbsp;</sup>While these statistics are harrowing, there are preventative measures hospitals can institute to help prevent hospital-acquired pneumonia.&nbsp; &nbsp;<br>\n &nbsp;<br>\n Hospital oral care plays a pivotal role in reducing the risk of HAP by minimizing the colonization of harmful bacteria in the respiratory tract. In this article, we delve into the importance of patient oral care and how it acts as a frontline defense against hospital-acquired pneumonia.</span></p>\n<h4><span class=\"fontsize-1-25em\">Understanding HAP</span></h4>\n<p><span class=\"fontsize-1-25em\">Hospital-acquired pneumonia is a lung infection that develops during a patient's stay in a healthcare facility, typically 48 hours after admission. It poses a considerable challenge for healthcare providers due to its association with prolonged hospitalization, increased healthcare costs and higher morbidity and mortality rates. Patients with compromised immune systems, such as the elderly, those with chronic illnesses and post-operative individuals, are especially susceptible to HAP.&nbsp;&nbsp;</span></p>\n<h4><span class=\"fontsize-1-25em\">The role of oral care in preventing HAP&nbsp;</span></h4>\n<p><span class=\"fontsize-1-25em\">Proper oral care has emerged as a potent preventive measure against hospital-acquired pneumonia. While the lungs and the oral cavity may seem unrelated, they are closely connected through the respiratory tract. Bacteria residing in the mouth can easily travel to the lungs through aspiration, which occurs when patients inhale tiny particles, including oral bacteria, into their airways.&nbsp;<br>\n</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Reducing bacterial load: </b>Regular oral care helps to control and reduce the bacterial load in the mouth, minimizing the likelihood of harmful bacteria being aspirated into the lungs. Bacteria like Streptococcus pneumoniae and Staphylococcus aureus, commonly found in the oral cavity, can lead to severe respiratory infections when aspirated.<br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\"><b>Preventing biofilm formation:</b> Dental plaque, a type of biofilm, harbors numerous bacteria that can contribute to respiratory infections. By maintaining oral hygiene, healthcare providers can prevent the accumulation of plaque, thus reducing the risk of bacterial colonization in the respiratory tract.<br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\"><b>Strengthening immune response: </b>A healthy oral cavity supports the overall immune system. In patients with compromised immunity, proper oral care becomes crucial in preventing opportunistic infections like HAP. A strong immune response helps the body ward off potential pathogens that could lead to pneumonia.&nbsp;</span></li>\n</ul>\n<h4><span class=\"fontsize-1-25em\">Implementing effective patient oral care&nbsp;</span></h4>\n<p><span class=\"fontsize-1-25em\">Healthcare facilities can adopt several strategies to ensure effective oral care for patients, particularly those at a higher risk of developing hospital-acquired pneumonia:&nbsp;<br>\n</span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><b>Collaboration between departments: </b>Close collaboration between nursing, respiratory therapy and dental departments is essential for devising a comprehensive oral care plan tailored to each patient's needs.<br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\"><b>Regular oral assessment: </b>Healthcare providers should perform routine oral assessments to identify any issues that could contribute to the risk of HAP, such as cavities, gingivitis or oral infections.<br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\"><b>Oral hygiene routine: </b>Implementing a structured oral hygiene routine, which includes brushing, flossing, and mouth rinsing, can significantly reduce the oral bacterial load. Stryker offers a wide variety of <a title=\"Oral hygiene\" href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/oral-hygiene.html\" target=\"_blank\"><u>patient-specialized systems</u></a> and kits designed specifically to remove plaque, debris and oral secretions.<br>\n <br>\n </span></li>\n<li><span class=\"fontsize-1-25em\"><b>Education and training: </b>Regular training sessions for healthcare staff on the importance of oral care in hospital-acquired pneumonia prevention and the proper techniques for providing oral care can enhance patient outcomes. Stryker offers multiple <a title=\"Healthcare-acquired infections\" href=\"/content/stryker/us/en/training-and-education/medical-and-surgical-equipment--/sage/focusrn/hospital-acquired-infections.html\" target=\"_blank\"><u>training courses, implementation tools and clinical studies</u></a> to aid you in training your staff.</span></li>\n</ul>\n<p><span class=\"fontsize-1-25em\">In the battle against hospital-acquired pneumonia, hospital oral care emerges as a potent detractor. By understanding the connection between oral health and respiratory infections, healthcare facilities can implement robust oral care practices that can reduce the risk of HAP. Through diligent collaboration, education and patient-centric care, we can work towards creating an environment where the prevention of HAP becomes an integral part of holistic patient care.</span></p>\n<h4><span class=\"fontsize-1-25em\">Together, we save lives&nbsp;</span></h4>\n<p><span class=\"fontsize-1-25em\">Connect with an <a title=\"Sage Self Oral Care\" href=\"/content/stryker/us/en/sage/products/sage-self-oral-care.html\" target=\"_blank\"><u>oral care expert</u></a> to learn more about how we can help reduce the risk of hospital-acquired pneumonia.&nbsp;</span></p>\n",
+    "jcr:lastModified": "Tue Sep 10 2024 15:02:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Toothbrush with Corinz sntiseptic vleansing and moisturizing oral rinse",
+    "srcFileRef": "/content/dam/stryker/sage/news/2024/24-SGC-930847-January_Newsroom3.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Wed Apr 17 2024 12:37:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "5380",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9e45e702-8c38-40f9-a2d3-684994cf549f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "d64a6767-cb2b-4dba-bb7a-6eff18f0e120"
+  ],
+  "lastPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "jcr:created": "Fri Jul 25 2025 15:55:31 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 15:55:36 GMT+0000",
+  "cq:lastModified": "Tue Jul 15 2025 19:08:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "d64a6767-cb2b-4dba-bb7a-6eff18f0e120",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "6e8b822d-22cf-4fb6-8b6a-03bd73037926",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Jan 23 2020 19:03:57 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Manny</span>&nbsp;Maceda</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Director since 2025, Compensation and Human Capital Committee, Governance and Nominating Committee<br>\n </span></span><br>\nChair and Partner, Bain &amp; Company<br>\n<br>\n&nbsp;</p>\n<p>Mr. Maceda serves as the Chair of Bain &amp; Company, Inc., a global management consulting firm. From 2018 to 2024, Mr. Maceda was the Worldwide Managing Partner and CEO of Bain and led Bain’s global strategy and operations across 65 offices, driving the firm’s transformation to strengthen digital capabilities, expand its focus on sustainability, and preserve its award-winning culture. Since joining Bain in 1989, Maceda has held multiple senior leadership roles and advised CEOs across a wide range of industries on enterprise-wide initiatives spanning strategy, growth, cost management and organizational effectiveness.</p>\n<p>Mr. Maceda also serves on the boards of the Ayala Corporation of the Philippines and The Bridgespan Group.</p>\n<p>Mr. Maceda’s strategic acumen, global leadership experience and track record in transformation enable him to provide valuable business, leadership and management insights to our Board.<br>\n</p>\n",
+      "jcr:lastModified": "Tue Jul 15 2025 19:00:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Jan 20 2020 19:33:18 GMT+0000",
+      "alt": "Manny Maceda",
+      "srcFileRef": "/content/dam/stryker/about/our-management/Board-of-Directors/new-bod/gold-bar/Our_BOD_Manny_Maceda_Gold_V2.jpg",
+      "jcr:lastModified": "Tue Jul 15 2025 18:58:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

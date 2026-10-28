@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "hero-mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a0224d10-f20f-42b6-a61e-72430194fc01",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "aed71a1c-7ee0-4892-b50d-78b1f082769e"
+  ],
+  "lastPublished": "Thu Apr 03 2025 22:17:43 GMT+0000",
+  "jcr:created": "Thu Apr 03 2025 22:17:43 GMT+0000",
+  "cq:lastReplicated": "Thu Apr 03 2025 22:17:46 GMT+0000",
+  "cq:lastModified": "Thu Feb 20 2025 22:18:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "aed71a1c-7ee0-4892-b50d-78b1f082769e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Apr 03 2025 22:17:43 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "40ef9af1-94bb-4f01-91aa-3e27c79979a1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Feb 20 2025 22:18:15 GMT+0000",
+      "alt": "LUCAS 3 chest compression unit and backpack",
+      "srcFileRef": "/content/dam/stryker/ems/products/lucas-3/LUCAS-3_web-training-hero_680x480.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 20 2025 22:18:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Disposable cannulas",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Dri-Lok",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ceab7f87-9662-42c5-99fb-54a93800a874",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "dri-lok",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/dri-lokcannula/images/thumb-drilok.jpg",
+  "jcr:predecessors": [
+    "0af19d60-f3a1-4740-8f34-246dafabc5cc"
+  ],
+  "contentID": "Literature number 1000903161",
+  "lastPublished": "Tue Aug 18 2026 21:28:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 21:28:38 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 21:28:40 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 21:28:28 GMT+0000",
+  "jcr:description": "Transparent rigid body cannula available in threaded and non-threaded options. The clear Dri-Lok cannulas offer great visibility of instruments and suture while providing fluid retention for arthroscopy. Dri-Lok offers a unique adjustable inflow/outflow valve designed to facilitate fluid management. ",
+  "jcr:baseVersion": "0af19d60-f3a1-4740-8f34-246dafabc5cc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:45:55 GMT+0000",
+  "pageTitle": "Dri-Lok Cannulas",
+  "cq:tags": [
+    "stryker:custom/sports-medicine/procedure-(knee)/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/product-type/cannulas",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:custom/sports-medicine/procedure-(hip)/capsulotomy",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/instability-repair",
+    "stryker:custom/sports-medicine/anatomy/fluid-management",
+    "stryker:custom/sports-medicine/procedure/cam-&-pincer-hip-fai",
+    "stryker:custom/sports-medicine/procedure/instability-repair",
+    "stryker:product/sports-medicine/dri-lok-cannula-",
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:custom/sports-medicine/procedure-(hip)/tissue-resection",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/sports-medicine/procedure/tissue-resection",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-reconstruction",
+    "stryker:custom/sports-medicine/procedure/labral-repair",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/biceps-tenodesis",
+    "stryker:custom/sports-medicine/procedure-(hip)/labral-repair",
+    "stryker:custom/sports-medicine/anatomy/hip",
+    "stryker:custom/sports-medicine/procedure/labral-reconstruction",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/sports-medicine/procedure/acl-pcl-reconstruction",
+    "stryker:custom/sports-medicine/product-type/instrumentation",
+    "stryker:portfolio/orthopaedics",
+    "stryker:custom/sports-medicine/procedure/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/anatomy/knee",
+    "stryker:custom/sports-medicine/procedure/capsulotomy",
+    "stryker:custom/sports-medicine/procedure-(shoulder)/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/procedure-(hip)/cam-&-pincer-hip-fai",
+    "stryker:specialty/fluid-management",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:lastModified": "Fri Nov 03 2023 18:56:35 GMT+0000",
+  "jcr:uuid": "01b9a2f0-0544-4b82-b938-7b9d86c4a2a1",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "titleColor": "rgb(255,181,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 02 2019 18:21:39 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Tue Jul 02 2019 20:05:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+        "layoutOptions": "col-sm-3",
+        "backgroundImageRef": "/content/dam/stryker/sports-medicine/products/dri-lokcannula/images/dri-lok_header_new.jpg",
+        "alt": "dri-lok_header",
+        "jcr:lastModified": "Tue Jul 02 2019 18:31:54 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage"
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 02 2019 18:56:37 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2019 18:56:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 02 2019 18:43:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span><span style=\"color: rgb(255,255,255);\"><span><span class=\"fontsize-4-5-vw\"><span style=\"color: rgb(255,181,0);\">Dri-Lok</span>&nbsp;<span class=\"urw-egyptienne\"><span style=\"color: rgb(50,50,50);\">feature</span></span></span></span></span></span></span>",
+      "jcr:lastModified": "Tue Jul 02 2019 20:12:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Jul 02 2019 14:42:28 GMT+0000",
+      "alt": "Dri-Lok adjustable inflow-outflow valve",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/products/dri-lokcannula/images/drilok-feature.png",
+      "jcr:lastModified": "Tue Jul 02 2019 20:11:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/sports-medicine/products/dri-lokcannula/resources/Cannula product offerings brochure.pdf",
+        "/content/dam/stryker/sports-medicine/products/dri-lokcannula/resources/Dri-Lok Cannula Brochure.pdf"
+      ],
+      "description": " ",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Fri Nov 12 2021 20:52:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Wed May 28 2025 20:06:26 GMT+0000",
+      "title": "Related products",
+      "jcr:lastModified": "Fri May 30 2025 20:45:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri May 30 2025 20:43:33 GMT+0000",
+      "jcr:lastModified": "Fri May 30 2025 20:43:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:43:38 GMT+0000",
+          "CTATitle": "gateway cannula",
+          "CTAImageAltText": "gateway-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:45:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/gateway-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/gateway"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri May 30 2025 20:43:41 GMT+0000",
+          "CTATitle": "TransPort and FlowPort cannulas",
+          "CTAImageAltText": "transport-flowport-CTA-thumb",
+          "jcr:lastModified": "Fri May 30 2025 20:45:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/transport-flowport-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/transport-and-flowport-cannulas"
+        }
+      }
+    },
+    "sectionseparator_1229323830": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 21:28:20 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 21:28:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "jcr:lastModified": "Tue Jul 02 2019 20:09:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/dri-lokcannula/images/thumb-drilok.jpg"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Disposable cannula features</span></span></span></p>\n<ul>\n<li>Dri-Lok cannulas come in threaded, non-threaded and distal threaded options, which helps to accommodate a wide range of shoulder, hip and knee procedures.</li>\n</ul>\n<ul>\n<li>Stryker cannulas feature a &quot;no-leak triple-seal&quot; design, adjustable inflow/outflow valves, shatter-resistant plastic constructions and color-coding sizes to improve usability.</li>\n</ul>\n<ul>\n<li>Available in 5.0mm, 6.5mm and 8.0mm</li>\n</ul>\n",
+    "jcr:lastModified": "Wed Nov 13 2019 20:30:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 21:28:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

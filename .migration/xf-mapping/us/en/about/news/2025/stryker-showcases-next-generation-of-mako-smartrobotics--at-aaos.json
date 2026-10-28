@@ -1,0 +1,108 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker showcases next generation of Mako SmartRobotics™ at AAOS 2025 Annual Meeting",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6f4536fb-8457-4e77-8626-5a8fd15c017b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "aaos-mako-press-release-thumbnail-graphic",
+  "jcr:predecessors": [
+    "b47e1418-b7c6-41df-bd6f-fe1e56c4d304"
+  ],
+  "contentID": "JR-MKOSYM-PRESS-1715150",
+  "lastPublished": "Tue Apr 01 2025 18:41:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Apr 01 2025 18:41:41 GMT+0000",
+  "cq:lastReplicated": "Tue Apr 01 2025 18:41:43 GMT+0000",
+  "cq:lastModified": "Tue Apr 01 2025 18:41:36 GMT+0000",
+  "jcr:description": "Stryker showcases the latest advancements in Mako SmartRobotics™ across hip, knee, spine and shoulder procedures at the American Academy of Orthopaedic Surgeons’ (AAOS) 2025 Annual Meeting in San Diego.",
+  "jcr:baseVersion": "b47e1418-b7c6-41df-bd6f-fe1e56c4d304",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Mar 11 2025 12:07:00 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews",
+    "stryker:content-type/news/advanced-digital-healthcare"
+  ],
+  "jcr:lastModified": "Tue Apr 01 2025 18:41:36 GMT+0000",
+  "jcr:uuid": "e8ee8d62-3d3d-4f7d-afef-f909e01da386",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Mar 10 2025 16:51:18 GMT+0000",
+      "jcr:lastModified": "Mon Mar 10 2025 16:51:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Mar 10 2025 16:47:30 GMT+0000",
+      "jcr:lastModified": "Mon Mar 10 2025 16:47:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1753928261_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Jul 29 2024 16:46:36 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;<br>\n<a href=\"/content/stryker/us/en/index.html\" target=\"_blank\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n </span>Stryker, Joint Replacement<br>\nNiamh Grano<br>\nSr. Communications Manager<br>\n<a href=\"mailto:niamh.grano@stryker.com\">niamh.grano@stryker.com</a><br>\n201.831.5589</p>\n",
+          "jcr:lastModified": "Mon Mar 10 2025 16:50:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "publishDate": "Tue Mar 11 2025 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "11-Mar-2025",
+    "jcr:lastModified": "Mon Mar 10 2025 16:29:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "bottomPadding": "3",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "text": "<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Latest technology offers more applications and innovation across more specialties</span></span></p>\n<p><b><span class=\"futura-bold\">MAHWAH, N.J., USA –– March 11, 2025</span></b> – Stryker (NYSE: SYK), a global leader in medical technologies, showcases the latest advancements in Mako SmartRobotics™ across hip, knee, spine and shoulder procedures at the American Academy of Orthopaedic Surgeons’ (AAOS) 2025 Annual Meeting in San Diego. With over 1.5 million Mako procedures performed globally across 45 countries, Mako is a market-leading technology in orthopaedics.</p>\n<p>With the introduction of <b>Mako Total Hip with Advanced Primary and Revision</b>, Stryker expands on its established Mako Total Hip offering to include a first-to-market robotic hip revision capability. In revision total hip arthroplasty (THA), the expanded Mako Total Hip application is engineered to streamline workflow and enable confidence in challenging procedures with new features such as augment and screw planning, intraoperative screw trajectory guidance and compatibility with Stryker’s revision hip implant portfolio. These new capabilities are designed to help surgeons simplify hip procedures by knowing more with Mako’s 3D CT-based planning, now across both primary and revision THA procedures.</p>\n<p>Additionally, now commercially available is Stryker’s fourth generation Mako System, <b>Mako 4</b>, a single robotics system that delivers additional applications and innovation, designed to offer a premium clinical and operational experience compared to manual across Mako Total Hip, Total Knee, Partial Knee and Spine. Mako 4 also integrates Stryker’s fourth-generation Q Guidance System, which is built on over 20 years of experience developing guidance technologies.</p>\n<p>“Today’s advancements in Mako SmartRobotics™ build on a foundation of clinical impact, innovation and market leadership,” said Keith Evans, vice president and general manager of Stryker’s Mako and Enabling Technologies business. “We are thrilled to showcase and demonstrate the future of Mako, not only what it can do but who it serves – more surgeons, more patients, across more specialties and more procedures.”</p>\n<p><b>Mako Spine and Mako Shoulder</b> are the latest to join the SmartRobotics™ suite of applications. Stryker completed its first Mako Spine cases in October and continues its limited market release with full U.S. commercial launch expected in the second half of 2025. Stryker also completed Mako Shoulder’s first cases at the end of last year, and the application remains in limited market release through 2025.</p>\n<p>AAOS 2025 Annual Meeting attendees can visit Stryker’s booth (#2529) to learn more about Mako 4 and our new applications. Stryker will hold demonstrations, exhibitions and a symposium throughout the week. For more information, please visit – <a href=\"http://makomeansmore.com/\" target=\"_blank\">MakoMeansMore.com</a>.&nbsp;&nbsp;</p>\n",
+    "jcr:lastModified": "Mon Mar 10 2025 19:04:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2025/stryker-showcases-next-generation-of-mako-smartrobotics-at-aaos-2025-annual-meeting/aaos-mako-press-release-thumbnail-graphic.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Mako Robotics product line image",
+    "srcFileRef": "/content/dam/stryker/about/news/2025/stryker-showcases-next-generation-of-mako-smartrobotics-at-aaos-2025-annual-meeting/aaos-mako-press-release-graphic.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Mon Mar 10 2025 20:11:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

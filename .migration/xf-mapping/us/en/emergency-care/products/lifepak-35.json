@@ -1,0 +1,1043 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK 35 monitor/defibrillator",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e866a883-9ea2-4160-8637-61d2dfa30537",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "LIFEPAK 35 monitor/defibrillator for hospital and EMS",
+  "jcr:predecessors": [
+    "5c784fdb-5b9d-4cf9-baea-3f4f76ba01ac"
+  ],
+  "contentID": "EC-L35-SYK-1049051_REV-0_en_us",
+  "lastPublished": "Thu Aug 20 2026 12:53:35 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 20 2026 12:53:36 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 20 2026 12:53:39 GMT+0000",
+  "cq:lastModified": "Thu Aug 20 2026 12:53:15 GMT+0000",
+  "jcr:description": "The LIFEPAK 35 monitor/defibrillator for hospitals and EMS is a future-ready device designed to promote confident cardiac care, enable clinical excellence and deliver in demanding environments.",
+  "jcr:baseVersion": "5c784fdb-5b9d-4cf9-baea-3f4f76ba01ac",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu May 30 2024 04:04:56 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/patient-outcomes",
+    "stryker:product/ems/lifepak-35",
+    "stryker:content-type/product",
+    "stryker:specialty/Monitor-Defibrillators",
+    "stryker:business-unit/ems",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/emergency-response-and-resuscitation",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Sep 11 2025 16:48:29 GMT+0000",
+  "jcr:uuid": "0b0b1232-8fa3-46c1-b0a8-e186fb4f98b8",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "7",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Apr 15 2024 19:10:08 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">LIFEPAK 35 monitor/defibrillator</span></span></h1>\n<h2><span class=\"fontsize-1-25em\">For hospital and EMS</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">A clinically advanced, life-saving device with proprietary tools and technology built on an intuitive<sup>1</sup>&nbsp;platform for advanced patient care.</span></span></p>\n",
+              "jcr:lastModified": "Fri May 10 2024 13:34:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Wed May 01 2024 17:39:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy_c_929234454": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Tue Dec 19 2023 15:22:22 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Tue Dec 19 2023 15:23:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 15 2024 19:14:55 GMT+0000",
+      "jcr:lastModified": "Mon Apr 15 2024 19:14:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Apr 15 2024 19:15:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2 style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Built on a legacy of trust. Ready for the future.</span></span></span></span></h2>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">The LIFEPAK 35 is a future-ready device designed to promote confident cardiac care,<sup>2</sup> enable clinical excellence and deliver in demanding environments.<sup>3</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue May 28 2024 20:37:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue May 07 2024 17:05:28 GMT+0000",
+      "text": "Intuitive LIFEPAK 35’s large, easy-to-use touchscreen1 and advanced clinical decision support tools provide a customizable clinical experience that helps reduce cognitive burden.1 Clinically advanced When every second matters, you need patient care that moves as fast as you do. With advanced connected capabilities providing insights and guidance, LIFEPAK 35 is reliably3 on your side – when time is not. Proven Built on a legacy of life-saving products and reimagined for today’s modern healthcare professional, the LIFEPAK 35 platform carries a foundation of trust and toughness that will advance patient care.",
+      "jcr:lastModified": "Tue May 07 2024 17:06:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/intuitive-clinically-advanced-proven/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/intuitive-clinically-advanced-proven/master"
+    },
+    "cols_1347210137": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue May 07 2024 17:05:23 GMT+0000",
+      "jcr:lastModified": "Tue May 07 2024 17:05:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Fri Oct 01 2021 17:37:13 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Mon Apr 22 2024 13:32:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/master-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/master-mobile",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "10",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue May 28 2024 20:12:11 GMT+0000",
+          "marginRight": "30",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "7",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "2",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-2",
+              "jcr:created": "Mon Apr 15 2024 19:19:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">cprINSIGHT has the only approved algorithm that identifies a shockable rhythm during chest compressions<sup>4</sup></span></span></span></p>\n",
+              "jcr:lastModified": "Thu May 23 2024 13:20:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(89,75,97)",
+              "gradientDirectionInverse": "true",
+              "textIsRich": "true",
+              "leftMargin": "-1"
+            }
+          }
+        },
+        "carouselslide_copy_802152578": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/hospital-workflow",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/hospital-workflow",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/minimal-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/minimal-mobile",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "10",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue May 28 2024 20:12:34 GMT+0000",
+          "marginRight": "37",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "4",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "leftPadding": "3",
+              "topPadding": "2",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-2",
+              "jcr:created": "Mon Apr 15 2024 19:19:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Intuitive touchscreen requires minimal training*<sup>1</sup></span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Thu May 23 2024 13:20:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(89,75,97)",
+              "gradientDirectionInverse": "true",
+              "textIsRich": "true",
+              "leftMargin": "-1"
+            }
+          }
+        },
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/navigation",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/navigation",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/emergency-care/en/products/us/lifepak_35/product_page/quotes/navigation-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/emergency-care/en/products/us/lifepak-35/product-page/quotes/navigation-mobile",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "textColor": "rgb(255,255,255)",
+          "verticalMargin": "45",
+          "jcr:created": "Fri Oct 01 2021 17:37:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue May 28 2024 20:12:50 GMT+0000",
+          "marginRight": "45",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "2",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "-2",
+              "jcr:created": "Mon Apr 15 2024 19:19:19 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Streamline workflow by transmitting data for quick analysis via WiFi or Bluetooth<sup>2</sup></span></span></span><br>\n</p>\n",
+              "jcr:lastModified": "Thu May 23 2024 13:21:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgb(89,75,97)",
+              "gradientDirectionInverse": "true",
+              "textIsRich": "true",
+              "leftMargin": "-1"
+            }
+          }
+        }
+      }
+    },
+    "cols_1159368827": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Apr 15 2024 19:29:07 GMT+0000",
+      "jcr:lastModified": "Mon Apr 15 2024 19:29:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Mon Apr 15 2024 19:30:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">The monitor/defibrillator that's advancing care for both EMS and hospitals</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Working in partnership with customers like you, we’ve created a slim, lightweight and ergonomically designed device to help give you more control during critical events. Whether it be on a crash cart or responding to a crashed car, our newest emergency response monitor/defibrillator balances advanced clinical technologies and ease-of-use in a device that’s tough enough to deliver in demanding environments.<sup>3</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed May 08 2024 15:11:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "jcr:lastModified": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 15 2024 19:35:39 GMT+0000",
+          "alt": "STJInsight displayed on a 10.4\" touchscreen of the LIFEPAK 35 monitor/defibrillator for hospitals and EMS",
+          "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_touchscreen-bench-use_587x320.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 16 2024 16:58:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 15 2024 19:35:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">The big, tough touchscreen</span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">High-definition, 10.4&quot; customizable display</span></li>\n<li><span class=\"fontsize-1-25em\">Durable, chemically reinforced glass<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Double-glove friendly<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Designed to withstand direct impact and drops<sup>3</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu May 23 2024 13:24:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "jcr:lastModified": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 30 2024 20:52:38 GMT+0000",
+          "alt": "LIFEPAK 35 monitor/defibrillator for hospitals and EMS resting on a Prime stretcher",
+          "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35_cath-lab-usage_587x320.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 16 2024 16:58:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 15 2024 19:35:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">Clinically advanced therapy tools</span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">cprINSIGHT analysis technology helps improve CPR performance by reducing pauses** during chest compressions<sup>4</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Live view 12/15-lead with STJ Insight provides a graphical representation of the ECG to help diagnose myocardial injury<sup>2</sup> </span></li>\n<li><span class=\"fontsize-1-25em\"> Pediatric AED mode helps treat patients with escalating biphasic energy from 1J to 360J<sup>3,5</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Thu May 23 2024 13:24:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "jcr:lastModified": "Tue Apr 16 2024 14:51:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_2122836384": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Apr 15 2024 19:35:39 GMT+0000",
+          "alt": "LIFEPAK 35 monitor/defibrillator for hospitals and EMS is LIFEPAK TOUGH with an IP55 rating ",
+          "srcFileRef": "/content/dam/stryker/ems/products/lifepak-35/images/LP35-mud-splash.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 20 2024 15:56:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Apr 15 2024 19:35:49 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">LIFEPAK TOUGH</span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">IP55 rating<sup>3</sup> protects against dust and water </span></li>\n<li><span class=\"fontsize-1-25em\">Chemically strengthened impact-tested glass<sup>3</sup></span></li>\n<li><span class=\"fontsize-1-25em\">FLEX lithium-ion dual battery system provides nine hours of monitoring<sup>6</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Tested to withstand severe impacts and extreme vibration<sup>3</sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Nov 26 2024 18:33:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_800710107": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Apr 30 2024 17:58:27 GMT+0000",
+      "jcr:lastModified": "Tue Apr 30 2024 17:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Apr 30 2024 17:58:51 GMT+0000",
+          "jcr:lastModified": "Tue Apr 30 2024 17:58:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Nov 13 2024 19:58:27 GMT+0000",
+      "jcr:lastModified": "Wed Nov 13 2024 19:58:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Mon Apr 15 2024 19:19:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">A monitor/defibrillator built for your needs&nbsp;</span></span></h2>\n<p><span class=\"fontsize-1-25em\">From the roadside to the emergency room, our focus is on empowering you with the support you need to provide rapid, high-quality care under pressure.</span></p>\n",
+          "jcr:lastModified": "Wed Nov 13 2024 20:06:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 13 2024 19:58:35 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Nov 13 2024 20:02:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/ems/products/lifepak-35/videos/LP35-more-than-tough-shortened.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/LP35-more-than-tough-shortened-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Nov 13 2024 20:02:29 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Jun 28 2019 13:17:38 GMT+0000",
+      "jcr:lastModified": "Tue Nov 16 2021 19:28:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accordion": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jun 28 2019 13:17:42 GMT+0000",
+          "jcr:lastModified": "Wed Apr 24 2024 13:53:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/accordion",
+          "accordion_parsys1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 1,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The fully featured monitor/defibrillator with paper and two batteries installed weighs 15.75 lb (7.14 kg)&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Wed Apr 24 2024 13:53:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 2,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Height: 14 inches (35.5 cm)<br>\n Width: 13.8 inches (34.9 cm)<br>\n Depth: 4.9 inches (12.4 cm)</span></p>\n",
+              "jcr:lastModified": "Wed Apr 24 2024 13:54:10 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 3,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The LIFEPAK 35 monitor/defibrillator memory has a total capacity of 50 patient records with a 12-hour duration for each record.&nbsp;</span><br>\n</p>\n",
+              "jcr:lastModified": "Wed Apr 24 2024 15:17:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 4,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Jun 28 2019 14:11:17 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The warranty is one year for EMS and five years for hospital use. The expected life is eight years.</span><br>\n</p>\n",
+              "jcr:lastModified": "Thu May 23 2024 13:23:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys5": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 5,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">A typical charge time for one or two fully depleted LIFEPAK 35 batteries is five hours when using either the battery charger or defibrillator.</span><br>\n</p>\n",
+              "jcr:lastModified": "Mon May 06 2024 19:43:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys6": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 6,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">The LIFEPAK 15 uses a lithium-ion battery. Each battery has a fuel gauge that indicates its approximate charge.</span></p>\n",
+              "jcr:lastModified": "Tue Oct 11 2022 15:31:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys7": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 7,
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Thu Jul 11 2019 15:25:15 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Yes, the streaming will temporarily pause as the transmit is processing.</span></p>\n",
+              "jcr:lastModified": "Tue Oct 11 2022 15:32:01 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordion_parsys8": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "accPosId": 8,
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Tue Oct 11 2022 15:40:26 GMT+0000",
+              "text": "<p><span class=\"fontsize-1-25em\">Yes, full monitoring and therapy abilities are available while streaming is active.</span><br>\n</p>\n",
+              "jcr:lastModified": "Tue Oct 11 2022 15:42:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "accordionsGrid": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "1",
+              "accTitle": "How much does the LIFEPAK 35 weigh? "
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "2",
+              "accTitle": "What are the dimensions of the LIFEPAK 35 monitor/defibrillator? "
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "3",
+              "accTitle": "How much memory does the LIFEPAK 35 have?"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "4",
+              "accTitle": "What is the warranty and expected life of the LIFEPAK 35?"
+            },
+            "5": {
+              "jcr:primaryType": "nt:unstructured",
+              "accPosId": "5",
+              "accTitle": "How long does it take the battery to charge?"
+            }
+          }
+        }
+      }
+    },
+    "section_title_805408": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Dec 19 2023 14:49:34 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Wed May 01 2024 17:39:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Wed May 01 2024 17:38:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "jcr:lastModified": "Fri Oct 01 2021 18:13:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p>Have feedback about Stryker’s products and services? Visit our <a href=\"https://www.stryker.com/productexperience/Legal/Agreement\" target=\"_blank\">product experience page</a> to connect with us.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 26 2022 19:22:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1322",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Oct 01 2021 18:13:22 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thanks!",
+          "jcr:lastModified": "Thu Aug 20 2026 12:53:15 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Tue Jul 26 2022 19:18:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">M0000014366 REV AA</span></p>\n",
+          "jcr:lastModified": "Sun Apr 23 2023 15:56:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Contact Information Customer service product feedback",
+          "jcr:lastModified": "Tue Dec 19 2023 14:44:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/lead_gen_form/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/lead-gen-form/social-icons/master"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Dec 19 2023 14:49:20 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Dec 19 2023 14:49:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed May 29 2024 15:30:23 GMT+0000",
+      "jcr:lastModified": "Fri Sep 13 2024 14:58:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "resources": [
+            "/content/dam/stryker/ems/products/lifepak-35/resources/LIFEPAK 35 EMS flyer - US.pdf",
+            "/content/dam/stryker/ems/products/lifepak-35/resources/LIFEPAK 35 EMS brochure - US.pdf",
+            "/content/dam/stryker/ems/products/lifepak-35/resources/EC-GSNPS-BROC-1105204-EN_US.pdf",
+            "/content/dam/stryker/ems/products/lifepak-35/resources/LIFEPAK 35 Hospital Flyer - US.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed May 29 2024 16:56:23 GMT+0000",
+          "jcr:lastModified": "Tue Nov 26 2024 18:30:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Sep 13 2024 14:58:32 GMT+0000",
+          "jcr:lastModified": "Fri Sep 13 2024 14:58:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Sep 13 2024 14:58:39 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Sep 13 2024 14:58:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/ems/products/lifepak-35/videos/LIFEPAK 35 full frozen in time video - US.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/LIFEPAK 35 full frozen in time video - US-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Nov 20 2024 17:35:01 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kent.schwartz@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Sep 13 2024 14:58:39 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Sep 13 2024 14:58:46 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/ems/products/lifepak-35/videos/LIFEPAK 35 hype video - US.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/LIFEPAK 35 hype video - US-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Nov 20 2024 17:35:04 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Product videos"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 3,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed May 29 2024 16:54:37 GMT+0000",
+          "jcr:lastModified": "Wed May 29 2024 16:55:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/power-pro-2"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/lucas-3"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/emergency-care/products/lifenet-care"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/prime-series"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c_1232194393": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Emergency Care homepage Newsroom Survivor stories Learn Training and education Product resources Information for use Techweb Support Contact information Return policy Disclosure and safety information Limited warranty More Terms and conditions LIFEPAK Device registration Recycling",
+      "jcr:lastModified": "Tue Dec 19 2023 14:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/emergency-care/en/business-unit/footer/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 15 2024 19:12:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 15 2024 19:12:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Apr 15 2024 19:12:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 15 2024 19:12:42 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Apr 15 2024 19:12:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>* Based on participants surveyed.</p>\r\n<p>** Pre-shock pauses were drastically reduced to an average of 8 seconds vs. an average of 22 seconds with the conventional AED. CCF with cprINSIGHT was 86 percent vs. 80 percent in the conventional AED group.</p>\r\n<p><b>References:</b></p>\r\n<p><b>1. </b>Data on file, Stryker HFVR 3338373.<b></b></p>\r\n<p><b>2. </b>Data on file, Stryker OI 3337705.&nbsp;</p>\r\n<p><b>3.</b> Data on file, Stryker SHVR 3338410.&nbsp;</p>\r\n<p><b>4.</b> de Graaf C, Beesems SG, Oud S, et al., Analyzing the heart rhythm during chest compressions: Performance and clinical value of a new AED algorithm. Resuscitation. May 2021;162:320-28.</p>\r\n<p><b>5.</b> Data on file, Stryker UND-3331509 section 6.5.&nbsp;</p>\r\n<p><b>6.</b> Data on file, Stryker 3352191 Rev A.</p>\r\n",
+    "jcr:lastModified": "Fri Aug 16 2024 14:01:21 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/lifepak-35/images/LIFEPAK-35-Hero-angled-left_1200x680.jpg"
+  }
+}

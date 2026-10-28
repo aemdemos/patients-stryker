@@ -1,0 +1,413 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b6241503-ebc0-42b3-9a29-17c6ee1ec962",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "ee82ae27-bc1a-45ae-8347-e217d46f7cfe"
+  ],
+  "lastPublished": "Tue Sep 10 2024 16:05:22 GMT+0000",
+  "jcr:created": "Tue Sep 10 2024 16:05:23 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 10 2024 16:05:25 GMT+0000",
+  "cq:lastModified": "Tue Sep 10 2024 15:59:17 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ee82ae27-bc1a-45ae-8347-e217d46f7cfe",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 10 2024 16:05:22 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "fb33b2d0-d817-4de5-9d18-1260393587d1",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 13:19:53 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\">Confined</span><span class=\"futura-bold\"> </span><span class=\"urw-egyptienne\">to a single operating room suite and the constant need to adapt to different surgical procedures creates a challenge for care teams working in operating rooms (ORs).</span> <span class=\"urw-egyptienne\">Every day, healthcare professionals require the flexibility to adjust equipment and technology based on the patient and surgical specialty they are treating. This often leads to discussions about reconstructing OR walls to accommodate these varying surgical needs. <a href=\"https://www.stryker.com/us/en/about/news/2024/stryker-completes-acquisition-of-mfphd.html\">Stryker's recent acquisition of mfPHD</a>, a leader in modular wall systems, addresses this challenge head-on. Discover how partnering with Stryker now gives healthcare professionals access to the Fortress modular OR wall system, a prefabricated solution that expands design options, streamlines construction timelines, enhances durability and flexibility within operating rooms and&nbsp;helps teams anticipate future surgical needs.</span></p>\n<p>Operating room wall finishes are an important design element to consider when investing in a new or retrofitted surgical suite. It’s just one component in <a href=\"https://www.stryker.com/us/en/communications/systems/-isuite-experience.html?utm_source=linkedin&amp;utm_medium=&amp;utm_campaign=isuite&amp;utm_content=\">Stryker’s iSuite</a>, which offers a combination of equipment and software that strives to transform the traditional operating room into a modern, state-of-the-art surgical environment. “Hospitals and ambulatory surgery centers have specific architectural drawings and workflow needs. They also collect clinical feedback to ensure each operating room design meets their needs,” said Caitlin Clark, Vice President and General Manager of Stryker’s Communications business. “The Fortress modular wall system enables healthcare professionals to quickly build and rebuild their operating rooms based on the ever-changing surgery schedules they have. It’s helping hospitals and surgery centers create operating rooms of the future.”<sup>1</sup></p>\n<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-8em\">Here are three things to know about Fortress, Stryker’s modular wall system and how it helps OR staff treat patients.</span></span></h2>\n",
+      "jcr:lastModified": "Tue Sep 10 2024 15:59:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 28 2024 13:29:38 GMT+0000",
+      "alt": "An empty operating room with an OR table, lights and monitor",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-is-innovating-in-operating-room-design/Image1_v3.png",
+      "borderColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 28 2024 14:49:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 14:28:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(255,181,0);\">1</span></span></span></span></span></span></span></div>\r\n",
+      "jcr:lastModified": "Wed Aug 28 2024 15:48:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "text_680523221": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 13:29:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">The Fortress modular wall system is fast to install&nbsp;</span></span></h3>\n<p>The Fortress system allows for reduced construction timelines<sup>2</sup>, providing healthcare teams with earlier operating room utilization. Additionally, during events such as leaks and wall repairs, Fortress allows teams to expedite room repairs with easy panel removal and the ability to quickly get behind the wall with little disturbance.</p>\n",
+      "jcr:lastModified": "Wed Aug 28 2024 15:43:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "aa",
+      "jcr:created": "Mon Aug 12 2024 14:37:19 GMT+0000",
+      "title": "‎ ",
+      "jcr:lastModified": "Mon Aug 12 2024 14:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 13:29:38 GMT+0000",
+      "jcr:lastModified": "Wed Aug 28 2024 14:44:34 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_copy6197119676229355": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Operating room with the walls taken off, showing the electrical wiring behind the wall",
+        "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-is-innovating-in-operating-room-design/Image2_1.png",
+        "borderColor": "rgb(255,181,0)",
+        "jcr:lastModified": "Wed Aug 28 2024 14:49:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4",
+            "behavior": "newline"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "standaloneimage_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Operating room with the walls taken off, showing the electrical wiring behind the wall",
+        "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-is-innovating-in-operating-room-design/Image2_2.png",
+        "borderColor": "rgb(255,181,0)",
+        "jcr:lastModified": "Wed Aug 28 2024 14:49:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "4",
+            "behavior": "newline"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 14:28:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: #ffb500;\">2</span></span></span></span></span></span></div>\r\n",
+      "jcr:lastModified": "Wed Aug 28 2024 14:07:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "text_680523221_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 13:29:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">The Fortress modular wall system allows for flexibility</span></span></h3>\n<p>Fortress provides flexibility during installation by allowing the walls to remain open throughout the construction process, easily enabling changes to be made up until final installation and beyond. The Fortress system also provides design flexibility with custom room capabilities and accessory items such as whiteboards, shelving and recessed monitors.</p>\n<p>Clark says that “Flexibility is such an important part of the operating room design process. Teams often map out where they want the surgeon, anesthesiologist and nurses to be positioned during each surgery, so to be able to adjust this as the team gets closer to completion is very helpful for OR staff.”<sup>1</sup></p>\n",
+      "jcr:lastModified": "Wed Aug 28 2024 17:24:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "aa",
+      "jcr:created": "Mon Aug 12 2024 14:37:19 GMT+0000",
+      "title": "‎ ",
+      "jcr:lastModified": "Mon Aug 12 2024 14:37:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standaloneimage_copy_635122160": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 28 2024 13:29:38 GMT+0000",
+      "alt": "Operating room outfitted with Stryker equipment like an operating room table, lights and the Fortress modular wall system",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-is-innovating-in-operating-room-design/Image3_v3.png",
+      "borderColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Aug 28 2024 14:47:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "4",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "11"
+        }
+      }
+    },
+    "largeheadline_copy_c_1181893793": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 14:28:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: right;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(28,86,135);\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: #ffb500;\">3</span></span></span></span></span></span></div>\r\n",
+      "jcr:lastModified": "Wed Aug 28 2024 14:07:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "1",
+          "behavior": "none"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2",
+          "behavior": "newline"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "text_680523221_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 13:29:31 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-8em\">The Fortress modular wall system allows healthcare professionals to create an operating room of the future, allowing OR staff to easily adjust as technology continues to evolve</span></span></h3>\n<p>The Fortress system maintains a modular design with individual panels enabling the existing space to be easily modified for future service lines and future equipment by removing a panel to access behind the wall, and simply reattaching.<sup>3</sup></p>\n",
+      "jcr:lastModified": "Wed Aug 28 2024 17:25:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "10"
+        }
+      }
+    },
+    "text_1345344560": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 13:32:07 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/us/en/communications/products/Fortress-wall-system.html\"><span class=\"urw-egyptienne\">Learn more about the Fortress modular wall system</span></a> <span class=\"urw-egyptienne\">and how to partner with Stryker to design your new OR.</span></span></p>\n",
+      "jcr:lastModified": "Wed Aug 28 2024 15:55:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

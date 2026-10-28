@@ -1,0 +1,138 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Medial Closing Wedge Osteotomy (Akin)",
+  "jcr:versionHistory": "6ab87af2-1c58-4669-a307-87500ba9d1b7",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/foot-and-ankle/procedures/Medial-closing-wedge-osteotomy--Akin-/Images/Forefoot_Akin.jpg",
+  "jcr:predecessors": [
+    "4c548971-f34a-472c-881f-bb7946b80e4c"
+  ],
+  "contentID": "OT-AWI-24, 07-2017",
+  "lastPublished": "Tue Nov 05 2019 15:49:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Nov 05 2019 15:49:18 GMT+0000",
+  "cq:lastModified": "Tue Nov 05 2019 15:49:10 GMT+0000",
+  "cq:cloudserviceconfigs": [
+    "[]"
+  ],
+  "jcr:description": "An Akin osteotomy is a medial closing wedge osteotomy of the proximal phalanx for the purpose of correcting a valgus deformity of the hallux.",
+  "jcr:baseVersion": "4c548971-f34a-472c-881f-bb7946b80e4c",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:business-unit/foot-and-ankle",
+    "stryker:specialty/forefoot",
+    "stryker:procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Aug 04 2017 08:58:57 GMT-0400",
+  "jcr:uuid": "7887c9c2-db9f-4888-809f-cfb8efe9d0b0",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "megan.foltz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Wed Jul 12 2017 10:10:48 GMT-0400",
+      "compImageRef": "/content/dam/stryker/foot-and-ankle/procedures/Medial-closing-wedge-osteotomy--Akin-/Images/Forefoot_Akin.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Tue Nov 05 2019 15:48:25 GMT+0000",
+      "jcr:lastModified": "Tue Nov 05 2019 15:48:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Tue Nov 05 2019 15:48:31 GMT+0000",
+          "type": "typeId",
+          "videoId": "DxNTdAw9ax8",
+          "jcr:lastModified": "Tue Nov 05 2019 15:48:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Akin osteotomy - Dr. Kai Olms",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "This video depicts a cadaveric surgical procedure of an Akin Osteotomy. This is a medial closing wedge osteotomy performed by Dr. Kai Olms on the proximal phalanx of the hallux using an Asnis Micro 2.0mm cannulated screw.",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 05 2019 15:48:35 GMT+0000",
+          "jcr:lastModified": "Tue Nov 05 2019 15:48:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "productgroups": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "dan.scanlon@stryker.com",
+      "searchPath": "/content/stryker/us/en",
+      "title": "Related products",
+      "jcr:lastModified": "Fri Jul 28 2017 10:17:47 GMT-0400",
+      "sling:resourceType": "stryker/components/content/productgroups",
+      "groups": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Screw systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/screw-systems"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Staple solutions",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/staple-solutions"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "External fixation systems",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/external-fixation-systems"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "groupName": "Biologics",
+          "groupTag": "/etc/tags/stryker/procedure/foot-and-ankle/medial-closing-wedge-osteotomy-(akin)/biologics"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/foot-and-ankle/procedures/Medial-closing-wedge-osteotomy--Akin-/Images/Forefoot_Akin.jpg"
+  }
+}

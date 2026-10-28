@@ -1,0 +1,78 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Scopes and Hardware",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Gynecology",
+  "jcr:versionHistory": "89dd1854-9a64-469f-be90-f0b05c59cffe",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-Hysteroscopy.jpg",
+  "jcr:predecessors": [
+    "6c5f173c-8bed-4a8a-abf2-193065dfc8c1"
+  ],
+  "contentID": "Literature Number: 1000902492, Rev. A",
+  "lastPublished": "Wed Mar 23 2022 18:41:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 23 2022 18:41:38 GMT+0000",
+  "cq:lastModified": "Wed Mar 23 2022 18:38:16 GMT+0000",
+  "jcr:description": "Combined with our camera technology, Stryker’s 2.9mm Rev360 hysteroscope line offers image clarity and durable rigid hysteroscopy equipment to provide a variety of options for gynecologic procedures.",
+  "jcr:baseVersion": "6c5f173c-8bed-4a8a-abf2-193065dfc8c1",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/specialty",
+    "stryker:specialty/hysteroscopy",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 23 2022 18:19:05 GMT+0000",
+  "jcr:uuid": "df6700ca-8402-44b9-9766-4e3e5dfd8d17",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 21:18:14 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Jul 25 2017 14:01:32 GMT-0400",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Portfolio-Hysteroscopy.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Thu Aug 31 2017 20:01:34 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-Hysteroscopy.jpg"
+  }
+}

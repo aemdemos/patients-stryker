@@ -1,0 +1,131 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "cq:LiveRelationship"
+  ],
+  "subtitle": "Simple designs inside. Engineered for excellence outside.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Knee",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0429d3e8-6b00-4566-a710-f257f2dcb9a8",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 3.jpg",
+  "jcr:predecessors": [
+    "d0f6d023-a648-4b0b-bf19-5eba193a5e32"
+  ],
+  "contentID": "Literature Number: 1000902714 Rev A",
+  "lastPublished": "Tue Jul 29 2025 15:35:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jul 29 2025 15:35:55 GMT+0000",
+  "cq:lastReplicated": "Tue Jul 29 2025 15:35:57 GMT+0000",
+  "cq:lastModified": "Tue Jul 22 2025 17:55:15 GMT+0000",
+  "jcr:description": "With simplicity in mind, Stryker's sports medicine knee systems are designed to allow for optimal patient results without sacrificing functionality, versatility, control or ergonomics for you.\r\n<br><br>\r\nFrom setup to post-op, our fully integrated and intuitive instrumentation, implant, resection and fluid management options are designed to answer the needs of surgeons and patients inside the operating room and engineered for excellence outside.",
+  "cq:siblingOrder": "shoulder,hip,knee,small-joints,sports-biologics,arthroscopy-instrumentation,arthroscopic-resection,fluid-management,displays,camera-systems,media-management,scopes,surgery-center,operating-room,surgical-tables,",
+  "jcr:baseVersion": "d0f6d023-a648-4b0b-bf19-5eba193a5e32",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 15:35:55 GMT+0000",
+  "pageTitle": "Knee",
+  "cq:name": "knee",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/knee-sports-medicine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:capability/sports-medicine",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue May 29 2018 20:26:16 GMT-0400",
+  "jcr:uuid": "663aa294-79a7-4498-b151-ea298fced06a",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/sports-medicine",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:LiveRelationship"
+      ],
+      "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "emptyText": "No Results found.",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Tue Jul 22 2025 17:55:15 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Procedure",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/procedure-(knee)"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Product type",
+        "tagFolder": "/etc/tags/stryker/custom/sports-medicine/product-type"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/All-inside-meniscal-repair-system"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/versitomic-flexible-reaming-system"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/procinch-suspensory-fixation-adjustable-loop"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/sports-medicine/products/sharpshooter-inside-out-meniscal-repair-system"
+      }
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:LiveRelationship"
+    ],
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "cq:lastRolledout": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Oct 23 2018 17:37:57 GMT+0000",
+    "compImageRef": "/content/dam/stryker/sports-medicine/images/SM-Hero-R2Knee.png",
+    "sling:resourceType": "stryker/components/content/pagehero",
+    "cq:lastRolledoutBy": "jeannie.chan@stryker.com"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/images/Template-Thumb-PortfolioPageArtboard 3.jpg"
+  }
+}

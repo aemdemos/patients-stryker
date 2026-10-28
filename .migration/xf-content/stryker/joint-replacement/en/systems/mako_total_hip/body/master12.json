@@ -1,0 +1,223 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body3",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "20b9d57d-59cb-43c9-974d-2dae3ec5f291",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "1cf87dc9-d202-4f85-879b-4550650ed6d3"
+  ],
+  "lastPublished": "Tue Sep 30 2025 21:18:59 GMT+0000",
+  "jcr:created": "Tue Sep 30 2025 21:18:59 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 30 2025 21:19:01 GMT+0000",
+  "cq:lastModified": "Fri Sep 19 2025 14:18:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1cf87dc9-d202-4f85-879b-4550650ed6d3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:36:55 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "5220f56a-0b5e-40e7-b6d7-a73f6318dcbc",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline_191797_370774362": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Feb 01 2024 15:21:06 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span style=\"color: rgb(76,125,122);\"><span style=\"color: rgb(0,0,0);\">Implant compatibility</span></span></span></h2>\r\n",
+      "jcr:lastModified": "Thu Feb 01 2024 18:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "standaloneimage_1102531123": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 19:53:04 GMT+0000",
+      "jcr:lastModified": "Tue Jan 30 2024 19:53:08 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_11025311234817354844388127": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Trident II, Trident Hemispherical, PSL, Tritanium ",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/Trident II.jpg",
+        "jcr:lastModified": "Wed Jan 31 2024 21:30:08 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 30 2024 19:56:31 GMT+0000",
+        "text": "<p style=\"text-align: center;\">Trident II <br>\nTrident Hemispherical PSL <br>\nTritanium</p>\n",
+        "jcr:lastModified": "Tue Jan 30 2024 19:57:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_1102": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Tue Jan 30 2024 19:53:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_11024817373815030602": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Insignia  Accolade II, Secur-Fit Advanced, Exeter ",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/implant.jpg",
+        "jcr:lastModified": "Wed Jan 31 2024 21:30:30 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 30 2024 19:56:31 GMT+0000",
+        "text": "<p style=\"text-align: center;\"><sup>Pictured from left to right:</sup><br>\nInsignia, Accolade II, Secur-Fit Advanced, Exeter</p>\n",
+        "jcr:lastModified": "Tue Jan 30 2024 19:58:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_1102_898841205": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Tue Jan 30 2024 19:53:50 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1102_8988412054817397080842096": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "X3, Modular Dual Mobility (MDM) ",
+        "srcFileRef": "/content/dam/stryker/joint-replacement/systems/Mako-Total-Hip/images/MDM.jpg",
+        "jcr:lastModified": "Wed Jan 31 2024 21:30:57 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false"
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      },
+      "text_copy_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "jcr:created": "Tue Jan 30 2024 19:56:31 GMT+0000",
+        "text": "<p style=\"text-align: center;\">X3 Modular Dual Mobility (MDM)</p>\n",
+        "jcr:lastModified": "Tue Jan 30 2024 19:59:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true"
+      }
+    },
+    "text_copy_1138828260": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "6",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "15",
+      "jcr:created": "Tue Jan 30 2024 19:40:33 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><a href=\"/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/hip.html\"><span style=\"color: #000000;\">Click here to learn more about our hip implant portfolio</span></a></span></p>\n",
+      "jcr:lastModified": "Wed Jan 31 2024 16:53:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "leftMargin": "15",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_214574944_copy__200222562": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 19:14:53 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 30 2024 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_214574944_copy__415255549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 30 2024 19:14:53 GMT+0000",
+      "text": "<p><br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jan 30 2024 19:23:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

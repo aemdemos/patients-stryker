@@ -1,0 +1,449 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "2019 Post OTA Newsletter",
+  "jcr:versionHistory": "22a5110e-e2df-4a3f-8744-324309e4fab7",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:predecessors": [
+    "d3aa5852-3455-4b9d-9a04-01a34c81e1bd"
+  ],
+  "contentID": "CP-NL-18",
+  "lastPublished": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:38 GMT+0000",
+  "cq:lastModified": "Wed Oct 30 2019 20:01:59 GMT+0000",
+  "jcr:baseVersion": "d3aa5852-3455-4b9d-9a04-01a34c81e1bd",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Tue Oct 29 2019 15:00:32 GMT+0000",
+  "jcr:uuid": "fbafa63b-9ed5-4afa-8e67-73d33b492890",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/TEACH-newsletter-banner-oct-2019.jpg",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "jcr:lastModified": "Tue Oct 29 2019 18:04:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_1114783857": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 18:19:11 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 18:19:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 18:19:19 GMT+0000",
+          "jcr:lastModified": "Tue Oct 15 2019 18:19:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:22:28 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:22:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span class=\"futura-bold\">Did you attend the <span style=\"color: #ffb500;\">experience?</span></span></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-1-5-vw\">This year at OTA we showcased our latest technologies including T2 Alpha, ADAPT for Gamma3 and announced our upcoming launch of VariAx 2 Mini Fragment System.<br>\r\n <br>\r\n To bring our customers together, we hosted an educational experience allowing over 300 HCP's to learn more about our most recent product offerings.</span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Missed this year’s event? Experience it for yourself by watching our event highlight video.</span><br>\r\n</p>\r\n",
+          "jcr:lastModified": "Tue Oct 15 2019 17:22:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:28:13 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Tue Oct 15 2019 17:29:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/landing-pages/videos/Post-OTA-2019-Highlight-Video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Post-OTA-2019-Highlight-Video-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Oct 15 2019 17:29:22 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:29:55 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:30:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:30:24 GMT+0000",
+          "jcr:lastModified": "Tue Oct 15 2019 17:30:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline"
+        }
+      }
+    },
+    "largeheadline_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-4vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Featured&nbsp;</span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">technologies</span></span></span></span>",
+      "jcr:lastModified": "Tue Oct 15 2019 17:31:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_749293504": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:31:44 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:31:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:34:36 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">VariAx 2 Mini Fragment</span></span><br>\n<span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Plating System</span></span></p>\n",
+          "jcr:lastModified": "Tue Oct 15 2019 17:35:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<p>The&nbsp;new VariAx 2 Mini Fragment plating system&nbsp;features a&nbsp;complete range of&nbsp;low profile plate and&nbsp;screw options&nbsp;in 2.0mm, 2.4mm and 2.7mm modules.&nbsp;Plates utilize the SmartLock variable angle locking technology.</p>\r\n<p>Plates&nbsp;featured in this system include a wide variety of&nbsp;types&nbsp;including broad and narrow straight&nbsp;locking&nbsp;plates as well as&nbsp;locking&nbsp;plates in T, Y and Triangle designs.&nbsp;These plates offer both locking and compression capabilities. The system also offers&nbsp;profile plates,&nbsp;which are&nbsp;intended to facilitate fracture reduction due to the&nbsp;extremely&nbsp;low-profile&nbsp;and non-locking design.</p>\r\n<p>The system features a streamlined and simplified instrument and screw platform which includes color coded screws and instrumentation designed to increase procedural efficiency.&nbsp;</p>\r\n<p>Learn more about our full plating portfolio here.&nbsp;&nbsp;</p>\r\n",
+          "jcr:lastModified": "Wed Oct 30 2019 20:01:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:33:35 GMT+0000",
+          "jcr:lastModified": "Tue Oct 15 2019 17:34:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "internalLink": "/content/stryker/us/en/trauma-and-extremities/systems/plating",
+              "buttonText": "Learn more",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:42:25 GMT+0000",
+          "alt": "Mini frag image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/variax-mini-fragment/mini-frag.png",
+          "jcr:lastModified": "Thu Oct 24 2019 15:02:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:48:00 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:48:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_857434493": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:48:13 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:48:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:42:25 GMT+0000",
+          "alt": "ADAPT for Gamma3 Feature",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/adapt/ADAPT-image-feature.png",
+          "jcr:lastModified": "Tue Oct 15 2019 18:12:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:34:36 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">ADAPT for Gamma3</span></span><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Oct 15 2019 17:48:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<p>Integrated seamlessly into the surgeon’s workflow, the ADAPT system, can potentially reduce radiation exposure and operative time.&nbsp; Studies have shown that orthopaedic surgeons are 5.39x more likely to have cancer compared to other healthcare workers.<sup>1</sup> ADAPT for Gamma3 has shown to reduce radiation exposure by 11%<sup>2</sup>, and reduce OR time by 9%.<sup>2</sup></p>\r\n<p>Half of the total radiation time for nailing procedures occurs during freehand distal locking.<sup>,3,4</sup>ADAPT supports distal locking using the Gamma Distal Targeting system and has been shown to distally lock up to 2 screws with a median of 5 shots.<sup>5</sup></p>\r\n<p>Want more information about this system? Learn more about ADAPT here.&nbsp;</p>\r\n",
+          "jcr:lastModified": "Tue Oct 15 2019 17:49:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:33:35 GMT+0000",
+          "jcr:lastModified": "Tue Oct 29 2019 20:23:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "internalLink": "/content/stryker/us/en/trauma-and-extremities/products/ADAPT-for-Gamma3",
+              "buttonText": "Learn more",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:48:00 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 17:48:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1151292388": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 18:11:01 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 18:11:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:42:25 GMT+0000",
+          "alt": "T2 Alpha Feature",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/t2alphatibia/images/T2-alpha-feature.png",
+          "jcr:lastModified": "Tue Oct 15 2019 18:12:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:34:36 GMT+0000",
+          "text": "<p><span style=\"font-size: 24.5px;\"><b><span class=\"futura-bold\">T2 Alpha</span><br>\n <span class=\"urw-egyptienne\">Nailing System</span></b></span></p>\n",
+          "jcr:lastModified": "Tue Oct 29 2019 18:06:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<p><a name=\"_Hlk21959727\" id=\"_Hlk21959727\"></a>T2 Alpha nails adapt to diverse intraoperative needs, addressing varying patient anatomy and preferences of the surgeon. New to the T2 Alpha nail is the Advanced Locking Screw option, which provides added axial and angular stability. &nbsp;These screws limit relative motion between the nail and screw, allowing surgeons to provide additional nail stability when needed.&nbsp; The implants are supported by new instrumentation which was designed for simplicity to improve the operative workflow.&nbsp;</p>\r\n<p>Learn more about the T2 Alpha nailing system here.</p>\r\n",
+          "jcr:lastModified": "Wed Oct 30 2019 20:01:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Tue Oct 15 2019 17:33:35 GMT+0000",
+          "jcr:lastModified": "Tue Oct 15 2019 18:13:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "internalLink": "/content/stryker/us/en/trauma-and-extremities/systems/intramedullary-nailing",
+              "buttonText": "Learn more",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "sectionseparator_854474394": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 18:13:39 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 18:13:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 18:13:46 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Our trauma and extremities portfolio offers you market-leading implants for the treatment of long and small bone fractures, as well as extremity joint replacements.</span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Visit our website to learn more about our product portfolio.&nbsp;</span></span></p>\n",
+      "jcr:lastModified": "Tue Oct 15 2019 18:17:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "buttonset_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(255,181,0,1)",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 17:33:35 GMT+0000",
+      "jcr:lastModified": "Tue Oct 29 2019 20:25:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(255,181,0,1)",
+          "internalLink": "/content/stryker/us/en/portfolios/orthopaedics/trauma-and-extremities",
+          "buttonText": "Learn more",
+          "externalLinkType": "int"
+        }
+      }
+    },
+    "sectionseparator_854": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Oct 15 2019 18:13:39 GMT+0000",
+      "jcr:lastModified": "Tue Oct 15 2019 18:13:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Mastrangelo G, Fedeli U, et al. Increased cancer risk among surgeons in an orthopaedic hospital. Occupational Medicine 2005;55:498-500</li>\r\n<li>Mitchell Kuhl, DO; Claudia Beimel, MSc (2018): Precise lag screw placement with the use of a novel computer assisted surgery system during cephalomedullary nailing.</li>\r\n<li>Uruc et al.; The comparison of freehand fl uoroscopic guidance and electromagnetic navigation for distal locking of intramedullary implants. Injury-5229</li>\r\n<li>Levin PE, Schoen Jr RW, Browner BD. Radiation exposure to the surgeon during closed interlocking intramedullary nailing. J Bone Joint Surg AM 1987;69 (June (5)): 761–6</li>\r\n<li>Survey data on first clinical experience with ADAPT 2.0 for Gamma3 / ADAPT mobile ADA-WP-5, 03-2019</li>\r\n</ol>\r\n<p>Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area. Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Gamma3, Stryker, T2 Alpha, TEACH Trauma &amp; Extremities Academic Courses for Healthcare, VariAx. All other trademarks are trademarks of their respective owners or holders.</p>\r\n",
+    "jcr:lastModified": "Thu Oct 24 2019 15:03:31 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

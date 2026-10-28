@@ -1,0 +1,80 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Social icons",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3510d0d8-77df-400f-a7c3-c540aeb5c84e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1d8bde10-2be3-4b69-af61-da8e60075530"
+  ],
+  "lastPublished": "Mon May 05 2025 18:01:29 GMT+0000",
+  "jcr:created": "Mon May 05 2025 18:01:36 GMT+0000",
+  "cq:lastReplicated": "Mon May 05 2025 18:01:38 GMT+0000",
+  "cq:lastModified": "Thu Feb 13 2025 01:50:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1d8bde10-2be3-4b69-af61-da8e60075530",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon May 05 2025 18:01:29 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "1802ba04-2d10-4227-9831-2d5897f09a0f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.linkedin.com/showcase/stryker_ent/",
+      "jcr:created": "Thu Feb 13 2025 01:48:56 GMT+0000",
+      "alt": "LinkedIn",
+      "srcFileRef": "/content/dam/stryker/ent/images/LinkedIn.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 13 2025 01:50:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_1667145970": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.youtube.com/playlist?list=PLZyNjjTfwJvAL_c-0abEuiLdfkHPHADi6",
+      "jcr:created": "Thu Feb 13 2025 01:49:01 GMT+0000",
+      "alt": "Youtube",
+      "srcFileRef": "/content/dam/stryker/ent/images/Youtube.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 13 2025 01:50:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    }
+  }
+}

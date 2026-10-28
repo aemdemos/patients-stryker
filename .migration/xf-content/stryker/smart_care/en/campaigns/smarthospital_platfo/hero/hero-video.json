@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Video",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1fe16a76-59d6-4f57-873f-879295bff9ca",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "2301ac64-8cc0-4817-a91f-361ca1873042"
+  ],
+  "lastPublished": "Tue Jun 09 2026 15:33:14 GMT+0000",
+  "jcr:created": "Tue Jun 09 2026 15:33:14 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 09 2026 15:33:17 GMT+0000",
+  "cq:lastModified": "Tue Jun 09 2026 15:33:07 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "2301ac64-8cc0-4817-a91f-361ca1873042",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 09 2026 15:33:14 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "2ddbfcbf-2ab0-42fd-a2f4-049bce026a91",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Feb 11 2026 13:20:56 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon May 04 2026 19:49:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/smart-care/campaigns/smarthopsital-platform/ADH-Wave_hero-animation_1920x640.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/ADH-Wave_hero-animation_1920x640-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Jun 09 2026 15:33:07 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

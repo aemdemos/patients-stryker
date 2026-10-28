@@ -1,0 +1,600 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "System 9 Precision Saw",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9017ab44-a7e1-4f93-b0a3-93b2d9dff26f",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "precision-hero",
+  "jcr:predecessors": [
+    "12af3d6f-4363-4256-bcab-64911dea610a"
+  ],
+  "contentID": "D0000277003 Rev. AA",
+  "lastPublished": "Thu Oct 10 2024 19:30:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 10 2024 19:30:37 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 10 2024 19:30:39 GMT+0000",
+  "cq:lastModified": "Thu Oct 03 2024 15:20:08 GMT+0000",
+  "jcr:baseVersion": "12af3d6f-4363-4256-bcab-64911dea610a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:30:30 GMT+0000",
+  "pageTitle": "System 9 Precision Saw",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:services/procare/surgical/power-tools",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:product/orthopaedic_instruments/system-9",
+    "stryker:portfolio/orthopaedics",
+    "stryker:services/procare/surgical",
+    "stryker:specialty/large-bone",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Thu Oct 03 2024 15:20:08 GMT+0000",
+  "jcr:uuid": "9eac9a43-db79-4336-bb61-5f2cd2617ffb",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "System 9 Precision Saw",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullbleedpanel_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue May 16 2023 18:08:19 GMT+0000",
+      "jcr:lastModified": "Tue May 16 2023 22:38:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(182,114,25,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Sat Jul 08 2023 22:30:21 GMT+0000",
+          "jcr:lastModified": "Sat Jul 08 2023 22:30:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Sat Jul 08 2023 22:30:26 GMT+0000",
+              "alt": "precision-hero",
+              "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/system-9-family/precision/precision-hero.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Sat Jul 08 2023 22:30:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "topMargin": "12",
+              "jcr:created": "Tue May 16 2023 18:08:36 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<p><span class=\"futura-bold\"><span class=\"fontsize-4-5-vw\">Precision </span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">Oscillating Tip Saw</span></span></p>\r\n",
+              "jcr:lastModified": "Thu Jul 27 2023 15:36:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "bottomMargin": "2"
+            }
+          }
+        }
+      }
+    },
+    "text_copy_334796670_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Apr 18 2023 21:04:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolving the way you cut.</span></span><br>\n</span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Empowering you with precision and control when you need it most.&nbsp;</span></span><br>\n</p>\n",
+      "jcr:lastModified": "Thu Jul 27 2023 20:04:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:11:18 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 21:11:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 21:11:27 GMT+0000",
+          "text": "<p><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"> </span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">The stationary cartridge design allows freehand stabilization of the cartridge body and eliminates wear on the cut guide. Precision cartridges can be used for ankle, shoulder, hip and knee arthroplasty, offering versatility and ensuring all your orthopaedic procedure needs are met.&nbsp;</span></span><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\"><br>\n &nbsp;</span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Length: 90mm, 105mm</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Width: 20mm, 25mm</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Thickness: 1.27mm, 1.37mm</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Reduced movement throughout blade</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Outward facing cutting teeth with cutting arch of -5° to +5°</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Sep 05 2023 12:48:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Apr 19 2023 18:13:01 GMT+0000",
+          "alt": "PrecisionOscillatingTipSaw_6",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/PrecisionOscillatingTipSaw_6.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Apr 19 2023 18:14:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(255,181,0,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 21:13:17 GMT+0000",
+          "jcr:lastModified": "Thu Aug 31 2023 12:52:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(255,181,0,1)",
+              "externalLink": "https://www.stryker.com",
+              "buttonText": "DOWNLOAD PDF",
+              "damLink": "/content/dam/stryker/orthopaedic-instruments/resources/System 9 Precision Brochure.pdf",
+              "externalLinkType": "dam"
+            }
+          }
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:11:18 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 21:11:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Apr 18 2023 21:11:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\"><span class=\"futura-bold\">Feel the difference</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The thinner cartridge design helps eliminate sticking or binding in cut guide slots. Because of the optimal tooth engagement throughout the cut arc, surgeons also reported an improved tactile feel when transitioning to cortical bone.</span></span></p>\n",
+          "jcr:lastModified": "Sat Jul 08 2023 22:02:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Apr 18 2023 21:11:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\"><span class=\"futura-bold\">Optimized for efficiency</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Precision’s Falcon saw tooth geometry is 19% faster and comparable to Stryker’s sagittal saw<sup>2</sup> speed. It offers enhanced relief features for chip clearance and a reduced blade surface area to decrease cutting temperature</span></span></p>\n",
+          "jcr:lastModified": "Sat Jul 08 2023 21:50:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop_1402748349": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:10:18 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 21:10:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "standaloneimage_1013": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 18 2023 21:21:55 GMT+0000",
+      "alt": "PrecisionOscillatingTipSaw_2",
+      "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/PrecisionOscillatingTipSaw_5.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 19 2023 17:41:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:04:28 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Total confidence,</span><br>\n<span class=\"futura-bold\"><span style=\"color: #ffb500;\">total control.</span></span></span><br>\n<span class=\"fontsize-1-75em\"><br>\n <span class=\"urw-egyptienne\">Our oscillating tip saw reduces noise and vibration, <br>\n enhancing handpiece control for a more precise surgical experience.</span></span></p>\n",
+      "jcr:lastModified": "Tue Sep 05 2023 12:49:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1561": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Tue Apr 18 2023 21:35:22 GMT+0000",
+      "alt": "PrecisionOscillatingTipSaw_3",
+      "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/PrecisionOscillatingTipSaw_Graphic1.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 19 2023 18:14:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols2_1883477064_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:35:34 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 21:35:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Apr 18 2023 21:43:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\">Stationary cartridge design</span></span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Allows for free-hand stabilization of the cartridge body</span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Eliminates wear on the cut guide and 84% reduction in metal as shows in cadaveric TKA model<sup>1</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Sep 05 2023 12:49:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 21:43:33 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #4c7d7a;\">Oscillating tip design</span></span></span></p>\n<ul>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Reduces noise and vibration for a more precise surgical experience<br>\n </span></span></li>\n<li><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Surgeons report a 23% reduction in excursion arc versus a sagittal blade<sup>2</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Tue Sep 05 2023 12:50:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_53500": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 21:59:44 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 22:02:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(84,88,87,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Apr 18 2023 21:59:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span style=\"color: #edeeec;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">“We learned of course that using a saw with oscillating tip creates way less soft tissue trauma than a conventional oscillating saw.”</span></span></span></p>\n<p><span style=\"color: #edeeec;\"><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Prof. Dr. Philipp Lobenhoffer, Hannover, Germany</span></span></span></p>\n",
+          "jcr:lastModified": "Tue May 16 2023 23:07:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_324601572_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Apr 18 2023 23:32:27 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">A family of power tools built for the whole hospital</span></span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Intentionally engineered to empower you with <br>\n a power tool solution that caters to your exact needs</span></span></p>\n",
+      "jcr:lastModified": "Thu Jul 27 2023 20:04:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": "true"
+    },
+    "cols3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Apr 18 2023 22:18:27 GMT+0000",
+      "jcr:lastModified": "Tue Apr 18 2023 22:18:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 18 2023 22:18:38 GMT+0000",
+          "alt": "System9EZOut",
+          "title": "System 9 EZout",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/system-9-family/precision/Ez-Bottom.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Sat Jul 08 2023 22:37:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 22:18:55 GMT+0000",
+          "jcr:lastModified": "Wed Aug 30 2023 17:40:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com",
+              "internalLink": "/content/stryker/us/en/orthopaedic-instruments/products/System-9-Power-Tools/system-9-ezout",
+              "buttonText": "LEARN MORE",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 18 2023 22:18:43 GMT+0000",
+          "alt": "CDNXT",
+          "title": "CD NXT",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/CDNXT.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Apr 19 2023 16:15:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 22:19:45 GMT+0000",
+          "jcr:lastModified": "Wed Aug 30 2023 17:40:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com",
+              "internalLink": "/content/stryker/us/en/orthopaedic-instruments/products/cd-nxt",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Apr 18 2023 22:18:47 GMT+0000",
+          "alt": "System9Family",
+          "title": "System 9 Family",
+          "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/System9Family.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Apr 19 2023 16:16:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Tue Apr 18 2023 22:20:22 GMT+0000",
+          "jcr:lastModified": "Wed Aug 30 2023 17:40:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "externalLink": "https://www.stryker.com/us/en/orthopaedic-instruments/products/System-9-Power-Tools.html",
+              "buttonText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "text_1308304033_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Apr 18 2023 22:05:14 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">High-quality cutting technology for your OR</span></span></p>\n<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Robust cutting accessory portfolio tailored to meet your needs <br>\n with intentionally designed to pair with our power tools for optimal performance</span></span></p>\n",
+      "jcr:lastModified": "Thu Jul 27 2023 20:04:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_8251": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Apr 18 2023 22:23:32 GMT+0000",
+      "alt": "PrecisionOscilatingTipSaw_4",
+      "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/PrecisionOscilatingTipSaw_4.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 19 2023 16:16:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols_1890460301_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Mon Aug 22 2022 22:57:07 GMT+0000",
+      "jcr:lastModified": "Tue Aug 30 2022 17:38:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "deepLinkingId": "contact",
+          "jcr:created": "Wed Apr 10 2024 17:42:59 GMT+0000",
+          "title": "Contact us",
+          "jcr:lastModified": "Wed Apr 10 2024 18:02:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri Sep 08 2023 14:54:51 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Fri Sep 08 2023 14:55:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 16 2023 18:13:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 16 2023 18:13:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 16 2023 18:13:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 16 2023 18:13:37 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue May 16 2023 18:13:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue May 16 2023 18:13:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>S.E. Syndney, BEng; S.A. Pickering, MD, FRCS(Eng), FRCS(Orth); C.G.R. Bell, PhD; R. Crawford, MBBS, FRACS, DPhil (Oxon). Orthopedics, 2007; 30;999.</li>\r\n<li>25 mm width Precision Cartridge compared to equivalent Stryker Sagittal Saw Blade.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Sep 05 2023 12:51:07 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/system-9-family/precision/precision-hero.png"
+  }
+}

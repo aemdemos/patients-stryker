@@ -1,0 +1,111 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker launches T2 Alpha Humerus Nailing System, supporting surgical workflow and care for complex fractures",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6f7e4955-5693-43f6-89ac-c91b0ed5be55",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+  "thumbnailAltText": "t2-alpha-humerus-thumbnail",
+  "jcr:predecessors": [
+    "86aaaa5e-ef5d-46a7-b89b-e78765dc9f1a"
+  ],
+  "contentID": "TR-T2AL-ARTI-2572930",
+  "lastPublished": "Wed Feb 11 2026 14:07:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 11 2026 14:07:02 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 11 2026 14:07:04 GMT+0000",
+  "cq:lastModified": "Tue Feb 10 2026 21:46:10 GMT+0000",
+  "jcr:description": "The system offers surgeons a streamlined approach to humeral fracture fixation while providing hospital teams with a unified platform that enables consistent, high-quality care.",
+  "cq:siblingOrder": "features,stryker-launches-t2-alpha-humerus-nailing-system,stryker-introduces-mako-handheld-robotics-mako-rps,",
+  "jcr:baseVersion": "86aaaa5e-ef5d-46a7-b89b-e78765dc9f1a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 11 2026 14:07:00 GMT+0000",
+  "cq:name": "stryker-launches-t2-alpha-humerus-nailing-system",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Feb 10 2026 21:46:10 GMT+0000",
+  "jcr:uuid": "93e82cfc-6628-4b73-a5ac-5e4c2607042c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/news/2026",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Feb 03 2026 22:49:11 GMT+0000",
+      "jcr:lastModified": "Tue Feb 03 2026 22:49:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_191512237_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Jun 24 2025 21:06:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">About Stryker<br>\n </span>Stryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at&nbsp;<br>\n<a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p><span class=\"futura-bold\">Media contact<br>\n</span>Frank Mastrangelo<br>\nDirector, Communications<br>\nStryker Trauma &amp; Extremities<br>\n<a href=\"mailto:frank.mastrangelo@stryker.com\">frank.mastrangelo@stryker.com</a></p>\n",
+      "jcr:lastModified": "Thu Feb 05 2026 15:58:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Wed Feb 11 2026 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "11-Feb-2026",
+    "jcr:lastModified": "Mon Feb 09 2026 23:32:26 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "bottomPadding": "3",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "text": "<p><b>PORTAGE, Mich. – Feb. 11, 2026&nbsp;</b>– Stryker (NYSE:SYK), a global leader in medical technologies, announced the launch of the T2 Alpha Humerus Nailing System, the latest addition to its T2 Alpha portfolio. The system offers surgeons a streamlined approach to humeral fracture fixation while providing hospital teams with a unified platform that enables consistent, high-quality care.&nbsp;</p>\n<p>Designed using Stryker’s SOMA (Stryker Orthopaedic Modeling and Analytics) technology, the T2 Alpha Humerus Nailing System helps manage complex humerus fractures, including non-unions, malunions, malalignments and pathological fractures. Its advanced nail design is intended to align with the patient’s anatomy, <sup>1</sup> enhance fixation stability, and provide flexibility.</p>\n<p>The T2 Alpha Humerus Nailing System is built to simplify procedures and expand treatment options through intuitive instrumentation and guided targeting, supporting ease of use in the operating room. By integrating with Stryker’s existing nailing platform, it promotes familiarity and consistent workflows across procedures, helping to streamline training, reduce tray requirements and support hospital process efficiencies.&nbsp;</p>\n<p>Key features of the T2 Alpha Humerus System include:</p>\n<ul>\n<li>SOMA-informed nail design based on CT data across diverse populations to facilitate anatomical fit and alignment<sup>1</sup></li>\n<li>Active intraoperative compression of up to 6mm to provide controlled fracture reduction compared to traditional methods<sup>6</sup></li>\n<li>Multiplanar screw fixation with advanced locking options designed to capture dense bone<sup>2</sup> and enhance stability<sup>4,5</sup></li>\n<li>Guided targeting instrumentation to promote reproducibility and potentially reduce radiation exposure<sup>3</sup></li>\n</ul>\n<p>“With the T2 Alpha Humerus Nailing System, we are giving surgeons greater flexibility to treat complex humerus fractures with confidence,” said Eric Tamweber, vice president and general manager of Stryker’s Trauma business. “This addition to our T2 Alpha portfolio builds on decades of surgeon collaboration and innovation, delivering solutions designed to support consistent results while driving efficiency in the operating room.”</p>\n<p>For more information, visit <a href=\"/content/stryker/us/en/trauma-and-extremities/products/T2-Alpha-Humeral-Nail.html\" target=\"_blank\">www.stryker.com/us/en/trauma-and-extremities/products/T2-Alpha-Humeral-Nail.html</a>.</p>\n",
+    "jcr:lastModified": "Tue Feb 10 2026 21:29:57 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2026/stryker-launches-t2-alpha-humerus-nailing-system/t2-alpha-humerus-press-release-thumbnail.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References</b></p>\r\n<ol>\r\n<li>Internal Report № D0000353370, Rev AA.</li>\r\n<li>Internal Report № D0000305724, Rev AA.</li>\r\n<li>Konda SR, Maseda M, et al. Observational prospective unblinded case-control study to evaluate the effect of the Gamma3® distal targeting system for long nails on radiation exposure and time for distal screw placement, Injury. 2023;54(2):677-682. doi:10.1016/j.injury.2022.11.046</li>\r\n<li>Naidu SH, Bixler B, Capo JT, Moulton MJ, Radin A. Percutaneous pinning of proximal humerus fractures: a biomechanical study. Orthopedics. 1997;20(11):1073–6.24.</li>\r\n<li>Horn J, Gueorguiev B, Brianza S, Steen H, Schwieger K. Biomechanical evaluation of two-part surgical neck fractures of the humerus fixed by anangular stable locked intramedullary nail. J Orthop Trauma. 2011;25(7):406–13.]</li>\r\n<li>T2 Alpha Humerus Nailing System Surgical Technique, TR-T2AL-SURGP-2363750, 09-2025&nbsp;</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Feb 03 2026 23:27:14 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "t2-alpha-humerus-image",
+    "srcFileRef": "/content/dam/stryker/about/news/2026/stryker-launches-t2-alpha-humerus-nailing-system/t2-alpha-humerus-image.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Feb 03 2026 23:37:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

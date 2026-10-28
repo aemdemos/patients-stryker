@@ -1,0 +1,61 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker earns two spots in “The Ten Best Sports Medicine Technologies for 2018” listing from Orthopedics This Week",
+  "jcr:versionHistory": "515b0b97-99a3-4499-81e4-9b9df1c22e59",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/about/news/images/sm technology award email banner 2.png",
+  "jcr:predecessors": [
+    "a6cf751d-39a7-4a39-85d0-58e3ccb4ab29"
+  ],
+  "lastPublished": "Wed Aug 01 2018 09:12:31 GMT+0000",
+  "jcr:created": "Wed Aug 01 2018 09:12:31 GMT-0400",
+  "cq:lastModified": "Wed Aug 01 2018 09:12:16 GMT-0400",
+  "jcr:baseVersion": "a6cf751d-39a7-4a39-85d0-58e3ccb4ab29",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Wed Aug 01 2018 09:08:43 GMT-0400",
+  "jcr:uuid": "e699220c-b0fa-45c4-b5d6-8dd06e822d1d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "nadia.conard@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "publishDate": "Wed Aug 01 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Aug-2018",
+    "jcr:lastModified": "Wed Aug 01 2018 09:08:19 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/sm technology award email banner 2.png",
+    "jcr:lastModified": "Wed Aug 01 2018 09:08:31 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "text": "<p><i>Orthopedics This Week</i> recently released their list of “The Ten Best Sports Medicine Technologies for 2018,” and both Cobra and Pivot Guardian were recognized as top 10 innovative products across all sports medicine companies in 2018.</p>\n<p>This annual award recognizes the best technologies that address clinical needs and improve upon the current standards of care to treat injured athletes in any activity.</p>\n<p><a href=\"https://view.joomag.com/orthopedics-this-week-2018-july-17-2018/0000418001531848147?short\">Read the full article</a>.</p>\n",
+    "jcr:lastModified": "Wed Aug 01 2018 09:12:16 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/sm technology award email banner 2.png"
+  }
+}

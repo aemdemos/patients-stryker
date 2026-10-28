@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "APPROACH™ Alternative Retractor Uses ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8d8cce11-712d-4784-a1cc-b102c73f15c6",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "af477f3d-a6ba-43de-942d-d4510fa4acc6"
+  ],
+  "lastPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:01:08 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:17 GMT+0000",
+  "cq:lastModified": "Tue Aug 09 2022 19:01:08 GMT+0000",
+  "jcr:baseVersion": "af477f3d-a6ba-43de-942d-d4510fa4acc6",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 09 2022 18:51:14 GMT+0000",
+  "jcr:uuid": "e5228a61-21e7-4560-80a1-35254b62e001",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:30:44 GMT+0000",
+      "text": "Tornier Approach Alternative Retractor Uses Dr. Brent Morris discusses alternative retractor uses for Tornier Approach. AP-016240A",
+      "jcr:lastModified": "Thu Jul 28 2022 18:31:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--alternative-retractor-uses/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/approach-alternative-retractor-uses/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/APPROACH Alternative Retractor Uses.jpg"
+  }
+}

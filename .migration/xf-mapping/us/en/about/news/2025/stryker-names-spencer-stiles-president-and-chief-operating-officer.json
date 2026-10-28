@@ -1,0 +1,157 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker names Spencer Stiles President and Chief Operating Officer",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "680ef55d-7fa3-4697-9dcb-e3f5bb99804c",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "stryker-logo-thumbnail",
+  "jcr:predecessors": [
+    "29566f29-3fd9-4999-bfb0-7df77f9dd964"
+  ],
+  "lastPublished": "Thu Dec 04 2025 19:46:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Dec 04 2025 19:46:45 GMT+0000",
+  "cq:lastReplicated": "Thu Dec 04 2025 19:46:47 GMT+0000",
+  "cq:lastModified": "Thu Dec 04 2025 19:46:35 GMT+0000",
+  "jcr:description": "Stryker announced Spencer Stiles has been appointed President and Chief Operating Officer (COO), effective January 1, 2026. In this role, Stiles will lead the company’s global businesses, strategy, and mergers and acquisitions.",
+  "jcr:baseVersion": "29566f29-3fd9-4999-bfb0-7df77f9dd964",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Dec 04 2025 19:46:45 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Thu Dec 04 2025 19:46:35 GMT+0000",
+  "jcr:uuid": "0d4d6d27-b9de-4501-b833-eb6caa0c329b",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_607298191": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 19:18:17 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1><span class=\"futura-bold\">Stryker names Spencer Stiles President and Chief Operating Officer</span></h1>\n<h2>Dylan Crotty promoted to Group President, Orthopaedics</h2>\n",
+      "jcr:lastModified": "Thu Dec 04 2025 19:34:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Dec 04 2025 19:08:12 GMT+0000",
+      "jcr:lastModified": "Thu Dec 04 2025 19:08:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 04 2025 19:34:01 GMT+0000",
+          "alt": "stryker_logo2015_left",
+          "srcFileRef": "/content/dam/stryker/logos/stryker/stryker_logo2015_left.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 04 2025 19:34:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1751649675": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Dec 04 2025 19:17:14 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><b>PORTAGE, Mich., USA</b> – <b>Dec. 4, 2025</b> – Stryker (NYSE:SYK), a global leader in medical technologies, announced today Spencer Stiles has been appointed President and Chief Operating Officer (COO), effective January 1, 2026. In this role, Stiles will lead the company’s global businesses, strategy, and mergers and acquisitions.</p>\n<p>“Appointing Spencer President and COO strengthens our ability to sustain high growth and leverage the breadth of our portfolio,” said Kevin Lobo, Chair and CEO, Stryker. “Spencer's deep knowledge of our business and our customers, combined with his leadership and operational execution will help position us well for the future.”</p>\n<p>Stiles, a twenty-seven-year Stryker veteran, has served as Group President of Orthopaedics and Spine since 2019. Throughout his career, he has held leadership roles across Orthopaedics as well as MedSurg and Neurotechnology, and has overseen international regions and key supporting functions. He brings a strong track record of performance and is recognized for his strategic vision, collaborative and motivational leadership, and commitment to advancing healthcare through technology.</p>\n<p>“I’m honored to step into this role,” said Stiles. “Our customers inspire everything we do; their challenges drive our innovation, and their trust fuels our growth. Alongside our exceptional Stryker team, I’m excited for what’s next as we continue delivering meaningful impact for patients around the world.”</p>\n<p>Dylan Crotty will be promoted to succeed Stiles as Group President, Orthopaedics. Crotty, who has spent twenty-seven years with Stryker, currently serves as President, Instruments. During his tenure, Crotty has held roles of increasing responsibility, leading many diverse businesses including roles in Trauma &amp; Extremities and Europe. He is a proven growth champion, known for his strong operational leadership and collaboration.</p>\n",
+          "jcr:lastModified": "Thu Dec 04 2025 19:34:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Dec 04 2025 19:08:17 GMT+0000",
+          "jcr:lastModified": "Thu Dec 04 2025 19:08:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Dec 04 2025 19:08:41 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\nStryker is a global leader in medical technologies and, together with our customers, we are driven to make healthcare better. We offer innovative products and services in MedSurg, Neurotechnology and Orthopaedics that help improve patient and healthcare outcomes. Alongside our customers around the world, we impact more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\">For investor inquiries:</span><br>\nJason Beach, Vice President, Finance and Investor Relations<br>\nat 269-385-2600 or <a href=\"mailto:jason.beach@stryker.com\">jason.beach@stryker.com</a></p>\n<p><span class=\"futura-bold\">For media inquiries:</span><br>\nKim Montagnino, Vice President, Chief Communications Officer<br>\nat 269-385-2600 or <a href=\"mailto:kim.montagnino@stryker.com\">kim.montagnino@stryker.com</a></p>\n",
+          "jcr:lastModified": "Thu Dec 04 2025 19:39:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "socialsharing": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Dec 04 2025 19:10:54 GMT+0000",
+      "isColoredIcon": "0",
+      "isLeftAligned": "1",
+      "jcr:lastModified": "Thu Dec 04 2025 19:10:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/socialsharing"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Thu Dec 04 2025 00:00:00 GMT-0800",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Dec-2025",
+    "jcr:lastModified": "Thu Dec 04 2025 19:07:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Dec 04 2025 19:16:05 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModified": "Thu Dec 04 2025 19:17:53 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/logos/stryker/stryker-logo-thumbnail.jpg"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Dec 04 2025 19:18:03 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

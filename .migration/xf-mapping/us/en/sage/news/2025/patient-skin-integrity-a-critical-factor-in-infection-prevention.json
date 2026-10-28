@@ -1,0 +1,184 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Patient skin integrity: A critical factor in infection prevention",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "07e34d06-65d0-467d-892a-243fe39d8c7a",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Infection-free incision scar on knee",
+  "jcr:predecessors": [
+    "01c95900-c361-4f9c-b493-7efa4cee3067"
+  ],
+  "contentID": "SAGE-SURGICAL-CARE-COMM-1644653_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 17:37:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 17:37:21 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 17:37:23 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 17:37:08 GMT+0000",
+  "jcr:description": "Not all chlorhexidine gluconate (CHG) products are created equal, and some formulations contain ingredients that may impact skin health and patient outcomes.",
+  "jcr:baseVersion": "01c95900-c361-4f9c-b493-7efa4cee3067",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 24 2025 14:36:33 GMT+0000",
+  "pageTitle": "Patient skin integrity: A critical factor in infection prevention",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage",
+    "stryker:content-type/news/sage/2"
+  ],
+  "jcr:lastModified": "Tue Jun 24 2025 14:25:29 GMT+0000",
+  "jcr:uuid": "aede8b12-e187-4dc0-9e35-da7f5c1b37b8",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Mar 25 2025 15:47:06 GMT+0000",
+      "alt": "Infection-free incision scar on knee",
+      "srcFileRef": "/content/dam/stryker/sage/news/2025/bzk-surgical-incision.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Jun 23 2025 14:52:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Mar 25 2025 15:47:10 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\">Maintaining skin integrity is a fundamental aspect of patient care, especially when it comes to preventing surgical site infections (SSIs) and hospital-acquired infections (HAIs). Nurses understand that compromised skin can become a gateway for pathogens. That’s why the choice of preoperative skin antiseptics and cleansing cloths matters. Not all chlorhexidine gluconate (CHG) products are created equal, and some formulations contain ingredients that may impact skin health and patient outcomes.</span></p>\n<h2><span class=\"futura-bold\">Not all CHG cloths are the same: Understanding the differences</span></h2>\n<p><span class=\"fontsize-1-25em\">CHG-based cleansing cloths have become a standard in preoperative skin preparation and infection prevention protocols. However, it’s crucial to recognize that formulations can vary significantly. When considering CHG-impregnated cloths as part of a protocol to address skin irritation and injury, special attention should be given to the formulation and ingredients contained in the products, keeping in mind their potential for patient skin irritation.</span></p>\n<h2><span class=\"futura-bold\">Benzalkonium chloride: What nurses need to know</span></h2>\n<p><span class=\"fontsize-1-25em\">Benzalkonium chloride (BZK) is a commonly used antimicrobial agent found in some antiseptic products, including certain CHG cloths. While BZK has disinfectant properties, research has raised questions about its safety and efficacy in patient care.<sup>1</sup></span></p>\n<h2><span class=\"futura-bold\">Key considerations regarding BZK</span></h2>\n<ul>\n<li><span class=\"fontsize-1-25em\">BZK is a significant skin irritant<sup>2</sup></span></li>\n<li><span class=\"fontsize-1-25em\">Unlike CHG, which offers broad-spectrum, long-lasting antimicrobial activity, BZK can increase resistance to antibiotics<sup>1,3</sup></span></li>\n</ul>\n<h2><span class=\"futura-bold\">Learn more about BZK and its impact on patient care</span></h2>\n<p><span class=\"fontsize-1-25em\">Understanding the implications of BZK in clinical settings is essential for making informed decisions about patient safety.</span></p>\n",
+      "jcr:lastModified": "Mon Jun 23 2025 17:00:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_1777322643_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "leftPadding": "2",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Tue Mar 25 2025 15:50:32 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Want to learn more?</span> <span class=\"futura-bold\">Download the full white paper.&nbsp;</span></span></span></p>\n",
+      "jcr:lastModified": "Mon Jun 23 2025 17:00:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Mar 25 2025 15:51:33 GMT+0000",
+      "jcr:lastModified": "Tue Mar 25 2025 15:51:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1286",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Mar 25 2025 15:50:45 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for submitting the form! The white paper will be emailed to you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 17:37:08 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "text_1803522812_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Jun 23 2025 14:45:47 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Learn more</span></span></h2>\n<p><span class=\"fontsize-1-25em\">At Stryker, we make products that clinicians use on patients across the continuum of care. Our Sage 2% Chlorhexidine Gluconate Cloths are clinically proven to address bacteria on the skin prior to surgery and do not contain benzalkonium chloride (BZK or BAC).<sup>4</sup> Learn more about our innovative solutions today!</span></p>\n",
+      "jcr:lastModified": "Mon Jun 23 2025 17:07:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "2"
+    },
+    "cols2_1_3_2_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Jun 23 2025 17:10:40 GMT+0000",
+      "jcr:lastModified": "Mon Jun 23 2025 17:10:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 23 2025 17:10:46 GMT+0000",
+          "alt": "Sage CHG cloths in their packaging",
+          "srcFileRef": "/content/dam/stryker/sage/products/chg-cloths/images/Sage-CHG-Cloths-Thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 23 2025 17:12:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "linkInternal": "/content/stryker/us/en/sage/products/sage-chg-cloths",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jun 23 2025 17:11:28 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Help address bacteria on the skin and standardize your pre-op prep.</span></p>\n<p><a href=\"/content/stryker/us/en/sage/products/sage-chg-cloths.html\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Mon Jun 23 2025 17:13:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "publishDate": "Tue Jun 24 2025 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jun-2025",
+    "jcr:lastModified": "Tue Jun 24 2025 14:22:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>1.&nbsp;</b>Pereira B, Tagkopoulos I. Benzalkonium Chlorides: Uses, Regulatory Status, and Microbial Resistance. Applied and Environmental Microbiology. 2019; 85(13): e00377-19.</p>\r\n<p><b>2.</b>&nbsp;Basketter D, Marriott M, Gilmour N, White I. Strong irritants masquerading as skin allergens: the case of benzalkonium chloride. Contact Dermatitis. 2004; 50: 213-217.&nbsp;</p>\r\n<p><b>3.&nbsp;</b>Short F, Lee V, Mamum R, Malmberg R, et al. Benzalkonium chloride antagonises aminoglycoside antibiotics and promotes evolution of resistance. EBioMedicine. 2021; Nov;73: 103653.<b></b></p>\r\n<p><b>4.</b>&nbsp;Time Kill and MIC Testing conducted by an independent laboratory 2002, 2003, 2019. Sage Products LLC, data on file.</p>\r\n",
+    "jcr:lastModified": "Tue Jun 24 2025 14:23:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2025/bzk-surgical-incision.png"
+  }
+}

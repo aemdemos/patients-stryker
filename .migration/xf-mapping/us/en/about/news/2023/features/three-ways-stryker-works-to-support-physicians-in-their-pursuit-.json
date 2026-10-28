@@ -1,0 +1,181 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Three ways Stryker supports physicians in their pursuit of better patient outcomes",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "276afae5-0b68-43e4-95c8-c0164a2d2fd4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Three ways Stryker works to support physicians thumbnail",
+  "jcr:predecessors": [
+    "1d042dfb-2bb0-496c-b78b-34f2d22ebc22"
+  ],
+  "contentID": "COMM-GSNPS-WEB-587138_Rev-1",
+  "lastPublished": "Wed Feb 11 2026 20:43:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 11 2026 20:43:13 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 11 2026 20:43:15 GMT+0000",
+  "cq:lastModified": "Wed Feb 11 2026 20:41:04 GMT+0000",
+  "jcr:description": "With more than 900,000 active physicians in the United States, training and education opportunities are integral in a physician’s ability to improve patient outcomes.",
+  "jcr:baseVersion": "1d042dfb-2bb0-496c-b78b-34f2d22ebc22",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:25:57 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/featured"
+  ],
+  "jcr:lastModified": "Wed Feb 11 2026 20:41:04 GMT+0000",
+  "jcr:uuid": "95f7c18a-90d2-43ea-8a25-777017124add",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 15:31:38 GMT+0000",
+      "jcr:lastModified": "Tue Mar 29 2022 15:31:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/three-ways-stryker-w/carousel/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/carousel/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/three-ways-stryker-w/carousel/mobile",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "30",
+          "jcr:created": "Tue Mar 29 2022 15:32:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Mar 29 2022 17:49:26 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "50",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Tue Mar 29 2022 15:34:17 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\">Three ways Stryker supports physicians in their pursuit of better patient outcomes</span></span></h1>\r\n",
+              "jcr:lastModified": "Fri Mar 22 2024 17:44:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 15:32:59 GMT+0000",
+      "jcr:lastModified": "Tue Mar 29 2022 15:33:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Mar 29 2022 15:33:37 GMT+0000",
+          "jcr:lastModified": "Tue Mar 29 2022 15:33:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Tue Mar 29 2022 15:33:40 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Tue Mar 29 2022 15:33:44 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1556406576": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 15:33:16 GMT+0000",
+      "jcr:lastModified": "Tue Mar 29 2022 15:33:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 15:33:12 GMT+0000",
+      "jcr:lastModified": "Tue Mar 29 2022 15:33:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Mar 29 2022 15:30:01 GMT+0000",
+      "text": "To improve patient outcomes and make healthcare more accessible for everyone, Stryker actively supports physicians through various initiatives and medical education programs. Here are just a few ways we’re working to support physicians. Stryker empowers physicians by offering the latest advancements in medical technology and training. This includes educational resources, hands-on workshops, and opportunities to collaborate with peers. Stryker fosters diversity in healthcare by investing in leadership development programs and by partnering with organizations that promote health equity. Stryker promotes global health by supporting medical missions, medical education programs and product donations in underserved areas around the world with Operation Smile, Project C.U.R.E. and the Red Cross. Why it matters With more than 949,000 active physicians in the United States, training and education opportunities are integral in a physician’s ability to improve patient outcomes.1 READ THE FULL ARTICLE With more than 949,000 active physicians in the United States, training and education opportunities are integral in a physician’s ability to improve patient outcomes.1 Stryker actively supports physicians in their pursuit to improve patient outcomes through various initiatives and programs. Here are three key ways we empower healthcare professionals to deliver the best possible care to their patients: A photo of the RV mobile lab at its destination in Danville, PA. 1. Empowering physicians with cutting-edge technology and training We are driven to make healthcare better by creating innovative products and services that improve patient outcomes. To deliver the full potential of these innovations, surgeons must be trained on their safe and effective use. We support surgeon learning in many parts of the world through a full range of in-person and virtual training programs. For example, when a medical education mobile lab parks outside a hospital, it makes it easier for surgeons to get the product-related training they need. Our Trauma & Extremities team utilizes a fleet of mobile labs throughout the country to bring education directly to surgeons. The fleet is comprised of seven RV labs that accommodate two surgical training stations each, and one large TEACH truck lab that accommodates eight stations. Fully equipped with surgical tables, lighting, power and a variety of Stryker solutions for trauma, foot & ankle and upper extremities procedures, each training is customized to the needs of our surgeon customers. Medical education courses are also offered in a traditional lab setting across multiple specialties in cities throughout the country to ensure our surgeon customers understand how to use Stryker’s products safely and effectively. 2. Supporting physicians with leadership development, networking and program implementation We continue to support the advancement of diversity within healthcare as our customers work to ensure physicians reflect the diversity of the communities they serve. The American Orthopaedic Foot & Ankle Society (AOFAS) and Orthopaedic Diversity Leadership Consortium (ODLC) are examples of two organizations we’re working with to positively impact diversity in the orthopaedic specialty. We continue to partner with AOFAS as they develop and lead their own diversity, equity and inclusion efforts. The ODLC also offers us an opportunity to help optimize the effectiveness and sustainability of diversity efforts in academic departments and healthcare organizations. “By partnering with Stryker to offer professional development programs, networking and medical education opportunities, we can help advance orthopaedic surgery diversity, equity, and inclusion leaders and improve orthopaedic care,” says Dr. Suleiman, an orthopaedic surgeon and Board Advisor for the ODLC from Chicago, Illinois. “Four percent of orthopaedic residents entering medical school are Black and just 1.9% of all practicing orthopaedic surgeons are Black.2 It’s a challenge that we’re excited to work with Stryker to address.” Photo courtesy of Operation Smile Dr. Steven Naum, a plastic surgeon, has been a volunteer surgeon for Operation Smile medical programs in Rwanda, Africa for many years. Here, Dr. Naum is examining a patient with University of Rwanda general surgery resident, Philemon. 3. Promoting global health by partnering with charitable organizations We care deeply about improving the wellbeing of people all over the world, including creating equitable access to education, healthcare, mentoring and more. To ensure underserved populations and those impacted by a disaster receive quality care, we partner with charitable organizations like Operation Smile, Project C.U.R.E. and the Red Cross to get medical care, medical education and equipment to patients in need. To help bring more equipment and medical supplies to under-resourced nations across the globe, Stryker partners with Project C.U.R.E. Through product donations and grant funding, our partnership helps bring medical technology to regions in need and ensures Project C.U.R.E. can operate safely and efficiently during times of crisis. Through financial and volunteer support, Stryker works with the Red Cross through donations and volunteer support to help them prevent and alleviate human suffering. Part of the global Red Cross and Red Crescent network, the organization deploys experts and works with communities around the world to prepare for and respond to disasters like wildfires, floods and hurricanes, eliminate deadly diseases like measles and rubella, and reunite families separated by crises, among many other services. Since the 1990s, our partnership with Operation Smile advances our mission through medical education programs that directly serve those in need. These education and training programs are designed to train healthcare professionals and build surgical capacity in under-resourced countries such as Rwanda, where Stryker funds the Rwanda Surgical Training Rotation. Dr. Steven Naum, a plastic surgeon from Grand Rapids, Michigan and volunteer plastic surgeon for Operation Smile shares, “The situation in Rwanda has developed into this surgical rotation model, and we’ve been able to now have general surgery residents from the University of Rwanda rotate with us [experienced surgeons and anesthesiologists]. It’s become part of their training as general surgery residents.” By supporting the development of medical education and training programs for surgeons and other healthcare professionals, we’re helping Operation Smile multiply its impact, and empowering professionals to hone their skills while increasing surgical capacity in some of the most under-resourced countries. References 1. Active physicians with a U.S. doctor of medicine (U.S. MD) degree by Specialty, 2021. Association of American Medical Colleges. (n.d.). Retrieved January 26, 2024, from https://www.aamc.org/data-reports/workforce/data/active-physicians-us-doctor-medicine-us-md-degree-specialty-2021 2. A snapshot of U.S. orthopaedic surgeons: results from the 2018 OPUS survey. Table 1: Race/ethnicity of surgeons. September 2019. American Academy of Orthopaedic Surgeons. Accessed 22 March 2022, from https://www.aaos.org/aaosnow/2019/sep/youraaos/youraaos01/",
+      "jcr:lastModified": "Tue Mar 29 2022 15:31:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/three_ways_stryker_w/body/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/three-ways-stryker-w/body/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Thu Mar 21 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "21-Mar-2024",
+    "jcr:lastModified": "Thu Mar 21 2024 18:49:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Mar 29 2022 15:34:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Mon Mar 27 2023 16:47:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/features/three-ways-stryker-works-to-support-physicians-in-their-pursuit-to-improve-patient-outcomes/RWA_2019_Rwinkwavu_Surgeon_Steve Naum_002.jpeg"
+  }
+}

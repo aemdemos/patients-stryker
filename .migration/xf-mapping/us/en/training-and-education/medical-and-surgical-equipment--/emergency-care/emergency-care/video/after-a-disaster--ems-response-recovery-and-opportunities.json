@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "After a disaster: EMS response recovery and opportunities",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7ee772a8-b417-4541-8eab-da304ef13a67",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3f3a1c44-c2c4-4e90-9e9c-f710209114d1"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:35:24 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:35:24 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:35:26 GMT+0000",
+  "cq:lastModified": "Thu Sep 08 2022 17:35:15 GMT+0000",
+  "jcr:baseVersion": "3f3a1c44-c2c4-4e90-9e9c-f710209114d1",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "ef1edae4-75b4-49dc-b5d3-647806f7b4e3",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:46:03 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:46:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Watch Carl Flores's on-demand webinar to discover important lessons learned from real-life experiences with disaster response.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 17:33:04 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Sep 08 2022 17:35:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials/after-a-disaster-ems-response-recovery-and-opportunities.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/after-a-disaster-ems-response-recovery-and-opportunities-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 08 2022 17:34:57 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

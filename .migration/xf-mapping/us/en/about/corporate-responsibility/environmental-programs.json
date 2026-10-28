@@ -1,0 +1,1036 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Climate and the environment",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Climate and the environment",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c8f532a9-ecad-474c-a5c9-5a3b0caae00b",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "ray.maniaci@stryker.com",
+  "jcr:predecessors": [
+    "4a835c55-52d1-492a-87bd-7bfb4cca1219"
+  ],
+  "contentID": "COMM-GSNPS-SYK-658887_Rev-2",
+  "lastPublished": "Fri Mar 14 2025 13:00:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Mar 14 2025 13:00:40 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 14 2025 13:00:41 GMT+0000",
+  "cq:lastModified": "Thu Mar 13 2025 19:42:55 GMT+0000",
+  "jcr:description": "Environmental programs, processes and initiatives to drive sustainability",
+  "cq:siblingOrder": "overview,focus-areas,investing-in-people,product-lifecycle-innovation,environmental-programs,ethics-and-accountability,responsible-supply-chains,i,supplierdiversity,us-fall-2020-update-landing-page,cr-hub,promoting-global-health,giving-back,good-business,employee-benefits-and-resources,",
+  "jcr:baseVersion": "4a835c55-52d1-492a-87bd-7bfb4cca1219",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:55:19 GMT+0000",
+  "hideInNav": "true",
+  "pageTitle": "Environmental programs",
+  "cq:name": "environmental-programs",
+  "cq:tags": [
+    "environment",
+    "efficiency",
+    "energy",
+    "sustainability",
+    "carbon",
+    "climate",
+    "renewable",
+    "sustainable"
+  ],
+  "jcr:lastModified": "Tue Mar 11 2025 20:52:25 GMT+0000",
+  "jcr:uuid": "66c2ba82-b8b8-4a7f-9247-d3fe7cfd43db",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/about/corporate-responsibility",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Wed Mar 31 2021 18:37:55 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Thu Apr 01 2021 13:38:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2020_1830211760/environmental_sustai/environment/windmill-video/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/annual-review/2020-1830211760/environmental-sustai/environment/windmill-video/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/annual_review/_2020_1830211760/environmental_sustai/environment/windmill-video-mobile/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/annual-review/2020-1830211760/environmental-sustai/environment/windmill-video-mobile/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "60",
+          "jcr:created": "Wed Mar 31 2021 18:38:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Mon May 08 2023 15:03:46 GMT+0000",
+          "marginRight": "40",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "7",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Sep 19 2019 15:55:09 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"fontsize-2-5-vw\">Climate <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">and the environment</span></span></span></h1>\r\n",
+              "jcr:lastModified": "Tue May 23 2023 14:29:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 17:05:40 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 17:05:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_1654930900_1279517269": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 18:28:16 GMT+0000",
+      "text": "<div><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Climate</span></span><span class=\"urw-egyptienne\"><br>\n</span></div>\n<p><span style=\"color: #ffb500;\">________________________________________</span></p>\n<p>Climate change is already affecting the air we breathe and the food we eat, and it is exacerbating extreme weather, thereby impacting our communities. As a healthcare company, we know that we make choices that affect the health of the planet and, ultimately, human health. That’s why we are continually measuring our carbon emissions and have set reduction goals to reduce our impact. Our current goals are:</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:47:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 27 2025 21:31:47 GMT+0000",
+      "jcr:lastModified": "Mon Jan 27 2025 21:31:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jan 27 2025 21:31:55 GMT+0000",
+          "text": "<p><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Reduce Scope 1 and 2 carbon emissions for Stryker’s facilities by </span></span><span style=\"color: #000000;\"><span class=\"futura-bold\">20% by 2024</span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\"> and become </span></span><span style=\"color: #000000;\"><span class=\"futura-bold\">carbon neutral by 2030</span></span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\"> (compared to a 2019 baseline)</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:51:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Jan 28 2025 14:37:53 GMT+0000",
+          "text": "<p><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Power all facilities with </span></span><span style=\"color: #000000;\"><span class=\"futura-bold\">100% renewable electricity by 2027</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:52:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_689585362": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 14:43:14 GMT+0000",
+      "text": "<p>To achieve these carbon goals, our strategy includes increasing energy efficiency throughout the organization and using renewable energy.<br>\n&nbsp;</p>\n",
+      "jcr:lastModified": "Mon Mar 03 2025 20:43:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 19 2021 20:08:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Energy efficiency</span><br>\nCapital investments in energy efficiency will contribute to our carbon-neutral goals. In recent years, projects we have invested in include a combined heat and power co-generator; upgraded lighting and HVAC equipment; automated gate valves for fume/smoke extractor systems; and production optimization projects.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Mar 06 2025 21:05:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 19 2021 20:08:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Renewable energy</span><br>\nOur pathway to carbon neutrality depends on transitioning from fossil fuel-based to renewable electricity, and we're making progress to be powered by 100 percent renewable electricity globally by 2027. This electricity will come from a combination of wind, solar, hydroelectric and other sources.</p>\n<p>Stryker partnered with global clean energy leader Ørsted to establish our first long-term renewable power purchase agreement. Through our virtual power purchase agreement, operations commenced in October 2023 at the Sunflower Wind project in Marion County, Kansas. We recently signed a virtual power purchase agreement we expect will cover a substantial portion of our EU energy consumption.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Mar 06 2025 21:06:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_1654930900": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 18:28:16 GMT+0000",
+      "text": "<div><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #4c7d7a;\">Stryker locations*</span></span></span><span class=\"urw-egyptienne\"><br>\n</span></div>\n<p><span style=\"color: #ffb500;\">________________________________________</span></p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:44:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3_1869020336": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "jcr:lastModified": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Australia</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:42:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-australia-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-australia-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:36:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_730428602": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:36:06 GMT+0000",
+          "alt": "solar",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/solar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:36:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>St. Leonards&nbsp;</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:41:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Mainland China&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:42:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-mainland-china-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-mainland-china-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "solar",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/solar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:37:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Changzhou<br>\n</li>\n<li>Suzhou</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:41:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy_2106641307": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/renewable.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:37:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_1848023306": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Changzhou<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:41:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">France&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-france-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-france-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy_811701692": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/renewable.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:37:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Brest<br>\n</li>\n<li>Cestas</li>\n<li>Grenoble</li>\n<li>Montbonnot</li>\n<li>Pusignan</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:41:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1869020336_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "jcr:lastModified": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Germany&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-germany-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-germany-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "solar",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/solar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:37:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Freiburg<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:39:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy_1959193704": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/renewable.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy__625653609": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Duisburg<br>\n</li>\n<li>Freiburg</li>\n<li>Kiel</li>\n<li>Stetten</li>\n<li>Tuttlingen</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:39:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Mexico&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-mexico-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-mexico-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy_943685223": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "solar",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/solar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Tijuana<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:39:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Netherlands&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-netherlands-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-netherlands-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy_424919378": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "wind",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/wind.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Venlo</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:39:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy_1655067026": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "solar",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/solar.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy__1732950624": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Venlo<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:39:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_1869020336_cop_1320471251": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "jcr:lastModified": "Thu Mar 13 2025 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Switzerland&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-switzerland-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-switzerland-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "hydro",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/hydro.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Selzach<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:40:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">United Kingdom&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:43:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-united-kingdom-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-united-kingdom-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:37:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy_1874743061": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/renewable.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Newbury<br>\n</li>\n<li>Belfast</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:40:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:35:34 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">United States&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:44:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:34:06 GMT+0000",
+          "alt": "climate-usa-map",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/climate-usa-map.jpg",
+          "borderColor": "rgb(187,188,188)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:38:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "standaloneimage_copy_1455958058": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 18:37:03 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/2025/imgs/renewable.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 18:38:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_888079546_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-8",
+          "jcr:created": "Thu Mar 13 2025 17:45:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Arlington, TN<br>\n</li>\n<li>Flower Mound, TX</li>\n<li>Mahwah, NJ</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:40:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 17:39:55 GMT+0000",
+      "jcr:lastModified": "Thu Mar 13 2025 17:39:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:40:00 GMT+0000",
+          "alt": "hydro",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/hydro.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:40:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:41:08 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Hydroelectric procurement</span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 17:43:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:40:00 GMT+0000",
+          "alt": "wind",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/wind.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:40:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:41:08 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #af6d04;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Wind procurement</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 17:43:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:40:00 GMT+0000",
+          "alt": "onsite",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/onsite.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:40:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:41:08 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #85458a;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Onsite solar</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 17:44:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Mar 13 2025 17:40:00 GMT+0000",
+          "alt": "renewable",
+          "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/climate-and-the-environment/renewable.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Mar 13 2025 17:40:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Mar 13 2025 17:41:08 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Renewable procurement mix</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 17:44:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_420695113": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 18:44:25 GMT+0000",
+      "text": "<p style=\"text-align: right;\">*As of 12/31/24. Our 2024 carbon data will be verified in 2025.&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:44:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_801060384": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Mar 13 2025 18:44:40 GMT+0000",
+      "jcr:lastModified": "Thu Mar 13 2025 18:44:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 19 2021 20:08:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Certifying our facilities </span><br>\nWe recognize that our offices and manufacturing facilities have an impact on the communities in which they are located, as well as the world's health. By working with accrediting organizations to evaluate and certify the environmental impact and sustainability of our buildings, we commit to protecting natural resources and supporting our employees and their communities. We currently have sites certified to Leadership in Energy and Environmental Design (LEED) and the International Organization for Standardization (ISO) 14001 and ISO 50001 global environmental standards.<br>\n</p>\n",
+      "jcr:lastModified": "Mon Mar 03 2025 20:44:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 14 2019 18:28:16 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<div><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Design for sustainability<br>\n </span></span></span><span style=\"color: #4c7d7a;\"><span class=\"fontsize-1-25em\">Doing more with less through additive manufacturing</span></span></span></div>\n<p><span style=\"color: #ffb500;\">________________________________________</span></p>\n<p><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Manufacturing our products requires materials, energy and water, and often generates waste as a byproduct. We recognize the need to focus on sustainable design as a strategic priority and integrate sustainability into our products and packaging.</span></span></p>\n<p>One way we are reducing the materials use is by investing in additive manufacturing (AM). AM, also known as 3D printing, uses computer-aided design software to create objects one layer at a time. In contrast to conventional, subtractive manufacturing methods, AM reduces environmental impact<sup>1</sup> by leveraging more efficient material usage and more freedom in product designs, while also allowing for greater product customization.</p>\n<p>Our AMagine Institute in Cork, Ireland, develops breakthrough technologies from early research and development (R&amp;D) to support full commercial launch and scaling across a broad portfolio of products and services. The AMagine Team, around the world, focuses on developing new implant, component and personalized solutions with innovative platform technologies. The pipeline of products from our AMagine Institute, supports all of Stryker’s divisions and demonstrates our ability to move AM research into action.</p>\n<p>Annually, we present the R&amp;D Award for Best Design for Environmental Sustainability. This award recognizes technical innovations, designs, processes and offerings that enable positive environmental impacts and sustainable outcome for Stryker and for our customers.</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:48:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols_1896369837": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Sep 05 2019 17:07:46 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2019 17:07:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "text_copy_152343826": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 19 2021 20:08:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Stryker’s Sustainability Solutions (SSS)</span><br>\nThe lifespan of many medical products is relatively short; many devices are used only once, leading to thousands of tons of materials sent to landfills each year. As the leading provider of reprocessing in the global healthcare market, Stryker’s <a href=\"/content/stryker/us/en/sustainability.html\">Sustainability Solutions Business Unit</a> is reducing our industry’s impact during manufacturing, use and end-of-life. SSS helps reduce healthcare industry waste by reprocessing medical devices that would otherwise be disposed of after a single use, thereby extending the life of these products and reducing material consumption. SSS collects and reprocesses devices spanning thousands of SKUs, which in turn leads to millions of pounds of waste diverted from landfills and millions of dollars saved for our customers.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:49:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols_1587792574": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jan 28 2025 16:15:14 GMT+0000",
+      "jcr:lastModified": "Tue Jan 28 2025 16:15:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_1654930900_1977485422": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 14 2019 18:28:16 GMT+0000",
+      "text": "<div><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Employee engagement on sustainability</span></span><span class=\"urw-egyptienne\"><br>\n</span></div>\n<p><span style=\"color: #ffb500;\">________________________________________</span></p>\n<p>Many of Stryker’s employees care deeply about the environment and are working with the company to drive more sustainable practices. Employees can engage in a number of ways, including through Stryker’s Environmental Alliance, which is an employee community committed to environmental change. This group continues to grow, with over a thousand current members around the globe. Chapters hold regular events, from local volunteer cleanups to recycling drives, empowering Stryker employees to drive local action on the issues they are most passionate about. Many groups hold energy treasure hunts, events that encourage cross-functional teams of employees to explore their worksites and simultaneously discover opportunities for energy savings, while building a culture of continuous improvement.</p>\n<p>We engage employees with an annual sustainability town hall, an internal event that is broadcast globally to educate employees about Stryker’s sustainability strategy, key practices and progress toward goals. The event typically includes fireside chats with Stryker leadership, a healthcare leader panel and presentations by subject matter experts. Conversations focus on how Stryker can collaborate with customers to make healthcare more sustainable and how employees can make a difference.</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Wed Mar 05 2025 18:59:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_1072963154": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 19 2021 20:08:50 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">Stryker’s sustainable healthcare industry collaborations<br>\n </span>Stryker actively collaborates with industry groups to drive meaningful environmental progress. Through these partnerships, we work to advance sustainability and tackle healthcare’s most pressing sustainability challenges. Explore the <a href=\"/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/cr-hub/resources/SOCI-GSNPS-FACT-949285%20011924%20CR%20healthier%20planet%20table.pdf\">full list</a> of organizations we engage with here.<br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Thu Mar 13 2025 18:50:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Wed Aug 14 2019 18:27:32 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>LCA of Two Joint Replacement Manufacturing Processes. Accessed February 3, 2025.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Mar 13 2025 18:46:35 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

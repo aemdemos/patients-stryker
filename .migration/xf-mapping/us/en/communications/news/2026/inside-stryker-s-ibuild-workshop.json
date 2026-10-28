@@ -1,0 +1,168 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Exploring Modular Construction in Healthcare Spaces",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Inside Stryker’s iBuild Workshop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ebd37e1b-85b3-4f9f-ac25-824088c7924f",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Attendees in the OR at Stryker's iBuild Workshop",
+  "jcr:predecessors": [
+    "3688e81e-a898-4f5e-b093-945cfbd916db"
+  ],
+  "contentID": "COMMS-FORT-SOCI-3790250",
+  "lastPublished": "Fri Sep 04 2026 15:57:22 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 04 2026 15:57:23 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 04 2026 15:57:25 GMT+0000",
+  "cq:lastModified": "Fri Sep 04 2026 15:57:12 GMT+0000",
+  "jcr:description": "At Stryker’s annual iBuild Workshop in Flower Mound, Texas, more than 75 healthcare architects, equipment planners, and general contractors came together to learn more about modular construction and its role in healthcare design. ",
+  "jcr:baseVersion": "3688e81e-a898-4f5e-b093-945cfbd916db",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 17 2026 13:22:16 GMT+0000",
+  "pageTitle": "Inside Stryker’s iBuild Workshop",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Sep 04 2026 15:57:12 GMT+0000",
+  "jcr:uuid": "09e98456-0776-44a9-927e-44cf395eed2c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "navTitle": "Inside Stryker’s iBuild Workshop",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Thu Nov 20 2025 16:32:26 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Thu Nov 20 2025 16:32:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/communications/news/2026/ibuild-recap-video.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/ibuild-recap-video-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Aug 13 2026 19:50:17 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "2",
+      "jcr:created": "Mon Nov 10 2025 15:25:23 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"futura-bold\">Exploring Modular Construction in Healthcare Spaces</span></h2>\n<p><span class=\"fontsize-1-25em\">At Stryker’s annual iBuild Workshop in Flower Mound, Texas, more than 75 healthcare architects, equipment planners, and general contractors came together to learn more about modular construction and its role in healthcare design.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">The two-day workshop included conversations about healthcare construction trends, Stryker’s modular solutions and collaboration across the project planning process. Through speaker sessions, roundtable discussions and hands-on experiences, attendees explored modular walls, ceilings and renovation strategies used in clinical spaces.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">The workshop also gave attendees an opportunity to discuss how modular construction may fit into healthcare planning, renovation and design conversations.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">A key highlight of the workshop was <a title=\"Fortress\" href=\"/content/stryker/us/en/communications/products/Fortress-wall-system.html\" target=\"_blank\">Stryker’s Fortress Modular Wall solution</a>, which gave attendees the opportunity to experience modular walls and ceilings firsthand and learn more about their use in healthcare construction and renovation planning.&nbsp;&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">As conversations around healthcare design continue to evolve, the iBuild Workshop offered a setting for attendees to learn more about modular construction and consider how it may support future projects.&nbsp;&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">We’re excited to keep the momentum going as modular construction continues to be part of the conversation around planning healthcare spaces for what’s next in patient care.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Thu Aug 13 2026 19:47:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Aug 13 2026 19:44:44 GMT+0000",
+      "jcr:lastModified": "Thu Aug 13 2026 19:44:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 13 2026 19:44:52 GMT+0000",
+          "alt": "Attendees in the OR at Stryker’s iBuild Workshop",
+          "srcFileRef": "/content/dam/stryker/communications/news/2026/ibuild-3.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Aug 17 2026 13:21:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 13 2026 19:44:52 GMT+0000",
+          "alt": "Attendees at Stryker’s iBuild Workshop",
+          "srcFileRef": "/content/dam/stryker/communications/news/2026/ibuild-2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 13 2026 19:45:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Aug 13 2026 19:44:52 GMT+0000",
+          "alt": "Group photo at Stryker’s iBuild Workshop",
+          "srcFileRef": "/content/dam/stryker/communications/news/2026/ibuild-1.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 13 2026 19:45:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Fri Sep 04 2026 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Sep-2026",
+    "jcr:lastModified": "Fri Sep 04 2026 15:13:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/news/2026/ibuild-3.jpg"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Aug 13 2026 19:48:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

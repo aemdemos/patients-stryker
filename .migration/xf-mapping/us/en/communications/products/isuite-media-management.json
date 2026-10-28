@@ -1,0 +1,197 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Archive, edit, and share.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Surgical media management",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "37c3bf14-a591-4359-9603-f0858969412a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "Media management",
+  "thumbnailFileReference": "/content/dam/stryker/communications/products/iSuiteMediaManagement-Thumb.jpg",
+  "jcr:predecessors": [
+    "f419864b-3a39-494b-871f-fc2dbee204b9"
+  ],
+  "contentID": "ENDO-GSNPS-SYK-1839050",
+  "lastPublished": "Mon Jun 29 2026 19:01:51 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 19:01:51 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 19:01:53 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 19:01:48 GMT+0000",
+  "jcr:description": "Our media asset management system that allows you to archive, edit and share media content captured during surgical cases.",
+  "jcr:baseVersion": "f419864b-3a39-494b-871f-fc2dbee204b9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:09:46 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:specialty/media-management",
+    "stryker:services/procare/communications/or-integration-and-connectivity",
+    "stryker:product/communications/isuite-media-management",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:specialty/hospital-enterprise-software",
+    "stryker:business-unit/communications",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Oct 09 2025 23:47:54 GMT+0000",
+  "jcr:uuid": "b06b9dbf-5925-40ea-ae7d-8997e904f52c",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "longtexthero": {
+      "jcr:primaryType": "nt:unstructured",
+      "longCopy": "<p>The iSuite media management system provides a centralized storage solution for the archiving and management of surgical videos and images. Seamless integration with the digital capture system facilitates a secure hand-off of media assets to long term storage, diminishing the need to archive data on DVDs and USBs.</p>\r\n<p>The software makes it easy for authorized users to search, edit and share surgical media from an intuitive web browser-based interface. Integration with a hospital’s EMR system allows surgical videos and images to be accessed directly from patient charts. iSuite media management has limited integration with EMR; integration is provided by iSuite EMR Connectivity. Whether creating an educational presentation, sharing surgical footage with a patient, or sending a referring physician a link to view a procedure, Our iSuite media management system makes it easy for surgeons to utilize their surgical videos and images.</p>\r\n",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "thumbnailRP": "/content/dam/stryker/communications/products/studio3mediamanagement/images/Media-management-hero.jpg",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Oct 08 2025 23:25:07 GMT+0000",
+      "jcr:lastModified": "Thu Oct 09 2025 23:48:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/longtexthero",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "sheila.raja@stryker.com",
+      "title": "Related Items",
+      "jcr:lastModified": "Fri Aug 10 2018 12:42:26 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/communications/systems/-isuite-experience"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Jun 29 2026 19:01:48 GMT+0000",
+      "jcr:lastModified": "Mon Jun 29 2026 19:01:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 16:25:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 18 2026 21:57:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "2951",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+              "jcr:lastModified": "Wed Jun 10 2026 13:13:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/communications/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/communications/en/contact-information/contact/master"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Wed Oct 08 2025 23:28:31 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/communications/products/studio3mediamanagement/images/Media-management-hero.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:01:38 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Jun 29 2026 19:01:41 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

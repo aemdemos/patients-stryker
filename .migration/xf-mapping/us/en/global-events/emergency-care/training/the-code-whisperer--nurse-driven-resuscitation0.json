@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "The Code Whisperer: Nurse Driven Resuscitation",
+  "jcr:versionHistory": "be4bec49-655f-4a21-ac56-1c4d4bb60f49",
+  "cq:template": "/apps/stryker/templates/event-detail",
+  "jcr:predecessors": [
+    "9db769ac-773d-421f-ba89-8fe12a340b4f"
+  ],
+  "lastPublished": "Fri Feb 19 2021 19:16:29 GMT+0000",
+  "jcr:created": "Fri Feb 19 2021 19:16:29 GMT+0000",
+  "cq:lastModified": "Fri Feb 19 2021 19:16:19 GMT+0000",
+  "jcr:baseVersion": "9db769ac-773d-421f-ba89-8fe12a340b4f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/event",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "035a0ef0-f734-4f1f-810c-4d4965fc6111",
+  "sling:resourceType": "stryker/components/structure/pages/event-detail",
+  "cq:lastModifiedBy": "danielle.smith@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "eventdetail": {
+    "jcr:primaryType": "nt:unstructured",
+    "hiddenEventTimeZone": "(UTC-08:00) Pacific Time (US & Canada)",
+    "eventBU": [
+      "stryker:business-unit/ems"
+    ],
+    "eventContactEmail": "john.friederich@stryker.com",
+    "eventRegistrationLink": "http://savinglivesnow.org/current.html",
+    "jcr:lastModifiedBy": "danielle.smith@stryker.com",
+    "eventAudience": [
+      "stryker:audience/Critical_Care_Nurses",
+      "stryker:audience/nurses",
+      "stryker:audience/medical_professionals"
+    ],
+    "eventSpecialty": [
+      "stryker:event-speciailty/Cardiac_Resuscitation"
+    ],
+    "eventContactName": "John Friederich",
+    "eventDetail": "<p>Speaker: Bridgid Joseph, DNP, RN, CCNS </p>\r\n<p>The fundamentals of cardiac resuscitation include the immediate provision of high-quality cardiopulmonary resuscitation combined with rapid defibrillation, all which are reliant upon effective communication and teamwork. During in-hospital resuscitation, nursing staff often drives the clinical team response initiating the emergency protocols and activating the code team. Interprofessional communication has been a long-standing focus in healthcare as a way to optimize patient care and eliminate error. Interprofessional collaboration is critical to optimizing resuscitation outcomes, and this webinar will provide support nurses in finding their voice to lead the resuscitation response and come away with new ideas to improve cardiac resuscitation outcomes.</p>\r\n",
+    "eventEndDateTime": "Tue Mar 09 2021 10:00:00 GMT+0000",
+    "eventLocation": "Virtual",
+    "eventCity": "Virtual",
+    "eventType": [
+      "stryker:event-type/medical_education"
+    ],
+    "eventTimeZone": "US/Pacific",
+    "jcr:lastModified": "Fri Feb 19 2021 19:16:19 GMT+0000",
+    "eventTitle": "The Code Whisperer: Nurse Driven Resuscitation",
+    "sling:resourceType": "stryker/components/content/eventdetail",
+    "eventRegistrationLabel": "Register here",
+    "eventStartDateTime": "Tue Mar 09 2021 09:00:00 GMT+0000",
+    "textIsRich": [
+      "true",
+      "true"
+    ],
+    "hiddenCountry": "United States of America",
+    "eventCountry": "United States of America"
+  }
+}

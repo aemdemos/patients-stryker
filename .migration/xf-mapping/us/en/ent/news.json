@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ENT newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8fbd0877-1249-4a79-9ac1-93fd1fe277e9",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "jcr:predecessors": [
+    "c58f8ffc-da90-46c0-8d66-7c8775d2d140"
+  ],
+  "lastPublished": "Fri Oct 31 2025 13:55:46 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Oct 31 2025 13:55:46 GMT+0000",
+  "cq:lastReplicated": "Fri Oct 31 2025 13:55:48 GMT+0000",
+  "cq:lastModified": "Wed Nov 08 2023 20:43:55 GMT+0000",
+  "jcr:baseVersion": "c58f8ffc-da90-46c0-8d66-7c8775d2d140",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:17:03 GMT+0000",
+  "jcr:lastModified": "Wed Nov 08 2023 20:42:56 GMT+0000",
+  "jcr:uuid": "550e8857-5d05-4ba4-91df-78b9ed2ff886",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "allisa.chamberlin@stryker.com",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "allisa.chamberlin@stryker.com",
+    "searchPath": "/content/stryker/us/en/ent/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Wed Nov 08 2023 20:43:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 20,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:content-type/news"
+    ],
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/ent/instructions-for-use"
+        ]
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

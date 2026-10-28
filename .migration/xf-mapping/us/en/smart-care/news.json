@@ -1,0 +1,54 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Smart Care Newsroom",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e7f85438-a8df-4ef7-9114-bbc79151ba3e",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:predecessors": [
+    "f9d34a22-d9f0-4020-88d4-d1551841edae"
+  ],
+  "lastPublished": "Mon Feb 02 2026 20:01:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Feb 02 2026 20:01:45 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 02 2026 20:01:47 GMT+0000",
+  "cq:lastModified": "Tue Dec 16 2025 14:43:50 GMT+0000",
+  "jcr:description": "The Smart Care Newsroom is your source for industry news, clinical information, product and business updates, inspiring stories and more.",
+  "jcr:baseVersion": "f9d34a22-d9f0-4020-88d4-d1551841edae",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 20:01:45 GMT+0000",
+  "jcr:lastModified": "Tue Dec 16 2025 14:43:50 GMT+0000",
+  "jcr:uuid": "f0e9558c-6394-4545-836d-9c690b89bd0d",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "showDates": "false",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "searchPath": "/content/stryker/us/en/smart-care/news",
+    "hideNewsFilters": "false",
+    "jcr:lastModified": "Tue Dec 02 2025 14:26:49 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 20,
+    "hideThumbnails": "false",
+    "parentTag": [
+      "stryker:content-type/news"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "jcr:lastModified": "Tue Dec 16 2025 14:35:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

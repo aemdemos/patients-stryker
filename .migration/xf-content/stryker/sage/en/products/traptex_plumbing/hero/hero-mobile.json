@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f726bbdd-e1a4-4839-99f3-58fd4276e3ae",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9f01d8e8-dfaf-4927-98a6-f74bcc7457f2"
+  ],
+  "jcr:created": "Thu Jan 04 2024 14:03:42 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 04 2024 14:03:44 GMT+0000",
+  "cq:lastModified": "Thu Jan 04 2024 14:03:40 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9f01d8e8-dfaf-4927-98a6-f74bcc7457f2",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "7faf9bc0-1cc3-481d-893f-f63d7c413531",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage62010": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Sage Traptex plumbing protection system",
+      "srcFileRef": "/content/dam/stryker/sage/products/traptex/images/Sage-Traptex-Plumbing-Thumbnail-16x9.jpg",
+      "jcr:lastModified": "Mon Dec 11 2023 19:56:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ASSH Annual Meeting",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "13333c59-a710-4c9c-99de-58a1b12062f1",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "f6e5cfa0-b240-4c38-99a6-8bebe260605f"
+  ],
+  "lastPublished": "Thu Sep 05 2024 18:23:02 GMT+0000",
+  "jcr:created": "Thu Sep 05 2024 18:23:03 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 05 2024 18:23:05 GMT+0000",
+  "cq:lastModified": "Thu Sep 05 2024 18:22:09 GMT+0000",
+  "jcr:baseVersion": "f6e5cfa0-b240-4c38-99a6-8bebe260605f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 05 2024 15:34:25 GMT+0000",
+  "jcr:uuid": "b79673a7-c3c4-4ae7-9b98-5f9a9b915beb",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text_1063445144_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Tue Jul 16 2019 20:03:12 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">2024</span></span></span></span></span><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"fontsize-1-75em\"> <span style=\"color: #ffb500;\">ASSH Annual Meeting</span></span></span></span><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><br>\n </span></span></span><span style=\"color: #ffb500;\">__________________________________________________________________________________________________________________________________________________________</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Minneapolis Convention Center | Minneapolis, MN | September 18-20, 2024 | Visit us at booth #643</span></span></span></p>\n",
+      "jcr:lastModified": "Tue Aug 06 2024 13:01:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/2024-ASSH-header-image.jpg",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "alt": "2024-ASSH-header-image",
+      "jcr:lastModified": "Thu Aug 01 2024 13:41:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 26 2019 20:00:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(0,0,0);\">Visit Stryker <br />\r\n during ASSH 2024</span></span></span></span></span></span></h3>\r\n",
+          "line2": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(223,225,222);\"><span style=\"color: #000000;\">Booth 643</span></span></span></span></span></span>",
+          "jcr:lastModified": "Thu Aug 01 2024 20:16:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_129425689": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Mon Aug 26 2019 20:02:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h5><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: #000000;\">Minneapolis Convention Center&nbsp;</span></span></span></span><br>\r\n</h5>\r\n",
+          "jcr:lastModified": "Thu Aug 01 2024 13:41:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "fullbleedpanel_copy__420009319": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:31:30 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 19:46:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(133,69,138,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "jcr:lastModified": "Wed Aug 11 2021 18:38:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.wolff@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 11 2021 18:35:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Featured</span></span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"> products</span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 11 2021 19:46:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Thu Aug 01 2024 14:28:43 GMT+0000",
+      "jcr:lastModified": "Thu Aug 01 2024 14:28:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1161322712": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/us/en/portfolios/orthopaedics/trauma-and-extremities.html",
+          "jcr:created": "Tue Aug 02 2022 16:28:34 GMT+0000",
+          "alt": "Volar-FP-image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/Volar-FP-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 01 2024 20:15:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text_1590571996": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Aug 02 2022 18:18:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">VariAx</span></span></span></span></span><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup><span class=\"fontsize-1-25em\">®</span></sup></span></span></span><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> 2</span>&nbsp;<br>\n </span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Distal Radius</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 06 2024 19:33:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/us/en/trauma-and-extremities/products/CoNextions-TR.html",
+          "jcr:created": "Tue Aug 02 2022 18:21:27 GMT+0000",
+          "alt": "conextions-featured-image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/conextions-featured-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 01 2024 20:14:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text_1590571996_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Aug 02 2022 18:18:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Conextions TR</span></span><span style=\"color: #ffb500;\"><sup>®</sup></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n </span></span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Tendon Repair System</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 06 2024 19:32:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 11 2021 18:36:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1161322712": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/us/en/trauma-and-extremities/products/evolve-radial-head-system.html",
+          "jcr:created": "Tue Aug 02 2022 16:28:34 GMT+0000",
+          "alt": "Evolve-FP-image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/proline-featured-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 01 2024 20:15:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text_1590571996": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Aug 02 2022 18:18:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Evolve</span></span></span></span></span><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><sup>™</sup></span></span></span></span><span class=\"fontsize-2em\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> Proline</span>&nbsp;<br>\n </span><span class=\"urw-egyptienne\"><span style=\"color: #000000;\">Radial Head System</span></span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 06 2024 19:31:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/us/en/portfolios/orthopaedics/upper-extremities.html",
+          "jcr:created": "Tue Aug 02 2022 18:21:27 GMT+0000",
+          "alt": "Tornier-featured-image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/landing-pages/Tornier-perform-featured-image.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 01 2024 20:14:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "false"
+        },
+        "text_1590571996_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Aug 02 2022 18:18:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">Tornier</span></span><span style=\"color: #ffb500;\"><sup>®&nbsp;</sup><span class=\"fontsize-2em\">Perform</span></span><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\"><br>\n </span></span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Humeral Stem</span></span></span><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\"></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 06 2024 19:32:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 07 2024 20:47:28 GMT+0000",
+      "jcr:lastModified": "Wed Aug 07 2024 20:47:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 07 2024 20:48:25 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Hosted by CoNextions</span></span></span></p>\n",
+      "jcr:lastModified": "Wed Aug 07 2024 20:48:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 07 2024 20:47:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 07 2024 20:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span>Wednesday, September 18<sup>th</sup>&nbsp;|&nbsp;8:00 am - 4:00 pm</span></b></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Advanced Nerve &amp; Tendon Repair Techniques with Axogen and CoNextions&nbsp;</span></span><br>\r\n</span></span></p>\r\n<p>&nbsp;</p>\r\n",
+          "jcr:lastModified": "Wed Aug 07 2024 20:49:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 07 2024 20:49:44 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fweb.cvent.com%2Fevent%2Fb307de22-8d10-4ee3-b692-91e8c848397f%2Fsummary&data=05%7C02%7Cvince.wolff%40stryker.com%7Cbcc97da4ed9f45304e1108dcb721d077%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C638586603103825394%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=kXAfITLwBQs7xWe7ccQYU9PQOoY0kBff4vKchmeRxrQ%3D&reserved=0",
+          "jcr:lastModified": "Wed Aug 07 2024 20:50:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span>Thursday, September 19<sup>th</sup>&nbsp;| 8:00 am - 5:00 pm</span></b></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CoNextions TR<sup>®</sup> Tendon Repair System Mini Surgical Lab &nbsp;</span></span></span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Lab #650&nbsp;</span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">(1 hour time slot per attendee)&nbsp;<br>\r\n</span></span></p>\r\n<p>&nbsp;</p>\r\n",
+          "jcr:lastModified": "Wed Aug 07 2024 20:51:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 07 2024 20:49:44 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf0KEhoPIjW9rOyhNtZ2p0Dus3iqww2kukoIA6Lu_M8I_kfdg%2Fviewform&data=05%7C02%7Cvince.wolff%40stryker.com%7Cbcc97da4ed9f45304e1108dcb721d077%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C638586603103832676%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=0JNWcEteNYbWVU4XY%2BSesIYxFLtCWxwpLvCQcIDHgu8%3D&reserved=0",
+          "jcr:lastModified": "Wed Aug 07 2024 20:52:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Aug 07 2024 20:47:58 GMT+0000",
+      "jcr:lastModified": "Wed Aug 07 2024 20:47:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span>Thursday, September 19<sup>th</sup>&nbsp;| 11:30 am - 12:30 pm</span></b></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CoNextions TR<sup>®</sup> Tendon Repair System Industry Forum:&nbsp;</span></span><span style=\"color: rgb(255,181,0);\"><span style=\"color: #000000;\">A surgeon led retrospect of complex cases and rehabilitation protocols</span></span><br>\r\n</span></span></p>\r\n<p>&nbsp;</p>\r\n",
+          "jcr:lastModified": "Wed Aug 07 2024 20:53:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 07 2024 20:49:44 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.assh.org%2Fannualmeeting%2Fs%2Fsession%3Fsid%3Da13Pb00000BUMCuIAP&data=05%7C02%7Cvince.wolff%40stryker.com%7Cbcc97da4ed9f45304e1108dcb721d077%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C638586603103843148%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=eY9yr7cLYLR%2B97MPwUX9B7HGiBGxdETYTbZqN3afb9E%3D&reserved=0",
+          "jcr:lastModified": "Wed Aug 07 2024 20:53:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+          "gradientDirection": "left-to-right",
+          "line2": "<h3><span><b style=\"font-family: &quot;Futura LT W01&quot; , &quot;Arial Black&quot; , Arial , sans-serif; background-color: transparent;\"><span>Friday, Sepember 20<sup>th</sup>&nbsp;|&nbsp;8:00am - 4:00pm</span></b></span><br>\r\n</h3>\r\n<p><span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CoNextions TR<sup>®</sup> Tendon Repair System Mini Surgical Lab </span></span></span></span><span style=\"color: rgb(255, 181, 0); font-family: &quot;Futura LT W01&quot;, &quot;Arial Black&quot;, Arial, sans-serif; font-weight: bold; font-size: 35px; background-color: transparent;\">&nbsp;&nbsp;</span></p>\r\n<p><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Lab #650&nbsp;</span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">(1 hour time slot per attendee)&nbsp;<br>\r\n</span></span></p>\r\n<p>&nbsp;</p>\r\n",
+          "jcr:lastModified": "Wed Aug 07 2024 20:54:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Aug 07 2024 20:49:44 GMT+0000",
+          "CTATitle": "REGISTER HERE",
+          "ctaExternalLink": "https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf0KEhoPIjW9rOyhNtZ2p0Dus3iqww2kukoIA6Lu_M8I_kfdg%2Fviewform&data=05%7C02%7Cvince.wolff%40stryker.com%7Cbcc97da4ed9f45304e1108dcb721d077%7C4e9dbbfb394a4583881053f81f819e3b%7C0%7C0%7C638586603103851662%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=qHeWeFTmdHnqgD7Rs7zgZ6PXqUJ0d87pIAU745Da2WY%3D&reserved=0",
+          "jcr:lastModified": "Wed Aug 07 2024 20:54:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(133,69,138)"
+        }
+      }
+    }
+  }
+}

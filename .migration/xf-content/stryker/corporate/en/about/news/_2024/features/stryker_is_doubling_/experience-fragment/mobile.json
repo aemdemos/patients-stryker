@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0aceafa1-63e2-4dc8-a90a-2849518e6e03",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5caf62e4-1485-4515-9001-ca4524455d90"
+  ],
+  "lastPublished": "Fri May 24 2024 15:31:30 GMT+0000",
+  "jcr:created": "Fri May 24 2024 15:31:30 GMT+0000",
+  "cq:lastReplicated": "Fri May 24 2024 15:31:32 GMT+0000",
+  "cq:lastModified": "Mon May 20 2024 15:36:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5caf62e4-1485-4515-9001-ca4524455d90",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 24 2024 15:31:30 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "997bebcf-cf19-414f-9f45-b5f373e98d55",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Fri May 17 2024 22:33:27 GMT+0000",
+      "alt": "Stryker employees at brain tumor community event",
+      "srcFileRef": "/content/dam/stryker/about/news/2024/features/stryker-is-doubling-down-in-the-fight-against-brain-tumors/carousel/2024-BATM-hero-mobile.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon May 20 2024 15:36:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

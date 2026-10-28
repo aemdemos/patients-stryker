@@ -1,0 +1,1320 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Vertebral compression fractures",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2c4a1a5a-f2fa-45e8-a932-27739f7d9e1a",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "thumbnailAltText": "Vertebral augmentation may help patients suffering from vertebral compression fractures",
+  "jcr:predecessors": [
+    "002b82b9-2f1d-42ae-83cf-d7db58fa9d5f"
+  ],
+  "contentID": "IVS-GSNPS-SYK-3712150_REV-0",
+  "lastPublished": "Thu Aug 13 2026 18:44:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 18:44:09 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 18:44:11 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 18:43:58 GMT+0000",
+  "jcr:description": "Vertebral augmentation may help patients suffering from vertebral compression fractures.",
+  "jcr:baseVersion": "002b82b9-2f1d-42ae-83cf-d7db58fa9d5f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 03 2026 00:05:52 GMT+0000",
+  "pageTitle": "Vertebral compression fractures",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Jul 31 2026 12:56:41 GMT+0000",
+  "jcr:uuid": "90140051-aa44-4613-9142-45bfa906e882",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "Let's treat the untreated VCF patient, together",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/VCF_Hero-Mobile-Imagery_1200x680.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/VCF_Hero-Imagery_1920x640.png",
+        "alt": "Vertebral augmentation may help patients suffering from vertebral compression fractures",
+        "jcr:lastModified": "Fri Jul 31 2026 12:55:25 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(0,0,0);\"><span class=\"urw-egyptienne\">Let's treat the </span><span style=\"color: rgb(255,181,0);\">untreated VCF patient,</span></span>&nbsp;<span style=\"color: #000000;\"><span class=\"urw-egyptienne\">together</span></span></span></span></span></h1>\r\n",
+              "jcr:lastModified": "Tue Jun 30 2026 13:35:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "ctaDeepLinkID": "contact-us",
+              "ctaExternalLink": "https://www.stryker.com/content/patients/us/en/ivs/find-a-doctor.html",
+              "jcr:lastModified": "Tue Jul 07 2026 13:17:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 25 2026 19:21:56 GMT+0000",
+      "jcr:lastModified": "Thu Jun 25 2026 19:21:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1455007547": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 25 2026 19:21:59 GMT+0000",
+      "jcr:lastModified": "Thu Jun 25 2026 19:21:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 12:56:09 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 12:56:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The majority of vertebral compression fractures&nbsp;</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">go undiagnosed<sup><a href=\"#references\">1</a></sup></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Early recognition and intervention can help patients avoid fracture progression, prolonged pain, loss of mobility and additional complications associated with untreated vertebral compression fractures (VCFs).<sup>2,3</sup></span></p>\n",
+          "jcr:lastModified": "Wed Jul 22 2026 17:12:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Thu Aug 13 2026 18:43:37 GMT+0000",
+          "alt": "Left untreated, patients can face long-term complications known as the “downward spiral”",
+          "srcFileRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/VCF-downward-spiral.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 13 2026 18:43:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1515238398": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 01:30:25 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 01:30:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_313900748_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Fri Nov 01 2024 17:50:10 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3 style=\"text-align: center;\"><span class=\"fontsize-1em\">Each year, roughly<span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">one million people&nbsp;<span class=\"urw-egyptienne\"><span style=\"color: #000000;\">in the United States experience vertebral compression fractures<sup>7</sup></span></span></span></span></span></h3>\n",
+      "jcr:lastModified": "Fri Jul 24 2026 12:27:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "leftMargin": "0",
+      "bottomMargin": "-2"
+    },
+    "cols_1939788194_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 16:38:47 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 16:38:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "fullbleedpanel_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Jun 25 2026 20:22:22 GMT+0000",
+          "jcr:lastModified": "Thu Jun 25 2026 20:22:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/fullbleedpanel",
+          "backgroundColor": "rgb(66,83,97)",
+          "fbleedparsys": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "topPadding": "2",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Wed Jul 22 2026 16:33:28 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"fontsize-7vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-9vw\">2</span> </span></span></span><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-4-5-vw\">in</span></span></span></span><span class=\"fontsize-7vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"> <span class=\"fontsize-9vw\">3</span></span></span></span></div>\r\n",
+              "jcr:lastModified": "Wed Jul 22 2026 16:52:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "4",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Wed Jul 22 2026 16:47:22 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">often go</span> undiagnosed and untreated<sup>8</sup></span></span></span></span></div>\r\n",
+              "jcr:lastModified": "Fri Jul 24 2026 12:27:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols_10369606": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 30 2026 01:31:03 GMT+0000",
+      "jcr:lastModified": "Tue Jun 30 2026 01:31:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Jul 24 2026 00:05:32 GMT+0000",
+      "jcr:lastModified": "Fri Jul 24 2026 00:05:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3"
+    },
+    "text_copy_copy_copy__1721379505": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3 style=\"text-align: left;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">Typical</span></span></span><span class=\"futura-bold\"><span style=\"color: #ffb500;\"> signs <span style=\"color: #000000;\"><span class=\"urw-egyptienne\">of a vertebral compression fracture<sup>2,3</sup></span></span></span></span></span></h3>\n",
+      "jcr:lastModified": "Mon Jul 27 2026 20:23:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true"
+    },
+    "cols2_195023563_copy_1058580232": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 19:28:46 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 19:28:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Tue Mar 04 2025 21:46:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\">Common causes of VCFs<sup>9,10</sup></span></span></span></h4>\n<ul>\n<li><span class=\"fontsize-1-25em\">Osteoporosis</span></li>\n<li><span class=\"fontsize-1-25em\">Hemangiomas</span></li>\n<li><span class=\"fontsize-1-25em\">Multiple myeloma</span></li>\n<li><span class=\"fontsize-1-25em\">Metastatic bone disease</span></li>\n<li><span class=\"fontsize-1-25em\">Traumatic</span></li>\n</ul>\n",
+          "jcr:lastModified": "Fri Jul 24 2026 12:27:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Fri Jul 24 2026 00:14:39 GMT+0000",
+          "text": "Back pain Limited spinal mobility Vertebral body height loss Deformity/disability",
+          "jcr:lastModified": "Fri Jul 24 2026 00:14:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/campaigns/vertebral_compressio/signs-of-a-vcf/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/campaigns/vertebral-compressio/signs-of-a-vcf/master"
+        }
+      }
+    },
+    "cols2_1234258713": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 19:29:36 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 19:29:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Why early diagnosis&nbsp;</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">matters</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">VCFs, caused by thinning bones, tumors or other complications, are associated with<b> significant morbidity and mortality.<sup>11</sup></b></span></p>\n<p><span class=\"fontsize-1-25em\"><br>\nIt is estimated that <b>approximately 50% of women and 25% of men will experience an osteoporotic fracture during their lifetime.<sup>12</sup></b><br>\n </span></p>\n",
+          "jcr:lastModified": "Mon Jul 27 2026 20:21:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jul 22 2026 19:29:53 GMT+0000",
+          "alt": "An estimated 50% of women and 25% of men will experience an osteoporotic fracture during their lifetime",
+          "srcFileRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/VCF_demographic-infograph.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 31 2026 12:54:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_243822104": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 17:03:53 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 17:03:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1788366026": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 17:46:07 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 17:46:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "startNumber": "0",
+          "fontColor": "rgb(255,181,0)",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6vw",
+          "currencyTypeNumberCounter": "$",
+          "jcr:lastModified": "Wed Jul 22 2026 17:46:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "50",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-5em\">higher risk of death at one year</span></b><span class=\"fontsize-1-25em\"> <br>\n when treated with conservative management versus vertebral augmentation<sup>11</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jul 24 2026 12:28:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "numbercounter_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "startNumber": "0",
+          "fontColor": "rgb(28,86,135)",
+          "numberCounterAlignment": "text-left",
+          "numberTypeNumberCounter": "3",
+          "fontFace": "futura-bold",
+          "fontSize": "fontsize-6vw",
+          "currencyTypeNumberCounter": "$",
+          "sling:resourceType": "stryker/components/content/numbercounter",
+          "endNumber": "58",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><b><span class=\"fontsize-1-5em\">higher mortality risk in older women</span></b><span class=\"fontsize-1-25em\"><br>\n with vertebral fractures and increasing hyperkyphosis<sup>13</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jul 24 2026 12:28:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_copy__335493575": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "topPadding": "2",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "0",
+      "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Do you have a treatment plan for patients with&nbsp;</span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">vertebral compression fractures?</span></span></span></h3>\n",
+      "jcr:lastModified": "Mon Jul 27 2026 20:21:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(255,255,255)",
+      "textIsRich": "true"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact-us",
+      "jcr:created": "Tue Jun 30 2026 14:02:48 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Tue Jun 30 2026 14:03:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_147305277": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 17:36:14 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 17:36:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 12:43:41 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 12:43:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jul 22 2026 12:43:44 GMT+0000",
+          "alt": "iVAS-Elite_VCF-campaign_1200x680",
+          "srcFileRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/iVAS-Elite_VCF-campaign_1200x680.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 22 2026 13:04:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"fontsize-1em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">iVAS<sup>®</sup> Elite </span></span></span></span><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">balloon system</span></span></span></span></span></h4>\n",
+          "jcr:lastModified": "Wed Jul 22 2026 12:48:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jul 22 2026 12:43:47 GMT+0000",
+          "alt": "OmniCurve_VCF-campaign_1200x680",
+          "srcFileRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/OmniCurve_VCF-campaign_1200x680.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 22 2026 13:04:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">OmniCurve<sup>®</sup> </span></span></span></span><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">curved balloon system</span></span></span></span></h4>\n",
+          "jcr:lastModified": "Wed Jul 22 2026 12:48:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Jul 22 2026 12:43:49 GMT+0000",
+          "alt": "SpineJack_VCF-campaign_1200x680",
+          "srcFileRef": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/SpineJack_VCF-campaign_1200x680.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 22 2026 13:04:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "0",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h4 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">SpineJack<sup>®</sup> </span></span></span></span><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"urw-egyptienne\">system</span></span></span></span></h4>\n",
+          "jcr:lastModified": "Wed Jul 22 2026 12:48:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1944771534": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 12:43:59 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 12:43:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<h3 style=\"text-align: center;\"><b><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Connect with a rep to learn more about vertebral augmentation solutions</span></span></b><span class=\"fontsize-1-5em\"><b><span class=\"futura-bold\"><br>\n </span></b></span></h3>\n",
+      "jcr:lastModified": "Tue Jun 30 2026 17:16:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols_1979178914": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 25 2026 19:25:55 GMT+0000",
+      "jcr:lastModified": "Thu Jun 25 2026 19:25:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\">At Stryker, we are partnering with you to make healthcare better. Reach out to discover our interventional solutions that are designed to help relieve pain and improve quality of life.</span></p>\n",
+      "jcr:lastModified": "Tue Apr 14 2026 01:07:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "marketoform_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "4781",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Apr 10 2026 16:27:49 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you!",
+      "jcr:lastModified": "Fri Apr 10 2026 16:28:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "cols_1693736916": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jul 22 2026 12:24:10 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 12:24:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_111111": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Apr 13 2026 20:24:55 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Jul 22 2026 12:39:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Mar 27 2025 13:18:55 GMT+0000",
+      "jcr:lastModified": "Wed Jul 22 2026 12:38:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols3_950607569": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Jul 22 2026 12:41:30 GMT+0000",
+          "jcr:lastModified": "Wed Jul 22 2026 12:41:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_auto",
+              "jcr:created": "Wed Jul 22 2026 12:35:41 GMT+0000",
+              "alt": "A 76-year-old female, with previously diagnosed and treated lung cancer, presented with a painful vertebral fracture and metastatic lesion in the T7 vertebral body",
+              "srcFileRef": "/content/dam/stryker/ivs/products/ivas-elite-balloon-system/images/OptaBlate and iVAS Elite clinical case collection.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Jul 22 2026 12:41:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/ivs/products/ivas-elite-balloon-system/resources/OptaBlate and iVAS Elite clinical case collection.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Aug 06 2025 15:05:01 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Wed Jul 22 2026 12:39:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_auto",
+              "jcr:created": "Thu May 08 2025 18:29:32 GMT+0000",
+              "alt": "Clinical case demonstrating 68-year-old patient outcome with a history of osteoporosis using OmniCurve curved balloon system",
+              "srcFileRef": "/content/dam/stryker/ivs/products/omnicurve-curved-balloon-system/images/OmniCurve clinical case collection - Nair.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 16 2025 12:09:33 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/ivs/products/omnicurve-curved-balloon-system/resources/OmniCurve clinical case collection - Nair.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Aug 06 2025 15:05:01 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Wed Jul 22 2026 12:30:54 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "preset": "max_width_auto",
+              "jcr:created": "Thu May 08 2025 18:29:34 GMT+0000",
+              "alt": "Clinical case demonstrating 27-year-old patient outcome with traumatic vertebral compression fracture using SpineJack system",
+              "srcFileRef": "/content/dam/stryker/ivs/products/spinejack-system/images/Traumatic Spinejack Case Dr. Shakir.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Sep 16 2025 12:12:05 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/ivs/products/spinejack-system/resources/Traumatic Spinejack Case Dr. Shakir.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Aug 06 2025 15:05:01 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Wed Jul 22 2026 12:30:58 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Fri Apr 11 2025 17:51:08 GMT+0000",
+          "jcr:lastModified": "Fri Apr 11 2025 17:51:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_200625012": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Oct 23 2025 20:27:35 GMT+0000",
+              "CTAImageAltText": "SpineJack® system brochure",
+              "jcr:lastModified": "Thu Oct 23 2025 20:29:04 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552090_D0000007218_SpineJack-Patient-Brochure_120220_L.png"
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_1495589587": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Oct 23 2025 20:27:37 GMT+0000",
+              "CTAImageAltText": "Sistema SpineJack®",
+              "jcr:lastModified": "Thu Oct 23 2025 20:30:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552176_D0000096607AA2_SpineJack-Patient-Brochure_041621_ESES_L.png"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_180178448": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Oct 23 2025 20:27:39 GMT+0000",
+              "CTAImageAltText": "Vertebral augmentation brochure",
+              "jcr:lastModified": "Fri Oct 24 2025 12:50:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1702476622_IVS-846502_BackPainBrochure_111623_XL-cover-photo-rev.png"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_635885937": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Oct 23 2025 20:27:42 GMT+0000",
+              "CTAImageAltText": "Aumento vertebral",
+              "jcr:lastModified": "Fri Oct 24 2025 12:50:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1712955173_WebImage_IVS-846502_BackPainBrochure_111623_ES-US-rev.png"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Apr 16 2025 13:40:53 GMT+0000",
+          "jcr:lastModified": "Wed Apr 16 2025 13:40:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_1181869184": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/OptaBlate Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 24 2025 12:42:58 GMT+0000",
+              "CTAImageAltText": "Bone tumor ablation brochure",
+              "jcr:lastModified": "Fri Oct 24 2025 12:51:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552225_D0000228551_OptaBlate_PatientBrochure_012623_XL-rev.png"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/OptaBlate Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys5": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 5,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols4": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Apr 16 2025 13:40:57 GMT+0000",
+          "jcr:lastModified": "Wed Apr 16 2025 13:40:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_847184697": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 24 2025 12:43:22 GMT+0000",
+              "CTAImageAltText": "Knee radiofrequency ablation brochure",
+              "jcr:lastModified": "Fri Oct 24 2025 12:45:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552247_D0000103435_KneeRFA_PatientBrochure_101121_L-rev.png"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 24 2025 12:43:26 GMT+0000",
+              "CTAImageAltText": "Ablación por radiofrecuencia de la rodilla",
+              "jcr:lastModified": "Fri Oct 24 2025 12:46:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552259_D0000239733_KneeRFA_PatientBrochure_122122_ES_XL-rev.png"
+            },
+            "curatedcta_copy_1933439231": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:30 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 24 2025 12:43:29 GMT+0000",
+              "CTAImageAltText": "Radiofrequency ablation brochure",
+              "jcr:lastModified": "Fri Oct 24 2025 12:46:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552275_D0000068200-RF-BackPainBrochure_RevAA_012821_L-rev.png"
+            },
+            "curatedcta_copy_1933": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 24 2025 12:43:32 GMT+0000",
+              "CTAImageAltText": "Ablación por radiofrecuencia",
+              "jcr:lastModified": "Fri Oct 24 2025 12:47:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/m/ivs-patient/homepage/resources/thumbnails/1680552288_D0000096609AA2_RF-BackPainBrochure_RevAA_041621_ESES_L-rev.png"
+            },
+            "curatedcta_copy_1933": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaDamLink": "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure_ESP.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 21 2025 16:50:43 GMT+0000",
+              "CTATitle": "LEARN MORE",
+              "jcr:lastModified": "Thu Oct 23 2025 13:37:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(76,125,122)"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Jul 22 2026 12:33:15 GMT+0000",
+          "jcr:lastModified": "Wed Jul 22 2026 12:33:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Wed Aug 13 2025 17:50:21 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">How Janet recovered from a vertebral compression fracture</span></span></p>\n<p><span class=\"fontsize-1-25em\">After experiencing persistent lower back pain following a fall, Janet consulted her physician and was diagnosed with a T11 vertebral compression fracture (VCF).<br>\n <br>\n Janet worked with Dr. Jason Smith to review her treatment options before undergoing kyphoplasty, a minimally invasive procedure to help restore function to her spine. “She did great. She was able to move and came in on her own at two weeks without any sort of independent devices, like a brace or walker. She was back to doing her normal things pretty quickly,” says Dr. Smith.</span></p>\n",
+              "jcr:lastModified": "Wed Jul 22 2026 14:16:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Jul 22 2026 12:32:25 GMT+0000",
+              "CTATitle": "WATCH NOW",
+              "ctaExternalLink": "https://view.stryker.com/viewer/d0508ceb58e5168d2c5b1ee213dcfddd",
+              "jcr:lastModified": "Wed Jul 22 2026 12:32:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_1968478208": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Wed Jul 22 2026 12:34:11 GMT+0000",
+              "hideBorder": "true",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Wed Jul 22 2026 12:34:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/m/ivs-patient/homepage/videos/1659642804_VCF-Patient-Testimonial_Janet-Kliebert-FINAL_Resized.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/1659642804_VCF-Patient-Testimonial_Janet-Kliebert-FINAL_Resized-1-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Jul 22 2026 12:34:19 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Clinical case collection"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Patient testimonials"
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 25 2026 19:19:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 25 2026 19:19:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Jun 25 2026 19:19:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 25 2026 19:21:18 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 25 2026 19:21:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Jun 25 2026 19:21:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Li Y, Yan L, Cai S, Wang P, Zhuang H, Yu H. The prevalence and under-diagnosis of vertebral fractures on chest radiograph. BMC Musculoskelet Disord. 2018 Jul 18;19(1):235. doi: 10.1186/s12891-018-2171-y. PMID: 30021567; PMCID: PMC6052683.</li>\r\n<li>Alexandru D and So W et al. Evaluation and management of vertebral compression fractures. The Permanente Journal. 2012;16(4):46-51.&nbsp;</li>\r\n<li>Langdon J et al. Vertebral compression fractures – new clinical signs to aid diagnosis. Annals of the Royal College of Surgeons of England. 2010; 92(2):163-166.</li>\r\n<li>Broy SB. The Vertebral Fracture Cascade: Etiology and Clinical Implications. J Clin Densitom. 2016 Jan-Mar;19(1):29-34.&nbsp;</li>\r\n<li>Silverman SL. The clinical consequences of vertebral compression fracture. Bone. 1992;13 Suppl 2:S27-31.&nbsp;</li>\r\n<li>Yang HL, Zhao L, Liu J, et al. Changes of pulmonary function for patients with osteoporotic vertebral compression fractures after kyphoplasty. J Spinal Disord Tech. 2007; 20: 221–25.</li>\r\n<li>Cleveland Clinic. Compression fracture: What it is, symptoms &amp; treatment. [Updated Aug 2024, Accessed Jul 2026]. Available from: https://my.clevelandclinic.org/health/diseases/21950-compression-fractures</li>\r\n<li>Boden S. (2013, May). When back pain is a spine compression fracture. Retrieved June 4, 2025 from: https://spine-health.com/conditions/osteoporosis/when-back-pain-a-spine-compression-fracture.</li>\r\n<li>American Association of Neurological Surgeons. (2020). Vertebral compression fractures. Retrieved from: https://www.aans.org/Patients/Neurosurgical-Conditions-and-Treatments/Vertebral-Compression-Fractures. Accessed: August 18, 2023.</li>\r\n<li>Vertebral compression fracture [Internet]. OrthoReference; [updated 2026 Dec 18; cited 2026 Jul 24]. Available from: <a href=\"https://orthoreference.org/conditions/vertebral-compression-fracture\" title=\"https://orthoreference.org/conditions/vertebral-compression-fracture\">https://orthoreference.org/conditions/vertebral-compression-fracture</a></li>\r\n<li>Edidin A et al. Morbidity and mortality after vertebral fractures: Comparison of vertebral augmentation and nonoperative management in the Medicare population. Spine. 2015; 40(15):1228-1241. Accessed: August 18, 2023.</li>\r\n<li>National Osteoporosis Foundation. Osteoporosis fast facts. Retrieved from: https://cdn.nof.org/wp-content/uploads/2015/12/Osteoporosis-Fast-Facts.pdf. Accessed: August 18, 2023.</li>\r\n<li>Kado DM, Lui LY, Ensrud KE, Fink HA, Karlamangla AS, Cummings SR; Study of Osteoporotic Fractures. Hyperkyphosis predicts mortality independent of vertebral osteoporosis in older women. Ann Intern Med. 2009 May 19;150(10):681-7. doi: 10.7326/0003-4819-150-10-200905190-00005. PMID: 19451575; PMCID: PMC2711520.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Jul 30 2026 17:23:21 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ivs/campaigns/vertebral-compression-fractures/VCF_Hero-Mobile-Imagery_1200x680.png"
+  }
+}

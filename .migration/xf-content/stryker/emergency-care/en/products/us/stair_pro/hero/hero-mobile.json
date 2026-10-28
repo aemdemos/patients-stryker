@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6132f682-f078-4331-949c-2559fd541a8e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "56abe9cb-c1c9-4994-b9dc-ee3aa3d3b856"
+  ],
+  "jcr:created": "Tue Jan 02 2024 14:08:20 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 02 2024 14:08:22 GMT+0000",
+  "cq:lastModified": "Tue Jan 02 2024 14:08:16 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "56abe9cb-c1c9-4994-b9dc-ee3aa3d3b856",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "4252832b-8cb9-4cf0-876d-cc5c9455a90c",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage14357": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Stryker's Stair-PRO manual stair chair ",
+      "srcFileRef": "/content/dam/stryker/ems/products/stairpro/images/Thumbnail_stairpro_stairchair_16x9.jpg",
+      "jcr:lastModified": "Tue Jan 02 2024 14:08:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

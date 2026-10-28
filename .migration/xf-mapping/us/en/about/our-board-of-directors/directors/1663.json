@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Rajeev Suri ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4e76a93c-c2da-4f1e-be25-3f936fcebc37",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "c0068986-1b0b-411a-b251-db9f17532564"
+  ],
+  "lastPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 25 2025 15:55:29 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 15:55:31 GMT+0000",
+  "cq:lastModified": "Thu Feb 02 2023 19:58:43 GMT+0000",
+  "jcr:baseVersion": "c0068986-1b0b-411a-b251-db9f17532564",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:53 GMT+0000",
+  "pageTitle": "Rajeev Suri",
+  "jcr:lastModified": "Thu Feb 02 2023 19:58:43 GMT+0000",
+  "jcr:uuid": "7176608f-f32a-478d-aeef-f783a732f489",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "navTitle": "Rajeev Suri",
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:48 GMT+0000",
+      "jcr:lastModified": "Tue Oct 11 2022 15:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
+      "text": "◁ Back",
+      "jcr:lastModified": "Tue Oct 11 2022 15:24:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/back-button/master"
+    },
+    "cols_2140249363_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:58 GMT+0000",
+      "jcr:lastModified": "Tue Oct 11 2022 15:23:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_287827416": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
+      "text": "Rajeev Suri Director since 2018, Audit Committee Former Chief Executive Officer of Inmarsat Mr. Suri is the Chairman of Digicel Group, a leading digital provider across the Caribbean and Central America and the Chairman of M-KOPA, a leading African financial technology company. He is the former Chief Executive Officer of Inmarsat, a world leader in global, mobile satellite communications and the former President and Chief Executive Officer of Nokia, from 2014 through July 2020. From 2009 to 2014, he was Chief Executive Officer of Nokia Solutions and Networks (previously Nokia Siemens Networks). Mr. Suri also serves as a director of Singapore Telecommunications Limited (commonly known as Singtel), a publicly traded Singaporean telecommunications company. Mr. Suri has deep business experience working across a range of functions, including strategy, mergers and acquisitions, marketing and sales. He led a transformation of Nokia through significant portfolio adjustments, including the acquisition of Alcatel-Lucent, and has strong global experience. Mr. Suri’s business background and extensive knowledge across a range of technology solutions provide critical input to our Board.",
+      "jcr:lastModified": "Tue Oct 11 2022 15:28:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/bod/1663/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/bod/1663/master"
+    }
+  }
+}

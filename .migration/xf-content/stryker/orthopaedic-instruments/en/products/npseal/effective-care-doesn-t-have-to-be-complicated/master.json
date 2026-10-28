@@ -1,0 +1,381 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Effective care doesn't have to be complicated",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8d783b20-851d-4f04-a9da-e4ea11ca64fb",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "856c1406-077c-48b9-bbd2-d5617938756b"
+  ],
+  "lastPublished": "Tue Oct 13 2026 15:46:47 GMT+0000",
+  "jcr:created": "Tue Oct 13 2026 15:46:47 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 13 2026 15:46:49 GMT+0000",
+  "cq:lastModified": "Fri Oct 02 2026 22:32:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "856c1406-077c-48b9-bbd2-d5617938756b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Feb 20 2026 17:35:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b58c26d6-8f3f-46d6-b67c-45d9766bcbb0",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 11 2026 21:46:23 GMT+0000",
+      "jcr:lastModified": "Wed Feb 11 2026 21:49:03 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage1354329861437993": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "1 icon thumbnail",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal/images/1 icon thumbnail.png",
+        "jcr:lastModified": "Wed Feb 11 2026 22:09:28 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          }
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "15",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Feb 11 2026 21:49:28 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">No batteries</span></span></p>\n",
+        "jcr:lastModified": "Wed Feb 11 2026 22:14:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      }
+    },
+    "standaloneimage_1336338764": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 11 2026 21:46:57 GMT+0000",
+      "jcr:lastModified": "Wed Feb 11 2026 22:07:38 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_13363387641355444658851685": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "2 icon thumbnail",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal/images/2 icon thumbnail.png",
+        "jcr:lastModified": "Wed Feb 11 2026 22:09:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "15",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Feb 11 2026 21:49:28 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">No wires</span></span></p>\n",
+        "jcr:lastModified": "Wed Feb 11 2026 22:14:53 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      }
+    },
+    "standaloneimage_2075006273": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Feb 11 2026 21:47:04 GMT+0000",
+      "jcr:lastModified": "Wed Feb 11 2026 22:07:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_20750062731355464788274723": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "3 icon thumbnail",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal/images/3 icon thumbnail.png",
+        "jcr:lastModified": "Wed Feb 11 2026 22:09:43 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3",
+          "behavior": "none"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "15",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Feb 11 2026 21:49:28 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">No canisters</span></span></p>\n",
+        "jcr:lastModified": "Wed Feb 11 2026 22:14:58 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      }
+    },
+    "standaloneimage_2075": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Wed Feb 11 2026 22:08:28 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_20751355494203173351": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "4 icon thumbnail",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/npseal/images/4 icon thumbnail.png",
+        "jcr:lastModified": "Wed Feb 11 2026 22:09:50 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "5"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "1"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "3"
+        }
+      },
+      "text_copy": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "topPadding": "15",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "jcr:created": "Wed Feb 11 2026 21:49:28 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">No tubes</span></span></p>\n",
+        "jcr:lastModified": "Wed Feb 11 2026 22:15:03 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "textIsRich": "true",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "7"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      }
+    }
+  }
+}

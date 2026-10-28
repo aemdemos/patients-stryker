@@ -1,0 +1,1713 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Innovating through generations",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "35edeb62-86e5-4d61-a478-71698ece9db5",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "45de440a-4447-47dc-b8fa-b0c2389d32a1"
+  ],
+  "contentID": "AP005002 v3.0",
+  "lastPublished": "Wed Nov 12 2025 01:53:19 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Nov 12 2025 01:53:22 GMT+0000",
+  "cq:lastReplicated": "Wed Nov 12 2025 01:53:24 GMT+0000",
+  "cq:lastModified": "Mon Nov 10 2025 23:13:35 GMT+0000",
+  "jcr:baseVersion": "45de440a-4447-47dc-b8fa-b0c2389d32a1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Sep 05 2025 18:00:18 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/neurovascular"
+  ],
+  "jcr:lastModified": "Mon Nov 10 2025 17:15:27 GMT+0000",
+  "jcr:uuid": "70a608c2-3d66-4a6f-a03a-d78ae92acf7a",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 13:51:01 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 13:51:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Aug 26 2025 14:37:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Aug 26 2025 14:37:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Aug 12 2025 17:28:52 GMT+0000",
+          "alt": "NV Legacy products",
+          "srcFileRef": "/content/dam/stryker/neurovascular/legacy/NV-Legacy-products-image--NA.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Aug 26 2025 14:36:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Tue Aug 12 2025 17:33:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"fontsize-2-5em\"><span class=\"urw-egyptienne\">Innovating through generations.&nbsp;</span></span></span></p>\n<p><span class=\"fontsize-1-75em\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Together with you.</span></span></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 26 2025 14:39:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": "true"
+        },
+        "text_1314768434": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Aug 12 2025 17:34:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>For 25 years, Synchro has guided the way.&nbsp;For 35 years from the original GDC Detachable Coils to Target Detachable Coils, Stryker has been at the forefront of coil innovation. And for 10 years, Atlas has delivered confidence through complexity.<br>\n</p>\n<p>But the legacy goes back even further. Each of our breakthroughs stand on the shoulders of those who came before—neurosurgeons, engineers and visionaries who imagined something better and built the foundation we continue to advance.</p>\n<p><b>Here’s to the next generation of innovation.</b></p>\n<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-2-5em\">Leading. Lasting. Legacy.</span></span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 10 2025 17:13:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 17:35:23 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 17:35:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Tue Aug 12 2025 17:35:38 GMT+0000",
+          "alt": "Neuroform Atlas stent system -- 10 years",
+          "srcFileRef": "/content/dam/stryker/neurovascular/legacy/Neuroform Atlas stent system--10 years.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 05 2025 17:59:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:38:54 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Celebrating 10 years of Atlas</span></p>\n<p>Built on the legacy of the original Neuroform – the world's first intracranial stent –&nbsp;Atlas advanced coil-assisted treatment with a low-profile, self-expanding design fit for vessels as small as 2.0 mm. 10 years later, it's become a trusted tool for complex cases. The Atlas story is evidence that innovation rarely starts from scratch. It builds on vision, lessons learned and the pioneering work that redefined aneurysm care.<br>\n</p>\n",
+          "jcr:lastModified": "Thu Aug 28 2025 17:34:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:40:58 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:47:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgb(76,125,122)",
+              "internalLink": "/content/stryker/us/en/neurovascular/products/neuroform-atlas-stent-system",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 12 2025 17:37:05 GMT+0000",
+          "alt": "Synchro Guidewires -- 25 years",
+          "srcFileRef": "/content/dam/stryker/neurovascular/legacy/Synchro Guidewires--25 years.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Aug 26 2025 13:47:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:39:29 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Celebrating 25 years of Synchro</span></p>\n<p>From early models to the latest generation of Synchro, you’ve trusted our technology to meet the moment and match your precision. This milestone isn’t just about us. It’s about every patient you’ve treated, every result you’ve delivered and every standard you’ve helped raise. Here’s to 25 years, and the impact you’ve made with Synchro in your hands.</p>\n",
+          "jcr:lastModified": "Tue Aug 12 2025 17:40:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:42:36 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:43:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "internalLink": "/content/stryker/us/en/neurovascular/products/synchro-select-guidewires",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Aug 12 2025 17:38:06 GMT+0000",
+          "alt": "Target Detachable Coils -- 35 years",
+          "srcFileRef": "/content/dam/stryker/neurovascular/legacy/Target-35-years-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Nov 10 2025 23:13:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:40:10 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">35 years of coil innovation: from GDC to Target</span></p>\n<p>Dr. Guido Guglielmi’s pioneering work in the 1980s, together with the contributions of Target Therapeutics and UCLA, played pivotal roles in the creation of GDC Detachable Coils – an innovation that changed the course of aneurysm treatment. Stryker's introduction of the Target Detachable Coil built on that legacy, combining engineering precision with clinical insight to set a new standard. 35 years after the first GDC case, our legacy is still taking shape – all because of you.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Nov 10 2025 18:54:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(76,125,122,1)",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:43:53 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:45:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "item0": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(76,125,122,1)",
+              "internalLink": "/content/stryker/us/en/neurovascular/products/target-tetra-detachable-coil-landing",
+              "buttonText": "Learn More",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Sep 05 2025 17:58:57 GMT+0000",
+      "jcr:lastModified": "Fri Sep 05 2025 17:58:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Fri Aug 15 2025 11:50:37 GMT+0000",
+      "jcr:lastModified": "Fri Sep 05 2025 17:28:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:08:15 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:08:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "col2": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "wcm/foundation/components/parsys"
+            },
+            "col2_825150300": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "wcm/foundation/components/parsys"
+            },
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Peter Kan.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Peter Kan-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Tue Sep 02 2025 17:57:57 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>(Left) <span class=\"futura-bold\">Ferdinand Hui</span>, MD, FSNIS<br>\nQueen's Medical Center<br>\nHonolulu, HI, US</p>\n<p>(Right)&nbsp;<span class=\"futura-bold\">Peter Kan</span>, MD, MPH, FRCSC, FAANS<br>\nUTMB Health<br>\nTexas, US</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 19:31:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Legacy testimonial -Ajay Wakhloo.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Legacy testimonial -Ajay Wakhloo-AVS",
+                "urlModifiers": "",
+                "viewerPresetPath": "",
+                "linkTarget": "_self",
+                "jcr:lastModified": "Fri Aug 22 2025 14:47:03 GMT+0000",
+                "s7PresetType": "viewer",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14579": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Ajay K. Wakhloo</span>, MD, PhD, FAHA<br>\n<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 11:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_767500384": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:45:26 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:45:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Legacy testimonial -Vitor Mendes Periera.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Legacy testimonial -Vitor Mendes Periera-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 14:45:47 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Dr. Vitor Mendes Pereira</span>, MD<br>\nSt. Michael's Hospital<br>\nToronto, Ontario, Canada</p>\n",
+              "jcr:lastModified": "Thu Aug 28 2025 12:35:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy_977835609": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Legacy testimonial -Emanuele Orru.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Legacy testimonial -Emanuele Orru-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 12:56:27 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Emanuele Orrù</span>, MD<br>\nLahey Health<br>\nBurlington, MA, US</p>\n",
+              "jcr:lastModified": "Fri Aug 22 2025 14:45:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_157804589": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:08:53 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:08:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Legacy testimonial -Brian Jankowitz.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Legacy testimonial -Brian Jankowitz-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 12:59:34 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_1813689956": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Brian Jankowitz</span>, MD<br>\nHackensack/JFK University Medical Center<br>\nPhiladelphia, PA, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:10:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Legacy testimonial -Alexander Coon.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Legacy testimonial -Alexander Coon-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 13:15:09 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Alexander Coon</span>, MD<br>\nCarondelet St. Joseph's Hospital<br>\nTucson, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 12:38:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1363245933": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:45:31 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:45:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy_170312406": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Ajay Wakhloo.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Ajay Wakhloo-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:57:56 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14579": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Ajay K. Wakhloo</span>, MD, PhD, FAHA<br>\n<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 11:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy_911416309": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Brian Jankowitz.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Brian Jankowitz-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:47:38 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_1813689956": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Brian Jankowitz</span>, MD<br>\nHackensack/JFK University Medical Center<br>\nPhiladelphia, PA, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:10:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1907415492": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:28:32 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:28:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Sep 04 2025 20:15:48 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Sep 04 2025 20:15:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Vitor Mendes Pereira-.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Vitor Mendes Pereira--AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Sep 05 2025 15:48:55 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_23130": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Dr. Vitor Mendes Pereira</span>, MD<br>\nSt. Michael's Hospital<br>\nToronto, Ontario, Canada</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 19:32:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 22 2025 13:19:17 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 22 2025 13:19:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Geoffrey Colby.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Geoffrey Colby-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 13:22:19 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Geoffrey&nbsp;Colby</span>, MD, PhD<br>\nUCLA<br>\nLos Angeles, CA, US<br>\n</p>\n",
+              "jcr:lastModified": "Fri Aug 22 2025 13:17:08 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1910276774": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:28:36 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:28:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Ben Waldau.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Ben Waldau-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:47:50 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Ben Waldau</span>, MD, MAS, FAANS, FACS<br>\nUC Davis<br>\nSacramento, CA, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:25:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Aug 21 2025 18:49:27 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Aug 21 2025 18:49:36 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Mohamed Teleb.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Mohamed Teleb-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Fri Aug 22 2025 14:44:10 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14198": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Mohamed Teleb</span>, MD<br>\nBanner Health<br>\nMesa, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:32:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:15:27 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:15:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Emanuele Orru.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Emanuele Orru-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:48:30 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Emanuele Orrù</span>, MD<br>\nLahey Health<br>\nBurlington, MA, US</p>\n",
+              "jcr:lastModified": "Fri Aug 22 2025 14:44:37 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Alexander Coon.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Alexander Coon-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:48:38 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Alexander Coon</span>, MD<br>\nCarondelet St. Joseph's Hospital<br>\nTucson, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 12:38:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1196123620": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Thu Sep 18 2025 15:55:24 GMT+0000",
+          "jcr:lastModified": "Thu Sep 18 2025 15:55:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Sep 24 2025 13:36:19 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Wed Sep 24 2025 13:36:27 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Synchro testimonial -Satoshi Tateshima-.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Synchro testimonial -Satoshi Tateshima--AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Sep 24 2025 14:20:25 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Satoshi Tateshima</span>, MD<br>\nUCLA Health<br>\nLos Angeles, CA, US</p>\n",
+              "jcr:lastModified": "Thu Sep 18 2025 19:07:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_407151962": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:45:35 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Wed Aug 20 2025 12:39:44 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Wed Aug 20 2025 12:40:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Neuroform testimonial -Italo Linfante.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Neuroform testimonial -Italo Linfante-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:56:26 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_1813689956": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Italo Linfante</span>, MD<br>\nBaptist Health<br>\nMiami, FL, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:40:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Sep 25 2025 17:39:51 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Sep 25 2025 17:40:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV-Neuroform testimonial-Brian Jankowitz--.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV-Neuroform testimonial-Brian Jankowitz---AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Sep 25 2025 17:40:59 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_1813689956": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Brian Jankowitz</span>, MD<br>\nHackensack/JFK University Medical Center<br>\nPhiladelphia, PA, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:10:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_157804589_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:08:53 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:08:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Neuroform testimonial -Ajay Wakhloo.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Neuroform testimonial -Ajay Wakhloo-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:46:59 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14579": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Ajay K. Wakhloo</span>, MD, PhD, FAHA<br>\n<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 11:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Sep 04 2025 20:15:48 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Sep 04 2025 20:15:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Neuroform testimonial -Alexander Coon-.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Neuroform testimonial -Alexander Coon--AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Sep 04 2025 20:57:28 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Alexander Coon</span>, MD<br>\nCarondelet St. Joseph's Hospital<br>\nTucson, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 12:38:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        }
+      },
+      "tabs_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 4,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_407151962_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Tue Aug 12 2025 17:45:35 GMT+0000",
+          "jcr:lastModified": "Tue Aug 12 2025 17:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Thu Sep 04 2025 20:15:48 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Thu Sep 04 2025 20:15:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Geoffrey Colby-.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Geoffrey Colby--AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Sep 04 2025 20:57:40 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Geoffrey&nbsp;Colby</span>, MD, PhD<br>\nUCLA<br>\nLos Angeles, CA, US<br>\n</p>\n",
+              "jcr:lastModified": "Fri Aug 22 2025 13:19:09 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Peter Kan.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Peter Kan-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:45:45 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p>(Left)&nbsp;<span class=\"futura-bold\">Ferdinand Hui</span>, MD, FSNIS&nbsp;<br>\nQueen's Medical Center<br>\nHonolulu, HI, US</p>\n<p>(Right)&nbsp;<span class=\"futura-bold\">Peter Kan</span>, MD, MPH, FRCSC, FAANS<br>\nUTMB Health<br>\nTexas, US</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 19:31:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:42:08 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:42:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Ajay Wakhloo.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Ajay Wakhloo-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:45:03 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14579": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Ajay K. Wakhloo</span>, MD, PhD, FAHA<br>\n<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 11:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Mohamed Teleb.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Mohamed Teleb-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:46:04 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_14198": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Mohamed Teleb</span>, MD<br>\nBanner Health<br>\nMesa, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:32:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_843097173": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:42:13 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:42:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Vitor Mendes Pereira.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Vitor Mendes Pereira-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:46:11 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Dr. Vitor Mendes Pereira</span>, MD<br>\nSt. Michael's Hospital<br>\nToronto, Ontario, Canada</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 19:32:24 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Alexander Coon.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Alexander Coon-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:46:18 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Alexander Coon</span>, MD<br>\nCarondelet St. Joseph's Hospital<br>\nTucson, AZ, US<br>\n</p>\n",
+              "jcr:lastModified": "Tue Sep 02 2025 12:39:38 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1741640925": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Wed Aug 20 2025 12:42:25 GMT+0000",
+          "jcr:lastModified": "Wed Aug 20 2025 12:42:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Fri Aug 15 2025 11:53:42 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Fri Aug 15 2025 11:55:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR NV -Target testimonial -Matt Bender.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR NV -Target testimonial -Matt Bender-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Thu Aug 21 2025 18:57:03 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Matt Bender</span>, MD<br>\nUniversity of Rochester<br>\nRochester, NY, US<br>\n</p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 12:51:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standalonevideo": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "jcr:created": "Mon Nov 03 2025 20:04:21 GMT+0000",
+              "hideBorder": "false",
+              "type": "typePath",
+              "borderColor": "rgba(0,0,0,1)",
+              "jcr:lastModified": "Mon Nov 03 2025 20:04:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standalonevideo",
+              "dynamic-media": {
+                "jcr:primaryType": "nt:unstructured",
+                "breakpoints": "",
+                "videoserverurl": "https://media-assets.stryker.com/is/content/",
+                "fileReference": "/content/dam/stryker/neurovascular/legacy/STR-NV-Target-testimonial-Satoshi-Tateshima.mp4",
+                "s7ImagePreset": "",
+                "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+                "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+                "s7ViewerPreset": "",
+                "assetID": "stryker/STR-NV-Target-testimonial-Satoshi-Tateshima-AVS",
+                "urlModifiers": "",
+                "jcr:lastModified": "Wed Nov 05 2025 04:31:35 GMT+0000",
+                "s7PresetType": "undefined",
+                "sling:resourceType": "dam/components/scene7/dynamicmedia",
+                "assetType": "VideoAVS",
+                "imageserverurl": "https://media-assets.stryker.com/is/image/",
+                "s7ViewerPresetPath": ""
+              }
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "darek.jansen1@stryker.com",
+              "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Fri Aug 15 2025 11:53:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"futura-bold\">Satoshi Tateshima</span>, MD<br>\nUCLA Health<br>\nLos Angeles, CA, US</p>\n",
+              "jcr:lastModified": "Thu Sep 18 2025 19:07:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1773744550": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "darek.jansen1@stryker.com",
+          "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+          "jcr:created": "Fri Oct 24 2025 20:31:18 GMT+0000",
+          "jcr:lastModified": "Fri Oct 24 2025 20:31:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "NV legacy"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "Synchro Guidewire"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "3",
+          "tabTitle": "Neuroform Atlas"
+        },
+        "4": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "4",
+          "tabTitle": "Target Detachable Coils"
+        }
+      }
+    },
+    "cols_252442689": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Fri Sep 05 2025 17:59:13 GMT+0000",
+      "jcr:lastModified": "Fri Sep 05 2025 17:59:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "darek.jansen1@stryker.com",
+      "jcr:lastModifiedBy": "darek.jansen1@stryker.com",
+      "jcr:created": "Wed Aug 20 2025 13:35:04 GMT+0000",
+      "text": "<p><b>This document is intended solely for the use of healthcare professionals.</b></p>\n<p>The physicians featured on this page are paid consultants of Stryker. The views and opinions expressed are solely those of the physicians and do not necessarily reflect those of Stryker. Individual experiences may vary.&nbsp;</p>\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: GDC, Neuroform Atlas, Stryker, Synchro, Target. All other trademarks are trademarks of their respective owners or holders.&nbsp;The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\n<p><b>To access product risks and important safety information go to:</b></p>\n<ul>\n<li><a href=\"https://www.stryker.com/content/dam/stryker/neurovascular/products/target-tetra/resources/Target%20Tetra%20US_12-13-22.pdf\">Target Tetra Detachable Coil</a></li>\n<li><a href=\"https://www.stryker.com/content/dam/stryker/neurovascular/products/neuroform-atlas-stent-system/resources/Neuroform-Atlas_DFU_US_May19.pdf\">Neuroform Atlas Stent System</a></li>\n<li><a href=\"https://www.stryker.com/content/dam/stryker/neurovascular/products/synchro-select-guidewires/US_Synchro_Select%20DFU.pdf\">Synchro SELECT Guidewire</a><br>\n</li>\n</ul>\n",
+      "jcr:lastModified": "Wed Sep 03 2025 18:53:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

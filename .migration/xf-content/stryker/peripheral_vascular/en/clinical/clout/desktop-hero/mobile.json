@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2c55755e-c31c-4c7d-9cf0-470dbf5467ad",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "554e08aa-f2de-4a6b-a3e9-d5b9f20ca6d3"
+  ],
+  "lastPublished": "Thu Oct 08 2026 20:10:04 GMT+0000",
+  "jcr:created": "Thu Oct 08 2026 20:10:05 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 08 2026 20:10:07 GMT+0000",
+  "cq:lastModified": "Thu Oct 08 2026 20:09:31 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "554e08aa-f2de-4a6b-a3e9-d5b9f20ca6d3",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 08 2026 20:10:04 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "0b67cd9f-3605-439b-9ac5-14b6801028f6",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Oct 08 2026 20:09:08 GMT+0000",
+      "alt": "DVT Hero image-mobile_1920x640",
+      "srcFileRef": "/content/dam/stryker/peripheral-vascular/clinical/clout/images/DVT Hero image-mobile_1920x640.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 08 2026 20:09:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

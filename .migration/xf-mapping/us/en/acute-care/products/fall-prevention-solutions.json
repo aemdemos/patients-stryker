@@ -1,0 +1,819 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Fall Prevention Solutions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2aa9fd91-ac4e-4da4-b414-7fb811293253",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "nurse looking back toward patient getting out of hospital bed",
+  "jcr:predecessors": [
+    "9103a458-0c3f-4422-badf-9c2f9f56df46"
+  ],
+  "contentID": "AC-GSNPS-SYK-1190425_REV-1_en_us",
+  "lastPublished": "Thu Feb 06 2025 01:24:47 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Feb 06 2025 01:24:47 GMT+0000",
+  "cq:lastReplicated": "Thu Feb 06 2025 01:24:49 GMT+0000",
+  "cq:lastModified": "Thu Feb 06 2025 01:24:41 GMT+0000",
+  "jcr:description": "Stryker’s connected ProCuity beds and Prime Connect stretchers can help with your hospital's fall prevention strategies. ",
+  "jcr:baseVersion": "9103a458-0c3f-4422-badf-9c2f9f56df46",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:42:45 GMT+0000",
+  "cq:tags": [
+    "stryker:product/acute-care/fall-prevention-solutions"
+  ],
+  "jcr:lastModified": "Tue Sep 24 2024 16:11:20 GMT+0000",
+  "jcr:uuid": "b956361b-42a5-46eb-9083-bae9bb10627d",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c_969710774": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerCheckbox": "hcp-banner-overlay",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Wed Jul 24 2024 14:36:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/fall_prevention/fall-prevention-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/fall-prevention/fall-prevention-hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/acute-care/en/products/fall_prevention/fall-prevention-hero/fall-prevention-hero-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/acute-care/en/products/fall-prevention/fall-prevention-hero/fall-prevention-hero-mobile",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "textColor": "rgb(0,0,0)",
+          "verticalMargin": "8",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Aug 07 2024 13:04:07 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Supporting hospital fall prevention strategies</span></span></span></h1>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">A moment is all it takes for a fall-risk patient to attempt to exit a bed or stretcher.</span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 07 2024 12:59:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Connect with an expert",
+              "ctaDeepLinkID": "connect",
+              "jcr:lastModified": "Wed Dec 15 2021 21:30:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTopLine": "true",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "childrenNumber": "-1",
+    "jcr:lastModified": "Wed Jul 24 2024 13:55:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/localpagenavigation",
+    "hideBottomLine": "true"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_766836985": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Tue Jul 23 2024 18:20:54 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Tue Jul 23 2024 18:25:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1584878764_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jul 19 2024 16:41:06 GMT+0000",
+      "jcr:lastModified": "Fri Jul 19 2024 16:41:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 19 2024 16:03:36 GMT+0000",
+          "text": "<h2><span style=\"font-size: 30.625px;\"><b><span class=\"futura-bold\">Falls in hospitals&nbsp;<span style=\"color: #ffb500;\">can take a heavy toll</span></span></b></span></h2>\n<p><span class=\"fontsize-1-25em\">Falls impact patient outcomes and experience, and impose a great cost on hospitals.</span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:54:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 18:27:44 GMT+0000",
+      "jcr:lastModified": "Tue Jul 23 2024 18:27:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 23 2024 18:27:52 GMT+0000",
+          "alt": "Patient in a hospital bed icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/images/icon_patient-in-hospital-bed_157x157.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 14 2024 17:31:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:28:19 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">1,000,000 patients</span></span></b><span class=\"fontsize-1-25em\"></span></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">in the U.S. experience a fall while being treated in the hospital each year.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:52:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 23 2024 18:27:52 GMT+0000",
+          "alt": "Patient with arm in cast icon ",
+          "srcFileRef": "/content/dam/stryker/acute-care/images/icon-arm-in-cast_gold_157x157.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 14 2024 17:31:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:28:19 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">80 to 90% of falls</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">in hospitals are unassisted, and unassisted falls are more likely to result in injury.<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:53:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 23 2024 18:27:52 GMT+0000",
+          "alt": "Hospital icon in grey and gold ",
+          "srcFileRef": "/content/dam/stryker/sage/journey-to-zero/images/Sage-Journey-to-Zero-hospital-icon.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 14 2024 17:31:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:28:19 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">More than 1/3 of falls</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">in hospitals result in injury.<sup>3</sup></span></p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:53:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 23 2024 18:27:52 GMT+0000",
+          "alt": "Dollar sign with gold background",
+          "srcFileRef": "/content/dam/stryker/acute-care/images/icon-dollar-sign_gold_157x157.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 14 2024 17:31:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:28:19 GMT+0000",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Up to $32,215</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">cost of a patient fall with injury.<sup>4</sup></span></p>\n<p style=\"text-align: center;\"><b data-rte-class=\"rte-temp\"><span class=\"fontsize-1-25em\"><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/acute-care/tools/falls-reduction-tool-calculator.html\">Calculate cost savings</a><br>\n </span></b></span></b></p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:53:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1511498439": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 15:56:36 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 15:56:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jul 24 2024 14:20:08 GMT+0000",
+          "jcr:lastModified": "Wed Jul 24 2024 14:20:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_589561424": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 20:10:50 GMT+0000",
+      "jcr:lastModified": "Tue Jul 23 2024 20:10:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "jcr:created": "Fri Jul 19 2024 16:03:36 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Stryker’s <span style=\"color: #ffb500;\">connected ProCuity beds</span> and <span style=\"color: #ffb500;\">Prime Connect stretchers</span> can help.</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Our smart, connected beds and stretchers are proven to support fall prevention protocols when used as part of a comprehensive fall prevention strategy.<sup>5,6</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Aug 07 2024 12:59:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 16:19:35 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 16:19:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3_1363070036": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 15:57:08 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 15:57:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
+          "alt": "Nurse monitoring bed configuration to help provide safe patient care ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/fall-prevention/iBed-cable-free-nurse-call-connection_1200c680.jpg",
+          "jcr:lastModified": "Wed Aug 07 2024 13:01:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 19 2024 16:07:58 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Simplify&nbsp;<span style=\"color: #000000;\">nurse workflows</span></span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Nurses need information, insights and simplified workflows that help them provide safe patient care with less burden. Stryker’s ProCuity beds and Prime Connect stretchers deliver.</span></p>\n<h3><span class=\"fontsize-1-25em\">Smart bed configuration monitoring</span></h3>\n<p><span class=\"fontsize-1-25em\">iBed Watch monitors ProCuity’s bed height, head-of-bed angle and siderail configuration for compliance with parameters set at the bedside.</span></p>\n<h3><span class=\"fontsize-1-25em\">Enhanced alarm accuracy</span></h3>\n<p><span class=\"fontsize-1-25em\">ProCuity’s Adaptive Bed Alarm adjusts its sensitivity based on the patient’s weight and position, and the bed’s siderail configurations. Prime Connect’s tailored bed exit alarms align with patient fall risk status and hospital auditory preferences.</span></p>\n<h3><span class=\"fontsize-1-25em\">Cable-free nurse call connection</span></h3>\n<p><span class=\"fontsize-1-25em\">Secure Connect enables ProCuity to automatically connect to nurse call without needing to plug in a cable.<br>\n </span>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jul 26 2024 15:55:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_4924008": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 14:26:45 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 14:26:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
+          "alt": "Nurse reviews Vision clinical dashboard ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/nurse-looking-at-vision-dashboard_1200x680.jpg",
+          "jcr:lastModified": "Wed Aug 07 2024 13:02:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Fri Jul 19 2024 16:07:58 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Enable&nbsp;<span style=\"color: #ffb500;\">quicker response</span> to <span style=\"color: #ffb500;\">patients at risk of falling</span></span></span></h2>\n<p><span class=\"fontsize-1-25em\">Through Stryker’s Dynamic Clinical Workflow, nurses can receive bed and stretcher notifications when they’re away from the bedside, to support quicker intervention when a patient is at risk of falling. Dynamic Clinical Workflow is an adaptable, scalable way to bring together the people and information needed to deliver quality patient care.</span></p>\n<h3><span class=\"fontsize-1-25em\">Intelligent workflow for care teams on the go</span></h3>\n<p><span class=\"fontsize-1-25em\">For on-the-go monitoring and support for rapid response, ProCuity and Prime Connect can send notifications through our enterprise workflow platform to the right care team members at the right time.*</span></p>\n<h3><span class=\"fontsize-1-25em\">Centralized monitoring with Vision</span></h3>\n<p><span class=\"fontsize-1-25em\">The Vision clinical dashboard provides remote visibility to patients’ bed or stretcher compliance with hospital safe-bed configurations in near-real time.**</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Aug 06 2024 20:43:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_84610099": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Jul 19 2024 17:30:53 GMT+0000",
+      "jcr:lastModified": "Fri Jul 19 2024 17:30:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 16:06:55 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 16:12:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(84,88,87)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3_498858": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jul 24 2024 14:24:55 GMT+0000",
+          "jcr:lastModified": "Wed Jul 24 2024 14:24:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "topPadding": "3",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Wed Jul 24 2024 16:13:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Wed Jul 24 2024 16:13:52 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Jul 23 2024 20:05:52 GMT+0000",
+              "alt": "Patient trying to exit hospital bed with alarm sounding ",
+              "srcFileRef": "/content/dam/stryker/acute-care/images/fall-prevention-bed-alarm_680x400.jpg",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Aug 07 2024 13:02:49 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Wed Jul 24 2024 16:13:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Fri Jul 26 2024 16:48:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_507153377_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "jcr:created": "Mon Oct 16 2023 21:09:19 GMT+0000",
+              "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Get the eGuide: </span><span style=\"color: #ffffff;\">Supporting hospital fall prevention strategies through smart, connected bed and stretcher workflows</span></span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><br>\n</span></span></h2>\n<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Discover how one hospital reduced bed-related falls by 64.8%, and an adult ED in a level 1 trauma center decreased falls 27% using Stryker’s smart, connected beds and stretchers.<sup>5,6†&nbsp;</sup>Learn more about the solutions behind the results. Find out how we can help your team use a data-driven approach to supporting fall-prevention protocols and long-term success.</span></span></p>\n",
+              "jcr:lastModified": "Fri Aug 30 2024 11:44:28 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "ctaLinkType": "int",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Jul 23 2024 20:05:10 GMT+0000",
+              "CTATitle": "Download the e-Guide",
+              "jcr:lastModified": "Tue Jul 23 2024 20:06:47 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/acute-care/c/enabling-fall-prevention-through-connected-bed-workflows"
+            },
+            "text_copy_991686161": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "chris.kleckner@stryker.com",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "jcr:created": "Wed Jul 24 2024 16:13:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "jcr:lastModified": "Fri Jul 26 2024 16:48:14 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 18:43:15 GMT+0000",
+      "jcr:lastModified": "Tue Jul 23 2024 18:43:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 14:24:43 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 14:24:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 23 2024 18:43:22 GMT+0000",
+          "alt": "calculator_guaranteePrograms",
+          "srcFileRef": "/content/dam/stryker/acute-care/images/gold-dollar-icon-1.69-ratio.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jul 24 2024 16:05:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Jul 23 2024 18:44:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Fall Reduction Tool <span style=\"color: #ffb500;\">Calculator</span></span></span></h2>\n<h3>Calculate potential savings over time</h3>\n<p><span class=\"fontsize-1-25em\">Identify the potential savings your facility could realize by reducing costly patient falls.</span></p>\n<p><a href=\"/content/stryker/us/en/acute-care/tools/falls-reduction-tool-calculator.html\"><span class=\"standalone-link\">Cost Savings Calculator</span></a></p>\n",
+          "jcr:lastModified": "Mon Jul 29 2024 20:33:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 18:43:15 GMT+0000",
+      "jcr:lastModified": "Tue Jul 23 2024 18:43:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "section_title_1507454934": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connect",
+      "jcr:created": "Tue Jul 23 2024 18:23:53 GMT+0000",
+      "title": "Connect",
+      "jcr:lastModified": "Tue Jul 23 2024 20:00:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_272493304_copy__1829589243": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 15:14:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Ready to learn more?&nbsp;<span class=\"futura-bold\">Talk to a rep today.</span></span></h2>\n",
+          "jcr:lastModified": "Tue Jul 23 2024 20:00:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:08:32 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:08:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_61969783": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "richard.thomas2@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Feb 17 2023 21:38:06 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your interest. A Stryker representative will reach out to you shortly.",
+          "jcr:lastModified": "Thu Feb 06 2025 01:24:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jul 24 2024 16:14:20 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Wed Jul 24 2024 16:14:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Jul 24 2024 16:14:55 GMT+0000",
+      "jcr:lastModified": "Wed Jul 24 2024 16:15:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 1,
+          "tabTitle": "Related Products"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "News Articles"
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:48:21 GMT+0000",
+          "title": "Related products",
+          "jcr:lastModified": "Mon Jul 29 2024 20:29:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/prime-series"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/procuity/index"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/dynamic-clinical-workflow"
+            }
+          }
+        },
+        "customizable_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 23 2024 18:48:21 GMT+0000",
+          "jcr:lastModified": "Tue Jul 23 2024 18:52:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/vocera-engage"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/vocera-smartbadge"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/vocera-minibadge"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Jul 24 2024 16:16:26 GMT+0000",
+          "jcr:lastModified": "Mon Jul 29 2024 20:23:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/news/ibed-fall-prevention-clinical-outcome"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/news/hospital-bed-standardization-va"
+            }
+          }
+        }
+      }
+    },
+    "cols_1452365377": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 18:52:38 GMT+0000",
+      "jcr:lastModified": "Tue Jul 23 2024 18:52:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Jul 23 2024 20:09:46 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Tue Jul 23 2024 20:09:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Jul 23 2024 18:52:45 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jul 23 2024 18:53:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Requires ProCuity and/or Prime Connect to be integrated with Vocera Engage intelligent middleware through our wireless system. Vocera Engage includes Engage Medical Device Alarm Notification (EMDAN), FDA 510(k)-cleared middleware, to deliver secondary alarms. Capabilities are based on your facility’s protocols and technology configuration.</p>\r\n<p>**Requires integration with our wireless system.</p>\r\n<p>†These hospitals’ results reflect the policies, protocols, technology and training implemented by these hospitals and the results are not necessarily representative of what another hospital may experience. </p>\r\n<p>1. Health Research &amp; Educational Trust. Preventing patient falls: A systematic approach from the Joint Commission Center for Transforming Healthcare project. Oct 2016. Retrieved June 30, 2023.</p>\r\n<p>2. Assisted and Unassisted Falls: Different Events, Different Outcomes, Different Implications for Quality of Hospital Care. Jt Comm J Qual Patient Saf. 2014 August; 40(8): 358–364. Accessed 30 June 2023. Retrieved June 30, 2023.</p>\r\n<p>3. Falls. Patient Safety Network. September 7, 2018. Retrieved July 1, 2024.</p>\r\n<p>4. Dykes PC,&nbsp;Burns Z,&nbsp;Adelman J, et al. Evaluation of a Patient-Centered Fall-Prevention Tool Kit to Reduce Falls and Injuries:&nbsp;A Nonrandomized Controlled Trial.&nbsp;<i>JAMA Netw Open.</i>&nbsp;2020;3(11):e2025889. doi:10.1001/jamanetworkopen.2020.25889. Retrieved July 1, 2024.</p>\r\n<p>5. Rohac, Delane, et al. Outcomes Story: Targeted Fall Prevention Interventions and Wireless Technology Results in Successful Quality Improvement Intervention. October 2018. Retrieved July 1, 2024.</p>\r\n<p>6. Cook NS, Komansky BJ, Urton MS. Do No Harm: A Multifactorial Approach to Preventing Emergency Department Falls – A Quality Improvement Project. J Emerg Nurs. 2020 Sep;46(5):666-674. doi: 10.1016/j.jen.2020.03.007. Epub 2020 Jun 4. PMID: 32507724. Retrieved July 1, 2024.</p>\r\n",
+    "jcr:lastModified": "Tue Aug 06 2024 20:26:32 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/fall-prevention/fall-prevention-hero_1200x680.jpg"
+  }
+}

@@ -1,0 +1,598 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5b9dd269-8610-4f37-80ef-d536a8db0a96",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "14ed1099-688c-4ffc-b79d-bd628cf8c918"
+  ],
+  "lastPublished": "Thu Mar 05 2026 18:07:45 GMT+0000",
+  "jcr:created": "Thu Mar 05 2026 18:07:47 GMT+0000",
+  "cq:lastReplicated": "Thu Mar 05 2026 18:07:49 GMT+0000",
+  "cq:lastModified": "Thu Feb 26 2026 00:59:12 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "14ed1099-688c-4ffc-b79d-bd628cf8c918",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Oct 22 2024 20:32:47 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "3952b2f5-0b2a-4548-a50f-e24bf4c79173",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Large",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 17 2024 20:28:00 GMT+0000",
+      "jcr:lastModified": "Tue Sep 17 2024 20:28:18 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline7945743166697075": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "topMargin": "3",
+        "gradientDirection": "left-to-right",
+        "line1": "<h1><span class=\"fontsize-4-5-vw\"><span class=\"futura-bold\"><b>Improving access to healthcare globally: <span style=\"color: rgb(255,181,0);\">How Stryker strengthens health systems</span></b></span></span></h1>\r\n",
+        "jcr:lastModified": "Thu Feb 26 2026 00:54:24 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "1",
+            "width": "10"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      },
+      "standaloneimage": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "kristian.bocage@stryker.com",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "preset": "max_width_1440",
+        "jcr:created": "Tue Sep 17 2024 20:28:05 GMT+0000",
+        "alt": "Dr. Clovis Baramburiye performs surgery while surgical residents observe in Rwanda, Africa",
+        "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally/RWA_2023_Bushenge_Surgeon_Clovis Baramburiye_005.jpg",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Tue Sep 17 2024 20:28:51 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "tablet": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 17 2024 20:27:53 GMT+0000",
+      "jcr:lastModified": "Tue Sep 17 2024 20:27:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Sep 17 2024 19:38:27 GMT+0000",
+      "text": "<p>Access to healthcare is the foundation of global public health. When health systems are strong, they do more than treat illness. They drive economic stability, foster community wellbeing and provide a critical line of defense against global health threats. Yet, for billions, the path to quality care remains a challenge.<sup>1</sup> Driven by our mission to make healthcare better, Stryker invests in partnerships that address these gaps. We focus on strengthening the people, equipment and systems required to deliver quality surgical care in the long term. Through our <b><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\">Signature Partner portfolio</span></span></span></b>, we unite charitable giving and volunteerism to expand surgical training, equip care delivery with donated medical equipment, support the wellbeing of healthcare workers and respond to disasters. By strengthening the foundations of care, we ensure our impact is immediate and enduring.</p>\n<h2><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-8em\">Why it matters</span></span></span></h2>\n<p><b><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\">Addressing the global healthcare access gap</span></span></span></b> is a multifaceted challenge that requires a commitment to the entire healthcare ecosystem. By working across foundations of care, we create a resilient multiplier effect. This approach advances our mission by meeting urgent needs today while building the <b><span style=\"color: #4c7d7a;\"><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\">long-term capacity and resilience</span></span></span></b> of healthcare systems worldwide.</p>\n",
+      "jcr:lastModified": "Thu Feb 26 2026 00:59:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Feb 24 2026 21:34:20 GMT+0000",
+      "jcr:lastModified": "Tue Feb 24 2026 21:34:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "defaultExpanded": "true",
+          "accPosId": 1,
+          "accTitle": "Read the full article"
+        }
+      },
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text_1771909297": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Sep 17 2024 19:48:31 GMT+0000",
+          "text": "<p>Access to healthcare is the foundation of global public health. When health systems are strong, they do more than treat illness. They drive economic stability, foster community wellbeing and provide a critical line of defense against global health threats. Yet, for billions, the path to quality care remains a challenge.<sup>1</sup></p>\n<p>Driven by our mission to make healthcare better, Stryker invests in partnerships that address these gaps. We focus on strengthening the people, equipment and systems required to deliver quality surgical care in the long term. Through our <b><span style=\"color: #1c5687;\"><span style=\"color: #4c7d7a;\">Signature Partner portfolio</span></span></b>, we unite charitable giving and volunteerism to expand surgical training, equip care delivery with donated medical equipment, support the wellbeing of healthcare workers and respond to disasters. By strengthening the foundations of care, we ensure our impact is immediate and enduring.</p>\n<p>Read on to learn how Stryker works with key nonprofit partners to create a better, healthier world.</p>\n",
+          "jcr:lastModified": "Thu Feb 26 2026 00:57:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_185031628": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 17 2024 19:50:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>How Stryker and Operation Smile strengthen health systems</h2>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 21:11:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "standaloneimage24737": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Dr. Clovis Baramburiye performs surgery while surgical residents observe in Rwanda, Africa.",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally/RWA_2023_Bushenge_Surgeon_Clovis Baramburiye_005.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 24 2026 21:11:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_50154424_copy_1": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-5",
+          "jcr:created": "Tue Sep 17 2024 19:50:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-8em\">Dr. Clovis Baramburiye performs surgery while surgical residents observe in Rwanda, Africa. Photo courtesy of the Operation Smile.</span></p>\n",
+          "jcr:lastModified": "Tue Sep 17 2024 20:24:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1179411546": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Sep 17 2024 19:51:12 GMT+0000",
+          "text": "<p>Operation Smile is a global nonprofit bridging the gap in access to essential surgeries and health care. They provide cleft surgery and comprehensive care, medical education and training and long-term investments in strengthening local health systems and workforces in low-and-middle income communities. For over 30 years, our donations to Operation Smile offers a range of medical education and training programs to healthcare professionals that help build local capacity, increase access to high quality care and improve patient outcomes. In 2025, Stryker has helped train more than 1,900 healthcare professionals through our partnership with Operation Smile.<sup>2</sup></p>\n<p>Our dedicated network of global employee Operation Smile ambassadors, a group of Stryker’s employees who champion and fundraise for the organization, are also committed to educating their community about Operation Smile’s mission. Ambassadors play a crucial role in the success of our partnership and raising awareness and funds for Operation Smile. Through their efforts, employees have collectively raised more than $1.8 million since 2016.<sup>2</sup></p>\n",
+          "jcr:lastModified": "Thu Feb 26 2026 00:50:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1570329442": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 17 2024 19:51:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>Stryker supports disaster relief with the American Red Cross</h2>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 21:12:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "Bettye and her family survived a fire in their Alabama home in December 2022, thanks to smoke alarms that Red Cross volunteers had installed just two months earlier.",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally/Red Cross.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 24 2026 21:14:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_50154424_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-5",
+          "jcr:created": "Tue Sep 17 2024 19:50:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-8em\">Bettye Brewer (center) and her family survived a fire in their Alabama home in December 2022, thanks to smoke alarms that Red Cross volunteers Robert Jay Wortley (left) and Mike Turner (right) had installed just two months earlier. Photo courtesy of the Red Cross.</span></p>\n",
+          "jcr:lastModified": "Tue Sep 17 2024 20:25:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1316804007": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Sep 17 2024 19:53:08 GMT+0000",
+          "text": "<p>The American Red Cross mobilizes the power of volunteers and the generosity of donors to alleviate human suffering. From extreme weather due to the climate crisis to single family home fires, the American Red Cross is ready to step in when a crisis strikes. As a member of the Annual Disaster Giving Program, Stryker’s pre-investment in disaster relief helps ensure the Red Cross is ready to act when needed.</p>\n<p>The American Red Cross also supplies nearly 40% of the nation’s blood.<sup>3</sup> Stryker supports these efforts by encouraging employee participation in and organization of blood drives, donating much-needed blood for patients in need.</p>\n<p>To ensure the American Red Cross has the resources to respond effectively to urgent needs, Stryker employees also support disaster relief efforts by assembling relief kits and providing donations to the American Red Cross.</p>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 21:00:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1921270851": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 17 2024 19:53:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>Stryker donates medical equipment and supplies with Project C.U.R.E. partnership</h2>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 21:15:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "standaloneimage_1032": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "A nurse checks the blood pressure of a patient at a Project C.U.R.E. clinic",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally/PC 2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 24 2026 21:15:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_50154424_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-5",
+          "jcr:created": "Tue Sep 17 2024 19:50:30 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-8em\">A nurse checks the blood pressure of a patient at a Project C.U.R.E. clinic. Photo courtesy of Project C.U.R.E.</span></p>\n",
+          "jcr:lastModified": "Tue Sep 17 2024 20:25:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_852660818": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 17 2024 19:54:39 GMT+0000",
+          "text": "<p>A lack of proper equipment should never be a barrier to quality healthcare. For healthcare professionals and caregivers in under-resourced countries, inadequate equipment and supply leads to delays in providing care to patients. Of the 313 million surgeries done around the world each year, only 6% of them occur in under-resourced countries.<sup>4</sup> This is why our partnership with Project C.U.R.E., the world’s largest distributor of donated medical equipment and supplies to under-resourced communities, is vital to the healthcare ecosystem.</p>\n<p>Since 2007, Stryker and Project C.U.R.E have worked together to deliver medical relief through monetary donations, product donations, and employee volunteer efforts. In 2023, Stryker collaborated with Project C.U.R.E to respond to global natural disasters in addition to our Orthopedic Power Tool Grant Program that impacted 21 countries from Angola to Zambia.<sup>5</sup> Employees also volunteered to sort donations and share technical expertise in distribution centers across the United States.<sup>5</sup> Project C.U.R.E.’s mission allows us to improve the experience of healthcare professionals and patients. With the proper tools, healthcare workers can take better care of their patients.</p>\n",
+          "jcr:lastModified": "Tue Oct 22 2024 19:57:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1560827435": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 17 2024 19:55:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2>Stryker helps protect health workers’ mental health and wellbeing alongside the Dr. Lorna Breen Heroes’ Foundation</h2>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 20:51:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "standaloneimage_1464": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Sep 17 2024 19:55:37 GMT+0000",
+          "alt": "A nurse smiling while going over a patient chart on an iPad.",
+          "srcFileRef": "/content/dam/stryker/about/news/2024/features/how-stryker-improves-access-to-healthcare-globally/AdobeStock_766858773.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Feb 24 2026 21:16:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1466410832": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Sep 17 2024 19:55:53 GMT+0000",
+          "text": "<p>We recognize that the wellbeing of healthcare professionals is crucial to a healthy and functioning healthcare ecosystem. Our new partnership with the Dr. Lorna Breen Heroes’ Foundation focuses on the safety and wellbeing of healthcare providers, with a focus on reducing burnout of healthcare professionals. The foundation advises the healthcare industry on how to implement well-being initiatives, drives awareness to reduce stigma and accelerates programs that seek ways to improve provider well-being.</p>\n<p>In partnership with Stryker, the foundation has been able to support their signature program, All In: Caring for Caregivers, which focuses on creating better workplace environments for healthcare workers. As part of this initiative, the Foundation supports healthcare organizations in implementing the ‘Impact Wellbeing Guide: Taking Action to Improve Healthcare Worker Wellbeing', which has been accessed by nearly 14,000 hospital leaders within the first four weeks of the guide’s release. “Together with partners like Stryker, we can address this mental health crisis our health workers are experiencing and make a lasting impact on our healthcare workforce’s wellbeing,” says Corey Feist, Co-Founder of the Dr. Lorna Breen Heroes’ Foundation.</p>\n<p>“Our mission to make healthcare better cannot be achieved without our nonprofit partners,” says Anita Mehta, Director of Social Impact at Stryker. &quot;We continue to assess and invest in our nonprofit partnerships to strengthen health systems worldwide. With each of these efforts, Stryker’s goal remains the same - we want to improve the experience of giving and receiving care, so patient outcomes improve.&quot;</p>\n",
+          "jcr:lastModified": "Thu Feb 26 2026 00:52:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1154821889": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 17 2024 20:26:29 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-8em\"><b>References</b></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-8em\">1. World Health Organization. (2025, December 6). Most countries make progress towards universal health coverage, but major challenges remain, WHO–World Bank report finds [News release]. <a href=\"https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds\">https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds</a><br>\n 2. Data on file with Operation Smile.<br>\n 3. American Red Cross. ‘Importance of the Blood Supply.’ Accessed 10 October 2024 via <a href=\"https://www.redcrossblood.org/donate-blood/how-to-donate/how-blood-donations-help/blood-needs-blood-supply.html\">https://www.redcrossblood.org/donate-blood/how-to-donate/how-blood-donations-help/blood-needs-blood-supply.html</a> <br>\n 4. Global Surgery 2030: evidence and solutions for achieving health, welfare, and economic development – The Lancet accessed 10 October 2024 via <a href=\"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60160-X/fulltext\">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60160-X/fulltext</a><br>\n 5. Data on file with Project C.U.R.E.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Feb 24 2026 21:04:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "1",
+              "width": "10"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        }
+      }
+    }
+  }
+}

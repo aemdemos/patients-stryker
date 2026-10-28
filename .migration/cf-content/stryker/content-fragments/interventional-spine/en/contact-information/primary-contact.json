@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable",
+    "rep:AccessControllable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:versionHistory": "755a8c40-3d63-4a50-94a7-3882066ea2ed",
+  "jcr:predecessors": [
+    "d57875a1-e3bb-436c-ba24-636d56e93a07"
+  ],
+  "jcr:created": "Mon Feb 24 2020 14:44:54 GMT+0000",
+  "jcr:baseVersion": "d57875a1-e3bb-436c-ba24-636d56e93a07",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "23eb8aac-8eaf-4b3b-94e2-41499c000fcb",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Primary Contact",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "cq:lastReplicated": "Thu Jan 04 2024 14:42:53 GMT+0000",
+    "cq:lastModified": "Mon Oct 07 2019 15:02:33 GMT+0000",
+    "jcr:description": "",
+    "contentFragment": true,
+    "cq:name": "primary-contact",
+    "jcr:lastModified": "Thu Jan 04 2024 14:42:51 GMT+0000",
+    "lastFragmentSave": "Thu Jan 04 2024 14:42:51 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/interventional-spine/en/contact-information",
+    "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Thu Jan 04 2024 14:42:51 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "Emails@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "addressBlock1": "<p>4100 East Milham Ave.<br>\nKalamazoo, MI 49001<br>\nUSA</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "BusinessHomePage": "<p><a href=\"https://www.stryker.com/us/en/interventional-spine/contact.html\">Learn More</a></p>\n",
+        "EmailLabel@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "RelatedLinks@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "locationName": "Interventional Spine",
+        "ShortDesc": "<p>Providing you with an extensive and innovative product portfolio for vertebral augmentation, vertebroplasty and radiofrequency ablation procedures, along with a diagnostic tool and decompression treatment advances for contained disc herniations.</p>\n",
+        "PhoneNumberLabel": "Phone",
+        "ShortDesc@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jan 03 2024 16:38:21 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "PhoneNumbers": "<p><b>Customer Service</b><br>\n800 253 3210 Toll Free<br>\n269 323 7700<br>\n800 999 3811 Toll Free Fax</p>\n",
+        "AddressLabel@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Tue Feb 18 2020 14:09:11 GMT+0000",
+        "BusinessHomePageLabel": "Interventional Spine Homepage"
+      }
+    }
+  }
+}

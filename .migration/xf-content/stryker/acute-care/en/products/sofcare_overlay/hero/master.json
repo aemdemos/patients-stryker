@@ -1,0 +1,57 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8e6f671c-76d3-4ce0-a7f9-4d004d6c5f90",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "54ac2029-6ae2-4cac-933c-7724594a98cf"
+  ],
+  "jcr:created": "Mon Feb 26 2024 14:38:02 GMT+0000",
+  "cq:lastReplicated": "Mon Feb 26 2024 14:38:04 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 17:39:08 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "54ac2029-6ae2-4cac-933c-7724594a98cf",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "66e0137e-c669-41ef-a942-b1a44b9bd81f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's SofCare overlay for treating pressure injuries",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/sofcareoverlay/images/Thumbnail_SofCareOverlay.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 17:39:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

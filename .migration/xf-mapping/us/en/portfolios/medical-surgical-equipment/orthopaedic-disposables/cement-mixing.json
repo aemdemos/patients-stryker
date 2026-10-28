@@ -1,0 +1,56 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Cement mixing",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "22ecf839-ca03-4591-99db-79e2e3a136f6",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "3e72dc06-245f-4bd4-858e-7a6ee871d435"
+  ],
+  "contentID": "9100-004-753 Rev. None",
+  "lastPublished": "Fri Jan 09 2026 23:01:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jan 09 2026 23:01:24 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 09 2026 23:01:26 GMT+0000",
+  "cq:lastModified": "Sun Sep 03 2017 11:37:06 GMT-0400",
+  "jcr:baseVersion": "3e72dc06-245f-4bd4-858e-7a6ee871d435",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 09 2026 23:01:24 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/cement-mixing-systems"
+  ],
+  "jcr:lastModified": "Sun Sep 03 2017 11:37:05 GMT-0400",
+  "jcr:uuid": "25b78a6d-a92c-4816-b8e2-d854ec22d0b1",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:33:48 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  }
+}

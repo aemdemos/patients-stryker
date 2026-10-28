@@ -1,0 +1,58 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5249ba26-9487-4673-bbc5-c035e1368fed",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "cb4d8391-eb3e-411c-bd10-f119d08fa176"
+  ],
+  "jcr:created": "Fri Feb 23 2024 17:17:45 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 23 2024 17:17:47 GMT+0000",
+  "cq:lastModified": "Fri Feb 23 2024 17:14:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "cb4d8391-eb3e-411c-bd10-f119d08fa176",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "3c2011a8-d0a3-41f6-aff4-f50ebdf58e08",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Stryker's Surgistool chair for surgical seating",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/surgistool/images/Thumbnail_Surgistool.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Feb 23 2024 17:14:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

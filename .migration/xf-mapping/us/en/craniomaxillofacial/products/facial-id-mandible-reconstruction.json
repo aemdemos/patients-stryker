@@ -1,0 +1,131 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "A patient specific solution",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Facial iD - Mandible Reconstruction",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d600dc61-55a0-4b53-8f0a-451dc0d31d03",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "thumbnailAltText": "Stryker Mandible Reconstruction Plate on Jaw",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/Mandible Recon_CMRP2.0.png",
+  "jcr:predecessors": [
+    "c16b16f5-46fb-47dd-aa99-a5f42cc89ba1"
+  ],
+  "contentID": "CMF-WC-28_Rev. None_14666 ",
+  "lastPublished": "Tue May 09 2023 17:20:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue May 09 2023 17:20:34 GMT+0000",
+  "cq:lastReplicated": "Tue May 09 2023 17:20:37 GMT+0000",
+  "cq:lastModified": "Tue May 09 2023 17:20:18 GMT+0000",
+  "jcr:description": "Rigid internal fixation for primary and secondary mandible reconstruction.",
+  "jcr:baseVersion": "c16b16f5-46fb-47dd-aa99-a5f42cc89ba1",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:capability/cmf-implants",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:specialty/cmf",
+    "stryker:portfolio/orthopaedics",
+    "stryker:product/craniomaxillofacial/facial-id-mandible-reconstruction",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue May 09 2023 17:20:18 GMT+0000",
+  "jcr:uuid": "befeb3f6-a604-4264-b209-2b5b05fbe13a",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "andrew.reynolds@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "andrew.reynolds@stryker.com",
+      "imageAlt": "Mandible Recon_CMRP2.0",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Mon May 08 2023 19:14:01 GMT+0000",
+      "compImageRef": "/content/dam/stryker/craniomaxillofacial/products/customizedmandibularreconstructionplate/images/Mandible Recon_CMRP2.0.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Individually designed. Personalized care.</p>\r\n",
+    "shortDescTop": "<p>Our Facial iD mandible reconstruction plate gives you the flexibility you're looking for. Based on patient specific CT data and direct input from you, our Facial iD mandible reconstruction plate is designed to meet the individual needs of you and your patients. After the data is received, a design session is set up between you and a design engineer, placing the artistry of implant design into your hands.&nbsp;<br>\r\n</p>\r\n<p>In collaboration with 3D Systems/Medical Modeling, you can use Virtual Surgical Planning if desired. Their expertise in surgical planning, guide/template design, and additive manufacturing combine to offer a product useful for improving surgeon confidence and enhancing outcomes.<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModified": "Mon Aug 14 2017 19:33:07 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Plate is designed using patient specific CT data and is delivered preformed, matching the planned design of the patient's postoperative anatomy.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Ability to increase individual bar width up to 1mm. Increased bar width may improve the fatigue strength by approximately 40% compared to our standard Universal Mandible reconstruction plates.<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Proprietary software to select specific plate design features such as profile height, screw hole location, and 3D run of the plate.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Allows for the transfer of the virtual plan to surgery using patient specific osteotomy and positioning guides.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "https://cmf.stryker.com/products/customized-mandible-reconstruction-plate",
+    "linkUrl": "https://cmf.stryker.com/products/customized-mandible-reconstruction-plate",
+    "jcr:lastModified": "Tue May 30 2017 18:13:48 GMT-0400",
+    "linkPath": "",
+    "linkText": "Additional resources",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. K132519, dynamic test TI 3645/13</p>\r\n",
+    "jcr:lastModified": "Tue Jul 11 2017 17:48:57 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/customizedmandibularreconstructionplate/images/Hero_CMRP and Facial iD.png"
+  }
+}

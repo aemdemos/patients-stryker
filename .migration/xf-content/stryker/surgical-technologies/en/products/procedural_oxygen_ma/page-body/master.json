@@ -1,0 +1,301 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "page body",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "735093fd-e648-443f-9224-6ed22d1d59d0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9f948a55-f48d-4e1d-946e-fa5031f7c017"
+  ],
+  "lastPublished": "Fri May 01 2026 17:12:37 GMT+0000",
+  "jcr:created": "Fri May 01 2026 17:12:40 GMT+0000",
+  "cq:lastReplicated": "Fri May 01 2026 17:12:41 GMT+0000",
+  "cq:lastModified": "Fri May 01 2026 14:30:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9f948a55-f48d-4e1d-946e-fa5031f7c017",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri May 01 2026 17:12:37 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "f04bcf87-ab4d-4c39-96e8-3bba91a494eb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:title": "You",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 16:40:36 GMT+0000",
+      "jcr:lastModified": "Thu Feb 19 2026 16:43:44 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "text2027210950071422": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "2",
+        "leftPadding": "3",
+        "topPadding": "3",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"futura-bold\">You and your patients can now breathe easier. POM offers an innovative oxygen‑delivery solution for procedures requiring sedation.</span></p>\n",
+        "jcr:lastModified": "Fri Mar 06 2026 16:07:40 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "3",
+        "textIsRich": "true"
+      },
+      "curatedcta": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "ctaLinkType": "deep",
+        "ctaOpenInNewTabOverride": "0",
+        "jcr:created": "Thu Feb 19 2026 16:41:26 GMT+0000",
+        "CTATitle": "Contact us",
+        "ctaDeepLinkID": "request-more-information",
+        "jcr:lastModified": "Fri Mar 06 2026 16:17:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/curatedcta",
+        "CTAButtonColor": "rgb(255,181,0)",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_copy_263637805__993963050": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 17 2026 15:54:11 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Tue Feb 17 2026 15:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "largeheadline_copy_c_1460553630": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Introducing...",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Thu Feb 19 2026 16:45:00 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_c_14605536302027286555872845": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<h2 style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-3vw\">POM Procedural Oxygen Mask<sup><span class=\"fontsize-1-5-vw\">®</span></sup></span></span><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\"><br>\r\n </span></span><span class=\"futura-bold\"><span class=\"fontsize-2vw\">Safety. Simplicity. Innovation. All in the same breath.</span></span></h2>\r\n",
+        "jcr:lastModified": "Fri Mar 06 2026 16:07:02 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(255,181,0)",
+        "gradientDirectionInverse": "true",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "8"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "standaloneimage20351": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "POM product",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/products/procedural-oxygen-mask/images/POM features.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 01 2026 17:23:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_170058219": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "7",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "leftPadding": "7",
+      "topPadding": "7",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Feb 19 2026 16:43:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><b><span class=\"futura-bold\">A)&nbsp;&nbsp;<span style=\"color: #ffb500;\">Nose clip</span><br>\n</span> </b></span><span class=\"urw-egyptienne\">Secures the mask to the patient’s face.</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">B)&nbsp;&nbsp;<span style=\"color: #ffb500;\">Oral &amp; nasal membrane access ports</span><br>\n </span></span><span class=\"urw-egyptienne\">Allows an instrument (scope, tube or probe) to enter either a patient’s oral or nasal passage.</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">C)&nbsp;&nbsp;<span style=\"color: #ffb500;\">Oxygen adaptor port</span><br>\n </span></span><span class=\"urw-egyptienne\">Allows for the insertion of a medium or high O2 concentration adaptor to facilitate oxygen delivery.</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">D)&nbsp;&nbsp;<span style=\"color: #ffb500;\">Exhalation valve</span><br>\n </span></span><span class=\"urw-egyptienne\">A one-way flap that allows the patient’s exhalation to vent or exit the mask. The valve closes during inhalation.</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">E)&nbsp;&nbsp;<span style=\"color: #ffb500;\">EtCO2 sampling port with tethered cap</span><br>\n </span></span><span class=\"urw-egyptienne\">Allows for the secure attachment of the EtCO2 sampling line to facilitate EtCO2 monitoring.</span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">F)&nbsp;&nbsp;<span style=\"color: #ffb500;\">Head strap</span><br>\n </span></span><span class=\"urw-egyptienne\">Adjusts to accommodate appropriate size.</span></p>\n",
+      "jcr:lastModified": "Wed Apr 01 2026 17:22:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "7",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_263637805_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Tue Feb 17 2026 15:54:11 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Tue Feb 17 2026 15:54:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,1)"
+    },
+    "largeheadline_copy_c_186223838": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Introducing...",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Thu Feb 19 2026 16:48:27 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "largeheadline_copy_c_1862238382027493957740247": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "gradientDirection": "left-to-right",
+        "line1": "<h2 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">Innovative oxygen delivery for procedures requiring sedation*</span></span><br>\r\n</h2>\r\n",
+        "jcr:lastModified": "Thu Feb 19 2026 16:59:31 GMT+0000",
+        "sling:resourceType": "stryker/components/content/largeheadline",
+        "backgroundColor": "rgb(255,181,0)",
+        "gradientDirectionInverse": "true",
+        "textIsRich": [
+          "true",
+          "true"
+        ],
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "6"
+          },
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "12"
+          }
+        }
+      }
+    },
+    "text_888598716": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 16:48:38 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Monitoring</span></span></p>\n<p>POM doesn’t just deliver oxygen to patients, it also samples gases for monitoring. POM helps decrease severe and prolonged hypoxic episodes and in-case interruptions, delays, and cancellations.**<sup>1</sup></p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 17:10:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_888598716_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 16:48:38 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Versatile</span></span></p>\n<p>POM is a versatile multi-port oxygen mask, designed to accommodate a wide range of scopes, probes, and tubes with ease. With its unique design, it allows for hassle-free insertion through the patient’s mouth or nose, all while maintaining optimal oxygen delivery. POM is engineered to maximize oxygen flow and provide respiratory rate monitoring for enhanced safety.</p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 17:10:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_888598716_copy_45027862": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Feb 19 2026 16:48:38 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Sizes</span></span></p>\n<p>POM is now available in three sizes: large&nbsp;(adult), medium, and small (pediatric). For more information on the models available, see the resources section below for the full part number guide.&nbsp;</p>\n",
+      "jcr:lastModified": "Thu Feb 19 2026 17:11:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "4"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

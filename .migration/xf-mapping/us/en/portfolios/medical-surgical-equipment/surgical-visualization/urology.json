@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Scopes and Hardware",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Urology",
+  "jcr:versionHistory": "34daa639-534e-420c-9510-6927bb606ba1",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-Cystoscopev3.jpg",
+  "jcr:predecessors": [
+    "a54b68f4-7497-4c85-9041-85b217ba2f58"
+  ],
+  "contentID": "Literature Number: 1000902492, Rev. A",
+  "lastPublished": "Wed Mar 23 2022 18:41:38 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Mar 23 2022 18:41:38 GMT+0000",
+  "cq:lastModified": "Wed Mar 23 2022 18:34:28 GMT+0000",
+  "jcr:description": "Stryker's Cystoscopes are designed to optimize our camera technology for increased visualization of critical anatomy. We offer several options to meet individual surgeon preferences. ",
+  "jcr:baseVersion": "a54b68f4-7497-4c85-9041-85b217ba2f58",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/specialty",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/cystoscopy",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 23 2022 18:19:44 GMT+0000",
+  "jcr:uuid": "e05721ce-6ba3-4aef-8837-275a25482012",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Mon Nov 19 2018 21:18:47 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Jul 25 2017 14:00:59 GMT-0400",
+    "compImageRef": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Portfolio-Cystoscopes.jpg",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/medical-surgical/surgical-visualization/images/Thumb-Cystoscopev3.jpg"
+  }
+}

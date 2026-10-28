@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "1353d96a-0a72-46c6-8ed6-e81b2a4ff33d",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "22d6824c-746d-40e4-a734-449721589769"
+  ],
+  "lastPublished": "Thu Jun 11 2026 20:40:47 GMT+0000",
+  "jcr:created": "Thu Jun 11 2026 20:40:48 GMT+0000",
+  "cq:lastReplicated": "Thu Jun 11 2026 20:40:50 GMT+0000",
+  "cq:lastModified": "Thu Jun 11 2026 20:29:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "22d6824c-746d-40e4-a734-449721589769",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Feb 12 2026 19:19:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "754a792f-0df6-45f2-a113-c69e18aeafb4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Dec 30 2025 17:47:06 GMT+0000",
+      "alt": "Yellow wave pattern on a white background",
+      "srcFileRef": "/content/dam/stryker/acute-care/images/gold-adh-wave_1200x480.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Jun 11 2026 20:29:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "How to prepare your workplace for a sudden cardiac emergency",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "17af75d3-60d0-4e7f-892c-680a64f7cb40",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "9773f014-2e77-4563-876c-0167e3bf80c4"
+  ],
+  "jcr:created": "Thu May 09 2024 13:33:38 GMT+0000",
+  "cq:lastReplicated": "Thu May 09 2024 13:33:40 GMT+0000",
+  "cq:lastModified": "Thu May 09 2024 13:31:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9773f014-2e77-4563-876c-0167e3bf80c4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "de698ebc-2dad-4df5-befe-2f6320ddb376",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Tue May 31 2022 20:36:08 GMT+0000",
+      "text": "<p><i>2-minute read</i></p>\n<p><span class=\"fontsize-1-25em\">A workplace emergency is an unforeseen event that can endanger your employees or customers. These incidents can disrupt or shut down your operations and cause physical or environmental damage to your property. While you can never be fully prepared for every emergency, developing a plan of action prior to a possible emergency is key to responding in a timely and appropriate manner.</span></p>\n<p><span class=\"fontsize-1-25em\">Emergencies may be either natural or manmade. While the list is long on possible scenarios, we believe preparing&nbsp;for a sudden cardiac emergency in your workplace is key to providing potentially lifesaving care.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">What is sudden cardiac arrest</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Sudden cardiac arrest is a leading cause of death in the United States. More than 350,000 out-of-hospital sudden cardiac arrests happen per year in the United States alone.<sup>1&nbsp;</sup></span></p>\n<p><span class=\"fontsize-1-25em\">Sudden cardiac arrest can occur when an electrical malfunction causes the heart to stop. This prevents the heart's&nbsp;ability to supply blood to the brain, lungs and other organs, causing death within minutes.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">How to respond to a sudden cardiac emergency</span></span></h3>\n<p><span class=\"fontsize-1-25em\">While the survival rate for sudden cardiac arrest is less than 12 percent, there are actions bystanders can take within the first few minutes to help the possibility of saving a life.<sup>2</sup></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">1. <b><span style=\"color: #1c5687;\">Call 911 for emergency medical services</span></b></span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">2. <b><span style=\"color: #1c5687;\">Begin CPR immediately</span></b></span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">3. <b><span style=\"color: #1c5687;\">Locate and begin using an automated external defibrillator (AED) as soon as possible</span></b></span></span></span></p>\n<p style=\"margin-left: 40px;\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\"><span class=\"fontsize-1-25em\">4. <b><span style=\"color: #1c5687;\">Continue CPR until first responders arrive</span></b></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">Performing high-quality cardiopulmonary resuscitation (CPR) on someone experiencing sudden cardiac arrest while waiting for an AED to arrive at the scene can help improve the chance of survival.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">How an AED can help with sudden cardiac arrest</span></span></h3>\n<p><span class=\"fontsize-1-25em\">AEDs are lightweight, portable devices designed to save people experiencing sudden cardiac arrest in a public setting and can be used on children, teens and adults. Even bystanders can operate them by following audible and visual instructions during an emergency. An AED is a critical link in the chain of survival, empowering you to deliver possible lifesaving intervention prior to EMS arrival.</span></p>\n<p><span class=\"fontsize-1-25em\">A sudden cardiac arrest victim's chance of survival decreases by seven to 10 percent for every minute without defibrillation.<sup>3</sup> This is why it’s critically important for your organization to supply readily accessible AEDs throughout your building(s). AEDs should be located in highly visible areas and be within easy reach of individuals in a wheelchair. AEDs are stored in AED cabinets which should be mounted in an unobstructed area no more than 48 inches above the floor.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">How to choose the right AEDs for your organization</span></span></h3>\n<p><span class=\"fontsize-1-25em\">There’s a wide array of AEDs available and choosing the best for your organization can be confusing. We recommend focusing on the following to find the correct AED for your needs:</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">1. <span style=\"color: #1c5687;\"><b>Ease of use&nbsp;</b></span>- AEDs should have simple graphics, audible instructions and automated features that help users remain calm and focused during a response.</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">2. <b><span style=\"color: #1c5687;\">Readiness&nbsp;</span></b>- Know your AEDs are always charged and working</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">3. <b><span style=\"color: #1c5687;\">Connectivity and technology&nbsp;</span></b>- An AED’s integrated Wi-Fi connectivity can give emergency responders a view into each cardiac arrest.</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">4. <b><span style=\"color: #1c5687;\">Affordability&nbsp;</span></b>- Beyond the initial cost of the AED, consider long-term maintenance and accessory</span></p>\n<p style=\"margin-left: 40px;\"><span class=\"fontsize-1-25em\">5. <span style=\"color: #1c5687;\"><b>Size and durability&nbsp;</b></span>- Check for an IP56 rating, which is the industry's highest level of protection against dust and water in AEDs.</span></p>\n<p><span class=\"fontsize-1-25em\"><br>\nTo learn more about how to choose the best AED, read our&nbsp;<a href=\"/content/stryker/us/en/emergency-care/news/2022/aed-buying-guide.html\" target=\"_blank\"><b>AED buying guide</b></a>.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Together, we save lives</span></span></h3>\n<p><span class=\"fontsize-1-25em\"><b><a href=\"/content/stryker/us/en/emergency-care/community-public-safety.html\" target=\"_self\">Help keep your workplace safe with Stryker’s&nbsp;full line of defibrillators</a></b>.&nbsp;With the right solution for all public places, we can help improve SCA survival rates in your community.</span></p>\n<p><span class=\"fontsize-1-25em\"><a href=\"https://www.stryker.com/us/en/emergency-care/contact.html#contact\"><b>Contact an AED expert today</b></a>&nbsp;to learn more about your device options and how they can help your organization.</span></p>\n",
+      "jcr:lastModified": "Thu May 09 2024 13:31:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

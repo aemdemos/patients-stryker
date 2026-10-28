@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Shoulder",
+  "jcr:versionHistory": "d68f1e08-d40a-4bd8-b907-222a3927da26",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+  "jcr:predecessors": [
+    "f6a0e33c-b21f-4979-b04d-eb9383fa18e3"
+  ],
+  "lastPublished": "Wed Nov 11 2020 14:44:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Nov 11 2020 14:44:13 GMT+0000",
+  "cq:lastModified": "Wed Nov 11 2020 14:31:55 GMT+0000",
+  "cq:siblingOrder": "shoulder,hand-and-wrist,elbow,",
+  "jcr:baseVersion": "f6a0e33c-b21f-4979-b04d-eb9383fa18e3",
+  "jcr:isCheckedOut": true,
+  "cq:name": "shoulder",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:capability/upper-extremities",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder"
+  ],
+  "jcr:lastModified": "Fri Sep 18 2020 12:54:12 GMT+0000",
+  "jcr:uuid": "08763212-0841-430a-a5d8-8d8c770aaf7a",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/orthopaedics/upper-extremities",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "bannercampaign_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "linkExternal": "https://strykerwelcomeswright.com/",
+      "jcr:created": "Thu Oct 03 2019 20:04:15 GMT+0000",
+      "jcr:lastModified": "Wed Nov 11 2020 14:22:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/bannercampaign",
+      "openInNewTab": "true",
+      "srcLargeFileRef": "/content/dam/stryker/trauma-and-extremeties/images/Stryker-Wright-RBL-Stryker-Banner-2049x572.png"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/portfolios/orthopaedics/foot-and-ankle/images/shoulder-image.png"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Wed Sep 09 2020 15:24:02 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "50",
+    "defaultFilterOption": "Show All"
+  }
+}

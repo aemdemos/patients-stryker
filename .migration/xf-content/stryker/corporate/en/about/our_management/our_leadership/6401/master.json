@@ -1,0 +1,85 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Leader - 6401",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c4629d2a-2d54-4fe1-944b-d71390a88f04",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "371301b1-94aa-4bb7-be35-a2bfa84f0a65"
+  ],
+  "lastPublished": "Tue Aug 19 2025 16:11:16 GMT+0000",
+  "jcr:created": "Tue Aug 19 2025 16:11:21 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 19 2025 16:11:24 GMT+0000",
+  "cq:lastModified": "Mon Aug 11 2025 20:43:25 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "371301b1-94aa-4bb7-be35-a2bfa84f0a65",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:00:14 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b1745188-ab80-4183-b2c7-fad244462ab4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Preston</span>&nbsp;Wells</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Vice President, Chief Financial Officer</span></span></p>\n<p>Preston Wells became Vice President, Chief Financial Officer in April 2025.<br>\n</p>\n<p>&nbsp;</p>\n<p>Preston is responsible for our global finance activities which include corporate accounting, reporting, tax, treasury and internal audit.</p>\n<p>Upon joining Stryker in 2015, Preston began his career with our Spine Division, leading sales finance and sales operations. He then led Financial Planning and Analysis and Investor Relations for the company, and most recently took on the role of Vice President, Group Chief Financial Officer for our Orthopaedics and Spine Group.</p>\n<p>Before joining Stryker, Preston had 17 years of experience as a senior accounting and financial management leader in global organizations. He was the CFO at Dialight Corporation and held various financial leadership positions within Johnson &amp; Johnson.</p>\n<p>Preston has a bachelor's degree in accounting from Bucknell University and an MBA in supply chain management from Lehigh University.<br>\n</p>\n",
+      "jcr:lastModified": "Thu Aug 07 2025 20:12:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "5"
+        }
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 20:19:30 GMT+0000",
+      "alt": "Preston Wells",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership_Template_Preston_Wells_V2.jpg",
+      "jcr:lastModified": "Mon Aug 11 2025 20:43:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Wireless Video Transmission",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SYNK 4K Wireless Platform",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2257005f-930e-462f-b058-e086d193c2c1",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "thumbnailAltText": "SYNK 4k wireless platform",
+  "thumbnailFileReference": "/content/dam/stryker/endoscopy/products/synkwirelessplatform/images/Thumb-Synk.jpg",
+  "jcr:predecessors": [
+    "4118aeb6-948b-4be7-bfd4-a6f43532bdc1"
+  ],
+  "contentID": "ENDO-GSNPS-SYK-1839050",
+  "lastPublished": "Wed Jul 01 2026 14:57:48 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 01 2026 14:57:48 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 01 2026 14:57:50 GMT+0000",
+  "cq:lastModified": "Wed Jul 01 2026 14:57:43 GMT+0000",
+  "jcr:description": "Stryker’s SYNK 4K wireless platform is Stryker’s first platform to transmit a 4K wireless\r\nsignal. By reducing cabling on the floor, wireless technology offers an improved flexibility of room setup in addition to enabling a safe working environment by eliminating potential tripping hazards in the Operating Room.",
+  "jcr:baseVersion": "4118aeb6-948b-4be7-bfd4-a6f43532bdc1",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:08:33 GMT+0000",
+  "cq:tags": [
+    "stryker:capability/surgical-visualization",
+    "stryker:specialty/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:services/procare/endoscopy/surgical-visualization/displays",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/spine",
+    "stryker:specialty/displays",
+    "stryker:capability/integration-and-connectivity",
+    "stryker:product/endoscopy/sync-wireless-platform",
+    "stryker:business-unit/endoscopy",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Fri Oct 10 2025 00:02:22 GMT+0000",
+  "jcr:uuid": "deb6b951-74b4-4aed-a431-f724ca100e35",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "imageAlt": "SYNK 4k wireless platform",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Oct 03 2025 00:24:19 GMT+0000",
+      "compImageRef": "/content/dam/stryker/endoscopy/products/synk-4k/images/SYNK-4k-hero.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jul 01 2026 14:57:43 GMT+0000",
+      "jcr:lastModified": "Wed Jul 01 2026 14:57:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
+              "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/contact/master"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "4047",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Mon May 29 2017 14:59:01 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/synk-4k/images/SYNK-thumbnail.jpg"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 01 2026 14:57:30 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Jul 01 2026 14:57:33 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  }
+}

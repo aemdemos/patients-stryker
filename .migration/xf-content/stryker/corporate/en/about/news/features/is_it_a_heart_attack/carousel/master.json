@@ -1,0 +1,42 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Carousel",
+  "jcr:versionHistory": "0caf4869-5b95-4390-962a-9fdc41e31c70",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "a27ce03e-a2fe-4ab1-a891-6a19c66e8c96"
+  ],
+  "jcr:created": "Mon Oct 11 2021 14:53:28 GMT+0000",
+  "cq:lastModified": "Thu Oct 07 2021 18:57:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "a27ce03e-a2fe-4ab1-a891-6a19c66e8c96",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "ebc56dab-f1a6-4e46-8ec1-fa42b2b97edc",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Thu Oct 07 2021 18:56:34 GMT+0000",
+      "alt": "woman holding AED device",
+      "srcFileRef": "/content/dam/stryker/about/news/features/is-it-a-heart-attack-or-sudden-cardiac-arrest--know-the-warning-signs-and-what-to-do-for-both/SCA-hero.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Oct 07 2021 18:57:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

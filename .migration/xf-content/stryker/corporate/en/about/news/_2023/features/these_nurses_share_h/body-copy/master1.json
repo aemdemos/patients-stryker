@@ -1,0 +1,277 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7a782c21-d676-40c8-b196-7f97157a888c",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "bb469c3f-3112-4a84-8ae2-9add96a4c546"
+  ],
+  "lastPublished": "Wed Jul 24 2024 16:20:53 GMT+0000",
+  "jcr:created": "Wed Jul 24 2024 16:20:53 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 24 2024 16:20:56 GMT+0000",
+  "cq:lastModified": "Wed Jul 24 2024 16:20:32 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "bb469c3f-3112-4a84-8ae2-9add96a4c546",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:20:53 GMT+0000",
+  "jcr:uuid": "b25737cd-db95-49b1-95c6-b21d526be015",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Apr 28 2022 14:33:17 GMT+0000",
+      "text": "<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-8em\">Nurses are at the forefront of innovation within healthcare systems, using their expertise and voice to improve outcomes for patients. They are also working within Stryker, developing solutions that promote nurse safety and efficiency in the workplace.</span></span></h2>\n<p>The Journal of Nursing Excellence puts it best: ‘Because nursing is a knowledge-intensive profession, nurses have a deep understanding of clinical needs and can identify and communicate ideas and opportunities for improvement.<sup>1</sup>’ It is this information that makes our nurse employee base, which is at 135 and counting, valuable to our research and development.<sup>2</sup> Nurses from across the company are called upon to assist teams in creating the future of nursing by providing input on new product development projects. Learn how four nurses-turned-employees are using their experience to innovate for caregivers.</p>\n",
+      "jcr:lastModified": "Wed Jul 24 2024 16:20:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standaloneimage_1766": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 18 2021 19:38:05 GMT+0000",
+      "jcr:lastModified": "Thu Apr 28 2022 14:36:00 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1766906349638895943": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Carolyn Fahey is a nurse turned senior clinical experience manager at Stryker",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/these-nurses-share-how-they're-turning-experience-into-innovation-at-stryker/icon_template-Carolyn-circleV1_2024.jpg",
+        "jcr:lastModified": "Wed May 01 2024 18:33:20 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "11",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "leftPadding": "10",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Mon May 06 2024 13:41:05 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Carolyn Fahey, Senior Clinical Experience Manager<br>\n </span></span><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">Understanding challenges for patient care improvement ideas</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span style=\"color: #edeeec;\"><span style=\"color: #ffffff;\">“As a former orthopaedic surgery nurse, I was the customer. I have done the job. For 25 years, I experienced the highs and lows of caring for patients. There are experiences that we have as nurses that can assist our development teams in understanding the challenges that clinicians face. We have an in-depth understanding of the pressures placed on healthcare professionals while in the process of doing their job.&nbsp;<br>\n Nurses are problem solvers. They have the ability to assess unmet needs in the continuum of patient care. There are a lot of processes that haven’t changed in years because they work, but could they be better? That is the guiding principle that drives me every day. How can I make this better for the end-user? I still have friends at the bedside that need innovative and safe devices.<br>\n <span class=\"futura-bold\">Nurses are there from first breath to last breath. It is exhausting, stressful, rewarding, and exhilarating. Most importantly, it is essential. We need to honor and innovate to support our clinicians so they can support their patients.”</span></span></span></span></p>\n",
+        "jcr:lastModified": "Mon May 06 2024 14:11:45 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "10",
+        "backgroundColor": "rgb(76,125,122)",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_1766_392868375": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 18 2021 19:38:05 GMT+0000",
+      "jcr:lastModified": "Thu Apr 28 2022 14:36:06 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1766_392868375906355763295787": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Whitney Owusu is a nurse turned clinical sales enablement manager at Stryker",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/these-nurses-share-how-they're-turning-experience-into-innovation-at-stryker/icon_template-Whitney-circleV1_2024.jpg",
+        "jcr:lastModified": "Wed May 01 2024 18:33:27 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "5.3",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "leftPadding": "10",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Mon May 06 2024 13:47:17 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Whitney Owusu,&nbsp;Account Executive, Orthopaedic Instruments<br>\n</span> </span><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">Advancing innovation in nursing on our Orthopaedic Instruments team</span></span></span></p>\n<p><span style=\"color: #ffffff;\"><span style=\"color: #edeeec;\"><span style=\"color: #ffffff;\">“I was a practicing nurse for three years in pediatric oncology and adult transplants before I decided I wanted to transition into a position that would challenge me in different ways. I learned a lot of lessons from my nursing career that I apply in my current role. I’ve learned to listen and never make assumptions because every patient, disease, and care plan is different. I’ve also learned to always ask questions. Healthcare is constantly evolving, so to provide the best care for our patients, we must always continue to learn.<br>\n To me, collaborating with my fellow nurses to develop new models of care that will help improve patient outcomes is what nurse innovation is all about. I work on the company’s Orthopaedic Instruments team, where I constantly ask myself if or how our product is improving nurses’ workflow efficiencies and safety. With the challenges nurses face daily, it’s important to me that we make products that keep them safe while improving their workflows.<br>\n <span class=\"futura-bold\">When working on new products, I always view them from the lens of the nurse.&nbsp;I not only want to ensure that the product is safe and effective for the patient, but I also ask myself if the product is safe and efficient for the nurse and other hospital staff.”</span></span></span></span></p>\n",
+        "jcr:lastModified": "Mon May 06 2024 14:08:36 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "10",
+        "backgroundColor": "rgb(175,109,4)",
+        "textIsRich": "true"
+      }
+    },
+    "text_680494732": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Apr 28 2022 15:13:40 GMT+0000",
+      "jcr:lastModified": "Thu Apr 28 2022 15:13:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text"
+    },
+    "standaloneimage_1766_834468962": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Thu Apr 28 2022 15:19:43 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1766_834468962908972638246042": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Kristin Sexton is a nurse turned senior staff market intelligence specialist at Stryker",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/these-nurses-share-how-they're-turning-experience-into-innovation-at-stryker/icon_template-Kristin-circleV1_2024.jpg",
+        "jcr:lastModified": "Wed May 01 2024 18:32:48 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "5.9",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "leftPadding": "10",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Mon May 06 2024 13:52:17 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">Kristin Sexton, Principle Staff Market Intelligence Specialist<br>\n</span> </span><span class=\"urw-egyptienne\"><span style=\"color: #ffb500;\">Bringing the voice of the clinician and patients into the product development process</span></span></span></p>\n<p><span style=\"color: #edeeec;\"><span style=\"color: #ffffff;\">“Empathy and sympathy are two things I bring with me to my current role from being a cardiovascular intensive care nurse for eleven years. Clinicians endure a lot on a daily basis and I try to think of ways we can help to make their jobs easier. As part of a unique team that develops solutions to reduce the risk of hospital-acquired conditions, I work side by side with engineers to help bring the voice of the clinician and patients into the product development process. I also help in educating and building confidence that our products are built into healthcare workflow and will make a huge impact on clinicians and patients. Nurse-led innovation is at the core of what we do. We utilize nursing feedback at all stages of our product development process. <span class=\"futura-bold\">From&nbsp;gaining insights from bedside clinicians to focus groups that help give us feedback on problem areas and ways to solve them,&nbsp;we value the voice of nurses because we know without their partnership, we couldn’t provide the simple interventions that led to extraordinary outcomes.&nbsp;</span>One of the greatest achievements a company like Stryker can do to make healthcare better in the easiest and most gratifying way is to partner with our clinicians and facilities.”</span></span></p>\n",
+        "jcr:lastModified": "Mon May 06 2024 14:08:49 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "10",
+        "backgroundColor": "rgb(133,69,138)",
+        "textIsRich": "true"
+      }
+    },
+    "standaloneimage_1766_376260105": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:lastModified": "Thu Apr 28 2022 15:13:46 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1766_376260105908615605495712": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "preset": "max_width_1440",
+        "alt": "Sabrina Flavin is a nurse turned lead clinical analyst at Stryker",
+        "srcFileRef": "/content/dam/stryker/about/news/2022/features/these-nurses-share-how-they're-turning-experience-into-innovation-at-stryker/icon_template-Sabrina-circleV1_2024.jpg",
+        "jcr:lastModified": "Wed May 01 2024 18:32:59 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "phone": {
+            "jcr:primaryType": "nt:unstructured",
+            "width": "12"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      },
+      "text": {
+        "jcr:primaryType": "nt:unstructured",
+        "bottomPadding": "4.5",
+        "jcr:createdBy": "hannah.white@stryker.com",
+        "leftPadding": "10",
+        "topPadding": "5",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "hideComponent": "false",
+        "topMargin": "-7",
+        "jcr:created": "Mon May 06 2024 13:52:21 GMT+0000",
+        "gradientDirection": "left-to-right",
+        "text": "<p><span style=\"color: #ffffff;\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Sabrina Flavin, Senior Portfolio Manager<br>\n </span><span class=\"urw-egyptienne\">Compassion and commitment beginning at the bedside</span></span></span></p>\n<p><span style=\"color: #ffffff;\">“For three years I was a MedSurg nurse and for five years I was a clinical consultant for Stryker. Recently I joined the Acute Care team, where we develop products that help address skin injury, patient falls and caregiver injuries.<br>\n The greatest insights I bring to my role are those acquired from my time at the bedside. Having that firsthand knowledge of what our caregivers are experiencing and seeing is invaluable. I'm able to take those insights into any area of my role; into developing a new product, into in-servicing on a product, into an educational flyer for staff to read, or into presentations to leadership on quality initiatives.<br>\n I think Dr. Cipriano, President of the International Council of Nurses put it perfectly, &quot;There is no health without a health workforce.&quot; In my role, I work to improve the safety of care for both the patient and the nurse. <span class=\"futura-bold\">While I may be more removed from the bedside, by listening to feedback, passing on my experiences, and working with our current customers, I seek to use my voice to continue to make a difference for our health workforce.</span> Stryker's mission is ‘together with our customers, we are driven to make healthcare better.’ We cannot make progress without the input of nurses.</span> <a href=\"https://www.stryker.com/us/en/about/news/features/nurses-a-key-driver-in-advancing-global-health.html\"><span style=\"color: #ffb500;\">We recognize the importance of what nurses do for global health</span></a><span style=\"color: #ffffff;\">, and it’s an honor to partner with them on improving safety and outcomes.”<br>\n </span>&nbsp;</p>\n",
+        "jcr:lastModified": "Mon May 06 2024 14:16:00 GMT+0000",
+        "sling:resourceType": "stryker/components/content/text",
+        "rightPadding": "10",
+        "backgroundColor": "rgb(28,86,135)",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

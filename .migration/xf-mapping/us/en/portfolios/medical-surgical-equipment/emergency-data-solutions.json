@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Emergency Care data solutions",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ee3193f0-6675-4319-9c6f-938ff8e16c28",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "43636b9e-9372-438e-980e-bfa1960f59d7"
+  ],
+  "contentID": "M0000009656 REV AA",
+  "lastPublished": "Wed Jan 11 2023 16:14:10 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jan 11 2023 16:14:10 GMT+0000",
+  "cq:lastReplicated": "Wed Jan 11 2023 16:14:12 GMT+0000",
+  "cq:lastModified": "Tue Jan 10 2023 21:46:46 GMT+0000",
+  "jcr:description": "Stryker's data solutions make it faster and easier to share information, collaborate, and generate insights.",
+  "jcr:baseVersion": "43636b9e-9372-438e-980e-bfa1960f59d7",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/emergency-data-solutions"
+  ],
+  "jcr:lastModified": "Tue Jan 10 2023 21:46:46 GMT+0000",
+  "jcr:uuid": "10b8df3b-bdf3-4ac0-a47f-22c1ba0b9406",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/lifenet/LIFENET_2109Cleveland_new_screen.jpg"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "andy.tanabe@stryker.com",
+      "title": "Emergency Care data solutions products",
+      "jcr:lastModified": "Mon Aug 26 2019 18:24:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    }
+  }
+}

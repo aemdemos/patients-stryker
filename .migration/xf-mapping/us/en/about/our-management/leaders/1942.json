@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Viju Menon",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "36dec1ad-d87d-4455-a3ec-ed33b2b18430",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "d42a4434-ad8a-4a79-882a-e60d4adaba83"
+  ],
+  "lastPublished": "Tue Aug 19 2025 16:11:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 19 2025 16:11:23 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 19 2025 16:11:25 GMT+0000",
+  "cq:lastModified": "Thu Feb 02 2023 20:13:28 GMT+0000",
+  "jcr:baseVersion": "d42a4434-ad8a-4a79-882a-e60d4adaba83",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:11:16 GMT+0000",
+  "pageTitle": "Viju Menon",
+  "jcr:lastModified": "Thu Feb 02 2023 20:13:28 GMT+0000",
+  "jcr:uuid": "55d2570a-5732-4f03-8163-f8e7e6063690",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "navTitle": "Viju Menon",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_998696161_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_443541711": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Jun 06 2022 16:54:58 GMT+0000",
+      "jcr:lastModified": "Mon Jun 06 2022 18:37:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/back-button/master"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "jcr:lastModified": "Wed Jun 01 2022 16:44:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Jun 01 2022 16:43:41 GMT+0000",
+      "text": "Viju Menon Group President, Global Quality and Operations Viju Menon was named Group President, Global Quality and Operations in April 2018. In his role, Viju is responsible for global operations, including manufacturing, procurement, regulatory affairs, quality assurance, sustainability, integrated business planning, logistics and advanced operations such as additive manufacturing technology development. Prior to joining us, Viju served as Chief Supply Chain Officer and Senior Vice President at Verizon. Before his work at Verizon, Viju held key leadership roles at Intel in technology, supply chain and manufacturing operations. Viju earned his doctoral degree from the University of Pennsylvania and dual graduate degrees (MBA, S.M. in electrical engineering) from the Massachusetts Institute of Technology's Leaders for Global Operations program. He also holds a graduate degree (M.S.E. in computer science engineering) from the University of Michigan and a bachelor’s degree in engineering from the University of Kerala, India. COMM-GSNPS-SYK-3042400",
+      "jcr:lastModified": "Mon Jun 06 2022 15:59:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_management/our_leadership/1942/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-management/our-leadership/1942/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

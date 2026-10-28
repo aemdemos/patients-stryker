@@ -1,0 +1,164 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "More power to you",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Emergency patient transport",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a3ed6310-b0c2-4129-b345-2355eb0bc9bb",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "Emergency Medical Equipment",
+  "thumbnailFileReference": "/content/dam/stryker/portfolios/medical-surgical/emergency-medical-equipment/images/Thumbnail_EMS_PoweredSystem.jpg",
+  "jcr:predecessors": [
+    "9ef5b8d4-3dba-40e0-9fc0-396e3dfe93e0"
+  ],
+  "lastPublished": "Fri May 26 2023 14:53:26 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 26 2023 14:53:26 GMT+0000",
+  "cq:lastReplicated": "Fri May 26 2023 14:53:28 GMT+0000",
+  "cq:lastModified": "Tue May 09 2023 16:28:02 GMT+0000",
+  "jcr:baseVersion": "9ef5b8d4-3dba-40e0-9fc0-396e3dfe93e0",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/emergency-medical-equipment",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Jan 10 2023 21:40:43 GMT+0000",
+  "jcr:uuid": "65df17a5-1839-4c6b-9e36-bbb255aa70c0",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue May 09 2023 16:26:51 GMT+0000",
+      "jcr:lastModified": "Tue May 09 2023 16:26:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Mon Dec 21 2020 16:20:47 GMT+0000",
+          "text": "<p><b>Investigator-initiated studies request for support form:</b>&nbsp;<a href=\"/content/stryker/us/en/sage/clinical-research-support.html\" target=\"_self\">Click here</a></p>\n",
+          "jcr:lastModified": "Tue May 09 2023 16:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+      "title": "Resources and Downloads",
+      "jcr:lastModified": "Wed Aug 02 2017 15:33:12 GMT-0400",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Tue Mar 15 2022 15:02:55 GMT+0000",
+    "compImageRef": "/content/dam/stryker/ems/products/power-pro-2/images/pp2-emergency-patient-transport.png",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "searchPath": "/content/stryker/us/en",
+    "jcr:lastModified": "Tue Apr 18 2023 13:20:50 GMT+0000",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "100",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true",
+    "sectionTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "title": "Stryker Emergency Patient Transport products",
+      "jcr:lastModified": "Tue Mar 15 2022 14:55:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterName": "Type of Emergency Patient Transport Equipment",
+        "tagFolder": "/etc/tags/stryker/custom/ems/product-type"
+      }
+    },
+    "filterArbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/emergency-care/products/xpedition-powered-stair-chair"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/emergency-care/products/power-pro-2"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/emergency-care/products/power-load"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/emergency-care/products/power-pro-xt"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterOrderPagePath": "/content/stryker/us/en/emergency-care/products/xpr-restraints"
+      }
+    }
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "jcr:lastModified": "Wed Aug 02 2017 15:28:42 GMT-0400",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/powered-system"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/hybrid-system"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport/manual-system"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Stryker Corporation or its divisions or other corporate affiliated entities own, use or have applied for the following trademarks or service marks: Flex Financial, M-1, MX-PRO, Performance-LOAD, Performance-PRO, Power-LOAD, Power-PRO, ProCare, SMRT Battery Kit, Stair-PRO, Stryker, XPS siderails. All other trademarks are trademarks of their respective owners or holder. The yellow and black color scheme is a registered trademark of Stryker Corporation.<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Fri Aug 04 2017 13:59:21 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ems/products/power-pro-2/images/pp2-emergency-patient-transport.png"
+  }
+}

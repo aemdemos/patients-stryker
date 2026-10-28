@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "IVS-GSNPS-BROC-1285444",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "SpineJack System Launch Slick",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e47aec4c-70a2-4a52-afbe-1e1643612cf3",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "6b3e7c3e-290d-4a8e-83c1-5d934abdf29d"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:04 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:06 GMT+0000",
+  "cq:lastModified": "Mon Dec 22 2025 18:49:34 GMT+0000",
+  "jcr:baseVersion": "6b3e7c3e-290d-4a8e-83c1-5d934abdf29d",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "jcr:lastModified": "Thu Sep 18 2025 23:13:29 GMT+0000",
+  "jcr:uuid": "8b80a0b8-ddb2-46dd-9297-130800cd2fca",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Sep 18 2025 23:13:37 GMT+0000",
+      "jcr:lastModified": "Thu Sep 18 2025 23:13:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Sep 18 2025 23:12:04 GMT+0000",
+      "text": "<p><b>Revision Date: 10.16.24</b></p>\n<ol>\n<li>Stryker data on file.</li>\n<li>Noriega D, Marcia S, Theumann N, Blondel B, Simon A, Hassel F, Maestretti G, Petit A, Weidle PA, Mandly AG, Kaya JM, Touta A, Fuentes S, Pflugmacher R. A prospective, international, randomized, noninferiority study comparing an implantable titanium vertebral augmentation device versus balloon kyphoplasty in the reduction of vertebral compression fractures (SAKOS study). Spine J. 2019 Nov;19(11):1782-1795. doi: 10.1016/j.spinee.2019.07.009. Epub 2019 Jul 17. PMID: 31325625.</li>\n<li>Ong K et al. Were VCF patients at higher risk of mortality following the 2009 publication of the vertebroplasty &quot;sham&quot; trials? Osteoporosis International. 2018; 29(2):375-383.</li>\n<li>Cooper C, O’Neill T, Silman A. The epidemiology of vertebral fractures. European Vertebral Osteoporosis Study Group. Bone 1993; 14(suppl 1):889-97.</li>\n<li>Pongchaiyakul C et al. Asymptomatic vertebral deformity as a major risk factor for subsequent fractures and mortality: A long-term prospective study. Journal of Bone and Mineral Research. 2005; 20(8):1349-1355.</li>\n<li>Kado D et al. Vertebral fractures and mortality in older women: A prospective study. Study of osteoporotic research group. Archives of Internal Medicine. 1999; 159(11):1215-1220.</li>\n<li>Hasserius R et al. Long-term morbidity and mortality after a clinically diagnosed vertebral fracture in the elderly – a 12 and 22-year follow-up of 257 patients. Calcified Tissue International. 2005; 76(4):235-242.</li>\n<li>Hasserius R et al. Prevalent vertebral deformities predict increased mortality and increased fracture rate in both men and women: A 10-year population-based study of 598 individuals from the Swedish cohort in the European vertebral osteoporotic study. Osteoporosis International. 2003; 14(1):61-68.</li>\n<li>Cauley J et al. Risk of mortality following clinical fractures. Osteoporosis International. 2000; 11(7):556-561.</li>\n<li>Center J et al. Mortality after all major types of osteoporotic fracture in men and women: An observational study. Lancet. 1999; 353(9156):878-882.</li>\n<li>Stanghelle B et al. Associations between health-related quality of life, physical function and pain in older women with osteoporosis and vertebral fracture. BMC Geriatrics. 2019; 19(1):298.</li>\n<li>Jung H et al. Quality of life in patients with osteoporotic vertebral compression fractures. Journal of Bone Metabolism. 2017; 24(3):187-196.</li>\n<li>Suzuki N et al. The prognosis for pain, disability, activities of daily living and quality of life after an acute osteoporotic vertebral body fracture: Its relation to fracture level, type of fracture and grade of fracture deformation. European Spine Journal. 2009; 18(1):77-88.</li>\n<li>Silverman S. The clinical consequences of vertebral compression fracture. Bone. 1992; 13(2):S27-S31.</li>\n<li>S. Food and Drug Administration, Center for Devices and Radiological Health. SpineJack Expansion Kit 510(k) Summary (K181262). Available from: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K181262.</li>\n<li>Tzermiadianos M et al. Altered disc pressure profile after an osteoporotic vertebral fracture is a risk factor for adjacent vertebral body fracture. European Spine Journal. 2008; 17:1522-1530.</li>\n</ol>\n",
+      "jcr:lastModified": "Thu Sep 18 2025 23:13:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

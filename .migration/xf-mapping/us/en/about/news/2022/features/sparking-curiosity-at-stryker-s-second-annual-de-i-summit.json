@@ -1,0 +1,387 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Sparking curiosity at Stryker’s second-annual DE&I summit",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e5093db5-9f3f-467e-818b-06534c62a8b1",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "DEI_Feature_Mobile",
+  "jcr:predecessors": [
+    "18ba655a-37c7-4739-b3a7-7477c6dd4b52"
+  ],
+  "contentID": "SYK CORP 2022-09-143",
+  "lastPublished": "Thu Sep 29 2022 18:23:21 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 29 2022 18:23:21 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 29 2022 18:23:23 GMT+0000",
+  "cq:lastModified": "Thu Sep 29 2022 18:23:18 GMT+0000",
+  "jcr:baseVersion": "18ba655a-37c7-4739-b3a7-7477c6dd4b52",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/diversity-equity-inclusion"
+  ],
+  "jcr:lastModified": "Thu Sep 29 2022 18:22:03 GMT+0000",
+  "jcr:uuid": "a54bf3d7-2006-4538-b71f-d663083361b3",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Sep 22 2022 18:53:50 GMT+0000",
+      "jcr:lastModified": "Thu Sep 22 2022 18:53:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/sparking_curiosity_a/hero-image/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/sparking-curiosity-a/hero-image/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/sparking_curiosity_a/hero-image/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/sparking-curiosity-a/hero-image/mobile",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "15",
+          "jcr:created": "Thu Sep 22 2022 18:53:53 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Mon Sep 26 2022 18:36:16 GMT+0000",
+          "marginRight": "57",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "garrett.shue@stryker.com",
+              "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+              "jcr:created": "Mon Sep 26 2022 18:31:27 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<p><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-2vw\"><span style=\"color: #000000;\">Sparking&nbsp;curiosity at Stryker’s second-annual DE&amp;I summit</span></span></span></span></p>\r\n<p>&nbsp;</p>\r\n",
+              "jcr:lastModified": "Mon Sep 26 2022 19:06:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "leftPadding": "10",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Sep 22 2022 18:27:51 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"futura-bold\">“How will you be the spark?” That was the question asked at our second-annual Global Diversity, Equity and Inclusion Summit.</span></p>\n<p>Last year, Stryker launched its <a href=\"https://www.stryker.com/us/en/about/news/features/stryker-holds-diversity--equity-and-inclusion-summit.html\">first global DE&amp;I summit</a>, which was open to all Stryker employees. With thousands in attendance, the summit helped increase global awareness of our <a href=\"/content/stryker/us/en/about/diversity-and-inclusion.html\">DE&amp;I commitments</a>, share updates on our progress and highlight the role all employees play in achieving our goals. The experience made such an impact that we recently hosted our second-annual event.<br>\n<br>\nThis year, the summit challenged us to be the spark – to celebrate authenticity, lead with curiosity and challenge bias – because when we harness the potential of DE&amp;I, we make each other better, and make healthcare better.<br>\n<br>\nOne of the sessions included a roundtable discussion on ‘Navigating DE&amp;I conversations.’ Brent Ladd, President of Stryker’s Endoscopy Division, moderated the session. “Stryker is quickly becoming an even better place to work as we continue to embark on our DE&amp;I journey. Our mission drives the meaning behind our work, and enhanced DE&amp;I provides for a great work environment for all of us,” shares Brent. Four employees brought their unique perspectives and stories to the table, sparking some meaningful conversation. Here’s what they had to say.<br>\n<br>\n</p>\n",
+      "jcr:lastModified": "Mon Sep 26 2022 19:07:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "10",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols2_1_3_2_3_1559602830": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 26 2022 18:48:25 GMT+0000",
+      "jcr:lastModified": "Mon Sep 26 2022 18:48:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_37141": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "20",
+          "jcr:created": "Thu Sep 22 2022 18:27:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">“Be comfortable being uncomfortable. The more educated you are, the more questions you ask, the more context you have – it’s so helpful in removing biases.”</span></span></p>\n<p><span class=\"futura-bold\">–Paris Deadmon, <span style=\"color: #ffb500;\">Regional Manager, Sales</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 26 2022 18:56:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 26 2022 18:47:02 GMT+0000",
+          "alt": "Paris",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/Paris_5.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 26 2022 18:55:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 26 2022 18:54:51 GMT+0000",
+      "jcr:lastModified": "Mon Sep 26 2022 18:54:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "9",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 22 2022 18:27:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">“Don’t deny other people’s truth because it doesn’t fit in with yours. Be curious, ask questions, be open to learning something new. You might just discover a new world.”</span></span></p>\n<p><span class=\"futura-bold\">–Roxana “Roxy” Sanderson, <span style=\"color: #ffb500;\">Associate Manager, Product Development</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 26 2022 18:56:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "20",
+          "bottomMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 26 2022 18:47:02 GMT+0000",
+          "alt": "Roxana",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/Roxana_6.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 26 2022 18:55:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1_3_2_3_711837234": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 26 2022 18:48:17 GMT+0000",
+      "jcr:lastModified": "Mon Sep 26 2022 18:48:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_75059": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "20",
+          "jcr:created": "Thu Sep 22 2022 18:27:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">“Find what makes you, you – and run with it. Make a difference by being different.”</span></span></p>\n<p><span class=\"futura-bold\">–Jillian Williams, <span style=\"color: #ffb500;\">Sales Representative</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 26 2022 18:56:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "3"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 26 2022 18:47:02 GMT+0000",
+          "alt": "Jillian",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/Jillian-5.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 26 2022 18:48:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3_1754951611": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Sep 26 2022 18:55:04 GMT+0000",
+      "jcr:lastModified": "Mon Sep 26 2022 18:55:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "8",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Sep 22 2022 18:27:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">“Seek to understand before you judge. The most challenging questions are the most powerful and important questions you can ask a person.”</span></span></p>\n<p><span class=\"futura-bold\">–Francesca Calnan, <span style=\"color: #ffb500;\">Private Group Manager UK</span></span><br>\n&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Sep 26 2022 18:56:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "8",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "20",
+          "bottomMargin": "3"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Sep 26 2022 18:47:02 GMT+0000",
+          "alt": "Fran",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/Fran_6.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Sep 26 2022 18:55:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "carouselslidegroup_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jun 09 2022 15:01:37 GMT+0000",
+      "jcr:lastModified": "Thu Jun 09 2022 15:01:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "carouselslide_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop1",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/advancing-healthcare/join-our-talent-network/join-our-talent-network-v2-desktop1",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-mobile1",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/corporate/en/about/news/2022/features/advancing-healthcare/join-our-talent-network/join-our-talent-network-v2-mobile1",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "30",
+          "jcr:created": "Fri Mar 04 2022 16:34:22 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Thu Jun 09 2022 14:52:43 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "57",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Wed May 25 2022 12:41:58 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<p> </p>\r\n<p> </p>\r\n",
+              "jcr:lastModified": "Wed May 25 2022 12:42:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed May 25 2022 12:38:51 GMT+0000",
+              "CTATitle": "JOIN OUR TALENT NETWORK",
+              "ctaExternalLink": "http://adtrk.tw/tp/rj6.uW9E.z-K",
+              "jcr:lastModified": "Thu May 26 2022 13:42:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(28,86,135,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "publishDate": "Thu Sep 29 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "29-Sep-2022",
+    "jcr:lastModified": "Thu Sep 29 2022 18:23:18 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/features/sparking-curiosity-at-stryker’s-second-annual-de-i-summit/DEI_Feature_Thumbnail.png"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Sep 22 2022 18:54:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Thu Sep 22 2022 18:54:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

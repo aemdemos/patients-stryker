@@ -1,0 +1,128 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Amniotic Membrane",
+  "jcr:createdBy": "admin",
+  "jcr:title": "AlloWrap DS",
+  "jcr:versionHistory": "c73a19bb-eacb-4a38-9069-37d97f432e44",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/allowrap/images/Allowrap DS Final.PNG.jpg",
+  "jcr:predecessors": [
+    "d1dfa83e-1019-4f7a-8ff8-ec47fd4c92a2"
+  ],
+  "lastPublished": "Fri May 20 2022 14:45:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri May 20 2022 14:45:23 GMT+0000",
+  "cq:lastModified": "Fri May 20 2022 14:45:19 GMT+0000",
+  "jcr:description": "An amniotic membrane harvested from a growth factor rich environment. ",
+  "jcr:baseVersion": "d1dfa83e-1019-4f7a-8ff8-ec47fd4c92a2",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:product/trauma-and-extremities/allowrap",
+    "stryker:custom/trauma-and-extremities/Indications/Biologics",
+    "stryker:capability/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/biologics-page-filters/amniotics-membrane",
+    "stryker:content-type/hcp_content",
+    "stryker:content-type/product",
+    "stryker:specialty/amniotics",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/soft-tissue",
+    "stryker:custom/trauma-and-extremities/Procedures/Biologics",
+    "stryker:system/trauma-and-extremities/biologics",
+    "stryker:custom/trauma-and-extremities/biologics/amniotics/membranes",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities"
+  ],
+  "jcr:lastModified": "Thu Mar 31 2022 18:43:05 GMT+0000",
+  "jcr:uuid": "c8b7629b-2462-4145-99a9-2ffe3a007e03",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.wolff@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Thu Aug 10 2017 11:15:49 GMT-0400",
+      "compImageRef": "/content/dam/stryker/trauma-and-extremeties/products/allowrap/images/Allowrap DS Final.PNG.jpg",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_548095758",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1540683288",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1377921406",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_1949088047",
+        "/content/dam/stryker/trauma-and-extremeties/products/allowrap/resources/2022-Physician-Office-Solutions.pdf",
+        "/content/stryker/us/en/trauma-and-extremities/asset-items/jcr:content/par/externalasset_123701_1183191160"
+      ],
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:lastModified": "Fri May 20 2022 14:45:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p><sup>AlloWrap DS &nbsp;</sup></p>\r\n",
+    "shortDescTop": "<p>Amniotic membranes are commonly used for wound coverage and nerve or tendon protection.<sup>1</sup> AlloWrap DS is a dual layer graft that is processed so the epithelial layer is facing outwards on both sides of the graft. This allows for omni-directional implantation.<sup>2</sup></p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Thu Aug 10 2017 11:21:26 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Packaged ready-to-use, not dehydrated or cryopreserved.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Product is 0.1-0.2mm thick</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Room temperature storage</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Terminally sterilized to 10<sup>-6</sup> SAL</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Duarte, IGL, and Ivana Duval-Araujo. &quot;Amniotic Membrane as a Biological Dressing in Infected Wound Healing in Rabbits.&quot; Acta Cirúrgica Brasileira 29.4 (2014): 334-39</li>\r\n<li>AlloWQrap Package Insert, M1S1174.01</li>\r\n</ol>\r\n<p>Processed by: Allosource 6278 S Troy Cir. Centennial, CO 80111 t: 800 557 3587</p>\r\n<p>CP-AWI-12, 07-2017<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Thu Aug 24 2017 11:22:37 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/allowrap/images/Allowrap DS Final.PNG.jpg"
+  }
+}

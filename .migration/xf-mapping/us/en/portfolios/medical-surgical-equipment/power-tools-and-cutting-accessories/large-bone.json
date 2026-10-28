@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Total confidence",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Large bone power tools",
+  "jcr:versionHistory": "08f8da50-bb1d-48a1-81bd-eaaf5f0a4bf6",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/system8/images/Thumbnail_System8.jpg",
+  "jcr:predecessors": [
+    "d3cc9674-ca06-4ef7-99b9-06af5ad70eab"
+  ],
+  "contentID": "9100-004-742 Rev. None",
+  "lastPublished": "Tue Sep 05 2017 13:08:04 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 05 2017 13:08:04 GMT-0400",
+  "cq:lastModified": "Sun Sep 03 2017 11:42:44 GMT-0400",
+  "jcr:description": "Power tools for your orthopaedic and cardiothoracic surgery.",
+  "cq:siblingOrder": "ent,large-bone,medium-bone,neuro-and-spine,small-bone,",
+  "jcr:baseVersion": "d3cc9674-ca06-4ef7-99b9-06af5ad70eab",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Large bone power tools",
+  "cq:name": "large-bone",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/large-bone",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Sun Sep 03 2017 11:42:44 GMT-0400",
+  "jcr:uuid": "25eb6fdb-8fdc-4f31-b822-5caa9522361d",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/power-tools-and-cutting-accessories",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "navTitle": "Large bone power tools",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:41:42 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "jcr:lastModified": "Fri Jul 28 2017 15:04:04 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/system8/images/Thumbnail_System8.jpg"
+  }
+}

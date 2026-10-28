@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4822cbaf-7d46-43d4-864f-8168c7cf048a",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "34e31ccf-f17b-4675-8319-b8918d920d7b"
+  ],
+  "jcr:created": "Thu Jan 04 2024 14:01:31 GMT+0000",
+  "cq:lastReplicated": "Thu Jan 04 2024 14:01:33 GMT+0000",
+  "cq:lastModified": "Thu Jan 04 2024 14:01:29 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "34e31ccf-f17b-4675-8319-b8918d920d7b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "0824eb0a-d05b-4a20-9f35-8fab414bffd3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage62010": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "alt": "Turn and position system for larger patients ",
+      "srcFileRef": "/content/dam/stryker/sage/products/tap-xl-xxl/images/Sage-TAP-XL-XXL-Thumbnail-16x9.jpg",
+      "jcr:lastModified": "Mon Dec 11 2023 19:43:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

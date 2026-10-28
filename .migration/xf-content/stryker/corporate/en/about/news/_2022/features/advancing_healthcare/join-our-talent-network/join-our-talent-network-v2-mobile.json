@@ -1,0 +1,42 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Join Our Talent Network v2 mobile",
+  "jcr:versionHistory": "4839584a-44e8-4459-a4fd-f0126a0fd7ae",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "86ef239f-09c2-48d9-a746-1e889af5601a"
+  ],
+  "jcr:created": "Thu May 12 2022 13:10:40 GMT+0000",
+  "cq:lastModified": "Wed May 11 2022 15:59:28 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "86ef239f-09c2-48d9-a746-1e889af5601a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "96b8c9b4-a055-4f79-afa0-b0eada7c4e89",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "linkExternal": "https://www.applytracking.com/optin.aspx?c=bqlIXmLCSvwwf7h6sQNnQcczGZq%2fAeIG",
+      "jcr:created": "Wed May 11 2022 14:12:21 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/advancing-healthcare-through-asian-culture-and-collaboration/JoinOurTalentNetwork_carousel_mobile.psd",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed May 11 2022 15:59:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "openInNewTab": "true",
+      "enableBorder": "false"
+    }
+  }
+}

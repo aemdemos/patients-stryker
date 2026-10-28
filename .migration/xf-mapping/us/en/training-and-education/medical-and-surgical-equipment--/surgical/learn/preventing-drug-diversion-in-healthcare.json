@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Preventing Drug Diversion in Healthcare",
+  "jcr:versionHistory": "5feab53d-bedc-4ceb-81f2-c473dd9590ed",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "0733f2bd-abf7-40f2-8b15-cf671099c0a0"
+  ],
+  "contentID": "D0000008667 Rev. AA",
+  "lastPublished": "Tue Feb 26 2019 20:48:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 26 2019 20:48:55 GMT+0000",
+  "cq:lastModified": "Thu Feb 21 2019 17:56:03 GMT+0000",
+  "jcr:description": "Perioperative Nurses | 2 contact hours",
+  "jcr:baseVersion": "0733f2bd-abf7-40f2-8b15-cf671099c0a0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Thu Feb 21 2019 17:56:03 GMT+0000",
+  "jcr:uuid": "b8022c69-a6d7-4897-9049-20dd11a0daed",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "navTitle": "Preventing Drug Diversion in Healthcare",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Wed Dec 19 2018 15:49:11 GMT+0000",
+      "text": "<h3><span class=\"urw-egyptienne\">Course Code: 4120 / classroom</span></h3>\n<p>2 contact hours</p>\n<p>Perioperative Nurses</p>\n<p>Opioid addiction has been recognized as an epidemic in the United States. Healthcare professionals are not immune to this risk; in fact, the ready access to prescription drugs in the healthcare setting has been recognized as a key factor in substance abuse among healthcare professionals and drug diversion in the healthcare setting at the hands of addicted healthcare professionals. Greater awareness and education about drug diversion is needed in the healthcare setting, including what it is, how it occurs, and how it can be prevented. The education efforts should also create an understanding of adjunct technologies that can be implemented to reduce drug diversion dangers in healthcare and help organizations come into compliance with federal and state regulations for safe drug disposal.</p>\n",
+      "jcr:lastModified": "Wed Dec 19 2018 15:53:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/training-and-education/images/Thumbnail_PreventDrug.jpg"
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Cranial Guidance Software",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "08a3bc71-864a-44f1-8709-e563ee1ca3f9",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "thumbnailAltText": "D1BFFE21_021 final approach - top right quad",
+  "thumbnailFileReference": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/D1BFFE21_021 final approach - top right quad.psd",
+  "jcr:predecessors": [
+    "b594f0b8-8ce1-4ba1-a1c0-c4950b5c5e4a"
+  ],
+  "contentID": "QGS-WB-6_34510",
+  "lastPublished": "Thu Sep 28 2023 18:45:40 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Sep 28 2023 18:45:40 GMT+0000",
+  "cq:lastReplicated": "Thu Sep 28 2023 18:45:42 GMT+0000",
+  "cq:lastModified": "Thu Sep 28 2023 18:45:34 GMT+0000",
+  "jcr:baseVersion": "b594f0b8-8ce1-4ba1-a1c0-c4950b5c5e4a",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:specialty/cranial",
+    "stryker:specialty/cranial-navigation",
+    "stryker:content-type/product",
+    "stryker:procedure/spine",
+    "stryker:portfolio/neurotechnology",
+    "stryker:business-unit/spine",
+    "stryker:capability/spine",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/orthopaedic-navigation",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/neurotechnology",
+    "stryker:capability/navigation"
+  ],
+  "jcr:lastModified": "Thu Sep 28 2023 18:45:34 GMT+0000",
+  "jcr:uuid": "b77369b4-43cc-4356-afa3-15010a62dd56",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "dimensionBox": "ND",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "layoutOptions": "col-sm-4",
+      "backgroundImageRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/Q-Guidance-Cranial-Software-Header.png",
+      "alt": "Styker_BM_06_FNL_Rotated",
+      "jcr:lastModified": "Wed Jan 25 2023 19:51:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Fri Aug 02 2019 19:26:56 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<p><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\"><span class=\"fontsize-4vw\">Cranial Guidance Software</span></span></span></span></span><span class=\"fontsize-2-5-vw\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><br />\r\n</span></span></span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Cranial surgery planning and navigation software powered by Q Guidance System</span></span></p>\r\n",
+          "line2": "This successor to CranialMap 3.0 boasts a completely new software application with enhanced capabilities, plus refined interfaces, navigation and screen views.",
+          "jcr:lastModified": "Tue Dec 20 2022 15:56:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "buttonset": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonSeriesColors": "rgba(84,88,87,1)",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "buttonAlignment": "horizontal-alignment align-left",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Fri Dec 16 2022 16:02:10 GMT+0000",
+          "jcr:lastModified": "Fri Dec 16 2022 16:03:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/buttonset",
+          "buttonSetList": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "buttonColor": "rgba(84,88,87,1)",
+              "internalLink": "/content/stryker/us/en/spine/products/q-guidance-system",
+              "buttonText": "Q Guidance System",
+              "externalLinkType": "int"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Aug 13 2019 19:12:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\"><span class=\"fontsize-2-5-vw\">Today’s robust cranial software provides full-spectrum active/passive hybrid optical tracking and&nbsp;automatic, algorithmic processing to help simplify core surgical tasks.</span></span></span>",
+      "jcr:lastModified": "Fri Mar 24 2023 13:26:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Jan 03 2023 19:45:11 GMT+0000",
+      "jcr:lastModified": "Tue Jan 03 2023 19:45:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_6528099_copy_co": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Oct 13 2022 19:16:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Features and benefits<sup>1</sup></span></span></p>\n<ul>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">In tandem with Q Guidance System, provides a single solution to track cutting-edge navigated instruments</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Delivers groundbreaking surgical planning and guidance capabilities via active/passive hybrid optical tracking – plus optional, scalable modules for navigated brain biopsy and EM Catheter Placement</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Provides automatic, algorithmic processing and comprehensive guidance data that aim to elevate your confidence and surgical ability</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Simpler than ever<sup>1</sup>, with 50% fewer main pages (only 4), 57% fewer minimum clicks, and a nearly 30% decrease in workflow steps</span></span><br>\n</li>\n<li><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">100% 5-star surgeon rating reported during validation labs<sup>*</sup></span></span></li>\n</ul>\n<p>&nbsp;</p>\n<p><span style=\"color: #545857;\">*Overall system accuracy – 9 surgeons<br>\n &nbsp;Accuracy of system in craniotomy – 7 surgeons<br>\n &nbsp;Accuracy of biopsy placement – 6 surgeons</span></p>\n",
+          "jcr:lastModified": "Wed Mar 29 2023 15:07:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 27 2022 15:39:10 GMT+0000",
+          "alt": "Spine Guidance Software",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/resources/neuro_2000.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jan 03 2023 15:06:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "largeheadline_copy_c_969196362": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Aug 13 2019 19:12:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"urw-egyptienne\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span class=\"fontsize-1vw\"><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-3-5-vw\"><span class=\"fontsize-4vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: #000000;\"><span style=\"color: #ffb500;\">Expanding</span></span></span></span></span> what's possible</span></span></span></span></span></span></span>",
+      "jcr:lastModified": "Fri Jan 27 2023 15:57:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 16:25:59 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 16:25:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"><span class=\"futura-bold\">Planning</span><br>\n</span></span></p>\n<ul>\n<li>Quick Segmentation Tool<br>\n</li>\n<li>Skull stripping (visualizes brain tissue only)</li>\n<li>Display customization</li>\n<li>Surgical zone</li>\n<li>Ability to visualize tractography with fiber bundles</li>\n<li>Image import (with auto analysis, segmentation and sequence detection)</li>\n</ul>\n",
+          "jcr:lastModified": "Wed Jan 25 2023 20:44:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 27 2022 15:39:10 GMT+0000",
+          "alt": "Spine Guidance Software Planning",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/QGS-BR-2_34223_SS210726 NS QG cranial brochure_v30.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jan 03 2023 15:08:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"margin-left: 40px; text-align: center;\"><span class=\"futura-bold\">Tractography with fiber bundles</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Jan 25 2023 19:31:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "sectionseparator_cop_1892468584": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Tue Oct 04 2022 19:39:48 GMT+0000",
+      "jcr:lastModified": "Tue Oct 04 2022 19:39:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1_3_2_3_106269": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 16:23:03 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 16:23:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"><span class=\"futura-bold\">Simplification</span><br>\n</span></span></p>\n<ul>\n<li>Tools for identifying, marking and localizing targets and anatomical structures of interest</li>\n<li>Enables planning and aligning instruments to preplanned trajectories based on entry point and target</li>\n<li>High performance 2D-3D visualization</li>\n<li>Same-screen viewing of co-registered image sets from different imaging modalities or sequences individually in different 2D/3D views<br>\n</li>\n<li>Surgeon-driven dashboards replace toggling between workflow tabs</li>\n<li>Flexible surface registration (not mandated at setup)</li>\n<li>Ability to instantly correct patient orientation up to 45º in respective plane without creating new anatomical coordinate system</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Feb 28 2023 20:30:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Oct 04 2022 19:46:21 GMT+0000",
+          "alt": "screw compatibility",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/D1BFFE21_021 final approach - top right quad.psd",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Dec 20 2022 18:29:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 15:49:43 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 15:49:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_2_3_1_3_1216631454": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Thu Feb 23 2023 16:07:29 GMT+0000",
+      "jcr:lastModified": "Thu Feb 23 2023 16:07:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "leftPadding": "10",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>&nbsp;</p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"><span class=\"futura-bold\">Navigation</span></span></span></p>\n<ul>\n<li>Gesture recognition (no-touch validation, calibration and point digitization)</li>\n<li>Precision Targeting System (additional module and Navigated Biopsy Needle)</li>\n<li>EM Catheter Placement (additional module)</li>\n<li>Support of legacy active pointers and trackers</li>\n<li>Compatible with existing CranialMask Tracker</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 23 2023 16:16:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 23 2023 16:07:53 GMT+0000",
+          "alt": "Q Guidance cranial",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/CG1.0 Navigation Screenshot.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 23 2023 16:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "sectionseparator_952905166": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 15:50:08 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 15:50:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_1_3_2_3_109611": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Thu Oct 06 2022 15:32:25 GMT+0000",
+      "jcr:lastModified": "Thu Oct 06 2022 15:32:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "10",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "10",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Oct 06 2022 15:35:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"> </span><span class=\"futura-bold\"><span class=\"urw-egyptienne\"></span><span style=\"color: #ffb500;\">Precision Targeting System:</span></span></span></span></h2>\n<h2><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-25em\">Optional module for brain biopsy</span></span></span></h2>\n",
+          "jcr:lastModified": "Fri Jan 27 2023 15:48:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Displays intuitive visual navigation icons and auto calculations</li>\n<li>Helps guide users from gross alignment to precise trajectory</li>\n<li>Enables drilling through skull at a pre-defined point</li>\n<li>Helps protect vital structures via auto-calculated depth stop for Navigated Biopsy Needle</li>\n<li>Tracks/displays Navigated Biopsy Needle progression until arrival at target&nbsp; &nbsp;<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Tue Dec 20 2022 16:28:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 27 2022 15:39:10 GMT+0000",
+          "alt": "2022-09-21-Stryker-2641",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/Precision Targeting System-  Optional module for brain biopsy  .png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Dec 20 2022 18:26:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">When Navigated Biopsy Needle reaches target, indicator turns from orange to green</span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Jan 27 2023 15:56:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Oct 06 2022 15:35:46 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\"> </span><span class=\"futura-bold\"><span class=\"urw-egyptienne\"></span><span style=\"color: #ffb500;\">EM tracking:<br>\n</span></span></span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><span class=\"fontsize-1-25em\">Optional module for catheter placement</span></span></span></h2>\n",
+      "jcr:lastModified": "Thu Feb 23 2023 16:12:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 15:43:30 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 15:43:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Includes EM Field Generator, mounting arm, trackers, instrumentation and Instrument Adapter Box</li>\n<li>Enables pinless procedures on adult and pediatric patients</li>\n<li>Applicable for various shunt (VP, VA, LP) and EVD procedures</li>\n<li>Small sensors on stylet tip enable tracking without direct line-of-sight to field generator and maintain accuracy under deflection</li>\n<li>Designed to intuitively guide placement of third-party catheters to a pre-planned trajectory via our navigated EM Stylet</li>\n<li>EM Stylet maintains visualization at the distal tip without additional calibration</li>\n<li>EM patient tracker can be reprocessed up to 10 times and used with disposable adhesive patient tracker tab<br>\n</li>\n</ul>\n",
+          "jcr:lastModified": "Thu Feb 23 2023 16:11:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 27 2023 15:45:03 GMT+0000",
+          "alt": "EM tracking-  Optional module for catheter placement",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/EM tracking-  Optional module for catheter placement  .png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 27 2023 15:45:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\">Intuitive graphics with auto calculations show your progression towards target</span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Jan 27 2023 15:56:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Wed Oct 05 2022 16:01:37 GMT+0000",
+      "jcr:lastModified": "Wed Oct 05 2022 16:09:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(237,238,236,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Fri Jan 27 2023 15:15:13 GMT+0000",
+          "jcr:lastModified": "Fri Jan 27 2023 15:15:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Fri Jan 27 2023 15:12:55 GMT+0000",
+              "alt": "Q-Cranial-Software-surgeon",
+              "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/Q-Cranial-Software-surgeon.png",
+              "borderColor": "rgba(178,180,174,1)",
+              "jcr:lastModified": "Fri Jan 27 2023 15:14:50 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_c": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "2",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "topMargin": "20",
+              "jcr:created": "Tue Aug 13 2019 19:12:46 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2-5-vw\"><span style=\"font-size: 49.0px;\"><b><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Versatility and compatibility</span></span></b></span></span></span>",
+              "jcr:lastModified": "Fri Jan 27 2023 15:29:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "gradientDirectionInverse": "true",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cathy.lapico@stryker.com",
+              "topPadding": "8",
+              "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\"><span class=\"futura-bold\">Broad compatibility<sup>1</sup></span></span></span><br>\n</p>\n<ul>\n<li>CT/CTA and MR/MRA</li>\n<li>fMRI, DTI and PET</li>\n<li>USB, CD/DVD or DICOM push data</li>\n<li>CranialMask Tracker</li>\n<li>Active pointers and instrument trackers</li>\n<li>Passive instruments and optional EM instruments</li>\n<li>Zeiss PENTERO and KINEVO integration<br>\n</li>\n</ul>\n",
+              "jcr:lastModified": "Wed Mar 29 2023 14:40:07 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols2_1896457287": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 15:23:07 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 15:23:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator_605984410": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "altText": "CranialMask Tracker",
+      "jcr:created": "Fri Jan 27 2023 15:58:36 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Fri Jan 27 2023 15:59:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cathy.lapico@stryker.com",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "jcr:created": "Fri Jan 27 2023 15:19:21 GMT+0000",
+      "jcr:lastModified": "Fri Jan 27 2023 15:19:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "20",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "jcr:created": "Tue Aug 13 2019 19:12:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span style=\"font-size: 49.0px;\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CranialMask<br>\r\nTracker</span></span></span></span></span></span>",
+          "jcr:lastModified": "Thu Feb 23 2023 16:12:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "leftPadding": "3",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Sep 27 2022 15:39:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li>Only tracker on the market that is completely sterile and designed for soft tissue placement</li>\n<li>Fully automated and simplified registration process</li>\n<li>Small anatomical footprint and universal fit</li>\n<li>Enables pin-less workflow</li>\n<li>Full range head mobility</li>\n</ul>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Jan 27 2023 15:24:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cathy.lapico@stryker.com",
+          "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Dec 20 2022 18:39:10 GMT+0000",
+          "alt": "Prone_lateral_registration",
+          "srcFileRef": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/Prone_lateral_registration.png",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Fri Jan 27 2023 15:27:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "featuredcontent_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+      "title": "Related products",
+      "jcr:lastModified": "Thu Feb 23 2023 16:12:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/spine/products/q-guidance-system"
+        }
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>Associated services<br>\r\n</b></p>\r\n<ul>\r\n<li>Flex Financial – offers alternative payment structures designed to fit your organization’s needs. This flexibility helps enable you to acquire the technology you need, when you need it.</li>\r\n<li>ProCare – helps ensure your equipment is consistently ready to perform and helps you optimize your investment via loaners, preventative maintenance solutions and service plans.</li>\r\n</ul>\r\n<p><b>References</b></p>\r\n<ol>\r\n<li>Stryker data on file<br>\r\n</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Mar 29 2023 18:44:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/spine/products/q-guidance-system/cranial-software/images/D1BFFE21_021 final approach - top right quad.psd"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jan 27 2023 15:04:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cathy.lapico@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Jan 27 2023 15:04:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

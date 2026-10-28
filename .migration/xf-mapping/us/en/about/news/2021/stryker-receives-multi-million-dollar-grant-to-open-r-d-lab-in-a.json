@@ -1,0 +1,130 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker receives multi-million dollar grant to open R&D Lab in Australia",
+  "jcr:versionHistory": "02267788-121b-4d6f-a41c-0cd2bbe3ab36",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "c1248864-e6a5-4e38-8c2b-faf7752b3d97"
+  ],
+  "lastPublished": "Mon Oct 04 2021 13:17:20 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 04 2021 13:17:20 GMT+0000",
+  "cq:lastModified": "Mon Oct 04 2021 13:16:58 GMT+0000",
+  "jcr:baseVersion": "c1248864-e6a5-4e38-8c2b-faf7752b3d97",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news"
+  ],
+  "jcr:lastModified": "Mon Oct 04 2021 13:16:58 GMT+0000",
+  "jcr:uuid": "d2acc735-865e-4950-9157-9d77f3965a14",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jun 16 2021 15:48:48 GMT+0000",
+      "jcr:lastModified": "Wed Jun 16 2021 15:48:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Jun 16 2021 15:48:52 GMT+0000",
+          "text": "<p>Stryker has announced the establishment of the R&amp;D Lab in Queensland, Australia that builds on existing partnerships with hospitals, researchers, universities and local governments to drive the transformation of research into viable, commercially available precision medical device technology.<br>\n</p>\n<p>With a research grant from the Queensland government, Stryker's new Digital, Robotics, and Enabling Technologies organization and South Pacific team have partnered with the Queensland State Government on the formation of the R&amp;D Lab which will focus on data science, robotics, disease and infection control, and advanced manufacturing research. “The level of partnership has been extraordinary. It’s this type of collaboration across Stryker, with state governments and with university and hospital systems that will unlock new frontiers of med device technology,” said Robert Cohen, president of Stryker’s Digital, Robotics, and Enabling Technologies organization.<br>\n</p>\n<p>The R&amp;D Lab will continue to collaborate with Australian universities, hospital systems and clinicians to help develop and translate novel medical research within the Australian MedTech ecosystem and will be located on the campus of the Royal Brisbane and Women’s Hospital.</p>\n<p>The new R&amp;D Lab will also partner with Stryker’s CMF, Endoscopy, Instruments, Joint Replacement, Medical, Spine and Trauma &amp; Extremities divisions to focus on research that drives technology platforms that can be used across service lines throughout the continuum of care.</p>\n<p>The R&amp;D Lab evolved from Stryker’s experience with the Innovative Manufacturing Cooperative Research Centre (IMCRC) project based in Melbourne, a research partnership between Stryker, four Australian universities and St. Vincent’s Hospital, Melbourne that began in 2017.</p>\n<p>“We are honored to be awarded this prestigious grant from Queensland. This venture has been years in the making with our collective work on robotics and patient-specific implants,” said Rob Wood, senior director of R&amp;D for Digital, Robotics and Enabling Technologies, who will spearhead the project.</p>\n<p>The R&amp;D Lab will have a team of engineers, scientists, clinical researchers and data analysts and will operate virtually for now, with the physical location opening in Brisbane by summer 2022.<br>\n</p>\n",
+          "jcr:lastModified": "Mon Sep 27 2021 18:04:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 15 2021 19:54:14 GMT+0000",
+      "jcr:lastModified": "Thu Jul 15 2021 19:54:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jul 15 2021 19:54:21 GMT+0000",
+          "alt": "R&D Lab location",
+          "srcFileRef": "/content/dam/stryker/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-australia/images/RandD-Lab-location.jpg",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Thu Jul 15 2021 19:56:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Jul 15 2021 19:54:21 GMT+0000",
+          "alt": "R&D Lab blueprint",
+          "srcFileRef": "/content/dam/stryker/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-australia/images/RandD-Lab-blueprint.jpg",
+          "borderColor": "rgba(178,180,174,1)",
+          "jcr:lastModified": "Thu Jul 15 2021 19:56:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Mon Oct 04 2021 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "04-Oct-2021",
+    "jcr:lastModified": "Tue Sep 28 2021 14:43:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-australia/images/RandD-Lab-lobby-002.png"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Wed Jun 16 2021 15:46:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "alt": "Lobby of the R&D lab",
+    "srcFileRef": "/content/dam/stryker/about/news/2021/stryker-receives-multi-million-dollar-grant-to-open-r-d-lab-in-australia/images/RandD-Lab-lobby-002.png",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Thu Jul 15 2021 19:56:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

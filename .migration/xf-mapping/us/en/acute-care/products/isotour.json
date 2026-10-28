@@ -1,0 +1,975 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Gel support surface",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "IsoTour",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "49f02b01-2d03-48b9-89a5-f9147d54e934",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Gel mattress for hospital pressure injury prevention",
+  "jcr:predecessors": [
+    "a39bee6a-7f8f-4569-94cf-48cdd6aac558"
+  ],
+  "contentID": "AC-IST-SYK-1224253_REV-0_en_us",
+  "lastPublished": "Thu Aug 13 2026 20:25:34 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Aug 13 2026 20:25:35 GMT+0000",
+  "cq:lastReplicated": "Thu Aug 13 2026 20:25:37 GMT+0000",
+  "cq:lastModified": "Thu Aug 13 2026 20:25:26 GMT+0000",
+  "jcr:description": "Helping with pressure injury prevention. ",
+  "jcr:baseVersion": "a39bee6a-7f8f-4569-94cf-48cdd6aac558",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 14:32:49 GMT+0000",
+  "pageTitle": "IsoTour",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:custom/acute-care/surfaces---beds-vs-stretchers/bedframe-surfaces",
+    "stryker:capability/support-surfaces",
+    "stryker:services/procare/acute-care/surfaces",
+    "stryker:custom/acute-care/surface-types/low-air-loss",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:custom/acute-care/surface-types/gel-technology",
+    "stryker:product/acute-care/isotour",
+    "stryker:specialty/bed-support-surfaces",
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Mon Jul 21 2025 21:58:51 GMT+0000",
+  "jcr:uuid": "0ec32dc7-2b17-46b7-8d80-3e3318a170ef",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "jcr:lastModified": "Thu Dec 21 2023 14:14:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/products/isotour_124925642/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/products/isotour-124925642/hero/master",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "7",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Jul 02 2024 13:35:51 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "8",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text5520009668863520": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "3",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\">IsoTour</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Gel support surface</span></h2>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Help prevent pressure injuries for all patients.</span></span></p>\n",
+              "jcr:lastModified": "Mon Aug 05 2024 20:47:26 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "bottomMargin": "7",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Wed May 01 2024 17:39:23 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 13:36:15 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:36:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_291103632": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 13:37:15 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:37:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 02 2024 13:37:20 GMT+0000",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Help prevent pressure injuries with IsoTour</span></span></h2>\n<p><span class=\"fontsize-1-25em\">IsoTour is a gel support surface designed to help prevent all stages of pressure injuries by addressing key risk factors of skin breakdown: pressure, shear and moisture. The surface is composed primarily of gel structures that help redistribute pressure by buckling and absorbing the patient’s weight. The result: a pressure distributing, comfortable hospital mattress.</span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 13:38:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_180805": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Jan 29 2024 18:26:56 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1283327520_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Thu Sep 10 2020 15:10:39 GMT+0000",
+      "jcr:lastModified": "Tue Feb 15 2022 16:02:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Sep 10 2020 13:30:40 GMT+0000",
+          "text": "<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\">A.</span>&nbsp;IsoTour pump</span></h3>\n<p><span class=\"fontsize-1-25em\">IsoTour is designed with user experience in mind. The surface can operate with or without a pump, but when the pump is attached, the surface converts to low air loss (LAL) automatically, and allows you to use TruTurn easily.*</span></p>\n<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\">B.</span>&nbsp;Innovative gel structure</span></h3>\n<p><span class=\"fontsize-1-25em\">Our exclusive gel is placed in three distinct zones to help with pressure redistribution on bony prominences, as well as to enhance comfort. The hospital mattress is composed primarily of gel structures that help redistribute pressure by buckling and absorbing the patient’s weight.</span></p>\n<h3><span class=\"futura-bold\"><span style=\"color: #1c5687;\">C. </span>Microclimate management</span></h3>\n<p><span class=\"fontsize-1-25em\">The tall hexagonal structure in addition to the updated gel/LAL design promotes airflow up through the mattress directly beneath the patient.</span></p>\n<p>* When compared with the standard of care, pillow.</p>\n",
+          "jcr:lastModified": "Mon Aug 05 2024 20:24:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Mar 02 2022 17:58:59 GMT+0000",
+          "CTATitle": "Calculate Potential Savings",
+          "ctaDeepLinkID": "calculate",
+          "jcr:lastModified": "Wed Mar 02 2022 18:28:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(255,181,0,1)"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Thu Sep 10 2020 15:15:06 GMT+0000",
+          "alt": "IsoTour gel hospital support surfaces help prevent pressure injuries ",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/isotour/images/MainCalloutImage_900x600_ABC.jpg",
+          "jcr:lastModified": "Mon Jul 29 2024 15:27:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_791684393": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 13:41:02 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:41:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "jcr:lastModified": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 13:41:44 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:41:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2001917617_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Thu Apr 22 2021 12:17:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">TruTurn assist</span></span></h2>\n<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Utilize TruTurn assist to help with turning, lifting and offloading patients</span></span></h3>\n<p><span class=\"fontsize-1-25em\">IsoTour’s exclusive turn assist, TruTurn, provides assistance up to 30 degrees to aid in achievement of facilities individual turning protocols.</span></p>\n<p><span class=\"fontsize-1-25em\">IsoTour aligns with the goals of Safe Patient Handling programs by helping to reduce the heavy lifting, turning and offloading of patients that can lead to injury<sup>1</sup>.</span></p>\n<p><span class=\"fontsize-1-25em\">Turn angle can be adjusted for patient tolerance and comfort up to 30 degrees.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 15:17:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jul 20 2020 17:58:34 GMT+0000",
+          "alt": "TruTurn assist helps with safe patient positioning and offloading",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/isotour/images/IsoTour_CloseUp_PatientTurnAssist_CORRECT PUMP.png",
+          "jcr:lastModified": "Mon Jul 29 2024 15:26:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 13:56:07 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:56:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "jcr:lastModified": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_1741297624": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 14:26:00 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 14:26:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+          "jcr:created": "Mon Jan 07 2019 20:40:16 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Jan 07 2019 20:43:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/products/isotour/videos/Stryker - IsoTour v5.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "Marissa.DeBruyn@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Stryker - IsoTour v5-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Jan 07 2019 20:43:29 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "8",
+          "jcr:created": "Tue Jul 02 2024 14:26:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-2em\"><span class=\"urw-egyptienne\">Experience the</span><span class=\"futura-bold\"> power of gel</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 14:31:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1694910975": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 14:26:31 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 14:26:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "jcr:lastModified": "Tue Jul 02 2024 13:41:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols_copy_copy_copy_1189085304": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jul 02 2024 14:02:35 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Proven pressure injury prevention</span></span></h2>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 14:03:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_1780944888": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jul 02 2024 14:03:27 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 14:03:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 14:44:13 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jul 02 2024 14:08:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/videos/surfaces_right-surface-right-time.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/surfaces_right-surface-right-time-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Sep 20 2023 14:44:21 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "9",
+          "jcr:created": "Tue Jul 02 2024 14:05:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">43.5%</span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">reduction in truncal HAPIs during the period of one case study<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 14:20:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "6",
+          "jcr:created": "Tue Jul 02 2024 14:05:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #1c5687;\">$290,120</span></span></span></span></p>\n<p><span class=\"fontsize-1-25em\">total cost savings during the period of one case study<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 14:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_2138840510_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Mon Sep 21 2020 19:52:15 GMT+0000",
+      "jcr:lastModified": "Mon Mar 21 2022 15:36:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 02 2024 14:21:16 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">IsoTour hospital support surface</span></span></h2>\n<h3><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">Stryker's financial guarantees</span></span></h3>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 15:18:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Feb 15 2022 16:27:27 GMT+0000",
+      "jcr:lastModified": "Tue Feb 15 2022 16:27:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_295406748_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jul 20 2020 21:39:54 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">50% rental reduction guarantee</span></span></p>\n<p><span class=\"fontsize-1-25em\">Stryker’s IsoTour Support Surface Financial Guarantee is designed to reduce non-capital support surface costs for the hospital by 50% in the first year. If this goal is not achieved, Stryker will reimburse the hospital up to the difference between the guaranteed savings amount and the actual savings (reimbursement amount not to exceed the purchase price for IsoTour).**</span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 15:18:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_295406748_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Jul 20 2020 21:39:54 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">30% HAPI guarantee</span></span></p>\n<p><span class=\"fontsize-1-25em\">Stryker’s HAPI Financial Guarantee: Stryker guarantees participating facilities a 30% reduction of HAPIs (Stages 3, 4, unstageable, DTI) for patients using the Stryker IsoTour, IsoFlex LAL, Stryker IsoAir or Stryker Isolibrium Support Surface, for a guaranteed period.***</span></p>\n",
+          "jcr:lastModified": "Tue Jul 02 2024 15:18:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "calculate",
+      "jcr:created": "Wed Mar 02 2022 18:27:35 GMT+0000",
+      "title": "Savings",
+      "jcr:lastModified": "Tue Jul 02 2024 15:28:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "fullbleedpanel_copy__1476349218": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 17 2020 20:29:19 GMT+0000",
+      "jcr:lastModified": "Tue Feb 15 2022 16:45:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 17 2020 20:31:53 GMT+0000",
+          "jcr:lastModified": "Fri Apr 17 2020 20:31:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 17 2020 20:31:57 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Apr 17 2020 20:31:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 17 2020 20:29:30 GMT+0000",
+          "jcr:lastModified": "Fri Apr 17 2020 20:29:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Fri Apr 17 2020 20:29:33 GMT+0000",
+              "alt": "Icon of dollar sign",
+              "srcFileRef": "/content/dam/stryker/acute-care/images/PIT-thumbnail-2.png",
+              "jcr:lastModified": "Tue Feb 16 2021 04:55:20 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 17 2020 20:31:57 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;<br>\n&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Apr 17 2020 21:16:42 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "jcr:created": "Fri Apr 17 2020 20:33:08 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(255,255,255);\">Pressure injury</span></span></span></span> <span class=\"urw-egyptienne\">savings calculator<br>\r\n </span></span><span class=\"urw-egyptienne\"><br>\r\n</span>",
+              "line2": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Calculate potential savings over time</span></span></p>\r\n<p><span class=\"fontsize-1-5-vw\">Identify the potential savings your facility could realize by reducing costly pressure injuries and specialty support surface rentals.</span></p>\r\n",
+              "jcr:lastModified": "Tue Jul 16 2024 13:59:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        },
+        "cols2_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri Apr 17 2020 20:31:53 GMT+0000",
+          "jcr:lastModified": "Fri Apr 17 2020 20:31:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Fri Apr 17 2020 20:31:57 GMT+0000",
+              "text": "<p>&nbsp;&nbsp;</p>\n",
+              "jcr:lastModified": "Fri Apr 17 2020 20:31:59 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        }
+      }
+    },
+    "cols_copy_copy_copy_421959622": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "jcr:lastModified": "Tue Sep 15 2020 00:10:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Apr 23 2020 17:59:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span><span style=\"color: rgb(50,50,50);\"><span class=\"futura-bold\"><span><span class=\"fontsize-2vw\">Calculate potential savings</span></span></span></span></span>",
+          "line2": "Please fill in <b>all</b> fields with your specific data, click the &quot;Calculate&quot; button, and view your facility's potential 1-year and 5-year savings.",
+          "jcr:lastModified": "Tue Jul 16 2024 14:01:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "remotecomponent": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "componentUrlList": "https://microapp.stryker.com/constant-contact/index.html|https://microapp.stryker.com/fall-reduction-calculator/index.html|https://microapp.stryker.com/surfaces/index.html|https://microapp.stryker.com/surfaces-rental/index.html|https://microapp.stryker.com/medical-information-request/index.html|https://strykerdotcom-remotecomponents-dev.azurewebsites.net/1688-aim-4k-platform/index.html|https://microapp.stryker.com/1688-aim-4k-platform/|https://microapp.stryker.com/trauma-gamma4/|https://microapp-stage.stryker.com/trauma-gamma4/|https://microapp.stryker.com/trauma-alpha-femur-antegrade/|https://microapp.stryker.com/trauma-alpha-tibia/|https://microapp.stryker.com/trauma-hoffman/|https://microapp.stryker.com/trauma-pro-pelvis/|https://microapp.stryker.com/trauma-alpha-femur-retrograde/|https://microapp.stryker.com/trauma-skeleton/|https://microapp.stryker.com/medical-information-request-sage/index.html|https://microapp.stryker.com/endoscopy-1788/|https://microapp.stryker.com/fa-westpoint/|https://microapp.stryker.com/trauma-pangea/index.html|https://microapp.stryker.com/fa-pulse/index.html|https://microapp.stryker.com/ac-mobile-lab-mapbox/index.html|https://microapp.stryker.com/medical-information-request-ec/index.html|https://microapp.stryker.com/heartsine-recall/index.html|https://microapp.stryker.com/fa-charcot/|https://microapp.stryker.com/trauma-t2-alpha/|https://microapp.stryker.com/procare-coverage-map/index.html|https://microapp.stryker.com/fa-bunion/index.html|https://microapp.stryker.com/trauma-pangea-femur/|https://microapp.stryker.com/fa-prostep/",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "componentIdList": "Constant Contact|Fall reduction calculator|Surfaces|Surfaces rental|Medical Information Request|1688 AIM 4k Platform|1688 AIM 4k Platform - R2|trauma-gamma4|trauma-gamma4 (DEV)|trauma-alpha-femur-antegrade|trauma-alpha-tibia|trauma-hoffman|trauma-pro-pelvis|trauma-alpha-femur-retrograde|trauma-skeleton|medical-information-request-sage|endoscopy-1788|fa-westpoint|trauma-pangea|fa-pulse|AC Mobile Lab Mapbox|EC Medical Information Request Form|heartsine-recall|fa-charcot|trauma-t2-alpha|ProCare Coverage Map|fa-bunion|trauma-pangea-femur|fa-prostep",
+          "hiddenSelCompId": "Surfaces rental",
+          "componentUrl": "https://microapp.stryker.com/surfaces-rental/index.html",
+          "jcr:created": "Mon Mar 21 2022 15:52:21 GMT+0000",
+          "hiddenSelCompUrl": "https://microapp.stryker.com/surfaces-rental/index.html",
+          "jcr:lastModified": "Mon Mar 21 2022 15:55:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/remotecomponent"
+        }
+      }
+    },
+    "section_title_108156": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Dec 19 2023 14:51:24 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Mon Jan 29 2024 18:31:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_1023882719": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 21 2023 18:43:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 21 2023 18:43:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert.</span></span></h2>\n",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Sep 15 2020 00:08:32 GMT+0000",
+      "jcr:lastModified": "Wed Dec 29 2021 15:54:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "1320",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "marketoInstance": "b2bProd",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Thu Aug 13 2026 20:25:26 GMT+0000",
+          "hiddenConfiguredMarketo": "true",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 19 2023 14:44:07 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Jan 29 2024 18:19:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Jan 29 2024 18:26:35 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Mon Jan 29 2024 18:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:48:14 GMT+0000",
+      "jcr:lastModified": "Tue Jul 02 2024 13:43:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload_1859927961": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/isotour/resources/IsoTour_Brochure_mkt lit-1692.pdf",
+            "/content/dam/stryker/acute-care/products/isotour/resources/IsoTour Spec Sheet (1).pdf",
+            "/content/stryker/us/en/acute-care/asset-items/techweb/jcr:content/par/externalasset_copy_c",
+            "/content/stryker/us/en/acute-care/asset-items/registration/jcr:content/par/externalasset_copy_c"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Tue Jul 02 2024 13:43:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "customizable_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Dec 21 2021 18:30:07 GMT+0000",
+          "jcr:lastModified": "Tue Jul 02 2024 13:44:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/isoair"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/isolibrium"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/comfortgel"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/procuity/index"
+            }
+          }
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Dec 19 2023 14:47:42 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Tue Jan 30 2024 14:12:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/isotour/images/Thumbnail_IsoTour_SYK.jpg"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>IsoTour at a glance</p>\r\n",
+    "shortDescTop": "<p>Treatment of pressure injuries can lead to stress, on-the-job injuries, and financial costs. And for patients, pressure injuries can be dangerous—or even fatal. IsoTour is a gel support surface designed to help prevent all stages of pressure injuries by addressing key risk factors of skin breakdown: pressure redistribution, shear, and moisture. The surface is composed primarily of gel structures that help redistribute pressure by buckling and absorbing the patient’s weight. The result: a pressure distributing, comfortable mattress. </p>\r\n",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 09 2022 17:08:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Our exclusive gel is placed in three distinct zones to help with pressure redistribution on bony prominences, as well as to enhance comfort.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>IsoTour’s exclusive turn assist, TruTurn™, helps to offload by reducing pressure on the sacrum.*</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Turn angle can be adjusted for patient tolerance and comfort up to 30 degrees.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>The surface can operate with or without a pump, but when the pump is attached, the surface converts to low air loss automatically, and allows you to use TruTurn easily.**</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*TruTurn should be used in conjunction with clinical judgement and does not eliminate the need for visual inspection of the skin.&nbsp;When compared with the standard of care, pillow.</p>\r\n<p>**Facility must meet eligibility requirements as outlined in the rental reduction contract. The guarantee is subject to the terms and conditions set forth in the Rental Reduction guarantee contract.</p>\r\n<p>***Facility must meet eligibility requirements as outlined in the HAPI Reduction contract. Must include advanced clinical hours. The guarantee is subject to the terms and conditions set forth in the HAPI guarantee contract</p>\r\n<p><span>1. Healthcare - Safe Patient Handling | Occupational Safety and Health Administration. May 9, 2022.&nbsp;https://www.osha.gov/healthcare/safe-patient-handling</span></p>\r\n<p>2. Bealer, Cheryl. 2019. Quality Improvement Initiative results in a Decrease of Hospital-Aquired Truncal Pressure Injuries. Penn State Health.</p>\r\n<p>Pressure Injury Savings Calculator:&nbsp;MKT LIT-2013 25 JUN 2020 REV A</p>\r\n",
+    "jcr:lastModified": "Mon May 09 2022 21:25:54 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://techweb.stryker.com/",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Wed Mar 09 2022 18:47:57 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Operations and Maintenance Manuals",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 02 2022 20:19:36 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 09 2022 17:08:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Mar 09 2022 17:08:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Mar 09 2022 20:04:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  }
+}

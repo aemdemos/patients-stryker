@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "LIFEPAK CR2: Using a fully-automatic AED on an adult, hands only CPR",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "afd4cc0c-c2a9-4226-94e0-bee120f8e5b4",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "a6099ad5-2559-43bb-a1a9-3505cec78b6b"
+  ],
+  "lastPublished": "Tue Sep 13 2022 20:39:11 GMT+0000",
+  "jcr:created": "Tue Sep 13 2022 20:39:11 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 13 2022 20:39:13 GMT+0000",
+  "cq:lastModified": "Thu Sep 08 2022 19:29:30 GMT+0000",
+  "jcr:baseVersion": "a6099ad5-2559-43bb-a1a9-3505cec78b6b",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:uuid": "0b84a058-e813-4758-86fe-cdba4b017350",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 14:53:01 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Thu Sep 08 2022 14:53:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "description": "Learn how to operate a fully-automatic AED on an adult along with hands only CPR.",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 08 2022 19:27:43 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Sep 08 2022 19:27:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/ems/videos/training-and-tutorials-products/lifepak-cr2-using-a-fully-automatic-aed-on-an-adult-hands-only-cpr.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/lifepak-cr2-using-a-fully-automatic-aed-on-an-adult-hands-only-cpr-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Sep 08 2022 19:29:30 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

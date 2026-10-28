@@ -1,0 +1,124 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker’s Lobo discusses outlook for our business, M&A strategy and future product innovation",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "91cd6800-528d-4067-8724-6ef2b6fe50f8",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "StrykerTalks23_4.11.23_1200x800",
+  "jcr:predecessors": [
+    "930f8fb4-4d39-4bc3-bbed-7526cdd20d14"
+  ],
+  "contentID": "COMM-GSNPS-SYK-630528",
+  "lastPublished": "Thu Apr 13 2023 14:59:33 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Apr 13 2023 14:59:33 GMT+0000",
+  "cq:lastReplicated": "Thu Apr 13 2023 14:59:35 GMT+0000",
+  "cq:lastModified": "Thu Apr 13 2023 14:59:30 GMT+0000",
+  "jcr:baseVersion": "930f8fb4-4d39-4bc3-bbed-7526cdd20d14",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/strykertalks-podcast",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Wed Apr 12 2023 17:56:14 GMT+0000",
+  "jcr:uuid": "28c616b7-bbe4-4b21-a356-da6eebdb7d6e",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Mon Mar 14 2022 19:47:40 GMT+0000",
+      "jcr:lastModified": "Mon Mar 14 2022 19:47:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Mar 14 2022 19:51:05 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-1-5-vw\"><span class=\"urw-egyptienne\">Kevin Lobo, our Chair and CEO, joins the StrykerTalks podcast to share the state of our global business, the progress of Wright Medical and Vocera integrations, and the current supercycle of product innovation.</span></span></h2>\r\n",
+          "jcr:lastModified": "Thu Apr 13 2023 14:59:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_386675570": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jun 06 2022 13:34:47 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Aug 22 2022 19:58:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2023/stryker’s-lobo-discusses-outlook-for-our-business,-m-a-strategy-and-future-product-innovation/StrykerTalks Kevin Lobo.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/StrykerTalks Kevin Lobo-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Apr 12 2023 17:35:17 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Apr 12 2022 17:06:21 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">Products may not be available in all markets. Product availability is subject to the regulatory and/or medical practices in individual markets.</span></p>\n",
+          "jcr:lastModified": "Wed Sep 07 2022 15:57:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Wed Apr 12 2023 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "12-Apr-2023",
+    "jcr:lastModified": "Wed Apr 12 2023 16:56:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2023/stryker’s-lobo-discusses-outlook-for-our-business,-m-a-strategy-and-future-product-innovation/StrykerTalks23_4.11.23_1200x800.jpg"
+  }
+}

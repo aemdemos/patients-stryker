@@ -1,0 +1,162 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "OR Managers",
+  "jcr:versionHistory": "3f2cd6cc-2011-4725-a625-595954a75fd3",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "jcr:predecessors": [
+    "6523b9d3-b4e4-4313-a042-ae11b9abec6a"
+  ],
+  "contentID": "D0000003942 Rev. AA",
+  "lastPublished": "Thu Sep 13 2018 15:54:59 GMT+0000",
+  "jcr:created": "Thu Sep 13 2018 15:54:59 GMT-0400",
+  "cq:lastModified": "Thu Sep 13 2018 13:51:36 GMT-0400",
+  "hideContentID": "true",
+  "jcr:baseVersion": "6523b9d3-b4e4-4313-a042-ae11b9abec6a",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "OR Managers",
+  "jcr:lastModified": "Thu Sep 13 2018 13:51:36 GMT-0400",
+  "jcr:uuid": "14791229-f536-4e22-a443-3ca2d9101661",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "layoutOptions": "col-sm-4 pull-right",
+      "backgroundImageRef": "/content/dam/stryker/campaigns/ormanagers/2018_Campagin_ORManager.jpg",
+      "jcr:created": "Thu Feb 22 2018 16:55:51 GMT-0500",
+      "jcr:lastModified": "Thu Sep 13 2018 11:07:34 GMT-0400",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Thu Feb 22 2018 16:56:40 GMT-0500",
+          "gradientDirection": "top-to-bottom",
+          "line1": "<h3><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"color: rgb(255, 181, 0);\"><span class=\"fontsize-3vw\">OR Manager Conference</span></span></span><span class=\"fontsize-1-5-vw\"><br>\r\n </span></span></span><span style=\"color: rgb(255, 181, 0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(255, 255, 255);\"><span class=\"fontsize-2-5-vw\">September 17-19</span></span></span></span></h3>\r\n<h3><span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255, 181, 0);\">Booth # 800<br>\r\n</span></span></span></h3>\r\n<p><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></p>\r\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\">&nbsp;</span></span></p>\r\n",
+          "jcr:lastModified": "Thu Sep 13 2018 12:07:01 GMT-0400",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(28,86,135,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 12 2018 14:16:14 GMT-0400",
+      "jcr:lastModified": "Wed Sep 12 2018 14:16:14 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 12 2018 14:53:08 GMT-0400",
+      "jcr:lastModified": "Wed Sep 12 2018 14:53:08 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "image": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "fileReference": "/content/dam/stryker/campaigns/ormanagers/2018_Campaign_ORManager_ESEP3.jpg",
+          "height": "0",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Sep 12 2018 14:50:49 GMT-0400",
+          "width": "0",
+          "linkURL": "/content/stryker/us/en/surgical/products/neptune-e-sep-smoke-evacuation-pencil",
+          "jcr:lastModified": "Thu Sep 13 2018 10:32:09 GMT-0400",
+          "sling:resourceType": "stryker/components/content/image"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "image_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "fileReference": "/content/dam/stryker/campaigns/ormanagers/2018_Campaign_ORManager_SurgiCount2.jpg",
+          "height": "0",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Sep 12 2018 14:50:49 GMT-0400",
+          "width": "0",
+          "linkURL": "/content/stryker/us/en/surgical/products/surgicount-safety-sponge-system",
+          "jcr:lastModified": "Thu Sep 13 2018 10:32:37 GMT-0400",
+          "sling:resourceType": "stryker/components/content/image"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "image_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.wolff@stryker.com",
+          "fileReference": "/content/dam/stryker/campaigns/ormanagers/2018_Campaign_ORManager_S8.jpg",
+          "height": "0",
+          "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+          "jcr:created": "Wed Sep 12 2018 14:50:49 GMT-0400",
+          "width": "0",
+          "linkURL": "/content/stryker/us/en/surgical/products/system-8",
+          "jcr:lastModified": "Thu Sep 13 2018 10:32:55 GMT-0400",
+          "sling:resourceType": "stryker/components/content/image"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Sep 12 2018 14:42:59 GMT-0400",
+      "jcr:lastModified": "Wed Sep 12 2018 14:42:59 GMT-0400",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "largeheadline_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Fri Feb 23 2018 11:50:11 GMT-0500",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-4vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255, 181, 0);\">Experience&nbsp;Stryker </span></span><span style=\"color: rgb(255, 181, 0);\"><span style=\"color: rgb(0, 0, 0);\"><span class=\"urw-egyptienne\">at OR Manager Conference</span></span></span></span>",
+      "jcr:lastModified": "Thu Sep 13 2018 10:52:11 GMT-0400",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Dilara.Atkins@stryker.com",
+      "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+      "jcr:created": "Thu Sep 13 2018 10:55:10 GMT-0400",
+      "text": "<h3><span class=\"futura-bold\">You are invited </span>to join Stryker for an evening of hors d'oeuvres and cocktails at the OR Manager Conference in Nashville, TN.</h3>\n<h4><span class=\"futura-bold\">Date:</span> September 17th</h4>\n<h4><span class=\"futura-bold\">Location:</span> Cabana Club | JW&nbsp; Marriott | Nashville, TN</h4>\n<h4><span class=\"futura-bold\">Time: </span>7:00pm -9:00pm</h4>\n<p><span class=\"standalone-link\"><a href=\"http://ormc2018.sykevents.com/\">Register</a></span></p>\n",
+      "jcr:lastModified": "Thu Sep 13 2018 11:04:47 GMT-0400",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

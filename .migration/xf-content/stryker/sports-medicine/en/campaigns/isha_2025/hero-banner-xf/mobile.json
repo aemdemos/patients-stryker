@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2ff60344-9c9d-41a3-b42c-5d8f733dcf78",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "27efaac9-a9dd-4754-96de-618f9a62e3f0"
+  ],
+  "lastPublished": "Mon Sep 08 2025 16:18:35 GMT+0000",
+  "jcr:created": "Mon Sep 08 2025 16:18:36 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 08 2025 16:18:40 GMT+0000",
+  "cq:lastModified": "Tue Aug 19 2025 17:13:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "27efaac9-a9dd-4754-96de-618f9a62e3f0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Sep 08 2025 16:18:35 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "aa7ee005-fbbe-4677-be2b-95329544bcaa",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "courtney.dickens@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Aug 19 2025 17:13:49 GMT+0000",
+      "alt": "fukuoka-japan-mobile-hero-image",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/campaigns/isha-2025/images/fukuoka-japan-mobile-hero-image.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 19 2025 17:13:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

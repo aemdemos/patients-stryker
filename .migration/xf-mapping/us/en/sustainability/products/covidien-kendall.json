@@ -1,0 +1,207 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reprocessed 3 lead and 5 lead sets and cables",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Covidien Kendall™ disposable ECG lead sets",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "88dd5b14-613d-4713-a169-74467d6548d8",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "morgan.harder@stryker.com",
+  "thumbnailAltText": "Covidien Kendall",
+  "jcr:predecessors": [
+    "51680157-b452-4ebc-b43e-0ea591e49d40"
+  ],
+  "contentID": "CIS11258",
+  "lastPublished": "Tue Aug 18 2026 20:25:55 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Aug 18 2026 20:25:56 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 18 2026 20:25:58 GMT+0000",
+  "cq:lastModified": "Tue Aug 18 2026 20:25:49 GMT+0000",
+  "jcr:description": "Reprocessed single use Kendall lead sets and cables to help you achieve savings, sustainability and infection prevention. Stryker's Sustainability Solutions offers 3 lead and 5 lead cables to customers. ",
+  "jcr:baseVersion": "51680157-b452-4ebc-b43e-0ea591e49d40",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:25:55 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/ecg-leads,-cables-and-adaptors",
+    "stryker:content-type/product",
+    "stryker:product/sustainability/kendall-dl",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/sustainability",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/reprocessed-products"
+  ],
+  "jcr:lastModified": "Thu Jul 27 2023 20:48:33 GMT+0000",
+  "jcr:uuid": "3b74c3fd-f2fc-4f25-8f9c-37f58f6ded72",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Wed Nov 09 2022 16:17:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 17:00:54 GMT+0000",
+      "title": "Ordering information",
+      "jcr:lastModified": "Wed Nov 09 2022 17:01:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "table": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td><b>Item number</b></td>\n<td><b>Description</b></td>\n</tr><tr><td>33103</td>\n<td>Disposable 3 Lead Cable and Lead Wire System 120&quot; Bedside</td>\n</tr><tr><td>33105</td>\n<td>5 Lead Cable and Lead Wire System 120&quot; Bedside</td>\n</tr><tr><td>33110</td>\n<td>10 Lead Cable and Lead Wire System 120&quot; Bedside</td>\n</tr><tr><td>33111</td>\n<td>Kendall DL Disposable Chest Leads 120&quot;</td>\n</tr><tr><td>33112</td>\n<td>Disposable 5 Lead Cable and Lead Wire GE Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33113</td>\n<td>Disposable 5 Lead Cable and Lead Wire Philips Telemetry VeridiaTM System 36&quot; Direct Connect</td>\n</tr><tr><td>33114</td>\n<td>Disposable 5 Lead Cable and Lead Wire Philips Telemetry InTelliVueTM System 36&quot; Direct Connect</td>\n</tr><tr><td>33125</td>\n<td>Disposable 6 Lead Cable and Lead Wire&nbsp; GE Apex Pro CH Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33126</td>\n<td>Disposable 6 Lead Cable and Lead Wire GE Apex Pro FH Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33132</td>\n<td>Disposable 5 Lead Cable and Lead Wire Draeger Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33133</td>\n<td>Disposable 5 Lead Cable and Lead Wire Spacelabs Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33134</td>\n<td>Disposable 6 Lead Cable and Lead Wire Nihon Kohden Telemetry System 36&quot; Direct Connect</td>\n</tr><tr><td>33135</td>\n<td>Kendall DL Disposable 5 Lead Dual Connect System/Kit 162&quot;</td>\n</tr><tr><td>33135T</td>\n<td>Disposable 5 Lead Dual Connect System/Kit 144&quot;</td>\n</tr><tr><td>33136</td>\n<td>Kendall DL Disposable Dual Connect Lead Set Only 42&quot;</td>\n</tr><tr><td>33136T</td>\n<td>Disposable 5 Lead Dual Connect Lead Set Only 36&quot;</td>\n</tr><tr><td>33145</td>\n<td>Kendall DL Disposable Dual Connect Cable Only 120&quot;</td>\n</tr><tr><td>33145T</td>\n<td>Disposable Dual Connect Cable Only, 108&quot;</td>\n</tr></tbody></table>\n",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Nov 09 2022 16:03:04 GMT+0000",
+      "jcr:lastModified": "Wed Nov 09 2022 16:09:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/table",
+      "textIsRich": "true"
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/endoscopy/products/covidien-kendall/resources/ECG lead reprocessing overview.pdf",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Nov 09 2022 16:17:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 18 2026 20:25:41 GMT+0000",
+      "jcr:lastModified": "Tue Aug 18 2026 20:25:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:28:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2736",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn X YouTube",
+          "jcr:lastModified": "Mon Aug 03 2026 19:29:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sustainability-solutions/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/endoscopy/products/covidien-kendall/images/ECG_Leads_Silo_Shadow_33136 (1).png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Helping you achieve savings, sustainability and infection prevention</p>\r\n",
+    "shortDescTop": "<p>Before being sent back to you, all reprocessed devices are required to pass through our robust manufacturing process consisting of:</p>\r\n",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Dec 19 2022 21:44:12 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Decontamination and cleaning</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Visual inspection</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Function testing for electrical continuity</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>EO exposure</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 18 2026 20:25:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

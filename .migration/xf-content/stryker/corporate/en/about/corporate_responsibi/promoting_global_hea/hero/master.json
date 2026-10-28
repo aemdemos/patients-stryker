@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "8ea8b861-1248-4121-bd31-e844ea349097",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "928be092-038d-458f-ba78-a35752ac5898"
+  ],
+  "lastPublished": "Fri Mar 14 2025 13:39:49 GMT+0000",
+  "jcr:created": "Fri Mar 14 2025 13:39:49 GMT+0000",
+  "cq:lastReplicated": "Fri Mar 14 2025 13:39:55 GMT+0000",
+  "cq:lastModified": "Fri Mar 07 2025 01:01:44 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "928be092-038d-458f-ba78-a35752ac5898",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 13:39:49 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "850e07fb-9e53-4a6d-abb1-2b7725c5e0aa",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Mon Nov 15 2021 19:29:13 GMT+0000",
+      "alt": "Better healthcare",
+      "srcFileRef": "/content/dam/stryker/about/corporate-responsiblity/new-corporate-responsibility/promoting-global-health/CR-BetterHealthcare-desktop-2025-v4.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Mar 07 2025 01:01:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

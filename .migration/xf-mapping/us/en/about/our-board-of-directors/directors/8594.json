@@ -1,0 +1,76 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Giovanni Caforio",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d98936dc-ff6b-4bf3-8e4b-9c8d79e5a684",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "eb90c575-fb25-4342-a5b5-aa0838041f3e"
+  ],
+  "lastPublished": "Fri Jul 25 2025 15:55:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Jul 25 2025 15:55:31 GMT+0000",
+  "cq:lastReplicated": "Fri Jul 25 2025 15:55:33 GMT+0000",
+  "cq:lastModified": "Thu Feb 02 2023 20:00:58 GMT+0000",
+  "jcr:baseVersion": "eb90c575-fb25-4342-a5b5-aa0838041f3e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:51:29 GMT+0000",
+  "pageTitle": "Giovanni Caforio",
+  "jcr:lastModified": "Thu Feb 02 2023 20:00:58 GMT+0000",
+  "jcr:uuid": "657f09ea-f148-4650-a536-14ef4a2ea9f4",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "navTitle": "Giovanni Caforio",
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:48 GMT+0000",
+      "jcr:lastModified": "Tue Oct 11 2022 15:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
+      "text": "◁ Back",
+      "jcr:lastModified": "Tue Oct 11 2022 15:24:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/back-button/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/back-button/master"
+    },
+    "cols_2140249363_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:58 GMT+0000",
+      "jcr:lastModified": "Tue Oct 11 2022 15:23:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c_885555526": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Tue Oct 11 2022 15:23:55 GMT+0000",
+      "text": "Giovanni Caforio, M.D. Director since 2020, Compensation and Human Capital Committee Chair, Governance and Nominating Committee Former Chairman and Chief Executive Officer of Bristol Myers Squibb Dr. Caforio is the former Chairman and CEO of Bristol Myers Squibb, Chairman from May 2017 to November 2023 and CEO from May 2015 to November 2023. Previously, he spent 12 years with Abbott Laboratories in a number of leadership positions. Dr. Caforio is the Chair of the Board of Novartis AG, a multinational pharmaceutical company focused on developing, manufacturing and marketing innovative medicines. Dr. Caforio adds extensive experience to our Board as both a physician and a business leader. As the former CEO of a leading global biopharmaceutical company, he oversaw the acquisition of Celgene, led the company’s focus on researching and developing transformational medicines and advanced scientific innovation that helped improve the lives of patients. This experience enables him to provide valuable business, leadership and management insights to our Board.",
+      "jcr:lastModified": "Tue Oct 11 2022 15:26:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/about/our_board_of_directo/bod/8594/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/about/our-board-of-directo/bod/8594/master"
+    }
+  }
+}

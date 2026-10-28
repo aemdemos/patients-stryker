@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "673a92e8-2982-412f-8f47-7967be954764",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "211d2f44-0967-4580-811c-69961c55496e"
+  ],
+  "jcr:created": "Tue Feb 06 2024 15:12:27 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 06 2024 15:12:29 GMT+0000",
+  "cq:lastModified": "Tue Feb 06 2024 15:01:50 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "211d2f44-0967-4580-811c-69961c55496e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "68e71575-1ddd-4200-a8b4-5e4ddb153ffd",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 30 2024 14:32:27 GMT+0000",
+      "alt": "Stryker's hospital bedside stands",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/bedsidestands/images/Thumbnail_BedsideStands_16x9.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Feb 06 2024 15:01:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

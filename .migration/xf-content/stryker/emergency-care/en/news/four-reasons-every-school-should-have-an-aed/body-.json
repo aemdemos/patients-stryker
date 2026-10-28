@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Body ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "e2ecdd0b-2cc3-4092-9f3d-715526ba7803",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "3b2335fd-e25f-40da-b62c-877ac5c48649"
+  ],
+  "jcr:created": "Mon Jun 12 2023 19:25:04 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 12 2023 19:25:08 GMT+0000",
+  "cq:lastModified": "Sun Jun 04 2023 13:49:33 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "3b2335fd-e25f-40da-b62c-877ac5c48649",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "1d0903a0-fb2f-4c72-85b9-1ecd36e7f16d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "katie.boertman@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "jcr:created": "Tue May 31 2022 17:25:04 GMT+0000",
+      "text": "<p><i>2-minute read</i></p>\n<p><span class=\"fontsize-1-25em\">Out-of-hospital sudden cardiac arrest is a leading cause of death in the United States, claiming the lives of approximately 356,000 people each year.<sup>1</sup> Sudden cardiac arrest occurs when the heart suddenly stops beating often without warning, causing the victim to collapse, become unresponsive and be unable to breathe normally. The person will die within minutes if a normal heart rhythm is not restored. Automated external defibrillators (AEDs) are lifesaving devices designed to get the heart back to a normal sinus rhythm.</span></p>\n<p><span class=\"fontsize-1-25em\">Although less than half of the states in the U.S. require AEDs in schools, every elementary and secondary school should seriously consider having one.<sup>2</sup></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Here are four reasons why:</span></p>\n<p><b><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\">1. School-aged children are potential victims of experiencing a sudden cardiac arrest</span></span></b><span class=\"fontsize-1-25em\"><br>\n This life-threatening event can happen to people of all ages, even those who appear to be in good health. In fact, sudden cardiac arrest strikes 7,000 children and teens every year.<sup>1&nbsp;</sup>And while sudden cardiac death among student-athletes has prompted a drive to equip athletic facilities with AEDs, research has found that sudden cardiac arrest occurs more often with school-aged non-athletes.<sup>3</sup>&nbsp; &nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><span style=\"color: #1c5687;\"><br>\n</span></span><span style=\"color: #1c5687;\"><b><span class=\"fontsize-1-5em\">2. AEDs in schools save lives</span></b></span><span class=\"fontsize-1-25em\"><br>\n In schools with AEDs, about 70 percent of students survive sudden cardiac arrest, which is more than seven times the overall survival rate for school-age children.<sup>3</sup> Survival is estimated to decrease by 10 percent every passing minute until a shock from a defibrillator is applied.<sup>4</sup> Because early defibrillation significantly increases the survival rate after sudden cardiac arrest, the American Heart Association (AHA) organization encourages making AEDs readily available in public spaces, such as school buildings.<sup>5</sup>&nbsp;<br>\n &nbsp;</span></p>\n<p><b><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\">3. Anyone in a school building may benefit</span></span></b><span class=\"fontsize-1-25em\"><br>\n AEDs reduce the risk of death from cardiac arrest for all age groups. There are around 7 million teachers and non-academic staff in U.S. public schools on any given school day.<sup>6</sup> Those numbers don’t include private schools or account for the parents, grandparents, coaches, administrators and other visitors who may be on a school campus. A 15-year study by the AHA found that about 90 percent of sudden cardiac arrests in schools occur among adults. The organization concluded that “school-based CPR and AED programs would benefit faculty and staff members, as well as visitors to the school who, because of their age, are at greater risk of cardiac arrest than the students.”<sup>7</sup></span></p>\n<p><span class=\"fontsize-1-25em\"><b><br>\n</b></span><b><span style=\"color: #1c5687;\"><span class=\"fontsize-1-5em\">4. Virtually anyone can use an AED to save a life</span></span></b><span class=\"fontsize-1-25em\"><b><br>\n </b>Operating an AED is not complicated. These portable devices are designed so any bystander – a teacher, a parent or even a student – can administer a lifesaving shock to someone in cardiac arrest.<sup>8</sup> With simple audio instructions to guide the user through the proper steps, an AED evaluates the heart’s rhythm to determine if defibrillation is needed.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\"><br>\nAn easily identifiable and accessible AED could mean the difference between life and death for a cardiac arrest victim.</span></p>\n<p><span class=\"fontsize-1-25em\">&nbsp;</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Together, we save lives</span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">The decision to invest in an AED for your school is an important one that could save lives. Choosing the safest device for your environment and student population is crucial.</span><br>\n</p>\n<p><span class=\"fontsize-1-25em\"><a href=\"/content/stryker/us/en/emergency-care/community-public-safety.html\"><b>Connect with an AED expert</b></a> to learn more about our AEDs and how we can help make your school safer.&nbsp;</span></p>\n",
+      "jcr:lastModified": "Sun Jun 04 2023 13:49:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

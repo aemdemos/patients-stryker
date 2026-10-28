@@ -1,0 +1,753 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Virtual Monitoring",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "457e5e95-1a0e-4550-89d0-369cdd2b842b",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kennedy.lane@stryker.com",
+  "thumbnailAltText": "A screenshot of a virtual sitter's screen for patient monitoring",
+  "jcr:predecessors": [
+    "5df08d51-dc50-443c-9f05-e720add36d2b"
+  ],
+  "contentID": "AC-GSNPS-SYK-1946434_REV-0_en_us",
+  "lastPublished": "Thu Jul 16 2026 20:45:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Jul 16 2026 20:45:25 GMT+0000",
+  "cq:lastReplicated": "Thu Jul 16 2026 20:45:27 GMT+0000",
+  "cq:lastModified": "Thu Jul 16 2026 20:45:17 GMT+0000",
+  "jcr:description": "Scale virtual sitter resources by performing workflows like patient monitoring and\r\nnight rounding through a virtual model. ",
+  "jcr:baseVersion": "5df08d51-dc50-443c-9f05-e720add36d2b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 02 2026 19:54:55 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:specialty/virtual-care",
+    "stryker:custom/smart-care/care-space/smarted",
+    "stryker:capability/smart-hospital",
+    "stryker:custom/smart-care/care-space/smartroom",
+    "stryker:content-type/hcp_content",
+    "stryker:custom/smart-care/product-type/virtual-care"
+  ],
+  "jcr:lastModified": "Fri Jan 09 2026 17:02:45 GMT+0000",
+  "jcr:uuid": "eaac345a-45f1-4c2c-aed0-a98089daaeb6",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/smart_care/en/products/us/virtual_monitoring/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/smart-care/en/products/us/virtual-monitoring/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/smart_care/en/products/us/virtual_monitoring/hero/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/smart-care/en/products/us/virtual-monitoring/hero/master",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "18",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Jan 28 2026 21:41:46 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"fontsize-1-75em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Virtual Monitoring</span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">Scale care provider resources</span></h2>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">A virtual care provider works from the virtual command center observing or monitoring multiple patients or environments at one time.</span></span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Dec 10 2025 15:07:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Thu Jan 11 2024 16:14:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title_copy_c_614342838": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Tue Nov 04 2025 21:53:43 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Wed Dec 03 2025 16:57:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Mon Oct 02 2023 16:50:13 GMT+0000",
+      "jcr:lastModified": "Mon Oct 02 2023 16:50:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Help return time to nurses<sup>1</sup></span></span></h2>\n<p><span class=\"fontsize-1-25em\">One U.S. research study demonstrates how task delegation through tech enablement for virtual nursing, virtual monitoring and ambient monitoring can help bedside care team members reclaim time and help close the workforce gap.<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Tue Oct 28 2025 17:04:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Oct 05 2023 15:47:30 GMT+0000",
+      "jcr:lastModified": "Thu Oct 05 2023 15:47:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 05 2025 16:45:56 GMT+0000",
+          "alt": "FTE Nurses Icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/virtual-nursing/FTE Nurses Icon_Gold.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Nov 18 2025 16:55:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2.2",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 14:59:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Projected <span class=\"futura-bold\">shortage of 207,980 FTE RNs and 302,440 FTE LPNs</span> by 2037<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Tue Nov 18 2025 16:55:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 05 2025 16:45:56 GMT+0000",
+          "alt": "Free up Time Icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/virtual-nursing/Free up Time Icon_Gold.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Nov 18 2025 16:55:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2.2",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 14:59:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Potential workforce gap closure of <span class=\"futura-bold\">up to 300,000 nurses</span> by freeing up time through tech enablement and task delegation<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Tue Nov 18 2025 16:58:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Nov 05 2025 16:45:56 GMT+0000",
+          "alt": "Time savings Icon",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/virtual-nursing/Time savings Icon_Gold.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Nov 18 2025 16:55:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_1590852084": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2.2",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 14:59:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Conservative estimate of potential <span class=\"futura-bold\">15% net time savings</span> through task delegation or tech enablement<sup>1</sup></span></p>\n",
+          "jcr:lastModified": "Tue Nov 18 2025 16:57:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true",
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_656386076_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Oct 06 2023 13:38:53 GMT+0000",
+      "jcr:lastModified": "Fri Oct 06 2023 13:38:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Fri Oct 06 2023 13:39:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Flexible workflows incorporating human observation and AI sensors</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Whether you aim to scale traditional patient monitoring workflows or augment human surveillance with ambient monitoring, we can co-design solutions that meet your needs.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Dec 10 2025 15:08:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_678292420": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Oct 05 2023 15:52:40 GMT+0000",
+      "jcr:lastModified": "Thu Oct 05 2023 15:52:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy_1460064413": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "alt": "An AI sensor presenting a feed for a virtual monitor to watch patients",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/ambient-monitoring/Workflows_680x400.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Jan 07 2026 16:32:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Thu Oct 05 2023 15:52:59 GMT+0000",
+          "text": "<h4>Scale traditional patient monitoring resources</h4>\n<p><span class=\"fontsize-1-25em\">Scale virtual sitter resources by performing workflows like patient monitoring and night rounding through a virtual model. A virtual sitter can engage with a patient through an in-room speaker or bring in additional care team members as needed.&nbsp;</span></p>\n<h4>Augment human surveillance with ambient monitoring</h4>\n<p><span class=\"fontsize-1-25em\">As virtual team members provide oversight, ambient intelligence captures activity and data such as time stamps, compliance, operating room camera feed, surgical counts and more from multiple points of care. AI-driven, always-aware ambient sensors continuously monitor activity to autonomously detect presence, motion and behavior.<br>\n </span></p>\n",
+          "jcr:lastModified": "Wed Dec 10 2025 15:10:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 18 2025 16:59:08 GMT+0000",
+      "jcr:lastModified": "Tue Nov 18 2025 16:59:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Nov 18 2025 16:59:14 GMT+0000",
+          "jcr:lastModified": "Tue Nov 18 2025 16:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "section_title_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "features",
+          "jcr:created": "Tue Nov 04 2025 21:53:43 GMT+0000",
+          "title": "Features",
+          "jcr:lastModified": "Tue Nov 04 2025 21:54:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text_copy_1183232467": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 17:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Product highlights</span></span></span></h2>\n",
+          "jcr:lastModified": "Wed Nov 19 2025 22:51:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Nov 18 2025 16:59:32 GMT+0000",
+      "jcr:lastModified": "Tue Nov 18 2025 17:00:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 1,
+          "tabTitle": "Ambient sensors"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Consultative partnership"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 3,
+          "tabTitle": "Virtual command center"
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 19 2025 22:24:06 GMT+0000",
+          "text": "Always-aware ambient sensors Transform healthcare facilities into smart spaces Always-aware ambient sensors are advanced, AI-driven devices embedded within care environments that act as the eyes, ears and intelligence of care.ai solutions. Protect patient privacy Using computer vision and AI-driven algorithms, sensors continuously monitor activity to autonomously detect presence, motion and behavior without intruding on patient privacy. Ambient sensors capture real-time data, infer patterns and identify deviations. They can notify appropriate care providers if a situation needs attention. Help drive standardization and optimize workflows Sensors can monitor for facility protocol compliance to help drive standardization and optimize clinical and operational workflows.",
+          "jcr:lastModified": "Tue Jan 06 2026 15:50:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/products/us/ambient-monitoring/tabs-content/master"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 19 2025 22:24:06 GMT+0000",
+          "text": "Consultative partnership We believe transformation in healthcare requires more than just technology – it requires trusted partnership and deep clinical experience. Our platform is built hand-in-hand with frontline clinicians. We continuously incorporate their insights to address real-world challenges like workforce shortages, administrative burdens and patient safety risks. Align with your protocols and processes We don’t just deliver tools; we want to be your partner, aligning with your leadership and care teams to co-design solutions that align with your protocols and processes. Integrate seamlessly Our implementation teams work to integrate your care.ai solutions seamlessly with your existing systems. Help ensure solution adoption Our clinical specialists collaborate with your clinical leaders to help ensure solution adoption, support your team training and education efforts and work with you to quantify outcomes.",
+          "jcr:lastModified": "Tue Jan 06 2026 15:50:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master1",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/products/us/ambient-monitoring/tabs-content/master1"
+        }
+      },
+      "tabs_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 3,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Wed Nov 19 2025 22:24:06 GMT+0000",
+          "text": "Virtual command center The virtual command center is the intelligence hub for care.ai solutions, bringing together virtual care and ambient intelligence into one seamless experience. For virtual care workflows, care providers work from the command center supporting a curated task list or monitoring multiple patients at once. Automate workflows, streamline compliance monitoring In Ambient Monitoring scenarios, the command center draws on near-real-time data from always-aware ambient sensors. It automates workflows, streamlines protocol compliance monitoring and delivers actionable insights that support proactive interventions. Get a single source of truth for situational awareness The command center unifies capabilities, systems and more, delivering predictive intelligence and enterprise-wide visibility to enable smarter, more human-centered care. The command center can integrate with a wide variety of systems like the EHR, nurse call, documentation tools, interpretation services and IoT devices. Support flexibility in managing care delivery The command center’s workflow orchestration tools support flexibility in managing aspects of care delivery like receiving and completing tasks or notifying team members.",
+          "jcr:lastModified": "Tue Jan 06 2026 15:50:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/products/us/ambient_monitoring/tabs-content/master2",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/products/us/ambient-monitoring/tabs-content/master2"
+        }
+      }
+    },
+    "text_copy_1183232467": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "topMargin": "5",
+      "jcr:created": "Mon Oct 02 2023 17:44:03 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">FAQs</span></span></span></h2>\n",
+      "jcr:lastModified": "Tue Jul 08 2025 20:54:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3-"
+    },
+    "accordion_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Oct 28 2025 16:22:23 GMT+0000",
+      "jcr:lastModified": "Tue Oct 28 2025 17:10:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Oct 28 2025 16:22:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">With Virtual Monitoring workflows, a virtual sitter works from the virtual command center, monitoring multiple patients per your organizational policy. A virtual sitter can engage with a patient through in-room audio and notify the bedside team members on the unit floor if a situation needs attention.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 28 2025 17:10:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Oct 28 2025 16:22:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">In Virtual Monitoring, a sitter works from the virtual command center monitoring multiple patients at one time. A virtual sitter can engage with a patient through an in-room speaker and/or bring in additional care team members as needed. In comparison, Ambient Monitoring uses AI-driven, always-aware ambient sensors to continuously interpret activity, conditions and behaviors in the healthcare environment. Ambient intelligence can be incorporated into Virtual Monitoring activities to scale virtual sitter resources even further.</span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 28 2025 17:11:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 3,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Oct 28 2025 16:22:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Yes. Because some patients may need multiple layers of care, Virtual Nursing sessions can be run simultaneously with Virtual Monitoring and/or Ambient Monitoring using a single ambient monitoring sensor.</span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Dec 03 2025 16:58:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordion_parsys4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 4,
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Oct 28 2025 16:22:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Yes. A virtual clinician can initiate a “virtual knock” to enter a patient’s room – for example, to round on a patient or to provide a medication administration double-check – without disrupting Virtual Monitoring and/or Ambient Monitoring.</span></p>\n",
+          "jcr:lastModified": "Tue Oct 28 2025 16:24:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "What is a virtual sitter?"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "2",
+          "accTitle": "What is the difference between Virtual Monitoring and Ambient Monitoring?"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "3",
+          "accTitle": "Can Virtual Monitoring, Ambient Monitoring and Virtual Nursing happen concurrently in one patient room?"
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Nov 04 2025 21:53:43 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Tue Nov 04 2025 21:54:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_272493304_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 15:14:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\">Interested in learning more? <span class=\"futura-bold\">Contact an expert</span></span></h2>\n",
+          "jcr:lastModified": "Fri Oct 06 2023 13:15:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_279238": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "eleni.maistrellis@stryker.com",
+      "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+      "jcr:created": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "jcr:lastModified": "Tue Jul 21 2020 22:44:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jul 21 2020 22:38:32 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for your interest in our Sync Badge. A Stryker representative will reach out to you shortly.",
+          "jcr:lastModified": "Wed Jun 25 2025 17:49:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_7": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Mon Feb 02 2026 15:20:17 GMT+0000",
+          "text": "Quick Links Smart Care homepage Medical and surgical equipment Contact information",
+          "jcr:lastModified": "Mon Feb 02 2026 15:20:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/smart_care/en/business_unit/form_sidebar/quick-links/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/smart-care/en/business-unit/form-sidebar/quick-links/master"
+        }
+      }
+    },
+    "section_title_copy_1": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Tue Nov 04 2025 21:53:43 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Nov 05 2025 16:22:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Dec 20 2024 15:17:56 GMT+0000",
+      "jcr:lastModified": "Tue Apr 22 2025 15:20:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 1,
+          "tabTitle": "Product Information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "resources": [
+            "/content/dam/stryker/acute-care/products/care-ai/resources/Care-ai-platform-one-sheet.pdf",
+            "/content/dam/stryker/acute-care/products/care-ai/resources/care.ai + SONIFI + Henry Ford Success Story - US.pdf"
+          ],
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:lastModified": "Wed Nov 05 2025 16:20:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "featuredcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "titleFont": "font-egyptienne",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideButton": "false",
+          "jcr:lastModified": "Thu Jul 16 2026 20:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "hideDescription": "false",
+          "hideThumbnail": "false",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/smart-care/products/virtual-nursing"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/smart-care/products/ambient-monitoring"
+            },
+            "3": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/vocera-engage"
+            },
+            "4": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/acute-care/products/procuity"
+            }
+          }
+        }
+      }
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 28 2025 16:52:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Oct 28 2025 16:52:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 28 2025 16:52:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 28 2025 16:52:12 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 28 2025 16:52:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/care-ai/images/virtual-monitoring/care.ai Virtual Monitoring_Hero_Image_732x488_DRAFT-v1.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<p>1.&nbsp;McKinsey and Company. Reimagining the nursing workload: Finding time to close the workforce gap. May 2023. Retrieved September 16, 2024.&nbsp;</p>\r\n<p>2.&nbsp;National Center for Health Workforce Analysis. Nurse Workforce Projections, 2022-2037. November 2024. Retrieved July 7, 20205.</p>\r\n",
+    "jcr:lastModified": "Wed Nov 05 2025 16:51:35 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

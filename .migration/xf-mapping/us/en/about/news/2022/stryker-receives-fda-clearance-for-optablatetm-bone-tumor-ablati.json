@@ -1,0 +1,137 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker receives FDA clearance for OptaBlateTM Bone Tumor Ablation System",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f79ac28d-4c00-414a-ac07-eea1d185e28d",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "1111f185-9c70-46fa-baa2-ebdc2ed93236"
+  ],
+  "contentID": "D0000220767",
+  "lastPublished": "Tue Sep 20 2022 14:12:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Sep 20 2022 14:12:27 GMT+0000",
+  "cq:lastReplicated": "Tue Sep 20 2022 14:12:30 GMT+0000",
+  "cq:lastModified": "Tue Sep 20 2022 14:12:07 GMT+0000",
+  "jcr:baseVersion": "1111f185-9c70-46fa-baa2-ebdc2ed93236",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/in-the-news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Sep 20 2022 14:05:15 GMT+0000",
+  "jcr:uuid": "0c860045-af03-4fa2-9cf2-d6920c4e5510",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 20 2022 14:06:07 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2vw\">Stryker receives FDA clearance for OptaBlate<sup>TM</sup> Bone Tumor Ablation System</span></span></h1>\r\n",
+      "jcr:lastModified": "Tue Sep 20 2022 14:07:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_1102196549": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 20 2022 14:05:26 GMT+0000",
+      "jcr:lastModified": "Tue Sep 20 2022 14:05:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Sep 20 2022 14:05:29 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/2022/optablade/opta-blade-thumbnail.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Sep 20 2022 14:05:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 20 2022 13:24:28 GMT+0000",
+      "jcr:lastModified": "Tue Sep 20 2022 13:24:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Tue Sep 20 2022 13:24:32 GMT+0000",
+          "text": "<p><i><span class=\"fontsize-1-25em\">Stryker's first bone tumor ablation system with patented microinfusion technology offers a reliable solution for people living with painful metastatic tumors</span></i></p>\n<p>Portage, Mich. – Sept. 20, 2022 – Stryker (NYSE:SYK), one of the world’s leading medical technology companies, announced today that its OptaBlate bone tumor ablation system (OptaBlate) received 510(k) clearance from the U.S. Food and Drug Administration. The addition of the OptaBlate technology to Stryker’s Interventional Spine (IVS) portfolio expands on its core competencies in vertebral augmentation and radiofrequency ablation and completes its portfolio of treatment options for metastatic vertebral body fractures.</p>\n<p>“Stryker’s new bone tumor ablation (BTA) system is a significant improvement on existing technology and builds on Stryker’s IVS portfolio,” said Dr. Anthony Brown, a Vascular and Interventional Radiologist at Radiology Imaging Associates, CO. “There is no more deserving patient population for our attention and intervention; OptaBlate will change lives.”</p>\n<p>As Stryker’s first Interventional Oncology technology, OptaBlate optimizes all aspects of the procedure—from set-up to ablation. Featuring four probes and Stryker’s unique and patented microinfusion technology*, OptaBlate allows physicians to easily customize their procedure and reduce ablation time by three minutes.<sup>1</sup></p>\n<p>Specific key features of the system include:</p>\n<ul>\n<li>Treatment of two vertebral body levels at once using a bipedicular approach</li>\n<li>Quicker, more consistent ablation<sup>1</sup></li>\n<li>Microinfusion technology, which keeps the zone hydrated, reducing impedance errors and preventing charring<sup>1</sup></li>\n</ul>\n<p>“Our commitment to our customers and understanding their needs has never been stronger. The collaboration has helped us to develop a more efficient bone tumor ablation system to address their unmet needs,” said Greg Siller, vice president and general manager of Stryker’s Interventional Spine business. “OptaBlate will help our customers provide another treatment option for those suffering from painful metastatic cancer, and this is just the beginning.”</p>\n<p>Stryker’s Interventional Spine business will introduce its OptaBlate as part of its minimally invasive portfolio at the North American Spine Society Annual Meeting, Oct. 12-15, in Chicago, IL. (Booth #4211).</p>\n<p>For questions, please <a href=\"https://providers.strykerivs.com/contact\">click here</a>.</p>\n<p><b>About Stryker’s Interventional Spine</b><br>\nWe are working to advance interventional care from diagnosis to delivery. For more information, visit <a href=\"https://strykerivs.com/\">strykerivs.com</a>&nbsp;and connect with us on <a href=\"https://www.linkedin.com/showcase/stryker-interventional-spine/\">LinkedIn</a>, <a href=\"https://twitter.com/TheStrykerIVS\">Twitter</a>, <a href=\"https://www.vumedi.com/channel/stryker/tab/interventional-spine/\">VuMedi</a>, and <a href=\"https://vimeo.com/user94562243\">Vimeo</a>.</p>\n<p><b>About Stryker</b><br>\nStryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at <a href=\"https://www.stryker.com/\">www.stryker.com</a>.</p>\n<p><b>Media contact</b><br>\nJennifer Lentner<br>\nSr. Director, Marketing Communications<br>\n<a href=\"mailto:jennifer.lentner@stryker.com\">jennifer.lentner@stryker.com</a></p>\n",
+          "jcr:lastModified": "Tue Sep 20 2022 14:12:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Sep 20 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "20-Sep-2022",
+    "jcr:lastModified": "Tue Sep 20 2022 14:05:54 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References:</p>\r\n<p>1. Stryker data on file</p>\r\n<p>* As of 9/14, OptaBlate features the only microinfuser on the market</p>\r\n<p>Dr. Anthony Brown is a paid consultant of Stryker. His statements represent his own opinions based on personal experience and are not necessarily those of Stryker. Individual results may vary.&nbsp;</p>\r\n<p>This document is intended solely for the use of healthcare professionals. A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. We do not dispense medical advice and recommend that surgeons be trained in the use of any particular product before using it in surgery.&nbsp;</p>\r\n<p>The information presented is intended to demonstrate Stryker’s products. A physician must always refer to the package insert, product label and/or instructions for use, including the instructions for cleaning and sterilization (if applicable), before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your representative if you have questions about the availability of Stryker’s products in your area.&nbsp;</p>\r\n<p>Stryker or its affiliated entities own, use, or have applied for the following trademarks or service marks: OptaBlate and Stryker. All other trademarks are trademarks of their respective owners or holders.&nbsp;</p>\r\n<p>The absence of a product, feature, or service name, or logo from this list does not constitute a waiver of Stryker’s trademark or other intellectual property rights concerning that name or logo.</p>\r\n",
+    "jcr:lastModified": "Tue Sep 20 2022 13:31:41 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/optablade/opta-blade-thumbnail.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "preset": "max_width_1440",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Tue Sep 20 2022 14:05:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Sep 20 2022 14:06:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

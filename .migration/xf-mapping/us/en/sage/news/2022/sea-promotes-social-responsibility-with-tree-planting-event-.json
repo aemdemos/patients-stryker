@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker’s Environmental Alliance plants roots in the community",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7351c92a-00a5-48fb-9049-5b9eef2aeae3",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "errin.pace@stryker.com",
+  "thumbnailAltText": "Group photo at SEA tree planting event",
+  "businessUnitTag": "stryker:content-type/news/sage/3",
+  "jcr:predecessors": [
+    "063f68d7-c6d2-477c-a8b9-c156f99850ba"
+  ],
+  "contentID": "29284",
+  "lastPublished": "Mon Oct 31 2022 18:21:27 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Oct 31 2022 18:21:27 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 31 2022 18:21:29 GMT+0000",
+  "cq:lastModified": "Mon Oct 31 2022 18:21:19 GMT+0000",
+  "jcr:baseVersion": "063f68d7-c6d2-477c-a8b9-c156f99850ba",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/sage/3"
+  ],
+  "jcr:lastModified": "Mon Oct 31 2022 18:21:19 GMT+0000",
+  "jcr:uuid": "9c8afd1e-e6c2-493c-a8fb-d63a30ce4aff",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "errin.pace@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "errin.pace@stryker.com",
+      "jcr:lastModifiedBy": "errin.pace@stryker.com",
+      "jcr:created": "Fri Oct 28 2022 15:16:34 GMT+0000",
+      "jcr:lastModified": "Fri Oct 28 2022 15:16:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Oct 28 2022 15:17:00 GMT+0000",
+          "alt": "Trees being planted at SEA event",
+          "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-SEA-Tree-Planting-Event-2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Oct 28 2022 15:46:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri Oct 28 2022 15:17:21 GMT+0000",
+          "text": "<p>The SEA team of more than 40 people (employees and family members) helped to plant a combination of 100 oak trees and bushes. The red, white and bur oak trees will grow well together with the hazelnut bushes to reclaim the former farmland. Brian Ecklund, Senior Staff Engineer, and a SEA member said, “It’s great to be a part of a really meaningful activity that engages such a wide range of people – both young and old.”</p>\n<p>This event is an example of our employees putting their commitment into action to help make a positive impact on the local community. “It was so much fun to see all the kids digging in the dirt and taking pictures by “their” trees,” said Jan Sahm, Staff Project Specialist Quality Operations and SEA site lead. “Not only are we helping improve the environment, but we’re educating our children about the importance of being lifelong caretakers of our planet,” she said.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Fri Oct 28 2022 15:45:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_576036056": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Fri Oct 28 2022 15:19:04 GMT+0000",
+          "alt": "Group of people planting a tree at SEA event",
+          "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-SEA-Tree-Planting-Event-3.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Oct 28 2022 15:40:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1450666776": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "errin.pace@stryker.com",
+          "jcr:lastModifiedBy": "errin.pace@stryker.com",
+          "jcr:created": "Fri Oct 28 2022 15:19:09 GMT+0000",
+          "text": "<p>The SEA team plans to return to the site next year to see their plantings and continue to help our community by making an environmental impact with another tree planting event.</p>\n",
+          "jcr:lastModified": "Fri Oct 28 2022 15:19:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "publishDate": "Fri Oct 28 2022 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "28-Oct-2022",
+    "jcr:lastModified": "Fri Oct 28 2022 15:02:48 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-SEA-Tree-Planting-Event.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "preset": "max_width_auto",
+    "alt": "Group photo at SEA tree planting event",
+    "srcFileRef": "/content/dam/stryker/sage/news/2022/Sage-Newsroom-SEA-Tree-Planting-Event.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Fri Oct 28 2022 15:10:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "text": "<p>The Stryker Environmental Alliance (SEA) recently partnered with the McHenry County Conservation District (MCCD) to organize the 2nd annual tree planting event at Hickory Grove Highlands in Cary, IL.</p>\n<p>Many of the Stryker employees and their family members took part in the 2021 tree planting event. MCCD had four of their employees attend; Shawna Flavell, Executive Director of MCCF, Laurie Ryan, Plant Ecologist with MCCD, Cindy Rendl, GIS Specialist, Ed Collins, Director of the Land Preservation and Natural Resource Management Division. They provided background information about the history of oak trees in McHenry County and how there are far fewer than there were 100 years ago. They also explained the history of the forest site and the unique qualities of the oak trees and hazelnut bushes that were being planted.</p>\n<h2>Committed to making a positive environmental impact</h2>\n",
+    "jcr:lastModified": "Fri Oct 28 2022 15:42:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

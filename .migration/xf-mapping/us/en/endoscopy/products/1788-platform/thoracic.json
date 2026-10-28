@@ -1,0 +1,536 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Experience a new wave of surgical visualization.",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "1788 Platform for Thoracic Surgery",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2b888e75-84a4-4253-8a6e-2cc4db010348",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+  "jcr:predecessors": [
+    "08b5b86c-a670-41aa-a89e-1d8785370ff9"
+  ],
+  "contentID": "ENDO-VCCU-SYK-2125149",
+  "lastPublished": "Tue Jun 30 2026 18:01:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 30 2026 18:01:55 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 30 2026 18:01:57 GMT+0000",
+  "cq:lastModified": "Tue Jun 30 2026 18:01:51 GMT+0000",
+  "jcr:description": "The 1788 Platform is cleared to visualize CYTALUX®. CYTALUX is approved to help surgeons identify malignant and non-malignant lesions in adult patients with known or suspected lung cancer. It is an FDA approved targeted imaging agent designed to “highlight” lung cancer in the body, helping surgeons to see it in real-time as they operate.1",
+  "jcr:baseVersion": "08b5b86c-a670-41aa-a89e-1d8785370ff9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Aug 25 2025 16:52:18 GMT+0000",
+  "pageTitle": "1788 Platform for Thoracic Surgery",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Tue Aug 26 2025 16:16:56 GMT+0000",
+  "jcr:uuid": "5dca1c63-0de2-42db-b33d-8da026994269",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "navTitle": "Thoracic",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "0",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "leftPadding": "0",
+      "topPadding": "0",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "rightMargin": "0",
+      "topMargin": "2",
+      "jcr:created": "Mon Aug 18 2025 21:57:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: left;\"><span class=\"fontsize-4-5-vw\"><span class=\"urw-egyptienne\">Experience a new wave of</span> <br />\r\n <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">surgical visualization.</span></span></span></div>\r\n",
+      "jcr:lastModified": "Mon Aug 18 2025 23:44:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "0",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ],
+      "leftMargin": "0",
+      "bottomMargin": "0"
+    },
+    "cols_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_264461011": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 16 2024 22:24:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">The 1788 Platform is cleared to visualize CYTALUX®. CYTALUX is approved to help surgeons identify malignant and non-malignant lesions in adult patients with known or suspected lung cancer. It is an FDA approved targeted imaging agent designed to “highlight” lung cancer in the body, helping surgeons to see it in real-time as they operate.<sup>1</sup></span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 23:44:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "0"
+        }
+      }
+    },
+    "buttonset_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(255,181,0,1)",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 18 2025 23:42:20 GMT+0000",
+      "jcr:lastModified": "Wed Aug 20 2025 22:39:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "item0": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgb(255,181,0)",
+          "externalLink": "http://stryker.com/us/en/endoscopy/products/1788-platform/thoracic.html#contact",
+          "buttonText": "Contact Us",
+          "externalLinkType": "ext"
+        }
+      }
+    },
+    "cols_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "jcr:lastModified": "Fri Aug 16 2024 22:20:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_1548835648": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Nov 30 2023 23:34:31 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Nov 30 2023 23:34:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "jcr:lastModified": "Wed Dec 27 2023 00:56:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 18 2025 21:57:24 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<div style=\"text-align: left;\"><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">1788 Platform visualizing</span><br>\r\n<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">CYTALUX in lung cases:</span></span></span></div>\r\n",
+      "jcr:lastModified": "Mon Aug 18 2025 22:00:47 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Thu Sep 05 2024 14:29:27 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 14:29:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 16 2024 22:34:43 GMT+0000",
+          "alt": "Cytalux in lung cases",
+          "srcFileRef": "/content/dam/stryker/endoscopy/products/1788-platform/images/spy-csf-2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Aug 20 2025 22:39:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_264461011_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 16 2024 22:24:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: left;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-2em\">CYTALUX, manufactured by On Target Laboratories, is administered intravenously 1-24 hours prior to surgery for lung cancer. The agent then circulates through the body, binding to cells and fluoresces using a specialized camera system. During a Phase 3 clinical trial<sup>2</sup>, CYTALUX enabled the detection of more cancer for removal<sup>3</sup>. The 1788 Platform is now cleared to visualize CYTALUX intraoperatively.&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 22:08:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "5"
+        }
+      }
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 18 2025 22:08:40 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Mon Aug 18 2025 23:34:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/endoscopy/products/1788-platform/videos/1788 Camera Visualizing CYTALUX in Thoracic Surgery-6 (2).mov",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/1788 Camera Visualizing CYTALUX in Thoracic Surgery-6 (2)-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Mon Aug 18 2025 23:36:42 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    },
+    "cols_195049656": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 18 2025 22:08:48 GMT+0000",
+      "jcr:lastModified": "Mon Aug 18 2025 22:08:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 18 2025 22:08:56 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 22:09:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Sep 13 2023 01:13:43 GMT+0000",
+      "jcr:lastModified": "Thu Sep 05 2024 15:04:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "0",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 13 2023 23:55:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": " ",
+          "jcr:lastModified": "Wed Sep 13 2023 23:55:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "largeheadline_1865711065": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Sep 14 2023 00:14:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "&nbsp;",
+          "jcr:lastModified": "Thu Sep 14 2023 00:14:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Thu Sep 05 2024 14:30:39 GMT+0000",
+          "jcr:lastModified": "Thu Sep 05 2024 14:30:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_copy_1": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Wed Sep 13 2023 00:42:18 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<div style=\"text-align: left;\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-4vw\"><br>\r\n1788 Platform<br>\r\n <span style=\"color: rgb(237,238,236);\">now featuring:<br>\r\n </span></span></span></span></div>\r\n",
+              "line2": "<p> </p>\r\n<p> </p>\r\n",
+              "jcr:lastModified": "Wed Aug 20 2025 22:24:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Sep 05 2024 15:04:54 GMT+0000",
+              "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #edeeec;\"><span style=\"color: #dfe1de;\"><span class=\"urw-egyptienne\">Ability to visualize CYTALUX intraoperatively.<sup>1<br>\n&nbsp;</sup></span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 22:24:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Sep 05 2024 15:04:54 GMT+0000",
+              "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #edeeec;\"><span style=\"color: #dfe1de;\"><span class=\"urw-egyptienne\">Wider color gamut for improved color accuracy and better differentiation of color.<sup>4<br>\n&nbsp;</sup></span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 22:24:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            },
+            "text_copy_1620070453": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Thu Sep 05 2024 15:04:54 GMT+0000",
+              "text": "<p><span class=\"fontsize-2em\"><span style=\"color: #edeeec;\"><span style=\"color: #dfe1de;\"><span class=\"urw-egyptienne\">Greater near-infrared image sensor sensitivity.<sup>1</sup><br>\n </span></span></span></span><span style=\"color: #edeeec;\"><span style=\"color: #dfe1de;\"><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">As compared to previous generation.<br>\n <br>\n &nbsp;</span></span></span></span></p>\n",
+              "jcr:lastModified": "Wed Aug 20 2025 22:25:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Sep 05 2024 15:03:39 GMT+0000",
+              "alt": "1788 Platform",
+              "srcFileRef": "/content/dam/stryker/endoscopy/simple-science-dev/images/Image 4.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Wed Aug 20 2025 22:39:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      }
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jun 28 2024 20:22:43 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Tue Jun 30 2026 18:01:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1670451800_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "jcr:lastModified": "Wed Jun 10 2026 16:15:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols_1195287680_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "jcr:lastModifiedBy": "eleni.maistrellis@stryker.com",
+          "jcr:created": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "jcr:lastModified": "Tue Mar 16 2021 17:28:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Wed Jun 10 2026 20:14:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/header/master"
+        },
+        "cols2_2_3_1_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "jcr:lastModified": "Fri Jun 19 2026 14:20:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "experiencefragment": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+              "text": "Contact Information Customer support product feedback Endoscopy LinkedIn Instagram X YouTube VuMedi Breast Care LinkedIn Instagram X YouTube Vumedi",
+              "jcr:lastModified": "Wed Jun 10 2026 20:17:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/experienceFragment",
+              "fragmentPath": "/content/experience-fragments/stryker/endoscopy/en/contact_information/contact/master",
+              "edsFragmentPath": "/us/en/fragments/stryker/endoscopy/en/contact-information/contact/master"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "marketoform": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "afterSubmitAction": "showMessage",
+              "formId": "4047",
+              "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+              "jcr:created": "Wed Jun 10 2026 13:14:34 GMT+0000",
+              "useProduction": "true",
+              "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+              "jcr:lastModified": "Fri Jun 19 2026 14:22:25 GMT+0000",
+              "sling:resourceType": "stryker/components/content/marketoform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Tue Sep 12 2023 18:33:38 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Tue Sep 12 2023 18:34:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/endoscopy/en/products/_1788_thoracic/ambient-video/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/endoscopy/en/products/1788-thoracic/ambient-video/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/endoscopy/en/products/_1788_thoracic/ambient-video/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/endoscopy/en/products/1788-thoracic/ambient-video/master",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "textColor": "rgb(0,0,0)",
+          "verticalMargin": "20",
+          "jcr:created": "Tue Sep 12 2023 18:09:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Wed Aug 20 2025 22:38:40 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "jcr:created": "Tue Sep 12 2023 18:35:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\">1788 Platform</span></span><span class=\"futura-bold\">&nbsp;</span><br>\r\n <span style=\"color: rgb(237,238,236);\"><span class=\"urw-egyptienne\">for Thoracic Surgery</span></span></span>",
+              "line2": "<span class=\"urw-egyptienne\"><span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-2-5-vw\">The future, in your hands</span></span></span>",
+              "jcr:lastModified": "Thu Sep 05 2024 14:03:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Sep 05 2024 14:03:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>NDA 214907 for approved indications of use</li>\r\n<li>In a Phase 3, multi-center trial, imaging with Cytalux identified 10 occult synchronous malignant lesions in 8 subjects (8%, 95% CI, 3.5-15.2) undetected by white light. Clinicaltrials.gov ID: NCT04241315.&nbsp;</li>\r\n<li>Sarkaria IS, Martin LW, Rice DC, Blackmon SH, Slade HB, Singhal S; ELUCIDATE Study Group. Pafolacianine for intraoperative molecular imaging of cancer in the lung: The ELUCIDATE Trial. J Thorac Cadriovasc Surg. 2023 Dec;166(6):e468-es478. doi: 10.1016/j.jtcvs.2023.02.025. Epub 2023 Mar 3.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Aug 20 2025 14:58:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "abe54c69-9ab3-439f-8a80-70b58cf53b5e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "b25d406a-fcd5-4e31-bc85-02d51e0192c9"
+  ],
+  "lastPublished": "Tue Aug 06 2024 14:33:09 GMT+0000",
+  "jcr:created": "Tue Aug 06 2024 14:33:09 GMT+0000",
+  "cq:lastReplicated": "Tue Aug 06 2024 14:33:11 GMT+0000",
+  "cq:lastModified": "Tue Aug 06 2024 13:48:19 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b25d406a-fcd5-4e31-bc85-02d51e0192c9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jun 28 2024 14:07:07 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b605e441-b272-4274-ac92-630bb0b3f887",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Feb 20 2024 15:57:03 GMT+0000",
+      "alt": "Isolibrium/Isolibrium PE powered hospital bed mattress ",
+      "srcFileRef": "/content/dam/stryker/acute-care/products/isolibrium/images/Isolibrium-red-strap-thumbnail.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Aug 06 2024 13:48:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  }
+}

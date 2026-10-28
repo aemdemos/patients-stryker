@@ -1,0 +1,682 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Small bone power tool system ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "TPX",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f06ef074-8f15-4d3a-927c-205c8707d561",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+  "jcr:predecessors": [
+    "a86e38c8-15f7-408d-b4ba-44b9d6c42447"
+  ],
+  "contentID": "D0000022954",
+  "lastPublished": "Wed Aug 14 2024 19:08:02 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 14 2024 19:08:03 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 14 2024 19:08:05 GMT+0000",
+  "cq:lastModified": "Mon Aug 12 2024 20:07:58 GMT+0000",
+  "jcr:description": "A versatile small bone electric power tool system that is powered through the CORE Console and consists of intuitive, lightweight handpieces. TPX’s design makes OR setup easier and more efficient.",
+  "jcr:baseVersion": "a86e38c8-15f7-408d-b4ba-44b9d6c42447",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:08:02 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:specialty/small-bone",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:business-unit/orthopaedic_instruments",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Thu Feb 06 2020 13:52:51 GMT+0000",
+  "jcr:uuid": "d967090a-350f-4596-92cf-e9e561422b3e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "titleColor": "rgb(255,181,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 00:22:07 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Fri May 15 2020 05:33:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "2",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "ND",
+        "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPXMobile.jpg",
+        "layoutOptions": "col-sm-8 pull-left​",
+        "backgroundImageRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPXTPX Main Banner-4.jpg",
+        "jcr:lastModified": "Fri May 15 2020 05:42:17 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "lee.fuller1@stryker.com",
+            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "jcr:created": "Fri May 15 2020 05:34:29 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<span class=\"fontsize-5-5-vw\"><span class=\"urw-egyptienne\">It's all in</span> <span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">your hands</span></span></span>",
+            "line2": "<span class=\"fontsize-2-5-vw\"><span class=\"urw-egyptienne\">A power tool you can trust.<br>\r\n </span></span><span class=\"fontsize-1-5-vw\">People depend on you. And when you're operating, you should be focused on the task at hand.</span>",
+            "jcr:lastModified": "Fri May 15 2020 05:37:12 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:20:28 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:20:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:20:38 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Wed May 27 2020 06:04:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/tpx/videos/TPXlaunchvideo.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/TPXlaunchvideo-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 27 2020 06:04:32 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:20:42 GMT+0000",
+          "type": "typePath",
+          "jcr:lastModified": "Wed May 27 2020 06:04:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/tpx/videos/TPX3Dproductvideo.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+            "unsharpMaskAmount": "0",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/TPX3Dproductvideo-AVS",
+            "unsharpMaskRadius": "0",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 27 2020 06:04:35 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "jpegQuality": "85",
+            "unsharpMaskThreshold": "0",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:20:56 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-6-5-vw\">An evolution</span></span></span><br>\r\n<span class=\"urw-egyptienne\"><span class=\"fontsize-3vw\">in small bone power tools</span></span>",
+      "jcr:lastModified": "Fri May 15 2020 05:21:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:34:06 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:34:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:22:07 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:22:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">A familiar look and feel</span></span></p>\n<p><span class=\"fontsize-1-25em\">Intuitive, familiar design so you can focus on the procedure at hand. Dedicated saws specifically designed for exceptional ergonomics, power, and agility. Versatility of use in a variety of small bone orthopaedic procedures.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:22:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:22:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Features 1.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:23:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:23:07 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:23:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:23:18 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Features 2.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:23:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Designed for durability</span></span></p>\n<p><span class=\"fontsize-1-25em\">With a new coating that is tolerable to SPD processing, the device is built to be temporarily submerged during cleaning, prior to sterilization.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:24:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_638595151": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:24:22 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:24:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">The sound of confidence</span></span></p>\n<p><span class=\"fontsize-1-25em\">Distinct, carved-out connection points respond with audible confirmation, enabling a confident connection.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:25:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:24:32 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Features 3.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:24:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_2_3_1_3_388567132": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:25:12 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:25:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">A longer-lasting switch</span></span></p>\n<p><span class=\"fontsize-1-25em\">The stainless steel run/safe hand switch clicks into place, ensuring a more reliable experience.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:25:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:25:26 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Features 4.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:25:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_1_3_2_3_897013831": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:26:03 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:26:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">A more personal touch</span></span></p>\n<p><span class=\"fontsize-1-25em\">I.D. Touch software within Stryker’s CORE 2 Console customizes how the Sagittal Saw and Micro Drill respond and feel.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:26:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:26:15 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Features 5.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:26:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "largeheadline_1248701062": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:27:00 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-5vw\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Every detail </span></span><span class=\"urw-egyptienne\">considered.</span></span>",
+      "jcr:lastModified": "Fri May 15 2020 05:27:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1824806352": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:27:43 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:27:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:27:48 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Detail 4.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:32:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">I.D. Touch software</span></span></p>\n<p><span class=\"fontsize-1-25em\">Customizes how the sagittal saw and micro drill respond, giving you the performance and feel you want.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:28:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:27:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Detail 1.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:32:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">SPD processing</span></span></p>\n<p><span class=\"fontsize-1-25em\">TPX’s handpiece coating is tolerable to SPD processing. The device is built to be temporarily submerged during cleaning, prior to sterilization.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:29:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1824806352_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:27:43 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:29:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:27:48 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Detail 2.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:32:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Coated cable&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">A low-friction coating is designed to reduce catching on surgical fabric and drapes while minimizing the collection of dust and debris.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:29:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:27:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2Detail 3.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:32:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\">Confident connection&nbsp;</span></span></p>\n<p><span class=\"fontsize-1-25em\">Distinct, carved-out connection points respond with audible confirmation, enabling a confident connection.</span></p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:29:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "lee.fuller1@stryker.com",
+      "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+      "jcr:created": "Fri May 15 2020 05:30:43 GMT+0000",
+      "jcr:lastModified": "Fri May 15 2020 05:30:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:30:48 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2sm-detail 1.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:32:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">XL Oscillating Saw&nbsp;</span></span></p>\n<p>A new mounted blade method provides a more purposeful connection.&nbsp;<br>\n</p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:31:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:30:51 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2sm-detail 2.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:33:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Universal Driver&nbsp;</span></span></p>\n<p>Maneuverability and control for multiple specialties, all in one driver.<br>\n</p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:31:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri May 15 2020 05:30:54 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/products/tpx/images/AssetsTPX-2sm-detail 3.jpg",
+          "jcr:lastModified": "Fri May 15 2020 05:33:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "lee.fuller1@stryker.com",
+          "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+          "jcr:created": "Fri May 15 2020 05:22:12 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Universal Collet&nbsp;</span></span></p>\n<p>Reliably grip wires and pins in the range of 0.7 - 3.2mm over the product’s life with a new, innovative grip design.<br>\n</p>\n",
+          "jcr:lastModified": "Fri May 15 2020 05:32:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1998611712": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 20:07:48 GMT+0000",
+      "jcr:lastModified": "Mon Aug 12 2024 20:07:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Aug 12 2024 20:06:31 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "jcr:lastModified": "Mon Aug 12 2024 20:06:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3022",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Aug 12 2024 20:03:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Mon Aug 12 2024 20:03:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/orthopaedic-instruments/products/STI11-3D-021_product_group_01.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Solution for a variety of small bone procedures</p>\r\n",
+    "shortDescTop": "<p>Combined with a variety of different cutting accessories, TPX enables the cutting and shaping of bone for small bone procedures.</p>\r\n",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "jcr:lastModified": "Mon Jun 01 2020 14:14:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>The intuitive design of the device allows surgeons to focus on the procedure at hand</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Ergonomic design that improves ease of use enabling a more intuitive assembly process</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Distinct connection points enable a confident connection</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Specialized handpieces consist of four saws, a micro drill, universal driver, and wire driver</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>I.D. Touch capabilities on the CORE 2 console with the sagittal saw and micro drill handpieces</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "nadia.conard@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Tue Jan 28 2020 15:32:21 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "textIsRich": "true"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "lee.fuller1@stryker.com",
+    "jcr:lastModified": "Fri May 15 2020 05:20:15 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

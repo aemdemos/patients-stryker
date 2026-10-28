@@ -1,0 +1,98 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker announces creation of new nasal valve collapse ICD-10-CM codes for accurate diagnosis reporting",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "0eed88ad-8da0-49be-bf99-aaf7efab1339",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "f64a076a-5307-4999-897b-980e908006b8"
+  ],
+  "contentID": "ENT-GSNPS-REIM-1395800_REV-0",
+  "lastPublished": "Thu Oct 10 2024 19:59:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 10 2024 20:00:03 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 10 2024 20:00:05 GMT+0000",
+  "cq:lastModified": "Thu Oct 10 2024 19:16:14 GMT+0000",
+  "jcr:description": "Portage, Michigan, USA – October 10, 2024 – Stryker, a global leader in medical technologies, announces that the Centers for Disease Control (CDC) and Centers for Medicare and Medicaid Services (CMS) have released new diagnosis codes for nasal valve collapse (NVC), effective October 1, 2024.",
+  "jcr:baseVersion": "f64a076a-5307-4999-897b-980e908006b8",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Thu Oct 10 2024 19:59:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Thu Oct 10 2024 17:58:26 GMT+0000",
+  "jcr:uuid": "d27e438b-6d7c-4c1a-be5d-3cf8382f2f9f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Thu Oct 10 2024 18:59:24 GMT+0000",
+      "jcr:lastModified": "Thu Oct 10 2024 18:59:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Oct 10 2024 19:00:54 GMT+0000",
+          "text": "<p><b>Portage, Michigan, USA</b>&nbsp;– <b>October 10, 2024</b> – Stryker, a global leader in medical technologies, announces that the Centers for Disease Control (CDC) and Centers for Medicare and Medicaid Services (CMS) have released new diagnosis codes for nasal valve collapse (NVC), effective October 1, 2024.</p>\n<p>In July of 2024, CMS released their FY 2025 Hospital Inpatient Prospective Payment System (IPPS). CMS uses the IPPS to introduce new ICD-10-CM codes, which are diagnosis codes used by U.S. healthcare providers and systems across all places of service. Within CMS' IPPS, new NVC diagnosis codes are included and take effect October 1, 2024. This new set of diagnosis codes will help ensure patients withvarious forms of NVC are able to be diagnosed appropriately.</p>\n<p>When diagnosing a patient with NVC, code J34.89 (Other specified disorders of nose and nasal sinuses) is no longer reported after September 30, 2024. Effective October 1, 2024, all providers (physicians, hospitals, and ASCs) should reference the appropriate disease state with the new ICD-10-CM codes listed below. The description of the codes and the parenthetical notes are listed below. When performing any procedure for nasal valve repair including LATERA, CPT<sup>®</sup> 30468, it will be important to use updated diagnosis coding with thorough documentation to accurately convey medical necessity.</p>\n<p><b>Effective October 1, 2024</b></p>\n<p>J34.8200 (internal nasal valve collapse, unspecified)</p>\n<p>J34.8201 (internal nasal valve collapse, static)</p>\n<p>J34.8202 (internal nasal valve collapse, dynamic)</p>\n<p>J34.8210 (external nasal valve collapse, unspecified)</p>\n<p>J34.8211 (external nasal valve collapse, static)</p>\n<p>J34.8212 (external nasal valve collapse, dynamic)</p>\n<p>J34.829 (nasal valve collapse, unspecified)</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Oct 10 2024 19:16:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Oct 10 2024 19:02:56 GMT+0000",
+          "jcr:lastModified": "Thu Oct 10 2024 19:02:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1107173709": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Thu Oct 10 2024 19:03:00 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span></p>\n<p>Stryker is a global leader in medical technologies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in MedSurg, Neurotechnology, Orthopedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 150 million patients annually. More information is available at <a href=\"/content/stryker/us/en/index.html\">www.stryker.com</a>.</p>\n",
+          "jcr:lastModified": "Thu Oct 10 2024 19:04:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "publishDate": "Thu Oct 10 2024 00:00:00 GMT-0700",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Oct-2024",
+    "jcr:lastModified": "Thu Oct 10 2024 18:48:55 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+    "jcr:lastModified": "Thu Oct 10 2024 19:04:07 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

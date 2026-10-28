@@ -1,0 +1,1106 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "The power of a platform",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "MultiGen® 2 radiofrequency generator and Venom® cannula and electrode system",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4cfd4b81-4d07-467e-9c16-0f42a23c71c2",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+  "thumbnailAltText": "MultiGen 2 RF generator and Venom electrode system designed for fast, minimally invasive lesioning",
+  "jcr:predecessors": [
+    "72093dce-e684-4a85-9de4-ca0a58864a0a"
+  ],
+  "contentID": "IVS-MG2-SYK-1135723_REV-1",
+  "lastPublished": "Tue Feb 17 2026 20:39:23 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Feb 17 2026 20:39:24 GMT+0000",
+  "cq:lastReplicated": "Tue Feb 17 2026 20:39:26 GMT+0000",
+  "cq:lastModified": "Tue Feb 17 2026 20:39:19 GMT+0000",
+  "jcr:description": "Together, the Mult!Gen 2 RF generator and Venom cannula and electrode system delivers large, minimally invasive lesions. Made for reliability, efficiency and ultimate control and customization, our Performance P latform delivers an advantage for you and your patients.",
+  "jcr:baseVersion": "72093dce-e684-4a85-9de4-ca0a58864a0a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 13:32:52 GMT+0000",
+  "pageTitle": "MultiGen® 2 radiofrequency generator and Venom® cannula and electrode system",
+  "cq:tags": [
+    "stryker:capability/spine-ortho",
+    "stryker:portfolio/neurotechnology",
+    "stryker:content-type/hcp_content",
+    "stryker:content-type/product",
+    "stryker:capability/image-guided-therapies",
+    "stryker:specialty/advanced-pain-therapies",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/spine",
+    "stryker:services/procare/ivs",
+    "stryker:business-unit/ivs",
+    "stryker:portfolio/orthopaedics",
+    "stryker:services/procare/ivs/radiofrequency-generator",
+    "stryker:product/ivs/multigen2-rf-generator"
+  ],
+  "jcr:lastModified": "Thu Oct 23 2025 17:29:19 GMT+0000",
+  "jcr:uuid": "32c64829-cd36-4c9d-8ce4-1e28b1668d19",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "hidesubtitle": "true",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Mar 26 2025 20:31:25 GMT+0000",
+      "hidedescription": "true",
+      "jcr:lastModified": "Thu Mar 27 2025 13:22:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "altMob": "Together, the MultiGen 2 radiofrequency generator and Venom cannula and electrode system delivers an advantage for you and your patients",
+        "dimensionBox": "FDB",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "backgroundImageMobRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/multigen2-hero_1200x680.png",
+        "layoutOptions": "50_bottom",
+        "backgroundImageRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/multigen2-hero_1920x640.png",
+        "alt": "Together, the MultiGen 2 radiofrequency generator and Venom cannula and electrode system delivers an advantage for you and your patients",
+        "jcr:lastModified": "Tue Feb 17 2026 20:39:19 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_138682149": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+            "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+            "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          },
+          "curatedcta": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "CTAOpenInNewTab": "true",
+            "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+            "ctaLinkType": "int",
+            "ctaOpenInNewTabOverride": "0",
+            "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+            "CTATitle": "FIND A DOCTOR",
+            "ctaExternalLink": "https://strykerivs.com/physician-locator",
+            "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+            "sling:resourceType": "stryker/components/content/curatedcta",
+            "CTAButtonColor": "rgb(255,181,0)",
+            "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+          }
+        },
+        "col2": {
+          "jcr:primaryType": "nt:unstructured",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_108516": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "leftPadding": "4",
+              "topPadding": "4",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">MultiGen<sup>® </sup>2 radiofrequency generator</span></span></span></h1>\r\n",
+              "line2": "<h2>Venom<sup>®</sup> cannula and electrode system</h2>\r\n",
+              "jcr:lastModified": "Tue Feb 17 2026 19:48:32 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "vince.shannon@stryker.com",
+              "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+              "ctaLinkType": "int",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Mon Feb 02 2026 15:21:31 GMT+0000",
+              "CTATitle": "CONTACT A REP",
+              "ctaExternalLink": "https://www.stryker.com/content/patients/us/en/ivs/find-a-doctor.html",
+              "jcr:lastModified": "Tue Feb 17 2026 19:13:45 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "ctaInternalLink": "/content/stryker/us/en/interventional-spine/contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 17:22:31 GMT+0000",
+      "jcr:lastModified": "Tue Jun 10 2025 17:22:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Tue Jun 10 2025 17:56:44 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Tue Jun 10 2025 17:56:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_424613045_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:25:08 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 19:25:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">The power of a</span><span class=\"futura-bold\">&nbsp;<span style=\"color: #ffb500;\">platform</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Together, the MultiGen 2 radiofrequency generator and Venom cannula and electrode system delivers large, minimally invasive lesions.<sup><a href=\"#references\">1</a></sup> Made for reliability, efficiency and ultimate control and customization, our performance platform delivers an advantage for you and your patients.</span></p>\n",
+          "jcr:lastModified": "Tue Feb 17 2026 20:27:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1729945199": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 17:22:43 GMT+0000",
+      "jcr:lastModified": "Tue Jun 10 2025 17:22:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Tue Jun 17 2025 18:07:25 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "loopVal": "1",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Jun 17 2025 18:07:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "section_title_1028015692": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Wed Jun 11 2025 17:00:04 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Wed Jun 11 2025 17:00:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_48397875_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:22:11 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Mar 20 2025 20:40:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Product&nbsp;<span style=\"color: #ffb500;\">highlights</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:30:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:35:07 GMT+0000",
+          "jcr:lastModified": "Thu May 08 2025 18:35:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 05 2025 18:22:43 GMT+0000",
+      "jcr:lastModified": "Thu Jun 05 2025 18:22:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 10 2025 17:37:11 GMT+0000",
+          "alt": "MultiGen 2 radiofrequency generator is made for reliability, efficiency and ultimate control and customization",
+          "srcFileRef": "/content/dam/stryker/about/news/images/MultiGen.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 14 2025 16:41:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Designed for confidence</span></span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Engineered with 100 watts, the MultiGen 2 RF generator can achieve target temperatures fast, maximizing your time. Experience high levels of quality and durability, plus peace of mind with our overnight replacement program from&nbsp;<a href=\"https://www.stryker.com/us/en/services/procare.html#serviceplan\">ProCare Services.</a></span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Customized to you</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Create a strip lesion for the SI joint without removing electrodes. Get error solutions that reduce downtime. The MultiGen 2 RF generator is appointed with modern features, like an ultra-responsive touchscreen, a USB port for saving and transferring presets and a lifecycle tracker for electrode use.</span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Take control</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Choose the order of lesions with independently run channels. Perform at your own pace with flexible stimulation controls. With the MultiGen 2 RF generator, you can customize your procedure based on patient needs, procedural goals and personal preferences.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:31:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1566331177": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 17:23:48 GMT+0000",
+      "jcr:lastModified": "Tue Jun 10 2025 17:23:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_13039": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue May 06 2025 19:57:30 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 20:32:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "4",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "0",
+          "topMargin": "2",
+          "jcr:created": "Tue Sep 30 2025 19:43:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2 style=\"text-align: center;\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">“The MultiGen 2 radiofrequency generator</span>&nbsp;<span style=\"color: #ffb500;\">ramps up to temperature quickly</span>&nbsp;<span style=\"color: #ffffff;\">and has an outstanding user interface.&nbsp;I can troubleshoot with a simple button without ever shutting down.”</span></span></h2>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><br>\n</span></span><span style=\"color: #ffffff;\"><span class=\"fontsize-1-25em\">Aaron Calodney, MD, Past President of the American Society of Interventional Pain Physicians (ASIPP)*</span></span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 21:57:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "2",
+          "textIsRich": "true",
+          "leftMargin": "0",
+          "bottomMargin": "2"
+        }
+      }
+    },
+    "cols_258957098": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Jun 10 2025 17:24:01 GMT+0000",
+      "jcr:lastModified": "Tue Jun 10 2025 17:24:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_830518094": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "venom",
+      "jcr:created": "Wed Jun 11 2025 17:06:13 GMT+0000",
+      "title": "Venom",
+      "jcr:lastModified": "Wed Jun 11 2025 17:06:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_48397875_copy_c_1041390276": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:22:11 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "section_title_181318": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideSectionTitleComp": "true",
+          "deepLinkingId": "procedure",
+          "jcr:created": "Thu May 08 2025 19:11:57 GMT+0000",
+          "title": "Procedure",
+          "jcr:lastModified": "Thu May 08 2025 19:12:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Mar 20 2025 20:40:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Procedure&nbsp;<span style=\"color: #ffb500;\">highlights</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:32:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:35:07 GMT+0000",
+          "jcr:lastModified": "Thu May 08 2025 18:35:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu May 08 2025 19:19:35 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<h1>Step by step<sup><a href=\"#references\">2</a></sup></h1>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 14:32:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "leftMargin": "2"
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue May 06 2025 20:23:22 GMT+0000",
+      "jcr:lastModified": "Tue May 06 2025 20:23:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 17 2019 17:36:04 GMT+0000",
+          "alt": "Step 1: Facet joint(s) with inflamed nerve(s).",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/rfa_step-1_640x380.png",
+          "jcr:lastModified": "Thu Oct 23 2025 17:18:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jun 11 2025 19:32:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">1. Facet joint(s) with inflamed nerve(s).</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:32:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 17 2019 17:36:04 GMT+0000",
+          "alt": "Step 2: Under X-ray imaging, insert needle(s) into the treatment area.",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/rfa_step-2_640x380.png",
+          "jcr:lastModified": "Thu Oct 23 2025 17:18:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jun 11 2025 19:32:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">2. Under X-ray imaging, insert needle(s) into the treatment area.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:33:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Sep 17 2019 17:36:04 GMT+0000",
+          "alt": "Step 3: Use radiofrequency current to heat surrounding nerve(s) tissue to create lesions.",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/rfa_step-3_640x380.png",
+          "jcr:lastModified": "Thu Oct 23 2025 17:19:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jun 11 2025 19:32:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">3. Use radiofrequency current to heat surrounding nerve(s) tissue to create lesions.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:33:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols3_copy_copy_copy_2145244515": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue May 06 2025 20:23:22 GMT+0000",
+      "jcr:lastModified": "Tue May 06 2025 20:23:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Sep 17 2019 17:36:04 GMT+0000",
+          "alt": "Step 4: Facet joint(s) with treated nerve(s).",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/rfa_step-4_640x380.png",
+          "jcr:lastModified": "Thu Oct 23 2025 17:19:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Jun 11 2025 19:32:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">4. Facet joint(s) with treated nerve(s).</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:33:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1124782968": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Oct 23 2025 17:07:23 GMT+0000",
+      "jcr:lastModified": "Thu Oct 23 2025 17:07:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullwidthimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "altMob": "Delivering minimally invasive solutions that help relieve pain and improve quality of life. Find the right treatment for you.",
+      "dimensionBox": "FDB",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "backgroundImageMobRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/multigen2-hero_1200x680.png",
+      "layoutOptions": "50_bottom",
+      "backgroundImageRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/venom-cannula-hero_1920x640.png",
+      "alt": "The Venom cannula and electrode system offers an alternative configuration at the distal end with a ‘V’ shape active tip",
+      "jcr:lastModified": "Tue Feb 17 2026 20:28:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImage",
+      "textparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_138682149": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "4",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Mar 26 2025 20:32:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-3-5-vw\">Pain doesn't hold the power. <span style=\"color: rgb(255,181,0);\">You do.</span></span></span></h1>\r\n",
+          "line2": "<h2>Through a variety of minimally invasive treatment options, we're deeply driven to help restore your quality of life</h2>\r\n",
+          "jcr:lastModified": "Fri Oct 24 2025 13:59:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "kendra.pilon@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Mar 26 2025 20:32:33 GMT+0000",
+          "CTATitle": "FIND A DOCTOR",
+          "ctaExternalLink": "https://strykerivs.com/physician-locator",
+          "jcr:lastModified": "Wed Dec 03 2025 22:31:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)",
+          "ctaInternalLink": "/content/patients/us/en/ivs/find-a-doctor"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "col1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline_108516": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "vince.shannon@stryker.com",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+            "jcr:created": "Thu Mar 13 2025 19:02:56 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">Venom<sup>®</sup></span></span></span></h1>\r\n",
+            "line2": "<h2>cannula and electrode system</h2>\r\n",
+            "jcr:lastModified": "Tue Feb 17 2026 19:51:38 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    },
+    "cols_424613045_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Fri Jun 06 2025 19:25:08 GMT+0000",
+      "jcr:lastModified": "Fri Jun 06 2025 19:25:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Thu Mar 13 2025 18:21:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span style=\"color: #ffb500;\"><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">The Venom</span></span> advantage</span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">The Venom cannula and electrode system offers an alternative configuration at the distal end with a ‘V’ shape active tip, while maintaining the same gauge cannula as the standard configuration.</span></p>\n",
+          "jcr:lastModified": "Tue Feb 17 2026 20:28:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:46:13 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:46:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jun 11 2025 14:54:58 GMT+0000",
+          "alt": "Venom cannula and electrode system featuring a V-shaped active tip for radiofrequency ablation",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/venom-technology_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 14 2025 16:31:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Tue Mar 04 2025 21:46:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Why Venom?</span><br>\n</span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Optimized configuration to target lesion zones yielding a larger, more consistent lesion than standard RF cannulae<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Ability to perform monopolar and parallel bipolar lesions<sup><a href=\"#references\">1</a></sup></span></li>\n<li><span class=\"fontsize-1-25em\">Same exceptional quality as Stryker's standard RF cannulae and electrodes<sup><a href=\"#references\">1</a></sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:34:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      }
+    },
+    "cols_507270082": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 17:26:32 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 17:26:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_48397875_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:22:11 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:22:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Mar 20 2025 20:40:20 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Product&nbsp;<span style=\"color: #ffb500;\">highlights</span></span></span></h3>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:34:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "backgroundColor": "rgb(255,255,255)",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:35:07 GMT+0000",
+          "jcr:lastModified": "Thu May 08 2025 18:35:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy_135198054": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu Jun 05 2025 18:22:43 GMT+0000",
+      "jcr:lastModified": "Thu Jun 05 2025 18:22:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jun 11 2025 16:50:12 GMT+0000",
+          "alt": "The 20-gauge Venom cannula creates a larger lesion compared to the standard configuration",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/lesion-beans_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 14 2025 16:39:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu May 08 2025 14:05:33 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Large lesion, small footprint</span></span></span></span></span></h3>\n<p><span class=\"fontsize-1-25em\">The 20-gauge Venom cannula creates a 92% larger lesion compared to the standard configuration.<sup><a href=\"#references\">1</a></sup></span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Industry-leading reliability<sup><a href=\"#references\">†</a></sup></span></span></h3>\n<p><span class=\"fontsize-1-25em\">Probes are validated for a minimum of 520 sterilization cycles.<sup><a href=\"#references\">1</a></sup></span></p>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Efficient anesthesia delivery</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Cannula side port facilitates immediate propagation of fluid more local to the exposed tip. This may provide more efficient delivery of anesthesia to a targeted lesion zone.<sup><a href=\"#references\">1</a></sup></span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:34:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_1919072639": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "cannula-and-electrodes",
+      "jcr:created": "Wed Jun 11 2025 17:06:47 GMT+0000",
+      "title": "Cannula and electrodes",
+      "jcr:lastModified": "Wed Jun 11 2025 17:29:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_1148889428": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Mon Jun 16 2025 17:22:32 GMT+0000",
+      "jcr:lastModified": "Mon Jun 16 2025 17:22:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Mon Jun 16 2025 17:22:35 GMT+0000",
+          "jcr:lastModified": "Mon Jun 16 2025 17:22:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols2_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:46:13 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:46:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Jun 11 2025 14:54:58 GMT+0000",
+          "alt": "MultiGen 2 radiofrequency generator heats a variety of cannulae and electrodes",
+          "srcFileRef": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/electrode-probes_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jul 14 2025 16:40:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "0",
+          "jcr:created": "Tue Mar 04 2025 21:46:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Standard cannula and electrodes</span></span></h3>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Cannulae</span></span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Choose straight or curved in a variety of lengths and gauges&nbsp;</span><ul>\n<li><span class=\"fontsize-1-25em\">Lengths: 50mm, 100mm, 150mm and 200mm&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Gauges: 18g, 20g and 22g&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Active tips from 5mm to 15mm</span></li>\n</ul>\n</li>\n</ul>\n<h3><span class=\"fontsize-1-25em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Nitinol electrodes</span></span></span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Available in color-coded lengths: 50mm, 100mm, 150mm and 200mm&nbsp;</span></li>\n<li><span class=\"fontsize-1-25em\">Validated for 520 sterilization cycles<sup><a href=\"#references\">1</a></sup></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:35:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "leftMargin": "0"
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Wed Jun 11 2025 17:05:46 GMT+0000",
+      "jcr:lastModified": "Wed Jun 11 2025 17:05:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_1501845820": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Wed Jun 11 2025 17:53:57 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Wed Jun 11 2025 17:54:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "text_copy_copy_copy__1345157733": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "topPadding": "3",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Thu Dec 04 2025 02:51:37 GMT+0000",
+      "gradientDirection": "top-to-bottom",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Interested in learning more?</span><b><br>\n <span class=\"futura-bold\">Contact us.</span></b></span></p>\n",
+      "jcr:lastModified": "Mon Feb 02 2026 21:42:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgb(182,114,25)",
+      "gradientDirectionInverse": "true",
+      "textIsRich": "true"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Thu May 08 2025 18:51:34 GMT+0000",
+      "jcr:lastModified": "Thu May 08 2025 18:51:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:53:28 GMT+0000",
+          "text": "<h3><span class=\"fontsize-1-25em\">Pain is unrelenting. But so are we.</span></h3>\n<p><span class=\"fontsize-1-25em\">Thank you for your interest in Stryker's Interventional Spine products—bold and innovative approaches for treating patients experiencing pain. Tell us how we can help by answering the following questions, and we’ll work to get you what you need.</span></p>\n<p><span class=\"fontsize-1-25em\">To place an order, contact your Stryker's Sales Representative or Stryker's Customer Service at 1 800 253 3210.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:35:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "vince.shannon@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2945",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu May 08 2025 18:52:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue Jun 10 2025 17:24:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Thu Sep 28 2023 18:36:53 GMT+0000",
+          "text": "<h3><span style=\"font-weight: normal;\"><span class=\"fontsize-1-25em\">Be in the know</span></span></h3>\n<p><span class=\"fontsize-1-25em\">Engage with us LinkedIn and Instagram to find information about upcoming MedEd events, including webinars, and to be among the first to receive news on technology enhancements, new clinical data and more.</span></p>\n",
+          "jcr:lastModified": "Mon Feb 02 2026 14:35:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+          "jcr:created": "Wed Dec 22 2021 14:53:18 GMT+0000",
+          "text": "",
+          "jcr:lastModified": "Thu Jun 05 2025 12:59:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/social-icons/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/social-icons/master"
+        }
+      }
+    },
+    "section_title_2103097217": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "references",
+      "jcr:created": "Wed Jun 11 2025 17:54:43 GMT+0000",
+      "title": "References",
+      "jcr:lastModified": "Wed Jun 11 2025 17:55:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:21:27 GMT+0000",
+      "text": "Resources Explore Interventional Spine homepage About us Learn Training and education Physician resources Indications for use Portfolios Advanced pain therapies Bone tumor ablation Vertebral augmentation Support Contact information Reimbursement Grants and donations",
+      "jcr:lastModified": "Tue Oct 21 2025 15:22:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/business_unit_page/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/business-unit-page/footer-links/master"
+    },
+    "cols_1369148773": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.shannon@stryker.com",
+      "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+      "jcr:created": "Tue Oct 21 2025 15:32:53 GMT+0000",
+      "jcr:lastModified": "Tue Oct 21 2025 15:32:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 10 2025 17:21:43 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/ivs/products/multigen2-rf-generator/images/multigen2-hero_1200x680.png"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "externalLink": "https://providers.strykerivs.com/products/multigen-2-radiofrequency-generator",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "linkNewWindow": "true",
+    "jcr:lastModified": "Tue Jun 10 2025 17:21:30 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkText": "Additional Resources",
+    "linkType": "ext",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<h2>Features</h2>\n<h4><br>\nDouble your confidence</h4>\n<p>Engineered with 100 watts, the MultiGen 2 RF generator can achieve target temperature fast, maximizing your time. Experience high levels of quality and durability, plus peace of mind with overnight replacement program from ProCare Services.</p>\n<h4><br>\nCustomized to you</h4>\n<p>Ramp up temperature faster and enjoy a simplified system interface. Create a strip lesion for the SI joint without removing electrodes. The MultiGen 2 RF generator is appointed with modern features, like an ultra-responsive touchscreen, a USB port for saving and transferring presets and a lifecycle tracker for electrode use.</p>\n<h4><br>\nTake Control</h4>\n<p>Choose the order of lesions with independently run cannels. Perform at your own pace with flexible stimulation controls. With the MultiGen 2 RF generator, you can customize your procedure based on patient needs, procedural goals and personal preferences.</p>\n",
+    "jcr:lastModified": "Tue Jun 10 2025 17:21:39 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div>*Dr. Calodney may have or have had a financial or advisory relationship with Stryker.<br>\r\n†True as of November 2025</div>\r\n<div>&nbsp;</div>\r\n<ol>\r\n<li>Stryker data on file.</li>\r\n<li>Kennedy D. (2019, April 23). Radiofrequency ablation (RFA): Procedure and recovery. Retrieved on November 11, 2025 from: https://www.spine-health.com/treatment/injections/radiofrequency-ablation-rfa-procedure-and-recovery</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Nov 11 2025 16:11:02 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 10 2025 17:21:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Jun 10 2025 17:21:33 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Game-changing innovations | Jeff’s total shoulder replacement story",
+  "jcr:versionHistory": "c5e360f8-b051-4071-b573-aa4d91049cc4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "0cfa5950-ce6e-4994-b2bb-c968cc66a19d"
+  ],
+  "contentID": "SYK CORP 2022-06-104",
+  "lastPublished": "Wed Jun 29 2022 13:37:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jun 29 2022 13:37:00 GMT+0000",
+  "cq:lastModified": "Wed Jun 29 2022 13:35:06 GMT+0000",
+  "jcr:baseVersion": "0cfa5950-ce6e-4994-b2bb-c968cc66a19d",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features",
+    "stryker:content-type/news/patient-stories"
+  ],
+  "jcr:lastModified": "Wed Jun 29 2022 13:35:06 GMT+0000",
+  "jcr:uuid": "fdab8065-50d4-4f63-bd35-f67f4a311865",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 28 2021 19:47:16 GMT+0000",
+      "jcr:lastModified": "Wed Jul 28 2021 19:47:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "danielle.smith@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Sep 03 2020 17:52:55 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Wed Mar 23 2022 19:40:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/jeff-brantley-1-31-22/21-SYK_GBF_SHORT_COMPILATION_DRAFT_10-27-21.mp4.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/21-SYK_GBF_SHORT_COMPILATION_DRAFT_10-27-21.mp4-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Jan 31 2022 21:41:49 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/jeff-bradley"
+          }
+        },
+        "curatedcta_copy_copy_289278285": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Jun 01 2021 21:07:44 GMT+0000",
+          "CTATitle": "Learn more about Blueprint 3D Planning Software",
+          "ctaExternalLink": "https://www.stryker.com/us/en/trauma-and-extremities/products/blueprint.html",
+          "jcr:lastModified": "Tue Jun 21 2022 19:25:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(133,69,138,1)",
+          "ctaInternalLink": "/content/stryker/us/en/portfolios/orthopaedics/spine--ortho-",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy53": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-1-5-vw\">With the help of Blueprint technology, a surgeon restores the shoulder—and the hope—of a former professional baseball pitcher.</span>",
+          "jcr:lastModified": "Fri Jun 24 2022 18:31:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        },
+        "item1089953560363234_234768509": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"urw-egyptienne\"></span> ",
+          "line2": "<p><span style=\"font-size: 21px; background-color: transparent;\"><span style=\"color: rgb(0, 0, 0);\">&quot;I’m not trying to throw the ball 90 miles an hour anymore, but if we want to go out and play catch, I know I can do it,&quot; he says. <span class=\"futura-bold\"><span style=\"color: #ffb500;\">”</span>The first time being able to go out and throw with my son was great for me. But it was even greater for him.</span></span></span><span class=\"futura-bold\" style=\"font-size: 21.0px; background-color: transparent;\"><span style=\"color: rgb(255,181,0);\">”</span></span><br>\r\n</p>\r\n<p>______________<br>\r\n<br>\r\n<span class=\"futura-bold\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">Jeff Brantley</span><br>\r\n </span></span></span><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"urw-egyptienne\"><span style=\"color: rgb(0,0,0);\">Former professional baseball pitcher</span></span></span></span></p>\r\n",
+          "jcr:lastModified": "Tue Jun 21 2022 19:23:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 12
+            },
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "width": 6
+            }
+          }
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "publishDate": "Fri Jun 24 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "24-Jun-2022",
+    "jcr:lastModified": "Fri Jun 24 2022 13:15:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/patients/patient-stories/jeff-brantley-1-31-22/jeff-bradley.png"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "jcr:lastModified": "Fri Jun 24 2022 13:15:20 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  }
+}

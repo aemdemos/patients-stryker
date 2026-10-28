@@ -1,0 +1,53 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker Launches Voluntary Field Action for Specific Units of the LIFEPAK® 15 Monitor/Defibrillator",
+  "jcr:versionHistory": "e743da42-6714-4f32-b43d-af6950c8051e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+  "jcr:predecessors": [
+    "4acc5493-54ed-4a56-9788-810580d8e3a4"
+  ],
+  "lastPublished": "Fri Feb 01 2019 20:45:30 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Feb 01 2019 20:45:30 GMT+0000",
+  "cq:lastModified": "Fri Feb 01 2019 20:44:35 GMT+0000",
+  "jcr:baseVersion": "4acc5493-54ed-4a56-9788-810580d8e3a4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Fri Feb 01 2019 20:44:35 GMT+0000",
+  "jcr:uuid": "6d7a76a5-7be9-4cef-b617-8f9bb19047ec",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "shannon.cox@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "publishDate": "Fri Feb 01 2019 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "01-Feb-2019",
+    "jcr:lastModified": "Fri Feb 01 2019 20:41:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "shannon.cox@stryker.com",
+    "text": "<p>Stryker announced today that the company is launching a voluntary field action on specific units of the LIFEPAK 15 Monitor/Defibrillators.</p>\n<p>The company is notifying certain LIFEPAK 15 customers of an issue that may cause the device to lock up after a defibrillation shock is delivered. The lock-up condition is defined as a blank monitor display with LED lights on, indicating power to the device, but no response in the keypad and device functions. A device in this condition has the potential to delay delivery of therapy, and this delay in therapy has the potential to result in serious injury or death.</p>\n<p>The company is contacting customers with impacted devices to schedule the correction of their device(s), which will include an update to the firmware for a component on the System Printed Circuit Board Assembly. &nbsp;Stryker anticipates that all devices subject to this field action will be serviced by December 31, 2019.&nbsp; If a customer experiences this issue, they should contact Stryker as soon as possible at 1 800 442 1142 and selecting option 7.</p>\n<p>Since the initial commercialization of LIFEPAK 15 in 2009, Stryker has become aware of 58 complaints reported globally for this issue, including 6 events in which the patient died following a delay in therapy. In all six of these cases, at least one shock was delivered prior to the device experiencing the lock-up condition. There are&nbsp;13,003&nbsp;devices&nbsp;potentially impacted by this issue&nbsp;and within scope of&nbsp;this&nbsp;field action.</p>\n<p><b>&nbsp;</b></p>\n<p>The company is instructing customers to continue to use their LIFEPAK 15 Monitor/Defibrillator according to the Operating Instructions until the correction can be completed.&nbsp; Device Automatic Self-Tests do not identify this fault, as it occurs during defibrillation.&nbsp; Customers should continue to perform the daily check as described in the Operator’s Checklist, specifically, the QUIK-COMBO therapy cable check as described in the General Maintenance and Testing Section (pages 10-4 and the LIFEPAK 15 Monitor/Defibrillator Operator’s Checklist, number 7).</p>\n<p>&nbsp;</p>\n<p>If a device exhibits the lockup condition during patient use, the steps from the General Troubleshooting Section (page 10-18) of the LIFEPAK 15 Monitor/Defibrillator Operating Instructions should be immediately followed:</p>\n<p>&nbsp; &nbsp; 1,. Press and hold ON until the LED turns off (~5 seconds). Then press ON to turn the device back on.</p>\n<p>&nbsp; &nbsp; 2. If the device does not turn off, remove both batteries and disconnect the device from the power adapter, if applicable. Then reinsert &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;batteries and/or, reconnect the power adapter, and press <b>ON </b>to turn the device back on.</p>\n<p>Information about this notice is available at: <a href=\"http://www.strykeremergencycare.com/productnotices\">http://www.strykeremergencycare.com/productnotices</a>. Impacted customers will be notified by letter and will be requested to verify their device status. Customers with questions regarding this notification, please contact Stryker by calling 1 800 442 1142, option 7, 6:00 a.m. to 4:00 p.m. (Pacific) Monday – Friday, or by email to <a href=\"mailto:rsfa281@stryker.com\">rsfa281@stryker.com</a> or fax to 1 425 867 4948.</p>\n<p>In addition to contacting Stryker, any potential quality problems or adverse reactions or events associated with the use of a product from Stryker may be reported to the U. S. Food and Drug Administration’s MedWatch Safety Information and Adverse Event Reporting Program online at <a href=\"https://www.fda.gov/safety/medwatch/\">https://www.fda.gov/safety/medwatch/</a>, by phone 1 800 332 1088 or fax 1 800 FDA 0178.</p>\n<p><u>&nbsp;</u></p>\n<p><b>&nbsp;</b></p>\n<p><b>About Stryker</b></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <a href=\"http://www.stryker.com/\">www.stryker.com</a>.</p>\n<p><b>Media contact</b></p>\n<p>Jon Zimmer</p>\n<p>jon.zimmer@stryker.com</p>\n",
+    "jcr:lastModified": "Fri Feb 01 2019 20:43:40 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

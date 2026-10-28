@@ -1,0 +1,67 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "1000-025-036",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "VCF Solutions Brochure",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7d505691-89f5-4384-8a2a-96e2a08c0ab3",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "629e736f-77a2-496f-b7e0-80685c46fee0"
+  ],
+  "lastPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Dec 22 2025 18:52:05 GMT+0000",
+  "cq:lastReplicated": "Mon Dec 22 2025 18:52:06 GMT+0000",
+  "cq:lastModified": "Mon Dec 22 2025 18:43:00 GMT+0000",
+  "jcr:baseVersion": "629e736f-77a2-496f-b7e0-80685c46fee0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Dec 22 2025 18:51:59 GMT+0000",
+  "jcr:lastModified": "Wed Sep 10 2025 23:50:23 GMT+0000",
+  "jcr:uuid": "d691ebeb-46e9-495e-aaf6-95adf7b9208b",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Tue Dec 09 2025 23:39:09 GMT+0000",
+      "text": "❮ BACK",
+      "jcr:lastModified": "Tue Dec 09 2025 23:39:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/interventional-spine/en/footnotes/return-to-main-page/master"
+    },
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Sep 10 2025 23:50:31 GMT+0000",
+      "jcr:lastModified": "Wed Sep 10 2025 23:50:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Sep 10 2025 23:47:42 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Rev E</span></span></p>\n<p><b>Current Revision Date: 07.08.16</b></p>\n<ol>\n<li>National Osteoporosis Foundation. What is Osteoporosis? http://www.nof.org/articles/7. Accessed Aug. 6, 2013</li>\n<li>Cooper G. Overview of Osteoporotic Compression Fractures. eMedicine. May 14, 2013. http://emedicine.medscape.com/article/325872-overview. Accessed July 24, 2013</li>\n<li>Lovi a, Teli M, ortolina A, et al. Vertebroplasty and Kyphoplasty: Complementary Techniques for the Treatment of Painful Osteoporotic Vertebral Compression Fractures. A Prospective Non-randomized Study on 154 Patients Eur Spine Jour (2009) 18 (Suppl 1):S95-S101</li>\n<li>Passias PG, Li Gang, Wood, KB. SRS Position Paper: The Results of Vertebral Augmentation Procedures. Department of Orthopaedic Spine Surgery Massachusetts General Hospital and Harvard Medical School Boston, MA. Sept. 8, 2008.</li>\n<li>Lavelle W, Carl A, Lavelle ED, Khaleel MA. Vertebroplasty and Kyphoplasty. Anesthesiol Clin. 2007 Dec;25(4):913-28.</li>\n<li>Kochan, J. &quot;Vertebroplasty and Kyphoplasty, Percutaneous.&quot; eMedicine. November 4, 2015. http://emedicine.medscape.com/article/423209-overview. Accessed April 20, 2016.</li>\n<li>Garfin SR, Buckley RA, Ledlie J; Balloon Kyphoplasty Outcomes Group. Balloon kyphoplasty for symptomatic vertebral body compression fractures results in rapid, significant, and sustained improvements in back pain, function, and quality of life for elderly patients. Spine. 2006 Sep 1;31(19):2213-20.</li>\n<li>Lieberman IH, Dudeney S, Reinhardt MK, Bell G. Initial outcome and efficacy of “kyphoplasty” in the treatment of painful osteoporotic vertebral compression fractures. Spine. 2001 Jul 15;26(14):1631-8.</li>\n<li>Independent lab results from Fluid Dynamics Inc. commissioned by Stryker July 2009. Testing conducted at 20-21° C (68-70° F).</li>\n<li>Erbe, et al., Comparison of a new bisphenol-a-glycidyl dimethacrylate-based cortical bone void filler with polymethylmethacrylate, Eur Spine J, 2001, 10: S147-S152.</li>\n<li>Szymborski et al., Characterization of Properties Influencing the Fill and Flow Behavior of Bone Augmentation Materials. Transactions of the 56th Annual Meeting of the Orthopaedic Research Society, 2010.</li>\n<li>Erbe et al., Cortoplasty: Augmentation of Osteoporotic Vertebral Compression Fractures with Cortoss. Transactions of the 32 meeting of the Society for Biomaterials, 2007.</li>\n<li>Carroll, et al., Characteristics of Orthopaedic Composites Used in Vertebral Augmentation, Transactions of the 31st Annual Meeting of the Society for Biomaterials, 2006.</li>\n<li>Bae, H., et al, A Prospective Randomized FDA-IDE Trial Comparing Cortoss to PMMA for Vertebroplasty: A Comparative Effectiveness Research Study with 24-Months Follow-Up. Spine. 2012; 37(7): 544-550</li>\n<li>An and Draugn, Mechanical Testing of Bone and the Bone-Implant Interface. CRC Press, New York, 2000.</li>\n<li>Burstein, A.H., et al., Aging of bone tissue: mechanical properties. JBJS-Am, 1976, 58(1): 82-86.</li>\n<li>Martin and Burr, Structure, Function, and Adaptation of Compact Bone. Raven Press, New York, 1989.</li>\n<li>Reilly and Burstein, The Elastic and Ultimate Properties of Compact Bone Tissue. J.Biomechanics, 1975, 8:393-405.</li>\n<li>Pomrink et al., A Comparison of the Mechanical and Thermodynamic Properties of a Novel In-Situ Polymerized Orthopaedic Composite Cement. Transactions of the 46th Annual Meeting of the Orthopaedic Research Society, 2000.</li>\n<li>Darmoc et al., Cyclic Fatigue Properties of Vertebral Augmentation Materials. Transactions of the 55th meeting of the Orthopaedic Reasearch Society, 2009.</li>\n<li>Havener, M. Report – Compression Testing of Cortoss and SpinePlex. Document Number 1010-0003CR2.</li>\n<li>The Worldwide Orthopaedic Market. Prepared by Knowledge Enterprises. October 2005, p. 11</li>\n<li>Orthopaedic Industry Annual Report: 2008-2009. Orthoworld, Inc. 2009, p. 22</li>\n<li>An Evaluation of the Safety and Efficacy of an Alternative Material to Polymethylmethacrylate Bone Cement for Vertebral Augmentation. Stryker Literature Number 5702-0004, Rev. 00</li>\n<li>Deramond H, Wright NT, Belko? SM. Temperature elevation caused by bone cement polymerization during vertebroplasty. Bone, 1999. Vol 25 (2) 17S-21S.</li>\n<li>Pomrink, et al., Evaluation of the reaction kinetics of Cortoss, a thermoset cortical bone void ller. Biomaterials, 2003, Vol. 24 (6) 1023-1031.</li>\n<li>Cortoss Bone Augmentation Material: Instructions for Use (IFU)</li>\n<li>Palussière, Jean et al. &quot;Clinical Results Of An Open Prospective Study Of A Bis-GMA Composite In Percutaneous Vertebral Augmentation&quot;. European Spine Journal 14.10 (2005): 982-991. Web. 18 Aug. 2016.</li>\n<li>Bae, Hyun et al. &quot;Clinical Experience Using Cortoss For Treating Vertebral Compression Fractures With Vertebroplasty And Kyphoplasty&quot;. Spine 35.20 (2010): E1030-E1036. Web.</li>\n</ol>\n",
+      "jcr:lastModified": "Wed Sep 10 2025 23:50:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

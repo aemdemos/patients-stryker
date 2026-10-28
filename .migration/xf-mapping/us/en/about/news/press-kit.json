@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Press Kit",
+  "jcr:versionHistory": "773cd43a-5ea1-46b9-98bc-71568f547bae",
+  "cq:template": "/apps/stryker/templates/base",
+  "jcr:predecessors": [
+    "c6e6c936-80d1-4b34-9329-f080b4a4e1f8"
+  ],
+  "lastPublished": "Fri Sep 01 2017 10:25:22 GMT+0000",
+  "jcr:created": "Fri Sep 01 2017 10:25:22 GMT-0400",
+  "cq:lastModified": "Mon Jun 19 2017 11:17:32 GMT-0400",
+  "jcr:baseVersion": "c6e6c936-80d1-4b34-9329-f080b4a4e1f8",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "d288b234-1258-449b-96c5-7a4a6d8dfc69",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:lastModifiedBy": "jane.irwin@stryker.com"
+}

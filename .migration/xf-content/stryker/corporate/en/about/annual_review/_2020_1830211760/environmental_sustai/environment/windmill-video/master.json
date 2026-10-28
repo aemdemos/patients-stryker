@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Windmill Video",
+  "jcr:versionHistory": "2c5aeeba-e0a5-4dd3-88d4-918706b0f954",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "2b7c9683-9914-48cf-a207-e9a1996a3845"
+  ],
+  "jcr:created": "Mon Apr 19 2021 18:14:34 GMT+0000",
+  "cq:lastModified": "Wed Mar 31 2021 18:44:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "2b7c9683-9914-48cf-a207-e9a1996a3845",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "250bf31f-6bf2-4c0e-9e8b-35e722a521a2",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 11 2021 19:53:06 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Wed Mar 31 2021 18:34:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/m/2020-comprehensive-report/environmental-sustainability/carbon-neutrality/AdobeStock_271191888 2.mov",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "unsharpMaskAmount": "0",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/AdobeStock_271191888 2-AVS",
+        "unsharpMaskRadius": "0",
+        "urlModifiers": "",
+        "jcr:lastModified": "Wed Mar 31 2021 18:34:25 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "jpegQuality": "85",
+        "unsharpMaskThreshold": "0",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

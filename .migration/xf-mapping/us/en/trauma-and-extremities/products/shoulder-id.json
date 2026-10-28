@@ -1,0 +1,1118 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Primary Reversed Glenoid",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder iD™",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9e1e025e-f562-4eab-b06f-654ee8232ccb",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "PR Glenoid CORE_Centered 25 with Sphere",
+  "jcr:predecessors": [
+    "8a1e5c42-067a-479b-9e38-72874703e664"
+  ],
+  "contentID": "AP-016486A, Dec. 2022",
+  "lastPublished": "Mon Sep 15 2025 19:50:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Sep 15 2025 19:50:09 GMT+0000",
+  "cq:lastReplicated": "Mon Sep 15 2025 19:50:12 GMT+0000",
+  "cq:lastModified": "Mon Sep 15 2025 16:31:56 GMT+0000",
+  "jcr:description": "Personalized glenoid implant powered by Blueprint for your patient’s unique anatomy",
+  "jcr:baseVersion": "8a1e5c42-067a-479b-9e38-72874703e664",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 20:47:59 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/product",
+    "stryker:capability/upper-extremities",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:specialty/shoulder"
+  ],
+  "jcr:lastModified": "Fri Dec 09 2022 14:42:18 GMT+0000",
+  "jcr:uuid": "9a2c75b9-ef8f-4948-9148-105aa6d2d1e3",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "cedu.ocson@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "backgroundNav": "rgba(255,255,255,1)",
+      "pauseonhover": "false",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "arrowFlag": "false",
+      "opacityLocal": "0",
+      "textColorNav": "rgba(255,255,255,1)",
+      "jcr:created": "Tue Sep 12 2023 18:33:38 GMT+0000",
+      "carouselOptionSpeed": "300",
+      "transitionEffects": "false",
+      "hcpBannerTextColor": "rgba(255,255,255,1)",
+      "carouselscrollOptions": "None",
+      "jcr:lastModified": "Tue Sep 12 2023 18:34:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "alignHCP": "hcp-left",
+      "localNav": "none",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/shoulder_id/ambient-video/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/trauma-and-extremities/en/products/shoulder-id/ambient-video/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/trauma-and-extremities/en/products/shoulder_id/ambient-video/master",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/trauma-and-extremities/en/products/shoulder-id/ambient-video/master",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "textColor": "rgb(0,0,0)",
+          "verticalMargin": "20",
+          "jcr:created": "Tue Sep 12 2023 18:09:27 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "standaloneVideoControls": "hideControl",
+          "jcr:lastModified": "Wed Sep 03 2025 16:45:02 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "1",
+              "jcr:createdBy": "kristian.bocage@stryker.com",
+              "topPadding": "1",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "topMargin": "1",
+              "jcr:created": "Tue Sep 12 2023 18:35:51 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-5vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,181,0);\">Shoulder iD™</span></span></span></span></span></span></span></h1>\r\n<h1><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-3vw\"><span class=\"futura-bold\">Primary Reversed Glenoid</span></span></span></h1>\r\n",
+              "line2": "<p><span class=\"urw-egyptienne\"><span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-2-5-vw\">Personalized glenoid implant </span></span></span></p>\r\n<p><span class=\"urw-egyptienne\"><span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-2-5-vw\">powered by Blueprint </span></span></span></p>\r\n",
+              "jcr:lastModified": "Thu Aug 21 2025 16:36:15 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ],
+              "bottomMargin": "1"
+            }
+          }
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:10:50 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:10:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:10:58 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\"><span style=\"color: #ffb500;\">Individually designed.&nbsp;</span></span></span></span></p>\n<p style=\"text-align: center;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\">Personalized care.</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Aug 19 2025 15:34:44 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_1312175923": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "3",
+          "topMargin": "1",
+          "jcr:created": "Fri Aug 08 2025 19:11:08 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\">Shoulder iD Primary Reversed Glenoid is powered by Stryker’s Blueprint technology, an advanced surgical planning software that allows the surgeon to plan a personalized implant for each patient’s unique anatomy. Shoulder iD is created to be more patient-specific than ever before.</span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 23:16:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "leftMargin": "3"
+        },
+        "text_copy_copy_copy__432690333": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 03 2025 16:34:57 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed Sep 03 2025 16:35:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/videos/Shoulder-ID-Hype.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Shoulder-ID-Hype-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed Sep 03 2025 16:35:10 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy__203825527": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Sep 03 2025 16:56:19 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 16:59:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "topMargin": "2",
+          "jcr:created": "Wed Sep 03 2025 16:57:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">With Shoulder iD, </span><span class=\"futura-bold\">visualize, plan, and order</span><span class=\"urw-egyptienne\"> your patient's unique glenoid implant directly through Blueprint 3D planning software.</span></span></span>",
+          "jcr:lastModified": "Wed Sep 03 2025 17:02:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 03 2025 17:00:17 GMT+0000",
+          "jcr:lastModified": "Wed Sep 03 2025 17:01:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Sep 03 2025 17:00:21 GMT+0000",
+              "CTATitle": "DOWNLOAD BROCHURE",
+              "ctaExternalLink": "https://stryker-assets.s3.us-west-2.amazonaws.com/trauma/shoulder-id-brochure.pdf",
+              "jcr:lastModified": "Mon Sep 15 2025 16:31:56 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkNewWindowOverride": "0",
+                  "externalLinkType": "none"
+                }
+              }
+            }
+          }
+        },
+        "largeheadline_1836839731": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 03 2025 17:01:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "&nbsp; &nbsp;",
+          "jcr:lastModified": "Wed Sep 03 2025 17:01:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_272385002": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Sep 03 2025 16:59:27 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 16:59:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Aug 12 2025 16:24:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1024883519": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:15:30 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 16:48:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "4",
+          "jcr:created": "Fri Aug 08 2025 19:16:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2-5em\"><span class=\"fontsize-1-25em\">Key Features<br>\n<br>\n </span></span></span></p>\n",
+          "jcr:lastModified": "Wed Sep 03 2025 16:48:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "textIsRich": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "4",
+          "jcr:created": "Fri Aug 08 2025 19:16:10 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\">Patient-matched to meet your patient’s unique anatomy&nbsp;</span></p>\n<p><span class=\"fontsize-1-75em\"><br>\nSurgeon driven — no engineering meetings to build augment&nbsp;</span></p>\n<p><span class=\"fontsize-1-75em\"><br>\nPatient-specific instrumentation models the native glenoid and guides pin placement&nbsp;</span></p>\n<p><span class=\"fontsize-1-75em\"><br>\nManual Bone Prep feature allows osteophyte removal without sacrificing the patient-matched augment</span></p>\n<p><span class=\"fontsize-1-75em\"><br>\nPersonalized lateralization — fine-tune the degree of glenoid lateralization for desired deformity correction</span></p>\n",
+          "jcr:lastModified": "Thu Sep 04 2025 21:40:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 08 2025 19:16:16 GMT+0000",
+          "alt": "shoulder-id-feature-1",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-feature-v3.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Aug 28 2025 21:09:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "standaloneimage_1301356924": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Fri Aug 08 2025 19:16:20 GMT+0000",
+          "alt": "shoulder-id-feature-2",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-boneillustration-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 29 2025 19:02:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "fullbleedpanel_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Wed Sep 03 2025 16:56:19 GMT+0000",
+      "jcr:lastModified": "Wed Sep 03 2025 16:59:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(66,83,97)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "topMargin": "2",
+          "jcr:created": "Wed Sep 03 2025 16:57:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span style=\"color: rgb(237,238,236);\"><span class=\"fontsize-3vw\"><span class=\"urw-egyptienne\">Learn how surgeons are using Shoulder iD as an <span class=\"futura-bold\">everyday glenoid solution</span> to manage a range of glenoid deformities.</span></span></span>",
+          "jcr:lastModified": "Fri Sep 05 2025 19:16:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 03 2025 17:00:17 GMT+0000",
+          "jcr:lastModified": "Wed Sep 03 2025 17:01:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "cedu.ocson@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+              "ctaLinkType": "ext",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Wed Sep 03 2025 17:00:21 GMT+0000",
+              "CTATitle": "HEAR FROM SURGEONS LIKE YOU",
+              "ctaExternalLink": "https://view.stryker.com/viewer/af8eebf9b09aa5ca02fe6b89fe6e651a",
+              "jcr:lastModified": "Thu Sep 04 2025 21:36:00 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)",
+              "links": {
+                "jcr:primaryType": "nt:unstructured",
+                "1": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "linkNewWindowOverride": "0",
+                  "externalLinkType": "none"
+                }
+              }
+            }
+          }
+        },
+        "largeheadline_1836839731": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Wed Sep 03 2025 17:01:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "&nbsp; &nbsp;",
+          "jcr:lastModified": "Wed Sep 03 2025 17:01:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols_1211876260": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:16:32 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:16:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy__1866808056": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:19:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">With Shoulder iD,&nbsp;</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">you are in the driver’s seat</span></span></span></span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 18:19:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2044266338": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:19:57 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:19:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 08 2025 19:20:14 GMT+0000",
+          "alt": "Shoulder-id-image",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-image-v2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Aug 12 2025 16:47:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "6",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Tue Aug 19 2025 15:32:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "2",
+          "topMargin": "4",
+          "jcr:created": "Fri Aug 08 2025 19:20:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\">With Shoulder iD, surgeons can visualize, plan and order their patients’ unique glenoid implants directly through the Blueprint planning software. The technology utilizes a CT scan, surgeon-driven planning, 3D-printed implants, and patient-specific instrumentation.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Sep 03 2025 16:40:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy__157310203": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 21:58:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_538737380": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:20:59 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:20:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 08 2025 19:21:06 GMT+0000",
+          "alt": "Shoulder-id-screen",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-image-v2.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Aug 12 2025 16:50:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 21:58:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "rightMargin": "2",
+          "topMargin": "4",
+          "jcr:created": "Fri Aug 08 2025 19:21:11 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-75em\">Multiple studies have shown that using 3D pre-operative planning software like Blueprint and patient-specific instrumentation enable the surgeon to accurately position the glenoid implant and replicate the pre-operative surgical plan compared to standard techniques.<sup>1-4</sup></span></p>\n",
+          "jcr:lastModified": "Wed Sep 03 2025 16:40:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy_copy__792741472": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+          "jcr:lastModified": "Mon Aug 18 2025 21:58:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_copy_1065136551": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:22:21 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:22:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_copy__816165433": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 17:13:41 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 17:13:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "resourcesanddownload": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "resources": [
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/Shoulder iD Operative Technique.pdf",
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/Shoulder iD brochure.pdf",
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/Tornier Perform Patient Matched Blueprint Planning B3 with Dr. Athwal.mp4",
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/Tornier Perform Patient Matched Blueprint Planning E2 with Dr. Athwal.mp4",
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/Perform Patient Matched Blueprint Planning E3 with Dr. Athwal.mp4",
+            "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/videos/YT-ShoulderID-Manual-Bone.mp4"
+          ],
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Fri Aug 08 2025 19:22:29 GMT+0000",
+          "jcr:lastModified": "Thu Aug 21 2025 22:56:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/resourcesanddownload"
+        }
+      },
+      "accordion_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 2
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "defaultExpanded": "true",
+          "accPosId": "1",
+          "accTitle": "Resources"
+        }
+      }
+    },
+    "text_copy_copy_copy__1010342997": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_977453881": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 11 2025 19:20:07 GMT+0000",
+      "text": "<p style=\"text-align: left;\"><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">RELATED PRODUCTS</span></span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 22:57:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Mon Aug 11 2025 19:18:09 GMT+0000",
+      "jcr:lastModified": "Mon Aug 11 2025 19:18:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 11 2025 19:18:21 GMT+0000",
+          "alt": "fpo-1080",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-product-blueprint.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 11 2025 22:54:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 11 2025 19:40:36 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Blueprint</span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:31:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_89708128_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Aug 08 2025 19:44:19 GMT+0000",
+          "jcr:lastModified": "Mon Aug 11 2025 23:00:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.stryker.com/us/en/trauma-and-extremities/products/blueprint.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 11 2025 19:18:23 GMT+0000",
+          "alt": "fpo-1080",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-product-humeralstem.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 11 2025 22:54:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 11 2025 19:40:45 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Tornier Perform Humeral Stem</span></p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:31:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_89708128_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Aug 08 2025 19:44:19 GMT+0000",
+          "jcr:lastModified": "Mon Aug 11 2025 23:01:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.stryker.com/us/en/trauma-and-extremities/products/tornier-perform.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Aug 11 2025 19:18:28 GMT+0000",
+          "alt": "fpo-1080",
+          "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/images/shoulder-id-products-glenoid.jpg",
+          "borderColor": "rgb(178,180,174)",
+          "jcr:lastModified": "Mon Aug 11 2025 22:55:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "jcr:created": "Mon Aug 11 2025 19:40:45 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Tornier Perform Reversed Glenoid</span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Aug 11 2025 22:31:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_89708128_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "cedu.ocson@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Aug 08 2025 19:44:19 GMT+0000",
+          "CTATitle": "https://www.stryker.com/us/en/trauma-and-extremities/products/tornier-perform-reversed-glenoid-reversed-augmented-glenoid.html",
+          "jcr:lastModified": "Tue Sep 02 2025 23:17:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.stryker.com/us/en/trauma-and-extremities/products/tornier-perform-reversed-glenoid-reversed-augmented-glenoid.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "Learn More",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "cols_765987777": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Tue Aug 12 2025 17:10:25 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 17:10:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_1362798589": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:41:53 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:41:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "section_title_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "description": "To learn more about Shoulder iD or other offerings to help advance shoulder arthroplasty, contact your Upper Extremities sales representative. ",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jun 28 2024 20:22:43 GMT+0000",
+      "title": "Contact us",
+      "jcr:lastModified": "Thu Aug 21 2025 16:46:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "marketoform_copy_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "afterSubmitAction": "showMessage",
+      "formId": "4050",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Jun 28 2024 20:19:40 GMT+0000",
+      "useProduction": "true",
+      "message": "Thank you for your submission.",
+      "jcr:lastModified": "Thu Aug 28 2025 16:55:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/marketoform"
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator_136": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:41:53 GMT+0000",
+      "jcr:lastModified": "Fri Aug 08 2025 19:41:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy_611622288": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2em\"><span class=\"futura-bold\">Follow Stryker’s Upper Extremities team on Social Media</span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Stay in the know and never miss an update!</span></span></p>\n",
+      "jcr:lastModified": "Tue Aug 12 2025 16:56:54 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "curatedcta_89708128": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "CTAOpenInNewTab": "true",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "ctaLinkType": "none",
+      "ctaOpenInNewTabOverride": "0",
+      "jcr:created": "Fri Aug 08 2025 19:44:19 GMT+0000",
+      "jcr:lastModified": "Tue Aug 12 2025 16:31:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/curatedcta",
+      "CTAButtonColor": "rgba(76,125,122,1)",
+      "links": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://www.linkedin.com/showcase/stryker-upper-extremities-/",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "Linkedin",
+          "externalLinkType": "ext"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "externalLink": "https://www.instagram.com/stryker.upperextremities/?hl=en",
+          "linkNewWindow": "true",
+          "linkNewWindowOverride": "0",
+          "linkText": "Instagram",
+          "externalLinkType": "ext"
+        }
+      }
+    },
+    "text_copy_copy_843607880": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "cedu.ocson@stryker.com",
+      "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+      "jcr:created": "Fri Aug 08 2025 19:44:03 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\n",
+      "jcr:lastModified": "Mon Aug 11 2025 17:34:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/shoulder-id/PR Glenoid CORE_Centered 25 with Sphere.png"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 21 2022 18:30:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 21 2022 18:30:52 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Nov 21 2022 18:31:04 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Dec 06 2022 14:38:22 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1em\">Personalized with Shoulder iD<br>\n </span></span>We’re making our Primary Reversed glenoid implants more patient specific than they’ve been before. Part of the iD Solutions family, Shoulder iD utilizes Blueprint 3D Planning Software to drive autonomous visualization, planning and order placement.</p>\n",
+    "jcr:lastModified": "Tue Aug 12 2025 22:35:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>Iannotti J, Baker J, Rodriguez E, et al. Three-dimensional preoperative planning software and a novel information transfer technology improve glenoid component positioning. J Bone Joint Surg Am.2014;96(9):e71.</li>\r\n<li>Hoenecke HR Jr, Hermida JC, Flores-Hernandez C, D’Lima DD. Accuracy of CT-based measurements of glenoid version for total shoulder arthroplasty. J Shoulder Elbow Surg. 2010;19(2):166-171.</li>\r\n<li>Walch G, Vereridis PS, Boileau, et al. Three-dimensional planning and use of patient-specific guides improves glenoid component position: an in vitro study. J Shoulder Elbow Surg. 2015;24(2):302-309.</li>\r\n<li>Hendel MD, Bryan JA, Barsoum WK, et al. Comparison of patient-specific instruments with standard surgical instruments in determining glenoid component position: a randomized prospective clinical trial. J Bone Joint Surg Am. 2012;94(23):2167-2175.</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Mon Aug 11 2025 23:05:04 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "cedu.ocson@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Aug 12 2025 22:35:13 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  }
+}

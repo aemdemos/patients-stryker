@@ -1,0 +1,93 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Clinically proven",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Pre-op prep",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "4fbd7fe5-5b5e-413f-a9ae-4a5b2cff02ae",
+  "cq:template": "/apps/stryker/templates/capability",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+  "thumbnailAltText": "Pre-op prep products",
+  "jcr:predecessors": [
+    "ac14afd0-0765-4399-b08f-bf70c67006a5"
+  ],
+  "contentID": "SAGE-GSNPS-WEB-485180_REV-0_en_us",
+  "lastPublished": "Fri Feb 16 2024 14:40:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Feb 16 2024 14:40:18 GMT+0000",
+  "cq:lastReplicated": "Fri Feb 16 2024 14:40:20 GMT+0000",
+  "cq:lastModified": "Fri Feb 16 2024 14:30:55 GMT+0000",
+  "jcr:description": "Address bacteria on the nares, oral cavity, and skin, which are risk factors for surgical site infection (SSI).",
+  "cq:siblingOrder": "advanced-digital-healthcare,ambulation-and-equipment-management,bedframes,cleaners-and-disinfectants,emergency-patient-transport,ent,image-guided-therapies,infrastructure-and-room-design,integration-and-connectivity,navigation,orthopedic-disposables,patient-room-furniture,personal-protection-equipment,pharmaceutical-waste,power-tools-and-cutting-accessories,sponge-management,sterile-processing,stretchers,support-surfaces,surgical-suction,surgical-visualization,temperature-management,reconstructive-surgery,emergency-response-and-resuscitation,emergency-data-solutions,public-access,emergency-patient-transport0,illuminated-instruments,oral-hygiene,patient-cleansing,patient-positioning,pre-op-prep,skin-closure,clinical-seating,surgical-headlights,urine-management,reprocessed-products,steerable-introducer-sheath,fluid-management,airway-management,clinical-communication-and-workflow,",
+  "jcr:baseVersion": "ac14afd0-0765-4399-b08f-bf70c67006a5",
+  "jcr:isCheckedOut": true,
+  "hideInNav": "true",
+  "cq:name": "pre-op-prep",
+  "cq:tags": [
+    "stryker:content-type/capability",
+    "stryker:capability/Pre_op_prep",
+    "stryker:content-type/hcp_content",
+    "stryker:portfolio/medical-and-surgical-equipment"
+  ],
+  "jcr:lastModified": "Fri Feb 16 2024 14:30:55 GMT+0000",
+  "jcr:uuid": "34ab2a7c-6e22-4476-85d9-1d19b5d86a67",
+  "sling:resourceType": "stryker/components/structure/pages/capability",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:parentPath": "/content/stryker/us/en/portfolios/medical-surgical-equipment",
+  "cq:childrenOrder": "skin-prep,nose-mouth-and-skin-prep,plumbing-protection,",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sage/products/noes-to-toes/images/Sage-Nose-to-Toes-Thumbnail.jpg"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Tue May 04 2021 18:52:50 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*equivalent to 500mg Chlorhexidine Gluconate per cloth (<a href=\"https://www.stryker.com/content/dam/stryker/sage/resources/Sage-Two-Percent-Chlorhexidine-Gluconate-Cloth-Drug-Facts.pdf\" target=\"_blank\" title=\"Drug facts for Sage 2% Chlorhexidine Gluconate Cloths\">drug facts</a>)</p>\r\n",
+    "jcr:lastModified": "Tue Oct 08 2019 13:53:52 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "highlevelcta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "errin.pace@stryker.com",
+    "jcr:lastModified": "Wed Sep 18 2019 19:27:04 GMT+0000",
+    "sling:resourceType": "stryker/components/content/highlevelcta",
+    "arbitraryOrdering": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/pre-op-prep/skin-prep"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/pre-op-prep/nose-mouth-and-skin-prep"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "orderPagePath": "/content/stryker/us/en/portfolios/medical-surgical-equipment/patient-cleansing/plumbing-protection"
+      }
+    }
+  }
+}

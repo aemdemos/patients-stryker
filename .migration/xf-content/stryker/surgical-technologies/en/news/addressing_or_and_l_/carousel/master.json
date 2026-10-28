@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "carousel",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c41b4bc8-d340-473a-80f6-0cb538d16053",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "0be575d8-1c10-4ad3-a521-2df8a6afc81c"
+  ],
+  "lastPublished": "Tue Jun 16 2026 14:03:18 GMT+0000",
+  "jcr:created": "Tue Jun 16 2026 14:03:18 GMT+0000",
+  "cq:lastReplicated": "Tue Jun 16 2026 14:03:21 GMT+0000",
+  "cq:lastModified": "Wed Jun 10 2026 16:07:15 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "0be575d8-1c10-4ad3-a521-2df8a6afc81c",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Jun 16 2026 14:03:18 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "ec158619-77ff-47e1-b492-2930fc885dd3",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jun 10 2026 16:07:10 GMT+0000",
+      "alt": "Addressing OR and LD Challenges_desktop",
+      "srcFileRef": "/content/dam/stryker/surgical-technologies/news/2026/addressing-or-and-l-d-challenges-with-adjunct-technology/Addressing OR and LD Challenges_desktop.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Jun 10 2026 16:07:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

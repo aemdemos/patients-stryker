@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Small bone power tools",
+  "jcr:versionHistory": "00157969-9306-4910-abe8-63c495e4fec4",
+  "cq:template": "/apps/stryker/templates/specialty",
+  "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/surgical/products/strykerf1/images/Thumbnail_StrykerF1.jpg",
+  "jcr:predecessors": [
+    "715cc23b-8e5e-43b4-884c-d7ab728181a2"
+  ],
+  "contentID": "9100-004-741 Rev. None",
+  "lastPublished": "Mon Mar 05 2018 16:10:17 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 05 2018 16:10:17 GMT-0500",
+  "cq:lastModified": "Mon Mar 05 2018 12:07:05 GMT-0500",
+  "jcr:baseVersion": "715cc23b-8e5e-43b4-884c-d7ab728181a2",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Small bone power tools",
+  "cq:tags": [
+    "stryker:content-type/specialty",
+    "stryker:specialty/small-bone",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:capability/power-tools"
+  ],
+  "jcr:lastModified": "Mon Mar 05 2018 12:07:05 GMT-0500",
+  "jcr:uuid": "abc4b02e-149b-4bbe-ab97-68d618322702",
+  "sling:resourceType": "stryker/components/structure/pages/specialty",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "Dilara.Atkins@stryker.com",
+  "navTitle": "Small bone power tools",
+  "featured_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    }
+  },
+  "filteredcontenttypegrid": {
+    "jcr:primaryType": "nt:unstructured",
+    "emptyText": "No Results found.",
+    "showSystems": "true",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "jcr:lastModified": "Mon Jun 19 2017 18:40:20 GMT-0400",
+    "loadMoreText": "Load More",
+    "sling:resourceType": "stryker/components/content/filteredcontenttypegrid",
+    "listSize": "20",
+    "defaultFilterOption": "Show All",
+    "showProcedures": "true"
+  },
+  "pagehero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Dilara.Atkins@stryker.com",
+    "headColor": "rgb(255,181,0)",
+    "usethumbnail": "true",
+    "jcr:lastModified": "Thu Aug 24 2017 19:19:09 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pagehero"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical/products/strykerf1/images/Thumbnail_StrykerF1.jpg"
+  }
+}

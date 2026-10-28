@@ -1,0 +1,45 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Image - Desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "d5f858c3-fcb7-4dca-bb2f-7005d7cd8c4e",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4e8c51d5-914c-48f0-8adb-3c8e720e3df7"
+  ],
+  "jcr:created": "Fri Aug 25 2023 17:44:08 GMT+0000",
+  "cq:lastReplicated": "Fri Aug 25 2023 17:44:10 GMT+0000",
+  "cq:lastModified": "Wed Aug 23 2023 13:41:36 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4e8c51d5-914c-48f0-8adb-3c8e720e3df7",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "680da992-10c3-4ea5-a584-315e20884a8e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.fitzsimmons@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Aug 15 2023 17:50:27 GMT+0000",
+      "alt": "Journey to Zero with Neptune S",
+      "srcFileRef": "/content/dam/stryker/about/news/2023/kers-journey-to-zero-harm-continues-with-neptune-s/HeroImage_Neptune.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Aug 23 2023 13:41:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

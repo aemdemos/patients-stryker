@@ -1,0 +1,87 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Officer - 8739",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "a2132a9c-bebf-4be4-b244-df89ce648335",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "6b53bdb0-f0d9-473a-ae80-43ca4d4b7f7a"
+  ],
+  "lastPublished": "Fri Apr 17 2026 19:21:24 GMT+0000",
+  "jcr:created": "Fri Apr 17 2026 19:21:25 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 17 2026 19:21:27 GMT+0000",
+  "cq:lastModified": "Fri Apr 17 2026 18:43:58 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "6b53bdb0-f0d9-473a-ae80-43ca4d4b7f7a",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:22:17 GMT+0000",
+  "jcr:uuid": "756fd808-3ebb-40f4-b542-7b2840152b4b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text_copy_copy_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Mon Jan 20 2020 19:32:29 GMT+0000",
+      "text": "<h1><span class=\"futura-bold\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffb500;\">Debra</span>&nbsp;King</span></span><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\"><br>\n</span></span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-75em\">Vice President, Chief Digital and Information Officer</span></span></p>\n<p>Debra King became Vice President, Chief Digital Information Officer in May 2025.</p>\n<p>&nbsp;</p>\n<p>Debra is responsible for overseeing our global IT strategy and advancing digital innovation to enhance value for our customers.</p>\n<p>Prior to joining us, Debra served as the Chief Technology Officer at Bunge for two years and as the Chief Information Officer at Corteva, Inc., from 2017 – 2021. Prior to her executive leadership roles, Debra had extensive experience in driving technology strategy to deliver business value from her tenure at Pfizer, Inc., and by working across industry sectors in technology consulting.</p>\n<p>Debra holds a bachelor's degree in computer science from Yeshiva University. Debra has served on numerous advisory boards, including being a former board member of the non-profit organization, NPower.</p>\n<p><span class=\"fontsize-8em\">COMM-GSNPS-SYK-2710550_Rev-1</span><br>\n</p>\n",
+      "jcr:lastModified": "Fri Apr 17 2026 18:43:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "7"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "6"
+        }
+      }
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Jan 23 2020 19:56:34 GMT+0000",
+      "alt": "Debra King",
+      "srcFileRef": "/content/dam/stryker/about/our-management/our-management/framed-images/other/Leadership-Template-Debra-King-v2.jpg",
+      "jcr:lastModified": "Fri Apr 17 2026 18:41:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "5"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

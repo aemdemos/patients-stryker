@@ -1,0 +1,107 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "News",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5cd1a9af-4eeb-4d55-be82-db3c942f1cbc",
+  "cq:template": "/apps/stryker/templates/news-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "4b9b5325-586b-427c-a2f1-32d8db83b9f0"
+  ],
+  "lastPublished": "Mon Jun 29 2026 20:07:18 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 29 2026 20:07:18 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 29 2026 20:07:20 GMT+0000",
+  "cq:lastModified": "Mon Jun 29 2026 20:07:08 GMT+0000",
+  "jcr:description": "The Endoscopy and Breast Care Newsroom is your source for industry news, clinical information, product and business updates, inspiring stories and more.",
+  "jcr:baseVersion": "4b9b5325-586b-427c-a2f1-32d8db83b9f0",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:54:24 GMT+0000",
+  "cq:tags": [
+    "stryker:business-unit/endoscopy"
+  ],
+  "jcr:lastModified": "Wed Oct 29 2025 16:26:08 GMT+0000",
+  "jcr:uuid": "6ac72333-d551-4b1b-ac54-c9775a18ab9b",
+  "sling:resourceType": "stryker/components/structure/pages/news-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "longtexthero": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "dominik.soldo@stryker.com",
+    "jcr:lastModified": "Tue May 09 2017 18:15:06 GMT-0400",
+    "sling:resourceType": "stryker/components/content/longtexthero",
+    "textIsRich": [
+      "true",
+      "true"
+    ]
+  },
+  "newsandannouncements": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Greg.Barrow@stryker.com",
+    "searchPath": "/content/stryker/us/en/endoscopy/news",
+    "jcr:lastModified": "Fri Jan 18 2019 04:08:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/newsandannouncements",
+    "listSize": 20,
+    "parentTag": [
+      "stryker:content-type/news"
+    ],
+    "filters": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/product-bulletins"
+        ]
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/company-announcements"
+        ]
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/ir"
+        ]
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/events"
+        ]
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "filterTags": [
+          "stryker:content-type/news/in-the-news"
+        ]
+      }
+    }
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "leftPadding": "4",
+    "topPadding": "4",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "hideComponent": "false",
+    "gradientDirection": "left-to-right",
+    "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-5em\"><span style=\"color: #ffb500;\">Follow us</span></span></span></span></p>\n<p><b><span class=\"futura-bold\">Endoscopy</span></b></p>\n<ul>\n<li><a href=\"https://linkedin.com/company/stryker-endo\" target=\"_blank\" title=\"LinkedIn\"><span class=\"standalone-link\">LinkedIn</span></a></li>\n<li><span class=\"standalone-link\"><a title=\"X\" href=\"https://x.com/StrykerEndo\" target=\"_blank\">X</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"Instagram\" href=\"https://www.instagram.com/strykervisualization/\" target=\"_blank\">Instagram</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"YouTube\" href=\"https://www.youtube.com/@StrykersClinicalSolutions\" target=\"_blank\">YouTube</a></span></li>\n<li><span class=\"standalone-link\"><a title=\"VuMedi\" href=\"https://www.vumedi.com/channel/stryker/tab/endoscopy-2/\" target=\"_blank\">VuMedi</a></span></li>\n</ul>\n<p><span class=\"futura-bold\">Breast Care</span></p>\n<ul>\n<li><a href=\"https://linkedin.com/company/stryker-breast-care\" target=\"_blank\" title=\"LinkedIn\"><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\">LinkedIn</span></b></a></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"X\" href=\"https://x.com/StrykerBreast\" target=\"_blank\">X</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"Instagram\" href=\"https://www.instagram.com/strykerbreastcare/\" target=\"_blank\">Instagram</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"YouTube\" href=\"https://www.youtube.com/@StrykersClinicalSolutions\" target=\"_blank\">YouTube</a></span></b></li>\n<li><b data-rte-class=\"rte-temp\"><span class=\"standalone-link\"><a title=\"VuMedi\" href=\"https://www.vumedi.com/channel/stryker/tab/endoscopy-2/\" target=\"_blank\">VuMedi</a></span></b></li>\n</ul>\n",
+    "jcr:lastModified": "Mon Jun 29 2026 20:07:08 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "rightPadding": "4",
+    "backgroundColor": "rgb(255,255,255)",
+    "showDimensionalBox": "true",
+    "textIsRich": "true",
+    "bottomMargin": "5"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

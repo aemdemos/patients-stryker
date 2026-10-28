@@ -1,0 +1,65 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "3b882dec-88fc-4bd1-a3a0-0103d9648164",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "abab5fc4-298a-4355-b254-8236097bbf44"
+  ],
+  "lastPublished": "Wed Sep 02 2026 17:38:38 GMT+0000",
+  "jcr:created": "Wed Sep 02 2026 17:38:39 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 02 2026 17:38:41 GMT+0000",
+  "cq:lastModified": "Tue Aug 11 2026 17:00:03 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "abab5fc4-298a-4355-b254-8236097bbf44",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 02 2026 17:38:38 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "0c46a6da-f80d-4694-9b41-07b2d89a6e9b",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "autoPlayVal": "1",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Aug 11 2026 16:59:45 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "borderColor": "rgba(0,0,0,1)",
+      "jcr:lastModified": "Tue Aug 11 2026 16:59:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/endoscopy/systems/breast/videos/bcc-shortloop-1920x640.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/bcc-shortloop-1920x640-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Tue Aug 11 2026 17:00:03 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  }
+}

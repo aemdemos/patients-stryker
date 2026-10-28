@@ -1,0 +1,389 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Finding her guide: Olivia’s journey with Treacher Collins",
+  "jcr:versionHistory": "be9910c4-e9fe-4416-a3a3-a4fabe572520",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "cef98066-f5d7-4864-a658-35daa9b3b7c8"
+  ],
+  "contentID": "CMF-NL-34_Rev.None_23109 SYK CORP 2019-11-14",
+  "lastPublished": "Wed Dec 18 2019 20:22:09 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Dec 18 2019 20:22:09 GMT+0000",
+  "cq:lastModified": "Wed Dec 18 2019 20:22:04 GMT+0000",
+  "jcr:baseVersion": "cef98066-f5d7-4864-a658-35daa9b3b7c8",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Fri Dec 13 2019 14:18:05 GMT+0000",
+  "jcr:uuid": "1389b2b1-1bbd-42df-9456-2a72e022db15",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "garrett.shue@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 18:20:23 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 18:20:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 25 2019 18:20:28 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/olivia/Olivia__header.png",
+          "jcr:lastModified": "Mon Nov 25 2019 18:34:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_1810796879": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 18:20:19 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 18:20:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_124826": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Olivia&nbsp; &nbsp;&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:48:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>Olivia is three, an age every parent knows well, a time when toddlers begin to ask questions and become more aware of the world around them. Three-year-olds are often learning to count, taking turns, making friends, and starting preschool, but Olivia hasn’t had the same life.<br>\n</p>\n<p>Instead of playing and becoming more independent, Olivia is living with a breathing tube in her neck, a tracheostomy. Because of this, she can’t speak or even take a bath. Her mother, Vanessa, isn’t watching her learn to run and climb, or worrying if her daughter will make friends in school as other mothers might. Instead, Vanessa spends her time worrying about her daughter’s tracheostomy and making sure Olivia remains clear of infection.</p>\n<p>Olivia is living with Treacher Collins syndrome, a very rare condition that afflicts an estimated one in 50,000 people globally each year. It typically affects the development of bones and other tissues of the face. Some people with this condition are also born with an opening in the roof of the mouth called a cleft palate. In severe cases, underdevelopment of the facial bones may restrict an affected infant’s airway, causing potentially life-threatening respiratory problems. This is the case with Olivia, who was given the tracheostomy as a life-saving measure shortly after birth.</p>\n<p>Olivia has also faced other challenges. Early on, she had trouble eating and her physical and cognitive abilities have slowed because of it. &quot;She would be out of the hospital for a week and then go back for three months,” says Vanessa. For a time, Olivia was passed around from doctor to doctor, suffering from a lack of resources in her hometown of Juarez, Mexico, to support her rare condition.</p>\n<p>Olivia finally got the break she and her mother had been waiting for when they met Dr. Vernon Burke. Though they had once been without proper medical resources, Olivia is now on a path to a more independent life.</p>\n",
+          "jcr:lastModified": "Wed Dec 18 2019 20:22:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 17:50:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 17:50:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_124826_2117329145": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Dr. Burke&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:50:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>A sense of humor and humility are the qualities used to describe Dr. Vernon Burke by those who know him. His personable nature lends to his success in working with children, and in particular, those afflicted with craniofacial and cleft anomalies.</p>\n<p>Born in Idaho, and a Gulf War veteran, Dr. Burke is the Department Chair of Oral and Maxillofacial Surgery and Pediatric/Hospital Dentistry at El Paso Children’s Hospital. He and his partners have three clinic locations in El Paso, and in 2018, Dr. Burke co-founded the Cleft and Craniofacial Clinic at Federacion Mexicana de Asociaciones Privadas (FEMAP) Hospital in Juarez, Mexico.</p>\n<p>He’s no stranger to complex craniofacial deformities, performing, on average, 450 surgeries per year with a focus on bony work for cleft and craniofacial surgery and orthognathic surgery. It is this expertise, and the proximity and connection to Juarez, that led to his fateful meeting with Olivia.</p>\n",
+          "jcr:lastModified": "Mon Dec 09 2019 14:29:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_770579451": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 17:51:45 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 17:51:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1157152101": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 18:35:50 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 18:35:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 25 2019 18:35:58 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/olivia/Olivia__car.png",
+          "jcr:lastModified": "Mon Nov 25 2019 18:36:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_2_3_1_3_124826_132795843": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Finding her guide, the path to a better outcome&nbsp; &nbsp; &nbsp; &nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>When Karen, a former patient of Dr. Burke’s in El Paso, saw Olivia’s story featured on the local television in Juarez, she knew she had to connect Olivia with Dr. Burke. After locating Olivia’s mother, Karen was able to help get an appointment with Dr. Burke at his Juarez FEMAP clinic.</p>\n<p>Before the first appointment, Olivia was becoming ill multiple times per year and wasn’t eating well. On top of that, she was living with a one in ten risk of death each year that she had the tracheostomy tube.</p>\n<p>Dr. Burke’s immediate goal in the first six to eight months of treatment was to open her airways via a distraction procedure, and subsequently remove the distractors, with the end goal to remove the tracheostomy. The procedure was complex, and Vanessa was not supported by health insurance, so Dr. Burke formulated a plan to garner support needed for her procedure.</p>\n<p>In addition to the time donated by Dr. Burke and other surgeons and staff, Olivia’s surgery would need a pediatric mandibular distraction system, which Stryker donated. In addition, El Paso Children’s Hospital donated an operating room and 3D Systems donated medical models and Virtual Surgical Planning services.</p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:53:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 25 2019 18:46:27 GMT+0000",
+          "text": "<p><span style=\"color: #ffffff;\">...<br>\n __</span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 18:46:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 18 2019 13:33:40 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">&quot;By partnering with Dr. Burke on Olivia’s case, we’re living our mission to make healthcare better together with our customers.&quot;</span></span>",
+          "line2": "<br>\r\n<span class=\"futura-bold\">Arden McDonough</span><br>\r\nStryker representative on Olivia’s case.<br>\r\n<br>\r\n<br>\r\n<br>\r\n",
+          "jcr:lastModified": "Mon Nov 25 2019 18:44:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(237,238,236,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_1332692925": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 17:53:42 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 17:53:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_124826_1424080955": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Olivia’s distraction surgery&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:54:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>With a plan in place, it was time for Olivia’s distraction surgery. Olivia began with an ENT, who ensured her airway was stable, then another surgeon placed a feeding tube for nourishment during the weeks post-op. Next, Dr. Burke began the distraction using Stryker’s <a href=\"https://cmf.stryker.com/products/pediatric-mandibular-distractor\">Pediatric Mandibular Distractor (PMD) with anti-reverse mechanism</a>, a tool intended to help elongate her lower jaw and open up her airways by fixating the linear distractor to Olivia’s mandible and slowly turning it half a millimeter to a millimeter daily. Similar to palate expanders used in orthodontics, a small end of the distractor is accessible by the parent, who uses a special screwdriver at a specified time to make the exact measured turns. Dr. Burke was one of the first surgeons to use the new distraction device and Olivia’s surgery was a success. After a few weeks with the distractors in place, Olivia returned for their removal as well as the removal of the gastric (feeding) tube.</p>\n<p>Dr. Burke says Olivia is like a new girl after the distraction, and that she’s “able to eat much better now that her jaw is in a better position. It opened up her throat and airways, so she can breathe better and eat independently. Her teeth meet better so she can better bite into things.” After years of waiting, Olivia and her family are seeing changes and outcomes that they never expected. Her mom, Vanessa, says, “Well for us it’s a lot because we’ve been waiting three years for a surgery like this, and we had previously received an answer that no, she wouldn’t be able to get it and that she was going to remain like this.”<br>\n</p>\n",
+          "jcr:lastModified": "Mon Dec 02 2019 19:13:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1971208212": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 17:55:05 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 17:55:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3_1522493731": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Nov 25 2019 18:37:01 GMT+0000",
+      "jcr:lastModified": "Mon Nov 25 2019 18:37:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Nov 25 2019 18:37:06 GMT+0000",
+          "srcFileRef": "/content/dam/stryker/about/news/olivia/Olivia.png",
+          "jcr:lastModified": "Mon Nov 25 2019 18:37:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage"
+        }
+      }
+    },
+    "cols2_2_3_1_3_124826_399097436": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "jcr:lastModified": "Thu Aug 22 2019 20:05:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Her journey continues&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></span></p>\n",
+          "jcr:lastModified": "Mon Nov 25 2019 17:55:36 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "jcr:lastModified": "Thu Aug 22 2019 20:25:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Aug 22 2019 20:05:26 GMT+0000",
+          "text": "<p>Looking ahead, Dr. Burke has a treatment plan for her continued journey. After the removal of her tracheostomy, Dr. Burke says her follow-up surgeries into her teen years will help her to lead a more normal and independent life. “You want Olivia to be able to walk into a room and people don’t stare at her. That people don’t notice her. Oftentimes the ability to go unnoticed – that people don’t stare and people don’t see her deformity right away – helps you feel like a normal person.”<br>\n</p>\n",
+          "jcr:lastModified": "Mon Dec 09 2019 14:29:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Tue Dec 10 2019 00:00:00 GMT-0500",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Dec-2019",
+    "jcr:lastModified": "Tue Dec 10 2019 17:08:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/olivia/Olivia__header.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.</p>\r\n<p>The information presented is intended to demonstrate the breadth of Stryker product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any Stryker product. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your Stryker representative if you have questions about the availability of Stryker products in your area</p>\r\n",
+    "jcr:lastModified": "Mon Nov 25 2019 17:56:22 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

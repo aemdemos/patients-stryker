@@ -1,0 +1,814 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Iconix Knotless all-suture knotless anchor",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "5eecf212-5557-4122-acd3-4cb86f0a0e67",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "iconix-knotless all-suture knotless anchor",
+  "thumbnailFileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Iconix_Knotless_Sutures_close-up.png",
+  "businessUnitTag": "stryker:business-unit/sports-medicine",
+  "jcr:predecessors": [
+    "4f1d4504-1e56-43c7-a036-cd0fba140e81"
+  ],
+  "contentID": "1000904478 rev C",
+  "lastPublished": "Wed Aug 19 2026 16:49:53 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 19 2026 16:49:55 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 19 2026 16:49:57 GMT+0000",
+  "cq:lastModified": "Wed Aug 19 2026 16:49:48 GMT+0000",
+  "jcr:description": "Iconix Knotless all-suture anchor offers expanded possibilities for soft tissue to bone fixation. Discover the benefits of the smallest knotless suture anchor on the market.",
+  "jcr:baseVersion": "4f1d4504-1e56-43c7-a036-cd0fba140e81",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 18:55:52 GMT+0000",
+  "pageTitle": "Enhanced orthopaedic fixation with Iconix Knotless suture anchor",
+  "cq:tags": [
+    "stryker:specialty/hip-sports-medicine",
+    "stryker:content-type/product",
+    "stryker:business-unit/sports-medicine",
+    "stryker:custom/sports-medicine/anatomy/shoulder",
+    "stryker:specialty/shoulder-sports-med",
+    "stryker:capability/sports-medicine",
+    "stryker:custom/sports-medicine/procedure-(hip)",
+    "stryker:custom/sports-medicine/procedure-(shoulder)",
+    "stryker:product/sports-medicine",
+    "stryker:content-type/hcp_content",
+    "stryker:procedure/sports-medicine/rotator-cuff-repair",
+    "stryker:custom/sports-medicine/product-type/implant"
+  ],
+  "jcr:lastModified": "Thu Jan 15 2026 16:29:33 GMT+0000",
+  "jcr:uuid": "30c4ff99-210e-4a96-9928-55802c7ef6b4",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "brittany.brady@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Sep 22 2023 20:25:03 GMT+0000",
+      "jcr:lastModified": "Fri Sep 22 2023 20:25:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2_1328335764": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Sep 22 2023 20:26:16 GMT+0000",
+      "jcr:lastModified": "Fri Sep 22 2023 20:26:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "topPadding": "300em",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "topMargin": "300em",
+          "jcr:created": "Thu Mar 10 2022 21:15:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-5vw\">Iconix Knotless</span></span></h1>\r\n",
+          "line2": "<h2>All-suture. Expanded possibilities.​</h2>\r\n<div><span class=\"fontsize-1-5-vw\">Introducing Iconix Knotless, featuring the <span class=\"futura-bold\">smallest knotless<br>\r\nall-suture anchor</span> on the market.*</span></div>\r\n",
+          "jcr:lastModified": "Fri Apr 12 2024 19:32:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Sep 20 2023 20:12:36 GMT+0000",
+          "alt": "Iconix_Knotless_tensioning",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless-loop.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 22 2023 20:28:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Sep 20 2023 19:24:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 20 2023 19:24:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "tagcrumb": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 20 2023 19:24:53 GMT+0000",
+          "jcr:lastModified": "Wed Sep 20 2023 19:25:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/tagcrumb"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols2_2_3_1_3_1316618888": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed May 01 2024 16:22:35 GMT+0000",
+      "jcr:lastModified": "Wed May 01 2024 16:22:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 18:53:04 GMT+0000",
+          "text": "<h2><span class=\"fontsize-1-25em\">The 1.4mm Iconix Knotless anchors are the smallest knotless all-suture anchors on the market.<sup>*</sup>&nbsp; &nbsp;</span></h2>\n",
+          "jcr:lastModified": "Mon Sep 16 2024 16:27:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 20:12:51 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Indicated for soft tissue to bone fixation in surgical procedures in shoulder, hip, knee, foot and ankle, elbow, and hand and wrist.<sup>**</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Apr 12 2024 19:43:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Sep 20 2023 20:12:36 GMT+0000",
+          "alt": "Iconix_Knotless_suture_close-up",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Iconix_Knotless_Sutures_close-up-smaller.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 22 2023 20:32:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols3_1989917091": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed May 01 2024 16:03:09 GMT+0000",
+      "jcr:lastModified": "Wed May 01 2024 16:03:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "In the Shoulder | Instability repair",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed May 01 2024 16:03:29 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed May 01 2024 16:10:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Iconix-knotless_shoulder_animation.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Iconix-knotless_shoulder_animation-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 01 2024 16:07:39 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "In the Hip | Labral base technique",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed May 01 2024 16:03:37 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed May 01 2024 16:10:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Iconix Knotless hip animation (labral base).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Iconix Knotless hip animation (labral base)-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 01 2024 16:07:19 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "In the Hip | Simple stitch technique",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed May 01 2024 16:03:44 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Wed May 01 2024 16:10:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/IconixKnotless_Hip_SimpleStitch_1000904531revb.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/IconixKnotless_Hip_SimpleStitch_1000904531revb-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Wed May 01 2024 16:07:23 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "features-and-benefits",
+      "jcr:created": "Wed May 01 2024 16:23:23 GMT+0000",
+      "title": "Features and benefits",
+      "jcr:lastModified": "Wed May 01 2024 16:24:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols3_1898396986": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Sep 26 2023 16:12:04 GMT+0000",
+      "jcr:lastModified": "Tue Sep 26 2023 16:12:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Sep 20 2023 20:14:35 GMT+0000",
+          "alt": "iconix-knotless_minimal-bone-removal",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless_minimal-bone-removal-revised.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Jun 03 2024 16:48:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 20:12:51 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The IntelliBraid Technology supports secure fixation<sup>1</sup> with minimal bone removal.<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Thu Apr 11 2024 19:41:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Sep 20 2023 20:14:35 GMT+0000",
+          "alt": "iconix-knotless-suture-shuttling",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless-suture-shuttling.gif",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 22 2023 20:08:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 20:12:51 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Iconix Knotless anchors are designed for smooth suture shuttling and sequential tensioning to facilitate the desired tension for a repair.<sup>3</sup></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Apr 12 2024 19:43:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Sep 20 2023 20:14:35 GMT+0000",
+          "alt": "iconix-knotless_low-profile",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless_low-profile.gif",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Sep 22 2023 20:14:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 20:12:51 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Iconix Knotless anchors support a low-profile repair.</span></p>\n",
+          "jcr:lastModified": "Wed Sep 20 2023 20:14:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Sep 20 2023 19:25:43 GMT+0000",
+      "jcr:lastModified": "Wed Sep 20 2023 19:25:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 20 2023 19:25:56 GMT+0000",
+          "alt": "iconix-knotless-configurations",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless-configurations-revised.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Jun 04 2024 18:39:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Sep 20 2023 19:25:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\">Available in six configurations</span></h3>\n<ul>\n<li><span class=\"fontsize-1-25em\">Three distinct repair strand color options exist to offer easy identification intra-operatively.</span></li>\n<li><span class=\"fontsize-1-25em\">Offered in 1.4mm and 2.3mm sizes</span></li>\n<li><span class=\"fontsize-1-25em\">Color coded sutures clearly distinguish the #2 repair suture from the #2-0 shuttle suture for ease of use.&nbsp;</span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Jun 03 2024 15:46:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Sep 20 2023 19:29:58 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"fontsize-3vw\"><span style=\"background-color: transparent; font-weight: normal;\">All-suture platform featuring IntelliBraid Technology,</span><br>\r\n</span></h2>\r\n<h2><span class=\"fontsize-3vw\"><span class=\"futura-bold\">backed by the Iconix family.</span></span></h2>\r\n",
+      "jcr:lastModified": "Wed Sep 20 2023 19:38:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(255,181,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Sep 20 2023 19:28:44 GMT+0000",
+      "jcr:lastModified": "Wed Sep 20 2023 19:28:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 20 2023 19:28:51 GMT+0000",
+          "alt": "iconix-knotless-intellibraid-technology",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconix-knotless/iconix-knotless-ibt.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Sep 20 2023 19:49:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 19:28:56 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">IntelliBraid Technology creates a bunching effect using targeted compression zones within the implant sheath for optimal fixation.</span></p>\n",
+          "jcr:lastModified": "Wed Sep 20 2023 19:40:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 20 2023 19:28:51 GMT+0000",
+          "alt": "iconix-guides",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconixallsutureanchorsystem/images/iconix-guides.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Sep 20 2023 19:42:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 19:28:56 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">The guide, anchor, suture and obturator options allow for a variety of techniques in numerous repairs.<sup>**</sup></span></p>\n",
+          "jcr:lastModified": "Thu Apr 11 2024 19:40:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "preset": "max_width_auto",
+          "jcr:created": "Wed Sep 20 2023 19:28:51 GMT+0000",
+          "alt": "iconix-self-centering-technology",
+          "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconixallsutureanchorsystem/images/iconix-sct.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Sep 20 2023 19:42:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Wed Sep 20 2023 19:28:56 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">Minimal bone removal<sup>2</sup>—The Iconix disposable drills feature a unique self-centering (SC) technology, to ensure accurate pilot hole placement. <sup>***</sup></span></p>\n",
+          "jcr:lastModified": "Wed May 01 2024 16:33:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "largeheadline_286910": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Fri Apr 03 2020 01:33:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Featured video library</span></span>",
+      "jcr:lastModified": "Fri Apr 03 2020 01:33:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols3_2027280588_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Wed Jul 26 2023 20:44:46 GMT+0000",
+      "jcr:lastModified": "Wed Jul 26 2023 20:44:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_9074": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Capsule labral repair for anterior shoulder instability using Iconix Knotless with Dr. Nikhil Verma*",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "jcr:created": "Tue Nov 10 2020 04:46:02 GMT+0000",
+          "hideBorder": "true",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Jun 03 2024 17:03:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Dr. Verma capsule labral repair for anterior shoulder instability using Iconix Knotless.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/Dr. Verma capsule labral repair for anterior shoulder instability using Iconix Knotless-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Mon Jun 03 2024 17:24:06 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/sports-medicine/products/iconix-knotless/resources/SYK_IconixKnotless_Brochure_1000904521revc-webpage.pdf",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Tue Nov 21 2023 18:58:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "section_title_593078976": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "deepLinkingId": "related-prod-proc",
+      "jcr:created": "Tue Nov 11 2025 20:06:36 GMT+0000",
+      "title": "Related products and procedures",
+      "jcr:lastModified": "Tue Nov 11 2025 20:07:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 20:06:48 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 20:06:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 21:55:01 GMT+0000",
+          "CTATitle": "Shoulder instability",
+          "CTAImageAltText": "instability-CTA-thumb",
+          "jcr:lastModified": "Tue Nov 11 2025 21:55:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/images/cta_thumbnails/instability-CTA-thumb.png",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/procedures/instability"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 11 2025 21:55:03 GMT+0000",
+          "CTATitle": "Iconix all-suture anchor platform",
+          "CTAImageAltText": "thumbnail-Iconix-v2",
+          "jcr:lastModified": "Tue Nov 11 2025 21:56:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "CTAImageFileReference": "/content/dam/stryker/sports-medicine/campaigns/aossm-25/thumbnails/thumbnail-Iconix-v2.jpg",
+          "ctaInternalLink": "/content/stryker/us/en/sports-medicine/products/iconix-all-suture-anchor"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "altText": "separator",
+      "jcr:created": "Mon Sep 16 2024 16:24:21 GMT+0000",
+      "sectionColor": "white-hr",
+      "jcr:lastModified": "Mon Sep 16 2024 16:25:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "sectionseparator_593028165": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Wed Aug 19 2026 16:49:19 GMT+0000",
+      "jcr:lastModified": "Wed Aug 19 2026 16:49:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "jcr:lastModified": "Tue Jun 23 2026 13:10:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Wed Jun 10 2026 13:13:09 GMT+0000",
+          "text": "Connect with us Have feedback about Stryker’s products and services? Visit our product experience page to connect with us. Visiting from outside the United States? Visit our country index to learn more about what's available in your country.",
+          "jcr:lastModified": "Tue Jun 23 2026 13:13:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/header/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/header/master"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "brittany.brady@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "jcr:created": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "jcr:lastModified": "Fri Apr 03 2026 22:39:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carissa.frausto@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3149",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu May 22 2025 01:33:44 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you! We have received your request. A Stryker representative will be in contact with you soon.",
+          "jcr:lastModified": "Mon Mar 30 2026 15:56:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "brittany.brady@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "jcr:created": "Thu Feb 19 2026 20:18:21 GMT+0000",
+          "text": "Contact Information Customer support product feedback LinkedIn Instagram YouTube VuMedi",
+          "jcr:lastModified": "Tue Jun 23 2026 13:14:05 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/contact_information/contact/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/contact-information/contact/master"
+        }
+      }
+    }
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 20 2023 19:24:16 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 20 2023 19:24:20 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 20 2023 19:24:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Wed Sep 20 2023 19:24:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Sep 20 2023 19:24:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/sports-medicine/products/iconix-knotless/Iconix_Knotless_Sutures_close-up-smaller.png"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>Data on File at Riverpoint Medical VP-065C, VP-065J.<br>\r\n</li>\r\n<li>Stryker DHD14024.<br>\r\n</li>\r\n<li>Data on File at Riverpoint Medical ES-012, ES-018.</li>\r\n</ol>\r\n<p>*Applies to 1.4mm anchor. Product specifications are derived from publicly-accessible websites of the legal manufacturers and/or physical product measurements as of April 2024. ** Refer to PUB465 for 1.4mm PN's and PUB471 for 2.3mm PNs for a full list of indications for use. ***Applicable to PNs 3910500568, 3910500569, 3910500571 and 3910500573.</p>\r\n",
+    "jcr:lastModified": "Wed Aug 19 2026 16:49:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Supply Chain Transparency and Ethics",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "c5a3f375-5917-46f1-b43d-e9692d2b6c28",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "ae897fb1-57c3-47aa-a6b5-6f0e844dbc98"
+  ],
+  "jcr:created": "Fri Jan 19 2024 18:27:43 GMT+0000",
+  "cq:lastReplicated": "Fri Jan 19 2024 18:27:45 GMT+0000",
+  "cq:lastModified": "Thu Jul 15 2021 18:19:13 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "ae897fb1-57c3-47aa-a6b5-6f0e844dbc98",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "f0352a37-7dbf-4404-a72e-954349556908",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 15:53:28 GMT-0400",
+      "title": "Conflict Minerals Policy",
+      "jcr:lastModified": "Thu Aug 24 2017 15:54:00 GMT-0400",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "text_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Aug 23 2017 11:05:08 GMT-0400",
+      "text": "<p><b>Purpose</b><br>\nStryker Corporation and its affiliated companies (&quot;Stryker&quot;) support of responsible sourcing.</p>\n<p><b>Scope</b><br>\nStryker’s ongoing effort to eliminate the use of Tin, Tantalum, Tungsten and Gold (“3TG”) from sources that may finance armed conflict and promote human rights abuses in The Democratic Republic of the Congo and adjoining countries including: Angola; Burundi; Central African Republic; The Republic of the Congo; Rwanda; South Sudan; Tanzania; Uganda; and Zambia (“Conflict&nbsp;Region”).</p>\n<p><b>Details<br>\n </b>Stryker supports responsible sourcing from the Conflict Region and expects its suppliers to procure material containing 3TG from socially responsible sources. The goal is to eliminate funding to human rights abusers while continuing to support socially responsible commerce in the Conflict Region.</p>\n<p>In support of this Policy, Stryker will among other things:</p>\n<ul>\n<li>Conduct reasonable country of origin inquiries and exercise ongoing due diligence of its suppliers consistent with the OECD<br>\nDue Diligence Guidance for Responsible Supply Chains of Minerals from Conflict-Affected and High-Risk Areas to determine whether 3TG from the Conflict Region exist in Stryker’s raw materials, components and/or finished devices, and if so, whether the 3TG was responsibly sourced;</li>\n<li>Require suppliers to conduct due diligence and to provide appropriate information to support the determination of the origin<br>\nof the 3TG used in the products that they supply to Stryker;</li>\n<li>Engage and collaborate with suppliers to work towards sustainably responsible 3TG sourcing; and&nbsp;</li>\n<li>File an annual Form SD and Conflict Minerals Disclosure and Report with the U.S. Securities and Exchange Commission and post these on its website.</li>\n</ul>\n<p>Questions or comments about this procedure should be directed to:&nbsp;<a href=\"mailto:conflictminerals@stryker.com\">conflictminerals@stryker.com&nbsp;</a></p>\n<p>Our SEC Form SD and Conflict Minerals Disclosure and Report can be accessed through the <a href=\"https://investors.stryker.com/financial-information/sec-filings/default.aspx\">Investor Relations</a> section of our website.<br>\n</p>\n",
+      "jcr:lastModified": "Tue Jun 29 2021 18:21:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 06 2021 20:13:03 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jul 06 2021 20:13:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "title_825592080_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 15:54:25 GMT-0400",
+      "title": " Disclosure Statement re California Transparency in Supply Chain Act",
+      "jcr:lastModified": "Thu Aug 24 2017 15:55:20 GMT-0400",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jane.irwin@stryker.com",
+      "jcr:lastModifiedBy": "jane.irwin@stryker.com",
+      "jcr:created": "Mon Jun 12 2017 17:18:55 GMT-0400",
+      "text": "<p>Since its founding by Dr. Homer H. Stryker in 1941, Stryker Corporation has been committed to conducting our affairs in compliance with all applicable laws and regulations and the highest ethical standards. Stryker also expects our business partners and suppliers to help ensure that we continue to meet our commitment to responsible supply chain management. Efforts to eradicate slavery and human trafficking from our supply chain are part of our comprehensive commitment to ethics, compliance with laws and social responsibility.</p>\n<p>The California Transparency in Supply Chains Act of 2010 became effective on January 1, 2012. The act declares that slavery and human trafficking are crimes under state, federal, and international law and requires that retailers and manufacturers doing business in the state of California disclose their efforts to eradicate slavery and human trafficking from their direct supply chain. The statements below are Stryker’s response to this requirement.</p>\n<ol>\n<li>Stryker will conduct a risk assessment in order to evaluate and address the risks of human trafficking and slavery when we conduct our annual comprehensive assessment of our product supply chain. We do not use a third party for verification.</li>\n<li>Stryker conducts audits of our suppliers to assess their compliance with our standards for suppliers, including those meant to eliminate trafficking and slavery in supply chains. The verification is not achieved via independent unannounced audits.</li>\n<li>We require that our direct suppliers to certify that materials incorporated into the product comply with the laws regarding slavery and human trafficking of the country or countries in which they are doing business.</li>\n<li>We maintain internal accountability standards and procedures for employees or suppliers failing to meet our company standards regarding slavery and trafficking.</li>\n<li>We plan to provide company employees and management, who have direct responsibility for supply chain management, training on human trafficking and slavery, particularly with respect to mitigating risks within the supply chains of products.<br>\n</li>\n</ol>\n",
+      "jcr:lastModified": "Mon Jun 12 2017 17:20:03 GMT-0400",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 06 2021 20:13:03 GMT+0000",
+      "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+      "jcr:lastModified": "Tue Jul 06 2021 20:13:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "title_2024453953_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 15:55:57 GMT-0400",
+      "title": "Purchase order terms and conditions",
+      "jcr:lastModified": "Thu Aug 24 2017 15:56:22 GMT-0400",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "text_635832283": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 06 2021 20:29:55 GMT+0000",
+      "text": "<p><a href=\"/content/stryker/us/en/about/corporate-responsibility/responsible-supply-chains/po-terms.html\">Purchase order terms and conditions</a></p>\n",
+      "jcr:lastModified": "Tue Jul 06 2021 20:34:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    }
+  }
+}

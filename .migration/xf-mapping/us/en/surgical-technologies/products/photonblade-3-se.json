@@ -1,0 +1,984 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "PhotonBlade 3 SE",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "508f3a06-3f43-4dce-9116-f505632de791",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Photonblade3SE -product",
+  "jcr:predecessors": [
+    "c5c7e96c-3481-491c-b194-e2ce7a986844"
+  ],
+  "contentID": "ST-PB3-MICRO-1718284_REV-0",
+  "lastPublished": "Mon Jun 08 2026 16:16:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Jun 08 2026 16:16:33 GMT+0000",
+  "cq:lastReplicated": "Mon Jun 08 2026 16:16:35 GMT+0000",
+  "cq:lastModified": "Mon Jun 08 2026 15:56:43 GMT+0000",
+  "jcr:baseVersion": "c5c7e96c-3481-491c-b194-e2ce7a986844",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Jun 08 2026 16:16:29 GMT+0000",
+  "cq:tags": [
+    "stryker:specialty/Illuminated_Suction",
+    "stryker:capability/plastic-surgery",
+    "stryker:capability/reconstructive-surgery",
+    "stryker:specialty/breast",
+    "stryker:business-unit/surgical_technologies",
+    "stryker:capability/Illuminated_instruments",
+    "stryker:content-type/hcp_content",
+    "stryker:capability/surgical-visualization",
+    "stryker:content-type/product",
+    "stryker:portfolio/medical-and-surgical-equipment",
+    "stryker:specialty/surgical-smoke-evacuation",
+    "stryker:capability/surgical-suction",
+    "stryker:specialty/Illuminated_Advanced_Energy",
+    "stryker:specialty/plastic-surgery"
+  ],
+  "jcr:lastModified": "Mon Jun 08 2026 15:56:42 GMT+0000",
+  "jcr:uuid": "0bcb4588-c3f5-493d-9514-e6893af80787",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Thu May 28 2026 20:15:13 GMT+0000",
+      "jcr:lastModified": "Thu May 28 2026 20:15:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 14:09:19 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h1><span class=\"fontsize-4vw\"><span class=\"futura-bold\">PhotonBlade 3 SE</span></span></h1>\r\n",
+          "line2": "<h2><span class=\"fontsize-2-5-vw\">Our goal is zero surgical smoke</span></h2>\r\n",
+          "jcr:lastModified": "Mon Jun 08 2026 15:44:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 14:15:33 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\">It can be hard to see past the smoke, with 500,000 healthcare workers exposed to harmful surgical plume every year.¹ That’s why we’re adding an advanced monopolar energy device with integrated smoke evacuation to our comprehensive portfolio.</span></p>\n",
+          "jcr:lastModified": "Wed Jun 03 2026 14:12:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "deep",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Mon Jun 01 2026 14:13:31 GMT+0000",
+          "CTATitle": "Contact an expert",
+          "ctaDeepLinkID": "contact",
+          "jcr:lastModified": "Wed Jun 03 2026 20:35:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Jun 01 2026 14:13:17 GMT+0000",
+          "alt": "PhotonBlade 3 SE",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/PhotonBlade 3 SE header.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 14:10:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 21:39:30 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 21:39:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title_949323787": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "overview",
+      "jcr:created": "Wed Jun 03 2026 14:15:03 GMT+0000",
+      "title": "Overview",
+      "jcr:lastModified": "Wed Jun 03 2026 14:15:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1708399778": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 21:44:27 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 21:44:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "7",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 21:44:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\"><b>Everything has been leading to this point. &nbsp;</b></span></p>\n<p><span class=\"fontsize-1-5em\">The precise cutting you trust from PhotonBlade. Smoke evacuation and illumination, working as one. It all comes together in the next generation design. PhotonBlade 3 Smoke Evacuation (SE) advanced monopolar energy is everything you need in one innovative tool.</span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 15:45:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Mon Dec 15 2025 21:44:35 GMT+0000",
+          "alt": "Photonblade3SE -product",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/Photonblade3SE -product.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 21:45:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 22:25:55 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 22:25:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 20:47:15 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 20:47:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Dec 15 2025 22:04:54 GMT+0000",
+          "alt": "icon -smoke-evac",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/icon -smoke-evac.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 22:05:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_654000976": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Tue Dec 16 2025 14:28:10 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\">Surgeons rated PhotonBlade 3 SE <b>4.8 out of 5</b> in a blinded study.<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Mon Jun 08 2026 15:48:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Dec 15 2025 22:04:54 GMT+0000",
+          "alt": "icon -illuminate",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/icon -illuminate.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 22:05:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 22:06:12 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\">PhotonBlade 3 SE average illuminance (lux) in the extended position is <b>2.5x greater</b> than Plasmablade X.<sup>3</sup></span></p>\n",
+          "jcr:lastModified": "Mon Dec 15 2025 22:07:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Dec 15 2025 22:04:54 GMT+0000",
+          "alt": "photonblade3_icon_thermal-spread",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade3_icon_thermal-spread.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 22:05:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 16 2025 14:30:59 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\"><b>Thermal spread and surrounding tissue damage were rated 4.5 out of 5</b> in a blinded study.<sup>4</sup></span></p>\n",
+          "jcr:lastModified": "Tue Dec 16 2025 14:31:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Mon Dec 15 2025 22:04:54 GMT+0000",
+          "alt": "photonblade3_icon_cutting",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade3_icon_cutting.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 22:05:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 16 2025 14:33:22 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-5em\">Up to <b>97% of smoke<sup>5</sup> can be removed</b> right at the electrode tip to help keep the OR smoke-free.</span></p>\n",
+          "jcr:lastModified": "Tue Dec 16 2025 14:33:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_84257_865488230": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 15 2025 16:46:27 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Dec 15 2025 17:08:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,0)"
+    },
+    "cols2_849180176": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 17:13:21 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 17:13:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Dec 15 2025 17:13:31 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Learn how it works</span></span></h2>\n<h2><span class=\"fontsize-8em\">Learn more about the features and benefits of PhotonBlade 3 SE.</span></h2>\n<p><span class=\"fontsize-1-25em\">PhotonBlade 3 SE is compatible with our Neptune waste management system, SafeAir compact smoke evacuator, and all IEC 60601-compliant electrosurgical generators with a standard 3 prong plug.<sup>6&nbsp;</sup>It also offers a variety of settings and modes across a range of full-featured Electrosurgical Units (ESUs).</span></p>\n",
+          "jcr:lastModified": "Wed Jun 03 2026 14:27:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 17:13:37 GMT+0000",
+          "hideBorder": "false",
+          "type": "typeId",
+          "videoId": "bmuLtZGkllk",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Mon Dec 15 2025 17:14:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      }
+    },
+    "section_title_1888950633": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "features",
+      "jcr:created": "Mon Dec 15 2025 20:56:18 GMT+0000",
+      "title": "Features",
+      "jcr:lastModified": "Mon Dec 15 2025 21:01:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1131096301": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 17:20:01 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 17:20:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "25",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2 style=\"text-align: left;\"><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">PhotonBlade 3 SE<br>\r\n </span></span><span class=\"futura-bold\"><span class=\"fontsize-1vw\">Now joining the Journey to Zero* surgical smoke</span></span></h2>\r\n",
+          "jcr:lastModified": "Mon Jun 08 2026 15:45:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(255,181,0)",
+          "gradientDirectionInverse": "true",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "-25"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Nov 10 2025 21:13:27 GMT+0000",
+      "jcr:lastModified": "Mon Nov 10 2025 21:13:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Tue Jul 07 2020 15:29:02 GMT+0000",
+          "alt": "Photonblade3SE -features-image",
+          "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/Photonblade3SE--features-hotspots-image.png",
+          "jcr:lastModified": "Tue Dec 16 2025 16:44:07 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "7",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "leftPadding": "7",
+          "topPadding": "7",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jul 07 2020 15:53:47 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">A)&nbsp;</span><span style=\"color: rgb(255, 181, 0);\"><span class=\"futura-bold\">Illumination and integrated smoke evacuation<br>\n </span></span></span>Self-contained illumination eliminates the need for an additional light source while the device is in use. The electrode tip captures smoke directly where it's generated, helping to keep the operating room clear.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">B)&nbsp;<span style=\"color: #ffb500;\">Electrode<br>\n </span></span></span>Delivers precise energy now with an anti-char coating.</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">C)&nbsp;<span style=\"color: #ffb500;\">Telescopic shaft<br>\n </span></span></span>Fully rotatable extendable shaft reaches the small surgical pocket. (2–5in/5–12 cm)</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">D)&nbsp;<span style=\"color: #ffb500;\">Ergonomic<br>\n </span></span></span>Shape, size, grip, and styling are all improved for a better overall feel.&nbsp;</p>\n<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">E) <span style=\"color: #ffb500;\">Light switch</span></span><span class=\"urw-egyptienne\"> <br>\n </span></span>Provides the user with the option to illuminate the surgical site.<br>\n</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">F) <span style=\"color: #ffb500;\">Pre-stretched tubing</span><span class=\"urw-egyptienne\"><br>\n </span></span></span>Light and pre-stretched tubing for ease of motion and tangle-free cord management.</p>\n",
+          "jcr:lastModified": "Fri Jun 05 2026 14:12:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "7",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_84257": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "5",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 15 2025 16:46:27 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Mon Dec 15 2025 17:08:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,0)"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 17:37:36 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 17:37:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 16:09:27 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 16:09:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "leftPadding": "25",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">PhotonBlade Pencils</span></span></h2>\r\n",
+          "jcr:lastModified": "Fri Jun 05 2026 14:13:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ],
+          "leftMargin": "-25"
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Tue Dec 16 2025 15:00:10 GMT+0000",
+      "jcr:lastModified": "Tue Dec 16 2025 17:42:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 16 2025 15:07:47 GMT+0000",
+          "jcr:lastModified": "Tue Dec 16 2025 15:07:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Dec 16 2025 15:23:27 GMT+0000",
+              "alt": "photonblade3-se-straight-image-940px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade3-se-straight-image-940px.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Dec 16 2025 15:23:51 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Tue Dec 16 2025 17:43:26 GMT+0000",
+          "jcr:lastModified": "Tue Dec 16 2025 17:43:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Tue Dec 16 2025 15:24:04 GMT+0000",
+              "alt": "photonblade3-straight-image-940px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade3-straight-image-940px.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Dec 16 2025 15:24:21 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          }
+        }
+      },
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "1",
+          "tabTitle": "PhotonBlade 3 SE"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": "2",
+          "tabTitle": "PhotonBlade 3†"
+        }
+      }
+    },
+    "sectionseparator_cop": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 17:37:36 GMT+0000",
+      "jcr:lastModified": "Mon Dec 15 2025 17:37:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Mon Dec 15 2025 16:46:27 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "jcr:lastModified": "Wed Dec 17 2025 15:07:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "backgroundColor": "rgba(255,255,255,0)"
+    },
+    "section_title_690811439": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Dec 15 2025 21:58:58 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Jun 03 2026 14:41:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "tabs_1159318599": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Jun 03 2026 14:37:18 GMT+0000",
+      "jcr:lastModified": "Wed Jun 03 2026 14:37:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/tabs",
+      "tabsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 1,
+          "tabTitle": "Product information"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "tabPosId": 2,
+          "tabTitle": "Related products"
+        }
+      },
+      "tabs_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 1,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Learn more</span></span></span></span></h2>\r\n",
+          "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Supporting your journey towards standardized safe OR solutions.</span></span></span></span>",
+          "jcr:lastModified": "Wed Jun 03 2026 20:44:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "cols4_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Thu Dec 18 2025 17:51:28 GMT+0000",
+          "jcr:lastModified": "Thu Dec 18 2025 17:51:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Dec 18 2025 17:51:31 GMT+0000",
+              "alt": "PhotonBlade-Product-Brochure-cover-225px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade-features-cover-left.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Dec 18 2025 18:23:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "ctaDamLink": "/content/dam/commercial/usa/surgical-technologies/smoke-evacuation/ST-PB3-BROC-1589000-EN_US.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Dec 18 2025 17:57:47 GMT+0000",
+              "CTATitle": "View File",
+              "jcr:lastModified": "Thu Dec 18 2025 17:59:12 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy_1240359099": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Dec 18 2025 17:51:31 GMT+0000",
+              "alt": "PhotonBlade-Product-Brochure-cover-225px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/photonblade-product-brochure-cover-left.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Dec 18 2025 18:13:31 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "ctaDamLink": "/content/dam/commercial/usa/surgical-technologies/smoke-evacuation/ST-PB3-BROC-1664350-EN_US.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Dec 18 2025 17:57:47 GMT+0000",
+              "CTATitle": "View File",
+              "jcr:lastModified": "Thu Dec 18 2025 18:23:48 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col3": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Dec 18 2025 17:51:31 GMT+0000",
+              "alt": "PhotonBlade-Product-Brochure-cover-225px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/smoke-facts-slick-cover-left.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Dec 18 2025 18:18:22 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/surgical-technologies/products/photonblade3/resources/Smoke-Facts-Slick.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Dec 18 2025 17:57:47 GMT+0000",
+              "CTATitle": "View File",
+              "jcr:lastModified": "Thu Dec 18 2025 18:24:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          },
+          "col4": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "preset": "max_width_png",
+              "jcr:created": "Thu Dec 18 2025 17:51:31 GMT+0000",
+              "alt": "PhotonBlade-Product-Brochure-cover-225px",
+              "srcFileRef": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/smoke-free-brochure-cover-left.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Thu Dec 18 2025 18:16:17 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "courtney.dickens@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+              "ctaDamLink": "/content/dam/stryker/surgical-technologies/products/photonblade3/resources/Smoke-Free-Solution-Brochure.pdf",
+              "ctaLinkType": "dam",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Thu Dec 18 2025 17:57:47 GMT+0000",
+              "CTATitle": "View File",
+              "jcr:lastModified": "Thu Dec 18 2025 18:24:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgb(255,181,0)"
+            }
+          }
+        }
+      },
+      "tabs_parsys2": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabPosId": 2,
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Related products</span></span></span></span></h2>\r\n",
+          "jcr:lastModified": "Wed Jun 03 2026 20:44:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "featuredcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "titleFont": "font-egyptienne",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "hideButton": "false",
+          "jcr:lastModified": "Mon Dec 15 2025 16:08:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/customizable",
+          "hideDescription": "false",
+          "hideThumbnail": "false",
+          "featuresCta": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/surgical-technologies/products/safeair-compact-evacuator"
+            },
+            "2": {
+              "jcr:primaryType": "nt:unstructured",
+              "cta": "/content/stryker/us/en/surgical-technologies/products/neptune-waste-management-system"
+            }
+          }
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Mon Dec 15 2025 20:53:37 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Mon Dec 15 2025 21:43:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "3",
+      "jcr:createdBy": "courtney.dickens@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Dec 15 2025 16:10:28 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-3vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">How can we help you?</span></span></span></span></h2>\r\n",
+      "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Together, our goal is zero. Partner with us today to start your journey.</span></span></span></span>",
+      "jcr:lastModified": "Wed Jun 03 2026 20:45:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "rightPadding": "5",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_2_3_1_3_copy_665899628": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:45:01 GMT+0000",
+      "jcr:lastModified": "Mon Jun 01 2026 17:45:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy_cop": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "courtney.dickens@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3248",
+          "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+          "jcr:created": "Mon Dec 15 2025 16:25:28 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Thu Feb 12 2026 22:02:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Jun 01 2026 17:46:32 GMT+0000",
+          "text": "Quick links Contact information Customer service Surgical technologies homepage Be in the know. Follow us on social media and be among the first to gain information about our technologies, education opportunities and more.",
+          "jcr:lastModified": "Mon Jun 01 2026 17:46:51 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/quick-links/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/footer-contact/quick-links/master"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Jun 01 2026 17:46:32 GMT+0000",
+      "text": "Resources Explore Surgical technologies Newsroom Videos Learn Training and education Information for use Support Contact information",
+      "jcr:lastModified": "Mon Jun 01 2026 17:47:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/surgical-technologies/en/footer_contact/resources/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/surgical-technologies/en/footer-contact/resources/master"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 15 2025 16:05:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "bottomPadding": "5",
+    "topPadding": "5",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Mon Dec 15 2025 21:38:28 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 15 2025 16:05:51 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 15 2025 16:05:55 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 15 2025 16:05:58 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "deactiveNav": "true",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Mon Dec 15 2025 21:39:35 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "courtney.dickens@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*Zero splash and spills, zero airborne contaminants, zero smoke, zero retained surgical sponges, zero blind spots, zero trips &amp; falls, zero drug diversion, and zero doubt messages are not guarantees and are aspirational in nature.</p>\r\n<p>† PhotonBlade 3 does not offer smoke evacuation capabilities.</p>\r\n<ol>\r\n<li>Canicoba ARB. Surgical smoke and occupational health. Ann Transl Med. 2022 Dec;10(24):1303. doi: 10.21037/atm-22-5631. PMID: 36660725; PMCID: PMC9843373.</li>\r\n<li>In a blinded study of 17 surgeons, PhotonBlade 3 SE smoke evacuation integration and performance rated an average of 4.8 out of 5. Data on file.</li>\r\n<li>Evidence: Engineering Test Report: 2401515-01 Rev A. When compared to PlasmaBlade x3 Light, testing date October 2-4, 2024.</li>\r\n<li>In a blinded survey of 17 surgeons, PhotonBlade 3 SE thermal spread and surrounding tissue damage was rated an average of 4.5 out of 5. Data on file.&nbsp;</li>\r\n<li>An average of 97% smoke removal was noted in engineering testing when connected to Stryker Compact Smoke Evacuation Unit and the Stryker Neptune Waste Management System. Data on File.</li>\r\n<li>Data on file. Engineering Test Report: Test Report S12086.240769 (with Neptune) , Test Report S12086.240696 (with Compact), Polaris test report S2579.232113, and HFE report (D0000300823).</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Tue Dec 16 2025 14:49:39 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/surgical-technologies/products/photonblade3/images/PhotonBlade 3 SE header.png"
+  }
+}

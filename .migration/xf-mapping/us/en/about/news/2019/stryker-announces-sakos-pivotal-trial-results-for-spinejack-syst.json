@@ -1,0 +1,129 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Stryker announces SAKOS pivotal trial results for SpineJack System published in The Spine Journal",
+  "jcr:versionHistory": "892f87a6-f374-41cc-be8b-1b872558bbf4",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "6960ff5c-6359-4d29-b9a0-687321a3c25f"
+  ],
+  "contentID": "D0000019424",
+  "lastPublished": "Wed Sep 25 2019 20:05:37 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Sep 25 2019 20:05:37 GMT+0000",
+  "cq:lastModified": "Wed Sep 25 2019 20:05:22 GMT+0000",
+  "jcr:baseVersion": "6960ff5c-6359-4d29-b9a0-687321a3c25f",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/product-bulletins"
+  ],
+  "jcr:lastModified": "Wed Sep 25 2019 20:05:22 GMT+0000",
+  "jcr:uuid": "067fb750-0466-41e9-a761-4beef1a6380d",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 25 2019 17:14:53 GMT+0000",
+      "jcr:lastModified": "Wed Sep 25 2019 17:14:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 25 2019 17:12:03 GMT+0000",
+      "jcr:lastModified": "Wed Sep 25 2019 17:12:03 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 25 2019 17:12:10 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">About Styker</span></span></p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Orthopaedics, Medical and Surgical, and Neurotechnology and Spine that help improve patient and hospital outcomes. More information is available at <span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/index.html\">www.stryker.com</a></span>.</p>\n",
+          "jcr:lastModified": "Wed Sep 25 2019 17:14:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_1320751789": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 25 2019 17:13:02 GMT+0000",
+      "jcr:lastModified": "Wed Sep 25 2019 17:13:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Wed Sep 25 2019 17:13:07 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Media contact</span></span></p>\n<p>Jennifer Lentner<br>\nSr. Director, Marketing Communications<br>\njennifer.lentner@stryker.com</p>\n",
+          "jcr:lastModified": "Wed Sep 25 2019 17:14:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Wed Sep 25 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-Sep-2019",
+    "jcr:lastModified": "Wed Sep 25 2019 17:06:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "eventlocationproperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "jcr:lastModified": "Wed Sep 25 2019 19:39:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/eventlocationproperties"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "text": "<p>Stryker announced today the publication of the SAKOS pivotal trial results for the SpineJack implantable fracture reduction system (SpineJack System) in The Spine Journal.<sup>1</sup> The SAKOS trial was a prospective, multicenter, randomized study designed to support a non-inferiority finding for use of the SpineJack system versus balloon kyphoplasty (BKP) in the treatment of painful osteoporotic vertebral compression fractures (VCF). Based upon these study results, the SpineJack system successfully demonstrated non-inferiority to BKP with an excellent risk/benefit profile for up to 12 months. This trial further provided compelling evidence to establish the superiority of the SpineJack system over BKP with regards to absence of adjacent level fractures (ALF) and midline vertebral body (VB) height restoration at both 6 and 12 months after the procedure.</p>\n<p>For over 35 years, osteoporotic VCF treatment has primarily focused on pain management. Traditional fracture treatments have overlooked reduction, fixation and restoration due to the limits of the instrumentation. The SpineJack system, which is part of Stryker’s Interventional Spine portfolio, finally gives physicians the tools to take control of the procedure, restore the anatomy and reduce the possibility of future adjacent level fractures in patients.</p>\n<p>The surgical technique involves a short series of minimally invasive steps performed via a bipedicular approach. Using X-ray guidance, two expandable implants are inserted into the fractured vertebrae through small incisions. The implants are then expanded, restoring the vertebral anatomy and creating a cavity supported by the expanded titanium structure. The area surrounding the implants is then filled with bone cement to stabilize the fracture. As it hardens, the bone cement forms an internal cast that holds the vertebra in place. Following the procedure, most incisions are simply covered with bandages.</p>\n<p>The SpineJack system, which expands Stryker’s already best-in-class VCF treatment portfolio, has been commercially available in Europe since 2010, with more than 70,000 units implanted in patients worldwide. The system received FDA 510k clearance on August 30, 2018. In addition to the AutoPlex cement mixer and delivery system, the iVAS Elite balloon system, and the AVAflex curved balloon system, the SpineJack system provides physicians the flexibility to customize their VCF treatment approach for each individual patient in an effort to generate the best outcomes possible.</p>\n<p>The SAKOS study can be found <span class=\"standalone-link\"><a href=\"https://www.thespinejournalonline.com/article/S1529-9430(19)30879-4/pdf\">here</a></span>. For more information about the SpineJack system, please visit Stryker at booth number 4011 at the NASS annual meeting.</p>\n",
+    "jcr:lastModified": "Wed Sep 25 2019 17:11:46 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>1. Noriega D et al. A prospective, international, randomized, non-inferiority study comparing an implantable titanium vertebral augmentation device versus balloon kyphoplasty in the reduction of vertebral compression fractures (SAKOS study). The Spine Journal. 2019. doi: 10.1016/j.spinee.2019.07.009.</p>\r\n",
+    "jcr:lastModified": "Wed Sep 25 2019 17:10:50 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/spinejack_implants_group_final-ddm.jpeg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "srcFileRef": "/content/dam/stryker/about/news/images/spinejack_implants_group_final-ddm.jpeg",
+    "jcr:lastModified": "Wed Sep 25 2019 17:16:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  }
+}

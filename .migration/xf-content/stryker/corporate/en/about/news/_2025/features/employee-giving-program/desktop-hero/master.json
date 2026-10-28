@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Desktop hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "6858d8e9-d575-4dd7-a76e-63ba2ed46e0f",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "1885a49f-aca8-412f-87d4-fcf74a55d788"
+  ],
+  "lastPublished": "Tue Nov 25 2025 20:32:19 GMT+0000",
+  "jcr:created": "Tue Nov 25 2025 20:32:21 GMT+0000",
+  "cq:lastReplicated": "Tue Nov 25 2025 20:32:25 GMT+0000",
+  "cq:lastModified": "Mon Nov 24 2025 16:39:00 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "1885a49f-aca8-412f-87d4-fcf74a55d788",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Nov 25 2025 20:32:19 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "d038a960-16bf-448d-8968-df96890a936e",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Nov 21 2025 00:49:42 GMT+0000",
+      "alt": "Stryker employee giving",
+      "srcFileRef": "/content/dam/stryker/about/news/2025/features/stryker-employee-giving-program/stryker-employee-giving.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Nov 24 2025 16:38:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

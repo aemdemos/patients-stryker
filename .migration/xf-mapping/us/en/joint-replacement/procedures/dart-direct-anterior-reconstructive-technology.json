@@ -1,0 +1,1194 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "DART Direct Anterior Reconstructive Technology",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "961d73b4-715d-47f9-a162-f1ec2e2f1b45",
+  "cq:template": "/apps/stryker/templates/procedure-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "6d4893aa-ce59-4d13-9760-7b4eec2d7f98"
+  ],
+  "contentID": "DAA-WC-17_33496",
+  "lastPublished": "Tue Jan 06 2026 20:03:24 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jan 06 2026 20:03:24 GMT+0000",
+  "cq:lastReplicated": "Tue Jan 06 2026 20:03:27 GMT+0000",
+  "cq:lastModified": "Tue Jan 06 2026 20:03:05 GMT+0000",
+  "jcr:baseVersion": "6d4893aa-ce59-4d13-9760-7b4eec2d7f98",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 16:57:56 GMT+0000",
+  "cq:tags": [
+    "stryker:custom/joint-replacements/procedure",
+    "stryker:business-unit/joint-replacement",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/procedure",
+    "stryker:specialty/hip-joint-replacement",
+    "stryker:capability/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Mar 20 2024 13:51:06 GMT+0000",
+  "jcr:uuid": "b4c5f929-9c7d-424a-ac6f-23d7f9fe6f15",
+  "sling:resourceType": "stryker/components/structure/pages/procedure-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 18 2022 13:32:36 GMT+0000",
+      "jcr:lastModified": "Tue Oct 18 2022 13:32:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_25878837": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/carousel/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/carousel/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/carousel/mobile",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "mobileOverlay": "mobile_Overlay",
+          "verticalMargin": "10",
+          "jcr:created": "Tue Oct 18 2022 13:50:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Tue Nov 18 2025 15:01:39 GMT+0000",
+          "marginRight": "60",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "CTAOpenInNewTab": "true",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "ctaLinkType": "none",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Tue Oct 25 2022 18:00:08 GMT+0000",
+              "CTAImageAltText": "9711_DART wordmark-01",
+              "jcr:lastModified": "Wed Mar 20 2024 19:24:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(76,125,122,1)",
+              "CTAImageFileReference": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/NEW_DART-wordmark-03.png"
+            },
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "leftPadding": "0",
+              "topPadding": "0",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Fri Oct 28 2022 13:52:41 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-1-5-vw\"><span style=\"color: rgb(0,0,0);\">Designed for surgeons<br />\r\n </span>Targeted for your DA approach</span></span></span><br />\r\n</h1>\r\n",
+              "line2": "DART is engineered to redefine and elevate your entire surgical experience to give you what you need, where you need it.",
+              "jcr:lastModified": "Mon Mar 25 2024 14:43:13 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "0",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Oct 28 2022 14:43:45 GMT+0000",
+      "title": "Procedural overview",
+      "jcr:lastModified": "Fri Oct 28 2022 14:55:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Dec 07 2023 14:02:51 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Procedural overview</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:24:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_2098027320": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 18 2022 18:58:03 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-2em\"><span style=\"color: #ffb500;\">DA</span>RT</span></span></p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">Direct Anterior</span> Reconstructive Technology</span></span></p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 19:36:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 18 2022 18:59:44 GMT+0000",
+      "jcr:lastModified": "Tue Oct 18 2022 18:59:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Oct 18 2022 18:56:38 GMT+0000",
+          "alt": "Gold_Hip_214076914",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/Gold_Hip_214076914.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Oct 18 2024 16:58:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Oct 18 2022 18:56:44 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-25em\">The Direct Anterior approach is one of the minimally invasive techniques used in total hip replacement surgery. Continuing orthopaedic experience suggests that this technique may be associated with reduced muscle damage and pain, as well as faster post-operative recovery.</span></span></p>\n<p><span class=\"fontsize-1em\"><span class=\"fontsize-1-25em\">Traditional hip replacement techniques involve operating from the side (lateral) or the back (posterior) of the hip, which requires a disturbance of the joint and connecting tissues and an incision approximately 8-12 inches long.<sup>2</sup> In comparison, the Direct Anterior approach requires an incision that may be 3-4 inches in length and located at the front of the hip.<sup>2</sup> In this position, the surgeon does not need to detach any of the muscles or tendons.<sup>2</sup> The table below illustrates the key potential benefits between traditional replacement and the Direct Anterior approach.</span></span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:24:14 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td colspan=\"2\" style=\"text-align: center;\"><b>Surgical Considerations</b></td>\n</tr><tr><td><b>Traditional Hip Replacement</b></td>\n<td><b>Direct Anterior Approach</b></td>\n</tr><tr><td>8–12-inch incision²</td>\n<td>May be a 3–4-inch incision²</td>\n</tr><tr><td>Surgical approach - side (lateral) or back (posterior)²</td>\n<td>Surgical approach - front (anterior)²</td>\n</tr><tr><td>Disturbance of the joint and connecting tissues²</td>\n<td>Associated with reduced muscle damage²</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Tue Oct 18 2022 19:01:47 GMT+0000",
+          "jcr:lastModified": "Thu Mar 13 2025 18:24:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Thu Dec 14 2023 21:01:46 GMT+0000",
+      "jcr:lastModified": "Thu Dec 14 2023 21:01:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_png",
+          "linkExternal": "https://www.stryker.com/content/dam/commercial/usa/joint-replacement/hip/JR-DAA-SURGP-1094638-EN_US.pdf",
+          "jcr:created": "Fri Jun 10 2022 18:13:45 GMT+0000",
+          "alt": "Direct Anterior Approach Surgical Technique",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/JR-Hip_Dart_ACIIDA-SP-1_Rev-7_33502.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Sep 18 2024 14:38:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaDamLink": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/resources/ACIIDA_SP_1 (6).pdf",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jun 09 2022 17:53:07 GMT+0000",
+          "CTATitle": "DOWNLOAD NOW",
+          "ctaExternalLink": "https://cdn.stryker.com/SYKGCSDOC-2-37135.pdf",
+          "jcr:lastModified": "Thu Dec 14 2023 21:19:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "0",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Jun 09 2022 17:49:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h3><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\"><sup><span class=\"fontsize-2vw\">View the DART Surgical Technique</span></sup></span></span></span></h3>\r\n",
+          "jcr:lastModified": "Thu Dec 14 2023 21:21:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 16:27:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 16:27:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "section_title_1318395190": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "videos",
+      "jcr:created": "Thu Dec 07 2023 14:07:12 GMT+0000",
+      "title": "Videos",
+      "jcr:lastModified": "Thu Dec 07 2023 14:07:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_457150557": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "leftPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Dec 07 2023 14:02:51 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Videos</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:21:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_1034429311": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 20:40:49 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 20:40:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols3_1459449499": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Dec 07 2023 16:15:39 GMT+0000",
+      "jcr:lastModified": "Thu Dec 07 2023 16:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/bikini-incision-for-direct-anterior-reconstructive-technique-darttm-total-hip-arthroplasty/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "Bikini Incision for Direct Anterior Reconstructive Technique (DART™) Total Hip Arthroplasty",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/Bikini Incision for Direct Anterior Reconstructive Technique DART Total Hip Arthroplasty Thumbnail.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Mon Jun 10 2024 21:28:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Bikini Incision for Direct Anterior Reconstructive Technology (DART™) Total Hip Arthroplasty</span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 27 2024 15:57:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/bikini-incision-for-direct-anterior-reconstructive-technique-darttm-total-hip-arthroplasty/",
+          "jcr:lastModified": "Thu Dec 07 2023 15:58:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/direct-anterior-approach-for-primary-tha-cadaveric-surgical-video-featuring-insigniar/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "Direct Anterior Approach for Primary THA featuring Insignia®",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/Direct Anterior Approach for Primary THA featuring Insignia Thumbnail.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Mon Jun 10 2024 21:30:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Direct Anterior Approach for Primary THA: Cadaveric Surgical video featuring Insignia<sup>®</sup></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 07 2023 16:27:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/direct-anterior-approach-for-primary-tha-cadaveric-surgical-video-featuring-insigniar/",
+          "jcr:lastModified": "Thu Dec 07 2023 16:25:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/cabling-with-the-dall-milesr-cable-system-through-a-direct-anterior-approach/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "Cabling with the Dall-Miles® Cable System through a Direct Anterior Approach",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/Cabling with the Dall-Miles Cable System through a Direct Anterior Approach Thumbnail.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Mon Jun 10 2024 21:28:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Cabling with the Dall-Miles® Cable System through a Direct Anterior Approach</span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 07 2023 16:26:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/cabling-with-the-dall-milesr-cable-system-through-a-direct-anterior-approach/",
+          "jcr:lastModified": "Thu Dec 07 2023 16:26:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols3_1591395678": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 16:32:18 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 16:32:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/direct-anterior-total-hip-arthroplasty-3/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "JR-Hip-DAA-VA-20_34479-tmb",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/videos/JR-Hip-PivotGuardian-tmb.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Dec 08 2023 14:50:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Direct Anterior Total Hip Arthroplasty</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 08 2023 14:51:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/direct-anterior-total-hip-arthroplasty-3/",
+          "jcr:lastModified": "Fri Dec 08 2023 14:50:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/mako-total-hip-40-smartroboticstm-direct-anterior-approach/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "JR-Hip-DAA-VA-20_34479-tmb",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/videos/JR-Hip-MKOTHA-VA-25_Rev-1_29502-tmb.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Dec 08 2023 14:51:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Mako Total Hip 4.0 - SmartRobotics™ Direct Anterior Approach</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 08 2023 14:51:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/mako-total-hip-40-smartroboticstm-direct-anterior-approach/",
+          "jcr:lastModified": "Fri Dec 08 2023 14:51:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/robotic-arm-assisted-direct-anterior-tha-utilizing-ipsilateral-pin-placement/",
+          "jcr:created": "Wed Dec 06 2023 15:53:32 GMT+0000",
+          "alt": "JR-Hip-DAA-VA-20_34479-tmb",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/videos/JR-Hip-JR-MTKA-VID-698600-tmb.png",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Fri Dec 08 2023 14:52:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Thu Dec 07 2023 16:15:59 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Robotic-arm Assisted Direct Anterior THA utilizing Ipsilateral Pin Placement</span></span></p>\n",
+          "jcr:lastModified": "Fri Dec 08 2023 14:52:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Jul 20 2023 18:03:47 GMT+0000",
+          "CTATitle": "View on VuMedi",
+          "ctaDeepLinkID": "contact",
+          "ctaExternalLink": "https://www.vumedi.com/channel/stryker/tab/hip-9/video/robotic-arm-assisted-direct-anterior-tha-utilizing-ipsilateral-pin-placement/",
+          "jcr:lastModified": "Fri Dec 08 2023 14:52:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols_1340385004": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Oct 28 2022 14:49:33 GMT+0000",
+      "jcr:lastModified": "Fri Oct 28 2022 14:49:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_1441600335": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "medical-education",
+      "jcr:created": "Fri Oct 28 2022 14:44:39 GMT+0000",
+      "title": "Medical Education",
+      "jcr:lastModified": "Tue Jan 06 2026 20:03:05 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "leftPadding": "1",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Medical Education </span></span></span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:21:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols_2077751456": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 13 2023 15:55:56 GMT+0000",
+      "jcr:lastModified": "Wed Dec 13 2023 15:55:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_2098027320_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Tue Oct 18 2022 18:58:03 GMT+0000",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Medical education</span></span>&nbsp;<span style=\"color: #ffb500;\">tailored to you</span></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 14 2023 21:36:23 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 13 2023 15:56:02 GMT+0000",
+          "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Stryker delivers a robust direct anterior education and trainings on the safe and effective use of our products, incorporating the latest and most relevant clinical insights and procedural innovations. With our faculty experts from all around the country, our tailored programs are designed to help enhance and elevate surgeon skills at any point of your direct anterior learning curve!</span></span></p>\n",
+          "jcr:lastModified": "Wed Dec 13 2023 15:57:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_431866364": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 13 2023 15:49:00 GMT+0000",
+      "jcr:lastModified": "Wed Dec 13 2023 15:49:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "stephen.brown@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Mon Jun 26 2017 10:56:24 GMT-0400",
+          "text": "<h4><span class=\"fontsize-1-5em\">Contact us</span></h4>\n<h4>Ready to explore more about the&nbsp;<span style=\"color: #ffffff;\"><span style=\"color: #ffb500;\">Direct Anterior approach?</span></span><br>\n</h4>\n<p><span class=\"fontsize-1-25em\">Complete the form and a Stryker representative will reach out&nbsp;with more information.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">This contact form is intended for healthcare professionals. If you’re looking to contact us about patient materials, <a href=\"https://patients.stryker.com\"><span class=\"futura-bold\">please go here</span></a>.</span></p>\n",
+          "jcr:lastModified": "Thu Mar 13 2025 18:24:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Oct 18 2022 18:56:38 GMT+0000",
+          "alt": "Gold_Hip_214076914",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/AdobeStock_150608240.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 19 2022 13:23:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "david.gilmour@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "3087",
+          "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+          "jcr:created": "Wed Dec 13 2023 15:49:43 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Dec 13 2023 15:50:13 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "section_title_1951840734": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Oct 28 2022 14:45:26 GMT+0000",
+      "title": "Implants",
+      "jcr:lastModified": "Fri Oct 28 2022 14:56:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Dec 07 2023 14:02:51 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Implants</span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:21:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "experiencefragment_315301438": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:37:12 GMT+0000",
+      "text": "Femoral Insignia® The Insignia hip stem leverages more than 1,300 CT scans, utilizing a 3D modeling and analytics system, Stryker Orthopedic Modeling and Analytics (SOMA) bone database, and is engineered to optimize fit and function.1 Founded on Stryker’s signature principles of implant fit, Insignia® is your collared, metaphyseal-filling hip stem designed specifically for muscle-sparing approaches. Learn More Accolade II Morphometric wedge femoral stem, an evolution of your conventional tapered wedge stem that is SOMA-designed for today’s diverse THA patient population. Learn More Exeter The Exeter cemented femoral hip system is designed for surgeons who are looking to perform all hip indications - primary, revision and fracture - with a single proven system. Learn More Restoration® Modular Make the most of your revision cases with a clinically-backed platform that is designed to leverage versatility and simplicity to help you achieve desired revision THA outcomes. Learn More Acetabular Trident II Have confidence in a powerful combination–a system that builds on the legacy that has defined our Trident brand for more than two decades, paired with the latest additive manufactured Tritanium In-Growth Technology or PureFix HA. Learn More Modular Dual Mobility Modular Dual Mobility is a premium acetabular offering designed to help prevent dislocation. The system builds upon our Anatomic Dual Mobility offering by providing you a choice of fixation surfaces and screwhole configurations for primary or revision THA. Learn More",
+      "jcr:lastModified": "Tue Oct 25 2022 18:53:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/compatible-implants/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/compatible-implants/master"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Oct 28 2022 14:49:24 GMT+0000",
+      "jcr:lastModified": "Fri Oct 28 2022 14:49:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_360151399": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Oct 28 2022 14:46:13 GMT+0000",
+      "title": "Mako SmartRobotics™",
+      "jcr:lastModified": "Fri Oct 28 2022 14:56:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Mako SmartRobotics<sup>™</sup></span></span></span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:21:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "largeheadline_copy_975755977": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Elevate your Direct Anterior approach with&nbsp;<span style=\"color: #ffb500;\">Mako Total Hip</span></span></span></span></span></span>",
+      "jcr:lastModified": "Tue Oct 25 2022 18:18:14 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1_3_2_3_1117253982": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 13:55:44 GMT+0000",
+      "jcr:lastModified": "Wed Oct 19 2022 13:55:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_png",
+          "jcr:created": "Wed Oct 19 2022 13:44:09 GMT+0000",
+          "alt": "MicrosoftTeams-image (2)1",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/MicrosoftTeams-image (2) copy.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Oct 19 2022 13:55:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 19 2022 13:55:59 GMT+0000",
+          "text": "<p>It all starts with a CT scan that creates a 3D image of your patient’s unique anatomy. This information allows you to create your patient’s plan and assess and balance the joint.</p>\n",
+          "jcr:lastModified": "Wed Oct 19 2022 20:27:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "ctaLinkType": "ext",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Wed Oct 19 2022 13:57:32 GMT+0000",
+          "ctaExternalLink": "https://www.stryker.com/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html",
+          "jcr:lastModified": "Wed Oct 19 2022 13:58:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)",
+          "links": {
+            "jcr:primaryType": "nt:unstructured",
+            "1": {
+              "jcr:primaryType": "nt:unstructured",
+              "externalLink": "https://www.stryker.com/us/en/joint-replacement/systems/Mako_SmartRobotics_Overview.html",
+              "linkNewWindow": "true",
+              "linkNewWindowOverride": "0",
+              "linkText": "READ MORE",
+              "externalLinkType": "ext"
+            }
+          }
+        }
+      }
+    },
+    "section_title_1894527495": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Oct 28 2022 14:47:25 GMT+0000",
+      "title": "Instrumentation",
+      "jcr:lastModified": "Fri Oct 28 2022 14:56:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c_2138593590": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Instrumentation</span></span></span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:22:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "largeheadline_copy_c_1937232124": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(0,0,0);\">Direct Anterior streamlined <span style=\"color: #ffb500;\">instrumentation</span></span></span></span></span></span>",
+      "jcr:lastModified": "Tue Oct 25 2022 19:01:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "experiencefragment_2035839511": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:04:10 GMT+0000",
+      "text": "Femoral tray system Stryker’s femoral tray system is built for efficiency. One general hip instrument tray is compatible across three femoral stems (Insignia, Accolade II, Exeter), allowing for minimal tray usage and cross-compatibility. Streamlined instrumentations and fewer trays can help lower sterilization costs and create a system more suitable for today’s health care environment, including Ambulatory Surgery Centers (ASC). Broach handles Broach handles feature a lever that is designed to actively secure the broach. This designis meant to minimize potential toggle and facilitate reproducibility of bone preparation.Each handle is fully compatible with Accolade II, Exeter, and Insignia femoral systems.",
+      "jcr:lastModified": "Tue Oct 25 2022 19:05:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/instrumentation/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/instrumentation/master"
+    },
+    "section_title_1275180202": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Oct 28 2022 14:48:58 GMT+0000",
+      "title": "Patient Positioning Equipment",
+      "jcr:lastModified": "Fri Oct 28 2022 14:56:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_525834496": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Patient Positioning Equipment</span></span></span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:22:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_2098027320_copy_2081091912": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 18 2022 18:58:03 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\"><span style=\"color: #000000;\">Pivot Guardian</span>&nbsp;Direct</span></span></span><br>\n</p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 19:53:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "experiencefragment_986661113": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:08:58 GMT+0000",
+      "text": "",
+      "jcr:lastModified": "Tue Oct 25 2022 19:10:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/sports-medicine/en/products/pivot_guardian/total-hip-system/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/sports-medicine/en/products/pivot-guardian/total-hip-system/master"
+    },
+    "text_2145405960": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Oct 19 2022 15:15:40 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span style=\"color: #000000;\"><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">State-of-the-art surgical table accessories spanning six hip procedures.</span></span></span></p>\n<ul>\n<li><span style=\"color: #000000;\"><span class=\"fontsize-1-25em\">Hip arthroscopy</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Direct Anterior total hip arthroplasty</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Hip pinning</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Hip fractures</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Periacetabular osteotomy (PAO)</span></span></li>\n<li><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Derotational femoral osteotomy (DFO)</span></span></li>\n</ul>\n<p><a href=\"https://www.stryker.com/us/en/sports-medicine/products/pivot-guardian-distraction-system.html\"><span class=\"standalone-link\"><span class=\"fontsize-1-25em\">Read more</span></span></a></p>\n",
+      "jcr:lastModified": "Wed Mar 20 2024 19:53:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "resources": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/resources/Pivot Guardian brochure.pdf",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Oct 19 2022 15:16:48 GMT+0000",
+      "jcr:lastModified": "Fri Dec 08 2023 15:02:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "sectionseparator_257715126": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "david.gilmour@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 20:53:41 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 20:53:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "cols_1640157521": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Oct 28 2022 14:52:06 GMT+0000",
+      "jcr:lastModified": "Fri Oct 28 2022 14:52:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "largeheadline_copy_5": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 18:06:05 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<h2><span style=\"color: rgb(133,69,138);\"><span class=\"futura-bold\"><span style=\"color: rgb(255,255,255);\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(237,238,236);\"><span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(0,0,0);\">Stryker’s Ambulatory Surgery Center (ASC)</span></span></span></span></span></span></span></h2>\r\n",
+      "jcr:lastModified": "Mon Mar 25 2024 17:22:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgb(237,238,236)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Nov 01 2022 15:58:30 GMT+0000",
+      "text": "Whatever the case, we've got you covered. The strategy. The solution. The financing. Learn more",
+      "jcr:lastModified": "Thu Dec 07 2023 13:55:18 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/asc-carousel/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/asc-carousel/master"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:26:24 GMT+0000",
+      "jcr:lastModified": "Tue Oct 25 2022 19:26:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "text_1998605263": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:24:00 GMT+0000",
+      "text": "<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-25em\">At Stryker, we have more of what you need to build and grow your ASC.&nbsp;By giving you access to our deep portfolio of products, guides who understand the ASC landscape, and ongoing support that makes building and growing feel simple, we deliver tailored solutions&nbsp;for where your ASC is today and could be tomorrow.</span></span></p>\n",
+      "jcr:lastModified": "Tue Oct 25 2022 19:27:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "text_100376495": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:24:37 GMT+0000",
+      "text": "<p style=\"text-align: center;\"><span class=\"fontsize-1-75em\"><span class=\"urw-egyptienne\">The expertise. The products. The financing. The implementation.<br>\n </span><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Stryker's ASC business delivers it all.</span></span></span></p>\n",
+      "jcr:lastModified": "Fri Oct 28 2022 13:18:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "david.gilmour@stryker.com",
+      "jcr:created": "Tue Oct 25 2022 19:27:56 GMT+0000",
+      "hideBorder": "true",
+      "type": "typePath",
+      "loopVal": "1",
+      "jcr:lastModified": "Wed Dec 20 2023 14:42:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/videos/Integrated Surgical Services and Stryker's ASC business_full.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "hannah.white@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/Integrated Surgical Services and Strykers ASC business_full-1-AVS",
+        "urlModifiers": "",
+        "viewerPresetPath": "",
+        "linkTarget": "_self",
+        "jcr:lastModified": "Tue Oct 25 2022 19:42:56 GMT+0000",
+        "s7PresetType": "viewer",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "enablehd": "never",
+        "s7ViewerPresetPath": "",
+        "viewermodfiers": "VideoPlayer.posterimage=stryker/ASC video thumbnail"
+      }
+    },
+    "carouselslidegroup_664084669": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Oct 28 2022 14:54:07 GMT+0000",
+      "jcr:lastModified": "Fri Oct 28 2022 14:54:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/procedures/dart_direct_anterior/asc-gradient-carousel/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/procedures/dart-direct-anterior/asc-gradient-carousel/master",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "30",
+          "jcr:created": "Wed Oct 26 2022 19:30:07 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Oct 26 2022 19:58:42 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "10",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "jcr:lastModifiedBy": "hannah.white@stryker.com",
+              "jcr:created": "Wed Oct 26 2022 19:57:04 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">Let's create solutions<br />\r\n</span><span class=\"futura-bold\">that build and grow your ASC.</span></span>",
+              "jcr:lastModified": "Wed Oct 26 2022 19:58:02 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/procedures/dart-direct-anterior-reconstructive-technique/Gold_Hip_214076914.png"
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 18 2022 13:34:37 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ]
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "false",
+    "jcr:lastModified": "Mon Mar 25 2024 14:53:45 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 18 2022 13:38:06 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 18 2022 13:38:10 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Tue Oct 18 2022 13:38:14 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>References</p>\r\n<ol>\r\n<li>Post ZD, Orozco F, Diaz-Ledezma C, et al. Direct anterior approach for total hip arthroplasty: Indications, techniques, and results. JAAOS. 2014;11(9):595-603.</li>\r\n<li>Wenz J, Gurkan I, Jibodh S. Mini-incision total hip arthroplasty: A comparative assessment of perioperative outcomes. Orthopedics. 2002;25(10):1031-4</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Oct 19 2022 15:19:10 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

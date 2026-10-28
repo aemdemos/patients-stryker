@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero Mobile",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "611de36c-8c83-4ee0-ae73-707ff039eab3",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "5c4c4190-8578-46e1-8345-3b93ca1cfb42"
+  ],
+  "lastPublished": "Mon Oct 21 2024 15:44:34 GMT+0000",
+  "jcr:created": "Mon Oct 21 2024 15:44:35 GMT+0000",
+  "cq:lastReplicated": "Mon Oct 21 2024 15:44:39 GMT+0000",
+  "cq:lastModified": "Mon Oct 21 2024 15:44:09 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "5c4c4190-8578-46e1-8345-3b93ca1cfb42",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Oct 21 2024 15:44:34 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "971162d3-2970-4bfc-90b8-b16f43c44e69",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Thu Sep 19 2024 17:11:12 GMT+0000",
+      "alt": "business woman in black suit wearing Vocera Smartbadge",
+      "srcFileRef": "/content/dam/stryker/acute-care/vocera/workplace-communication-solutions/vocera_workplace-communication-hero_1200x680.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Mon Oct 21 2024 15:44:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

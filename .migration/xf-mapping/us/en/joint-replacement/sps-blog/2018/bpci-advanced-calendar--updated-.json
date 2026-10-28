@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "BPCI Advanced calendar – updated!",
+  "jcr:versionHistory": "74446fc7-0880-4ec2-a2a4-eb5271a57b2e",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+  "jcr:predecessors": [
+    "ee243456-a4b2-4701-ac2d-c003c852cf92"
+  ],
+  "contentID": "Blog10_718",
+  "lastPublished": "Mon Jul 23 2018 10:23:29 GMT+0000",
+  "jcr:created": "Mon Jul 23 2018 10:23:29 GMT-0400",
+  "cq:lastModified": "Sat Jul 21 2018 16:49:00 GMT-0400",
+  "jcr:baseVersion": "ee243456-a4b2-4701-ac2d-c003c852cf92",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Wed Jul 18 2018 10:41:13 GMT-0400",
+  "jcr:uuid": "84481ae2-1850-45bf-89d4-f2e3935bf58c",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:lastModifiedBy": "anna.kroll@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "publishDate": "Thu Jul 19 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "19-Jul-2018",
+    "jcr:lastModified": "Wed Jul 18 2018 10:36:05 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "srcFileRef": "/content/dam/stryker/joint-replacement/sps_blog/Updated Communication Timeline Slide July no title.jpg",
+    "jcr:lastModified": "Wed Jul 18 2018 10:36:29 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This material and/or presentation is provided for guidance and/or illustrative purposes only and should not be construed as a guarantee of future results or a substitution for legal advice and/or medical advice from a healthcare provider. Stryker Performance Solutions does not practice medicine and assumes no responsibility for the administration of patient care.</p>\r\n<p>©2018 Stryker’s Performance Solutions Reproduction or distribution prohibited without the express written consent of Stryker’s Performance Solutions.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\r\n",
+    "jcr:lastModified": "Wed Jul 18 2018 10:39:17 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "anna.kroll@stryker.com",
+    "text": "<p><span class=\"futura-bold\"><span style=\"color: #ffb500;\">We have updated our calendar!</span></span></p>\n<p>We are moving right along and getting close to the August deadline to sign BPCI Advanced Participation Agreements and finalize clinical episode selections to submit them to CMS. We have updated our calendar to keep you up-to-date on the latest dates from CMS.</p>\n<p>As you are making your final decision on who to work with, consider the following:</p>\n<ul>\n<li>Is this a long-term opportunity to advance you knowledge, processes and data analytics to succeed not only in BPCI Advanced but in other bundles?</li>\n<li>How much risk do you have to take?</li>\n<li>What are the fees and costs to you?</li>\n<li>Are you getting accurate information from your convener to make a decision?</li>\n</ul>\n<p>If you have any questions or are confused based on the different discussions you are having with conveners, don’t hesitate to ask tough questions. We are here to give you the straight-forward and honest truth about your opportunity as well as ours in BPCI Advanced.</p>\n<p>Every episode is an opportunity...to do what's best for the patient.</p>\n<p>We have your back.&nbsp;</p>\n<p><b><a href=\"https://www.stryker.com/content/stryker/us/en/joint-replacement/sps-blog.html?cid=sps_site_blog_nav_link\"><span class=\"futura-bold\">GO BACK</span></a></b></p>\n",
+    "jcr:lastModified": "Sat Jul 21 2018 16:49:00 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  }
+}

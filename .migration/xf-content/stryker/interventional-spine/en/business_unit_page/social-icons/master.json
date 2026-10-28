@@ -1,0 +1,116 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Social icons",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "81e00c81-ec49-4e7d-be4c-cbc6b8817085",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9f16ab0f-41b7-4f75-86b0-855561a6fcf9"
+  ],
+  "lastPublished": "Wed Sep 17 2025 13:25:52 GMT+0000",
+  "jcr:created": "Wed Sep 17 2025 13:25:59 GMT+0000",
+  "cq:lastReplicated": "Wed Sep 17 2025 13:26:00 GMT+0000",
+  "cq:lastModified": "Thu Jun 05 2025 12:57:57 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "9f16ab0f-41b7-4f75-86b0-855561a6fcf9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Sep 17 2025 13:25:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "4a1d15ee-ab0e-4610-87a0-b323fc63f15f",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "vince.shannon@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_1929_338284025": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:lastModified": "Thu May 25 2023 19:24:58 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "standaloneimage_1929_3382840253979060698550563": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "preset": "max_width_auto",
+        "linkExternal": "https://www.linkedin.com/company/stryker-interventional-spine/",
+        "alt": "Follow us on LinkedIn at Stryker Interventional Spine",
+        "srcFileRef": "/content/dam/stryker/ems/images/LinkedIn_100x100.png",
+        "borderColor": "rgba(76,125,122,1)",
+        "jcr:lastModified": "Thu Jun 05 2025 12:57:56 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false",
+        "cq:responsive": {
+          "jcr:primaryType": "nt:unstructured",
+          "default": {
+            "jcr:primaryType": "nt:unstructured",
+            "offset": "0",
+            "width": "2"
+          }
+        }
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    },
+    "standaloneimage_1929": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:title": "Building Block",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:lastModified": "Wed Oct 04 2023 18:06:04 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      },
+      "standaloneimage50616": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:lastModifiedBy": "vince.shannon@stryker.com",
+        "preset": "max_width_auto",
+        "linkExternal": "http://instagram.com/strykerivs",
+        "alt": "Follow us on Instagram at @StrykerIVS",
+        "srcFileRef": "/content/dam/stryker/orthopaedic-instruments/bu-landing-page/images/IG_100x100-1.png",
+        "jcr:lastModified": "Thu Jun 05 2025 12:56:39 GMT+0000",
+        "sling:resourceType": "stryker/components/content/standaloneimage",
+        "openInNewTab": "true",
+        "enableBorder": "false"
+      }
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:title": "Standalone",
+      "cq:masterBuildingBlock": true,
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Mon Dec 11 2023 22:19:55 GMT+0000",
+      "jcr:lastModified": "Mon Dec 11 2023 22:19:59 GMT+0000",
+      "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "2"
+        }
+      }
+    }
+  }
+}

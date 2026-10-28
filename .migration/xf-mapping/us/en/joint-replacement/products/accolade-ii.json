@@ -1,0 +1,635 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Femoral Hip Stem",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Accolade II",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "dcb3cae5-5ea9-4308-a423-05b7db4f33cc",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "thumbnailAltText": "Accolade II thumbnail",
+  "thumbnailFileReference": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_AccoladeII.png",
+  "jcr:predecessors": [
+    "c264ca53-87d8-44d5-bb08-7b83c1eeb90a"
+  ],
+  "contentID": "ACCII-WC-7_34335",
+  "lastPublished": "Mon Mar 25 2024 20:18:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Mar 25 2024 20:18:41 GMT+0000",
+  "cq:lastReplicated": "Mon Mar 25 2024 20:18:44 GMT+0000",
+  "cq:lastModified": "Wed Mar 20 2024 19:55:01 GMT+0000",
+  "jcr:description": "Morphometric wedge femoral stem, an evolution of your conventional tapered wedge stem that is SOMA-designed for today’s diverse THA patient population.",
+  "jcr:baseVersion": "c264ca53-87d8-44d5-bb08-7b83c1eeb90a",
+  "jcr:isCheckedOut": true,
+  "pageTitle": "Accolade II",
+  "cq:tags": [
+    "stryker:custom/joint-replacements/product-type/cementless",
+    "stryker:system/joint-replacements",
+    "stryker:system/joint-replacements/mako-total-hip",
+    "stryker:business-unit/joint-replacement",
+    "stryker:custom/joint-replacements/procedure/primary",
+    "stryker:custom/joint-replacements/product-type/implants",
+    "stryker:content-type/hcp_content",
+    "stryker:content-type/product",
+    "stryker:product/joint-replacement/accolade-ii",
+    "stryker:portfolio/orthopaedics",
+    "stryker:specialty/hip-joint-replacement",
+    "stryker:capability/joint-replacement",
+    "stryker:procedure/joint-replacements/direct-superior-approach"
+  ],
+  "jcr:lastModified": "Wed Nov 23 2022 14:59:57 GMT+0000",
+  "jcr:uuid": "6ad4db13-b402-4818-9a37-37a8b447d976",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "navTitle": "Accolade II",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Dec 01 2022 17:33:23 GMT+0000",
+      "jcr:lastModified": "Thu Dec 01 2022 17:33:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Dec 01 2022 17:35:15 GMT+0000",
+          "alt": "Accolade photo",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_AccoladeII.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Dec 01 2022 17:35:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Tue Nov 29 2022 21:05:00 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Accolade II</span>&nbsp;<br>\n Designed to fit more patients, designed to fit your approach</span></h1>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">Accolade II’s Morphometric Wedge is designed to address modern demands with novel technology by evolving conventional tapered wedge femoral stem design with size specific medial curvature to more closely fit a broad range of bone sizes and shapes of today’s patient population.<sup>1</sup></span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 01 2022 17:37:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Dec 01 2022 17:33:29 GMT+0000",
+      "jcr:lastModified": "Thu Dec 01 2022 17:33:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "SOMA",
+      "jcr:lastModified": "Fri Nov 18 2022 19:26:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1591537828": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:51:23 GMT+0000",
+      "jcr:lastModified": "Fri Nov 18 2022 19:51:23 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 18 2022 19:32:58 GMT+0000",
+          "alt": "JR_Hip_Accolade_II_Figure_02",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/JR_Hip_Accolade_II_Figure_02.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 18 2022 19:33:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 29 2022 21:08:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\">Stryker Orthopaedic Modeling and Analytics (SOMA)</span></h3>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stryker Orthopaedic Modeling and Analytics, or SOMA, is a system that enables population-based design and has powerful functionality with which to design, model, and analyze novel orthopaedic devices. Stryker utilized SOMA technology to design a novel stem building upon the conventional tapered wedge femoral design, incorporating features to allow for an enhanced implant fit in today’s patient population.<sup>3</sup></span></span></p>\n<p><span class=\"urw-egyptienne\"><span class=\"fontsize-1-5em\">By establishing an increased canal fit and fill<sup>3</sup>, Accolade II has been shown to allow for enhanced stability<sup>3</sup>, decreased intraoperative femoral fractures<sup>5</sup>, as well as survivorship and functional outcomes<sup>6,7</sup>,&nbsp;which may lead to satisfied patients.<sup>7,8</sup>&nbsp;An illustrated look at the process by which SOMA technology is employed in implant design is described below.</span></span></p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Dec 01 2022 17:43:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jun 09 2022 18:23:35 GMT+0000",
+      "jcr:lastModified": "Thu Jun 09 2022 18:23:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jun 09 2022 18:23:49 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h2><span class=\"futura-bold\"><span class=\"fontsize-3vw\">Key <span style=\"color: rgb(255,255,255);\"><span style=\"color: rgb(255,181,0);\">benefits</span></span></span></span></h2>\r\n",
+          "jcr:lastModified": "Wed Sep 07 2022 19:33:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Unique size-specific medial curvature",
+      "jcr:lastModified": "Fri Nov 18 2022 19:19:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:44:06 GMT+0000",
+      "jcr:lastModified": "Fri Nov 18 2022 19:44:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 18 2022 19:37:36 GMT+0000",
+          "alt": "JR_Hip_Accolade_II_size-specific-medial-curvature_Figure_03",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/JR_Hip_Accolade_II_size-specific-medial-curvature_Figure_03.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 18 2022 19:43:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "4",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 15:10:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Offers increasing proximal conformity to enhance primary stability.<sup>8,9</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Initial stability may be increased by creating a higher conformity between the implant and&nbsp;the femoral cortices, leading to a larger area of contract.<sup>10</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Mon Nov 28 2022 17:07:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_1446219483": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Enhanced proximal-distal proportions¹",
+      "jcr:lastModified": "Fri Nov 18 2022 19:20:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_1445503995": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:52:15 GMT+0000",
+      "jcr:lastModified": "Fri Nov 18 2022 19:52:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "4",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 15:10:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Distal-only engaged femoral stems can experience stress shielding<sup>10</sup>&nbsp;and consequently may lead to elevated failure rates due to loosening and migration.<sup>3</sup>&nbsp;In order to better mimic the femoral anatomy and avoid distal-only engagement, a more anatomic implant growth rate is needed.</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Utilizing the SOMA femoral morphology study, a more anthropomorphic proximal-distal stem growth rate was identified. This rate led to enhanced implant proportions<sup>6</sup>, as the distal geometry of Accolade II increases in size less than the proximal geometry.</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">These proportions enable Accolade II to achieve a significantly better canal fit and fill<sup>3</sup>, and Accolade II has shown a decreased incidence of distal-only engagement.<sup>3</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Nov 23 2022 17:14:58 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 18 2022 19:44:56 GMT+0000",
+          "alt": "JR_Hip_Accolade_II_enhanced-proximal-distal-proportions_Figure_04",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/JR_Hip_Accolade_II_enhanced-proximal-distal-proportions_Figure_04.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 18 2022 19:45:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_copy_2086565369": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Optimized stem length²",
+      "jcr:lastModified": "Fri Nov 18 2022 19:20:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_1490113875": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:52:30 GMT+0000",
+      "jcr:lastModified": "Fri Nov 18 2022 19:52:30 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "4",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 15:10:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">There exists a complex relationship between stem length and implant stability.<sup>11</sup>&nbsp;Shortening stem length without geometry optimization has been shown to increase the potential for micromotion<sup>11</sup>, which is a strong indicator for implant failure.<sup>12</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Accolade II utilized the SOMA database and stability analyses to establish an optimized length for each stem size which not only accommodates muscle-sparing approaches<sup>11</sup>, but demonstrated improved initial stability.<sup>4</sup></span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Nov 23 2022 17:15:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "4",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Nov 18 2022 19:44:56 GMT+0000",
+          "alt": "JR_Hip_Accolade_II_enhanced-proximal-distal-proportions_Figure_04",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/products/accoladeii/images/JR_Hip_Accolade_II_(optimized-stem-length_Figure_06.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Nov 18 2022 19:47:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_copy_2031119653": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Designed to fit your approach",
+      "jcr:lastModified": "Fri Nov 18 2022 19:20:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Wed Nov 23 2022 14:56:26 GMT+0000",
+      "jcr:lastModified": "Wed Nov 23 2022 14:56:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "1",
+          "topPadding": "1",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Sep 19 2022 15:10:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<ul>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Muscle-sparing surgical approaches continue to gain popularity, due to the potential patient benefits of faster recovery<sup>13,14</sup>, less pain<sup>13,14</sup>&nbsp;and greater satisfaction.<sup>15</sup></span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stryker’s portfolio of muscle-sparing techniques features modern instrumentation and dynamic Medical Education programs to support the Direct Anterior Reconstructive Technology (DART™) and the Direct Superior Approach.</span></span></li>\n<li><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">Stryker developed a training platform to help surgeons during the learning curve of a new surgical approach, Stryker’s Training Academy. For access to Stryker’s Training Academy, contact your local Stryker sales representative.</span></span></li>\n</ul>\n",
+          "jcr:lastModified": "Wed Mar 20 2024 19:55:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "1",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy_794338709": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Clinical performance",
+      "jcr:lastModified": "Fri Nov 18 2022 19:20:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Fri Nov 18 2022 19:50:13 GMT+0000",
+      "jcr:lastModified": "Fri Nov 18 2022 19:50:13 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-1",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-1",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Nov 18 2022 19:50:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Nov 18 2022 19:55:55 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        },
+        "carouselslide_579209719": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-2",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-2",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Nov 18 2022 19:57:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Nov 18 2022 20:02:08 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        },
+        "carouselslide_2059993971": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-3",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Nov 18 2022 20:01:42 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Nov 18 2022 20:02:32 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        },
+        "carouselslide_1391825244": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-4",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-4",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Nov 18 2022 20:01:46 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Nov 18 2022 20:02:46 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        },
+        "carouselslide_916293787": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-5",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/products/accolade-ii/clinical-performance-carousel-5",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Fri Nov 18 2022 20:01:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Fri Nov 18 2022 20:03:00 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5"
+        }
+      }
+    },
+    "section_title_copy_1283300266": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideSectionTitleComp": "true",
+      "jcr:created": "Fri Nov 18 2022 19:18:43 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Mon Nov 28 2022 16:50:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Nov 28 2022 16:51:26 GMT+0000",
+      "jcr:lastModified": "Mon Nov 28 2022 16:51:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Nov 29 2022 21:08:21 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"futura-bold\"><span class=\"fontsize-1-25em\">Attend a&nbsp;<span style=\"color: #ffb500;\">medical education</span>&nbsp;event today!</span></span></h3>\n<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">If you are interested in attending one of these courses to learn more about Accolade II, contact your Stryker Joint Replacement Representative using the form below:</span></span></p>\n",
+          "jcr:lastModified": "Thu Dec 01 2022 17:48:20 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "3",
+          "textIsRich": "true"
+        },
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2730",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Fri Nov 18 2022 19:21:31 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Tue Nov 22 2022 18:13:57 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": [
+        "/content/dam/stryker/joint-replacement/products/accoladeii/resources/Accolade II Design Rationale ACCII-PG-3_Rev-1_22894.pdf",
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_968428294",
+        "/content/dam/stryker/joint-replacement/products/accoladeii/resources/Accolade II Tray Layout_ACCII-TL-1_25643.pdf"
+      ],
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:lastModified": "Fri Nov 18 2022 19:09:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Designed to fit more patients, designed to fit your approach<br />\r\n</p>\r\n",
+    "shortDescTop": "<p>Accolade II’s Morphometric Wedge is designed to address modern demands with novel technology by evolving conventional tapered wedge femoral stem design with size specific medial curvature to more closely fit a broad range of bone sizes and shapes of today’s patient population.<sup>1</sup> Accolade II has been shown to allow for enhance stability,<sup>2</sup> decreased intraoperative femoral fractures,<sup>3</sup> as well as survivorship and functional outcomes<sup>4,5 </sup>which may lead to satisfied patients.<sup>5,6</sup></p>\r\n<p> </p>\r\n<p>Clinically, Accolade II has shown significantly better overall canal fit<sup>1</sup> than conventional tapered wedge design with five times less intraoperative fractures observed compared to conventional tapered wedges<sup>3</sup> and less than 0.1mm subsidence pursuant to a 2-year RSA study. Additionally, Accolade II has shown 99.2% survivorship pursuant to a 3.5-year mean study.<sup>4</sup></p>\r\n<p> </p>\r\n<p>Key features include:</p>\r\n",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Nov 18 2022 18:48:23 GMT+0000",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Unique size-specific medial curvature: Offers increasing proximal conformity to enhance primary stability.<sup>6,7</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Enhanced proximal-distal proportions:<sup>7</sup>&nbsp;Shown to mimic canal anatomy to avoid distal only engagement and achieve cortical fit.<sup>8,9</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Optimized stem length: Enables muscle-sparing approaches such as Direct Anterior or Direct Superior without sacrificing stability.<sup>7,10</sup><br>\r\n</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<div>References:</div>\r\n<ol>\r\n<li>Wuestemann T, Bastian A, Parvizi J, Nessler J, Kolisek F. A novel tapered hip stem design optimized for femoral fit in a wide array of bone types. 2011 EFFORT.</li>\r\n<li>Boucher, F. et al. Preclinical Finite Element Analysis of a Novel Tapered Wedge Stem Optimized for Stability at a Reduced Length. 2011 EFORT Poster Presentation.</li>\r\n<li>Issa, K et al. Radiographic Fit and Fill Analysis of a New Second-Generation Proximally Coated Cementless Stem Compared to its Predicate Design. Journal of Arthroplasty (2013). <a href=\"http://dx.doi.org/10.1016/j.arth.2013.04.029\">http://dx.doi.org/10.1016/j.arth.2013.04.029</a>.</li>\r\n<li>Collopy, D. et al. A Prospective Roentgen Stereophotogrammetric Analysis (RSA) Study of the Stryker Accolade II Cementless Hipo Stem to 2 Years Post-Surgery. Abstracts from 2016 Annual AOA Meeiting–Cairns, QLD, October 9-13, 2016.</li>\r\n<li>Bono, J. et al. Total Hip Intraoperative Femur Fracture: Does a Tapered Wedge Design with a Size Specific Medial Curvature Reduce the Incidence of Intraoperative Femur Fracture? Presentation at 47thAnnual EOA Meeting -New Orleans, LA, October 19-22, 2016.</li>\r\n<li>Pierce T. et al. Second-Generation Versus First-Generation Cementless Tapered Wedge Femoral Stems. Orthopedics. 2015 38(9): 550-554.</li>\r\n<li>Kolisek, F. et al. Outcomes of Second-Generation Tapered Wedge Design. SurgTechnolInt. 2016 Apr 4; XXVIII. pii: sti28/702.</li>\r\n<li>Stryker Internal presentation ‘Global Bone Morphology Study-Proximal Femur’. November 10, 2016.</li>\r\n<li>Narzikul, BS et al. Alternation in Geometry of Femoral Stem Results in Better Fit and Fill: Comparison of Accolade I vs. Accolade II. Presentation at 47th Annual EOA Meeting – New Orleans, LA, October 19-22, 2016.</li>\r\n<li>Khanuja H, et al. Current Concepts Review: Cementless Femoral Fixation in Total Hip Arthroplasty. J Bone Joint Surg Am. 2011;93:500-9.</li>\r\n<li>Faizan A, et al, Development and Verification of a Cementless Novel Tapered Wedge Stem for Total Hip Arthroplasty, J Arthroplasty (2014), <a href=\"http://dx.doi.org/10.1016/j.arth.2014.09.023\">http://dx.doi.org/10.1016/j.arth.2014.09.023</a>.</li>\r\n<li>Van der Voort, P. et al. Early subsidence of shape-closed hip arthroplasty stems is associated with late revision, Acta Orthopaedica 2015 86:5, 575-585, DOI: 10.3109/17453674.2015.1043832.</li>\r\n<li>Restrepo C, Parvizi J, Eslam Pour A, et al. Prospective Randomized Study of Two Surgical Approaches for Total Hip Arthroplasty. The Journal of Arhtroplasty 2010; 25: 671-670.</li>\r\n<li>Vail T, Mariani E, Bourne M, Berger R, Meneghini M. Approaches in Primary Total Hip Arthroplasty. J Bone Joint Surgery 2009; 91:10.</li>\r\n<li>M.W. Zawadsky et al./ Early Outcome Comparison Between the Direct Anterior Approach and the Mini-Incision Posterior Approach for Primary Total Hip Arthroplasty: 150 Consecutive Cases, The Journal of Arthroplasty 29 (2014) 1256-126.</li>\r\n<li>Internal Sales Data (2022).</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Wed Nov 23 2022 15:08:34 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/products/accoladeii/images/Hero_JR_Hip_AccoladeII.png"
+  },
+  "contactbutton": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Nov 18 2022 18:48:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/contactbutton"
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Nov 18 2022 18:48:13 GMT+0000",
+    "linkNewWindowOverride": "0",
+    "linkType": "none",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "tagcrumb": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Fri Nov 18 2022 18:48:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagcrumb"
+  },
+  "rte": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Fri Nov 18 2022 18:48:29 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "jumpbarnav": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideComponent": "true",
+    "jcr:lastModified": "Thu Dec 01 2022 17:33:17 GMT+0000",
+    "sling:resourceType": "stryker/components/content/jumpbarnav"
+  }
+}

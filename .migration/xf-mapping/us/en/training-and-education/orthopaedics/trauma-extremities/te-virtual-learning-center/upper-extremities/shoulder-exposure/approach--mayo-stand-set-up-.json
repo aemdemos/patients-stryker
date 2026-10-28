@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "APPROACH™ Mayo Stand Set-up ",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "85b8e0da-f421-415c-aa61-77b74f47e3df",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "jcr:predecessors": [
+    "315ec9ee-bc5c-4732-b617-a08984a07015"
+  ],
+  "lastPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Feb 05 2025 21:01:07 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:09 GMT+0000",
+  "cq:lastModified": "Mon Aug 08 2022 20:44:37 GMT+0000",
+  "jcr:baseVersion": "315ec9ee-bc5c-4732-b617-a08984a07015",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Mon Aug 08 2022 20:44:37 GMT+0000",
+  "jcr:uuid": "f4f6370d-9c2f-41ac-8c8a-c10da3de07f0",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jul 28 2022 18:32:52 GMT+0000",
+      "text": "Tornier Approach Mayo Stand Set-up Dr. Brent Morris discusses the Mayo stand set-up for Tornier Approach. AP-016236A",
+      "jcr:lastModified": "Thu Jul 28 2022 18:33:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/training_and_educati/wright_meded_vlc/upper_extremities/approach--mayo-stand-set-up/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/training-and-educati/wright-meded-vlc/upper-extremities/approach-mayo-stand-set-up/master"
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/images/upper-extremities/APPROACH Mayo Stand Set-up MEDED-8081.png"
+  }
+}

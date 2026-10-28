@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero - static",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b32e5ee0-bdfd-4f19-bcdd-71790b4cf0e0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "705e23cc-d56e-4db8-a7a0-d080d5e58395"
+  ],
+  "lastPublished": "Fri Apr 10 2026 18:18:57 GMT+0000",
+  "jcr:created": "Fri Apr 10 2026 18:18:58 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 10 2026 18:19:00 GMT+0000",
+  "cq:lastModified": "Tue Apr 07 2026 21:14:22 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "705e23cc-d56e-4db8-a7a0-d080d5e58395",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Apr 10 2026 18:18:57 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "b51ceb2b-eb45-4723-a411-3870e196729a",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Fri Apr 03 2026 21:23:28 GMT+0000",
+      "alt": "Peripheral Vascular",
+      "srcFileRef": "/content/dam/stryker/peripheral-vascular/landing/images/PV-hero-2.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Apr 07 2026 21:14:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

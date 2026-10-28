@@ -1,0 +1,47 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Carousel slide - desktop",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "ba5aafc9-f9a9-4124-beb5-8557971162a4",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "4aa581bb-3f2f-483b-87ab-ffcba719725f"
+  ],
+  "lastPublished": "Wed Jun 10 2026 15:42:52 GMT+0000",
+  "jcr:created": "Wed Jun 10 2026 15:42:53 GMT+0000",
+  "cq:lastReplicated": "Wed Jun 10 2026 15:42:56 GMT+0000",
+  "cq:lastModified": "Tue Jun 02 2026 20:37:34 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "4aa581bb-3f2f-483b-87ab-ffcba719725f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Jun 10 2026 15:42:52 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "395f3854-6fdf-437f-b347-4815c9670141",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jun 02 2026 20:37:27 GMT+0000",
+      "alt": "Arthritis-article-hero-desktop",
+      "srcFileRef": "/content/dam/stryker/about/news/2026/features/myths-realities-and-real-innovation-what-everyone-should-know-about-arthritis/Arthritis-article-hero-desktop.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Tue Jun 02 2026 20:37:34 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Shoulder Arthroplasty featuring the Aequalis Ascend™ Flex: Reversed Shoulder Exposure Technique - James Kelly, MD",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "59c4063b-b308-45ef-9094-59b1cd1367dd",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "b9a4b25c-9a75-428e-b0ec-b46244dadfc2"
+  ],
+  "lastPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "jcr:created": "Wed Feb 05 2025 21:01:07 GMT+0000",
+  "cq:lastReplicated": "Wed Feb 05 2025 21:01:09 GMT+0000",
+  "cq:lastModified": "Tue Aug 20 2024 20:07:37 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "b9a4b25c-9a75-428e-b0ec-b46244dadfc2",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Wed Feb 05 2025 21:01:06 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "081fbb19-ff7e-4ccf-b956-762a71ea565d",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standalonevideo_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 20 2022 19:43:00 GMT+0000",
+      "hideBorder": "false",
+      "type": "typePath",
+      "jcr:lastModified": "Wed Jul 20 2022 19:43:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/education-and-training/wright-medical-virtual-learning-center/videos/upper-extremities/CAW-6941 Aequalisascend_revshoulderarthroexposuretech_080916_WebOp.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/CAW-6941 Aequalisascend_revshoulderarthroexposuretech_080916_WebOp-AVS",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Aug 04 2022 18:00:01 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "s7ViewerPresetPath": ""
+      },
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        },
+        "tablet": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "description": "Orthopedic surgeon, James Kelly, MD, uses the reversed shoulder exposure technique for a shoulder arthroplasty, using the Tornier Flex Shoulder System.",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "deepLinkingId": "link",
+      "jcr:created": "Wed Jul 20 2022 19:44:38 GMT+0000",
+      "title": "Shoulder arthroplasty featuring the Tornier Flex Shoulder System: Reversed Shoulder Exposure Technique – James Kelly, MD ",
+      "jcr:lastModified": "Tue Aug 20 2024 20:07:37 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Sep 27 2022 15:29:26 GMT+0000",
+      "text": "<p><span class=\"fontsize-8em\">AP-016285A</span></p>\n",
+      "jcr:lastModified": "Fri Mar 17 2023 19:27:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "1",
+          "width": "10"
+        }
+      }
+    }
+  }
+}

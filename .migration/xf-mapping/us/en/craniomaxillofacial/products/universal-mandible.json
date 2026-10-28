@@ -1,0 +1,146 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Mandibular fracture and reconstruction fixation system",
+  "jcr:createdBy": "admin",
+  "jcr:title": "Universal Mandible",
+  "jcr:versionHistory": "3d2ae9f9-3bad-4f2b-81eb-617b91ebc15d",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "jcr:lastModifiedBy": "erica.mellema@stryker.com",
+  "thumbnailFileReference": "/content/dam/stryker/craniomaxillofacial/products/universalmandiblereconstruction/images/Thumbnail_Universal Mandible and Fracture.png",
+  "jcr:predecessors": [
+    "3878b0e8-9b30-4204-9003-7a5b86f19641"
+  ],
+  "contentID": "CMF-WC-28_Rev. None_14666 ",
+  "lastPublished": "Wed Jul 18 2018 09:49:54 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 18 2018 09:49:54 GMT-0400",
+  "cq:lastModified": "Wed Jul 18 2018 08:59:09 GMT-0400",
+  "jcr:description": "A  2.0, 2.3 and 2.7 mm bone fixation system for mandibular fixation needs.",
+  "cq:siblingOrder": "advanced-midface-distractor,allograft-bio-implants,colorado-microdissection-needle,facial-id-mandible-reconstruction,delta-resorbable-fixation,directinject-on-demand-ha-cement,duramatrix-portfolio,hydroset-injectable-bone-substitute,medical-models,multi-guide-ii-mandibular-distractor,right-angled-screwdriver,smartlock-hybrid-mmf,universal-mandible,universal-trauma,varispeed,vsp-cranial,vsp-orthognathic,vsp-reconstruction,universal-neuro-3,universal-orthognathic,medpor-titan-3d-orbital-floor,cranial-id,facial-id,",
+  "jcr:baseVersion": "3878b0e8-9b30-4204-9003-7a5b86f19641",
+  "jcr:isCheckedOut": true,
+  "cq:name": "universal-mandible",
+  "cq:tags": [
+    "stryker:specialty/reconstruction",
+    "stryker:specialty/trauma",
+    "stryker:business-unit/craniomaxillofacial",
+    "stryker:content-type/product",
+    "stryker:product/craniomaxillofacial/universal-mandible-fracture",
+    "stryker:capability/cmf-implants",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/orthognathic",
+    "stryker:system/craniomaxillofacial/universal-2-system"
+  ],
+  "jcr:lastModified": "Wed Jul 18 2018 08:59:09 GMT-0400",
+  "jcr:uuid": "fc9a7101-fab6-4bf6-bb82-622d2ee06694",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:parentPath": "/content/stryker/us/en/craniomaxillofacial/products",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "erica.mellema@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Fri Jun 02 2017 11:51:24 GMT-0400",
+      "compImageRef": "/content/dam/stryker/craniomaxillofacial/products/universalmandiblereconstruction/images/Hero_Universal Mandible and Fracture.png",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>Mandibular solutions</p>\r\n",
+    "shortDescTop": "<p>Built on the Leibinger platform, our Universal Mandible System features full and half size aluminum containers for your fracture and reconstruction needs.&nbsp;<br>\r\n</p>\r\n",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "jcr:lastModified": "Fri Jul 28 2017 11:42:07 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Dedicated instrument trays with color coded instruments allow for easy identification.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Universal screwdriver for 2.0mm, 2.3mm and 2.7mm screws limiting the instrumentation required in a case.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Features SMARTLock technology, a one step locking screw featuring locking capability with up to 10˚ of angulation.<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Plates accommodate multiple screw diameters and designs, allowing for more flexibility.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Fracture module includes a variety of low profile mini and 3D plates, fracture plates and compression plate options for your fixation needs.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Reconstruction module features low profile primary reconstruction plates along with precontoured plates to fit your reconstructive needs.</p>\r\n",
+        "textIsRich": "true"
+      },
+      "7": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>SMARTLoad screw delivery field features recessed screw holes that may facilitate easy loading of the screw.</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "secondarycta": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "openInNewWindow": true,
+    "internalLink": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "linkUrl": "https://cmf.stryker.com/products/universal-2-cmf-plating",
+    "jcr:lastModified": "Wed Jun 07 2017 17:28:34 GMT-0400",
+    "linkPath": "",
+    "linkText": "Additional resources",
+    "linkType": "int",
+    "sling:resourceType": "stryker/components/content/secondarycta"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "beth.sizemore@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<ol>\r\n<li>TI2124 White Paper<br>\r\n</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Fri Jul 28 2017 11:42:20 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/craniomaxillofacial/products/universalmandiblereconstruction/images/Thumbnail_Universal Mandible and Fracture.png"
+  }
+}

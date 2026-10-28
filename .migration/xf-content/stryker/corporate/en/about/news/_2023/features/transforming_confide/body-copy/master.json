@@ -1,0 +1,389 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "body copy",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "b431b74f-5ec5-4389-9ca0-2876a091c735",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "c22d750f-a40d-4236-b052-fde59369f214"
+  ],
+  "lastPublished": "Tue Oct 22 2024 21:01:32 GMT+0000",
+  "jcr:created": "Tue Oct 22 2024 21:01:33 GMT+0000",
+  "cq:lastReplicated": "Tue Oct 22 2024 21:01:35 GMT+0000",
+  "cq:lastModified": "Tue Oct 22 2024 20:58:52 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "c22d750f-a40d-4236-b052-fde59369f214",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 21:01:32 GMT+0000",
+  "cq:tags": [],
+  "jcr:uuid": "54408023-11fb-4f50-80a0-b0726df13ca4",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 19 2024 16:58:29 GMT+0000",
+      "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Together, Stryker and Operation Smile are changing lives and strengthening healthcare systems. </span></span><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Here are a few ways:</span></span></p>\n<ul>\n<li>Whether it’s training healthcare workers or helping replace outdated equipment in a hospital, Operation Smile is forging solutions in some of the world’s hardest-to-reach areas so that more patients have access to care—and Stryker is focused on advancing these solutions forward.</li>\n<li>In low-and middle-income countries, there is only 1 surgeon for every 100,000 people.<sup>4&nbsp;</sup>In 2024, Stryker has helped train more than 2,300 healthcare professionals through our partnership with Operation Smile.<sup>1</sup></li>\n<li>Our impact is amplified even more by the dollars raised during the annual employee giving campaigns, where we engage employees in this journey that we’ve been on for 30 years.</li>\n</ul>\n",
+      "jcr:lastModified": "Tue Oct 22 2024 20:20:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "text_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "bottomPadding": "2",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "leftPadding": "4",
+      "topPadding": "4",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "hideComponent": "false",
+      "rightMargin": "0",
+      "jcr:created": "Thu Sep 19 2024 16:58:29 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-5em\"><span style=\"color: #1c5687;\"><span style=\"color: #85458a;\"><span style=\"color: #ffb500;\"><span class=\"futura-bold\">Why it matters</span><br>\n</span></span></span></span></p>\n<p>A child is born with a cleft every 3 minutes, but for many patients and families in low- and middle-income countries, surgical intervention isn’t an option due to lack of resources and access.<sup>2</sup> Our partnership with Operation Smile is a shining example of our mission to make healthcare better.</p>\n",
+      "jcr:lastModified": "Thu Sep 19 2024 18:52:24 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "rightPadding": "4",
+      "showDimensionalBox": "true",
+      "textIsRich": "true",
+      "leftMargin": "0",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "2",
+          "width": "8"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    },
+    "accordion": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Sep 19 2024 16:57:15 GMT+0000",
+      "jcr:lastModified": "Thu Sep 19 2024 16:57:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/accordion",
+      "accordion_parsys1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "accPosId": 1,
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 11 2023 19:21:58 GMT+0000",
+          "text": "<h2><span class=\"fontsize-8em\">Founded in 1982 by Dr. Bill and Kathy Magee, Operation Smile is a global nonprofit organization that creates solutions to deliver safe surgery to people where it’s needed most. For over 30 years, Stryker has partnered with Operation Smile to make healthcare better, a journey that started in the 1990’s with product donations and discounts, grew to supporting medical education and healthcare workers and now includes our employees, who annually raise funds.</span></h2>\n<p>Headquartered in Virginia Beach, VA with programs in over 30 countries worldwide, Operation Smile has helped over 420,000 people access surgery and comprehensive care.<sup>1</sup> Cleft surgeries are a majority of the surgical care provided to patients, addressing critical needs, because when left untreated:</p>\n<ul>\n<li>Babies have difficulty with feeding, leading to malnutrition,</li>\n<li>Speech and dental development can be impaired and</li>\n<li>Children may be bullied or socially isolated.</li>\n</ul>\n<p>&nbsp;</p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">A child is born with a cleft every 3 minutes<sup>2</sup></span></span></h2>\n<p>This happens when tissues of the face fail to join properly during fetal development. For children with these facial conditions, the pain can become extreme, both physically and emotionally. That’s why Operation Smile helps thousands of children living with cleft lip and cleft palate to better breathe, eat, speak and live lives of greater confidence and quality, and Stryker is proud to stand by Operation Smile as a signature partner, expanding access and quality of care.</p>\n<p>“We would never be able to be the organization that we are with the sustainability that we’ve had and the continued elevation of the vision we want to create, without our partners like Stryker,” said Dr. Bill Magee, Co-Founder and CEO Emeritus, Operation Smile.</p>\n<p>&nbsp;</p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Together, Stryker and Operation Smile are changing lives and strengthening healthcare systems</span></span></h2>\n<p>According to Operation Smile, 90 percent of people in low-and middle-income countries can’t access basic surgical care.<sup>3&nbsp;</sup>That’s why looking at the systemic issues that cause backlogs in care and taking action to address them is so vital. Whether it’s training healthcare workers or helping replace outdated equipment in a hospital, Operation Smile is forging solutions in some of the world’s hardest-to-reach areas so that more patients have access to care—and Stryker is focused on advancing these solutions forward.</p>\n<p>“Our partnership with Operation Smile is a shining example of our mission to make healthcare better. Globally, our employees are passionate about making a difference, and working to ensure broader access to healthcare through organizations like Operation Smile,” said Anita Mehta, Director of Social Impact at Stryker. “What we love about Operation Smile is that their work both helps people, today, and builds for the future. And we’re proud to play a part in that journey, because together, we’re transforming communities.”</p>\n<p>&nbsp;</p>\n<h2><span class=\"futura-bold\"><span class=\"fontsize-8em\">Closing the medical education and training gap&nbsp;</span></span></h2>\n<p>In low-and middle-income countries, there is only 1 surgeon for every 100,000 people.<sup>4</sup> That type of gap can seem insurmountable. But through our company-level giving, which supports strategic medical education and training programs, we’re not just hoping to close it. We’re actively helping to close it.</p>\n<p>In 2024, Stryker has helped train more than 2,300 healthcare professionals through our partnership with Operation Smile.<sup>1</sup> Programs like the Rwanda Surgical Training Rotations, are helping train a new generation of plastic surgeons. As of 2024, 21 new surgeons and anesthesiologists are now providing skin and plastics care in Rwanda.<sup>1</sup> But there is still a great need, which is why training and education remains such a major focus.<br>\n</p>\n",
+          "jcr:lastModified": "Tue Oct 22 2024 20:33:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "2",
+              "width": "8"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "section_title_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "deepLinkingId": "aa",
+          "jcr:created": "Mon Aug 12 2024 14:37:19 GMT+0000",
+          "title": "‎ ",
+          "jcr:lastModified": "Mon Aug 12 2024 14:37:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "standaloneimage19804": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:title": "Building Block",
+          "cq:masterBuildingBlock": true,
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:lastModified": "Thu Sep 19 2024 17:04:15 GMT+0000",
+          "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+          "standaloneimage198048106301010260168": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "preset": "max_width_1440",
+            "alt": "Dr. Charles and Dr. Ntirenganya pose for a photo with Drs. Nezerwa, Mukagaju and Shyaka at the University of Rwanda’s plastic surgery residency program.",
+            "srcFileRef": "/content/dam/stryker/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile/images/RWA_2022_Kigali_Surgeon_Faustin Ntirenganya_003.png",
+            "borderColor": "rgba(76,125,122,1)",
+            "jcr:lastModified": "Thu Sep 19 2024 17:09:23 GMT+0000",
+            "sling:resourceType": "stryker/components/content/standaloneimage",
+            "enableBorder": "false",
+            "cq:responsive": {
+              "jcr:primaryType": "nt:unstructured",
+              "default": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "5"
+              },
+              "tablet": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "6"
+              },
+              "phone": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "12"
+              }
+            }
+          },
+          "text": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "jcr:created": "Wed Oct 11 2023 19:37:56 GMT+0000",
+            "text": "<p>Dr. Charles and Dr. Ntirenganya were originally the only 2 plastic surgeons in Rwanda. Last year, Drs. Nezerwa, Mukagaju and Shyaka joined them – the first graduates of the University of Rwanda’s plastic surgery residency program launched due to the success demonstrated by the surgical training rotations that Stryker helped launch and continues to support. Dr. Mukagaju is also the first female plastic surgeon in Rwanda.</p>\n<p>From right to left: Dr. Furaha Charles, Dr. Faustin Ntirenganya, Dr. Yves Nezerwa, Dr. Françoise Mukagaju, Dr. Ian Shyaka.</p>\n",
+            "jcr:lastModified": "Thu Sep 19 2024 17:10:04 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "textIsRich": "true",
+            "cq:responsive": {
+              "jcr:primaryType": "nt:unstructured",
+              "default": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "3"
+              },
+              "tablet": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "6"
+              },
+              "phone": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "12"
+              }
+            }
+          },
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "2",
+              "width": "8"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "section_title_copy_c_1216920607": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "deepLinkingId": "aa",
+          "jcr:created": "Mon Aug 12 2024 14:37:19 GMT+0000",
+          "title": "‎ ",
+          "jcr:lastModified": "Mon Aug 12 2024 14:37:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/section-title"
+        },
+        "text_187799714_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:title": "“We",
+          "cq:masterBuildingBlock": true,
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 11 2023 19:38:50 GMT+0000",
+          "jcr:lastModified": "Thu Sep 19 2024 18:26:17 GMT+0000",
+          "sling:resourceType": "cq/experience-fragments/editor/components/buildingblock",
+          "standaloneimage": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "preset": "max_width_1440",
+            "jcr:created": "Thu Sep 19 2024 18:24:54 GMT+0000",
+            "alt": "quotation1",
+            "srcFileRef": "/content/dam/stryker/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile/images/quotation1_2.png",
+            "borderColor": "rgba(76,125,122,1)",
+            "jcr:lastModified": "Thu Sep 19 2024 18:31:46 GMT+0000",
+            "sling:resourceType": "stryker/components/content/standaloneimage",
+            "enableBorder": "false",
+            "cq:responsive": {
+              "jcr:primaryType": "nt:unstructured",
+              "default": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "1",
+                "width": "1"
+              },
+              "phone": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "3"
+              }
+            }
+          },
+          "text_187799714_copy8111222312206073": {
+            "jcr:primaryType": "nt:unstructured",
+            "bottomPadding": "2",
+            "leftPadding": "4",
+            "topPadding": "4",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "hideComponent": "false",
+            "rightMargin": "0",
+            "gradientDirection": "left-to-right",
+            "text": "<p><span class=\"fontsize-1-25em\">We developed a hospital in Guwahati, India in the early 2000’s that at the time, had nothing,” recalled Dr. Bill Magee. “I called my contacts at Stryker and asked if there was anyone in India who could help. A day later, this gentleman came and we sat down together and drew out what would ultimately become a hospital with 7 operating rooms that operated on close to 11,500 people in four years. That’s the kind of thing Stryker helps start up.”</span></p>\n",
+            "jcr:lastModified": "Thu Sep 19 2024 18:27:49 GMT+0000",
+            "sling:resourceType": "stryker/components/content/text",
+            "rightPadding": "4",
+            "showDimensionalBox": "true",
+            "textIsRich": "true",
+            "leftMargin": "0",
+            "cq:responsive": {
+              "jcr:primaryType": "nt:unstructured",
+              "default": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "8"
+              },
+              "tablet": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "12"
+              },
+              "phone": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "12"
+              }
+            }
+          },
+          "standaloneimage_7630": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "hannah.white@stryker.com",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "preset": "max_width_1440",
+            "jcr:created": "Thu Sep 19 2024 18:25:35 GMT+0000",
+            "alt": "quotation2",
+            "srcFileRef": "/content/dam/stryker/about/news/2023/features/transforming-confidence-and-care-in-partnership-with-operation-smile/images/quotation2_5.png",
+            "borderColor": "rgba(76,125,122,1)",
+            "jcr:lastModified": "Thu Sep 19 2024 18:46:29 GMT+0000",
+            "sling:resourceType": "stryker/components/content/standaloneimage",
+            "enableBorder": "false",
+            "cq:responsive": {
+              "jcr:primaryType": "nt:unstructured",
+              "default": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "0",
+                "width": "1"
+              },
+              "phone": {
+                "jcr:primaryType": "nt:unstructured",
+                "offset": "9",
+                "width": "3"
+              }
+            }
+          }
+        },
+        "text_187799714": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 11 2023 19:38:50 GMT+0000",
+          "text": "<h2><span class=\"fontsize-8em\"><span class=\"futura-bold\">How Stryker and Operation Smile are making surgeries better</span></span><br>\n</h2>\n<p>As part of our signature partnership with Operation Smile, our goal isn’t only making surgeries happen. It’s making surgeries better.</p>\n<p>Product donations and discounts help care teams perform surgeries, improving healthcare at Operation Smile programs globally. Additionally, our charitable contributions help scale training for healthcare workers. For instance, in one region of Madagascar, Operation Smile worked with LifeBox, a partner nonprofit organization, to deliver a training course to healthcare workers across three hospitals that helped drive reductions in surgical complications.</p>\n<p>Our partnership is amplified even more by the dollars raised during the annual employee giving campaigns. Since 2015, employees have raised over $1.8 million using the company match and volunteer rewards incentives to increase their impact.<sup>5</sup> And in support of <span class=\"futura-bold\">Operation Smile volunteer</span> efforts, employees have joined the organization on surgical programs. What keeps us giving is knowing the difference that every dollar and every minute spent training a healthcare professional means for a child, a family, a community. “What else could you ask to make you feel fulfilled than to know that at least one kid had a chance for a life that they may never have had if it wasn’t for you?” added Dr. Bill Magee.</p>\n",
+          "jcr:lastModified": "Tue Oct 22 2024 20:58:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "2",
+              "width": "8"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        },
+        "text_1140347087": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Wed Oct 11 2023 19:42:06 GMT+0000",
+          "text": "<p><span class=\"fontsize-8em\">&nbsp;</span></p>\n<p><span class=\"fontsize-8em\"><b>References:</b></span></p>\n<ol>\n<li><span class=\"fontsize-8em\">Data on file with Operation Smile.</span></li>\n<li><span class=\"fontsize-8em\">&nbsp;Sandy J, Davies A, Humphries K, Ireland T, Wren Y. Cleft lip and palate: Care configuration, national registration, and research strategies. J World Fed Orthod. 2020 Oct;9(3S):S40-S44. doi: 10.1016/j.ejwf.2020.09.003. PMID: 33023731; PMCID: PMC7532935.</span><br>\n</li>\n<li><span class=\"fontsize-8em\">Meara, Dr. John, Leather, Andrew J M, et al. “Global Surgery 2030: evidence and solutions for achieving health, welfare, and economic development.” April 26, 2015. Accessed 12 August 2024 via <a href=\"https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60160-X/fulltext\">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)60160-X/fulltext</a>&nbsp;</span></li>\n<li><span class=\"fontsize-8em\">&nbsp;Schecter, William P and Adhikari, Sweta. Essential Surgery: Disease Control Priorities, Third Edition (Volume 1). “Chapter 20: Global surgery and poverty.” Accessed 12 August 2024 via <a href=\"https://www.ncbi.nlm.nih.gov/books/NBK333494/\">https://www.ncbi.nlm.nih.gov/books/NBK333494/</a></span></li>\n<li><span class=\"fontsize-8em\">Data on file with Stryker.</span></li>\n</ol>\n<p><span class=\"fontsize-8em\">Photos courtesy of Operation Smile, Inc.</span></p>\n",
+          "jcr:lastModified": "Tue Oct 22 2024 20:36:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "2",
+              "width": "8"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          }
+        }
+      },
+      "accordionsGrid": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "accPosId": "1",
+          "accTitle": "READ THE FULL ARTICLE"
+        }
+      }
+    }
+  }
+}

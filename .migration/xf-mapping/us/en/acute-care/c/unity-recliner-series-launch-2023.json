@@ -1,0 +1,263 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Unity Recliner Series Launch 2023",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "2caf0d08-bb27-4348-91ea-4c8e3adaa1c4",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "jcr:predecessors": [
+    "3a3f6aa9-fc42-4ff2-82e5-bde5fc806da9"
+  ],
+  "lastPublished": "Wed Aug 23 2023 15:20:41 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Aug 23 2023 15:20:41 GMT+0000",
+  "cq:lastReplicated": "Wed Aug 23 2023 15:20:43 GMT+0000",
+  "cq:lastModified": "Wed Aug 23 2023 15:20:21 GMT+0000",
+  "noFollow": "true",
+  "jcr:baseVersion": "3a3f6aa9-fc42-4ff2-82e5-bde5fc806da9",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Fri Jul 28 2023 14:37:01 GMT+0000",
+  "jcr:uuid": "ee56a669-16fb-491d-b547-d396078c68af",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "noIndex": "true",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "fullwidthimagehero_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "titleColor": "rgba(255,255,255,0)",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 20 2021 20:49:08 GMT+0000",
+      "jcr:lastModified": "Tue Jul 20 2021 20:59:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullWidthImageHero",
+      "hideBottomLine": "1",
+      "location": "1",
+      "fullWidthImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "dimensionBox": "ND",
+        "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+        "layoutOptions": "col-sm-8 pull-left​",
+        "backgroundImageRef": "/content/dam/stryker/acute-care/campaigns/unity-recliner-series-launch/unity-relciner-series-launch_2023_hero.png",
+        "alt": "unity-relciner-series-launch_2023_hero",
+        "jcr:lastModified": "Fri Jul 21 2023 14:25:22 GMT+0000",
+        "sling:resourceType": "stryker/components/content/fullWidthImage",
+        "textparsys": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/foundation/components/parsys",
+          "largeheadline": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "kristian.bocage@stryker.com",
+            "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+            "jcr:created": "Tue Jul 20 2021 20:50:05 GMT+0000",
+            "gradientDirection": "left-to-right",
+            "line1": "<span class=\"fontsize-3vw\"><span class=\"futura-bold\">Unity Recliner Series Launch | 2023</span><br />\r\nWe’ve got the clinical edge</span>",
+            "line2": "<p><span class=\"fontsize-1-5-vw\">Our new line of modern, durable and comfortable recliners were developed to meet the needs of both caregivers and patients to help aid in the recovery and treatment process. This line includes three different models (Value, Clinical and Treatment) with optional features and upgrades for all. Each model meets the highest standards of clinical efficacy and safety that our competitors in this market can’t match.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span class=\"fontsize-1-5-vw\">These clinically focused recliners provide a safe, versatile solution that can be standardized throughout the continuum of care to help improve nursing workflow and patient comfort.</span></p>\r\n",
+            "jcr:lastModified": "Fri Jul 28 2023 13:49:16 GMT+0000",
+            "sling:resourceType": "stryker/components/content/largeheadline",
+            "backgroundColor": "rgba(255,255,255,0)",
+            "textIsRich": [
+              "true",
+              "true"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jul 20 2021 19:17:19 GMT+0000",
+      "jcr:lastModified": "Tue Jul 20 2021 19:17:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Wed Aug 23 2023 15:14:40 GMT+0000",
+          "jcr:lastModified": "Wed Aug 23 2023 15:14:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        },
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Aug 03 2021 19:31:21 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Thu Jul 27 2023 20:55:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/campaigns/unity-recliner-series-launch/SYK192_Raap In_CV5.1.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/SYK192_Raap In_CV5.1-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Fri Jul 28 2023 14:31:48 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "topMargin": "2",
+          "jcr:created": "Tue Jul 20 2021 20:38:50 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<span class=\"fontsize-2-5-vw\"><span class=\"futura-bold\">We’re excited to welcome this new product into our portfolio. Get ready to start selling and please reach out to Marketing with any questions.</span></span>",
+          "jcr:lastModified": "Wed Aug 23 2023 15:20:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        }
+      }
+    },
+    "cols2_2_3_1_3_792342": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 29 2021 15:59:38 GMT+0000",
+      "jcr:lastModified": "Thu Jul 29 2021 15:59:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text_copy_224847634": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "1",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "leftPadding": "3",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Jul 20 2021 19:50:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Unity Presenters</span></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jul 29 2021 15:28:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        },
+        "sectionseparator_372": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Jul 29 2021 15:49:39 GMT+0000",
+          "jcr:lastModified": "Thu Jul 29 2021 15:49:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "cols3_copy_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Jul 29 2021 15:52:57 GMT+0000",
+      "jcr:lastModified": "Thu Jul 29 2021 15:52:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 20 2021 19:50:13 GMT+0000",
+          "alt": "leanne-fried_headshot_2023",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/unity-recliner-series-launch/hallie-miller_headshot_2023.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 28 2023 13:45:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Jul 20 2021 19:50:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Hallie Miller</span><br>\n<span class=\"urw-egyptienne\">Senior Portfolio Associate</span></span></p>\n",
+          "jcr:lastModified": "Fri Jul 28 2023 13:46:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "standaloneimage_1616": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jul 20 2021 19:50:19 GMT+0000",
+          "alt": "hallie-miller",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/unity-recliner-series-launch/anna-lomonaco_headshot_2023.jpeg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jul 28 2023 13:46:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "-3",
+          "jcr:created": "Tue Jul 20 2021 19:50:45 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"futura-bold\">Anna LoMonaco</span><br>\n<span class=\"urw-egyptienne\">Marketing Associate<br>\n </span></span><br>\n</p>\n",
+          "jcr:lastModified": "Fri Jul 28 2023 13:46:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgba(255,255,255,0)",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

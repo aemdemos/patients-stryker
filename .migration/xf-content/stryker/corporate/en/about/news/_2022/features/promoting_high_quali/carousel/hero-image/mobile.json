@@ -1,0 +1,41 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Mobile",
+  "jcr:versionHistory": "48f610ca-40b0-4788-8ef3-4be0882bd755",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "jcr:predecessors": [
+    "fa63ad3b-4513-42c4-8025-d2c3ed39ba6e"
+  ],
+  "jcr:created": "Mon May 16 2022 14:56:29 GMT+0000",
+  "cq:lastModified": "Wed Apr 27 2022 18:56:01 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "fa63ad3b-4513-42c4-8025-d2c3ed39ba6e",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "67e1aca1-8206-4ee3-bf08-c5fd912ca042",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "preset": "max_width_auto",
+      "jcr:created": "Wed Apr 27 2022 18:55:04 GMT+0000",
+      "alt": "Child with cleft lip",
+      "srcFileRef": "/content/dam/stryker/about/news/2022/features/promoting-high-quality,-inclusive-healthcare-in-latin-america-/promoting-high-quality-healthcare-latam-mobile.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Wed Apr 27 2022 18:56:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

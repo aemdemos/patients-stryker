@@ -1,0 +1,98 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:versionHistory": "963de2e7-0ff3-4409-9257-4046d07f74de",
+  "jcr:predecessors": [
+    "a566c675-a012-4f06-a032-844c9a69cc33"
+  ],
+  "jcr:created": "Tue Aug 12 2025 18:56:36 GMT+0000",
+  "jcr:baseVersion": "a566c675-a012-4f06-a032-844c9a69cc33",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "1643d70c-3953-4a7a-b4e8-eacf28103572",
+  "jcr:content": {
+    "jcr:primaryType": "dam:AssetContent",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "Amsterdam",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "replication-service",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "cq:lastReplicated": "Mon May 18 2026 20:23:49 GMT+0000",
+    "contentFragment": true,
+    "cq:name": "amsterdam",
+    "jcr:lastModified": "Thu May 14 2026 19:13:21 GMT+0000",
+    "lastFragmentSave": "Thu May 14 2026 19:13:21 GMT+0000",
+    "cq:parentPath": "/content/dam/stryker/content-fragments/europe/en/contact-information",
+    "renditions": {
+      "jcr:primaryType": "nt:folder",
+      "jcr:createdBy": "replication-receiver",
+      "jcr:created": "Mon May 18 2026 20:23:47 GMT+0000"
+    },
+    "related": {
+      "jcr:primaryType": "nt:unstructured"
+    },
+    "indexedData": {
+      "jcr:primaryType": "nt:unstructured",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:IndexedFragmentData"
+        ],
+        "@string@model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+        "string@PhoneNumberLabel": "Phone",
+        "@stringArray@variations": [],
+        "string@locationName": "The Netherlands",
+        "string@AddressLabel": "Address",
+        "string@addressBlock1": "<p><b>Stryker European Operations, Branch Office</b><br>\nHerikerbergweg 110<br>\n1101 CM Amsterdam<br>\nNetherlands</p>\n",
+        "jcr:uuid": "fe9463fe-f2f9-4205-895b-6b28518057ee",
+        "string@PhoneNumbers": "<p>+31 20 2415984</p>\n"
+      }
+    },
+    "metadata": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:mixinTypes": [
+        "cq:Taggable"
+      ],
+      "dam:scene7PublishPending": true
+    },
+    "data": {
+      "jcr:primaryType": "nt:unstructured",
+      "_strucVersion": 1,
+      "cq:model": "/conf/global/settings/dam/cfm/models/contact-us-information-fragment-model",
+      "master": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "dam:cfVariationNode",
+          "cq:Taggable"
+        ],
+        "BusinessHomePage@ContentType": "text/html",
+        "locationName@LastModified": "Wed Aug 06 2025 14:06:16 GMT+0000",
+        "PhoneNumbers@ContentType": "text/html",
+        "addressBlock1@LastModified": "Thu May 14 2026 19:13:21 GMT+0000",
+        "Emails@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "addressBlock1": "<p><b>Stryker European Operations, Branch Office</b><br>\nHerikerbergweg 110<br>\n1101 CM Amsterdam<br>\nNetherlands</p>\n",
+        "ShortDesc@ContentType": "text/html",
+        "EmailLabel@LastModified": "Wed Jul 23 2025 17:55:24 GMT+0000",
+        "RelatedLinks@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "locationName": "The Netherlands",
+        "PhoneNumberLabel": "Phone",
+        "ShortDesc@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "AddressLabel": "Address",
+        "RelatedLinksLabel@LastModified": "Wed Jul 23 2025 17:55:24 GMT+0000",
+        "BusinessHomePageLabel@LastModified": "Wed Jul 23 2025 17:55:24 GMT+0000",
+        "RelatedLinks@ContentType": "text/html",
+        "Emails@ContentType": "text/html",
+        "BusinessHomePage@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "addressBlock1@ContentType": "text/html",
+        "PhoneNumbers@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "PhoneNumbers": "<p>+31 20 2415984</p>\n",
+        "AddressLabel@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000",
+        "PhoneNumberLabel@LastModified": "Wed Jul 23 2025 17:57:14 GMT+0000"
+      }
+    }
+  }
+}

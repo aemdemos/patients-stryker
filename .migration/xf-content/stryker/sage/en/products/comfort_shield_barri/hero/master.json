@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Hero",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "f1dfa3c5-3933-4a4a-a72a-fbc0f2765fe0",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:predecessors": [
+    "9c8d7b36-a301-41c6-8768-18c9da9ff6b4"
+  ],
+  "jcr:created": "Fri Apr 19 2024 18:23:13 GMT+0000",
+  "cq:lastReplicated": "Fri Apr 19 2024 18:23:15 GMT+0000",
+  "cq:lastModified": "Fri Apr 19 2024 18:23:08 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "The Sage Prevalon AirTAP XXL system helps reduce the risk of injury to nurses and other caregivers by providing an ergonomically friendly method of turning and repositioning larger patients.",
+  "jcr:baseVersion": "9c8d7b36-a301-41c6-8768-18c9da9ff6b4",
+  "jcr:isCheckedOut": true,
+  "jcr:uuid": "55c7517f-0207-4187-8068-bc445484a647",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Mon Feb 26 2024 19:33:44 GMT+0000",
+      "alt": "Sage Comfort Shield Barrier Cream Cloths in variety pack",
+      "srcFileRef": "/content/dam/stryker/sage/products/barrier-cream-cloths/images/ComfortShield_8-pack_3-pack_24-pack.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Apr 19 2024 18:23:08 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false",
+      "cq:responsive": {
+        "jcr:primaryType": "nt:unstructured",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "6",
+          "width": "6"
+        },
+        "phone": {
+          "jcr:primaryType": "nt:unstructured",
+          "offset": "0",
+          "width": "12"
+        }
+      }
+    }
+  },
+  "cq:metadata": {
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

@@ -1,0 +1,1165 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Mako SmartRobotics Overview",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "7301a905-dcee-4746-b192-e3f6fb1fc415",
+  "cq:template": "/apps/stryker/templates/long-page-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+  "thumbnailAltText": "Mako 4 Family",
+  "jcr:predecessors": [
+    "bc20a093-79ef-4195-a364-7245e941f7e9"
+  ],
+  "contentID": "JR-GSNPS-SYK-1643187",
+  "lastPublished": "Wed Jul 29 2026 19:53:44 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Jul 29 2026 19:53:46 GMT+0000",
+  "cq:lastReplicated": "Wed Jul 29 2026 19:53:48 GMT+0000",
+  "cq:lastModified": "Wed Jul 29 2026 19:53:39 GMT+0000",
+  "jcr:description": "The next generation of Mako isn’t just about what it does. It’s about who it serves – more surgeons, more patients, across more specialties and more procedures. Mako means more than ever. Let us show you all the possibilities.",
+  "jcr:baseVersion": "bc20a093-79ef-4195-a364-7245e941f7e9",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:41:07 GMT+0000",
+  "pageTitle": "Mako SmartRobotics Overview",
+  "cq:tags": [
+    "stryker:system/joint-replacements/mako-robotic-arm-assisted-surgery",
+    "stryker:specialty/mako-robotic-arm-assisted-surgery",
+    "stryker:portfolio/orthopaedics",
+    "stryker:content-type/system",
+    "stryker:business-unit/joint-replacement",
+    "stryker:content-type/hcp_content"
+  ],
+  "jcr:lastModified": "Wed Jul 29 2026 19:53:39 GMT+0000",
+  "jcr:uuid": "90eeacd7-4d80-4d03-9c50-34caa1bbdf0b",
+  "sling:resourceType": "stryker/components/structure/pages/long-page-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "videoType": "typeId",
+  "cq:lastModifiedBy": "joelle.battista@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Mon Feb 24 2025 20:50:48 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"fontsize-3-5-vw\"><span class=\"fontsize-4vw\"><span class=\"futura-bold\"><span style=\"color: rgb(255,181,0);\">Mako</span> means <span style=\"color: rgb(178,180,174);\"><span style=\"color: rgb(0,0,0);\"><span style=\"color: rgb(178,180,174);\">more</span></span></span></span></span></span>",
+      "line2": "<p><span class=\"fontsize-2vw\"><span class=\"urw-egyptienne\">More procedures.</span> <span class=\"futura-bold\"><span style=\"color: rgb(84,88,87);\">Greater possibilities.&nbsp;</span></span></span></p>\r\n<p><span class=\"fontsize-2vw\"><span class=\"futura-bold\"><br>\r\n</span></span><span class=\"fontsize-1-5-vw\"><span class=\"fontsize-2vw\">The next generation of Mako isn’t just about what it does. It’s about who it serves – more surgeons, more patients, across more specialties and more procedures. Mako means more than ever. Let us show you all the possibilities. &nbsp;​</span></span></p>\r\n",
+      "jcr:lastModified": "Mon Apr 13 2026 14:20:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Feb 08 2024 18:02:41 GMT+0000",
+      "jcr:lastModified": "Thu Feb 08 2024 18:02:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/mako-means-more-hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/systems/mako-smartrobotics-o/mako-means-more-hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/mako-means-more-hero/mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/joint-replacement/en/systems/mako-smartrobotics-o/mako-means-more-hero/mobile",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "5",
+          "jcr:created": "Thu Feb 08 2024 18:02:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Jul 15 2026 19:20:41 GMT+0000",
+          "marginRight": "5",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys"
+          }
+        }
+      }
+    },
+    "jumpbarnav_2128571994": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Oct 10 2024 18:08:38 GMT+0000",
+      "jcr:lastModified": "Thu Oct 10 2024 18:08:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "fullbleedpanel_1763610758": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Dec 27 2022 14:45:53 GMT+0000",
+      "jcr:lastModified": "Tue Dec 27 2022 14:46:02 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_1669326910": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 21:02:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\">Expect more with SmartRobotics™</span><br>\n</h2>\n<h2>&nbsp;</h2>\n<p><span class=\"fontsize-1-5em\">SmartRobotics is designed to elevate surgeon control and confidence and optimize implant placement by combining <span class=\"futura-bold\"><span style=\"color: #ffb500;\">3D CT-based planning</span></span> and <span class=\"futura-bold\"><span style=\"color: #ffb500;\">AccuStop™ haptic technology</span></span>.<sup>1-3</sup></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 14:26:38 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 27 2025 14:24:35 GMT+0000",
+          "alt": "Mako 4 System with Mako Total Knee software and the Q Guidance System",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Mako 4 TKA and Q Guidance 4K (1).png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 20:33:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 15:00:32 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2 style=\"text-align: center;\">Introducing the latest advancements in SmartRobotics™​</h2>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 21:19:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_216936779": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Dec 27 2022 14:55:26 GMT+0000",
+      "jcr:lastModified": "Thu Feb 23 2023 16:57:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_958293239": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 27 2025 15:01:51 GMT+0000",
+      "jcr:lastModified": "Thu Feb 27 2025 15:01:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 15:02:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">More applications</span></span> in a single system</span></span></h3>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 16:21:26 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_361585292": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "total-knee",
+      "jcr:created": "Mon Jun 08 2026 17:52:26 GMT+0000",
+      "title": "Mako Total Knee",
+      "jcr:lastModified": "Mon Jun 08 2026 17:52:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_1859988957": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 17:51:36 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 17:51:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Feb 27 2025 20:22:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako Total Knee</span></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">The unique features of Mako Total Knee SmartRobotics™ are designed to help you optimize Triathlon component positioning and enhance functional outcomes.<sup>2</sup>&nbsp;<br>\n</span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><a href=\"/content/stryker/us/en/joint-replacement/systems/mako-total-knee.html\" target=\"_blank\"><span class=\"fontsize-1-25em\"><u>Learn more about Mako Total Knee</u></span></a></span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 14:28:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true",
+          "leftMargin": "5"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 17:51:45 GMT+0000",
+          "alt": "Mako total knee",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/mako total knee with dimensional frame5.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 17:09:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "total-hip",
+      "jcr:created": "Mon Jun 08 2026 17:53:56 GMT+0000",
+      "title": "Mako Total Hip",
+      "jcr:lastModified": "Mon Jun 08 2026 17:54:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_991430557": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 17:54:25 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 17:54:25 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 05 2026 17:04:57 GMT+0000",
+          "alt": "mako total hip with dimensional frame4",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/mako total hip with dimensional frame4.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 17:09:53 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Feb 27 2025 20:22:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako Total Hip</span></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Enhance your Mako Total Hip experience through patient-specific planning to enable more accurate implant positioning to plan when compared to traditional techniques.<sup>3</sup></span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><a href=\"/content/stryker/us/en/joint-replacement/systems/mako-total-hip.html\" target=\"_blank\"><span class=\"fontsize-1-25em\"><u>Learn more about Mako Total Hip</u></span></a></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 05 2026 17:16:42 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true",
+          "leftMargin": "5"
+        }
+      }
+    },
+    "section_title_821857665": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "partial-knee",
+      "jcr:created": "Mon Jun 08 2026 17:54:43 GMT+0000",
+      "title": "Mako Partial Knee",
+      "jcr:lastModified": "Mon Jun 08 2026 17:56:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_461658394": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Jun 02 2026 17:55:36 GMT+0000",
+      "jcr:lastModified": "Tue Jun 02 2026 17:55:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1137078653": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jun 02 2026 17:54:36 GMT+0000",
+          "alt": "Mako 4 THA 8K",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/mako images with dimensional frame.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 15:27:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "3",
+          "jcr:created": "Thu Feb 27 2025 20:22:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako Partial Knee</span></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Mako Partial Knee helps enable the surgeon to dynamically balance soft tissue tensioning intraoperatively, with the goal of recreating natural knee kinematics.<sup>4</sup><br>\n</span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><a href=\"/content/stryker/us/en/joint-replacement/systems/mako-partial-knee.html\" target=\"_blank\"><span class=\"fontsize-1-25em\"><u>Learn more about Mako Partial Knee</u></span></a></span></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 16:16:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true",
+          "leftMargin": "5"
+        }
+      }
+    },
+    "section_title_2016146538": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "spine",
+      "jcr:created": "Mon Jun 08 2026 17:55:28 GMT+0000",
+      "title": "Mako Spine",
+      "jcr:lastModified": "Mon Jun 08 2026 17:56:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_1071030339": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 17:04:46 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 17:04:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Thu Feb 27 2025 20:22:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako Spine</span></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Mako Spine is designed to give surgeons confidence that they’re executing their procedure to plan and support correct level selection with visual level indication and haptic feedback.&nbsp;</span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><a href=\"/content/stryker/us/en/joint-replacement/systems/mako-spine.html\" target=\"_blank\"><span class=\"fontsize-1-25em\"><span style=\"color: #4c7d7a;\"><u>Learn more about Mako Spine</u></span></span></a></span></span></p>\n",
+          "jcr:lastModified": "Fri Jun 05 2026 17:11:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true",
+          "leftMargin": "5"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 05 2026 17:10:29 GMT+0000",
+          "alt": "mako spine with dimensional frame",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/mako spine with dimensional frame2.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 17:10:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "section_title_693904738": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "shoulder",
+      "jcr:created": "Mon Jun 08 2026 17:55:37 GMT+0000",
+      "title": "Mako Shoulder",
+      "jcr:lastModified": "Mon Jun 08 2026 17:57:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3_1574273947": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Fri Jun 05 2026 17:04:49 GMT+0000",
+      "jcr:lastModified": "Fri Jun 05 2026 17:04:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "3",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Thu Feb 27 2025 20:22:52 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Mako Shoulder</span></span></span></p>\n<p>&nbsp;</p>\n<p><span class=\"fontsize-1-25em\">Mako Shoulder is designed to simplify planning and intraoperative performance while giving surgeons the confidence that they are executing the procedure to plan. ​</span></p>\n<p>&nbsp;</p>\n<p><span class=\"futura-bold\"><span style=\"color: #4c7d7a;\"><a href=\"/content/stryker/us/en/joint-replacement/systems/mako-shoulder.html\" target=\"_blank\"><span class=\"fontsize-1-25em\"><span style=\"color: #4c7d7a;\"><u>Learn more about Mako Shoulder</u></span></span></a></span></span></p>\n",
+          "jcr:lastModified": "Wed Jul 08 2026 14:11:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true",
+          "leftMargin": "5"
+        }
+      },
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jun 05 2026 17:11:32 GMT+0000",
+          "alt": "mako shoulder with dimensional frame",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/mako shoulder with dimensional frame3.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jun 05 2026 17:12:00 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols_1960780021": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 27 2025 21:17:50 GMT+0000",
+      "jcr:lastModified": "Thu Feb 27 2025 21:17:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "fullbleedpanel_95829": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 27 2025 15:01:51 GMT+0000",
+      "jcr:lastModified": "Thu Feb 27 2025 15:01:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 15:02:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">More innovation</span></span>&nbsp;to help improve your experience</span></span></h3>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 21:20:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_1875765210": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 27 2025 18:53:21 GMT+0000",
+      "jcr:lastModified": "Thu Feb 27 2025 18:53:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "fullbleedpanel_531217641": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Dec 27 2022 15:26:34 GMT+0000",
+      "jcr:lastModified": "Thu Feb 23 2023 17:05:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgba(255,255,255,1)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 27 2025 18:57:40 GMT+0000",
+          "jcr:lastModified": "Thu Feb 27 2025 18:57:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text"
+        },
+        "cols2": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 27 2025 18:50:47 GMT+0000",
+          "jcr:lastModified": "Thu Feb 27 2025 18:50:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "largeheadline_493101": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Thu Feb 27 2025 18:48:59 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<h1><span class=\"futura-bold\"><span class=\"fontsize-2-5-vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"fontsize-3vw\">Mako 4</span></span></span></span></h1>\r\n",
+              "line2": "<h2><span class=\"fontsize-2-5-vw\"><span class=\"fontsize-2vw\">One system. <span class=\"futura-bold\">More procedures.</span></span></span></h2>\r\n",
+              "jcr:lastModified": "Fri Feb 28 2025 19:41:53 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          },
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "jcr:created": "Thu Feb 27 2025 18:56:10 GMT+0000",
+              "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Thu Feb 27 2025 18:57:16 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "cols2_1_3_2_3_1236808445": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Fri Feb 28 2025 19:17:47 GMT+0000",
+          "jcr:lastModified": "Fri Feb 28 2025 19:17:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Feb 27 2025 18:51:38 GMT+0000",
+              "alt": "Mako Total Hip, Mako Total knee, Mako Partial Knee,  Mako Spine​ and Mako Shoulder",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/Mako 4 Family 5_ALL GRAY.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Tue Jun 02 2026 18:02:11 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text_copy_copy_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jan 03 2023 18:13:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\">The latest advancement in SmartRobotics™ is here. Our fourth generation Mako System is a single system that delivers more - more capabilities and more applications - and is designed to offer a premium clinical and operational experience when compared to manual surgery across Mako Total Hip, Total Knee, Partial Knee, Spine and Shoulder.</span></p>\n<p>&nbsp;</p>\n",
+              "jcr:lastModified": "Wed Jun 10 2026 14:27:39 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            },
+            "text_copy_copy_copy_": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "hannah.white@stryker.com",
+              "leftPadding": "7",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "jcr:created": "Tue Jan 03 2023 18:13:47 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p style=\"text-align: left;\"><span class=\"fontsize-1-75em\"><span class=\"futura-bold\">Get more with Mako 4.&nbsp;</span></span></p>\n",
+              "jcr:lastModified": "Fri Feb 28 2025 19:41:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "backgroundColor": "rgba(255,255,255,0)",
+              "textIsRich": "true"
+            }
+          }
+        },
+        "largeheadline": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "11",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 27 2025 19:26:02 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "line1": "<h4><span class=\"fontsize-2-5-vw\">Integrated with the&nbsp;<span style=\"color: rgb(255,181,0);\">Q Guidance System</span></span></h4>\r\n",
+          "jcr:lastModified": "Wed Jul 08 2026 14:44:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/largeheadline",
+          "rightPadding": "5",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "textIsRich": [
+            "true",
+            "true"
+          ]
+        },
+        "text_459010829": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 19:28:18 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-5em\">The Q Guidance System - an advanced, multi-specialty platform built on 20 years of experience developing guidance technologies - is the hub of an ecosystem that includes Mako SmartRobotics™ for Spine, Total Hip, Total Knee, Partial Knee and Shoulder, as well as Cranial Guidance and Spine Guidance Software applications.&nbsp;&nbsp;</span></p>\n<p><span class=\"fontsize-1-5em\">To learn more about the Q Guidance System <a href=\"https://www.stryker.com/us/en/spine/products/q-guidance-system.html\" target=\"_blank\"><span style=\"color: #ffb500;\">click here</span></a>.&nbsp;</span></p>\n",
+          "jcr:lastModified": "Wed Jul 08 2026 14:14:12 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        },
+        "cols2_1_3_2_3": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 27 2025 19:36:35 GMT+0000",
+          "jcr:lastModified": "Thu Feb 27 2025 19:36:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+          "col2": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "standaloneimage": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "preset": "max_width_1440",
+              "jcr:created": "Thu Feb 27 2025 19:35:42 GMT+0000",
+              "alt": "Mako 4 TKA and Q Guidance system",
+              "srcFileRef": "/content/dam/stryker/joint-replacement/images/Mako 4 TKA and Q Guidance 4K1.png",
+              "borderColor": "rgba(76,125,122,1)",
+              "jcr:lastModified": "Fri Feb 28 2025 20:33:55 GMT+0000",
+              "sling:resourceType": "stryker/components/content/standaloneimage",
+              "enableBorder": "false"
+            }
+          },
+          "col1": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "text": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "7",
+              "jcr:created": "Thu Feb 27 2025 19:36:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Q Guidance System display monitors</span></span></p>\n<p><span class=\"fontsize-1-5em\">Large display monitor for enhanced intraoperative visibility designed to improve user experience.&nbsp;</span></p>\n",
+              "jcr:lastModified": "Thu Feb 27 2025 19:39:41 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "7",
+              "bottomMargin": "5"
+            },
+            "text_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "7",
+              "jcr:created": "Thu Feb 27 2025 19:36:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">FP8000 camera</span></span></p>\n<p><span class=\"fontsize-1-5em\">Our proprietary FP8000 camera features a wide field of view for enhanced probe and array visibility and operates up to 15x faster than leading competitor’s cameras<sup>5&nbsp;</sup>in spine applications.</span></p>\n",
+              "jcr:lastModified": "Tue Jul 07 2026 18:17:34 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "7",
+              "bottomMargin": "5"
+            },
+            "text_copy_2014979254": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "5",
+              "jcr:createdBy": "joelle.battista@stryker.com",
+              "leftPadding": "5",
+              "topPadding": "5",
+              "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+              "hideComponent": "false",
+              "topMargin": "7",
+              "jcr:created": "Thu Feb 27 2025 19:36:48 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "text": "<p><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Small OR footprint</span></span></p>\n<p><span class=\"fontsize-1-5em\">Space-efficient design for ease of transport, setup and turnover.</span></p>\n",
+              "jcr:lastModified": "Thu Feb 27 2025 19:41:03 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "rightPadding": "5",
+              "showDimensionalBox": "true",
+              "textIsRich": "true",
+              "leftMargin": "7",
+              "bottomMargin": "5"
+            }
+          }
+        },
+        "text_1426008988": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Feb 27 2025 19:42:55 GMT+0000",
+          "text": "<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 20:12:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "fullbleedpanel_95829_454820454": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Feb 27 2025 15:01:51 GMT+0000",
+      "jcr:lastModified": "Thu Feb 27 2025 15:01:59 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel",
+      "backgroundColor": "rgb(255,181,0)",
+      "fbleedparsys": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "2",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "2",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 15:02:03 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h3><span class=\"fontsize-1em\"><span class=\"fontsize-1-5em\"><span class=\"futura-bold\"><span style=\"color: #ffffff;\">More integrated technologies</span></span></span></span></h3>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 19:42:48 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 19 2023 15:53:10 GMT+0000",
+      "jcr:lastModified": "Thu Jan 19 2023 15:53:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Tue Dec 27 2022 15:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Mako Spine with <span style=\"color: #ffb500;\">Copilot's automatic depth stop*</span></span></span></p>\n",
+          "jcr:lastModified": "Tue Jul 07 2026 18:08:01 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "15",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "standaloneimage_267485789": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 27 2025 19:44:18 GMT+0000",
+          "alt": "Mako Spine end effector",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Picture13.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Feb 28 2025 19:23:24 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1834942466": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 19:50:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Mako Spine's lock-and-hold feature is designed to help provide stability within haptic boundaries and take Copilot's automatic depth stop capability to the next level, enhancing confidence during pedicle preparation and screw placement in spinal procedures.&nbsp;</span></p>\n<p><span class=\"fontsize-1-25em\">Mako Spine is intended for use during pedicle preparation and screw placement, and can be used together with the Q Pedicle Instruments and Copilot Smart Driver. Mako Spine is not intended for use with Copilot during bone resection.&nbsp;</span></p>\n<p>*Mako Spine and Copilot's automatic depth stop are features within the Spine Guidance 5 Software.&nbsp;</p>\n",
+          "jcr:lastModified": "Tue Jul 07 2026 18:08:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "7",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "5",
+          "jcr:created": "Tue Dec 27 2022 15:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\"><span style=\"color: #ffb500;\">MICS 3</span></span></span></p>\n",
+          "jcr:lastModified": "Wed Mar 05 2025 17:07:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "showDimensionalBox": "true",
+          "textIsRich": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Thu Feb 27 2025 19:44:14 GMT+0000",
+          "alt": "MICS",
+          "srcFileRef": "/content/dam/stryker/joint-replacement/images/Picture141.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Thu Feb 27 2025 19:55:10 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_1834942466_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "leftPadding": "5",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 19:50:13 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">Built on the legacy of Stryker’s System 9 power tools, the MICS 3 handpiece, attachments, and blades are designed for an enhanced cutting experience in your Total Knee, Partial Knee, and Total Hip procedures.<br>\n <br>\n </span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 19:55:45 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 19 2023 15:53:10 GMT+0000",
+      "jcr:lastModified": "Thu Jan 19 2023 15:53:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "leftPadding": "6",
+          "topPadding": "6",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "10",
+          "jcr:created": "Tue Dec 27 2022 15:36:23 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"futura-bold\"><span class=\"fontsize-1-75em\">Mako&nbsp;<span style=\"color: #ffb500;\">SmartRobotics™</span></span></span></p>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Global statistics through&nbsp;</span><span class=\"futura-bold\">2025</span><sup>5</sup></span></p>\n",
+          "jcr:lastModified": "Thu Jun 18 2026 16:17:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "15",
+          "showDimensionalBox": "true",
+          "textIsRich": "true",
+          "bottomMargin": "10"
+        }
+      }
+    },
+    "experiencefragment": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Dec 27 2022 15:42:59 GMT+0000",
+      "text": "2.5 million+ Mako procedures have been performed across the globe 47 countries Mako Systems installed in over 47 countries 20 years of robotic-arm assisted surgery experience 800+ contributions to the global scientific record* 2,000+ patents and patent applications established globally",
+      "jcr:lastModified": "Wed Oct 09 2024 19:59:42 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/systems/mako_smartrobotics_o/global-statistics/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/systems/mako-smartrobotics-o/global-statistics/master"
+    },
+    "cols_1167137855": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 19 2023 15:44:07 GMT+0000",
+      "jcr:lastModified": "Thu Jan 19 2023 15:44:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Thu Feb 27 2025 19:59:55 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p>*Peer-reviewed papers, pre-prints and conference abstracts</p>\n",
+          "jcr:lastModified": "Tue May 26 2026 17:06:02 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "5",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols_1224419950": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Jan 19 2023 15:44:33 GMT+0000",
+      "jcr:lastModified": "Thu Jan 19 2023 15:44:33 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title_779566407": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "resources",
+      "jcr:created": "Mon Mar 10 2025 19:52:21 GMT+0000",
+      "title": "Resources and Downloads",
+      "jcr:lastModified": "Mon Mar 10 2025 19:53:09 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "resources": [
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_665771006",
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_1800360228",
+        "/content/stryker/us/en/joint-replacement/asset-items/jcr:content/par/externalasset_1524406953"
+      ],
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Tue Dec 27 2022 15:52:40 GMT+0000",
+      "title": "Resources and downloads",
+      "jcr:lastModified": "Wed Jun 10 2026 14:28:16 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "experiencefragment_945376981": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 14:53:36 GMT+0000",
+      "text": "Your next step in learning with Stryker starts here. Visit Stryker’s Training Academy, your on-demand digital platform, to explore a comprehensive library of easily accessible and searchable educational content on Stryker products and technologies. Available to U.S. healthcare professionals with an NPI Sign In to Stryker's Training Academy JR-OTH-SYK-2191506",
+      "jcr:lastModified": "Wed Oct 29 2025 14:54:07 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/joint-replacement/en/training_and_educati/stryker_training_aca/sta-callout-and-signup-invite/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/joint-replacement/en/training-and-educati/stryker-training-aca/sta-callout-and-signup-invite/master"
+    },
+    "section_title_2142105823": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "stephen.brown@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Fri Jan 10 2020 19:41:37 GMT+0000",
+      "title": "Contact Us",
+      "jcr:lastModified": "Thu Feb 27 2025 21:11:15 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "largeheadline_copy_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "topPadding": "5",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "topMargin": "5",
+      "jcr:created": "Tue Dec 27 2022 14:52:54 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\"><span style=\"color: rgb(255,181,0);\"><span style=\"color: rgb(0,0,0);\">See</span> Mako SmartRobotics<sup>™</sup> <span style=\"color: rgb(0,0,0);\">in action!</span></span></span></span>",
+      "jcr:lastModified": "Wed Oct 29 2025 14:53:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,255,255,0)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "joelle.battista@stryker.com",
+      "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+      "jcr:created": "Thu Nov 14 2024 18:12:55 GMT+0000",
+      "jcr:lastModified": "Thu Nov 14 2024 18:12:55 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "joelle.battista@stryker.com",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Thu Nov 14 2024 18:11:57 GMT+0000",
+          "text": "<p><span class=\"fontsize-1-25em\"><b>This contact form is intended for healthcare professionals</b>. If you’re a patient looking to contact us,&nbsp;<a href=\"https://patients.stryker.com/\" target=\"_blank\">please go here</a>.</span></p>\n",
+          "jcr:lastModified": "Thu Feb 27 2025 21:45:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_425268517": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jan 31 2023 14:26:43 GMT+0000",
+      "jcr:lastModified": "Tue Jan 31 2023 14:26:43 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2784",
+          "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+          "jcr:created": "Tue Dec 27 2022 16:14:26 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you!",
+          "jcr:lastModified": "Wed Oct 09 2024 19:35:52 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "joelle.battista@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p><b>References:&nbsp;</b></p>\r\n<ol>\r\n<li>Kayani B, Konan S, Tahmassebi J, Rowan FE, Haddad FS. An assessment of early functional rehabilitation and hospital discharge in conventional versus robotic-arm assisted unicompartmental knee arthroplasty: a prospective cohort study. Bone Joint J. 2019 Jan;101-B(1):24-33. doi: 10.1302/0301-620X.101B1.BJJ-2018-0564.R2. PMID: 30601042.</li>\r\n<li>Kayani B, Konan S, Tahmassebi J, Pietrzak JRT, Haddad FS. Robotic-arm assisted total knee arthroplasty is associated with improved early functional recovery and reduced time to hospital discharge compared with conventional jig-based total knee arthroplasty: a prospective cohort study. Bone Joint J. 2018 Jul;100 B(7):930-937. doi: 10.1302/0301-620X.100B7.BJJ-2017-1449.R1. PMID: 29954217; PMCID: PMC6413767.</li>\r\n<li>Kayani B, Konan S, Thakrar RR, Huq SS, Haddad FS. Assuring the long-term total joint arthroplasty: a triad of variables. Bone Joint J. 2019 Jan;101-B(1_Supple_A):11-18. doi: 10.1302/0301-620X.101B1.BJJ-2018-0377.R1. PMID: 30648491.</li>\r\n<li>Catani F, Zambianchi F, Marcovigi A, Franceschi G, Nardacchione R. COMPONENT POSITIONING AND SOFT-TISSUE TENSIONING INFLUENCE CLINICAL OUTCOMES OF ROBOTIC-ASSISTED MEDIAL UNICOMPARTMENTAL KNEE ARTHROPLASTY: A SHORT-TERM FOLLOW-UP STUDY. Orthop Procs. 2018;100-B(SUPP_12):3-3. doi:10.1302/1358-992X.2018.12.003</li>\r\n<li>Stryker data on file.&nbsp;</li>\r\n</ol>\r\n",
+    "jcr:lastModified": "Thu Jun 18 2026 16:17:03 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Tue Jan 31 2023 14:47:44 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/joint-replacement/systems/mako-system-overview/images/Mako 4 Family 5_ALL GRAY.png"
+  },
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  }
+}

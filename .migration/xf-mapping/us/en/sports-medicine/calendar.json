@@ -1,0 +1,49 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Calendar",
+  "jcr:versionHistory": "68f64b22-7492-452f-b69f-b36507b0aa94",
+  "cq:template": "/apps/stryker/templates/event-calendar",
+  "jcr:predecessors": [
+    "dd8a09c7-e7e1-443d-8d04-b51e4583b59e"
+  ],
+  "lastPublished": "Thu Nov 30 2017 16:07:22 GMT+0000",
+  "jcr:created": "Thu Nov 30 2017 16:07:22 GMT-0500",
+  "cq:lastModified": "Wed Nov 29 2017 11:13:19 GMT-0500",
+  "cq:siblingOrder": "procedures,news,systems,awards,products,asset-items,contact,services,calendar,",
+  "jcr:baseVersion": "dd8a09c7-e7e1-443d-8d04-b51e4583b59e",
+  "jcr:isCheckedOut": true,
+  "cq:name": "calendar",
+  "cq:tags": [
+    "stryker:content-type/hcp_content",
+    "stryker:business-unit/sports-medicine"
+  ],
+  "jcr:uuid": "f08b03d5-6aad-4e45-9a2c-3618b8d5d6aa",
+  "sling:resourceType": "stryker/components/structure/pages/event-calendar",
+  "cq:parentPath": "/content/stryker/us/en/sports-medicine",
+  "cq:childrenOrder": "",
+  "cq:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "eventcalendar": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "searchPath": "/content/stryker/us/en/global-events/sports-medicine",
+    "title": "Calendar of events for Sports Medicine",
+    "jcr:lastModified": "Tue Nov 28 2017 16:28:07 GMT-0500",
+    "sling:resourceType": "stryker/components/content/eventcalendar",
+    "parentTag": [
+      "stryker:content-type/event"
+    ]
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>Attendance at these events is subject to applicable legal and compliance requirements, industry codes of ethics, and Stryker policies and procedures.&nbsp;For more information, contact your local sales representative.&nbsp;<br>\r\n</p>\r\n",
+    "jcr:lastModified": "Wed Nov 29 2017 11:13:19 GMT-0500",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

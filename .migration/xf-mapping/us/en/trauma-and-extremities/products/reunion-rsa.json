@@ -1,0 +1,384 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "Reverse Shoulder Arthroplasty System  ",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "ReUnion RSA",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "57b675ae-9d55-41d1-9642-df5b36df3cde",
+  "cq:template": "/apps/stryker/templates/product-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+  "thumbnailAltText": "ReUnion RSA",
+  "thumbnailFileReference": "/content/dam/stryker/trauma-and-extremeties/products/reunionrsa/images/ReUnion-RSA-with-shoulder.png",
+  "jcr:predecessors": [
+    "428447ce-8b4e-421a-a461-0ac9b1d7f9cc"
+  ],
+  "lastPublished": "Thu Oct 10 2024 19:23:13 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Thu Oct 10 2024 19:25:39 GMT+0000",
+  "cq:lastReplicated": "Thu Oct 10 2024 19:25:42 GMT+0000",
+  "cq:lastModified": "Thu Oct 03 2024 14:39:09 GMT+0000",
+  "jcr:description": "Shoulder replacement intended for primary fractures or revisions. ",
+  "jcr:baseVersion": "428447ce-8b4e-421a-a461-0ac9b1d7f9cc",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 19:22:01 GMT+0000",
+  "cq:tags": [
+    "stryker:product/trauma-and-extremities/reunion-rsa",
+    "stryker:capability/upper-extremities",
+    "stryker:system/trauma-and-extremities/shoulder-arthroplasty",
+    "stryker:custom/trauma-and-extremities/Procedures/Arthroplasty",
+    "stryker:custom/trauma-and-extremities/Indications/shoulder",
+    "stryker:content-type/hcp_content",
+    "stryker:specialty/shoulder-and-elbow",
+    "stryker:specialty/shoulder",
+    "stryker:content-type/product",
+    "stryker:capability/trauma-and-extremities",
+    "stryker:portfolio/orthopaedics",
+    "stryker:business-unit/trauma-and-extremities",
+    "stryker:custom/trauma-and-extremities/product-type/shoulder-arthroplasty"
+  ],
+  "jcr:lastModified": "Thu Oct 03 2024 14:39:09 GMT+0000",
+  "jcr:uuid": "da208593-8b0b-4464-a506-622ede22a63e",
+  "sling:resourceType": "stryker/components/structure/pages/product-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carlos.castaneda@stryker.com",
+      "jcr:lastModifiedBy": "devin.doran@stryker.com",
+      "jcr:created": "Thu May 25 2017 10:11:22 GMT-0400",
+      "headColor": "rgb(255,181,0)",
+      "usethumbnail": "true",
+      "jcr:lastModified": "Thu Jun 08 2017 13:50:52 GMT-0400",
+      "sling:resourceType": "stryker/components/content/pagehero"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_1997618794": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Thu Nov 07 2019 21:12:01 GMT+0000",
+      "jcr:lastModified": "Thu Nov 07 2019 21:12:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Thu Nov 07 2019 21:12:05 GMT+0000",
+          "type": "typeId",
+          "videoId": "x7TmOgCDBtM",
+          "jcr:lastModified": "Thu Nov 07 2019 21:12:18 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Part 1 of 3 RSA Live Procedure",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Dr. Willis demonstrates exposure and  humeral prep  during  this live surgery recording.",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Nov 07 2019 21:12:09 GMT+0000",
+          "jcr:lastModified": "Thu Nov 07 2019 21:13:11 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2_1873859244": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Thu Nov 07 2019 21:13:19 GMT+0000",
+      "jcr:lastModified": "Thu Nov 07 2019 21:13:19 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Thu Nov 07 2019 21:13:28 GMT+0000",
+          "type": "typeId",
+          "videoId": "4Ah8Nb60OxI",
+          "jcr:lastModified": "Thu Nov 07 2019 21:14:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Part 2 of 3 RSA Live Procedure",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Dr. Willis demonstrates glenoid preparation in an RSA procedure.",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Nov 07 2019 21:13:33 GMT+0000",
+          "jcr:lastModified": "Thu Nov 07 2019 21:15:09 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2_2105104711": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Thu Nov 07 2019 21:15:17 GMT+0000",
+      "jcr:lastModified": "Thu Nov 07 2019 21:15:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Thu Nov 07 2019 21:15:22 GMT+0000",
+          "type": "typeId",
+          "videoId": "LXyYiuoTdvM",
+          "jcr:lastModified": "Thu Nov 07 2019 21:15:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Part 3 of 3 RSA Live Procedure",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Dr. Willis demonstrates closure of an RSA procedure.",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Thu Nov 07 2019 21:15:25 GMT+0000",
+          "jcr:lastModified": "Thu Nov 07 2019 21:16:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2_1829519737": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Tue Nov 05 2019 05:11:10 GMT+0000",
+      "jcr:lastModified": "Tue Nov 05 2019 05:11:10 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Tue Nov 05 2019 05:11:16 GMT+0000",
+          "type": "typeId",
+          "videoId": "l7DG_7_xNjA",
+          "jcr:lastModified": "Tue Nov 05 2019 05:11:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "ReUnion Shoulder Arthroplasty: Stryker R&D’s 2018 Best Product Award",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Hear from surgeons what they love most about the ReUnion Shoulder Arthroplasty system. ",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Nov 05 2019 05:11:30 GMT+0000",
+          "jcr:lastModified": "Tue Nov 05 2019 05:12:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Tue Apr 09 2019 14:15:32 GMT+0000",
+      "jcr:lastModified": "Tue Apr 09 2019 14:15:32 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Tue Apr 09 2019 14:15:41 GMT+0000",
+          "type": "typeId",
+          "videoId": "SeYaGSGiS70",
+          "jcr:lastModified": "Tue Apr 09 2019 14:22:16 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Reverse Total Shoulder Arthroplasty- Live Surgery",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Surgery performed by Dr. Mighell and moderated by Dr. Sanchez-Sotelo using the ReUnion Shoulder.",
+          "CTAOpenInNewTab": "true",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Tue Apr 09 2019 14:16:45 GMT+0000",
+          "jcr:lastModified": "Fri Feb 28 2020 17:17:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "cols2_1194925959": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "megan.foltz@stryker.com",
+      "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+      "jcr:created": "Fri Feb 28 2020 17:15:44 GMT+0000",
+      "jcr:lastModified": "Fri Feb 28 2020 17:15:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "jcr:created": "Fri Feb 28 2020 17:15:49 GMT+0000",
+          "type": "typeId",
+          "videoId": "Ewb_pOHZ3og",
+          "jcr:lastModified": "Fri Feb 28 2020 17:16:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "subtitle": "Cecil's experience with RSA",
+          "jcr:createdBy": "megan.foltz@stryker.com",
+          "description": "Cecil describes the decision making process, his previous limitations and how his life has changed after the procedure.  ",
+          "jcr:lastModifiedBy": "megan.foltz@stryker.com",
+          "ctaLinkType": "none",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Feb 28 2020 17:17:13 GMT+0000",
+          "jcr:lastModified": "Fri Feb 28 2020 17:18:25 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgba(76,125,122,1)"
+        }
+      }
+    },
+    "featuredcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "stryker/components/content/customizable"
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "resources": "/content/dam/stryker/trauma-and-extremeties/products/reunionrsa/resources/RU-ST-16_Rev-5 2021 ReUnion Reverse.pdf",
+      "jcr:lastModifiedBy": "bonnie.lindenfelser@stryker.com",
+      "jcr:lastModified": "Tue May 21 2024 15:13:21 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "vince.wolff@stryker.com",
+      "jcr:lastModifiedBy": "vince.wolff@stryker.com",
+      "jcr:created": "Wed Oct 02 2019 17:29:16 GMT+0000",
+      "alt": "TEACH Talks Ad Banner",
+      "srcFileRef": "/content/dam/stryker/trauma-and-extremeties/images/TEACH-talks-ad-banner.jpg",
+      "jcr:lastModified": "Wed Oct 02 2019 17:31:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "linkInternal": "/content/stryker/us/en/training-and-education/orthopaedics/trauma-extremities/teach/TEACH-TALKS-home-page"
+    }
+  },
+  "pageshortdescription": {
+    "jcr:primaryType": "nt:unstructured",
+    "shortDescTitle": "<p>ReUnion Shoulder<br>\r\n</p>\r\n",
+    "shortDescTop": "<p>The ReUnion Shoulder System offers novel technologies such as X3 highly crosslinked polyethylene, Tritanium 3D porous metal, and SmartLock variable angle locking screws in a shoulder arthroplasty system, combined with patented intuitive instrumentation designed to provide simple solutions to complicated procedures.</p>\r\n<p>&nbsp;</p>\r\n<p>Fully convertible platform humeral stems provides intraoperative and postoperative flexibility for you and your patients when deciding between a hemi, anatomic total or reverse shoulder arthroplasty.</p>\r\n<p>&nbsp;</p>\r\n",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "jcr:lastModified": "Fri Jul 21 2017 12:59:45 GMT-0400",
+    "sling:resourceType": "stryker/components/content/pageshortdescription",
+    "textIsRich": [
+      "true",
+      "true",
+      "true"
+    ],
+    "bulletList": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Tritanium 3D porous metal backed glenoid baseplate; allows mechanism for bony ingrowth<sup>1</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Curved back baseplate geometry allows mechanism for shear resistance<sup>2</sup></p>\r\n",
+        "textIsRich": "true"
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>SmartLock compressive locking center screws</p>\r\n",
+        "textIsRich": "true"
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>SmartLock variable angle locking peripheral screws with a 30° cone of angulation</p>\r\n",
+        "textIsRich": "true"
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Humeral inserts made with X3 highly crosslinked polyethylene</p>\r\n",
+        "textIsRich": "true"
+      },
+      "6": {
+        "jcr:primaryType": "nt:unstructured",
+        "bullet": "<p>Streamlined and intuitive platform instrument system</p>\r\n",
+        "textIsRich": "true"
+      }
+    }
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "devin.doran@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p> </p>\r\n<ol>\r\n<li>Stroud N. J., DiPaola M. J., Martin B. L., et al,<br />\r\n“Initial Glenoid Fixation Using Two Different<br />\r\nReverse Shoulder Designs with an Equivalent<br />\r\nCenter of Rotation in a Low Density and High<br />\r\nDensity Bone Substitute,” J Shoulder Elbow Sur<br />\r\n(2013) 22, 1573-1579</li>\r\n<li>Anglin C., Wyss UP., et al., “Mechanical Testing of<br />\r\nShoulder Prostheses and Recommendations for<br />\r\nGlenoid Design,” J Shoulder Elbow Surg, 2000;<br />\r\n9:323-31.</li>\r\n</ol>\r\n<p>RU-AWI-2, 07-2017<br />\r\n</p>\r\n",
+    "jcr:lastModified": "Thu Apr 18 2019 17:31:01 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/trauma-and-extremeties/products/reunionrsa/images/ReUnion-RSA-with-shoulder.png"
+  }
+}

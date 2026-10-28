@@ -1,0 +1,297 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "How one medical center reduced pressure ulcers and saved costs",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "746434ff-d224-48e2-ab60-e9f3cff62222",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "Patient in dark room laying in ProCuity hospital bed",
+  "jcr:predecessors": [
+    "cdf9e2eb-72a3-40d3-9ddd-dfb8b03d7c4b"
+  ],
+  "contentID": "AC-PRCY-COMM-1201444_REV-0_en_us",
+  "lastPublished": "Fri Sep 26 2025 13:21:16 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 26 2025 13:21:16 GMT+0000",
+  "cq:lastReplicated": "Fri Sep 26 2025 13:21:19 GMT+0000",
+  "cq:lastModified": "Fri Sep 26 2025 13:21:10 GMT+0000",
+  "jcr:description": "Hospital acquired pressure injuries (HAPI) – also known as pressure ulcers or bed sores – cause substantial patient harm and costs to hospitals.",
+  "jcr:baseVersion": "cdf9e2eb-72a3-40d3-9ddd-dfb8b03d7c4b",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Tue Sep 03 2024 18:18:08 GMT+0000",
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:custom/acute-care/acute-care-bu-news"
+  ],
+  "jcr:lastModified": "Fri Sep 26 2025 13:21:10 GMT+0000",
+  "jcr:uuid": "340440da-6dac-411d-877c-7137a8eed0a0",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "chris.kleckner@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "standaloneimage_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Aug 28 2024 20:13:59 GMT+0000",
+      "alt": "Patient laying in ProCuity hospital bed",
+      "srcFileRef": "/content/dam/stryker/acute-care/news/procuity-eguide-abstract/procuity-eguide-abstract_hero_1440x900.jpg",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Aug 30 2024 17:36:35 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "text_copy_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 20:14:04 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\"><i>3-minute read</i></span></p>\n<h2><span class=\"futura-bold\">91.7% decrease in HAPIs in the ICU saved an estimated $660,000 to $5,006,100</span><sup>1</sup></h2>\n",
+      "jcr:lastModified": "Tue Sep 03 2024 12:59:26 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true",
+      "bottomMargin": "3"
+    },
+    "cols3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 21:46:27 GMT+0000",
+      "jcr:lastModified": "Wed Aug 28 2024 21:46:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5.75",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 28 2024 21:51:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"fontsize-2-5em\"><span class=\"futura-bold\">2.5 million</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Acute care patients who develop<br>\na HAPI each year<sup>2</sup></span></p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 22:12:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 28 2024 21:51:43 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">$20,000 to <br>\n$151,700</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Cost of a single HAPI instance<sup>3</sup></span></p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 22:08:22 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "5.75",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "topPadding": "5",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 28 2024 21:51:48 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p style=\"text-align: center;\"><b><span class=\"futura-bold\"><span class=\"fontsize-2-5em\">19.6%</span></span></b></p>\n<p style=\"text-align: center;\"><span class=\"fontsize-1-25em\">Quarterly ICU HAPI rate increase from<br>\none RN voluntarily leaving<sup>4</sup></span></p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 22:12:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "text_copy_copy_2143304509": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "hideComponent": "false",
+      "jcr:created": "Wed Aug 28 2024 20:14:04 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "text": "<p><span class=\"fontsize-1-25em\">Hospital acquired pressure injuries (HAPI) – also known as pressure ulcers or bed sores – cause substantial patient harm and costs to hospitals.<br>\n</span></p>\n<p><span class=\"fontsize-1-25em\">Every year in the U.S., approximately 2.5 million acute care patients develop a HAPI.<sup>1</sup> Patients who are elderly, immobile, malnourished, have poor skin quality or have extended hospital stays are at particularly high risk.<sup>5</sup></span></p>\n<p><span class=\"fontsize-1-25em\">The challenge of preventing HAPIs is acerbated by the nursing shortage, the continued exodus of nurses from the profession and short tenures. One study showed that on average per quarter in an intensive care unit (ICU), a single RN voluntarily leaving leads to a 19.6% increase in the HAPI rate.<sup>4</sup></span></p>\n<h3><span class=\"futura-bold\">When preventive measures aren’t enough</span></h3>\n<p><span class=\"fontsize-1-25em\">With the prevention and treatment of HAPIs top of mind, ICU nurses follow well-recognized protocols. They take measures to avoid pressure on areas prone to developing bed sores. They assess and clean skin. They apply dressings and reposition patients.</span></p>\n<p><span class=\"fontsize-1-25em\">And still, all too often, too many HAPIs occur.</span></p>\n<h3><span class=\"futura-bold\">A medical center’s journey to reducing HAPIs</span><sup>*1</sup></h3>\n<p><span class=\"fontsize-1-25em\">At Bon Secours Southside Medical Center, nurse leaders wondered if a more advanced hospital bed – a state-of-the-art bed with an integrated, powered support surface – could make a difference in reducing HAPIs.</span></p>\n<p><span class=\"fontsize-1-25em\">They conducted a study to find out.</span></p>\n<p><span class=\"fontsize-1-25em\">Their adult ICU and adult cardiovascular ICU (CVICU) each had 14 beds and a patient population in poor health and at high risk for chronic diseases. During the study’s 10-month pre-intervention period, 36 HAPIs occurred in the ICU and eight occurred in the CVICU.</span></p>\n<p><span class=\"fontsize-1-25em\">At the start of the intervention period, the 14 beds in the ICU were replaced with Stryker’s <a href=\"https://www.stryker.com/us/en/acute-care/products/procuity-icu.html\">ProCuity ZMX</a> bed frames with <a href=\"https://www.stryker.com/us/en/acute-care/products/isolibrium.html\">Isolibrium PE</a> support surfaces. No change was made to the beds in the CVICU.</span></p>\n",
+      "jcr:lastModified": "Mon Sep 23 2024 14:15:38 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 22:16:04 GMT+0000",
+      "jcr:lastModified": "Wed Aug 28 2024 22:16:04 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "leftPadding": "0",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 28 2024 20:14:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<p><span class=\"fontsize-1-25em\">During the 20 months of the study, staff in both groups followed protocols designed to decrease pressure-related injuries. All were directed to continue to practice Q2 turning and repositioning, early assessment and early consults to wound care. They were advised to ensure pressure injury preventative measures were in place for high-risk patients as part of the care plan.</span><br>\n</p>\n<p><span class=\"fontsize-1-25em\">And what was the result?</span></p>\n<p><span class=\"fontsize-1-25em\">In the ICU, where 36 HAPIs occurred during the pre-intervention period, only three occurred during the intervention period. In fact, during the final six consecutive months of the intervention period, no HAPI occurred in the ICU.</span></p>\n<p><span class=\"fontsize-1-25em\">Meanwhile, in the CVICU, where no change was made to the beds, 20 HAPIs occurred during the intervention period.</span></p>\n<p><span class=\"fontsize-1-25em\">The team concluded that preventive measures administered and conducted by hospital personnel can successfully limit the number of HAPIs only to a certain degree. When combined with these efforts, state-of-the-art patient bed technology can significantly decrease HAPI occurrence, leading to enhanced patient care and decreased hospital cost.</span></p>\n<p><span class=\"fontsize-1-25em\">Based on the national average HAPI cost, a 91.7% decrease in the total number of HAPIs in the ICU saved Bon Secours Southside Medical Center an estimated $660,000 to $5,006,100.</span></p>\n",
+          "jcr:lastModified": "Wed Aug 28 2024 22:27:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "rightPadding": "0",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Wed Aug 28 2024 22:25:36 GMT+0000",
+          "alt": "Chart showing Total number of HAPIs reported in the ICU before and after intervention",
+          "title": "Figure 1. Total number of HAPIs reported in the ICU before and after intervention.",
+          "srcFileRef": "/content/dam/stryker/acute-care/news/procuity-eguide-abstract/Figure-1_Total-HAPIs-reported-in-the-ICU-before-and-after-intervention.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 30 2024 17:36:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      }
+    },
+    "cols2_1591502610": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Aug 28 2024 22:28:00 GMT+0000",
+      "jcr:lastModified": "Wed Aug 28 2024 22:28:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "katie.boertman@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Aug 30 2024 11:54:02 GMT+0000",
+          "alt": "Nurse talking with patient in hospital bed",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/pressure-ulcer-prevention-icu-beds/ac-procuity-eguide-thumbmail-2_1200x680.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Aug 30 2024 17:37:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Wed Aug 28 2024 20:14:04 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\">Want to learn more? Access our e-Guide</span><br>\n</h2>\n<p><span class=\"fontsize-1-25em\">As today’s healthcare landscape continues to evolve, frontline healthcare professionals are taking on more responsibilities amid ongoing turnover and a less-experienced workforce.<sup>4,6</sup></span></p>\n<p><span class=\"fontsize-1-25em\">If you’re striving to drive quality care in the ICU while navigating these challenges, access our e-Guide*, “Supporting pressure injury prevention in the ICU with ProCuity ZMX and Isolibrium PE: Strategies for enhancing patient care and helping to reduce cost.”</span></p>\n<p><span class=\"fontsize-1-25em\">You’ll get a closer look at how Bon Secours achieved their results and learn about the hospital bed technology that made the difference. Perhaps best of all, you’ll discover how we can help <b>your</b> hospital use a data-driven approach to supporting HAPI prevention in the ICU, starting from wherever you are today.</span></p>\n",
+          "jcr:lastModified": "Fri Aug 30 2024 12:02:50 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "curatedcta": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "chris.kleckner@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "ctaLinkType": "int",
+          "ctaOpenInNewTabOverride": "0",
+          "jcr:created": "Fri Aug 30 2024 11:56:05 GMT+0000",
+          "CTATitle": "Access e-Guide",
+          "jcr:lastModified": "Fri Aug 30 2024 11:57:08 GMT+0000",
+          "sling:resourceType": "stryker/components/content/curatedcta",
+          "CTAButtonColor": "rgb(255,181,0)",
+          "ctaInternalLink": "/content/stryker/us/en/acute-care/c/pressure-ulcer-prevention-icu-beds"
+        }
+      }
+    },
+    "customizable": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Fri Aug 30 2024 11:51:00 GMT+0000",
+      "title": "Related",
+      "jcr:lastModified": "Fri Aug 30 2024 11:52:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/customizable",
+      "featuresCta": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/procuity-icu"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/products/isolibrium"
+        },
+        "3": {
+          "jcr:primaryType": "nt:unstructured",
+          "cta": "/content/stryker/us/en/acute-care/c/the-science-behind-support-surfaces"
+        }
+      }
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Mon Aug 05 2024 18:25:02 GMT+0000",
+      "text": "Resources Explore Acute Care homepage Newsroom Caregiver stories ProClinical Learn Training and Education Information for use Techweb Support Contact information Investigator-initiated studies request for support Medical information request form",
+      "jcr:lastModified": "Mon Aug 05 2024 18:25:22 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master"
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "publishDate": "Tue Sep 03 2024 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "03-Sep-2024",
+    "jcr:lastModified": "Tue Sep 03 2024 18:18:01 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/news/procuity-eguide-abstract/procuity-eguide-abstract_hero_1200x680.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>*This case study describes the findings of a quality improvement initiative that incorporated ProCuity ZMX and Isolibrium PE with other evidence based HAPI prevention interventions. The hospital's results reflect the policies, protocols, technology and training implemented by the hospital and the results are not necessarily representative of what another hospital may experience.</p>\r\n<p>1. Maass A, Dundalow JL. Case study: Quality Improvement Using Support Surfaces Effectively Decreases the Incidence of Hospital-Acquired Pressure Injuries. <a href=\"https://view.stryker.com/viewer/664646c192d58daa8e14d558\">https://view.stryker.com/viewer/664646c192d58daa8e14d558</a>. Retrieved May 17, 2024.</p>\r\n<p>2. Padula WV, Delarmente BA. The national cost of hospital-acquired pressure injuries in the United States. International wound journal. 2019 Jun;16(3):634- 40. Retrieved May 16, 2024.</p>\r\n<p>3. Agency for Healthcare Research and Quality, Rockville, MD. Are we ready for this change? Last reviewed October 2014. Retrieved May 16, 2024.</p>\r\n<p>4. Peng D, Ye Y, et al. Journal of Operations Management. The impact of nurse staffing on turnover and quality: An empirical examination of nursing care within hospital units. March 26, 2023. Retrieved May 16, 2024.</p>\r\n<p>5. Kayser SA, VanGilder CA, Lachenbruch C. Predictors of superficial and severe hospital-acquired pressure injuries: A cross-sectional study using the International Pressure Ulcer Prevalence™ survey. International journal of nursing studies. 2019 Jan 1;89:46-52. Retrieved May 16, 2024.</p>\r\n<p>6. Intensive care unit nurse demographics and statistics in the US. <a href=\"http://www.zippia.com\">www.zippia.com</a>. Retrieved May 16, 2024.</p>\r\n",
+    "jcr:lastModified": "Fri Aug 30 2024 12:05:04 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

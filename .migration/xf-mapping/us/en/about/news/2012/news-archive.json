@@ -1,0 +1,140 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "2012",
+  "jcr:createdBy": "admin",
+  "jcr:title": "News archive",
+  "jcr:versionHistory": "b6840322-c7a4-4b90-8a18-311bbf84ee14",
+  "cq:template": "/apps/stryker/templates/tier2-landing-page",
+  "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+  "jcr:predecessors": [
+    "990dbc7b-aad8-4ad8-84d9-252fcc375919"
+  ],
+  "lastPublished": "Fri Sep 01 2017 10:23:00 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Fri Sep 01 2017 10:23:00 GMT-0400",
+  "cq:lastModified": "Wed Aug 30 2017 15:16:37 GMT-0400",
+  "jcr:baseVersion": "990dbc7b-aad8-4ad8-84d9-252fcc375919",
+  "jcr:isCheckedOut": true,
+  "jcr:lastModified": "Thu Aug 24 2017 20:30:04 GMT-0400",
+  "jcr:uuid": "6e1f6234-bf69-44ab-98ec-e3f6f1ccb9bd",
+  "sling:resourceType": "stryker/components/structure/pages/tier2-landing-page",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "hero_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "pagehero": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "headColor": "rgb(255,181,0)",
+      "jcr:lastModified": "Thu Aug 24 2017 21:04:07 GMT-0400",
+      "sling:resourceType": "stryker/components/content/pagehero",
+      "hideBottomLine": "true"
+    }
+  },
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:29:31 GMT-0400",
+      "title": "Products",
+      "jcr:lastModified": "Wed Aug 30 2017 15:16:37 GMT-0400",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "jcr:lastModified": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"10%\">&nbsp;</td>\n<td width=\"40%\">&nbsp;</td>\n<td width=\"60%\">&nbsp;</td>\n</tr><tr><td>11/15/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/148087\">Stryker Launches Mini Mobile Training Center at The Seventh International Congress of Chinese Orthopaedic Association 2012 (COA) – Beijing, China</a></td>\n<td>Stryker&nbsp;announces the launch of a mini version of its Mobile Training Center (MTC mini) at The Seventh International Congress of Chinese Orthopaedic Association taking place in Beijing, China. Stryker successfully launched the first China Mobile Training Center (MTC) last year in order to provide medical technology training solutions to healthcare providers. The new MTC mini will broaden access into more cities in China and increase training opportunities for customers. The MTC mini will feature the latest Stryker products and instrumentation and enables hands-on practices and procedural training.</td>\n</tr><tr><td height=\"20\">11/8/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/148066\">Healthcare Purchasing News - Your Third-Party Device Reprocessor:&nbsp;&nbsp; Critical to Program Success</a></td>\n<td>Stryker Sustainability Solutions President, Brian White, discusses&nbsp;how the ideal reprocessor is the one that operates within a framework that emphasizes education, promotion, integration, and continuous supporter.&nbsp;</td>\n</tr><tr><td height=\"20\">11/8/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/148065\">Stryker Launches&nbsp;Next Generation Trevo® ProVue™ Retrieval System</a></td>\n<td>Stryker announces the global commercial launch of the new Trevo® ProVue™ Retriever. The World’s First Fully Visible Stent Retriever Device to Treat Acute Ischemic Stroke Expands Stryker’s Commitment to Complete Stroke Care. The Trevo ProVue Retriever is the first clot removal device fully visible during the procedure for precise positioning within the clot and optimized clot retrieval in patients experiencing acute ischemic stroke. Previous technology only provided visibility to the edges of the device. “Trevo ProVue Retriever’s full visibility provides a significant clinical benefit.” said Professor Liebig, M.D., Head of Neuroradiology, University Hospital of Cologne in Cologne, Germany. “I am impressed with how full device visibility provides more information during the procedure to quickly and easily position the device and enables real-time feedback for a new level of confidence to open blood vessels.”&nbsp;</td>\n</tr><tr><td height=\"20\">11/1/2012</td>\n<td><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=1753180&amp;highlight=\">Stryker Completes Acquisition of Privately-Held Surpass Medical, Ltd</a></td>\n<td>Stryker announces the closing of its previously announced acquisition of privately-held Surpass Medical, Ltd. (Surpass). Surpass is developing and commercializing the NeuroEndoGraft family of next-generation flow diversion stent technology to treat brain aneurysms using a unique mesh design and delivery system. &quot;With the acquisition of Surpass Medical we are continuing to expand our global product portfolio in the fast growing and highly innovative neurovascular market by offering patients and caregivers differentiated products focused on Complete Stroke Care,&quot; said Kevin A. Lobo, President and Chief Executive Officer.&nbsp;&nbsp;&nbsp; &nbsp;</td>\n</tr><tr><td height=\"20\">10/16/2012</td>\n<td><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=1745734&amp;highlight=\">Stryker Announces Definitive Agreement to Acquire Privately-Held Surpass Medical, Ltd. for $135 Million</a></td>\n<td>Stryker announced&nbsp;a definitive agreement to acquire privately-held Surpass Medical, Ltd.&nbsp;Headquartered in Tel Aviv, Israel, with manufacturing and R&amp;D in Miramar, Florida, Surpass is developing and commercializing next-generation flow diversion stent technology to treat brain aneurysms using a unique mesh design and delivery system. Surpass' key product, the NeuroEndoGraft family of flow diverters, is designed to redirect blood flow away from an aneurysm, allowing a stable clot to be formed within the aneurysm pouch.&nbsp;&nbsp;</td>\n</tr><tr><td height=\"20\">10/4/2012</td>\n<td><a href=\"http://www.prnewswire.com/news-releases/stryker-launches-revolutionary-computer-assisted-surgery-technology-for-hip-fractures-172643361.html\">Stryker Launches Revolutionary Computer Assisted Surgery Technology for Hip Fractures</a></td>\n<td>Stryker announced&nbsp;that it has launched a revolutionary computer assisted surgery system, Stryker ADAPT™ for the Gamma3™ Locking Nail System. Gamma3 nails are used to treat hip fractures, which are breaks in the upper end of the femur (the thighbone). &quot;We are pleased to offer the ADAPT/Gamma3 technology which assists surgeons to more accurately position the lag screw, with no significant difference in procedure time,&quot; said Jim Bruty, Senior Director of Marketing, Stryker Navigation. &quot;In addition, the number of x-ray images taken during the procedure can be reduced, which could potentially reduce the radiation exposure for the patient and the operating room staff.&quot;&nbsp;&nbsp; &nbsp;</td>\n</tr><tr><td height=\"20\">9/19/2012</td>\n<td><a href=\"http://abclocal.go.com/wpvi/story?section=news/health&amp;id=8815788\">Stroke Rate Increasing Among Younger People - Trevo Device from Stryker Used to Treat New Jersey Patient</a></td>\n<td>Doctors have a new device option to treat stroke patients. At Capital Health in New Jersey, they are using one called Trevo from Stryker. Doctors thread a catheter right to the clot, and unlike other similar devices, this one restores blood flow to the brain right away. Within hours after treatment, this patient was able to move and talk..watch the video.&nbsp;</td>\n</tr><tr><td height=\"20\">8/26/2012</td>\n<td><a href=\"http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(12)61299-9/fulltext\">Trevo Versus Merci Retrievers for Thrombectomy Revascularisation of Large Vessel Occlusions in Acute Ischaemic Stroke (TREVO 2):&nbsp;A Randomised Trial&nbsp;&nbsp;&nbsp;</a></td>\n<td>Read about the study of the randomized trial that was held between Feb 3, 2011, and Dec 1, 2011, where we randomly assigned 88 patients to the Trevo Retriever group and 90 patients to Merci Retriever group. 76 (86%) patients in the Trevo group and 54 (60%) in the Merci group met the primary endpoint after the assigned device was used (odds ratio 4•22, 95% CI 2•01—8•86; psuperiority&lt;0•0001). Incidence of the primary safety endpoint did not differ between groups (13 [15%] patients in the Trevo group vs 21 [23%] in the Merci group; p=0•1826).&nbsp; &nbsp;</td>\n</tr><tr><td height=\"20\">8/13/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/147777\">Stryker&nbsp;Announces FDA Clearance of the Trevo®&nbsp;Pro Retrieval System</a></td>\n<td>Next generation clot removal technology provides physicians with a powerful new tool to treat acute ischemic stroke. Stryker Neurovascular's Trevo® Pro Retriever has been granted 510(k) market clearance by the U.S. Food and Drug Administration.&nbsp;</td>\n</tr><tr><td height=\"20\">8/10/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/147779\">Capital Health First in Country to Use New Stroke Retrieval Device</a></td>\n<td>Capital Health Regional Medical Center became the first hospital in the country to treat a stroke patient using Trevo™ following its approval by the FDA. The device was used by Capital Health cerebrovascular and endovascular neurosurgeon, Dr. Erol Veznedaroglu, and restores blood flow to the brain faster.</td>\n</tr><tr><td height=\"20\">4/18/2012</td>\n<td><a href=\"http://healthcare-executive-insight.advanceweb.com/Archives/Article-Archives/Ventures-for-a-Healthier-Hospit.aspx\">Reprocessing Programs have Become a Favored Practice Among Leading Hospitals Across the Nation&nbsp;</a></td>\n<td>Many hospitals have recognized that reprocessing single-use devices (SUDs) is a proven solution with tangible fiscal and environmental benefits to help address the resource management challenges they face. Reprocessing programs have become a favored practice among leading hospitals across the nation, including all 17 U.S. News &amp; World Report &quot;Honor Roll&quot; hospitals. However, there is more to reprocessing than simply having a program in place. One of the most critical aspects of a reprocessing program is selecting the right partner.&nbsp;</td>\n</tr><tr><td height=\"20\">4/17/2012</td>\n<td><a href=\"http://sustainability.stryker.com/download/file/fid/475\">Sustainability Solutions Launches Restep</a></td>\n<td>&nbsp; Stryker's Sustainability Solutions division recently announced the launch of Restep, our new deep vein thrombosis (DVT) prevention system. The system is used for the prevention of deep vein thrombosis in patients that are at risk for clot formation.</td>\n</tr><tr><td height=\"20\">3/11/2012</td>\n<td><a href=\"http://sippican.villagesoup.com/community/story/prehospital-conference-brings-emergency-medical-care-providers-to-marion/223116\">EMS Products Showcased at Pre-hospital Conference&nbsp;</a></td>\n<td>A sampling of Stryker’s EMS products was recently featured at the first ever Cape &amp; Coast Prehospital Conference in Marion, Massachusetts, U.S. The conference gave vendors and recruiters in the medical, police, fire, security and military industries a chance to highlight the opportunities found in the region’s emergency medical care industry.</td>\n</tr><tr><td height=\"20\">3/7/2012</td>\n<td><a href=\"http://www.stryker.com/stellent/groups/public/documents/web_prod/142596.pdf\">Stryker Launches Next Generation Heavy Duty Surgical Power Tools&nbsp;</a></td>\n<td>Stryker announced the release of System 7 – the next generation of heavy duty surgical power tools for use in total joint procedures, such as hip and knee replacements. System 7 offers the latest in advanced cutting technology, resulting in the most dependable and highest performing power tool system ever from Stryker. Stryker was the first to market with cordless heavy duty power tools in 1982, and has built a 30 year legacy of quality and innovation, resulting in the introduction of System 7 – a precise and reliable solution for surgeons and hospitals.</td>\n</tr><tr><td height=\"20\">3/5/2012</td>\n<td><a href=\"http://www.huffingtonpost.com/rosina-samadani/is-michael-graves-the-jam_b_1275152.html\">Keep it Simple: Michael Graves and Medical Designs for Stryker Make Sense for Patients&nbsp;</a></td>\n<td><a href=\"http://www.stryker.com/adresource/\">The Huffington Post recently spotlighted Michael Graves, the well known architect and designer, and his groundbreaking hospital furniture designs, which are manufactured by Stryker’s Medical division. According to the Post, the two newly designed tables from Graves “make sense for a patient's room. They take into account the need for patients to have two surfaces – one for when the meal tray is brought in, the other for personal items – a drawer that opens on both sides of the cart, a plastic drawer with a lid that the patient can take home with them, and an attached litter bin.” It all adds up to a better hospital stay for the patient.&nbsp;Find out more&nbsp;about Michael Graves’ designs for Medical.</a></td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:created": "Thu Aug 24 2017 20:28:01 GMT-0400",
+          "jcr:lastModified": "Thu Aug 24 2017 20:29:07 GMT-0400",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_1232980526": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:32:31 GMT-0400",
+      "title": "In the news",
+      "jcr:lastModified": "Thu Aug 24 2017 20:32:39 GMT-0400",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "jcr:lastModified": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"10%\">&nbsp;</td>\n<td width=\"40%\">&nbsp;</td>\n<td width=\"60%\">&nbsp;</td>\n</tr><tr><td>11/20/2012</td>\n<td><a href=\"http://www.breeam.org/about.jsp?id=66\">Stryker announces BREEAM certification for Venlo, Netherlands, distribution center and Stryker's United Kingdom office in Newbury, Berkshire&nbsp;</a></td>\n<td>Two Stryker facilities were recently awarded the BREEAM certification. Our Venlo distribution center in the Netherlands received a &quot;very good&quot; rating, while our new Stryker U.K. facility in Newbury received an &quot;excellent&quot; rating. BREEAM is the world's foremost environmental assessment method and rating system for buildings. BREEAM sets the standard for best practice in sustainable building design, construction and operation and has become one of the most comprehensive and widely recognized measures of a building's environmental performance. A BREEAM assessment uses recognized measures of performance, which are set against established benchmarks, to evaluate a building’s specification, design, construction and use. The measures used represent a broad range of categories and criteria from energy to ecology. They include aspects related to energy and water use, the internal environment (health and well-being), pollution, transport, materials, waste, ecology and management processes.</td>\n</tr><tr><td height=\"20\">11/20/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/148086\">West Michigan Businesses Support American Red Cross&nbsp;</a></td>\n<td>Stryker named as major corporate partner to Hurricane Sandy Relief Efforts. The Red Cross of West Michigan is extremely grateful for the generosity of these businesses that are based in our region,” said Cheryl Bremer, Regional CEO of the Red Cross of West Michigan. “Their support is critical to our ability to provide food, shelter, relief supplies and comfort for thousands of people who have been impacted by Hurricane Sandy and other related storms.”</td>\n</tr><tr><td height=\"20\">10/1/2012</td>\n<td><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=1739806&amp;highlight=\">Stryker Names Kevin A. Lobo as President and Chief Executive Officer</a></td>\n<td>Stryker Corporation's (NYSE:SYK) Board of Directors announced today that Kevin A. Lobo has been named the Company's President and Chief Executive Officer, effective immediately. He has also been named to the Company's Board of Directors. Mr. Lobo joined Stryker in April 2011, and was most recently Group President of Stryker Orthopaedics. Orthopaedics includes the Company's Reconstructive, Osteosynthesis, Joint Preservation, Orthobiologics and Performance Solutions businesses.&nbsp; &nbsp;</td>\n</tr><tr><td height=\"20\">3/19/2012</td>\n<td><a href=\"http://www.prnewswire.com/news-releases/top-scientists-from-us-canada-and-australia-member-of-the-canadian-parliament-and-stryker-executive-to-be-honored-by-the-society-of-brain-mapping-and-therapeutics-sbmt-142911585.html\">Society of Brain Mapping and Therapeutics (SBMT) to honor Top Scientists from US, Canada, Australia, Member of the Canadian Parliament and Stryker Orthopaedics Group President, Kevin Lobo&nbsp;</a></td>\n<td>Pioneer Awards will be presented at The Gala of Brain Mapping Foundation on June 1, 2012 in Toronto. Kevin Lobo, Orthopedics Group President, will be accepting a Pioneer in Technology Development award from the Society on behalf of Stryker, who has contributed to the introduction of new devices, technologies and significantly contributed to therapies of neurological disorders. The Pioneer in Technology Award is presented to trailblazing companies and their CEOs/presidents who have facilitated the development of pioneering technologies through interdisciplinary approaches that have impacted diagnostics, treatment, and healthcare delivery in unprecedented ways.</td>\n</tr><tr><td height=\"20\">1/10/2012</td>\n<td><a href=\"http://videoreprints.cnbc.com/playback.action?parms=Vy9xQitlTG9McWxHNGo3Q0tVdi8rMitMd0c0WVorMnJZbkdoWHhESks2S3NSVHlsWXpKMzdhZ0U3SlhyWHFvREdPblNjWjNpb2hzPQ==\">Medical Device Titans on Healthcare Reform&nbsp;</a></td>\n<td>In this live interview from the J.P. Morgan Healthcare Conference in San Francisco, Chairman, President and CEO Steve MacMillan discusses how the Patient Protection and Affordable Care Act’s new 2.3 percent tax on medical device makers is impacting business.</td>\n</tr><tr><td height=\"20\">1/5/2012</td>\n<td><a href=\"http://gmj.gallup.com/content/150956/Boosting-Engagement-Stryker.aspx\">Boosting Engagement at Stryker&nbsp;</a></td>\n<td>Gallup Management Journal published an article which highlights the change in culture at Stryker’s Orthopaedics division in Mahwah, NJ. Read how Sabine Krummel-Mihajlovic’s dedicated role improved the employee engagement level of Mahwah employees from 48% to 57% in less than a year.</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:created": "Thu Aug 24 2017 20:28:01 GMT-0400",
+          "jcr:lastModified": "Thu Aug 24 2017 20:32:23 GMT-0400",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_913191503": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:33:29 GMT-0400",
+      "title": "Financials",
+      "jcr:lastModified": "Thu Aug 24 2017 20:33:37 GMT-0400",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_2_3_1_3_copy_709930092": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+      "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+      "jcr:created": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "jcr:lastModified": "Thu Aug 24 2017 20:27:56 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "table": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "Bridget.Campomanes@stryker.com",
+          "tableData": "<table width=\"100%\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\">\n<tbody><tr><td width=\"10%\">&nbsp;</td>\n<td width=\"40%\">&nbsp;</td>\n<td width=\"60%\">&nbsp;</td>\n</tr><tr><td>11/8/2012</td>\n<td><a href=\"http://phx.corporate-ir.net/phoenix.zhtml?c=118965&amp;p=irol-newsArticle&amp;ID=1756135&amp;highlight=\">David K. Floyd joins Stryker as Group President, Orthopaedics</a></td>\n<td>Stryker announces the appointment of David K. Floyd to the role of Group President, Orthopaedics, effective November 15, 2012. Orthopaedics includes the Company's Reconstructive, Trauma and Extremities, Joint Preservation, Orthobiologics and Performance Solutions businesses. Mr. Floyd will report to Kevin A. Lobo, President and Chief Executive Officer of Stryker.</td>\n</tr><tr><td height=\"20\">7/6/2012</td>\n<td><a href=\"http://www.stryker.com/en-us/corporate/PressNews/ssLINK/en-us/378/147504\">Stryker&nbsp;Initiates Voluntary Product Recall of Modular-Neck Stems</a></td>\n<td>Stryker has voluntarily recalled its Rejuvenate and ABG II modular-neck stems.&nbsp;&nbsp; Modular-neck stems provide surgeons with an option to correct certain aspects of a patient's anatomy and hip biomechanics, but given the potential risks associated with fretting and corrosion at the modular neck junction, Stryker Orthopaedics decided to take this voluntary action. &nbsp;</td>\n</tr></tbody></table>\n",
+          "jcr:lastModifiedBy": "Bridget.Campomanes@stryker.com",
+          "jcr:created": "Thu Aug 24 2017 20:28:01 GMT-0400",
+          "jcr:lastModified": "Thu Aug 24 2017 20:34:25 GMT-0400",
+          "sling:resourceType": "stryker/components/content/table",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "localpagenavigation": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "stryker/components/content/localpagenavigation"
+  }
+}

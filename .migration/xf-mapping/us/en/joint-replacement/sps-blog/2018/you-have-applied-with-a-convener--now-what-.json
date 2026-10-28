@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "You have applied with a convener. Now what?",
+  "jcr:versionHistory": "0cd663f0-0223-4b8d-ae67-cf298899602b",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+  "jcr:predecessors": [
+    "225bf415-1c3e-4530-9c44-1a6e5cc5efc4"
+  ],
+  "contentID": "blog1_418",
+  "lastPublished": "Wed Apr 11 2018 10:28:08 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed Apr 11 2018 10:28:08 GMT-0400",
+  "cq:lastModified": "Wed Apr 11 2018 10:27:38 GMT-0400",
+  "jcr:baseVersion": "225bf415-1c3e-4530-9c44-1a6e5cc5efc4",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news"
+  ],
+  "jcr:lastModified": "Tue Apr 03 2018 11:27:19 GMT-0400",
+  "jcr:uuid": "232b4b80-acec-4eab-abd8-e715aaabfb4f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "jeannie.chan@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys"
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Tue Apr 10 2018 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "10-Apr-2018",
+    "jcr:lastModified": "Tue Apr 03 2018 11:30:49 GMT-0400",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "text": "<p>So your application is in, and now the waiting and learning game begins. CMS will not release data and target prices until sometime in May so there is a bit of time before conveners have all the information necessary to assess your opportunity. So what are they doing right now, and what can you be doing in the meantime? Conveners, such as Performance Solutions are busy developing the structure of the contracts that will need to be signed before the August 1st deadline. They are also analyzing previous years of claims data to better understand the opportunities and risks. There are some nuances in BPCI Advanced that are different than BPCI so conveners are working through the differences with guidance from CMS and building them into protocols and materials to present to applicants. &nbsp;There is a lot to get ready for and a lot of behind the scenes work is being done. Here’s what you can be doing now:&nbsp; Begin pulling together a BPCI leadership team in your organization and establishing rolls and responsibilities, if you haven’t done so already. Work with your convener contact to understand their communication process, style and timeline over the course of the next several months.&nbsp; It will be important to find time on your calendar to learn about all the tools and resources that will be available to you so that you can make the best decision for your organization before August 1st. And, if you don’t know something, just ask.&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n",
+    "jcr:lastModified": "Wed Apr 11 2018 10:27:38 GMT-0400",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "title": "Communications timeline",
+    "srcFileRef": "/content/dam/stryker/joint-replacement/sps_blog/spsblog_1.png",
+    "jcr:lastModified": "Tue Apr 03 2018 11:22:58 GMT-0400",
+    "sling:resourceType": "stryker/components/content/standaloneimage"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "disclaimer-type": "text",
+    "disclaimer": "<p>This material and/or presentation is provided for guidance and/or illustrative purposes only and should not be construed as a guarantee of future results or a substitution for legal advice and/or medical advice from a healthcare provider. Stryker Performance Solutions does not practice medicine and assumes no responsibility for the administration of patient care.</p>\r\n<p>©2018 Stryker’s Performance Solutions Reproduction or distribution prohibited without the express written consent of Stryker’s Performance Solutions.&nbsp; &nbsp; &nbsp;</p>\r\n",
+    "jcr:lastModified": "Tue Apr 03 2018 11:26:30 GMT-0400",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

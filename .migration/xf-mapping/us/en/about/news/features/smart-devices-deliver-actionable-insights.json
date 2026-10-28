@@ -1,0 +1,154 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Smart devices deliver actionable insights",
+  "jcr:versionHistory": "93cea649-3aa0-4845-a7ac-17e26df72388",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+  "jcr:predecessors": [
+    "62a76a4f-eeb3-4a60-a65c-06787afafa13"
+  ],
+  "contentID": "SYK CORP 2019-07-10",
+  "lastPublished": "Mon Apr 19 2021 18:13:25 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Apr 19 2021 18:13:25 GMT+0000",
+  "cq:lastModified": "Wed Sep 04 2019 17:18:19 GMT+0000",
+  "jcr:baseVersion": "62a76a4f-eeb3-4a60-a65c-06787afafa13",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news",
+    "stryker:content-type/news/Features"
+  ],
+  "jcr:lastModified": "Tue Aug 13 2019 18:35:27 GMT+0000",
+  "jcr:uuid": "e2f65366-fca9-47cb-ba80-451bef1eb39f",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kristian.bocage@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "text": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 15:32:35 GMT+0000",
+      "text": "<p><span class=\"fontsize-2-5em\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\">Smart devices</span> deliver actionable insights<br>\n </span><br>\n </span></p>\n",
+      "jcr:lastModified": "Thu Jul 11 2019 15:41:40 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "sectionseparator": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 15:41:45 GMT+0000",
+      "jcr:lastModified": "Thu Jul 11 2019 15:41:45 GMT+0000",
+      "sling:resourceType": "stryker/components/content/sectionseparator"
+    },
+    "fullbleedpanel": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 16:01:36 GMT+0000",
+      "jcr:lastModified": "Thu Jul 11 2019 16:01:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/fullbleedpanel"
+    },
+    "largeheadline": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 17:06:49 GMT+0000",
+      "gradientDirection": "left-to-right",
+      "line1": "<span class=\"futura-bold\"><span class=\"fontsize-2vw\">Stryker aims to improve healthcare with IoT solutions</span></span>",
+      "jcr:lastModified": "Thu Jul 11 2019 17:07:11 GMT+0000",
+      "sling:resourceType": "stryker/components/content/largeheadline",
+      "backgroundColor": "rgba(255,181,0,1)",
+      "textIsRich": [
+        "true",
+        "true"
+      ]
+    },
+    "text_774605157": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 15:41:51 GMT+0000",
+      "text": "<p><span class=\"fontsize-1-5em\"><span class=\"urw-egyptienne\">“To be a good partner for our customers, we must continually evolve the ways in which we deliver value.”&nbsp;</span></span><br>\n</p>\n<p><span class=\"futura-bold\"><span class=\"fontsize-1em\">-&nbsp; Matt Powell, Senior Director, Connected Care</span></span></p>\n",
+      "jcr:lastModified": "Fri Jul 26 2019 17:12:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 17:08:44 GMT+0000",
+      "jcr:lastModified": "Thu Jul 11 2019 17:08:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2"
+    },
+    "text_912969278": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 15:44:09 GMT+0000",
+      "text": "<p>Feedback is fundamental to our teams, and sometimes it comes from a surprising source: data collected from the medical device itself. When a device of any kind has a unique connection to the internet, it is referred to as IoT (Internet of Things). Using data from product lines in the field, our teams get insights on performance, design feature usage and service delivery needs. Teams across Stryker translate that data to improve what we deliver and how we deliver it to you. Now, we’re expanding our use of integrated Microsoft technologies and sharing metrics with you, starting with Smart Equipment Management (SEM).</p>\n<p>Learn more about how data is driving actionable insights from leaders in the field of Connected Care in this video.</p>\n",
+      "jcr:lastModified": "Tue Aug 06 2019 21:20:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/text",
+      "textIsRich": "true"
+    },
+    "standalonevideo": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Jul 11 2019 15:53:03 GMT+0000",
+      "type": "typePath",
+      "jcr:lastModified": "Thu Jul 11 2019 15:53:12 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standalonevideo",
+      "dynamic-media": {
+        "jcr:primaryType": "nt:unstructured",
+        "breakpoints": "",
+        "videoserverurl": "https://media-assets.stryker.com/is/content/",
+        "fileReference": "/content/dam/stryker/about/news/videos/MS_IoTCaseStudies_Stryker_Hero_Rev_NoSubtitles_H264_1080p29_Stereo.mp4",
+        "s7ImagePreset": "",
+        "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+        "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+        "unsharpMaskAmount": "0",
+        "s7ViewerPreset": "",
+        "assetID": "stryker/MS_IoTCaseStudies_Stryker_Hero_Rev_NoSubtitles_H264_1080p29_Stereo-AVS",
+        "unsharpMaskRadius": "0",
+        "urlModifiers": "",
+        "jcr:lastModified": "Thu Jul 11 2019 15:58:23 GMT+0000",
+        "s7PresetType": "undefined",
+        "sling:resourceType": "dam/components/scene7/dynamicmedia",
+        "assetType": "VideoAVS",
+        "imageserverurl": "https://media-assets.stryker.com/is/image/",
+        "jpegQuality": "85",
+        "unsharpMaskThreshold": "0",
+        "s7ViewerPresetPath": ""
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "publishDate": "Mon Aug 05 2019 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "05-Aug-2019",
+    "jcr:lastModified": "Wed Sep 04 2019 17:18:19 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "h1-title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+    "hideTitle": "true",
+    "jcr:lastModified": "Thu Jul 11 2019 15:32:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/h1-title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/features/IoT screenshot.PNG"
+  }
+}

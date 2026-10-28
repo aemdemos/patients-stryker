@@ -1,0 +1,601 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Patient",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9011685c-9cec-4547-a261-cb66a905e533",
+  "cq:template": "/apps/stryker/templates/tier1-landing",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+  "jcr:predecessors": [
+    "b64da68c-60f2-44c4-953e-b91a57e04f5f"
+  ],
+  "contentID": "COMM-GSNPS-SYK-675259_Rev-3",
+  "lastPublished": "Mon Nov 04 2024 18:04:03 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Mon Nov 04 2024 18:04:04 GMT+0000",
+  "cq:lastReplicated": "Mon Nov 04 2024 18:04:07 GMT+0000",
+  "cq:lastModified": "Mon Nov 04 2024 17:21:28 GMT+0000",
+  "jcr:description": "Explore real-life impact of Stryker's technology, dedicated to improving patient outcomes. Hear from survivors like Derrick, Carolyn and other patients who have benefited from our innovative solutions. Learn about our orthopaedic and arthroscopy offerings, designed to enhance patients' quality of life. Find resources and connect with skilled surgeons for joint health and replacement procedures.",
+  "jcr:baseVersion": "b64da68c-60f2-44c4-953e-b91a57e04f5f",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Mon Feb 06 2023 17:26:56 GMT+0000",
+  "jcr:lastModified": "Wed Oct 02 2024 23:17:43 GMT+0000",
+  "jcr:uuid": "819b8cd5-9d12-4ae6-9da7-5acb60449a96",
+  "sling:resourceType": "stryker/components/structure/pages/tier1-landing",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "activationGroup": "stryker-superuser",
+  "cq:lastModifiedBy": "carolyn.lee@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Jul 01 2020 20:02:29 GMT+0000",
+      "jcr:lastModified": "Wed Jul 01 2020 20:02:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/corporate/en/patient/carousel/carousel---patient-stories-hero---no-translations/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/corporate/en/patient/carousel/carousel-patient-stories-hero-no-translations/master",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Wed Jul 01 2020 20:02:37 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Jul 01 2020 20:03:52 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "5",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "largeheadline": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "jeannie.chan@stryker.com",
+              "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+              "jcr:created": "Thu Feb 07 2019 14:32:31 GMT+0000",
+              "gradientDirection": "left-to-right",
+              "line1": "<span class=\"fontsize-3vw\"><span style=\"color: rgb(255,181,0);\"><span class=\"futura-bold\"><span style=\"color: #000000;\">Patient impact</span></span></span></span><br>\r\n",
+              "line2": "<span class=\"urw-egyptienne\"><span class=\"fontsize-2vw\">Our customers and their patients are at the heart of everything we do. The real-life impact of the technology we create inspires our dedication to improving patient outcomes. </span></span><br />\r\n",
+              "jcr:lastModified": "Fri Jul 16 2021 15:33:29 GMT+0000",
+              "sling:resourceType": "stryker/components/content/largeheadline",
+              "backgroundColor": "rgba(255,255,255,1)",
+              "textIsRich": [
+                "true",
+                "true"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "cols_1321987664": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Thu Aug 25 2022 19:39:00 GMT+0000",
+      "jcr:lastModified": "Thu Aug 25 2022 19:39:00 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "experiencefragment_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon May 15 2023 16:36:28 GMT+0000",
+      "text": "Back pain and scoliosis: Victoria finds relief Victoria lived with back pain for years – impeding her ability to walk, stand, and lead a normal life as a teenager. “It made my whole life uncomfortable,” Victoria says. “I would stand for 30 minutes and it [the pain] would just get worse.” When the back pain became too much for Victoria to handle, she was referred to Dr. Stephen George, who diagnosed her with idiopathic scoliosis and recommended surgical intervention. Dr. George corrected Victoria’s scoliosis using the Everest Spinal System. When she saw her x-rays after the surgery, Victoria couldn’t believe that the x-rays were of her spine. She was able to return to school after three weeks and start physical activity after six months, just in time for her high school graduation festivities. Now, Victoria is a college student studying to be a counseling psychologist. “Everything leading up to it, doing the surgery, it was worth it,” Victoria says. “It changed the way I lived.” “Everything leading up to it, doing the surgery, it was worth it. It changed the way I lived.” ______________ Victoria Back pain and scoliosis patient Watch Dr. George and Victoria talk about scoliosis treatment Learn more about spine solutions",
+      "jcr:lastModified": "Tue Jul 09 2024 14:36:49 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/patient/victoria_7_9_24/body-copy/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/patient/victoria-7-9-24/body-copy/master"
+    },
+    "cols_1704435646": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Nov 17 2022 19:59:50 GMT+0000",
+      "jcr:lastModified": "Thu Nov 17 2022 19:59:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_1364713100": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Thu Nov 17 2022 19:59:56 GMT+0000",
+      "jcr:lastModified": "Thu Nov 17 2022 19:59:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kristian.bocage@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Mon Oct 16 2023 20:57:40 GMT+0000",
+          "jcr:lastModified": "Mon Oct 16 2023 20:57:40 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        }
+      }
+    },
+    "experiencefragment_c_1208520907": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon May 15 2023 16:36:28 GMT+0000",
+      "text": "How Janet recovered from a vertebral (spine) compression fracture When Janet fell to the floor after tripping on the stairs in her Louisiana home, she knew something wasn’t right. After experiencing several weeks of lower back pain that wasn’t improving, she reached out to her doctor and learned she had suffered from a compression fracture in her spine, a broken bone that can cause the vertebrae to collapse and become shorter. Janet worked with Dr. Jason Smith to learn about the treatment options for her T11 vertebral compression fracture, or ‘VCF’ for short. He performed a kyphoplasty, a minimally invasive procedure to help restore function to her spine. “She did great. She was able to move and came in on her own at two weeks without any sort of independent devices, like a brace or walker. She was back to doing her normal things pretty quickly,” says Dr. Smith. “If someone was going to have the procedure I had and is wondering if they should or not, absolutely have it. It allows me to do the things I need to do,” says Janet. Learn more about VCF solutions",
+      "jcr:lastModified": "Tue Jul 09 2024 14:32:48 GMT+0000",
+      "sling:resourceType": "stryker/components/content/experienceFragment",
+      "fragmentPath": "/content/experience-fragments/stryker/corporate/en/patient/janet_9_19_22/janets-story/master",
+      "edsFragmentPath": "/us/en/fragments/stryker/corporate/en/patient/janet-9-19-22/janets-story/master"
+    },
+    "cols_722316713": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Tue Jun 01 2021 21:06:44 GMT+0000",
+      "jcr:lastModified": "Tue Jun 01 2021 21:06:44 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys"
+      }
+    },
+    "cols_1096630696": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Mon Sep 19 2022 18:49:36 GMT+0000",
+      "jcr:lastModified": "Mon Sep 19 2022 18:49:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 05 2020 19:22:44 GMT+0000",
+      "title": "More stories",
+      "jcr:lastModified": "Thu Mar 05 2020 19:23:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "hannah.white@stryker.com",
+      "jcr:lastModifiedBy": "hannah.white@stryker.com",
+      "jcr:created": "Tue Jun 21 2022 20:11:52 GMT+0000",
+      "jcr:lastModified": "Tue Jun 21 2022 20:11:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "8_q2hoWp6AA",
+          "jcr:lastModified": "Wed Jul 12 2023 19:47:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2023/features/katherine-stroke-story/AP004370_NA_APAC_LATAM - Share.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "hannah.white@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/AP004370_NA_APAC_LATAM - Share-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Nov 13 2023 16:35:27 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Katherine patient story thumbnail"
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Oct 10 2019 18:26:50 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Katherine’s catastrophic stroke survivor story</span></span></span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/about/news/2023/features/katherine-s-catastrophic-stroke-survivor-story.html\"><span class=\"fontsize-8em\">READ STORY HERE</span></a></span><br>\n</p>\n",
+          "jcr:lastModified": "Tue Jul 09 2024 14:31:21 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "8_q2hoWp6AA",
+          "jcr:lastModified": "Wed Jul 12 2023 19:47:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/commercial/usa/joint-replacement/gsnps/JR-GSNPS-VID-776251-EN_US.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/JR-GSNPS-VID-776251-EN_US-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Wed Oct 18 2023 14:08:25 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Oct 10 2019 18:26:50 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Carolyn's Mako Total Hip replacement story</span></span></span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"/content/stryker/us/en/portfolios/orthopaedics/joint-replacement/mako-robotic-arm-assisted-surgery.html\"><span class=\"fontsize-8em\">LEARN MORE ABOUT MAKO</span></a></span><br>\n</p>\n",
+          "jcr:lastModified": "Thu Jan 11 2024 17:57:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "jcr:lastModified": "Mon Oct 02 2023 18:08:55 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            },
+            "tablet": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            },
+            "phone": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "12"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/patients/patient-stories/derrick-10-2-23/videos/stryker_derrick_mosely_v8 (1080p).mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/stryker_derrick_mosely_v8 (1080p)-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Mon Oct 02 2023 18:28:23 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/derrick-thumbnail"
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Thu Oct 10 2019 18:26:50 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Derrick’s sudden cardiac arrest story</span></span></span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/about/news/2023/features/knowing-the-warning-signs-of-sudden-cardiac-arrest-helped-saved-.html\"><span class=\"fontsize-8em\">READ STORY HERE</span></a></span><br>\n</p>\n",
+          "jcr:lastModified": "Mon Nov 13 2023 16:49:39 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+          "jcr:created": "Fri May 19 2023 18:47:38 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "videoId": "8_q2hoWp6AA",
+          "jcr:lastModified": "Wed Jul 12 2023 19:47:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "cq:responsive": {
+            "jcr:primaryType": "nt:unstructured",
+            "default": {
+              "jcr:primaryType": "nt:unstructured",
+              "offset": "0",
+              "width": "6"
+            }
+          },
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/about/news/2023/features/garys-mako-total-knee-replacement-story/632647-MotionSense Patient Testimonial Video_with_disclaimer.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/632647-MotionSense Patient Testimonial Video_with_disclaimer-AVS",
+            "urlModifiers": "",
+            "viewerPresetPath": "",
+            "linkTarget": "_self",
+            "jcr:lastModified": "Fri Aug 04 2023 15:22:17 GMT+0000",
+            "s7PresetType": "viewer",
+            "sling:resourceType": "stryker/components/content/standalonevideo/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": "",
+            "viewermodfiers": "VideoPlayer.posterimage=stryker/Gary_PatientStory"
+          }
+        },
+        "text_copy_copy_copy_": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "garrett.shue@stryker.com",
+          "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+          "jcr:created": "Thu Oct 10 2019 18:26:50 GMT+0000",
+          "text": "<p><span class=\"standalone-link\"><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #000000;\">Gary’s Mako Total Knee&nbsp;<br>\n replacement story</span></span></span></span></span></p>\n<p><span class=\"standalone-link\"><a href=\"https://www.stryker.com/us/en/portfolios/orthopaedics/joint-replacement/mako-robotic-arm-assisted-surgery.html\"><span class=\"fontsize-8em\">Learn more about Mako</span></a></span><br>\n</p>\n",
+          "jcr:lastModified": "Wed Oct 18 2023 13:42:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "buttonset": {
+      "jcr:primaryType": "nt:unstructured",
+      "buttonSeriesColors": "rgba(76,125,122,1)",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "buttonAlignment": "horizontal-alignment align-left",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 18:10:03 GMT+0000",
+      "jcr:lastModified": "Mon Jul 01 2019 18:09:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/buttonset",
+      "buttonSetList": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "buttonColor": "rgba(76,125,122,1)",
+          "internalLink": "/content/stryker/us/en/about/news",
+          "buttonText": "Read More About Our Impact",
+          "externalLinkType": "int"
+        }
+      }
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Fri Jun 14 2019 17:50:52 GMT+0000",
+      "jcr:lastModified": "Fri Jun 14 2019 17:50:52 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols_277429068": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Thu Mar 05 2020 19:52:36 GMT+0000",
+      "jcr:lastModified": "Thu Mar 05 2020 19:52:36 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "description": "For more information, please visit the sites below.",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "jcr:created": "Wed Feb 06 2019 18:33:35 GMT+0000",
+      "title": "Patient education",
+      "jcr:lastModified": "Mon Apr 08 2019 18:26:58 GMT+0000",
+      "sling:resourceType": "stryker/components/content/title"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Mon Jul 24 2017 09:07:43 GMT-0400",
+      "jcr:lastModified": "Mon Jul 24 2017 09:07:43 GMT-0400",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_294666571": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "description": "Access information on orthopaedic health and joint replacement. Find a surgeon who can help their patients return to the activities of daily living.",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://patients.stryker.com/mako-robotic-arm-assisted-technology",
+          "jcr:created": "Mon Jul 24 2017 10:09:56 GMT-0400",
+          "alt": "Orthopaedics patient site",
+          "title": "Orthopaedics patient website",
+          "srcFileRef": "/content/dam/stryker/patients/images/patient-education/Orthopaedic-Patients-Thumbnail.jpg",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Oct 02 2024 23:15:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_1546443521": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "description": "Ear, nose and throat (ENT) conditions can be accompanied by various mild to disruptive symptoms, that can impact a person's quality of life. We offer a range of solutions to treat these conditions, using exciting new technologies designed with patient outcomes in mind.",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/content/m/patients/us/ent/en/index.html",
+          "jcr:created": "Tue Apr 16 2024 13:15:34 GMT+0000",
+          "alt": "ENT patient site",
+          "title": "ENT",
+          "srcFileRef": "/content/dam/stryker/patients/images/patient-education/ENT-Microsite-Thumbnail.jpg",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Oct 02 2024 23:16:04 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      }
+    },
+    "cols2_681907321": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carolyn.lee@stryker.com",
+      "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+      "jcr:created": "Wed Oct 02 2024 18:28:51 GMT+0000",
+      "jcr:lastModified": "Wed Oct 02 2024 18:28:51 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_9606": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "description": "A site dedicated to helping patients learn about Stryker’s early, minimally invasive solutions that may relieve chronic back pain and help patients get back to their active lives as quickly as possible.",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://strykerivs.com",
+          "jcr:created": "Mon Jul 24 2017 10:12:59 GMT-0400",
+          "alt": "Helping backs",
+          "title": "Helping backs",
+          "srcFileRef": "/content/dam/stryker/patients/images/patient-education/IVS-Patient-Thumbnail.jpg",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Oct 02 2024 23:16:15 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        },
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://www.stryker.com/content/m/zip-skin-closure/en/index.html",
+          "jcr:created": "Wed Oct 09 2024 17:40:49 GMT+0000",
+          "alt": "Zip Skin Closure",
+          "title": "Zip skin closure",
+          "srcFileRef": "/content/dam/stryker/patients/images/patient-education/Zip-Skin-Closure-Thumbnail.jpg",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Mon Nov 04 2024 17:21:28 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "carolyn.lee@stryker.com",
+          "description": "Learn to recognize the signs of stroke. BE FAST and help save lives.",
+          "jcr:lastModifiedBy": "carolyn.lee@stryker.com",
+          "preset": "max_width_1440",
+          "linkExternal": "https://somesignssavelives.com/",
+          "jcr:created": "Wed Oct 02 2024 23:16:25 GMT+0000",
+          "alt": "Stroke awareness",
+          "title": "Stroke awareness",
+          "srcFileRef": "/content/dam/stryker/patients/images/patient-education/Stroke-Awareness-Thumbnail.jpg",
+          "borderColor": "rgb(0,0,0)",
+          "jcr:lastModified": "Wed Oct 02 2024 23:17:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "openInNewTab": "true",
+          "enableBorder": "true"
+        }
+      }
+    }
+  },
+  "tagline": {
+    "jcr:primaryType": "nt:unstructured",
+    "hideTagLineComp": "true",
+    "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+    "gradientDirection": "left-to-right",
+    "jcr:lastModified": "Wed Jul 01 2020 20:45:00 GMT+0000",
+    "sling:resourceType": "stryker/components/content/tagline",
+    "backgroundColor": "rgba(255,255,255,1)"
+  },
+  "title": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModified": "Wed Feb 06 2019 18:33:56 GMT+0000",
+    "sling:resourceType": "stryker/components/content/title"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/2022/features/focusing-on-her-mobility-/IVS social media - July 2022_LinkedIn-REV_patient testimonial.jpg"
+  },
+  "disclaimer": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "hannah.white@stryker.com",
+    "disclaimer-type": "text",
+    "jcr:lastModified": "Mon Feb 27 2023 15:51:18 GMT+0000",
+    "sling:resourceType": "stryker/components/structure/disclaimer",
+    "textIsRich": "true"
+  }
+}

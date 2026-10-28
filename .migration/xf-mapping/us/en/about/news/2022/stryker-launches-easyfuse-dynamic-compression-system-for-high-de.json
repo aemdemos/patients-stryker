@@ -1,0 +1,123 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Stryker Launches EasyFuse™ Dynamic Compression System for High-Demand Foot and Ankle Applications",
+  "jcr:versionHistory": "d0caba95-9d1a-4019-b1f1-78a918cd58a6",
+  "cq:template": "/apps/stryker/templates/news-detail",
+  "jcr:lastModifiedBy": "hannah.white@stryker.com",
+  "jcr:predecessors": [
+    "c2001dba-278b-4542-a0aa-ab7d17b611d3"
+  ],
+  "lastPublished": "Tue Jun 21 2022 17:35:45 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Tue Jun 21 2022 17:35:45 GMT+0000",
+  "cq:lastModified": "Tue Jun 21 2022 17:31:59 GMT+0000",
+  "jcr:baseVersion": "c2001dba-278b-4542-a0aa-ab7d17b611d3",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [
+    "stryker:content-type/news/product-bulletins",
+    "stryker:content-type/news",
+    "stryker:content-type/corporatenews"
+  ],
+  "jcr:lastModified": "Tue Jun 21 2022 17:31:59 GMT+0000",
+  "jcr:uuid": "1baa11ec-da00-45c9-accf-8c59e560697a",
+  "sling:resourceType": "stryker/components/structure/pages/news-detail",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "hannah.white@stryker.com",
+  "customizablearea_parsys": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "jeannie.chan@stryker.com",
+      "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+      "jcr:created": "Wed May 25 2022 12:10:31 GMT+0000",
+      "jcr:lastModified": "Wed May 25 2022 12:10:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Wed May 25 2022 12:10:39 GMT+0000",
+          "text": "<p><b>Kalamazoo, Michigan, USA</b>&nbsp;––&nbsp;Stryker&nbsp;(NYSE:SYK)&nbsp;announced today the launch of its EasyFuse™ Dynamic Compression System. Created using nitinol, a nickel titanium alloy metal well known for its strength and shape recovery, Stryker’s new foot and ankle staple system is designed to decrease surgical complexity, provide strong dynamic-compression implants and reduce waste in the operating room.&nbsp;</p>\n<p>“The EasyFuse Dynamic Compression System is another key addition to Stryker’s innovative foot and ankle product portfolio, expanding options for surgeons,” said Michael Rankin, Vice President, Marketing and Medical Education for Stryker’s Foot &amp; Ankle business unit. “We are pleased to provide a new premier staple technology to our customers that has the potential to improve patient outcomes.”&nbsp;</p>\n<p>The EasyFuse Dynamic Compression System boasts the following attributes:</p>\n<ul>\n<li>Strength: Extra wide staple bridge designed to distribute forces and provide consistent implant strength·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>\n<li>Efficiency: Universal, sterile packed instrumentation decreases surgical complexity and reduces operating room material waste&nbsp;·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>\n<li>Ease of Use: Intuitively designed inserter provides surgeons with confident implant deployment while also allowing quick and easy implant reloading if desired</li>\n</ul>\n<p>“Over the last five years, staples have emerged as efficient and effective implants for foot and ankle surgeons to use for both simple and complex midfoot arthrodesis,” said Dr. Carroll Jones, an orthopaedic surgeon at OrthoCarolina and design surgeon. “The attributes of the EasyFuse System represent the next generation of best-in-class staple technology.”</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed May 25 2022 12:18:33 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_161": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Apr 11 2022 13:51:37 GMT+0000",
+          "jcr:lastModified": "Mon Apr 11 2022 13:51:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Wed May 25 2022 12:10:39 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">About Stryker</span><br>\n</p>\n<p>Stryker is one of the world’s leading medical technology companies and, together with its customers, is driven to make healthcare better. The company offers innovative products and services in Medical and Surgical, Neurotechnology, Orthopaedics and Spine that help improve patient and healthcare outcomes. Alongside its customers around the world, Stryker impacts more than 100 million patients annually. More information is available at&nbsp;<a href=\"https://www.stryker.com/\">www.stryker.com</a>.</p>\n<p>Follow Stryker Foot &amp; Ankle on&nbsp;<a href=\"https://www.linkedin.com/showcase/stryker-foot-&amp;-ankle/\">LinkedIn</a>.</p>\n<p>&nbsp;</p>\n",
+          "jcr:lastModified": "Wed May 25 2022 12:18:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        },
+        "sectionseparator_161_870557199": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "hannah.white@stryker.com",
+          "jcr:lastModifiedBy": "hannah.white@stryker.com",
+          "jcr:created": "Mon Apr 11 2022 13:51:37 GMT+0000",
+          "jcr:lastModified": "Mon Apr 11 2022 13:51:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text_1085582159": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "jeannie.chan@stryker.com",
+          "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+          "jcr:created": "Wed May 25 2022 12:12:54 GMT+0000",
+          "text": "<p><span class=\"futura-bold\">Media contact</span></p>\n<p>Andrea Sampson, Sampson Public Relations Group<br>\nasampson@sampsonprgroup.com<br>\n562.304.0301</p>\n<p><br>\n<span class=\"fontsize-8em\">A surgeon must always rely on his or her own professional clinical judgment when deciding whether to use a particular product when treating a particular patient. Stryker does not dispense medical advice and recommends that surgeons be trained in the use of any particular product before using it in surgery.&nbsp;The information presented is intended to demonstrate the breadth of Stryker’s product offerings. A surgeon must always refer to the package insert, product label and/or instructions for use before using any of Stryker’s products. Products may not be available in all markets because product availability is subject to the regulatory and/or medical practices in individual markets. Please contact your sales representative if you have questions about the availability of products in your area.</span></p>\n",
+          "jcr:lastModified": "Wed May 25 2022 12:15:31 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    }
+  },
+  "publishdate": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "publishDate": "Wed May 25 2022 00:00:00 GMT-0400",
+    "dateFormat": "dd-MMM-yyyy",
+    "dateString": "25-May-2022",
+    "jcr:lastModified": "Wed May 25 2022 15:05:27 GMT+0000",
+    "sling:resourceType": "stryker/components/content/publishdate"
+  },
+  "text": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "jcr:lastModified": "Wed May 25 2022 12:17:24 GMT+0000",
+    "sling:resourceType": "stryker/components/content/text",
+    "textIsRich": "true"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/about/news/images/EasyFuse_Dynamic_Compression_System_launch.jpg"
+  },
+  "standaloneimage": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "jeannie.chan@stryker.com",
+    "preset": "max_width_auto",
+    "title": "New Nitinol Staple Provides Strength, Efficiency and Ease of Use",
+    "srcFileRef": "/content/dam/stryker/about/news/images/EasyFuse_Dynamic_Compression_System_launch.jpg",
+    "borderColor": "rgba(76,125,122,1)",
+    "jcr:lastModified": "Wed May 25 2022 01:57:09 GMT+0000",
+    "sling:resourceType": "stryker/components/content/standaloneimage",
+    "enableBorder": "false"
+  }
+}

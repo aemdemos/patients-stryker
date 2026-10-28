@@ -1,0 +1,46 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Iconix indication locations",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "9d9c6817-eea7-4c7f-996f-30f70c9aaee5",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:lastReplicatedBy": "replication-service",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "cc5f35ea-73bf-47d5-8942-7d840506f6d0"
+  ],
+  "jcr:created": "Thu Feb 16 2023 00:20:49 GMT+0000",
+  "cq:lastReplicated": "Thu Feb 16 2023 00:20:51 GMT+0000",
+  "cq:lastModified": "Thu Feb 16 2023 00:10:28 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:description": "All-suture. Endless possibilities.",
+  "jcr:baseVersion": "cc5f35ea-73bf-47d5-8942-7d840506f6d0",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e6f3a9b6-3467-48c3-b581-727737aebcbb",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "carissa.frausto@stryker.com",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "carissa.frausto@stryker.com",
+      "jcr:lastModifiedBy": "carissa.frausto@stryker.com",
+      "preset": "max_width_png",
+      "jcr:created": "Wed Feb 15 2023 23:11:38 GMT+0000",
+      "alt": "iconix-expfrag-indications",
+      "srcFileRef": "/content/dam/stryker/sports-medicine/products/iconixallsutureanchorsystem/images/iconix-expfrag-indications.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Thu Feb 16 2023 00:10:28 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    }
+  }
+}

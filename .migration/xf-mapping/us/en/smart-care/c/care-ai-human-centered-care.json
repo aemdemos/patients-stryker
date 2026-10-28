@@ -1,0 +1,556 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "subtitle": "care.ai now part of Stryker",
+  "jcr:createdBy": "replication-receiver",
+  "jcr:title": "Empowering human-centered care",
+  "cq:lastReplicationAction": "Activate",
+  "jcr:versionHistory": "13ba2be5-ae5a-44d0-92a6-4e28983f6698",
+  "cq:template": "/apps/stryker/templates/base",
+  "cq:lastReplicatedBy": "replication-service",
+  "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+  "thumbnailAltText": "care.ai monitoring platform",
+  "jcr:predecessors": [
+    "799a7571-ffe5-4d68-a5da-b167e82ff86e"
+  ],
+  "contentID": "AC-GSNPS-SYK-1573550_REV-1_en_us",
+  "lastPublished": "Wed May 06 2026 17:31:29 GMT+0000",
+  "cq:contextHubSegmentsPath": "/etc/segmentation/contexthub",
+  "jcr:created": "Wed May 06 2026 17:31:30 GMT+0000",
+  "cq:lastReplicated": "Wed May 06 2026 17:31:32 GMT+0000",
+  "cq:lastModified": "Wed May 06 2026 17:29:14 GMT+0000",
+  "jcr:description": "As care tasks have become more complex, time consuming and fragmented the SmartCare Platform features a variety of AI-enabled workflows that can help deliver a responsive and personalized healthcare environment. ",
+  "jcr:baseVersion": "799a7571-ffe5-4d68-a5da-b167e82ff86e",
+  "jcr:isCheckedOut": true,
+  "originallyPublished": "Fri Jan 31 2025 23:08:22 GMT+0000",
+  "pageTitle": "Empowering human-centered care",
+  "cq:tags": [
+    "stryker:business-unit/acute-care"
+  ],
+  "jcr:lastModified": "Wed Nov 26 2025 18:48:21 GMT+0000",
+  "jcr:uuid": "2d8332fd-c973-4c84-94df-ef5353fa1bb0",
+  "sling:resourceType": "stryker/components/structure/pages/base",
+  "cq:contextHubPath": "/etc/cloudsettings/default/contexthub",
+  "cq:lastModifiedBy": "kent.schwartz@stryker.com",
+  "navTitle": "Empowering human-centered care",
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "fileReference": "/content/dam/stryker/acute-care/products/care-ai/images/care-ai_patient-viewing-screen_1200x680.jpg"
+  },
+  "par": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/foundation/components/parsys",
+    "carouselslidegroup_c": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "jcr:lastModified": "Wed Dec 06 2023 14:18:20 GMT+0000",
+      "sling:resourceType": "stryker/components/content/carouselslidegroup",
+      "slides": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "carouselslide_copy_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "experienceFragmentPath": "/content/experience-fragments/stryker/acute-care/en/campaigns/care_ai_bridge_page/hero/master",
+          "edsExperienceFragmentPath": "/us/en/fragments/stryker/acute-care/en/campaigns/care-ai-bridge-page/hero/master",
+          "experienceFragmentPathMobile": "/content/experience-fragments/stryker/acute-care/en/campaigns/care_ai_bridge_page/hero/hero-mobile",
+          "edsExperienceFragmentPathMobile": "/us/en/fragments/stryker/acute-care/en/campaigns/care-ai-bridge-page/hero/hero-mobile",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "mobileOverlay": "mobile_Bottom",
+          "verticalMargin": "15",
+          "jcr:created": "Thu Dec 21 2023 14:14:17 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "jcr:lastModified": "Wed Oct 29 2025 13:43:21 GMT+0000",
+          "marginRight": "50",
+          "sling:resourceType": "stryker/components/content/carouselslidegroup/carouselslide",
+          "backgroundColor": "rgba(255,255,255,1)",
+          "marginLeft": "6",
+          "cta-rte-head": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/foundation/components/parsys",
+            "curatedcta_copy_copy": {
+              "jcr:primaryType": "nt:unstructured"
+            },
+            "text1180572359123043": {
+              "jcr:primaryType": "nt:unstructured",
+              "bottomPadding": "3",
+              "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+              "hideComponent": "false",
+              "gradientDirection": "left-to-right",
+              "text": "<h1><span class=\"futura-bold\"><span style=\"color: #ffb500;\"><span class=\"fontsize-1-25em\"><span style=\"color: #ffffff;\"><span style=\"color: #000000;\">Empowering human-centered care</span></span></span></span></span></h1>\n<h2><span class=\"fontsize-1-25em\">care.ai is now part of Stryker</span></h2>\n<p><span class=\"fontsize-1-25em\"><span class=\"urw-egyptienne\">Nurse burnout, fragmented systems and limited resources challenge hospitals every day. Together with care.ai, we are transforming care environments into smart, aware spaces that support more efficient workflows and redefine how care is delivered.</span></span></p>\n",
+              "jcr:lastModified": "Wed Oct 29 2025 13:36:40 GMT+0000",
+              "sling:resourceType": "stryker/components/content/text",
+              "textIsRich": "true",
+              "cq:responsive": {
+                "jcr:primaryType": "nt:unstructured",
+                "default": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "offset": "1",
+                  "width": "5"
+                }
+              }
+            },
+            "curatedcta_copy": {
+              "jcr:primaryType": "nt:unstructured",
+              "jcr:createdBy": "brittany.brady@stryker.com",
+              "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+              "ctaLinkType": "deep",
+              "ctaOpenInNewTabOverride": "0",
+              "jcr:created": "Fri Oct 01 2021 17:42:01 GMT+0000",
+              "CTATitle": "Contact an expert",
+              "ctaDeepLinkID": "contact",
+              "jcr:lastModified": "Thu Jan 11 2024 16:14:06 GMT+0000",
+              "sling:resourceType": "stryker/components/content/curatedcta",
+              "CTAButtonColor": "rgba(255,181,0,1)"
+            }
+          }
+        }
+      }
+    },
+    "jumpbarnav": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:48:17 GMT+0000",
+      "jcr:lastModified": "Tue Jan 14 2025 22:48:17 GMT+0000",
+      "sling:resourceType": "stryker/components/content/jumpbarnav"
+    },
+    "cols_1920497623": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Tue Nov 11 2025 18:34:57 GMT+0000",
+      "jcr:lastModified": "Tue Nov 11 2025 18:34:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols"
+    },
+    "cols2": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Feb 04 2025 17:35:57 GMT+0000",
+      "jcr:lastModified": "Tue Feb 04 2025 17:35:57 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "topPadding": "8",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jan 14 2025 22:26:06 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Transform your healthcare environment by redefining how care is delivered</span></span></h2>\n<p><span class=\"fontsize-1-25em\">As part of our SmartHospital Platform, care.ai’s scalable, integrated suite of virtual care and ambient intelligence solutions supports the unique clinical and operational needs of your health system. By automating tasks and connecting clinicians with relevant insights, we help redefine care delivery—scaling seamlessly across your facility and wherever future innovation leads.</span></p>\n",
+          "jcr:lastModified": "Wed Nov 26 2025 18:47:56 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standalonevideo": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Feb 04 2025 19:26:40 GMT+0000",
+          "hideBorder": "false",
+          "type": "typePath",
+          "borderColor": "rgba(0,0,0,1)",
+          "jcr:lastModified": "Tue Feb 04 2025 19:26:47 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standalonevideo",
+          "dynamic-media": {
+            "jcr:primaryType": "nt:unstructured",
+            "breakpoints": "",
+            "videoserverurl": "https://media-assets.stryker.com/is/content/",
+            "fileReference": "/content/dam/stryker/acute-care/products/care-ai/videos/care-ai-intro-video.mp4",
+            "s7ImagePreset": "",
+            "viewerPath": "https://media-assets.stryker.com/s7viewers/",
+            "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+            "s7ViewerPreset": "",
+            "assetID": "stryker/care-ai-intro-video-AVS",
+            "urlModifiers": "",
+            "jcr:lastModified": "Tue Feb 04 2025 19:28:26 GMT+0000",
+            "s7PresetType": "undefined",
+            "sling:resourceType": "dam/components/scene7/dynamicmedia",
+            "assetType": "VideoAVS",
+            "imageserverurl": "https://media-assets.stryker.com/is/image/",
+            "s7ViewerPresetPath": ""
+          }
+        }
+      }
+    },
+    "section_title_copy_1178925289": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "solutions",
+      "jcr:created": "Tue Jan 14 2025 22:47:08 GMT+0000",
+      "title": "Solutions",
+      "jcr:lastModified": "Wed Jan 15 2025 21:15:29 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols2_1_3_2_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:39:56 GMT+0000",
+      "jcr:lastModified": "Tue Jan 14 2025 22:39:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jan 14 2025 22:25:46 GMT+0000",
+          "alt": "Care view for virtual nurses using care.ai",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/care-ai/images/care-ai-virtual-care.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 31 2025 20:59:17 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Tue Jan 14 2025 22:25:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span class=\"futura-bold\">Virtual care</span></span></h2>\n<p><span class=\"fontsize-1-25em\">The care.ai suite of AI-enabled virtual care solutions, including Virtual Nursing and Virtual Monitoring workflows, is designed to align with your facility’s protocols and processes. From a single virtual command center, virtual nurses or sitters can manage a variety of tasks to support bedside teams in delivering hands‑on care.</span></p>\n",
+          "jcr:lastModified": "Wed Oct 29 2025 12:43:06 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_1_3_2_3_1128929037": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:40:31 GMT+0000",
+      "jcr:lastModified": "Tue Jan 14 2025 22:40:31 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_1-3_2-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jan 14 2025 22:25:46 GMT+0000",
+          "alt": "Ambient monitoring through AI-enabled sensors",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/care-ai/images/ambient-monitoring_960x864.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Wed Nov 26 2025 18:47:46 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "topMargin": "7",
+          "jcr:created": "Tue Jan 14 2025 22:25:51 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\"><span class=\"fontsize-1-5em\">Ambient intelligence</span></span></h2>\n<p><span class=\"fontsize-1-25em\">Ambient intelligence transforms care environments into intelligent spaces. Our AI-driven, always-aware ambient sensors continuously monitor activity and conditions within patient rooms, providing clinicians with near-real-time insights. These capabilities can empower informed clinical decision-making throughout the patient journey.</span></p>\n",
+          "jcr:lastModified": "Wed Oct 29 2025 12:43:54 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title_copy": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "connected",
+      "jcr:created": "Tue Jan 14 2025 22:47:08 GMT+0000",
+      "title": "Connected ecosystem",
+      "jcr:lastModified": "Wed Jan 15 2025 21:15:53 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Tue Jan 14 2025 22:26:12 GMT+0000",
+      "alt": "Dynamic Clinical Workflow solutions with SmartCare Platform",
+      "srcFileRef": "/content/dam/stryker/acute-care/campaigns/care-ai/images/dcw-care-ai-intersection.png",
+      "borderColor": "rgba(76,125,122,1)",
+      "jcr:lastModified": "Fri Jan 31 2025 20:53:41 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage",
+      "enableBorder": "false"
+    },
+    "cols": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Tue Jan 14 2025 22:50:56 GMT+0000",
+      "jcr:lastModified": "Tue Jan 14 2025 22:50:56 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "sectionseparator": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jan 14 2025 22:50:59 GMT+0000",
+          "jcr:lastModified": "Tue Jan 14 2025 22:50:59 GMT+0000",
+          "sling:resourceType": "stryker/components/content/sectionseparator"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Tue Jan 14 2025 22:51:25 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"futura-bold\">Related products</span></h2>\n",
+          "jcr:lastModified": "Wed Jan 15 2025 21:16:19 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true",
+          "bottomMargin": "-2"
+        }
+      }
+    },
+    "cols4": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Fri Jan 17 2025 16:44:50 GMT+0000",
+      "jcr:lastModified": "Fri Jan 17 2025 16:44:50 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols4",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jan 14 2025 22:28:09 GMT+0000",
+          "alt": "ProCuity smart, connected hospital bed systems",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/procuity/images/procuity_bed_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 31 2025 20:43:49 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jan 14 2025 22:28:14 GMT+0000",
+          "text": "<h3 style=\"text-align: left;\">ProCuity connected beds</h3>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">Enable bed notifications and data to be sent to your EHR, nurse call, clinical communication devices and more.</span></p>\n<p style=\"text-align: left;\"><a href=\"/content/stryker/us/en/acute-care/products/procuity.html\" target=\"_blank\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Tue Jan 14 2025 22:32:35 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jan 14 2025 22:28:09 GMT+0000",
+          "alt": "Prime Connect hospital stretcher",
+          "srcFileRef": "/content/dam/stryker/acute-care/products/primeseries/images/prime-connect_640x380.png",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 31 2025 20:41:03 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Tue Jan 14 2025 22:28:14 GMT+0000",
+          "text": "<h3 style=\"text-align: left;\">Prime Connect stretcher</h3>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">Support fall protocol compliance from anywhere in your facility.&nbsp;</span></p>\n<p style=\"text-align: left;\"><a href=\"/content/stryker/us/en/acute-care/products/prime-series.html\" target=\"_blank\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Tue Jan 14 2025 22:31:41 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Tue Jan 14 2025 22:28:09 GMT+0000",
+          "alt": "Smartbadge, Minibadge and Sync Badge",
+          "srcFileRef": "/content/dam/stryker/portfolios/medical-surgical/clinical-communication-and-workflow/images/ccw-hardware_3-badges_666x392.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Tue Nov 11 2025 13:41:32 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Jan 14 2025 22:28:14 GMT+0000",
+          "text": "<h3 style=\"text-align: left;\">Communication devices and software</h3>\n<p style=\"text-align: left;\"><span class=\"fontsize-1-25em\">Support the way people need to communicate, including hands-free options.</span></p>\n<p style=\"text-align: left;\"><a href=\"/content/stryker/us/en/portfolios/medical-surgical-equipment/clinical-communication-and-workflow.html\" target=\"_blank\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Mon Nov 10 2025 21:44:43 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      },
+      "col4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "standaloneimage": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "brittany.brady@stryker.com",
+          "preset": "max_width_1440",
+          "jcr:created": "Fri Jan 17 2025 16:45:18 GMT+0000",
+          "alt": "Dynamic Clinical Workflow",
+          "srcFileRef": "/content/dam/stryker/acute-care/campaigns/dynamic-clinical-workflow/dcw-featured-products-thumbnail_640x380.jpg",
+          "borderColor": "rgba(76,125,122,1)",
+          "jcr:lastModified": "Fri Jan 31 2025 20:43:29 GMT+0000",
+          "sling:resourceType": "stryker/components/content/standaloneimage",
+          "enableBorder": "false"
+        },
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Fri Jan 17 2025 16:45:24 GMT+0000",
+          "text": "<h3>Dynamic Clinical Workflow</h3>\n<p><span class=\"fontsize-1-25em\">Bring together the people and information you need to deliver quality patient care with our adaptable, scalable platform.</span></p>\n<p><a href=\"/content/stryker/us/en/acute-care/dynamic-clinical-workflow.html\" target=\"_blank\"><span class=\"standalone-link\">Learn more</span></a></p>\n",
+          "jcr:lastModified": "Fri Jan 17 2025 17:04:27 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "section_title": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "hideSectionTitleComp": "true",
+      "deepLinkingId": "contact",
+      "jcr:created": "Tue Jan 14 2025 22:47:08 GMT+0000",
+      "title": "Contact",
+      "jcr:lastModified": "Tue Jan 14 2025 22:48:06 GMT+0000",
+      "sling:resourceType": "stryker/components/content/section-title"
+    },
+    "cols_272493304_copy_": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kristian.bocage@stryker.com",
+      "jcr:lastModifiedBy": "kristian.bocage@stryker.com",
+      "jcr:created": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "jcr:lastModified": "Wed Sep 30 2020 17:34:01 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "text": {
+          "jcr:primaryType": "nt:unstructured",
+          "bottomPadding": "3",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "leftPadding": "2",
+          "topPadding": "4",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "hideComponent": "false",
+          "jcr:created": "Mon Oct 02 2023 15:14:39 GMT+0000",
+          "gradientDirection": "left-to-right",
+          "text": "<h2><span class=\"fontsize-1-5em\"><span style=\"color: #ffffff;\"><span style=\"color: #000000;\">Interested in learning more?&nbsp;<span class=\"futura-bold\">Contact an expert</span></span></span></span></h2>\n",
+          "jcr:lastModified": "Mon Nov 10 2025 21:59:34 GMT+0000",
+          "sling:resourceType": "stryker/components/content/text",
+          "backgroundColor": "rgb(255,181,0)",
+          "textIsRich": "true"
+        }
+      }
+    },
+    "cols2_2_3_1_3": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Thu Feb 06 2025 01:13:27 GMT+0000",
+      "jcr:lastModified": "Thu Feb 06 2025 01:13:27 GMT+0000",
+      "sling:resourceType": "stryker/components/content/columncontrol/cols2_2-3_1-3",
+      "col1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "marketoform_copy": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "eleni.maistrellis@stryker.com",
+          "afterSubmitAction": "showMessage",
+          "formId": "2761",
+          "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+          "jcr:created": "Tue Sep 15 2020 00:07:40 GMT+0000",
+          "useProduction": "true",
+          "message": "Thank you for reaching out! A Stryker representative will contact you shortly.",
+          "jcr:lastModified": "Fri Jan 09 2026 19:10:30 GMT+0000",
+          "sling:resourceType": "stryker/components/content/marketoform"
+        }
+      },
+      "col2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/foundation/components/parsys",
+        "experiencefragment_c": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:createdBy": "kent.schwartz@stryker.com",
+          "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+          "jcr:created": "Mon Oct 02 2023 15:16:03 GMT+0000",
+          "text": "Quick links Contact information Customer service Product feedback",
+          "jcr:lastModified": "Mon Oct 02 2023 15:17:37 GMT+0000",
+          "sling:resourceType": "stryker/components/content/experienceFragment",
+          "fragmentPath": "/content/experience-fragments/stryker/acute-care/en/business_unit/lead-gen-social/master",
+          "edsFragmentPath": "/us/en/fragments/stryker/acute-care/en/business-unit/lead-gen-social/master"
+        }
+      }
+    },
+    "resourcesanddownload": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "kent.schwartz@stryker.com",
+      "resources": "/content/dam/stryker/acute-care/products/care-ai/resources/Care-ai-platform-one-sheet.pdf",
+      "jcr:lastModifiedBy": "kent.schwartz@stryker.com",
+      "jcr:created": "Wed Jan 29 2025 16:14:30 GMT+0000",
+      "title": "Resources",
+      "jcr:lastModified": "Wed Jan 29 2025 16:15:39 GMT+0000",
+      "sling:resourceType": "stryker/components/content/resourcesanddownload"
+    },
+    "video": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "chris.kleckner@stryker.com",
+      "jcr:title": "<style>     @media screen and (max-width:1024px) {         .carouselslide .mobile_Bottom {top: 5% !important;margin-left: 4% !important;width: calc(100% - 55%) !important;}     }     @media screen and (max-width:768px) {         .carouselslide .mobile_Bottom .c-rich-text-editor>div {margin-left: auto;}     }     @media screen and (max-width: 840px) {         .c-autocarousel .mobile_Bottom.overlayparsys {margin-top: 20px;}     } </style>",
+      "height": "0",
+      "jcr:lastModifiedBy": "chris.kleckner@stryker.com",
+      "jcr:created": "Wed Oct 29 2025 13:38:30 GMT+0000",
+      "width": "0",
+      "jcr:lastModified": "Wed Oct 29 2025 14:03:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/video"
+    }
+  }
+}

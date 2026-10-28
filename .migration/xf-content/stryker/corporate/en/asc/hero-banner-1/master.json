@@ -1,0 +1,39 @@
+{
+  "jcr:primaryType": "cq:PageContent",
+  "jcr:mixinTypes": [
+    "mix:versionable"
+  ],
+  "jcr:createdBy": "admin",
+  "jcr:title": "Hero Banner 1",
+  "jcr:versionHistory": "ca49dbd3-bcb6-479a-8ee3-b530682657d6",
+  "cq:template": "/conf/global/settings/wcm/templates/reusable-component-template",
+  "cq:xfMasterVariation": true,
+  "jcr:predecessors": [
+    "835a8b35-31b1-4b66-aa3e-3520dcd11904"
+  ],
+  "jcr:created": "Wed Jul 01 2020 22:40:40 GMT+0000",
+  "cq:lastModified": "Wed Jul 01 2020 22:40:38 GMT+0000",
+  "cq:xfVariantType": "web",
+  "jcr:baseVersion": "835a8b35-31b1-4b66-aa3e-3520dcd11904",
+  "jcr:isCheckedOut": true,
+  "cq:tags": [],
+  "jcr:uuid": "e381155a-aeac-4dd6-8e07-57c8ae328bbc",
+  "sling:resourceType": "stryker/components/structure/xfpage",
+  "cq:lastModifiedBy": "reference-adjustment-service",
+  "root": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:lastModifiedBy": "pankaj.kumar@stryker.com",
+    "jcr:lastModified": "Fri Aug 23 2019 18:13:48 GMT+0000",
+    "sling:resourceType": "wcm/foundation/components/responsivegrid",
+    "standaloneimage": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:createdBy": "garrett.shue@stryker.com",
+      "jcr:lastModifiedBy": "garrett.shue@stryker.com",
+      "preset": "max_width_1440",
+      "jcr:created": "Wed Jul 01 2020 17:57:38 GMT+0000",
+      "srcFileRef": "/content/dam/stryker/care-settings/asc/heros/BannerAssets-ForXFImplants.jpg",
+      "jcr:lastModified": "Wed Jul 01 2020 17:57:46 GMT+0000",
+      "sling:resourceType": "stryker/components/content/standaloneimage"
+    }
+  }
+}
